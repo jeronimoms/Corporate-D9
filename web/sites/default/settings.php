@@ -779,11 +779,8 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-#
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
-$databases['default']['default'] = array (
+
+$databases['default']['default'] = [
   'database' => 'ncw',
   'username' => 'root',
   'password' => 'saretex1',
@@ -792,5 +789,11 @@ $databases['default']['default'] = array (
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
-);
-$settings['config_sync_directory'] = 'sites/default/files/config_ZgEBQijFO9Vn2wNYC4q51XOShzGO30fREafyF-swAu6wttIMezFN6hwhr_SRsCaoy-kt-qu7zw/sync';
+];
+
+
+$settings['config_sync_directory'] = $app_root . '/' . $site_path . '/config/sync';
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
