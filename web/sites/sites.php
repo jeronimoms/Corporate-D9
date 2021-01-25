@@ -63,4 +63,8 @@ $sites = [
   'allages.bilbomatica.es' => 'allages',
   // Local sites.
   'vesafe.ddev.site' => 'vesafe',
+  'napo.ddev.site' => 'napo',
+  'oira.ddev.site' => 'oira',
+  'allages.ddev.site' => 'allages',
+  'osha.ddev.site' => 'default',
 ];
