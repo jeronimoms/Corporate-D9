@@ -1,0 +1,6 @@
+services:
+  csrf_checks.event_subscriber:
+    class: Drupal\csrf_checks\EventSubscriber\CsrfChecksSubscriber
+    arguments: ['@logger.factory']
+    tags:
+      - {name: event_subscriber}

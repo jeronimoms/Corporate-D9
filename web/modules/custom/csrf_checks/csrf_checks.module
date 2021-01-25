@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function csrf_checks_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Create help page.
+    case 'help.page.csrf_checks':
+      $module_handler = \Drupal::service('module_handler');
+      $module_path = $module_handler->getModule('csrf_checks')->getPath();
+      $file = $module_path . '/README.md';
+      if (!file_exists($file)) {
+        return '';
+      }
+
+      // Get content from file.
+      $reader = file_get_contents($file);
+
+      // Return "clean" content.
+      return preg_replace("/\r\n|\n|\r/", "<br>", $reader);
+  }
+
+}
