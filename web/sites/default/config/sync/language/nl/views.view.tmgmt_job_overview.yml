@@ -4,12 +4,8 @@ display:
       fields:
         state:
           label: Status
-        label:
-          label: Label
         target_language:
           label: Naar
-        translator:
-          label: Provider
         tags_count:
           label: Labels
         operations:
@@ -18,6 +14,3 @@ display:
         state:
           expose:
             label: Status
-        translator:
-          expose:
-            label: Provider

@@ -1,23 +1,15 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
       fields:
         type:
           label: Inhoudstype
-        status:
-          label: Status
         operations:
           label: Bewerkingen
       filters:
         type:
           expose:
             label: Inhoudstype
-        status:
-          expose:
-            label: Status
         langcode:
           expose:
             label: Taal

@@ -7,15 +7,9 @@ display:
       fields:
         title:
           label: Etikett
-      filters:
-        status:
-          expose:
-            label: Status
   closed:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etikett
         target_language:
@@ -23,9 +17,6 @@ display:
         operations:
           label: Funktioner
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etikett
@@ -34,8 +25,6 @@ display:
   completed:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etikett
         target_language:
@@ -43,9 +32,6 @@ display:
         operations:
           label: Funktioner
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etikett
@@ -54,8 +40,6 @@ display:
   eligible:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etikett
         target_language:
@@ -63,17 +47,12 @@ display:
         operations:
           label: Funktioner
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etikett
   my_tasks:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etikett
         target_language:
@@ -81,17 +60,12 @@ display:
         operations:
           label: Funktioner
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etikett
   pending:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etikett
         target_language:
@@ -99,17 +73,12 @@ display:
         operations:
           label: Funktioner
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etikett
   rejected:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etikett
         target_language:
@@ -117,24 +86,15 @@ display:
         operations:
           label: Funktioner
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etikett
   unassigned:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etikett
         target_language:
           label: Till
         operations:
           label: Funktioner
-      filters:
-        status:
-          expose:
-            label: Status

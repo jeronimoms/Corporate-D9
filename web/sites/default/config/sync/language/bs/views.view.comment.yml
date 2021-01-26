@@ -2,9 +2,6 @@ label: Komentari
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
       fields:
         subject:
           label: Naslov

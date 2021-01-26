@@ -7,17 +7,12 @@ display:
       fields:
         type:
           label: Innehållstyp
-        status:
-          label: Status
         operations:
           label: Funktioner
       filters:
         type:
           expose:
             label: Innehållstyp
-        status:
-          expose:
-            label: Status
         langcode:
           expose:
             label: Språk

@@ -7,15 +7,9 @@ display:
       fields:
         title:
           label: Etykieta
-      filters:
-        status:
-          expose:
-            label: Status
   closed:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etykieta
         target_language:
@@ -23,9 +17,6 @@ display:
         operations:
           label: Operacje
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etykieta
@@ -34,8 +25,6 @@ display:
   completed:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etykieta
         target_language:
@@ -43,9 +32,6 @@ display:
         operations:
           label: Operacje
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etykieta
@@ -54,8 +40,6 @@ display:
   eligible:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etykieta
         target_language:
@@ -63,17 +47,12 @@ display:
         operations:
           label: Operacje
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etykieta
   my_tasks:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etykieta
         target_language:
@@ -81,17 +60,12 @@ display:
         operations:
           label: Operacje
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etykieta
   pending:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etykieta
         target_language:
@@ -99,17 +73,12 @@ display:
         operations:
           label: Operacje
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etykieta
   rejected:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etykieta
         target_language:
@@ -117,24 +86,15 @@ display:
         operations:
           label: Operacje
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etykieta
   unassigned:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etykieta
         target_language:
           label: Do
         operations:
           label: Operacje
-      filters:
-        status:
-          expose:
-            label: Status

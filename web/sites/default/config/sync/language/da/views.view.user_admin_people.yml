@@ -1,19 +1,10 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
       fields:
         name:
           label: Brugernavn
-        status:
-          label: Status
         roles_target_id:
           label: Roller
         operations:
           label: Handlinger
-      filters:
-        status:
-          group_info:
-            label: Status

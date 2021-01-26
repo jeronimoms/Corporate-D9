@@ -1,14 +1,7 @@
 display:
-  default:
-    display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
   assigned:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Til
         operations:
@@ -23,8 +16,6 @@ display:
       menu:
         title: Lukket
       fields:
-        status:
-          label: Status
         target_language:
           label: Til
         operations:
@@ -39,8 +30,6 @@ display:
       menu:
         title: Gennemført
       fields:
-        status:
-          label: Status
         target_language:
           label: Til
         operations:
@@ -52,8 +41,6 @@ display:
   pending:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Til
         operations:
@@ -65,8 +52,6 @@ display:
   rejected:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Til
         operations:
@@ -78,8 +63,6 @@ display:
   unassigned:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Til
         operations:

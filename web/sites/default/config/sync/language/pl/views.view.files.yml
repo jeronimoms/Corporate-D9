@@ -7,9 +7,3 @@ display:
       fields:
         filename:
           label: Nazwa
-        status:
-          label: Status
-      filters:
-        status:
-          expose:
-            label: Status

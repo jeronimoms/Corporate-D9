@@ -1,17 +1,6 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
       fields:
-        filename:
-          label: Name
-        status:
-          label: Status
         operations:
           label: Aktionen
-      filters:
-        status:
-          expose:
-            label: Status

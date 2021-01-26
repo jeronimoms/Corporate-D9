@@ -7,11 +7,5 @@ display:
       fields:
         filename:
           label: Naziv
-        status:
-          label: Status
         operations:
           label: Operacije
-      filters:
-        status:
-          expose:
-            label: Status

@@ -42,27 +42,35 @@ class CsrfChecksSubscriber implements EventSubscriberInterface {
   public function checkForCsrfAttack(RequestEvent $event) {
     /** @var \Symfony\Component\HttpFoundation\Request $request */
     $request = $event->getRequest();
+    global $base_root;
 
     // The base url.
-    $base = str_replace(array(':', '/', '.'), ['\:', '\/', '\.'], $request->getHttpHost());
+    $base = str_replace([':', '/', '.'], ['\:', '\/', '\.'], $base_root);
 
 
     if ($request->getMethod() == 'POST') {
-      // Get the origin.
+      // Check the origin.
       $http_origin = $request->server->get('HTTP_ORIGIN');
       if (isset($http_origin)) {
         if (preg_match("/^$base/", $http_origin) != 1) {
           $this->blockCsrfRequest('HTTP_ORIGIN not allowed from ip:' . $request->getClientIp());
+          $event->setResponse(Response::create('x-origin', 403, []));
         }
       }
 
       // Check the referer header.
-      $referer = $request->server->get('HTTP_REFERER');
-      if (isset($referer) && preg_match("/^$base/", $referer) !== 1) {
-        $this->blockCsrfRequest('HTTP_REFERER not allowed from ip:' . $request->getClientIp());
+      $refererToCheck = $request->server->get('HTTP_REFERER');
+      if (isset($refererToCheck)) {
+        if (preg_match("/^$base/", $refererToCheck) != 1) {
+          // Possible CSRF attack. Block the request.
+          $this->blockCsrfRequest('HTTP_REFERER not allowed from ip:' . $request->getClientIp());
+          $event->setResponse(Response::create('x-referer', 403, []));
+        }
       }
       else {
+        // Possible CSRF attack. Block the request.
         $this->blockCsrfRequest('HTTP_REFERER is empty from ip:' . $request->getClientIp());
+        $event->setResponse(Response::create('x-referer-empty', 403, []));
       }
 
     }
@@ -77,7 +85,7 @@ class CsrfChecksSubscriber implements EventSubscriberInterface {
    */
   public function blockCsrfRequest($message) {
     $this->logger->error($message);
-    throw new AccessDeniedHttpException();
+   // throw new AccessDeniedHttpException();
   }
 
   /**

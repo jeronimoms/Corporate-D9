@@ -7,8 +7,6 @@ display:
   assigned:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Do
         operations:
@@ -23,8 +21,6 @@ display:
       menu:
         title: Zamknięte
       fields:
-        status:
-          label: Status
         target_language:
           label: Do
         operations:
@@ -39,8 +35,6 @@ display:
       menu:
         title: Zakończone
       fields:
-        status:
-          label: Status
         target_language:
           label: Do
         operations:
@@ -52,8 +46,6 @@ display:
   pending:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Do
         operations:
@@ -65,8 +57,6 @@ display:
   rejected:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Do
         operations:
@@ -78,8 +68,6 @@ display:
   unassigned:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Do
         operations:

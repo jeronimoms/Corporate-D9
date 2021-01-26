@@ -1,23 +1,15 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
       fields:
         type:
           label: Indholdstype
-        status:
-          label: Status
         operations:
           label: Handlinger
       filters:
         type:
           expose:
             label: Indholdstype
-        status:
-          expose:
-            label: Status
         langcode:
           expose:
             label: Sprog

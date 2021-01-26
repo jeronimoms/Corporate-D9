@@ -7,17 +7,12 @@ display:
       fields:
         type:
           label: 'Rodzaj zawartości'
-        status:
-          label: Status
         operations:
           label: Operacje
       filters:
         type:
           expose:
             label: 'Rodzaj zawartości'
-        status:
-          expose:
-            label: Status
         langcode:
           expose:
             label: Język

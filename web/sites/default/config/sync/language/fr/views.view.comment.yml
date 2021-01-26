@@ -6,8 +6,6 @@ display:
         options:
           submit_button: Filtrer
       fields:
-        comment_bulk_form:
-          action_title: Action
         subject:
           label: Objet
         operations:
@@ -34,8 +32,6 @@ display:
           expose:
             label: Langue
       fields:
-        comment_bulk_form:
-          action_title: Action
         subject:
           label: Objet
         operations:
