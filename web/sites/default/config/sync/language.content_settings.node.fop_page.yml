@@ -4,11 +4,6 @@ status: true
 dependencies:
   config:
     - node.type.fop_page
-  module:
-    - content_translation
-third_party_settings:
-  content_translation:
-    enabled: true
 id: node.fop_page
 target_entity_type_id: node
 target_bundle: fop_page

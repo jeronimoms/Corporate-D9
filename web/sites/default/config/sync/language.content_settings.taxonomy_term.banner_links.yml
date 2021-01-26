@@ -4,11 +4,6 @@ status: true
 dependencies:
   config:
     - taxonomy.vocabulary.banner_links
-  module:
-    - content_translation
-third_party_settings:
-  content_translation:
-    enabled: true
 id: taxonomy_term.banner_links
 target_entity_type_id: taxonomy_term
 target_bundle: banner_links

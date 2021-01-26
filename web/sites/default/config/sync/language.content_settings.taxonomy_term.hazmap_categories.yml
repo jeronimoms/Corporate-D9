@@ -4,11 +4,6 @@ status: true
 dependencies:
   config:
     - taxonomy.vocabulary.hazmap_categories
-  module:
-    - content_translation
-third_party_settings:
-  content_translation:
-    enabled: true
 id: taxonomy_term.hazmap_categories
 target_entity_type_id: taxonomy_term
 target_bundle: hazmap_categories
