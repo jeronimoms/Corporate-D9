@@ -1,0 +1,26 @@
+/* Breadcrumbs */
+.featured-top{
+  border-bottom: 2px solid #cfddee;
+  padding-bottom: 5px;
+  margin-bottom: 2em;
+  background-color: $bg-color-white;
+  #block-ncwtheme-breadcrumbs{
+    font-size: 0.8rem;
+    font-weight: lighter;
+    border: 0;
+    clear: both;
+    padding: 1em 15px 0 15px;
+    max-width: 1160px;
+    margin: 0 auto;
+    a{
+      color: $text-color-blue;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 1px solid $bg-color-pink;
+      &:hover{
+        transition: border-bottom 1s;
+        border-bottom: 1px solid $bg-color-blue;
+      }
+    }
+  }
+}
