@@ -1,6 +1,6 @@
 #!/bin/sh
-# Change the branch to testing.
-git checkout testing
+# Change the branch to develop.
+git checkout develop
 
 # Download last changes.
 git pull
