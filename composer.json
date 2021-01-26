@@ -63,7 +63,7 @@
         "drupal/context": "^4.0@beta",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
-        "drupal/core-recommended": "^9.1",
+        "drupal/core": "^9.1",
         "drupal/crop": "^2.1",
         "drupal/csv_serialization": "^2.0@beta",
         "drupal/ctools": "^3.4",
@@ -182,9 +182,9 @@
         "sort-packages": true
     },
     "extra": {
-        "enable-patching": true,
-        "patches": {
-
+        "enable-patching": false,
+        "patchLevel": {
+            "drupal/core": "-p2"
         },
         "drupal-scaffold": {
             "locations": {
