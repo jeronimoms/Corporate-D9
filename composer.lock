@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7eaaf881050936b3d0138c19e8e5376c",
+    "content-hash": "802f5d8061b11728ef3215dcc4a5a00c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -10945,6 +10945,18 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/master"
             },
             "time": "2020-06-29T00:56:53+00:00"
+        },
+        {
+            "name": "facets_range_widget/library",
+            "version": "1.11.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips/archive/v1.11.3.zip"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "jquery-ui-slider-pips"
+            }
         },
         {
             "name": "flow/jsonpath",
