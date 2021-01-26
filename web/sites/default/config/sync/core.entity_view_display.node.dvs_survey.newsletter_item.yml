@@ -1,0 +1,28 @@
+uuid: 5a77262d-111b-45de-b15e-63949d619351
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter_item
+    - field.field.node.dvs_survey.comment_node_dvs_survey
+    - field.field.node.dvs_survey.field_dvs_code
+    - field.field.node.dvs_survey.field_flickr_date
+    - node.type.dvs_survey
+  module:
+    - user
+id: node.dvs_survey.newsletter_item
+targetEntityType: node
+bundle: dvs_survey
+mode: newsletter_item
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_dvs_survey: true
+  field_dvs_code: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

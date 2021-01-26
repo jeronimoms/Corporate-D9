@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Status
+        label:
+          label: Etichetă
+        target_language:
+          label: Către
+        translator:
+          label: Furnizor
+        tags_count:
+          label: Etichete
+        operations:
+          label: Operaţii
+      filters:
+        state:
+          expose:
+            label: Status
+        translator:
+          expose:
+            label: Furnizor

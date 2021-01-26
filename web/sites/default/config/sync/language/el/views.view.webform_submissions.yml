@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: Λειτουργίες
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Ενέργεια
+        completed:
+          label: Ολοκληρώθηκε
+        operations:
+          label: Λειτουργίες
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Ενέργεια
+        completed:
+          label: Ολοκληρώθηκε
+        view_webform_submission:
+          label: Λειτουργίες
+        edit_webform_submission:
+          label: Λειτουργίες
+  embed_review:
+    display_options:
+      fields:
+        completed:
+          label: Ολοκληρώθηκε
+        view_webform_submission:
+          label: Λειτουργίες

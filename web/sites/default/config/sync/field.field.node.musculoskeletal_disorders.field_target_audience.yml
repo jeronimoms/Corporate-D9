@@ -1,0 +1,26 @@
+uuid: 77b645a9-7aca-40cd-bbc1-d4617b32f681
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_target_audience
+    - node.type.musculoskeletal_disorders
+    - taxonomy.vocabulary.target_audience
+id: node.musculoskeletal_disorders.field_target_audience
+field_name: field_target_audience
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Target audience'
+description: 'Please select a target audience from the drop down list'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      target_audience: target_audience
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

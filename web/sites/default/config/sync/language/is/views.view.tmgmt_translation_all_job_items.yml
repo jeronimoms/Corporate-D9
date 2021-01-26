@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Fylki
+        label:
+          label: Merking
+        target_language:
+          label: Til
+        tags_count:
+          label: Efnisorð
+        operations:
+          label: Aðgerðir
+      filters:
+        state:
+          group_info:
+            label: Fylki

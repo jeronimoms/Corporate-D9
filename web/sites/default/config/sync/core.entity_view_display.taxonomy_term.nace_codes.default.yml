@@ -1,0 +1,64 @@
+uuid: 66039c4e-3250-41a7-b50a-d46c741ca7c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nace_codes.field_nace_changes
+    - field.field.taxonomy_term.nace_codes.field_nace_code
+    - field.field.taxonomy_term.nace_codes.field_nace_excludes
+    - field.field.taxonomy_term.nace_codes.field_nace_includes
+    - field.field.taxonomy_term.nace_codes.field_nace_includes_also
+    - taxonomy.vocabulary.nace_codes
+  module:
+    - text
+id: taxonomy_term.nace_codes.default
+targetEntityType: taxonomy_term
+bundle: nace_codes
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nace_changes:
+    label: above
+    weight: 3
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_nace_code:
+    label: above
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_nace_excludes:
+    label: above
+    weight: 5
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_nace_includes:
+    label: above
+    weight: 4
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_nace_includes_also:
+    label: above
+    weight: 6
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

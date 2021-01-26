@@ -1,0 +1,20 @@
+uuid: ef714af7-7453-42f4-bd8c-4108d05b6823
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+id: node.comment_node_infographic
+field_name: comment_node_infographic
+entity_type: node
+type: comment
+settings:
+  comment_type: comment_node_infographic
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

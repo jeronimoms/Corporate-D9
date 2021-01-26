@@ -1,0 +1,22 @@
+uuid: 4292cc2b-243c-4967-a0df-fa656b47c8d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ncwtheme
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: ncwtheme_system_powered_by
+theme: ncwtheme
+region: footer_fifth
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: ''
+  provider: system
+  label_display: '0'
+visibility: {  }

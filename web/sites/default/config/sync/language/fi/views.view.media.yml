@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Suodatus
+      fields:
+        media_bulk_form:
+          action_title: Toiminto
+        status:
+          label: Tila
+        operations:
+          label: Toimenpiteet
+      filters:
+        langcode:
+          expose:
+            label: Kieli

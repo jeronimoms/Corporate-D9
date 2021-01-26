@@ -1,0 +1,26 @@
+uuid: 317ca73b-e81f-408e-a84b-c38b6540831d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_visualisation_material_typ
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.material_objective
+id: node.dangerous_substances.field_visualisation_material_typ
+field_name: field_visualisation_material_typ
+entity_type: node
+bundle: dangerous_substances
+label: 'Type of visualisation material'
+description: 'Please select type of visualisation from the drop down list'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      material_objective: material_objective
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

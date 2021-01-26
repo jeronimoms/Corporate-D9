@@ -1,0 +1,16 @@
+uuid: 5db17334-6cde-48ee-ad2d-cff581aab194
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.evaluation_quality_criteria
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.evaluation_quality_criteria
+target_entity_type_id: taxonomy_term
+target_bundle: evaluation_quality_criteria
+default_langcode: und
+language_alterable: true

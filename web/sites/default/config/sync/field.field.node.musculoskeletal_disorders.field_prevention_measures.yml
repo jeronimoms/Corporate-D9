@@ -1,0 +1,26 @@
+uuid: c2ae244e-c218-4eb5-9873-345249fd8da6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prevention_measures
+    - node.type.musculoskeletal_disorders
+    - taxonomy.vocabulary.prevention_measures_msd
+id: node.musculoskeletal_disorders.field_prevention_measures
+field_name: field_prevention_measures
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Prevention measures'
+description: 'Please select the prevention measures used'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      prevention_measures_msd: prevention_measures_msd
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

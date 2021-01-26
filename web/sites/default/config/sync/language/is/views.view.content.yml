@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Sía
+      fields:
+        type:
+          label: Efnisgerð
+        status:
+          label: Staða
+        operations:
+          label: Aðgerðir
+      filters:
+        type:
+          expose:
+            label: Efnisgerð
+        status:
+          expose:
+            label: Staða
+        langcode:
+          expose:
+            label: Tungumál

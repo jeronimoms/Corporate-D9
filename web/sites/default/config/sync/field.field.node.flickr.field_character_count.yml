@@ -1,0 +1,23 @@
+uuid: b22aa924-dd3c-46fa-9cdc-0f091bc01345
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_character_count
+    - node.type.flickr
+id: node.flickr.field_character_count
+field_name: field_character_count
+entity_type: node
+bundle: flickr
+label: 'Character count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: null
+  prefix: ''
+  suffix: ''
+field_type: integer

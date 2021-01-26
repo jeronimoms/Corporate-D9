@@ -1,0 +1,21 @@
+uuid: 82375e9c-c16c-450c-bb42-d6a70f83300a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_job_vacancies
+label: 'Content - Job vacancies'
+type: 'canonical_entities:node'
+pattern: 'about-eu-osha/careers/[node:title]'
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      job_vacancies: job_vacancies
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: 0
+relationships: {  }

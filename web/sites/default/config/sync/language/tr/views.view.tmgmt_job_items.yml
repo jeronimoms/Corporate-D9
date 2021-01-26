@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Eyalet
+        label:
+          label: Etiket
+        tags_count:
+          label: Etiketler
+        operations:
+          label: İşlemler
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Etiket

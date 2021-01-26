@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtruoti
+      fields:
+        name:
+          label: 'Nario vardas'
+        status:
+          label: Būsena
+        roles_target_id:
+          label: Rolės
+        operations:
+          label: Veiksmai
+      filters:
+        status:
+          group_info:
+            label: Būsena

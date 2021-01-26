@@ -1,0 +1,16 @@
+uuid: 272fb5c2-22af-4c15-b50c-31795ce6f57d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.flickr_tags
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.flickr_tags
+target_entity_type_id: taxonomy_term
+target_bundle: flickr_tags
+default_langcode: und
+language_alterable: false

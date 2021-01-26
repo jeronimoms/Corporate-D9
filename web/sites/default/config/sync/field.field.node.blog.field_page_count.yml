@@ -1,0 +1,23 @@
+uuid: 8b2f004e-d27c-45b9-a27c-5520b709eac8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_count
+    - node.type.blog
+id: node.blog.field_page_count
+field_name: field_page_count
+entity_type: node
+bundle: blog
+label: 'Page count'
+description: 'Automatically calculated when saving. The count of pages of text in the default language (English).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: !!float 0
+  prefix: ''
+  suffix: ''
+field_type: decimal

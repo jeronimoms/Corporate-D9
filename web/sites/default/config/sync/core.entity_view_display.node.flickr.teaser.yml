@@ -1,0 +1,30 @@
+uuid: ea11428b-5bf0-4eb0-b7ea-1469169841e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.flickr.comment_node_flickr
+    - field.field.node.flickr.field_character_count
+    - field.field.node.flickr.field_flickr_date
+    - field.field.node.flickr.field_page_count
+    - node.type.flickr
+  module:
+    - user
+id: node.flickr.teaser
+targetEntityType: node
+bundle: flickr
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_flickr: true
+  field_character_count: true
+  field_flickr_date: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

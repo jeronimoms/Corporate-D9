@@ -1,0 +1,140 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+      fields:
+        title:
+          label: Beschriftung
+      filters:
+        status:
+          expose:
+            label: Status
+  closed:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Beschriftung
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        status:
+          expose:
+            label: Status
+        title:
+          expose:
+            label: Beschriftung
+      menu:
+        title: Geschlossen
+  completed:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Beschriftung
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        status:
+          expose:
+            label: Status
+        title:
+          expose:
+            label: Beschriftung
+      menu:
+        title: Abgeschlossen
+  eligible:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Beschriftung
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        status:
+          expose:
+            label: Status
+        title:
+          expose:
+            label: Beschriftung
+  my_tasks:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Beschriftung
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        status:
+          expose:
+            label: Status
+        title:
+          expose:
+            label: Beschriftung
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Beschriftung
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        status:
+          expose:
+            label: Status
+        title:
+          expose:
+            label: Beschriftung
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Beschriftung
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        status:
+          expose:
+            label: Status
+        title:
+          expose:
+            label: Beschriftung
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Beschriftung
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        status:
+          expose:
+            label: Status

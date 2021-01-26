@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Status
+        label:
+          label: Label
+        target_language:
+          label: Naar
+        tags_count:
+          label: Labels
+        operations:
+          label: Bewerkingen
+      filters:
+        state:
+          group_info:
+            label: Status

@@ -1,0 +1,28 @@
+uuid: 5c5b17cb-ff90-4bd0-9b30-49e5ebc5d8f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_slideshow
+    - field.field.node.dvs_survey.comment_node_dvs_survey
+    - field.field.node.dvs_survey.field_dvs_code
+    - field.field.node.dvs_survey.field_flickr_date
+    - node.type.dvs_survey
+  module:
+    - user
+id: node.dvs_survey.osha_slideshow
+targetEntityType: node
+bundle: dvs_survey
+mode: osha_slideshow
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_dvs_survey: true
+  field_dvs_code: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

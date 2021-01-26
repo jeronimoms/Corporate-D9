@@ -1,0 +1,36 @@
+uuid: 6d6092dc-528a-4811-a44b-339b8bea7ea2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter_item
+    - field.field.node.youtube.body
+    - field.field.node.youtube.comment_node_youtube
+    - field.field.node.youtube.field_character_count
+    - field.field.node.youtube.field_flickr_date
+    - field.field.node.youtube.field_page_count
+    - field.field.node.youtube.field_publication_date
+    - field.field.node.youtube.field_youtube
+    - node.type.youtube
+  module:
+    - user
+id: node.youtube.newsletter_item
+targetEntityType: node
+bundle: youtube
+mode: newsletter_item
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_youtube: true
+  field_character_count: true
+  field_flickr_date: true
+  field_page_count: true
+  field_publication_date: true
+  field_youtube: true
+  langcode: true
+  search_api_excerpt: true

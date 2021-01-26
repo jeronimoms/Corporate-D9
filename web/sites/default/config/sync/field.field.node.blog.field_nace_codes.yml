@@ -1,0 +1,26 @@
+uuid: 9eeee7f3-79ff-4421-9c48-e10a3544f989
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nace_codes
+    - node.type.blog
+    - taxonomy.vocabulary.nace_codes
+id: node.blog.field_nace_codes
+field_name: field_nace_codes
+entity_type: node
+bundle: blog
+label: Nace
+description: 'Select Nace code for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      nace_codes: nace_codes
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

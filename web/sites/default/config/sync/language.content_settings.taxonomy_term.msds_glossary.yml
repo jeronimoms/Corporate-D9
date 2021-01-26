@@ -1,0 +1,16 @@
+uuid: 56abe218-824a-4d80-a85d-85c614a6aa08
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.msds_glossary
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.msds_glossary
+target_entity_type_id: taxonomy_term
+target_bundle: msds_glossary
+default_langcode: und
+language_alterable: true

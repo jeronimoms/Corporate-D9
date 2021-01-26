@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Pročisti
+      fields:
+        filename:
+          label: Naziv
+        status:
+          label: Status
+        operations:
+          label: Operacije
+      filters:
+        status:
+          expose:
+            label: Status

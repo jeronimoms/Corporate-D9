@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Olek
+        label:
+          label: Nimetus
+        target_language:
+          label: Kellele
+        tags_count:
+          label: Sildid
+        operations:
+          label: Toimingud
+      filters:
+        state:
+          group_info:
+            label: Olek

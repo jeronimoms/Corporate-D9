@@ -1,0 +1,16 @@
+uuid: 31a57a05-9b88-44fa-aaf2-381a002c270a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.agency
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.agency
+target_entity_type_id: taxonomy_term
+target_bundle: agency
+default_langcode: und
+language_alterable: true

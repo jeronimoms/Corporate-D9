@@ -1,0 +1,27 @@
+uuid: 8398e941-c2b5-443c-aa82-984285867beb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_general_services
+    - node.type.register_records
+  module:
+    - file
+id: node.register_records.field_general_services
+field_name: field_general_services
+entity_type: node
+bundle: register_records
+label: 'General Services'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

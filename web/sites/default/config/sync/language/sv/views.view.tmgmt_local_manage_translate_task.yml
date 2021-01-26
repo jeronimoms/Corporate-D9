@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrera
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Till
+        operations:
+          label: Funktioner
+      filters:
+        uid:
+          expose:
+            label: Leverantör
+  closed:
+    display_title: Stängd
+    display_options:
+      menu:
+        title: Stängd
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Till
+        operations:
+          label: Funktioner
+      filters:
+        uid:
+          expose:
+            label: Leverantör
+  completed:
+    display_title: Slutförd
+    display_options:
+      menu:
+        title: Slutförd
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Till
+        operations:
+          label: Funktioner
+      filters:
+        uid:
+          expose:
+            label: Leverantör
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Till
+        operations:
+          label: Funktioner
+      filters:
+        uid:
+          expose:
+            label: Leverantör
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Till
+        operations:
+          label: Funktioner
+      filters:
+        uid:
+          expose:
+            label: Leverantör
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Till
+        operations:
+          label: Funktioner

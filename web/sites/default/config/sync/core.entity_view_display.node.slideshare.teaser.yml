@@ -1,0 +1,32 @@
+uuid: deca13f5-9e0c-4d5b-aae3-dc9b66baac15
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.slideshare.comment_node_slideshare
+    - field.field.node.slideshare.field_character_count
+    - field.field.node.slideshare.field_flickr_date
+    - field.field.node.slideshare.field_page_count
+    - field.field.node.slideshare.field_slideshare_thumbnail
+    - node.type.slideshare
+  module:
+    - user
+id: node.slideshare.teaser
+targetEntityType: node
+bundle: slideshare
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_slideshare: true
+  field_character_count: true
+  field_flickr_date: true
+  field_page_count: true
+  field_slideshare_thumbnail: true
+  langcode: true
+  search_api_excerpt: true

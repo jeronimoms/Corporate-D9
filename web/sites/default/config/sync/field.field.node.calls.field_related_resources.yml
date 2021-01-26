@@ -1,0 +1,27 @@
+uuid: bf15c86f-afbe-4722-90ab-262b9ced8140
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_resources
+    - node.type.calls
+  module:
+    - file
+id: node.calls.field_related_resources
+field_name: field_related_resources
+entity_type: node
+bundle: calls
+label: Documents
+description: 'Calls Documents files.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: true
+  file_directory: calls/documents
+  file_extensions: 'txt pdf docx zip ppt pptx doc rar odt odp otp xls xlsx'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

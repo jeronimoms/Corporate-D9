@@ -1,0 +1,63 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Филтър
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Статус
+        target_language:
+          label: До
+        operations:
+          label: Действия
+  closed:
+    display_title: Закрито
+    display_options:
+      menu:
+        title: Закрито
+      fields:
+        status:
+          label: Статус
+        target_language:
+          label: До
+        operations:
+          label: Действия
+  completed:
+    display_options:
+      fields:
+        status:
+          label: Статус
+        target_language:
+          label: До
+        operations:
+          label: Действия
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Статус
+        target_language:
+          label: До
+        operations:
+          label: Действия
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Статус
+        target_language:
+          label: До
+        operations:
+          label: Действия
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Статус
+        target_language:
+          label: До
+        operations:
+          label: Действия

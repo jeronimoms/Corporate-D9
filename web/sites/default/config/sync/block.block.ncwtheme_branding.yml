@@ -1,0 +1,25 @@
+uuid: 65cac8de-1d72-49e4-b789-6cb8c5adbf22
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ncwtheme
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: ncwtheme_branding
+theme: ncwtheme
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

@@ -1,0 +1,65 @@
+uuid: d27593ca-c7f6-4279-93fc-76a37b42b0c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.infographic.body
+    - field.field.node.infographic.comment_node_infographic
+    - field.field.node.infographic.field_activity
+    - field.field.node.infographic.field_archived
+    - field.field.node.infographic.field_external_url
+    - field.field.node.infographic.field_file
+    - field.field.node.infographic.field_flickr_date
+    - field.field.node.infographic.field_image
+    - field.field.node.infographic.field_pages_count
+    - field.field.node.infographic.field_publication_date
+    - field.field.node.infographic.field_tags
+    - field.field.node.infographic.field_thumbnail
+    - field.field.node.infographic.field_twin_infographics
+    - node.type.infographic
+  module:
+    - image
+    - text
+    - user
+id: node.infographic.teaser
+targetEntityType: node
+bundle: infographic
+mode: teaser
+content:
+  body:
+    label: hidden
+    weight: 2
+    type: text_summary_or_trimmed
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_thumbnail:
+    label: hidden
+    weight: 1
+    type: image
+    settings:
+      image_link: ''
+      image_style: medium_crop_220
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_infographic: true
+  field_activity: true
+  field_archived: true
+  field_external_url: true
+  field_file: true
+  field_flickr_date: true
+  field_image: true
+  field_pages_count: true
+  field_publication_date: true
+  field_tags: true
+  field_twin_infographics: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,93 @@
+uuid: 0c67a40f-47eb-466b-8452-cae881cbce02
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_banner.default
+    - field.field.node.banner.comment_node_banner
+    - field.field.node.banner.field_banner_link
+    - field.field.node.banner.field_banner_link_title
+    - field.field.node.banner.field_character_count
+    - field.field.node.banner.field_copyright
+    - field.field.node.banner.field_flickr_date
+    - field.field.node.banner.field_image
+    - field.field.node.banner.field_page_count
+    - field.field.node.banner.field_subtitle
+    - node.type.banner
+  module:
+    - comment
+    - datetime
+    - image
+    - link
+    - user
+id: node.banner.default
+targetEntityType: node
+bundle: banner
+mode: default
+content:
+  comment_node_banner:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  field_banner_link:
+    label: hidden
+    weight: 2
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_banner_link_title:
+    label: above
+    weight: 10
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    label: above
+    weight: 11
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_image:
+    label: hidden
+    weight: 1
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_subtitle:
+    label: above
+    weight: 13
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_character_count: true
+  field_copyright: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

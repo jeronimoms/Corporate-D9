@@ -1,0 +1,30 @@
+uuid: 5d40b224-a9ed-411f-b7e5-778db7206e38
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c035f0f7-662f-4a86-a9ba-380e11b3d8c5'
+  module:
+    - block_content
+    - system
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_osha_frontend_block_1
+theme: bootstrap_barrio
+region: content
+weight: 2
+provider: null
+plugin: 'block_content:c035f0f7-662f-4a86-a9ba-380e11b3d8c5'
+settings:
+  id: 'block_content:c035f0f7-662f-4a86-a9ba-380e11b3d8c5'
+  label: '<none>'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/oshmail-newsletter\n/node/9"

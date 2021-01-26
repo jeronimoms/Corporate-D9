@@ -1,0 +1,28 @@
+uuid: 13470c4b-031f-4c23-b0c1-4d2c272f0b57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_manager
+    - node.type.blog
+id: node.blog.field_project_manager
+field_name: field_project_manager
+entity_type: node
+bundle: blog
+label: 'Project manager'
+description: 'The person that will receive notifications on e-mail when a new comment is published.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles: null
+field_type: entity_reference

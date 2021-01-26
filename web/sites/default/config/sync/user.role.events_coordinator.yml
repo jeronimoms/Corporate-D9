@@ -1,0 +1,39 @@
+uuid: bed38230-797a-413d-9e5f-7a47fcf62c8d
+langcode: en
+status: true
+dependencies: {  }
+id: events_coordinator
+label: 'Events Coordinator'
+weight: 11
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access dashboard'
+  - 'access media browser'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'create events content'
+  - 'create files'
+  - 'create url aliases'
+  - 'delete any events content'
+  - 'delete own events content'
+  - 'edit any events content'
+  - 'edit meta tags'
+  - 'edit own events content'
+  - 'osha access administration pages'
+  - 'use manualcrop'
+  - 'use media wysiwyg'
+  - 'use text format full_html'
+  - 'use text format full_html_minimal'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'
+  - 'view own files'
+  - 'view own private files'
+  - 'view own unpublished content'
+  - 'view private files'
+  - 'view revisions'
+  - 'view the administration theme'
+  - 'view workbench access information'

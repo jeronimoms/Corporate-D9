@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Stav
+        label:
+          label: Označenie
+        tags_count:
+          label: Značky
+        operations:
+          label: Operácie
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Označenie

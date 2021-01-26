@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Φίλτρο
+      fields:
+        media_bulk_form:
+          action_title: Ενέργεια
+        status:
+          label: Κατάσταση
+        operations:
+          label: Λειτουργίες
+      filters:
+        langcode:
+          expose:
+            label: Γλώσσα

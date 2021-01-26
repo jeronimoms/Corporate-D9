@@ -1,0 +1,44 @@
+uuid: 2cd28c7f-6be1-4ea8-8a03-ddb57481b061
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.external_url.comment_node_external_url
+    - field.field.node.external_url.field_character_count
+    - field.field.node.external_url.field_external_url
+    - field.field.node.external_url.field_flickr_date
+    - field.field.node.external_url.field_page_count
+    - node.type.external_url
+  module:
+    - link
+    - user
+id: node.external_url.osha_resources
+targetEntityType: node
+bundle: external_url
+mode: osha_resources
+content:
+  field_external_url:
+    label: hidden
+    weight: 0
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_external_url: true
+  field_character_count: true
+  field_flickr_date: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

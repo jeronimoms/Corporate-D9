@@ -1,0 +1,26 @@
+uuid: fc882fe3-d9df-4376-80ca-35060f51de16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prevention_measure_type
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.prevention_measures
+id: node.dangerous_substances.field_prevention_measure_type
+field_name: field_prevention_measure_type
+entity_type: node
+bundle: dangerous_substances
+label: 'Prevention measures'
+description: 'Please select the prevention measures used'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      prevention_measures: prevention_measures
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

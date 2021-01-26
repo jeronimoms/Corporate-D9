@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Tila
+        label:
+          label: Tunnus
+        target_language:
+          label: Osoitteeseen
+        tags_count:
+          label: Tagit
+        operations:
+          label: Toimenpiteet
+      filters:
+        state:
+          group_info:
+            label: Tila

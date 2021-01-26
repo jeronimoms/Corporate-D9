@@ -1,0 +1,41 @@
+uuid: 8c4bbca2-6c20-4d11-a166-20f1a4a66037
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.material_purpose.field_material_purpose_code
+    - field.field.taxonomy_term.material_purpose.field_thesaurus_id
+    - taxonomy.vocabulary.material_purpose
+  module:
+    - text
+id: taxonomy_term.material_purpose.default
+targetEntityType: taxonomy_term
+bundle: material_purpose
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_material_purpose_code:
+    label: above
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_thesaurus_id:
+    label: above
+    weight: 1
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

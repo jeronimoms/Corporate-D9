@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Szűrő
+      fields:
+        filename:
+          label: Név
+        status:
+          label: Állapot
+        operations:
+          label: Műveletek
+      filters:
+        status:
+          expose:
+            label: Állapot

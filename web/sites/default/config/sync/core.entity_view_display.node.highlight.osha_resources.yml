@@ -1,0 +1,67 @@
+uuid: ffc96c33-ffd0-4fe4-b973-21b490aa7835
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.highlight.body
+    - field.field.node.highlight.comment_node_highlight
+    - field.field.node.highlight.field_activity
+    - field.field.node.highlight.field_aditional_resources
+    - field.field.node.highlight.field_archived
+    - field.field.node.highlight.field_avoid_archived
+    - field.field.node.highlight.field_character_count
+    - field.field.node.highlight.field_expiration_date
+    - field.field.node.highlight.field_flickr_date
+    - field.field.node.highlight.field_image
+    - field.field.node.highlight.field_image_oshmail
+    - field.field.node.highlight.field_migrate_hwc
+    - field.field.node.highlight.field_page_count
+    - field.field.node.highlight.field_publication_date
+    - field.field.node.highlight.field_show_on
+    - field.field.node.highlight.field_tags
+    - field.field.node.highlight.field_thesaurus
+    - field.field.node.highlight.field_thesaurus_2020
+    - node.type.highlight
+  module:
+    - datetime
+    - user
+id: node.highlight.osha_resources
+targetEntityType: node
+bundle: highlight
+mode: osha_resources
+content:
+  field_publication_date:
+    label: hidden
+    weight: 0
+    type: datetime_default
+    settings:
+      format_type: osha_day_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_highlight: true
+  field_activity: true
+  field_aditional_resources: true
+  field_archived: true
+  field_avoid_archived: true
+  field_character_count: true
+  field_expiration_date: true
+  field_flickr_date: true
+  field_image: true
+  field_image_oshmail: true
+  field_migrate_hwc: true
+  field_page_count: true
+  field_show_on: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  langcode: true
+  search_api_excerpt: true

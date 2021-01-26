@@ -1,0 +1,18 @@
+uuid: 7e2bef99-1e3f-4293-96b9-a4ac3891ba43
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.twitter_user_profile
+id: node.twitter_user_profile.title
+field_name: title
+entity_type: node
+bundle: twitter_user_profile
+label: Name
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

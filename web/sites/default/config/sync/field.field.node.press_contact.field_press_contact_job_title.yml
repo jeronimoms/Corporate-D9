@@ -1,0 +1,19 @@
+uuid: 93e4c1fe-4959-44af-ba12-a2c0b298e6ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_press_contact_job_title
+    - node.type.press_contact
+id: node.press_contact.field_press_contact_job_title
+field_name: field_press_contact_job_title
+entity_type: node
+bundle: press_contact
+label: 'Job title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

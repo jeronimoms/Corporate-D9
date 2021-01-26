@@ -1,0 +1,20 @@
+uuid: 9ff6ea9e-a7cb-4ab7-bc80-c11ff639f938
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - ncwtheme
+id: ncwtheme_user_login
+theme: ncwtheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: ''
+  provider: user
+  label_display: '0'
+visibility: {  }

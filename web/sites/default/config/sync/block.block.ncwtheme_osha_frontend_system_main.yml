@@ -1,0 +1,22 @@
+uuid: 704e4ceb-08f1-4bce-a95c-c788c2664a16
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ncwtheme
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: ncwtheme_osha_frontend_system_main
+theme: ncwtheme
+region: content
+weight: 14
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: ''
+  provider: system
+  label_display: '0'
+visibility: {  }

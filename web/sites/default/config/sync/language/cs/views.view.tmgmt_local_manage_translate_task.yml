@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtr
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Stav
+        target_language:
+          label: Komu
+        operations:
+          label: Operace
+      filters:
+        uid:
+          expose:
+            label: Poskytovatel
+  closed:
+    display_title: Zavřená
+    display_options:
+      menu:
+        title: Zavřená
+      fields:
+        status:
+          label: Stav
+        target_language:
+          label: Komu
+        operations:
+          label: Operace
+      filters:
+        uid:
+          expose:
+            label: Poskytovatel
+  completed:
+    display_title: Dokončené
+    display_options:
+      menu:
+        title: Dokončené
+      fields:
+        status:
+          label: Stav
+        target_language:
+          label: Komu
+        operations:
+          label: Operace
+      filters:
+        uid:
+          expose:
+            label: Poskytovatel
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Stav
+        target_language:
+          label: Komu
+        operations:
+          label: Operace
+      filters:
+        uid:
+          expose:
+            label: Poskytovatel
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Stav
+        target_language:
+          label: Komu
+        operations:
+          label: Operace
+      filters:
+        uid:
+          expose:
+            label: Poskytovatel
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Stav
+        target_language:
+          label: Komu
+        operations:
+          label: Operace

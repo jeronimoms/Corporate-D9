@@ -1,0 +1,23 @@
+uuid: 72d66a9e-51c2-40de-839a-01d25e90aecb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_fop_url
+    - node.type.fop_page
+  module:
+    - link
+id: node.fop_page.field_main_fop_url
+field_name: field_main_fop_url
+entity_type: node
+bundle: fop_page
+label: 'Focal Point website'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

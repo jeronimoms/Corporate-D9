@@ -1,0 +1,19 @@
+uuid: 4d465921-9330-46b4-a5a0-d07923349f60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitter_a_screen_name
+    - node.type.twitter_user_profile
+id: node.twitter_user_profile.field_twitter_a_screen_name
+field_name: field_twitter_a_screen_name
+entity_type: node
+bundle: twitter_user_profile
+label: 'Twitter Screen Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Läge
+        label:
+          label: Etikett
+        tags_count:
+          label: Etiketter
+        operations:
+          label: Funktioner
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Etikett

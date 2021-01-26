@@ -1,0 +1,16 @@
+uuid: 668ad804-3801-4a49-bdcb-ce5d36b807e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.seminar
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.seminar
+target_entity_type_id: node
+target_bundle: seminar
+default_langcode: und
+language_alterable: true

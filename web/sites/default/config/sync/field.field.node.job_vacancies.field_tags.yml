@@ -1,0 +1,26 @@
+uuid: 19546133-b025-41ed-a83b-5d1a243e24f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.job_vacancies
+    - taxonomy.vocabulary.tags
+id: node.job_vacancies.field_tags
+field_name: field_tags
+entity_type: node
+bundle: job_vacancies
+label: Tags
+description: 'Select Tags for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      tags: tags
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

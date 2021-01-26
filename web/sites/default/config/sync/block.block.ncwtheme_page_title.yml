@@ -1,0 +1,20 @@
+uuid: 9c4bb0a8-5bcd-4868-8bd6-3d8a0a04c32c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ncwtheme
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: ncwtheme_page_title
+theme: ncwtheme
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

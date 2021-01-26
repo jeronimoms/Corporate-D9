@@ -1,0 +1,23 @@
+uuid: 18ed0d84-10fe-43c9-8a11-7a0e005b5d7e
+langcode: und
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_finance_and_procurement
+field_name: field_finance_and_procurement
+entity_type: node
+type: file
+settings:
+  display_default: false
+  display_field: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

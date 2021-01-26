@@ -1,0 +1,21 @@
+uuid: 02ad46a4-646b-4b09-8464-ceaa0c3c990f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_disclaimer
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.field_disclaimer
+field_name: field_disclaimer
+entity_type: node
+bundle: dangerous_substances
+label: Disclaimer
+description: "Please add the disclaimer for the material. Please use \"Paste from Word\" button when you copy text from MS Word\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

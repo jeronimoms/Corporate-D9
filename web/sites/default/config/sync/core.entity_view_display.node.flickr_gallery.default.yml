@@ -1,0 +1,58 @@
+uuid: 1d3c0d00-915b-4b62-a07f-aa984dc0d39f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_flickr_gallery.default
+    - field.field.node.flickr_gallery.comment_node_flickr_gallery
+    - field.field.node.flickr_gallery.field_flickr_date
+    - field.field.node.flickr_gallery.field_photo_gallery_type
+    - field.field.node.flickr_gallery.field_publication_date
+    - field.field.node.flickr_gallery.field_tags
+    - node.type.flickr_gallery
+  module:
+    - comment
+    - datetime
+    - user
+id: node.flickr_gallery.default
+targetEntityType: node
+bundle: flickr_gallery
+mode: default
+content:
+  comment_node_flickr_gallery:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    label: above
+    weight: 4
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_publication_date:
+    label: hidden
+    weight: 0
+    type: datetime_default
+    settings:
+      format_type: osha_day_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_photo_gallery_type: true
+  field_tags: true
+  langcode: true
+  search_api_excerpt: true

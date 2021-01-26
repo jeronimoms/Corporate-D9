@@ -1,0 +1,23 @@
+uuid: c4e8772d-a340-47af-900a-f4fb8ffb31e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archived
+    - node.type.guideline
+id: node.guideline.field_archived
+field_name: field_archived
+entity_type: node
+bundle: guideline
+label: 'Marked as outdated'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

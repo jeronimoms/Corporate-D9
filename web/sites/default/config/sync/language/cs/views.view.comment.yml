@@ -1,0 +1,42 @@
+label: Komentáře
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtr
+      fields:
+        comment_bulk_form:
+          action_title: Akce
+        subject:
+          label: Předmět
+        operations:
+          label: Operace
+      filters:
+        subject:
+          expose:
+            label: Předmět
+        langcode:
+          expose:
+            label: Jazyk
+      title: Komentáře
+  page_published:
+    display_options:
+      menu:
+        title: Komentáře
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Předmět
+        langcode:
+          expose:
+            label: Jazyk
+      fields:
+        comment_bulk_form:
+          action_title: Akce
+        subject:
+          label: Předmět
+        operations:
+          label: Operace

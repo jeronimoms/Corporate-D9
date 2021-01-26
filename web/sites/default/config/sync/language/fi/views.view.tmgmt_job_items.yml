@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Tila
+        label:
+          label: Tunnus
+        tags_count:
+          label: Tagit
+        operations:
+          label: Toimenpiteet
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Tunnus

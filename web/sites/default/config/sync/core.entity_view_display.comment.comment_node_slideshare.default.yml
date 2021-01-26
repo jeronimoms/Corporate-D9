@@ -1,0 +1,29 @@
+uuid: 9b72d139-e752-4fb4-adf3-029a6e349274
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_slideshare
+    - field.field.comment.comment_node_slideshare.comment_body
+  module:
+    - text
+id: comment.comment_node_slideshare.default
+targetEntityType: comment
+bundle: comment_node_slideshare
+mode: default
+content:
+  comment_body:
+    label: hidden
+    weight: 0
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,48 @@
+uuid: 6a9ee6c6-11fb-4de5-aa23-c2ffd9775cb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.scs
+    - field.field.node.infographic.body
+    - field.field.node.infographic.comment_node_infographic
+    - field.field.node.infographic.field_activity
+    - field.field.node.infographic.field_archived
+    - field.field.node.infographic.field_external_url
+    - field.field.node.infographic.field_file
+    - field.field.node.infographic.field_flickr_date
+    - field.field.node.infographic.field_image
+    - field.field.node.infographic.field_pages_count
+    - field.field.node.infographic.field_publication_date
+    - field.field.node.infographic.field_tags
+    - field.field.node.infographic.field_thumbnail
+    - field.field.node.infographic.field_twin_infographics
+    - node.type.infographic
+  module:
+    - user
+id: node.infographic.scs
+targetEntityType: node
+bundle: infographic
+mode: scs
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_infographic: true
+  field_activity: true
+  field_archived: true
+  field_external_url: true
+  field_file: true
+  field_flickr_date: true
+  field_image: true
+  field_pages_count: true
+  field_publication_date: true
+  field_tags: true
+  field_thumbnail: true
+  field_twin_infographics: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,16 @@
+uuid: 98bf8a3f-3226-4ea3-abdd-c5f0f8ef0770
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazmap_categories
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.hazmap_categories
+target_entity_type_id: taxonomy_term
+target_bundle: hazmap_categories
+default_langcode: und
+language_alterable: true

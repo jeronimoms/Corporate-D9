@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Status
+        label:
+          label: Beschriftung
+        target_language:
+          label: An
+        translator:
+          label: Anbieter
+        tags_count:
+          label: Tags
+        operations:
+          label: Aktionen
+      filters:
+        state:
+          expose:
+            label: Status
+        translator:
+          expose:
+            label: Anbieter

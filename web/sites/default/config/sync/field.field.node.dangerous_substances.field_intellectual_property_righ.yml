@@ -1,0 +1,23 @@
+uuid: c171d2b7-6ff8-456b-845f-af539c29bd6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intellectual_property_righ
+    - node.type.dangerous_substances
+  module:
+    - options
+id: node.dangerous_substances.field_intellectual_property_righ
+field_name: field_intellectual_property_righ
+entity_type: node
+bundle: dangerous_substances
+label: 'Intellectual property rights'
+description: "Please describe the contact address for the material. \n"
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Not known'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

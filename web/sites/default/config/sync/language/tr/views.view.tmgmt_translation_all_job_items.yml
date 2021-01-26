@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Eyalet
+        label:
+          label: Etiket
+        target_language:
+          label: Kime
+        tags_count:
+          label: Etiketler
+        operations:
+          label: İşlemler
+      filters:
+        state:
+          group_info:
+            label: Eyalet

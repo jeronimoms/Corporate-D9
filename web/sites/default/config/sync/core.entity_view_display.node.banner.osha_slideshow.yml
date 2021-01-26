@@ -1,0 +1,50 @@
+uuid: cee0c046-d0cf-4c4e-b7d9-44cd8989ac4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_slideshow
+    - field.field.node.banner.comment_node_banner
+    - field.field.node.banner.field_banner_link
+    - field.field.node.banner.field_banner_link_title
+    - field.field.node.banner.field_character_count
+    - field.field.node.banner.field_copyright
+    - field.field.node.banner.field_flickr_date
+    - field.field.node.banner.field_image
+    - field.field.node.banner.field_page_count
+    - field.field.node.banner.field_subtitle
+    - image.style.medium
+    - node.type.banner
+  module:
+    - image
+    - user
+id: node.banner.osha_slideshow
+targetEntityType: node
+bundle: banner
+mode: osha_slideshow
+content:
+  field_image:
+    label: hidden
+    weight: 0
+    type: image
+    settings:
+      image_link: file
+      image_style: medium
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_banner: true
+  field_banner_link: true
+  field_banner_link_title: true
+  field_character_count: true
+  field_copyright: true
+  field_flickr_date: true
+  field_page_count: true
+  field_subtitle: true
+  langcode: true
+  search_api_excerpt: true

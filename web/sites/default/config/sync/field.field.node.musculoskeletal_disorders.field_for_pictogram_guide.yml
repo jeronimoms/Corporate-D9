@@ -1,0 +1,21 @@
+uuid: b4641e8f-8a28-4358-862a-37dcdfb12949
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_for_pictogram_guide
+    - node.type.musculoskeletal_disorders
+  module:
+    - options
+id: node.musculoskeletal_disorders.field_for_pictogram_guide
+field_name: field_for_pictogram_guide
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Recommended for EU-OSHA pictogram guide'
+description: 'Please indicate if the resource contains elements that EU-OSHA could adapt to make pictograms'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

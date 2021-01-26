@@ -1,0 +1,35 @@
+uuid: 6888ad28-52d6-4d57-9d2c-5de3edbc3079
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter_item
+    - field.field.node.newsletter_article.body
+    - field.field.node.newsletter_article.comment_node_newsletter_article
+    - field.field.node.newsletter_article.field_flickr_date
+    - node.type.newsletter_article
+  module:
+    - text
+    - user
+id: node.newsletter_article.newsletter_item
+targetEntityType: node
+bundle: newsletter_article
+mode: newsletter_item
+content:
+  body:
+    label: hidden
+    weight: 0
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_newsletter_article: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

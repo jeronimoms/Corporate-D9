@@ -1,0 +1,41 @@
+uuid: 24a14bc9-5201-4fe8-8afd-60e217dcc165
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.biological_hazard.field_biological_hazard_code
+    - field.field.taxonomy_term.biological_hazard.field_thesaurus_id
+    - taxonomy.vocabulary.biological_hazard
+  module:
+    - text
+id: taxonomy_term.biological_hazard.default
+targetEntityType: taxonomy_term
+bundle: biological_hazard
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_biological_hazard_code:
+    label: above
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_thesaurus_id:
+    label: above
+    weight: 1
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

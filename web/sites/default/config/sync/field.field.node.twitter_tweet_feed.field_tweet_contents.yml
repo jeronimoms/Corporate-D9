@@ -1,0 +1,21 @@
+uuid: 4a403d21-36ea-4f1e-b872-7ac6efd27d11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tweet_contents
+    - node.type.twitter_tweet_feed
+  module:
+    - text
+id: node.twitter_tweet_feed.field_tweet_contents
+field_name: field_tweet_contents
+entity_type: node
+bundle: twitter_tweet_feed
+label: 'Tweet Contents'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

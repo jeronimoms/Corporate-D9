@@ -1,0 +1,42 @@
+label: Ummæli
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Sía
+      fields:
+        comment_bulk_form:
+          action_title: Aðgerð
+        subject:
+          label: Viðfangsefni
+        operations:
+          label: Aðgerðir
+      filters:
+        subject:
+          expose:
+            label: Viðfangsefni
+        langcode:
+          expose:
+            label: Tungumál
+      title: Ummæli
+  page_published:
+    display_options:
+      menu:
+        title: Ummæli
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Viðfangsefni
+        langcode:
+          expose:
+            label: Tungumál
+      fields:
+        comment_bulk_form:
+          action_title: Aðgerð
+        subject:
+          label: Viðfangsefni
+        operations:
+          label: Aðgerðir

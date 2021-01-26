@@ -1,0 +1,16 @@
+uuid: 7471b0fd-c827-41ab-85b3-7039a651d04b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.highlight
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.highlight
+target_entity_type_id: node
+target_bundle: highlight
+default_langcode: und
+language_alterable: true

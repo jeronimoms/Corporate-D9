@@ -1,0 +1,26 @@
+uuid: b56537f8-413a-4dc5-acea-f8647aa19c71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thesaurus
+    - node.type.guideline
+    - taxonomy.vocabulary.thesaurus
+id: node.guideline.field_thesaurus
+field_name: field_thesaurus
+entity_type: node
+bundle: guideline
+label: Thesaurus
+description: 'Select Thesaurus for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      thesaurus: thesaurus
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

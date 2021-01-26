@@ -1,0 +1,41 @@
+uuid: 77cd41f1-68eb-4633-9e84-48f8d0971283
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.hazard_physical_state.field_hazard_health_effects_code
+    - field.field.taxonomy_term.hazard_physical_state.field_thesaurus_id
+    - taxonomy.vocabulary.hazard_physical_state
+  module:
+    - text
+id: taxonomy_term.hazard_physical_state.default
+targetEntityType: taxonomy_term
+bundle: hazard_physical_state
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hazard_health_effects_code:
+    label: above
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_thesaurus_id:
+    label: above
+    weight: 1
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

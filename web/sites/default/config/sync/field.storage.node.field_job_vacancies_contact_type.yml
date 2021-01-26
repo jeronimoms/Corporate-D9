@@ -1,0 +1,39 @@
+uuid: 51ecafb2-bb06-46cb-bb0d-56ca92271fa2
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_job_vacancies_contact_type
+field_name: field_job_vacancies_contact_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Contract staff'
+      label: 'Contract staff'
+    -
+      value: 'Other contracts'
+      label: 'Other contracts'
+    -
+      value: 'Permanent official'
+      label: 'Permanent official'
+    -
+      value: 'Seconded national expert (SNE)'
+      label: 'Seconded national expert (SNE)'
+    -
+      value: 'Temporary staff'
+      label: 'Temporary staff'
+    -
+      value: Trainee
+      label: Trainee
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

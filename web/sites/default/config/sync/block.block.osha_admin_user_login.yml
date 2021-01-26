@@ -1,0 +1,20 @@
+uuid: 97f5cb3f-571f-4aa8-b05c-f9d15aa52458
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - seven
+id: osha_admin_user_login
+theme: seven
+region: content
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: ''
+  provider: user
+  label_display: '0'
+visibility: {  }

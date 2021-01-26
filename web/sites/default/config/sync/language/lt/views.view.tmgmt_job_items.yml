@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Etapas
+        label:
+          label: Žymė
+        tags_count:
+          label: Raktažodžiai
+        operations:
+          label: Veiksmai
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Žymė

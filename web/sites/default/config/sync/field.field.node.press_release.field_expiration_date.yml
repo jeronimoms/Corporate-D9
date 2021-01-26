@@ -1,0 +1,21 @@
+uuid: 255c21fd-c95c-4654-8aa0-f6cb0d46fc62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expiration_date
+    - node.type.press_release
+  module:
+    - datetime
+id: node.press_release.field_expiration_date
+field_name: field_expiration_date
+entity_type: node
+bundle: press_release
+label: 'Expiration date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

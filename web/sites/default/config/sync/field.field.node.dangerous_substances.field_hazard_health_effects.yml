@@ -1,0 +1,26 @@
+uuid: f290949a-7d37-4378-868c-d3156ce1f55b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hazard_health_effects
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.hazard_health_effects
+id: node.dangerous_substances.field_hazard_health_effects
+field_name: field_hazard_health_effects
+entity_type: node
+bundle: dangerous_substances
+label: 'Hazard - health effects'
+description: 'Please select the type of hazards related to health effect from the drop down list'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      hazard_health_effects: hazard_health_effects
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

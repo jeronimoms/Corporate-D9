@@ -1,0 +1,26 @@
+uuid: 37c7ab25-5989-4395-97b0-d5a70c188bc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.highlight
+    - taxonomy.vocabulary.tags
+id: node.highlight.field_tags
+field_name: field_tags
+entity_type: node
+bundle: highlight
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      tags: tags
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

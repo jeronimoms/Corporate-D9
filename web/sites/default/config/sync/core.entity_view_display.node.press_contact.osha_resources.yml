@@ -1,0 +1,64 @@
+uuid: e3e8e981-062e-4a27-9c3f-ce86f5b755a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.press_contact.comment_node_press_contact
+    - field.field.node.press_contact.field_city
+    - field.field.node.press_contact.field_contact_type
+    - field.field.node.press_contact.field_contact_uuid
+    - field.field.node.press_contact.field_country
+    - field.field.node.press_contact.field_flickr_date
+    - field.field.node.press_contact.field_is_advisory
+    - field.field.node.press_contact.field_is_observer
+    - field.field.node.press_contact.field_personal_title
+    - field.field.node.press_contact.field_press_contact_cv
+    - field.field.node.press_contact.field_press_contact_declaration
+    - field.field.node.press_contact.field_press_contact_email
+    - field.field.node.press_contact.field_press_contact_job_title
+    - field.field.node.press_contact.field_press_contact_location
+    - field.field.node.press_contact.field_press_contact_organization
+    - field.field.node.press_contact.field_press_contact_phone
+    - field.field.node.press_contact.field_website
+    - field.field.node.press_contact.field_wg_category
+    - field.field.node.press_contact.field_wg_role_1
+    - field.field.node.press_contact.field_wg_role_2
+    - field.field.node.press_contact.field_zip_code
+    - node.type.press_contact
+  module:
+    - user
+id: node.press_contact.osha_resources
+targetEntityType: node
+bundle: press_contact
+mode: osha_resources
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_press_contact: true
+  field_city: true
+  field_contact_type: true
+  field_contact_uuid: true
+  field_country: true
+  field_flickr_date: true
+  field_is_advisory: true
+  field_is_observer: true
+  field_personal_title: true
+  field_press_contact_cv: true
+  field_press_contact_declaration: true
+  field_press_contact_email: true
+  field_press_contact_job_title: true
+  field_press_contact_location: true
+  field_press_contact_organization: true
+  field_press_contact_phone: true
+  field_website: true
+  field_wg_category: true
+  field_wg_role_1: true
+  field_wg_role_2: true
+  field_zip_code: true
+  langcode: true
+  search_api_excerpt: true

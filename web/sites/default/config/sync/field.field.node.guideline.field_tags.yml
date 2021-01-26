@@ -1,0 +1,26 @@
+uuid: 6f0d5823-c051-4b9f-9be5-30a51fef036b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.guideline
+    - taxonomy.vocabulary.tags
+id: node.guideline.field_tags
+field_name: field_tags
+entity_type: node
+bundle: guideline
+label: 'Tag (mapping)'
+description: 'Select Tags for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      tags: tags
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

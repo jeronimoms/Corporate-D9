@@ -1,0 +1,42 @@
+label: Kommentaarid
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtreeri
+      fields:
+        comment_bulk_form:
+          action_title: Tegevus
+        subject:
+          label: Teema
+        operations:
+          label: Toimingud
+      filters:
+        subject:
+          expose:
+            label: Teema
+        langcode:
+          expose:
+            label: Keel
+      title: Kommentaarid
+  page_published:
+    display_options:
+      menu:
+        title: Kommentaarid
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Teema
+        langcode:
+          expose:
+            label: Keel
+      fields:
+        comment_bulk_form:
+          action_title: Tegevus
+        subject:
+          label: Teema
+        operations:
+          label: Toimingud

@@ -1,0 +1,23 @@
+uuid: 1837b3d9-769e-47bf-93af-3505b0e37dfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_url
+    - node.type.external_url
+  module:
+    - link
+id: node.external_url.field_external_url
+field_name: field_external_url
+entity_type: node
+bundle: external_url
+label: 'External URL'
+description: 'Please make sure to add translations and change the title and URL in other languages, if needed.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

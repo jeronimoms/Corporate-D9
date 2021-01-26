@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Fylki
+        label:
+          label: Merking
+        tags_count:
+          label: Efnisorð
+        operations:
+          label: Aðgerðir
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Merking

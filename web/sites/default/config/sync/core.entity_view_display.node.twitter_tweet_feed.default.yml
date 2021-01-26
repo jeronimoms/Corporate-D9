@@ -1,0 +1,206 @@
+uuid: 01bd22ad-41e7-4e04-baaa-08750d10f7b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_twitter_tweet_feed.default
+    - field.field.node.twitter_tweet_feed.comment_node_twitter_tweet_feed
+    - field.field.node.twitter_tweet_feed.field_flickr_date
+    - field.field.node.twitter_tweet_feed.field_geographic_coordinates
+    - field.field.node.twitter_tweet_feed.field_geographic_place
+    - field.field.node.twitter_tweet_feed.field_link_to_tweet
+    - field.field.node.twitter_tweet_feed.field_profile_image
+    - field.field.node.twitter_tweet_feed.field_tweet_author
+    - field.field.node.twitter_tweet_feed.field_tweet_author_id
+    - field.field.node.twitter_tweet_feed.field_tweet_author_name
+    - field.field.node.twitter_tweet_feed.field_tweet_author_verified
+    - field.field.node.twitter_tweet_feed.field_tweet_contents
+    - field.field.node.twitter_tweet_feed.field_tweet_creation_date
+    - field.field.node.twitter_tweet_feed.field_tweet_feed_id
+    - field.field.node.twitter_tweet_feed.field_tweet_id
+    - field.field.node.twitter_tweet_feed.field_tweet_linked_images
+    - field.field.node.twitter_tweet_feed.field_tweet_source
+    - field.field.node.twitter_tweet_feed.field_twitter_favorite_count
+    - field.field.node.twitter_tweet_feed.field_twitter_hashtags
+    - field.field.node.twitter_tweet_feed.field_twitter_mentions_in_tweet
+    - field.field.node.twitter_tweet_feed.field_twitter_retweet_count
+    - node.type.twitter_tweet_feed
+  module:
+    - comment
+    - datetime
+    - image
+    - options
+    - user
+id: node.twitter_tweet_feed.default
+targetEntityType: node
+bundle: twitter_tweet_feed
+mode: default
+content:
+  comment_node_twitter_tweet_feed:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    label: above
+    weight: 19
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_geographic_coordinates:
+    label: above
+    weight: 1
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_geographic_place:
+    label: above
+    weight: 2
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_link_to_tweet:
+    label: above
+    weight: 3
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_profile_image:
+    label: above
+    weight: 0
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_tweet_author:
+    label: above
+    weight: 4
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_tweet_author_id:
+    label: above
+    weight: 5
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_tweet_author_name:
+    label: above
+    weight: 17
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_tweet_author_verified:
+    label: above
+    weight: 18
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_tweet_creation_date:
+    label: above
+    weight: 7
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_tweet_feed_id:
+    label: above
+    weight: 8
+    type: number_integer
+    settings:
+      prefix_suffix: true
+      thousand_separator: ' '
+    third_party_settings: {  }
+    region: content
+  field_tweet_id:
+    label: above
+    weight: 9
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_tweet_linked_images:
+    label: above
+    weight: 15
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_tweet_source:
+    label: above
+    weight: 10
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_twitter_favorite_count:
+    label: above
+    weight: 11
+    type: number_integer
+    settings:
+      prefix_suffix: true
+      thousand_separator: ' '
+    third_party_settings: {  }
+    region: content
+  field_twitter_hashtags:
+    label: above
+    weight: 12
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_twitter_mentions_in_tweet:
+    label: above
+    weight: 16
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_twitter_retweet_count:
+    label: above
+    weight: 13
+    type: number_integer
+    settings:
+      prefix_suffix: true
+      thousand_separator: ' '
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_tweet_contents: true
+  langcode: true
+  search_api_excerpt: true

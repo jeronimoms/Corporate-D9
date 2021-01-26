@@ -1,0 +1,88 @@
+uuid: 918d47ed-1329-48d0-9b48-c07113eb092d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_wiki
+    - field.field.node.publication.body
+    - field.field.node.publication.comment_node_publication
+    - field.field.node.publication.field_activity
+    - field.field.node.publication.field_aditional_resources
+    - field.field.node.publication.field_archived
+    - field.field.node.publication.field_author
+    - field.field.node.publication.field_banner_publications_office
+    - field.field.node.publication.field_booklet
+    - field.field.node.publication.field_character_count
+    - field.field.node.publication.field_cover_image
+    - field.field.node.publication.field_expiration_date
+    - field.field.node.publication.field_file
+    - field.field.node.publication.field_flickr_date
+    - field.field.node.publication.field_metatag
+    - field.field.node.publication.field_msd_priority_area
+    - field.field.node.publication.field_msd_priority_areas
+    - field.field.node.publication.field_nace_codes
+    - field.field.node.publication.field_page_count
+    - field.field.node.publication.field_pages_count
+    - field.field.node.publication.field_pages_count_updated
+    - field.field.node.publication.field_priority_area
+    - field.field.node.publication.field_publication_bookshop_id
+    - field.field.node.publication.field_publication_date
+    - field.field.node.publication.field_publication_related_res
+    - field.field.node.publication.field_publication_type
+    - field.field.node.publication.field_related_oshwiki_articles
+    - field.field.node.publication.field_related_publications
+    - field.field.node.publication.field_relevant_for
+    - field.field.node.publication.field_show_on
+    - field.field.node.publication.field_tags
+    - field.field.node.publication.field_thesaurus
+    - field.field.node.publication.field_thesaurus_2020
+    - field.field.node.publication.field_wiki_categories
+    - node.type.publication
+  module:
+    - user
+id: node.publication.osha_wiki
+targetEntityType: node
+bundle: publication
+mode: osha_wiki
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_publication: true
+  field_activity: true
+  field_aditional_resources: true
+  field_archived: true
+  field_author: true
+  field_banner_publications_office: true
+  field_booklet: true
+  field_character_count: true
+  field_cover_image: true
+  field_expiration_date: true
+  field_file: true
+  field_flickr_date: true
+  field_metatag: true
+  field_msd_priority_area: true
+  field_msd_priority_areas: true
+  field_nace_codes: true
+  field_page_count: true
+  field_pages_count: true
+  field_pages_count_updated: true
+  field_priority_area: true
+  field_publication_bookshop_id: true
+  field_publication_date: true
+  field_publication_related_res: true
+  field_publication_type: true
+  field_related_oshwiki_articles: true
+  field_related_publications: true
+  field_relevant_for: true
+  field_show_on: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  field_wiki_categories: true
+  langcode: true
+  search_api_excerpt: true

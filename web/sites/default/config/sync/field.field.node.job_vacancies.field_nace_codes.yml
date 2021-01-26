@@ -1,0 +1,26 @@
+uuid: 894f985c-2f88-4805-8cd7-7facd25abadf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nace_codes
+    - node.type.job_vacancies
+    - taxonomy.vocabulary.nace_codes
+id: node.job_vacancies.field_nace_codes
+field_name: field_nace_codes
+entity_type: node
+bundle: job_vacancies
+label: Nace
+description: 'Select Nace code for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      nace_codes: nace_codes
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

@@ -1,0 +1,26 @@
+uuid: 6967c30c-37d7-410b-af76-eb26c60faf1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activity
+    - node.type.register_records
+    - taxonomy.vocabulary.activity
+id: node.register_records.field_activity
+field_name: field_activity
+entity_type: node
+bundle: register_records
+label: Activity
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      activity: activity
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

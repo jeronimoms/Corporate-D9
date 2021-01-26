@@ -1,0 +1,34 @@
+uuid: b01190f1-ee0d-4180-a890-40fb44658fd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.quiz.body
+    - field.field.node.quiz.comment_node_quiz
+    - node.type.quiz
+  module:
+    - text
+    - user
+id: node.quiz.teaser
+targetEntityType: node
+bundle: quiz
+mode: teaser
+content:
+  body:
+    label: hidden
+    weight: 0
+    type: text_summary_or_trimmed
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_quiz: true
+  langcode: true
+  search_api_excerpt: true

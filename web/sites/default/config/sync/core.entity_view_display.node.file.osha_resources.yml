@@ -1,0 +1,28 @@
+uuid: 1f369834-9825-4c2a-8c78-c85150c6c331
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.file.comment_node_file
+    - field.field.node.file.field_file
+    - field.field.node.file.field_flickr_date
+    - node.type.file
+  module:
+    - user
+id: node.file.osha_resources
+targetEntityType: node
+bundle: file
+mode: osha_resources
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_file: true
+  field_file: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

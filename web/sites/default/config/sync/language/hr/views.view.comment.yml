@@ -1,0 +1,42 @@
+label: Komentari
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Pročisti
+      fields:
+        comment_bulk_form:
+          action_title: Akcija
+        subject:
+          label: Naziv
+        operations:
+          label: Operacije
+      filters:
+        subject:
+          expose:
+            label: Naziv
+        langcode:
+          expose:
+            label: Jezik
+      title: Komentari
+  page_published:
+    display_options:
+      menu:
+        title: Komentari
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Naziv
+        langcode:
+          expose:
+            label: Jezik
+      fields:
+        comment_bulk_form:
+          action_title: Akcija
+        subject:
+          label: Naziv
+        operations:
+          label: Operacije

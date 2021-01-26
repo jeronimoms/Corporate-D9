@@ -1,0 +1,16 @@
+uuid: f1b281d8-28ac-4f2c-bc0c-5b4b4a206829
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazard_health_effects
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.hazard_health_effects
+target_entity_type_id: taxonomy_term
+target_bundle: hazard_health_effects
+default_langcode: und
+language_alterable: true

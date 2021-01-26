@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Olek
+        label:
+          label: Nimetus
+        target_language:
+          label: Kellele
+        translator:
+          label: Teenusepakkuja
+        tags_count:
+          label: Sildid
+        operations:
+          label: Toimingud
+      filters:
+        state:
+          expose:
+            label: Olek
+        translator:
+          expose:
+            label: Teenusepakkuja

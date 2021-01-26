@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtreeri
+      fields:
+        filename:
+          label: Nimi
+        status:
+          label: Olek
+        operations:
+          label: Toimingud
+      filters:
+        status:
+          expose:
+            label: Olek

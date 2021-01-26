@@ -1,0 +1,27 @@
+uuid: 84f6ff93-6984-4744-8da2-9b64fd86a6b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_report
+    - node.type.seminar
+  module:
+    - file
+id: node.seminar.field_report
+field_name: field_report
+entity_type: node
+bundle: seminar
+label: Report
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: 'pdf doc docx ppt pptx html odp odt txt'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

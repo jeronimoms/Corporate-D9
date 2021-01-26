@@ -1,0 +1,362 @@
+uuid: 017f6708-e968-4401-bbcb-19704c269d77
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.dangerous_substances.body
+    - field.field.node.dangerous_substances.field_advertising
+    - field.field.node.dangerous_substances.field_biological_hazard
+    - field.field.node.dangerous_substances.field_biological_hazard_other
+    - field.field.node.dangerous_substances.field_body_original
+    - field.field.node.dangerous_substances.field_cas_number
+    - field.field.node.dangerous_substances.field_contact_address
+    - field.field.node.dangerous_substances.field_country_other
+    - field.field.node.dangerous_substances.field_disclaimer
+    - field.field.node.dangerous_substances.field_ec_number
+    - field.field.node.dangerous_substances.field_evaluation
+    - field.field.node.dangerous_substances.field_evaluation_other
+    - field.field.node.dangerous_substances.field_exposure_route
+    - field.field.node.dangerous_substances.field_exposure_route_other
+    - field.field.node.dangerous_substances.field_external_url
+    - field.field.node.dangerous_substances.field_flickr_date
+    - field.field.node.dangerous_substances.field_hazard_health_effects
+    - field.field.node.dangerous_substances.field_hazard_health_other
+    - field.field.node.dangerous_substances.field_hazard_physical_other
+    - field.field.node.dangerous_substances.field_hazard_physical_state
+    - field.field.node.dangerous_substances.field_image
+    - field.field.node.dangerous_substances.field_intellectual_property_righ
+    - field.field.node.dangerous_substances.field_item_type
+    - field.field.node.dangerous_substances.field_languages_other
+    - field.field.node.dangerous_substances.field_material_country
+    - field.field.node.dangerous_substances.field_material_purpose_other
+    - field.field.node.dangerous_substances.field_material_purpose_type
+    - field.field.node.dangerous_substances.field_measurement_method
+    - field.field.node.dangerous_substances.field_media_format
+    - field.field.node.dangerous_substances.field_metatag
+    - field.field.node.dangerous_substances.field_non_applicable_url
+    - field.field.node.dangerous_substances.field_original_desc_lang_other
+    - field.field.node.dangerous_substances.field_other_information
+    - field.field.node.dangerous_substances.field_ownership_information
+    - field.field.node.dangerous_substances.field_prevention_measure_type
+    - field.field.node.dangerous_substances.field_prevention_measures_other
+    - field.field.node.dangerous_substances.field_priority_area
+    - field.field.node.dangerous_substances.field_publication_year
+    - field.field.node.dangerous_substances.field_rights_description
+    - field.field.node.dangerous_substances.field_sector_industry_covered
+    - field.field.node.dangerous_substances.field_sector_industry_other
+    - field.field.node.dangerous_substances.field_selected_for_analysis
+    - field.field.node.dangerous_substances.field_target_group
+    - field.field.node.dangerous_substances.field_target_group_other
+    - field.field.node.dangerous_substances.field_tasks_covered
+    - field.field.node.dangerous_substances.field_tasks_other
+    - field.field.node.dangerous_substances.field_title_original
+    - field.field.node.dangerous_substances.field_visualisation_mat_other
+    - field.field.node.dangerous_substances.field_visualisation_material_typ
+    - field.field.node.dangerous_substances.field_worker_groups_other
+    - field.field.node.dangerous_substances.field_worker_groups_type
+    - node.type.dangerous_substances
+  module:
+    - image
+    - link
+    - options
+    - text
+    - user
+id: node.dangerous_substances.search_index
+targetEntityType: node
+bundle: dangerous_substances
+mode: search_index
+content:
+  body:
+    label: hidden
+    weight: 0
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_advertising:
+    label: above
+    weight: 37
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_biological_hazard:
+    label: above
+    weight: 14
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_biological_hazard_other:
+    label: above
+    weight: 15
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_body_original:
+    label: above
+    weight: 29
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cas_number:
+    label: above
+    weight: 20
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_contact_address:
+    label: above
+    weight: 38
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_country_other:
+    label: above
+    weight: 42
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_disclaimer:
+    label: above
+    weight: 39
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ec_number:
+    label: above
+    weight: 21
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_evaluation:
+    label: above
+    weight: 31
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_exposure_route:
+    label: above
+    weight: 18
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_external_url:
+    label: above
+    weight: 4
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_hazard_health_effects:
+    label: above
+    weight: 17
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_hazard_physical_state:
+    label: above
+    weight: 16
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_image:
+    label: above
+    weight: 48
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_intellectual_property_righ:
+    label: above
+    weight: 35
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_item_type:
+    label: above
+    weight: 2
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_material_country:
+    label: above
+    weight: 47
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_material_purpose_type:
+    label: above
+    weight: 28
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_measurement_method:
+    label: above
+    weight: 22
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_media_format:
+    label: above
+    weight: 34
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_other_information:
+    label: above
+    weight: 41
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ownership_information:
+    label: above
+    weight: 40
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_prevention_measure_type:
+    label: above
+    weight: 24
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_prevention_measures_other:
+    label: above
+    weight: 25
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_rights_description:
+    label: above
+    weight: 36
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_sector_industry_covered:
+    label: above
+    weight: 46
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_target_group:
+    label: above
+    weight: 30
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_tasks_covered:
+    label: above
+    weight: 44
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_tasks_other:
+    label: above
+    weight: 13
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_title_original:
+    label: above
+    weight: 3
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_visualisation_material_typ:
+    label: above
+    weight: 32
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_worker_groups_type:
+    label: above
+    weight: 23
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_evaluation_other: true
+  field_exposure_route_other: true
+  field_flickr_date: true
+  field_hazard_health_other: true
+  field_hazard_physical_other: true
+  field_languages_other: true
+  field_material_purpose_other: true
+  field_metatag: true
+  field_non_applicable_url: true
+  field_original_desc_lang_other: true
+  field_priority_area: true
+  field_publication_year: true
+  field_sector_industry_other: true
+  field_selected_for_analysis: true
+  field_target_group_other: true
+  field_visualisation_mat_other: true
+  field_worker_groups_other: true
+  langcode: true
+  search_api_excerpt: true

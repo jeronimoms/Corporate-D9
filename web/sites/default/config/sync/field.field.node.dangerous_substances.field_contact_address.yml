@@ -1,0 +1,21 @@
+uuid: de6f9c71-7c60-476a-9dad-d916849b160a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_address
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.field_contact_address
+field_name: field_contact_address
+entity_type: node
+bundle: dangerous_substances
+label: 'Contact address'
+description: 'Please add the contact address for the material. Please use "Paste from Word" button when you copy text from MS Word'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

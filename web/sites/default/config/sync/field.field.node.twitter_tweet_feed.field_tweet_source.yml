@@ -1,0 +1,19 @@
+uuid: 70623992-9b70-41b9-9f93-2b315c59f76b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tweet_source
+    - node.type.twitter_tweet_feed
+id: node.twitter_tweet_feed.field_tweet_source
+field_name: field_tweet_source
+entity_type: node
+bundle: twitter_tweet_feed
+label: Source
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

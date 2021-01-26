@@ -1,0 +1,26 @@
+uuid: 7c804e71-437a-4444-adb9-a5b98e0101b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wg_role_1
+    - node.type.press_contact
+    - taxonomy.vocabulary.wg_role_1
+id: node.press_contact.field_wg_role_1
+field_name: field_wg_role_1
+entity_type: node
+bundle: press_contact
+label: 'WG Role 1'
+description: 'Select WG Role 1 for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      wg_role_1: wg_role_1
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

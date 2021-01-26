@@ -1,0 +1,27 @@
+display:
+  default:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: Operacije
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Akcija
+        operations:
+          label: Operacije
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Akcija
+        view_webform_submission:
+          label: Operacije
+        edit_webform_submission:
+          label: Operacije
+  embed_review:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: Operacije

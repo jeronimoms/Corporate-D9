@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: Operacje
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Akcja
+        completed:
+          label: Zakończone
+        operations:
+          label: Operacje
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Akcja
+        completed:
+          label: Zakończone
+        view_webform_submission:
+          label: Operacje
+        edit_webform_submission:
+          label: Operacje
+  embed_review:
+    display_options:
+      fields:
+        completed:
+          label: Zakończone
+        view_webform_submission:
+          label: Operacje

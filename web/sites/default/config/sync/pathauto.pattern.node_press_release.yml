@@ -1,0 +1,21 @@
+uuid: 5e92ce21-7b3f-4ba7-a5a2-810267afb640
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_press_release
+label: 'Content - Press release'
+type: 'canonical_entities:node'
+pattern: 'about-eu-osha/press-room/[node:title]'
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      press_release: press_release
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: 0
+relationships: {  }

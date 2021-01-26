@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Etapas
+        label:
+          label: Žymė
+        target_language:
+          label: Kam
+        translator:
+          label: Tiekėjas
+        tags_count:
+          label: Raktažodžiai
+        operations:
+          label: Veiksmai
+      filters:
+        state:
+          expose:
+            label: Etapas
+        translator:
+          expose:
+            label: Tiekėjas

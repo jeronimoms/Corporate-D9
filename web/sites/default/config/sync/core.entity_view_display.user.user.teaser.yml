@@ -1,0 +1,44 @@
+uuid: da800f5d-5020-4306-bf6b-fcd69d91538f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.teaser
+    - field.field.user.user.field_cmw_mail_notifications
+    - field.field.user.user.field_metatag
+    - field.field.user.user.ldap_user_current_dn
+    - field.field.user.user.ldap_user_last_checked
+    - field.field.user.user.ldap_user_ldap_exclude
+    - field.field.user.user.ldap_user_prov_entries
+    - field.field.user.user.ldap_user_puid
+    - field.field.user.user.ldap_user_puid_property
+    - field.field.user.user.ldap_user_puid_sid
+    - field.field.user.user.tmgmt_translation_skills
+    - field.field.user.user.user_picture
+  module:
+    - user
+id: user.user.teaser
+targetEntityType: user
+bundle: user
+mode: teaser
+content:
+  member_for:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  blog__personal_blog_link: true
+  field_cmw_mail_notifications: true
+  field_metatag: true
+  langcode: true
+  ldap_user_current_dn: true
+  ldap_user_last_checked: true
+  ldap_user_ldap_exclude: true
+  ldap_user_prov_entries: true
+  ldap_user_puid: true
+  ldap_user_puid_property: true
+  ldap_user_puid_sid: true
+  search_api_excerpt: true
+  tmgmt_translation_skills: true
+  user_picture: true

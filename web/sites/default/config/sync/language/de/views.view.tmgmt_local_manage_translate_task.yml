@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        uid:
+          expose:
+            label: Anbieter
+  closed:
+    display_title: Geschlossen
+    display_options:
+      menu:
+        title: Geschlossen
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        uid:
+          expose:
+            label: Anbieter
+  completed:
+    display_title: Abgeschlossen
+    display_options:
+      menu:
+        title: Abgeschlossen
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        uid:
+          expose:
+            label: Anbieter
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        uid:
+          expose:
+            label: Anbieter
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: An
+        operations:
+          label: Aktionen
+      filters:
+        uid:
+          expose:
+            label: Anbieter
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: An
+        operations:
+          label: Aktionen

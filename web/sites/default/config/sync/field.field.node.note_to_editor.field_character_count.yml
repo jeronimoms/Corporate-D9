@@ -1,0 +1,23 @@
+uuid: 24640950-7f51-494d-93c6-0a78e441667b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_character_count
+    - node.type.note_to_editor
+id: node.note_to_editor.field_character_count
+field_name: field_character_count
+entity_type: node
+bundle: note_to_editor
+label: 'Character count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: null
+  prefix: ''
+  suffix: ''
+field_type: integer

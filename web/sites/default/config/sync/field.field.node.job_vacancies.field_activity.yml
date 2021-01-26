@@ -1,0 +1,26 @@
+uuid: 26e11f74-a8a4-44fc-a7b9-471f83350ed4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activity
+    - node.type.job_vacancies
+    - taxonomy.vocabulary.activity
+id: node.job_vacancies.field_activity
+field_name: field_activity
+entity_type: node
+bundle: job_vacancies
+label: Activity
+description: 'Select Activity for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      activity: activity
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

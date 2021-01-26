@@ -1,0 +1,28 @@
+uuid: fc2b76a4-a24d-462b-b8a5-1e52201a5d3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.dangerous_substances
+    - field.field.node.file.comment_node_file
+    - field.field.node.file.field_file
+    - field.field.node.file.field_flickr_date
+    - node.type.file
+  module:
+    - user
+id: node.file.dangerous_substances
+targetEntityType: node
+bundle: file
+mode: dangerous_substances
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_file: true
+  field_file: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

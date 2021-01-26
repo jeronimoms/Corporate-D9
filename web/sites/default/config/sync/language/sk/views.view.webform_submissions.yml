@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: Operácie
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Akcia
+        completed:
+          label: Ukončená
+        operations:
+          label: Operácie
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Akcia
+        completed:
+          label: Ukončená
+        view_webform_submission:
+          label: Operácie
+        edit_webform_submission:
+          label: Operácie
+  embed_review:
+    display_options:
+      fields:
+        completed:
+          label: Ukončená
+        view_webform_submission:
+          label: Operácie

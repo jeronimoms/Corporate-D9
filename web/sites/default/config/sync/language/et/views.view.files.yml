@@ -1,0 +1,15 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtreeri
+      fields:
+        filename:
+          label: Nimi
+        status:
+          label: Olek
+      filters:
+        status:
+          expose:
+            label: Olek

@@ -1,0 +1,98 @@
+uuid: bc452f08-36ab-4046-a64e-2d1d754e2dce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.newsletter_sections.field_background_color
+    - field.field.taxonomy_term.newsletter_sections.field_background_image
+    - field.field.taxonomy_term.newsletter_sections.field_icon
+    - field.field.taxonomy_term.newsletter_sections.field_link
+    - field.field.taxonomy_term.newsletter_sections.field_newsletter_template
+    - image.style.thumbnail
+    - taxonomy.vocabulary.newsletter_sections
+  module:
+    - image
+    - link
+    - path
+    - text
+    - workbench_moderation
+id: taxonomy_term.newsletter_sections.default
+targetEntityType: taxonomy_term
+bundle: newsletter_sections
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_background_color:
+    weight: 7
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_background_image:
+    weight: 6
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  field_icon:
+    weight: 8
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 9
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_newsletter_template:
+    weight: 5
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
+hidden: {  }

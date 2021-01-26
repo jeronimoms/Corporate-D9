@@ -1,0 +1,21 @@
+uuid: 8ebe6e72-e275-4b85-865c-886cfbca4382
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expiration_date
+    - node.type.guideline
+  module:
+    - datetime
+id: node.guideline.field_expiration_date
+field_name: field_expiration_date
+entity_type: node
+bundle: guideline
+label: 'Expiration date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

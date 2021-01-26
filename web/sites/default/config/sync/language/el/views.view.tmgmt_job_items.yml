@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Κατάσταση
+        label:
+          label: Ετικέτα
+        tags_count:
+          label: Ετικέτες
+        operations:
+          label: Λειτουργίες
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Ετικέτα

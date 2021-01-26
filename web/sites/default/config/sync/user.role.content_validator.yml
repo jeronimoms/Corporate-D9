@@ -1,0 +1,25 @@
+uuid: 284a9f4f-257a-482c-9323-c02a9253666f
+langcode: en
+status: true
+dependencies: {  }
+id: content_validator
+label: 'Content Validator'
+weight: 10
+is_admin: null
+permissions:
+  - 'abort job item'
+  - 'access dashboard'
+  - 'access devel information'
+  - 'access toolbar'
+  - 'access workbench'
+  - 'create blog content'
+  - 'edit own blog content'
+  - 'osha access administration pages'
+  - 'preview layout validation'
+  - 'use manualcrop'
+  - 'use text format full_html'
+  - 'use text format full_html_minimal'
+  - 'view needs content validation list'
+  - 'view the administration theme'
+  - 'view translation job'
+  - 'view translation job item'

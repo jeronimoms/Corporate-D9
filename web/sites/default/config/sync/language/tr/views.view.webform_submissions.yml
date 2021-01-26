@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: İşlemler
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Eylem
+        completed:
+          label: Tamamlandı
+        operations:
+          label: İşlemler
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Eylem
+        completed:
+          label: Tamamlandı
+        view_webform_submission:
+          label: İşlemler
+        edit_webform_submission:
+          label: İşlemler
+  embed_review:
+    display_options:
+      fields:
+        completed:
+          label: Tamamlandı
+        view_webform_submission:
+          label: İşlemler

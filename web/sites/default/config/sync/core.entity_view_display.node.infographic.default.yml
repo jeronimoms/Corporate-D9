@@ -1,0 +1,96 @@
+uuid: 425549ef-12c7-47d4-9de3-e5bfd0246bbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_infographic.default
+    - field.field.node.infographic.body
+    - field.field.node.infographic.comment_node_infographic
+    - field.field.node.infographic.field_activity
+    - field.field.node.infographic.field_archived
+    - field.field.node.infographic.field_external_url
+    - field.field.node.infographic.field_file
+    - field.field.node.infographic.field_flickr_date
+    - field.field.node.infographic.field_image
+    - field.field.node.infographic.field_pages_count
+    - field.field.node.infographic.field_publication_date
+    - field.field.node.infographic.field_tags
+    - field.field.node.infographic.field_thumbnail
+    - field.field.node.infographic.field_twin_infographics
+    - node.type.infographic
+  module:
+    - comment
+    - datetime
+    - image
+    - options
+    - text
+    - user
+id: node.infographic.default
+targetEntityType: node
+bundle: infographic
+mode: default
+content:
+  body:
+    label: hidden
+    weight: 2
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment_node_infographic:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  field_archived:
+    label: above
+    weight: 7
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    label: above
+    weight: 8
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_thumbnail:
+    label: hidden
+    weight: 1
+    type: image
+    settings:
+      image_link: ''
+      image_style: infographic_thumbnail
+    third_party_settings: {  }
+    region: content
+  field_twin_infographics:
+    label: above
+    weight: 6
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_activity: true
+  field_external_url: true
+  field_file: true
+  field_image: true
+  field_pages_count: true
+  field_publication_date: true
+  field_tags: true
+  langcode: true
+  search_api_excerpt: true

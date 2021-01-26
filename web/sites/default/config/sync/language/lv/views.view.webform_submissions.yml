@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: Darbības
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Darbība
+        completed:
+          label: Pabeigts
+        operations:
+          label: Darbības
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Darbība
+        completed:
+          label: Pabeigts
+        view_webform_submission:
+          label: Darbības
+        edit_webform_submission:
+          label: Darbības
+  embed_review:
+    display_options:
+      fields:
+        completed:
+          label: Pabeigts
+        view_webform_submission:
+          label: Darbības

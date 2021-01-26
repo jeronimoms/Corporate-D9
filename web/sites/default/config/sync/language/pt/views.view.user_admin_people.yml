@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+      fields:
+        name:
+          label: 'Nome de utilizador'
+        status:
+          label: Estado
+        roles_target_id:
+          label: 'Grupos de utilizador'
+        operations:
+          label: Operações
+      filters:
+        status:
+          group_info:
+            label: Estado

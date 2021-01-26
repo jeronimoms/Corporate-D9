@@ -1,0 +1,26 @@
+uuid: c93b8a01-fa80-4449-8af6-bf5a561bdad8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_priority_area
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.priority_area
+id: node.dangerous_substances.field_priority_area
+field_name: field_priority_area
+entity_type: node
+bundle: dangerous_substances
+label: 'Priority area'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      priority_area: priority_area
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

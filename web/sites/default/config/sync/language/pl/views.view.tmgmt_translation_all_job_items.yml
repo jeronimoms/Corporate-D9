@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Stan
+        label:
+          label: Etykieta
+        target_language:
+          label: Do
+        tags_count:
+          label: Tagi
+        operations:
+          label: Operacje
+      filters:
+        state:
+          group_info:
+            label: Stan

@@ -1,0 +1,32 @@
+uuid: d38c0366-44c4-4ed8-bfc8-e25776c78a22
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlights_item
+    - field.field.node.e_guide.comment_node_e_guide
+    - field.field.node.e_guide.field_country
+    - field.field.node.e_guide.field_external_url
+    - field.field.node.e_guide.field_flickr_date
+    - field.field.node.e_guide.field_link
+    - node.type.e_guide
+  module:
+    - user
+id: node.e_guide.highlights_item
+targetEntityType: node
+bundle: e_guide
+mode: highlights_item
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_e_guide: true
+  field_country: true
+  field_external_url: true
+  field_flickr_date: true
+  field_link: true
+  langcode: true
+  search_api_excerpt: true

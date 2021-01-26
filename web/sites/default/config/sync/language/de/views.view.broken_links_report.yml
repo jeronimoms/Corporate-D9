@@ -1,0 +1,14 @@
+display:
+  default:
+    display_options:
+      fields:
+        method:
+          label: Methode
+        operations:
+          label: Aktionen
+      filters:
+        code_1:
+          group_info:
+            group_items:
+              1:
+                title: Fehlgeschlagen

@@ -1,0 +1,19 @@
+uuid: 0e1799bc-f5e0-42cd-a05c-9d31d13c1a75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitter_profile_url
+    - node.type.twitter_user_profile
+id: node.twitter_user_profile.field_twitter_profile_url
+field_name: field_twitter_profile_url
+entity_type: node
+bundle: twitter_user_profile
+label: 'Display Url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

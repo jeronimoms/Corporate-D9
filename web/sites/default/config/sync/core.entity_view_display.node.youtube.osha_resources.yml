@@ -1,0 +1,54 @@
+uuid: 548ab497-40e8-4fc0-a79e-b070e25af2b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.youtube.body
+    - field.field.node.youtube.comment_node_youtube
+    - field.field.node.youtube.field_character_count
+    - field.field.node.youtube.field_flickr_date
+    - field.field.node.youtube.field_page_count
+    - field.field.node.youtube.field_publication_date
+    - field.field.node.youtube.field_youtube
+    - node.type.youtube
+  module:
+    - datetime
+    - user
+    - youtube
+id: node.youtube.osha_resources
+targetEntityType: node
+bundle: youtube
+mode: osha_resources
+content:
+  field_publication_date:
+    label: hidden
+    weight: 3
+    type: datetime_default
+    settings:
+      format_type: osha_day_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_youtube:
+    label: hidden
+    weight: 0
+    type: youtube_thumbnail
+    settings:
+      image_link: ''
+      image_style: publication_youtube
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_youtube: true
+  field_character_count: true
+  field_flickr_date: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: Műveletek
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Művelet
+        completed:
+          label: Teljesítve
+        operations:
+          label: Műveletek
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Művelet
+        completed:
+          label: Teljesítve
+        view_webform_submission:
+          label: Műveletek
+        edit_webform_submission:
+          label: Műveletek
+  embed_review:
+    display_options:
+      fields:
+        completed:
+          label: Teljesítve
+        view_webform_submission:
+          label: Műveletek

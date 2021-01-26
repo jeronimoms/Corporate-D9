@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Država
+        label:
+          label: Oznaka
+        target_language:
+          label: Za
+        translator:
+          label: Pružatelj
+        tags_count:
+          label: Oznake
+        operations:
+          label: Operacije
+      filters:
+        state:
+          expose:
+            label: Država
+        translator:
+          expose:
+            label: Pružatelj

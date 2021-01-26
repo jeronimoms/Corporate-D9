@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Läge
+        label:
+          label: Etikett
+        target_language:
+          label: Till
+        tags_count:
+          label: Etiketter
+        operations:
+          label: Funktioner
+      filters:
+        state:
+          group_info:
+            label: Läge

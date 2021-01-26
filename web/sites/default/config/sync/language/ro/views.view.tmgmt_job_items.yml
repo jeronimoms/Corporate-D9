@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Status
+        label:
+          label: Etichetă
+        tags_count:
+          label: Etichete
+        operations:
+          label: Operaţii
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Etichetă

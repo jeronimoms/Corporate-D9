@@ -1,0 +1,42 @@
+label: Hozzászólások
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Szűrő
+      fields:
+        comment_bulk_form:
+          action_title: Művelet
+        subject:
+          label: Tárgy
+        operations:
+          label: Műveletek
+      filters:
+        subject:
+          expose:
+            label: Tárgy
+        langcode:
+          expose:
+            label: Nyelv
+      title: Hozzászólások
+  page_published:
+    display_options:
+      menu:
+        title: Hozzászólások
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Tárgy
+        langcode:
+          expose:
+            label: Nyelv
+      fields:
+        comment_bulk_form:
+          action_title: Művelet
+        subject:
+          label: Tárgy
+        operations:
+          label: Műveletek

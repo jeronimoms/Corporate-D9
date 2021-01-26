@@ -1,0 +1,26 @@
+uuid: 8e4a0bda-2cbc-491d-b44b-6589d73c6769
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.25th_anniversary
+    - taxonomy.vocabulary.tags
+id: node.25th_anniversary.field_tags
+field_name: field_tags
+entity_type: node
+bundle: 25th_anniversary
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      tags: tags
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

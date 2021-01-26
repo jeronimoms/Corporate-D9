@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Фильтр
+      fields:
+        media_bulk_form:
+          action_title: Действие
+        status:
+          label: Статус
+        operations:
+          label: Операции
+      filters:
+        langcode:
+          expose:
+            label: Язык

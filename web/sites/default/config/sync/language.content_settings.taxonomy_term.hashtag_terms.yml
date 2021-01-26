@@ -1,0 +1,16 @@
+uuid: 98529a1f-07f8-4d7d-abca-05384c8bbe09
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hashtag_terms
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.hashtag_terms
+target_entity_type_id: taxonomy_term
+target_bundle: hashtag_terms
+default_langcode: und
+language_alterable: false

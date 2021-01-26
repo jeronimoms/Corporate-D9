@@ -1,0 +1,23 @@
+uuid: e5bbbacb-d79b-4dce-bfbb-69116372f164
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.body
+field_name: body
+entity_type: node
+bundle: dangerous_substances
+label: 'Content (English)'
+description: "Please describe the material (max. 150 words)\nPlease note: the first paragraph will be displayed as short description, \nPlease take this into consideration when you are writing the first paragraph.\nPlease use \"Paste from Word\" button when you copy text from MS Word."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

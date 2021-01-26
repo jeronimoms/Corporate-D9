@@ -1,0 +1,34 @@
+uuid: 7c40da7e-1f45-4bf4-a554-c26267e59280
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.token
+    - field.field.taxonomy_term.newsletter_sections.field_background_color
+    - field.field.taxonomy_term.newsletter_sections.field_background_image
+    - field.field.taxonomy_term.newsletter_sections.field_icon
+    - field.field.taxonomy_term.newsletter_sections.field_link
+    - field.field.taxonomy_term.newsletter_sections.field_newsletter_template
+    - taxonomy.vocabulary.newsletter_sections
+  module:
+    - text
+id: taxonomy_term.newsletter_sections.token
+targetEntityType: taxonomy_term
+bundle: newsletter_sections
+mode: token
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_background_color: true
+  field_background_image: true
+  field_icon: true
+  field_link: true
+  field_newsletter_template: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,16 @@
+uuid: 8474ece1-30f4-477b-9df0-4f0f939998fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.note_to_editor
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.note_to_editor
+target_entity_type_id: node
+target_bundle: note_to_editor
+default_langcode: und
+language_alterable: true

@@ -1,0 +1,10 @@
+uuid: 1abffa01-2c34-437a-a02a-eae2a59d7453
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.osha_resources
+label: osha_resources
+targetEntityType: node
+cache: true

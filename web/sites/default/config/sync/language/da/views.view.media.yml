@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+      fields:
+        media_bulk_form:
+          action_title: Handling
+        status:
+          label: Status
+        operations:
+          label: Handlinger
+      filters:
+        langcode:
+          expose:
+            label: Sprog

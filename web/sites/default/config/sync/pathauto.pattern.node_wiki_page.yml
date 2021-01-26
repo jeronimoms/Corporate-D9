@@ -1,0 +1,21 @@
+uuid: e088beec-3aac-4fb3-880d-d73d409fd1f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_wiki_page
+label: 'Content - Wiki page'
+type: 'canonical_entities:node'
+pattern: '/oshwiki/[node:title]'
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      wiki_page: wiki_page
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: 0
+relationships: {  }

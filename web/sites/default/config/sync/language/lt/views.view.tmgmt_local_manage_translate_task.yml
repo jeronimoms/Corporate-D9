@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtruoti
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Būsena
+        target_language:
+          label: Kam
+        operations:
+          label: Veiksmai
+      filters:
+        uid:
+          expose:
+            label: Tiekėjas
+  closed:
+    display_title: Uždara
+    display_options:
+      menu:
+        title: Uždara
+      fields:
+        status:
+          label: Būsena
+        target_language:
+          label: Kam
+        operations:
+          label: Veiksmai
+      filters:
+        uid:
+          expose:
+            label: Tiekėjas
+  completed:
+    display_title: Pabaigtas
+    display_options:
+      menu:
+        title: Pabaigtas
+      fields:
+        status:
+          label: Būsena
+        target_language:
+          label: Kam
+        operations:
+          label: Veiksmai
+      filters:
+        uid:
+          expose:
+            label: Tiekėjas
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Būsena
+        target_language:
+          label: Kam
+        operations:
+          label: Veiksmai
+      filters:
+        uid:
+          expose:
+            label: Tiekėjas
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Būsena
+        target_language:
+          label: Kam
+        operations:
+          label: Veiksmai
+      filters:
+        uid:
+          expose:
+            label: Tiekėjas
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Būsena
+        target_language:
+          label: Kam
+        operations:
+          label: Veiksmai

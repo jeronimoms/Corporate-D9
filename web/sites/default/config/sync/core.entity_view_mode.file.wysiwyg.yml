@@ -1,0 +1,10 @@
+uuid: 0a1c776a-5c99-4d0a-923c-3bf54c3cb55c
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+id: file.wysiwyg
+label: wysiwyg
+targetEntityType: file
+cache: true

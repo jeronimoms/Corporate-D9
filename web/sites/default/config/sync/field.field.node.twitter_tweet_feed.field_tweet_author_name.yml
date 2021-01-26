@@ -1,0 +1,19 @@
+uuid: e0a81668-d417-427c-b8fa-9159a067542c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tweet_author_name
+    - node.type.twitter_tweet_feed
+id: node.twitter_tweet_feed.field_tweet_author_name
+field_name: field_tweet_author_name
+entity_type: node
+bundle: twitter_tweet_feed
+label: 'Tweet Author Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

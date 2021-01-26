@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Филтрирај
+      fields:
+        status:
+          label: Статус
+        operations:
+          label: Операције
+      filters:
+        status:
+          expose:
+            label: Статус
+        langcode:
+          expose:
+            label: Језик

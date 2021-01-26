@@ -1,0 +1,28 @@
+uuid: f1e5869f-3c05-4a4b-85d8-3874f91b98bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.dangerous_substances
+    - field.field.node.webform.comment_node_webform
+    - field.field.node.webform.field_flickr_date
+    - field.field.node.webform.field_page_introduction
+    - node.type.webform
+  module:
+    - user
+id: node.webform.dangerous_substances
+targetEntityType: node
+bundle: webform
+mode: dangerous_substances
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_webform: true
+  field_flickr_date: true
+  field_page_introduction: true
+  langcode: true
+  search_api_excerpt: true

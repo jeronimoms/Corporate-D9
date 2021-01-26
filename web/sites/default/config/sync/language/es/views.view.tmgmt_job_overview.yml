@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Estado
+        label:
+          label: Etiqueta
+        target_language:
+          label: Para
+        translator:
+          label: Proveedor
+        tags_count:
+          label: Etiquetas
+        operations:
+          label: Operaciones
+      filters:
+        state:
+          expose:
+            label: Estado
+        translator:
+          expose:
+            label: Proveedor

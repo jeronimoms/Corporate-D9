@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtra
+      fields:
+        name:
+          label: 'Nome utente'
+        status:
+          label: Stato
+        roles_target_id:
+          label: Ruoli
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          group_info:
+            label: Stato

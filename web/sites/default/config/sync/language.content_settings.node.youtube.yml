@@ -1,0 +1,16 @@
+uuid: 8893e4e5-f1e2-4e36-81e3-cf5d30f1fac2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.youtube
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.youtube
+target_entity_type_id: node
+target_bundle: youtube
+default_langcode: und
+language_alterable: true

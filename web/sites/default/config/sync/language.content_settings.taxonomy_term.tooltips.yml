@@ -1,0 +1,16 @@
+uuid: b9b07193-877a-4f69-b0d6-c96b77aea8dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tooltips
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.tooltips
+target_entity_type_id: taxonomy_term
+target_bundle: tooltips
+default_langcode: und
+language_alterable: true

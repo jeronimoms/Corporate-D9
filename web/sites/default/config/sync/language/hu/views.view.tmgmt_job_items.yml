@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Állapot
+        label:
+          label: Címke
+        tags_count:
+          label: Címkék
+        operations:
+          label: Műveletek
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Címke

@@ -1,0 +1,19 @@
+uuid: 6a35d000-fb21-4561-8a43-45a36ebdb0fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_bookshop_id
+    - node.type.publication
+id: node.publication.field_publication_bookshop_id
+field_name: field_publication_bookshop_id
+entity_type: node
+bundle: publication
+label: 'Bookshop ID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

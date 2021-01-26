@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Статус
+        label:
+          label: Заглавие
+        tags_count:
+          label: Таг
+        operations:
+          label: Действия
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Заглавие

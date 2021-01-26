@@ -1,0 +1,202 @@
+uuid: 6a0f475e-b6d1-4d0e-945e-d9f25d38fede
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.blog.body
+    - field.field.node.blog.comment_node_blog
+    - field.field.node.blog.field_activity
+    - field.field.node.blog.field_archived
+    - field.field.node.blog.field_author
+    - field.field.node.blog.field_character_count
+    - field.field.node.blog.field_expiration_date
+    - field.field.node.blog.field_flickr_date
+    - field.field.node.blog.field_image
+    - field.field.node.blog.field_nace_codes
+    - field.field.node.blog.field_page_count
+    - field.field.node.blog.field_project_manager
+    - field.field.node.blog.field_publication_date
+    - field.field.node.blog.field_tags
+    - field.field.node.blog.field_thesaurus
+    - field.field.node.blog.field_thesaurus_2020
+    - node.type.blog
+  module:
+    - comment
+    - datetime
+    - file
+    - path
+    - text
+    - workbench_moderation
+id: node.blog.default
+targetEntityType: node
+bundle: blog
+mode: default
+content:
+  body:
+    weight: 6
+    type: text_textarea_with_summary
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  comment_node_blog:
+    type: comment_default
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_activity:
+    weight: 10
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_archived:
+    weight: 11
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_author:
+    weight: 18
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_character_count:
+    weight: 15
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_expiration_date:
+    weight: 5
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    weight: 5
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 3
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_nace_codes:
+    weight: 8
+    type: entity_reference_autocomplete
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_page_count:
+    weight: 16
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_publication_date:
+    weight: 4
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_tags:
+    weight: 7
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_thesaurus:
+    weight: 9
+    type: entity_reference_autocomplete
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_project_manager: true
+  field_thesaurus_2020: true

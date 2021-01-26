@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Eyalet
+        label:
+          label: Etiket
+        target_language:
+          label: Kime
+        translator:
+          label: Sağlayıcı
+        tags_count:
+          label: Etiketler
+        operations:
+          label: İşlemler
+      filters:
+        state:
+          expose:
+            label: Eyalet
+        translator:
+          expose:
+            label: Sağlayıcı

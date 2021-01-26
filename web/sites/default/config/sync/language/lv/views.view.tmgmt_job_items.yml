@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Stāvoklis
+        label:
+          label: Etiķete
+        tags_count:
+          label: Iezīmes
+        operations:
+          label: Darbības
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Etiķete

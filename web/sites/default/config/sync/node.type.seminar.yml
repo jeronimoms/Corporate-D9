@@ -1,0 +1,18 @@
+uuid: c4fc542e-5845-4293-8d65-52a79299542a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: Seminar
+type: seminar
+description: Seminars
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Suodatus
+      fields:
+        type:
+          label: Sisältötyyppi
+        status:
+          label: Tila
+        operations:
+          label: Toimenpiteet
+      filters:
+        type:
+          expose:
+            label: Sisältötyyppi
+        status:
+          expose:
+            label: Tila
+        langcode:
+          expose:
+            label: Kieli

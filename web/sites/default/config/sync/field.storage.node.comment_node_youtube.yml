@@ -1,0 +1,20 @@
+uuid: ab121cc6-e59d-4c97-85c3-88a65ca87ec5
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+id: node.comment_node_youtube
+field_name: comment_node_youtube
+entity_type: node
+type: comment
+settings:
+  comment_type: comment_node_youtube
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: a809e200-c3f1-401e-bda9-2de638563460
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_vacancies_contact_type
+    - node.type.job_vacancies
+  module:
+    - options
+id: node.job_vacancies.field_job_vacancies_contact_type
+field_name: field_job_vacancies_contact_type
+entity_type: node
+bundle: job_vacancies
+label: 'Type of Contract'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,35 @@
+uuid: dcf8e3e5-7145-430c-b114-bd490048a380
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - node.type.news
+  module:
+    - image
+id: node.news.field_image
+field_name: field_image
+entity_type: node
+bundle: news
+label: Image
+description: 'The header image that will be displayed on page. The image should be 220x220px'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: news
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  title_field: true
+  default_image: '32946'
+  caption_field: false
+  caption_field_required: false
+  alt_field_required: true
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

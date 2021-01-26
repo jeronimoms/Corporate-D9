@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Olek
+        label:
+          label: Nimetus
+        tags_count:
+          label: Sildid
+        operations:
+          label: Toimingud
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Nimetus

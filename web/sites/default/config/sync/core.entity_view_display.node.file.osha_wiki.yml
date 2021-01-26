@@ -1,0 +1,28 @@
+uuid: 089caa94-c32c-417b-acff-84fc06790cdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_wiki
+    - field.field.node.file.comment_node_file
+    - field.field.node.file.field_file
+    - field.field.node.file.field_flickr_date
+    - node.type.file
+  module:
+    - user
+id: node.file.osha_wiki
+targetEntityType: node
+bundle: file
+mode: osha_wiki
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_file: true
+  field_file: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtr
+      fields:
+        type:
+          label: 'Typ obsahu'
+        status:
+          label: Stav
+        operations:
+          label: Operace
+      filters:
+        type:
+          expose:
+            label: 'Typ obsahu'
+        status:
+          expose:
+            label: Stav
+        langcode:
+          expose:
+            label: Jazyk

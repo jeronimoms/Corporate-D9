@@ -1,0 +1,16 @@
+uuid: 5e35e796-2d21-4782-81fa-391f9ac56aec
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.thesaurus
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.thesaurus
+target_entity_type_id: taxonomy_term
+target_bundle: thesaurus
+default_langcode: und
+language_alterable: true

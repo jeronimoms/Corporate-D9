@@ -1,0 +1,46 @@
+uuid: 71819640-81d0-4a68-ada8-01051cb8f3f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_slideshow
+    - field.field.node.calls.body
+    - field.field.node.calls.comment_node_calls
+    - field.field.node.calls.field_activity
+    - field.field.node.calls.field_archived
+    - field.field.node.calls.field_author
+    - field.field.node.calls.field_calls_deadline
+    - field.field.node.calls.field_character_count
+    - field.field.node.calls.field_expiration_date
+    - field.field.node.calls.field_flickr_date
+    - field.field.node.calls.field_page_count
+    - field.field.node.calls.field_publication_date
+    - field.field.node.calls.field_related_resources
+    - node.type.calls
+  module:
+    - user
+id: node.calls.osha_slideshow
+targetEntityType: node
+bundle: calls
+mode: osha_slideshow
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_calls: true
+  field_activity: true
+  field_archived: true
+  field_author: true
+  field_calls_deadline: true
+  field_character_count: true
+  field_expiration_date: true
+  field_flickr_date: true
+  field_page_count: true
+  field_publication_date: true
+  field_related_resources: true
+  langcode: true
+  search_api_excerpt: true

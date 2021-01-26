@@ -1,0 +1,43 @@
+uuid: 9d1dc2b1-90ad-47eb-a4e0-398f9a76bfa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_infographic
+    - field.field.comment.comment_node_infographic.comment_body
+  module:
+    - text
+id: comment.comment_node_infographic.default
+targetEntityType: comment
+bundle: comment_node_infographic
+mode: default
+content:
+  author:
+    weight: -2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment_body:
+    weight: 0
+    type: text_textarea
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

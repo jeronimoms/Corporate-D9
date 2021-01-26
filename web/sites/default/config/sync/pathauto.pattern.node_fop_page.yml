@@ -1,0 +1,21 @@
+uuid: 89b95e5d-d3e2-4acb-b6c4-302cad4e83ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_fop_page
+label: 'Content - Focal Point Page'
+type: 'canonical_entities:node'
+pattern: 'about-eu-osha/national-focal-points/[node:title]'
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      fop_page: fop_page
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: 0
+relationships: {  }

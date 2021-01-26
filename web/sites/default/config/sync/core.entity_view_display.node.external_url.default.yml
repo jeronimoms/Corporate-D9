@@ -1,0 +1,62 @@
+uuid: 1fc4f945-0332-4ebd-b7a8-310c726fad21
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_external_url.default
+    - field.field.node.external_url.comment_node_external_url
+    - field.field.node.external_url.field_character_count
+    - field.field.node.external_url.field_external_url
+    - field.field.node.external_url.field_flickr_date
+    - field.field.node.external_url.field_page_count
+    - node.type.external_url
+  module:
+    - comment
+    - datetime
+    - link
+    - user
+id: node.external_url.default
+targetEntityType: node
+bundle: external_url
+mode: default
+content:
+  comment_node_external_url:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  field_external_url:
+    label: hidden
+    weight: 1
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    label: above
+    weight: 4
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_character_count: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

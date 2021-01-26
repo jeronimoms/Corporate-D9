@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Status
+        label:
+          label: Etichetă
+        target_language:
+          label: Către
+        tags_count:
+          label: Etichete
+        operations:
+          label: Operaţii
+      filters:
+        state:
+          group_info:
+            label: Status

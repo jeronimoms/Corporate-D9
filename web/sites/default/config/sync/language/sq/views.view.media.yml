@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtri
+      fields:
+        media_bulk_form:
+          action_title: Veprimi
+        status:
+          label: Gjendja
+        operations:
+          label: Operacionet
+      filters:
+        langcode:
+          expose:
+            label: Gjuha

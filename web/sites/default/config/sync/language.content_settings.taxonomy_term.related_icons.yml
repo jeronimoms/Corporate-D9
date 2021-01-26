@@ -1,0 +1,16 @@
+uuid: 1e67988c-54ab-4534-8368-4ae952edf11b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.related_icons
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.related_icons
+target_entity_type_id: taxonomy_term
+target_bundle: related_icons
+default_langcode: und
+language_alterable: true

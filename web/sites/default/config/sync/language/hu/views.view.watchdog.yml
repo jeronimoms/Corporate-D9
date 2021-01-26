@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Szűrő
+      fields:
+        nothing:
+          admin_label: Ikon
+        name:
+          label: Felhasználó
+        link:
+          label: Műveletek

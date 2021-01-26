@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtru
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Stare
+        target_language:
+          label: Către
+        operations:
+          label: Operaţii
+      filters:
+        uid:
+          expose:
+            label: Furnizor
+  closed:
+    display_title: Închis
+    display_options:
+      menu:
+        title: Închis
+      fields:
+        status:
+          label: Stare
+        target_language:
+          label: Către
+        operations:
+          label: Operaţii
+      filters:
+        uid:
+          expose:
+            label: Furnizor
+  completed:
+    display_title: Finalizată
+    display_options:
+      menu:
+        title: Finalizată
+      fields:
+        status:
+          label: Stare
+        target_language:
+          label: Către
+        operations:
+          label: Operaţii
+      filters:
+        uid:
+          expose:
+            label: Furnizor
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Stare
+        target_language:
+          label: Către
+        operations:
+          label: Operaţii
+      filters:
+        uid:
+          expose:
+            label: Furnizor
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Stare
+        target_language:
+          label: Către
+        operations:
+          label: Operaţii
+      filters:
+        uid:
+          expose:
+            label: Furnizor
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Stare
+        target_language:
+          label: Către
+        operations:
+          label: Operaţii

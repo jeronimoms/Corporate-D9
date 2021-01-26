@@ -1,0 +1,28 @@
+uuid: e51e24f9-4f7a-45e6-abf9-b54a316de782
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.newsletter_article.body
+    - field.field.node.newsletter_article.comment_node_newsletter_article
+    - field.field.node.newsletter_article.field_flickr_date
+    - node.type.newsletter_article
+  module:
+    - user
+id: node.newsletter_article.osha_resources
+targetEntityType: node
+bundle: newsletter_article
+mode: osha_resources
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_newsletter_article: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

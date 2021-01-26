@@ -1,0 +1,19 @@
+uuid: 7a46e780-5b53-4253-90af-fd0bfe7d4ac0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_article_type_code
+    - taxonomy.vocabulary.article_types
+id: taxonomy_term.article_types.field_article_type_code
+field_name: field_article_type_code
+entity_type: taxonomy_term
+bundle: article_types
+label: 'Article Type Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: f7391be0-a19c-4904-b982-367e29a1a971
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_note_to_editor
+label: 'Content - Note to editor'
+type: 'canonical_entities:node'
+pattern: 'about-eu-osha/press-room/note-to-editor/[node:title]'
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      note_to_editor: note_to_editor
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: 0
+relationships: {  }

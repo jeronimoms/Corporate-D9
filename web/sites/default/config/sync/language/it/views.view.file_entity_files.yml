@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtra
+      fields:
+        filename:
+          label: Nome
+        status:
+          label: Stato
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          expose:
+            label: Stato

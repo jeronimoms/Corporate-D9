@@ -1,0 +1,21 @@
+uuid: ade16ee6-c319-4780-bf9e-9bcaac036705
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.seminar
+  module:
+    - datetime
+id: node.seminar.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: seminar
+label: 'Publication date'
+description: 'Please select the date of publication, if it is not possible to identify leave it empty.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

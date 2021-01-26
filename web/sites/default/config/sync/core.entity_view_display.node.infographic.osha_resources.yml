@@ -1,0 +1,74 @@
+uuid: efd154cf-76f1-4b73-bf98-567010794ad8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.infographic.body
+    - field.field.node.infographic.comment_node_infographic
+    - field.field.node.infographic.field_activity
+    - field.field.node.infographic.field_archived
+    - field.field.node.infographic.field_external_url
+    - field.field.node.infographic.field_file
+    - field.field.node.infographic.field_flickr_date
+    - field.field.node.infographic.field_image
+    - field.field.node.infographic.field_pages_count
+    - field.field.node.infographic.field_publication_date
+    - field.field.node.infographic.field_tags
+    - field.field.node.infographic.field_thumbnail
+    - field.field.node.infographic.field_twin_infographics
+    - node.type.infographic
+  module:
+    - datetime
+    - image
+    - user
+id: node.infographic.osha_resources
+targetEntityType: node
+bundle: infographic
+mode: osha_resources
+content:
+  field_pages_count:
+    label: hidden
+    weight: 1
+    type: number_integer
+    settings:
+      prefix_suffix: true
+      thousand_separator: ''
+    third_party_settings: {  }
+    region: content
+  field_publication_date:
+    label: hidden
+    weight: 2
+    type: datetime_default
+    settings:
+      format_type: osha_day_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_thumbnail:
+    label: hidden
+    weight: 0
+    type: image
+    settings:
+      image_link: ''
+      image_style: infographic_thumbnail
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_infographic: true
+  field_activity: true
+  field_archived: true
+  field_external_url: true
+  field_file: true
+  field_flickr_date: true
+  field_image: true
+  field_tags: true
+  field_twin_infographics: true
+  langcode: true
+  search_api_excerpt: true

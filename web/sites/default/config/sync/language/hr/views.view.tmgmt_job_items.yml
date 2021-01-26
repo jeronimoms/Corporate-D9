@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Država
+        label:
+          label: Oznaka
+        tags_count:
+          label: Oznake
+        operations:
+          label: Operacije
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Oznaka

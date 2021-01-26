@@ -1,0 +1,21 @@
+uuid: df0e6aef-7409-4bdd-8caf-9a880d024273
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.dangerous_substances
+  module:
+    - metatag
+id: node.dangerous_substances.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: dangerous_substances
+label: 'Meta tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

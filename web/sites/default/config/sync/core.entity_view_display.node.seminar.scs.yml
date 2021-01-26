@@ -1,0 +1,64 @@
+uuid: 751c37ba-95c4-4c38-a7da-5355081c8718
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.scs
+    - field.field.node.seminar.body
+    - field.field.node.seminar.comment_node_seminar
+    - field.field.node.seminar.field_activity
+    - field.field.node.seminar.field_archived
+    - field.field.node.seminar.field_character_count
+    - field.field.node.seminar.field_country_code
+    - field.field.node.seminar.field_expiration_date
+    - field.field.node.seminar.field_flickr_date
+    - field.field.node.seminar.field_metatag
+    - field.field.node.seminar.field_page_count
+    - field.field.node.seminar.field_pages_count
+    - field.field.node.seminar.field_publication_date
+    - field.field.node.seminar.field_related_resources
+    - field.field.node.seminar.field_report
+    - field.field.node.seminar.field_seminar_end_date
+    - field.field.node.seminar.field_seminar_location
+    - field.field.node.seminar.field_seminar_start_date
+    - field.field.node.seminar.field_show_eu_flag
+    - field.field.node.seminar.field_tags
+    - field.field.node.seminar.field_thesaurus
+    - field.field.node.seminar.field_thesaurus_2020
+    - node.type.seminar
+  module:
+    - user
+id: node.seminar.scs
+targetEntityType: node
+bundle: seminar
+mode: scs
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_seminar: true
+  field_activity: true
+  field_archived: true
+  field_character_count: true
+  field_country_code: true
+  field_expiration_date: true
+  field_flickr_date: true
+  field_metatag: true
+  field_page_count: true
+  field_pages_count: true
+  field_publication_date: true
+  field_related_resources: true
+  field_report: true
+  field_seminar_end_date: true
+  field_seminar_location: true
+  field_seminar_start_date: true
+  field_show_eu_flag: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+      fields:
+        type:
+          label: 'Tip sadržaja'
+        status:
+          label: Status
+        operations:
+          label: Operacije
+      filters:
+        type:
+          expose:
+            label: 'Tip sadržaja'
+        status:
+          expose:
+            label: Status
+        langcode:
+          expose:
+            label: Jezik

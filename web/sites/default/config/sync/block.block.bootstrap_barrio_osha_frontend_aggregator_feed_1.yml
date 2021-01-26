@@ -1,0 +1,22 @@
+uuid: a7e6cd3b-88fc-4bcb-9194-cac5f6ca3192
+langcode: en
+status: true
+dependencies:
+  module:
+    - aggregator
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_osha_frontend_aggregator_feed_1
+theme: bootstrap_barrio
+region: content
+weight: 25
+provider: null
+plugin: aggregator_feed_block
+settings:
+  id: broken
+  label: 'EU-OSHA in the media'
+  provider: core
+  label_display: visible
+  block_count: 2
+  feed: '1'
+visibility: {  }

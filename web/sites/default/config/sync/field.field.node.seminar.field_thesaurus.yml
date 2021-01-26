@@ -1,0 +1,26 @@
+uuid: 1d2d62bb-eb4d-4467-849f-9db3c71397e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thesaurus
+    - node.type.seminar
+    - taxonomy.vocabulary.thesaurus
+id: node.seminar.field_thesaurus
+field_name: field_thesaurus
+entity_type: node
+bundle: seminar
+label: Thesaurus
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      thesaurus: thesaurus
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

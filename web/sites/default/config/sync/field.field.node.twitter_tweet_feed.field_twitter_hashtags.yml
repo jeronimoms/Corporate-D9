@@ -1,0 +1,30 @@
+uuid: 1c157960-a352-43d5-bb3b-a32a9053868b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitter_hashtags
+    - node.type.twitter_tweet_feed
+    - taxonomy.vocabulary.hashtag_terms
+id: node.twitter_tweet_feed.field_twitter_hashtags
+field_name: field_twitter_hashtags
+entity_type: node
+bundle: twitter_tweet_feed
+label: 'Hashtags Used'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      hashtag_terms: hashtag_terms
+field_type: entity_reference

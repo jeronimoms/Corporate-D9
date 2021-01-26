@@ -1,0 +1,224 @@
+uuid: 89a0c23c-22af-493c-9168-7a3df92d52a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.register_records.body
+    - field.field.node.register_records.comment_node_register_records
+    - field.field.node.register_records.field_activity
+    - field.field.node.register_records.field_documentation
+    - field.field.node.register_records.field_events_and_meetings
+    - field.field.node.register_records.field_finance_and_procurement
+    - field.field.node.register_records.field_general_services
+    - field.field.node.register_records.field_governance
+    - field.field.node.register_records.field_human_resources
+    - field.field.node.register_records.field_ict
+    - field.field.node.register_records.field_missions
+    - field.field.node.register_records.field_relationship_management
+    - field.field.node.register_records.field_research_activities
+    - field.field.node.register_records.field_staff_committee
+    - field.field.node.register_records.field_surveys
+    - field.field.node.register_records.field_tags
+    - field.field.node.register_records.field_websites_online_services
+    - field.field.node.register_records.field_wiki_categories
+    - node.type.register_records
+  module:
+    - comment
+    - file
+    - path
+    - text
+    - workbench_moderation
+id: node.register_records.default
+targetEntityType: node
+bundle: register_records
+mode: default
+content:
+  body:
+    weight: 2
+    type: text_textarea_with_summary
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  comment_node_register_records:
+    type: comment_default
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_activity:
+    weight: 24
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_documentation:
+    weight: 4
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_events_and_meetings:
+    weight: 5
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_finance_and_procurement:
+    weight: 6
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_general_services:
+    weight: 7
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_governance:
+    weight: 8
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_human_resources:
+    weight: 9
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_ict:
+    weight: 10
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_missions:
+    weight: 11
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_relationship_management:
+    weight: 3
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_research_activities:
+    weight: 12
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_staff_committee:
+    weight: 13
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_surveys:
+    weight: 14
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_tags:
+    weight: 22
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_websites_online_services:
+    weight: 15
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_wiki_categories:
+    weight: 23
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

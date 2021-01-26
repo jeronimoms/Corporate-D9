@@ -1,0 +1,23 @@
+uuid: fcf24d97-85ff-419a-9221-e0519bed72c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_migrate_hwc
+    - node.type.news
+id: node.news.field_migrate_hwc
+field_name: field_migrate_hwc
+entity_type: node
+bundle: news
+label: 'Migrate to HWC'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

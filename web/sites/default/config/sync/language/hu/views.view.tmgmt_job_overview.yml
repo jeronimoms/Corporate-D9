@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Állapot
+        label:
+          label: Címke
+        target_language:
+          label: Hova
+        translator:
+          label: Szolgáltató
+        tags_count:
+          label: Címkék
+        operations:
+          label: Műveletek
+      filters:
+        state:
+          expose:
+            label: Állapot
+        translator:
+          expose:
+            label: Szolgáltató

@@ -1,0 +1,34 @@
+uuid: c891646e-bb32-4c9c-9f05-0772134910e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.scs
+    - field.field.node.page.body
+    - field.field.node.page.comment_node_page
+    - field.field.node.page.field_activity
+    - field.field.node.page.field_character_count
+    - field.field.node.page.field_flickr_date
+    - field.field.node.page.field_page_count
+    - node.type.page
+  module:
+    - user
+id: node.page.scs
+targetEntityType: node
+bundle: page
+mode: scs
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_page: true
+  field_activity: true
+  field_character_count: true
+  field_flickr_date: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

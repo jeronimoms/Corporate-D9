@@ -1,0 +1,140 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Φίλτρο
+      fields:
+        title:
+          label: Ετικέτα
+      filters:
+        status:
+          expose:
+            label: Κατάσταση
+  closed:
+    display_options:
+      fields:
+        status:
+          label: Κατάσταση
+        title:
+          label: Ετικέτα
+        target_language:
+          label: Προς
+        operations:
+          label: Λειτουργίες
+      filters:
+        status:
+          expose:
+            label: Κατάσταση
+        title:
+          expose:
+            label: Ετικέτα
+      menu:
+        title: 'Έχει κλείσει'
+  completed:
+    display_options:
+      fields:
+        status:
+          label: Κατάσταση
+        title:
+          label: Ετικέτα
+        target_language:
+          label: Προς
+        operations:
+          label: Λειτουργίες
+      filters:
+        status:
+          expose:
+            label: Κατάσταση
+        title:
+          expose:
+            label: Ετικέτα
+      menu:
+        title: Ολοκληρώθηκε
+  eligible:
+    display_options:
+      fields:
+        status:
+          label: Κατάσταση
+        title:
+          label: Ετικέτα
+        target_language:
+          label: Προς
+        operations:
+          label: Λειτουργίες
+      filters:
+        status:
+          expose:
+            label: Κατάσταση
+        title:
+          expose:
+            label: Ετικέτα
+  my_tasks:
+    display_options:
+      fields:
+        status:
+          label: Κατάσταση
+        title:
+          label: Ετικέτα
+        target_language:
+          label: Προς
+        operations:
+          label: Λειτουργίες
+      filters:
+        status:
+          expose:
+            label: Κατάσταση
+        title:
+          expose:
+            label: Ετικέτα
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Κατάσταση
+        title:
+          label: Ετικέτα
+        target_language:
+          label: Προς
+        operations:
+          label: Λειτουργίες
+      filters:
+        status:
+          expose:
+            label: Κατάσταση
+        title:
+          expose:
+            label: Ετικέτα
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Κατάσταση
+        title:
+          label: Ετικέτα
+        target_language:
+          label: Προς
+        operations:
+          label: Λειτουργίες
+      filters:
+        status:
+          expose:
+            label: Κατάσταση
+        title:
+          expose:
+            label: Ετικέτα
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Κατάσταση
+        title:
+          label: Ετικέτα
+        target_language:
+          label: Προς
+        operations:
+          label: Λειτουργίες
+      filters:
+        status:
+          expose:
+            label: Κατάσταση

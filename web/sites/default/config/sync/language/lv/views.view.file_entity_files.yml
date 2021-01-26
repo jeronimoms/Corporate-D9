@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrēt
+      fields:
+        filename:
+          label: Nosaukums
+        status:
+          label: Statuss
+        operations:
+          label: Darbības
+      filters:
+        status:
+          expose:
+            label: Statuss

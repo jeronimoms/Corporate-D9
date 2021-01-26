@@ -1,0 +1,140 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+      fields:
+        title:
+          label: Etiqueta
+      filters:
+        status:
+          expose:
+            label: Estado
+  closed:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        title:
+          label: Etiqueta
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        status:
+          expose:
+            label: Estado
+        title:
+          expose:
+            label: Etiqueta
+      menu:
+        title: Cerrado
+  completed:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        title:
+          label: Etiqueta
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        status:
+          expose:
+            label: Estado
+        title:
+          expose:
+            label: Etiqueta
+      menu:
+        title: Completado
+  eligible:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        title:
+          label: Etiqueta
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        status:
+          expose:
+            label: Estado
+        title:
+          expose:
+            label: Etiqueta
+  my_tasks:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        title:
+          label: Etiqueta
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        status:
+          expose:
+            label: Estado
+        title:
+          expose:
+            label: Etiqueta
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        title:
+          label: Etiqueta
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        status:
+          expose:
+            label: Estado
+        title:
+          expose:
+            label: Etiqueta
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        title:
+          label: Etiqueta
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        status:
+          expose:
+            label: Estado
+        title:
+          expose:
+            label: Etiqueta
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        title:
+          label: Etiqueta
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        status:
+          expose:
+            label: Estado

@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrēt
+      fields:
+        media_bulk_form:
+          action_title: Darbība
+        status:
+          label: Statuss
+        operations:
+          label: Darbības
+      filters:
+        langcode:
+          expose:
+            label: Valoda

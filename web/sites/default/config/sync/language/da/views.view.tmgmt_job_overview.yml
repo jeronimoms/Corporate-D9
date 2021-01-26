@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Status
+        label:
+          label: Etiket
+        target_language:
+          label: Til
+        translator:
+          label: Udbyder
+        tags_count:
+          label: Tags
+        operations:
+          label: Handlinger
+      filters:
+        state:
+          expose:
+            label: Status
+        translator:
+          expose:
+            label: Udbyder

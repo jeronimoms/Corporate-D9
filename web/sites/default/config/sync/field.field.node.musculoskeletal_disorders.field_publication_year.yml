@@ -1,0 +1,21 @@
+uuid: 111c9b9f-2758-4583-91ac-a3398ea8b596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_year
+    - node.type.musculoskeletal_disorders
+  module:
+    - datetime
+id: node.musculoskeletal_disorders.field_publication_year
+field_name: field_publication_year
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Date of Publication / Year '
+description: 'Please select a year of publication, if it is not possible to identify leave it empty.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

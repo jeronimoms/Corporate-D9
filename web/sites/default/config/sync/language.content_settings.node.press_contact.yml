@@ -1,0 +1,16 @@
+uuid: 4b14ad1b-1689-486c-bfab-334aa9b357f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.press_contact
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.press_contact
+target_entity_type_id: node
+target_bundle: press_contact
+default_langcode: und
+language_alterable: true

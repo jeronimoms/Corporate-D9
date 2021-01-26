@@ -1,0 +1,23 @@
+uuid: 5fb218d9-1743-4c19-830e-01f08cdc4a24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.note_to_editor
+  module:
+    - text
+id: node.note_to_editor.body
+field_name: body
+entity_type: node
+bundle: note_to_editor
+label: Body
+description: 'Please introduce in this box the text of this section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

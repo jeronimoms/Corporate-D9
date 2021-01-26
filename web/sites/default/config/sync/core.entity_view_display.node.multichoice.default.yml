@@ -1,0 +1,33 @@
+uuid: 3c182b1c-1c91-4274-a17b-458a1bd0f8c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_multichoice.default
+    - field.field.node.multichoice.comment_node_multichoice
+    - node.type.multichoice
+  module:
+    - comment
+    - user
+id: node.multichoice.default
+targetEntityType: node
+bundle: multichoice
+mode: default
+content:
+  comment_node_multichoice:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

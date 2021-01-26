@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Stav
+        label:
+          label: Popisek
+        tags_count:
+          label: Štítky
+        operations:
+          label: Operace
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Popisek

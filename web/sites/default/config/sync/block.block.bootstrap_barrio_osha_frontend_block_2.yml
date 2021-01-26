@@ -1,0 +1,25 @@
+uuid: 8de1d249-3909-436b-95d8-86ca412b153b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6750f86d-b838-4615-b3d6-b8c46718e14f'
+  module:
+    - block_content
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_osha_frontend_block_2
+theme: bootstrap_barrio
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:6750f86d-b838-4615-b3d6-b8c46718e14f'
+settings:
+  id: 'block_content:6750f86d-b838-4615-b3d6-b8c46718e14f'
+  label: ''
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

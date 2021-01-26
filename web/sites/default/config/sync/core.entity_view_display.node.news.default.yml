@@ -1,0 +1,112 @@
+uuid: b6b96a2b-5c36-47f9-9771-611a28f573d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_news.default
+    - field.field.node.news.body
+    - field.field.node.news.comment_node_news
+    - field.field.node.news.field_activity
+    - field.field.node.news.field_aditional_resources
+    - field.field.node.news.field_archived
+    - field.field.node.news.field_avoid_archived
+    - field.field.node.news.field_character_count
+    - field.field.node.news.field_expiration_date
+    - field.field.node.news.field_flickr_date
+    - field.field.node.news.field_image
+    - field.field.node.news.field_migrate_hwc
+    - field.field.node.news.field_migration_source
+    - field.field.node.news.field_page_count
+    - field.field.node.news.field_publication_date
+    - field.field.node.news.field_show_in_ncw
+    - field.field.node.news.field_show_on
+    - field.field.node.news.field_source_url
+    - field.field.node.news.field_tags
+    - field.field.node.news.field_thesaurus
+    - field.field.node.news.field_thesaurus_2020
+    - node.type.news
+  module:
+    - comment
+    - datetime
+    - image
+    - text
+    - user
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  body:
+    label: hidden
+    weight: 4
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment_node_news:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  field_aditional_resources:
+    label: above
+    weight: 5
+    type: entity_reference_entity_view
+    settings:
+      view_mode: osha_resources
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    label: above
+    weight: 6
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_image:
+    label: hidden
+    weight: 0
+    type: image
+    settings:
+      image_link: ''
+      image_style: medium_crop_220
+    third_party_settings: {  }
+    region: content
+  field_publication_date:
+    label: hidden
+    weight: 1
+    type: datetime_default
+    settings:
+      format_type: osha_day_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_activity: true
+  field_archived: true
+  field_avoid_archived: true
+  field_character_count: true
+  field_expiration_date: true
+  field_migrate_hwc: true
+  field_migration_source: true
+  field_page_count: true
+  field_show_in_ncw: true
+  field_show_on: true
+  field_source_url: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  langcode: true
+  search_api_excerpt: true

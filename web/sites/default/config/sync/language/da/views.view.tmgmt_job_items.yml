@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Status
+        label:
+          label: Etiket
+        tags_count:
+          label: Tags
+        operations:
+          label: Handlinger
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Etiket

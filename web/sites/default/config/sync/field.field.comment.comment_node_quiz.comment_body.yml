@@ -1,0 +1,21 @@
+uuid: cb88cb86-7c3d-4715-90b6-d90268a33b11
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_quiz
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.comment_node_quiz.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: comment_node_quiz
+label: Comment
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

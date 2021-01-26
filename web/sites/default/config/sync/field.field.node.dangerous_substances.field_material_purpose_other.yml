@@ -1,0 +1,19 @@
+uuid: c8581f89-81f2-402f-b794-4aa8e20ecf4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_material_purpose_other
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_material_purpose_other
+field_name: field_material_purpose_other
+entity_type: node
+bundle: dangerous_substances
+label: 'Purpose of the material other'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

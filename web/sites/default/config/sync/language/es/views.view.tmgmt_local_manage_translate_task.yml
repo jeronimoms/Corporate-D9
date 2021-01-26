@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        uid:
+          expose:
+            label: Proveedor
+  closed:
+    display_title: Cerrado
+    display_options:
+      menu:
+        title: Cerrado
+      fields:
+        status:
+          label: Estado
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        uid:
+          expose:
+            label: Proveedor
+  completed:
+    display_title: Completado
+    display_options:
+      menu:
+        title: Completado
+      fields:
+        status:
+          label: Estado
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        uid:
+          expose:
+            label: Proveedor
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        uid:
+          expose:
+            label: Proveedor
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones
+      filters:
+        uid:
+          expose:
+            label: Proveedor
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Estado
+        target_language:
+          label: Para
+        operations:
+          label: Operaciones

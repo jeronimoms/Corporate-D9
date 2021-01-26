@@ -1,0 +1,21 @@
+uuid: ab19a816-6aff-4709-a896-229b4fe9b177
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expiration_date
+    - node.type.seminar
+  module:
+    - datetime
+id: node.seminar.field_expiration_date
+field_name: field_expiration_date
+entity_type: node
+bundle: seminar
+label: 'Expiration date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

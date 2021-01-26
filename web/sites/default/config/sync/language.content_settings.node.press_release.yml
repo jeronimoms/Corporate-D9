@@ -1,0 +1,16 @@
+uuid: 1992c545-fdaf-4597-ba3f-1db3dc7787cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.press_release
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.press_release
+target_entity_type_id: node
+target_bundle: press_release
+default_langcode: und
+language_alterable: true

@@ -1,0 +1,53 @@
+uuid: b67d8a4f-33f5-4ee5-aad3-cef06ddb9157
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_newsletter_article.default
+    - field.field.node.newsletter_article.body
+    - field.field.node.newsletter_article.comment_node_newsletter_article
+    - field.field.node.newsletter_article.field_flickr_date
+    - node.type.newsletter_article
+  module:
+    - comment
+    - datetime
+    - text
+    - user
+id: node.newsletter_article.default
+targetEntityType: node
+bundle: newsletter_article
+mode: default
+content:
+  body:
+    label: hidden
+    weight: 0
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment_node_newsletter_article:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    label: above
+    weight: 2
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Süzgeç
+      fields:
+        nothing:
+          admin_label: Simge
+        name:
+          label: Kullanıcı
+        link:
+          label: İşlemler

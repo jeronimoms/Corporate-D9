@@ -1,0 +1,21 @@
+uuid: 196da89c-21ae-40ea-ba3a-f72b089ec30b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_calls
+label: 'Content - Calls'
+type: 'canonical_entities:node'
+pattern: 'about-eu-osha/procurement/[node:title]'
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      calls: calls
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: 0
+relationships: {  }

@@ -1,0 +1,23 @@
+uuid: ec2fe2aa-847e-461e-8f56-02b72a4db1e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_character_count
+    - node.type.publication
+id: node.publication.field_character_count
+field_name: field_character_count
+entity_type: node
+bundle: publication
+label: 'Character count'
+description: 'Automatically calculated when saving. The count of characters found in the default language text (English).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: 0
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtruoti
+      fields:
+        type:
+          label: 'Turinio tipas'
+        status:
+          label: Būsena
+        operations:
+          label: Veiksmai
+      filters:
+        type:
+          expose:
+            label: 'Turinio tipas'
+        status:
+          expose:
+            label: Būsena
+        langcode:
+          expose:
+            label: Kalba

@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Φίλτρο
+      fields:
+        name:
+          label: 'Όνομα χρήστη'
+        status:
+          label: Κατάσταση
+        roles_target_id:
+          label: Ρόλοι
+        operations:
+          label: Λειτουργίες
+      filters:
+        status:
+          group_info:
+            label: Κατάσταση

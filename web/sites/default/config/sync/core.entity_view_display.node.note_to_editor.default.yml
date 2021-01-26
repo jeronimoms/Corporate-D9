@@ -1,0 +1,57 @@
+uuid: 64863a92-0bf1-4255-840b-c364de9550d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_note_to_editor.default
+    - field.field.node.note_to_editor.body
+    - field.field.node.note_to_editor.comment_node_note_to_editor
+    - field.field.node.note_to_editor.field_character_count
+    - field.field.node.note_to_editor.field_flickr_date
+    - field.field.node.note_to_editor.field_page_count
+    - node.type.note_to_editor
+  module:
+    - comment
+    - datetime
+    - text
+    - user
+id: node.note_to_editor.default
+targetEntityType: node
+bundle: note_to_editor
+mode: default
+content:
+  body:
+    label: hidden
+    weight: 0
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment_node_note_to_editor:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    label: above
+    weight: 4
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_character_count: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

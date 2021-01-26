@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Suodatus
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Tila
+        target_language:
+          label: Osoitteeseen
+        operations:
+          label: Toimenpiteet
+      filters:
+        uid:
+          expose:
+            label: Sisältölähde
+  closed:
+    display_title: Suljettu
+    display_options:
+      menu:
+        title: Suljettu
+      fields:
+        status:
+          label: Tila
+        target_language:
+          label: Osoitteeseen
+        operations:
+          label: Toimenpiteet
+      filters:
+        uid:
+          expose:
+            label: Sisältölähde
+  completed:
+    display_title: Valmis
+    display_options:
+      menu:
+        title: Valmis
+      fields:
+        status:
+          label: Tila
+        target_language:
+          label: Osoitteeseen
+        operations:
+          label: Toimenpiteet
+      filters:
+        uid:
+          expose:
+            label: Sisältölähde
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Tila
+        target_language:
+          label: Osoitteeseen
+        operations:
+          label: Toimenpiteet
+      filters:
+        uid:
+          expose:
+            label: Sisältölähde
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Tila
+        target_language:
+          label: Osoitteeseen
+        operations:
+          label: Toimenpiteet
+      filters:
+        uid:
+          expose:
+            label: Sisältölähde
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Tila
+        target_language:
+          label: Osoitteeseen
+        operations:
+          label: Toimenpiteet

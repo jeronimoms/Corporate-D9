@@ -1,0 +1,32 @@
+uuid: ef0ddbab-d395-48f2-83a5-5da118f542bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.slideshare.comment_node_slideshare
+    - field.field.node.slideshare.field_character_count
+    - field.field.node.slideshare.field_flickr_date
+    - field.field.node.slideshare.field_page_count
+    - field.field.node.slideshare.field_slideshare_thumbnail
+    - node.type.slideshare
+  module:
+    - user
+id: node.slideshare.osha_resources
+targetEntityType: node
+bundle: slideshare
+mode: osha_resources
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_slideshare: true
+  field_character_count: true
+  field_flickr_date: true
+  field_page_count: true
+  field_slideshare_thumbnail: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,15 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Sía
+      fields:
+        filename:
+          label: Nafn
+        status:
+          label: Staða
+      filters:
+        status:
+          expose:
+            label: Staða

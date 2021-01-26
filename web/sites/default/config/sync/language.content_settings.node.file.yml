@@ -1,0 +1,16 @@
+uuid: bac4a8d3-1dfa-4bcf-a89f-e1c95eba1726
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.file
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.file
+target_entity_type_id: node
+target_bundle: file
+default_langcode: und
+language_alterable: true

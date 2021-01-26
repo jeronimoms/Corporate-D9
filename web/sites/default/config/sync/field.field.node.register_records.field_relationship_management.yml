@@ -1,0 +1,27 @@
+uuid: ea6b0225-f270-44ba-af13-827cc7badaa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_relationship_management
+    - node.type.register_records
+  module:
+    - file
+id: node.register_records.field_relationship_management
+field_name: field_relationship_management
+entity_type: node
+bundle: register_records
+label: 'Client Relationship Management'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

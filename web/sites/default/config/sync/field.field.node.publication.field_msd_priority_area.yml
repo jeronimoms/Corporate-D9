@@ -1,0 +1,26 @@
+uuid: 039ffd1f-d966-4dec-b9d4-47ba02ceedc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_msd_priority_area
+    - node.type.publication
+    - taxonomy.vocabulary.msd_priority_area
+id: node.publication.field_msd_priority_area
+field_name: field_msd_priority_area
+entity_type: node
+bundle: publication
+label: 'MSD Priority area'
+description: 'Select Priority area for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      msd_priority_area: msd_priority_area
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

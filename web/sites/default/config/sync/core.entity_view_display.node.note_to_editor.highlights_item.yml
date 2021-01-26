@@ -1,0 +1,32 @@
+uuid: 777e09e2-72ab-4dbd-b16c-a58b033c411b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlights_item
+    - field.field.node.note_to_editor.body
+    - field.field.node.note_to_editor.comment_node_note_to_editor
+    - field.field.node.note_to_editor.field_character_count
+    - field.field.node.note_to_editor.field_flickr_date
+    - field.field.node.note_to_editor.field_page_count
+    - node.type.note_to_editor
+  module:
+    - user
+id: node.note_to_editor.highlights_item
+targetEntityType: node
+bundle: note_to_editor
+mode: highlights_item
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_note_to_editor: true
+  field_character_count: true
+  field_flickr_date: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

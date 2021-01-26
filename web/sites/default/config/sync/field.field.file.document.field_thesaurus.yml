@@ -1,0 +1,26 @@
+uuid: 563de7ed-6aa3-4295-8cfc-8dc825e3d1d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.file.field_thesaurus
+    - file_entity.type.document
+    - taxonomy.vocabulary.thesaurus
+id: file.document.field_thesaurus
+field_name: field_thesaurus
+entity_type: file
+bundle: document
+label: Thesaurus
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      thesaurus: thesaurus
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

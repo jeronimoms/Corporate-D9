@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Status
+        label:
+          label: Label
+        tags_count:
+          label: Labels
+        operations:
+          label: Bewerkingen
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Label

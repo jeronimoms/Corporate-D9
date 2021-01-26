@@ -1,0 +1,16 @@
+uuid: 4718298b-70ff-41ef-8ff3-1b8490aa2a5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.banner_links
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.banner_links
+target_entity_type_id: taxonomy_term
+target_bundle: banner_links
+default_langcode: und
+language_alterable: true

@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Estado
+        label:
+          label: Etiqueta
+        tags_count:
+          label: Etiquetas
+        operations:
+          label: Operações
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Etiqueta

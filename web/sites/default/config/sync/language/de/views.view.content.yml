@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+      fields:
+        type:
+          label: Inhaltstyp
+        status:
+          label: Status
+        operations:
+          label: Aktionen
+      filters:
+        type:
+          expose:
+            label: Inhaltstyp
+        status:
+          expose:
+            label: Status
+        langcode:
+          expose:
+            label: Sprache

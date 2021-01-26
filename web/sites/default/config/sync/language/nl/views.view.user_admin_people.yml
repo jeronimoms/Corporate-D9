@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+      fields:
+        name:
+          label: Gebruikersnaam
+        status:
+          label: Status
+        roles_target_id:
+          label: Rollen
+        operations:
+          label: Bewerkingen
+      filters:
+        status:
+          group_info:
+            label: Status

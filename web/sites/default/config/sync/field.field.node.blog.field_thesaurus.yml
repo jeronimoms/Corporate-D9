@@ -1,0 +1,26 @@
+uuid: e7bb9e88-6920-4eae-9095-e84a3daa2cf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thesaurus
+    - node.type.blog
+    - taxonomy.vocabulary.thesaurus
+id: node.blog.field_thesaurus
+field_name: field_thesaurus
+entity_type: node
+bundle: blog
+label: Thesaurus
+description: 'Select Thesaurus for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      thesaurus: thesaurus
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

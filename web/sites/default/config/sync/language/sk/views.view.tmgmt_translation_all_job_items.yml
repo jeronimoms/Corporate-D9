@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Stav
+        label:
+          label: Označenie
+        target_language:
+          label: Komu
+        tags_count:
+          label: Značky
+        operations:
+          label: Operácie
+      filters:
+        state:
+          group_info:
+            label: Stav

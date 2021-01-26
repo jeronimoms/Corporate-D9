@@ -1,0 +1,16 @@
+uuid: 67f6fd2b-ef52-435b-a984-a3379fef20ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contact_type_of_sender
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.contact_type_of_sender
+target_entity_type_id: taxonomy_term
+target_bundle: contact_type_of_sender
+default_langcode: und
+language_alterable: true

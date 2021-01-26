@@ -1,0 +1,30 @@
+uuid: 802902bb-a181-4790-bb3a-ab8084444b40
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_intellectual_property_righ
+field_name: field_intellectual_property_righ
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Yes'
+      label: 'Yes'
+    -
+      value: 'No'
+      label: 'No'
+    -
+      value: 'Not known'
+      label: 'Not known'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,27 @@
+uuid: 1bb67a13-f9c5-46c4-bb15-b91ba046fcf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_events_and_meetings
+    - node.type.register_records
+  module:
+    - file
+id: node.register_records.field_events_and_meetings
+field_name: field_events_and_meetings
+entity_type: node
+bundle: register_records
+label: 'Events and meetings'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

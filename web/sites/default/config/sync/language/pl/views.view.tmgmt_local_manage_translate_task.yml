@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtr
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Do
+        operations:
+          label: Operacje
+      filters:
+        uid:
+          expose:
+            label: Usługodawca
+  closed:
+    display_title: Zamknięte
+    display_options:
+      menu:
+        title: Zamknięte
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Do
+        operations:
+          label: Operacje
+      filters:
+        uid:
+          expose:
+            label: Usługodawca
+  completed:
+    display_title: Zakończone
+    display_options:
+      menu:
+        title: Zakończone
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Do
+        operations:
+          label: Operacje
+      filters:
+        uid:
+          expose:
+            label: Usługodawca
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Do
+        operations:
+          label: Operacje
+      filters:
+        uid:
+          expose:
+            label: Usługodawca
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Do
+        operations:
+          label: Operacje
+      filters:
+        uid:
+          expose:
+            label: Usługodawca
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Status
+        target_language:
+          label: Do
+        operations:
+          label: Operacje

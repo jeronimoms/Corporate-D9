@@ -1,0 +1,16 @@
+uuid: cded3412-7515-4bed-a60a-ca05bcfda817
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.job_vacancies
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.job_vacancies
+target_entity_type_id: node
+target_bundle: job_vacancies
+default_langcode: und
+language_alterable: true

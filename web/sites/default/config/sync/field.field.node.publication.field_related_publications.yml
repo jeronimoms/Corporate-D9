@@ -1,0 +1,29 @@
+uuid: fb5139d9-f17b-4808-8260-f9663c082a7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_publications
+    - node.type.publication
+id: node.publication.field_related_publications
+field_name: field_related_publications
+entity_type: node
+bundle: publication
+label: 'Twin publications'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: 'title_field:value'
+      direction: ASC
+    target_bundles:
+      publication: publication
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 6185da03-33ed-4a0f-827b-69e956a54441
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seminar_end_date
+    - node.type.seminar
+  module:
+    - datetime
+id: node.seminar.field_seminar_end_date
+field_name: field_seminar_end_date
+entity_type: node
+bundle: seminar
+label: 'End date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

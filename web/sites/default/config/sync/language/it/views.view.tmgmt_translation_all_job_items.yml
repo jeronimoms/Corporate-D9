@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Stato
+        label:
+          label: Etichetta
+        target_language:
+          label: A
+        tags_count:
+          label: Etichette
+        operations:
+          label: Operazioni
+      filters:
+        state:
+          group_info:
+            label: Stato

@@ -1,0 +1,21 @@
+uuid: 806614dd-5233-44c2-b97c-b19de05f7a20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_vacancies_location
+    - node.type.job_vacancies
+id: node.job_vacancies.field_job_vacancies_location
+field_name: field_job_vacancies_location
+entity_type: node
+bundle: job_vacancies
+label: Location(s)
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: Bilbao
+default_value_callback: ''
+settings: {  }
+field_type: string

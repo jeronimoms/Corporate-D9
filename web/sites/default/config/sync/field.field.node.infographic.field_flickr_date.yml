@@ -1,0 +1,21 @@
+uuid: bbfd8d90-d0eb-451e-959b-772981ae597f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_flickr_date
+    - node.type.infographic
+  module:
+    - datetime
+id: node.infographic.field_flickr_date
+field_name: field_flickr_date
+entity_type: node
+bundle: infographic
+label: 'Flickr date taken'
+description: 'Grab Flickr photos taken on or between these dates only.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

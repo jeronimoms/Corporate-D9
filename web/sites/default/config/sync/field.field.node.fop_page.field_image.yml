@@ -1,0 +1,35 @@
+uuid: f09ae491-ee6e-4416-ab87-5c4dfcbf3942
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - node.type.fop_page
+  module:
+    - image
+id: node.fop_page.field_image
+field_name: field_image
+entity_type: node
+bundle: fop_page
+label: Image
+description: 'The header image that will be displayed on page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: false
+  default_image: 0
+  file_directory: fop_page
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  caption_field: false
+  caption_field_required: false
+  alt_field_required: true
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

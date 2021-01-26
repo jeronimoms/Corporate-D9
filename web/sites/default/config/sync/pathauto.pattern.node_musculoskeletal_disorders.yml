@@ -1,0 +1,21 @@
+uuid: 1ed0e30a-5206-4f36-8be1-0ff8e306387b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_musculoskeletal_disorders
+label: 'Content - Musculoskeletal Disorders'
+type: 'canonical_entities:node'
+pattern: 'themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders/[node:title]'
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      musculoskeletal_disorders: musculoskeletal_disorders
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: 0
+relationships: {  }

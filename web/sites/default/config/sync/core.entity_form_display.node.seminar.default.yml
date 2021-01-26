@@ -1,0 +1,234 @@
+uuid: 7ae8a12d-a85e-4487-9b5a-9b761984fe1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.seminar.body
+    - field.field.node.seminar.comment_node_seminar
+    - field.field.node.seminar.field_activity
+    - field.field.node.seminar.field_archived
+    - field.field.node.seminar.field_character_count
+    - field.field.node.seminar.field_country_code
+    - field.field.node.seminar.field_expiration_date
+    - field.field.node.seminar.field_flickr_date
+    - field.field.node.seminar.field_metatag
+    - field.field.node.seminar.field_page_count
+    - field.field.node.seminar.field_pages_count
+    - field.field.node.seminar.field_publication_date
+    - field.field.node.seminar.field_related_resources
+    - field.field.node.seminar.field_report
+    - field.field.node.seminar.field_seminar_end_date
+    - field.field.node.seminar.field_seminar_location
+    - field.field.node.seminar.field_seminar_start_date
+    - field.field.node.seminar.field_show_eu_flag
+    - field.field.node.seminar.field_tags
+    - field.field.node.seminar.field_thesaurus
+    - field.field.node.seminar.field_thesaurus_2020
+    - node.type.seminar
+  module:
+    - comment
+    - datetime
+    - file
+    - metatag
+    - path
+    - text
+    - workbench_moderation
+id: node.seminar.default
+targetEntityType: node
+bundle: seminar
+mode: default
+content:
+  body:
+    weight: 5
+    type: text_textarea_with_summary
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  comment_node_seminar:
+    type: comment_default
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_activity:
+    weight: 20
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_archived:
+    weight: 13
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_character_count:
+    weight: 17
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_country_code:
+    weight: 38
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_expiration_date:
+    weight: 4
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    weight: 2
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_metatag:
+    weight: 122
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_page_count:
+    weight: 19
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_pages_count:
+    weight: 34
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_publication_date:
+    weight: 3
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_related_resources:
+    weight: 8
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_report:
+    weight: 9
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_seminar_end_date:
+    weight: 12
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_seminar_location:
+    weight: 10
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_seminar_start_date:
+    weight: 11
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_show_eu_flag:
+    weight: 32
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_tags:
+    weight: 6
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_thesaurus: true
+  field_thesaurus_2020: true

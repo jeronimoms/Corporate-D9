@@ -1,0 +1,36 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Филтрирај
+      fields:
+        comment_bulk_form:
+          action_title: Акција
+        subject:
+          label: Предмет
+        operations:
+          label: Операције
+      filters:
+        subject:
+          expose:
+            label: Предмет
+        langcode:
+          expose:
+            label: Језик
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Предмет
+        langcode:
+          expose:
+            label: Језик
+      fields:
+        comment_bulk_form:
+          action_title: Акција
+        subject:
+          label: Предмет
+        operations:
+          label: Операције

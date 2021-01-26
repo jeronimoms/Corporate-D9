@@ -1,0 +1,21 @@
+uuid: ee9dff48-61cb-4c99-bc10-db81994a0970
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_information
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.field_other_information
+field_name: field_other_information
+entity_type: node
+bundle: dangerous_substances
+label: 'Other information'
+description: 'Please add the other information for the material. Please use "Paste from Word" button when you copy text from MS Word'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

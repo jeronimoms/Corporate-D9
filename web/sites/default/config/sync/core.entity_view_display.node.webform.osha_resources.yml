@@ -1,0 +1,28 @@
+uuid: 4f87819b-349c-4a5e-842d-e514d5ae5458
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.webform.comment_node_webform
+    - field.field.node.webform.field_flickr_date
+    - field.field.node.webform.field_page_introduction
+    - node.type.webform
+  module:
+    - user
+id: node.webform.osha_resources
+targetEntityType: node
+bundle: webform
+mode: osha_resources
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_webform: true
+  field_flickr_date: true
+  field_page_introduction: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Филтър
+      fields:
+        type:
+          label: 'Тип на съдържанието'
+        status:
+          label: Статус
+        operations:
+          label: Действия
+      filters:
+        type:
+          expose:
+            label: 'Тип на съдържанието'
+        status:
+          expose:
+            label: Статус
+        langcode:
+          expose:
+            label: Език

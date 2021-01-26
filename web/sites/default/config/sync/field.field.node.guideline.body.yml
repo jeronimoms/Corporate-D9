@@ -1,0 +1,23 @@
+uuid: 54cab81c-e4e5-462a-b5b3-b0de844fb8ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.guideline
+  module:
+    - text
+id: node.guideline.body
+field_name: body
+entity_type: node
+bundle: guideline
+label: Body
+description: 'Please introduce in this box the text of this section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

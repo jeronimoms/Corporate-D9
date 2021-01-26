@@ -1,0 +1,16 @@
+uuid: 2fd221eb-4040-4457-959d-cf01fe32c0a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_objective
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.material_objective
+target_entity_type_id: taxonomy_term
+target_bundle: material_objective
+default_langcode: und
+language_alterable: false

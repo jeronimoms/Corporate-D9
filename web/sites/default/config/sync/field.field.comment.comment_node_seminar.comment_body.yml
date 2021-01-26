@@ -1,0 +1,21 @@
+uuid: ac9068e4-b09d-48ea-8c60-ab5318f14879
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_seminar
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.comment_node_seminar.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: comment_node_seminar
+label: Comment
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

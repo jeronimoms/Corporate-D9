@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrera
+      fields:
+        name:
+          label: Användarnamn
+        status:
+          label: Status
+        roles_target_id:
+          label: Roller
+        operations:
+          label: Funktioner
+      filters:
+        status:
+          group_info:
+            label: Status

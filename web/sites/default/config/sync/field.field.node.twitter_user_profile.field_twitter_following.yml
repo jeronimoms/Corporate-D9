@@ -1,0 +1,23 @@
+uuid: 7b0083ec-b955-47a6-9f24-2320803cecc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitter_following
+    - node.type.twitter_user_profile
+id: node.twitter_user_profile.field_twitter_following
+field_name: field_twitter_following
+entity_type: node
+bundle: twitter_user_profile
+label: Following
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: null
+  prefix: ''
+  suffix: ''
+field_type: integer

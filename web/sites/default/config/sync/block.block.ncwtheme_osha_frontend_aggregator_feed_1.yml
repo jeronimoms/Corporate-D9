@@ -1,0 +1,22 @@
+uuid: 7838f5d1-792f-465f-b995-eb022a1336da
+langcode: en
+status: true
+dependencies:
+  module:
+    - aggregator
+  theme:
+    - ncwtheme
+id: ncwtheme_osha_frontend_aggregator_feed_1
+theme: ncwtheme
+region: content
+weight: 25
+provider: null
+plugin: aggregator_feed_block
+settings:
+  id: broken
+  label: 'EU-OSHA in the media'
+  provider: core
+  label_display: visible
+  block_count: 2
+  feed: '1'
+visibility: {  }

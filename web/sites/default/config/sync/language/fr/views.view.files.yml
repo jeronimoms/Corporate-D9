@@ -1,0 +1,15 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrer
+      fields:
+        filename:
+          label: Nom
+        status:
+          label: État
+      filters:
+        status:
+          expose:
+            label: État

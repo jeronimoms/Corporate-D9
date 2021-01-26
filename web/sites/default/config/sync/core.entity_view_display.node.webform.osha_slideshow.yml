@@ -1,0 +1,28 @@
+uuid: 7676bb92-53b0-411b-be86-f9b490d85c1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_slideshow
+    - field.field.node.webform.comment_node_webform
+    - field.field.node.webform.field_flickr_date
+    - field.field.node.webform.field_page_introduction
+    - node.type.webform
+  module:
+    - user
+id: node.webform.osha_slideshow
+targetEntityType: node
+bundle: webform
+mode: osha_slideshow
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_webform: true
+  field_flickr_date: true
+  field_page_introduction: true
+  langcode: true
+  search_api_excerpt: true

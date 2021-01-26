@@ -1,0 +1,140 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtra
+      fields:
+        title:
+          label: Etichetta
+      filters:
+        status:
+          expose:
+            label: Stato
+  closed:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        title:
+          label: Etichetta
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          expose:
+            label: Stato
+        title:
+          expose:
+            label: Etichetta
+      menu:
+        title: Chiuso
+  completed:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        title:
+          label: Etichetta
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          expose:
+            label: Stato
+        title:
+          expose:
+            label: Etichetta
+      menu:
+        title: Completato
+  eligible:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        title:
+          label: Etichetta
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          expose:
+            label: Stato
+        title:
+          expose:
+            label: Etichetta
+  my_tasks:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        title:
+          label: Etichetta
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          expose:
+            label: Stato
+        title:
+          expose:
+            label: Etichetta
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        title:
+          label: Etichetta
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          expose:
+            label: Stato
+        title:
+          expose:
+            label: Etichetta
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        title:
+          label: Etichetta
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          expose:
+            label: Stato
+        title:
+          expose:
+            label: Etichetta
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        title:
+          label: Etichetta
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          expose:
+            label: Stato

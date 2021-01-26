@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtra
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        uid:
+          expose:
+            label: 'Fonte esterna'
+  closed:
+    display_title: Chiuso
+    display_options:
+      menu:
+        title: Chiuso
+      fields:
+        status:
+          label: Stato
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        uid:
+          expose:
+            label: 'Fonte esterna'
+  completed:
+    display_title: Completato
+    display_options:
+      menu:
+        title: Completato
+      fields:
+        status:
+          label: Stato
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        uid:
+          expose:
+            label: 'Fonte esterna'
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        uid:
+          expose:
+            label: 'Fonte esterna'
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        target_language:
+          label: A
+        operations:
+          label: Operazioni
+      filters:
+        uid:
+          expose:
+            label: 'Fonte esterna'
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Stato
+        target_language:
+          label: A
+        operations:
+          label: Operazioni

@@ -1,0 +1,23 @@
+uuid: 30daa5eb-bbe9-49c1-9c21-807294e561d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_count
+    - node.type.slideshare
+id: node.slideshare.field_page_count
+field_name: field_page_count
+entity_type: node
+bundle: slideshare
+label: 'Page count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

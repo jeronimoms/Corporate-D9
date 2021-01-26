@@ -1,0 +1,42 @@
+label: Kommentit
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Suodatus
+      fields:
+        comment_bulk_form:
+          action_title: Toiminto
+        subject:
+          label: Aihe
+        operations:
+          label: Toimenpiteet
+      filters:
+        subject:
+          expose:
+            label: Aihe
+        langcode:
+          expose:
+            label: Kieli
+      title: Kommentit
+  page_published:
+    display_options:
+      menu:
+        title: Kommentit
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Aihe
+        langcode:
+          expose:
+            label: Kieli
+      fields:
+        comment_bulk_form:
+          action_title: Toiminto
+        subject:
+          label: Aihe
+        operations:
+          label: Toimenpiteet

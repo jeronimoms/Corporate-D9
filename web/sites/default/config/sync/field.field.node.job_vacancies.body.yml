@@ -1,0 +1,23 @@
+uuid: 785e272f-382d-433a-9c26-ea0eddaad89d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.job_vacancies
+  module:
+    - text
+id: node.job_vacancies.body
+field_name: body
+entity_type: node
+bundle: job_vacancies
+label: Body
+description: 'Please introduce in this box the text of this section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

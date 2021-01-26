@@ -1,0 +1,20 @@
+uuid: 65f576ba-1586-4537-836e-9a19480a6b4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+id: node.comment_node_flickr_gallery
+field_name: comment_node_flickr_gallery
+entity_type: node
+type: comment
+settings:
+  comment_type: comment_node_flickr_gallery
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 84ec2cd8-e09e-4d55-8fea-5c607336658a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - seven
+id: osha_admin_system_powered_by
+theme: seven
+region: content
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: ''
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: f185d7ad-3c62-46f5-8649-cbac50def98b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_activities
+    - node.type.register_records
+  module:
+    - file
+id: node.register_records.field_research_activities
+field_name: field_research_activities
+entity_type: node
+bundle: register_records
+label: 'Research activities'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

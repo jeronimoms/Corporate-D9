@@ -1,0 +1,27 @@
+uuid: 8c2cb296-84f5-456f-a8bd-b88f79313576
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_websites_online_services
+    - node.type.register_records
+  module:
+    - file
+id: node.register_records.field_websites_online_services
+field_name: field_websites_online_services
+entity_type: node
+bundle: register_records
+label: 'Websites and online services'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

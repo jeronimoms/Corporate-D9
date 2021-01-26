@@ -1,0 +1,26 @@
+uuid: 4e848de9-27cb-4259-96d7-24833e08654a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_target_group
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.target_group
+id: node.dangerous_substances.field_target_group
+field_name: field_target_group
+entity_type: node
+bundle: dangerous_substances
+label: 'Target group'
+description: 'Please select a target group from the drop down list'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      target_group: target_group
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

@@ -1,0 +1,37 @@
+uuid: 9a6a4f2a-5f9d-45d4-8216-e3ea920cf600
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.file.thumbnail
+    - field.field.file.document.field_file_description
+    - field.field.file.document.field_nace_codes
+    - field.field.file.document.field_tags
+    - field.field.file.document.field_thesaurus
+    - file_entity.type.document
+_core:
+  default_config_hash: zlB0VonOjJywsH9sIrMlYt9bIpPdi3QysmBkBUaV1YY
+id: file.document.thumbnail
+targetEntityType: file
+bundle: document
+mode: thumbnail
+content:
+  filename:
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    label: hidden
+    region: content
+hidden:
+  field_file_description: true
+  field_nace_codes: true
+  field_tags: true
+  field_thesaurus: true
+  filemime: true
+  filesize: true
+  langcode: true
+  search_api_excerpt: true
+  uid: true
+  uri: true

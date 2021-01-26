@@ -1,0 +1,40 @@
+check_links_types: 0
+default_url_scheme: 'http://'
+base_path: ''
+extract:
+  from_a: true
+  from_audio: false
+  from_embed: false
+  from_iframe: false
+  from_img: false
+  from_object: false
+  from_video: false
+  filter_blacklist:
+    filter_autop: filter_autop
+    media_filter: '0'
+    filter_url: '0'
+    pathologic: '0'
+    filter_htmlcorrector: '0'
+    filter_html_escape: '0'
+    media_filter_paragraph_fix: '0'
+    filter_html: '0'
+    osha_tmgmt_filter_oiraurl: '0'
+    osha_tmgmt_filter_id: '0'
+    spamspan: '0'
+check:
+  connections_max: 8
+  connections_max_per_domain: 2
+  disable_link_check_for_urls: "example.com\nexample.net\nexample.org"
+  library: core
+  interval: 2419200
+  useragent: 'Drupal (+http://drupal.org/)'
+error:
+  action_status_code_301: 0
+  action_status_code_404: 0
+  ignore_response_codes: "200\r\n206\r\n302\r\n304\r\n401\r\n403\r\n301"
+  impersonate_account: osha_admin
+logging:
+  level: 6
+_core:
+  default_config_hash: FzFKuqOuk667AkDorrqvXkc_-M4D-Ac1XeGGusxS1JU
+scan_blocks: false

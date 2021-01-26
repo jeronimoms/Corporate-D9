@@ -1,0 +1,32 @@
+uuid: e00a9814-d375-4544-9e55-c635b07a04f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.dangerous_substances
+    - field.field.node.external_url.comment_node_external_url
+    - field.field.node.external_url.field_character_count
+    - field.field.node.external_url.field_external_url
+    - field.field.node.external_url.field_flickr_date
+    - field.field.node.external_url.field_page_count
+    - node.type.external_url
+  module:
+    - user
+id: node.external_url.dangerous_substances
+targetEntityType: node
+bundle: external_url
+mode: dangerous_substances
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_external_url: true
+  field_character_count: true
+  field_external_url: true
+  field_flickr_date: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

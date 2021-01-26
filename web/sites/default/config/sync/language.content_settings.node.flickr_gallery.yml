@@ -1,0 +1,16 @@
+uuid: c6e28ec2-305d-409b-ae56-227d0e156374
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.flickr_gallery
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.flickr_gallery
+target_entity_type_id: node
+target_bundle: flickr_gallery
+default_langcode: und
+language_alterable: true

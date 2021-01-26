@@ -1,0 +1,26 @@
+uuid: 3d9e3d4d-7dc5-4fbb-8251-7cb1b678f39a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activity
+    - node.type.directive
+    - taxonomy.vocabulary.activity
+id: node.directive.field_activity
+field_name: field_activity
+entity_type: node
+bundle: directive
+label: Activity
+description: 'Select Activity for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      activity: activity
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

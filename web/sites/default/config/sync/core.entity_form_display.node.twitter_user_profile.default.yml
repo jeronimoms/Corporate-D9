@@ -1,0 +1,253 @@
+uuid: bdf624ac-5299-4577-9db8-21e33ea87a3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.twitter_user_profile.body
+    - field.field.node.twitter_user_profile.field_background_color
+    - field.field.node.twitter_user_profile.field_background_image
+    - field.field.node.twitter_user_profile.field_banner_image
+    - field.field.node.twitter_user_profile.field_flickr_date
+    - field.field.node.twitter_user_profile.field_link_color
+    - field.field.node.twitter_user_profile.field_profile_image
+    - field.field.node.twitter_user_profile.field_profile_text_color
+    - field.field.node.twitter_user_profile.field_sidebar_border_color
+    - field.field.node.twitter_user_profile.field_sidebar_fill_color
+    - field.field.node.twitter_user_profile.field_tweet_author_verified
+    - field.field.node.twitter_user_profile.field_twitter_a_profile_url
+    - field.field.node.twitter_user_profile.field_twitter_a_screen_name
+    - field.field.node.twitter_user_profile.field_twitter_favorites_count
+    - field.field.node.twitter_user_profile.field_twitter_followers
+    - field.field.node.twitter_user_profile.field_twitter_following
+    - field.field.node.twitter_user_profile.field_twitter_location
+    - field.field.node.twitter_user_profile.field_twitter_profile_url
+    - field.field.node.twitter_user_profile.field_twitter_tweet_count
+    - field.field.node.twitter_user_profile.field_twitter_user_id
+    - node.type.twitter_user_profile
+  module:
+    - datetime
+    - file
+    - path
+    - text
+    - workbench_moderation
+id: node.twitter_user_profile.default
+targetEntityType: node
+bundle: twitter_user_profile
+mode: default
+content:
+  body:
+    weight: 31
+    type: text_textarea_with_summary
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_background_color:
+    weight: 13
+    type: string_textfield
+    settings:
+      size: 6
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_background_image:
+    weight: 7
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_banner_image:
+    weight: 11
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    weight: 5
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_link_color:
+    weight: 16
+    type: string_textfield
+    settings:
+      size: 6
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_profile_image:
+    weight: 8
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_profile_text_color:
+    weight: 15
+    type: string_textfield
+    settings:
+      size: 6
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_sidebar_border_color:
+    weight: 17
+    type: string_textfield
+    settings:
+      size: 6
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_sidebar_fill_color:
+    weight: 18
+    type: string_textfield
+    settings:
+      size: 6
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_tweet_author_verified:
+    weight: 3
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_twitter_a_profile_url:
+    weight: 5
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_twitter_a_screen_name:
+    weight: 2
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_twitter_favorites_count:
+    weight: 12
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_twitter_followers:
+    weight: 9
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_twitter_following:
+    weight: 10
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_twitter_location:
+    weight: 4
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_twitter_profile_url:
+    weight: 6
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_twitter_tweet_count:
+    weight: 14
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_twitter_user_id:
+    weight: 1
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

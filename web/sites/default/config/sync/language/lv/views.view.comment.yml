@@ -1,0 +1,42 @@
+label: Komentāri
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrēt
+      fields:
+        comment_bulk_form:
+          action_title: Darbība
+        subject:
+          label: Temats
+        operations:
+          label: Darbības
+      filters:
+        subject:
+          expose:
+            label: Temats
+        langcode:
+          expose:
+            label: Valoda
+      title: Komentāri
+  page_published:
+    display_options:
+      menu:
+        title: Komentāri
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Temats
+        langcode:
+          expose:
+            label: Valoda
+      fields:
+        comment_bulk_form:
+          action_title: Darbība
+        subject:
+          label: Temats
+        operations:
+          label: Darbības

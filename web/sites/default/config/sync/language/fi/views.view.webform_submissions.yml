@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: Toimenpiteet
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Toiminto
+        completed:
+          label: Valmis
+        operations:
+          label: Toimenpiteet
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Toiminto
+        completed:
+          label: Valmis
+        view_webform_submission:
+          label: Toimenpiteet
+        edit_webform_submission:
+          label: Toimenpiteet
+  embed_review:
+    display_options:
+      fields:
+        completed:
+          label: Valmis
+        view_webform_submission:
+          label: Toimenpiteet

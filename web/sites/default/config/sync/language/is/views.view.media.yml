@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Sía
+      fields:
+        media_bulk_form:
+          action_title: Aðgerð
+        status:
+          label: Staða
+        operations:
+          label: Aðgerðir
+      filters:
+        langcode:
+          expose:
+            label: Tungumál

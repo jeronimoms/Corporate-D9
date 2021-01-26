@@ -1,0 +1,108 @@
+uuid: ed5db755-2372-4798-aeec-b481679dbdad
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_highlight.default
+    - field.field.node.highlight.body
+    - field.field.node.highlight.comment_node_highlight
+    - field.field.node.highlight.field_activity
+    - field.field.node.highlight.field_aditional_resources
+    - field.field.node.highlight.field_archived
+    - field.field.node.highlight.field_avoid_archived
+    - field.field.node.highlight.field_character_count
+    - field.field.node.highlight.field_expiration_date
+    - field.field.node.highlight.field_flickr_date
+    - field.field.node.highlight.field_image
+    - field.field.node.highlight.field_image_oshmail
+    - field.field.node.highlight.field_migrate_hwc
+    - field.field.node.highlight.field_page_count
+    - field.field.node.highlight.field_publication_date
+    - field.field.node.highlight.field_show_on
+    - field.field.node.highlight.field_tags
+    - field.field.node.highlight.field_thesaurus
+    - field.field.node.highlight.field_thesaurus_2020
+    - node.type.highlight
+  module:
+    - comment
+    - datetime
+    - image
+    - text
+    - user
+id: node.highlight.default
+targetEntityType: node
+bundle: highlight
+mode: default
+content:
+  body:
+    label: hidden
+    weight: 3
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment_node_highlight:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    region: content
+  field_aditional_resources:
+    label: above
+    weight: 4
+    type: entity_reference_entity_view
+    settings:
+      view_mode: osha_resources
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    label: above
+    weight: 5
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_image:
+    label: hidden
+    weight: 2
+    type: image
+    settings:
+      image_link: ''
+      image_style: medium_crop_220
+    third_party_settings: {  }
+    region: content
+  field_publication_date:
+    label: hidden
+    weight: 0
+    type: datetime_default
+    settings:
+      format_type: osha_day_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_activity: true
+  field_archived: true
+  field_avoid_archived: true
+  field_character_count: true
+  field_expiration_date: true
+  field_image_oshmail: true
+  field_migrate_hwc: true
+  field_page_count: true
+  field_show_on: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  langcode: true
+  search_api_excerpt: true

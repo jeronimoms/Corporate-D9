@@ -1,0 +1,28 @@
+uuid: 22ef1a7a-d259-4ac3-bcbc-6e46f7df5cb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.dangerous_substances
+    - field.field.node.dvs_survey.comment_node_dvs_survey
+    - field.field.node.dvs_survey.field_dvs_code
+    - field.field.node.dvs_survey.field_flickr_date
+    - node.type.dvs_survey
+  module:
+    - user
+id: node.dvs_survey.dangerous_substances
+targetEntityType: node
+bundle: dvs_survey
+mode: dangerous_substances
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_dvs_survey: true
+  field_dvs_code: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: 2e64465c-7b14-434a-94b2-3aaac3da52f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_original
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.field_body_original
+field_name: field_body_original
+entity_type: node
+bundle: dangerous_substances
+label: 'Content (original language)'
+description: 'Please add a short description in original language (only if a description is available on the website or material – no extra drafting or translation). Please use "Paste from Word" button when you copy text from MS Word'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

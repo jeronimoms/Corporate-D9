@@ -1,0 +1,26 @@
+uuid: cdff806e-220f-4e63-9a05-4e31c0b8d469
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thesaurus
+    - node.type.press_release
+    - taxonomy.vocabulary.thesaurus
+id: node.press_release.field_thesaurus
+field_name: field_thesaurus
+entity_type: node
+bundle: press_release
+label: Thesaurus
+description: 'Select Thesaurus for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      thesaurus: thesaurus
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

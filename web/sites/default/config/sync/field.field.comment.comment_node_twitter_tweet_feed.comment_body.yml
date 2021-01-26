@@ -1,0 +1,21 @@
+uuid: 39c2569c-fffe-4f68-9864-0cce0a37a378
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_twitter_tweet_feed
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.comment_node_twitter_tweet_feed.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: comment_node_twitter_tweet_feed
+label: Comment
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

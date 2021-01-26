@@ -1,0 +1,27 @@
+uuid: bc5e550d-88b1-4613-a9fb-8afb1b30d96d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_human_resources
+    - node.type.register_records
+  module:
+    - file
+id: node.register_records.field_human_resources
+field_name: field_human_resources
+entity_type: node
+bundle: register_records
+label: 'Human Resources'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

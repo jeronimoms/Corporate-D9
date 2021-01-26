@@ -1,0 +1,21 @@
+uuid: 7bebae63-ada7-4edd-befa-149eed9d9e14
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_25th_anniversary
+label: 'Content - 25th anniversary'
+type: 'canonical_entities:node'
+pattern: 'about-eu-osha/eu-osha-1994-2019/our-story/[node:title]'
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      25th_anniversary: 25th_anniversary
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: 0
+relationships: {  }

@@ -1,0 +1,19 @@
+uuid: 3d610901-5f86-41c9-b55c-caaad603609d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_synonyms
+    - node.type.thesaurus
+id: node.thesaurus.field_synonyms
+field_name: field_synonyms
+entity_type: node
+bundle: thesaurus
+label: Synonyms
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

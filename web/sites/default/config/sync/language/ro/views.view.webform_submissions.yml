@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      fields:
+        view_webform_submission:
+          label: Operaţii
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Acțiune
+        completed:
+          label: Finalizată
+        operations:
+          label: Operaţii
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Acțiune
+        completed:
+          label: Finalizată
+        view_webform_submission:
+          label: Operaţii
+        edit_webform_submission:
+          label: Operaţii
+  embed_review:
+    display_options:
+      fields:
+        completed:
+          label: Finalizată
+        view_webform_submission:
+          label: Operaţii

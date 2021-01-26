@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrera
+      fields:
+        media_bulk_form:
+          action_title: Åtgärd
+        status:
+          label: Status
+        operations:
+          label: Funktioner
+      filters:
+        langcode:
+          expose:
+            label: Språk

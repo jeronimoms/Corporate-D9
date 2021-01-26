@@ -1,0 +1,26 @@
+uuid: 0e414d9d-0beb-497c-bec4-36f647cf197e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_type
+    - node.type.publication
+    - taxonomy.vocabulary.publication_types
+id: node.publication.field_publication_type
+field_name: field_publication_type
+entity_type: node
+bundle: publication
+label: 'Publication Type'
+description: 'Select Publication Type for this content.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      publication_types: publication_types
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

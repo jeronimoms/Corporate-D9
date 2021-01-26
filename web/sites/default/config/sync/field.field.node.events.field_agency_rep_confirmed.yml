@@ -1,0 +1,19 @@
+uuid: 26a2dff2-18cf-4dab-a91c-1565e6195992
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agency_rep_confirmed
+    - node.type.events
+id: node.events.field_agency_rep_confirmed
+field_name: field_agency_rep_confirmed
+entity_type: node
+bundle: events
+label: 'Agency rep confirmed'
+description: 'Please add here the initials of the staff member attending the event.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

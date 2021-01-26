@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Фильтр
+      fields:
+        type:
+          label: 'Тип материала'
+        status:
+          label: Статус
+        operations:
+          label: Операции
+      filters:
+        type:
+          expose:
+            label: 'Тип материала'
+        status:
+          expose:
+            label: Статус
+        langcode:
+          expose:
+            label: Язык

@@ -1,0 +1,26 @@
+uuid: 2003eb90-ac9d-4750-bcf4-526d46f78915
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tasks_covered
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.hazmap_categories
+id: node.dangerous_substances.field_tasks_covered
+field_name: field_tasks_covered
+entity_type: node
+bundle: dangerous_substances
+label: 'Tasks covered'
+description: 'Please select the HAZMAP categories from the drop down list'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      hazmap_categories: hazmap_categories
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

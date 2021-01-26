@@ -1,0 +1,21 @@
+uuid: e03a7568-2192-4163-9151-03487edfa089
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.infographic
+  module:
+    - datetime
+id: node.infographic.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: infographic
+label: 'Publication date'
+description: 'Please select the date of publication, if it is not possible to identify leave it empty.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

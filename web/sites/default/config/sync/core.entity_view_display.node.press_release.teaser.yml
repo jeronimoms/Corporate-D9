@@ -1,0 +1,76 @@
+uuid: 43f1559e-a801-41ee-8bad-49b9d58939c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.press_release.body
+    - field.field.node.press_release.comment_node_press_release
+    - field.field.node.press_release.field_activity
+    - field.field.node.press_release.field_aditional_resources
+    - field.field.node.press_release.field_archived
+    - field.field.node.press_release.field_character_count
+    - field.field.node.press_release.field_expiration_date
+    - field.field.node.press_release.field_flickr_date
+    - field.field.node.press_release.field_image
+    - field.field.node.press_release.field_nace_codes
+    - field.field.node.press_release.field_page_count
+    - field.field.node.press_release.field_pr_embargo_date
+    - field.field.node.press_release.field_pr_notes_to_editor
+    - field.field.node.press_release.field_publication_date
+    - field.field.node.press_release.field_quote
+    - field.field.node.press_release.field_tags
+    - field.field.node.press_release.field_thesaurus
+    - field.field.node.press_release.field_thesaurus_2020
+    - node.type.press_release
+  module:
+    - datetime
+    - image
+    - user
+id: node.press_release.teaser
+targetEntityType: node
+bundle: press_release
+mode: teaser
+content:
+  field_image:
+    label: hidden
+    weight: 2
+    type: image
+    settings:
+      image_link: content
+      image_style: thumbnail_crop_100
+    third_party_settings: {  }
+    region: content
+  field_publication_date:
+    label: hidden
+    weight: 0
+    type: datetime_default
+    settings:
+      format_type: short_date_eu
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_press_release: true
+  field_activity: true
+  field_aditional_resources: true
+  field_archived: true
+  field_character_count: true
+  field_expiration_date: true
+  field_flickr_date: true
+  field_nace_codes: true
+  field_page_count: true
+  field_pr_embargo_date: true
+  field_pr_notes_to_editor: true
+  field_quote: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,23 @@
+uuid: 26ab2044-be6d-448b-904f-f28e60ffec0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archived
+    - node.type.seminar
+id: node.seminar.field_archived
+field_name: field_archived
+entity_type: node
+bundle: seminar
+label: 'Marked as outdated'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

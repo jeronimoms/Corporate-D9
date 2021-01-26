@@ -1,0 +1,26 @@
+uuid: 0a69c8eb-1481-4ba2-b376-c0781e97f8b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo_gallery_type
+    - node.type.flickr_gallery
+    - taxonomy.vocabulary.photo_gallery_type
+id: node.flickr_gallery.field_photo_gallery_type
+field_name: field_photo_gallery_type
+entity_type: node
+bundle: flickr_gallery
+label: 'Photo Gallery Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      photo_gallery_type: photo_gallery_type
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

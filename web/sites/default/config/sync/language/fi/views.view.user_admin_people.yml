@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Suodatus
+      fields:
+        name:
+          label: Käyttäjätunnus
+        status:
+          label: Tila
+        roles_target_id:
+          label: Käyttäjäroolit
+        operations:
+          label: Toimenpiteet
+      filters:
+        status:
+          group_info:
+            label: Tila

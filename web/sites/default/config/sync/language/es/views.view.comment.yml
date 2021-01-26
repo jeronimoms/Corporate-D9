@@ -1,0 +1,42 @@
+label: Comentarios
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+      fields:
+        comment_bulk_form:
+          action_title: Acción
+        subject:
+          label: Asunto
+        operations:
+          label: Operaciones
+      filters:
+        subject:
+          expose:
+            label: Asunto
+        langcode:
+          expose:
+            label: Idioma
+      title: Comentarios
+  page_published:
+    display_options:
+      menu:
+        title: Comentarios
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Asunto
+        langcode:
+          expose:
+            label: Idioma
+      fields:
+        comment_bulk_form:
+          action_title: Acción
+        subject:
+          label: Asunto
+        operations:
+          label: Operaciones

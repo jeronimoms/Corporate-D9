@@ -1,0 +1,23 @@
+uuid: c6b5b0b4-0a07-4f21-ab87-551e1a4e8862
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_count
+    - node.type.external_url
+id: node.external_url.field_page_count
+field_name: field_page_count
+entity_type: node
+bundle: external_url
+label: 'Page count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

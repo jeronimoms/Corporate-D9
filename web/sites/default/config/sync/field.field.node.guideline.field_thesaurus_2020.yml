@@ -1,0 +1,30 @@
+uuid: c1d5f5c7-6f5e-4ead-8645-28282c395fcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thesaurus_2020
+    - node.type.guideline
+    - node.type.thesaurus
+id: node.guideline.field_thesaurus_2020
+field_name: field_thesaurus_2020
+entity_type: node
+bundle: guideline
+label: 'Thesaurus 2020'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      thesaurus: thesaurus
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: 73bebcc2-0cff-4caa-9673-51e086055df7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitter_favorite_count
+    - node.type.twitter_tweet_feed
+id: node.twitter_tweet_feed.field_twitter_favorite_count
+field_name: field_twitter_favorite_count
+entity_type: node
+bundle: twitter_tweet_feed
+label: 'Favorite Count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: null
+  prefix: ''
+  suffix: ''
+field_type: integer

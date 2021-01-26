@@ -1,0 +1,176 @@
+uuid: 5c6b62a7-ab51-46a3-b9b5-ce03ecdd5936
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.calls.body
+    - field.field.node.calls.comment_node_calls
+    - field.field.node.calls.field_activity
+    - field.field.node.calls.field_archived
+    - field.field.node.calls.field_author
+    - field.field.node.calls.field_calls_deadline
+    - field.field.node.calls.field_character_count
+    - field.field.node.calls.field_expiration_date
+    - field.field.node.calls.field_flickr_date
+    - field.field.node.calls.field_page_count
+    - field.field.node.calls.field_publication_date
+    - field.field.node.calls.field_related_resources
+    - node.type.calls
+  module:
+    - comment
+    - datetime
+    - file
+    - path
+    - text
+    - workbench_moderation
+id: node.calls.default
+targetEntityType: node
+bundle: calls
+mode: default
+content:
+  body:
+    weight: 6
+    type: text_textarea_with_summary
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  comment_node_calls:
+    type: comment_default
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_activity:
+    weight: 17
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_archived:
+    weight: 18
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_author:
+    weight: 7
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_calls_deadline:
+    weight: 4
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_character_count:
+    weight: 22
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_expiration_date:
+    weight: 5
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_flickr_date:
+    weight: 5
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_page_count:
+    weight: 23
+    type: number
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_publication_date:
+    weight: 3
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_related_resources:
+    weight: 8
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

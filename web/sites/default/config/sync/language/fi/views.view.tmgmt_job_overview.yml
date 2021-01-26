@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: Tila
+        label:
+          label: Tunnus
+        target_language:
+          label: Osoitteeseen
+        translator:
+          label: Sisältölähde
+        tags_count:
+          label: Tagit
+        operations:
+          label: Toimenpiteet
+      filters:
+        state:
+          expose:
+            label: Tila
+        translator:
+          expose:
+            label: Sisältölähde

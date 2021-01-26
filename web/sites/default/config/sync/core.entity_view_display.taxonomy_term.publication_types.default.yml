@@ -1,0 +1,34 @@
+uuid: 41899d0b-edc2-4d34-8e35-61ab77629fdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.publication_types.field_main_category
+    - field.field.taxonomy_term.publication_types.field_publication_type_code
+    - taxonomy.vocabulary.publication_types
+  module:
+    - text
+id: taxonomy_term.publication_types.default
+targetEntityType: taxonomy_term
+bundle: publication_types
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_publication_type_code:
+    label: above
+    weight: 2
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_main_category: true
+  langcode: true
+  search_api_excerpt: true

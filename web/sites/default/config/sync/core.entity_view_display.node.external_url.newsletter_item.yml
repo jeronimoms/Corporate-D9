@@ -1,0 +1,32 @@
+uuid: 3bcd9aa4-50d3-403d-8021-f41b6d42192a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter_item
+    - field.field.node.external_url.comment_node_external_url
+    - field.field.node.external_url.field_character_count
+    - field.field.node.external_url.field_external_url
+    - field.field.node.external_url.field_flickr_date
+    - field.field.node.external_url.field_page_count
+    - node.type.external_url
+  module:
+    - user
+id: node.external_url.newsletter_item
+targetEntityType: node
+bundle: external_url
+mode: newsletter_item
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_external_url: true
+  field_character_count: true
+  field_external_url: true
+  field_flickr_date: true
+  field_page_count: true
+  langcode: true
+  search_api_excerpt: true

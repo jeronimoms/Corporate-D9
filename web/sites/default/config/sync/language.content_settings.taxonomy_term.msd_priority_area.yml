@@ -1,0 +1,16 @@
+uuid: 88e3fc47-7b0a-4c88-a65d-9d148756c5f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.msd_priority_area
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.msd_priority_area
+target_entity_type_id: taxonomy_term
+target_bundle: msd_priority_area
+default_langcode: und
+language_alterable: true

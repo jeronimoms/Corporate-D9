@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtreeri
+      fields:
+        name:
+          label: Kasutajanimi
+        status:
+          label: Olek
+        roles_target_id:
+          label: Rollid
+        operations:
+          label: Toimingud
+      filters:
+        status:
+          group_info:
+            label: Olek

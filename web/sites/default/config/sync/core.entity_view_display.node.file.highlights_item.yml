@@ -1,0 +1,28 @@
+uuid: 6b505cd8-d7bb-459b-b07d-7e0651344745
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlights_item
+    - field.field.node.file.comment_node_file
+    - field.field.node.file.field_file
+    - field.field.node.file.field_flickr_date
+    - node.type.file
+  module:
+    - user
+id: node.file.highlights_item
+targetEntityType: node
+bundle: file
+mode: highlights_item
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_file: true
+  field_file: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,42 @@
+label: Komentáre
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+      fields:
+        comment_bulk_form:
+          action_title: Akcia
+        subject:
+          label: Predmet
+        operations:
+          label: Operácie
+      filters:
+        subject:
+          expose:
+            label: Predmet
+        langcode:
+          expose:
+            label: Jazyk
+      title: Komentáre
+  page_published:
+    display_options:
+      menu:
+        title: Komentáre
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Predmet
+        langcode:
+          expose:
+            label: Jazyk
+      fields:
+        comment_bulk_form:
+          action_title: Akcia
+        subject:
+          label: Predmet
+        operations:
+          label: Operácie

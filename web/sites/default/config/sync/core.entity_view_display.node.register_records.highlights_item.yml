@@ -1,0 +1,58 @@
+uuid: 412b2cee-f71e-45d7-86fc-47d4ae85044d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlights_item
+    - field.field.node.register_records.body
+    - field.field.node.register_records.comment_node_register_records
+    - field.field.node.register_records.field_activity
+    - field.field.node.register_records.field_documentation
+    - field.field.node.register_records.field_events_and_meetings
+    - field.field.node.register_records.field_finance_and_procurement
+    - field.field.node.register_records.field_general_services
+    - field.field.node.register_records.field_governance
+    - field.field.node.register_records.field_human_resources
+    - field.field.node.register_records.field_ict
+    - field.field.node.register_records.field_missions
+    - field.field.node.register_records.field_relationship_management
+    - field.field.node.register_records.field_research_activities
+    - field.field.node.register_records.field_staff_committee
+    - field.field.node.register_records.field_surveys
+    - field.field.node.register_records.field_tags
+    - field.field.node.register_records.field_websites_online_services
+    - field.field.node.register_records.field_wiki_categories
+    - node.type.register_records
+  module:
+    - user
+id: node.register_records.highlights_item
+targetEntityType: node
+bundle: register_records
+mode: highlights_item
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_register_records: true
+  field_activity: true
+  field_documentation: true
+  field_events_and_meetings: true
+  field_finance_and_procurement: true
+  field_general_services: true
+  field_governance: true
+  field_human_resources: true
+  field_ict: true
+  field_missions: true
+  field_relationship_management: true
+  field_research_activities: true
+  field_staff_committee: true
+  field_surveys: true
+  field_tags: true
+  field_websites_online_services: true
+  field_wiki_categories: true
+  langcode: true
+  search_api_excerpt: true

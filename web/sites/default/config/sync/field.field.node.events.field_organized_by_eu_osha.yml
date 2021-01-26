@@ -1,0 +1,23 @@
+uuid: a2984927-8aad-4236-a32c-cbb034adb6d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_organized_by_eu_osha
+    - node.type.events
+id: node.events.field_organized_by_eu_osha
+field_name: field_organized_by_eu_osha
+entity_type: node
+bundle: events
+label: 'Organized by EU-OSHA'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

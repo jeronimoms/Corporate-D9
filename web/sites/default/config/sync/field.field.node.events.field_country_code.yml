@@ -1,0 +1,21 @@
+uuid: 5e9c4819-5461-4517-af5d-f69ec293e6e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country_code
+    - node.type.events
+  module:
+    - options
+id: node.events.field_country_code
+field_name: field_country_code
+entity_type: node
+bundle: events
+label: Country
+description: Mandatory
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

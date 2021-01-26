@@ -1,0 +1,70 @@
+uuid: 27c61df8-6a56-40a8-917f-dc1b9d3095e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_slideshow
+    - field.field.node.job_vacancies.body
+    - field.field.node.job_vacancies.comment_node_job_vacancies
+    - field.field.node.job_vacancies.field_activity
+    - field.field.node.job_vacancies.field_archived
+    - field.field.node.job_vacancies.field_author
+    - field.field.node.job_vacancies.field_character_count
+    - field.field.node.job_vacancies.field_expiration_date
+    - field.field.node.job_vacancies.field_flickr_date
+    - field.field.node.job_vacancies.field_job_vacancies_agency
+    - field.field.node.job_vacancies.field_job_vacancies_contact_type
+    - field.field.node.job_vacancies.field_job_vacancies_deadline
+    - field.field.node.job_vacancies.field_job_vacancies_grade
+    - field.field.node.job_vacancies.field_job_vacancies_location
+    - field.field.node.job_vacancies.field_job_vacancies_ref_id
+    - field.field.node.job_vacancies.field_job_vacancies_shortlisted
+    - field.field.node.job_vacancies.field_job_vacancies_type
+    - field.field.node.job_vacancies.field_nace_codes
+    - field.field.node.job_vacancies.field_page_count
+    - field.field.node.job_vacancies.field_publication_date
+    - field.field.node.job_vacancies.field_related_resources
+    - field.field.node.job_vacancies.field_reserve_list
+    - field.field.node.job_vacancies.field_tags
+    - field.field.node.job_vacancies.field_thesaurus
+    - field.field.node.job_vacancies.field_thesaurus_2020
+    - node.type.job_vacancies
+  module:
+    - user
+id: node.job_vacancies.osha_slideshow
+targetEntityType: node
+bundle: job_vacancies
+mode: osha_slideshow
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_job_vacancies: true
+  field_activity: true
+  field_archived: true
+  field_author: true
+  field_character_count: true
+  field_expiration_date: true
+  field_flickr_date: true
+  field_job_vacancies_agency: true
+  field_job_vacancies_contact_type: true
+  field_job_vacancies_deadline: true
+  field_job_vacancies_grade: true
+  field_job_vacancies_location: true
+  field_job_vacancies_ref_id: true
+  field_job_vacancies_shortlisted: true
+  field_job_vacancies_type: true
+  field_nace_codes: true
+  field_page_count: true
+  field_publication_date: true
+  field_related_resources: true
+  field_reserve_list: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  langcode: true
+  search_api_excerpt: true

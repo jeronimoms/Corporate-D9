@@ -1,0 +1,26 @@
+uuid: 0e4a13c0-6726-4793-a22d-57995c34b3cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thesaurus
+    - node.type.wiki_page
+    - taxonomy.vocabulary.thesaurus
+id: node.wiki_page.field_thesaurus
+field_name: field_thesaurus
+entity_type: node
+bundle: wiki_page
+label: Thesaurus
+description: 'Select Thesaurus for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      thesaurus: thesaurus
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

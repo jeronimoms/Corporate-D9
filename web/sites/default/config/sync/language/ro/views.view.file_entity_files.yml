@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtru
+      fields:
+        filename:
+          label: Nume
+        status:
+          label: Stare
+        operations:
+          label: Operaţii
+      filters:
+        status:
+          expose:
+            label: Stare

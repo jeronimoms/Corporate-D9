@@ -1,0 +1,86 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Szűrő
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Állapot
+        target_language:
+          label: Hova
+        operations:
+          label: Műveletek
+      filters:
+        uid:
+          expose:
+            label: Szolgáltató
+  closed:
+    display_title: Lezárt
+    display_options:
+      menu:
+        title: Lezárt
+      fields:
+        status:
+          label: Állapot
+        target_language:
+          label: Hova
+        operations:
+          label: Műveletek
+      filters:
+        uid:
+          expose:
+            label: Szolgáltató
+  completed:
+    display_title: Teljesítve
+    display_options:
+      menu:
+        title: Teljesítve
+      fields:
+        status:
+          label: Állapot
+        target_language:
+          label: Hova
+        operations:
+          label: Műveletek
+      filters:
+        uid:
+          expose:
+            label: Szolgáltató
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Állapot
+        target_language:
+          label: Hova
+        operations:
+          label: Műveletek
+      filters:
+        uid:
+          expose:
+            label: Szolgáltató
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Állapot
+        target_language:
+          label: Hova
+        operations:
+          label: Műveletek
+      filters:
+        uid:
+          expose:
+            label: Szolgáltató
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Állapot
+        target_language:
+          label: Hova
+        operations:
+          label: Műveletek

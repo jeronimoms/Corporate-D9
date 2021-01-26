@@ -1,0 +1,103 @@
+uuid: 920fdbab-72fd-42f4-a5db-66a8db1ff380
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.events.body
+    - field.field.node.events.comment_node_events
+    - field.field.node.events.field_activity
+    - field.field.node.events.field_adonis
+    - field.field.node.events.field_agency_contact_reply
+    - field.field.node.events.field_agency_initial_contact
+    - field.field.node.events.field_agency_rep_confirmed
+    - field.field.node.events.field_agency_role
+    - field.field.node.events.field_agenda
+    - field.field.node.events.field_city
+    - field.field.node.events.field_color
+    - field.field.node.events.field_comments_summary_after_eve
+    - field.field.node.events.field_country_code
+    - field.field.node.events.field_event_in_amp
+    - field.field.node.events.field_event_type
+    - field.field.node.events.field_flickr_date
+    - field.field.node.events.field_for_the_web
+    - field.field.node.events.field_key_performance
+    - field.field.node.events.field_location
+    - field.field.node.events.field_media_promotion
+    - field.field.node.events.field_migrate_hwc
+    - field.field.node.events.field_migration_source
+    - field.field.node.events.field_number_of_attendees
+    - field.field.node.events.field_organization
+    - field.field.node.events.field_organized_by_eu_osha
+    - field.field.node.events.field_publications_exhibition_su
+    - field.field.node.events.field_related_documents
+    - field.field.node.events.field_satisfaction_rate
+    - field.field.node.events.field_show_eu_flag
+    - field.field.node.events.field_show_in_ncw
+    - field.field.node.events.field_show_on
+    - field.field.node.events.field_source_url
+    - field.field.node.events.field_start_date
+    - field.field.node.events.field_tags
+    - field.field.node.events.field_unit_ref
+    - field.field.node.events.field_website_of_event
+    - node.type.events
+  module:
+    - datetime
+    - user
+id: node.events.osha_resources
+targetEntityType: node
+bundle: events
+mode: osha_resources
+content:
+  field_start_date:
+    label: hidden
+    weight: 0
+    type: datetime_default
+    settings:
+      format_type: osha_day_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_events: true
+  field_activity: true
+  field_adonis: true
+  field_agency_contact_reply: true
+  field_agency_initial_contact: true
+  field_agency_rep_confirmed: true
+  field_agency_role: true
+  field_agenda: true
+  field_city: true
+  field_color: true
+  field_comments_summary_after_eve: true
+  field_country_code: true
+  field_event_in_amp: true
+  field_event_type: true
+  field_flickr_date: true
+  field_for_the_web: true
+  field_key_performance: true
+  field_location: true
+  field_media_promotion: true
+  field_migrate_hwc: true
+  field_migration_source: true
+  field_number_of_attendees: true
+  field_organization: true
+  field_organized_by_eu_osha: true
+  field_publications_exhibition_su: true
+  field_related_documents: true
+  field_satisfaction_rate: true
+  field_show_eu_flag: true
+  field_show_in_ncw: true
+  field_show_on: true
+  field_source_url: true
+  field_tags: true
+  field_unit_ref: true
+  field_website_of_event: true
+  langcode: true
+  search_api_excerpt: true

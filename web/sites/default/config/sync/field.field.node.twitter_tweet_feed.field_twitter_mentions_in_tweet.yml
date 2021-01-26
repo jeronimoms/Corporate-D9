@@ -1,0 +1,30 @@
+uuid: bf6058d6-8e59-416d-9be2-9dbc387aa6f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitter_mentions_in_tweet
+    - node.type.twitter_tweet_feed
+    - taxonomy.vocabulary.user_mention_terms
+id: node.twitter_tweet_feed.field_twitter_mentions_in_tweet
+field_name: field_twitter_mentions_in_tweet
+entity_type: node
+bundle: twitter_tweet_feed
+label: 'Mentions In Tweet'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      user_mention_terms: user_mention_terms
+field_type: entity_reference

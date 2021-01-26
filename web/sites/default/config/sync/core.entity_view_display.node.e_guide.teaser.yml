@@ -1,0 +1,55 @@
+uuid: 6d347479-006b-4eb9-9006-435486927abb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.e_guide.comment_node_e_guide
+    - field.field.node.e_guide.field_country
+    - field.field.node.e_guide.field_external_url
+    - field.field.node.e_guide.field_flickr_date
+    - field.field.node.e_guide.field_link
+    - node.type.e_guide
+  module:
+    - link
+    - user
+id: node.e_guide.teaser
+targetEntityType: node
+bundle: e_guide
+mode: teaser
+content:
+  field_external_url:
+    label: hidden
+    weight: 2
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_link:
+    label: hidden
+    weight: 3
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_e_guide: true
+  field_country: true
+  field_flickr_date: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,16 @@
+uuid: d997fc6f-b84d-428c-8987-95de9bc4aa24
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.guideline
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.guideline
+target_entity_type_id: node
+target_bundle: guideline
+default_langcode: und
+language_alterable: true

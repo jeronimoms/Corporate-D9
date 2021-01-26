@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtru
+      fields:
+        media_bulk_form:
+          action_title: Acțiune
+        status:
+          label: Stare
+        operations:
+          label: Operaţii
+      filters:
+        langcode:
+          expose:
+            label: Limba

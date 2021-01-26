@@ -1,0 +1,54 @@
+uuid: bf55d10b-69f6-4f10-9456-c41617bc13e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.guideline.body
+    - field.field.node.guideline.comment_node_guideline
+    - field.field.node.guideline.field_activity
+    - field.field.node.guideline.field_additional_html
+    - field.field.node.guideline.field_archived
+    - field.field.node.guideline.field_character_count
+    - field.field.node.guideline.field_expiration_date
+    - field.field.node.guideline.field_external_url
+    - field.field.node.guideline.field_flickr_date
+    - field.field.node.guideline.field_legislation_category
+    - field.field.node.guideline.field_nace_codes
+    - field.field.node.guideline.field_page_count
+    - field.field.node.guideline.field_publication_date
+    - field.field.node.guideline.field_tags
+    - field.field.node.guideline.field_thesaurus
+    - field.field.node.guideline.field_thesaurus_2020
+    - node.type.guideline
+  module:
+    - user
+id: node.guideline.osha_resources
+targetEntityType: node
+bundle: guideline
+mode: osha_resources
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment_node_guideline: true
+  field_activity: true
+  field_additional_html: true
+  field_archived: true
+  field_character_count: true
+  field_expiration_date: true
+  field_external_url: true
+  field_flickr_date: true
+  field_legislation_category: true
+  field_nace_codes: true
+  field_page_count: true
+  field_publication_date: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  langcode: true
+  search_api_excerpt: true
