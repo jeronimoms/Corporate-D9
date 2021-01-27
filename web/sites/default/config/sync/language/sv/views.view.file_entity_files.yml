@@ -7,11 +7,5 @@ display:
       fields:
         filename:
           label: Namn
-        status:
-          label: Status
         operations:
           label: Funktioner
-      filters:
-        status:
-          expose:
-            label: Status

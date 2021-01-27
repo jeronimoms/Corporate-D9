@@ -1,5 +1,5 @@
-name: CSRFd Checks
+name: CSRF Checks
 description: Verifying Same Origin with Standard Headers
 type: module
-core_version_requirement: ^9
+core_version_requirement: ^8 || ^9
 package: Osha

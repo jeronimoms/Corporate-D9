@@ -7,13 +7,7 @@ display:
       fields:
         name:
           label: Användarnamn
-        status:
-          label: Status
         roles_target_id:
           label: Roller
         operations:
           label: Funktioner
-      filters:
-        status:
-          group_info:
-            label: Status

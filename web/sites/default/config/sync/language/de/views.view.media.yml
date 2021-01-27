@@ -1,14 +1,9 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
       fields:
         media_bulk_form:
           action_title: Aktion
-        status:
-          label: Status
         operations:
           label: Aktionen
       filters:

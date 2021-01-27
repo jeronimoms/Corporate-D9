@@ -7,9 +7,3 @@ display:
       fields:
         filename:
           label: Naziv
-        status:
-          label: Status
-      filters:
-        status:
-          expose:
-            label: Status

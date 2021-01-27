@@ -7,15 +7,9 @@ display:
       fields:
         title:
           label: Oznaka
-      filters:
-        status:
-          expose:
-            label: Status
   closed:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Oznaka
         target_language:
@@ -23,9 +17,6 @@ display:
         operations:
           label: Operacije
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Oznaka
@@ -34,8 +25,6 @@ display:
   completed:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Oznaka
         target_language:
@@ -43,17 +32,12 @@ display:
         operations:
           label: Operacije
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Oznaka
   eligible:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Oznaka
         target_language:
@@ -61,17 +45,12 @@ display:
         operations:
           label: Operacije
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Oznaka
   my_tasks:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Oznaka
         target_language:
@@ -79,17 +58,12 @@ display:
         operations:
           label: Operacije
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Oznaka
   pending:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Oznaka
         target_language:
@@ -97,17 +71,12 @@ display:
         operations:
           label: Operacije
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Oznaka
   rejected:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Oznaka
         target_language:
@@ -115,24 +84,15 @@ display:
         operations:
           label: Operacije
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Oznaka
   unassigned:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Oznaka
         target_language:
           label: Za
         operations:
           label: Operacije
-      filters:
-        status:
-          expose:
-            label: Status

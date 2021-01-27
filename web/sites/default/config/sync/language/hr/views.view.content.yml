@@ -7,17 +7,12 @@ display:
       fields:
         type:
           label: 'Vrsta sadržaja'
-        status:
-          label: Status
         operations:
           label: Operacije
       filters:
         type:
           expose:
             label: 'Vrsta sadržaja'
-        status:
-          expose:
-            label: Status
         langcode:
           expose:
             label: Jezik

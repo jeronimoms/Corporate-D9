@@ -7,13 +7,7 @@ display:
       fields:
         name:
           label: 'Nazwa użytkownika'
-        status:
-          label: Status
         roles_target_id:
           label: Role
         operations:
           label: Operacje
-      filters:
-        status:
-          group_info:
-            label: Status

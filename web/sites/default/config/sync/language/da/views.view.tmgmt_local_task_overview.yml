@@ -1,21 +1,12 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
       fields:
         title:
           label: Etiket
-      filters:
-        status:
-          expose:
-            label: Status
   closed:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etiket
         target_language:
@@ -23,9 +14,6 @@ display:
         operations:
           label: Handlinger
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etiket
@@ -34,8 +22,6 @@ display:
   completed:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etiket
         target_language:
@@ -43,9 +29,6 @@ display:
         operations:
           label: Handlinger
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etiket
@@ -54,8 +37,6 @@ display:
   eligible:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etiket
         target_language:
@@ -63,17 +44,12 @@ display:
         operations:
           label: Handlinger
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etiket
   my_tasks:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etiket
         target_language:
@@ -81,17 +57,12 @@ display:
         operations:
           label: Handlinger
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etiket
   pending:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etiket
         target_language:
@@ -99,17 +70,12 @@ display:
         operations:
           label: Handlinger
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etiket
   rejected:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etiket
         target_language:
@@ -117,24 +83,15 @@ display:
         operations:
           label: Handlinger
       filters:
-        status:
-          expose:
-            label: Status
         title:
           expose:
             label: Etiket
   unassigned:
     display_options:
       fields:
-        status:
-          label: Status
         title:
           label: Etiket
         target_language:
           label: Til
         operations:
           label: Handlinger
-      filters:
-        status:
-          expose:
-            label: Status

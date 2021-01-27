@@ -1,85 +1,48 @@
 display:
-  default:
-    display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
   assigned:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Naar
         operations:
           label: Bewerkingen
-      filters:
-        uid:
-          expose:
-            label: Provider
   closed:
     display_title: Gesloten
     display_options:
       menu:
         title: Gesloten
       fields:
-        status:
-          label: Status
         target_language:
           label: Naar
         operations:
           label: Bewerkingen
-      filters:
-        uid:
-          expose:
-            label: Provider
   completed:
     display_title: Voltooid
     display_options:
       menu:
         title: Voltooid
       fields:
-        status:
-          label: Status
         target_language:
           label: Naar
         operations:
           label: Bewerkingen
-      filters:
-        uid:
-          expose:
-            label: Provider
   pending:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Naar
         operations:
           label: Bewerkingen
-      filters:
-        uid:
-          expose:
-            label: Provider
   rejected:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Naar
         operations:
           label: Bewerkingen
-      filters:
-        uid:
-          expose:
-            label: Provider
   unassigned:
     display_options:
       fields:
-        status:
-          label: Status
         target_language:
           label: Naar
         operations:

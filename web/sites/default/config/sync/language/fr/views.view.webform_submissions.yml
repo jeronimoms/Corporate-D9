@@ -7,8 +7,6 @@ display:
   embed_administer:
     display_options:
       fields:
-        webform_submission_bulk_form:
-          action_title: Action
         completed:
           label: Terminé
         operations:
@@ -16,8 +14,6 @@ display:
   embed_manage:
     display_options:
       fields:
-        webform_submission_bulk_form:
-          action_title: Action
         completed:
           label: Terminé
         view_webform_submission:

@@ -1,19 +1,10 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
       fields:
         name:
           label: 'Korisničko ime'
-        status:
-          label: Status
         roles_target_id:
           label: Uloge
         operations:
           label: Operacije
-      filters:
-        status:
-          group_info:
-            label: Status
