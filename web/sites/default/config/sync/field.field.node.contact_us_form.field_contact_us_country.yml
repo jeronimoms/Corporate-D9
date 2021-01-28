@@ -1,0 +1,21 @@
+uuid: aac5b116-7981-43ed-bbe7-4ea9e024d22e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_us_country
+    - node.type.contact_us_form
+_core:
+  default_config_hash: ewtD1G0PEYByb7MqVH2I_tTU6bBrLXw1zm1aicFTi54
+id: node.contact_us_form.field_contact_us_country
+field_name: field_contact_us_country
+entity_type: node
+bundle: contact_us_form
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: 3c73d31f-3410-420d-b11a-8f75017ab2bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - eu_cookie_compliance
+id: cookie_category.token
+label: Token
+targetEntityType: cookie_category
+cache: true
