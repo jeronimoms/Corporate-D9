@@ -1,4 +1,4 @@
-uuid: ce26ac86-d23a-4bba-a523-651d4afd7e0b
+uuid: d6fdc2b3-c697-4e8a-b88e-7542e7dabfc8
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,6 @@ dependencies:
   module:
     - image
     - path
-    - workbench_moderation
 _core:
   default_config_hash: WeM0d1VqhuyGELo4SRiDJfhDQSLqfKavISEbrnlcTaE
 id: media.image.default

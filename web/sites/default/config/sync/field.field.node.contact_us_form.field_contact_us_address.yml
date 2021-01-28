@@ -1,0 +1,21 @@
+uuid: ac1067a7-a0a2-4a5f-b008-ef624f29128c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_us_address
+    - node.type.contact_us_form
+_core:
+  default_config_hash: '-pIYNkHjXU4NEbL4ErrTesYdBpbR9OTLk7PdQgUMX_A'
+id: node.contact_us_form.field_contact_us_address
+field_name: field_contact_us_address
+entity_type: node
+bundle: contact_us_form
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

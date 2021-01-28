@@ -1,19 +1,11 @@
-uuid: 76b07a06-ae67-4d17-ba29-126c905d3634
+uuid: 40ac8cf1-4468-46e2-a1de-a533ffe5f8bb
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_page.default
     - field.field.node.page.body
-    - field.field.node.page.comment_node_page
-    - field.field.node.page.field_activity
-    - field.field.node.page.field_character_count
-    - field.field.node.page.field_flickr_date
-    - field.field.node.page.field_page_count
     - node.type.page
   module:
-    - comment
-    - datetime
     - text
     - user
 _core:
@@ -25,35 +17,13 @@ mode: default
 content:
   body:
     label: hidden
-    weight: 0
     type: text_default
+    weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
-  comment_node_page:
-    label: hidden
-    type: comment_default
-    weight: 20
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    region: content
-  field_flickr_date:
-    label: above
-    weight: 7
-    type: datetime_default
-    settings:
-      format_type: long
-      timezone_override: ''
-    third_party_settings: {  }
-    region: content
   links:
     weight: 101
     region: content
 hidden:
-  field_activity: true
-  field_character_count: true
-  field_page_count: true
   langcode: true
-  search_api_excerpt: true

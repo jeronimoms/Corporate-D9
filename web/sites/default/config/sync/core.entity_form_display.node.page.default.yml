@@ -1,21 +1,13 @@
-uuid: 609adf0f-00ea-4498-bfec-6f47b7c5c22e
+uuid: af33c078-3903-47ec-921c-26c1aaaf6e67
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.comment_node_page
-    - field.field.node.page.field_activity
-    - field.field.node.page.field_character_count
-    - field.field.node.page.field_flickr_date
-    - field.field.node.page.field_page_count
     - node.type.page
   module:
-    - comment
-    - datetime
     - path
     - text
-    - workbench_moderation
 _core:
   default_config_hash: AD_lefuYmjsKeH3OQApsyP_nLj6ZnGaALznLQSQ0Z_o
 id: node.page.default
@@ -24,53 +16,21 @@ bundle: page
 mode: default
 content:
   body:
-    weight: 2
     type: text_textarea_with_summary
+    weight: 31
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    region: content
-  comment_node_page:
-    type: comment_default
-    weight: 20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_activity:
-    weight: 3
-    type: options_select
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_character_count:
-    weight: 42
-    type: number
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
-  field_flickr_date:
-    weight: 5
-    type: datetime_default
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_page_count:
-    weight: 44
-    type: number
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
   langcode:
     type: language_select
     weight: 2

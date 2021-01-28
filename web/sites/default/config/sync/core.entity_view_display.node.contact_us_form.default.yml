@@ -1,0 +1,92 @@
+uuid: c98ff643-737c-403d-9f6a-302c4e0452cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact_us_form.field_contact_us_address
+    - field.field.node.contact_us_form.field_contact_us_company_name
+    - field.field.node.contact_us_form.field_contact_us_country
+    - field.field.node.contact_us_form.field_contact_us_designation
+    - field.field.node.contact_us_form.field_contact_us_email
+    - field.field.node.contact_us_form.field_contact_us_name
+    - field.field.node.contact_us_form.field_contact_us_phone
+    - field.field.node.contact_us_form.field_contact_us_query
+    - node.type.contact_us_form
+  module:
+    - user
+_core:
+  default_config_hash: c1n1SeS3fvhb4olrFIPI4RxaMseSSh5D-sGOVSojWlY
+id: node.contact_us_form.default
+targetEntityType: node
+bundle: contact_us_form
+mode: default
+content:
+  field_contact_us_address:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_contact_us_company_name:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_contact_us_country:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_contact_us_designation:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_contact_us_email:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_contact_us_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_contact_us_phone:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_contact_us_query:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -1,15 +1,10 @@
-uuid: e338d610-4d4b-4465-b2fd-6dca505436c1
+uuid: f61723f0-2319-4bfe-9250-8c1eaba261fe
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
-    - field.field.node.page.comment_node_page
-    - field.field.node.page.field_activity
-    - field.field.node.page.field_character_count
-    - field.field.node.page.field_flickr_date
-    - field.field.node.page.field_page_count
     - node.type.page
   module:
     - text
@@ -23,20 +18,14 @@ mode: teaser
 content:
   body:
     label: hidden
-    weight: 0
     type: text_summary_or_trimmed
+    weight: 100
+    region: content
     settings:
       trim_length: 600
     third_party_settings: {  }
-    region: content
   links:
     weight: 101
     region: content
 hidden:
-  comment_node_page: true
-  field_activity: true
-  field_character_count: true
-  field_flickr_date: true
-  field_page_count: true
   langcode: true
-  search_api_excerpt: true

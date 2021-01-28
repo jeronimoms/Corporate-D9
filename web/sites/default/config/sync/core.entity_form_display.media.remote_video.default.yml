@@ -1,4 +1,4 @@
-uuid: 2187f8b3-cbe1-44ae-b6ba-84579a88e61c
+uuid: 08150a97-f27f-47d4-899f-a719c8c8666c
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,6 @@ dependencies:
   module:
     - media
     - path
-    - workbench_moderation
 _core:
   default_config_hash: DfbjvjtGEMGLvm-1Zm7-MCRZj3wpGokUWZOuaK5-1Po
 id: media.remote_video.default

@@ -1,16 +1,10 @@
-uuid: 98a25939-0c3d-4802-9753-1329e30d18be
+uuid: 67c69c35-183e-4998-999c-dc8e4c5e6dd4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.file.image.field_file_description
-    - field.field.file.image.field_file_image_alt_text
-    - field.field.file.image.field_file_image_title_text
     - field.field.file.image.field_image_alt_text
     - field.field.file.image.field_image_title_text
-    - field.field.file.image.field_nace_codes
-    - field.field.file.image.field_tags
-    - field.field.file.image.field_thesaurus
     - file_entity.type.image
   module:
     - file_entity
@@ -21,13 +15,6 @@ targetEntityType: file
 bundle: image
 mode: default
 content:
-  field_file_description:
-    label: above
-    weight: 5
-    type: basic_string
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_image_alt_text:
     type: string
     weight: 0
@@ -41,30 +28,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     label: above
-    region: content
-  field_nace_codes:
-    label: above
-    weight: 3
-    type: entity_reference_label
-    settings:
-      link: true
-    third_party_settings: {  }
-    region: content
-  field_tags:
-    label: above
-    weight: 2
-    type: entity_reference_label
-    settings:
-      link: true
-    third_party_settings: {  }
-    region: content
-  field_thesaurus:
-    label: above
-    weight: 4
-    type: entity_reference_label
-    settings:
-      link: true
-    third_party_settings: {  }
     region: content
   filemime:
     type: string
@@ -108,7 +71,4 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
-  field_file_image_alt_text: true
-  field_file_image_title_text: true
   langcode: true
-  search_api_excerpt: true

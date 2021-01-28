@@ -1,35 +1,17 @@
-uuid: faf6433b-3710-459e-abc7-a947ff12fea1
+uuid: b72beaea-9af9-47cb-a624-3fbed9364701
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_article.default
+    - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.comment_node_article
-    - field.field.node.article.field_activity
-    - field.field.node.article.field_aditional_resources
-    - field.field.node.article.field_archived
-    - field.field.node.article.field_article_type
-    - field.field.node.article.field_body_revamp
-    - field.field.node.article.field_character_count
-    - field.field.node.article.field_expiration_date
-    - field.field.node.article.field_flickr_date
     - field.field.node.article.field_image
-    - field.field.node.article.field_metatag
-    - field.field.node.article.field_nace_codes
-    - field.field.node.article.field_page_count
-    - field.field.node.article.field_publication_date
-    - field.field.node.article.field_related_oshwiki_articles
-    - field.field.node.article.field_resources
     - field.field.node.article.field_tags
-    - field.field.node.article.field_thesaurus
-    - field.field.node.article.field_thesaurus_2020
-    - field.field.node.article.field_wiki_categories
+    - image.style.large
     - node.type.article
   module:
     - comment
-    - datetime
     - image
     - text
     - user
@@ -41,12 +23,12 @@ bundle: article
 mode: default
 content:
   body:
-    label: hidden
-    weight: 3
     type: text_default
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
+    label: hidden
   comment:
     type: comment_default
     weight: 110
@@ -56,63 +38,27 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-  comment_node_article:
-    label: hidden
-    type: comment_default
-    weight: 20
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    region: content
-  field_aditional_resources:
-    label: above
-    weight: 4
-    type: entity_reference_entity_view
-    settings:
-      view_mode: osha_resources
-      link: false
-    third_party_settings: {  }
-    region: content
-  field_flickr_date:
-    label: above
-    weight: 5
-    type: datetime_default
-    settings:
-      format_type: long
-      timezone_override: ''
-    third_party_settings: {  }
-    region: content
   field_image:
-    label: hidden
-    weight: 1
     type: image
-    settings:
-      image_link: ''
-      image_style: 1000x1000
-    third_party_settings: {  }
+    weight: -1
     region: content
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+  field_tags:
+    type: entity_reference_label
+    weight: 10
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
   links:
     weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_activity: true
-  field_archived: true
-  field_article_type: true
-  field_body_revamp: true
-  field_character_count: true
-  field_expiration_date: true
-  field_metatag: true
-  field_nace_codes: true
-  field_page_count: true
-  field_publication_date: true
-  field_related_oshwiki_articles: true
-  field_resources: true
-  field_tags: true
-  field_thesaurus: true
-  field_thesaurus_2020: true
-  field_wiki_categories: true
   langcode: true
-  search_api_excerpt: true
