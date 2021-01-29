@@ -1,0 +1,11 @@
+uuid: c2f57806-60af-4859-a60d-7369e9c0443a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nace_codes
+id: taxonomy_term.nace_codes
+target_entity_type_id: taxonomy_term
+target_bundle: nace_codes
+default_langcode: und
+language_alterable: true

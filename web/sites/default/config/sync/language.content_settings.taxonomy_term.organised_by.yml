@@ -1,0 +1,11 @@
+uuid: e06f2c6f-94cb-4eee-a35c-2689d5233961
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.organised_by
+id: taxonomy_term.organised_by
+target_entity_type_id: taxonomy_term
+target_bundle: organised_by
+default_langcode: und
+language_alterable: true
