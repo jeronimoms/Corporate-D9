@@ -57,9 +57,40 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "slick/library",
+                "version": "1.8.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "slick"
+                },
+                "dist": {
+                    "url": "https://github.com/kenwheeler/slick/archive/1.8.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "blazy/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "blazy"
+                },
+                "dist": {
+                    "url": "https://github.com/dinbror/blazy/archive/master.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
+        "blazy/library": "^1.8",
         "chosen/library": "^1.8",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
@@ -160,6 +191,7 @@
         "drupal/search_autocomplete": "^2.0",
         "drupal/shs": "^1.0@alpha",
         "drupal/sitemap": "^2.0@beta",
+        "drupal/slick": "^2.2",
         "drupal/smart_trim": "^1.3",
         "drupal/smtp": "^1.0",
         "drupal/spamspan": "^1.2",
@@ -188,7 +220,8 @@
         "drupal/youtube": "^1.2",
         "drush/drush": "^10.3",
         "facets_range_widget/library": "^1.11",
-        "jquery_touch_punch/library": "^0.2.3"
+        "jquery_touch_punch/library": "^0.2.3",
+        "slick/library": "^1.8"
     },
     "require-dev": {
         "kint-php/kint": "^3.3"
