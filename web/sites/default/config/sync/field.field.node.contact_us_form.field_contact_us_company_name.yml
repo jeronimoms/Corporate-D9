@@ -1,0 +1,21 @@
+uuid: 8805755e-927e-414f-a09f-ae48d66a578b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_us_company_name
+    - node.type.contact_us_form
+_core:
+  default_config_hash: HYyt2BAo1ozsQXkkZQ4_qP58tFZvm4cEuMix5ysQxrQ
+id: node.contact_us_form.field_contact_us_company_name
+field_name: field_contact_us_company_name
+entity_type: node
+bundle: contact_us_form
+label: 'Company Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 1f2f9c80-77af-4f2c-9095-db851ed67468
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_us_phone
+    - node.type.contact_us_form
+_core:
+  default_config_hash: BU33xvLzwqZo_ihZq29bffMvP3PGtxDoKtCHe3jIKCk
+id: node.contact_us_form.field_contact_us_phone
+field_name: field_contact_us_phone
+entity_type: node
+bundle: contact_us_form
+label: Phone
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,32 +1,20 @@
-uuid: f8a0c99b-6499-446c-b8ca-a0ddc3f0c6f4
+uuid: 2d524f66-90ce-4d21-a692-cc20c4744f56
 langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: pq_mEIu_B4widZN7Ap81iCJSjShFFdcL0jEiCi8VrDk
 id: anonymous
-label: 'anonymous user'
+label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
-  - 'access PDF version'
   - 'access comments'
   - 'access content'
-  - 'access news feeds'
-  - 'access quiz'
-  - 'access site map'
   - 'access site-wide contact form'
-  - 'display EU Cookie Compliance popup'
-  - 'download any document files'
-  - 'post comments'
+  - 'display eu cookie compliance popup'
   - 'search content'
-  - 'skip comment approval'
-  - 'use Search Autocomplete'
   - 'use exclude node title'
-  - 'use manualcrop'
-  - 'use text format filtered_html'
+  - 'use text format restricted_html'
   - 'view files'
   - 'view media'
-  - 'view newsletter_content_collection entity collections'
-  - 'view own quiz results'
-  - 'view results for own quiz'

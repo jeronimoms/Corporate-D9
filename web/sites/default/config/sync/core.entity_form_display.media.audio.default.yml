@@ -1,4 +1,4 @@
-uuid: 539d8f75-7f85-459a-8170-6182e406b661
+uuid: 2cd1eb2d-b151-495b-8aac-d7e1d0c53e3d
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,6 @@ dependencies:
   module:
     - file
     - path
-    - workbench_moderation
 _core:
   default_config_hash: HGa6EpWJApUec2IS8zsOnJ3NhIhwY2QYNmLY7eS5zLM
 id: media.audio.default
