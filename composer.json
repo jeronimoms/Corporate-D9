@@ -239,7 +239,8 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "Uninstalled custom theme stuck in config blocking config import" : "https://www.drupal.org/files/issues/2020-09-23/2898274-29.patch"
+                "Uninstalled custom theme stuck in config blocking config import" : "https://www.drupal.org/files/issues/2020-09-23/2898274-29.patch",
+                "Cannot override content field block title" : "https://www.drupal.org/files/issues/2019-05-20/3055818-3.patch"
             },
             "drupal/linked_field": {
                 "Token warnings": "https://www.drupal.org/files/issues/2020-08-14/problem-with-display-of-custom-data-in-layout-manager-3110226-8.patch"
