@@ -1,0 +1,19 @@
+uuid: 1ceb7da2-2678-477f-9f85-16e67a7786ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_guideline_category_code
+    - taxonomy.vocabulary.legislation_category
+id: taxonomy_term.legislation_category.field_guideline_category_code
+field_name: field_guideline_category_code
+entity_type: taxonomy_term
+bundle: legislation_category
+label: 'Guideline Category Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

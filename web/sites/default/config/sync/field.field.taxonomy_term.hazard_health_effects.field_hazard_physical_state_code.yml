@@ -1,0 +1,19 @@
+uuid: 67a23114-380f-4053-b307-3c51133b86ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hazard_physical_state_code
+    - taxonomy.vocabulary.hazard_health_effects
+id: taxonomy_term.hazard_health_effects.field_hazard_physical_state_code
+field_name: field_hazard_physical_state_code
+entity_type: taxonomy_term
+bundle: hazard_health_effects
+label: Code
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

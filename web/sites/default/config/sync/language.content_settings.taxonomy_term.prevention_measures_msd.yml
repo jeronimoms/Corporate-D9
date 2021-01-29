@@ -1,0 +1,11 @@
+uuid: c0a6baa2-992a-4938-9b11-8c1b888ce9e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.prevention_measures_msd
+id: taxonomy_term.prevention_measures_msd
+target_entity_type_id: taxonomy_term
+target_bundle: prevention_measures_msd
+default_langcode: und
+language_alterable: true
