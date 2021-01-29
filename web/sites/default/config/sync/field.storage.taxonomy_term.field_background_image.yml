@@ -1,0 +1,26 @@
+uuid: 3c5b20a5-d16e-499e-8b3b-02136fc81a4c
+langcode: und
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - taxonomy
+id: taxonomy_term.field_background_image
+field_name: field_background_image
+entity_type: taxonomy_term
+type: image
+settings:
+  default_image:
+    uuid: ''
+  uri_scheme: public
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

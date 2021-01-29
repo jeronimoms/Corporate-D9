@@ -1,0 +1,11 @@
+uuid: 23629e17-183e-4843-ac5f-103d297d6086
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.grade
+id: taxonomy_term.grade
+target_entity_type_id: taxonomy_term
+target_bundle: grade
+default_langcode: und
+language_alterable: true

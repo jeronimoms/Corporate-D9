@@ -1,0 +1,11 @@
+uuid: a14a41db-839b-4271-9121-f1662282fd2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.attachment_file_type
+id: taxonomy_term.attachment_file_type
+target_entity_type_id: taxonomy_term
+target_bundle: attachment_file_type
+default_langcode: und
+language_alterable: true

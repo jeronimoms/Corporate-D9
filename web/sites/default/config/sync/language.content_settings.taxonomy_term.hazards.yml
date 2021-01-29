@@ -1,0 +1,11 @@
+uuid: 46cf9160-9ce1-4518-943f-5289a0efa7ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazards
+id: taxonomy_term.hazards
+target_entity_type_id: taxonomy_term
+target_bundle: hazards
+default_langcode: und
+language_alterable: true

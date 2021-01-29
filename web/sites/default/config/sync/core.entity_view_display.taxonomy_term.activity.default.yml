@@ -1,0 +1,41 @@
+uuid: 36ec812c-5d11-45d3-a6f0-eba1134c995e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.activity.field_activity_code
+    - field.field.taxonomy_term.activity.field_activity_level
+    - taxonomy.vocabulary.activity
+  module:
+    - text
+id: taxonomy_term.activity.default
+targetEntityType: taxonomy_term
+bundle: activity
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_activity_code:
+    label: above
+    weight: 2
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_activity_level:
+    label: above
+    weight: 3
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
