@@ -27,9 +27,70 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery_touch_punch/library",
+                "version": "0.2.3",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery-ui-touch-punch"
+                },
+                "dist": {
+                    "url": "https://github.com/furf/jquery-ui-touch-punch/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "facets_range_widget/library",
+                "version": "1.11.3",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery-ui-slider-pips"
+                },
+                "dist": {
+                    "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips/archive/v1.11.3.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "slick/library",
+                "version": "1.8.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "slick"
+                },
+                "dist": {
+                    "url": "https://github.com/kenwheeler/slick/archive/1.8.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "blazy/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "blazy"
+                },
+                "dist": {
+                    "url": "https://github.com/dinbror/blazy/archive/master.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
+        "blazy/library": "^1.8",
         "chosen/library": "^1.8",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
@@ -46,15 +107,17 @@
         "drupal/clientside_validation": "^3.0@RC",
         "drupal/contact_us": "^2.1",
         "drupal/context": "^4.0@beta",
+        "drupal/core": "^9.1",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
-        "drupal/core-recommended": "^9.1",
+        "drupal/crop": "^2.1",
         "drupal/csv_serialization": "^2.0@beta",
         "drupal/ctools": "^3.4",
         "drupal/custom_formatters": "^3.0@beta",
         "drupal/date_popup": "^1.1",
         "drupal/devel": "^4.1",
         "drupal/diff": "^1.0",
+        "drupal/draggableviews": "^2.0",
         "drupal/dropdown_language": "^2.6",
         "drupal/dynamic_entity_reference": "^2.0@alpha",
         "drupal/easy_breadcrumb": "^1.13",
@@ -69,6 +132,7 @@
         "drupal/eu_cookie_compliance": "^1.14",
         "drupal/event": "^1.0@alpha",
         "drupal/exclude_node_title": "^1.1",
+        "drupal/extlink": "^1.5",
         "drupal/facets": "^1.6",
         "drupal/features": "^3.11",
         "drupal/feeds": "^3.0@alpha",
@@ -79,6 +143,8 @@
         "drupal/group": "^1.3",
         "drupal/hreflang": "^1.3",
         "drupal/image_field_caption": "^1.1",
+        "drupal/image_url_formatter": "^1.0",
+        "drupal/image_widget_crop": "^2.3",
         "drupal/imce": "^2.3",
         "drupal/job_scheduler": "^3.1",
         "drupal/jquery_ui": "^1.4",
@@ -90,6 +156,7 @@
         "drupal/jquery_ui_slider": "^1.1",
         "drupal/jquery_ui_tabs": "^1.1",
         "drupal/jquery_ui_touch_punch": "^1.0",
+        "drupal/layoutcomponents": "^1.20@beta",
         "drupal/ldap": "^4.0@beta",
         "drupal/ldap_auth": "^1.20",
         "drupal/libraries": "^3.0@beta",
@@ -108,6 +175,7 @@
         "drupal/pathauto": "^1.8",
         "drupal/pathologic": "^1.0@alpha",
         "drupal/printfriendly": "^3.5",
+        "drupal/purge": "^3.0",
         "drupal/quicktabs": "^3.0@alpha",
         "drupal/r4032login": "^2.0",
         "drupal/rabbit_hole": "^1.0@beta",
@@ -115,13 +183,17 @@
         "drupal/redirect": "^1.6",
         "drupal/reroute_email": "^2.0",
         "drupal/responsive_menu": "^4.4",
+        "drupal/rules": "3.x-dev@dev",
         "drupal/scanner": "^1.0@RC",
         "drupal/search_api": "^1.18",
         "drupal/search_api_attachments": "^1.0@beta",
         "drupal/search_api_solr": "^4.1",
+        "drupal/search_api_sorts": "^1.0",
         "drupal/search_autocomplete": "^2.0",
         "drupal/shs": "^1.0@alpha",
         "drupal/sitemap": "^2.0@beta",
+        "drupal/slick": "^2.2",
+        "drupal/slick_views": "^2.3",
         "drupal/smart_trim": "^1.3",
         "drupal/smtp": "^1.0",
         "drupal/spamspan": "^1.2",
@@ -131,19 +203,27 @@
         "drupal/taxonomy_manager": "^2.0",
         "drupal/tmgmt": "^1.11",
         "drupal/token": "^1.9",
+        "drupal/twig_tweak": "^3.0",
         "drupal/twitter_block": "^3.0@alpha",
         "drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/varnish_purge": "^2.0",
+        "drupal/views_block_area": "^1.0@beta",
+        "drupal/views_block_filter_block": "^1.0",
         "drupal/views_bulk_operations": "^3.10",
         "drupal/views_data_export": "^1.0",
         "drupal/views_slideshow": "^4.8",
         "drupal/views_templates": "^1.1",
         "drupal/webform": "^6.0",
+        "drupal/wordpress_migrate": "^3.0@alpha",
         "drupal/workbench": "^1.3",
         "drupal/workbench_access": "^1.0@beta",
         "drupal/workbench_moderation": "^1.6",
         "drupal/xmlsitemap": "^1.0",
         "drupal/youtube": "^1.2",
-        "drush/drush": "^10.3"
+        "drush/drush": "^10.3",
+        "facets_range_widget/library": "^1.11",
+        "jquery_touch_punch/library": "^0.2.3",
+        "slick/library": "^1.8"
     },
     "require-dev": {
         "kint-php/kint": "^3.3"
@@ -159,7 +239,19 @@
     "extra": {
         "enable-patching": true,
         "patches": {
-
+            "drupal/core": {
+                "Uninstalled custom theme stuck in config blocking config import" : "https://www.drupal.org/files/issues/2020-09-23/2898274-29.patch",
+                "Cannot override content field block title" : "https://www.drupal.org/files/issues/2019-05-20/3055818-3.patch"
+            },
+            "drupal/linked_field": {
+                "Token warnings": "https://www.drupal.org/files/issues/2020-08-14/problem-with-display-of-custom-data-in-layout-manager-3110226-8.patch"
+            },
+            "drupal/inline_entity_form": {
+                "Revision on inline blocks": "https://www.drupal.org/files/issues/2020-07-25/inline_entity_form_inlineBlocks_3161487.2.patch"
+            }
+        },
+        "patchLevel": {
+            "drupal/core": "-p2"
         },
         "drupal-scaffold": {
             "locations": {

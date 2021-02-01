@@ -1,0 +1,20 @@
+uuid: a71994f9-30cb-43e2-b758-241a88dd0b1e
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_biological_hazard
+field_name: field_biological_hazard
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

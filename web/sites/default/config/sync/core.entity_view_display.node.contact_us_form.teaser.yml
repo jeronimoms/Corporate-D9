@@ -1,0 +1,39 @@
+uuid: 03440870-6860-420f-a376-7744d205b705
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact_us_form.field_contact_us_address
+    - field.field.node.contact_us_form.field_contact_us_company_name
+    - field.field.node.contact_us_form.field_contact_us_country
+    - field.field.node.contact_us_form.field_contact_us_designation
+    - field.field.node.contact_us_form.field_contact_us_email
+    - field.field.node.contact_us_form.field_contact_us_name
+    - field.field.node.contact_us_form.field_contact_us_phone
+    - field.field.node.contact_us_form.field_contact_us_query
+    - node.type.contact_us_form
+  module:
+    - user
+_core:
+  default_config_hash: 6j9jTqO-4boPfm6fA6mxgVUw-IpVjYYJbYuC8lseCRg
+id: node.contact_us_form.teaser
+targetEntityType: node
+bundle: contact_us_form
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_contact_us_address: true
+  field_contact_us_company_name: true
+  field_contact_us_country: true
+  field_contact_us_designation: true
+  field_contact_us_email: true
+  field_contact_us_name: true
+  field_contact_us_phone: true
+  field_contact_us_query: true
+  langcode: true

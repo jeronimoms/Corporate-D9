@@ -1,0 +1,21 @@
+uuid: e048d660-91ee-4f40-8932-4515c4fbd6ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_us_email
+    - node.type.contact_us_form
+_core:
+  default_config_hash: F1DzengfDMyPXy7UP5Fldggbj6UWQehFay82IbGY3Qs
+id: node.contact_us_form.field_contact_us_email
+field_name: field_contact_us_email
+entity_type: node
+bundle: contact_us_form
+label: Email
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

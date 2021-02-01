@@ -1,0 +1,11 @@
+uuid: 8356725b-17e5-40ad-8bdb-b577b2623ba3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.worker_groups_covered
+id: taxonomy_term.worker_groups_covered
+target_entity_type_id: taxonomy_term
+target_bundle: worker_groups_covered
+default_langcode: und
+language_alterable: true

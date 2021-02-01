@@ -1,0 +1,19 @@
+uuid: 5da7abef-7e31-4208-898e-95c06508739a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_thesaurus_id
+    - taxonomy.vocabulary.exposure_route
+id: taxonomy_term.exposure_route.field_thesaurus_id
+field_name: field_thesaurus_id
+entity_type: taxonomy_term
+bundle: exposure_route
+label: 'Thesaurus code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

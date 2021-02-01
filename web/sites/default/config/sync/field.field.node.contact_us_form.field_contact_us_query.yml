@@ -1,0 +1,21 @@
+uuid: 0074b57f-8788-4edc-aad5-a14bf96a68aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_us_query
+    - node.type.contact_us_form
+_core:
+  default_config_hash: 90EXyFyGitZhYrF-wrf2DouRodgDpzBXgbV502fYJ3k
+id: node.contact_us_form.field_contact_us_query
+field_name: field_contact_us_query
+entity_type: node
+bundle: contact_us_form
+label: Query
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

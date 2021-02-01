@@ -14,23 +14,42 @@ git submodule update --recursive
 # Update the Drupal installation.
 composer install
 
-# Update the databases.
+
+# Update Osha site.
+echo 'Runing updb for Osha site'
 drush updb -l default -y
-drush updb -l allages -y
-drush updb -l oira -y
-drush updb -l vesafe -y
-drush updb -l napo -y
 
-# Import the configuration.
-drush cim -l default -y
-drush cim -l allages -y
-drush cim -l oira -y
-drush cim -l vesafe -y
-drush cim -l napo -y
-
-# Clear the cache.
+echo 'Clearing caches for Osha site'
 drush cr -l default -y
-drush cr -l allages -y
+
+echo 'Importing configuration for Osha site'
+drush cim -l default -y
+
+echo 'Clearing caches for Osha site'
+drush cr -l default -y
+
+# Update Oira site.
+echo 'Runing updb for Oira site'
+drush updb -l oira -y
+
+echo 'Clearing caches for Oira site'
 drush cr -l oira -y
+
+echo 'Importing configuration for Oira site'
+drush cim -l oira -y
+
+echo 'Clearing caches for Oira site'
+drush cr -l oira -y
+
+# Update Vesafe site.
+echo 'Runing updb for Vesafe site'
+drush updb -l vesafe -y
+
+echo 'Clearing caches for Vesafe site'
 drush cr -l vesafe -y
-drush cr -l napo -y
+
+echo 'Importing configuration for Vesafe site'
+drush cim -l vesafe -y
+
+echo 'Clearing caches for Vesafe site'
+drush cr -l vesafe -y

@@ -1,0 +1,40 @@
+uuid: d0df1146-1e6e-495d-a7a5-047e17d5860f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_flag
+    - taxonomy.vocabulary.country
+  module:
+    - image
+id: taxonomy_term.country.field_flag
+field_name: field_flag
+entity_type: taxonomy_term
+bundle: country
+label: Flag
+description: 'The flag image that will be displayed on page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: false
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: flags
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  caption_field: false
+  caption_field_required: false
+  alt_field_required: true
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,0 +1,11 @@
+uuid: ceadb825-db5e-41fc-ad2b-aebbe0f2337f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazard_physical_state
+id: taxonomy_term.hazard_physical_state
+target_entity_type_id: taxonomy_term
+target_bundle: hazard_physical_state
+default_langcode: und
+language_alterable: true

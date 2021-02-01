@@ -10,6 +10,8 @@
 # Ignore debug services
 /web/sites/*/services.yml
 /web/sites/development.services.yml
+/web/sites/*/development.services.yml
+
 
 # Ignore sensitive information
 /web/sites/*/settings.local.php

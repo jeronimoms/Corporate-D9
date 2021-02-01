@@ -1,0 +1,32 @@
+uuid: 42b041d9-06f9-4e90-95d9-3dc8c4537ef5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.esener.field_esener_code
+    - taxonomy.vocabulary.esener
+  module:
+    - text
+id: taxonomy_term.esener.default
+targetEntityType: taxonomy_term
+bundle: esener
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_esener_code:
+    label: above
+    weight: 3
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
