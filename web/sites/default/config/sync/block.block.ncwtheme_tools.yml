@@ -1,4 +1,4 @@
-uuid: 06bf38bf-2fef-4af0-bcb5-f6f53ff2d898
+uuid: 9c83ca6a-c272-4885-afe3-996fb7402e6a
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - ncwtheme
 _core:
   default_config_hash: rH6PpAn7-RScha1rGkohGAYSSh_1OVeZzioJPzPw6O4
-id: bartik_tools
-theme: bartik
+id: ncwtheme_tools
+theme: ncwtheme
 region: sidebar_first
 weight: 0
 provider: null

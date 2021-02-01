@@ -1,13 +1,13 @@
-uuid: b567e195-4a3b-441a-b036-ef3c67bac614
+uuid: 9ab02f17-bdaa-4814-9816-7ea74014a3e7
 langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
+    - ncwtheme
 _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
-id: bartik_local_tasks
-theme: bartik
+id: ncwtheme_local_tasks
+theme: ncwtheme
 region: content
 weight: -40
 provider: null

@@ -1,15 +1,15 @@
-uuid: 0048b520-b2ea-46f6-b72c-e4c23bc8fa5c
+uuid: 2fd2ede8-4b0a-445f-a46b-63dc85c1bb29
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - ncwtheme
 _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
-id: bartik_branding
-theme: bartik
+id: ncwtheme_branding
+theme: ncwtheme
 region: header
 weight: 0
 provider: null
