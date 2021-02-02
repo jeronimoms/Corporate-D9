@@ -1,0 +1,20 @@
+uuid: 46887110-04d1-499d-9983-3168c18f824a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.esener
+  module:
+    - text
+id: taxonomy_term.esener.description
+field_name: description
+entity_type: taxonomy_term
+bundle: esener
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

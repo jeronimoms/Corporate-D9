@@ -1,0 +1,18 @@
+uuid: ac4f2045-7fbd-48e8-9a23-e9a6e0db6827
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.provider_type
+id: taxonomy_term.provider_type.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: provider_type
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

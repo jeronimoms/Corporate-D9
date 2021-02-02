@@ -1,0 +1,20 @@
+uuid: 676e4372-1227-43ba-ae9c-e42ba87cb14f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.banner_links
+  module:
+    - text
+id: taxonomy_term.banner_links.description
+field_name: description
+entity_type: taxonomy_term
+bundle: banner_links
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

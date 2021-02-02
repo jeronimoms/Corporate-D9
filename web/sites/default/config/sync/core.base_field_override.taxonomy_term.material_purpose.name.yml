@@ -1,0 +1,18 @@
+uuid: c6b54df6-79d8-4f8b-94cd-c0bd60aad1a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_purpose
+id: taxonomy_term.material_purpose.name
+field_name: name
+entity_type: taxonomy_term
+bundle: material_purpose
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

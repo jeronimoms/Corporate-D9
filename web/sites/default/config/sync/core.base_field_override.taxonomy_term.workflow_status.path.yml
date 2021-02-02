@@ -1,0 +1,20 @@
+uuid: 6a41329d-5a4b-4fcf-b6d7-bef3dbb934aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.workflow_status
+  module:
+    - path
+id: taxonomy_term.workflow_status.path
+field_name: path
+entity_type: taxonomy_term
+bundle: workflow_status
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

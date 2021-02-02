@@ -1,0 +1,18 @@
+uuid: e28713de-3322-4dbd-bdfe-7b5808b900c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.relevant_for
+id: taxonomy_term.relevant_for.name
+field_name: name
+entity_type: taxonomy_term
+bundle: relevant_for
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

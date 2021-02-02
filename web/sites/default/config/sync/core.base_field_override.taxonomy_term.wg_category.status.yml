@@ -1,0 +1,22 @@
+uuid: b866f1ed-6e87-4ff7-8c37-6fca397e2d9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wg_category
+id: taxonomy_term.wg_category.status
+field_name: status
+entity_type: taxonomy_term
+bundle: wg_category
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

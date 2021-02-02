@@ -12,7 +12,8 @@ bundle: banner
 label: 'Page count'
 description: 'Automatically calculated when saving. The count of pages of text in the default language (English).'
 required: false
-translatable: false
+translatable: true
+
 default_value: {  }
 default_value_callback: ''
 settings:

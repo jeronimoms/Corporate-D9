@@ -1,0 +1,22 @@
+uuid: 0cd900b7-c84b-43ed-95c3-4fc63b161e6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.prevention_measures
+id: taxonomy_term.prevention_measures.status
+field_name: status
+entity_type: taxonomy_term
+bundle: prevention_measures
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

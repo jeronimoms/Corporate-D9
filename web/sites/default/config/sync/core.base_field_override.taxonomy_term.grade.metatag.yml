@@ -1,0 +1,18 @@
+uuid: cc51d40b-9d8f-42e9-bdd1-7033bf3a406b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.grade
+id: taxonomy_term.grade.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: grade
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

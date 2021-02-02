@@ -1,0 +1,18 @@
+uuid: 994d5e84-41fc-4aeb-9d04-18107acdcbb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact_us_form
+id: node.contact_us_form.changed
+field_name: changed
+entity_type: node
+bundle: contact_us_form
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

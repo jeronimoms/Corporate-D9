@@ -1,0 +1,20 @@
+uuid: 71f5efd5-37de-434b-88ee-75dc63ff52a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contact_type_of_sender
+  module:
+    - text
+id: taxonomy_term.contact_type_of_sender.description
+field_name: description
+entity_type: taxonomy_term
+bundle: contact_type_of_sender
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

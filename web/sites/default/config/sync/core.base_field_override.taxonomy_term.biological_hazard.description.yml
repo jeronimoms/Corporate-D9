@@ -1,0 +1,20 @@
+uuid: 7d49d37a-7a47-41e3-bc29-7b4b408d762b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.biological_hazard
+  module:
+    - text
+id: taxonomy_term.biological_hazard.description
+field_name: description
+entity_type: taxonomy_term
+bundle: biological_hazard
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

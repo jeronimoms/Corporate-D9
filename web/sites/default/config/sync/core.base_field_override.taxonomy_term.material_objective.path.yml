@@ -1,0 +1,20 @@
+uuid: 13e11fd2-7f98-400c-aa8a-f9f82609f0bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_objective
+  module:
+    - path
+id: taxonomy_term.material_objective.path
+field_name: path
+entity_type: taxonomy_term
+bundle: material_objective
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

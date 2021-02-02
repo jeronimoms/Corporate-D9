@@ -1,0 +1,18 @@
+uuid: f64d4b49-b742-4763-bf5f-4afae7e567c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.msds_glossary
+id: taxonomy_term.msds_glossary.name
+field_name: name
+entity_type: taxonomy_term
+bundle: msds_glossary
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

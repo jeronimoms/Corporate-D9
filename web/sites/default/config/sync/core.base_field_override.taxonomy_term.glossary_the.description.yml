@@ -1,0 +1,20 @@
+uuid: bdf35255-94cc-42f9-86c0-f7d4033b900f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.glossary_the
+  module:
+    - text
+id: taxonomy_term.glossary_the.description
+field_name: description
+entity_type: taxonomy_term
+bundle: glossary_the
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,18 @@
+uuid: 83b2105e-f4f8-4037-a92a-f5d03d8eba82
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.user_mention_terms
+id: taxonomy_term.user_mention_terms.name
+field_name: name
+entity_type: taxonomy_term
+bundle: user_mention_terms
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

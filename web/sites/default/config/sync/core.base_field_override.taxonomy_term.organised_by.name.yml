@@ -1,0 +1,18 @@
+uuid: 11137d34-3e44-43a8-be5d-7bf1509212db
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.organised_by
+id: taxonomy_term.organised_by.name
+field_name: name
+entity_type: taxonomy_term
+bundle: organised_by
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

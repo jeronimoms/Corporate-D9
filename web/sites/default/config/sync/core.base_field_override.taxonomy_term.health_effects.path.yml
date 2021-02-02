@@ -1,0 +1,20 @@
+uuid: 37d4aeae-5079-4f5a-9399-c049e79f3830
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.health_effects
+  module:
+    - path
+id: taxonomy_term.health_effects.path
+field_name: path
+entity_type: taxonomy_term
+bundle: health_effects
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

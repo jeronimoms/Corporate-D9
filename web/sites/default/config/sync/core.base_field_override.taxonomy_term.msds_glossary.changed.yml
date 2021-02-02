@@ -1,0 +1,18 @@
+uuid: 7f94d8a9-4d8e-4457-8b3d-3cd3a1028d79
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.msds_glossary
+id: taxonomy_term.msds_glossary.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: msds_glossary
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

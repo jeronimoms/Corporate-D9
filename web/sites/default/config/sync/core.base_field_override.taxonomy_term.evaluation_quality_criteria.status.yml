@@ -1,0 +1,22 @@
+uuid: 9085caf5-6d16-4dda-8818-2ea97a975e70
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.evaluation_quality_criteria
+id: taxonomy_term.evaluation_quality_criteria.status
+field_name: status
+entity_type: taxonomy_term
+bundle: evaluation_quality_criteria
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

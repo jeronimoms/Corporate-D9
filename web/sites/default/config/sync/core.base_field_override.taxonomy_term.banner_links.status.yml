@@ -1,0 +1,22 @@
+uuid: 85472c50-48c8-4968-88ce-69e68ac41cd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.banner_links
+id: taxonomy_term.banner_links.status
+field_name: status
+entity_type: taxonomy_term
+bundle: banner_links
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

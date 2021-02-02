@@ -1,0 +1,22 @@
+uuid: 4d4391dc-199c-4194-bf9a-4cbbe76b243a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.fop_link_sections
+id: taxonomy_term.fop_link_sections.status
+field_name: status
+entity_type: taxonomy_term
+bundle: fop_link_sections
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

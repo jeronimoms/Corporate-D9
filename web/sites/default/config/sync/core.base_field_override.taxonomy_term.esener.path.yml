@@ -1,0 +1,20 @@
+uuid: 1fe9bf37-3009-442e-b623-d221f82181c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.esener
+  module:
+    - path
+id: taxonomy_term.esener.path
+field_name: path
+entity_type: taxonomy_term
+bundle: esener
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
