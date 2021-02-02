@@ -1,0 +1,26 @@
+entity.node.approvers_node:
+  path: '/node/{node}/approvers'
+  defaults:
+    _controller: '\Drupal\vesafe_workflow\Controller\ApproversController::list'
+  requirements:
+    node: \d+
+    _permission: 'administer contact entity'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+vesafe_workflow.approver_form:
+  path: '/vesafe_workflow/approver/add'
+  defaults:
+    _form: '\Drupal\vesafe_workflow\Form\ApproverAddForm'
+  requirements:
+    _access: 'TRUE'
+
+vesafe_workflow.delete_form:
+  path: '/vesafe_workflow/delete/{node_id}/{user_id}/{back_url}'
+  defaults:
+    _form: '\Drupal\vesafe_workflow\Form\DeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
