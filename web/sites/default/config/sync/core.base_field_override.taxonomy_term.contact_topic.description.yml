@@ -1,0 +1,20 @@
+uuid: 8284f8fa-f8d9-4c7e-8226-74e697af13d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contact_topic
+  module:
+    - text
+id: taxonomy_term.contact_topic.description
+field_name: description
+entity_type: taxonomy_term
+bundle: contact_topic
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

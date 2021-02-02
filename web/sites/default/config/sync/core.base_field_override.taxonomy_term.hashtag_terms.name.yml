@@ -1,0 +1,18 @@
+uuid: 3cff21e6-a893-47a9-a3e1-a43ab22a4adb
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hashtag_terms
+id: taxonomy_term.hashtag_terms.name
+field_name: name
+entity_type: taxonomy_term
+bundle: hashtag_terms
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

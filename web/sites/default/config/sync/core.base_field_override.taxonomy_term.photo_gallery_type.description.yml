@@ -1,0 +1,20 @@
+uuid: 97d4a4ec-c6b5-45e2-83e6-eebd51f2c926
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.photo_gallery_type
+  module:
+    - text
+id: taxonomy_term.photo_gallery_type.description
+field_name: description
+entity_type: taxonomy_term
+bundle: photo_gallery_type
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

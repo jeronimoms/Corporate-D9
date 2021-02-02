@@ -1,0 +1,20 @@
+uuid: 2f3d0e1f-e93f-4da1-862f-b185a3f2aa53
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.audio
+id: media.audio.moderation_state
+field_name: moderation_state
+entity_type: media
+bundle: audio
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

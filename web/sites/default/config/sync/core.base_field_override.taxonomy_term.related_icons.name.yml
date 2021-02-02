@@ -1,0 +1,18 @@
+uuid: 765c9326-e27f-4a20-ad96-e7dd12f73f20
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.related_icons
+id: taxonomy_term.related_icons.name
+field_name: name
+entity_type: taxonomy_term
+bundle: related_icons
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

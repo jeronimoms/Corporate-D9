@@ -1,0 +1,18 @@
+uuid: 0742ee29-4922-419b-a5ce-4bfa29629286
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.workflow_status
+id: taxonomy_term.workflow_status.name
+field_name: name
+entity_type: taxonomy_term
+bundle: workflow_status
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

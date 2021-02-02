@@ -1,0 +1,18 @@
+uuid: 21478824-dcef-4a75-b9ae-6ec9e4250fc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.newsletter_sections
+id: taxonomy_term.newsletter_sections.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: newsletter_sections
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

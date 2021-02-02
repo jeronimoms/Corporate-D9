@@ -1,0 +1,20 @@
+uuid: 44af75a5-20c0-4272-87ce-ce25e43de4a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazmap_categories
+id: taxonomy_term.hazmap_categories.moderation_state
+field_name: moderation_state
+entity_type: taxonomy_term
+bundle: hazmap_categories
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

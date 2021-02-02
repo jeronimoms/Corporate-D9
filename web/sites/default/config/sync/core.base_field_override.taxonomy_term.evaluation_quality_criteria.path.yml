@@ -1,0 +1,20 @@
+uuid: 20a8ebd9-99c6-4dff-8b0e-61972b7f67ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.evaluation_quality_criteria
+  module:
+    - path
+id: taxonomy_term.evaluation_quality_criteria.path
+field_name: path
+entity_type: taxonomy_term
+bundle: evaluation_quality_criteria
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

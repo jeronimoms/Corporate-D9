@@ -1,0 +1,18 @@
+uuid: 61f4ea91-1eaf-4508-9c93-c8ea28a1133a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_purpose
+id: taxonomy_term.material_purpose.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: material_purpose
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

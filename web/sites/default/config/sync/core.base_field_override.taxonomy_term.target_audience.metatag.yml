@@ -1,0 +1,18 @@
+uuid: 8ca1db4a-b12a-4b48-bfd2-2300bec63208
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.target_audience
+id: taxonomy_term.target_audience.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: target_audience
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

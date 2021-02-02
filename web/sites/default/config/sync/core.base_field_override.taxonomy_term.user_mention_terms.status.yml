@@ -1,0 +1,22 @@
+uuid: f8456c0e-4aec-4e67-8c11-d369d482c1ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.user_mention_terms
+id: taxonomy_term.user_mention_terms.status
+field_name: status
+entity_type: taxonomy_term
+bundle: user_mention_terms
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,20 @@
+uuid: b9d8a17a-f449-4497-8ded-53635215a29b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wiki_categories
+  module:
+    - path
+id: taxonomy_term.wiki_categories.path
+field_name: path
+entity_type: taxonomy_term
+bundle: wiki_categories
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

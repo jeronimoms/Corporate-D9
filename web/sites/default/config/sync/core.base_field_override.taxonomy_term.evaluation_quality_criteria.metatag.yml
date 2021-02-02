@@ -1,0 +1,18 @@
+uuid: 5ed50fc4-299a-4b85-9138-99d793611447
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.evaluation_quality_criteria
+id: taxonomy_term.evaluation_quality_criteria.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: evaluation_quality_criteria
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

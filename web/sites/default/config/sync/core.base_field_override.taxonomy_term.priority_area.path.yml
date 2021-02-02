@@ -1,0 +1,20 @@
+uuid: aeb79919-2df7-48b1-8deb-ac74489e173a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.priority_area
+  module:
+    - path
+id: taxonomy_term.priority_area.path
+field_name: path
+entity_type: taxonomy_term
+bundle: priority_area
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

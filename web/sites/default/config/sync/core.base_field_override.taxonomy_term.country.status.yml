@@ -1,0 +1,22 @@
+uuid: 5691d422-98de-4d06-945b-3d038096a73d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.country
+id: taxonomy_term.country.status
+field_name: status
+entity_type: taxonomy_term
+bundle: country
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

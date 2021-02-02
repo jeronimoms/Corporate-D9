@@ -1,0 +1,22 @@
+uuid: dad0c8a0-76fe-416e-8d8c-49d1afd13b58
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_objective
+id: taxonomy_term.material_objective.status
+field_name: status
+entity_type: taxonomy_term
+bundle: material_objective
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

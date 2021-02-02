@@ -1,0 +1,20 @@
+uuid: 294b44a1-0824-4de8-bdc9-9e94efbe9436
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact_us_form
+  module:
+    - path
+id: node.contact_us_form.path
+field_name: path
+entity_type: node
+bundle: contact_us_form
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

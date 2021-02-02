@@ -1,0 +1,20 @@
+uuid: 870be2c2-4fa7-478f-998e-c171df78d798
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.msd_priority_area
+  module:
+    - text
+id: taxonomy_term.msd_priority_area.description
+field_name: description
+entity_type: taxonomy_term
+bundle: msd_priority_area
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

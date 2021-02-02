@@ -1,0 +1,18 @@
+uuid: ae43da56-66d1-4c80-96b9-904be2864eb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.purpose_of_material
+id: taxonomy_term.purpose_of_material.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: purpose_of_material
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

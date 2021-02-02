@@ -1,0 +1,22 @@
+uuid: 96c6386b-2ec7-4ee7-b6e3-11e0b254feb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazard_physical_state
+id: taxonomy_term.hazard_physical_state.status
+field_name: status
+entity_type: taxonomy_term
+bundle: hazard_physical_state
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

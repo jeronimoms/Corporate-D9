@@ -1,0 +1,20 @@
+uuid: f21adca3-8706-4aa0-9497-cf68bcbf41e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.moderation_state
+field_name: moderation_state
+entity_type: taxonomy_term
+bundle: tags
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

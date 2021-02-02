@@ -1,0 +1,18 @@
+uuid: 070bb336-fac2-44db-a898-2adc81f812d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact_us_form
+id: node.contact_us_form.metatag
+field_name: metatag
+entity_type: node
+bundle: contact_us_form
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

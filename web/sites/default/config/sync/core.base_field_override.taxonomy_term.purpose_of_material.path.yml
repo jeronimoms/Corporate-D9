@@ -1,0 +1,20 @@
+uuid: 0f81a9d3-8e2c-4f3c-8c00-b5147e57999a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.purpose_of_material
+  module:
+    - path
+id: taxonomy_term.purpose_of_material.path
+field_name: path
+entity_type: taxonomy_term
+bundle: purpose_of_material
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

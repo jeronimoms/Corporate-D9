@@ -1,0 +1,22 @@
+uuid: 3af088f6-79ce-47b8-875e-61418d4331b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contact_type_of_sender
+id: taxonomy_term.contact_type_of_sender.status
+field_name: status
+entity_type: taxonomy_term
+bundle: contact_type_of_sender
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

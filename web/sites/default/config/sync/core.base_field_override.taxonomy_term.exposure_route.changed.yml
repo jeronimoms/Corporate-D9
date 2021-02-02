@@ -1,0 +1,18 @@
+uuid: f8209179-4d09-45ce-9236-6aa75191ea48
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.exposure_route
+id: taxonomy_term.exposure_route.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: exposure_route
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

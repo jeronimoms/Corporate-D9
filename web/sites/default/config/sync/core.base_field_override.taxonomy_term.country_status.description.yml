@@ -1,0 +1,20 @@
+uuid: c7aa5ea1-6f5c-417d-8ee6-401b70248aae
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.country_status
+  module:
+    - text
+id: taxonomy_term.country_status.description
+field_name: description
+entity_type: taxonomy_term
+bundle: country_status
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

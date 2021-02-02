@@ -1,0 +1,18 @@
+uuid: 25bbe6df-e4ab-4feb-ad1b-d400d4496e86
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.prevention_measures
+id: taxonomy_term.prevention_measures.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: prevention_measures
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
