@@ -13,6 +13,7 @@ label: 'Character count'
 description: 'Automatically calculated when saving. The count of characters found in the default language text (English).'
 required: false
 translatable: true
+
 default_value: {  }
 default_value_callback: ''
 settings:

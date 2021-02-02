@@ -17,6 +17,7 @@ dependencies:
     - datetime
     - link
     - media_library
+
     - path
     - workbench_moderation
 id: node.banner.default
@@ -27,12 +28,14 @@ content:
   created:
     type: datetime_timestamp
     weight: 11
+
     region: content
     settings: {  }
     third_party_settings: {  }
   field_banner_link:
     type: link_default
     weight: 5
+
     region: content
     settings:
       placeholder_url: ''
@@ -41,6 +44,7 @@ content:
   field_banner_link_title:
     type: entity_reference_autocomplete
     weight: 6
+
     region: content
     settings:
       match_operator: CONTAINS
@@ -51,6 +55,7 @@ content:
   field_character_count:
     type: number
     weight: 8
+
     region: content
     settings:
       placeholder: ''
@@ -58,6 +63,7 @@ content:
   field_copyright:
     type: string_textfield
     weight: 4
+
     region: content
     settings:
       size: 60
@@ -79,6 +85,7 @@ content:
   field_page_count:
     type: number
     weight: 9
+
     region: content
     settings:
       placeholder: ''
@@ -86,6 +93,7 @@ content:
   field_subtitle:
     type: string_textfield
     weight: 2
+
     region: content
     settings:
       size: 60
@@ -109,6 +117,7 @@ content:
     settings:
       display_label: true
     weight: 12
+
     region: content
     third_party_settings: {  }
   status:
@@ -136,6 +145,7 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 10
+
     settings:
       match_operator: CONTAINS
       size: 60
