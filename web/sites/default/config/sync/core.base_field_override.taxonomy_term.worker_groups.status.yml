@@ -1,0 +1,22 @@
+uuid: 1dd26467-c453-45a2-9527-8e6b68a51873
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.worker_groups
+id: taxonomy_term.worker_groups.status
+field_name: status
+entity_type: taxonomy_term
+bundle: worker_groups
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

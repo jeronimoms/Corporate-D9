@@ -1,0 +1,18 @@
+uuid: 684476b4-2b66-41ac-972f-a32d985fa68e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wiki_categories
+id: taxonomy_term.wiki_categories.name
+field_name: name
+entity_type: taxonomy_term
+bundle: wiki_categories
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

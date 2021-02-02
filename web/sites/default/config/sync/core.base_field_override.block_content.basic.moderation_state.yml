@@ -1,0 +1,20 @@
+uuid: c5ca27a0-bd44-4e03-b8ac-01488796fbe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+id: block_content.basic.moderation_state
+field_name: moderation_state
+entity_type: block_content
+bundle: basic
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

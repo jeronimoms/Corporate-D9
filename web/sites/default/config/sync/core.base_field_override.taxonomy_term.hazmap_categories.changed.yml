@@ -1,0 +1,18 @@
+uuid: 94702942-71bf-400c-b60b-b15a7b88a922
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazmap_categories
+id: taxonomy_term.hazmap_categories.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: hazmap_categories
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

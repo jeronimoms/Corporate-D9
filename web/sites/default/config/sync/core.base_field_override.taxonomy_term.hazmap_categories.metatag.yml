@@ -1,0 +1,18 @@
+uuid: e58a3103-d009-4ad1-9b92-88e2729bf692
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazmap_categories
+id: taxonomy_term.hazmap_categories.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: hazmap_categories
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

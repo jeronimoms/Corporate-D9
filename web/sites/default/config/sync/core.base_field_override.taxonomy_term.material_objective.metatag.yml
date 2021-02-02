@@ -1,0 +1,18 @@
+uuid: a9f01758-6d35-476a-a797-5c3ccb5ac561
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_objective
+id: taxonomy_term.material_objective.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: material_objective
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

@@ -1,0 +1,20 @@
+uuid: 93c947e3-2387-48c7-9b33-4acdcdb13f7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.exposure_route
+  module:
+    - path
+id: taxonomy_term.exposure_route.path
+field_name: path
+entity_type: taxonomy_term
+bundle: exposure_route
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

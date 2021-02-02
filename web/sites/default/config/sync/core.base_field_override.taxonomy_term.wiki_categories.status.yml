@@ -1,0 +1,22 @@
+uuid: da2f5a05-4f7e-4a8e-b1d3-bad49b25d5f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wiki_categories
+id: taxonomy_term.wiki_categories.status
+field_name: status
+entity_type: taxonomy_term
+bundle: wiki_categories
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

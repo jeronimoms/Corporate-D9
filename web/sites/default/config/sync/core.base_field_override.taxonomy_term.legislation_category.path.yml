@@ -1,0 +1,20 @@
+uuid: e13e0c93-cbb1-454a-bed6-7601a9fcfe5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.legislation_category
+  module:
+    - path
+id: taxonomy_term.legislation_category.path
+field_name: path
+entity_type: taxonomy_term
+bundle: legislation_category
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

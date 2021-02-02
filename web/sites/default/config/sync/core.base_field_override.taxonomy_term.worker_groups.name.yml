@@ -1,0 +1,18 @@
+uuid: 2904f625-545c-4d2d-94b9-bee1cf3c0fea
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.worker_groups
+id: taxonomy_term.worker_groups.name
+field_name: name
+entity_type: taxonomy_term
+bundle: worker_groups
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 3ffca9e2-e53d-443b-aaf3-07d9287127ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.legislation_category
+  module:
+    - text
+id: taxonomy_term.legislation_category.description
+field_name: description
+entity_type: taxonomy_term
+bundle: legislation_category
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

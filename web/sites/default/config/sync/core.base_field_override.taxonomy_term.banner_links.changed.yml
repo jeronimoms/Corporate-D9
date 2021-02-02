@@ -1,0 +1,18 @@
+uuid: e18c5375-9a1f-4859-9996-7c30bc994ac4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.banner_links
+id: taxonomy_term.banner_links.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: banner_links
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

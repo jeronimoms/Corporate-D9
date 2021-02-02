@@ -1,0 +1,22 @@
+uuid: 5070207c-9837-4fa8-8082-59140dac96cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazard_health_effects
+id: taxonomy_term.hazard_health_effects.status
+field_name: status
+entity_type: taxonomy_term
+bundle: hazard_health_effects
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

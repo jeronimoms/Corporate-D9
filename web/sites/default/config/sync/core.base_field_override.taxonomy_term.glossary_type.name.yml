@@ -1,0 +1,18 @@
+uuid: bd704613-7a26-4bec-b436-31eeee8fdfea
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.glossary_type
+id: taxonomy_term.glossary_type.name
+field_name: name
+entity_type: taxonomy_term
+bundle: glossary_type
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

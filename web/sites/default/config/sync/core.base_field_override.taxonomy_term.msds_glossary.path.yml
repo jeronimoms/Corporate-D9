@@ -1,0 +1,20 @@
+uuid: 45278cd9-bbc3-49c0-a4ac-fbc031856dff
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.msds_glossary
+  module:
+    - path
+id: taxonomy_term.msds_glossary.path
+field_name: path
+entity_type: taxonomy_term
+bundle: msds_glossary
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,22 @@
+uuid: a3f63692-6047-4196-8029-672845a0f562
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.exposure_route
+id: taxonomy_term.exposure_route.status
+field_name: status
+entity_type: taxonomy_term
+bundle: exposure_route
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,20 @@
+uuid: 333d78d7-7691-4ec1-a7de-13c676c015aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazard_physical_state
+  module:
+    - text
+id: taxonomy_term.hazard_physical_state.description
+field_name: description
+entity_type: taxonomy_term
+bundle: hazard_physical_state
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

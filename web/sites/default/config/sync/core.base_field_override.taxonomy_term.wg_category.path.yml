@@ -1,0 +1,20 @@
+uuid: a2c4dcbe-23f1-41b5-ac74-f0c4f93c04e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wg_category
+  module:
+    - path
+id: taxonomy_term.wg_category.path
+field_name: path
+entity_type: taxonomy_term
+bundle: wg_category
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,18 @@
+uuid: 7a26bdb4-80ec-4e37-90f0-e54b825c938d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tooltips
+id: taxonomy_term.tooltips.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: tooltips
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

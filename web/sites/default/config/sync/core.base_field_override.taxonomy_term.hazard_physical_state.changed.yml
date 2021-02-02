@@ -1,0 +1,18 @@
+uuid: ad81dd3e-981d-42db-b6d7-da166b7836d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazard_physical_state
+id: taxonomy_term.hazard_physical_state.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: hazard_physical_state
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

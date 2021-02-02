@@ -1,0 +1,18 @@
+uuid: 41479886-b63a-49b8-8e5a-9c028cd34000
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.msds_glossary
+id: taxonomy_term.msds_glossary.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: msds_glossary
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

@@ -1,0 +1,20 @@
+uuid: 59fa2266-e086-4fd0-b91b-6f68f9892149
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wg_role_2
+  module:
+    - path
+id: taxonomy_term.wg_role_2.path
+field_name: path
+entity_type: taxonomy_term
+bundle: wg_role_2
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,20 @@
+uuid: 061ba1b9-f505-408c-840d-1a015380149c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_objective
+id: taxonomy_term.material_objective.moderation_state
+field_name: moderation_state
+entity_type: taxonomy_term
+bundle: material_objective
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

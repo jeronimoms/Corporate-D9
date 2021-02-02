@@ -1,0 +1,22 @@
+uuid: 45e2ce2f-2bc2-48d5-82b5-c13e9591cdd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.biological_hazard
+id: taxonomy_term.biological_hazard.status
+field_name: status
+entity_type: taxonomy_term
+bundle: biological_hazard
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

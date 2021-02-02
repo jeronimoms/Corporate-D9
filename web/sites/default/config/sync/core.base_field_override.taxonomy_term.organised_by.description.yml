@@ -1,0 +1,20 @@
+uuid: 052e89c7-7b35-4d6d-a5cf-010aca6a75b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.organised_by
+  module:
+    - text
+id: taxonomy_term.organised_by.description
+field_name: description
+entity_type: taxonomy_term
+bundle: organised_by
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

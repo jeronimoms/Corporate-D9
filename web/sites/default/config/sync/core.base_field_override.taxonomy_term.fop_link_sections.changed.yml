@@ -1,0 +1,18 @@
+uuid: 3911caca-b0fd-48d8-9375-f38f4f1712b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.fop_link_sections
+id: taxonomy_term.fop_link_sections.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: fop_link_sections
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

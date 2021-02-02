@@ -1,0 +1,20 @@
+uuid: 3ac75963-190d-449a-8669-62b9d526cb20
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact_us_form
+id: node.contact_us_form.uid
+field_name: uid
+entity_type: node
+bundle: contact_us_form
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

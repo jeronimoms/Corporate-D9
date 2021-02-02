@@ -1,0 +1,20 @@
+uuid: 0c581e1e-071f-43af-9478-b0d8f4b7a00a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazard_physical_state
+  module:
+    - path
+id: taxonomy_term.hazard_physical_state.path
+field_name: path
+entity_type: taxonomy_term
+bundle: hazard_physical_state
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

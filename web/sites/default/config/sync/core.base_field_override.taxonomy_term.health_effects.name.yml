@@ -1,0 +1,18 @@
+uuid: e27f9ac6-0477-4dd2-88fb-737cf2525339
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.health_effects
+id: taxonomy_term.health_effects.name
+field_name: name
+entity_type: taxonomy_term
+bundle: health_effects
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

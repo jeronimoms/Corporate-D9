@@ -1,0 +1,18 @@
+uuid: bf0ab152-b044-40cc-a87d-fd890b26335f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.target_group
+id: taxonomy_term.target_group.name
+field_name: name
+entity_type: taxonomy_term
+bundle: target_group
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: 0b36eed6-3041-4a5e-8af1-46c1dc86c4f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.legislation_category
+id: taxonomy_term.legislation_category.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: legislation_category
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,18 @@
+uuid: 0d81cd95-326e-41c3-92ff-b6c90aae1d6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_objective
+id: taxonomy_term.material_objective.name
+field_name: name
+entity_type: taxonomy_term
+bundle: material_objective
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

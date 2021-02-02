@@ -1,0 +1,20 @@
+uuid: dd234bd0-4f26-4e1a-9fa4-ff821e0fc846
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.target_audience
+  module:
+    - text
+id: taxonomy_term.target_audience.description
+field_name: description
+entity_type: taxonomy_term
+bundle: target_audience
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

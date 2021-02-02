@@ -1,0 +1,20 @@
+uuid: fa2111d8-1248-435b-aa8c-b9c106ab0922
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_objective
+  module:
+    - text
+id: taxonomy_term.material_objective.description
+field_name: description
+entity_type: taxonomy_term
+bundle: material_objective
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

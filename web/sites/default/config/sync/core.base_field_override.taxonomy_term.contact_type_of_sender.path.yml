@@ -1,0 +1,20 @@
+uuid: 3a523721-0cab-4dd0-9904-f7b26a5e493c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contact_type_of_sender
+  module:
+    - path
+id: taxonomy_term.contact_type_of_sender.path
+field_name: path
+entity_type: taxonomy_term
+bundle: contact_type_of_sender
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
