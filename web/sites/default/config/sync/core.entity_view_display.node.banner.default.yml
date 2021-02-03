@@ -6,12 +6,10 @@ dependencies:
     - field.field.node.banner.comment_node_banner
     - field.field.node.banner.field_banner_link
     - field.field.node.banner.field_banner_link_title
-    - field.field.node.banner.field_character_count
     - field.field.node.banner.field_copyright
-    - field.field.node.banner.field_flickr_date
-    - field.field.node.banner.field_imagen
-    - field.field.node.banner.field_page_count
+    - field.field.node.banner.field_image_media
     - field.field.node.banner.field_subtitle
+    - field.field.node.banner.field_summary
     - node.type.banner
   module:
     - user
@@ -20,9 +18,9 @@ targetEntityType: node
 bundle: banner
 mode: default
 content:
-  field_imagen:
+  field_image_media:
     type: entity_reference_entity_view
-    weight: 101
+    weight: 102
     label: above
     settings:
       view_mode: default
@@ -38,10 +36,8 @@ hidden:
   comment_node_banner: true
   field_banner_link: true
   field_banner_link_title: true
-  field_character_count: true
   field_copyright: true
-  field_flickr_date: true
-  field_page_count: true
   field_subtitle: true
+  field_summary: true
   langcode: true
   search_api_excerpt: true

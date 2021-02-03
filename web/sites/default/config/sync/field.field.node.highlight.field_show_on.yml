@@ -1,0 +1,21 @@
+uuid: 9c8ac1d1-ad60-48d4-b568-9f5106847a29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_on
+    - node.type.highlight
+  module:
+    - options
+id: node.highlight.field_show_on
+field_name: field_show_on
+entity_type: node
+bundle: highlight
+label: 'Show on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

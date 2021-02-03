@@ -1,18 +1,16 @@
-uuid: b9cf2282-a56a-4f61-a0b8-b22945828f45
+uuid: 7471b0fd-c827-41ab-85b3-7039a651d04b
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.banner
+    - node.type.highlight
   module:
     - content_translation
 third_party_settings:
   content_translation:
     enabled: true
-    bundle_settings:
-      untranslatable_fields_hide: '1'
-id: node.banner
+id: node.highlight
 target_entity_type_id: node
-target_bundle: banner
+target_bundle: highlight
 default_langcode: site_default
 language_alterable: false

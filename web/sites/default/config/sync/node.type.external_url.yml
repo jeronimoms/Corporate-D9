@@ -1,4 +1,4 @@
-uuid: b21aa52d-17ba-446b-9bdf-58d6b76e0afb
+uuid: a2f0b56d-b8e5-433f-a12f-1d3a5596dc0a
 langcode: en
 status: true
 dependencies:
@@ -6,12 +6,12 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    parent: 'main:'
     available_menus:
-      - main
-name: Banner
-type: banner
-description: 'Banners for home page'
+      - main-menu
+    parent: 'main-menu:0:'
+name: 'External URL'
+type: external_url
+description: 'Additional resources - external URL'
 help: ''
 new_revision: false
 preview_mode: 1
