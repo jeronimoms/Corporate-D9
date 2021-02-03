@@ -1,0 +1,23 @@
+uuid: 14e64a5b-5cb3-4b05-af70-f6e2c014638a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archived
+    - node.type.highlight
+id: node.highlight.field_archived
+field_name: field_archived
+entity_type: node
+bundle: highlight
+label: 'Marked as outdated'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

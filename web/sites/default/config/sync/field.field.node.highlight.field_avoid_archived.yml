@@ -1,0 +1,23 @@
+uuid: 6cb99506-8fbf-470b-a9c1-04701cd2e4b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_avoid_archived
+    - node.type.highlight
+id: node.highlight.field_avoid_archived
+field_name: field_avoid_archived
+entity_type: node
+bundle: highlight
+label: 'Avoid item to be archived'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean
