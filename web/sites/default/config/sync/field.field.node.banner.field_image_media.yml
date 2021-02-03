@@ -1,19 +1,19 @@
-uuid: 8b1d677d-4eb0-4c6e-b6e4-edc8a5ba171c
+uuid: 4d99228f-21a6-4bef-a668-ff9d30e7522f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_imagen
+    - field.storage.node.field_image_media
     - media.type.image
     - node.type.banner
-id: node.banner.field_imagen
-field_name: field_imagen
+id: node.banner.field_image_media
+field_name: field_image_media
 entity_type: node
 bundle: banner
-label: Imagen
-description: 'The header image that will be displayed on page.'
-required: true
-translatable: true
+label: Image
+description: ''
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

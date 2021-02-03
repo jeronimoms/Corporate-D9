@@ -1,17 +1,17 @@
-uuid: 19ab9b45-915c-44d1-9fd2-8714a941ef1c
-langcode: und
+uuid: b0de6f61-eac6-4837-a8f2-d1426b488983
+langcode: en
 status: true
 dependencies:
   module:
-    - datetime
+    - media
     - node
-id: node.field_flickr_date
-field_name: field_flickr_date
+id: node.field_image_media
+field_name: field_image_media
 entity_type: node
-type: datetime
+type: entity_reference
 settings:
-  datetime_type: date
-module: datetime
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true
