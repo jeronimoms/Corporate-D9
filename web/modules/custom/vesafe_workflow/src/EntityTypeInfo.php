@@ -3,6 +3,7 @@
 namespace Drupal\vesafe_workflow;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -17,6 +18,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class EntityTypeInfo implements ContainerInjectionInterface {
 
   use StringTranslationTrait;
+  use DependencySerializationTrait;
 
   /**
    * The current user.

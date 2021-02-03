@@ -4,6 +4,7 @@ namespace Drupal\vesafe_workflow\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\vesafe_workflow\VesafeWorkFlowHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Database\Connection;
@@ -25,11 +26,19 @@ class ApproverAddForm extends FormBase {
   protected $database;
 
   /**
+   * The Vesafe helper service.
+   *
+   * @var \Drupal\vesafe_workflow\VesafeWorkFlowHelper
+   */
+  protected $helper;
+
+  /**
    * Class constructor.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, Connection $database) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, Connection $database, VesafeWorkFlowHelper $vasefe_helper) {
     $this->entityTypeManager = $entity_type_manager;
     $this->database = $database;
+    $this->helper = $vasefe_helper;
   }
 
   /**
@@ -40,7 +49,8 @@ class ApproverAddForm extends FormBase {
     return new static(
     // Load the service required to construct this class.
       $container->get('entity_type.manager'),
-      $container->get('database')
+      $container->get('database'),
+      $container->get('vesafe_workflow.helper')
     );
   }
 
@@ -114,10 +124,9 @@ class ApproverAddForm extends FormBase {
       'user_id' => $form_state->getValue('user_id'),
       'status' => $this->t('Waiting to approve'),
     ];
-    $this->database->insert('vesafe_workflow_approvers')
-      ->fields($fields)
-      ->execute();
 
+    // Add the user to the list.
+    $this->helper->addUserToList('approvers', $fields);
   }
 
   public function getUsers() {
@@ -132,7 +141,10 @@ class ApproverAddForm extends FormBase {
       if ($user->id() == 0) {
         continue;
       }
-      $output[$user->id()] = $user->getDisplayName();
+
+      if ($user->hasRole('approver') || $user->hasRole('administrator')) {
+        $output[$user->id()] = $user->getDisplayName();
+      }
     }
 
     return $output;
