@@ -1,0 +1,18 @@
+uuid: 642e0f2c-3e05-4a37-9fe8-3477003ebc5e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: File
+type: file
+description: 'Additional resources - internal files'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false
