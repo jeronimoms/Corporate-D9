@@ -1,1 +1,63 @@
 <?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Menu\LocalTaskDefault;
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
+use Drupal\vesafe_workflow\VesafeWorkflowEntity;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function vesafe_workflow_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'content_moderation_entity_moderation_form') {
+    return \Drupal::service('class_resolver')
+      ->getInstanceFromDefinition(VesafeWorkflowEntity::class)
+      ->formModerationAlter($form, $form_state, $form_id);
+  }
+
+  if ($form_id == 'node_good_practice_edit_form') {
+    return \Drupal::service('class_resolver')
+      ->getInstanceFromDefinition(VesafeWorkflowEntity::class)
+      ->formAlter($form, $form_state, $form_id);
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function vesafe_workflow_entity_presave(EntityInterface $entity) {
+  // Filter by node type.
+  if (!$entity instanceof Node) {
+    return;
+  }
+
+  // Filter by bundle.
+  if ($entity->bundle() == 'good_practice') {
+    return \Drupal::service('class_resolver')
+      ->getInstanceFromDefinition(VesafeWorkflowEntity::class)
+      ->preNodeSave($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function vesafe_workflow_entity_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  // Filter by node type.
+  if (!$entity instanceof Node) {
+    return;
+  }
+
+  // Filter by bundle.
+  if ($entity->bundle() == 'good_practice' && $display->id() == 'node.good_practice.full') {
+    return \Drupal::service('class_resolver')
+      ->getInstanceFromDefinition(VesafeWorkflowEntity::class)
+      ->viewAlter($build, $entity, $display);
+  }
+}
+

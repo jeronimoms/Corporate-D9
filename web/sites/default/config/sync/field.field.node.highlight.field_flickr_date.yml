@@ -1,21 +1,20 @@
-uuid: f9fcdcb4-8771-4683-98f3-939b63e83c42
+uuid: 51505a92-783f-4d99-83b4-beb99039d279
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_flickr_date
-    - node.type.banner
+    - node.type.highlight
   module:
     - datetime
-id: node.banner.field_flickr_date
+id: node.highlight.field_flickr_date
 field_name: field_flickr_date
 entity_type: node
-bundle: banner
+bundle: highlight
 label: 'Flickr date taken'
 description: 'Grab Flickr photos taken on or between these dates only.'
 required: false
-translatable: true
-
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

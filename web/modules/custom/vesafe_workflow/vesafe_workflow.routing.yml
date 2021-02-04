@@ -4,7 +4,7 @@ entity.node.approvers_node:
     _controller: '\Drupal\vesafe_workflow\Controller\ApproversController::list'
   requirements:
     node: \d+
-    _permission: 'administer contact entity'
+    _permission: 'administer approvers'
   options:
     parameters:
       node:

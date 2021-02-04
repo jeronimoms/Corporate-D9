@@ -1,0 +1,29 @@
+uuid: 084fefd5-0bc2-48b7-8645-3ba50bd9bada
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_oshmail_media
+    - media.type.image
+    - node.type.highlight
+id: node.highlight.field_image_oshmail_media
+field_name: field_image_oshmail_media
+entity_type: node
+bundle: highlight
+label: 'Image OSHmail'
+description: 'This image is displayed on OSHmail. The image should be: width:300px height:200px'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

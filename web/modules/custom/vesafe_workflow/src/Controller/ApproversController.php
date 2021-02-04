@@ -7,6 +7,8 @@ use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Block\BlockManager;
 use Drupal\Core\Form\FormBuilder;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\vesafe_workflow\VesafeWorkFlowHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\vesafe_workflow\Form\ApproverAddForm;
@@ -46,16 +48,32 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
   protected $blockManager;
 
   /**
+   * The AccountInterface object.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $account;
+
+  /**
+   * The Vesafe helper service.
+   *
+   * @var \Drupal\vesafe_workflow\VesafeWorkFlowHelper
+   */
+  protected $helper;
+
+  /**
    * ChooseBlockController constructor.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
    */
-  public  function __construct(EntityTypeManagerInterface $entity_type_manager, FormBuilder $form_builder, Connection $database, BlockManager $block_manager) {
+  public  function __construct(EntityTypeManagerInterface $entity_type_manager, FormBuilder $form_builder, Connection $database, BlockManager $block_manager, AccountInterface $account, VesafeWorkFlowHelper $vasefe_helper) {
     $this->entityTypeManager = $entity_type_manager;
     $this->formBuilder = $form_builder;
     $this->database = $database;
     $this->blockManager = $block_manager;
+    $this->account = $account;
+    $this->helper = $vasefe_helper;
   }
 
   /**
@@ -66,7 +84,9 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
       $container->get('entity_type.manager'),
       $container->get('form_builder'),
       $container->get('database'),
-      $container->get('plugin.manager.block')
+      $container->get('plugin.manager.block'),
+      $container->get('current_user'),
+      $container->get('vesafe_workflow.helper')
     );
   }
 
@@ -78,9 +98,6 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
     // Block of current states.
     $plugin_block = $this->blockManager->createInstance('vesafe_workflow_block', []);
     $content['block'] = $plugin_block->build();
-
-    // Show the form to approve or reject the changes.
-    $content['form_approve'] = $this->formBuilder->getForm(ApproveForm::class);
 
     // Pre table message.
     $content['message'] = [
@@ -97,11 +114,7 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
     ];
 
     // Get the actual entries from database.
-    $query = $this->database->select('vesafe_workflow_approvers', 'v')
-      ->condition('node_id', $node->id() , '=')
-      ->fields('v', ['id', 'node_id', 'user_id', 'status']);
-
-    $results = $query->execute()->fetchAll();
+    $results = $this->helper->getModerationList('approvers');
 
     // Create the rows.
     foreach ($results as $data) {
