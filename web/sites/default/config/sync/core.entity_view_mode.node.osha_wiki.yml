@@ -1,0 +1,10 @@
+uuid: bd0e3259-f977-46e8-90d3-72686dd5a6ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.osha_wiki
+label: osha_wiki
+targetEntityType: node
+cache: true
