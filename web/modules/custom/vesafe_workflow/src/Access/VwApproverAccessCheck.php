@@ -5,9 +5,9 @@ namespace Drupal\vesafe_workflow\Access;
 use Drupal\Core\Routing\Access\AccessInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
-use Drupal\vesafe_workflow\VesafeWorkFlowHelper;
+use Drupal\vesafe_workflow\VwHelper;
 
-class VesafeWorkflowApproverAccessCheck implements AccessInterface {
+class VwApproverAccessCheck implements AccessInterface {
 
   public function access(AccountInterface $account) {
     // Get the helper object.
@@ -32,7 +32,7 @@ class VesafeWorkflowApproverAccessCheck implements AccessInterface {
   /**
    * Gets Vesafe Helper object.
    *
-   * @return \Drupal\vesafe_workflow\VesafeWorkFlowHelper
+   * @return \Drupal\vesafe_workflow\VwHelper
    *   The object.
    */
   public function getVesafeHelper() {

@@ -8,7 +8,7 @@ use Symfony\Component\Routing\RouteCollection;
 /**
  * Alter the routes to check the access.
  */
-class VesafeWorkflowRouteSubscriber extends RouteSubscriberBase {
+class VwRouteSubscriber extends RouteSubscriberBase {
 
   /**
    * {@inheritdoc}

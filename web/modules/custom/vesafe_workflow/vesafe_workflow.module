@@ -1,14 +1,32 @@
 <?php
 
-use Drupal\Core\Access\AccessResult;
-use Drupal\Core\Menu\LocalTaskDefault;
-use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
-use Drupal\vesafe_workflow\VesafeWorkflowEntity;
+use Drupal\vesafe_workflow\VwEntity;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\Entity\Node;
 
 
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function vesafe_workflow_local_tasks_alter(&$local_tasks) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwEntity::class)
+    ->localTastAlter($local_tasks);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function vesafe_workflow_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'approvers':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
 
 /**
  * Implements hook_form_alter().
@@ -16,13 +34,13 @@ use Drupal\node\Entity\Node;
 function vesafe_workflow_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'content_moderation_entity_moderation_form') {
     return \Drupal::service('class_resolver')
-      ->getInstanceFromDefinition(VesafeWorkflowEntity::class)
+      ->getInstanceFromDefinition(VwEntity::class)
       ->formModerationAlter($form, $form_state, $form_id);
   }
 
   if ($form_id == 'node_good_practice_edit_form') {
     return \Drupal::service('class_resolver')
-      ->getInstanceFromDefinition(VesafeWorkflowEntity::class)
+      ->getInstanceFromDefinition(VwEntity::class)
       ->formAlter($form, $form_state, $form_id);
   }
 }
@@ -37,9 +55,9 @@ function vesafe_workflow_entity_presave(EntityInterface $entity) {
   }
 
   // Filter by bundle.
-  if ($entity->bundle() == 'good_practice') {
+  if ($entity->bundle() == 'good_practice' || $entity->bundle() == 'key_article') {
     return \Drupal::service('class_resolver')
-      ->getInstanceFromDefinition(VesafeWorkflowEntity::class)
+      ->getInstanceFromDefinition(VwEntity::class)
       ->preNodeSave($entity);
   }
 }
@@ -48,16 +66,8 @@ function vesafe_workflow_entity_presave(EntityInterface $entity) {
  * Implements hook_entity_view_alter().
  */
 function vesafe_workflow_entity_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
-  // Filter by node type.
-  if (!$entity instanceof Node) {
-    return;
-  }
-
-  // Filter by bundle.
-  if ($entity->bundle() == 'good_practice' && $display->id() == 'node.good_practice.full') {
-    return \Drupal::service('class_resolver')
-      ->getInstanceFromDefinition(VesafeWorkflowEntity::class)
-      ->viewAlter($build, $entity, $display);
-  }
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwEntity::class)
+    ->viewAlter($build, $entity, $display);
 }
 

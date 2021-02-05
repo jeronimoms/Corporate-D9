@@ -10,7 +10,7 @@ use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Url;
 use Drupal\Core\Render\Element;
 
-class DeleteForm extends ConfirmFormBase {
+class VwDeleteForm extends ConfirmFormBase {
 
   private $node_id;
   private $user_id;

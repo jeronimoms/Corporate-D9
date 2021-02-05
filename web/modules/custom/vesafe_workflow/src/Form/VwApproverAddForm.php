@@ -4,12 +4,15 @@ namespace Drupal\vesafe_workflow\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\vesafe_workflow\VesafeWorkFlowHelper;
+use Drupal\Tests\search\Kernel\SearchMatchTest;
+use Drupal\vesafe_workflow\VwHelper;
+use http\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Config\ConfigFactoryInterface;
 
-class ApproverAddForm extends FormBase {
+class VwApproverAddForm extends FormBase {
 
   /**
    * The entity type manager.
@@ -28,17 +31,25 @@ class ApproverAddForm extends FormBase {
   /**
    * The Vesafe helper service.
    *
-   * @var \Drupal\vesafe_workflow\VesafeWorkFlowHelper
+   * @var \Drupal\vesafe_workflow\VwHelper
    */
   protected $helper;
 
   /**
+   * The Config Factory service.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * Class constructor.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, Connection $database, VesafeWorkFlowHelper $vasefe_helper) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, Connection $database, VwHelper $vasefe_helper, ConfigFactoryInterface $config_factory) {
     $this->entityTypeManager = $entity_type_manager;
     $this->database = $database;
     $this->helper = $vasefe_helper;
+    $this->configFactory = $config_factory;
   }
 
   /**
@@ -50,7 +61,8 @@ class ApproverAddForm extends FormBase {
     // Load the service required to construct this class.
       $container->get('entity_type.manager'),
       $container->get('database'),
-      $container->get('vesafe_workflow.helper')
+      $container->get('vesafe_workflow.helper'),
+      $container->get('config.factory')
     );
   }
 
@@ -64,14 +76,25 @@ class ApproverAddForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state, $table = NULL) {
+    // Set the table name.
+    $form_state->set('vesafe_workflow_table', $table);
+
+    // Store the list configration.
+    $vesafe_config = $this->configFactory->getEditable('vesafe_workflow.general');
+    foreach ($vesafe_config->get('lists')['list'] as $list) {
+      if ($list['name'] == ucfirst($form_state->get('vesafe_workflow_table'))) {
+        $form_state->set('vesafe_workflow_list_configuration', $list);
+      }
+    }
+
     $form['node_id'] = [
       '#type' => 'number',
       '#min' => 0,
       '#step' => 1,
     ];
 
-    $users = $this->getUsers();
+    $users = $this->getUsers($form_state->get('vesafe_workflow_list_configuration')['access_roles']);
     $form['user_id'] = [
       '#type' => 'select',
       '#title' => $this->t('Select a new user to add it to the queue'),
@@ -100,17 +123,10 @@ class ApproverAddForm extends FormBase {
       $form_state->setErrorByName('User ID', $this->t('The field User ID is empty'));
     }
 
-    // Check if the user already exists.
-    $query = $this->database->select('vesafe_workflow_approvers', 'v')
-      ->condition('node_id', $node_id , '=')
-      ->condition('user_id', $user_id , '=')
-      ->fields('v', ['id', 'node_id', 'user_id', 'status']);
-
-    $results = $query->execute()->fetchAll();
-    if (!empty($results)) {
+    // If the user already exists in the list, then return error.
+    if ($this->helper->checkUserExists($form_state->get('vesafe_workflow_table'), $user_id)) {
       $form_state->setErrorByName('Duplicated', $this->t('That user already exists as approver'));
     }
-
 
     parent::validateForm($form, $form_state);
   }
@@ -126,10 +142,10 @@ class ApproverAddForm extends FormBase {
     ];
 
     // Add the user to the list.
-    $this->helper->addUserToList('approvers', $fields);
+    $this->helper->addUserToList($form_state->get('vesafe_workflow_table'), $fields);
   }
 
-  public function getUsers() {
+  public function getUsers(array $roles = []) {
     // Output array.
     $output = [];
 
@@ -142,7 +158,15 @@ class ApproverAddForm extends FormBase {
         continue;
       }
 
-      if ($user->hasRole('approver') || $user->hasRole('administrator')) {
+      // Assign the access if the rol exists in the list configuration.
+      foreach ($roles as $rol) {
+        if ($user->hasRole($rol)) {
+          $output[$user->id()] = $user->getDisplayName();
+        }
+      }
+
+      // Set access if the user is administrator.
+      if ($user->hasRole('administrator')) {
         $output[$user->id()] = $user->getDisplayName();
       }
     }

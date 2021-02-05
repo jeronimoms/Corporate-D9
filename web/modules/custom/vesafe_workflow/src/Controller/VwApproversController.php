@@ -8,16 +8,16 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Block\BlockManager;
 use Drupal\Core\Form\FormBuilder;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\vesafe_workflow\VesafeWorkFlowHelper;
+use Drupal\vesafe_workflow\VwHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
-use Drupal\vesafe_workflow\Form\ApproverAddForm;
-use Drupal\vesafe_workflow\Form\ApproveForm;
+use Drupal\vesafe_workflow\Form\VwApproverAddForm;
+use Drupal\vesafe_workflow\Form\VwApproveForm;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Link;
 
 
-class ApproversController extends ControllerBase implements ContainerInjectionInterface {
+class VwApproversController extends ControllerBase implements ContainerInjectionInterface {
 
   /**
    * The entity type manager.
@@ -57,7 +57,7 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
   /**
    * The Vesafe helper service.
    *
-   * @var \Drupal\vesafe_workflow\VesafeWorkFlowHelper
+   * @var \Drupal\vesafe_workflow\VwHelper
    */
   protected $helper;
 
@@ -67,7 +67,7 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
    */
-  public  function __construct(EntityTypeManagerInterface $entity_type_manager, FormBuilder $form_builder, Connection $database, BlockManager $block_manager, AccountInterface $account, VesafeWorkFlowHelper $vasefe_helper) {
+  public  function __construct(EntityTypeManagerInterface $entity_type_manager, FormBuilder $form_builder, Connection $database, BlockManager $block_manager, AccountInterface $account, VwHelper $vasefe_helper) {
     $this->entityTypeManager = $entity_type_manager;
     $this->formBuilder = $form_builder;
     $this->database = $database;
@@ -91,7 +91,10 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
   }
 
 
-  public function list(Node $node) {
+  public function list(Node $node, $list_name) {
+    // Set the table of current list.
+    $table = strtolower($list_name);
+
     // Set the final array output.
     $content = [];
 
@@ -101,7 +104,7 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
 
     // Pre table message.
     $content['message'] = [
-      '#markup' => $this->t('List of approvers'),
+      '#markup' => $this->t('List of @name', ['@name' => $list_name]),
     ];
 
     // Default table.
@@ -114,7 +117,7 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
     ];
 
     // Get the actual entries from database.
-    $results = $this->helper->getModerationList('approvers');
+    $results = $this->helper->getModerationList($table);
 
     // Create the rows.
     foreach ($results as $data) {
@@ -141,7 +144,7 @@ class ApproversController extends ControllerBase implements ContainerInjectionIn
     ];
 
     // Show the Approver form to add users inline.
-    $content['form_add'] = $this->formBuilder->getForm(ApproverAddForm::class);
+    $content['form_add'] = $this->formBuilder->getForm(VwApproverAddForm::class, $table);
     $content['form_add']['node_id']['#value'] = $node->id();
     $content['form_add']['node_id']['#attributes']['class'] = ['vesafe-workflow-node-field'];
 
