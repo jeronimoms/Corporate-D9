@@ -5,7 +5,7 @@ namespace Drupal\vesafe_workflow\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\vesafe_workflow\VesafeWorkFlowHelper;
+use Drupal\vesafe_workflow\VwHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Component\Utility\SortArray;
 
@@ -17,19 +17,19 @@ use Drupal\Component\Utility\SortArray;
  *   admin_label = @Translation("Vesafe Workflow"),
  * )
  */
-class VesafeWorkflowBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class VwBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * The Vesafe helper service.
    *
-   * @var \Drupal\vesafe_workflow\VesafeWorkFlowHelper
+   * @var \Drupal\vesafe_workflow\VwHelper
    */
   protected $helper;
 
   /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, VesafeWorkFlowHelper $vasefe_helper) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, VwHelper $vasefe_helper) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->helper = $vasefe_helper;
   }

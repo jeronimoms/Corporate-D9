@@ -2,6 +2,7 @@
 
 namespace Drupal\vesafe_workflow\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -10,22 +11,30 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\vesafe_workflow\VesafeWorkFlowHelper;
+use Drupal\vesafe_workflow\VwHelper;
 
-class ApproveForm extends FormBase {
+class VwApproveForm extends FormBase {
 
   /**
    * The Vesafe helper service.
    *
-   * @var \Drupal\vesafe_workflow\VesafeWorkFlowHelper
+   * @var \Drupal\vesafe_workflow\VwHelper
    */
   protected $helper;
 
   /**
+   * The Config Factory service.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(VesafeWorkFlowHelper $vasefe_helper) {
+  public function __construct(VwHelper $vasefe_helper, ConfigFactoryInterface $config_factory) {
     $this->helper = $vasefe_helper;
+    $this->configFactory = $config_factory;
   }
 
   /**
@@ -33,7 +42,8 @@ class ApproveForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('vesafe_workflow.helper')
+      $container->get('vesafe_workflow.helper'),
+      $container->get('config.factory')
     );
   }
 
@@ -47,9 +57,23 @@ class ApproveForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state, $table = NULL) {
+    // Set the table name.
+    $form_state->set('vesafe_workflow_table', strtolower($table));
+
+    // Store the list configration.
+    $vesafe_config = $this->configFactory->getEditable('vesafe_workflow.general');
+    foreach ($vesafe_config->get('lists')['list'] as $list) {
+      if ($list['name'] == ucfirst($form_state->get('vesafe_workflow_table'))) {
+        $form_state->set('vesafe_workflow_list_configuration', $list);
+      }
+    }
+
+    $list_state = $form_state->get('vesafe_workflow_list_configuration')['workflow_state'];
+    $list_previous_state = $form_state->get('vesafe_workflow_list_configuration')['workflow_state_previous'];
+
     // Show the form if the node contains the correct moderation state.
-    if ($this->helper->getNodeModerationState() !== 'to_be_approved') {
+    if ($this->helper->getNodeModerationState() !== $list_state) {
       return $form;
     }
 
@@ -64,7 +88,7 @@ class ApproveForm extends FormBase {
 
       $form['reject'] = [
         '#type' => 'submit',
-        '#value' => $this->t('Reject, send back to ' . $workflow_settings['to_be_reviewed']['label']),
+        '#value' => $this->t('Reject, send back to ' . $workflow_settings[$list_previous_state]['label']),
         '#submit' => [[$this, 'submitReject']],
       ];
     }
@@ -84,20 +108,23 @@ class ApproveForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Update the status of current user.
-    $this->helper->approveUser('approvers');
+    $this->helper->approveUser($form_state->get('vesafe_workflow_table'));
 
-    // If all users approved the content, then set the node as "ready_to_publish".
-    if ($this->helper->getNodeModerationState()) {
-      $this->helper->setNodeModerationState('ready_to_publish');
+    // If all users approved the content, then set the node as the next state defined in the list.
+    if ($this->helper->getModerationListStatus($form_state->get('vesafe_workflow_table'))) {
+      $this->helper->setNodeModerationState($form_state->get('vesafe_workflow_list_configuration')['workflow_state_next']);
     } else {
       $mailManager = \Drupal::service('plugin.manager.mail');
-      $next_user = $this->helper->getNextUser('approvers');
+      $next_user = $this->helper->getNextUser($form_state->get('vesafe_workflow_table'));
       $mailManager->mail(
         'vesafe_workflow',
-        'item_approved',
+        $form_state->get('vesafe_workflow_table'),
         $next_user->getEmail(),
         $next_user->getPreferredLangcode(),
-        'hola',
+        [
+          'subject' => 'test',
+          'body' => 'hola',
+        ],
         NULL,
         TRUE
       );
@@ -109,10 +136,10 @@ class ApproveForm extends FormBase {
    */
   public function submitReject(array &$form, FormStateInterface $form_state) {
     // Set the previous state.
-    $this->helper->setNodeModerationState('to_be_reviewed');
+    $this->helper->setNodeModerationState($form_state->get('vesafe_workflow_list_configuration')['workflow_state_previous']);
 
     // Reset the current users approver status.
-    $this->helper->resetUsersStatus('approvers');
+    $this->helper->resetUsersStatus($form_state->get('vesafe_workflow_table'));
   }
 
 }
