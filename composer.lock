@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7079236772a8d1bf82656e70c3927cc0",
+    "content-hash": "d75e2136bb8f87e22cc7da45195e5994",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3346,6 +3346,55 @@
             "homepage": "https://www.drupal.org/project/contact_us",
             "support": {
                 "source": "https://git.drupalcode.org/project/contact_us"
+            }
+        },
+        {
+            "name": "drupal/content_moderation_notifications",
+            "version": "dev-3.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/content_moderation_notifications.git",
+                "reference": "7ffa9366f1cbafbb5d872c835b7b263cb768a811"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "require-dev": {
+                "drupal/token": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.2+3-dev",
+                    "datestamp": "1588276492",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Holmes",
+                    "homepage": "https://www.drupal.org/user/1774034"
+                },
+                {
+                    "name": "jhedstrom",
+                    "homepage": "https://www.drupal.org/user/208732"
+                }
+            ],
+            "description": "Manage notifications for content moderation transitions.",
+            "homepage": "https://www.drupal.org/project/content_moderation_notifications",
+            "support": {
+                "source": "https://git.drupalcode.org/project/content_moderation_notifications",
+                "issues": "https://www.drupal.org/project/issues/content_moderation_notifications"
             }
         },
         {

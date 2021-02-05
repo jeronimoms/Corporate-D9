@@ -89,6 +89,18 @@ class ApproveForm extends FormBase {
     // If all users approved the content, then set the node as "ready_to_publish".
     if ($this->helper->getNodeModerationState()) {
       $this->helper->setNodeModerationState('ready_to_publish');
+    } else {
+      $mailManager = \Drupal::service('plugin.manager.mail');
+      $next_user = $this->helper->getNextUser('approvers');
+      $mailManager->mail(
+        'vesafe_workflow',
+        'item_approved',
+        $next_user->getEmail(),
+        $next_user->getPreferredLangcode(),
+        'hola',
+        NULL,
+        TRUE
+      );
     }
   }
 
