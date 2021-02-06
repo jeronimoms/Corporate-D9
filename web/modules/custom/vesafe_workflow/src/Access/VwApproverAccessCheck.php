@@ -5,15 +5,21 @@ namespace Drupal\vesafe_workflow\Access;
 use Drupal\Core\Routing\Access\AccessInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
-use Drupal\vesafe_workflow\VwHelper;
 
+/**
+ * General class for custom access check for approvers.
+ */
 class VwApproverAccessCheck implements AccessInterface {
 
+  /**
+   * {@inheritdoc}
+   */
   public function access(AccountInterface $account) {
     // Get the helper object.
     $helper = $this->getVesafeHelper();
 
-    // By default we have to deny the access to all users that thay have the approver role.
+    // By default we have to deny the access to all users that thay.
+    // have the approver role.
     if (array_search('approver', $account->getRoles())) {
       // List of current approvers.
       $users = $helper->getModerationList('approvers');
@@ -38,4 +44,5 @@ class VwApproverAccessCheck implements AccessInterface {
   public function getVesafeHelper() {
     return \Drupal::service('vesafe_workflow.helper');
   }
+
 }

@@ -5,14 +5,12 @@ namespace Drupal\vesafe_workflow\Form;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Database\Connection;
-use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\vesafe_workflow\VwHelper;
 
+/**
+ * General class for Vw approve form.
+ */
 class VwApproveForm extends FormBase {
 
   /**
@@ -88,7 +86,7 @@ class VwApproveForm extends FormBase {
 
       $form['reject'] = [
         '#type' => 'submit',
-        '#value' => $this->t('Reject, send back to ' . $workflow_settings[$list_previous_state]['label']),
+        '#value' => $this->t('Reject, send back to @state', ['@state' => $workflow_settings[$list_previous_state]['label']]),
         '#submit' => [[$this, 'submitReject']],
       ];
     }
@@ -99,35 +97,14 @@ class VwApproveForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Update the status of current user.
     $this->helper->approveUser($form_state->get('vesafe_workflow_table'));
 
-    // If all users approved the content, then set the node as the next state defined in the list.
+    // If all users approved the content, then set the node as the.
+    // next state defined in the list.
     if ($this->helper->getModerationListStatus($form_state->get('vesafe_workflow_table'))) {
       $this->helper->setNodeModerationState($form_state->get('vesafe_workflow_list_configuration')['workflow_state_next']);
-    } else {
-      $mailManager = \Drupal::service('plugin.manager.mail');
-      $next_user = $this->helper->getNextUser($form_state->get('vesafe_workflow_table'));
-      $mailManager->mail(
-        'vesafe_workflow',
-        $form_state->get('vesafe_workflow_table'),
-        $next_user->getEmail(),
-        $next_user->getPreferredLangcode(),
-        [
-          'subject' => 'test',
-          'body' => 'hola',
-        ],
-        NULL,
-        TRUE
-      );
     }
   }
 

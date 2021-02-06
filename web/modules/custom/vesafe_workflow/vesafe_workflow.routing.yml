@@ -10,6 +10,16 @@ vesafe_workflow.settings:
   options:
     _admin_route: TRUE
 
+vesafe_workflow.build:
+  path: '/vesafe_workflow/build'
+  defaults:
+    _form: '\Drupal\vesafe_workflow\Form\VwBuildForm'
+    _title: 'Generate the lists'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE
+
 vesafe_workflow.approver_form:
   path: '/vesafe_workflow/approver/add'
   defaults:
@@ -24,3 +34,5 @@ vesafe_workflow.delete_form:
     _title: 'DeleteForm'
   requirements:
     _access: 'TRUE'
+  options:
+    _admin_route: TRUE

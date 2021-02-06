@@ -11,6 +11,9 @@ use Drupal\vesafe_workflow\VwHelper;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 
+/**
+ * General class for Vw settings form.
+ */
 class VwSettingsForm extends ConfigFormBase {
 
   /**
@@ -27,6 +30,9 @@ class VwSettingsForm extends ConfigFormBase {
    */
   protected $helper;
 
+  /**
+   * {@inheritdoc}
+   */
   public function __construct(ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, VwHelper $helper) {
     $this->entityTypeManager = $entity_type_manager;
     $this->helper = $helper;
@@ -44,16 +50,25 @@ class VwSettingsForm extends ConfigFormBase {
     );
   }
 
+  /**
+   * {@inheritdoc}
+   */
   protected function getEditableConfigNames() {
     return [
       'vesafe_workflow.general',
     ];
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getFormId() {
     return 'vesafe_workflow_settings_general';
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     /** @var \Drupal\Core\Config\Config $config */
@@ -85,8 +100,6 @@ class VwSettingsForm extends ConfigFormBase {
       '#prefix' => '<div id="list-fieldset-wrapper">',
       '#suffix' => '</div>',
     ];
-
-    ksm($this->entityTypeManager->getStorage('content_moderation_notification')->loadMultiple());
 
     foreach ($form_state->get('list_num') as $i => $item) {
       $form['list_fieldset']['list'][$i] = [
@@ -162,7 +175,7 @@ class VwSettingsForm extends ConfigFormBase {
 
       $form['list_fieldset']['list'][$i]['actions']['remove_list'] = [
         '#type' => 'submit',
-        '#value' => $this->t('Remove ' . $i),
+        '#value' => $this->t('Remove @i', ['@i' => $i]),
         '#options' => ['id' => $i],
         '#submit' => ['::removeCallback'],
         '#ajax' => [
@@ -171,7 +184,6 @@ class VwSettingsForm extends ConfigFormBase {
         ],
       ];
     }
-
 
     $form['list_fieldset']['actions'] = [
       '#type' => 'actions',
@@ -192,10 +204,12 @@ class VwSettingsForm extends ConfigFormBase {
       '#value' => $this->t('Submit'),
     ];
 
-
     return parent::buildForm($form, $form_state);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $lists = $form_state->getValue('list_fieldset');
 
@@ -206,6 +220,9 @@ class VwSettingsForm extends ConfigFormBase {
     parent::submitForm($form, $form_state);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function workflowCallback(array &$form, FormStateInterface $form_state) {
     $element = $form_state->getTriggeringElement();
     $response = new AjaxResponse();
@@ -214,6 +231,9 @@ class VwSettingsForm extends ConfigFormBase {
     return $response;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getWorkflowStates($workflow, $array = FALSE) {
     // Define the default array.
     if ($array) {
@@ -235,7 +255,7 @@ class VwSettingsForm extends ConfigFormBase {
         $options[$name] = $name;
       }
       else {
-        $options .= "<option value='". $name ."'>" . $name . "</option>";
+        $options .= "<option value='" . $name . "'>" . $name . "</option>";
       }
     }
 
@@ -276,6 +296,9 @@ class VwSettingsForm extends ConfigFormBase {
     $form_state->setRebuild();
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getRoles() {
     $options = [];
     $roles = $this->entityTypeManager->getStorage('user_role')->loadMultiple();
@@ -290,6 +313,9 @@ class VwSettingsForm extends ConfigFormBase {
     return $options;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getWorkflows() {
     $options = [];
     $workflows = $this->entityTypeManager->getStorage('workflow')->loadMultiple();

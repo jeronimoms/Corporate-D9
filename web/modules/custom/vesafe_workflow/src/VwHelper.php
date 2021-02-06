@@ -84,20 +84,29 @@ class VwHelper {
   }
 
   /**
-   * Get he moderation state of current node.
+   * Get the moderation state of current node.
    *
    * @return string
    *   The moderation state of current node.
    */
   public function getNodeModerationState() {
     $node = $this->getLastRevisionNode();
+    if (empty($node)) {
+      return '';
+    }
+
+    $moderation_state = $node->get('moderation_state')->getValue();
+    if (empty($moderation_state)) {
+      return NULL;
+    }
+
     return $node->get('moderation_state')->getValue()[0]['value'];
   }
 
   /**
    * Set the new state to the current node.
    *
-   * @param $state
+   * @param string $state
    *   The state name.
    */
   public function setNodeModerationState($state) {
@@ -107,7 +116,7 @@ class VwHelper {
   /**
    * Check if any user of the list has not approved it.
    *
-   * @param $table
+   * @param string $table
    *   The table name.
    *
    * @return bool
@@ -130,12 +139,12 @@ class VwHelper {
   /**
    * Gets the moderation list.
    *
-   * @param $table
+   * @param string $table
    *   The table name.
    */
   public function getModerationList($table) {
     $query = $this->database->select("vesafe_workflow_$table", 'v')
-      ->condition('node_id', $this->getLastRevisionNode()->id() , '=')
+      ->condition('node_id', $this->getLastRevisionNode()->id(), '=')
       ->fields('v', ['id', 'node_id', 'user_id', 'status']);
 
     return $query->execute()->fetchAll();
@@ -144,7 +153,7 @@ class VwHelper {
   /**
    * Set the status to approve of users list.
    *
-   * @param $table
+   * @param string $table
    *   The table name.
    */
   public function resetUsersStatus($table) {
@@ -158,7 +167,7 @@ class VwHelper {
   /**
    * Add a user in the list.
    *
-   * @param $table
+   * @param string $table
    *   The table name.
    * @param array $fields
    *   The array with fields.
@@ -172,7 +181,7 @@ class VwHelper {
   /**
    * Set the status to approve of user list.
    *
-   * @param $table
+   * @param string $table
    *   The table name.
    */
   public function approveUser($table) {
@@ -188,7 +197,7 @@ class VwHelper {
   /**
    * Gets the next user of list.
    *
-   * @param $table
+   * @param string $table
    *   The table name.
    *
    * @return array|\Drupal\user\Entity\User
@@ -206,9 +215,9 @@ class VwHelper {
   }
 
   /**
-   * Check if the user is included to the list.
+   * Check if the user status.
    *
-   * @param $table
+   * @param string $table
    *   The table name.
    *
    * @return bool
@@ -230,6 +239,17 @@ class VwHelper {
     return FALSE;
   }
 
+  /**
+   * Check if the user is included to the list.
+   *
+   * @param string $table
+   *   The table name.
+   * @param string $user_id
+   *   The user id.
+   *
+   * @return bool
+   *   If the user has access.
+   */
   public function checkUserExists($table, $user_id) {
     $results = $this->getModerationList($table);
     foreach ($results as $data) {
@@ -241,10 +261,26 @@ class VwHelper {
     return FALSE;
   }
 
+  /**
+   * Get the workflow of current node.
+   *
+   * @return array|\Drupal\workflows\Entity\Workflow
+   *   If the user has access.
+   */
   public function getWorkflow() {
+    $node = $this->getLastRevisionNode();
+    if (!isset($node)) {
+      return [];
+    }
+    if (is_array($node)) {
+      $node = reset($node);
+      if (!$node) {
+        return [];
+      }
+    }
+
     /** @var \Drupal\workflows\Entity\Workflow $flow */
-    return $this->moderationManager->getWorkflowForEntityTypeAndBundle('node', $this->getLastRevisionNode()->bundle());
-    return $flow->get('type_settings');
+    return $this->moderationManager->getWorkflowForEntityTypeAndBundle('node', $node->bundle());
   }
 
   /**

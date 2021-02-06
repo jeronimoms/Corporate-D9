@@ -15,6 +15,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\vesafe_workflow\VwHelper;
 use Drupal\vesafe_workflow\Form\VwApproveForm;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\node\Entity\Node;
 
 /**
@@ -61,14 +62,22 @@ class VwEntity implements ContainerInjectionInterface {
   protected $configFactory;
 
   /**
+   * The AccountInterface object.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $account;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(BlockManager $block_manager, VwHelper $vasefe_helper, RouteMatchInterface $route_match, FormBuilder $form_builder, ConfigFactoryInterface $config_factory) {
+  public function __construct(BlockManager $block_manager, VwHelper $vasefe_helper, RouteMatchInterface $route_match, FormBuilder $form_builder, ConfigFactoryInterface $config_factory, AccountInterface $account) {
     $this->blockManager = $block_manager;
     $this->helper = $vasefe_helper;
     $this->routeMatch = $route_match;
     $this->formBuilder = $form_builder;
     $this->configFactory = $config_factory;
+    $this->account = $account;
   }
 
   /**
@@ -80,64 +89,49 @@ class VwEntity implements ContainerInjectionInterface {
       $container->get('vesafe_workflow.helper'),
       $container->get('current_route_match'),
       $container->get('form_builder'),
-      $container->get('config.factory')
+      $container->get('config.factory'),
+      $container->get('current_user')
     );
-  }
-
-  /**
-   * Adds a new Vesafe Workflow validaton.
-   *
-   * @param array $form
-   *   The complete form array.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The FormStateInterface object.
-   * @param $form_id
-   *   The form id.
-   *
-   * @see \hook_form_alter()
-   */
-  public function formModerationAlter(&$form, FormStateInterface $form_state, $form_id) {
-    // Custom validation to control if the list is empty.
-    $form['#validate'][] = [$this, 'formValidateAlter'];
   }
 
   /**
    * Form alter for for good practices and key articles.
    *
-   * @param array $form
-   *   The complete form array.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The FormStateInterface object.
-   * @param $form_id
-   *   The form id.
-   *
    * @see \hook_form_alter()
    */
   public function formAlter(&$form, FormStateInterface $form_state, $form_id) {
-    // Load the vesafe block.
-    $plugin_block = $this->blockManager->createInstance('vesafe_workflow_block', []);
-    $vesafe_block = $plugin_block->build();
+    if ($form_id == 'content_moderation_entity_moderation_form') {
+      $state = $this->helper->getNodeModerationState();
 
-    // Set the position of new item on form.
-    $vesafe_block['#weight'] = 99;
-    $vesafe_block['#group'] = 'footer';
+      // Remove the moderation form if the current user has the role "approver".
+      if ($state == 'to_be_approved' && array_search('approver', $this->account->getRoles())) {
+        // Pending cofirmation! $form['#access'] = FALSE;.
+        return;
+      }
 
-    // Set the new item.
-    $form['vesafe_block'] = $vesafe_block;
+      // Custom validation to control if the list is empty.
+      $form['#validate'][] = [$this, 'formValidateAlter'];
+    }
 
-    // Custom validation to control if the list is empty.
-    $form['#validate'][] = [$this, 'formValidateAlter'];
+    if ($form_id == 'node_good_practice_edit_form' || $form_id == 'node_key_article_edit_form') {
+      // Load the vesafe block.
+      $plugin_block = $this->blockManager->createInstance('vesafe_workflow_block', []);
+      $vesafe_block = $plugin_block->build();
+
+      // Set the position of new item on form.
+      $vesafe_block['#weight'] = 99;
+      $vesafe_block['#group'] = 'footer';
+
+      // Set the new item.
+      $form['vesafe_block'] = $vesafe_block;
+
+      // Custom validation to control if the list is empty.
+      $form['#validate'][] = [$this, 'formValidateAlter'];
+    }
   }
 
   /**
    * Adds a new Vesafe Workflow validaton.
-   *
-   * @param array $form
-   *   The complete form array.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The FormStateInterface object.
-   * @param $form_id
-   *   The form id.
    *
    * @see \hook_form_alter()
    */
@@ -152,53 +146,32 @@ class VwEntity implements ContainerInjectionInterface {
         $form_state->setErrorByName('Empty Approvers', $this->t('The list of approvers is empty.'));
       }
     }
-  }
 
-  /**
-   * Entity pre save to check if the list of approvers is empty.
-   *
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-   *   The FormStateInterface object.
-   *
-   * @see \hook_entity_presave()
-   */
-  public function preNodeSave(EntityInterface $entity) {
-    // Get the new moderation state.
-    $moderation_state = $entity->get('moderation_state')->getValue()[0]['value'];
-
-    if ($moderation_state == 'to_be_approved') {
-      // Reset the approvers status
-      $this->helper->resetUsersStatus('approvers');
-    }
-
-    if ($moderation_state == 'to_be_reviewed') {
-      // Reset the approvers status
-      $this->helper->resetUsersStatus('reviewers');
+    if ($moderation_state == 'final_draft') {
+      // Get the list of approvers.
+      $list = $this->helper->getModerationList('reviewers');
+      if (empty($list)) {
+        // Return error if the list is empty.
+        $form_state->setErrorByName('Empty Reviewers', $this->t('The list of reviewers is empty.'));
+      }
     }
   }
 
   /**
    * View alter to add the approver form in latest revision view.
    *
-   * @param array $build
-   *   The complete build array.
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-   *   The EntityInterface object.
-   * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
-   *   The display object.
-   *
    * @see \hook_entity_view_alter()
    */
   public function viewAlter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
     // Filter by node type.
-    if (!$entity instanceof Node) {
+    if (!$entity instanceof Node || $this->routeMatch->getRouteName() == 'layout_builder.defaults.node.view') {
       return;
     }
 
     // Workflow settings of current node.
     $workflow = $this->helper->getWorkflow();
 
-    if (!isset($workflow)) {
+    if (!isset($workflow) || empty($workflow)) {
       return;
     }
 
@@ -236,17 +209,21 @@ class VwEntity implements ContainerInjectionInterface {
     array_unshift($build, $plugin_block->build());
   }
 
+  /**
+   * Alter the local tasks.
+   *
+   * @see \hook_local_tasks_alter()
+   */
   public function localTastAlter(&$local_tasks) {
     // Get VW default settings.
     $config = $this->configFactory->getEditable('vesafe_workflow.general');
     $lists = $config->get('lists');
     if (array_key_exists('list', $lists)) {
       foreach ($lists['list'] as $list) {
-        $name = $list['name'];
-
-        // Generate the new local task;
-        $local_tasks['entity.node.' . strtolower($name) . '_node'] = [
-          'route_name' => "vesafe_workflow." . strtolower($name) . ".list",
+        $name = strtolower($list['name']);
+        // Generate the new local task.
+        $local_tasks['entity.node.' . $name . '_node'] = [
+          'route_name' => "vesafe_workflow." . $name . ".list",
           'base_route' => "entity.node.canonical",
           'class' => 'Drupal\Core\Menu\LocalTaskDefault',
           'route_parameters' => [
@@ -257,6 +234,7 @@ class VwEntity implements ContainerInjectionInterface {
         ];
       }
     }
+
   }
 
 }

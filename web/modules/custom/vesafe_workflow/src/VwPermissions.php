@@ -29,7 +29,7 @@ class VwPermissions {
       $name = $list['name'];
       // Set list permissions.
       $permissions["administer " . strtolower($name)] = [
-        'title' => $this->t('Administer ' . $name),
+        'title' => $this->t('Administer @name', ['@name' => $name]),
       ];
     }
 
@@ -45,4 +45,5 @@ class VwPermissions {
   public function configFactory() {
     return \Drupal::configFactory();
   }
+
 }

@@ -4,14 +4,15 @@ namespace Drupal\vesafe_workflow\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Tests\search\Kernel\SearchMatchTest;
 use Drupal\vesafe_workflow\VwHelper;
-use http\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Config\ConfigFactoryInterface;
 
+/**
+ * General class for Vw approve add form.
+ */
 class VwApproverAddForm extends FormBase {
 
   /**
@@ -109,6 +110,9 @@ class VwApproverAddForm extends FormBase {
     return $form;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $node_id = $form_state->getValue('node_id');
     $user_id = $form_state->getValue('user_id');
@@ -145,6 +149,9 @@ class VwApproverAddForm extends FormBase {
     $this->helper->addUserToList($form_state->get('vesafe_workflow_table'), $fields);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getUsers(array $roles = []) {
     // Output array.
     $output = [];

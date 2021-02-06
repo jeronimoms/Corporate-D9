@@ -1,10 +1,30 @@
 <?php
 
 use Drupal\vesafe_workflow\VwEntity;
+use Drupal\vesafe_workflow\VwCmn;
+use Drupal\vesafe_workflow\VwToolBar;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\Entity\Node;
 
+
+/**
+ * Implements hook_toolbar().
+ */
+function vesafe_workflow_toolbar() {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwToolBar::class)
+    ->toolBar();
+}
+
+/**
+ * Implements hook_content_moderation_notification_mail_data_alter().
+ */
+function vesafe_workflow_content_moderation_notification_mail_data_alter(EntityInterface $entity, array &$data) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwCmn::class)
+    ->mailDataAlter($entity, $data);
+}
 
 /**
  * Implements hook_local_tasks_alter().
@@ -32,34 +52,9 @@ function vesafe_workflow_mail($key, &$message, $params) {
  * Implements hook_form_alter().
  */
 function vesafe_workflow_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'content_moderation_entity_moderation_form') {
-    return \Drupal::service('class_resolver')
-      ->getInstanceFromDefinition(VwEntity::class)
-      ->formModerationAlter($form, $form_state, $form_id);
-  }
-
-  if ($form_id == 'node_good_practice_edit_form') {
-    return \Drupal::service('class_resolver')
-      ->getInstanceFromDefinition(VwEntity::class)
-      ->formAlter($form, $form_state, $form_id);
-  }
-}
-
-/**
- * Implements hook_entity_presave().
- */
-function vesafe_workflow_entity_presave(EntityInterface $entity) {
-  // Filter by node type.
-  if (!$entity instanceof Node) {
-    return;
-  }
-
-  // Filter by bundle.
-  if ($entity->bundle() == 'good_practice' || $entity->bundle() == 'key_article') {
-    return \Drupal::service('class_resolver')
-      ->getInstanceFromDefinition(VwEntity::class)
-      ->preNodeSave($entity);
-  }
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwEntity::class)
+    ->formAlter($form, $form_state, $form_id);
 }
 
 /**

@@ -4,7 +4,6 @@ namespace Drupal\vesafe_workflow\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\vesafe_workflow\VwHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Component\Utility\SortArray;
@@ -87,7 +86,7 @@ class VwBlock extends BlockBase implements ContainerFactoryPluginInterface {
         }
 
         // Set the last item.
-        if ($i == (count($workflow_settings) -1)) {
+        if ($i == (count($workflow_settings) - 1)) {
           $item_class = 'last';
         }
 
@@ -102,4 +101,5 @@ class VwBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     return $output;
   }
+
 }

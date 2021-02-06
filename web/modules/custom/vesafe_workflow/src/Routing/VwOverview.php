@@ -5,12 +5,17 @@ namespace Drupal\vesafe_workflow\Routing;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
+/**
+ * General class for Vw overview routing.
+ */
 class VwOverview {
 
   /**
    * Dynamically generate the routes for the entity details.
    *
    * @return \Symfony\Component\Routing\RouteCollection
+   *   The collections.
+   *
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function routes() {
@@ -21,15 +26,15 @@ class VwOverview {
       $collection = new RouteCollection();
 
       foreach ($lists['list'] as $list) {
-        $name = $list['name'];
+        $name = strtolower($list['name']);
         $route = new Route(
-          "/node/{node}/{list_name}",
+          "/node/{node}/$name/{list_name}",
           [
             '_controller' => '\Drupal\vesafe_workflow\Controller\VwApproversController::list',
           ],
           [
             'node' => '\d+',
-            '_permission' => 'administer ' . strtolower($name),
+            '_permission' => 'administer ' . $name,
           ],
           [
             'parameters' => [
@@ -38,11 +43,10 @@ class VwOverview {
               ],
               'list_name' => $name,
             ],
-            '_admin_route' => TRUE,
           ]
         );
 
-        $collection->add('vesafe_workflow.' . strtolower($name) . '.list', $route);
+        $collection->add('vesafe_workflow.' . $name . '.list', $route);
       }
 
       return $collection;

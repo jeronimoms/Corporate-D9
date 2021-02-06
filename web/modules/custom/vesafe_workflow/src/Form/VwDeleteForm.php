@@ -8,13 +8,32 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Url;
-use Drupal\Core\Render\Element;
 
+/**
+ * General class for Vw delete form.
+ */
 class VwDeleteForm extends ConfirmFormBase {
 
-  private $node_id;
-  private $user_id;
-  private $back_url;
+  /**
+   * The node id.
+   *
+   * @var string
+   */
+  private $nodeId;
+
+  /**
+   * The user id.
+   *
+   * @var string
+   */
+  private $userId;
+
+  /**
+   * The return url.
+   *
+   * @var string
+   */
+  private $backUrl;
 
   /**
    * The entity type manager.
@@ -59,7 +78,7 @@ class VwDeleteForm extends ConfirmFormBase {
    * {@inheritdoc}
    */
   public function getCancelUrl() {
-    return Url::fromUserInput("/node/$this->node_id/$this->back_url");
+    return Url::fromUserInput("/node/$this->node_id/$this->back_url/$this->back_url");
   }
 
   /**
@@ -76,11 +95,14 @@ class VwDeleteForm extends ConfirmFormBase {
     return 'vesaf_workflows_delete_form';
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function buildForm(array $form, FormStateInterface $form_state, $node_id = NULL, $user_id = NULL, $back_url = NULL) {
     // Set extra variables.
-    $this->node_id = $node_id;
-    $this->user_id = $user_id;
-    $this->back_url = $back_url;
+    $this->nodeId = $node_id;
+    $this->userId = $user_id;
+    $this->backUrl = $back_url;
     return parent::buildForm($form, $form_state);
   }
 
@@ -89,13 +111,13 @@ class VwDeleteForm extends ConfirmFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Delete the user from the list.
-    $query = $this->database->delete('vesafe_workflow_approvers')
-      ->condition('node_id', $this->node_id)
-      ->condition('user_id', $this->user_id);
+    $query = $this->database->delete('vesafe_workflow_' . $this->backUrl)
+      ->condition('node_id', $this->nodeId)
+      ->condition('user_id', $this->userId);
     $query->execute();
 
     // Redirect to previus page.
-    $form_state->setRedirectUrl(Url::fromUserInput("/node/$this->node_id/$this->back_url"));
+    $form_state->setRedirectUrl(Url::fromUserInput("/node/$this->nodeId/$this->backUrl/$this->backUrl"));
     return parent::buildForm($form, $form_state);
   }
 

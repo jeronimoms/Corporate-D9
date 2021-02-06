@@ -12,11 +12,12 @@ use Drupal\vesafe_workflow\VwHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\vesafe_workflow\Form\VwApproverAddForm;
-use Drupal\vesafe_workflow\Form\VwApproveForm;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Link;
 
-
+/**
+ * General class for Vw approvers controller.
+ */
 class VwApproversController extends ControllerBase implements ContainerInjectionInterface {
 
   /**
@@ -62,12 +63,9 @@ class VwApproversController extends ControllerBase implements ContainerInjection
   protected $helper;
 
   /**
-   * ChooseBlockController constructor.
-   *
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity type manager.
+   * {@inheritdoc}
    */
-  public  function __construct(EntityTypeManagerInterface $entity_type_manager, FormBuilder $form_builder, Connection $database, BlockManager $block_manager, AccountInterface $account, VwHelper $vasefe_helper) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, FormBuilder $form_builder, Connection $database, BlockManager $block_manager, AccountInterface $account, VwHelper $vasefe_helper) {
     $this->entityTypeManager = $entity_type_manager;
     $this->formBuilder = $form_builder;
     $this->database = $database;
@@ -90,8 +88,17 @@ class VwApproversController extends ControllerBase implements ContainerInjection
     );
   }
 
-
+  /**
+   * {@inheritdoc}
+   */
   public function list(Node $node, $list_name) {
+    $state = $this->helper->getNodeModerationState();
+    if (!isset($state)) {
+      return [
+        '#markup' => $this->t('The current entity is not associated with any workflow.'),
+      ];
+    }
+
     // Set the table of current list.
     $table = strtolower($list_name);
 
@@ -129,7 +136,7 @@ class VwApproversController extends ControllerBase implements ContainerInjection
         [
           'node_id' => $node->id(),
           'user_id' => $data->user_id,
-          'back_url' => 'approvers',
+          'back_url' => $table,
         ]
         ),
       ];
@@ -151,6 +158,9 @@ class VwApproversController extends ControllerBase implements ContainerInjection
     return $content;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getUser($user_id) {
     if (empty($user_id)) {
       return '';
@@ -159,6 +169,9 @@ class VwApproversController extends ControllerBase implements ContainerInjection
     return $this->entityTypeManager->getStorage('user')->load($user_id);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getUserName($user_id) {
     /** @var \Drupal\user\Entity\User $user */
     if ($user = $this->getUser($user_id)) {
@@ -168,6 +181,9 @@ class VwApproversController extends ControllerBase implements ContainerInjection
     return '';
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getUserMail($user_id) {
     /** @var \Drupal\user\Entity\User $user */
     if ($user = $this->getUser($user_id)) {
