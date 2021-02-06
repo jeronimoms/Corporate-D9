@@ -1,0 +1,30 @@
+uuid: da3e47c2-8e41-4d25-b5f4-1e1e8ecb1160
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thesaurus_2020
+    - node.type.news
+    - node.type.thesaurus
+id: node.news.field_thesaurus_2020
+field_name: field_thesaurus_2020
+entity_type: node
+bundle: news
+label: 'Thesaurus 2020'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      thesaurus: thesaurus
+field_type: entity_reference

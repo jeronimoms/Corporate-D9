@@ -1,0 +1,23 @@
+uuid: 5120cba7-bbda-4b62-a3cc-6dbabf26c109
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_character_count
+    - node.type.news
+id: node.news.field_character_count
+field_name: field_character_count
+entity_type: node
+bundle: news
+label: 'Character count'
+description: 'Automatically calculated when saving. The count of characters found in the default language text (English).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: 0
+  prefix: ''
+  suffix: ''
+field_type: integer
