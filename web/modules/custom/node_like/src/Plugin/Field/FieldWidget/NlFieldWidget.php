@@ -23,7 +23,7 @@ class NlFieldWidget extends WidgetBase {
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $value = isset($items[$delta]->value) ? $items[$delta]->value : 0;
     $element += [
-      '#type' => 'integer',
+      '#type' => 'number',
       '#default_value' => $value,
       '#element_validate' => [
         [$this, 'validate'],

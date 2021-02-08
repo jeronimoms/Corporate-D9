@@ -28,11 +28,8 @@ class NlField extends FieldItemBase{
     return [
       'columns' => [
         'value' => [
-          'type' => 'numeric',
-          'size' => 'tiny',
-          'not null' => FALSE,
-          'precision' => 1,
-          'scale' => 1,
+          'type' => 'int',
+          'unsigned' => TRUE,
         ],
       ],
     ];
@@ -43,8 +40,9 @@ class NlField extends FieldItemBase{
    */
 
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
-    $properties['value'] = DataDefinition::create('numeric')
-      ->setLabel(t('Like value'));
+    $properties['value'] = DataDefinition::create('integer')
+      ->setLabel(t('Like value'))
+      ->setSetting('unsigned', TRUE);
 
     return $properties;
   }

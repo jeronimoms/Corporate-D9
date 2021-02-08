@@ -4,6 +4,9 @@ namespace Drupal\node_like\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\AlertCommand;
+use Drupal\Core\Url;
 
 /**
  * Plugin implementation of the 'field_example_simple_text' formatter.
@@ -22,14 +25,26 @@ class NlFieldFormatter extends FormatterBase {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
 
+    /**
+     * @var  array $delta
+     * @var \Drupal\node_like\Plugin\Field\FieldType\NlField $item
+     */
     foreach ($items as $delta => $item) {
+      $node = $item->getEntity();
       $elements[$delta] = [
-        '#type' => 'html_tag',
-        '#tag' => 'p',
+        '#type' => 'link',
+        '#title' => $item->value,
         '#attributes' => [
-          'style' => 'color: ' . $item->value,
+          'class' => ['use-ajax', 'node_like-like-' . $node->id()],
         ],
-        '#value' => $this->t('Likes @code', ['@code' => $item->value]),
+        '#url' => Url::fromRoute('node_like.controller', [
+          'node' => $node->id(),
+        ],
+        [
+          'attributes' => [
+            'class' => ['use-ajax', 'node_like-like'],
+          ],
+        ]),
       ];
     }
 
