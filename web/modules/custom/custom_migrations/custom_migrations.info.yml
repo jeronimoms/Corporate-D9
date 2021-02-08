@@ -1,0 +1,12 @@
+type: module
+name: Custom Migrations
+description: 'Custom migrations'
+package: Development
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - migrate
+  - migrate_drupal
+  - migrate_plus
+  - migrate_tools
+  - node
+  - taxonomy
