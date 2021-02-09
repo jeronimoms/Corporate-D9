@@ -7,8 +7,8 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_taxonomy_sectors
-label: 'Terms: sectors'
+id: oira_taxonomy_sector_category
+label: 'Terms: sector_category'
 audit: true
 migration_group: oira_migrate
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
@@ -21,7 +21,7 @@ deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 
 source:
   plugin: d7_taxonomy_term
-  bundle: sectors
+  bundle: sector_category
 
 ########################## SOURCE #########################
 
@@ -39,7 +39,7 @@ process:
   vid:
     -
       plugin: default_value
-      default_value: sectors
+      default_value: sector_category
   langcode:
     -
       plugin: get
