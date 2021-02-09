@@ -1,0 +1,6 @@
+name: 'Text Resize'
+description: 'Creates a block that allows your users to resize text on the page.'
+core_version_requirement: ^8.8 || ^9
+configure: text_resize_settings
+package: 'User interface'
+type: module
