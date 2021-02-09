@@ -39,7 +39,7 @@ process:
   type:
     -
       plugin: default_value
-      default_value: thesaurus
+      default_value: key_article_theme
   title:
     -
       plugin: get
@@ -47,12 +47,16 @@ process:
   field_subtitle:
     -
       plugin: get
-      source: field_subtitle
-  body:
+      source: field_subtitle/0
+  field_subtitle/format:
+    - plugin: default_value
+      default_value: full_html
+  body/value: body/0/value
+  body/summary:
     -
-      plugin: get
-      source: body
-  'body/0/format':
+      plugin: strip_tags
+      source: field_summary/0/value
+  body/format:
     -
       plugin: default_value
       default_value: full_html
@@ -60,6 +64,14 @@ process:
     -
       plugin: get
       source: field_publication_date
+  field_thesaurus_2020:
+    -
+      plugin: sub_process
+      source: field_thesaurus_2020
+      process:
+        target_id:
+          plugin: get
+          source: nid
   uid:
     -
       plugin: get
@@ -100,10 +112,6 @@ dependencies:
     module:
       - custom_migrations
 
-# Declare optional dependencies on another migration for this migration.
-# This one has none.
-migration_dependencies:
-  required:
-    - d7_user
+
 
 ######################## DEPENDENCIES #####################
