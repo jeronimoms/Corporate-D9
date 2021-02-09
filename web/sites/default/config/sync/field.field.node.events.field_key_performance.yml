@@ -1,0 +1,21 @@
+uuid: 52232111-f87b-48eb-8079-d4eadf221a32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_key_performance
+    - node.type.events
+  module:
+    - options
+id: node.events.field_key_performance
+field_name: field_key_performance
+entity_type: node
+bundle: events
+label: 'Key Performance Indicator'
+description: 'Please indicate, if this event is to be counted in the framework of the KPI monitoring framework.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

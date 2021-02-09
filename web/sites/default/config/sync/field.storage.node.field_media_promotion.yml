@@ -1,0 +1,30 @@
+uuid: 51d12166-6b62-4d88-96ec-e8c46d52f721
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_media_promotion
+field_name: field_media_promotion
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Yes'
+      label: 'Yes'
+    -
+      value: 'No'
+      label: 'No'
+    -
+      value: 'Don’t know'
+      label: 'Don’t know yet'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,30 @@
+uuid: f3a222e3-ea2b-4474-a3a4-05b85bd9ba32
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.home_page_main_carousel
+id: entity_subqueue.home_page_main_carousel.default
+targetEntityType: entity_subqueue
+bundle: home_page_main_carousel
+mode: default
+content:
+  items:
+    label: hidden
+    type: entity_reference_label
+    weight: 0
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: -10
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true
