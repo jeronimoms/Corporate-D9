@@ -1,0 +1,30 @@
+uuid: fd6e80c2-6c73-472b-bc32-ef23423dbef7
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_key_performance
+field_name: field_key_performance
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Yes'
+      label: 'Yes'
+    -
+      value: 'No'
+      label: 'No'
+    -
+      value: 'Don’t know'
+      label: 'Don’t know yet'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

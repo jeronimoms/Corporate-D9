@@ -1,0 +1,21 @@
+uuid: ab49794e-811f-487a-affc-f30d3f6057ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publications_exhibition_su
+    - node.type.events
+  module:
+    - options
+id: node.events.field_publications_exhibition_su
+field_name: field_publications_exhibition_su
+entity_type: node
+bundle: events
+label: 'Publications/exhibition support'
+description: 'Please download the publications request form and send it to the publications team at least 4 weeks before the event is taking place.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
