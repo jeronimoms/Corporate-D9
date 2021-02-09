@@ -1,0 +1,23 @@
+uuid: c761d834-f639-470e-82e5-f15f78a7ba56
+langcode: und
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_related_resources
+field_name: field_related_resources
+entity_type: node
+type: file
+settings:
+  display_default: true
+  display_field: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

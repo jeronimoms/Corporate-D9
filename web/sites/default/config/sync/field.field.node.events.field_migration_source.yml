@@ -1,0 +1,21 @@
+uuid: 4956bbe9-2be9-42f4-b296-624d6362c0f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_migration_source
+    - node.type.events
+  module:
+    - options
+id: node.events.field_migration_source
+field_name: field_migration_source
+entity_type: node
+bundle: events
+label: 'Migration Source'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

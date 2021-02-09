@@ -1,0 +1,30 @@
+uuid: a5b4e147-a3d4-4d53-a649-499edcaef935
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_type_of_item
+field_name: field_type_of_item
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Visual resources'
+      label: 'Visual resources'
+    -
+      value: 'Guides & Tools'
+      label: 'Guides & Tools'
+    -
+      value: 'Case study'
+      label: 'Case study'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

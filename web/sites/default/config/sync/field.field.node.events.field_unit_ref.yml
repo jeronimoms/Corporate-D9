@@ -1,0 +1,21 @@
+uuid: f408b481-3b33-4c7b-be97-18ca1bc79007
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unit_ref
+    - node.type.events
+  module:
+    - options
+id: node.events.field_unit_ref
+field_name: field_unit_ref
+entity_type: node
+bundle: events
+label: 'Unit Ref'
+description: 'Please select the appropriate EU-OSHA unit.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

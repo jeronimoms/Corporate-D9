@@ -1,0 +1,21 @@
+uuid: 78126ccb-ec1a-47ac-9832-3eadd3500ed6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agency_role
+    - node.type.events
+  module:
+    - options
+id: node.events.field_agency_role
+field_name: field_agency_role
+entity_type: node
+bundle: events
+label: 'Agency role'
+description: 'Please select the role that the Agency is playing in this event.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
