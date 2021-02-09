@@ -18,8 +18,7 @@ use Drupal\Core\TypedData\DataDefinition;
  *   default_formatter = "node_like_formatter"
  * )
  */
-
-class NlField extends FieldItemBase{
+class NlField extends FieldItemBase {
 
   /**
    * {@inheritdoc}
@@ -38,7 +37,6 @@ class NlField extends FieldItemBase{
   /**
    * {@inheritdoc}
    */
-
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties['value'] = DataDefinition::create('integer')
       ->setLabel(t('Like value'))

@@ -4,8 +4,6 @@ namespace Drupal\node_like\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\AlertCommand;
 use Drupal\Core\Url;
 
 /**
@@ -22,15 +20,29 @@ use Drupal\Core\Url;
  */
 class NlFieldFormatter extends FormatterBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
 
-    /**
-     * @var  array $delta
-     * @var \Drupal\node_like\Plugin\Field\FieldType\NlField $item
-     */
     foreach ($items as $delta => $item) {
       $node = $item->getEntity();
+      $title = '';
+      $liked_nodes = '0;';
+
+      // Get the cookies.
+      $cookies = \Drupal::request()->cookies->all();
+
+      if (array_key_exists('liked-nodes', $cookies)) {
+        $liked_nodes = $cookies['liked-nodes'];
+      }
+
+      $string_nodes = explode(';', $liked_nodes);
+      if (array_search($node->id(), $string_nodes) > 0) {
+        $title = $this->t('Already liked!');
+      }
+
       $elements[$delta] = [
         '#type' => 'link',
         '#title' => $item->value,
@@ -42,14 +54,17 @@ class NlFieldFormatter extends FormatterBase {
         ],
         [
           'attributes' => [
-            'class' => ['use-ajax', 'node_like-like'],
+            'class' => ['use-ajax', 'node_like-like', 'nl-tooltip'],
+            'title' => $title,
           ],
         ]),
+        '#attached' => [
+          'library' => 'core/drupal.ajax',
+        ],
       ];
     }
 
     return $elements;
-
   }
 
 }

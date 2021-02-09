@@ -20,6 +20,9 @@ use Drupal\Core\Field\WidgetBase;
  */
 class NlFieldWidget extends WidgetBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $value = isset($items[$delta]->value) ? $items[$delta]->value : 0;
     $element += [
@@ -28,9 +31,23 @@ class NlFieldWidget extends WidgetBase {
       '#element_validate' => [
         [$this, 'validate'],
       ],
+      '#attributes' => [
+        'disabled' => TRUE,
+      ],
     ];
-    return ['value' => $element];
 
+    return ['value' => $element];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validate($element, FormStateInterface $form_state) {
+    $value = $element['#value'];
+    if (isset($value)) {
+      $form_state->setValueForElement($element, 0);
+      return;
+    }
   }
 
 }
