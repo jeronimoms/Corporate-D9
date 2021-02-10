@@ -1,4 +1,4 @@
-uuid: e97d9855-2039-4309-aa33-c8f842b09139
+uuid: 7945e5ad-9ceb-4b22-bbdb-6a04218b6ad4
 langcode: en
 status: true
 dependencies:
@@ -14,9 +14,9 @@ field_name: body
 entity_type: node
 bundle: article
 label: Body
-description: 'Please introduce in this box the text of this section.'
+description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
