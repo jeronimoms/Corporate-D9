@@ -1,19 +1,17 @@
-uuid: e97d9855-2039-4309-aa33-c8f842b09139
+uuid: 45e534a8-aa23-4104-9e22-e325d6bf52af
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.article
+    - node.type.wiki_page
   module:
     - text
-_core:
-  default_config_hash: IjZnOLWk1Pjq3WRg2pLSA1ERh7Po7izCq_p6UztZr2c
-id: node.article.body
+id: node.wiki_page.body
 field_name: body
 entity_type: node
-bundle: article
-label: Body
+bundle: wiki_page
+label: 'Article text'
 description: 'Please introduce in this box the text of this section.'
 required: false
 translatable: true
