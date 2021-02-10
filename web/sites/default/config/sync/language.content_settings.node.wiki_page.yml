@@ -1,11 +1,11 @@
-uuid: 272eaccd-2147-497e-b1ef-41de78d5b8da
+uuid: 0676bebc-e474-48af-9c18-85e83079cc55
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
-id: node.article
+    - node.type.wiki_page
+id: node.wiki_page
 target_entity_type_id: node
-target_bundle: article
+target_bundle: wiki_page
 default_langcode: und
 language_alterable: true

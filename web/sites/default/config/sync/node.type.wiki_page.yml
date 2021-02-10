@@ -1,4 +1,4 @@
-uuid: c98bee70-ad2d-40a7-b163-8b1f2b6317f2
+uuid: d9993c32-fbcf-426f-90c5-ed6ce05f9f13
 langcode: en
 status: true
 dependencies:
@@ -9,12 +9,10 @@ third_party_settings:
     available_menus:
       - main-menu
     parent: 'main-menu:0:'
-_core:
-  default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
-name: Article
-type: article
-description: 'Introductions and Sections'
+name: 'Wiki page'
+type: wiki_page
+description: 'Wiki articles'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 1
 display_submitted: false
