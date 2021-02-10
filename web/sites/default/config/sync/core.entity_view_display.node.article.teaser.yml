@@ -1,31 +1,14 @@
-uuid: ebdbc999-ae01-41cb-a699-59e3ab062755
+uuid: ad782402-44cf-433e-9f84-1497e19dda6d
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
-    - field.field.node.article.comment_node_article
-    - field.field.node.article.field_activity
-    - field.field.node.article.field_aditional_resources
-    - field.field.node.article.field_archived
-    - field.field.node.article.field_article_type
-    - field.field.node.article.field_body_revamp
-    - field.field.node.article.field_character_count
-    - field.field.node.article.field_expiration_date
-    - field.field.node.article.field_flickr_date
+    - field.field.node.article.comment
     - field.field.node.article.field_image
-    - field.field.node.article.field_metatag
-    - field.field.node.article.field_nace_codes
-    - field.field.node.article.field_page_count
-    - field.field.node.article.field_publication_date
-    - field.field.node.article.field_related_oshwiki_articles
-    - field.field.node.article.field_resources
-    - field.field.node.article.field_summary_html
     - field.field.node.article.field_tags
-    - field.field.node.article.field_thesaurus
-    - field.field.node.article.field_thesaurus_2020
-    - field.field.node.article.field_wiki_categories
+    - image.style.medium
     - node.type.article
   module:
     - image
@@ -38,47 +21,42 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  body:
-    label: hidden
-    weight: 1
-    type: text_default
+  addtoany:
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_image:
-    label: hidden
+  body:
+    type: text_summary_or_trimmed
     weight: 0
-    type: image
-    settings:
-      image_link: ''
-      image_style: ''
-    third_party_settings: {  }
     region: content
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    label: hidden
+  field_image:
+    type: image
+    weight: -1
+    region: content
+    settings:
+      image_style: medium
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+  field_tags:
+    type: entity_reference_label
+    weight: 10
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    label: above
   links:
     weight: 100
     region: content
 hidden:
-  addtoany: true
   comment: true
-  comment_node_article: true
-  field_activity: true
-  field_aditional_resources: true
-  field_archived: true
-  field_article_type: true
-  field_body_revamp: true
-  field_character_count: true
-  field_expiration_date: true
-  field_flickr_date: true
-  field_metatag: true
-  field_nace_codes: true
-  field_page_count: true
-  field_publication_date: true
-  field_related_oshwiki_articles: true
-  field_resources: true
-  field_summary_html: true
+  field_image: true
   field_tags: true
-  field_thesaurus: true
-  field_thesaurus_2020: true
-  field_wiki_categories: true
   langcode: true
   search_api_excerpt: true

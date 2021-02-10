@@ -1,11 +1,18 @@
-uuid: 272eaccd-2147-497e-b1ef-41de78d5b8da
+uuid: 49d6511b-c225-4210-994e-1f700e1c6663
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.article
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 id: node.article
 target_entity_type_id: node
 target_bundle: article
-default_langcode: und
-language_alterable: true
+default_langcode: site_default
+language_alterable: false
