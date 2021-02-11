@@ -1,4 +1,4 @@
-uuid: 4b0b5ef9-3150-4325-af9f-dc7343042b7a
+uuid: b43cb613-14dc-42db-a24c-a7089ecfc04c
 langcode: en
 status: true
 dependencies:
@@ -14,29 +14,24 @@ field_name: field_image
 entity_type: node
 bundle: article
 label: Image
-description: ''
+description: 'The header image that will be displayed on page.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: '[date:custom:Y]-[date:custom:m]'
+  alt_field: true
+  default_image: 0
+  file_directory: pages
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
-  alt_field: true
-  title_field: false
-  alt_field_required: true
-  title_field_required: false
-  default_image:
-    uuid: null
-    alt: ''
-    title: ''
-    width: null
-    height: null
-  handler: 'default:file'
-  handler_settings: {  }
+  title_field: true
   caption_field: false
   caption_field_required: false
+  alt_field_required: true
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
 field_type: image

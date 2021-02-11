@@ -1,0 +1,55 @@
+uuid: bd1c403f-807e-4b31-92ca-ac9dff19ace0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_wiki
+    - field.field.node.wiki_page.body
+    - field.field.node.wiki_page.comment_node_wiki_page
+    - field.field.node.wiki_page.field_flickr_date
+    - field.field.node.wiki_page.field_nace_codes
+    - field.field.node.wiki_page.field_tags
+    - field.field.node.wiki_page.field_thesaurus
+    - field.field.node.wiki_page.field_thesaurus_2020
+    - field.field.node.wiki_page.field_updated
+    - field.field.node.wiki_page.field_wiki_categories
+    - field.field.node.wiki_page.field_wiki_page_url
+    - node.type.wiki_page
+  module:
+    - link
+    - user
+id: node.wiki_page.osha_wiki
+targetEntityType: node
+bundle: wiki_page
+mode: osha_wiki
+content:
+  field_wiki_page_url:
+    label: hidden
+    weight: 2
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  comment_node_wiki_page: true
+  field_flickr_date: true
+  field_nace_codes: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  field_updated: true
+  field_wiki_categories: true
+  langcode: true
+  search_api_excerpt: true

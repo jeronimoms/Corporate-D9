@@ -1,0 +1,48 @@
+uuid: ecfbdbc6-48c9-4202-befd-57e36e6dd70a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aditional_resources
+    - node.type.article
+    - node.type.events
+    - node.type.external_url
+    - node.type.file
+    - node.type.flickr
+    - node.type.infographic
+    - node.type.news
+    - node.type.press_release
+    - node.type.publication
+    - node.type.slideshare
+    - node.type.youtube
+id: node.article.field_aditional_resources
+field_name: field_aditional_resources
+entity_type: node
+bundle: article
+label: 'Additional resources'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      events: events
+      external_url: external_url
+      file: file
+      flickr: flickr
+      infographic: infographic
+      news: news
+      press_release: press_release
+      publication: publication
+      slideshare: slideshare
+      youtube: youtube
+field_type: entity_reference
