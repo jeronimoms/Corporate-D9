@@ -1,0 +1,25 @@
+uuid: 5fe1c0c8-ee8f-4d72-a50a-eb39db7eeaa5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_image:3661c4cd-57a2-4eb6-a8d3-c0bb5bd23d60'
+  module:
+    - block_content
+  theme:
+    - ncwtheme
+id: logoosha
+theme: ncwtheme
+region: top_header_logos
+weight: 0
+provider: null
+plugin: 'block_content:3661c4cd-57a2-4eb6-a8d3-c0bb5bd23d60'
+settings:
+  id: 'block_content:3661c4cd-57a2-4eb6-a8d3-c0bb5bd23d60'
+  label: 'Logo OSHA'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

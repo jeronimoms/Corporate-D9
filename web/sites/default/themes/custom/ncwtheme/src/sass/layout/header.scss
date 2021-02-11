@@ -24,3 +24,40 @@
     }
   }
 }
+
+.top-header-content {
+  height: 135px;
+  display: flex;
+  align-content: center;
+  margin-left: 0;
+  margin-right: 0;
+
+  .region-top-header-logos {
+    float: left;
+    margin-left: 1rem;
+    .field--name-field-image {
+      display: flex;
+      margin: 0;
+      align-items: center;
+      .field__item {
+        float: left;
+        margin-right: 20px;
+        img {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Hide menu link to view only the Share links images in header and footer */
+#block-socialmenu, #block-socialmenu-2{
+  > ul{
+    list-style: none;
+    > li{
+      > a{
+        display: none;
+      }
+    }
+  }
+}
