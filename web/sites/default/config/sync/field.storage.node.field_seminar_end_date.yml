@@ -1,0 +1,20 @@
+uuid: 204eefe2-0577-4564-a89c-5cd01b765bb5
+langcode: und
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_seminar_end_date
+field_name: field_seminar_end_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

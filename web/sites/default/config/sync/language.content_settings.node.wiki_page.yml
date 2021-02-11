@@ -1,0 +1,11 @@
+uuid: 0676bebc-e474-48af-9c18-85e83079cc55
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.wiki_page
+id: node.wiki_page
+target_entity_type_id: node
+target_bundle: wiki_page
+default_langcode: und
+language_alterable: true

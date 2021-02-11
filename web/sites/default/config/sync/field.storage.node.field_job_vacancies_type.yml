@@ -1,0 +1,27 @@
+uuid: 2539cd50-7f28-4500-852a-3d7d71c8dd08
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_job_vacancies_type
+field_name: field_job_vacancies_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Public
+      label: Public
+    -
+      value: Inter-Agency
+      label: Inter-Agency
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

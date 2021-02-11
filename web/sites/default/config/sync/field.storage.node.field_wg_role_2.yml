@@ -1,0 +1,20 @@
+uuid: 03e1a4a7-9098-448f-b911-c5c6e308cbaf
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_wg_role_2
+field_name: field_wg_role_2
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

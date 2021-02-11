@@ -1,0 +1,23 @@
+uuid: be0cb465-e294-49b3-87a1-5541f8dbd8e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_attendees
+    - node.type.events
+id: node.events.field_number_of_attendees
+field_name: field_number_of_attendees
+entity_type: node
+bundle: events
+label: 'Number of attendees'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: 0
+  prefix: ''
+  suffix: ''
+field_type: integer

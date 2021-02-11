@@ -1,0 +1,26 @@
+uuid: ddc4f7bf-d7ac-46fc-a734-781916f15a52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.wiki_page
+    - taxonomy.vocabulary.tags
+id: node.wiki_page.field_tags
+field_name: field_tags
+entity_type: node
+bundle: wiki_page
+label: Tags
+description: 'Select Tags for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      tags: tags
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

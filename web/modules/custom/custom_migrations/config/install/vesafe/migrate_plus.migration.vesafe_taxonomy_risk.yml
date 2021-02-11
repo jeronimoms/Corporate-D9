@@ -56,24 +56,6 @@ process:
     -
       plugin: get
       source: weight
-  # Only attempt to stub real (non-zero) parents.
-  parent_id:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: parent
-    -
-      plugin: migration_lookup
-      migration: vesafe_taxonomy_category
-  parent:
-    -
-      plugin: default_value
-      default_value: 0
-      source: '@parent_id'
-  forum_container:
-    -
-      plugin: get
-      source: is_container
   changed:
     -
       plugin: get
