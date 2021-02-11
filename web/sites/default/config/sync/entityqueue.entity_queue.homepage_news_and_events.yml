@@ -1,0 +1,27 @@
+uuid: cd3ad263-ade0-4f32-b986-0ffda42ce9a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: homepage_news_and_events
+label: 'Homepage news and events'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      events: events
+      news: news
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: events
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: true
