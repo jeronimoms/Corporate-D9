@@ -6,12 +6,16 @@
   font-family: 'Open Sans';
 }
 
+/* Common elements */
 body{
   font-family: 'Open Sans';
   background: $bg-color-white;
 }
 
 h1{
-  color: red;
   font-family: 'Open Sans Condensed';
+}
+
+.push-right{
+  margin-left: auto;
 }

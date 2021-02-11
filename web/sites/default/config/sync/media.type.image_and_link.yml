@@ -1,0 +1,13 @@
+uuid: 14438977-7905-4003-9581-f42461f9641e
+langcode: en
+status: true
+dependencies: {  }
+id: image_and_link
+label: 'Image and link'
+description: "Image with link - url\r\nRender the image with the URL <a href=\"\">img</a>\r\nmedia--image-and-link--default.html.twig"
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }

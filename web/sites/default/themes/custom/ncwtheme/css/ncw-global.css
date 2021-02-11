@@ -78,14 +78,18 @@
 @font-face {
   font-family: "Open Sans";
 }
+/* Common elements */
 body {
   font-family: "Open Sans";
   background: #FFF;
 }
 
 h1 {
-  color: red;
   font-family: "Open Sans Condensed";
+}
+
+.push-right {
+  margin-left: auto;
 }
 
 /* Breadcrumbs */
@@ -113,6 +117,38 @@ h1 {
 .featured-top #block-ncwtheme-breadcrumbs a:hover {
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
+}
+
+.top-header-content {
+  height: 135px;
+  display: flex;
+  align-content: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+.top-header-content .region-top-header-logos {
+  float: left;
+  margin-left: 1rem;
+}
+.top-header-content .region-top-header-logos .field--name-field-image {
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+.top-header-content .region-top-header-logos .field--name-field-image .field__item {
+  float: left;
+  margin-right: 20px;
+}
+.top-header-content .region-top-header-logos .field--name-field-image .field__item img {
+  margin: 0;
+}
+
+/* Hide menu link to view only the Share links images in header and footer */
+#block-socialmenu > ul, #block-socialmenu-2 > ul {
+  list-style: none;
+}
+#block-socialmenu > ul > li > a, #block-socialmenu-2 > ul > li > a {
+  display: none;
 }
 
 .navbar {
