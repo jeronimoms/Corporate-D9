@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33877373b44864a53b1ff10fabf59ed8",
+    "content-hash": "1dc862605e4b3f0781f3521d0c3b23a6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6253,6 +6253,54 @@
             "homepage": "https://www.drupal.org/project/file_entity",
             "support": {
                 "source": "https://git.drupalcode.org/project/file_entity"
+            }
+        },
+        {
+            "name": "drupal/google_translator",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/google_translator.git",
+                "reference": "8.x-1.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/google_translator-8.x-1.0-rc1.zip",
+                "reference": "8.x-1.0-rc1",
+                "shasum": "153c064d42cb74b1bfe047e87f48688385b4cea2"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1603495556",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "fxarte",
+                    "homepage": "https://www.drupal.org/user/238139"
+                },
+                {
+                    "name": "jenna.tollerson",
+                    "homepage": "https://www.drupal.org/user/147099"
+                }
+            ],
+            "description": "Provides a block with configurable languages to translate the current page into.",
+            "homepage": "https://www.drupal.org/project/google_translator",
+            "support": {
+                "source": "https://git.drupalcode.org/project/google_translator"
             }
         },
         {
@@ -18360,6 +18408,7 @@
         "drupal/feeds_ex": 15,
         "drupal/feeds_tamper": 10,
         "drupal/file_entity": 10,
+        "drupal/google_translator": 5,
         "drupal/layoutcomponents": 10,
         "drupal/ldap": 10,
         "drupal/libraries": 10,
