@@ -64,25 +64,36 @@
             display: block;
             background: $bg-color-white;
             left: 0;
-            margin-left: -1.1em;
+            margin-left: -1.3em;
             margin-top: 1em;
-            border-top: 5px solid $bg-color-blue;
-            border-bottom: 5px solid $bg-color-blue-light;
+            border-top: 5px solid $bg-color-blue-light;
+            border-bottom: 5px solid $bg-color-blue;
             z-index: 999;
           }
         }
       }
       li {
         ul.menu-level-1 {
+          display: none;
           background: $bg-color-white;
           list-style: none;
-          display: none;
+          width: 22rem;
+          padding: 10px 10px 10px 20px;
           li {
             text-align: left;
             ul.menu-level-2 {
               list-style: none;
+              padding-left: 10px;
               li{
                 text-align: left;
+                a{
+                  display: block;
+                  color: $text-color-grey;
+                  font-weight: bold;
+                  font-size: 0.8rem;
+                  padding-bottom: 5px;
+                  padding-top: 5px;
+                }
               }
             }
           }

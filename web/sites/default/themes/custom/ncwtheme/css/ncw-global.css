@@ -238,6 +238,10 @@ h3.home a:hover {
   margin: 0;
 }
 
+.header-blocks section.row {
+  margin-right: 30px;
+}
+
 /* Hide menu link to view only the Share links images in header and footer */
 #block-socialmenu > ul, #block-socialmenu-2 > ul {
   list-style: none;
@@ -306,25 +310,36 @@ h3.home a:hover {
   display: block;
   background: #FFF;
   left: 0;
-  margin-left: -1.1em;
+  margin-left: -1.3em;
   margin-top: 1em;
-  border-top: 5px solid #003399;
-  border-bottom: 5px solid #cfddee;
+  border-top: 5px solid #cfddee;
+  border-bottom: 5px solid #003399;
   z-index: 999;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 {
+  display: none;
   background: #FFF;
   list-style: none;
-  display: none;
+  width: 22rem;
+  padding: 10px 10px 10px 20px;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 li {
   text-align: left;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 li ul.menu-level-2 {
   list-style: none;
+  padding-left: 10px;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 li ul.menu-level-2 li {
   text-align: left;
+}
+.navbar #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 li ul.menu-level-2 li a {
+  display: block;
+  color: #57575a;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 /*# sourceMappingURL=ncw-global.css.map */
