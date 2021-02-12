@@ -50,6 +50,12 @@
   }
 }
 
+.header-blocks{
+  section.row{
+    margin-right: 30px;
+  }
+}
+
 /* Hide menu link to view only the Share links images in header and footer */
 #block-socialmenu, #block-socialmenu-2{
   > ul{

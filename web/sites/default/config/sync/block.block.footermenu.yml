@@ -1,0 +1,29 @@
+uuid: 585f3875-85fb-47e4-a9f2-4ccb4f4ff4ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-menu
+  module:
+    - menu_block
+  theme:
+    - ncwtheme
+id: footermenu
+theme: ncwtheme
+region: footer_end
+weight: -6
+provider: null
+plugin: 'menu_block:footer-menu'
+settings:
+  id: 'menu_block:footer-menu'
+  label: 'Footer Menu'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: true
+  parent: 'footer-menu:'
+  suggestion: footer_menu
+visibility: {  }

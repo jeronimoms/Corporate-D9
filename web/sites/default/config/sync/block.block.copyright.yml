@@ -1,0 +1,25 @@
+uuid: cb4bea9e-85e7-4e69-942a-62c0fbf1196c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:40c614f8-8950-4b17-b38f-00214d471d8e'
+  module:
+    - block_content
+  theme:
+    - ncwtheme
+id: copyright
+theme: ncwtheme
+region: footer_end
+weight: -7
+provider: null
+plugin: 'block_content:40c614f8-8950-4b17-b38f-00214d471d8e'
+settings:
+  id: 'block_content:40c614f8-8950-4b17-b38f-00214d471d8e'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
