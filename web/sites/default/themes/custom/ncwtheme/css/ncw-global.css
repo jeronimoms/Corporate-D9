@@ -378,6 +378,75 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-footermenu 
   display: none;
 }
 
+/* View 3 banners */
+.view-osha-home-page-banners {
+  float: left;
+  width: 100%;
+  margin-bottom: 3em;
+}
+.view-osha-home-page-banners .home-boxes {
+  width: 374px;
+  height: 245px;
+  float: left;
+  margin-right: 1em;
+  position: relative;
+  cursor: pointer;
+}
+.view-osha-home-page-banners .home-boxes h2 a {
+  background: transparent;
+  color: #FFF;
+  position: absolute;
+  font-size: 1.7rem;
+  letter-spacing: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  bottom: 0;
+  margin-bottom: 0;
+  padding: 0 0 0.4em 0;
+  font-weight: 100;
+  z-index: 999;
+  transition: 0.8s;
+  line-height: 30px;
+  padding-bottom: 20px;
+}
+.view-osha-home-page-banners .home-boxes h3 a {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  padding: 0;
+  background: transparent;
+  color: #FFF;
+  margin-left: 16px;
+  padding-bottom: 0.4em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+  z-index: 999;
+  visibility: hidden;
+  transition: 0.8s;
+  font-size: 1rem;
+}
+.view-osha-home-page-banners .home-boxes .views-field-field-copyright {
+  font-size: 0.7rem;
+  margin-top: 0;
+  display: block;
+}
+.view-osha-home-page-banners .home-boxes .content-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 51, 153, 0);
+  background: -moz-linear-gradient(top, rgba(0, 51, 153, 0) 30%, rgba(0, 51, 153, 0.65) 76%, rgba(0, 51, 153, 0.65) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(30%, rgba(0, 51, 153, 0)), color-stop(76%, rgba(0, 51, 153, 0.65)), color-stop(100%, rgba(0, 51, 153, 0.65)));
+  background: -webkit-linear-gradient(top, rgba(0, 51, 153, 0) 30%, rgba(0, 51, 153, 0.65) 76%, rgba(0, 51, 153, 0.65) 100%);
+  background: -o-linear-gradient(top, rgba(0, 51, 153, 0) 30%, rgba(0, 51, 153, 0.65) 76%, rgba(0, 51, 153, 0.65) 100%);
+  background: -ms-linear-gradient(top, rgba(0, 51, 153, 0) 30%, rgba(0, 51, 153, 0.65) 76%, rgba(0, 51, 153, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(0, 51, 153, 0) 30%, rgba(0, 51, 153, 0.65) 76%, rgba(0, 51, 153, 0.65) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#003399", endColorstr="#003399", GradientType=0);
+  -webkit-transition: width 2s;
+  transition: width 2s;
+}
+
 .navbar {
   padding: 0;
 }
