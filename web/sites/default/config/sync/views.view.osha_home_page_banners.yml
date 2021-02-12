@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entityqueue.entity_queue.home_page_main_carousel
     - entityqueue.entity_queue.home_page_recommended_resources
     - field.storage.node.field_banner_link
     - field.storage.node.field_copyright
@@ -882,6 +883,20 @@ display:
       display_description: ''
       block_description: 'Home page banner top'
       rendering_language: '***LANGUAGE_language_content***'
+      relationships:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: 'Content queue'
+          required: true
+          limit_queue: home_page_main_carousel
+          entity_type: node
+          plugin_id: entity_queue
+      defaults:
+        relationships: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -889,7 +904,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:entityqueue.entity_queue.home_page_recommended_resources'
+        - 'config:entityqueue.entity_queue.home_page_main_carousel'
         - 'config:field.storage.node.field_banner_link'
         - 'config:field.storage.node.field_copyright'
         - 'config:field.storage.node.field_image_media'

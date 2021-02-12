@@ -1,0 +1,26 @@
+uuid: 39cc14e3-ee33-477a-8585-12bfd07a5ea7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.landing.body
+    - node.type.landing
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+id: node.landing.full
+targetEntityType: node
+bundle: landing
+mode: full
+content: {  }
+hidden:
+  addtoany: true
+  body: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

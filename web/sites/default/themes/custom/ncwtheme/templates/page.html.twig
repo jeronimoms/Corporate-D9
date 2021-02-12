@@ -25,9 +25,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="collapse navbar-collapse" id="CollapsingNavbar">
-          <div class="container">
             {{ page.primary_menu }}
-          </div>
         </div>
       {% endif %}
       {% if sidebar_collapse %}
@@ -52,18 +50,10 @@
   {% else %}
     <div id="main">
   {% endif %}
-    <div class="oira-content">
-        <main>
-            {% if node.bundle == 'news' %}
-              <section class="section container">
-            {% else %}
-              <section class="section">
-            {% endif %}
-                <a id="main-content" tabindex="-1"></a>
-                {{ page.content }}
-                </section>
-        </main>
-    </div>
+      <section class="section">
+        <a id="main-content" tabindex="-1"></a>
+        {{ page.content }}
+      </section>
   </div>
       {% if page.sidebar_first %}
     </div>
