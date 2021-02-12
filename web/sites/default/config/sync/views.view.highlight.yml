@@ -497,7 +497,7 @@ display:
             trim_suffix: ...
             wrap_output: false
             wrap_class: trimmed
-            more_link: true
+            more_link: false
             more_text: 'See more'
             more_class: more-link
             summary_handler: full
@@ -568,20 +568,7 @@ display:
           absolute: false
           entity_type: node
           plugin_id: entity_link
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: "\r\n<div class=\"more-link revamp events\">\r\n  <a href=\"/en/highlights\">\r\n    View all highlights  </a>\r\n</div>"
-            format: basic_html
-          plugin_id: text
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:
