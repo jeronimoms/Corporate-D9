@@ -1,0 +1,46 @@
+uuid: ac20a042-895c-416e-9429-635d26b5f1be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_image_menu_main
+    - system.menu.main
+  module:
+    - link
+    - media_library
+    - menu_item_extras
+    - workbench_moderation
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  field_image_menu_main:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  view_mode:
+    type: menu_item_extras_view_mode_selector_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

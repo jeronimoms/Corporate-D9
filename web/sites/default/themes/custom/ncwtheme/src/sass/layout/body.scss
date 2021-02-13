@@ -6,12 +6,115 @@
   font-family: 'Open Sans';
 }
 
+/* Common elements */
 body{
   font-family: 'Open Sans';
   background: $bg-color-white;
+  font-size: 16px;
 }
 
-h1{
-  color: red;
-  font-family: 'Open Sans Condensed';
+/*Headings*/
+
+h1, h2, a, label{
+  font-family: 'Open Sans',sans-serif;
+  color: $text-color-blue;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+h2{
+  font-size: 1.35rem;
+  margin-bottom: 0;
+  padding-left: 0;
+  font-weight: 600;
+  line-height: 30px;
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+      transition: all 1s;
+    }
+  }
+}
+
+h3{
+  font-size: 1.1rem;
+  color: $text-color-black;
+  a{
+    color: $text-color-black;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+      transition: all 1s;
+    }
+  }
+}
+
+h3.related{
+  width: 100%;
+  float: left;
+  background: url(../images/grey-h3-line.png) 0 60% repeat-x;
+  color: $text-color-grey-h3;
+  padding: 0;
+  span{
+    background: $bg-color-white;
+    padding-right: 1em;
+  }
+}
+
+h3.home{
+  color: $text-color-blue;
+  a{
+    color: $text-color-blue;
+    font-size: 1.3rem;
+    line-height: 1.1em;
+    text-decoration: none;
+    padding: 0;
+    font-weight: bold;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.sidebar{
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-bottom: 0;
+  }
+}
+
+.push-right{
+  margin-left: auto;
+}
+
+/* END Common elements */
+
+/* Twetter Block */
+.block-twitter-block{
+  height: 757px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #e1e8ed;
+  padding-bottom: 9px;
+  padding-left: 0em;
+  clear: both;
+  border: 0;
+}
+
+.block-twitter-block::-webkit-scrollbar-track{
+  background-color: $bg-color-blue-light;
+}
+
+.block-twitter-block::-webkit-scrollbar{
+  width: 5px;
+  background-color: $bg-color-blue-light;
+}
+
+.block-twitter-block::-webkit-scrollbar-thumb{
+  background-color: $bg-color-blue;
 }
