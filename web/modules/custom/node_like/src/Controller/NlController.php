@@ -4,7 +4,7 @@ namespace Drupal\node_like\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\InvokeCommand;
@@ -27,8 +27,8 @@ class NlController extends ControllerBase implements ContainerInjectionInterface
   /**
    * {@inheritdoc}
    */
-  public function __construct(Request $request_stack) {
-    $this->request = $request_stack;
+  public function __construct(RequestStack $request_stack) {
+    $this->request = $request_stack->getCurrentRequest();
   }
 
   /**
