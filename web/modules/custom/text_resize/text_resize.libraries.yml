@@ -8,6 +8,7 @@ text_resize.resize:
       css/text_resize.css: {}
   dependencies:
     - core/jquery
+    - core/jquery.cookie
     - core/drupal
     - core/drupal.form
     - core/drupalSettings
