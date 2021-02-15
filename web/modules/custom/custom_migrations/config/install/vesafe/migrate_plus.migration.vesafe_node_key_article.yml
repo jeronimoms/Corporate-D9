@@ -7,8 +7,8 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: vesafe_node_key_article_theme
-label: 'Node: Key Article Theme'
+id: vesafe_node_key_article
+label: 'Node: Key Article'
 audit: true
 migration_group: vesafe_migrate
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
@@ -16,26 +16,21 @@ deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 ########################## SOURCE #########################
 
 source:
-  plugin: d7_node
-  node_type: key_article_theme
+  # In this case, we have to control the state of node because is moderated by content_moderation
+  plugin: d7_node_moderation_state
+  node_type: key_article
 
 ########################## PROCESS #########################
 
 process:
   # If you are using this file to build a custom migration consider removing
   # the nid field to allow incremental migrations.
-  nid:
-    -
-      plugin: get
-      source: nid
+  nid: nid
   type:
     -
       plugin: default_value
-      default_value: key_article_theme
-  title:
-    -
-      plugin: get
-      source: title
+      default_value: key_article
+  title: title
   field_subtitle:
     -
       plugin: get
@@ -62,31 +57,17 @@ process:
           from_format: 'Y-m-d H:i:s'
           to_format: 'Y-m-d'
           source: value
-  field_thesaurus_2020:
-    -
-      plugin: sub_process
-      source: field_thesaurus_2020
-      process:
-        target_id:
-          plugin: get
-          source: nid
-  uid:
-    -
-      plugin: get
-      source: node_uid
-  status:
-    -
-      plugin: get
-      source: status
-  created:
-    -
-      plugin: get
-      source: created
-  changed:
-    -
-      plugin: get
-      source: changed
 
+  field_ka_general_safety_issues: field_ka_general_safety_issues
+  field_ka_general_risk_factors: field_ka_general_risk_factors
+  field_ka_specific_risk_factors: field_ka_specific_risk_factors
+  field_related_good_practices: field_related_good_practices
+
+  uid: node_uid
+  status: status
+  moderation_state: moderation_state
+  created: created
+  changed: changed
 ######################## DESTINATION ######################
 
 destination:
@@ -105,3 +86,4 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
+    - vesafe_node_key_article_theme

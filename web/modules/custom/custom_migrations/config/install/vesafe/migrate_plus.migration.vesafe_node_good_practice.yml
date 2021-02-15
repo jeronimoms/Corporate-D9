@@ -7,8 +7,8 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: vesafe_node_key_article_theme
-label: 'Node: Key Article Theme'
+id: vesafe_node_good_practice
+label: 'Node: Good Practice'
 audit: true
 migration_group: vesafe_migrate
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
@@ -16,41 +16,50 @@ deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 ########################## SOURCE #########################
 
 source:
-  plugin: d7_node
-  node_type: key_article_theme
+  # In this case, we have to control the state of node because is moderated by content_moderation
+  plugin: d7_node_moderation_state
+  node_type: good_practice
 
 ########################## PROCESS #########################
 
 process:
   # If you are using this file to build a custom migration consider removing
   # the nid field to allow incremental migrations.
-  nid:
-    -
-      plugin: get
-      source: nid
+  nid: nid
   type:
     -
       plugin: default_value
-      default_value: key_article_theme
-  title:
-    -
-      plugin: get
-      source: title
-  field_subtitle:
-    -
-      plugin: get
-      source: field_subtitle/0
-  field_subtitle/format:
+      default_value: good_practice
+  title: title
+  field_vehicles:
+    - plugin: sub_process
+      source: field_vehicles
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_risks:
+    - plugin: sub_process
+      source: field_risks
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_gp_what_is_it: field_gp_what_is_it
+  'field_gp_what_is_it/0/format':
     - plugin: default_value
       default_value: full_html
-  body/value: body/0/value
-  body/summary:
-    -
-      plugin: strip_tags
-      source: field_summary/0/value
-  body/format:
-    -
-      plugin: default_value
+  field_gp_who_is_for: field_gp_who_is_for
+  'field_gp_who_is_for/0/format':
+    - plugin: default_value
+      default_value: full_html
+  field_gp_what_is_the_benefit: field_gp_what_is_the_benefit
+  'field_gp_what_is_the_benefit/0/format':
+    - plugin: default_value
+      default_value: full_html
+  field_gp_getting_started: field_gp_getting_started
+  'field_gp_getting_started/0/format':
+    - plugin: default_value
       default_value: full_html
   field_publication_date:
     -
@@ -62,31 +71,19 @@ process:
           from_format: 'Y-m-d H:i:s'
           to_format: 'Y-m-d'
           source: value
-  field_thesaurus_2020:
-    -
-      plugin: sub_process
-      source: field_thesaurus_2020
-      process:
-        target_id:
-          plugin: get
-          source: nid
-  uid:
-    -
-      plugin: get
-      source: node_uid
-  status:
-    -
-      plugin: get
-      source: status
-  created:
-    -
-      plugin: get
-      source: created
-  changed:
-    -
-      plugin: get
-      source: changed
-
+  field_like: field_like_count
+  field_gp_external_links:
+    plugin: field_link
+    source: field_gp_external_links
+  field_additional_resources:
+    plugin: field_link
+    source: field_additional_resources
+  field_thesaurus_2020: field_thesaurus_2020
+  uid: node_uid
+  status: status
+  moderation_state: moderation_state
+  created: created
+  changed: changed
 ######################## DESTINATION ######################
 
 destination:
@@ -105,3 +102,6 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
+    - vesafe_node_thesaurus
+    - vesafe_taxonomy_risk
+    - vesafe_taxonomy_vehicle
