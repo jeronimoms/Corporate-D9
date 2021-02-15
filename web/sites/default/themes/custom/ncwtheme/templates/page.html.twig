@@ -36,7 +36,9 @@
 {% endblock %}
 
 {% block content %}
-  <div class="container">{{ page.breadcrumb }}</div>
+  <div class="breadcrumb-fluid">
+    <div class="container"> {{ page.breadcrumb }}</div>
+  </div>
   {% if page.sidebar_first %}
     <div class="content-two-columns">
       <div{{ sidebar_first_attributes }}>
