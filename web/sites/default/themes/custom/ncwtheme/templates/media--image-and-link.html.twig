@@ -40,11 +40,10 @@
 #}
 
 {% set fieldlink = content.field_link_image.0 %}
-{% set external_link = content.field_external_link.0 %}
-
+{% set external_link = content.field_external_link.0['#markup'] %}
 <div{{ attributes }}>
   {{ title_suffix.contextual_links }}
-  {% if fieldlink and external_link %}
+  {% if fieldlink and external_link == 'External link' %}
     <a target ="_blank" title="{{ fieldlink['#title']}}" href="{{ fieldlink['#url_title'] }}">{{ content.field_media_image_1 }}</a>
   {% elseif fieldlink %}
     <a title="{{ fieldlink['#title']}}" href="{{ fieldlink['#url_title'] }}">{{ content.field_media_image_1 }}</a>

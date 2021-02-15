@@ -48,6 +48,10 @@ process:
     -
       plugin: get
       source: field_subtitle
+  'field_subtitle/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
   field_publication_date:
     -
       plugin: get
