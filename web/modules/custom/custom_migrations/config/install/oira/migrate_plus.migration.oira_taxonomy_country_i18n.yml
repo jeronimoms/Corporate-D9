@@ -7,49 +7,45 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_taxonomy_country_i18n
-label: 'Terms: Country Translations'
+id: oira_taxonomy_country_i18n               # -----  CHANGUE
+label: 'Terms: Country Translations'         # -----  CHANGUE
 audit: true
-migration_group: oira_migrate
-
-##################### BASIC INFORMATION ###################
-
-
-
-########################## SOURCE #########################
-
+migration_group: oira_migrate                # -----  CHANGUE
 source:
   plugin: d7_locale_terms
-  bundle: country
+  bundle: country                            # -----  CHANGUE
   translations: true
+destination:
+  plugin: entity:taxonomy_term
+  translations: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
 
-########################## SOURCE #########################
-
-
-
-########################## PROCESS ########################
+migration_dependencies:
+  required:
+    - oira_taxonomy_country                  # -----  CHANGUE
 
 process:
-
-  # If you are using this file to build a custom migration consider removing
-  # the tid field to allow incremental migrations.
   tid:
     plugin: migration_lookup
-    migration: oira_taxonomy_country
+    migration: oira_taxonomy_country         # -----  CHANGUE
     source: tid
-  # Use the language from the locales_target table.
-  langcode: ltlanguage
+  langcode: ltlanguage  # Use the language from the locales_target table.
   vid:
     -
       plugin: default_value
-      default_value: country
+      default_value: country                 # -----  CHANGUE
   name: name_field_value
+  ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGUE
   field_iso2:
     -
       plugin: get
       source: field_iso2
   field_country_status:
-    - plugin: sub_process
+    -
+      plugin: sub_process
       source: field_country_status
       process:
         target_id:
@@ -59,32 +55,4 @@ process:
     plugin: field_link
     source: field_ncw_fp_link
   weight: weight
-########################## PROCESS ########################
 
-
-
-######################## DESTINATION ######################
-
-destination:
-  plugin: entity:taxonomy_term
-  translations: true
-
-######################## DESTINATION ######################
-
-
-
-######################## DEPENDENCIES #####################
-
-# We specify that this migration depends on the unops_project_migrate module.
-# Based on this dependency, this migration will be removed when the
-# custom_migrate module is uninstalled.
-dependencies:
-  enforced:
-    module:
-      - custom_migrations
-
-migration_dependencies:
-  required:
-    - oira_taxonomy_country
-
-######################## DEPENDENCIES #####################
