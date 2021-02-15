@@ -1,0 +1,90 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_taxonomy_country_i18n
+label: 'Terms: Country Translations'
+audit: true
+migration_group: oira_migrate
+
+##################### BASIC INFORMATION ###################
+
+
+
+########################## SOURCE #########################
+
+source:
+  plugin: d7_locale_terms
+  bundle: country
+  translations: true
+
+########################## SOURCE #########################
+
+
+
+########################## PROCESS ########################
+
+process:
+
+  # If you are using this file to build a custom migration consider removing
+  # the tid field to allow incremental migrations.
+  tid:
+    plugin: migration_lookup
+    migration: oira_taxonomy_country
+    source: tid
+  # Use the language from the locales_target table.
+  langcode: ltlanguage
+  vid:
+    -
+      plugin: default_value
+      default_value: country
+  name: name_field_value
+  field_iso2:
+    -
+      plugin: get
+      source: field_iso2
+  field_country_status:
+    - plugin: sub_process
+      source: field_country_status
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_ncw_fp_link:
+    plugin: field_link
+    source: field_ncw_fp_link
+  weight: weight
+########################## PROCESS ########################
+
+
+
+######################## DESTINATION ######################
+
+destination:
+  plugin: entity:taxonomy_term
+  translations: true
+
+######################## DESTINATION ######################
+
+
+
+######################## DEPENDENCIES #####################
+
+# We specify that this migration depends on the unops_project_migrate module.
+# Based on this dependency, this migration will be removed when the
+# custom_migrate module is uninstalled.
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+migration_dependencies:
+  required:
+    - oira_taxonomy_country
+
+######################## DEPENDENCIES #####################
