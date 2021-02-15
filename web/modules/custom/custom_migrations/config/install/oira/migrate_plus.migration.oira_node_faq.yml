@@ -1,0 +1,62 @@
+# Migration file for creating "faq" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_node_faq
+label: 'Node: Faq'
+audit: true
+migration_group: oira_migrate
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+
+########################## SOURCE #########################
+
+source:
+  plugin: d7_node
+  node_type: faq
+
+########################## PROCESS ########################
+
+process:
+  # Map of fields
+  nid: tnid
+  vid: vid
+  # Define by default the type of node
+  type:
+    - plugin: default_value
+      default_value: faq
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  field_oira: field_oira
+  field_weight: field_weight
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+
+######################## DESTINATION ######################
+
+destination:
+  plugin: entity:node
+
+######################## DEPENDENCIES #####################
+
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+migration_dependencies:
+  required:
+    - d7_user
