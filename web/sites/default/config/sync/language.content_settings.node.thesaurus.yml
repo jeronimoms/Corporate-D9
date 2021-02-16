@@ -1,0 +1,16 @@
+uuid: 9bf0f89d-baa8-4f2a-aade-e5930817e302
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thesaurus
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.thesaurus
+target_entity_type_id: node
+target_bundle: thesaurus
+default_langcode: site_default
+language_alterable: false
