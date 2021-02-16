@@ -194,49 +194,76 @@
   }
 }
 
-.more-link.revamp{
-  width: 100%;
-  float: left;
-  text-align: center;
-  background: url(../images/img-border-more-link.png) repeat-x center 50%;
-  a{
-    background: $bg-color-white;
-    border: 2px solid $bg-color-blue;
-    padding: 5px 1.5em;
-    margin-left: 0;
-    font-weight: bold;
-    &:hover{
-      background: $bg-color-blue;
-      color: $text-color-white;
-      transition: all 500ms;
-      text-decoration: none;
-    }
-  }
-}
-
 /* News and Events */
-.content-news-events{
+.content-news-events {
   width: 100%;
   float: left;
   clear: both;
   margin-top: 2rem;
-  .news-home{
-    .view-content{
-      border: 2px solid $bg-color-blue;
+
+  .news-home, .events-home {
+    float: left;
+
+    .view-content {
       float: left;
-      margin-right: 1em;
       margin-top: 11px;
-      width: 31.6%;
       padding: 0;
-      time{
+
+      .views-row {
+        width: 275px;
+        border: 2px solid $bg-color-blue;
+        float: left;
+        margin-right: 1em;
+      }
+
+      time, .views-field-field-date {
         padding-left: 15px;
         padding-top: 1em;
         display: block;
       }
-      a{
+
+      .views-field-field-city, .views-field-field-country-code {
+        float: left;
+        font-size: 0.8rem;
+        color: $text-color-blue;
         padding-left: 15px;
-        padding-top: 1em;
-        display: block;
+        padding-top: 0;
+        display: inline-block;
+      }
+      
+      h3 {
+        a {
+          display: block;
+          margin: 5px 0 25px 0;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 1em;
+
+        }
+      }
+
+      .see-more-arrow {
+        a {
+          padding: 11px 40px 10px 10px;
+        }
+      }
+
+      .tag-news-events {
+        font-family: 'Open Sans Condensed', sans-serif;
+        background: $bg-color-pink;
+        text-transform: uppercase;
+        float: right;
+        color: $text-color-white;
+        font-weight: bold;
+        padding: 9px 1em;
+        letter-spacing: 3px;
+      }
+    }
+  }
+  .events-home {
+    .view-content {
+      .views-row {
+        margin-right: 0;
       }
     }
   }
