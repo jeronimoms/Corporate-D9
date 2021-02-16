@@ -1,0 +1,25 @@
+uuid: 5ff92710-528e-47cd-8e44-41f89944797d
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:4ba258d7-78f6-40f3-bb0e-e97a029e50ba'
+  module:
+    - block_content
+  theme:
+    - ncwtheme
+id: viewallhighlightshomepage
+theme: ncwtheme
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:4ba258d7-78f6-40f3-bb0e-e97a029e50ba'
+settings:
+  id: 'block_content:4ba258d7-78f6-40f3-bb0e-e97a029e50ba'
+  label: 'View all highlights Home page'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
