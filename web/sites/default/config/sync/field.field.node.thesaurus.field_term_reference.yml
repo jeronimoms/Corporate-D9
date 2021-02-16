@@ -1,0 +1,21 @@
+uuid: c6aff3b7-e304-4fea-8be4-c7fcc7db30b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_term_reference
+    - node.type.thesaurus
+  module:
+    - text
+id: node.thesaurus.field_term_reference
+field_name: field_term_reference
+entity_type: node
+bundle: thesaurus
+label: 'Term reference'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
