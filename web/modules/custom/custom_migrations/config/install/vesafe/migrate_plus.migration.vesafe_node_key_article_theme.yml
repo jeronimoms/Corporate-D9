@@ -13,19 +13,11 @@ audit: true
 migration_group: vesafe_migrate
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 
-##################### BASIC INFORMATION ###################
-
-
-
 ########################## SOURCE #########################
 
 source:
   plugin: d7_node
   node_type: key_article_theme
-
-########################## SOURCE #########################
-
-
 
 ########################## PROCESS #########################
 
@@ -62,8 +54,14 @@ process:
       default_value: full_html
   field_publication_date:
     -
-      plugin: get
+      plugin: sub_process
       source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d'
+          source: value
   field_thesaurus_2020:
     -
       plugin: sub_process
@@ -89,18 +87,10 @@ process:
       plugin: get
       source: changed
 
-########################## PROCESS #########################
-
-
-
 ######################## DESTINATION ######################
 
 destination:
   plugin: entity:node
-
-######################## DESTINATION ######################
-
-
 
 ######################## DEPENDENCIES #####################
 
@@ -112,6 +102,6 @@ dependencies:
     module:
       - custom_migrations
 
-
-
-######################## DEPENDENCIES #####################
+migration_dependencies:
+  required:
+    - d7_user

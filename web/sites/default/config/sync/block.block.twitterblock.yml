@@ -1,4 +1,4 @@
-uuid: b23748ca-011b-4a1f-93a7-a5ae19f9d71c
+uuid: 08d9f434-7bdc-45b9-8d24-660f2a845c20
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
 id: twitterblock
 theme: ncwtheme
 region: sidebar_second
-weight: -7
+weight: 0
 provider: null
 plugin: twitter_block
 settings:

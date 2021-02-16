@@ -1,0 +1,107 @@
+# Migration file for creating "publication" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: vesafe_node_good_practice
+label: 'Node: Good Practice'
+audit: true
+migration_group: vesafe_migrate
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+
+########################## SOURCE #########################
+
+source:
+  # In this case, we have to control the state of node because is moderated by content_moderation
+  plugin: d7_node_moderation_state
+  node_type: good_practice
+
+########################## PROCESS #########################
+
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the nid field to allow incremental migrations.
+  nid: nid
+  type:
+    -
+      plugin: default_value
+      default_value: good_practice
+  title: title
+  field_vehicles:
+    - plugin: sub_process
+      source: field_vehicles
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_risks:
+    - plugin: sub_process
+      source: field_risks
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_gp_what_is_it: field_gp_what_is_it
+  'field_gp_what_is_it/0/format':
+    - plugin: default_value
+      default_value: full_html
+  field_gp_who_is_for: field_gp_who_is_for
+  'field_gp_who_is_for/0/format':
+    - plugin: default_value
+      default_value: full_html
+  field_gp_what_is_the_benefit: field_gp_what_is_the_benefit
+  'field_gp_what_is_the_benefit/0/format':
+    - plugin: default_value
+      default_value: full_html
+  field_gp_getting_started: field_gp_getting_started
+  'field_gp_getting_started/0/format':
+    - plugin: default_value
+      default_value: full_html
+  field_publication_date:
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d'
+          source: value
+  field_like: field_like_count
+  field_gp_external_links:
+    plugin: field_link
+    source: field_gp_external_links
+  field_additional_resources:
+    plugin: field_link
+    source: field_additional_resources
+  field_thesaurus_2020: field_thesaurus_2020
+  uid: node_uid
+  status: status
+  moderation_state: moderation_state
+  created: created
+  changed: changed
+######################## DESTINATION ######################
+
+destination:
+  plugin: entity:node
+
+######################## DEPENDENCIES #####################
+
+# We specify that this migration depends on the unops_project_migrate module.
+# Based on this dependency, this migration will be removed when the
+# unops_project_migrate module is uninstalled.
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+migration_dependencies:
+  required:
+    - d7_user
+    - vesafe_node_thesaurus
+    - vesafe_taxonomy_risk
+    - vesafe_taxonomy_vehicle

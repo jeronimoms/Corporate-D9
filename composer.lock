@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e544ae0113dfbc6c77211128a5328458",
+    "content-hash": "d070b15e87834e3af1be09e1e49bf999",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2112,6 +2112,40 @@
             "time": "2020-08-30T22:54:22+00:00"
         },
         {
+            "name": "drupal-ckeditor-libraries-group/font",
+            "version": "4.13.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal-ckeditor-libraries-group/font.git",
+                "reference": "81cbe90726319bb0a8c0c12c0a893e1e2e660c60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal-ckeditor-libraries-group/font/zipball/81cbe90726319bb0a8c0c12c0a893e1e2e660c60",
+                "reference": "81cbe90726319bb0a8c0c12c0a893e1e2e660c60",
+                "shasum": ""
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later",
+                "LGPL-2.1-or-later",
+                "MPL-1.1"
+            ],
+            "description": "CKEditor 4 font plugin",
+            "homepage": "https://ckeditor.com/cke4/addon/font",
+            "keywords": [
+                "CKEditor",
+                "font",
+                "plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/ckeditor/ckeditor4/issues",
+                "source": "https://github.com/ckeditor/ckeditor4/tree/master/plugins/font"
+            },
+            "time": "2019-06-27T14:05:00+00:00"
+        },
+        {
             "name": "drupal/addtoany",
             "version": "1.14.0",
             "source": {
@@ -3132,6 +3166,67 @@
             "homepage": "https://www.drupal.org/project/chosen",
             "support": {
                 "source": "https://git.drupalcode.org/project/chosen"
+            }
+        },
+        {
+            "name": "drupal/ckeditor_font",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor_font.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_font-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "a8d0d10e7b23307bb9aba5de707518c108f69570"
+            },
+            "require": {
+                "drupal-ckeditor-libraries-group/font": "4.13.1",
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1590157419",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Webbeh",
+                    "homepage": "https://www.drupal.org/user/1160608"
+                },
+                {
+                    "name": "cobenash",
+                    "homepage": "https://www.drupal.org/user/2138470"
+                },
+                {
+                    "name": "darol100",
+                    "homepage": "https://www.drupal.org/user/2667123"
+                },
+                {
+                    "name": "dinarcon",
+                    "homepage": "https://www.drupal.org/user/909522"
+                }
+            ],
+            "description": "This plugin adds Font Size and Font Family dropdowns that applies as inline element style.",
+            "homepage": "https://www.drupal.org/project/ckeditor_font",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/ckeditor_font",
+                "issues": "http://drupal.org/project/issues/ckeditor_font"
             }
         },
         {
@@ -7300,17 +7395,17 @@
         },
         {
             "name": "drupal/layoutcomponents",
-            "version": "1.20.0-beta2",
+            "version": "1.21.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layoutcomponents.git",
-                "reference": "8.x-1.20-beta2"
+                "reference": "8.x-1.21-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layoutcomponents-8.x-1.20-beta2.zip",
-                "reference": "8.x-1.20-beta2",
-                "shasum": "8da92254609a506bd1d5ed3b708d8d65b250cea4"
+                "url": "https://ftp.drupal.org/files/projects/layoutcomponents-8.x-1.21-beta2.zip",
+                "reference": "8.x-1.21-beta2",
+                "shasum": "36dfaeb7497dc55c82beb70339cdc9b5bb18a0e1"
             },
             "require": {
                 "cweagans/composer-patches": "^1.6",
@@ -7344,8 +7439,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.20-beta2",
-                    "datestamp": "1611828083",
+                    "version": "8.x-1.21-beta2",
+                    "datestamp": "1613300509",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -7404,10 +7499,10 @@
                     "role": "Frontend developer"
                 },
                 {
-                    "name": "Adrian Vazquez Peligero",
+                    "name": "Roberto Valentino Da Costa Correa",
                     "homepage": "https://www.drupal.org/user/3619999",
-                    "email": "srvazquez95@gmail.com",
-                    "role": "Maintainer"
+                    "email": "tobascosta10@gmail.com",
+                    "role": "Backend developer"
                 },
                 {
                     "name": "Alberto Perez Dosaula",
@@ -7432,7 +7527,7 @@
         },
         {
             "name": "drupal/layoutcomponents-sliderwidget",
-            "version": "1.20.0-beta2",
+            "version": "1.21.0-beta2",
             "require": {
                 "drupal/core": "^8.8 || ^9",
                 "drupal/layoutcomponents": "^1"
@@ -7440,8 +7535,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.20-beta2",
-                    "datestamp": "1611828083",
+                    "version": "8.x-1.21-beta2",
+                    "datestamp": "1613300509",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -8013,6 +8108,77 @@
             }
         },
         {
+            "name": "drupal/masquerade",
+            "version": "2.0.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/masquerade.git",
+                "reference": "8.x-2.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/masquerade-8.x-2.0-beta4.zip",
+                "reference": "8.x-2.0-beta4",
+                "shasum": "8ab6cf13239e92a787f373d83bd245b9d50f7e6b"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-beta4",
+                    "datestamp": "1591126607",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Postnikov (andypost)",
+                    "homepage": "https://www.drupal.org/u/andypost",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "David Norman (deekayen)",
+                    "homepage": "https://www.drupal.org/u/deekayen",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Mark Shropshire (shrop)",
+                    "homepage": "https://www.drupal.org/u/shrop",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Daniel Kudwien (sun)",
+                    "homepage": "https://www.drupal.org/u/sun",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Andrew Berry (deviantintegral)",
+                    "homepage": "https://www.drupal.org/u/deviantintegral",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "sun",
+                    "homepage": "https://www.drupal.org/user/54136"
+                }
+            ],
+            "description": "Allows privileged users to masquerade as another user.",
+            "homepage": "https://www.drupal.org/project/masquerade",
+            "support": {
+                "source": "https://git.drupal.org/project/masquerade.git",
+                "issues": "https://www.drupal.org/project/issues/masquerade",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
             "name": "drupal/matomo",
             "version": "1.11.0",
             "source": {
@@ -8544,6 +8710,56 @@
                 "source": "https://git.drupalcode.org/project/metatag",
                 "issues": "https://www.drupal.org/project/issues/metatag",
                 "docs": "https://www.drupal.org/docs/8/modules/metatag"
+            }
+        },
+        {
+            "name": "drupal/migrate_file_to_media",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_file_to_media.git",
+                "reference": "2.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_file_to_media-2.0.6.zip",
+                "reference": "2.0.6",
+                "shasum": "e681ce04edf38b3409a435ef41a7e5a21ba6bd0b"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/migrate_plus": "*",
+                "drupal/migrate_tools": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.6",
+                    "datestamp": "1604940132",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ayalon",
+                    "homepage": "https://www.drupal.org/user/419226"
+                },
+                {
+                    "name": "grahl",
+                    "homepage": "https://www.drupal.org/user/146040"
+                }
+            ],
+            "description": "Migrate file fields to media fields.",
+            "homepage": "https://www.drupal.org/project/migrate_file_to_media",
+            "support": {
+                "source": "https://git.drupalcode.org/project/migrate_file_to_media"
             }
         },
         {
@@ -10844,17 +11060,17 @@
         },
         {
             "name": "drupal/taxonomy_manager",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/taxonomy_manager.git",
-                "reference": "2.0.3"
+                "reference": "2.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/taxonomy_manager-2.0.3.zip",
-                "reference": "2.0.3",
-                "shasum": "f9e5222ab37ff54084263611f0983414ffcac32f"
+                "url": "https://ftp.drupal.org/files/projects/taxonomy_manager-2.0.4.zip",
+                "reference": "2.0.4",
+                "shasum": "1bb0c27a268e1b9220e908f24b38d36216699ba2"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -10863,8 +11079,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.3",
-                    "datestamp": "1602424385",
+                    "version": "2.0.4",
+                    "datestamp": "1613054276",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10883,6 +11099,10 @@
                 {
                     "name": "VladimirAus",
                     "homepage": "https://www.drupal.org/user/673120"
+                },
+                {
+                    "name": "dragan_bp",
+                    "homepage": "https://www.drupal.org/user/3578037"
                 },
                 {
                     "name": "joaogarin",
@@ -18436,6 +18656,7 @@
         "drupal/like_and_dislike": 10,
         "drupal/linkchecker": 15,
         "drupal/linkit": 10,
+        "drupal/masquerade": 10,
         "drupal/menu_position": 10,
         "drupal/node_export": 15,
         "drupal/node_revision_delete": 5,
