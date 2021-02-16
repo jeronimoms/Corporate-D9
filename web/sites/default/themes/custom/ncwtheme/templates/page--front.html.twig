@@ -36,37 +36,20 @@
 {% endblock %}
 
 {% block content %}
-  <div class="breadcrumb-fluid">
-    <div class="container"> {{ page.breadcrumb }}</div>
-  </div>
-  {% if page.sidebar_first %}
-    <div class="content-two-columns">
-      <div{{ sidebar_first_attributes }}>
-        <aside class="section col-md-4" role="complementary">
-          {{ page.sidebar_first }}
-        </aside>
-      </div>
-  {% endif %}
-  {% if page.sidebar_first %}
-    <div id="main" class="col-md-8 two-column">
-  {% else %}
-    <div id="main">
-  {% endif %}
-      <section class="section">
-        <a id="main-content" tabindex="-1"></a>
-        <div class="container">{{ page.content }}</div>
-      </section>
-  </div>
-      {% if page.sidebar_first %}
+  <div class="page_front">
+    <div class="home-intro">
+      {{ drupal_view('osha_home_page_banners', 'home_page_banner_top') }}
     </div>
-      {% endif %}
-  {% if page.sidebar_second %}
-    <div{{ sidebar_second_attributes }}>
-      <aside class="section" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
+
+    <div class="left_column">
+      {{ drupal_view('highlight', 'block_2') }}
     </div>
-  {% endif %}
+    <div class="sidebar_second">
+      {{ drupal_entity('block', 'twitterblock') }}
+    </div>
+
+  </div>
+
 {% endblock %}
 
 {% block footer %}
