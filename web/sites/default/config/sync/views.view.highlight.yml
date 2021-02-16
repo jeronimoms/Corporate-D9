@@ -586,7 +586,20 @@ display:
           absolute: false
           entity_type: node
           plugin_id: entity_link
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<div class=\"more-link revamp events\">\r\n  <a href=\"/en/highlights\">View all highlights</a>\r\n</div>"
+            format: full_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

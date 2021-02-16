@@ -1,4 +1,25 @@
 /* View 3 banners */
+.page_front {
+  max-width: 1160px;
+  margin: 2rem auto;
+}
+
+.left_column {
+  width: 73.4%;
+  float: left;
+}
+
+.path-frontpage{
+  .sidebar_second{
+    width: 23.5%;
+    float: left;
+    margin-left: 1rem;
+    margin-top: 0;
+    padding-right: 0;
+  }
+}
+
+
 .view-osha-home-page-banners{
   float: left;
   width: 100%;

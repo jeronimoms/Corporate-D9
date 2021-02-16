@@ -18,6 +18,10 @@ body{
   margin-top: 0;
 }
 
+.sidebar .block{
+  border: 0;
+}
+
 .datetime{
   font-size: 0.8rem;
   color: $text-color-blue;
@@ -91,7 +95,6 @@ h2{
   h2{
     font-size: 1.6rem;
     font-weight: 700;
-    margin-left: -15px;
   }
 }
 
