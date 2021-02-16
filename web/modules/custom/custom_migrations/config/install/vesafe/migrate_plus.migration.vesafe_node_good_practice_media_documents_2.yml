@@ -1,0 +1,36 @@
+# This migration links the newly created media entities with entity reference field on the target bundle.
+
+id: vesafe_node_good_practice_media_documents_2
+label: 'Good Practice: Media Documents Mapping'
+migration_group: vesafe_migrate_media
+
+source:
+  key: migrate
+  plugin: d7_node
+  node_type: good_practice
+
+destination:
+  plugin: entity:node
+
+process:
+  nid: nid
+  changed: changed
+  title: title
+  type:
+    plugin: default_value
+    default_value: good_practice
+
+  field_media_gp_factsheet:
+    plugin: file_id_lookup
+    source: field_gp_factsheet
+    migration: vesafe_node_good_practice_media_documents_1
+    no_stub: true
+
+dependencies:
+  module:
+    - custom_migrations
+
+migration_dependencies:
+  optional:
+    - vesafe_node_good_practice
+    - vesafe_node_good_practice_media_documents_1
