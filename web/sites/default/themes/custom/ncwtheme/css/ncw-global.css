@@ -85,6 +85,51 @@ body {
   font-size: 16px;
 }
 
+.node__content {
+  font-size: initial;
+  margin-top: 0;
+}
+
+.sidebar .block {
+  border: 0;
+}
+
+.datetime {
+  font-size: 0.8rem;
+  color: #003399;
+  font-weight: bold;
+}
+
+/* Links - arrows */
+span.see-more-arrow a {
+  width: auto;
+  color: #003399;
+  display: inline-block;
+  padding: 10px 40px 10px 10px;
+  background: url(../images/arrow.png) no-repeat calc(100% - 10px) 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+span.see-more-arrow a:hover {
+  background: url(../images/arrow.png) no-repeat #003399 calc(100% - 10px) 15px;
+  color: #FFF;
+  -webkit-transition: background-color 800ms linear;
+  -moz-transition: background-color 800ms linear;
+  -o-transition: background-color 800ms linear;
+  -ms-transition: background-color 800ms linear;
+  transition: background-color 800ms linear;
+}
+
+span.see-more-arrow.minor-size a {
+  font-size: 0.75rem;
+  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
+  padding: 5px 30px 5px 5px;
+}
+span.see-more-arrow.minor-size a:hover {
+  background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
+}
+
 /*Headings*/
 h1, h2, a, label {
   font-family: "Open Sans", sans-serif;
@@ -110,6 +155,11 @@ h2 a {
 h2 a:hover {
   text-decoration: underline;
   transition: all 1s;
+}
+
+.path-frontpage h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 h3 {
@@ -185,6 +235,41 @@ h3.home a:hover {
 
 .block-twitter-block::-webkit-scrollbar-thumb {
   background-color: #003399;
+}
+
+/* Breadcrumbs */
+.breadcrumb-fluid {
+  border-bottom: 2px solid #cfddee;
+  padding-bottom: 5px;
+  margin-bottom: 2em;
+  background-color: #FFF;
+}
+.breadcrumb-fluid .breadcrumb {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  border: 0px;
+  clear: both;
+  padding: 2em 0 5px 0;
+  margin: 0 auto;
+  background: #FFF;
+}
+.breadcrumb-fluid .breadcrumb a {
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid #dc2f82;
+}
+.breadcrumb-fluid .breadcrumb a:hover {
+  transition: border-bottom 1s;
+  border-bottom: 1px solid #003399;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  width: 20px;
+  padding-right: 0;
+  color: #6c757d;
+  content: "";
+  background: url(../images/delimiter-off.png) no-repeat 0px 5px;
 }
 
 footer.site-footer {
@@ -379,20 +464,49 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-footermenu 
 }
 
 /* View 3 banners */
+.page-front-container {
+  max-width: 1175px;
+  margin: 2rem auto;
+}
+
+.left_column {
+  width: 73.4%;
+  float: left;
+}
+
+.path-frontpage .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.path-frontpage .sidebars_second_home {
+  width: 23.5%;
+  float: left;
+  margin-left: 1rem;
+  margin-top: 0;
+  padding-right: 0;
+}
+
+.home-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
 .view-osha-home-page-banners {
   float: left;
   width: 100%;
-  margin-bottom: 3em;
 }
 .view-osha-home-page-banners .home-boxes {
   width: 374px;
   height: 245px;
   float: left;
-  margin-right: 1em;
+  margin-right: 15px;
   position: relative;
   cursor: pointer;
 }
-.view-osha-home-page-banners .home-boxes h2 a {
+.view-osha-home-page-banners .home-boxes h2 {
   background: transparent;
   color: #FFF;
   position: absolute;
@@ -409,7 +523,7 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-footermenu 
   line-height: 30px;
   padding-bottom: 20px;
 }
-.view-osha-home-page-banners .home-boxes h3 a {
+.view-osha-home-page-banners .home-boxes h3 {
   position: absolute;
   bottom: 0;
   margin-bottom: 0;
@@ -426,7 +540,7 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-footermenu 
   transition: 0.8s;
   font-size: 1rem;
 }
-.view-osha-home-page-banners .home-boxes .views-field-field-copyright {
+.view-osha-home-page-banners .home-boxes .copyright {
   font-size: 0.7rem;
   margin-top: 0;
   display: block;
@@ -445,6 +559,137 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-footermenu 
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#003399", endColorstr="#003399", GradientType=0);
   -webkit-transition: width 2s;
   transition: width 2s;
+}
+.view-osha-home-page-banners .home-boxes:hover h2 {
+  bottom: 60px;
+  transition: 0.8s;
+}
+.view-osha-home-page-banners .home-boxes:hover h3 {
+  bottom: 40px;
+  visibility: visible;
+  transition: 0.8s;
+}
+.view-osha-home-page-banners .home-boxes:hover a.box-link {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.8s linear;
+}
+.view-osha-home-page-banners .home-boxes:hover .content-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 51, 153, 0);
+  background: -moz-linear-gradient(top, rgba(0, 51, 153, 0) 12%, rgba(0, 51, 153, 0.05) 16%, rgba(0, 51, 153, 0.65) 65%, rgba(0, 51, 153, 0.65) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(12%, rgba(0, 51, 153, 0)), color-stop(16%, rgba(0, 51, 153, 0.05)), color-stop(65%, rgba(0, 51, 153, 0.65)), color-stop(100%, rgba(0, 51, 153, 0.65)));
+  background: -webkit-linear-gradient(top, rgba(0, 51, 153, 0) 12%, rgba(0, 51, 153, 0.05) 16%, rgba(0, 51, 153, 0.65) 65%, rgba(0, 51, 153, 0.65) 100%);
+  background: -o-linear-gradient(top, rgba(0, 51, 153, 0) 12%, rgba(0, 51, 153, 0.05) 16%, rgba(0, 51, 153, 0.65) 65%, rgba(0, 51, 153, 0.65) 100%);
+  background: -ms-linear-gradient(top, rgba(0, 51, 153, 0) 12%, rgba(0, 51, 153, 0.05) 16%, rgba(0, 51, 153, 0.65) 65%, rgba(0, 51, 153, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(0, 51, 153, 0) 12%, rgba(0, 51, 153, 0.05) 16%, rgba(0, 51, 153, 0.65) 65%, rgba(0, 51, 153, 0.65) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#003399", endColorstr="#003399", GradientType=0 );
+}
+.view-osha-home-page-banners .home-boxes:hover .content-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* View Highlights */
+.view-highlight {
+  float: left;
+}
+.view-highlight .views-row {
+  background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  float: left;
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+  width: 100%;
+}
+.view-highlight .views-row .views-field-field-image-media {
+  float: left;
+  margin-right: 1rem;
+  width: 220px;
+  height: 220px;
+}
+.view-highlight .views-row h3 a {
+  color: #003399;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.1em;
+  text-decoration: none;
+  padding: 0;
+  border-bottom: 0px;
+  font-weight: bold;
+}
+.view-highlight .views-row h3 a:hover {
+  text-decoration: underline;
+}
+.view-highlight .views-row .views-field-view-node {
+  margin-top: 2.5rem;
+  float: right;
+}
+.view-highlight .views-row:nth-child(2) .views-field-field-image-media {
+  float: right;
+  padding-right: 0;
+  margin-left: 1em;
+  margin-right: 0;
+}
+.view-highlight .views-row:nth-child(2) .views-field-view-node {
+  float: left;
+}
+.view-highlight .views-row:nth-child(3) {
+  background: transparent;
+  padding-bottom: 0.5rem;
+}
+
+.more-link.revamp {
+  width: 100%;
+  float: left;
+  text-align: center;
+  background: url(../images/img-border-more-link.png) repeat-x center 50%;
+}
+.more-link.revamp a {
+  background: #FFF;
+  border: 2px solid #003399;
+  padding: 5px 1.5em;
+  margin-left: 0;
+  font-weight: bold;
+}
+.more-link.revamp a:hover {
+  background: #003399;
+  color: #FFF;
+  transition: all 500ms;
+  text-decoration: none;
+}
+
+/* News and Events */
+.content-news-events {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-top: 2rem;
+}
+.content-news-events .news-home .view-content {
+  border: 2px solid #003399;
+  float: left;
+  margin-right: 1em;
+  margin-top: 11px;
+  width: 31.6%;
+  padding: 0;
+}
+.content-news-events .news-home .view-content time {
+  padding-left: 15px;
+  padding-top: 1em;
+  display: block;
+}
+.content-news-events .news-home .view-content a {
+  padding-left: 15px;
+  padding-top: 1em;
+  display: block;
+}
+
+/* Recommended resources */
+.home-recommended-resources {
+  background: #cfddee;
 }
 
 .navbar {

@@ -1,0 +1,43 @@
+uuid: a58af8a2-161d-4ce5-8161-7b635e0d2534
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.dangerous_substances
+    - field.field.node.thesaurus.comment_node_thesaurus
+    - field.field.node.thesaurus.field_context
+    - field.field.node.thesaurus.field_definition
+    - field.field.node.thesaurus.field_father
+    - field.field.node.thesaurus.field_full_url
+    - field.field.node.thesaurus.field_glossary_the
+    - field.field.node.thesaurus.field_notes
+    - field.field.node.thesaurus.field_synonyms
+    - field.field.node.thesaurus.field_term_id
+    - field.field.node.thesaurus.field_term_reference
+    - node.type.thesaurus
+  module:
+    - user
+id: node.thesaurus.dangerous_substances
+targetEntityType: node
+bundle: thesaurus
+mode: dangerous_substances
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  comment_node_thesaurus: true
+  field_context: true
+  field_definition: true
+  field_father: true
+  field_full_url: true
+  field_glossary_the: true
+  field_notes: true
+  field_synonyms: true
+  field_term_id: true
+  field_term_reference: true
+  langcode: true
+  search_api_excerpt: true

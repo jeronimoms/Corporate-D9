@@ -1,56 +1,83 @@
 /* View 3 banners */
+.page-front-container {
+  max-width: 1175px;
+  margin: 2rem auto;
+}
+
+.left_column {
+  width: 73.4%;
+  float: left;
+}
+
+.path-frontpage{
+  .view-content.row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .sidebars_second_home{
+    width: 23.5%;
+    float: left;
+    margin-left: 1rem;
+    margin-top: 0;
+    padding-right: 0;
+  }
+}
+
+.home-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
 .view-osha-home-page-banners{
   float: left;
   width: 100%;
-  margin-bottom: 3em;
   .home-boxes {
     width: 374px;
     height: 245px;
     float: left;
-    margin-right: 1em;
+    margin-right: 15px;
     position: relative;
     cursor: pointer;
     h2{
-      a{
-        background: transparent;
-        color: $text-color-white;
-        position: absolute;
-        font-size: 1.7rem;
-        letter-spacing: 0;
-        margin-left: 15px;
-        margin-right: 15px;
-        bottom: 0;
-        margin-bottom: 0;
-        padding: 0 0 0.4em 0;
-        font-weight: 100;
-        z-index: 999;
-        transition: 0.8s;
-        line-height: 30px;
-        padding-bottom: 20px;
-      }
+      background: transparent;
+      color: $text-color-white;
+      position: absolute;
+      font-size: 1.7rem;
+      letter-spacing: 0;
+      margin-left: 15px;
+      margin-right: 15px;
+      bottom: 0;
+      margin-bottom: 0;
+      padding: 0 0 0.4em 0;
+      font-weight: 100;
+      z-index: 999;
+      transition: 0.8s;
+      line-height: 30px;
+      padding-bottom: 20px;
     }
 
     h3{
-      a{
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 0;
-        padding: 0;
-        background: transparent;
-        color: $text-color-white;
-        margin-left: 16px;
-        padding-bottom: 0.4em;
-        font-weight: 600;
-        letter-spacing: 1px;
-        font-size: 0.8em;
-        z-index: 999;
-        visibility: hidden;
-        transition: 0.8s;
-        font-size: 1rem;
-      }
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 0;
+      padding: 0;
+      background: transparent;
+      color: $text-color-white;
+      margin-left: 16px;
+      padding-bottom: 0.4em;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 0.8em;
+      z-index: 999;
+      visibility: hidden;
+      transition: 0.8s;
+      font-size: 1rem;
     }
 
-    .views-field-field-copyright{
+    .copyright{
       font-size: 0.7rem;
       margin-top: 0;
       display: block;
@@ -71,5 +98,151 @@
       -webkit-transition: width 2s;
       transition: width 2s;
     }
+
+    &:hover{
+      h2{
+        bottom: 60px;
+        transition: 0.8s;
+      }
+
+      h3{
+        bottom: 40px;
+        visibility: visible;
+        transition: 0.8s;
+      }
+
+      a.box-link{
+        visibility: visible;
+        opacity:1;
+        transition:opacity 0.8s linear;
+      }
+
+      .content-background{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,51,153,0);
+        background: -moz-linear-gradient(top, rgba(0,51,153,0) 12%, rgba(0,51,153,0.05) 16%, rgba(0,51,153,0.65) 65%, rgba(0,51,153,0.65) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(12%, rgba(0,51,153,0)), color-stop(16%, rgba(0,51,153,0.05)), color-stop(65%, rgba(0,51,153,0.65)), color-stop(100%, rgba(0,51,153,0.65)));
+        background: -webkit-linear-gradient(top, rgba(0,51,153,0) 12%, rgba(0,51,153,0.05) 16%, rgba(0,51,153,0.65) 65%, rgba(0,51,153,0.65) 100%);
+        background: -o-linear-gradient(top, rgba(0,51,153,0) 12%, rgba(0,51,153,0.05) 16%, rgba(0,51,153,0.65) 65%, rgba(0,51,153,0.65) 100%);
+        background: -ms-linear-gradient(top, rgba(0,51,153,0) 12%, rgba(0,51,153,0.05) 16%, rgba(0,51,153,0.65) 65%, rgba(0,51,153,0.65) 100%);
+        background: linear-gradient(to bottom, rgba(0,51,153,0) 12%, rgba(0,51,153,0.05) 16%, rgba(0,51,153,0.65) 65%, rgba(0,51,153,0.65) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003399', endColorstr='#003399', GradientType=0 );
+      }
+
+      .content-background{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
+}
+
+/* View Highlights */
+
+.view-highlight{
+  float: left;
+  .views-row{
+    background: url('../images/separator_home.jpg') repeat-x scroll 0% 100% rgba(0,0,0,0);
+    float: left;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    width: 100%;
+    .views-field-field-image-media{
+      float: left;
+      margin-right: 1rem;
+      width: 220px;
+      height: 220px;
+    }
+    h3{
+      a{
+        color: $text-color-blue;
+        font-family: 'Open Sans',sans-serif;
+        font-size: 1.3rem;
+        line-height: 1.1em;
+        text-decoration: none;
+        padding: 0;
+        border-bottom: 0px;
+        font-weight: bold;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    .views-field-view-node{
+      margin-top: 2.5rem;
+      float: right;
+    }
+  }
+  .views-row:nth-child(2) {
+    .views-field-field-image-media{
+      float: right;
+      padding-right: 0;
+      margin-left: 1em;
+      margin-right: 0;
+    }
+    .views-field-view-node {
+      float: left;
+    }
+  }
+
+  .views-row:nth-child(3){
+    background: transparent;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.more-link.revamp{
+  width: 100%;
+  float: left;
+  text-align: center;
+  background: url(../images/img-border-more-link.png) repeat-x center 50%;
+  a{
+    background: $bg-color-white;
+    border: 2px solid $bg-color-blue;
+    padding: 5px 1.5em;
+    margin-left: 0;
+    font-weight: bold;
+    &:hover{
+      background: $bg-color-blue;
+      color: $text-color-white;
+      transition: all 500ms;
+      text-decoration: none;
+    }
+  }
+}
+
+/* News and Events */
+.content-news-events{
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-top: 2rem;
+  .news-home{
+    .view-content{
+      border: 2px solid $bg-color-blue;
+      float: left;
+      margin-right: 1em;
+      margin-top: 11px;
+      width: 31.6%;
+      padding: 0;
+      time{
+        padding-left: 15px;
+        padding-top: 1em;
+        display: block;
+      }
+      a{
+        padding-left: 15px;
+        padding-top: 1em;
+        display: block;
+      }
+    }
+  }
+}
+
+/* Recommended resources */
+.home-recommended-resources{
+  background: $bg-color-blue-light;
 }

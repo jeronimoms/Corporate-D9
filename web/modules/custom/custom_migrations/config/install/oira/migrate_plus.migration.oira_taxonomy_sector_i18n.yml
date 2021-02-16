@@ -1,0 +1,41 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_taxonomy_sector_i18n               # -----  CHANGUE
+label: 'Terms: Sector Translations'         # -----  CHANGUE
+audit: true
+migration_group: oira_migrate                # -----  CHANGUE
+source:
+  plugin: d7_locale_terms
+  bundle: sector                            # -----  CHANGUE
+  translations: true
+destination:
+  plugin: entity:taxonomy_term
+  translations: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+migration_dependencies:
+  required:
+    - oira_taxonomy_sector                  # -----  CHANGUE
+
+process:
+  tid:
+    plugin: migration_lookup
+    migration: oira_taxonomy_sector         # -----  CHANGUE
+    source: tid
+  langcode: ltlanguage  # Use the language from the locales_target table.
+  vid:
+    -
+      plugin: default_value
+      default_value: sector                 # -----  CHANGUE
+  name: name_field_value
+  ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGUE
