@@ -1,6 +1,6 @@
 /* View 3 banners */
-.page_front {
-  max-width: 1160px;
+.page-front-container {
+  max-width: 1175px;
   margin: 2rem auto;
 }
 
@@ -10,7 +10,11 @@
 }
 
 .path-frontpage{
-  .sidebar_second{
+  .view-content.row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .sidebars_second_home{
     width: 23.5%;
     float: left;
     margin-left: 1rem;
@@ -19,16 +23,22 @@
   }
 }
 
+.home-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
 
 .view-osha-home-page-banners{
   float: left;
   width: 100%;
-  margin-bottom: 3em;
   .home-boxes {
     width: 374px;
     height: 245px;
     float: left;
-    margin-right: 1em;
+    margin-right: 15px;
     position: relative;
     cursor: pointer;
     h2{
@@ -171,6 +181,7 @@
       float: right;
       padding-right: 0;
       margin-left: 1em;
+      margin-right: 0;
     }
     .views-field-view-node {
       float: left;
@@ -179,6 +190,7 @@
 
   .views-row:nth-child(3){
     background: transparent;
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -187,7 +199,6 @@
   float: left;
   text-align: center;
   background: url(../images/img-border-more-link.png) repeat-x center 50%;
-  margin-top: 1rem;
   a{
     background: $bg-color-white;
     border: 2px solid $bg-color-blue;
@@ -201,4 +212,37 @@
       text-decoration: none;
     }
   }
+}
+
+/* News and Events */
+.content-news-events{
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-top: 2rem;
+  .news-home{
+    .view-content{
+      border: 2px solid $bg-color-blue;
+      float: left;
+      margin-right: 1em;
+      margin-top: 11px;
+      width: 31.6%;
+      padding: 0;
+      time{
+        padding-left: 15px;
+        padding-top: 1em;
+        display: block;
+      }
+      a{
+        padding-left: 15px;
+        padding-top: 1em;
+        display: block;
+      }
+    }
+  }
+}
+
+/* Recommended resources */
+.home-recommended-resources{
+  background: $bg-color-blue-light;
 }
