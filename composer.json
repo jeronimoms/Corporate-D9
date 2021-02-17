@@ -254,7 +254,9 @@
         "patches": {
             "drupal/core": {
                 "Uninstalled custom theme stuck in config blocking config import" : "https://www.drupal.org/files/issues/2020-09-23/2898274-29.patch",
-                "Cannot override content field block title" : "https://www.drupal.org/files/issues/2019-05-20/3055818-3.patch"
+                "Cannot override content field block title" : "https://www.drupal.org/files/issues/2019-05-20/3055818-3.patch",
+
+                "Make the exposed filter as token": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch"
             },
             "drupal/linked_field": {
                 "Token warnings": "https://www.drupal.org/files/issues/2020-08-14/problem-with-display-of-custom-data-in-layout-manager-3110226-8.patch"

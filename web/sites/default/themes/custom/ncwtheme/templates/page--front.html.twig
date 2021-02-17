@@ -36,18 +36,34 @@
 {% endblock %}
 
 {% block content %}
-  <div class="page_front">
+  <aside class="page-front-container">
     <div class="home-intro">
       {{ drupal_view('osha_home_page_banners', 'home_page_banner_top') }}
     </div>
-
     <div class="left_column">
-      {{ drupal_view('highlight', 'block_2') }}
+      <div class="content-highlight-home">
+        <h2>{{ 'Highlights' | trans }}</h2>
+        {{ drupal_view('highlight', 'block_2') }}
+      </div>
+      <div class="content-news-events">
+        <h2> {{ 'News & Events' | trans }}</h2>
+        <div class="news-home">
+          {{ drupal_view('osh_news', 'front') }}
+        </div>
+        <div class="events-home">
+          {{ drupal_view('homepage_events', 'block_1') }}
+        </div>
+      </div>
     </div>
-    <div class="sidebar_second">
+    <aside class="sidebars_second sidebars_second_home">
       {{ drupal_entity('block', 'twitterblock') }}
+    </aside>
+  </div>
+  <div class="home-recommended-resources">
+    <div class="page-front-container">
+      <h2> {{ 'Recommended resources' | trans }}</h2>
+      {{ drupal_view('osha_home_page_banners', 'home_page_banner_footer') }}
     </div>
-
   </div>
 
 {% endblock %}

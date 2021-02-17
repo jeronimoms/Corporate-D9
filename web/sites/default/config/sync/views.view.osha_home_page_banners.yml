@@ -719,7 +719,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -873,7 +873,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"rr-element\">\r\n      \r\n<a href=\"{{ field_banner_link }}\">\r\n<span class=\"rr-content-img\">\r\n{{ field_image_media }}\r\n</span>\r\n<h3>Healthy Workplaces Campaign</h3>\r\n</a>    </div>"
+            text: "<div class=\"rr-element\">\r\n  <a href=\"{{ field_banner_link }}\">\r\n   <span class=\"rr-content-img\">\r\n       {{ field_image_media }}\r\n   </span>\r\n   <h3>{{ title }}</h3>\r\n  </a>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

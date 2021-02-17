@@ -1,0 +1,19 @@
+uuid: 8dbb194c-7a6f-4ff6-83cf-16194b562f3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_term_id
+    - node.type.thesaurus
+id: node.thesaurus.field_term_id
+field_name: field_term_id
+entity_type: node
+bundle: thesaurus
+label: ID
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

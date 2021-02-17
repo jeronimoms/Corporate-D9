@@ -1,6 +1,6 @@
 /* View 3 banners */
-.page_front {
-  max-width: 1160px;
+.page-front-container {
+  max-width: 1175px;
   margin: 2rem auto;
 }
 
@@ -10,7 +10,11 @@
 }
 
 .path-frontpage{
-  .sidebar_second{
+  .view-content.row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .sidebars_second_home{
     width: 23.5%;
     float: left;
     margin-left: 1rem;
@@ -19,16 +23,22 @@
   }
 }
 
+.home-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
 
 .view-osha-home-page-banners{
   float: left;
   width: 100%;
-  margin-bottom: 3em;
   .home-boxes {
     width: 374px;
     height: 245px;
     float: left;
-    margin-right: 1em;
+    margin-right: 15px;
     position: relative;
     cursor: pointer;
     h2{
@@ -171,6 +181,7 @@
       float: right;
       padding-right: 0;
       margin-left: 1em;
+      margin-right: 0;
     }
     .views-field-view-node {
       float: left;
@@ -179,26 +190,86 @@
 
   .views-row:nth-child(3){
     background: transparent;
+    padding-bottom: 0.5rem;
   }
 }
 
-.more-link.revamp{
+/* News and Events */
+.content-news-events {
   width: 100%;
   float: left;
-  text-align: center;
-  background: url(../images/img-border-more-link.png) repeat-x center 50%;
-  margin-top: 1rem;
-  a{
-    background: $bg-color-white;
-    border: 2px solid $bg-color-blue;
-    padding: 5px 1.5em;
-    margin-left: 0;
-    font-weight: bold;
-    &:hover{
-      background: $bg-color-blue;
-      color: $text-color-white;
-      transition: all 500ms;
-      text-decoration: none;
+  clear: both;
+  margin-top: 2rem;
+
+  .news-home, .events-home {
+    float: left;
+
+    .view-content {
+      float: left;
+      margin-top: 11px;
+      padding: 0;
+
+      .views-row {
+        width: 275px;
+        border: 2px solid $bg-color-blue;
+        float: left;
+        margin-right: 1em;
+      }
+
+      time, .views-field-field-date {
+        padding-left: 15px;
+        padding-top: 1em;
+        display: block;
+      }
+
+      .views-field-field-city, .views-field-field-country-code {
+        float: left;
+        font-size: 0.8rem;
+        color: $text-color-blue;
+        padding-left: 15px;
+        padding-top: 0;
+        display: inline-block;
+      }
+      
+      h3 {
+        a {
+          display: block;
+          margin: 5px 0 25px 0;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 1em;
+
+        }
+      }
+
+      .see-more-arrow {
+        a {
+          padding: 11px 40px 10px 10px;
+        }
+      }
+
+      .tag-news-events {
+        font-family: 'Open Sans Condensed', sans-serif;
+        background: $bg-color-pink;
+        text-transform: uppercase;
+        float: right;
+        color: $text-color-white;
+        font-weight: bold;
+        padding: 9px 1em;
+        letter-spacing: 3px;
+      }
     }
   }
+  .events-home {
+    .view-content {
+      .views-row {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/* Recommended resources */
+.home-recommended-resources{
+  background: $bg-color-blue-light;
 }
