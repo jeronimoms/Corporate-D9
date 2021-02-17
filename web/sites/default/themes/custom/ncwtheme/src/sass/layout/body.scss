@@ -22,7 +22,7 @@ body{
   border: 0;
 }
 
-.datetime{
+.datetime, .views-field-field-date{
   font-size: 0.8rem;
   color: $text-color-blue;
   font-weight: bold;
@@ -95,6 +95,13 @@ h2{
   h2{
     font-size: 1.6rem;
     font-weight: 700;
+  }
+  h3{
+    a{
+      color: $text-color-blue;
+      font-size: 1rem;
+      font-weight: 700;
+    }
   }
 }
 
