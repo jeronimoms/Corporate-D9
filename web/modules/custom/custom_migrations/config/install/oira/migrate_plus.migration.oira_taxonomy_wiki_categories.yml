@@ -7,25 +7,25 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_taxonomy_wiki_categories       # -----  CHANGUE
-label: 'Terms: Wiki Categories'         # -----  CHANGUE
+id: oira_taxonomy_wiki_categories       # -----  CHANGE
+label: 'Terms: Wiki Categories'         # -----  CHANGE
 audit: true
-migration_group: oira_migrate   # -----  CHANGUE
+migration_group: oira_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
-  bundle: wiki_categories               # -----  CHANGUE
+  bundle: wiki_categories               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
   optional:
-    - d7_field_instance         # -----  CHANGUE
+    - d7_field_instance         # -----  CHANGE
 process:
   tid: tid
   vid:
     -
       plugin: default_value
-      default_value: wiki_categories    # -----  CHANGUE
+      default_value: wiki_categories    # -----  CHANGE
   name: name
   'description/value': description
   'description/format': format
@@ -46,6 +46,6 @@ process:
   changed: timestamp
   langcode: language
 
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGUE
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
 
 

@@ -7,25 +7,25 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_taxonomy_sector       # -----  CHANGUE
-label: 'Terms: Sector'         # -----  CHANGUE
+id: oira_taxonomy_sector       # -----  CHANGE
+label: 'Terms: Sector'         # -----  CHANGE
 audit: true
-migration_group: oira_migrate   # -----  CHANGUE
+migration_group: oira_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
-  bundle: sector               # -----  CHANGUE
+  bundle: sector               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
   optional:
-    - d7_field_instance         # -----  CHANGUE
+    - d7_field_instance         # -----  CHANGE
 process:
   tid: tid
   vid:
     -
       plugin: default_value
-      default_value: sector    # -----  CHANGUE
+      default_value: sector    # -----  CHANGE
   name: name
   'description/value': description
   'description/format': format
@@ -46,4 +46,4 @@ process:
   changed: timestamp
   langcode: language
 
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGUE
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE

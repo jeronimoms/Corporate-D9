@@ -7,25 +7,25 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_taxonomy_promotional_material_type       # -----  CHANGUE
-label: 'Terms: Promotional Material Type'         # -----  CHANGUE
+id: oira_taxonomy_promotional_material_type       # -----  CHANGE
+label: 'Terms: Promotional Material Type'         # -----  CHANGE
 audit: true
-migration_group: oira_migrate   # -----  CHANGUE
+migration_group: oira_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
-  bundle: promotional_material_type               # -----  CHANGUE
+  bundle: promotional_material_type               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
   optional:
-    - d7_field_instance         # -----  CHANGUE
+    - d7_field_instance         # -----  CHANGE
 process:
   tid: tid
   vid:
     -
       plugin: default_value
-      default_value: promotional_material_type    # -----  CHANGUE
+      default_value: promotional_material_type    # -----  CHANGE
   name: name
   'description/value': description
   'description/format': format
@@ -46,10 +46,10 @@ process:
   changed: timestamp
   langcode: language
 
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGUE
-  field_image:
-    plugin: Image
-    source: field_image
-
-
-
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+#  field_image:
+#    plugin: image_import
+#    source: file
+#    destination: '/temp/file_destination'
+##    title: file_title
+##    alt: !title

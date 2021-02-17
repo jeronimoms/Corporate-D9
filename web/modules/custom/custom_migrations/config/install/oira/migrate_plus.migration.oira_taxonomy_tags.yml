@@ -7,25 +7,25 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_taxonomy_tags       # -----  CHANGUE
-label: 'Terms: Tags'         # -----  CHANGUE
+id: oira_taxonomy_tags       # -----  CHANGE
+label: 'Terms: Tags'         # -----  CHANGE
 audit: true
-migration_group: oira_migrate   # -----  CHANGUE
+migration_group: oira_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
-  bundle: tags               # -----  CHANGUE
+  bundle: tags               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
   optional:
-    - d7_field_instance         # -----  CHANGUE
+    - d7_field_instance         # -----  CHANGE
 process:
   tid: tid
   vid:
     -
       plugin: default_value
-      default_value: tags    # -----  CHANGUE
+      default_value: tags    # -----  CHANGE
   name: name
   'description/value': description
   'description/format': format
@@ -46,13 +46,14 @@ process:
   changed: timestamp
   langcode: language
 
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGUE
-  field_tags_code:
-    -
-      plugin: get
-      source: field_tags_code
-  field_excluded_from:
-    plugin: default_value
-    default_value: field_excluded_from
-
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+#  field_tags_code:
+#    -
+#      plugin: get
+#      source: field_tags_code
+#  field_excluded_from:
+#    -
+#      plugin: default_value
+#      key: key
+#      source: field_excluded_from
 
