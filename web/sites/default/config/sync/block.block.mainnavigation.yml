@@ -11,7 +11,7 @@ dependencies:
 id: mainnavigation
 theme: ncwtheme
 region: footer_end
-weight: -8
+weight: -9
 provider: null
 plugin: 'menu_block:main'
 settings:
@@ -22,7 +22,7 @@ settings:
   follow: false
   follow_parent: child
   level: 1
-  depth: 0
+  depth: 3
   expand: true
   parent: 'main:'
   suggestion: main

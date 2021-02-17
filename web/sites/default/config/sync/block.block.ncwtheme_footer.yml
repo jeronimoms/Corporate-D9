@@ -1,6 +1,6 @@
 uuid: 6e8b1aef-7f22-4ce3-8027-2fb42ec3dfa4
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.footer
@@ -13,7 +13,7 @@ _core:
 id: ncwtheme_footer
 theme: ncwtheme
 region: footer_end
-weight: -6
+weight: -7
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

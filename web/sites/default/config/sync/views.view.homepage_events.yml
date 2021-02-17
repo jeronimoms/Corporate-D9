@@ -74,8 +74,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: '{{ field_date__value }}'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -137,7 +137,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -202,8 +202,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{{ field_city }}, {{ field_country_code }} '
             make_link: false
             path: ''
             absolute: false
@@ -408,13 +408,13 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: span
-          element_class: tag-news-events
+          element_type: ''
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: div
-          element_wrapper_class: 'views-field views-field-view-node'
+          element_wrapper_type: span
+          element_wrapper_class: tag-news-events
           element_default_classes: false
           empty: ''
           hide_empty: false

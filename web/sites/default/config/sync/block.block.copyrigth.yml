@@ -1,22 +1,22 @@
-uuid: cb4bea9e-85e7-4e69-942a-62c0fbf1196c
+uuid: 33ad78f6-1a1b-49f9-9a8c-2cad7a6f0e32
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:40c614f8-8950-4b17-b38f-00214d471d8e'
+    - 'block_content:basic:5a3b99ad-113b-45ed-9542-c308545fd7da'
   module:
     - block_content
   theme:
     - ncwtheme
-id: copyright
+id: copyrigth
 theme: ncwtheme
 region: footer_end
-weight: -7
+weight: -8
 provider: null
-plugin: 'block_content:40c614f8-8950-4b17-b38f-00214d471d8e'
+plugin: 'block_content:5a3b99ad-113b-45ed-9542-c308545fd7da'
 settings:
-  id: 'block_content:40c614f8-8950-4b17-b38f-00214d471d8e'
-  label: Copyright
+  id: 'block_content:5a3b99ad-113b-45ed-9542-c308545fd7da'
+  label: Copyrigth
   provider: block_content
   label_display: '0'
   status: true

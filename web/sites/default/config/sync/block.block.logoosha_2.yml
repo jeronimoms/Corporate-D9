@@ -1,21 +1,21 @@
-uuid: 5fe1c0c8-ee8f-4d72-a50a-eb39db7eeaa5
+uuid: f932ac0d-656d-41d2-8807-6dcc0d25c417
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:block_image:3661c4cd-57a2-4eb6-a8d3-c0bb5bd23d60'
+    - 'block_content:block_image:9e7c79b2-76b7-4af6-9910-9c25239698ae'
   module:
     - block_content
   theme:
     - ncwtheme
-id: logoosha
+id: logoosha_2
 theme: ncwtheme
 region: top_header_logos
 weight: 0
 provider: null
-plugin: 'block_content:3661c4cd-57a2-4eb6-a8d3-c0bb5bd23d60'
+plugin: 'block_content:9e7c79b2-76b7-4af6-9910-9c25239698ae'
 settings:
-  id: 'block_content:3661c4cd-57a2-4eb6-a8d3-c0bb5bd23d60'
+  id: 'block_content:9e7c79b2-76b7-4af6-9910-9c25239698ae'
   label: 'Logo OSHA'
   provider: block_content
   label_display: '0'
