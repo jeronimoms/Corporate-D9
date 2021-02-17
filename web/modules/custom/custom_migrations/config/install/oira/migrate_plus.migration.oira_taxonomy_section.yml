@@ -7,25 +7,25 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_taxonomy_section       # -----  CHANGUE
-label: 'Terms: Partner'         # -----  CHANGUE
+id: oira_taxonomy_section       # -----  CHANGE
+label: 'Terms: Partner'         # -----  CHANGE
 audit: true
-migration_group: oira_migrate   # -----  CHANGUE
+migration_group: oira_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
-  bundle: section               # -----  CHANGUE
+  bundle: section               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
   optional:
-    - d7_field_instance         # -----  CHANGUE
+    - d7_field_instance         # -----  CHANGE
 process:
   tid: tid
   vid:
     -
       plugin: default_value
-      default_value: section    # -----  CHANGUE
+      default_value: section    # -----  CHANGE
   name: name
   'description/value': description
   'description/format': format
@@ -46,7 +46,7 @@ process:
   changed: timestamp
   langcode: language
 
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGUE
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_ldap_section_code:
     -
       plugin: get

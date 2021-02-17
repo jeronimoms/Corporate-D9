@@ -7,13 +7,13 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_taxonomy_partner_types_i18n               # -----  CHANGUE
-label: 'Terms: Partner Types Translations'         # -----  CHANGUE
+id: oira_taxonomy_partner_types_i18n               # -----  CHANGE
+label: 'Terms: Partner Types Translations'         # -----  CHANGE
 audit: true
-migration_group: oira_migrate                # -----  CHANGUE
+migration_group: oira_migrate                # -----  CHANGE
 source:
   plugin: d7_locale_terms
-  bundle: partner_types                            # -----  CHANGUE
+  bundle: partner_types                            # -----  CHANGE
   translations: true
 destination:
   plugin: entity:taxonomy_term
@@ -25,17 +25,17 @@ dependencies:
 
 migration_dependencies:
   required:
-    - oira_taxonomy_partner_types                  # -----  CHANGUE
+    - oira_taxonomy_partner_types                  # -----  CHANGE
 
 process:
   tid:
     plugin: migration_lookup
-    migration: oira_taxonomy_partner_types         # -----  CHANGUE
+    migration: oira_taxonomy_partner_types         # -----  CHANGE
     source: tid
   langcode: ltlanguage  # Use the language from the locales_target table.
   vid:
     -
       plugin: default_value
-      default_value: partner_types                 # -----  CHANGUE
+      default_value: partner_types                 # -----  CHANGE
   name: name_field_value
-  ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGUE
+  ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGE
