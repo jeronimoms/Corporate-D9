@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\vesafe_structure\VsForm;
+
+/**
+ * Implements hook_form_alter().
+ */
+function vesafe_structure_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VsForm::class)
+    ->formAlter($form, $form_state, $form_id);
+}
