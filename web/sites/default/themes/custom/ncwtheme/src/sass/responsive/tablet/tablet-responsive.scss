@@ -21,9 +21,13 @@
       ul.menu-level-0{
         width: 100%;
         display: block;
+        padding-bottom: 1.5rem;
         > li.menu-item:nth-child(1) {
           width: 100%;
           text-align: left;
+          .mean-expand {
+            display: none;
+          }
           > a{
             display: none;
           }
@@ -47,6 +51,15 @@
           float: none;
           width: 100%;
           text-align: left;
+          border-left: 0;
+          padding: 1rem 0 0 1rem;
+          background: transparent;
+          a{
+            display: block;
+            color: $text-color-grey;
+            font-size: 1.3rem;
+            font-weight: normal;
+          }
           &:hover{
             ul.menu-level-1{
               position: relative;
@@ -55,10 +68,37 @@
         }
         li {
           ul.menu-level-1 {
+            display: none;
+            width: 95%;
+            background: transparent;
+            border-top: 0;
+            border-bottom: 0;
             li {
+              background: url(../images/li_arrow.png) no-repeat 1em 10px;
+              padding: 0 0 1em 2rem;
+              a{
+                color: $text-color-blue;
+                font-size: 1.3rem;
+                opacity: .75;
+              }
               ul.menu-level-2 {
+                display: none;
+                width: 80%;
+                background: transparent;
+                padding: 1rem 0 0 0;
+                border-top: 0;
+                border-bottom: 0;
                 li{
+                  background: url(../images/li_arrow.png) no-repeat 1em 9px;
+                  padding: 0 0 1em 2rem;
+                  .mean-expand {
+                    display: none;
+                  }
                   a{
+                    color: $text-color-blue;
+                    font-size: 1.1rem;
+                    padding: 0;
+                    opacity: .75;
                   }
                 }
               }
@@ -69,6 +109,9 @@
     }
   }
 
+  .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:hover ul.menu-level-1{
+    margin-left: 0;
+  }
 
   .navbar-collapse{
     .container{
@@ -78,5 +121,20 @@
       margin: 0;
     }
   }
+
+  .mean-expand{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 9999;
+    right: 60px;
+    top: 13px;
+    background: url(../images/ico-plus.png) no-repeat 9px 8px;
+    &.active{
+      background: url("../images/ico_minor.png") no-repeat 10px 11px;
+    }
+  }
+
 
 }
