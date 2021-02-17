@@ -1,0 +1,82 @@
+@media only screen and (max-width : 991px) {
+  /* Menu responsive */
+  #navbar-main {
+    padding: 0;
+    background: $bg-color-blue;
+    .navbar-toggler {
+      padding: 1rem;
+
+      .icon-bar {
+        background-color: $bg-color-white;
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        border-radius: 1px;
+      }
+    }
+
+    #block-ncwtheme-main-menu{
+      ul.menu-level-0{
+        width: 100%;
+        display: block;
+        > li.menu-item:nth-child(1) {
+          width: 100%;
+          text-align: left;
+          > a{
+            display: none;
+          }
+          .field--type-entity-reference{
+            img{
+              margin: 0;
+            }
+          }
+        }
+        > li.menu-item:last-child{
+          ul {
+            margin-left: 0 ;
+            li{
+              ul{
+                margin-left: 0;
+              }
+            }
+          }
+        }
+        > li.menu-item{
+          float: none;
+          width: 100%;
+          text-align: left;
+          &:hover{
+            ul.menu-level-1{
+              position: relative;
+            }
+          }
+        }
+        li {
+          ul.menu-level-1 {
+            li {
+              ul.menu-level-2 {
+                li{
+                  a{
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .navbar-collapse{
+    .container{
+      max-width: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+}
