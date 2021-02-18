@@ -5,36 +5,36 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_node_faq
-label: 'Node: Faq'
+id: oira_node_faq                    # -----  CHANGE
+label: 'Node: Faq'                   # -----  CHANGE
 audit: true
 migration_group: oira_migrate
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
-
-########################## SOURCE #########################
-
 source:
   plugin: d7_node
-  node_type: faq
-
-########################## PROCESS ########################
+  node_type: faq                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
 
 process:
-  # Map of fields
   nid: tnid
   vid: vid
-  # Define by default the type of node
   type:
     - plugin: default_value
-      default_value: faq
+      default_value: faq              # -----  CHANGE
   langcode:
     plugin: default_value
     source: language
     default_value: "und"
   title: title
   body: body
-  field_oira: field_oira
-  field_weight: field_weight
   uid: node_uid
   status: status
   created: created
@@ -44,19 +44,6 @@ process:
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
-
-######################## DESTINATION ######################
-
-destination:
-  plugin: entity:node
-
-######################## DEPENDENCIES #####################
-
-dependencies:
-  enforced:
-    module:
-      - custom_migrations
-
-migration_dependencies:
-  required:
-    - d7_user
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_oira: field_oira
+  field_weight: field_weight

@@ -7,14 +7,14 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_taxonomy_country       # -----  CHANGE
-label: 'Terms: Country'         # -----  CHANGE
+id: oira_taxonomy_tags       # -----  CHANGE
+label: 'Terms: Tags'         # -----  CHANGE
 audit: true
 migration_group: oira_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
-  bundle: country               # -----  CHANGE
+  bundle: tags               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
@@ -25,7 +25,7 @@ process:
   vid:
     -
       plugin: default_value
-      default_value: country    # -----  CHANGE
+      default_value: tags    # -----  CHANGE
   name: name
   'description/value': description
   'description/format': format
@@ -37,7 +37,7 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: oira_taxonomy_country
+      migration: oira_taxonomy_tags
   parent:
     plugin: default_value
     default_value: 0
@@ -47,20 +47,6 @@ process:
   langcode: language
 
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_iso2:
-    -
-      plugin: get
-      source: field_iso2
-  field_country_status:
-    - plugin: sub_process
-      source: field_country_status
-      process:
-        target_id:
-          plugin: get
-          source: tid
-  field_ncw_fp_link:
-    plugin: field_link
-    source: field_ncw_fp_link
-
-
+  field_tags_code: field_tags_code
+  field_excluded_from: field_excluded_from
 
