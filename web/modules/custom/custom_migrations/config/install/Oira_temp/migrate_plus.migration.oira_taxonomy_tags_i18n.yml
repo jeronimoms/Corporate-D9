@@ -38,13 +38,19 @@ process:
       plugin: default_value
       default_value: tags                 # -----  CHANGE
   name: name_field_value
-  ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGE
-  field_tags_code:
-    -
-      plugin: get
-      source: field_tags_code
-  field_excluded_from:
+  parent_id:
+    - plugin: skip_on_empty
+      method: process
+      source: parent
+    - plugin: migration_lookup
+      migration: oira_taxonomy_tags
+  parent:
     plugin: default_value
-    default_value: field_excluded_from
-
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGE
+  field_tags_code: field_tags_code
+  field_excluded_from: field_excluded_from
 
