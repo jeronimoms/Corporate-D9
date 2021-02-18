@@ -38,7 +38,17 @@ process:
       plugin: default_value
       default_value: promotional_material_type                 # -----  CHANGE
   name: name_field_value
+  parent_id:
+    - plugin: skip_on_empty
+      method: process
+      source: parent
+    - plugin: migration_lookup
+      migration: oira_taxonomy_promotional_material_type
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+
   ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGE
-  field_image:
-    plugin: Image
-    source: field_image

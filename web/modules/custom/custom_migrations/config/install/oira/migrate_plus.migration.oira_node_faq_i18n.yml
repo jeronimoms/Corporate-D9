@@ -7,18 +7,25 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_node_faq_i18n
-label: 'Node: Faq Translations'
+id: oira_node_faq_i18n                         # -----  CHANGE
+label: 'Node: Faq Translations'                # -----  CHANGE
 migration_group: oira_migrate
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
-
-########################## SOURCE #########################
-
 source:
   plugin: d7_node_entity_translation
-  node_type: faq
-
-########################## PROCESS ########################
+  node_type: faq                                # -----  CHANGE
+destination:
+  plugin: entity:node
+  translations: true
+  destination_module: content_translation
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - oira_node_faq                            # -----  CHANGE
 
 process:
   nid: entity_id
@@ -37,22 +44,8 @@ process:
   revision_timestamp: timestamp
   content_translation_source: source
   content_translation_outdated: translate
+  ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
+  field_oira: field_oira
+  field_weight: field_weight
 
-######################## DESTINATION ######################
 
-destination:
-  plugin: entity:node
-  translations: true
-  destination_module: content_translation
-
-######################## DEPENDENCIES #####################
-
-dependencies:
-  enforced:
-    module:
-      - custom_migrations
-
-migration_dependencies:
-  required:
-    - d7_user
-    - oira_node_faq
