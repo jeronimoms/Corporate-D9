@@ -1,0 +1,5 @@
+services:
+  search_and_replace.route_subscriber:
+    class: Drupal\search_and_replace\Routing\SarRouteSubscriber
+    tags:
+      - { name: event_subscriber }

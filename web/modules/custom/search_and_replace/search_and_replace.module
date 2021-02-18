@@ -1,1 +1,13 @@
 <?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\search_and_replace\SarForm;
+
+/**
+ * Implements hook_form_alter().
+ */
+function search_and_replace_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  /*return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(SarForm::class)
+    ->formAlter($form, $form_state, $form_id);*/
+}

@@ -1,0 +1,6 @@
+search_and_replace.settings:
+  path: '/admin/content/scanner/settings'
+  defaults:
+    _form: '\Drupal\scanner\Form\ScannerAdminForm'
+  requirements:
+    _access: 'TRUE'
