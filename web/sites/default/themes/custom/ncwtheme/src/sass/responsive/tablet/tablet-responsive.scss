@@ -1,4 +1,89 @@
+@media only screen and (max-width : 1200px) {
+  /* Home page */
+  .home-intro {
+    .view-osha-home-page-banners {
+      .home-boxes {
+        width: 32%;
+        height: auto;
+        margin-bottom: 1.5em;
+        margin-right: 10px;
+        .home-boxes {
+          width: 100%;
+          img {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 1024px) {
+
+  #main-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .left_column {
+    width: 100%;
+  }
+
+  .path-frontpage{
+    .sidebars_second_home {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  /* News and Events */
+  .content-news-events {
+    display: block;
+    float: left;
+    .news-home{
+      display: block;
+      float: left;
+      .view-content {
+        display: block;
+        float: left;
+        width: 66%;
+        .views-row {
+          display: block;
+          clear: none;
+          width: 46%;
+          height: 181px;
+          margin-right: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .events-home {
+    display: block;
+    float: left;
+    .view-content {
+      display: block;
+      float: left;
+      .views-row {
+        display: block;
+        clear: both;
+        width: 30%;
+        height: 181px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+}
+
+
+
 @media only screen and (max-width : 991px) {
+
   /* Menu responsive */
   #navbar-main {
     padding: 0;
