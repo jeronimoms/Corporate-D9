@@ -623,8 +623,8 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
 .view-highlight .views-row {
   background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
   float: left;
-  padding-top: 1em;
-  padding-bottom: 1.5em;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
   width: 100%;
 }
 .view-highlight .views-row .views-field-field-image-media {
@@ -915,6 +915,78 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
   display: none;
 }
 
+@media only screen and (max-width: 1200px) {
+  /* Home page */
+  .home-intro .view-osha-home-page-banners .home-boxes {
+    width: 32%;
+    height: auto;
+    margin-bottom: 1.5em;
+    margin-right: 10px;
+  }
+  .home-intro .view-osha-home-page-banners .home-boxes .home-boxes {
+    width: 100%;
+  }
+  .home-intro .view-osha-home-page-banners .home-boxes .home-boxes img {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #main-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .left_column {
+    width: 100%;
+  }
+
+  .path-frontpage .sidebars_second_home {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* News and Events */
+  .content-news-events {
+    display: block;
+    float: left;
+  }
+  .content-news-events .news-home {
+    display: block;
+    float: left;
+  }
+  .content-news-events .news-home .view-content {
+    display: block;
+    float: left;
+    width: 66%;
+  }
+  .content-news-events .news-home .view-content .views-row {
+    display: block;
+    clear: none;
+    width: 46%;
+    height: 181px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .events-home {
+    display: block;
+    float: left;
+  }
+  .events-home .view-content {
+    display: block;
+    float: left;
+  }
+  .events-home .view-content .views-row {
+    display: block;
+    clear: both;
+    width: 30%;
+    height: 181px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+}
 @media only screen and (max-width: 991px) {
   /* Menu responsive */
   #navbar-main {
@@ -1037,5 +1109,50 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
     background: url("../images/ico_minor.png") no-repeat 10px 11px;
   }
 }
+@media only screen and (max-width: 768px) {
+  /* Home page */
+  .home-intro {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .home-intro .view-osha-home-page-banners .home-boxes {
+    width: 374px;
+    height: 245px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5em;
+  }
+  .home-intro .view-osha-home-page-banners .home-boxes .home-boxes {
+    width: 100%;
+  }
+  .home-intro .view-osha-home-page-banners .home-boxes .home-boxes img {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Home News and Events */
+  .content-news-events h2 {
+    padding-bottom: 1rem;
+  }
+  .content-news-events .news-home .view-content, .content-news-events .events-home .view-content {
+    float: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .content-news-events .news-home .view-content .views-row, .content-news-events .events-home .view-content .views-row {
+    clear: both;
+    width: 100%;
+    height: 181px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .home-recommended-resources {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+/* End Media 768px */
 
 /*# sourceMappingURL=ncw-global.css.map */
