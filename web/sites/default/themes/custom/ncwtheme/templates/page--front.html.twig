@@ -47,11 +47,18 @@
       </div>
       <div class="content-news-events">
         <h2> {{ 'News & Events' | trans }}</h2>
-        <div class="news-home">
-          {{ drupal_view('osh_news', 'front') }}
+        <div class="wrap-news-events">
+          <div class="news-home">
+            {{ drupal_view('osh_news', 'front') }}
+          </div>
+          <div class="events-home">
+            {{ drupal_view('homepage_events', 'block_1') }}
+          </div>
         </div>
-        <div class="events-home">
-          {{ drupal_view('homepage_events', 'block_1') }}
+        <div class="content-links-news-events">
+          <div class="more-link revamp">
+            <a href="/en/oshnews">View all news</a><a class="link-view-home" href="/en/events">View all events</a>
+          </div>
         </div>
       </div>
     </div>
