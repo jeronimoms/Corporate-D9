@@ -1,0 +1,18 @@
+uuid: fcfdada5-279c-41f3-a354-73994a5ed3d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_thesaurus
+id: comment.comment_node_thesaurus.created
+field_name: created
+entity_type: comment
+bundle: comment_node_thesaurus
+label: Created
+description: 'The time that the comment was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

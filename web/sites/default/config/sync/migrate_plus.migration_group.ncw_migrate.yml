@@ -1,0 +1,15 @@
+uuid: 7601c3bb-7f4f-470f-8510-ed84af49f13e
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_migrate
+label: 'Migrate ncw'
+description: 'Migration nodes from D7 to Drupal 8'
+source_type: 'Drupal 7'
+module: null
+shared_configuration:
+  source:
+    key: migrate

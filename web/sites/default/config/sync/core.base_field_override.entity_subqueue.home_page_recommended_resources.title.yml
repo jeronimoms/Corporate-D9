@@ -1,0 +1,18 @@
+uuid: bd514599-ee4b-4815-aed0-488ab2f4950e
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.home_page_recommended_resources
+id: entity_subqueue.home_page_recommended_resources.title
+field_name: title
+entity_type: entity_subqueue
+bundle: home_page_recommended_resources
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

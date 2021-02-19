@@ -1,0 +1,53 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_taxonomy_tags       # -----  CHANGE
+label: 'Terms: Tags'         # -----  CHANGE
+audit: true
+migration_group: ncw_migrate   # -----  CHANGE
+deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
+source:
+  plugin: d7_taxonomy_term
+  bundle: tags               # -----  CHANGE
+destination:
+  plugin: entity:taxonomy_term
+migration_dependencies:
+  optional:
+    - d7_field_instance         # -----  CHANGE
+process:
+  tid: tid
+  vid:
+    -
+      plugin: default_value
+      default_value: tags    # -----  CHANGE
+  name: name
+  'description/value': description
+  'description/format': format
+  weight: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: ncw_taxonomy_tags
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_tags_code: field_tags_code
+  field_excluded_from: field_excluded_from
+  field_main_topic: field_main_topic
+

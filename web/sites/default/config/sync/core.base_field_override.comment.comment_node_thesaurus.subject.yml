@@ -1,0 +1,18 @@
+uuid: 192395cc-7f7a-42d6-bf14-58fd5b0be7aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_thesaurus
+id: comment.comment_node_thesaurus.subject
+field_name: subject
+entity_type: comment
+bundle: comment_node_thesaurus
+label: Subject
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

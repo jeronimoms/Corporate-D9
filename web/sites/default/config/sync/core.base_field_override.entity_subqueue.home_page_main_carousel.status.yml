@@ -1,0 +1,22 @@
+uuid: 180613c3-c690-46b4-b16e-8b5e06ea38af
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.home_page_main_carousel
+id: entity_subqueue.home_page_main_carousel.status
+field_name: status
+entity_type: entity_subqueue
+bundle: home_page_main_carousel
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

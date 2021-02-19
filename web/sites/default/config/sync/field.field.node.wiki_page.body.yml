@@ -14,7 +14,7 @@ bundle: wiki_page
 label: 'Article text'
 description: 'Please introduce in this box the text of this section.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,20 @@
+uuid: bb7ab82e-20b5-4510-aea8-f46d7cdd3fdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image_and_link
+id: media.image_and_link.moderation_state
+field_name: moderation_state
+entity_type: media
+bundle: image_and_link
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,18 @@
+uuid: 596ca84e-4a62-4946-9288-a3382ada1ada
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.external_url
+id: node.external_url.title
+field_name: title
+entity_type: node
+bundle: external_url
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

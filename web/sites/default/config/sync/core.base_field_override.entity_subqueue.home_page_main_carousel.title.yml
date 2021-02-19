@@ -1,0 +1,18 @@
+uuid: b1dbec05-cdab-480b-840e-0dd85a145602
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.home_page_main_carousel
+id: entity_subqueue.home_page_main_carousel.title
+field_name: title
+entity_type: entity_subqueue
+bundle: home_page_main_carousel
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

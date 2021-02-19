@@ -1,0 +1,22 @@
+uuid: f57f7204-6b55-400a-9e44-25c15b39fbbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.slideshare
+id: node.slideshare.status
+field_name: status
+entity_type: node
+bundle: slideshare
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

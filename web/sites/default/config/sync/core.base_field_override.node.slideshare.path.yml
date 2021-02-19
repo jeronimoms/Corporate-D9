@@ -1,0 +1,20 @@
+uuid: 7bcea4c9-2f5c-4de6-a47d-ba7591a16270
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.slideshare
+  module:
+    - path
+id: node.slideshare.path
+field_name: path
+entity_type: node
+bundle: slideshare
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

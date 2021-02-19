@@ -1,0 +1,18 @@
+uuid: b95139d3-06d1-4583-8ac7-cf075f8b13d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.homepage_news_and_events
+id: entity_subqueue.homepage_news_and_events.created
+field_name: created
+entity_type: entity_subqueue
+bundle: homepage_news_and_events
+label: 'Authored on'
+description: 'The time that the subqueue was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

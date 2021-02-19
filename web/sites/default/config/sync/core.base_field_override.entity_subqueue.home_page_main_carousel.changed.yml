@@ -1,0 +1,18 @@
+uuid: 1894e65a-af8c-4558-9e83-74d388c190c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.home_page_main_carousel
+id: entity_subqueue.home_page_main_carousel.changed
+field_name: changed
+entity_type: entity_subqueue
+bundle: home_page_main_carousel
+label: Changed
+description: 'The time that the subqueue was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
