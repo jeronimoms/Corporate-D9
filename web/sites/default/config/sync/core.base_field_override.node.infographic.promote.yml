@@ -1,0 +1,22 @@
+uuid: 8f5c0909-c3f9-491a-a6fb-b941d3e89e04
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.infographic
+id: node.infographic.promote
+field_name: promote
+entity_type: node
+bundle: infographic
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

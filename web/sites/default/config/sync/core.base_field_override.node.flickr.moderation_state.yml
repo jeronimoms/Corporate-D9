@@ -1,0 +1,20 @@
+uuid: caf0418d-0f86-4ea3-a525-373f8c0ff392
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.flickr
+id: node.flickr.moderation_state
+field_name: moderation_state
+entity_type: node
+bundle: flickr
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

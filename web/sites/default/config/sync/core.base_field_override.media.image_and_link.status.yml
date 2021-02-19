@@ -1,0 +1,22 @@
+uuid: 7f0c74b6-8f5a-4151-b9a3-0c7d015045ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image_and_link
+id: media.image_and_link.status
+field_name: status
+entity_type: media
+bundle: image_and_link
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

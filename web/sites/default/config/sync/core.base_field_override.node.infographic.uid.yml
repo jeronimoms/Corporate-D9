@@ -1,0 +1,20 @@
+uuid: 3a49478a-64d5-4db1-8f89-406301cd139b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.infographic
+id: node.infographic.uid
+field_name: uid
+entity_type: node
+bundle: infographic
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

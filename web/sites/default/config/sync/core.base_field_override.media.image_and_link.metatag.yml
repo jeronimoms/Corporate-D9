@@ -1,0 +1,18 @@
+uuid: 6ffa9b85-8903-44a2-bc60-9e4a3f3325f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image_and_link
+id: media.image_and_link.metatag
+field_name: metatag
+entity_type: media
+bundle: image_and_link
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

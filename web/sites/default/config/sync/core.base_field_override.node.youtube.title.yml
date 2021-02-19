@@ -1,0 +1,18 @@
+uuid: 79038139-ec8f-4dfc-8b03-a0d1b7389e5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.youtube
+id: node.youtube.title
+field_name: title
+entity_type: node
+bundle: youtube
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

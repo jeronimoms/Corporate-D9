@@ -1,0 +1,20 @@
+uuid: e1c46c00-0c12-4820-81fa-f9c349563d95
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.youtube
+id: node.youtube.menu_link
+field_name: menu_link
+entity_type: node
+bundle: youtube
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

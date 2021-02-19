@@ -1,0 +1,20 @@
+uuid: 4f238633-0d9c-4de4-b111-63913ea655be
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.press_release
+  module:
+    - path
+id: node.press_release.path
+field_name: path
+entity_type: node
+bundle: press_release
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

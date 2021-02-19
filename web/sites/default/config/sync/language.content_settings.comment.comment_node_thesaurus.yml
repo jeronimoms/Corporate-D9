@@ -1,0 +1,18 @@
+uuid: a9184c61-ee68-4e11-8fca-60e87865bd33
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_thesaurus
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: comment.comment_node_thesaurus
+target_entity_type_id: comment
+target_bundle: comment_node_thesaurus
+default_langcode: site_default
+language_alterable: false

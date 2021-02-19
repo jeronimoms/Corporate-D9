@@ -1,0 +1,20 @@
+uuid: ac538f76-2e5f-433d-b5e8-f553b5683028
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.home_page_recommended_resources
+id: entity_subqueue.home_page_recommended_resources.uid
+field_name: uid
+entity_type: entity_subqueue
+bundle: home_page_recommended_resources
+label: 'User ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\entityqueue\Entity\EntitySubqueue::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

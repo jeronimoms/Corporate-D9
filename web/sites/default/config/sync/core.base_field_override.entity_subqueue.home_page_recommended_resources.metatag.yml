@@ -1,0 +1,18 @@
+uuid: 023a1545-d488-4f9d-ac71-b8d6eeaeafde
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.home_page_recommended_resources
+id: entity_subqueue.home_page_recommended_resources.metatag
+field_name: metatag
+entity_type: entity_subqueue
+bundle: home_page_recommended_resources
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

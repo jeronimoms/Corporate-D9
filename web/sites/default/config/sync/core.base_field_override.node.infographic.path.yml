@@ -1,0 +1,20 @@
+uuid: 212108e4-adc8-4037-9e46-d74a8943be93
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.infographic
+  module:
+    - path
+id: node.infographic.path
+field_name: path
+entity_type: node
+bundle: infographic
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,18 @@
+uuid: b0368b73-ec18-40f5-a10f-d0a6fe2a023c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.flickr
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.flickr
+target_entity_type_id: node
+target_bundle: flickr
+default_langcode: site_default
+language_alterable: false

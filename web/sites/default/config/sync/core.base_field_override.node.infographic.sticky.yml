@@ -1,0 +1,22 @@
+uuid: 88cf820a-9522-4227-8608-8e4e7d63c723
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.infographic
+id: node.infographic.sticky
+field_name: sticky
+entity_type: node
+bundle: infographic
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

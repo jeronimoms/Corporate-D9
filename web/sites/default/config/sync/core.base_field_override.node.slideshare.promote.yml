@@ -1,0 +1,22 @@
+uuid: 11dceef0-7873-48f1-98f8-79ead394c097
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.slideshare
+id: node.slideshare.promote
+field_name: promote
+entity_type: node
+bundle: slideshare
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

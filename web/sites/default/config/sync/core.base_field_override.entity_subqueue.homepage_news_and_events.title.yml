@@ -1,0 +1,18 @@
+uuid: e235c1a3-8890-4900-b8c9-c94464be2ece
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.homepage_news_and_events
+id: entity_subqueue.homepage_news_and_events.title
+field_name: title
+entity_type: entity_subqueue
+bundle: homepage_news_and_events
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
