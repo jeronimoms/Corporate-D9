@@ -25,29 +25,27 @@
 
   /* Home News and Events */
   .content-news-events {
-    h2{
-      padding-bottom: 1rem;
-    }
-    .news-home, .events-home {
-      .view-content {
-        float: none;
-        margin-top: 0;
-        margin-bottom: 0;
-        .views-row {
-          clear: both;
-          width: 100%;
-          height: 181px;
-          margin-right: 0;
-          margin-bottom: 1rem;
+    .wrap-news-events {
+      h2 {
+        padding-bottom: 1rem;
+      }
+
+      .news-home, .events-home {
+        .view-content {
+          float: none;
+          margin-top: 0;
+          margin-bottom: 0;
+
+          .views-row {
+            clear: both;
+            width: 100%;
+            height: 181px;
+            margin-right: 0;
+            margin-bottom: 1rem;
+          }
         }
       }
     }
   }
-
-  .home-recommended-resources{
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
 
 }/* End Media 768px */

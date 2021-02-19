@@ -80,11 +80,13 @@
           width: 22rem;
           padding: 10px 10px 10px 20px;
           li {
+            width: 100%;
             text-align: left;
             ul.menu-level-2 {
               list-style: none;
               padding-left: 10px;
               li{
+                width: 100%;
                 text-align: left;
                 a{
                   display: block;
