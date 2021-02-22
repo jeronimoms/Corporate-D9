@@ -1,0 +1,20 @@
+uuid: 174323e2-f718-4d58-92ed-388e0dd182f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image_and_link
+id: media.image_and_link.name
+field_name: name
+entity_type: media
+bundle: image_and_link
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,4 +1,79 @@
+@media only screen and (max-width : 1200px) {
+  /* Home page */
+  #main-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .home-intro {
+    .view-osha-home-page-banners {
+      .home-boxes {
+        width: 32%;
+        height: auto;
+        margin-bottom: 1.5em;
+        margin-right: 10px;
+        .home-boxes {
+          width: 100%;
+          img {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .home-recommended-resources{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Footer */
+  nav#block-footermenu{
+    ul.menu-level-0{
+      li.menu-item.menu-item--expanded:nth-child(2){
+        display: flex;
+        float: none;
+        margin-right: 0;
+        width: 100%;
+        clear: both;
+        justify-content: center;
+        padding-top: 2rem;
+      }
+    }
+  }
+
+}/* End Media 1200px */
+
+@media only screen and (max-width : 1024px) {
+  .left_column {
+    width: 100%;
+  }
+
+  .path-frontpage{
+    .sidebars_second_home {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  /* News and Events */
+  .content-news-events {
+    .news-home, .events-home {
+      .view-content {
+        .views-row {
+          width: 235px;
+        }
+      }
+    }
+  }
+
+}/* End Media 1024px */
+
+
+
 @media only screen and (max-width : 991px) {
+
   /* Menu responsive */
   #navbar-main {
     padding: 0;
@@ -123,6 +198,7 @@
   }
 
   .mean-expand{
+    display: block;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -136,5 +212,4 @@
     }
   }
 
-
-}
+}/* End Media 990px */

@@ -1,0 +1,20 @@
+uuid: a5c47a0b-a377-4068-b83d-d29bdb0763fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.external_url
+  module:
+    - path
+id: node.external_url.path
+field_name: path
+entity_type: node
+bundle: external_url
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

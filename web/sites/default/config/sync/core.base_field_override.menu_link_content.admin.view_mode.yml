@@ -1,0 +1,18 @@
+uuid: 0580b60f-7bfc-4822-9a9d-1be1e7aa2151
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.admin
+id: menu_link_content.admin.view_mode
+field_name: view_mode
+entity_type: menu_link_content
+bundle: admin
+label: 'View mode'
+description: 'Per item view mode selector.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

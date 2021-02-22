@@ -1,0 +1,18 @@
+uuid: ac6a88b1-d129-4e37-b6ff-0e9cc08d27c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.home_page_recommended_resources
+id: entity_subqueue.home_page_recommended_resources.created
+field_name: created
+entity_type: entity_subqueue
+bundle: home_page_recommended_resources
+label: 'Authored on'
+description: 'The time that the subqueue was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

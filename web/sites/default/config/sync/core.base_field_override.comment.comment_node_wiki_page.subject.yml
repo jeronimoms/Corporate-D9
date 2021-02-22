@@ -1,0 +1,18 @@
+uuid: 89499d7b-f274-4748-a2ad-79fa153778df
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_wiki_page
+id: comment.comment_node_wiki_page.subject
+field_name: subject
+entity_type: comment
+bundle: comment_node_wiki_page
+label: Subject
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

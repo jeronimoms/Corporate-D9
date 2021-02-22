@@ -1,0 +1,20 @@
+uuid: 1eb447f5-a93f-4b33-bffa-772356e22a9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.homepage_news_and_events
+id: entity_subqueue.homepage_news_and_events.moderation_state
+field_name: moderation_state
+entity_type: entity_subqueue
+bundle: homepage_news_and_events
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

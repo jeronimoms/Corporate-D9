@@ -1,0 +1,18 @@
+uuid: 58b08e95-3142-4554-930f-26edf45da5bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.slideshare
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.slideshare
+target_entity_type_id: node
+target_bundle: slideshare
+default_langcode: site_default
+language_alterable: false
