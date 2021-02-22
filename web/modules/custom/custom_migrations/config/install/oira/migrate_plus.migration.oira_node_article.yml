@@ -46,8 +46,13 @@ process:
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_aditional_resources: field_aditional_resources
-  field_archived: field_archived  #
-  field_article_type: field_article_type
+  field_archived: field_archived
+  field_article_type:
+    -
+      plugin: sub_process
+      source: field_article_type
+      process:
+        target_id: tid
   field_character_count: field_character_count
   field_expiration_date: field_expiration_date
   field_wiki_categories: field_wiki_categories
