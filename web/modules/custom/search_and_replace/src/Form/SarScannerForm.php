@@ -9,6 +9,7 @@ use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\scanner\Form\ScannerForm;
 use Drupal\scanner\Plugin\ScannerPluginManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Component\Render\FormattableMarkup;
 
 class SarScannerForm extends ScannerForm {
 
@@ -68,13 +69,66 @@ class SarScannerForm extends ScannerForm {
       unset($build['replace']);
       unset($build['submit_replace']);
     } else {
-      $build['options']['#collapsed'] = TRUE;
+      $build['options']['#collapsible'] = TRUE;
+      $build['options']['#open'] = FALSE;
     }
 
     $build['replace']['#weight'] = 98;
     $build['submit_replace']['#weight'] = 99;
-    $build['results']['#weight'] = 100;
+    unset($build['results']);
 
+    $header = [
+      'title' => $this->t('Title'),
+      'type' => $this->t('Type'),
+      'snippet' => $this->t('Snippet'),
+      'count' => $this->t('Count'),
+      'languages' => $this->t('Language'),
+    ];
+    $rows = [];
+
+    $results = $scannerStore->get('results');
+
+    if (!empty($results)) {
+      foreach ($results['#data']['values']['node'] as $type => $nodes) {
+        foreach ($results['#data']['values']['node'][$type] as $field_name => $field_values) {
+          foreach ($field_values as $values) {
+            $title = $values['title'];
+            $row = [
+              'title' => $title,
+              'type' => $type,
+              'count' => count($values['field']),
+            ];
+            $snippet = [
+              '#markup' => '',
+            ];
+            $output = '';
+            foreach ($values['field'] as $value) {
+              $output .= '<div>';
+              $output .= '<span class="search-and-replace-info">[One or more matches in <strong>' . $field_name . '</strong>:]</span><br />';
+              $output .= '<span class="search-and-replace-text">...' . strip_tags($value, '') . '...</span>';
+              $output .= '</div>';
+            }
+            $row['snippet'] = new FormattableMarkup($output, []);
+            $rows[] = $row;
+          }
+        }
+      }
+
+      $build['results_final'] = [
+        '#header' => $header,
+        '#type' => 'tableselect',
+        '#options' => $rows,
+        '#attributes' => array('id' => 'search-and-replace-results'),
+        '#weight' => 100,
+      ];
+
+      $build['results_final_legend'] = [
+        '#markup' => '<span class="legend-span node-in-translation"></span> In active translation job',
+      ];
+    }
+
+
+    ksm($scannerStore->get('results'));
     ksm($build);
 
     return $build;

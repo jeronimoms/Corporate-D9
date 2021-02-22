@@ -2,7 +2,16 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\search_and_replace\SarForm;
+use Drupal\search_and_replace\SarEntity;
 
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function search_and_replace_local_tasks_alter(&$local_tasks) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(SarEntity::class)
+    ->localTastAlter($local_tasks);
+}
 /**
  * Implements hook_form_alter().
  */
