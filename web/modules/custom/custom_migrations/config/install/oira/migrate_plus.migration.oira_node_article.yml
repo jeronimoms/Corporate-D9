@@ -24,8 +24,8 @@ migration_dependencies:
     - d7_user
 
 process:
-  nid: tnid
-  vid: vid
+  #nid: tnid
+#  vid: vid
   type:
     - plugin: default_value
       default_value: article              # -----  CHANGE
