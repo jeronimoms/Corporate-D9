@@ -54,11 +54,34 @@ process:
       process:
         target_id: tid
   field_character_count: field_character_count
-  field_expiration_date: field_expiration_date
+  field_expiration_date:
+    -
+      plugin: sub_process
+      source: field_expiration_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
   field_wiki_categories: field_wiki_categories
   field_related_oshwiki_articles: field_related_oshwiki_articles
   field_page_count: field_page_count
-  field_publication_date: field_publication_date
+#  field_publication_date: field_publication_date
+  field_publication_date:
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
   field_recommended_articles: field_recommended_articles
   field_recommended_resources: field_recommended_resources
   field_sector: field_sector
