@@ -65,11 +65,17 @@ process:
           to_format: 'Y-m-d\TH:i:s'
           from_timezone: 'Europe/Madrid'
           to_timezone: 'Europe/Madrid'
+          settings:
+            validate_format: false
           source: value
-  field_wiki_categories: field_wiki_categories
+  field_wiki_categories:
+    -
+      plugin: sub_process
+      source: field_wiki_categories
+      process:
+        target_id: tid
   field_related_oshwiki_articles: field_related_oshwiki_articles
   field_page_count: field_page_count
-#  field_publication_date: field_publication_date
   field_publication_date:
     -
       plugin: sub_process
@@ -84,6 +90,16 @@ process:
           source: value
   field_recommended_articles: field_recommended_articles
   field_recommended_resources: field_recommended_resources
-  field_sector: field_sector
+  field_sector:
+    -
+      plugin: sub_process
+      source: field_sector
+      process:
+        target_id: tid
   field_summary: field_summary
-  field_tags: field_tags
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
