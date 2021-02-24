@@ -1,9 +1,14 @@
 #!/bin/sh
-# Change the branch to develop.
-git checkout develop
+
+# Insert the tag name.
+echo 'Enter the tag name:'
+read tag_name
+
+# Change to the tag name.
+git checkout $tag_name
 
 # Download last changes.
-git pull
+git pull origin $tag_name
 
 # Init submodules.
 git submodule init
@@ -13,33 +18,6 @@ git submodule update --recursive
 
 # Update the Drupal installation.
 composer install
-
-
-# Update Osha site.
-echo 'Runing updb for Osha site'
-drush updb -l default -y
-
-echo 'Clearing caches for Osha site'
-drush cr -l default -y
-
-echo 'Importing configuration for Osha site'
-drush cim -l default -y
-
-echo 'Clearing caches for Osha site'
-drush cr -l default -y
-
-# Update Oira site.
-echo 'Runing updb for Oira site'
-drush updb -l oira -y
-
-echo 'Clearing caches for Oira site'
-drush cr -l oira -y
-
-echo 'Importing configuration for Oira site'
-drush cim -l oira -y
-
-echo 'Clearing caches for Oira site'
-drush cr -l oira -y
 
 # Update Vesafe site.
 echo 'Runing updb for Vesafe site'

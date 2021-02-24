@@ -1,13 +1,10 @@
 #!/bin/sh
-# Insert the tag name.
-echo 'Enter the tag name:'
-read tag_name
 
-# Change to the tag name.
-git checkout $tag_name
+# Change the branch to develop.
+git checkout develop
 
 # Download last changes.
-git pull origin $tag_name
+git pull
 
 # Init submodules.
 git submodule init
@@ -17,7 +14,6 @@ git submodule update --recursive
 
 # Update the Drupal installation.
 composer install
-
 
 # Update Osha site.
 echo 'Runing updb for Osha site'
