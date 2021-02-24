@@ -18,6 +18,8 @@ class SarRouteSubscriber extends RouteSubscriberBase {
     if ($route = $collection->get('scanner.admin_content')) {
       $route->setDefault('_form', '\Drupal\search_and_replace\Form\SarScannerForm');
     }
-
+    if ($route = $collection->get('scanner.admin_confirm')) {
+      $route->setDefault('_form', '\Drupal\search_and_replace\Form\SarScannerConfirmForm');
+    }
   }
 }

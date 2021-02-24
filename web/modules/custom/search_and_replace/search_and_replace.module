@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\search_and_replace\Plugin\Scanner\SarNode;
 use Drupal\search_and_replace\SarForm;
 use Drupal\search_and_replace\SarEntity;
 
@@ -12,6 +13,7 @@ function search_and_replace_local_tasks_alter(&$local_tasks) {
     ->getInstanceFromDefinition(SarEntity::class)
     ->localTastAlter($local_tasks);
 }
+
 /**
  * Implements hook_form_alter().
  */
@@ -19,4 +21,14 @@ function search_and_replace_form_alter(&$form, FormStateInterface $form_state, $
   /*return \Drupal::service('class_resolver')
     ->getInstanceFromDefinition(SarForm::class)
     ->formAlter($form, $form_state, $form_id);*/
+}
+
+/**
+ * Implements hook_filter_info_alter().
+ */
+/**
+ * Implements hook_scanner_info_alter().
+ */
+function search_and_replace_scanner_info_alter(array &$scanners) {
+  $scanners['scanner_node']['class'] = SarNode::class;
 }
