@@ -1,0 +1,14 @@
+uuid: c6521143-2a98-4a72-975c-016eab8a5ec4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.osh_collaborator
+  module:
+    - user
+id: user_remove_role_action.osh_collaborator
+label: 'Remove the OSH Collaborator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: osh_collaborator

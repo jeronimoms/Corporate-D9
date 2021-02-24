@@ -5,16 +5,27 @@ dependencies: {  }
 _core:
   default_config_hash: pq_mEIu_B4widZN7Ap81iCJSjShFFdcL0jEiCi8VrDk
 id: anonymous
-label: 'Anonymous user'
+label: 'anonymous user'
 weight: 0
 is_admin: false
 permissions:
+  - 'access PDF version'
   - 'access comments'
   - 'access content'
+  - 'access news feeds'
+  - 'access quiz'
+  - 'access site map'
   - 'access site-wide contact form'
-  - 'display eu cookie compliance popup'
+  - 'display EU Cookie Compliance popup'
+  - 'download any document files'
+  - 'post comments'
   - 'search content'
+  - 'skip comment approval'
+  - 'use Search Autocomplete'
   - 'use exclude node title'
-  - 'use text format restricted_html'
+  - 'use manualcrop'
+  - 'use text format filtered_html'
   - 'view files'
-  - 'view media'
+  - 'view newsletter_content_collection entity collections'
+  - 'view own quiz results'
+  - 'view results for own quiz'

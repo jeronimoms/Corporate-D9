@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.article.field_publication_date
     - field.field.node.article.field_related_oshwiki_articles
     - field.field.node.article.field_resources
+    - field.field.node.article.field_section
     - field.field.node.article.field_summary_html
     - field.field.node.article.field_tags
     - field.field.node.article.field_thesaurus
@@ -39,6 +40,11 @@ content:
     label: hidden
     weight: 0
     type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -66,6 +72,7 @@ hidden:
   field_publication_date: true
   field_related_oshwiki_articles: true
   field_resources: true
+  field_section: true
   field_summary_html: true
   field_tags: true
   field_thesaurus: true

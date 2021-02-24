@@ -1,0 +1,53 @@
+# Migration file for creating "event" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_thesaurus_i18n                         # -----  CHANGE
+label: 'Node: thesaurus Translations'                # -----  CHANGE
+migration_group: ncw_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node_entity_translation
+  node_type: thesaurus                                # -----  CHANGE
+destination:
+  plugin: entity:node
+  translations: true
+  destination_module: content_translation
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - ncw_node_thesaurus                            # -----  CHANGE
+
+process:
+  nid: entity_id
+  type: type
+  langcode: language
+  title: title
+  body: body
+  uid: uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  content_translation_source: source
+  content_translation_outdated: translate
+  ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
+  field_full_url:  field_full_url
+  field_term_id:  field_term_id
+  field_definition:  field_definition
+  field_context:  field_context
+  field_synonyms:  field_synonyms
+  field_term_reference:  field_term_reference
+  field_notes:  field_notes
+  field_father:  field_father
+  field_glossary_the:  field_glossary_the

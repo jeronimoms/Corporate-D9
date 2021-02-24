@@ -1,0 +1,131 @@
+# Migration file for creating "article" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_article                    # -----  CHANGE
+label: 'Node: Article'                   # -----  CHANGE
+audit: true
+migration_group: ncw_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: article                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  id: tnid
+  vid: vid
+  type:
+    - plugin: default_value
+      default_value: article              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_aditional_resources: field_aditional_resources    # necesito news y slideshare para comprobar
+  field_archived: field_archived
+  field_article_type:
+    -
+      plugin: sub_process
+      source: field_article_type
+      process:
+        target_id: tid
+  field_activity:
+  -
+    plugin: sub_process
+    source: field_activity
+    process:
+      target_id: tid
+  field_section:
+    -
+      plugin: sub_process
+      source: workbench_access
+      process:
+        target_id: tid
+  field_character_count: field_character_count
+  field_expiration_date:                #revisar
+    -
+      plugin: sub_process
+      source: field_expiration_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          settings:
+            validate_format: false
+          source: value
+  field_wiki_categories:
+    -
+      plugin: sub_process
+      source: field_wiki_categories
+      process:
+        target_id: tid
+  field_related_oshwiki_articles: field_related_oshwiki_articles
+  field_page_count: field_page_count
+  field_publication_date:       #revisar
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_recommended_articles: field_recommended_articles
+  field_recommended_resources: field_recommended_resources
+  field_sector:
+    -
+      plugin: sub_process
+      source: field_sector
+      process:
+        target_id: tid
+  field_summary: field_summary
+  field_body_revamp: field_body_revamp
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_nace_codes:
+    -
+      plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
+
+  field_thesaurus_2020:
+    -
+      plugin: sub_process
+      source: field_thesaurus_2020
+      process:
+        target_id: nid
