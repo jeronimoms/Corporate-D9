@@ -24,8 +24,8 @@ migration_dependencies:
     - d7_user
 
 process:
-  #nid: tnid
-#  vid: vid
+  nid: tnid   #comentar si no es bbdd limpia
+  vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value
       default_value: article              # -----  CHANGE

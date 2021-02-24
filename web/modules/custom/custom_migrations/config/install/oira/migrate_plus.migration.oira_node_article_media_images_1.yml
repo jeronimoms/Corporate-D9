@@ -10,7 +10,7 @@ source:
   plugin: media_entity_generator_d7
   entity_type: node
   bundle: article
-  d7_file_url: 'public://'
+  d7_file_url: 'https://test.oiraproject.eu/sites/default/files/'
   field_names:
     - field_image
 destination:
