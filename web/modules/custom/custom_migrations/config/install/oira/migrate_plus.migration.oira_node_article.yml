@@ -45,7 +45,7 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_aditional_resources: field_aditional_resources
+  field_aditional_resources: field_aditional_resources    # necesito news y slideshare para comprobar
   field_archived: field_archived
   field_article_type:
     -
@@ -54,7 +54,7 @@ process:
       process:
         target_id: tid
   field_character_count: field_character_count
-  field_expiration_date:
+  field_expiration_date:                #revisar
     -
       plugin: sub_process
       source: field_expiration_date
@@ -76,7 +76,7 @@ process:
         target_id: tid
   field_related_oshwiki_articles: field_related_oshwiki_articles
   field_page_count: field_page_count
-  field_publication_date:
+  field_publication_date:       #revisar
     -
       plugin: sub_process
       source: field_publication_date
