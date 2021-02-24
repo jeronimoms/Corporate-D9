@@ -1,0 +1,25 @@
+uuid: 4b1f8148-3cf5-4734-add7-7b6fffbc2873
+langcode: en
+status: true
+dependencies: {  }
+id: translation_liaison
+label: 'Translation Liaison'
+weight: 8
+is_admin: null
+permissions:
+  - 'access dashboard'
+  - 'access devel information'
+  - 'access toolbar'
+  - 'access workbench'
+  - 'create blog content'
+  - 'edit own blog content'
+  - 'osha access administration pages'
+  - 'preview layout validation'
+  - 'use manualcrop'
+  - 'use text format full_html'
+  - 'use text format full_html_minimal'
+  - 'use workbench access'
+  - 'view the administration theme'
+  - 'view translation job'
+  - 'view translation job item'
+  - 'view untranslated jobs'

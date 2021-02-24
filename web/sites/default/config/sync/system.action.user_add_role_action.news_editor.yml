@@ -1,0 +1,14 @@
+uuid: 8721c9d6-2a5f-4e55-b3ce-1d06882715b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.news_editor
+  module:
+    - user
+id: user_add_role_action.news_editor
+label: 'Add the News Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: news_editor

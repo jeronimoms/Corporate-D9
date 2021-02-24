@@ -47,6 +47,10 @@ process:
   langcode: language
 
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_glossary_type: field_glossary_type
-
-
+  field_glossary_type:
+    - plugin: sub_process
+      source: field_glossary_type
+      process:
+        target_id:
+          plugin: get
+          source: tid
