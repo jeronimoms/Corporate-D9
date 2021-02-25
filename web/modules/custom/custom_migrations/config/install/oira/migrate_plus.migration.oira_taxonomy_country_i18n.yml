@@ -10,7 +10,7 @@
 id: oira_taxonomy_country_i18n               # -----  CHANGE
 label: 'Terms: Country Translations'         # -----  CHANGE
 audit: true
-migration_group: oira_migrate                # -----  CHANGE
+migration_group: oira_migrate_tax              # -----  CHANGE
 source:
   plugin: d7_locale_terms
   bundle: country                            # -----  CHANGE
@@ -38,21 +38,21 @@ process:
       plugin: default_value
       default_value: country                 # -----  CHANGE
   name: name_field_value
+  'description/value': description
+  'description/format': format
+  weight: weight
   ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGE
-  field_iso2:
-    -
-      plugin: get
-      source: field_iso2
+  field_iso2: field_iso2
   field_country_status:
-    -
-      plugin: sub_process
-      source: field_country_status
-      process:
-        target_id:
-          plugin: get
-          source: tid
+    plugin: sub_process
+    source: field_country_status
+    process:
+      target_id:
+        plugin: get
+        source: tid
   field_ncw_fp_link:
     plugin: field_link
     source: field_ncw_fp_link
-  weight: weight
+  field_flag: field_flag # Image -- Error
+
 
