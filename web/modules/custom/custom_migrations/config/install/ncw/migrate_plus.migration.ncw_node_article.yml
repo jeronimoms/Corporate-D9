@@ -8,7 +8,7 @@
 id: ncw_node_article                    # -----  CHANGE
 label: 'Node: Article'                   # -----  CHANGE
 audit: true
-migration_group: ncw_migrate_node
+migration_group: ncw_migrate
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
