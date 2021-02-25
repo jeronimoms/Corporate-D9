@@ -10,7 +10,7 @@
 id: oira_taxonomy_country       # -----  CHANGE
 label: 'Terms: Country'         # -----  CHANGE
 audit: true
-migration_group: oira_migrate   # -----  CHANGE
+migration_group: oira_migrate_tax   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
@@ -47,17 +47,19 @@ process:
   langcode: language
 
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_iso2: ield_iso2
-  field_country_status: field_country_status
-    - plugin: sub_process
-      source: field_country_status
-      process:
-        target_id:
-          plugin: get
-          source: tid
-  field_ncw_fp_link: field_ncw_fp_link
+  field_iso2: field_iso2
+  field_country_status:
+    plugin: sub_process
+    source: field_country_status
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_ncw_fp_link:
     plugin: field_link
     source: field_ncw_fp_link
+  field_flag: field_flag # Image -- Error
+
 
 
 

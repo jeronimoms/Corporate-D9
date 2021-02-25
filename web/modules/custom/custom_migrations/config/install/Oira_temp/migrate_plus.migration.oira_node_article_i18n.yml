@@ -30,12 +30,10 @@ migration_dependencies:
 process:
   nid: entity_id
   type: type
-#  langcode: language
   langcode:
     plugin: static_map
     bypass: true
     source: language
-#    default_value: 'und'
     map:
       'pt': 'pt-pt'
   title: title
