@@ -35,7 +35,6 @@ dependencies:
     - file_entity
     - metatag
     - path
-    - shs
     - text
 _core:
   default_config_hash: 6VUXB1jTUjK5zjkfMa2Kd2WW4sFUlgfBlfJSx01qLpU
@@ -169,13 +168,9 @@ content:
     third_party_settings: {  }
   field_section:
     weight: 1
-    settings:
-      display_node_count: false
-      create_new_items: false
-      create_new_levels: false
-      force_deepest: false
+    settings: {  }
     third_party_settings: {  }
-    type: options_shs
+    type: options_select
     region: content
   field_summary_html:
     weight: 3

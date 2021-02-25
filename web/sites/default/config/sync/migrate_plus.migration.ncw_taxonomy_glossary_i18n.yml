@@ -27,6 +27,8 @@ process:
       plugin: default_value
       default_value: glossary
   name: name_field_value
+  description/value: description_field_value
+  description/format: format
   parent_id:
     -
       plugin: skip_on_empty
