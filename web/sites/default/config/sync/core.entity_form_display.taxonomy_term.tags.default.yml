@@ -10,7 +10,6 @@ dependencies:
   module:
     - path
     - text
-    - workbench_moderation
 id: taxonomy_term.tags.default
 targetEntityType: taxonomy_term
 bundle: tags
@@ -73,4 +72,9 @@ content:
     weight: 7
     region: content
     third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden: {  }

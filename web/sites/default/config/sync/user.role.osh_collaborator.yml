@@ -1,0 +1,23 @@
+uuid: dce179ea-2731-4b89-9db2-64e77d1d508b
+langcode: en
+status: true
+dependencies: {  }
+id: osh_collaborator
+label: 'OSH Collaborator'
+weight: 13
+is_admin: null
+permissions:
+  - 'access workbench access by role'
+  - 'create dangerous_substances content'
+  - 'create files'
+  - 'create musculoskeletal_disorders content'
+  - 'edit any dangerous_substances content'
+  - 'edit any musculoskeletal_disorders content'
+  - 'edit own dangerous_substances content'
+  - 'edit own musculoskeletal_disorders content'
+  - 'osha access administration pages'
+  - 'use manualcrop'
+  - 'use text format dangerous_substances'
+  - 'use text format dangerous_substances_minimal'
+  - 'view own files'
+  - 'view the administration theme'

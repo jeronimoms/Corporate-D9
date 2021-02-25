@@ -1,0 +1,22 @@
+uuid: 71efb1de-1f34-4b18-8791-acace5920d80
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: thesaurus
+label: Thesaurus
+type: 'canonical_entities:node'
+pattern: 'tools-and-resources/eu-osha-thesaurus/term/[node:field_term_id]'
+selection_criteria:
+  458171b2-f3b0-4ae8-a250-4dfb40aa1701:
+    id: node_type
+    bundles:
+      thesaurus: thesaurus
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 458171b2-f3b0-4ae8-a250-4dfb40aa1701
+selection_logic: and
+weight: -5
+relationships: {  }

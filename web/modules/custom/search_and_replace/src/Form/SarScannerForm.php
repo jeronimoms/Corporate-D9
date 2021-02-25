@@ -71,6 +71,8 @@ class SarScannerForm extends ScannerForm {
     } else {
       $build['options']['#collapsible'] = TRUE;
       $build['options']['#open'] = FALSE;
+      $build['submit_replace']['#validate'] = [$this, '::validateReplace'];
+      ksm($build['submit_replace']['#validate']);
     }
 
     $build['replace']['#weight'] = 98;
@@ -82,7 +84,7 @@ class SarScannerForm extends ScannerForm {
       'type' => $this->t('Type'),
       'snippet' => $this->t('Snippet'),
       'count' => $this->t('Count'),
-      'languages' => $this->t('Language'),
+      'lang' => $this->t('Language'),
     ];
     $rows = [];
 
@@ -97,6 +99,7 @@ class SarScannerForm extends ScannerForm {
               'title' => $title,
               'type' => $type,
               'count' => count($values['field']),
+              'lang' => $values['lang']
             ];
             $snippet = [
               '#markup' => '',
@@ -105,7 +108,7 @@ class SarScannerForm extends ScannerForm {
             foreach ($values['field'] as $value) {
               $output .= '<div>';
               $output .= '<span class="search-and-replace-info">[One or more matches in <strong>' . $field_name . '</strong>:]</span><br />';
-              $output .= '<span class="search-and-replace-text">...' . strip_tags($value, '') . '...</span>';
+              $output .= '<span class="search-and-replace-text">...' . strip_tags($value, '<strong>') . '...</span>';
               $output .= '</div>';
             }
             $row['snippet'] = new FormattableMarkup($output, []);
@@ -127,11 +130,19 @@ class SarScannerForm extends ScannerForm {
       ];
     }
 
-
-    ksm($scannerStore->get('results'));
-    ksm($build);
-
     return $build;
+  }
+
+  public function validateReplace(&$form, FormStateInterface $form_state) {
+    $scannerStore = $this->tempStore->get('scanner');
+    $results = $scannerStore->get('results');
+    ksm($form_state->getValues());
+    ksm($results);
+    $to_replace = array_filter($form_state->getValues()['results_final']);
+    ksm($to_replace);
+    if (empty($to_replace)) {
+      $form_state->setErrorByName('ALL', 'Perform a search first and select at least 1 node.');
+    }
   }
 
   /**

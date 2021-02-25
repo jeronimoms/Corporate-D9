@@ -6,7 +6,6 @@ dependencies:
     - entityqueue.entity_queue.home_page_main_carousel
   module:
     - entityqueue
-    - workbench_moderation
 id: entity_subqueue.home_page_main_carousel.default
 targetEntityType: entity_subqueue
 bundle: home_page_main_carousel

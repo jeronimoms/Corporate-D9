@@ -1,0 +1,38 @@
+uuid: 2584cb93-bae1-4c09-abc5-16e2bab03d76
+langcode: en
+status: true
+dependencies: {  }
+id: events_editor
+label: 'Events Editor'
+weight: 12
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access contextual links'
+  - 'access dashboard'
+  - 'access media browser'
+  - 'create events content'
+  - 'create files'
+  - 'create url aliases'
+  - 'delete own events content'
+  - 'delete own image files'
+  - 'download any image files'
+  - 'download own image files'
+  - 'edit any events content'
+  - 'edit any image files'
+  - 'edit meta tags'
+  - 'edit own events content'
+  - 'edit own image files'
+  - 'osha access administration pages'
+  - 'use manualcrop'
+  - 'use media wysiwyg'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'use text format full_html_minimal'
+  - 'view files'
+  - 'view own files'
+  - 'view own private files'
+  - 'view own unpublished content'
+  - 'view revisions'
+  - 'view the administration theme'
