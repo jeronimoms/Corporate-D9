@@ -2,7 +2,7 @@
 
 id: oira_node_article_media_images_1
 label: Article Media Step 1
-migration_group: oira_migrate_media_node
+migration_group: oira_migrate_media
 
 source:
   key: migrate
@@ -10,7 +10,7 @@ source:
   plugin: media_entity_generator_d7
   entity_type: node
   bundle: article
-  d7_file_url: 'public://'
+  d7_file_url: 'https://test.oiraproject.eu/sites/default/files/'
   field_names:
     - field_image
 destination:

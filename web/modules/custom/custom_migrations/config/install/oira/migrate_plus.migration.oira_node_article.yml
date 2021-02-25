@@ -24,8 +24,8 @@ migration_dependencies:
     - d7_user
 
 process:
-  nid: tnid
-  vid: vid
+  nid: tnid   #comentar si no es bbdd limpia
+  vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value
       default_value: article              # -----  CHANGE
@@ -45,17 +45,61 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_aditional_resources: field_aditional_resources
-  field_archived: field_archived  #
-  field_article_type: field_article_type
+  field_aditional_resources: field_aditional_resources    # necesito news y slideshare para comprobar
+  field_archived: field_archived
+  field_article_type:
+    -
+      plugin: sub_process
+      source: field_article_type
+      process:
+        target_id: tid
   field_character_count: field_character_count
-  field_expiration_date: field_expiration_date
-  field_wiki_categories: field_wiki_categories
+  field_expiration_date:                #revisar
+    -
+      plugin: sub_process
+      source: field_expiration_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          settings:
+            validate_format: false
+          source: value
+  field_wiki_categories:
+    -
+      plugin: sub_process
+      source: field_wiki_categories
+      process:
+        target_id: tid
   field_related_oshwiki_articles: field_related_oshwiki_articles
   field_page_count: field_page_count
-  field_publication_date: field_publication_date
+  field_publication_date:       #revisar
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
   field_recommended_articles: field_recommended_articles
   field_recommended_resources: field_recommended_resources
-  field_sector: field_sector
+  field_sector:
+    -
+      plugin: sub_process
+      source: field_sector
+      process:
+        target_id: tid
   field_summary: field_summary
-  field_tags: field_tags
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
