@@ -56,6 +56,9 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 $sites = [
+  // Staging sites.
+  'testd9-eguides.osha.europa.eu.vehicle-safety' => 'vesafe',
+  // Develop sites.
   'osha.bilbomatica.es' => 'default',
   'napo.bilbomatica.es' => 'napo',
   'vesafe.bilbomatica.es' => 'vesafe',
