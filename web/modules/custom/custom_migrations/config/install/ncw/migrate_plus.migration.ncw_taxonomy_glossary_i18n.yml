@@ -38,6 +38,8 @@ process:
       plugin: default_value
       default_value: glossary                 # -----  CHANGE
   name: name_field_value
+  'description/value': description_field_value
+  'description/format': format
   parent_id:
     - plugin: skip_on_empty
       method: process
@@ -51,6 +53,7 @@ process:
   forum_container: is_container
   changed: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGE
+
   field_glossary_type:
     - plugin: sub_process
       source: field_glossary_type
