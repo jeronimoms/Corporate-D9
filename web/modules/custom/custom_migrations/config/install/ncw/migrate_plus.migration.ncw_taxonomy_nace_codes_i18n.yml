@@ -38,6 +38,8 @@ process:
       plugin: default_value
       default_value: nace_codes                 # -----  CHANGE
   name: name_field_value
+  'description/value': description_field_value
+  'description/format': format
   parent_id:
     - plugin: skip_on_empty
       method: process
