@@ -56,10 +56,6 @@ process:
 
   field_nace_code: field_nace_code
   field_nace_changes: field_nace_changes
-  'field_nace_includes/value': field_nace_includes_value
-  'field_nace_includes/format': format
-  'field_nace_excludes/value': field_nace_excludes
-  'field_nace_excludes/format': format
-  'field_nace_includes_also/value': field_nace_includes_also
-  'field_nace_includes_also/format': format
-
+  field_nace_includes: includes_field_value
+  field_nace_excludes: excludes_field_value
+  field_nace_includes_also: includes_also_field_value
