@@ -59,6 +59,39 @@ class LocaleTerms extends Term {
       ->fetchCol();
     $row->setSourceProperty('description_field_value', $desc[0]);
 
+    // Set specific include field.
+    $includeField = $this->select('field_data_field_nace_includes', 'fdf')
+      ->fields('fdf', ['field_nace_includes_value'])
+      ->condition('entity_id', $row->getSourceProperty('tid'))
+      ->condition('language' , $language)
+      ->execute()
+      ->fetchCol();
+    if (!empty($includeField[0])){
+      $row->setSourceProperty('includes_field_value', $includeField[0]);
+    }
+
+    // Set specific excluded field.
+    $excludeField = $this->select('field_data_field_nace_excludes', 'fdf')
+      ->fields('fdf', ['field_nace_excludes_value'])
+      ->condition('entity_id', $row->getSourceProperty('tid'))
+      ->condition('language' , $language)
+      ->execute()
+      ->fetchCol();
+    if (!empty($excludeField[0])){
+      $row->setSourceProperty('excludes_field_value', $excludeField[0]);
+    }
+
+    // Set specific include also field.
+    $include_alsoField = $this->select('field_data_field_nace_includes_also', 'fdf')
+      ->fields('fdf', ['field_nace_includes_also_value'])
+      ->condition('entity_id', $row->getSourceProperty('tid'))
+      ->condition('language' , $language)
+      ->execute()
+      ->fetchCol();
+    if (!empty($include_alsoField[0])){
+      $row->setSourceProperty('includes_also_field_value', $include_alsoField[0]);
+    }
+
     // Set the i18n string table for use in I18nQueryTrait.
     $this->i18nStringTable = 'i18n_string';
 
@@ -82,6 +115,9 @@ class LocaleTerms extends Term {
       'language' => $this->t('Language for this term.'),
       'name_field_value' => $this->t('Term name translation.'),
       'description_field_value' => $this->t('Term description translation.'),
+      'includes_field_value' => $this->t('Term includes translation.'),
+      'excludes_field_value' => $this->t('Term excludes translation.'),
+      'includes_also_field_value' => $this->t('Term includes also translation.'),
     ];
     return parent::fields() + $fields;
   }
