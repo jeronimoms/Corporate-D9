@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a347fdf368014153005a0ad0aec57d5c",
+    "content-hash": "626f57aa860313282b50d52423e2d75c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11012,6 +11012,56 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/smtp",
                 "issues": "https://www.drupal.org/project/issues/smtp"
+            }
+        },
+        {
+            "name": "drupal/social_media_links",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/social_media_links.git",
+                "reference": "8.x-2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/social_media_links-8.x-2.7.zip",
+                "reference": "8.x-2.7",
+                "shasum": "132db954d880c743bd6316f7fecd0b085bb73f91"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.7",
+                    "datestamp": "1598506938",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/u/neslee-canil-pinto",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "cbeier",
+                    "homepage": "https://www.drupal.org/user/1500710"
+                }
+            ],
+            "description": "The module provides a block that display links (icons) to your profiles on various social networking sites.",
+            "homepage": "https://www.drupal.org/project/social_media_links",
+            "support": {
+                "source": "https://git.drupalcode.org/project/social_media_links",
+                "issues": "https://www.drupal.org/project/issues/social_media_links"
             }
         },
         {
