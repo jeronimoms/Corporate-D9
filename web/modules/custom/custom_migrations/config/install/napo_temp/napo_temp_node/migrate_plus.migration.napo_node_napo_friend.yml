@@ -1,0 +1,49 @@
+# Migration file for creating "napo_friend" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: napo_node_napo_friend                    # -----  CHANGE
+label: 'Node: Napo Friend'                   # -----  CHANGE
+audit: true
+migration_group: napo_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: napo_friend                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  # nid: tnid   #comentar si no es bbdd limpia
+  # vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: napo_friend              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_image: field_image
+
