@@ -271,6 +271,9 @@
             },
             "drupal/simple_block": {
                 "Editor form warning": "patches/simple_block-edit-form-warning.patch"
+            },
+            "drupal/varnish_purge": {
+                "Config annotation missing": "https://www.drupal.org/files/issues/2020-06-05/3146499-2.patch"
             }
         },
         "patchLevel": {
