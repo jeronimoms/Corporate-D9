@@ -1,0 +1,82 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_taxonomy_section       # -----  CHANGE
+label: 'Terms: Partner'         # -----  CHANGE
+audit: true
+migration_group: oira_migrate   # -----  CHANGE
+deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
+source:
+  plugin: d7_taxonomy_term
+  bundle: section               # -----  CHANGE
+destination:
+  plugin: entity:taxonomy_term
+migration_dependencies:
+  optional:
+    - d7_field_instance         # -----  CHANGE
+process:
+  tid: tid
+  vid:
+    -
+      plugin: default_value
+      default_value: section    # -----  CHANGE
+  name: name
+  'description/value': description
+  'description/format': format
+  weight: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: oira_taxonomy_section
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+#  'path/pathauto':
+#    plugin: pathauto_generate
+#    source: tnid
+#  'path/alias':
+#    -
+#      plugin: url_alias_migration
+#      source: tnid
+  'path/pathauto':
+    plugin: default_value
+    default_value: 0 # Disable pathauto.
+  'path/alias': alias
+#  path/alias: source_path
+#  path/pathauto:
+#    plugin: default_value
+#    default_value: 0
+
+
+#  'path/pathauto':
+#    plugin: default_value
+#    default_value: 0 # Disable pathauto.
+#  'path/alias':
+#    -
+#      plugin: empty_if_url_alias_exists
+#      source: public_url
+#    -
+#      plugin: skip_on_empty
+#      method: process
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_ldap_section_code:
+    -
+      plugin: get
+      source: field_ldap_section_code
+
+
+
