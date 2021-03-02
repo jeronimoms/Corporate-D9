@@ -1,0 +1,93 @@
+# Migration file for creating "news" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_node_news                    # -----  CHANGE
+label: 'Node: news'                   # -----  CHANGE
+audit: true
+migration_group: oira_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: news                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  nid: tnid
+  vid: vid
+  type:
+    - plugin: default_value
+      default_value: news              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_aditional_resources: field_aditional_resources
+  field_character_count: field_character_count
+  field_co_author:               #falla
+    plugin: sub_process
+      source: field_co_author
+      process:
+        target_id:
+          plugin: get
+          source: nid
+  field_wf_notification: field_wf_notification
+  field_migration_source: field_migration_source #list
+  field_page_count: field_page_count
+#  field_publication_date:                        #DATE
+#    - plugin: sub_process
+#      source: field_publication_date
+#      process:
+#        value:
+#          plugin: format_date
+#          from_format: 'Y-m-d'
+#          to_format: 'Y-m-d\TH:i:s'
+#          from_timezone: 'Europe/Madrid'
+#          to_timezone: 'Europe/Madrid'
+#          source: value
+#          settings:
+#            validate_format: false
+  field_publication_date:                          # FALLA
+    - plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+
+  field_summary: field_summary
+  field_tags:
+    plugin: sub_process
+    source: field_tags
+    process:
+      target_id:
+        plugin: get
+        source: tid
+

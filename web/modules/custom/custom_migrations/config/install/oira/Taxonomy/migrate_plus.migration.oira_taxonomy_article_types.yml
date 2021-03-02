@@ -1,0 +1,56 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_taxonomy_article_types      # -----  CHANGE
+label: 'Terms: Article Type'         # -----  CHANGE
+audit: true
+migration_group: oira_migrate_tax    # -----  CHANGE
+deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
+source:
+  plugin: d7_taxonomy_term
+  bundle: article_types               # -----  CHANGE
+destination:
+  plugin: entity:taxonomy_term
+migration_dependencies:
+  optional:
+    - d7_field_instance         # -----  CHANGE
+process:
+  tid: tid
+  vid:
+    -
+      plugin: default_value
+      default_value: article_types    # -----  CHANGE
+  name: name
+  'description/value': description
+  'description/format': format
+  weight: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: oira_taxonomy_article_types
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_article_type_code:
+    -
+      plugin: get
+      source: field_article_type_code
+
+
+
