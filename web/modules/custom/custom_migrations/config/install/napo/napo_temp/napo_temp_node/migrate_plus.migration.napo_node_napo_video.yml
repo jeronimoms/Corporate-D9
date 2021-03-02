@@ -1,0 +1,79 @@
+# Migration file for creating "napo_video" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: napo_node_napo_video                    # -----  CHANGE
+label: 'Node: Napo video'                   # -----  CHANGE
+audit: true
+migration_group: napo_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: napo_video                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  # nid: tnid   #comentar si no es bbdd limpia
+  # vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: napo_video              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_combined_tags:
+    - plugin: sub_process
+        source: field_combined_tags
+        process:
+          target_id: tid
+  field_image: field_image
+  field_main_tag:
+    - plugin: sub_process
+        source: field_tags
+        process:
+          target_id: tid
+  field_archived: field_archived
+  field_napo_film: field_napo_film
+  field_publication_date: #revisar
+    - plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_video: field_video
+  field_video_type: field_video_type
+  field_youtube: field_youtube
