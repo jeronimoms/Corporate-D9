@@ -229,6 +229,44 @@ h3.home a:hover {
   margin-left: auto;
 }
 
+/* Share this on articles icons */
+#share-this-on {
+  float: left;
+  padding-top: 1rem;
+}
+#share-this-on .text-share {
+  font-size: 0.9rem;
+  padding-right: 10px;
+}
+#share-this-on .a2a_svg svg {
+  display: none;
+}
+#share-this-on .a2a_s__default {
+  background-color: transparent !important;
+}
+#share-this-on .a2a_button_facebook {
+  background: url(../images/share_facebook.png) no-repeat;
+}
+#share-this-on .a2a_button_twitter {
+  background: url(../images/share_twitter.png) no-repeat;
+}
+#share-this-on .a2a_button_linkedin_share {
+  background: url(../images/share_in.png) no-repeat;
+}
+#share-this-on .a2a_button_linkedin_share button {
+  display: none !important;
+}
+#share-this-on .print-icon {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(../images/share_print.png) no-repeat 0 4px;
+}
+#share-this-on a:hover {
+  opacity: 0.8;
+}
+
 /* END Common elements */
 /* Twetter Block */
 .block-twitter-block {
@@ -894,6 +932,9 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
   width: 22rem;
   padding: 10px 10px 10px 20px;
 }
+.navbar #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 a {
+  font-family: "Open Sans Condensed";
+}
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 li {
   width: 100%;
   text-align: left;
@@ -909,6 +950,7 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 li ul.menu-level-2 li a {
   display: block;
   color: #57575a;
+  font-family: "Open Sans";
   font-weight: bold;
   font-size: 0.8rem;
   padding-bottom: 5px;
