@@ -47,41 +47,28 @@ process:
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_aditional_resources: field_aditional_resources
   field_character_count: field_character_count
-  field_co_author: field_co_author               #falla
-#    plugin: sub_process
-#      source: field_co_author
-#      process:
-#        target_id:
-#          plugin: get
-#          source: nid
-  field_wf_notification: field_wf_notification
-  field_migration_source: field_migration_source #list
-  field_page_count: field_page_count
-#  field_publication_date:                        #DATE
-#    - plugin: sub_process
-#      source: field_publication_date
-#      process:
-#        value:
-#          plugin: format_date
-#          from_format: 'Y-m-d'
-#          to_format: 'Y-m-d\TH:i:s'
-#          from_timezone: 'Europe/Madrid'
-#          to_timezone: 'Europe/Madrid'
-#          source: value
-#          settings:
-#            validate_format: false
-  field_publication_date:                          # FALLA
+  field_co_author:
     - plugin: sub_process
-      source: field_publication_date
+      source: field_co_author
       process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d'
-          to_format: 'Y-m-d\TH:i:s'
-          from_timezone: 'Europe/Madrid'
-          to_timezone: 'Europe/Madrid'
-          source: value
-
+        target_id:
+          plugin: get
+          source: tid
+  field_wf_notification: field_wf_notification
+  field_migration_source: field_migration_source   #list
+  field_page_count: field_page_count
+  field_publication_date/value:
+    -
+      plugin: extract
+      source: field_publication_date
+      index:
+        - '0'
+        - value
+    -
+      plugin: format_date
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
+      timezone: 'GMT'
   field_summary: field_summary
   field_tags:
     plugin: sub_process
