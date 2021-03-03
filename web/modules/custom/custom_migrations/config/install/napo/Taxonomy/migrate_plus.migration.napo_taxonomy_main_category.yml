@@ -47,7 +47,7 @@ process:
   langcode: language
 
   ### ADD FIELDS CUSTOM OF ENTITY ### # -----
-  field_tags: field_tags
+  field_tags:
     -
       plugin: sub_process
       source: field_tags

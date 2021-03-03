@@ -43,7 +43,7 @@ process:
   vid:
     -
       plugin: default_value
-    default_value: main_category # ----- CHANGE
+      default_value: main_category # ----- CHANGE
   name: name_field_value
   'description/value': description
   'description/format': format
