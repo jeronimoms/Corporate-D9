@@ -99,6 +99,8 @@ class VwBlock extends BlockBase implements ContainerFactoryPluginInterface {
       }
     }
 
+    $output['#attached']['library'][] = 'vesafe_workflow/vesafe_workflow.block';
+
     return $output;
   }
 
