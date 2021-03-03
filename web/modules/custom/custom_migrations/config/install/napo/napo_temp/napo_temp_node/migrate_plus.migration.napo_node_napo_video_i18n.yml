@@ -1,0 +1,86 @@
+# Migration file for creating "event" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: napo_videonode_napo_videoimage_i18n                         # -----  CHANGE
+label: 'Node: Napo video Translations'                # -----  CHANGE
+migration_group: napo_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node_entity_translation
+  node_type: napo_videoimage                                # -----  CHANGE
+destination:
+  plugin: entity:node
+  translations: true
+  destination_module: content_translation
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - napo_videonode_napo_videoimage                            # -----  CHANGE
+
+process:
+  nid: entity_id
+  type: type
+  #  langcode: language
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    #    default_value: 'und'
+    map:
+      'pt': 'pt-pt'
+  title: title
+  body: body
+  uid: uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  content_translation_source: source
+  content_translation_outdated: translate
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_combined_tags:
+    - plugin: sub_process
+        source: field_combined_tags
+        process:
+          target_id: tid
+  field_image: field_image
+  field_main_tag:
+    - plugin: sub_process
+        source: field_tags
+        process:
+          target_id: tid
+  field_archived: field_archived
+  field_napo_film: field_napo_film
+  field_publication_date: #revisar
+    - plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_video: field_video
+  field_video_type: field_video_type
+  field_youtube: field_youtube
