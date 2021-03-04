@@ -45,18 +45,18 @@ process:
       default_value: sector_category  # -----  CHANGE
   name: name_field_value
   'description/value': description
-    'description/format': format
-    weight: weight
-    parent_id:
-      - plugin: skip_on_empty
-        method: process
-        source: parent
-      - plugin: migration_lookup
-        migration: oira_taxonomy_sector_category
-    parent:
-      plugin: default_value
-      default_value: 0
-      source: '@parent_id'
-    forum_container: is_container
-    changed: timestamp
+  'description/format': format
+  weight: weight
+  parent_id:
+    - plugin: skip_on_empty
+      method: process
+      source: parent
+    - plugin: migration_lookup
+      migration: oira_taxonomy_sector_category
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
