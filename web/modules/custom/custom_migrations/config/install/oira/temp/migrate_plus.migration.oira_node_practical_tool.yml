@@ -1,0 +1,118 @@
+# Migration file for creating "practical_tool" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_node_practical_tool                    # -----  CHANGE
+label: 'Node: practical_tool'                   # -----  CHANGE
+audit: true
+migration_group: oira_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: practical_tool                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  nid: tnid   #comentar si no es bbdd limpia
+  vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: practical_tool              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_alternative_body: field_alternative_body
+  field_alternative_title: field_alternative_title
+  field_co_author:
+  - plugin: sub_process
+    source: field_co_author
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_country:
+  - plugin: sub_process
+    source: field_country
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_third_description: field_third_description
+  field_wf_notification: field_wf_notification
+  field_language:
+  - plugin: sub_process
+    source: field_language
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_third_language: field_third_language
+  field_publication_date/value:
+    - plugin: extract
+      source: field_publication_date
+      index:
+        - '0'
+        - value
+    - plugin: format_date
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
+      timezone: 'GMT'
+  field_related_partners:
+  - plugin: sub_process
+    source: field_related_partners
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_revised_date:
+  - plugin: extract
+    source: field_revised_date
+    index:
+      - '0'
+      - value
+  - plugin: format_date
+    from_format: 'Y-m-d H:i:s'
+    to_format: 'Y-m-d\TH:i:s'
+    timezone: 'GMT'
+  field_sector_category:
+  - plugin: sub_process
+    source: field_sector_category
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_third_title: field_third_title
+  field_tool_link:
+    plugin: field_link
+    source: field_tool_link
+  field_tool_type:
+  - plugin: sub_process
+    source: field_tool_type
+    process:
+      target_id:
+        plugin: get
+        source: tid
