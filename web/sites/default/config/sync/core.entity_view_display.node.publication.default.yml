@@ -70,12 +70,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_aditional_resources:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     weight: 6
     region: content
     label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
   field_banner_publications_office:
     type: boolean
