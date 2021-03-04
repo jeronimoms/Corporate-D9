@@ -1,0 +1,36 @@
+uuid: bbcf8b49-f6ee-479c-a51c-aaf19ae837a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_image_2
+    - media.type.image_caption_article
+  module:
+    - image
+id: media.image_caption_article.field_media_image_2
+field_name: field_media_image_2
+entity_type: media
+bundle: image_caption_article
+label: Image
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  default_image:
+    caption: ''
+  caption_field: false
+  caption_field_required: false
+  file_extensions: 'png gif jpg jpeg'
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  max_resolution: ''
+  min_resolution: ''
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image
