@@ -1,0 +1,76 @@
+uuid: ee0a5580-7307-482c-af35-b0a31da5d9c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.25th_anniversary.body
+    - field.field.node.25th_anniversary.field_publication_date
+    - field.field.node.25th_anniversary.field_summary
+    - field.field.node.25th_anniversary.field_tags
+    - node.type.25th_anniversary
+  module:
+    - datetime
+    - text
+    - workbench_moderation
+id: node.25th_anniversary.default
+targetEntityType: node
+bundle: 25th_anniversary
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 6
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_publication_date:
+    type: datetime_datelist
+    weight: 4
+    region: content
+    settings:
+      date_order: DMY
+      time_type: '24'
+      increment: 15
+    third_party_settings: {  }
+  field_summary:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_tags:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 5
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  translation: true
+  uid: true
+  url_redirects: true

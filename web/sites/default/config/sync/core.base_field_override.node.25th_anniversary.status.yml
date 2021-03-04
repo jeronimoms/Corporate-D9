@@ -1,0 +1,22 @@
+uuid: dabc6484-abb6-45d8-977d-21701f4d85c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.25th_anniversary
+id: node.25th_anniversary.status
+field_name: status
+entity_type: node
+bundle: 25th_anniversary
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

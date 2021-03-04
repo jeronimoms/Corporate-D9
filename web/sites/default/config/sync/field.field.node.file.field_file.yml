@@ -1,0 +1,27 @@
+uuid: ecd881e3-e344-4b7e-8cac-a5b0e9f58f81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file
+    - node.type.file
+  module:
+    - file
+id: node.file.field_file
+field_name: field_file
+entity_type: node
+bundle: file
+label: File
+description: 'Content file.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: ''
+  file_extensions: 'txt pdf docx zip ppt pptx doc rar odt odp otp'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

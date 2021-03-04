@@ -1,0 +1,23 @@
+uuid: a84ca1ba-69f8-4110-9f9d-8388b40d12d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slideshare_url
+    - node.type.slideshare
+  module:
+    - link
+id: node.slideshare.field_slideshare_url
+field_name: field_slideshare_url
+entity_type: node
+bundle: slideshare
+label: 'Slideshare URL'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

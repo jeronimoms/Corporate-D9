@@ -1,0 +1,23 @@
+uuid: 0a024cf0-c1c3-47f2-a59d-9be5e7901366
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.infographic
+  module:
+    - text
+id: node.infographic.body
+field_name: body
+entity_type: node
+bundle: infographic
+label: Body
+description: 'Please introduce in this box the text of this section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,39 @@
+uuid: 3a7ba6af-8d33-44cc-8ec6-1ef2e285be21
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.slideshare.field_slideshare_id
+    - field.field.node.slideshare.field_slideshare_url
+    - field.field.node.slideshare.field_thumbnail
+    - node.type.slideshare
+  module:
+    - image
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.slideshare.teaser
+targetEntityType: node
+bundle: slideshare
+mode: teaser
+content:
+  field_thumbnail:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  addtoany: true
+  field_slideshare_id: true
+  field_slideshare_url: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

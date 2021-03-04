@@ -1,0 +1,23 @@
+uuid: 9f654a87-9976-4051-a462-9cb341da0314
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pages_count
+    - node.type.publication
+id: node.publication.field_pages_count
+field_name: field_pages_count
+entity_type: node
+bundle: publication
+label: 'Number of pages'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

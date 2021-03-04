@@ -1,16 +1,16 @@
-uuid: f0daa515-57d1-4971-bb87-c5eb30195056
-langcode: und
+uuid: 769bc14a-67f8-4772-be13-4630574466d7
+langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_activity
-field_name: field_activity
+id: node.field_slideshare_id
+field_name: field_slideshare_id
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: taxonomy_term
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1
