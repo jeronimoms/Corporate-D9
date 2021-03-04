@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
-    - field.field.node.article.comment_node_article
     - field.field.node.article.field_activity
     - field.field.node.article.field_aditional_resources
     - field.field.node.article.field_archived
@@ -13,8 +12,7 @@ dependencies:
     - field.field.node.article.field_body_revamp
     - field.field.node.article.field_character_count
     - field.field.node.article.field_expiration_date
-    - field.field.node.article.field_flickr_date
-    - field.field.node.article.field_image
+    - field.field.node.article.field_image_caption
     - field.field.node.article.field_metatag
     - field.field.node.article.field_nace_codes
     - field.field.node.article.field_page_count
@@ -24,12 +22,10 @@ dependencies:
     - field.field.node.article.field_section
     - field.field.node.article.field_summary_html
     - field.field.node.article.field_tags
-    - field.field.node.article.field_thesaurus
     - field.field.node.article.field_thesaurus_2020
     - field.field.node.article.field_wiki_categories
     - node.type.article
   module:
-    - image
     - text
     - user
 _core:
@@ -51,22 +47,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_image:
-    label: hidden
-    weight: 0
-    type: image
-    settings:
-      image_link: ''
-      image_style: ''
-    third_party_settings: {  }
-    region: content
   links:
     weight: 100
     region: content
 hidden:
   addtoany: true
   comment: true
-  comment_node_article: true
   field_activity: true
   field_aditional_resources: true
   field_archived: true
@@ -74,7 +60,7 @@ hidden:
   field_body_revamp: true
   field_character_count: true
   field_expiration_date: true
-  field_flickr_date: true
+  field_image_caption: true
   field_metatag: true
   field_nace_codes: true
   field_page_count: true
@@ -84,7 +70,6 @@ hidden:
   field_section: true
   field_summary_html: true
   field_tags: true
-  field_thesaurus: true
   field_thesaurus_2020: true
   field_wiki_categories: true
   langcode: true
