@@ -1,0 +1,23 @@
+uuid: a14d3140-c600-407a-88f8-49ab228e4b40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_url
+    - node.type.infographic
+  module:
+    - link
+id: node.infographic.field_external_url
+field_name: field_external_url
+entity_type: node
+bundle: infographic
+label: Website
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

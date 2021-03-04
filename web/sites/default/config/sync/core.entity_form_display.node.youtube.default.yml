@@ -1,0 +1,58 @@
+uuid: 126e4a65-5436-4514-b074-cce0126606e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.youtube.body
+    - field.field.node.youtube.field_video_length
+    - field.field.node.youtube.field_youtube
+    - node.type.youtube
+  module:
+    - datetime
+    - text
+    - youtube
+id: node.youtube.default
+targetEntityType: node
+bundle: youtube
+mode: default
+content:
+  body:
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_video_length:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_youtube:
+    weight: 2
+    settings:
+      placeholder_url: ''
+    third_party_settings: {  }
+    type: youtube
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

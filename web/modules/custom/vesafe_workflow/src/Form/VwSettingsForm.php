@@ -102,15 +102,19 @@ class VwSettingsForm extends ConfigFormBase {
     ];
 
     foreach ($form_state->get('list_num') as $i => $item) {
+      $name = (isset($item['name'])) ? $item['name'] : $i;
+      $access_roles = (isset($item['access_roles'])) ? $item['access_roles'] : [];
+      $workflow = (isset($item['workflow'])) ? $item['access_roles'] : '';
+
       $form['list_fieldset']['list'][$i] = [
         '#type' => 'details',
-        '#title' => $this->t('List @name', ['@name' => $item['name']]),
+        '#title' => $this->t('List @name', ['@name' => $name]),
       ];
 
       $form['list_fieldset']['list'][$i]['name'] = [
         '#type' => 'textfield',
         '#title' => $this->t('Name'),
-        '#default_value' => $item['name'],
+        '#default_value' => $name,
         '#description' => $this->t('The name of this list'),
       ];
 
@@ -119,7 +123,7 @@ class VwSettingsForm extends ConfigFormBase {
         '#multiple' => TRUE,
         '#title' => $this->t('User roles'),
         '#options' => $this->getRoles(),
-        '#default_value' => $item['access_roles'],
+        '#default_value' => $access_roles,
         '#description' => $this->t('The roles of users that can be added to the list'),
       ];
 
@@ -127,7 +131,7 @@ class VwSettingsForm extends ConfigFormBase {
         '#type' => 'select',
         '#title' => $this->t('Workflow'),
         '#options' => $this->getWorkflows(),
-        '#default_value' => $item['workflow'],
+        '#default_value' => $workflow,
         '#description' => $this->t('The workflow where this list must apply'),
         '#ajax'   => [
           'callback' => '::workflowCallback',

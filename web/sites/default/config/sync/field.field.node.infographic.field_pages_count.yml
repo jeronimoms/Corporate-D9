@@ -1,0 +1,23 @@
+uuid: 9fa95820-4349-4f92-8f9f-10e8ef5973cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pages_count
+    - node.type.infographic
+id: node.infographic.field_pages_count
+field_name: field_pages_count
+entity_type: node
+bundle: infographic
+label: 'Number of pages'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

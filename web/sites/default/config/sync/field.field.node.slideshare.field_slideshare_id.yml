@@ -1,0 +1,23 @@
+uuid: a3b68847-15a3-4ecc-81c8-42d6f16e6470
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slideshare_id
+    - node.type.slideshare
+id: node.slideshare.field_slideshare_id
+field_name: field_slideshare_id
+entity_type: node
+bundle: slideshare
+label: 'Slideshare ID'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

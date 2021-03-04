@@ -1,0 +1,29 @@
+uuid: 147ce234-c0d4-4375-b62c-eaaec56d98bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_priority_area
+    - node.type.publication
+    - taxonomy.vocabulary.priority_area
+id: node.publication.field_priority_area
+field_name: field_priority_area
+entity_type: node
+bundle: publication
+label: 'Priority area'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      priority_area: priority_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

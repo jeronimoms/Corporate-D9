@@ -1,0 +1,45 @@
+uuid: 356be119-8ed7-43b8-b8f2-092d16243e28
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.25th_anniversary.body
+    - field.field.node.25th_anniversary.field_publication_date
+    - field.field.node.25th_anniversary.field_summary
+    - field.field.node.25th_anniversary.field_tags
+    - node.type.25th_anniversary
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.25th_anniversary.full
+targetEntityType: node
+bundle: 25th_anniversary
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_summary:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  addtoany: true
+  field_publication_date: true
+  field_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
