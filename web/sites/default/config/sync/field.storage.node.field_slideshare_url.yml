@@ -1,0 +1,19 @@
+uuid: df42eced-a3f3-4339-9085-51e2f0ae72c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_slideshare_url
+field_name: field_slideshare_url
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

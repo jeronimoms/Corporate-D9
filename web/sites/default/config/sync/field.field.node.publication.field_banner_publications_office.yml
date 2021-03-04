@@ -1,0 +1,23 @@
+uuid: ceaa9124-bb94-474a-929e-8e206face9e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_publications_office
+    - node.type.publication
+id: node.publication.field_banner_publications_office
+field_name: field_banner_publications_office
+entity_type: node
+bundle: publication
+label: 'Banner publications office'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

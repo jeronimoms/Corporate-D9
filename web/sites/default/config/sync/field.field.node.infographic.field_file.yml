@@ -1,0 +1,27 @@
+uuid: 859f3c73-dfbb-45e9-9990-a7c8071cdf57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file
+    - node.type.infographic
+  module:
+    - file
+id: node.infographic.field_file
+field_name: field_file
+entity_type: node
+bundle: infographic
+label: File
+description: 'Infographic file.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: infographics
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,39 @@
+uuid: cdb05be8-4d15-483e-a01b-151619b6c7a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.file.field_file
+    - node.type.file
+  module:
+    - file
+    - workbench_moderation
+id: node.file.default
+targetEntityType: node
+bundle: file
+mode: default
+content:
+  field_file:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true
