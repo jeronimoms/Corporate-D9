@@ -13,7 +13,7 @@ audit: true
 migration_group: oira_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
-  plugin: d7_taxonomy_term_tax
+  plugin: d7_taxonomy_term
   bundle: sector               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
