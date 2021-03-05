@@ -1,0 +1,87 @@
+# Migration file for creating "Wiki pages" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_wiki_page                    # -----  CHANGE
+label: 'Node: Wiki page'                   # -----  CHANGE
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: wiki_page                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  #nid: tnid   #comentar si no es bbdd limpia
+  #vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: wiki_page              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_wiki_page_url:
+    plugin: field_link
+    source: field_wiki_page_url
+  field_nace_codes:
+    -
+      plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
+  field_wiki_categories:
+    -
+      plugin: sub_process
+      source: field_wiki_categories
+      process:
+        target_id: tid
+  field_updated:       #revisar
+    -
+      plugin: sub_process
+      source: field_updated
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_summary_html: field_summary
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+field_nace_codes:
+    -
+      plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: nid

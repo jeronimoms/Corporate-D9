@@ -1,0 +1,15 @@
+uuid: 6a204661-bfd8-42a3-860a-59adaf7795dc
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_migrate_nodes
+label: 'Migrate nodes from ncw'
+description: 'Migration nodes from D7 to Drupal 9'
+source_type: 'Drupal 7'
+module: null
+shared_configuration:
+  source:
+    key: migrate
