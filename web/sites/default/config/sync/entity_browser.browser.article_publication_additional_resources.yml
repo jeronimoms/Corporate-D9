@@ -1,4 +1,4 @@
-uuid: 2f39038f-3d89-4c9a-87e8-f6221586053b
+uuid: 922fafaf-4668-4a8f-a2c8-4f13f04afaee
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - views.view.additional_resources
   module:
     - views
-name: additional_resources_browser
-label: 'Additional resources browser'
+name: article_publication_additional_resources
+label: 'Article/Publication Additional Resources'
 display: modal
 display_configuration:
   width: '650'
@@ -19,13 +19,13 @@ selection_display_configuration: {  }
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
-  30037994-5011-4bb8-9b08-9c3405ae3ecf:
+  6d2263f9-3bca-44b7-a947-e44f4e7df50b:
     settings:
       view: additional_resources
-      view_display: entity_browser_1
+      view_display: entity_browser_2
       submit_text: 'Select entities'
       auto_select: false
-    uuid: 30037994-5011-4bb8-9b08-9c3405ae3ecf
-    weight: 2
+    uuid: 6d2263f9-3bca-44b7-a947-e44f4e7df50b
+    weight: 1
     label: view
     id: view
