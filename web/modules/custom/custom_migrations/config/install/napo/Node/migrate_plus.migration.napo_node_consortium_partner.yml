@@ -12,7 +12,7 @@ migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
-  node_type: Consortium partner                     # -----  CHANGE
+  node_type: consortium_partner                     # -----  CHANGE
 destination:
   plugin: entity:node
 dependencies:
@@ -26,15 +26,20 @@ migration_dependencies:
 process:
   # nid: tnid   #comentar si no es bbdd limpia
   # vid: vid  #comentar si no es bbdd limpia
+  nid:
+    - plugin: get
+      source: nid
   type:
     - plugin: default_value
-      default_value: Consortium partner              # -----  CHANGE
-  langcode:
-    plugin: default_value
-    source: language
-    default_value: "und"
+      default_value: consortium_partner              # -----  CHANGE
   title: title
-  body: body
+  body:
+    - plugin: get
+      source: body
+  'body/0/format':
+    - plugin: default_value
+      default_value: full_html
+  langcode: language
   uid: node_uid
   status: status
   created: created
@@ -44,6 +49,7 @@ process:
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
+
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_consortium_partner_type:
     -
@@ -51,7 +57,8 @@ process:
       source: field_consortium_partner_type
       process:
         target_id: tid
-  field_image: field_image
-  field_url: field_url
+  field_url:
+    plugin: field_link
+    source: field_url
 
 
