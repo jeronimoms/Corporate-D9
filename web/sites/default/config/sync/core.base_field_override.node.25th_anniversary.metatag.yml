@@ -1,0 +1,18 @@
+uuid: bf9d34ab-f2a0-4fd1-84b5-db25ffee68f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.25th_anniversary
+id: node.25th_anniversary.metatag
+field_name: metatag
+entity_type: node
+bundle: 25th_anniversary
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

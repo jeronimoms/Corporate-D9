@@ -10,7 +10,7 @@
 id: ncw_node_thesaurus
 label: 'Node: Thesaurus'
 audit: true
-migration_group: ncw_migrate
+migration_group: ncw_migrate_nodes
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 
 ##################### BASIC INFORMATION ###################

@@ -1,0 +1,20 @@
+uuid: 1b4da342-5bb4-44bb-ad28-0d9e1c198a47
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.25th_anniversary
+id: node.25th_anniversary.uid
+field_name: uid
+entity_type: node
+bundle: 25th_anniversary
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

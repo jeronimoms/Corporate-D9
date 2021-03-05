@@ -6,8 +6,8 @@ dependencies:
     - core.entity_view_mode.node.highlights_item
     - field.field.node.wiki_page.body
     - field.field.node.wiki_page.comment_node_wiki_page
-    - field.field.node.wiki_page.field_flickr_date
     - field.field.node.wiki_page.field_nace_codes
+    - field.field.node.wiki_page.field_summary_html
     - field.field.node.wiki_page.field_tags
     - field.field.node.wiki_page.field_thesaurus
     - field.field.node.wiki_page.field_thesaurus_2020
@@ -31,8 +31,8 @@ hidden:
   addtoany: true
   body: true
   comment_node_wiki_page: true
-  field_flickr_date: true
   field_nace_codes: true
+  field_summary_html: true
   field_tags: true
   field_thesaurus: true
   field_thesaurus_2020: true
