@@ -1,0 +1,123 @@
+
+/* Font colours */
+$text-color-black: #333;
+$text-color-red: #ea4a5e;
+$text-color-white: #FFF;
+$text-color-registry:#000;
+$text-color-light-blue:#337ab7;
+
+.text-color-black{
+  color: $text-color-black;
+}
+.text-color-red{
+  color: $text-color-red;
+}
+.text-color-white{
+  color: $text-color-white;
+}
+
+/* background colours */
+$bg-color-blue: #323a93;
+$bg-color-light-blue:#337ab7;
+$bg-color-red: #ea4a5e;
+$bg-color-red-hover: #a02b3a;
+$bg-color-black: #323232;
+$bg-color-grey: #f7f7f7;
+$bg-color-grey-lines: #dcdcdc;
+$bg-color-grey-lines-hover: #adadad;
+$bg-color-grey-dark: #9c9c9c;
+$bg-color-white: #FFF;
+$bg-color-white-hover: #e6e6e6;
+$bg-color-grey-light: #dfdfdf;
+$bg-color-grey-light-2: #fbfbfb;
+$bg-color-grey-lighter: #ededed;
+
+.bg-color-blue{
+  background: $bg-color-blue;
+}
+.bg-color-red{
+  background: $bg-color-red;
+}
+.bg-color-red-hover{
+  background: $bg-color-red-hover;
+}
+.bg-color-black{
+  background: $bg-color-black;
+}
+.bg-color-grey{
+  background: $bg-color-grey;
+}
+.bg-color-grey-lines{
+  background: $bg-color-grey-lines;
+}
+.bg-color-grey-dark{
+  background: $bg-color-grey-dark;
+}
+.bg-color-white{
+  background: $bg-color-white;
+}
+
+
+
+/*  WIDGET BACKEND TO WORKFLOW OF THE STATES OF GOOD PRACTICES  */
+
+.vesafe-workflow-list-widget{
+  background-color:transparent;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  p{
+    display: inline-block;
+    background: #fff498;
+    margin-right: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    padding-left: 40px;
+    font-size: 16px;
+    &:before{
+      content: "";
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      position: absolute;
+      left: 0px;
+      top: 0;
+      border-left: 25px solid $bg-color-white;
+    }
+    &:after{
+      content: "";
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 25px solid #fff498;
+      position: absolute;
+      right: -25px;
+      top: 0;
+    }
+    &.first{
+      padding-left: 10px;
+      &:before{
+        content: "";
+        border: none;
+      }
+    }
+    &.last{
+      padding-right: 10px;
+      &:after{
+        content: "";
+        border: none ;
+      }
+    }
+    &.active{
+      background: #8d8c81;
+      color: $text-color-white ;
+      font-weight: bolder;
+      &:before{
+        border-left: 25px solid $bg-color-white;
+      }
+      &:after{
+        border-left: 25px solid #8d8c81;
+      }
+    }
+  }
+}
