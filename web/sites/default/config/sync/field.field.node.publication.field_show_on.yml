@@ -1,0 +1,21 @@
+uuid: c9a70539-5422-4ea1-a45a-89ebabf0869e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_on
+    - node.type.publication
+  module:
+    - options
+id: node.publication.field_show_on
+field_name: field_show_on
+entity_type: node
+bundle: publication
+label: 'Display in'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

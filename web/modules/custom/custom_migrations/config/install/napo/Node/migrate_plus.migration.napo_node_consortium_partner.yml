@@ -1,0 +1,64 @@
+# Migration file for creating "Consortium partner" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: napo_node_consortium_partner                    # -----  CHANGE
+label: 'Node: Consortium partner'                   # -----  CHANGE
+audit: true
+migration_group: napo_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: consortium_partner                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  # nid: tnid   #comentar si no es bbdd limpia
+  # vid: vid  #comentar si no es bbdd limpia
+  nid:
+    - plugin: get
+      source: nid
+  type:
+    - plugin: default_value
+      default_value: consortium_partner              # -----  CHANGE
+  title: title
+  body:
+    - plugin: get
+      source: body
+  'body/0/format':
+    - plugin: default_value
+      default_value: full_html
+  langcode: language
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_consortium_partner_type:
+    -
+      plugin: sub_process
+      source: field_consortium_partner_type
+      process:
+        target_id: tid
+  field_url:
+    plugin: field_link
+    source: field_url
+
+

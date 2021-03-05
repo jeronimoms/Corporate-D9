@@ -1,0 +1,53 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: napo_taxonomy_tags_i18n             # ----- CHANGE
+label: 'Terms: Tags Translations'       # ----- CHANGE
+audit: true
+migration_group: napo_migrate           # ----- CHANGE
+source:
+  plugin: d7_locale_terms
+  bundle: tags                          # ----- CHANGE
+  translations: true
+destination:
+  plugin: entity:taxonomy_term
+  translations: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+migration_dependencies:
+  required:
+    - napo_taxonomy_tags               # ----- CHANGE
+
+process:
+  tid:
+    plugin: migration_lookup
+    migration: napo_taxonomy_tags      # ----- CHANGE
+    source: tid
+    # langcode: ltlanguage # Use the language from the locales_target table.
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: ltlanguage
+    map:
+      'pt': 'pt-pt'
+
+  vid:
+    -
+      plugin: default_value
+      default_value: tags # ----- CHANGE
+  name: name_field_value
+  'description/value': description_field_value
+  'description/format': format
+
+  ### ADD FIELDS CUSTOM OF ENTITY ### # ----- CHANGE
+  field_tags_code: field_tags_code
+  field_excluded_from: field_excluded_from
