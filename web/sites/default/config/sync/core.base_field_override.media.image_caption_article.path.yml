@@ -1,0 +1,20 @@
+uuid: 3c0bca7a-4649-48df-adbe-dcf4990c72e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image_caption_article
+  module:
+    - path
+id: media.image_caption_article.path
+field_name: path
+entity_type: media
+bundle: image_caption_article
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

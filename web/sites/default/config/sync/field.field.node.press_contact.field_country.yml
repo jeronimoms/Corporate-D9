@@ -1,0 +1,29 @@
+uuid: 45c782c8-4c9a-4442-8509-00fde0c8d5ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.press_contact
+    - taxonomy.vocabulary.country
+id: node.press_contact.field_country
+field_name: field_country
+entity_type: node
+bundle: press_contact
+label: Country
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      country: country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

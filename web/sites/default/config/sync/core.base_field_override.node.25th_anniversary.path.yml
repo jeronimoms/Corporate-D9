@@ -1,0 +1,20 @@
+uuid: deaf998e-b037-4f09-bc33-758743021195
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.25th_anniversary
+  module:
+    - path
+id: node.25th_anniversary.path
+field_name: path
+entity_type: node
+bundle: 25th_anniversary
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

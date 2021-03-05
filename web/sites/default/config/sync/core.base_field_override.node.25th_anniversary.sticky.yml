@@ -1,0 +1,22 @@
+uuid: dd689645-5ddd-4dbe-b19d-2f50b723bc1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.25th_anniversary
+id: node.25th_anniversary.sticky
+field_name: sticky
+entity_type: node
+bundle: 25th_anniversary
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

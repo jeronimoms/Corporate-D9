@@ -1,0 +1,38 @@
+uuid: b897c51e-744b-464d-be9e-bfecc38ef3d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dvs_survey.field_dvs_code
+    - node.type.dvs_survey
+id: node.dvs_survey.default
+targetEntityType: node
+bundle: dvs_survey
+mode: default
+content:
+  field_dvs_code:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true
