@@ -1,18 +1,18 @@
-# Migration file for creating "article" nodes from BBDD.
+# Migration file for creating "Youtube" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
 
 ##################### BASIC INFORMATION ###################
 
-id: napo_node_article                    # -----  CHANGE
-label: 'Node: Article'                   # -----  CHANGE
+id: ncw_node_youtube                    # -----  CHANGE
+label: 'Node: Youtube'                   # -----  CHANGE
 audit: true
-migration_group: napo_migrate_node
+migration_group: ncw_migrate_nodes
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
-  node_type: article                     # -----  CHANGE
+  node_type: youtube                     # -----  CHANGE
 destination:
   plugin: entity:node
 dependencies:
@@ -24,15 +24,15 @@ migration_dependencies:
     - d7_user
 
 process:
-  # nid: tnid   #comentar si no es bbdd limpia
-  # vid: vid  #comentar si no es bbdd limpia
+  nid: tnid   #comentar si no es bbdd limpia
+  vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value
-      default_value: article              # -----  CHANGE
+      default_value: youtube              # -----  CHANGE
   langcode:
     plugin: default_value
     source: language
-    default_value: "und"
+    default_value: "en"
   title: title
   body: body
   uid: node_uid
@@ -45,14 +45,6 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_article_type:
-    -
-      plugin: sub_process
-      source: field_article_type
-      process:
-        target_id: tid
-  field_image: field_image
-  field_poster_image: field_poster_image
-  field_url: field_url
-  field_video: field_video
+  field_youtube: field_youtube
+
 

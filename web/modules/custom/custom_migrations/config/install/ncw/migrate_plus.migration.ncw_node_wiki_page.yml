@@ -1,18 +1,18 @@
-# Migration file for creating "napo_video" nodes from BBDD.
+# Migration file for creating "Wiki pages" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
 
 ##################### BASIC INFORMATION ###################
 
-id: napo_node_napo_video                    # -----  CHANGE
-label: 'Node: Napo video'                   # -----  CHANGE
+id: ncw_node_wiki_page                    # -----  CHANGE
+label: 'Node: Wiki page'                   # -----  CHANGE
 audit: true
-migration_group: napo_migrate_node
+migration_group: ncw_migrate_nodes
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
-  node_type: napo_video                     # -----  CHANGE
+  node_type: wiki_page                     # -----  CHANGE
 destination:
   plugin: entity:node
 dependencies:
@@ -24,15 +24,15 @@ migration_dependencies:
     - d7_user
 
 process:
-  # nid: tnid   #comentar si no es bbdd limpia
-  # vid: vid  #comentar si no es bbdd limpia
+  #nid: tnid   #comentar si no es bbdd limpia
+  #vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value
-      default_value: napo_video              # -----  CHANGE
+      default_value: wiki_page              # -----  CHANGE
   langcode:
     plugin: default_value
     source: language
-    default_value: "und"
+    default_value: "en"
   title: title
   body: body
   uid: node_uid
@@ -45,22 +45,25 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_combined_tags:
-    - plugin: sub_process
-        source: field_combined_tags
-        process:
-          target_id: tid
-  field_image: field_image
-  field_main_tag:
-    - plugin: sub_process
-        source: field_tags
-        process:
-          target_id: tid
-  field_archived: field_archived
-  field_napo_film: field_napo_film
-  field_publication_date: #revisar
-    - plugin: sub_process
-      source: field_publication_date
+  field_wiki_page_url:
+    plugin: field_link
+    source: field_wiki_page_url
+  field_nace_codes:
+    -
+      plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
+  field_wiki_categories:
+    -
+      plugin: sub_process
+      source: field_wiki_categories
+      process:
+        target_id: tid
+  field_updated:       #revisar
+    -
+      plugin: sub_process
+      source: field_updated
       process:
         value:
           plugin: format_date
@@ -69,11 +72,16 @@ process:
           from_timezone: 'Europe/Madrid'
           to_timezone: 'Europe/Madrid'
           source: value
+  field_summary_html: field_summary
   field_tags:
-    - plugin: sub_process
+    -
+      plugin: sub_process
       source: field_tags
       process:
         target_id: tid
-  field_video: field_video
-  field_video_type: field_video_type
-  field_youtube: field_youtube
+field_nace_codes:
+    -
+      plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: nid

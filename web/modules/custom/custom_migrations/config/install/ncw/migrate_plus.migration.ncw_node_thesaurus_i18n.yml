@@ -9,7 +9,7 @@
 
 id: ncw_node_thesaurus_i18n                         # -----  CHANGE
 label: 'Node: thesaurus Translations'                # -----  CHANGE
-migration_group: ncw_migrate
+migration_group: ncw_migrate_nodes
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation

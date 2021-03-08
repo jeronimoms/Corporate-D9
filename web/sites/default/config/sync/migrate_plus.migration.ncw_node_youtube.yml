@@ -1,0 +1,45 @@
+uuid: ce9c35ad-5bdf-4ffb-9630-0633fc6f3f05
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_youtube
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: Youtube'
+source:
+  plugin: d7_node
+  node_type: youtube
+process:
+  nid: tnid
+  vid: vid
+  type:
+    -
+      plugin: default_value
+      default_value: youtube
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: en
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_youtube: field_youtube
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - d7_user

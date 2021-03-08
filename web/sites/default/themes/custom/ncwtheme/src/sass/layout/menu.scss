@@ -79,6 +79,9 @@
           list-style: none;
           width: 22rem;
           padding: 10px 10px 10px 20px;
+          a{
+           font-family: 'Open Sans Condensed';
+          }
           li {
             width: 100%;
             text-align: left;
@@ -91,6 +94,7 @@
                 a{
                   display: block;
                   color: $text-color-grey;
+                  font-family: 'Open Sans';
                   font-weight: bold;
                   font-size: 0.8rem;
                   padding-bottom: 5px;

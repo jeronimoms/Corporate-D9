@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.article_publication_additional_resources
     - field.field.node.article.body
     - field.field.node.article.field_activity
     - field.field.node.article.field_aditional_resources
@@ -28,6 +29,7 @@ dependencies:
   module:
     - content_moderation
     - datetime
+    - entity_browser
     - media_library
     - metatag
     - path
@@ -68,14 +70,18 @@ content:
     third_party_settings: {  }
     region: content
   field_aditional_resources:
-    type: entity_reference_autocomplete
+    type: entity_browser_entity_reference
     weight: 19
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      entity_browser: article_publication_additional_resources
+      field_widget_display: label
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_edit: false
+      field_widget_replace: false
+      field_widget_display_settings: {  }
     third_party_settings: {  }
   field_archived:
     weight: 18

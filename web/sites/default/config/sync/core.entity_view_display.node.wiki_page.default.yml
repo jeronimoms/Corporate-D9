@@ -6,8 +6,8 @@ dependencies:
     - core.entity_view_display.comment.comment_node_wiki_page.default
     - field.field.node.wiki_page.body
     - field.field.node.wiki_page.comment_node_wiki_page
-    - field.field.node.wiki_page.field_flickr_date
     - field.field.node.wiki_page.field_nace_codes
+    - field.field.node.wiki_page.field_summary_html
     - field.field.node.wiki_page.field_tags
     - field.field.node.wiki_page.field_thesaurus
     - field.field.node.wiki_page.field_thesaurus_2020
@@ -17,8 +17,8 @@ dependencies:
     - node.type.wiki_page
   module:
     - comment
-    - datetime
     - link
+    - text
     - user
 id: node.wiki_page.default
 targetEntityType: node
@@ -34,14 +34,12 @@ content:
       pager_id: 0
     third_party_settings: {  }
     region: content
-  field_flickr_date:
+  field_summary_html:
+    weight: 101
     label: above
-    weight: 9
-    type: datetime_default
-    settings:
-      format_type: long
-      timezone_override: ''
+    settings: {  }
     third_party_settings: {  }
+    type: text_default
     region: content
   field_thesaurus_2020:
     label: inline
