@@ -36,6 +36,7 @@ process:
     source: language
     map:
       'pt': 'pt-pt'
+      'no': 'nn'
   title: title
   body: body
   uid: uid
@@ -73,7 +74,7 @@ process:
       plugin: format_date
       from_format: 'Y-m-d H:i:s'
       to_format: 'Y-m-d\TH:i:s'
-      timezone: 'GMT'
+
   field_summary: field_summary
   field_tags:
     plugin: sub_process

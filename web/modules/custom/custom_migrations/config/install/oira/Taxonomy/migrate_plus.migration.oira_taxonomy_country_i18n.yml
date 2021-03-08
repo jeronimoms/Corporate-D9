@@ -38,6 +38,7 @@ process:
     source: ltlanguage
     map:
       'pt': 'pt-pt'
+      'no': 'nn'
   vid:
     -
       plugin: default_value
