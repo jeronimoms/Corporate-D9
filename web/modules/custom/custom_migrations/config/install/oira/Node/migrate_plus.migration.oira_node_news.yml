@@ -68,7 +68,7 @@ process:
       plugin: format_date
       from_format: 'Y-m-d H:i:s'
       to_format: 'Y-m-d\TH:i:s'
-      timezone: 'GMT'
+
   field_summary: field_summary
   field_tags:
     plugin: sub_process
