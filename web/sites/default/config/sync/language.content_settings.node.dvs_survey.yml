@@ -1,0 +1,11 @@
+uuid: e2b35017-d47e-4383-9c2d-9877268210b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dvs_survey
+id: node.dvs_survey
+target_entity_type_id: node
+target_bundle: dvs_survey
+default_langcode: site_default
+language_alterable: false

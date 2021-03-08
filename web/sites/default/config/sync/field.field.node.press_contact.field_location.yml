@@ -1,0 +1,19 @@
+uuid: 2a3376b9-281e-447a-8197-64ba6e5b8b60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.press_contact
+id: node.press_contact.field_location
+field_name: field_location
+entity_type: node
+bundle: press_contact
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

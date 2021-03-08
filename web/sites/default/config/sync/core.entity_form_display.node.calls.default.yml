@@ -1,0 +1,113 @@
+uuid: df66e533-f0ca-4f83-8655-ff334819a5e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.calls.body
+    - field.field.node.calls.field_activity
+    - field.field.node.calls.field_archived
+    - field.field.node.calls.field_author
+    - field.field.node.calls.field_calls_deadline
+    - field.field.node.calls.field_expiration_date
+    - field.field.node.calls.field_publication_date
+    - field.field.node.calls.field_related_resources
+    - field.field.node.calls.field_section
+    - node.type.calls
+  module:
+    - datetime
+    - file
+    - text
+id: node.calls.default
+targetEntityType: node
+bundle: calls
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 5
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_activity:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_archived:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_author:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_calls_deadline:
+    weight: 3
+    settings:
+      increment: 15
+      date_order: YMD
+      time_type: '24'
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_expiration_date:
+    weight: 4
+    settings:
+      increment: 15
+      date_order: YMD
+      time_type: '24'
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_publication_date:
+    weight: 2
+    settings:
+      increment: 15
+      date_order: YMD
+      time_type: '24'
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_related_resources:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_section:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

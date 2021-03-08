@@ -1,0 +1,209 @@
+uuid: 44ce1885-1377-40a4-bc54-a2ab37b39182
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.press_contact.field_city
+    - field.field.node.press_contact.field_contact_type
+    - field.field.node.press_contact.field_contact_uuid
+    - field.field.node.press_contact.field_country
+    - field.field.node.press_contact.field_is_advisory
+    - field.field.node.press_contact.field_is_observer
+    - field.field.node.press_contact.field_location
+    - field.field.node.press_contact.field_personal_title
+    - field.field.node.press_contact.field_press_contact_cv
+    - field.field.node.press_contact.field_press_contact_declaration
+    - field.field.node.press_contact.field_press_contact_email
+    - field.field.node.press_contact.field_press_contact_job_title
+    - field.field.node.press_contact.field_press_contact_organization
+    - field.field.node.press_contact.field_press_contact_phone
+    - field.field.node.press_contact.field_website
+    - field.field.node.press_contact.field_wg_category
+    - field.field.node.press_contact.field_wg_role_1
+    - field.field.node.press_contact.field_wg_role_2
+    - field.field.node.press_contact.field_zip_code
+    - node.type.press_contact
+  module:
+    - file
+    - link
+id: node.press_contact.default
+targetEntityType: node
+bundle: press_contact
+mode: default
+content:
+  field_city:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_contact_type:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_contact_uuid:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_country:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_is_advisory:
+    weight: 18
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_is_observer:
+    weight: 17
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_location:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_personal_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_press_contact_cv:
+    weight: 15
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_press_contact_declaration:
+    weight: 16
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_press_contact_email:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_press_contact_job_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_press_contact_organization:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_press_contact_phone:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_website:
+    weight: 14
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_wg_category:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_wg_role_1:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_wg_role_2:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_zip_code:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

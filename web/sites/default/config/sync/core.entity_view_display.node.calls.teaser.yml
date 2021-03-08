@@ -1,0 +1,46 @@
+uuid: 76655816-7d86-4348-ac80-5f29d0a6deeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.calls.body
+    - field.field.node.calls.field_activity
+    - field.field.node.calls.field_archived
+    - field.field.node.calls.field_author
+    - field.field.node.calls.field_calls_deadline
+    - field.field.node.calls.field_expiration_date
+    - field.field.node.calls.field_publication_date
+    - field.field.node.calls.field_related_resources
+    - field.field.node.calls.field_section
+    - node.type.calls
+  module:
+    - datetime
+    - user
+id: node.calls.teaser
+targetEntityType: node
+bundle: calls
+mode: teaser
+content:
+  field_publication_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  field_activity: true
+  field_archived: true
+  field_author: true
+  field_calls_deadline: true
+  field_expiration_date: true
+  field_related_resources: true
+  field_section: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
