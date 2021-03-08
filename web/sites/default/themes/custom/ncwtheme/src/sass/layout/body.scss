@@ -165,6 +165,48 @@ h3.home{
   margin-left: auto;
 }
 
+/* Share this on articles icons */
+#share-this-on{
+  float: left;
+  padding-top: 1rem;
+  .text-share {
+    font-size: 0.9rem;
+    padding-right: 10px;
+  }
+  .a2a_svg{
+    svg {
+      display: none;
+    }
+  }
+  .a2a_s__default{
+    background-color: transparent !important;
+  }
+  .a2a_button_facebook{
+    background: url(../images/share_facebook.png) no-repeat;
+  }
+  .a2a_button_twitter{
+    background: url(../images/share_twitter.png) no-repeat;
+  }
+  .a2a_button_linkedin_share{
+    background: url(../images/share_in.png) no-repeat;
+    button{
+      display: none !important;
+    }
+  }
+  .print-icon{
+    display: block;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: url(../images/share_print.png) no-repeat 0 4px;
+  }
+  a:hover{
+    opacity: 0.8;
+  }
+}
+
+
+
 /* END Common elements */
 
 /* Twetter Block */

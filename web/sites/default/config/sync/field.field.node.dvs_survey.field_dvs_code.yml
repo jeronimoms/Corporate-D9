@@ -1,0 +1,19 @@
+uuid: 9f2d6279-505f-4734-a1d5-a24f7c17f5ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dvs_code
+    - node.type.dvs_survey
+id: node.dvs_survey.field_dvs_code
+field_name: field_dvs_code
+entity_type: node
+bundle: dvs_survey
+label: 'DVS code'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

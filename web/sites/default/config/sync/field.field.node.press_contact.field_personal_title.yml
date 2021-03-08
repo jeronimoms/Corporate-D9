@@ -1,0 +1,19 @@
+uuid: 6c05db11-fffc-4199-9a24-759d3d5f765c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_personal_title
+    - node.type.press_contact
+id: node.press_contact.field_personal_title
+field_name: field_personal_title
+entity_type: node
+bundle: press_contact
+label: 'Personal Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

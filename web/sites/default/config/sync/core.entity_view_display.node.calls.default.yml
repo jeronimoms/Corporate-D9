@@ -1,0 +1,60 @@
+uuid: a44e081c-d541-485c-a18c-e0acc2c6af8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.calls.body
+    - field.field.node.calls.field_activity
+    - field.field.node.calls.field_archived
+    - field.field.node.calls.field_author
+    - field.field.node.calls.field_calls_deadline
+    - field.field.node.calls.field_expiration_date
+    - field.field.node.calls.field_publication_date
+    - field.field.node.calls.field_related_resources
+    - field.field.node.calls.field_section
+    - node.type.calls
+  module:
+    - datetime
+    - file
+    - text
+    - user
+id: node.calls.default
+targetEntityType: node
+bundle: calls
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_calls_deadline:
+    weight: 1
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_related_resources:
+    weight: 2
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  addtoany: true
+  field_activity: true
+  field_archived: true
+  field_author: true
+  field_expiration_date: true
+  field_publication_date: true
+  field_section: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

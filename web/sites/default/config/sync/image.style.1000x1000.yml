@@ -1,0 +1,25 @@
+uuid: f1f3e577-7a51-4125-8549-e55a90afc064
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.articles_crop
+  module:
+    - crop
+name: 1000x1000
+label: 1000x1000
+effects:
+  de9a240c-5ed4-47e8-80ac-668038f90429:
+    uuid: de9a240c-5ed4-47e8-80ac-668038f90429
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: articles_crop
+  dc0774c6-3a5c-4c5a-b63c-8da24e4ef921:
+    uuid: dc0774c6-3a5c-4c5a-b63c-8da24e4ef921
+    id: image_scale
+    weight: 2
+    data:
+      width: 1000
+      height: null
+      upscale: true

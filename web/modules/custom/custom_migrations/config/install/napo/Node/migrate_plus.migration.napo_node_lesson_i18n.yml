@@ -58,18 +58,18 @@ process:
       source: field_lesson_type
       process:
         target_id: tid
-    field_activities: field_activities
-    field_assessment: field_assessment
-    field_file: field_file
-    field_lesson_intro_text: field_lesson_intro_text
-    field_learning_objectives: field_learning_objectives
-    field_lesson_toolkit: field_lesson_toolkit
-    field_lesson_video: field_lesson_video
-    field_curriculum_links: field_curriculum_links
-    field_resources_required: field_resources_required
-    field_starter: field_starter
-    field_tags:
-      - plugin: sub_process
-        source: field_tags
-        process:
-          target_id: tid
+  field_activities: field_activities
+  field_assessment: field_assessment
+  field_file: field_file
+  field_lesson_intro_text: field_lesson_intro_text
+  field_learning_objectives: field_learning_objectives
+  field_lesson_toolkit: field_lesson_toolkit
+  field_lesson_video: field_lesson_video
+  field_curriculum_links: field_curriculum_links
+  field_resources_required: field_resources_required
+  field_starter: field_starter
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid

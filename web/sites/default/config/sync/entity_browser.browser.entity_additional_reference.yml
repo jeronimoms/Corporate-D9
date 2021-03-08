@@ -1,0 +1,31 @@
+uuid: 4cfffe14-c29e-4564-a722-c78406e7ded2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.additional_resources
+  module:
+    - views
+name: entity_additional_reference
+label: 'Entity Additional Resources'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  a7dc1a58-f276-4b7c-baa0-b7ae01a89a22:
+    settings:
+      view: additional_resources
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: a7dc1a58-f276-4b7c-baa0-b7ae01a89a22
+    weight: 1
+    label: view
+    id: view

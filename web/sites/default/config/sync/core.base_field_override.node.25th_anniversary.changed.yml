@@ -1,0 +1,18 @@
+uuid: 31b8c466-0897-4ec5-941c-3a3d493af3e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.25th_anniversary
+id: node.25th_anniversary.changed
+field_name: changed
+entity_type: node
+bundle: 25th_anniversary
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

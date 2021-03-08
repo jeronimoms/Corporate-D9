@@ -1,0 +1,21 @@
+uuid: cb84290b-cdcd-4917-93b1-e71bc1eca706
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expiration_date
+    - node.type.calls
+  module:
+    - datetime
+id: node.calls.field_expiration_date
+field_name: field_expiration_date
+entity_type: node
+bundle: calls
+label: 'Expiration date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

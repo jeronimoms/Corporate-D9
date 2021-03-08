@@ -1,0 +1,19 @@
+uuid: 846fea2a-107b-4a22-8469-940b57b3879f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.press_contact
+id: node.press_contact.field_city
+field_name: field_city
+entity_type: node
+bundle: press_contact
+label: City
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
