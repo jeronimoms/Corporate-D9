@@ -7,7 +7,7 @@ dependencies:
       - custom_migrations
 id: ncw_migrate
 label: 'Migrate ncw'
-description: 'Migration nodes from D7 to Drupal 8'
+description: 'Migration taxonomies from D7 to Drupal 8'
 source_type: 'Drupal 7'
 module: null
 shared_configuration:

@@ -1,0 +1,19 @@
+uuid: d52cdeeb-5262-4845-9275-122e10764eaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_uuid
+    - node.type.press_contact
+id: node.press_contact.field_contact_uuid
+field_name: field_contact_uuid
+entity_type: node
+bundle: press_contact
+label: 'CRM UUID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

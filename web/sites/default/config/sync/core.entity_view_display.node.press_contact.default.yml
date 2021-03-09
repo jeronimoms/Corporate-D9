@@ -1,0 +1,202 @@
+uuid: 5a6e045d-6be9-4f35-9e67-30f7e3d6b990
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.press_contact.field_city
+    - field.field.node.press_contact.field_contact_type
+    - field.field.node.press_contact.field_contact_uuid
+    - field.field.node.press_contact.field_country
+    - field.field.node.press_contact.field_is_advisory
+    - field.field.node.press_contact.field_is_observer
+    - field.field.node.press_contact.field_location
+    - field.field.node.press_contact.field_personal_title
+    - field.field.node.press_contact.field_press_contact_cv
+    - field.field.node.press_contact.field_press_contact_declaration
+    - field.field.node.press_contact.field_press_contact_email
+    - field.field.node.press_contact.field_press_contact_job_title
+    - field.field.node.press_contact.field_press_contact_organization
+    - field.field.node.press_contact.field_press_contact_phone
+    - field.field.node.press_contact.field_website
+    - field.field.node.press_contact.field_wg_category
+    - field.field.node.press_contact.field_wg_role_1
+    - field.field.node.press_contact.field_wg_role_2
+    - field.field.node.press_contact.field_zip_code
+    - node.type.press_contact
+  module:
+    - file
+    - link
+    - user
+id: node.press_contact.default
+targetEntityType: node
+bundle: press_contact
+mode: default
+content:
+  field_city:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_contact_type:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_contact_uuid:
+    weight: 119
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_country:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_is_advisory:
+    weight: 118
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_is_observer:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_location:
+    weight: 120
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_personal_title:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_press_contact_cv:
+    weight: 115
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_press_contact_declaration:
+    weight: 116
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_press_contact_email:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_press_contact_job_title:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_press_contact_organization:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_press_contact_phone:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_website:
+    weight: 114
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_wg_category:
+    weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_wg_role_1:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_wg_role_2:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_zip_code:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

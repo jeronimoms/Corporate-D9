@@ -7,22 +7,21 @@ dependencies:
     - field.field.node.infographic.field_activity
     - field.field.node.infographic.field_archived
     - field.field.node.infographic.field_external_url
-    - field.field.node.infographic.field_file
+    - field.field.node.infographic.field_file_media
     - field.field.node.infographic.field_image_media
     - field.field.node.infographic.field_pages_count
     - field.field.node.infographic.field_publication_date
     - field.field.node.infographic.field_section
     - field.field.node.infographic.field_tags
-    - field.field.node.infographic.field_thumbnail
+    - field.field.node.infographic.field_thumbnail_media
     - field.field.node.infographic.field_twin_infographics
-    - image.style.thumbnail
     - node.type.infographic
   module:
+    - content_moderation
     - datetime
-    - file
-    - image
     - link
     - media_library
+    - path
     - text
 id: node.infographic.default
 targetEntityType: node
@@ -39,6 +38,12 @@ content:
     third_party_settings: {  }
     type: text_textarea_with_summary
     region: content
+  created:
+    type: datetime_timestamp
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_activity:
     weight: 10
     settings: {  }
@@ -60,12 +65,15 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_file:
+  field_file_media:
     weight: 7
     settings:
-      progress_indicator: throbber
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: file_generic
+    type: entity_reference_autocomplete
     region: content
   field_image_media:
     weight: 5
@@ -102,13 +110,12 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  field_thumbnail:
+  field_thumbnail_media:
+    type: media_library_widget
     weight: 6
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
-    type: image_image
     region: content
   field_twin_infographics:
     weight: 8
@@ -122,9 +129,22 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 14
     settings: {  }
     region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -134,12 +154,14 @@ content:
       size: 255
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  created: true
   langcode: true
-  path: true
   promote: true
-  status: true
   sticky: true
   uid: true
   url_redirects: true

@@ -14,7 +14,7 @@ bundle: youtube
 label: Description
 description: 'If the description is empty when saving the page, the system will fill it with the description of the video from youtube website.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,33 @@
+uuid: 8d29d96b-b7fd-4c5f-b41c-13002f2ef353
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.calls
+    - taxonomy.vocabulary.section
+  content:
+    - 'taxonomy_term:section:19a189e6-8db5-4850-9977-7540ea3a2af9'
+id: node.calls.field_section
+field_name: field_section
+entity_type: node
+bundle: calls
+label: Section
+description: 'Select the proper editorial group for this content.'
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 19a189e6-8db5-4850-9977-7540ea3a2af9
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      section: section
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

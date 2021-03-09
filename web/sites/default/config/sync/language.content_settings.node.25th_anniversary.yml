@@ -9,6 +9,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 id: node.25th_anniversary
 target_entity_type_id: node
 target_bundle: 25th_anniversary
