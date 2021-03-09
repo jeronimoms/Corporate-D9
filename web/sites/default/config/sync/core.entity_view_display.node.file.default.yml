@@ -3,23 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.file.field_file
+    - field.field.node.file.field_file_media
     - node.type.file
   module:
-    - file
     - user
 id: node.file.default
 targetEntityType: node
 bundle: file
 mode: default
 content:
-  field_file:
-    weight: 0
-    label: hidden
+  field_file_media:
+    type: entity_reference_entity_view
+    weight: 1
+    label: above
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: file_default
     region: content
 hidden:
   addtoany: true

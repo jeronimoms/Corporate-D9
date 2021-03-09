@@ -3,21 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.file.field_file
+    - field.field.node.file.field_file_media
     - node.type.file
   module:
-    - file
+    - content_moderation
+    - media_library
 id: node.file.default
 targetEntityType: node
 bundle: file
 mode: default
 content:
-  field_file:
-    weight: 1
+  field_file_media:
+    type: media_library_widget
+    weight: 101
     settings:
-      progress_indicator: throbber
+      media_types: {  }
     third_party_settings: {  }
-    type: file_generic
     region: content
   moderation_state:
     type: moderation_state_default
@@ -33,6 +34,11 @@ content:
       size: 255
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   created: true
   langcode: true
