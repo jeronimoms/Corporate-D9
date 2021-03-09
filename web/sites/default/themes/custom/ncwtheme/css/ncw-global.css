@@ -513,6 +513,43 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
   margin: 0;
 }
 
+.font-size-print {
+  float: left;
+}
+.font-size-print span a {
+  color: #003399;
+  font-weight: bold;
+  cursor: pointer;
+}
+.font-size-print .a_small a {
+  font-size: 1rem;
+}
+.font-size-print .a_medium a {
+  font-size: 1.35rem;
+}
+.font-size-print .a_big a {
+  font-size: 1.65rem;
+}
+.font-size-print .print-friendly {
+  display: inline-block;
+  background: url("../images/share_print_blue.png") no-repeat;
+  width: 26px;
+  height: 20px;
+}
+
+.header-menu-news {
+  float: left;
+  margin-left: 7px;
+  margin-top: 6px;
+}
+.header-menu-news #block-socialmenu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.header-blocks {
+  clear: both;
+}
 .header-blocks section.row {
   margin-right: 30px;
 }
