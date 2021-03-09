@@ -1,0 +1,19 @@
+uuid: d642b1eb-0fcb-4b90-b619-65f8f4c9ad1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_worker_groups_other
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_worker_groups_other
+field_name: field_worker_groups_other
+entity_type: node
+bundle: dangerous_substances
+label: 'Worker groups covered other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

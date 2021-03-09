@@ -1,0 +1,19 @@
+uuid: 440180c6-91b3-4ff0-b26d-3a6bef3aab92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tasks_other
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_tasks_other
+field_name: field_tasks_other
+entity_type: node
+bundle: dangerous_substances
+label: 'Tasks covered other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

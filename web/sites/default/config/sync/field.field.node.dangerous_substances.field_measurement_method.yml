@@ -1,0 +1,19 @@
+uuid: e194277b-08f7-44e5-8dcb-9689993ac4f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_measurement_method
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_measurement_method
+field_name: field_measurement_method
+entity_type: node
+bundle: dangerous_substances
+label: 'Measurement method'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

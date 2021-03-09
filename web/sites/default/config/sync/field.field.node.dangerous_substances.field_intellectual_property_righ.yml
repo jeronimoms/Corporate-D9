@@ -1,0 +1,21 @@
+uuid: 3ffee0df-4a1a-4104-b5a6-c0d3593ed876
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intellectual_property_righ
+    - node.type.dangerous_substances
+  module:
+    - options
+id: node.dangerous_substances.field_intellectual_property_righ
+field_name: field_intellectual_property_righ
+entity_type: node
+bundle: dangerous_substances
+label: 'Intellectual property rights'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

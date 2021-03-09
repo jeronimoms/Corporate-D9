@@ -1,0 +1,29 @@
+uuid: 62bc6c62-d178-4049-8e17-f3670f93a7e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exposure_route
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.exposure_route
+id: node.dangerous_substances.field_exposure_route
+field_name: field_exposure_route
+entity_type: node
+bundle: dangerous_substances
+label: 'Exposure route'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      exposure_route: exposure_route
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

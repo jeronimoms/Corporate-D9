@@ -1,0 +1,11 @@
+uuid: ca5ac4d4-ae34-495a-8937-fbc799bf440f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dangerous_substances
+id: node.dangerous_substances
+target_entity_type_id: node
+target_bundle: dangerous_substances
+default_langcode: site_default
+language_alterable: false
