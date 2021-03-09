@@ -1,0 +1,29 @@
+uuid: f56ffe68-6884-4794-b0d0-8107b05702cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thumbnail_media
+    - media.type.image_caption
+    - node.type.infographic
+id: node.infographic.field_thumbnail_media
+field_name: field_thumbnail_media
+entity_type: node
+bundle: infographic
+label: Thumbnail
+description: 'Please adapt the thumbnail width to  350px and height to 260px (a ratio of 1.35).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image_caption: image_caption
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -8,18 +8,16 @@ dependencies:
     - field.field.node.infographic.field_activity
     - field.field.node.infographic.field_archived
     - field.field.node.infographic.field_external_url
-    - field.field.node.infographic.field_file
+    - field.field.node.infographic.field_file_media
     - field.field.node.infographic.field_image_media
     - field.field.node.infographic.field_pages_count
     - field.field.node.infographic.field_publication_date
     - field.field.node.infographic.field_section
     - field.field.node.infographic.field_tags
-    - field.field.node.infographic.field_thumbnail
+    - field.field.node.infographic.field_thumbnail_media
     - field.field.node.infographic.field_twin_infographics
-    - image.style.medium
     - node.type.infographic
   module:
-    - image
     - layout_builder
     - text
     - user
@@ -39,26 +37,18 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_thumbnail:
-    weight: 0
-    label: hidden
-    settings:
-      image_style: medium
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
 hidden:
   addtoany: true
   field_activity: true
   field_archived: true
   field_external_url: true
-  field_file: true
+  field_file_media: true
   field_image_media: true
   field_pages_count: true
   field_publication_date: true
   field_section: true
   field_tags: true
+  field_thumbnail_media: true
   field_twin_infographics: true
   langcode: true
   links: true

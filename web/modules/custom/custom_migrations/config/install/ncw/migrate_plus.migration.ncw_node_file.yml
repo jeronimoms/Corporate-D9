@@ -1,0 +1,97 @@
+# Migration file for creating "publication" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_file
+label: 'Node: file'
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+
+##################### BASIC INFORMATION ###################
+
+
+
+########################## SOURCE #########################
+
+source:
+  plugin: d7_node
+  node_type: file
+
+########################## SOURCE #########################
+
+
+
+########################## PROCESS #########################
+
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the nid field to allow incremental migrations.
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: file
+  title:
+    -
+      plugin: get
+      source: title
+  field_full_url:
+    -
+      plugin: get
+      source: field_full_url
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+
+########################## PROCESS #########################
+
+
+
+######################## DESTINATION ######################
+
+destination:
+  plugin: entity:node
+
+######################## DESTINATION ######################
+
+
+
+######################## DEPENDENCIES #####################
+
+# We specify that this migration depends on the unops_project_migrate module.
+# Based on this dependency, this migration will be removed when the
+# unops_project_migrate module is uninstalled.
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+# Declare optional dependencies on another migration for this migration.
+# This one has none.
+migration_dependencies:
+  required:
+    - d7_user
+
+######################## DEPENDENCIES #####################

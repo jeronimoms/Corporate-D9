@@ -1,0 +1,29 @@
+uuid: b23f9fdd-fff7-478b-9de5-1d22326a2b54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_media
+    - media.type.document
+    - node.type.infographic
+id: node.infographic.field_file_media
+field_name: field_file_media
+entity_type: node
+bundle: infographic
+label: File
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

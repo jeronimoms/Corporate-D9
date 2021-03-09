@@ -36,6 +36,7 @@ process:
     source: language
     map:
       'pt': 'pt-pt'
+      'no': 'nn'
   title: title
   body: body
   uid: uid
@@ -85,7 +86,6 @@ process:
     - plugin: format_date
       from_format: 'Y-m-d H:i:s'
       to_format: 'Y-m-d\TH:i:s'
-      timezone: 'GMT'
   field_related_partners:
     - plugin: sub_process
       source: field_related_partners
@@ -102,7 +102,6 @@ process:
     - plugin: format_date
       from_format: 'Y-m-d H:i:s'
       to_format: 'Y-m-d\TH:i:s'
-      timezone: 'GMT'
   field_sector_category:
     - plugin: sub_process
       source: field_sector_category

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.file.field_file
+    - field.field.node.file.field_file_media
     - node.type.file
   module:
     - layout_builder
@@ -20,7 +20,7 @@ mode: teaser
 content: {  }
 hidden:
   addtoany: true
-  field_file: true
+  field_file_media: true
   langcode: true
   links: true
   search_api_excerpt: true
