@@ -1,17 +1,17 @@
-uuid: 857688f1-c247-48be-92b0-0b59b3b2b165
+uuid: f56ffe68-6884-4794-b0d0-8107b05702cd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image_media
-    - media.type.image
+    - field.storage.node.field_thumbnail_media
+    - media.type.image_caption
     - node.type.infographic
-id: node.infographic.field_image_media
-field_name: field_image_media
+id: node.infographic.field_thumbnail_media
+field_name: field_thumbnail_media
 entity_type: node
 bundle: infographic
-label: Image
-description: 'The header image that will be displayed on page.'
+label: Thumbnail
+description: 'Please adapt the thumbnail width to  350px and height to 260px (a ratio of 1.35).'
 required: false
 translatable: true
 default_value: {  }
@@ -20,7 +20,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image: image
+      image_caption: image_caption
     sort:
       field: _none
       direction: ASC
