@@ -1,0 +1,35 @@
+uuid: 54673145-4555-4539-8212-f761592b9dc0
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_migrations
+id: ncw_node_file_media_documents_2
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'File: Media Documents Mapping'
+source:
+  key: migrate
+  plugin: d7_node
+  node_type: file
+process:
+  nid: nid
+  changed: changed
+  title: title
+  type:
+    plugin: default_value
+    default_value: file
+  field_file_media:
+    plugin: file_id_lookup
+    source: field_file
+    migration: ncw_node_file_media_documents_1
+    no_stub: true
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  optional:
+    - ncw_node_file
+    - ncw_node_file_media_documents_1
