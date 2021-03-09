@@ -747,11 +747,9 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
 }
 .content-news-events .wrap-news-events .news-home .view-content .views-row, .content-news-events .wrap-news-events .events-home .view-content .views-row {
   position: relative;
-  width: 275px;
   height: 181px;
   border: 2px solid #003399;
   float: left;
-  margin-right: 1em;
 }
 .content-news-events .wrap-news-events .news-home .view-content time, .content-news-events .wrap-news-events .events-home .view-content time {
   padding-left: 15px;
@@ -791,6 +789,19 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
   font-weight: bold;
   padding: 9px 1em;
   letter-spacing: 3px;
+}
+.content-news-events .wrap-news-events .news-home {
+  width: 67%;
+}
+.content-news-events .wrap-news-events .news-home .views-row {
+  width: 47.5%;
+  margin-right: 2.5%;
+}
+.content-news-events .wrap-news-events .events-home {
+  width: 33%;
+}
+.content-news-events .wrap-news-events .events-home .views-row {
+  width: 100%;
 }
 .content-news-events .wrap-news-events .events-home .view-content .views-row {
   margin-right: 0;
@@ -1009,11 +1020,6 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
     width: 100%;
     margin-left: 0;
   }
-
-  /* News and Events */
-  .content-news-events .news-home .view-content .views-row, .content-news-events .events-home .view-content .views-row {
-    width: 235px;
-  }
 }
 /* End Media 1024px */
 @media only screen and (max-width: 991px) {
@@ -1177,6 +1183,19 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
     height: 181px;
     margin-right: 0;
     margin-bottom: 1rem;
+  }
+  .content-news-events .wrap-news-events .news-home {
+    width: 100%;
+  }
+  .content-news-events .wrap-news-events .news-home .views-row {
+    width: 100%;
+    margin-right: 0;
+  }
+  .content-news-events .wrap-news-events .events-home {
+    width: 100%;
+  }
+  .content-news-events .wrap-news-events .events-home .views-row {
+    width: 100%;
   }
 }
 /* End Media 768px */
