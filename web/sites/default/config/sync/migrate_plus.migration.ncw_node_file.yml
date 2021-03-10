@@ -1,0 +1,55 @@
+uuid: fe1129e7-9418-4c88-bbff-35851d2bea55
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_file
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: file'
+source:
+  plugin: d7_node
+  node_type: file
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: file
+  title:
+    -
+      plugin: get
+      source: title
+  field_full_url:
+    -
+      plugin: get
+      source: field_full_url
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - d7_user

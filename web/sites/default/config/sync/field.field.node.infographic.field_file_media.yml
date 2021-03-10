@@ -1,17 +1,17 @@
-uuid: 857688f1-c247-48be-92b0-0b59b3b2b165
+uuid: b23f9fdd-fff7-478b-9de5-1d22326a2b54
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image_media
-    - media.type.image
+    - field.storage.node.field_file_media
+    - media.type.document
     - node.type.infographic
-id: node.infographic.field_image_media
-field_name: field_image_media
+id: node.infographic.field_file_media
+field_name: field_file_media
 entity_type: node
 bundle: infographic
-label: Image
-description: 'The header image that will be displayed on page.'
+label: File
+description: ''
 required: false
 translatable: true
 default_value: {  }
@@ -20,7 +20,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image: image
+      document: document
     sort:
       field: _none
       direction: ASC
