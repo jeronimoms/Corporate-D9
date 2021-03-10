@@ -1,0 +1,29 @@
+uuid: 8dfb1982-c962-4187-8b98-6e13724afc5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sector_industry_covered
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.nace_codes
+id: node.dangerous_substances.field_sector_industry_covered
+field_name: field_sector_industry_covered
+entity_type: node
+bundle: dangerous_substances
+label: 'Sector / Indrustry covered'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nace_codes: nace_codes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,24 @@
+uuid: 631b7193-2b68-4cd7-bfbf-d0327e334f62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.directive
+  module:
+    - datetime
+id: node.directive.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: directive
+label: 'Publication date'
+description: 'Please select the date of publication, if it is not possible to identify leave it empty.'
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

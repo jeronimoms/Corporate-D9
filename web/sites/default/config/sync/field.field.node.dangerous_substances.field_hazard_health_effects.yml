@@ -1,0 +1,29 @@
+uuid: f622f714-3151-4e70-b8df-674e19b49e45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hazard_health_effects
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.hazard_health_effects
+id: node.dangerous_substances.field_hazard_health_effects
+field_name: field_hazard_health_effects
+entity_type: node
+bundle: dangerous_substances
+label: 'Hazard - health effects'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      hazard_health_effects: hazard_health_effects
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

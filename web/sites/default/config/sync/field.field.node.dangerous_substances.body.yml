@@ -1,0 +1,23 @@
+uuid: 252c9f20-4c7a-4c00-99b8-878b04ffdccb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.body
+field_name: body
+entity_type: node
+bundle: dangerous_substances
+label: 'Content (English)'
+description: 'Please fill in the English title of the material'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

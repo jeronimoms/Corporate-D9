@@ -1,0 +1,29 @@
+uuid: 1844bae4-6b8c-4d78-adee-e6378c52a4b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hazard_physical_state
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.hazard_physical_state
+id: node.dangerous_substances.field_hazard_physical_state
+field_name: field_hazard_physical_state
+entity_type: node
+bundle: dangerous_substances
+label: 'Hazard - physical state'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      hazard_physical_state: hazard_physical_state
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: b9a9d5ce-a2a5-47f0-b325-08563e981ecc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ec_number
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_ec_number
+field_name: field_ec_number
+entity_type: node
+bundle: dangerous_substances
+label: 'EC number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

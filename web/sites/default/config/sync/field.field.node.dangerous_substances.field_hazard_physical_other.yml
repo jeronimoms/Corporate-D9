@@ -1,0 +1,19 @@
+uuid: 99fca709-372c-40bb-879f-cc147707b0c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hazard_physical_other
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_hazard_physical_other
+field_name: field_hazard_physical_other
+entity_type: node
+bundle: dangerous_substances
+label: 'Hazard - physical state other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

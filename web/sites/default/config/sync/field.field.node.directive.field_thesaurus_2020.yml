@@ -1,0 +1,29 @@
+uuid: a629eeb6-82c8-442f-8610-432452c3a68b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thesaurus_2020
+    - node.type.directive
+    - node.type.thesaurus
+id: node.directive.field_thesaurus_2020
+field_name: field_thesaurus_2020
+entity_type: node
+bundle: directive
+label: 'Thesaurus 2020'
+description: 'Select Thesaurus for this content.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      thesaurus: thesaurus
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,51 @@
+uuid: 3d505044-66c3-454e-b726-3a5d5f042714
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.directive.body
+    - field.field.node.directive.field_activity
+    - field.field.node.directive.field_archived
+    - field.field.node.directive.field_date_of_directive
+    - field.field.node.directive.field_directive_type
+    - field.field.node.directive.field_expiration_date
+    - field.field.node.directive.field_legislation_category
+    - field.field.node.directive.field_nace_codes
+    - field.field.node.directive.field_publication_date
+    - field.field.node.directive.field_section
+    - field.field.node.directive.field_summary
+    - field.field.node.directive.field_tags
+    - field.field.node.directive.field_thesaurus_2020
+    - node.type.directive
+  module:
+    - user
+id: node.directive.teaser
+targetEntityType: node
+bundle: directive
+mode: teaser
+content:
+  field_summary:
+    type: basic_string
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  field_activity: true
+  field_archived: true
+  field_date_of_directive: true
+  field_directive_type: true
+  field_expiration_date: true
+  field_legislation_category: true
+  field_nace_codes: true
+  field_publication_date: true
+  field_section: true
+  field_tags: true
+  field_thesaurus_2020: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

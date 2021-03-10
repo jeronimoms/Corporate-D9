@@ -1,0 +1,19 @@
+uuid: c77f13f8-065d-48bc-81c5-a03dee2de440
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_format
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_media_format
+field_name: field_media_format
+entity_type: node
+bundle: dangerous_substances
+label: 'Format, quality (audio track bit rate, video track bit rate)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

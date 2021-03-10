@@ -1,0 +1,19 @@
+uuid: 01756712-f670-42d9-8908-39cbd0d04360
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country_other
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_country_other
+field_name: field_country_other
+entity_type: node
+bundle: dangerous_substances
+label: 'Country other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

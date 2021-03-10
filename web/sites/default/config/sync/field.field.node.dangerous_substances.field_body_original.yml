@@ -1,0 +1,21 @@
+uuid: 13db41d2-403e-4268-8ab7-f18e11b5f3a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_original
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.field_body_original
+field_name: field_body_original
+entity_type: node
+bundle: dangerous_substances
+label: 'Content (original)'
+description: "\r\nPlease fill in the original title of the material"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,19 @@
+uuid: 6887f4a0-28e3-4a45-8dd9-7f538e2b5ae4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_biological_hazard_other
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_biological_hazard_other
+field_name: field_biological_hazard_other
+entity_type: node
+bundle: dangerous_substances
+label: 'Biological hazard other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
