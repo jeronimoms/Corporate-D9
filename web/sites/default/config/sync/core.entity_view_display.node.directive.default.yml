@@ -1,0 +1,57 @@
+uuid: 1bc993cf-8338-43f8-9d94-7a402cc19450
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.directive.body
+    - field.field.node.directive.field_activity
+    - field.field.node.directive.field_archived
+    - field.field.node.directive.field_date_of_directive
+    - field.field.node.directive.field_directive_type
+    - field.field.node.directive.field_expiration_date
+    - field.field.node.directive.field_legislation_category
+    - field.field.node.directive.field_nace_codes
+    - field.field.node.directive.field_publication_date
+    - field.field.node.directive.field_section
+    - field.field.node.directive.field_summary
+    - field.field.node.directive.field_tags
+    - field.field.node.directive.field_thesaurus_2020
+    - node.type.directive
+  module:
+    - text
+    - user
+id: node.directive.default
+targetEntityType: node
+bundle: directive
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_summary:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  addtoany: true
+  field_activity: true
+  field_archived: true
+  field_date_of_directive: true
+  field_directive_type: true
+  field_expiration_date: true
+  field_legislation_category: true
+  field_nace_codes: true
+  field_publication_date: true
+  field_section: true
+  field_tags: true
+  field_thesaurus_2020: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

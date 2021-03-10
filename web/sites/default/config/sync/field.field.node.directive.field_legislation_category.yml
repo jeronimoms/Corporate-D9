@@ -1,0 +1,29 @@
+uuid: 84d49763-fe07-4699-afe0-59c5203d3931
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legislation_category
+    - node.type.directive
+    - taxonomy.vocabulary.legislation_category
+id: node.directive.field_legislation_category
+field_name: field_legislation_category
+entity_type: node
+bundle: directive
+label: 'Legislation category'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      legislation_category: legislation_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

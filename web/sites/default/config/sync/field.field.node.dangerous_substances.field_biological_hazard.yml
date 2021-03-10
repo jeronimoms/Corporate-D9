@@ -1,0 +1,29 @@
+uuid: 871ed295-80ff-4656-b88f-51d3da86f49d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_biological_hazard
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.biological_hazard
+id: node.dangerous_substances.field_biological_hazard
+field_name: field_biological_hazard
+entity_type: node
+bundle: dangerous_substances
+label: 'Biological hazard'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      biological_hazard: biological_hazard
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

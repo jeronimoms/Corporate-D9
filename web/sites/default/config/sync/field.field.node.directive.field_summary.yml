@@ -1,0 +1,19 @@
+uuid: 57b04626-94b1-483d-b9da-febcc29cd980
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.directive
+id: node.directive.field_summary
+field_name: field_summary
+entity_type: node
+bundle: directive
+label: Summary
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

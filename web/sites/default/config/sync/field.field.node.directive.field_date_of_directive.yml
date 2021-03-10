@@ -1,0 +1,24 @@
+uuid: 20576d37-6754-44cd-a36d-95aea94de0fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_directive
+    - node.type.directive
+  module:
+    - datetime
+id: node.directive.field_date_of_directive
+field_name: field_date_of_directive
+entity_type: node
+bundle: directive
+label: 'Date of directive'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

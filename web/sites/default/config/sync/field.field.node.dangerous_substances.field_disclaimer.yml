@@ -1,0 +1,21 @@
+uuid: e44ccf8c-2dfe-4052-98ee-9a8cfcbf3f2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_disclaimer
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.field_disclaimer
+field_name: field_disclaimer
+entity_type: node
+bundle: dangerous_substances
+label: Disclaimer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,58 @@
+uuid: 3115502e-8a98-420f-ae78-7bb6f0e62595
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.e_guide.field_country
+    - field.field.node.e_guide.field_external_url
+    - field.field.node.e_guide.field_link
+    - field.field.node.e_guide.field_section
+    - node.type.e_guide
+  module:
+    - link
+    - user
+id: node.e_guide.teaser
+targetEntityType: node
+bundle: e_guide
+mode: teaser
+content:
+  field_external_url:
+    type: link
+    weight: 1
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_link:
+    type: link
+    weight: 2
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  langcode:
+    type: language
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_country: true
+  field_section: true
+  links: true
+  search_api_excerpt: true
