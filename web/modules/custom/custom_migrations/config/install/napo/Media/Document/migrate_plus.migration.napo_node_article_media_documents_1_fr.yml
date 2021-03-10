@@ -1,0 +1,76 @@
+# File to Media Migration configuration for vesafe_good_practice_media_image migration
+
+id: napo_node_article_media_documents_1_fr
+label: 'Article: Media Documents Step 1 FR'
+migration_group: napo_migrate_media
+source:
+  plugin: media_entity_generator_d7
+  entity_type: node
+  bundle: article
+  langcode: fr
+  d7_file_url: 'https://www.napofilm.net/sites/default/files/'
+  field_names:
+    - field_guidance_file
+    - field_activity_list_file
+    - field_menu
+
+destination:
+  plugin: entity:media
+  translations: true
+
+process:
+  bundle:
+    plugin: default_value
+    default_value: document
+
+  # Using the alt tag if available, else the file name.
+  name:
+    plugin: media_name
+    source: file_name
+
+  mid:
+    plugin: migration_lookup
+    migration: napo_node_article_media_documents_1
+    source: target_id
+    no_stub: true
+
+  # Map the field image
+  field_media_document/title: title
+  field_media_description: field_file_description
+  field_media_document/target_id:
+    plugin: media_file_copy
+    move: FALSE
+    reuse: TRUE
+    path: 'public://documents/articles/'
+    source: file_path
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_nace_codes:
+    - plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
+  field_thesaurus:
+    - plugin: sub_process
+      source: field_thesaurus
+      process:
+        target_id: tid
+
+  langcode: langcode
+  uid: uid
+
+  content_translation_source:
+    plugin: default_value
+    default_value: en
+
+
+
+dependencies:
+  module:
+    - custom_migrations
+  enforced:
+    module:
+      - custom_migrations

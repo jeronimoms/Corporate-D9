@@ -1,7 +1,7 @@
-# File to Media Migration configuration for napo_good_practice_media_image migration
+# File to Media Migration configuration for vesafe_good_practice_media_image migration
 
-id: napo_node_article_media_images_1
-label: Article Media Step 1
+id: napo_node_consortium_partner_media_images_1
+label: 'Consortium Partner: Step 1'
 migration_group: napo_migrate_media
 
 source:
@@ -9,10 +9,11 @@ source:
   langcode: und
   plugin: media_entity_generator_d7
   entity_type: node
-  bundle: article
-  d7_file_url: 'https://test.napoproject.eu/sites/default/files/'
+  bundle: consortium_partner
+  d7_file_url: 'https://www.napofilm.net/sites/default/files/'
   field_names:
     - field_image
+
 destination:
   plugin: entity:media
 
@@ -39,13 +40,28 @@ process:
   # Map the field image
   field_media_image/alt: alt
   field_media_image/title: title
+  field_media_description: field_file_description
   field_media_image/target_id:
     plugin: media_file_copy
-    move: FALSE
+    move: TRUE
     reuse: TRUE
-    path: 'public://images/articles'
+    path: 'public://images/consortium_partners/'
     source: file_path
-
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_nace_codes:
+    - plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
+  field_thesaurus:
+    - plugin: sub_process
+      source: field_thesaurus
+      process:
+        target_id: tid
   langcode: langcode
 
   uid:

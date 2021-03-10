@@ -22,37 +22,47 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
-
+    - napo_node_article_media_documents_1
+    - napo_node_article_media_images_1
 process:
-  # nid: tnid   #comentar si no es bbdd limpia
-  # vid: vid  #comentar si no es bbdd limpia
-  type:
-    - plugin: default_value
-      default_value: article              # -----  CHANGE
-  langcode:
-    plugin: default_value
-    source: language
-    default_value: "und"
-  title: title
-  body: body
-  uid: node_uid
-  status: status
-  created: created
-  changed: changed
-  promote: promote
-  sticky: sticky
-  revision_uid: revision_uid
-  revision_log: log
-  revision_timestamp: timestamp
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_article_type:
+  nid:
     -
-      plugin: sub_process
-      source: field_article_type
-      process:
-        target_id: tid
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: article
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_character_count: field_character_count
-  field_menu: field_menu
   field_expiration_date:                #revisar
     -
       plugin: sub_process
@@ -67,11 +77,6 @@ process:
           settings:
             validate_format: false
           source: value
-  field_guidance_file: field_guidance_file
-  field_icon: field_icon
-  field_image: field_image
-  field_activity_list_file: field_activity_list_file
-  field_nace_codes: field_nace_codes
   field_page_count: field_page_count
   field_publication_date:       #revisar
     -
@@ -85,10 +90,55 @@ process:
           from_timezone: 'Europe/Madrid'
           to_timezone: 'Europe/Madrid'
           source: value
+
+  # Relateds.
+  field_nace_codes:
+    -
+      plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
   field_tags:
     -
       plugin: sub_process
       source: field_tags
       process:
         target_id: tid
-  field_thesaurus: field_thesaurus
+  field_thesaurus:
+    -
+      plugin: sub_process
+      source: field_thesaurus
+      process:
+        target_id: tid
+
+  # Images.
+  field_image:
+    plugin: file_id_lookup
+    source: field_image
+    migration: napo_node_article_media_images_1
+    no_stub: true
+  field_icon:
+    plugin: file_id_lookup
+    source: field_icon
+    migration: napo_node_article_media_images_1
+    no_stub: true
+
+  # Documents.
+  field_guidance_file:
+    plugin: file_id_lookup
+    source: field_guidance_file
+    migration:
+      - napo_node_article_media_documents_1
+    no_stub: true
+  field_activity_list_file:
+    plugin: file_id_lookup
+    source: field_activity_list_file
+    migration:
+      - napo_node_article_media_documents_1
+    no_stub: true
+  field_glossary:
+    plugin: file_id_lookup
+    source: field_menu
+    migration:
+      - napo_node_article_media_documents_1
+    no_stub: true

@@ -22,6 +22,7 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
+    - napo_node_consortium_partner_media_images_1   # -----  CHANGE
 
 process:
   # nid: tnid   #comentar si no es bbdd limpia
@@ -50,7 +51,6 @@ process:
   revision_log: log
   revision_timestamp: timestamp
 
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_consortium_partner_type:
     -
       plugin: sub_process
@@ -61,4 +61,9 @@ process:
     plugin: field_link
     source: field_url
 
-
+  # Medias.
+  field_image:
+    plugin: file_id_lookup
+    source: field_image
+    migration: napo_node_consortium_partner_media_images_1
+    no_stub: true
