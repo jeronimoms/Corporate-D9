@@ -75,11 +75,6 @@ class VwBlock extends BlockBase implements ContainerFactoryPluginInterface {
         $label = $state['label'];
         $item_class = '';
 
-        // Set the active item.
-        if ($node_state == $name) {
-          $item_class = ' active';
-        }
-
         // Set the first item.
         if ($i == 0) {
           $item_class = 'first';
@@ -88,6 +83,11 @@ class VwBlock extends BlockBase implements ContainerFactoryPluginInterface {
         // Set the last item.
         if ($i == (count($workflow_settings) - 1)) {
           $item_class = 'last';
+        }
+
+        // Set the active item.
+        if ($node_state == $name) {
+          $item_class .= ' active';
         }
 
         // Generate the item.
