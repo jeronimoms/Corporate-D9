@@ -1,0 +1,19 @@
+uuid: f3d3856b-e20b-4078-a310-b3cff6c4aeab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rights_description
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_rights_description
+field_name: field_rights_description
+entity_type: node
+bundle: dangerous_substances
+label: 'Rights description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: bdfda65f-27fb-46d9-854b-364e1112949c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_information
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.field_other_information
+field_name: field_other_information
+entity_type: node
+bundle: dangerous_substances
+label: 'Other information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

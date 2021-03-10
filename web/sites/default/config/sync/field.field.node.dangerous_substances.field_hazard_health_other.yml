@@ -1,0 +1,19 @@
+uuid: 189ebc2b-884d-4f2b-bd56-a8aa41e0b722
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hazard_health_other
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_hazard_health_other
+field_name: field_hazard_health_other
+entity_type: node
+bundle: dangerous_substances
+label: 'Hazard - health effects other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

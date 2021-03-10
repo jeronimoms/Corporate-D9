@@ -1,0 +1,23 @@
+uuid: 6393ead9-5591-423d-8834-5123a0b73ecd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_selected_for_analysis
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_selected_for_analysis
+field_name: field_selected_for_analysis
+entity_type: node
+bundle: dangerous_substances
+label: 'Selected for analysis'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

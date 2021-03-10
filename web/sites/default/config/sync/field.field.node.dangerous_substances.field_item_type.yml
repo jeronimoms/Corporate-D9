@@ -1,0 +1,21 @@
+uuid: d8bcc84f-4f15-4c43-bd77-149f6cc0bfb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_item_type
+    - node.type.dangerous_substances
+  module:
+    - options
+id: node.dangerous_substances.field_item_type
+field_name: field_item_type
+entity_type: node
+bundle: dangerous_substances
+label: 'Type of item'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

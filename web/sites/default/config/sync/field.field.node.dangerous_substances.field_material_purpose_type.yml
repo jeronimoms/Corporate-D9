@@ -1,0 +1,29 @@
+uuid: 901231b3-3e01-4386-8978-1af6a5fba22b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_material_purpose_type
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.material_purpose
+id: node.dangerous_substances.field_material_purpose_type
+field_name: field_material_purpose_type
+entity_type: node
+bundle: dangerous_substances
+label: 'Purpose of the material'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      material_purpose: material_purpose
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
