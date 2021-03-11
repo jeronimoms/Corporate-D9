@@ -108,16 +108,21 @@ process:
     plugin: file_id_lookup
     source: field_image
     migration:
-      - ncw_node_infographic_media_field_image_1
+      - ncw_node_infographic_field_image_media_1
     no_stub: true
-  #field_thumbnail_media:
-  #  plugin: file_id_lookup
-  #  source: field_activity_list_file
-  #  migration:
-  #    - ncw_node_infographic_media_image_1
-  #  no_stub: true
-
-
+  field_thumbnail_media:
+    plugin: file_id_lookup
+    source: field_thumbnail
+    migration:
+      - ncw_node_infographic_field_image_media_caption_1
+    no_stub: true
+  # Documents.
+ field_file_media:
+   plugin: file_id_lookup
+   source: field_file
+   migration:
+     - ncw_node_infographics_media_documents_1
+   no_stub: true
 ######################## DESTINATION ######################
 
 destination:
