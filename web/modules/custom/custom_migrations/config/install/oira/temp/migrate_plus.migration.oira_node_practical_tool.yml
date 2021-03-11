@@ -63,7 +63,6 @@ process:
           source: tid
   field_third_description: field_third_description
   field_wf_notification: field_wf_notification
-  field_third_language: field_third_language
   field_publication_date/value:
     - plugin: extract
       source: field_publication_date
@@ -108,18 +107,20 @@ process:
           plugin: get
           source: tid
 
-
-
   field_workbench_access:
     - plugin: sub_process
       source: workbench_access
       process:
         target_id: tid
-  field_language2:
+  field_language:
     - plugin: sub_process
       source: field_language
       process:
         value: value
-
+  field_third_language:
+    - plugin: sub_process
+      source: field_third_language
+      process:
+        value: value
 
 
