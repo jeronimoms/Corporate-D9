@@ -1,7 +1,7 @@
 # File to Media Migration configuration for oira_good_practice_media_image migration
 
-id: oira_node_practical_tool_media_images_1
-label: practical_tool Media Step 1
+id: oira_node_article_media_images_1
+label: 'Article: Media Images Step 1'
 migration_group: oira_migrate_media
 
 source:
@@ -9,7 +9,7 @@ source:
   langcode: und
   plugin: media_entity_generator_d7
   entity_type: node
-  bundle: practical_tool
+  bundle: article
   d7_file_url: 'https://test.oiraproject.eu/sites/default/files/'
   field_names:
     - field_image

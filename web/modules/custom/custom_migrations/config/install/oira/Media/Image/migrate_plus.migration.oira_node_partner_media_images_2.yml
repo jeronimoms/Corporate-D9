@@ -1,7 +1,7 @@
 # This migration links the newly created media entities with entity reference field on the target bundle.
 
 id: oira_node_partner_media_images_2
-label: 'partner: Media Images Mapping'
+label: 'Partner: Media Images Step 2'
 migration_group: oira_migrate_media
 
 source:

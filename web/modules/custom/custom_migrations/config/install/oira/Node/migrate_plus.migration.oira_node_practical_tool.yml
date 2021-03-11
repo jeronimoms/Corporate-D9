@@ -1,23 +1,20 @@
-# Migration file for creating "event" nodes from BBDD.
+# Migration file for creating "practical_tool" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
-# But why write code if you can write YAML?
-# This is how we declare a Migration the Drupal 8 way.
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_node_practical_tool_i18n                         # -----  CHANGE
-label: 'Node: practical_tool Translations'                # -----  CHANGE
+id: oira_node_practical_tool                    # -----  CHANGE
+label: 'Node: Practical Tool'                   # -----  CHANGE
+audit: true
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
-  plugin: d7_node_entity_translation
-  node_type: practical_tool                                # -----  CHANGE
+  plugin: ev_d7_node
+  node_type: practical_tool                     # -----  CHANGE
 destination:
   plugin: entity:node
-  translations: true
-  destination_module: content_translation
 dependencies:
   enforced:
     module:
@@ -25,21 +22,21 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
-    - oira_node_practical_tool                            # -----  CHANGE
+    - oira_node_practical_tool_media_images_1
 
 process:
-  nid: entity_id
-  type: type
+  nid: tnid   #comentar si no es bbdd limpia
+  vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: practical_tool              # -----  CHANGE
   langcode:
-    plugin: static_map
-    bypass: true
+    plugin: default_value
     source: language
-    map:
-      'pt': 'pt-pt'
-      'no': 'nn'
+    default_value: "und"
   title: title
   body: body
-  uid: uid
+  uid: node_uid
   status: status
   created: created
   changed: changed
@@ -48,9 +45,7 @@ process:
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
-  content_translation_source: source
-  content_translation_outdated: translate
-  ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_alternative_body: field_alternative_body
   field_alternative_title: field_alternative_title
   field_co_author:
@@ -69,14 +64,6 @@ process:
           source: tid
   field_third_description: field_third_description
   field_wf_notification: field_wf_notification
-  field_language:
-    - plugin: sub_process
-      source: field_language
-      process:
-        target_id:
-          plugin: get
-          source: tid
-  field_third_language: field_third_language
   field_publication_date/value:
     - plugin: extract
       source: field_publication_date
@@ -120,3 +107,25 @@ process:
         target_id:
           plugin: get
           source: tid
+
+  field_workbench_access:
+    - plugin: sub_process
+      source: workbench_access
+      process:
+        target_id: tid
+  field_language:
+    - plugin: sub_process
+      source: field_language
+      process:
+        value: value
+  field_third_language:
+    - plugin: sub_process
+      source: field_third_language
+      process:
+        value: value
+  field_image:
+    plugin: file_id_lookup
+    source: field_image
+    migration: oira_node_practical_tool_media_images_1
+    no_stub: true
+

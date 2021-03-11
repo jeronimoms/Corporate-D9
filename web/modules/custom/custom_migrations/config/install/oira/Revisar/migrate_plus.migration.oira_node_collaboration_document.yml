@@ -6,7 +6,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_collaboration_document                    # -----  CHANGE
-label: 'Node: Collaboration document'                   # -----  CHANGE
+label: 'Node: Collaboration Document'                   # -----  CHANGE
 audit: true
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
