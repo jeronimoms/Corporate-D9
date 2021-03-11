@@ -1,0 +1,152 @@
+# Migration file for creating "publication" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_infographic
+label: 'Node: infographic'
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+
+##################### BASIC INFORMATION ###################
+
+
+
+########################## SOURCE #########################
+
+source:
+  plugin: ev_d7_node
+  node_type: infographic
+
+########################## SOURCE #########################
+
+
+
+########################## PROCESS #########################
+
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the nid field to allow incremental migrations.
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: infographic
+  title: title
+  body:
+    - plugin: get
+      source: body
+  'body/0/format':
+    - plugin: default_value
+      default_value: full_html
+  langcode: language
+
+  field_publication_date:       #revisar
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_external_url:
+    plugin: field_link
+    source: field_external_url
+
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+
+  field_activity:
+    - plugin: sub_process
+      source: field_activity
+      process:
+        target_id: tid
+  field_section:
+    - plugin: sub_process
+      source: workbench_access
+      process:
+        target_id: tid
+  field_archived: field_archived
+
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  field_pages_count: field_pages_count
+########################## PROCESS #########################
+  # Images.
+
+  field_image_media:
+    plugin: file_id_lookup
+    source: field_image
+    migration:
+      - ncw_node_infographic_field_image_media_1
+    no_stub: true
+  field_thumbnail_media:
+    plugin: file_id_lookup
+    source: field_thumbnail
+    migration:
+      - ncw_node_infographic_field_image_media_caption_1
+    no_stub: true
+  # Documents.
+ field_file_media:
+   plugin: file_id_lookup
+   source: field_file
+   migration:
+     - ncw_node_infographics_media_documents_1
+   no_stub: true
+
+######################## DESTINATION ######################
+
+destination:
+  plugin: entity:node
+
+######################## DESTINATION ######################
+
+
+
+######################## DEPENDENCIES #####################
+
+# We specify that this migration depends on the unops_project_migrate module.
+# Based on this dependency, this migration will be removed when the
+# unops_project_migrate module is uninstalled.
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+# Declare optional dependencies on another migration for this migration.
+# This one has none.
+migration_dependencies:
+  required:
+    - d7_user
+
+######################## DEPENDENCIES #####################
