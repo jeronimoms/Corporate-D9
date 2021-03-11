@@ -57,6 +57,7 @@ dependencies:
     - field.field.node.dangerous_substances.field_worker_groups_type
     - node.type.dangerous_substances
   module:
+    - chosen_field
     - datetime
     - field_group
     - link
@@ -275,7 +276,7 @@ content:
     weight: 8
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_material_purpose_other:
     weight: 33
