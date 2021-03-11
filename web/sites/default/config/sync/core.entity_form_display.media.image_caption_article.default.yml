@@ -1,20 +1,20 @@
-uuid: a3d03b36-734b-4fbd-8d82-654cc892245a
+uuid: 588beb81-fcce-455f-afd4-a10f5f7283b5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image_caption.field_caption_copyrigth_
-    - field.field.media.image_caption.field_media_image
-    - image.style.thumbnail
-    - media.type.image_caption
+    - field.field.media.image_caption_article.field_caption_copyrigth_
+    - field.field.media.image_caption_article.field_media_image_2
+    - image.style.media_thumbnail_preview
+    - media.type.image_caption_article
   module:
     - image_widget_crop
     - imce
     - path
     - text
-id: media.image_caption.default
+id: media.image_caption_article.default
 targetEntityType: media
-bundle: image_caption
+bundle: image_caption_article
 mode: default
 content:
   created:
@@ -31,21 +31,22 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_media_image:
+  field_media_image_2:
     weight: 1
     settings:
       show_default_crop: true
       warn_multiple_usages: true
-      preview_image_style: thumbnail
-      crop_preview_image_style: home_news
+      preview_image_style: media_thumbnail_preview
+      crop_preview_image_style: 1000x1000
       progress_indicator: throbber
       crop_list:
-        - custom_crop_
-      crop_types_required: {  }
+        - articles_crop
+      crop_types_required:
+        - articles_crop
       show_crop_area: false
     third_party_settings:
       imce:
-        enabled: true
+        enabled: false
     type: image_widget_crop
     region: content
   langcode:
