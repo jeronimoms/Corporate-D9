@@ -1,0 +1,21 @@
+uuid: 19ca04a3-77c7-4808-a5ed-ae06dbe03f0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_original_desc_language
+    - node.type.dangerous_substances
+  module:
+    - languagefield
+id: node.dangerous_substances.field_original_desc_language
+field_name: field_original_desc_language
+entity_type: node
+bundle: dangerous_substances
+label: 'Original description language'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: language_field

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.dangerous_substances.body
     - field.field.node.dangerous_substances.field_advertising
+    - field.field.node.dangerous_substances.field_available_in_languages
     - field.field.node.dangerous_substances.field_biological_hazard
     - field.field.node.dangerous_substances.field_biological_hazard_other
     - field.field.node.dangerous_substances.field_body_original
@@ -34,6 +35,7 @@ dependencies:
     - field.field.node.dangerous_substances.field_non_applicable_url
     - field.field.node.dangerous_substances.field_notes
     - field.field.node.dangerous_substances.field_original_desc_lang_other
+    - field.field.node.dangerous_substances.field_original_desc_language
     - field.field.node.dangerous_substances.field_other_information
     - field.field.node.dangerous_substances.field_ownership_information
     - field.field.node.dangerous_substances.field_prevention_measure_type
@@ -58,6 +60,7 @@ dependencies:
     - node.type.dangerous_substances
   module:
     - datetime
+    - languagefield
     - link
     - options
     - text
@@ -70,12 +73,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 28
+    weight: 29
     settings: {  }
     third_party_settings: {  }
     region: content
   field_advertising:
-    weight: 39
+    weight: 40
     label: above
     settings:
       format: default
@@ -84,8 +87,18 @@ content:
     third_party_settings: {  }
     type: boolean
     region: content
+  field_available_in_languages:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+      format:
+        name: name
+    third_party_settings: {  }
+    type: languagefield_default
+    region: content
   field_biological_hazard:
-    weight: 10
+    weight: 11
     label: above
     settings:
       link: true
@@ -93,7 +106,7 @@ content:
     type: entity_reference_label
     region: content
   field_biological_hazard_other:
-    weight: 11
+    weight: 12
     label: above
     settings:
       link_to_entity: false
@@ -101,14 +114,14 @@ content:
     type: string
     region: content
   field_body_original:
-    weight: 29
+    weight: 30
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_cas_number:
-    weight: 19
+    weight: 20
     label: above
     settings:
       link_to_entity: false
@@ -116,7 +129,7 @@ content:
     type: string
     region: content
   field_contact_address:
-    weight: 40
+    weight: 41
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -131,14 +144,14 @@ content:
     type: string
     region: content
   field_disclaimer:
-    weight: 41
+    weight: 42
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_ec_number:
-    weight: 20
+    weight: 21
     label: above
     settings:
       link_to_entity: false
@@ -146,7 +159,7 @@ content:
     type: string
     region: content
   field_evaluation:
-    weight: 32
+    weight: 33
     label: above
     settings:
       link: true
@@ -154,7 +167,7 @@ content:
     type: entity_reference_label
     region: content
   field_evaluation_other:
-    weight: 33
+    weight: 34
     label: above
     settings:
       link_to_entity: false
@@ -162,7 +175,7 @@ content:
     type: string
     region: content
   field_exposure_route:
-    weight: 16
+    weight: 17
     label: above
     settings:
       link: true
@@ -170,7 +183,7 @@ content:
     type: entity_reference_label
     region: content
   field_exposure_route_other:
-    weight: 17
+    weight: 18
     label: above
     settings:
       link_to_entity: false
@@ -190,7 +203,7 @@ content:
     type: link
     region: content
   field_hazard_health_effects:
-    weight: 14
+    weight: 15
     label: above
     settings:
       link: true
@@ -198,7 +211,7 @@ content:
     type: entity_reference_label
     region: content
   field_hazard_health_other:
-    weight: 15
+    weight: 16
     label: above
     settings:
       link_to_entity: false
@@ -206,7 +219,7 @@ content:
     type: string
     region: content
   field_hazard_physical_other:
-    weight: 13
+    weight: 14
     label: above
     settings:
       link_to_entity: false
@@ -214,7 +227,7 @@ content:
     type: string
     region: content
   field_hazard_physical_state:
-    weight: 12
+    weight: 13
     label: above
     settings:
       link: true
@@ -222,7 +235,7 @@ content:
     type: entity_reference_label
     region: content
   field_image_media:
-    weight: 44
+    weight: 45
     label: above
     settings:
       link: true
@@ -230,7 +243,7 @@ content:
     type: entity_reference_label
     region: content
   field_intellectual_property_righ:
-    weight: 37
+    weight: 38
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -244,7 +257,7 @@ content:
     type: list_default
     region: content
   field_languages_other:
-    weight: 5
+    weight: 6
     label: above
     settings:
       link_to_entity: false
@@ -260,7 +273,7 @@ content:
     type: entity_reference_label
     region: content
   field_material_purpose_other:
-    weight: 27
+    weight: 28
     label: above
     settings:
       link_to_entity: false
@@ -268,7 +281,7 @@ content:
     type: string
     region: content
   field_material_purpose_type:
-    weight: 26
+    weight: 27
     label: above
     settings:
       link: true
@@ -276,7 +289,7 @@ content:
     type: entity_reference_label
     region: content
   field_measurement_method:
-    weight: 21
+    weight: 22
     label: above
     settings:
       link_to_entity: false
@@ -284,7 +297,7 @@ content:
     type: string
     region: content
   field_media_format:
-    weight: 36
+    weight: 37
     label: above
     settings:
       link_to_entity: false
@@ -292,7 +305,7 @@ content:
     type: string
     region: content
   field_non_applicable_url:
-    weight: 50
+    weight: 52
     label: above
     settings:
       format: default
@@ -302,36 +315,46 @@ content:
     type: boolean
     region: content
   field_notes:
-    weight: 48
+    weight: 49
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_original_desc_lang_other:
-    weight: 49
+    weight: 51
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_original_desc_language:
+    weight: 50
+    label: above
+    settings:
+      link_to_entity: false
+      format:
+        name: name
+    third_party_settings: {  }
+    type: languagefield_default
+    region: content
   field_other_information:
-    weight: 43
+    weight: 44
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_ownership_information:
-    weight: 42
+    weight: 43
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_prevention_measure_type:
-    weight: 24
+    weight: 25
     label: above
     settings:
       link: true
@@ -339,7 +362,7 @@ content:
     type: entity_reference_label
     region: content
   field_prevention_measures_other:
-    weight: 25
+    weight: 26
     label: above
     settings:
       link_to_entity: false
@@ -347,7 +370,7 @@ content:
     type: string
     region: content
   field_priority_area:
-    weight: 45
+    weight: 46
     label: above
     settings:
       link: true
@@ -355,7 +378,7 @@ content:
     type: entity_reference_label
     region: content
   field_publication_year:
-    weight: 47
+    weight: 48
     label: above
     settings:
       timezone_override: ''
@@ -364,7 +387,7 @@ content:
     type: datetime_default
     region: content
   field_rights_description:
-    weight: 38
+    weight: 39
     label: above
     settings:
       link_to_entity: false
@@ -372,7 +395,7 @@ content:
     type: string
     region: content
   field_sector_industry_covered:
-    weight: 6
+    weight: 7
     label: above
     settings:
       link: true
@@ -380,7 +403,7 @@ content:
     type: entity_reference_label
     region: content
   field_sector_industry_other:
-    weight: 7
+    weight: 8
     label: above
     settings:
       link_to_entity: false
@@ -388,7 +411,7 @@ content:
     type: string
     region: content
   field_selected_for_analysis:
-    weight: 46
+    weight: 47
     label: above
     settings:
       format: default
@@ -398,14 +421,14 @@ content:
     type: boolean
     region: content
   field_summary:
-    weight: 18
+    weight: 19
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_target_group:
-    weight: 30
+    weight: 31
     label: above
     settings:
       link: true
@@ -413,7 +436,7 @@ content:
     type: entity_reference_label
     region: content
   field_target_group_other:
-    weight: 31
+    weight: 32
     label: above
     settings:
       link_to_entity: false
@@ -421,7 +444,7 @@ content:
     type: string
     region: content
   field_tasks_covered:
-    weight: 8
+    weight: 9
     label: above
     settings:
       link: true
@@ -429,7 +452,7 @@ content:
     type: entity_reference_label
     region: content
   field_tasks_other:
-    weight: 9
+    weight: 10
     label: above
     settings:
       link_to_entity: false
@@ -445,7 +468,7 @@ content:
     type: string
     region: content
   field_visualisation_mat_other:
-    weight: 35
+    weight: 36
     label: above
     settings:
       link_to_entity: false
@@ -453,7 +476,7 @@ content:
     type: string
     region: content
   field_visualisation_material_typ:
-    weight: 34
+    weight: 35
     label: above
     settings:
       link: true
@@ -461,7 +484,7 @@ content:
     type: entity_reference_label
     region: content
   field_worker_groups_other:
-    weight: 23
+    weight: 24
     label: above
     settings:
       link_to_entity: false
@@ -469,7 +492,7 @@ content:
     type: string
     region: content
   field_worker_groups_type:
-    weight: 22
+    weight: 23
     label: above
     settings:
       link: true
