@@ -59,6 +59,7 @@ dependencies:
     - field.field.node.dangerous_substances.field_worker_groups_type
     - node.type.dangerous_substances
   module:
+    - chosen_field
     - datetime
     - field_group
     - languagefield
@@ -290,7 +291,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
+    type: chosen_select
     region: content
   field_material_purpose_other:
     weight: 35

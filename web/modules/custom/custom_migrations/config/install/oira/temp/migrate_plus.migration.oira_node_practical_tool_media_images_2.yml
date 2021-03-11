@@ -1,0 +1,36 @@
+# This migration links the newly created media entities with entity reference field on the target bundle.
+
+id: oira_node_practical_tool_media_images_2
+label: 'practical_tool: Media Images Mapping'
+migration_group: oira_migrate_media
+
+source:
+  key: migrate
+  plugin: d7_node
+  node_type: practical_tool
+
+destination:
+  plugin: entity:node
+
+process:
+  nid: nid
+  changed: changed
+  title: title
+  type:
+    plugin: default_value
+    default_value: practical_tool
+
+  field_image:
+    plugin: file_id_lookup
+    source: field_image
+    migration: oira_node_practical_tool_media_images_1
+    no_stub: true
+
+dependencies:
+  module:
+    - custom_migrations
+
+migration_dependencies:
+  optional:
+    - oira_node_practical_tool
+    - oira_node_practical_tool_media_images_1
