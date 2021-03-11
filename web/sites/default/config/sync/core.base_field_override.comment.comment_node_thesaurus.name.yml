@@ -1,0 +1,20 @@
+uuid: 6daa12e6-3964-4b1b-a010-949a3e550f94
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_thesaurus
+id: comment.comment_node_thesaurus.name
+field_name: name
+entity_type: comment
+bundle: comment_node_thesaurus
+label: Name
+description: 'The comment author''s name.'
+required: false
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

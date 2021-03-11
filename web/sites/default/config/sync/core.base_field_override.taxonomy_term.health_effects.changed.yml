@@ -1,0 +1,18 @@
+uuid: e4a4683d-2cdc-4889-8f26-fd1f0a7991e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.health_effects
+id: taxonomy_term.health_effects.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: health_effects
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

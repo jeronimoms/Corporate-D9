@@ -1,0 +1,31 @@
+uuid: c045b5c7-340a-4601-9fb1-38640a7556e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog_project_managers
+  module:
+    - views
+name: blog_project_managers
+label: 'Blog Project Managers (User)'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  bba099f6-a2ed-4664-9b75-1b3ae199fc3e:
+    settings:
+      view: blog_project_managers
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: bba099f6-a2ed-4664-9b75-1b3ae199fc3e
+    weight: 1
+    label: view
+    id: view

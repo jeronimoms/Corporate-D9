@@ -1,0 +1,44 @@
+uuid: 990596df-6038-4cca-95e7-e381ec3ab36b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.banner.comment_node_banner
+    - field.field.node.banner.field_banner_link
+    - field.field.node.banner.field_banner_link_title
+    - field.field.node.banner.field_copyright
+    - field.field.node.banner.field_image_media
+    - field.field.node.banner.field_subtitle
+    - field.field.node.banner.field_summary
+    - node.type.banner
+  module:
+    - user
+id: node.banner.default
+targetEntityType: node
+bundle: banner
+mode: default
+content:
+  field_image_media:
+    type: entity_reference_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  comment_node_banner: true
+  field_banner_link: true
+  field_banner_link_title: true
+  field_copyright: true
+  field_subtitle: true
+  field_summary: true
+  langcode: true
+  search_api_excerpt: true

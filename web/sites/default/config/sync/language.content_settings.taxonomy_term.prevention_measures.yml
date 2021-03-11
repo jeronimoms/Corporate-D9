@@ -1,0 +1,18 @@
+uuid: 5f9c11b6-9f88-406b-b7b4-1757ac57f96a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.prevention_measures
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.prevention_measures
+target_entity_type_id: taxonomy_term
+target_bundle: prevention_measures
+default_langcode: und
+language_alterable: false

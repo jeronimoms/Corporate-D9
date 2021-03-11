@@ -1,0 +1,20 @@
+uuid: e393f88b-9cb9-483c-aa6d-f41f6a0e00e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image_caption
+  module:
+    - path
+id: media.image_caption.path
+field_name: path
+entity_type: media
+bundle: image_caption
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

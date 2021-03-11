@@ -1,0 +1,111 @@
+uuid: 20c38948-60d8-43a5-8357-34da07ac6b11
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_thesaurus
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: Thesaurus'
+source:
+  plugin: d7_node
+  node_type: thesaurus
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: thesaurus
+  title:
+    -
+      plugin: get
+      source: title
+  field_full_url:
+    -
+      plugin: get
+      source: field_full_url
+  field_term_id:
+    -
+      plugin: get
+      source: field_term_id
+  field_definition:
+    -
+      plugin: get
+      source: field_definition
+  field_definition/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_context:
+    -
+      plugin: get
+      source: field_context
+  field_context/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_synonyms:
+    -
+      plugin: get
+      source: field_synonyms
+  field_term_reference:
+    -
+      plugin: get
+      source: field_term_reference
+  field_term_reference/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_notes:
+    -
+      plugin: get
+      source: field_notes
+  field_notes/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_father:
+    -
+      plugin: sub_process
+      source: field_father
+      process:
+        target_id:
+          plugin: get
+          source: nid
+  field_glossary_the:
+    -
+      plugin: sub_process
+      source: field_glossary_the
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - d7_user

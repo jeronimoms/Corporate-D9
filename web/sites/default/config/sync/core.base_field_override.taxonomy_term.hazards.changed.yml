@@ -1,0 +1,18 @@
+uuid: 5b88357d-7d59-4aed-b35c-c0d2eec4b7e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazards
+id: taxonomy_term.hazards.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: hazards
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

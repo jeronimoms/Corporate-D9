@@ -1,0 +1,43 @@
+uuid: ace284c5-f2ae-4f11-a55f-6d3aa129df3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.osha_resources
+    - field.field.node.thesaurus.comment_node_thesaurus
+    - field.field.node.thesaurus.field_context
+    - field.field.node.thesaurus.field_definition
+    - field.field.node.thesaurus.field_father
+    - field.field.node.thesaurus.field_full_url
+    - field.field.node.thesaurus.field_glossary_the
+    - field.field.node.thesaurus.field_notes
+    - field.field.node.thesaurus.field_synonyms
+    - field.field.node.thesaurus.field_term_id
+    - field.field.node.thesaurus.field_term_reference
+    - node.type.thesaurus
+  module:
+    - user
+id: node.thesaurus.osha_resources
+targetEntityType: node
+bundle: thesaurus
+mode: osha_resources
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  comment_node_thesaurus: true
+  field_context: true
+  field_definition: true
+  field_father: true
+  field_full_url: true
+  field_glossary_the: true
+  field_notes: true
+  field_synonyms: true
+  field_term_id: true
+  field_term_reference: true
+  langcode: true
+  search_api_excerpt: true

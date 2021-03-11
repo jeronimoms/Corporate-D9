@@ -1,0 +1,18 @@
+uuid: d832ada8-2624-4053-adfd-76bd94149dc8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Directive
+type: directive
+description: 'Legislation directives'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

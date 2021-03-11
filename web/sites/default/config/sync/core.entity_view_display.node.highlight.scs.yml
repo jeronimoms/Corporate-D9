@@ -1,0 +1,59 @@
+uuid: 5c386a30-928e-431c-9ed0-d9db5ccab843
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.scs
+    - field.field.node.highlight.body
+    - field.field.node.highlight.comment_node_highlight
+    - field.field.node.highlight.field_activity
+    - field.field.node.highlight.field_aditional_resources
+    - field.field.node.highlight.field_archived
+    - field.field.node.highlight.field_avoid_archived
+    - field.field.node.highlight.field_character_count
+    - field.field.node.highlight.field_expiration_date
+    - field.field.node.highlight.field_flickr_date
+    - field.field.node.highlight.field_image_media
+    - field.field.node.highlight.field_image_oshmail_media
+    - field.field.node.highlight.field_migrate_hwc
+    - field.field.node.highlight.field_page_count
+    - field.field.node.highlight.field_publication_date
+    - field.field.node.highlight.field_show_on
+    - field.field.node.highlight.field_tags
+    - field.field.node.highlight.field_thesaurus
+    - field.field.node.highlight.field_thesaurus_2020
+    - node.type.highlight
+  module:
+    - user
+id: node.highlight.scs
+targetEntityType: node
+bundle: highlight
+mode: scs
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  comment_node_highlight: true
+  field_activity: true
+  field_aditional_resources: true
+  field_archived: true
+  field_avoid_archived: true
+  field_character_count: true
+  field_expiration_date: true
+  field_flickr_date: true
+  field_image_media: true
+  field_image_oshmail_media: true
+  field_migrate_hwc: true
+  field_page_count: true
+  field_publication_date: true
+  field_show_on: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  langcode: true
+  search_api_excerpt: true

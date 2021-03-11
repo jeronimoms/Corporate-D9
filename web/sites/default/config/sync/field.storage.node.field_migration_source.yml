@@ -1,0 +1,33 @@
+uuid: d19b1c6d-949b-4d8a-a2c6-0c50eaf5f452
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_migration_source
+field_name: field_migration_source
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: hwc
+      label: HWC
+    -
+      value: oira
+      label: Oira
+    -
+      value: napo
+      label: Napo
+    -
+      value: ncw
+      label: NCW
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

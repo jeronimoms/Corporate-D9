@@ -1,0 +1,23 @@
+uuid: 73fd9fe9-a1ab-4a5c-9b86-e976604d8d1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archived
+    - node.type.calls
+id: node.calls.field_archived
+field_name: field_archived
+entity_type: node
+bundle: calls
+label: 'Marked as outdated'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

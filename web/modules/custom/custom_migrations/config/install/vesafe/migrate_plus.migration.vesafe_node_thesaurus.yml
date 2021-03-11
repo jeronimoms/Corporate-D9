@@ -1,0 +1,145 @@
+# Migration file for creating "publication" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: vesafe_node_thesaurus
+label: 'Node: Thesaurus'
+audit: true
+migration_group: vesafe_migrate
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+
+##################### BASIC INFORMATION ###################
+
+
+
+########################## SOURCE #########################
+
+source:
+  plugin: d7_node
+  node_type: thesaurus
+
+########################## SOURCE #########################
+
+
+
+########################## PROCESS #########################
+
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the nid field to allow incremental migrations.
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: thesaurus
+  title:
+    -
+      plugin: get
+      source: title
+  field_full_url:
+    -
+      plugin: get
+      source: field_full_url
+  field_term_id:
+    -
+      plugin: get
+      source: field_term_id
+  field_definition:
+    -
+      plugin: get
+      source: field_definition
+  'field_definition/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+  field_context:
+    -
+      plugin: get
+      source: field_context
+  'field_context/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+  field_synonyms:
+    -
+      plugin: get
+      source: field_synonyms
+  field_term_reference:
+    -
+      plugin: get
+      source: field_term_reference
+  'field_term_reference/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+  field_notes:
+    -
+      plugin: get
+      source: field_notes
+  'field_notes/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+  field_father:
+    -
+      plugin: sub_process
+      source: field_father
+      process:
+        target_id:
+          plugin: get
+          source: nid
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+
+########################## PROCESS #########################
+
+
+
+######################## DESTINATION ######################
+
+destination:
+  plugin: entity:node
+
+######################## DESTINATION ######################
+
+
+
+######################## DEPENDENCIES #####################
+
+# We specify that this migration depends on the unops_project_migrate module.
+# Based on this dependency, this migration will be removed when the
+# unops_project_migrate module is uninstalled.
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+# Declare optional dependencies on another migration for this migration.
+# This one has none.
+migration_dependencies:
+  required:
+    - d7_user
+
+######################## DEPENDENCIES #####################

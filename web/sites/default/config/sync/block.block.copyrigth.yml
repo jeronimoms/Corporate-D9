@@ -1,0 +1,25 @@
+uuid: 33ad78f6-1a1b-49f9-9a8c-2cad7a6f0e32
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5a3b99ad-113b-45ed-9542-c308545fd7da'
+  module:
+    - block_content
+  theme:
+    - ncwtheme
+id: copyrigth
+theme: ncwtheme
+region: footer_end
+weight: -8
+provider: null
+plugin: 'block_content:5a3b99ad-113b-45ed-9542-c308545fd7da'
+settings:
+  id: 'block_content:5a3b99ad-113b-45ed-9542-c308545fd7da'
+  label: Copyrigth
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

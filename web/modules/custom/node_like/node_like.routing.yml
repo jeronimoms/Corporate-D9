@@ -1,0 +1,10 @@
+node_like.controller:
+  path: '/node/{node}/like'
+  defaults:
+    _controller: '\Drupal\node_like\Controller\NlController::addLike'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      user:
+        type: entity:node

@@ -1,0 +1,55 @@
+uuid: 5ea09bba-b4bd-48a8-8764-a3f163e75a86
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.infographic.body
+    - field.field.node.infographic.field_activity
+    - field.field.node.infographic.field_archived
+    - field.field.node.infographic.field_external_url
+    - field.field.node.infographic.field_file_media
+    - field.field.node.infographic.field_image_media
+    - field.field.node.infographic.field_pages_count
+    - field.field.node.infographic.field_publication_date
+    - field.field.node.infographic.field_section
+    - field.field.node.infographic.field_tags
+    - field.field.node.infographic.field_thumbnail_media
+    - field.field.node.infographic.field_twin_infographics
+    - node.type.infographic
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.infographic.teaser
+targetEntityType: node
+bundle: infographic
+mode: teaser
+content:
+  body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  addtoany: true
+  field_activity: true
+  field_archived: true
+  field_external_url: true
+  field_file_media: true
+  field_image_media: true
+  field_pages_count: true
+  field_publication_date: true
+  field_section: true
+  field_tags: true
+  field_thumbnail_media: true
+  field_twin_infographics: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

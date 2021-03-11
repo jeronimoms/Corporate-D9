@@ -1,0 +1,20 @@
+uuid: dabf0c75-321c-4a72-a045-1dc1e1885293
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazards
+  module:
+    - path
+id: taxonomy_term.hazards.path
+field_name: path
+entity_type: taxonomy_term
+bundle: hazards
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

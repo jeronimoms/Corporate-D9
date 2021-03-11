@@ -1,0 +1,86 @@
+/* Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+
+@font-face {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Font colours */
+$text-color-blue: #003399;
+$text-color-pink: #dc2f82;
+$text-color-black: #000;
+$text-color-black-label: #333;
+$text-color-grey: #57575a;
+$text-color-grey-h3: #5a5a5b;
+$text-color-grey-light: #7c7d81;
+$text-color-white: #FFF;
+
+.text-color-blue{
+  color: $text-color-blue;
+}
+.text-color-pink{
+  color: $text-color-pink;
+}
+.text-color-black{
+  color: $text-color-black;
+}
+.text-color-black-label{
+  color: $text-color-black-label;
+}
+.text-color-grey-light{
+  color: $text-color-grey-light;
+}
+.text-color-grey{
+  color: $text-color-grey;
+}
+.text-color-white{
+  color: $text-color-white;
+}
+
+/* background colours */
+$bg-color-blue: #003399;
+$bg-color-blue-light: #cfddee;
+$bg-color-blue-block: #ecf1fb;
+$bg-color-blue-wiki: #325bad;
+$bg-color-blue-accordion: #e8eef7;
+$bg-color-blue-button: #b2c7e5;
+$bg-color-pink: #dc2f82;
+$bg-color-grey: #57575a;
+$bg-color-white: #FFF;
+$bg-color-tag-1: #4e6aa0;
+$bg-color-tag-2: #e8eef7;
+
+.bg-color-blue{
+  background: $bg-color-blue;
+}
+.bg-color-blue-light{
+  background: $bg-color-blue-light;
+}
+.bg-color-blue-block{
+  background: $bg-color-blue-block;
+}
+.bg-color-blue-wiki{
+  background: $bg-color-blue-wiki;
+}
+.bg-color-blue-accordion{
+  background: $bg-color-blue-accordion;
+}
+.bg-color-blue-button{
+  background: $bg-color-blue-button;
+}
+.bg-color-pink{
+  background: $bg-color-pink;
+}
+.bg-color-grey{
+  background: $bg-color-grey;
+}
+.bg-color-white{
+  background: $bg-color-white;
+}
+.bg-color-tag-1{
+  background: $bg-color-tag-1;
+}
+.bg-color-tag-2{
+  background: $bg-color-tag-2;
+}

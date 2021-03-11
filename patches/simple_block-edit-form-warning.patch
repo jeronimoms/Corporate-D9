@@ -1,0 +1,19 @@
+diff --git a/src/SimpleBlockEditForm.php b/src/SimpleBlockEditForm.php
+index 51fd14a..1ada7d6 100644
+--- a/src/SimpleBlockEditForm.php
++++ b/src/SimpleBlockEditForm.php
+@@ -49,11 +49,12 @@ class SimpleBlockEditForm extends EntityForm implements ContainerInjectionInterf
+       '#description' => $this->t("The block title."),
+       '#required' => TRUE,
+     ];
++    $simple_block_content = $simple_block->getContent();
+     $form['content'] = [
+       '#type' => 'text_format',
+-      '#format' => $simple_block->getContent()['format'],
++      '#format' => $simple_block_content ? $simple_block_content['format'] : '',
+       '#title' => $this->t('Block content'),
+-      '#default_value' => $simple_block->getContent()['value'],
++      '#default_value' =>  $simple_block_content ? $simple_block_content['value'] : '',
+       '#description' => $this->t("The block content."),
+       '#required' => TRUE,
+     ];

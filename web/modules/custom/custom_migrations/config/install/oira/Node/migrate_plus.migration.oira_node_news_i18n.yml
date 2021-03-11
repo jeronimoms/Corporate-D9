@@ -1,0 +1,85 @@
+# Migration file for creating "event" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_node_news_i18n                         # -----  CHANGE
+label: 'Node: news Translations'                # -----  CHANGE
+migration_group: oira_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node_entity_translation
+  node_type: news                                # -----  CHANGE
+destination:
+  plugin: entity:node
+  translations: true
+  destination_module: content_translation
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - oira_node_news                            # -----  CHANGE
+
+process:
+  nid: entity_id
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      'pt': 'pt-pt'
+      'no': 'nn'
+  title: title
+  body: body
+  uid: uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  content_translation_source: source
+  content_translation_outdated: translate
+  ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
+  field_aditional_resources: field_aditional_resources
+  field_character_count: field_character_count
+  field_co_author:
+    - plugin: sub_process
+      source: field_co_author
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_wf_notification: field_wf_notification
+  field_migration_source: field_migration_source   #list
+  field_page_count: field_page_count
+  field_publication_date/value:
+    -
+      plugin: extract
+      source: field_publication_date
+      index:
+        - '0'
+        - value
+    -
+      plugin: format_date
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
+
+  field_summary: field_summary
+  field_tags:
+    plugin: sub_process
+    source: field_tags
+    process:
+      target_id:
+        plugin: get
+        source: tid

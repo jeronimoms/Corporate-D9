@@ -1,0 +1,18 @@
+uuid: 81eadeb2-2bb9-4134-bbed-79466efec8a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wg_category
+id: taxonomy_term.wg_category.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: wg_category
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

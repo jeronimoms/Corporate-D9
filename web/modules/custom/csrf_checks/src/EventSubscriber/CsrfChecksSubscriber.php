@@ -7,6 +7,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -44,11 +45,11 @@ class CsrfChecksSubscriber implements EventSubscriberInterface {
     $request = $event->getRequest();
 
     // The base url.
-    $base = str_replace(array(':', '/', '.'), ['\:', '\/', '\.'], $request->getHttpHost());
+    $base = str_replace([':', '/', '.'], ['\:', '\/', '\.'], $request->getSchemeAndHttpHost());
 
 
     if ($request->getMethod() == 'POST') {
-      // Get the origin.
+      // Check the origin.
       $http_origin = $request->server->get('HTTP_ORIGIN');
       if (isset($http_origin)) {
         if (preg_match("/^$base/", $http_origin) != 1) {
@@ -57,11 +58,15 @@ class CsrfChecksSubscriber implements EventSubscriberInterface {
       }
 
       // Check the referer header.
-      $referer = $request->server->get('HTTP_REFERER');
-      if (isset($referer) && preg_match("/^$base/", $referer) !== 1) {
-        $this->blockCsrfRequest('HTTP_REFERER not allowed from ip:' . $request->getClientIp());
+      $refererToCheck = $request->server->get('HTTP_REFERER');
+      if (isset($refererToCheck)) {
+        if (preg_match("/^$base/", $refererToCheck) != 1) {
+          // Possible CSRF attack. Block the request.
+          $this->blockCsrfRequest('HTTP_REFERER not allowed from ip:' . $request->getClientIp());
+        }
       }
       else {
+        // Possible CSRF attack. Block the request.
         $this->blockCsrfRequest('HTTP_REFERER is empty from ip:' . $request->getClientIp());
       }
 

@@ -1,0 +1,18 @@
+uuid: e0e15e96-35c6-4c9c-a4e4-4fa87b871011
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Contact
+type: press_contact
+description: 'Contacts (extended old Press contacts)  - used for Press contacts, Focal Points, Board Members etc.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

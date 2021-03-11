@@ -1,0 +1,119 @@
+# Migration file for creating "publication" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: vesafe_node_article
+label: 'Node: Article'
+audit: true
+migration_group: vesafe_migrate
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+
+##################### BASIC INFORMATION ###################
+
+
+
+########################## SOURCE #########################
+
+source:
+  plugin: d7_node
+  node_type: article
+
+########################## SOURCE #########################
+
+
+
+########################## PROCESS #########################
+
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the nid field to allow incremental migrations.
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: article
+  title:
+    -
+      plugin: get
+      source: title
+  field_subtitle:
+    -
+      plugin: get
+      source: field_subtitle
+  'field_subtitle/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+  field_publication_date:
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d'
+          source: value
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
+########################## PROCESS #########################
+
+
+
+######################## DESTINATION ######################
+
+destination:
+  plugin: entity:node
+
+######################## DESTINATION ######################
+
+
+
+######################## DEPENDENCIES #####################
+
+# We specify that this migration depends on the unops_project_migrate module.
+# Based on this dependency, this migration will be removed when the
+# unops_project_migrate module is uninstalled.
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+# Declare optional dependencies on another migration for this migration.
+# This one has none.
+migration_dependencies:
+  required:
+    - d7_user
+
+######################## DEPENDENCIES #####################

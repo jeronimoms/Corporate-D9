@@ -1,0 +1,18 @@
+uuid: 0d5f080a-58c0-44b3-953a-9b7f55d5df2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.25th_anniversary
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.25th_anniversary
+target_entity_type_id: node
+target_bundle: 25th_anniversary
+default_langcode: site_default
+language_alterable: false

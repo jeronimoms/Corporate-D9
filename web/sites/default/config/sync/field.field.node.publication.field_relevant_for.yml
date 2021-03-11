@@ -1,0 +1,29 @@
+uuid: c6e4663f-e2b2-44ea-8418-c5a4f4fc6cc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_relevant_for
+    - node.type.publication
+    - taxonomy.vocabulary.publication_types
+id: node.publication.field_relevant_for
+field_name: field_relevant_for
+entity_type: node
+bundle: publication
+label: Relevant_for
+description: 'Select Relevant for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      publication_types: publication_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

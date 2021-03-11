@@ -1,0 +1,18 @@
+uuid: 28feb11e-f656-42e8-8646-89401ebaa667
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.user_mention_terms
+id: taxonomy_term.user_mention_terms.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: user_mention_terms
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

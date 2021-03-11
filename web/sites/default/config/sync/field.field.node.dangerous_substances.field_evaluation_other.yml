@@ -1,0 +1,19 @@
+uuid: 7b06dffb-7109-4e26-aa9e-4876a0d81c99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_evaluation_other
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_evaluation_other
+field_name: field_evaluation_other
+entity_type: node
+bundle: dangerous_substances
+label: 'Evaluation other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

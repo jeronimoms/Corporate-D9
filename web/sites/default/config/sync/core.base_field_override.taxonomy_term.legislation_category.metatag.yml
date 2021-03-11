@@ -1,0 +1,18 @@
+uuid: 95fe9919-c0ae-4389-aa01-65c996c48168
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.legislation_category
+id: taxonomy_term.legislation_category.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: legislation_category
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

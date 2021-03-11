@@ -1,0 +1,18 @@
+uuid: b975f396-a426-4d1c-b8bb-53dd0c1226e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.glossary_the
+id: taxonomy_term.glossary_the.name
+field_name: name
+entity_type: taxonomy_term
+bundle: glossary_the
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

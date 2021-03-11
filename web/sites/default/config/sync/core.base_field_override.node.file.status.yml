@@ -1,0 +1,22 @@
+uuid: fab45cc7-bad1-4875-a00f-1233138d5be7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.file
+id: node.file.status
+field_name: status
+entity_type: node
+bundle: file
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

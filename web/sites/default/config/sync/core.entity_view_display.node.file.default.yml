@@ -1,0 +1,28 @@
+uuid: a68cad76-f77b-491d-965c-e0ed102e4f3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.file.field_file_media
+    - node.type.file
+  module:
+    - user
+id: node.file.default
+targetEntityType: node
+bundle: file
+mode: default
+content:
+  field_file_media:
+    type: entity_reference_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

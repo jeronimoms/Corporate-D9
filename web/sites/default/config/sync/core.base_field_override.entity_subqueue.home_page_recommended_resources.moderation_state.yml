@@ -1,0 +1,20 @@
+uuid: 32febf4e-77b5-48c1-894b-c8c468b87232
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.home_page_recommended_resources
+id: entity_subqueue.home_page_recommended_resources.moderation_state
+field_name: moderation_state
+entity_type: entity_subqueue
+bundle: home_page_recommended_resources
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

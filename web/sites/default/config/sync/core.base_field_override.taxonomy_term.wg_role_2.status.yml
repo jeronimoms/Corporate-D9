@@ -1,0 +1,22 @@
+uuid: 8e548d35-8f14-460b-afc4-024165e13bd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wg_role_2
+id: taxonomy_term.wg_role_2.status
+field_name: status
+entity_type: taxonomy_term
+bundle: wg_role_2
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

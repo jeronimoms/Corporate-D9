@@ -1,0 +1,20 @@
+uuid: 506be201-247e-4ba6-a5f8-61160ea774a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.photo_gallery_type
+  module:
+    - path
+id: taxonomy_term.photo_gallery_type.path
+field_name: path
+entity_type: taxonomy_term
+bundle: photo_gallery_type
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,19 @@
+uuid: 7f1e6f39-67df-4273-911f-6423b80fa8b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_press_contact_phone
+    - node.type.press_contact
+id: node.press_contact.field_press_contact_phone
+field_name: field_press_contact_phone
+entity_type: node
+bundle: press_contact
+label: Phone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

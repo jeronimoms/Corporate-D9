@@ -1,0 +1,18 @@
+uuid: b518179f-3233-48f3-adaa-6ab573c20d7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.banner_links
+id: taxonomy_term.banner_links.name
+field_name: name
+entity_type: taxonomy_term
+bundle: banner_links
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

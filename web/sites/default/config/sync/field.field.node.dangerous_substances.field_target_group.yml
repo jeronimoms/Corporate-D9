@@ -1,0 +1,29 @@
+uuid: ae34dc2a-77fd-476c-919e-c17f0573af69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_target_group
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.target_group
+id: node.dangerous_substances.field_target_group
+field_name: field_target_group
+entity_type: node
+bundle: dangerous_substances
+label: 'Target group'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      target_group: target_group
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,18 @@
+uuid: b6d493b0-0895-4f75-8b82-37577585395a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.biological_hazard
+id: taxonomy_term.biological_hazard.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: biological_hazard
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

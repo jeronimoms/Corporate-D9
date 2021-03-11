@@ -1,0 +1,19 @@
+uuid: 69f800e1-51c3-4f97-9374-baefcd00854f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_full_url
+    - node.type.thesaurus
+id: node.thesaurus.field_full_url
+field_name: field_full_url
+entity_type: node
+bundle: thesaurus
+label: 'Full URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

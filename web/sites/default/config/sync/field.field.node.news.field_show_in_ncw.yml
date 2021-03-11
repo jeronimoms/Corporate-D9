@@ -1,0 +1,23 @@
+uuid: c14ff190-9671-4d6d-8013-75b00b9bc8aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_in_ncw
+    - node.type.news
+id: node.news.field_show_in_ncw
+field_name: field_show_in_ncw
+entity_type: node
+bundle: news
+label: 'Show in NCW'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

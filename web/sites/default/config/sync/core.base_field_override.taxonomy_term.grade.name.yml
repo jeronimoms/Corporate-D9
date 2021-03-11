@@ -1,0 +1,18 @@
+uuid: 73b79382-6c70-4672-bdf5-0f1f6fe47727
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.grade
+id: taxonomy_term.grade.name
+field_name: name
+entity_type: taxonomy_term
+bundle: grade
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

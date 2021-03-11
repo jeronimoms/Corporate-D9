@@ -1,0 +1,21 @@
+uuid: 84b52044-af84-4981-a134-c3331891da53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary_html
+    - node.type.news
+  module:
+    - text
+id: node.news.field_summary_html
+field_name: field_summary_html
+entity_type: node
+bundle: news
+label: Summary
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

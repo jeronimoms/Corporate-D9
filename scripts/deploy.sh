@@ -1,9 +1,14 @@
 #!/bin/sh
-# Change the branch to testing.
-git checkout testing
+
+# Insert the tag name.
+echo 'Enter the tag name:'
+read tag_name
+
+# Change to the tag name.
+git checkout $tag_name
 
 # Download last changes.
-git pull
+git pull origin $tag_name
 
 # Init submodules.
 git submodule init
@@ -14,23 +19,15 @@ git submodule update --recursive
 # Update the Drupal installation.
 composer install
 
-# Update the databases.
-drush updb -l default -y
-drush updb -l allages -y
-drush updb -l oira -y
+# Update Vesafe site.
+echo 'Runing updb for Vesafe site'
 drush updb -l vesafe -y
-drush updb -l napo -y
 
-# Import the configuration.
-drush cim -l default -y
-drush cim -l allages -y
-drush cim -l oira -y
-drush cim -l vesafe -y
-drush cim -l napo -y
-
-# Clear the cache.
-drush cr -l default -y
-drush cr -l allages -y
-drush cr -l oira -y
+echo 'Clearing caches for Vesafe site'
 drush cr -l vesafe -y
-drush cr -l napo -y
+
+echo 'Importing configuration for Vesafe site'
+drush cim -l vesafe -y
+
+echo 'Clearing caches for Vesafe site'
+drush cr -l vesafe -y

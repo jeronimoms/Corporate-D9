@@ -1,0 +1,20 @@
+uuid: 32aaf93a-03ea-4fac-be22-2e5a7a9645d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.related_icons
+  module:
+    - path
+id: taxonomy_term.related_icons.path
+field_name: path
+entity_type: taxonomy_term
+bundle: related_icons
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,43 @@
+uuid: 19637eb1-99b8-42a2-845e-63ec2a6cfec3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlights_item
+    - field.field.node.wiki_page.body
+    - field.field.node.wiki_page.comment_node_wiki_page
+    - field.field.node.wiki_page.field_nace_codes
+    - field.field.node.wiki_page.field_summary_html
+    - field.field.node.wiki_page.field_tags
+    - field.field.node.wiki_page.field_thesaurus
+    - field.field.node.wiki_page.field_thesaurus_2020
+    - field.field.node.wiki_page.field_updated
+    - field.field.node.wiki_page.field_wiki_categories
+    - field.field.node.wiki_page.field_wiki_page_url
+    - node.type.wiki_page
+  module:
+    - user
+id: node.wiki_page.highlights_item
+targetEntityType: node
+bundle: wiki_page
+mode: highlights_item
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  comment_node_wiki_page: true
+  field_nace_codes: true
+  field_summary_html: true
+  field_tags: true
+  field_thesaurus: true
+  field_thesaurus_2020: true
+  field_updated: true
+  field_wiki_categories: true
+  field_wiki_page_url: true
+  langcode: true
+  search_api_excerpt: true

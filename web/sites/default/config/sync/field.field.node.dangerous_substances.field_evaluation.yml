@@ -1,0 +1,29 @@
+uuid: d2426051-fac1-4352-8de9-2007dfb9386d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_evaluation
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.evaluation
+id: node.dangerous_substances.field_evaluation
+field_name: field_evaluation
+entity_type: node
+bundle: dangerous_substances
+label: Evaluation
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      evaluation: evaluation
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

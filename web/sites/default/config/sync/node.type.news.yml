@@ -1,0 +1,17 @@
+uuid: a396cfec-ca95-4d2e-bc28-4e4f382221a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: News
+type: news
+description: 'OSH news'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

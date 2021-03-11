@@ -1,0 +1,86 @@
+uuid: 593f5895-debb-48c8-bf87-0afec1271fb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.press_contact.field_city
+    - field.field.node.press_contact.field_contact_type
+    - field.field.node.press_contact.field_contact_uuid
+    - field.field.node.press_contact.field_country
+    - field.field.node.press_contact.field_is_advisory
+    - field.field.node.press_contact.field_is_observer
+    - field.field.node.press_contact.field_location
+    - field.field.node.press_contact.field_personal_title
+    - field.field.node.press_contact.field_press_contact_cv
+    - field.field.node.press_contact.field_press_contact_declaration
+    - field.field.node.press_contact.field_press_contact_email
+    - field.field.node.press_contact.field_press_contact_job_title
+    - field.field.node.press_contact.field_press_contact_organization
+    - field.field.node.press_contact.field_press_contact_phone
+    - field.field.node.press_contact.field_website
+    - field.field.node.press_contact.field_wg_category
+    - field.field.node.press_contact.field_wg_role_1
+    - field.field.node.press_contact.field_wg_role_2
+    - field.field.node.press_contact.field_zip_code
+    - node.type.press_contact
+  module:
+    - spamspan
+    - user
+id: node.press_contact.teaser
+targetEntityType: node
+bundle: press_contact
+mode: teaser
+content:
+  field_press_contact_email:
+    type: email_spamspan
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      spamspan_at: ' [at] '
+      spamspan_use_graphic: 0
+      spamspan_dot_enable: 0
+      spamspan_dot: ' [dot] '
+      spamspan_use_form: 0
+      spamspan_form_pattern: '<a href="%url?goto=%email">%displaytext</a>'
+      spamspan_form_default_url: contact
+      spamspan_form_default_displaytext: 'contact form'
+    third_party_settings: {  }
+  field_press_contact_job_title:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_press_contact_phone:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_city: true
+  field_contact_type: true
+  field_contact_uuid: true
+  field_country: true
+  field_is_advisory: true
+  field_is_observer: true
+  field_location: true
+  field_personal_title: true
+  field_press_contact_cv: true
+  field_press_contact_declaration: true
+  field_press_contact_organization: true
+  field_website: true
+  field_wg_category: true
+  field_wg_role_1: true
+  field_wg_role_2: true
+  field_zip_code: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

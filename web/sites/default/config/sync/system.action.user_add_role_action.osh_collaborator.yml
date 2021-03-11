@@ -1,0 +1,14 @@
+uuid: 928a9b0e-6859-49fb-8a73-5541d6456f24
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.osh_collaborator
+  module:
+    - user
+id: user_add_role_action.osh_collaborator
+label: 'Add the OSH Collaborator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: osh_collaborator

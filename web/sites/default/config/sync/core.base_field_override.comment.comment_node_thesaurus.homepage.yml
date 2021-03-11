@@ -1,0 +1,18 @@
+uuid: 821740fc-c8f8-4adf-a2c0-ef6de18f1d7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_thesaurus
+id: comment.comment_node_thesaurus.homepage
+field_name: homepage
+entity_type: comment
+bundle: comment_node_thesaurus
+label: Homepage
+description: 'The comment author''s home page address.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: uri

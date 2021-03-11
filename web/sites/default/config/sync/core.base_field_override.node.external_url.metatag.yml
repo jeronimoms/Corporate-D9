@@ -1,0 +1,18 @@
+uuid: eed0f397-0f5f-4206-b9c7-13b12edfdc90
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.external_url
+id: node.external_url.metatag
+field_name: metatag
+entity_type: node
+bundle: external_url
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

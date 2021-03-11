@@ -1,0 +1,23 @@
+uuid: 7caf758e-b705-4c73-8713-7ab36f64198a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website
+    - node.type.press_contact
+  module:
+    - link
+id: node.press_contact.field_website
+field_name: field_website
+entity_type: node
+bundle: press_contact
+label: 'Web Site'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

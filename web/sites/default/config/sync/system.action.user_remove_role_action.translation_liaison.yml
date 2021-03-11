@@ -1,0 +1,14 @@
+uuid: d803540b-0cc7-4d05-87dd-668b706cad8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.translation_liaison
+  module:
+    - user
+id: user_remove_role_action.translation_liaison
+label: 'Remove the Translation Liaison role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: translation_liaison

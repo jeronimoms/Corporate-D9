@@ -1,0 +1,140 @@
+uuid: d81ae003-c62b-4d21-9910-5cb25061806e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.directive.body
+    - field.field.node.directive.field_activity
+    - field.field.node.directive.field_archived
+    - field.field.node.directive.field_date_of_directive
+    - field.field.node.directive.field_directive_type
+    - field.field.node.directive.field_expiration_date
+    - field.field.node.directive.field_legislation_category
+    - field.field.node.directive.field_nace_codes
+    - field.field.node.directive.field_publication_date
+    - field.field.node.directive.field_section
+    - field.field.node.directive.field_summary
+    - field.field.node.directive.field_tags
+    - field.field.node.directive.field_thesaurus_2020
+    - node.type.directive
+  module:
+    - datetime
+    - multiple_selects
+    - text
+id: node.directive.default
+targetEntityType: node
+bundle: directive
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 7
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_activity:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_archived:
+    weight: 12
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_date_of_directive:
+    weight: 5
+    settings:
+      date_order: MDY
+      time_type: none
+      increment: 15
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_directive_type:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_expiration_date:
+    weight: 11
+    settings:
+      increment: 15
+      date_order: YMD
+      time_type: '24'
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_legislation_category:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nace_codes:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: multiple_options_select
+    region: content
+  field_publication_date:
+    weight: 4
+    settings:
+      date_order: YMD
+      time_type: '24'
+      increment: 15
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_section:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_summary:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_tags:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_thesaurus_2020:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: multiple_options_select
+    region: content
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

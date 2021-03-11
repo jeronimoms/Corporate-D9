@@ -10,9 +10,14 @@
 # Ignore debug services
 /web/sites/*/services.yml
 /web/sites/development.services.yml
+/web/sites/*/development.services.yml
+
 
 # Ignore sensitive information
 /web/sites/*/settings.local.php
+/web/sites/*/settings.develop.php
+/web/sites/*/settings.staging.php
+/web/sites/*/settings.production.php
 
 # Ignore Drupal's file directory
 /web/sites/*/files/
@@ -24,3 +29,7 @@
 /.env
 /.editorconfig
 /.gitattributes
+
+
+# Docker Local
+/.ddev

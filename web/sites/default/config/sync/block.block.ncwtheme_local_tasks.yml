@@ -1,0 +1,22 @@
+uuid: 9ab02f17-bdaa-4814-9816-7ea74014a3e7
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ncwtheme
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: ncwtheme_local_tasks
+theme: ncwtheme
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

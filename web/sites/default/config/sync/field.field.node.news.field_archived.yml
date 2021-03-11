@@ -1,0 +1,23 @@
+uuid: 2748dd0d-5950-4cdf-bf40-15cfdf9e325e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archived
+    - node.type.news
+id: node.news.field_archived
+field_name: field_archived
+entity_type: node
+bundle: news
+label: 'Marked as outdated'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

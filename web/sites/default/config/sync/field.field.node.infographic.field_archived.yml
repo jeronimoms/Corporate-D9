@@ -1,0 +1,23 @@
+uuid: 77568725-68bf-4918-9c2d-dbdadb271acd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archived
+    - node.type.infographic
+id: node.infographic.field_archived
+field_name: field_archived
+entity_type: node
+bundle: infographic
+label: 'Marked as outdated'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

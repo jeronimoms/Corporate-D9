@@ -1,0 +1,18 @@
+uuid: 3a362103-6199-4ea2-9a62-6781ac3adec7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.attachment_file_type
+id: taxonomy_term.attachment_file_type.name
+field_name: name
+entity_type: taxonomy_term
+bundle: attachment_file_type
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

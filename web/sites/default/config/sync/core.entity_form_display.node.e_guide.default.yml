@@ -1,0 +1,69 @@
+uuid: 9c8872e4-b3e3-49c0-a5e1-1e07ac601895
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.e_guide.field_country
+    - field.field.node.e_guide.field_external_url
+    - field.field.node.e_guide.field_link
+    - field.field.node.e_guide.field_section
+    - node.type.e_guide
+  module:
+    - link
+id: node.e_guide.default
+targetEntityType: node
+bundle: e_guide
+mode: default
+content:
+  field_country:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_external_url:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_section:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

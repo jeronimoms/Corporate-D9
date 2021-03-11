@@ -1,0 +1,22 @@
+uuid: 066fef9e-75a4-45ea-b42a-f9e75100c293
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.glossary_type
+id: taxonomy_term.glossary_type.status
+field_name: status
+entity_type: taxonomy_term
+bundle: glossary_type
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: 73a381e2-d53f-48f1-b450-c9330354d769
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.target_audience
+id: taxonomy_term.target_audience.name
+field_name: name
+entity_type: taxonomy_term
+bundle: target_audience
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

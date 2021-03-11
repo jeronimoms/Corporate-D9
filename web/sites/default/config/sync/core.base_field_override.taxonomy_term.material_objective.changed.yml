@@ -1,0 +1,18 @@
+uuid: f5d19bb4-a8ca-414c-b538-9d89f4fcb111
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material_objective
+id: taxonomy_term.material_objective.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: material_objective
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

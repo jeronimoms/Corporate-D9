@@ -1,0 +1,294 @@
+uuid: 4d8d568f-083d-4fcf-9f30-c4fdb0267995
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.entity_additional_reference
+    - field.field.node.publication.body
+    - field.field.node.publication.field_activity
+    - field.field.node.publication.field_aditional_resources
+    - field.field.node.publication.field_archived
+    - field.field.node.publication.field_author
+    - field.field.node.publication.field_banner_publications_office
+    - field.field.node.publication.field_booklet
+    - field.field.node.publication.field_expiration_date
+    - field.field.node.publication.field_file
+    - field.field.node.publication.field_image_media
+    - field.field.node.publication.field_msd_priority_area
+    - field.field.node.publication.field_nace_codes
+    - field.field.node.publication.field_page_count
+    - field.field.node.publication.field_pages_count
+    - field.field.node.publication.field_pages_count_updated
+    - field.field.node.publication.field_priority_area
+    - field.field.node.publication.field_publication_bookshop_id
+    - field.field.node.publication.field_publication_date
+    - field.field.node.publication.field_publication_related_res
+    - field.field.node.publication.field_publication_type
+    - field.field.node.publication.field_related_oshwiki_articles
+    - field.field.node.publication.field_related_publications
+    - field.field.node.publication.field_relevant_for
+    - field.field.node.publication.field_section
+    - field.field.node.publication.field_show_on
+    - field.field.node.publication.field_tags
+    - field.field.node.publication.field_thesaurus_2020
+    - field.field.node.publication.field_wiki_categories
+    - node.type.publication
+  module:
+    - content_moderation
+    - datetime
+    - entity_browser
+    - field_group
+    - file
+    - media_library
+    - multiple_selects
+    - text
+third_party_settings:
+  field_group:
+    group_summary_resources:
+      children:
+        - field_related_publications
+        - field_publication_related_res
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Summary & Resources'
+id: node.publication.default
+targetEntityType: node
+bundle: publication
+mode: default
+content:
+  body:
+    weight: 6
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_activity:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_aditional_resources:
+    type: entity_browser_entity_reference
+    weight: 21
+    region: content
+    settings:
+      entity_browser: entity_additional_reference
+      field_widget_display: label
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_edit: false
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+  field_archived:
+    weight: 19
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_author:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_publications_office:
+    weight: 13
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_booklet:
+    weight: 27
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_expiration_date:
+    weight: 5
+    settings:
+      date_order: MDY
+      time_type: '24'
+      increment: 15
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_file:
+    weight: 14
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_image_media:
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_msd_priority_area:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nace_codes:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: multiple_options_select
+    region: content
+  field_page_count:
+    weight: 20
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pages_count:
+    weight: 24
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pages_count_updated:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_priority_area:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_publication_bookshop_id:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_publication_date:
+    weight: 4
+    settings:
+      date_order: MDY
+      time_type: '24'
+      increment: 15
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_publication_related_res:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_publication_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_related_oshwiki_articles:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_related_publications:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_relevant_for:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: multiple_options_select
+    region: content
+  field_section:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_show_on:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_tags:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_thesaurus_2020:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: multiple_options_select
+    region: content
+  field_wiki_categories:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

@@ -1,0 +1,18 @@
+uuid: 616f7196-84aa-41ed-8b4d-9b00b1406cb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contact_type
+id: taxonomy_term.contact_type.name
+field_name: name
+entity_type: taxonomy_term
+bundle: contact_type
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 26973fa0-a907-4d21-98de-af6e6f2ad1c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_main_category
+    - taxonomy.vocabulary.publication_types
+id: taxonomy_term.publication_types.field_main_category
+field_name: field_main_category
+entity_type: taxonomy_term
+bundle: publication_types
+label: 'Main category'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

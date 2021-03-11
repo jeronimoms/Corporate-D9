@@ -1,0 +1,89 @@
+# Migration file for creating "publication" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: vesafe_node_key_article
+label: 'Node: Key Article'
+audit: true
+migration_group: vesafe_migrate
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+
+########################## SOURCE #########################
+
+source:
+  # In this case, we have to control the state of node because is moderated by content_moderation
+  plugin: d7_node_moderation_state
+  node_type: key_article
+
+########################## PROCESS #########################
+
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the nid field to allow incremental migrations.
+  nid: nid
+  type:
+    -
+      plugin: default_value
+      default_value: key_article
+  title: title
+  field_subtitle:
+    -
+      plugin: get
+      source: field_subtitle/0
+  field_subtitle/format:
+    - plugin: default_value
+      default_value: full_html
+  body/value: body/0/value
+  body/summary:
+    -
+      plugin: strip_tags
+      source: field_summary/0/value
+  body/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_publication_date:
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d'
+          source: value
+
+  field_ka_general_safety_issues: field_ka_general_safety_issues
+  field_ka_general_risk_factors: field_ka_general_risk_factors
+  field_ka_specific_risk_factors: field_ka_specific_risk_factors
+  field_related_good_practices: field_related_good_practices
+
+  uid: node_uid
+  status: status
+  moderation_state: moderation_state
+  created: created
+  changed: changed
+######################## DESTINATION ######################
+
+destination:
+  plugin: entity:node
+
+######################## DEPENDENCIES #####################
+
+# We specify that this migration depends on the unops_project_migrate module.
+# Based on this dependency, this migration will be removed when the
+# unops_project_migrate module is uninstalled.
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+migration_dependencies:
+  required:
+    - d7_user
+    - vesafe_node_key_article_theme

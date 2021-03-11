@@ -1,0 +1,17 @@
+uuid: 3dcb51ee-0eca-48d6-910b-8c726129eb07
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Youtube
+type: youtube
+description: 'Additional resources - Youtube videos'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

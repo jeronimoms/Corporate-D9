@@ -1,0 +1,25 @@
+name: NCW Theme
+type: theme
+description: 'Corporate Website Theme'
+core: 8.x
+core_version_requirement: ^8 || ^9
+base theme: bootstrap_barrio
+
+libraries:
+  - ncwtheme/bootstrap_cdn
+  - ncwtheme/global-styling
+
+regions:
+  top_header: 'Top header'
+  top_header_logos: 'Top header logos'
+  header: Header
+  header_form: 'Header form'
+  primary_menu: 'Primary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer_end: 'Footer End'

@@ -1,0 +1,22 @@
+uuid: 9ab35021-4b32-4534-ada8-3184e10b7757
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.priority_area
+id: taxonomy_term.priority_area.status
+field_name: status
+entity_type: taxonomy_term
+bundle: priority_area
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,20 @@
+uuid: 701629e6-30f7-4052-bd98-6885e1994f8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.health_effects
+id: taxonomy_term.health_effects.moderation_state
+field_name: moderation_state
+entity_type: taxonomy_term
+bundle: health_effects
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: eb4e93f8-1856-4be5-bade-80e1aa8115f8
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_thesaurus_2020
+field_name: field_thesaurus_2020
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

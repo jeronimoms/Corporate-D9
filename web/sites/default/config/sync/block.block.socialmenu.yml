@@ -1,0 +1,29 @@
+uuid: b4b07f06-624e-4645-b69a-9864615afe10
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social-menu
+  module:
+    - menu_block
+  theme:
+    - ncwtheme
+id: socialmenu
+theme: ncwtheme
+region: header
+weight: -7
+provider: null
+plugin: 'menu_block:social-menu'
+settings:
+  id: 'menu_block:social-menu'
+  label: 'Social menu'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'social-menu:'
+  suggestion: social_menu
+visibility: {  }

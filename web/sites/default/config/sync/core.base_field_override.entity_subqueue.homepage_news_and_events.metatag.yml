@@ -1,0 +1,18 @@
+uuid: f04080bd-a8a7-4b37-ba15-be01edcd0d4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.homepage_news_and_events
+id: entity_subqueue.homepage_news_and_events.metatag
+field_name: metatag
+entity_type: entity_subqueue
+bundle: homepage_news_and_events
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

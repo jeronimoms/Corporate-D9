@@ -1,0 +1,114 @@
+.navbar{
+  padding: 0;
+  #block-ncwtheme-main-menu{
+    float: none;
+    width: 100%;
+    background-color: $bg-color-blue-light;
+    border-bottom: 5px solid $bg-color-blue;
+    text-align: left;
+    padding-bottom:0;
+    padding-left:0;
+    a{
+      color: $text-color-blue;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    ul.menu-level-0{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      border: 0;
+      border-radius: 0;
+      margin-top: 0px;
+      margin-bottom: 0;
+      padding-left: 0;
+
+      > li.menu-item:nth-child(1) {
+        width: 3%;
+        border-left: 0;
+        text-align: center;
+        > a{
+          display: none;
+        }
+        .field--type-entity-reference{
+          margin: 0;
+          img{
+            margin: 0;
+          }
+        }
+      }
+      > li.menu-item:last-child{
+        ul {
+          margin-left: -80px ;
+          li{
+            ul{
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      > li.menu-item{
+        position: relative;
+        float: left;
+        width: 13%;
+        text-align: center;
+        padding: 1rem 1rem 1rem 1rem;
+        border-left: 1px solid $bg-color-white;
+
+        &:hover{
+          ul.menu-level-1{
+            position: absolute;
+            display: block;
+            background: $bg-color-white;
+            left: 0;
+            margin-left: -1.3em;
+            margin-top: 1em;
+            border-top: 5px solid $bg-color-blue-light;
+            border-bottom: 5px solid $bg-color-blue;
+            z-index: 999;
+          }
+        }
+      }
+      li {
+        ul.menu-level-1 {
+          display: none;
+          background: $bg-color-white;
+          list-style: none;
+          width: 22rem;
+          padding: 10px 10px 10px 20px;
+          a{
+           font-family: 'Open Sans Condensed';
+          }
+          li {
+            width: 100%;
+            text-align: left;
+            ul.menu-level-2 {
+              list-style: none;
+              padding-left: 10px;
+              li{
+                width: 100%;
+                text-align: left;
+                a{
+                  display: block;
+                  color: $text-color-grey;
+                  font-family: 'Open Sans';
+                  font-weight: bold;
+                  font-size: 0.8rem;
+                  padding-bottom: 5px;
+                  padding-top: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mean-expand{
+  display: none;
+}

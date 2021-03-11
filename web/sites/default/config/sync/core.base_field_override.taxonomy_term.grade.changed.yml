@@ -1,0 +1,18 @@
+uuid: c217304c-c94f-4296-ac53-4bc8c487a155
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.grade
+id: taxonomy_term.grade.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: grade
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

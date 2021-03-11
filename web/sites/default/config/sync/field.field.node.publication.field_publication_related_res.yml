@@ -1,0 +1,27 @@
+uuid: 1624aa99-e239-4b96-8213-9c4f3bff508e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_related_res
+    - node.type.publication
+  module:
+    - file
+id: node.publication.field_publication_related_res
+field_name: field_publication_related_res
+entity_type: node
+bundle: publication
+label: 'Resources (files)'
+description: 'Publication Resources files.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: publications/related_resources
+  file_extensions: 'pdf doc docx odt rtf txt csv xls ods xlsx ppt pptx epub'
+  max_filesize: 50MB
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,19 @@
+uuid: 377befbd-c8fa-40c0-ad57-ed5699584f60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agency_contact_reply
+    - node.type.events
+id: node.events.field_agency_contact_reply
+field_name: field_agency_contact_reply
+entity_type: node
+bundle: events
+label: 'Agency contact / reply'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

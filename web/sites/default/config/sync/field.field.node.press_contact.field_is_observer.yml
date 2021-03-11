@@ -1,0 +1,23 @@
+uuid: 5997046b-ee09-4a8c-84d4-549477890775
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_observer
+    - node.type.press_contact
+id: node.press_contact.field_is_observer
+field_name: field_is_observer
+entity_type: node
+bundle: press_contact
+label: 'Is Observer'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

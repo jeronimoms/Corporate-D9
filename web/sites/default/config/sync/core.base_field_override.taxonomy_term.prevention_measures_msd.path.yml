@@ -1,0 +1,20 @@
+uuid: 292a868d-e127-49fa-a2af-0c178914a4ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.prevention_measures_msd
+  module:
+    - path
+id: taxonomy_term.prevention_measures_msd.path
+field_name: path
+entity_type: taxonomy_term
+bundle: prevention_measures_msd
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,18 @@
+uuid: 8f3ed6e9-26b2-4da9-b5e9-0a93c52bc412
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.prevention_measures_msd
+id: taxonomy_term.prevention_measures_msd.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: prevention_measures_msd
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

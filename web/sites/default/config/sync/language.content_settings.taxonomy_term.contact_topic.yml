@@ -1,0 +1,18 @@
+uuid: d2a19cbd-de2d-4fce-b27b-0db978ddbd88
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contact_topic
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.contact_topic
+target_entity_type_id: taxonomy_term
+target_bundle: contact_topic
+default_langcode: und
+language_alterable: true

@@ -1,0 +1,104 @@
+# Migration file for creating "event" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_node_partner_i18n                         # -----  CHANGE
+label: 'Node: partner Translations'                # -----  CHANGE
+migration_group: oira_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node_entity_translation
+  node_type: partner                                # -----  CHANGE
+destination:
+  plugin: entity:node
+  translations: true
+  destination_module: content_translation
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - oira_node_partner                            # -----  CHANGE
+
+process:
+  nid: entity_id
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      'pt': 'pt-pt'
+      'no': 'nn'
+  title: title
+  body: body
+  uid: uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  content_translation_source: source
+  content_translation_outdated: translate
+  ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
+  field_mission_statement: field_mission_statement
+  field_ph_address: field_ph_address
+  field_ph_cp: field_ph_cp
+  field_ph_town: field_ph_town
+  field_website:
+    plugin: field_link
+    source: field_website
+  field_country:
+    plugin: sub_process
+    source: field_country
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_dedicated_oira_website:
+    plugin: field_link
+    source: field_dedicated_oira_website
+  field_general_phone: field_general_phone
+  field_guid_main_contact: field_guid_main_contact
+  field_main_contact: field_main_contact
+  field_main_contact_email: field_main_contact_email
+  field_oira_eu_level: field_oira_eu_level
+  field_guid_organisation: field_guid_organisation
+  field_orgtype:
+    plugin: sub_process
+    source: field_orgtype
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_partner_other_users: field_partner_other_users
+  field_social_profile:
+    plugin: field_link
+    source: field_social_profile
+  field_partner_type:
+    plugin: sub_process
+    source: field_partner_type
+    process:
+      target_id:
+        plugin: get
+        source: tid
+
+  # -----  CAMPOS Q FALLAN
+  field_general_email: field_general_email
+  field_partner:
+    plugin: sub_process
+    source: workbench_access
+    process:
+      target_id:
+        plugin: get
+        source: tid

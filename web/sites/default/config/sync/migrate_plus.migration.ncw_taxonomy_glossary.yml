@@ -1,0 +1,52 @@
+uuid: fa7f8eec-3d68-4559-8b2a-2c00d195dae1
+langcode: en
+status: true
+dependencies: {  }
+id: ncw_taxonomy_glossary
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate
+label: 'Terms: Glossary'
+source:
+  plugin: d7_taxonomy_term
+  bundle: glossary
+process:
+  tid: tid
+  vid:
+    -
+      plugin: default_value
+      default_value: glossary
+  name: name
+  description/value: description
+  description/format: format
+  weight: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: ncw_taxonomy_glossary
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+  field_glossary_type:
+    -
+      plugin: sub_process
+      source: field_glossary_type
+      process:
+        target_id:
+          plugin: get
+          source: tid
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies:
+  optional:
+    - d7_field_instance

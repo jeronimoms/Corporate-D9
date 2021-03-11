@@ -1,0 +1,18 @@
+uuid: ae4812d6-5963-4d3a-850b-04e5ac084366
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contact_type_of_sender
+id: taxonomy_term.contact_type_of_sender.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: contact_type_of_sender
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

@@ -1,0 +1,29 @@
+uuid: 9d8d644c-ebb7-42aa-a82a-4e31a0ec36aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tasks_covered
+    - node.type.dangerous_substances
+    - taxonomy.vocabulary.hazmap_categories
+id: node.dangerous_substances.field_tasks_covered
+field_name: field_tasks_covered
+entity_type: node
+bundle: dangerous_substances
+label: 'Tasks covered'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      hazmap_categories: hazmap_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

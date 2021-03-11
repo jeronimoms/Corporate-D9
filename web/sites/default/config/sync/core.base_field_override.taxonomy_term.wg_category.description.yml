@@ -1,0 +1,20 @@
+uuid: ca22dd1f-36b1-44bd-a6f4-54dc3e715239
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wg_category
+  module:
+    - text
+id: taxonomy_term.wg_category.description
+field_name: description
+entity_type: taxonomy_term
+bundle: wg_category
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

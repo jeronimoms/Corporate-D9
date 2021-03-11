@@ -1,0 +1,27 @@
+uuid: 4e4227da-26e4-4df0-bdf5-7423e183426f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_press_contact_cv
+    - node.type.press_contact
+  module:
+    - file
+id: node.press_contact.field_press_contact_cv
+field_name: field_press_contact_cv
+entity_type: node
+bundle: press_contact
+label: CV
+description: 'Contact CV file.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: ''
+  file_extensions: txt
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

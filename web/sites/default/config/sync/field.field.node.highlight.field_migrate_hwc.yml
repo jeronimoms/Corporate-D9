@@ -1,0 +1,23 @@
+uuid: a71791a2-0d8b-45d8-93a1-5c8893768eaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_migrate_hwc
+    - node.type.highlight
+id: node.highlight.field_migrate_hwc
+field_name: field_migrate_hwc
+entity_type: node
+bundle: highlight
+label: 'Migrate to HWC'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

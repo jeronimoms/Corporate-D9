@@ -1,0 +1,20 @@
+uuid: 02d0c408-5255-486d-87d3-21d9e793320b
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_banner_link_title
+field_name: field_banner_link_title
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

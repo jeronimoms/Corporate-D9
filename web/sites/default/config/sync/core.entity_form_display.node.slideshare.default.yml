@@ -1,0 +1,81 @@
+uuid: bed026bd-f495-4cc6-a37f-98fed654d84d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.slideshare.field_slideshare_id
+    - field.field.node.slideshare.field_slideshare_url
+    - field.field.node.slideshare.field_thumbnail
+    - image.style.thumbnail
+    - node.type.slideshare
+  module:
+    - field_group
+    - image
+    - link
+third_party_settings:
+  field_group:
+    group_slideshare:
+      children:
+        - field_slideshare_url
+        - field_slideshare_id
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: SLIDESHARE
+id: node.slideshare.default
+targetEntityType: node
+bundle: slideshare
+mode: default
+content:
+  field_slideshare_id:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_slideshare_url:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_thumbnail:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

@@ -1,0 +1,22 @@
+uuid: 82e01554-9587-40ed-aacf-39d12521b928
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.wiki_page
+id: node.wiki_page.status
+field_name: status
+entity_type: node
+bundle: wiki_page
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

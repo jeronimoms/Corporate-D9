@@ -1,0 +1,18 @@
+uuid: 4748ac79-ffea-48f8-bff6-c593d2ba99d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contact_type_of_sender
+id: taxonomy_term.contact_type_of_sender.name
+field_name: name
+entity_type: taxonomy_term
+bundle: contact_type_of_sender
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

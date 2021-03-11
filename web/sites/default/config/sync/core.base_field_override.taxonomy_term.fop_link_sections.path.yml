@@ -1,0 +1,20 @@
+uuid: 69833a37-d92d-4478-986f-5ec6eba75604
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.fop_link_sections
+  module:
+    - path
+id: taxonomy_term.fop_link_sections.path
+field_name: path
+entity_type: taxonomy_term
+bundle: fop_link_sections
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

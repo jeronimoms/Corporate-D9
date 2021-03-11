@@ -1,0 +1,68 @@
+<?php
+
+use Drupal\vesafe_workflow\VwEntity;
+use Drupal\vesafe_workflow\VwCmn;
+use Drupal\vesafe_workflow\VwToolBar;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+
+
+/**
+ * Implements hook_toolbar().
+ */
+function vesafe_workflow_toolbar() {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwToolBar::class)
+    ->toolBar();
+}
+
+/**
+ * Implements hook_content_moderation_notification_mail_data_alter().
+ */
+function vesafe_workflow_content_moderation_notification_mail_data_alter(EntityInterface $entity, array &$data) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwCmn::class)
+    ->mailDataAlter($entity, $data);
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function vesafe_workflow_local_tasks_alter(&$local_tasks) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwEntity::class)
+    ->localTastAlter($local_tasks);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function vesafe_workflow_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'approvers':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function vesafe_workflow_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwEntity::class)
+    ->formAlter($form, $form_state, $form_id);
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function vesafe_workflow_entity_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(VwEntity::class)
+    ->viewAlter($build, $entity, $display);
+}
+

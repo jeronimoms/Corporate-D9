@@ -1,0 +1,18 @@
+uuid: 3a6fde0a-4ba2-47bf-a4e6-276b912f1793
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.wiki_categories
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.wiki_categories
+target_entity_type_id: taxonomy_term
+target_bundle: wiki_categories
+default_langcode: und
+language_alterable: true

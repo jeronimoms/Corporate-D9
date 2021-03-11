@@ -1,0 +1,18 @@
+uuid: ffd8508c-025a-4c8a-8395-d86b8f7150b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazards
+id: taxonomy_term.hazards.name
+field_name: name
+entity_type: taxonomy_term
+bundle: hazards
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

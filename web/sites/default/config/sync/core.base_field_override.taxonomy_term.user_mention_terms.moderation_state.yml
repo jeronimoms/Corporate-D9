@@ -1,0 +1,20 @@
+uuid: 85be8b86-16f7-44ab-aba3-715781a3cc63
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.user_mention_terms
+id: taxonomy_term.user_mention_terms.moderation_state
+field_name: moderation_state
+entity_type: taxonomy_term
+bundle: user_mention_terms
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: 6cae848e-8a6a-4ed4-a432-599fe38e9dbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.worker_groups_covered
+  module:
+    - path
+id: taxonomy_term.worker_groups_covered.path
+field_name: path
+entity_type: taxonomy_term
+bundle: worker_groups_covered
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

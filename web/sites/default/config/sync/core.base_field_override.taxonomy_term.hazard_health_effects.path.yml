@@ -1,0 +1,20 @@
+uuid: c832ad3a-7529-48ea-a1f9-c3c8ec053bcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hazard_health_effects
+  module:
+    - path
+id: taxonomy_term.hazard_health_effects.path
+field_name: path
+entity_type: taxonomy_term
+bundle: hazard_health_effects
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

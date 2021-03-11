@@ -1,0 +1,18 @@
+uuid: 481d6ec5-29c4-44dc-938b-5c5a98d7c84b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.worker_groups
+id: taxonomy_term.worker_groups.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: worker_groups
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

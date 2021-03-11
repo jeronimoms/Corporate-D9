@@ -1,0 +1,20 @@
+uuid: adb26921-38fd-470d-85ef-560912e52533
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_news
+id: comment.comment_node_news.name
+field_name: name
+entity_type: comment
+bundle: comment_node_news
+label: Name
+description: 'The comment author''s name.'
+required: false
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

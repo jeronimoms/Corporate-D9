@@ -1,0 +1,18 @@
+uuid: b9ab6d83-ba37-4379-a474-7ee6272b1194
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact_us_form
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.contact_us_form
+target_entity_type_id: node
+target_bundle: contact_us_form
+default_langcode: site_default
+language_alterable: false

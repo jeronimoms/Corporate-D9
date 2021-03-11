@@ -1,0 +1,23 @@
+uuid: 197dd30a-66b8-457f-be3a-937f93bff5ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_count
+    - node.type.publication
+id: node.publication.field_page_count
+field_name: field_page_count
+entity_type: node
+bundle: publication
+label: 'Page count'
+description: 'Automatically calculated when saving. The count of pages of text in the default language (English).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

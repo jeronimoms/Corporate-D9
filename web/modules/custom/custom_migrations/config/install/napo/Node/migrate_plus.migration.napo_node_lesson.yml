@@ -1,0 +1,69 @@
+# Migration file for creating "lesson" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: napo_node_lesson                    # -----  CHANGE
+label: 'Node: Lesson'                   # -----  CHANGE
+audit: true
+migration_group: napo_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: lesson                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  # nid: tnid   #comentar si no es bbdd limpia
+  # vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: lesson              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_lesson_type:
+    -
+      plugin: sub_process
+      source: field_lesson_type
+      process:
+        target_id: tid
+  field_activities: field_activities
+  field_assessment: field_assessment
+  field_file: field_file
+  field_lesson_intro_text: field_lesson_intro_text
+  field_learning_objectives: field_learning_objectives
+  field_lesson_toolkit: field_lesson_toolkit
+  field_lesson_video: field_lesson_video
+  field_curriculum_links: field_curriculum_links
+  field_resources_required: field_resources_required
+  field_starter: field_starter
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+

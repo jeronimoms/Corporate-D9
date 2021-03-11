@@ -1,0 +1,29 @@
+uuid: a68e9b83-a2b2-43ba-838b-9775fd40b188
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_manager
+    - node.type.blog
+id: node.blog.field_project_manager
+field_name: field_project_manager
+entity_type: node
+bundle: blog
+label: 'Project manager'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

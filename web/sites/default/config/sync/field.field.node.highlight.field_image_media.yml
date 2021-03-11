@@ -1,0 +1,29 @@
+uuid: 3cb96b8d-7eff-4321-b309-25739b780b72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_media
+    - media.type.image_caption
+    - node.type.highlight
+id: node.highlight.field_image_media
+field_name: field_image_media
+entity_type: node
+bundle: highlight
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image_caption: image_caption
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

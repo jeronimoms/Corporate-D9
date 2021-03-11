@@ -1,0 +1,21 @@
+uuid: f9c1a585-5dcb-4633-b64c-6d3d7f94a5ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_us_designation
+    - node.type.contact_us_form
+_core:
+  default_config_hash: 269cHSIYwbgYA8kPDW8im3_oEWLfT4ExNbRkCExMPiI
+id: node.contact_us_form.field_contact_us_designation
+field_name: field_contact_us_designation
+entity_type: node
+bundle: contact_us_form
+label: Designation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,26 @@
+uuid: 6e9781ef-75ff-4d24-ab19-7f6b0a88c2b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activity
+    - node.type.highlight
+    - taxonomy.vocabulary.activity
+id: node.highlight.field_activity
+field_name: field_activity
+entity_type: node
+bundle: highlight
+label: Activity
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      activity: activity
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

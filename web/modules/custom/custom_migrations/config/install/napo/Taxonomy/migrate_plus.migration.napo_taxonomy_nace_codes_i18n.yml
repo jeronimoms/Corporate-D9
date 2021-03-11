@@ -1,0 +1,66 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: napo_taxonomy_nace_codes_i18n               # -----  CHANGE
+label: 'Terms: nace_codes Translations'         # -----  CHANGE
+audit: true
+migration_group: napo_migrate                # -----  CHANGE
+source:
+  plugin: d7_locale_terms
+  bundle: nace_codes                            # -----  CHANGE
+  translations: true
+destination:
+  plugin: entity:taxonomy_term
+  translations: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+migration_dependencies:
+  required:
+    - napo_taxonomy_nace_codes                  # -----  CHANGE
+
+process:
+  tid:
+    plugin: migration_lookup
+    migration: napo_taxonomy_nace_codes         # -----  CHANGE
+    source: tid
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: ltlanguage
+    map:
+      'pt': 'pt-pt'
+  vid:
+    -
+      plugin: default_value
+      default_value: nace_codes                 # -----  CHANGE
+  name: name_field_value
+  'description/value': description_field_value
+  'description/format': format
+  parent_id:
+    - plugin: skip_on_empty
+      method: process
+      source: parent
+    - plugin: migration_lookup
+      migration: napo_taxonomy_nace_codes
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGE
+
+  field_nace_code: field_nace_code
+  field_nace_changes: field_nace_changes
+  field_nace_includes: includes_field_value
+  field_nace_excludes: excludes_field_value
+  field_nace_includes_also: includes_also_field_value

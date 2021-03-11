@@ -1,0 +1,18 @@
+uuid: cdcd8ece-1134-42ee-ae2a-738e36343f39
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.agency
+id: taxonomy_term.agency.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: agency
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

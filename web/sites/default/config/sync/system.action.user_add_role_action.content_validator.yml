@@ -1,0 +1,14 @@
+uuid: 89a66762-d455-4486-ac08-2e6c3bfe5d48
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_validator
+  module:
+    - user
+id: user_add_role_action.content_validator
+label: 'Add the Content Validator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: content_validator

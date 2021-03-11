@@ -1,0 +1,99 @@
+uuid: cbbf9070-871f-4c95-adf2-5f599fa54153
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.infographic.body
+    - field.field.node.infographic.field_activity
+    - field.field.node.infographic.field_archived
+    - field.field.node.infographic.field_external_url
+    - field.field.node.infographic.field_file_media
+    - field.field.node.infographic.field_image_media
+    - field.field.node.infographic.field_pages_count
+    - field.field.node.infographic.field_publication_date
+    - field.field.node.infographic.field_section
+    - field.field.node.infographic.field_tags
+    - field.field.node.infographic.field_thumbnail_media
+    - field.field.node.infographic.field_twin_infographics
+    - node.type.infographic
+  module:
+    - link
+    - text
+    - user
+id: node.infographic.default
+targetEntityType: node
+bundle: infographic
+mode: default
+content:
+  body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_archived:
+    weight: 6
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_external_url:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_file_media:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image_media:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_thumbnail_media:
+    type: entity_reference_entity_view
+    weight: 8
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_twin_infographics:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  addtoany: true
+  field_activity: true
+  field_pages_count: true
+  field_publication_date: true
+  field_section: true
+  field_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

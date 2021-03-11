@@ -1,0 +1,19 @@
+uuid: 618b3ba1-4d3c-4a39-a2d3-9686ff87ba20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_languages_other
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_languages_other
+field_name: field_languages_other
+entity_type: node
+bundle: dangerous_substances
+label: 'Languages other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 39cb883b-0863-4de3-89af-61b712a8c1fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cas_number
+    - node.type.dangerous_substances
+id: node.dangerous_substances.field_cas_number
+field_name: field_cas_number
+entity_type: node
+bundle: dangerous_substances
+label: 'CAS Number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

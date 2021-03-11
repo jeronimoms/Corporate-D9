@@ -1,0 +1,203 @@
+@media only screen and (max-width : 1200px) {
+  /* Home page */
+  #main-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .home-intro {
+    .view-osha-home-page-banners {
+      .home-boxes {
+        width: 32%;
+        height: auto;
+        margin-bottom: 1.5em;
+        margin-right: 10px;
+        .home-boxes {
+          width: 100%;
+          img {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .home-recommended-resources{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Footer */
+  nav#block-footermenu{
+    ul.menu-level-0{
+      li.menu-item.menu-item--expanded:nth-child(2){
+        display: flex;
+        float: none;
+        margin-right: 0;
+        width: 100%;
+        clear: both;
+        justify-content: center;
+        padding-top: 2rem;
+      }
+    }
+  }
+
+}/* End Media 1200px */
+
+@media only screen and (max-width : 1024px) {
+  .left_column {
+    width: 100%;
+  }
+
+  .path-frontpage{
+    .sidebars_second_home {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}/* End Media 1024px */
+
+
+
+@media only screen and (max-width : 991px) {
+
+  /* Menu responsive */
+  #navbar-main {
+    padding: 0;
+    background: $bg-color-blue;
+    .navbar-toggler {
+      padding: 1rem;
+
+      .icon-bar {
+        background-color: $bg-color-white;
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        border-radius: 1px;
+      }
+    }
+
+    #block-ncwtheme-main-menu{
+      ul.menu-level-0{
+        width: 100%;
+        display: block;
+        padding-bottom: 1.5rem;
+        > li.menu-item:nth-child(1) {
+          width: 100%;
+          text-align: left;
+          .mean-expand {
+            display: none;
+          }
+          > a{
+            display: none;
+          }
+          .field--type-entity-reference{
+            img{
+              margin: 0;
+            }
+          }
+        }
+        > li.menu-item:last-child{
+          ul {
+            margin-left: 0 ;
+            li{
+              ul{
+                margin-left: 0;
+              }
+            }
+          }
+        }
+        > li.menu-item{
+          float: none;
+          width: 100%;
+          text-align: left;
+          border-left: 0;
+          padding: 1rem 0 0 1rem;
+          background: transparent;
+          a{
+            display: block;
+            color: $text-color-grey;
+            font-size: 1.3rem;
+            font-weight: normal;
+          }
+          &:hover{
+            ul.menu-level-1{
+              position: relative;
+            }
+          }
+        }
+        li {
+          ul.menu-level-1 {
+            display: none;
+            width: 95%;
+            background: transparent;
+            border-top: 0;
+            border-bottom: 0;
+            li {
+              background: url(../images/li_arrow.png) no-repeat 1em 10px;
+              padding: 0 0 1em 2rem;
+              a{
+                color: $text-color-blue;
+                font-size: 1.3rem;
+                opacity: .75;
+              }
+              ul.menu-level-2 {
+                display: none;
+                width: 80%;
+                background: transparent;
+                padding: 1rem 0 0 0;
+                border-top: 0;
+                border-bottom: 0;
+                li{
+                  background: url(../images/li_arrow.png) no-repeat 1em 9px;
+                  padding: 0 0 1em 2rem;
+                  .mean-expand {
+                    display: none;
+                  }
+                  a{
+                    color: $text-color-blue;
+                    font-size: 1.1rem;
+                    padding: 0;
+                    opacity: .75;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:hover ul.menu-level-1{
+    margin-left: 0;
+  }
+
+  .navbar-collapse{
+    .container{
+      max-width: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .mean-expand{
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 9999;
+    right: 60px;
+    top: 13px;
+    background: url(../images/ico-plus.png) no-repeat 9px 8px;
+    &.active{
+      background: url("../images/ico_minor.png") no-repeat 10px 11px;
+    }
+  }
+
+}/* End Media 990px */

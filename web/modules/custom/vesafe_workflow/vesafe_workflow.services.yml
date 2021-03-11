@@ -1,0 +1,21 @@
+services:
+  vesafe_workflow.helper:
+    class: Drupal\vesafe_workflow\VwHelper
+    arguments: ['@current_user', '@database', '@current_route_match', '@entity_type.manager', '@content_moderation.moderation_information']
+
+  vesafe_workflow.route_subscriber:
+    class: Drupal\vesafe_workflow\Routing\VwRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  vesafe_workflow.access_checker:
+    class: Drupal\vesafe_workflow\Access\VwApproverAccessCheck
+    arguments: ['@current_user', '@vesafe_workflow.helper']
+    tags:
+      - { name: access_check, applies_to: _vesafe_workflow_access_check }
+
+  vesafe_workflow.access_checker.list:
+    class: Drupal\vesafe_workflow\Access\VwListAccessCheck
+    arguments: ['@current_user', '@vesafe_workflow.helper']
+    tags:
+      - { name: access_check, applies_to: _vesafe_workflow_access_check_list }

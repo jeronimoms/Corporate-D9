@@ -1,0 +1,26 @@
+uuid: 70b31870-2a8c-40d4-8315-1f94b2b6caff
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - contact_us
+  module:
+    - node
+_core:
+  default_config_hash: CQdMUbrK5w72ewJTJqrwGiz6yYP4lDTieX-fUjxS0Ig
+id: node.field_contact_us_address
+field_name: field_contact_us_address
+entity_type: node
+type: string
+settings:
+  max_length: 100
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

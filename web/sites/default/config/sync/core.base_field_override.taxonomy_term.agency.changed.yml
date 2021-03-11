@@ -1,0 +1,18 @@
+uuid: dba47fc7-1850-4ca2-b6f5-3f26ed00493a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.agency
+id: taxonomy_term.agency.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: agency
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

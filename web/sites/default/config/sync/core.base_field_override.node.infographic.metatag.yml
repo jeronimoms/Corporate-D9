@@ -1,0 +1,18 @@
+uuid: fff7e094-d745-41a0-8874-dd2645087b04
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.infographic
+id: node.infographic.metatag
+field_name: metatag
+entity_type: node
+bundle: infographic
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

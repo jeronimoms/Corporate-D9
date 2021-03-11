@@ -1,0 +1,38 @@
+route_callbacks:
+  - '\Drupal\vesafe_workflow\Routing\VwOverview::routes'
+
+vesafe_workflow.settings:
+  path: '/vesafe_workflow/settings'
+  defaults:
+    _form: '\Drupal\vesafe_workflow\Form\VwSettingsForm'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE
+
+vesafe_workflow.build:
+  path: '/vesafe_workflow/build'
+  defaults:
+    _form: '\Drupal\vesafe_workflow\Form\VwBuildForm'
+    _title: 'Generate the lists'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE
+
+vesafe_workflow.approver_form:
+  path: '/vesafe_workflow/approver/add'
+  defaults:
+    _form: '\Drupal\vesafe_workflow\Form\VwApproverAddForm'
+  requirements:
+    _access: 'TRUE'
+
+vesafe_workflow.delete_form:
+  path: '/vesafe_workflow/delete/{node_id}/{user_id}/{back_url}'
+  defaults:
+    _form: '\Drupal\vesafe_workflow\Form\VwDeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE

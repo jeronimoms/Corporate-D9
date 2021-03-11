@@ -1,0 +1,503 @@
+uuid: 3cbe8720-e7ab-40ca-889c-695a2f5096ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dangerous_substances.body
+    - field.field.node.dangerous_substances.field_advertising
+    - field.field.node.dangerous_substances.field_biological_hazard
+    - field.field.node.dangerous_substances.field_biological_hazard_other
+    - field.field.node.dangerous_substances.field_body_original
+    - field.field.node.dangerous_substances.field_cas_number
+    - field.field.node.dangerous_substances.field_contact_address
+    - field.field.node.dangerous_substances.field_country_other
+    - field.field.node.dangerous_substances.field_disclaimer
+    - field.field.node.dangerous_substances.field_ec_number
+    - field.field.node.dangerous_substances.field_evaluation
+    - field.field.node.dangerous_substances.field_evaluation_other
+    - field.field.node.dangerous_substances.field_exposure_route
+    - field.field.node.dangerous_substances.field_exposure_route_other
+    - field.field.node.dangerous_substances.field_external_url
+    - field.field.node.dangerous_substances.field_hazard_health_effects
+    - field.field.node.dangerous_substances.field_hazard_health_other
+    - field.field.node.dangerous_substances.field_hazard_physical_other
+    - field.field.node.dangerous_substances.field_hazard_physical_state
+    - field.field.node.dangerous_substances.field_image_media
+    - field.field.node.dangerous_substances.field_intellectual_property_righ
+    - field.field.node.dangerous_substances.field_item_type
+    - field.field.node.dangerous_substances.field_languages_other
+    - field.field.node.dangerous_substances.field_material_country
+    - field.field.node.dangerous_substances.field_material_purpose_other
+    - field.field.node.dangerous_substances.field_material_purpose_type
+    - field.field.node.dangerous_substances.field_measurement_method
+    - field.field.node.dangerous_substances.field_media_format
+    - field.field.node.dangerous_substances.field_non_applicable_url
+    - field.field.node.dangerous_substances.field_notes
+    - field.field.node.dangerous_substances.field_original_desc_lang_other
+    - field.field.node.dangerous_substances.field_other_information
+    - field.field.node.dangerous_substances.field_ownership_information
+    - field.field.node.dangerous_substances.field_prevention_measure_type
+    - field.field.node.dangerous_substances.field_prevention_measures_other
+    - field.field.node.dangerous_substances.field_priority_area
+    - field.field.node.dangerous_substances.field_publication_year
+    - field.field.node.dangerous_substances.field_rights_description
+    - field.field.node.dangerous_substances.field_section
+    - field.field.node.dangerous_substances.field_sector_industry_covered
+    - field.field.node.dangerous_substances.field_sector_industry_other
+    - field.field.node.dangerous_substances.field_selected_for_analysis
+    - field.field.node.dangerous_substances.field_summary
+    - field.field.node.dangerous_substances.field_target_group
+    - field.field.node.dangerous_substances.field_target_group_other
+    - field.field.node.dangerous_substances.field_tasks_covered
+    - field.field.node.dangerous_substances.field_tasks_other
+    - field.field.node.dangerous_substances.field_title_original
+    - field.field.node.dangerous_substances.field_visualisation_mat_other
+    - field.field.node.dangerous_substances.field_visualisation_material_typ
+    - field.field.node.dangerous_substances.field_worker_groups_other
+    - field.field.node.dangerous_substances.field_worker_groups_type
+    - node.type.dangerous_substances
+  module:
+    - chosen_field
+    - datetime
+    - field_group
+    - link
+    - media_library
+    - text
+third_party_settings:
+  field_group:
+    group_access_condition:
+      children:
+        - field_contact_address
+        - field_disclaimer
+        - field_ownership_information
+        - field_other_information
+      parent_name: ''
+      weight: 45
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Access condition'
+id: node.dangerous_substances.default
+targetEntityType: node
+bundle: dangerous_substances
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 34
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_advertising:
+    weight: 46
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_biological_hazard:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_biological_hazard_other:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_body_original:
+    weight: 35
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_cas_number:
+    weight: 25
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_contact_address:
+    weight: 43
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_country_other:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        20a24568-5c2a-4fd4-b7d7-5eb30133a98e:
+          dependee: field_material_country
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: dangerous_substances
+    type: string_textfield
+    region: content
+  field_disclaimer:
+    weight: 44
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_ec_number:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_evaluation:
+    weight: 38
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_evaluation_other:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_exposure_route:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_exposure_route_other:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_external_url:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_hazard_health_effects:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hazard_health_other:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hazard_physical_other:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hazard_physical_state:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image_media:
+    weight: 47
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_intellectual_property_righ:
+    weight: 43
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_item_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_languages_other:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_material_country:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_material_purpose_other:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_material_purpose_type:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_measurement_method:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_media_format:
+    weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_non_applicable_url:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_notes:
+    weight: 49
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_original_desc_lang_other:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_other_information:
+    weight: 46
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_ownership_information:
+    weight: 45
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_prevention_measure_type:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_prevention_measures_other:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_priority_area:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_publication_year:
+    weight: 7
+    settings:
+      increment: 15
+      date_order: YMD
+      time_type: '24'
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_rights_description:
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_section:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sector_industry_covered:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sector_industry_other:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_selected_for_analysis:
+    weight: 48
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_summary:
+    weight: 24
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_target_group:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_target_group_other:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_tasks_covered:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_tasks_other:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title_original:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_visualisation_mat_other:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_visualisation_material_typ:
+    weight: 40
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_worker_groups_other:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_worker_groups_type:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  title:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

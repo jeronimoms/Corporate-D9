@@ -1,0 +1,22 @@
+uuid: 4b0ba22b-6522-4aaa-a35d-8becc68bba7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact_us_form
+id: node.contact_us_form.status
+field_name: status
+entity_type: node
+bundle: contact_us_form
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,21 @@
+uuid: 032180ad-8903-451f-b925-92e24b7e3af9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.field_notes
+field_name: field_notes
+entity_type: node
+bundle: dangerous_substances
+label: Notes
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

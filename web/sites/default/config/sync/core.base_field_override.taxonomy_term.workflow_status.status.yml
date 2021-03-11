@@ -1,0 +1,22 @@
+uuid: cf84d401-2b5f-4592-9bd6-36ba999921fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.workflow_status
+id: taxonomy_term.workflow_status.status
+field_name: status
+entity_type: taxonomy_term
+bundle: workflow_status
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

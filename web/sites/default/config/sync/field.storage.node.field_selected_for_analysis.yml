@@ -1,0 +1,18 @@
+uuid: 7e63072c-c62a-445f-ad14-b6118f46effb
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_selected_for_analysis
+field_name: field_selected_for_analysis
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

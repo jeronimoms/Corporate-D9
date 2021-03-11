@@ -1,0 +1,39 @@
+uuid: fdde968a-0299-41cb-95c5-66586699bd7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.25th_anniversary.body
+    - field.field.node.25th_anniversary.field_publication_date
+    - field.field.node.25th_anniversary.field_summary
+    - field.field.node.25th_anniversary.field_tags
+    - node.type.25th_anniversary
+  module:
+    - text
+    - user
+id: node.25th_anniversary.default
+targetEntityType: node
+bundle: 25th_anniversary
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_summary:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_publication_date: true
+  field_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
