@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_partner_i18n                         # -----  CHANGE
-label: 'Node: partner Translations'                # -----  CHANGE
+label: 'Node: partner i18n'                # -----  CHANGE
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:

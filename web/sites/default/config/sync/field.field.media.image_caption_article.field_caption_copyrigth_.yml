@@ -1,0 +1,21 @@
+uuid: 06b63151-bc6c-497e-b8f4-55fd2593ff8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_caption_copyrigth_
+    - media.type.image_caption_article
+  module:
+    - text
+id: media.image_caption_article.field_caption_copyrigth_
+field_name: field_caption_copyrigth_
+entity_type: media
+bundle: image_caption_article
+label: 'Caption (Copyrigth)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

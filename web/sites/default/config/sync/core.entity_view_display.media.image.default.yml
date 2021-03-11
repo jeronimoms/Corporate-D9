@@ -3,10 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_description
     - field.field.media.image.field_media_image
-    - field.field.media.image.field_nace
-    - field.field.media.image.field_tags
     - image.style.large
     - media.type.image
   module:
@@ -18,13 +15,6 @@ targetEntityType: media
 bundle: image
 mode: default
 content:
-  field_description:
-    weight: 4
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
   field_media_image:
     label: visually_hidden
     settings:
@@ -34,27 +24,9 @@ content:
     type: image
     weight: 1
     region: content
-  field_nace:
-    weight: 3
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_tags:
-    weight: 2
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
 hidden:
-  addtoany: true
   created: true
   langcode: true
   name: true
-  search_api_excerpt: true
   thumbnail: true
   uid: true

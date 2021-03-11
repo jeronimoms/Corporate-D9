@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_collaboration_document_i18n                         # -----  CHANGE
-label: 'Node: collaboration_document Translations'                # -----  CHANGE
+label: 'Node: Collaboration Document i18n'                # -----  CHANGE
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:

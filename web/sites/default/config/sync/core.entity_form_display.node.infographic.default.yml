@@ -68,9 +68,12 @@ content:
   field_file_media:
     weight: 7
     settings:
-      media_types: {  }
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: media_library_widget
+    type: entity_reference_autocomplete
     region: content
   field_image_media:
     weight: 5

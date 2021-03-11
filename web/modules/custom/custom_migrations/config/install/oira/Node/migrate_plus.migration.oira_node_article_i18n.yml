@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_article_i18n                         # -----  CHANGE
-label: 'Node: article Translations'                # -----  CHANGE
+label: 'Node: Article i18n'                # -----  CHANGE
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
