@@ -1,0 +1,13 @@
+uuid: abb26f6c-4f47-47d8-9cfa-240a0e1ab49a
+langcode: en
+status: true
+dependencies: {  }
+id: image_caption_article
+label: 'Image + Caption Article'
+description: 'Image for Articles content types'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_2
+field_map: {  }

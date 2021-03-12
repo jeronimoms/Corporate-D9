@@ -1,0 +1,21 @@
+uuid: 20d8b406-cb74-46b0-9803-b806e1ce115b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_vacancies_deadline
+    - node.type.job_vacancies
+  module:
+    - datetime
+id: node.job_vacancies.field_job_vacancies_deadline
+field_name: field_job_vacancies_deadline
+entity_type: node
+bundle: job_vacancies
+label: Deadline
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.dangerous_substances.field_exposure_route
     - field.field.node.dangerous_substances.field_exposure_route_other
     - field.field.node.dangerous_substances.field_external_url
+    - field.field.node.dangerous_substances.field_fc_provider
     - field.field.node.dangerous_substances.field_hazard_health_effects
     - field.field.node.dangerous_substances.field_hazard_health_other
     - field.field.node.dangerous_substances.field_hazard_physical_other
@@ -135,6 +136,7 @@ hidden:
   field_evaluation_other: true
   field_exposure_route: true
   field_exposure_route_other: true
+  field_fc_provider: true
   field_hazard_health_effects: true
   field_hazard_health_other: true
   field_hazard_physical_other: true

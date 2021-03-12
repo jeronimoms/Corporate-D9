@@ -1,0 +1,23 @@
+uuid: 7c103a03-54c2-4570-8aa2-c43cd5bc9d26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reserve_list
+    - node.type.job_vacancies
+id: node.job_vacancies.field_reserve_list
+field_name: field_reserve_list
+entity_type: node
+bundle: job_vacancies
+label: 'Reserve List'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

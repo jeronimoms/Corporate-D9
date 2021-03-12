@@ -1,0 +1,21 @@
+uuid: e0d3cef2-0b9e-447d-b03c-233f6f711bd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_vacancies_type
+    - node.type.job_vacancies
+  module:
+    - options
+id: node.job_vacancies.field_job_vacancies_type
+field_name: field_job_vacancies_type
+entity_type: node
+bundle: job_vacancies
+label: 'Vacancy Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

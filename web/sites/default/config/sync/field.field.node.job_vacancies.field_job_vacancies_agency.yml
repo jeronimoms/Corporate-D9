@@ -1,0 +1,29 @@
+uuid: 77a51ab0-a847-4b44-91a9-9a4a68438641
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_vacancies_agency
+    - node.type.job_vacancies
+    - taxonomy.vocabulary.agency
+id: node.job_vacancies.field_job_vacancies_agency
+field_name: field_job_vacancies_agency
+entity_type: node
+bundle: job_vacancies
+label: Agency
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      agency: agency
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

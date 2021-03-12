@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.dangerous_substances.field_exposure_route
     - field.field.node.dangerous_substances.field_exposure_route_other
     - field.field.node.dangerous_substances.field_external_url
+    - field.field.node.dangerous_substances.field_fc_provider
     - field.field.node.dangerous_substances.field_hazard_health_effects
     - field.field.node.dangerous_substances.field_hazard_health_other
     - field.field.node.dangerous_substances.field_hazard_physical_other
@@ -59,12 +60,12 @@ dependencies:
     - field.field.node.dangerous_substances.field_worker_groups_type
     - node.type.dangerous_substances
   module:
-    - chosen_field
     - datetime
     - field_group
     - languagefield
     - link
     - media_library
+    - paragraphs
     - text
 third_party_settings:
   field_group:
@@ -75,7 +76,7 @@ third_party_settings:
         - field_ownership_information
         - field_other_information
       parent_name: ''
-      weight: 47
+      weight: 48
       format_type: fieldset
       region: content
       format_settings:
@@ -91,7 +92,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 36
+    weight: 37
     settings:
       rows: 9
       summary_rows: 3
@@ -100,14 +101,14 @@ content:
     third_party_settings: {  }
     region: content
   field_advertising:
-    weight: 48
+    weight: 49
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_available_in_languages:
-    weight: 10
+    weight: 11
     settings:
       format:
         name: name
@@ -115,13 +116,13 @@ content:
     type: languagefield_select
     region: content
   field_biological_hazard:
-    weight: 18
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_biological_hazard_other:
-    weight: 19
+    weight: 20
     settings:
       size: 60
       placeholder: ''
@@ -129,7 +130,7 @@ content:
     type: string_textfield
     region: content
   field_body_original:
-    weight: 37
+    weight: 38
     settings:
       rows: 5
       placeholder: ''
@@ -137,7 +138,7 @@ content:
     type: text_textarea
     region: content
   field_cas_number:
-    weight: 27
+    weight: 28
     settings:
       size: 60
       placeholder: ''
@@ -153,7 +154,7 @@ content:
     type: text_textarea
     region: content
   field_country_other:
-    weight: 9
+    weight: 10
     settings:
       size: 60
       placeholder: ''
@@ -185,7 +186,7 @@ content:
     type: text_textarea
     region: content
   field_ec_number:
-    weight: 28
+    weight: 29
     settings:
       size: 60
       placeholder: ''
@@ -193,13 +194,13 @@ content:
     type: string_textfield
     region: content
   field_evaluation:
-    weight: 40
+    weight: 41
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_evaluation_other:
-    weight: 41
+    weight: 42
     settings:
       size: 60
       placeholder: ''
@@ -207,13 +208,13 @@ content:
     type: string_textfield
     region: content
   field_exposure_route:
-    weight: 24
+    weight: 25
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_exposure_route_other:
-    weight: 25
+    weight: 26
     settings:
       size: 60
       placeholder: ''
@@ -228,14 +229,26 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  field_fc_provider:
+    type: entity_reference_paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_hazard_health_effects:
-    weight: 22
+    weight: 23
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_hazard_health_other:
-    weight: 23
+    weight: 24
     settings:
       size: 60
       placeholder: ''
@@ -243,7 +256,7 @@ content:
     type: string_textfield
     region: content
   field_hazard_physical_other:
-    weight: 21
+    weight: 22
     settings:
       size: 60
       placeholder: ''
@@ -251,20 +264,20 @@ content:
     type: string_textfield
     region: content
   field_hazard_physical_state:
-    weight: 20
+    weight: 21
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_image_media:
-    weight: 49
+    weight: 50
     settings:
       media_types: {  }
     third_party_settings: {  }
     type: media_library_widget
     region: content
   field_intellectual_property_righ:
-    weight: 45
+    weight: 46
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -276,7 +289,7 @@ content:
     type: options_select
     region: content
   field_languages_other:
-    weight: 11
+    weight: 12
     settings:
       size: 60
       placeholder: ''
@@ -284,17 +297,17 @@ content:
     type: string_textfield
     region: content
   field_material_country:
-    weight: 8
+    weight: 9
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: chosen_select
+    type: entity_reference_autocomplete_tags
     region: content
   field_material_purpose_other:
-    weight: 35
+    weight: 36
     settings:
       size: 60
       placeholder: ''
@@ -302,13 +315,13 @@ content:
     type: string_textfield
     region: content
   field_material_purpose_type:
-    weight: 34
+    weight: 35
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_measurement_method:
-    weight: 29
+    weight: 30
     settings:
       size: 60
       placeholder: ''
@@ -316,7 +329,7 @@ content:
     type: string_textfield
     region: content
   field_media_format:
-    weight: 44
+    weight: 45
     settings:
       size: 60
       placeholder: ''
@@ -331,7 +344,7 @@ content:
       display_label: true
     third_party_settings: {  }
   field_notes:
-    weight: 51
+    weight: 52
     settings:
       rows: 5
       placeholder: ''
@@ -339,7 +352,7 @@ content:
     type: text_textarea
     region: content
   field_original_desc_lang_other:
-    weight: 13
+    weight: 14
     settings:
       size: 60
       placeholder: ''
@@ -347,7 +360,7 @@ content:
     type: string_textfield
     region: content
   field_original_desc_language:
-    weight: 12
+    weight: 13
     settings:
       format:
         name: name
@@ -371,13 +384,13 @@ content:
     type: text_textarea
     region: content
   field_prevention_measure_type:
-    weight: 32
+    weight: 33
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_prevention_measures_other:
-    weight: 33
+    weight: 34
     settings:
       size: 60
       placeholder: ''
@@ -391,7 +404,7 @@ content:
     type: options_select
     region: content
   field_publication_year:
-    weight: 7
+    weight: 8
     settings:
       increment: 15
       date_order: YMD
@@ -400,7 +413,7 @@ content:
     type: datetime_datelist
     region: content
   field_rights_description:
-    weight: 46
+    weight: 47
     settings:
       size: 60
       placeholder: ''
@@ -414,13 +427,13 @@ content:
     type: options_select
     region: content
   field_sector_industry_covered:
-    weight: 14
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_sector_industry_other:
-    weight: 15
+    weight: 16
     settings:
       size: 60
       placeholder: ''
@@ -428,14 +441,14 @@ content:
     type: string_textfield
     region: content
   field_selected_for_analysis:
-    weight: 50
+    weight: 51
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_summary:
-    weight: 26
+    weight: 27
     settings:
       rows: 5
       placeholder: ''
@@ -443,13 +456,13 @@ content:
     type: string_textarea
     region: content
   field_target_group:
-    weight: 38
+    weight: 39
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_target_group_other:
-    weight: 39
+    weight: 40
     settings:
       size: 60
       placeholder: ''
@@ -457,13 +470,13 @@ content:
     type: string_textfield
     region: content
   field_tasks_covered:
-    weight: 16
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_tasks_other:
-    weight: 17
+    weight: 18
     settings:
       size: 60
       placeholder: ''
@@ -479,7 +492,7 @@ content:
     type: string_textfield
     region: content
   field_visualisation_mat_other:
-    weight: 43
+    weight: 44
     settings:
       size: 60
       placeholder: ''
@@ -487,13 +500,13 @@ content:
     type: string_textfield
     region: content
   field_visualisation_material_typ:
-    weight: 42
+    weight: 43
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_worker_groups_other:
-    weight: 31
+    weight: 32
     settings:
       size: 60
       placeholder: ''
@@ -501,7 +514,7 @@ content:
     type: string_textfield
     region: content
   field_worker_groups_type:
-    weight: 30
+    weight: 31
     settings: {  }
     third_party_settings: {  }
     type: options_select
