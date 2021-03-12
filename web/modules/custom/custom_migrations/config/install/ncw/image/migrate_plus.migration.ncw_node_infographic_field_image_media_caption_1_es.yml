@@ -1,17 +1,17 @@
 # File to Media Migration configuration for vesafe_good_practice_media_image migration
 
-id: ncw_node_infographic_field_image_media_1
-label: 'infographic: Media Image'
+id: ncw_node_infographic_field_image_media_caption_1_es
+label: 'infographic: Media Image with caption es Step 1'
 migration_group: ncw_migrate_nodes
 source:
 
   plugin: media_entity_generator_d7
   entity_type: node
   bundle: infographic
-  langcode: en
+  langcode: es
   d7_file_url: 'https://www.osha.europa.eu/sites/default/files/'
   field_names:
-    - field_image
+    - field_thumbnail
 
 destination:
   plugin: entity:media
@@ -19,7 +19,7 @@ destination:
 process:
   bundle:
     plugin: default_value
-    default_value: image
+    default_value: image_caption
 
   # Using the alt tag if available, else the file name.
   name:
@@ -56,6 +56,7 @@ process:
       source: field_nace_codes
       process:
         target_id: tid
+
   langcode: langcode
 
   uid:
