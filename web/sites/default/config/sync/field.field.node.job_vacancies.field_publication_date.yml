@@ -13,13 +13,8 @@ entity_type: node
 bundle: job_vacancies
 label: 'Publication date'
 description: ''
-<<<<<<< HEAD
 required: true
 translatable: true
-=======
-required: false
-translatable: false
->>>>>>> 4a08d8e488974f62ee1cc6f221ac1c4b48f99c2f
 default_value:
   -
     default_date_type: now
