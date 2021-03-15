@@ -1,0 +1,19 @@
+uuid: 47ead3d5-3c24-4a21-bf4e-bb2f018c71d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_vacancies_ref_id
+    - node.type.job_vacancies
+id: node.job_vacancies.field_job_vacancies_ref_id
+field_name: field_job_vacancies_ref_id
+entity_type: node
+bundle: job_vacancies
+label: 'Reference ID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

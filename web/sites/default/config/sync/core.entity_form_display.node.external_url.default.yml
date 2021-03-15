@@ -1,0 +1,40 @@
+uuid: 79940374-dd63-4503-b8c7-ae2018e1ecad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.external_url.field_external_url
+    - node.type.external_url
+  module:
+    - link
+id: node.external_url.default
+targetEntityType: node
+bundle: external_url
+mode: default
+content:
+  field_external_url:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

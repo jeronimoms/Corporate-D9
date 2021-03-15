@@ -1,0 +1,31 @@
+uuid: 0824ba87-7bc5-4ff9-b105-9b7ed2771031
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fc_provider
+    - node.type.dangerous_substances
+    - paragraphs.paragraphs_type.paragraph_provider
+  module:
+    - entity_reference_revisions
+id: node.dangerous_substances.field_fc_provider
+field_name: field_fc_provider
+entity_type: node
+bundle: dangerous_substances
+label: Provider
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      paragraph_provider: paragraph_provider
+    target_bundles_drag_drop:
+      paragraph_provider:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

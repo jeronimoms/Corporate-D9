@@ -1,0 +1,11 @@
+uuid: bacfb0a1-e6ec-41ff-af74-d948ede467ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.guideline
+id: node.guideline
+target_entity_type_id: node
+target_bundle: guideline
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,51 @@
+uuid: 22db8aa0-1c15-4405-8b7e-08984851f98d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fop_page.body
+    - field.field.node.fop_page.field_archived
+    - field.field.node.fop_page.field_country
+    - field.field.node.fop_page.field_fop_link
+    - field.field.node.fop_page.field_image_media
+    - field.field.node.fop_page.field_main_fop_url
+    - field.field.node.fop_page.field_section
+    - node.type.fop_page
+  module:
+    - link
+    - text
+    - user
+id: node.fop_page.default
+targetEntityType: node
+bundle: fop_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_main_fop_url:
+    weight: 1
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  addtoany: true
+  field_archived: true
+  field_country: true
+  field_fop_link: true
+  field_image_media: true
+  field_section: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
