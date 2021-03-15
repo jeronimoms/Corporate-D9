@@ -1,0 +1,18 @@
+uuid: 9ccf7812-ba30-49d0-802e-10e5f167009d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dangerous_substances
+id: node.dangerous_substances.created
+field_name: created
+entity_type: node
+bundle: dangerous_substances
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,22 @@
+uuid: 70241ebc-5a8b-4ada-8e00-b4c1ac8b3765
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.directive
+id: node.directive.sticky
+field_name: sticky
+entity_type: node
+bundle: directive
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

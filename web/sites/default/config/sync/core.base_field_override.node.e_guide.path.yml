@@ -1,0 +1,20 @@
+uuid: c17080bb-bbc6-4ece-b655-6a38a52a9167
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.e_guide
+  module:
+    - path
+id: node.e_guide.path
+field_name: path
+entity_type: node
+bundle: e_guide
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
