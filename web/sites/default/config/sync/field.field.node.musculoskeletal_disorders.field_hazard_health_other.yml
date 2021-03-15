@@ -1,0 +1,19 @@
+uuid: 6ca096cd-5e84-4166-b316-a68dec7f5c74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hazard_health_other
+    - node.type.musculoskeletal_disorders
+id: node.musculoskeletal_disorders.field_hazard_health_other
+field_name: field_hazard_health_other
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Health effects other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

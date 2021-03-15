@@ -1,0 +1,19 @@
+uuid: 6e7844ae-be10-488f-b527-0a2532745753
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_worker_groups_other
+    - node.type.musculoskeletal_disorders
+id: node.musculoskeletal_disorders.field_worker_groups_other
+field_name: field_worker_groups_other
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Worker groups covered other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

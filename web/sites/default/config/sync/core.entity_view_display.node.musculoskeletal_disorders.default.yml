@@ -1,0 +1,205 @@
+uuid: ede5c38b-7560-4cb0-8dfc-f57737e29516
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.musculoskeletal_disorders.body
+    - field.field.node.musculoskeletal_disorders.field_available_in_languages
+    - field.field.node.musculoskeletal_disorders.field_country_other
+    - field.field.node.musculoskeletal_disorders.field_external_url
+    - field.field.node.musculoskeletal_disorders.field_hazard_health_other
+    - field.field.node.musculoskeletal_disorders.field_hazards
+    - field.field.node.musculoskeletal_disorders.field_hazards_other
+    - field.field.node.musculoskeletal_disorders.field_health_effects
+    - field.field.node.musculoskeletal_disorders.field_languages_other
+    - field.field.node.musculoskeletal_disorders.field_material_country
+    - field.field.node.musculoskeletal_disorders.field_msd_priority_area
+    - field.field.node.musculoskeletal_disorders.field_msd_provider
+    - field.field.node.musculoskeletal_disorders.field_publication_year
+    - field.field.node.musculoskeletal_disorders.field_section
+    - field.field.node.musculoskeletal_disorders.field_sector_industry_covered
+    - field.field.node.musculoskeletal_disorders.field_title_original
+    - field.field.node.musculoskeletal_disorders.field_type_of_item
+    - field.field.node.musculoskeletal_disorders.field_worker_groups_covered
+    - field.field.node.musculoskeletal_disorders.field_worker_groups_other
+    - node.type.musculoskeletal_disorders
+  module:
+    - datetime
+    - entity_reference_revisions
+    - languagefield
+    - link
+    - options
+    - text
+    - user
+id: node.musculoskeletal_disorders.default
+targetEntityType: node
+bundle: musculoskeletal_disorders
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_available_in_languages:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+      format:
+        name: name
+    third_party_settings: {  }
+    type: languagefield_default
+    region: content
+  field_country_other:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_external_url:
+    weight: 106
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hazard_health_other:
+    weight: 117
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hazards:
+    weight: 114
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hazards_other:
+    weight: 115
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_health_effects:
+    weight: 116
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_languages_other:
+    weight: 112
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_material_country:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_msd_priority_area:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_msd_provider:
+    type: entity_reference_revisions_entity_view
+    weight: 107
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_publication_year:
+    weight: 108
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_section:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_sector_industry_covered:
+    weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_title_original:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_type_of_item:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_worker_groups_covered:
+    weight: 118
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_worker_groups_other:
+    weight: 119
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

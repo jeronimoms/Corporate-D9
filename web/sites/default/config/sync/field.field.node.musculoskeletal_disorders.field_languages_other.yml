@@ -1,0 +1,19 @@
+uuid: 67124897-95c9-4623-8205-680488e2426f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_languages_other
+    - node.type.musculoskeletal_disorders
+id: node.musculoskeletal_disorders.field_languages_other
+field_name: field_languages_other
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Languages other'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

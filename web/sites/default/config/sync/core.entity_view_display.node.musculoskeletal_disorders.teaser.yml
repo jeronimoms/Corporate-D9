@@ -1,0 +1,69 @@
+uuid: 7e18aa33-8253-4789-ac76-903428f8c508
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.musculoskeletal_disorders.body
+    - field.field.node.musculoskeletal_disorders.field_available_in_languages
+    - field.field.node.musculoskeletal_disorders.field_country_other
+    - field.field.node.musculoskeletal_disorders.field_external_url
+    - field.field.node.musculoskeletal_disorders.field_hazard_health_other
+    - field.field.node.musculoskeletal_disorders.field_hazards
+    - field.field.node.musculoskeletal_disorders.field_hazards_other
+    - field.field.node.musculoskeletal_disorders.field_health_effects
+    - field.field.node.musculoskeletal_disorders.field_languages_other
+    - field.field.node.musculoskeletal_disorders.field_material_country
+    - field.field.node.musculoskeletal_disorders.field_msd_priority_area
+    - field.field.node.musculoskeletal_disorders.field_msd_provider
+    - field.field.node.musculoskeletal_disorders.field_publication_year
+    - field.field.node.musculoskeletal_disorders.field_section
+    - field.field.node.musculoskeletal_disorders.field_sector_industry_covered
+    - field.field.node.musculoskeletal_disorders.field_title_original
+    - field.field.node.musculoskeletal_disorders.field_type_of_item
+    - field.field.node.musculoskeletal_disorders.field_worker_groups_covered
+    - field.field.node.musculoskeletal_disorders.field_worker_groups_other
+    - node.type.musculoskeletal_disorders
+  module:
+    - text
+    - user
+id: node.musculoskeletal_disorders.teaser
+targetEntityType: node
+bundle: musculoskeletal_disorders
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_available_in_languages: true
+  field_country_other: true
+  field_external_url: true
+  field_hazard_health_other: true
+  field_hazards: true
+  field_hazards_other: true
+  field_health_effects: true
+  field_languages_other: true
+  field_material_country: true
+  field_msd_priority_area: true
+  field_msd_provider: true
+  field_publication_year: true
+  field_section: true
+  field_sector_industry_covered: true
+  field_title_original: true
+  field_type_of_item: true
+  field_worker_groups_covered: true
+  field_worker_groups_other: true
+  langcode: true
+  search_api_excerpt: true

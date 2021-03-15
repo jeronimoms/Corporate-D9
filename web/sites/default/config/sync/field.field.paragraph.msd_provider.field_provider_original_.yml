@@ -1,0 +1,19 @@
+uuid: 3471cb1d-e95b-43e4-86f2-5ba9326d8038
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_provider_original_
+    - paragraphs.paragraphs_type.msd_provider
+id: paragraph.msd_provider.field_provider_original_
+field_name: field_provider_original_
+entity_type: paragraph
+bundle: msd_provider
+label: 'Provider (Original)'
+description: 'Please fill in the provider of the material (Name in original language)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

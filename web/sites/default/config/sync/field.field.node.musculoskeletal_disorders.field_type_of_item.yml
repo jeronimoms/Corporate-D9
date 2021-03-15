@@ -1,0 +1,21 @@
+uuid: c9d84e92-fd4e-4b40-8844-a0e5a705b30b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_item
+    - node.type.musculoskeletal_disorders
+  module:
+    - options
+id: node.musculoskeletal_disorders.field_type_of_item
+field_name: field_type_of_item
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Type of item'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
