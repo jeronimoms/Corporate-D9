@@ -15,7 +15,7 @@ bundle: calls
 label: Section
 description: 'Select the proper editorial group for this content.'
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     target_uuid: 19a189e6-8db5-4850-9977-7540ea3a2af9
