@@ -1,9 +1,19 @@
-# File to Media Migration configuration for vesafe_good_practice_media_image migration
-
+uuid: 4e6c2522-d55f-454f-9adf-35118cc06cfd
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_migrations
+  enforced:
+    module:
+      - custom_migrations
 id: ncw_node_infographics_media_documents_1_es
-label: 'Infographic Document ES'
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
 migration_group: ncw_migrate_nodes
-
+label: 'Infographic Document ES'
 source:
   key: migrate
   langcode: es
@@ -13,60 +23,42 @@ source:
   d7_file_url: 'https://osha.europa.eu/sites/default/files/'
   field_names:
     - field_file
-
-destination:
-  plugin: entity:media
-
 process:
   bundle:
     plugin: default_value
     default_value: document
-
-  # Using the alt tag if available, else the file name.
   name:
     plugin: media_name
     source: file_name
-
-  # This process plugin will skip the whole row if a existing media is found.
   existing_media_file:
     plugin: check_media_duplicate
     source: target_id
-
-  # This process plugin will skip the whole row if a duplicate image is found.
   unique_file_id:
     plugin: check_duplicate
     source: target_id
-
-  # Map the field document
   field_media_document/title: title
-
   field_media_document/target_id:
     plugin: media_file_copy
-    move: FALSE
-    reuse: TRUE
+    move: false
+    reuse: true
     path: 'public://'
     source: file_path
   field_tags:
-    - plugin: sub_process
+    -
+      plugin: sub_process
       source: field_tags
       process:
         target_id: tid
   field_nace_codes:
-    - plugin: sub_process
+    -
+      plugin: sub_process
       source: field_nace_codes
       process:
         target_id: tid
   langcode: langcode
-
   uid:
     plugin: default_value
     default_value: 1
-
-
-
-dependencies:
-  module:
-    - custom_migrations
-  enforced:
-    module:
-      - custom_migrations
+destination:
+  plugin: 'entity:media'
+migration_dependencies: null

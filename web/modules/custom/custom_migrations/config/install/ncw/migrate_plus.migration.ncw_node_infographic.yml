@@ -117,7 +117,7 @@ process:
       - ncw_node_infographic_field_image_media_caption_1
     no_stub: true
   # Documents.
- field_file_media:
+  field_file_media:
    plugin: file_id_lookup
    source: field_file
    migration:
