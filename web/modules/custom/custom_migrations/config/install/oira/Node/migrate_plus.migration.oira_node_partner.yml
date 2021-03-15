@@ -6,7 +6,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_partner                    # -----  CHANGE
-label: 'Node: partner'                   # -----  CHANGE
+label: 'Node: Partner'                   # -----  CHANGE
 audit: true
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver

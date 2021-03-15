@@ -1,0 +1,18 @@
+uuid: 86fa8516-5387-48c8-90f8-162f3bd832b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.press_contact
+id: node.press_contact.title
+field_name: title
+entity_type: node
+bundle: press_contact
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

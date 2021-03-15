@@ -1,0 +1,22 @@
+uuid: d9d66e9c-58e3-4687-a771-f08724f41813
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.directive
+id: node.directive.status
+field_name: status
+entity_type: node
+bundle: directive
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

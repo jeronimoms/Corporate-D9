@@ -13,7 +13,7 @@ bundle: e_guide
 label: Country
 description: 'Select Country for this content.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

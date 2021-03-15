@@ -1,0 +1,18 @@
+uuid: 2aa721d3-ec00-45a6-8569-b6a7014cde9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.press_contact
+id: node.press_contact.metatag
+field_name: metatag
+entity_type: node
+bundle: press_contact
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

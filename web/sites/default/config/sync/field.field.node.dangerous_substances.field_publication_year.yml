@@ -14,7 +14,7 @@ bundle: dangerous_substances
 label: 'Year of publication'
 description: 'Please select a year of publication, if it is not possible to identify leave it empty.'
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     default_date_type: now

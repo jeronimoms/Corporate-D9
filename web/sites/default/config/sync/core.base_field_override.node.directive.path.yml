@@ -1,0 +1,20 @@
+uuid: cc9489f6-f7df-48c1-a575-b6d9e8a6d7a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.directive
+  module:
+    - path
+id: node.directive.path
+field_name: path
+entity_type: node
+bundle: directive
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
