@@ -1,0 +1,22 @@
+uuid: 72cc0385-417e-4d70-912e-5d7ac2c45b50
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dvs_survey
+id: node.dvs_survey.promote
+field_name: promote
+entity_type: node
+bundle: dvs_survey
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

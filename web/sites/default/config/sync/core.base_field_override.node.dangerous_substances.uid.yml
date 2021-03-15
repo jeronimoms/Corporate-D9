@@ -1,0 +1,20 @@
+uuid: 1fed0e49-9f8e-480f-b4bd-f4e852ca1807
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dangerous_substances
+id: node.dangerous_substances.uid
+field_name: uid
+entity_type: node
+bundle: dangerous_substances
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference
