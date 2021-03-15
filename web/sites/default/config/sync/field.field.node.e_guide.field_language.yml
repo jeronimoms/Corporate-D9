@@ -1,0 +1,21 @@
+uuid: 0612f205-6e4d-4871-adf1-a509a06ba2d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_language
+    - node.type.e_guide
+  module:
+    - languagefield
+id: node.e_guide.field_language
+field_name: field_language
+entity_type: node
+bundle: e_guide
+label: Language
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: language_field

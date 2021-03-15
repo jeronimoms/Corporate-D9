@@ -66,11 +66,6 @@ process:
       source: field_activity
       process:
         target_id: tid
-  field_section:
-    - plugin: sub_process
-      source: workbench_access
-      process:
-        target_id: tid
   field_archived: field_archived
 
   uid:

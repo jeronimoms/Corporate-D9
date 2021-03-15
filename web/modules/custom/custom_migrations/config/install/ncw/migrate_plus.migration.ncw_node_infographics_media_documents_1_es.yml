@@ -2,13 +2,14 @@
 
 id: ncw_node_infographics_media_documents_1_es
 label: 'Infographic Document ES'
+migration_group: ncw_migrate_nodes
 
 source:
   key: migrate
-  langcode: en
+  langcode: es
   plugin: media_entity_generator_d7
   entity_type: node
-  bundle: file
+  bundle: infographic
   d7_file_url: 'https://osha.europa.eu/sites/default/files/'
   field_names:
     - field_file
