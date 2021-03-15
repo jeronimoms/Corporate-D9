@@ -45,7 +45,6 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_collaboration_items: field_collaboration_items
   field_languages: field_languages
   field_multiple_sector:
     - plugin: sub_process
@@ -53,3 +52,10 @@ process:
       process:
         target_id: tid
   field_strategic_type_2: field_strategic_type_2
+  # Documents.
+  field_collaboration_items:
+    plugin: file_id_lookup_fc
+    source: field_collaboration_items
+    migration:
+      - oira_node_collaboration_document_media_documents_1
+    no_stub: true

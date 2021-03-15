@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_news_i18n                         # -----  CHANGE
-label: 'Node: news i18n'                # -----  CHANGE
+label: 'Node: News i18n'                # -----  CHANGE
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
