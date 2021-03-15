@@ -1,0 +1,20 @@
+uuid: 2cb46466-41ae-4e61-b244-1cbe97e1232a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.guideline
+  module:
+    - path
+id: node.guideline.path
+field_name: path
+entity_type: node
+bundle: guideline
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

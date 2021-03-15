@@ -14,7 +14,7 @@ bundle: dangerous_substances
 label: 'Content (English)'
 description: 'Please fill in the English title of the material'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

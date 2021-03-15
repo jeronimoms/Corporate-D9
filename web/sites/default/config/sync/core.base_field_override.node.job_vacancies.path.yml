@@ -1,0 +1,20 @@
+uuid: 07347d9b-a23b-4abf-be74-f35fed66a792
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.job_vacancies
+  module:
+    - path
+id: node.job_vacancies.path
+field_name: path
+entity_type: node
+bundle: job_vacancies
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
