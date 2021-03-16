@@ -8,12 +8,12 @@
 ##################### BASIC INFORMATION ###################
 
 id: napo_node_lesson_toolkit_i18n                         # -----  CHANGE
-label: 'Node: Home Video Translations'                # -----  CHANGE
+label: 'Node: Lesson Toolkit i18n'                # -----  CHANGE
 migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation
-  node_type: faq                                # -----  CHANGE
+  node_type: lesson_toolkit                                # -----  CHANGE
 destination:
   plugin: entity:node
   translations: true
@@ -45,4 +45,3 @@ process:
   content_translation_source: source
   content_translation_outdated: translate
   ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
-  field_target_ages: field_target_ages

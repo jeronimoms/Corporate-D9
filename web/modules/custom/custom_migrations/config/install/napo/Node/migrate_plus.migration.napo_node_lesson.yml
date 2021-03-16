@@ -28,6 +28,9 @@ process:
   nid:
     - plugin: get
       source: nid
+  vid:
+    - plugin: get
+      source: vid
   type:
     - plugin: default_value
       default_value: lesson              # -----  CHANGE
@@ -35,6 +38,10 @@ process:
     -
       plugin: get
       source: title
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: en
   body:
     -
       plugin: get

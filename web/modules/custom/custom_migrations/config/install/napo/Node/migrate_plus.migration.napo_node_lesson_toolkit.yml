@@ -6,13 +6,13 @@
 ##################### BASIC INFORMATION ###################
 
 id: napo_node_lesson_toolkit                    # -----  CHANGE
-label: 'Node: lesson_toolkit'                   # -----  CHANGE
+label: 'Node: Lesson Toolkit'                   # -----  CHANGE
 audit: true
 migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
-  node_type: Lesson Resources                     # -----  CHANGE
+  node_type: lesson_toolkit                    # -----  CHANGE
 destination:
   plugin: entity:node
 dependencies:
@@ -24,27 +24,47 @@ migration_dependencies:
     - d7_user
 
 process:
-  # nid: tnid   #comentar si no es bbdd limpia
-  # vid: vid  #comentar si no es bbdd limpia
+  nid:
+    -
+      plugin: get
+      source: nid
   type:
-    - plugin: default_value
-      default_value: lesson_toolkit              # -----  CHANGE
-  langcode:
-    plugin: default_value
-    source: language
-    default_value: "und"
-  title: title
-  body: body
-  uid: node_uid
-  status: status
-  created: created
-  changed: changed
-  promote: promote
-  sticky: sticky
-  revision_uid: revision_uid
-  revision_log: log
-  revision_timestamp: timestamp
+    -
+      plugin: default_value
+      default_value: lesson_toolkit
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_target_ages: field_target_ages
-
+  field_target_ages:
+    -
+      plugin: sub_process
+      source: field_target_ages
+      process:
+        target_id: tid
 
