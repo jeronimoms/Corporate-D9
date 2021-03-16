@@ -1,0 +1,20 @@
+uuid: 2d0b3a90-8379-44ec-a0a5-a5f7920120f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dangerous_substances
+  module:
+    - path
+id: node.dangerous_substances.path
+field_name: path
+entity_type: node
+bundle: dangerous_substances
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

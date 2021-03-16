@@ -1,0 +1,18 @@
+uuid: 30f8c4ee-ed91-44fa-980c-5e100fca5d85
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.fop_page
+id: node.fop_page.changed
+field_name: changed
+entity_type: node
+bundle: fop_page
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

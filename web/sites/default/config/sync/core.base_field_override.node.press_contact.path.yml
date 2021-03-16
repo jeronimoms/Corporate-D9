@@ -1,0 +1,20 @@
+uuid: 494d987e-3c20-4e64-bbe1-9291f594c5a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.press_contact
+  module:
+    - path
+id: node.press_contact.path
+field_name: path
+entity_type: node
+bundle: press_contact
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

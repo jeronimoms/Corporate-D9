@@ -13,7 +13,7 @@ bundle: directive
 label: 'Directive Type'
 description: 'Select Directive Type for this content.'
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

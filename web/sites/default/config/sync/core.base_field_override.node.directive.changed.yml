@@ -1,0 +1,18 @@
+uuid: 581170ae-b753-4546-97f1-9bb75df6d1fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.directive
+id: node.directive.changed
+field_name: changed
+entity_type: node
+bundle: directive
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

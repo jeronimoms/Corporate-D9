@@ -14,7 +14,7 @@ bundle: job_vacancies
 label: 'Type of Contract'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

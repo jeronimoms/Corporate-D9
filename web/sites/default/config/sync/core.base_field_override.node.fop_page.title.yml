@@ -1,0 +1,18 @@
+uuid: f75c91a7-2473-4101-8167-7f264f9c0de2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.fop_page
+id: node.fop_page.title
+field_name: title
+entity_type: node
+bundle: fop_page
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
