@@ -1,0 +1,20 @@
+uuid: ac2364fe-df48-49a9-8451-ac250d8c3d8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dvs_survey
+id: node.dvs_survey.uid
+field_name: uid
+entity_type: node
+bundle: dvs_survey
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

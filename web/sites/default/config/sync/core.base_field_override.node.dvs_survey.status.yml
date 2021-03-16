@@ -1,0 +1,22 @@
+uuid: d138436e-d5df-444e-b20a-b8e7638323ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dvs_survey
+id: node.dvs_survey.status
+field_name: status
+entity_type: node
+bundle: dvs_survey
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

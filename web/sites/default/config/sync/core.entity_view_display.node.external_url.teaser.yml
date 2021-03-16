@@ -1,0 +1,38 @@
+uuid: 87a9e6bb-9fdf-4b1e-9639-a98f32ed66b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.external_url.field_external_url
+    - node.type.external_url
+  module:
+    - layout_builder
+    - link
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.external_url.teaser
+targetEntityType: node
+bundle: external_url
+mode: teaser
+content:
+  field_external_url:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

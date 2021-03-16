@@ -1,0 +1,23 @@
+uuid: 13361dc2-ab26-4c27-b951-1026e041713a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archived
+    - node.type.fop_page
+id: node.fop_page.field_archived
+field_name: field_archived
+entity_type: node
+bundle: fop_page
+label: 'Marked as outdated'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

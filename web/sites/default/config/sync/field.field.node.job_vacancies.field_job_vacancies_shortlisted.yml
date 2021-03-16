@@ -1,0 +1,23 @@
+uuid: 82702c2d-47a0-4f12-b7c0-6d300432cd8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_vacancies_shortlisted
+    - node.type.job_vacancies
+id: node.job_vacancies.field_job_vacancies_shortlisted
+field_name: field_job_vacancies_shortlisted
+entity_type: node
+bundle: job_vacancies
+label: Shortlisted
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

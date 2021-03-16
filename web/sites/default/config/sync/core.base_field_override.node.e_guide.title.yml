@@ -1,0 +1,18 @@
+uuid: 68b302fe-23b0-4f47-a611-ec9dd1bd4329
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.e_guide
+id: node.e_guide.title
+field_name: title
+entity_type: node
+bundle: e_guide
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

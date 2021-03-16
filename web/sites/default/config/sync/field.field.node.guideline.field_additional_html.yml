@@ -1,0 +1,21 @@
+uuid: 4338a168-d07d-4182-831a-601e67abec38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_html
+    - node.type.guideline
+  module:
+    - text
+id: node.guideline.field_additional_html
+field_name: field_additional_html
+entity_type: node
+bundle: guideline
+label: 'Additional html'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -267,6 +267,13 @@ h3.home a:hover {
   opacity: 0.8;
 }
 
+.target-blank-v2 {
+  background: url(../images/external_link-v2.png) no-repeat scroll right 2px rgba(0, 0, 0, 0);
+  padding-right: 16px;
+  float: none;
+  display: inline-block;
+}
+
 /* END Common elements */
 /* Twetter Block */
 .block-twitter-block {
@@ -290,6 +297,23 @@ h3.home a:hover {
 
 .block-twitter-block::-webkit-scrollbar-thumb {
   background-color: #003399;
+}
+
+/* Infographics */
+.download-img, .download-pdf {
+  background: #fbfbfb;
+  padding: 1rem;
+  margin-top: 0.3rem;
+}
+.download-img a, .download-pdf a {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.label_multilang_file {
+  color: #7c7d81;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 /* Breadcrumbs */
@@ -616,7 +640,7 @@ nav#block-footermenu ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(
   margin-bottom: 0;
   padding: 0 0 0.4em 0;
   font-weight: 100;
-  z-index: 999;
+  z-index: 1;
   transition: 0.8s;
   line-height: 30px;
   padding-bottom: 20px;

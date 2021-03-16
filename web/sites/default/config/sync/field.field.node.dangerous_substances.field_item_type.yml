@@ -14,7 +14,7 @@ bundle: dangerous_substances
 label: 'Type of item'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

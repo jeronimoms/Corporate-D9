@@ -1,0 +1,23 @@
+uuid: cbd93faf-a615-45df-9feb-c004f4e06cdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.job_vacancies
+  module:
+    - text
+id: node.job_vacancies.body
+field_name: body
+entity_type: node
+bundle: job_vacancies
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

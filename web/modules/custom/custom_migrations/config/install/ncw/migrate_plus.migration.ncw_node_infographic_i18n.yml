@@ -66,11 +66,6 @@ process:
       source: field_activity
       process:
         target_id: tid
-  field_section:
-    - plugin: sub_process
-      source: workbench_access
-      process:
-        target_id: tid
   field_archived: field_archived
 
   uid:
@@ -97,12 +92,18 @@ process:
     plugin: file_id_lookup_translations
     source: field_image
     migration:
-      - ncw_node_infographic_media_field_image_1_es
+      - ncw_node_infographic_field_image_media_1_es
     no_stub: true
- #field_thumbnail_media:
- #  plugin: file_id_lookup_translations
- #  source: field_activity_list_file
- #  migration:
- #    - ncw_node_infographic_media_field_image_1
- #  no_stub: true
-
+  field_thumbnail_media:
+    plugin: file_id_lookup_translations
+    source: field_thumbnail
+    migration:
+      - ncw_node_infographic_field_image_media_caption_1_es
+    no_stub: true
+ # Documents.
+  field_file_media:
+    plugin: file_id_lookup_translations
+    source: field_file
+    migration:
+      - ncw_node_infographics_media_documents_1_es
+    no_stub: true

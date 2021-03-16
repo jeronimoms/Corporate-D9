@@ -6,7 +6,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_news                    # -----  CHANGE
-label: 'Node: news'                   # -----  CHANGE
+label: 'Node: News'                   # -----  CHANGE
 audit: true
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver

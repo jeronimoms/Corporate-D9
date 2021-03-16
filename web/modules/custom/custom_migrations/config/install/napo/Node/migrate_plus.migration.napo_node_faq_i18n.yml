@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: napo_node_faq_i18n                         # -----  CHANGE
-label: 'Node: FAQ Translations'                # -----  CHANGE
+label: 'Node: Faq i18n'                # -----  CHANGE
 migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
@@ -35,7 +35,6 @@ process:
     plugin: static_map
     bypass: true
     source: language
-    #    default_value: 'und'
     map:
       'pt': 'pt-pt'
   title: title

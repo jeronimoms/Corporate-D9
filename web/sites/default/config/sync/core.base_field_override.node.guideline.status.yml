@@ -1,0 +1,22 @@
+uuid: 60df7c99-1250-4900-89e8-7f3e30f624e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.guideline
+id: node.guideline.status
+field_name: status
+entity_type: node
+bundle: guideline
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

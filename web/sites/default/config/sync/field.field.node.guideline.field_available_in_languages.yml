@@ -1,0 +1,21 @@
+uuid: b7d851f2-a5ce-4b6e-af9f-fc182a784880
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_available_in_languages
+    - node.type.guideline
+  module:
+    - languagefield
+id: node.guideline.field_available_in_languages
+field_name: field_available_in_languages
+entity_type: node
+bundle: guideline
+label: 'Available in languages'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: language_field

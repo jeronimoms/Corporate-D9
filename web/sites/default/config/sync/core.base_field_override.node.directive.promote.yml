@@ -1,0 +1,22 @@
+uuid: 6152ee90-d66d-4537-9b89-84a3e8972b95
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.directive
+id: node.directive.promote
+field_name: promote
+entity_type: node
+bundle: directive
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

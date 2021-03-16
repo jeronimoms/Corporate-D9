@@ -1,0 +1,19 @@
+uuid: cb242599-3ffc-4348-9a67-91d8839c2211
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_provider_name_english
+    - paragraphs.paragraphs_type.paragraph_provider
+id: paragraph.paragraph_provider.field_provider_name_english
+field_name: field_provider_name_english
+entity_type: paragraph
+bundle: paragraph_provider
+label: 'Provider name (English)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

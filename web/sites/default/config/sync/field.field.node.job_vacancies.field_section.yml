@@ -1,0 +1,33 @@
+uuid: c1598171-cb29-49ec-9aa8-fe6486399e7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.job_vacancies
+    - taxonomy.vocabulary.section
+  content:
+    - 'taxonomy_term:section:84ddecfe-7936-4b13-8ad2-5669ad73f777'
+id: node.job_vacancies.field_section
+field_name: field_section
+entity_type: node
+bundle: job_vacancies
+label: Section
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 84ddecfe-7936-4b13-8ad2-5669ad73f777
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      section: section
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
