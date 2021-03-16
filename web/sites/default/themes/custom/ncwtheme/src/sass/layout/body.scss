@@ -205,6 +205,12 @@ h3.home{
   }
 }
 
+.target-blank-v2 {
+  background: url(../images/external_link-v2.png) no-repeat scroll right 2px rgba(0, 0, 0, 0);
+  padding-right: 16px;
+  float: none;
+  display: inline-block;
+}
 
 
 /* END Common elements */
@@ -231,4 +237,20 @@ h3.home{
 
 .block-twitter-block::-webkit-scrollbar-thumb{
   background-color: $bg-color-blue;
+}
+
+/* Infographics */
+.download-img, .download-pdf{
+  background: $bg-color-grey-light;
+  padding: 1rem;
+  margin-top: 0.3rem;
+  a{
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+}
+.label_multilang_file{
+  color: #7c7d81;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
