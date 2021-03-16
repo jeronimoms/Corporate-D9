@@ -9,7 +9,7 @@
 
 id: napo_node_lesson_toolkit_i18n                         # -----  CHANGE
 label: 'Node: Home Video Translations'                # -----  CHANGE
-migration_group: napo_migrate
+migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation

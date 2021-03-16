@@ -1,5 +1,5 @@
 id: napo_node_article_i18n                   # -----  CHANGE
-label: 'Node: Article Translations'
+label: 'Node: Article i18n'
 audit: true
 migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver

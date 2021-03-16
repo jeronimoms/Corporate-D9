@@ -22,22 +22,39 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
+    - napo_node_lesson_media_documents_1
 
 process:
-  # nid: tnid   #comentar si no es bbdd limpia
-  # vid: vid  #comentar si no es bbdd limpia
+  nid:
+    - plugin: get
+      source: nid
   type:
     - plugin: default_value
       default_value: lesson              # -----  CHANGE
-  langcode:
-    plugin: default_value
-    source: language
-    default_value: "und"
-  title: title
-  body: body
-  uid: node_uid
-  status: status
-  created: created
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
   changed: changed
   promote: promote
   sticky: sticky
@@ -46,14 +63,14 @@ process:
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_lesson_type:
-    -
-      plugin: sub_process
+    - plugin: sub_process
       source: field_lesson_type
       process:
-        target_id: tid
+        target_id:
+          plugin: get
+          source: tid
   field_activities: field_activities
   field_assessment: field_assessment
-  field_file: field_file
   field_lesson_intro_text: field_lesson_intro_text
   field_learning_objectives: field_learning_objectives
   field_lesson_toolkit: field_lesson_toolkit
@@ -65,5 +82,13 @@ process:
     - plugin: sub_process
       source: field_tags
       process:
-        target_id: tid
-
+        target_id:
+          plugin: get
+          source: tid
+  # Documents.
+  field_file:
+    plugin: file_id_lookup
+    source: field_file
+    migration:
+      - napo_node_lesson_media_documents_1
+    no_stub: true
