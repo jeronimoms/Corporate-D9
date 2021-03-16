@@ -8,12 +8,12 @@
 ##################### BASIC INFORMATION ###################
 
 id: napo_node_lesson_video_i18n                         # -----  CHANGE
-label: 'Node: Home Video Translations'                # -----  CHANGE
+label: 'Node: Lesson Video i18n'                # -----  CHANGE
 migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation
-  node_type: faq                                # -----  CHANGE
+  node_type: lesson_video                                # -----  CHANGE
 destination:
   plugin: entity:node
   translations: true
