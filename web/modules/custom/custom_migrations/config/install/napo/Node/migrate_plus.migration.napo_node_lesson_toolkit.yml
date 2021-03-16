@@ -67,4 +67,4 @@ process:
       source: field_target_ages
       process:
         target_id: tid
-
+      no_stub: true

@@ -52,7 +52,6 @@ process:
     plugin: static_map
     bypass: true
     source: language
-    #    default_value: 'und'
     map:
       'pt': 'pt-pt'
   title: title
