@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
+    - field.field.media.document.field_description
     - field.field.media.document.field_media_document
+    - field.field.media.document.field_nace
+    - field.field.media.document.field_tags
     - image.style.thumbnail
     - media.type.document
   module:
@@ -26,8 +29,13 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
+  addtoany: true
   created: true
+  field_description: true
   field_media_document: true
+  field_nace: true
+  field_tags: true
   langcode: true
   name: true
+  search_api_excerpt: true
   uid: true

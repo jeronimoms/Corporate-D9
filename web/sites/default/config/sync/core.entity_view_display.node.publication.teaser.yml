@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.publication.field_banner_publications_office
     - field.field.node.publication.field_booklet
     - field.field.node.publication.field_expiration_date
-    - field.field.node.publication.field_file
+    - field.field.node.publication.field_file_media
     - field.field.node.publication.field_image_media
     - field.field.node.publication.field_msd_priority_area
     - field.field.node.publication.field_nace_codes
@@ -22,7 +22,7 @@ dependencies:
     - field.field.node.publication.field_priority_area
     - field.field.node.publication.field_publication_bookshop_id
     - field.field.node.publication.field_publication_date
-    - field.field.node.publication.field_publication_related_res
+    - field.field.node.publication.field_publication_res_files
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_related_oshwiki_articles
     - field.field.node.publication.field_related_publications
@@ -36,7 +36,6 @@ dependencies:
   module:
     - datetime
     - field_group
-    - file
     - layout_builder
     - user
 third_party_settings:
@@ -66,14 +65,6 @@ targetEntityType: node
 bundle: publication
 mode: teaser
 content:
-  field_file:
-    weight: 1
-    label: hidden
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
   field_publication_date:
     weight: 0
     label: hidden
@@ -93,6 +84,7 @@ hidden:
   field_banner_publications_office: true
   field_booklet: true
   field_expiration_date: true
+  field_file_media: true
   field_image_media: true
   field_msd_priority_area: true
   field_nace_codes: true
@@ -101,7 +93,7 @@ hidden:
   field_pages_count_updated: true
   field_priority_area: true
   field_publication_bookshop_id: true
-  field_publication_related_res: true
+  field_publication_res_files: true
   field_publication_type: true
   field_related_oshwiki_articles: true
   field_related_publications: true

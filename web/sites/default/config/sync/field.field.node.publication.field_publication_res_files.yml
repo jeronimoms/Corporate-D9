@@ -1,29 +1,29 @@
-uuid: fbe2fbc8-1090-49bb-8a0c-f96810b6550c
+uuid: a7445808-99b3-41d2-8142-c83ae2bd341e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image_media
-    - media.type.image_caption
+    - field.storage.node.field_publication_res_files
+    - media.type.document
     - node.type.publication
-id: node.publication.field_image_media
-field_name: field_image_media
+id: node.publication.field_publication_res_files
+field_name: field_publication_res_files
 entity_type: node
 bundle: publication
-label: 'Cover image'
+label: 'Resources (files)'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image_caption: image_caption
+      document: document
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: image
+    auto_create_bundle: ''
 field_type: entity_reference
