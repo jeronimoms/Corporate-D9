@@ -1,0 +1,29 @@
+uuid: d733ed85-91d5-438d-8076-4c2c6d44b38d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activity
+    - node.type.seminar
+    - taxonomy.vocabulary.activity
+id: node.seminar.field_activity
+field_name: field_activity
+entity_type: node
+bundle: seminar
+label: Activity
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      activity: activity
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

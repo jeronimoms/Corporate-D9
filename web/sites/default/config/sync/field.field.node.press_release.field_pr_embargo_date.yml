@@ -1,0 +1,21 @@
+uuid: f8ec1bba-61da-4c15-a2f5-182d6d84008c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pr_embargo_date
+    - node.type.press_release
+  module:
+    - datetime
+id: node.press_release.field_pr_embargo_date
+field_name: field_pr_embargo_date
+entity_type: node
+bundle: press_release
+label: 'Embargo date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

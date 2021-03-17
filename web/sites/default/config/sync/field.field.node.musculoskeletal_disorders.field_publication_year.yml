@@ -11,8 +11,8 @@ id: node.musculoskeletal_disorders.field_publication_year
 field_name: field_publication_year
 entity_type: node
 bundle: musculoskeletal_disorders
-label: 'Year of publication / Year'
-description: ''
+label: 'Date of publication / Year'
+description: 'Please select a year of publication, if it is not possible to identify leave it empty.'
 required: false
 translatable: true
 default_value:

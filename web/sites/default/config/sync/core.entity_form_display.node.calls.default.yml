@@ -10,12 +10,12 @@ dependencies:
     - field.field.node.calls.field_calls_deadline
     - field.field.node.calls.field_expiration_date
     - field.field.node.calls.field_publication_date
-    - field.field.node.calls.field_related_resources
+    - field.field.node.calls.field_related_resources_media
     - field.field.node.calls.field_section
     - node.type.calls
   module:
     - datetime
-    - file
+    - media_library
     - text
 id: node.calls.default
 targetEntityType: node
@@ -80,12 +80,12 @@ content:
     third_party_settings: {  }
     type: datetime_datelist
     region: content
-  field_related_resources:
+  field_related_resources_media:
     weight: 7
     settings:
-      progress_indicator: throbber
+      media_types: {  }
     third_party_settings: {  }
-    type: file_generic
+    type: media_library_widget
     region: content
   field_section:
     weight: 0

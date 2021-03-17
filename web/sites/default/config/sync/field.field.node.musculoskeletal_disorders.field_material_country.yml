@@ -11,7 +11,7 @@ field_name: field_material_country
 entity_type: node
 bundle: musculoskeletal_disorders
 label: Country
-description: ''
+description: 'Please add a country code from the list'
 required: true
 translatable: true
 default_value: {  }

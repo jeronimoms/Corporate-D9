@@ -11,7 +11,7 @@ field_name: field_worker_groups_covered
 entity_type: node
 bundle: musculoskeletal_disorders
 label: 'Worker groups covered (vulnerable groups etc.)'
-description: ''
+description: 'Please select the type of workers covered in the material from the drop down list'
 required: false
 translatable: true
 default_value: {  }

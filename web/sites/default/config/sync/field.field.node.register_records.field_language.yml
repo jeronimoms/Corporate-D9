@@ -1,0 +1,21 @@
+uuid: 0ef8f376-88ce-4e2f-b853-148e1c0a76c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_language
+    - node.type.register_records
+  module:
+    - languagefield
+id: node.register_records.field_language
+field_name: field_language
+entity_type: node
+bundle: register_records
+label: Language
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: language_field

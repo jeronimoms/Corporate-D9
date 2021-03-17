@@ -1,0 +1,23 @@
+uuid: 024d367e-887a-4ea3-81b3-52dfd86d5650
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nominated_by_fop
+    - node.type.musculoskeletal_disorders
+id: node.musculoskeletal_disorders.field_nominated_by_fop
+field_name: field_nominated_by_fop
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Nominated by FOP'
+description: "Please tick if yes\r\n"
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

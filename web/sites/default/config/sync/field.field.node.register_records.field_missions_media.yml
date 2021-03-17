@@ -1,0 +1,29 @@
+uuid: 73b77dc1-8acf-482a-9839-364879863856
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_missions_media
+    - media.type.document
+    - node.type.register_records
+id: node.register_records.field_missions_media
+field_name: field_missions_media
+entity_type: node
+bundle: register_records
+label: Missions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

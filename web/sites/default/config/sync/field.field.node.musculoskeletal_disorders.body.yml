@@ -11,8 +11,8 @@ id: node.musculoskeletal_disorders.body
 field_name: body
 entity_type: node
 bundle: musculoskeletal_disorders
-label: Body
-description: ''
+label: "Description (English)\t"
+description: 'Please describe the material (max. 150 words) Please note: the first paragraph will be displayed as short description, please take this into consideration when you are writing the first paragraph.'
 required: false
 translatable: true
 default_value: {  }

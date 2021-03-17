@@ -1,0 +1,29 @@
+uuid: 32658b1f-c1aa-45e9-8486-5e2e1330ce51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_media
+    - media.type.image
+    - node.type.press_release
+id: node.press_release.field_image_media
+field_name: field_image_media
+entity_type: node
+bundle: press_release
+label: Image
+description: 'The header image that will be displayed on page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
