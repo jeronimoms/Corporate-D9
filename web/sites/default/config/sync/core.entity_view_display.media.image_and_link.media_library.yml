@@ -7,6 +7,8 @@ dependencies:
     - field.field.media.image_and_link.field_external_link
     - field.field.media.image_and_link.field_link_image
     - field.field.media.image_and_link.field_media_image_1
+    - field.field.media.image_and_link.field_nace
+    - field.field.media.image_and_link.field_tags
     - image.style.medium
     - media.type.image_and_link
   module:
@@ -31,6 +33,8 @@ hidden:
   field_external_link: true
   field_link_image: true
   field_media_image_1: true
+  field_nace: true
+  field_tags: true
   langcode: true
   name: true
   search_api_excerpt: true
