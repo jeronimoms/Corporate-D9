@@ -1,18 +1,18 @@
-# Migration file for creating "napo_album" nodes from BBDD.
+# Migration file for creating "msds_activities	" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
 
 ##################### BASIC INFORMATION ###################
 
-id: napo_node_napo_album                    # -----  CHANGE
-label: 'Node: Napo Album'                   # -----  CHANGE
+id: napo_node_msds_resources	                    # -----  CHANGE
+label: 'Node: MSDS Resources'                   # -----  CHANGE
 audit: true
 migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
-  node_type: napo_album                     # -----  CHANGE
+  node_type: msds_resources                     # -----  CHANGE
 destination:
   plugin: entity:node
 dependencies:
@@ -22,7 +22,6 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
-    - napo_node_napo_album_media_images_1
 
 process:
   nid:
@@ -32,7 +31,7 @@ process:
   type:
     -
       plugin: default_value
-      default_value: napo_album
+      default_value: msds_resources
   title:
     -
       plugin: get
@@ -41,10 +40,6 @@ process:
     -
       plugin: get
       source: body
-  'body/0/format':
-    -
-      plugin: default_value
-      default_value: full_html
   uid:
     -
       plugin: get
@@ -62,20 +57,3 @@ process:
       plugin: get
       source: changed
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_images:
-    plugin: file_id_lookup
-    source: field_images
-    migration: napo_node_napo_album_media_images_1
-    no_stub: true
-  field_publication_date:
-    -
-      plugin: sub_process
-      source: field_publication_date
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: 'Y-m-d\TH:i:s'
-          from_timezone: 'Europe/Madrid'
-          to_timezone: 'Europe/Madrid'
-          source: value
