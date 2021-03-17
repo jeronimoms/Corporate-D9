@@ -1,0 +1,29 @@
+uuid: edd9d45c-6397-445e-b4d1-2e0014358e38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_resources_media
+    - media.type.document
+    - node.type.seminar
+id: node.seminar.field_related_resources_media
+field_name: field_related_resources_media
+entity_type: node
+bundle: seminar
+label: 'Related resources'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

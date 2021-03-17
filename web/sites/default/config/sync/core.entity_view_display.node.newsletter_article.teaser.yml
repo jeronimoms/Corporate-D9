@@ -1,0 +1,29 @@
+uuid: 0eca81b0-17bd-410d-a782-e275dcadb6b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.newsletter_article.body
+    - node.type.newsletter_article
+  module:
+    - text
+    - user
+id: node.newsletter_article.teaser
+targetEntityType: node
+bundle: newsletter_article
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

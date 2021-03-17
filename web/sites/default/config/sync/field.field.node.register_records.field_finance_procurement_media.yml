@@ -1,0 +1,29 @@
+uuid: 2fd86e81-bf26-4dc8-907d-c12e0c8ac979
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_finance_procurement_media
+    - media.type.document
+    - node.type.register_records
+id: node.register_records.field_finance_procurement_media
+field_name: field_finance_procurement_media
+entity_type: node
+bundle: register_records
+label: 'Finance and Procurement'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

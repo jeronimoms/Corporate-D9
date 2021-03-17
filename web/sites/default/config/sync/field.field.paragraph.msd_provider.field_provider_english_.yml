@@ -1,0 +1,19 @@
+uuid: dfacfb21-c5f9-43e5-91d4-28edc32814ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_provider_english_
+    - paragraphs.paragraphs_type.msd_provider
+id: paragraph.msd_provider.field_provider_english_
+field_name: field_provider_english_
+entity_type: paragraph
+bundle: msd_provider
+label: 'Provider (English)'
+description: 'Please fill in the provider of the material (English version of the name)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

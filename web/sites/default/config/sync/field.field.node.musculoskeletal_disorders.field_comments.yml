@@ -1,0 +1,21 @@
+uuid: cf6bc7c4-629f-45a8-9c58-62ea0c6b25c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comments
+    - node.type.musculoskeletal_disorders
+  module:
+    - text
+id: node.musculoskeletal_disorders.field_comments
+field_name: field_comments
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Comments regarding suitability for pictogram guide'
+description: 'Please add comments regarding any elements that EU-OSHA could adapt to make pictograms'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

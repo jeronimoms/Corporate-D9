@@ -1,0 +1,29 @@
+uuid: 1d593890-b303-450e-af82-66075fb7312d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_purpose_of_the_material
+    - node.type.musculoskeletal_disorders
+    - taxonomy.vocabulary.purpose_of_material
+id: node.musculoskeletal_disorders.field_purpose_of_the_material
+field_name: field_purpose_of_the_material
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Purpose of the material'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      purpose_of_material: purpose_of_material
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

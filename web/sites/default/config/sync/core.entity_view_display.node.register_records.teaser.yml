@@ -1,0 +1,71 @@
+uuid: 1656163f-d8f2-4b6f-b17d-6bb45ef15206
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.register_records.body
+    - field.field.node.register_records.field_activity
+    - field.field.node.register_records.field_documentation_media
+    - field.field.node.register_records.field_events_meetings_media
+    - field.field.node.register_records.field_finance_procurement_media
+    - field.field.node.register_records.field_general_services_media
+    - field.field.node.register_records.field_governance_media
+    - field.field.node.register_records.field_human_resources_media
+    - field.field.node.register_records.field_ict_media
+    - field.field.node.register_records.field_language
+    - field.field.node.register_records.field_missions_media
+    - field.field.node.register_records.field_relationship_management_me
+    - field.field.node.register_records.field_research_activities_media
+    - field.field.node.register_records.field_section
+    - field.field.node.register_records.field_staff_committee_media
+    - field.field.node.register_records.field_summary
+    - field.field.node.register_records.field_surveys_media
+    - field.field.node.register_records.field_tags
+    - field.field.node.register_records.field_websites_online_serv_media
+    - field.field.node.register_records.field_wiki_categories
+    - node.type.register_records
+  module:
+    - text
+    - user
+id: node.register_records.teaser
+targetEntityType: node
+bundle: register_records
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_activity: true
+  field_documentation_media: true
+  field_events_meetings_media: true
+  field_finance_procurement_media: true
+  field_general_services_media: true
+  field_governance_media: true
+  field_human_resources_media: true
+  field_ict_media: true
+  field_language: true
+  field_missions_media: true
+  field_relationship_management_me: true
+  field_research_activities_media: true
+  field_section: true
+  field_staff_committee_media: true
+  field_summary: true
+  field_surveys_media: true
+  field_tags: true
+  field_websites_online_serv_media: true
+  field_wiki_categories: true
+  langcode: true
+  search_api_excerpt: true

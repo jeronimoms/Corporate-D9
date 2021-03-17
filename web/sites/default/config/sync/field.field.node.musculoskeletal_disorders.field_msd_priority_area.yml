@@ -1,0 +1,29 @@
+uuid: 3180c29b-1fc6-4820-89eb-01178ac44293
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_msd_priority_area
+    - node.type.musculoskeletal_disorders
+    - taxonomy.vocabulary.msd_priority_area
+id: node.musculoskeletal_disorders.field_msd_priority_area
+field_name: field_msd_priority_area
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Priority area'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      msd_priority_area: msd_priority_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

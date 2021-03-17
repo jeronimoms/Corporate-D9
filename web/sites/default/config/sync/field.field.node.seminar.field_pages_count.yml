@@ -1,0 +1,23 @@
+uuid: 8dfef1d0-5ae3-44e6-a8da-da5b45e5054b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pages_count
+    - node.type.seminar
+id: node.seminar.field_pages_count
+field_name: field_pages_count
+entity_type: node
+bundle: seminar
+label: 'Number of pages'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

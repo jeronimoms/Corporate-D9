@@ -1,0 +1,19 @@
+uuid: cfc98b83-1106-4290-a660-bdc926992b7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.register_records
+id: node.register_records.field_summary
+field_name: field_summary
+entity_type: node
+bundle: register_records
+label: Summary
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,161 @@
+uuid: f24c458d-193e-4355-9779-371d504faacc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.press_release.body
+    - field.field.node.press_release.field_activity
+    - field.field.node.press_release.field_aditional_resources
+    - field.field.node.press_release.field_archived
+    - field.field.node.press_release.field_expiration_date
+    - field.field.node.press_release.field_image_media
+    - field.field.node.press_release.field_nace_codes
+    - field.field.node.press_release.field_pr_embargo_date
+    - field.field.node.press_release.field_pr_notes_to_editor
+    - field.field.node.press_release.field_publication_date
+    - field.field.node.press_release.field_quote
+    - field.field.node.press_release.field_section
+    - field.field.node.press_release.field_summary
+    - field.field.node.press_release.field_tags
+    - field.field.node.press_release.field_thesaurus_2020
+    - node.type.press_release
+  module:
+    - datetime
+    - text
+    - user
+id: node.press_release.default
+targetEntityType: node
+bundle: press_release
+mode: default
+content:
+  body:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_activity:
+    weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_aditional_resources:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_archived:
+    weight: 114
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_expiration_date:
+    weight: 105
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_image_media:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_nace_codes:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_pr_embargo_date:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_pr_notes_to_editor:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_publication_date:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_quote:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_section:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_summary:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_tags:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_thesaurus_2020:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true
