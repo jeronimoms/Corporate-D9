@@ -7,6 +7,8 @@ dependencies:
     - field.field.media.image_and_link.field_external_link
     - field.field.media.image_and_link.field_link_image
     - field.field.media.image_and_link.field_media_image_1
+    - field.field.media.image_and_link.field_nace
+    - field.field.media.image_and_link.field_tags
     - image.style.thumbnail
     - media.type.image_and_link
   module:
@@ -40,6 +42,26 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
+  field_nace:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   name:
     type: string_textfield
     settings:

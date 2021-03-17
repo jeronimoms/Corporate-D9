@@ -1,0 +1,29 @@
+uuid: 11952dda-1267-4241-a083-189abe60382a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_tags
+    - media.type.image_and_link
+    - taxonomy.vocabulary.tags
+id: media.image_and_link.field_tags
+field_name: field_tags
+entity_type: media
+bundle: image_and_link
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
