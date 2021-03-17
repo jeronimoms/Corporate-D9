@@ -7,13 +7,13 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: napo_node_napo_album_i18n                         # -----  CHANGE
-label: 'Node: Napo Album Translations'                # -----  CHANGE
+id: napo_node_napo_friend_i18n                         # -----  CHANGE
+label: 'Node: Napo Friend i18n'                # -----  CHANGE
 migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation
-  node_type: napo_album                                # -----  CHANGE
+  node_type: napo_friend                                # -----  CHANGE
 destination:
   plugin: entity:node
   translations: true
@@ -25,17 +25,15 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
-    - napo_node_napo_album                            # -----  CHANGE
+    - napo_node_napo_friend                            # -----  CHANGE
 
 process:
   nid: entity_id
   type: type
-  #  langcode: language
   langcode:
     plugin: static_map
     bypass: true
     source: language
-    #    default_value: 'und'
     map:
       'pt': 'pt-pt'
   title: title
@@ -52,16 +50,4 @@ process:
   content_translation_source: source
   content_translation_outdated: translate
   ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
-  field_images: field_images
-  field_publication_date:       #revisar
-    -
-      plugin: sub_process
-      source: field_publication_date
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: 'Y-m-d\TH:i:s'
-          from_timezone: 'Europe/Madrid'
-          to_timezone: 'Europe/Madrid'
-          source: value
+
