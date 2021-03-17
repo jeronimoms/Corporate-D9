@@ -1,0 +1,27 @@
+uuid: 68195b7a-2e29-4873-9960-7e5a152ed5fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.newsletter_article.body
+    - node.type.newsletter_article
+  module:
+    - text
+    - user
+id: node.newsletter_article.default
+targetEntityType: node
+bundle: newsletter_article
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

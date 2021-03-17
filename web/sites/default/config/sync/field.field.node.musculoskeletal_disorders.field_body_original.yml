@@ -1,0 +1,21 @@
+uuid: 1f6cdb19-02f3-4f9e-ad67-f6fe847bda75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_original
+    - node.type.musculoskeletal_disorders
+  module:
+    - text
+id: node.musculoskeletal_disorders.field_body_original
+field_name: field_body_original
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Description (original language)'
+description: 'Please add a short description in original language (only if a description is available on the website or material – no extra drafting or translation)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

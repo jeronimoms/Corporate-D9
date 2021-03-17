@@ -11,7 +11,7 @@ audit: true
 migration_group: ncw_migrate_nodes
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
-  plugin: d7_node
+  plugin: ev_d7_node
   node_type: article                     # -----  CHANGE
 destination:
   plugin: entity:node
@@ -60,8 +60,7 @@ process:
     process:
       target_id: tid
   field_section:
-    -
-      plugin: sub_process
+    - plugin: sub_process
       source: workbench_access
       process:
         target_id: tid

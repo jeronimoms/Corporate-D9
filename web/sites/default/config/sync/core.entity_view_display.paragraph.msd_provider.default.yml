@@ -1,0 +1,31 @@
+uuid: 4a8ef3ee-9b3c-4e9e-bfca-d6c716609326
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.msd_provider.field_provider_english_
+    - field.field.paragraph.msd_provider.field_provider_original_
+    - paragraphs.paragraphs_type.msd_provider
+id: paragraph.msd_provider.default
+targetEntityType: paragraph
+bundle: msd_provider
+mode: default
+content:
+  field_provider_english_:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_provider_original_:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

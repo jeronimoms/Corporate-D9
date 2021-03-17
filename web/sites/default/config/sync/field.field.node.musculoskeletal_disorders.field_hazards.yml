@@ -1,0 +1,29 @@
+uuid: 199006aa-47c1-400a-8057-50dfbc59cfef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hazards
+    - node.type.musculoskeletal_disorders
+    - taxonomy.vocabulary.hazards
+id: node.musculoskeletal_disorders.field_hazards
+field_name: field_hazards
+entity_type: node
+bundle: musculoskeletal_disorders
+label: Hazards
+description: 'Please select the type of hazards related to state and occurrence in the workplace from the drop down list'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      hazards: hazards
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: 02cf46ed-4631-49ea-82bb-c857e346574a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.press_release
+  module:
+    - text
+id: node.press_release.body
+field_name: body
+entity_type: node
+bundle: press_release
+label: Body
+description: 'Please introduce in this box the text of this section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

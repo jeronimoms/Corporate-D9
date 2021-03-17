@@ -1,0 +1,29 @@
+uuid: 7a10696b-08ac-43a4-9652-60926fae135e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_material_country
+    - node.type.musculoskeletal_disorders
+    - taxonomy.vocabulary.country
+id: node.musculoskeletal_disorders.field_material_country
+field_name: field_material_country
+entity_type: node
+bundle: musculoskeletal_disorders
+label: Country
+description: 'Please add a country code from the list'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      country: country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

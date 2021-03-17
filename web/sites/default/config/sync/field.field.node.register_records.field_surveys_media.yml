@@ -1,0 +1,29 @@
+uuid: ffec4dfb-3272-418c-8e66-de7a8c838767
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_surveys_media
+    - media.type.document
+    - node.type.register_records
+id: node.register_records.field_surveys_media
+field_name: field_surveys_media
+entity_type: node
+bundle: register_records
+label: Surveys
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

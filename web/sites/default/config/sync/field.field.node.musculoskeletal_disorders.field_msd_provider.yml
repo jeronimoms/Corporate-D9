@@ -1,0 +1,37 @@
+uuid: a15f227e-4de5-481f-9c36-ee5ae45b35b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_msd_provider
+    - node.type.musculoskeletal_disorders
+    - paragraphs.paragraphs_type.msd_provider
+  module:
+    - entity_reference_revisions
+id: node.musculoskeletal_disorders.field_msd_provider
+field_name: field_msd_provider
+entity_type: node
+bundle: musculoskeletal_disorders
+label: Provider
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      msd_provider: msd_provider
+    target_bundles_drag_drop:
+      fop_link:
+        weight: 4
+        enabled: false
+      msd_provider:
+        enabled: true
+        weight: 5
+      paragraph_provider:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

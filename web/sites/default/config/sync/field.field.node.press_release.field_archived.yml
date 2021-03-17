@@ -1,0 +1,23 @@
+uuid: e7ee15bc-7000-4cd5-8eff-b9de5b44a1b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archived
+    - node.type.press_release
+id: node.press_release.field_archived
+field_name: field_archived
+entity_type: node
+bundle: press_release
+label: 'Marked as outdated'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

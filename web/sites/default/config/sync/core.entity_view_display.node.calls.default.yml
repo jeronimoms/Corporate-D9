@@ -10,12 +10,11 @@ dependencies:
     - field.field.node.calls.field_calls_deadline
     - field.field.node.calls.field_expiration_date
     - field.field.node.calls.field_publication_date
-    - field.field.node.calls.field_related_resources
+    - field.field.node.calls.field_related_resources_media
     - field.field.node.calls.field_section
     - node.type.calls
   module:
     - datetime
-    - file
     - text
     - user
 id: node.calls.default
@@ -39,13 +38,13 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_related_resources:
+  field_related_resources_media:
     weight: 2
     label: above
     settings:
-      use_description_as_link_text: true
+      link: true
     third_party_settings: {  }
-    type: file_default
+    type: entity_reference_label
     region: content
 hidden:
   addtoany: true

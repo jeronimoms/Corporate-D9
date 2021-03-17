@@ -1,0 +1,29 @@
+uuid: 29b38bcc-49b9-4b23-a237-621c7fa7b05b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activity
+    - node.type.register_records
+    - taxonomy.vocabulary.activity
+id: node.register_records.field_activity
+field_name: field_activity
+entity_type: node
+bundle: register_records
+label: Activity
+description: 'Select OSHwiki category for this content.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      activity: activity
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
