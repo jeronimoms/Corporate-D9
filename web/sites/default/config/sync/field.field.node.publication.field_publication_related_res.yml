@@ -14,7 +14,7 @@ bundle: publication
 label: 'Resources (files)'
 description: 'Publication Resources files.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
