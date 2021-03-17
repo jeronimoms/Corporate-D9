@@ -13,7 +13,7 @@ migration_tags: null
 migration_group: ncw_migrate_nodes
 label: 'Node: Article'
 source:
-  plugin: d7_node
+  plugin: ev_d7_node
   node_type: article
 process:
   id: tnid

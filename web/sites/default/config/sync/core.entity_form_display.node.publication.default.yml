@@ -34,6 +34,7 @@ dependencies:
     - field.field.node.publication.field_wiki_categories
     - node.type.publication
   module:
+    - chosen_field
     - content_moderation
     - datetime
     - entity_browser
@@ -151,7 +152,7 @@ content:
     weight: 9
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_nace_codes:
     weight: 11
@@ -163,7 +164,7 @@ content:
     weight: 8
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_publication_date:
     weight: 4
