@@ -1,0 +1,116 @@
+# Migration file for creating "napo_friend" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: napo_node_napo_video                   # -----  CHANGE
+label: 'Node: Napo Video'                   # -----  CHANGE
+audit: true
+migration_group: napo_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: napo_video                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - napo_node_napo_video_media_videos_1
+
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: napo_video
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_video_type:
+    - plugin: sub_process
+      source: field_video_type
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_napo_film: field_napo_film
+  field_image:
+    plugin: file_id_lookup
+    source: field_image
+    migration: napo_node_napo_video_media_images_1
+    no_stub: true
+  field_video:
+    plugin: file_id_lookup
+    source: field_video
+    migration: napo_node_napo_video_media_videos_1
+    no_stub: true
+  field_youtube: field_youtube
+  field_publication_date:
+    - plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_main_tag:
+    - plugin: sub_process
+      source: field_main_tag
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_archived: field_archived
+  field_combined_tags:
+    - plugin: sub_process
+      source: field_combined_tags
+      process:
+        target_id:
+          plugin: get
+          source: tid

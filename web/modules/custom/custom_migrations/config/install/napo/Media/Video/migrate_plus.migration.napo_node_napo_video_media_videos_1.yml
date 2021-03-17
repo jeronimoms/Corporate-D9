@@ -1,13 +1,13 @@
 # File to Media Migration configuration for vesafe_good_practice_media_image migration
 
-id: napo_node_home_video_media_videos_1
-label: 'Home Video: Media Videos Step 1'
+id: napo_node_napo_video_media_videos_1
+label: 'Napo Video: Media Videos Step 1'
 migration_group: napo_migrate_media
 source:
 
   plugin: media_entity_generator_d7
   entity_type: node
-  bundle: home_video
+  bundle: napo_video
   langcode: en
   d7_file_url: 'https://www.napofilm.net/sites/default/files/'
   field_names:
@@ -42,7 +42,7 @@ process:
     plugin: media_file_copy
     move: FALSE
     reuse: TRUE
-    path: 'public://videos/home_video/'
+    path: 'public://videos/napo_video/'
     source: file_path
 
   langcode: langcode
