@@ -1,0 +1,20 @@
+uuid: 91ca00df-5e86-40ac-9852-cbc782bb4ae4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.register_records
+  module:
+    - path
+id: node.register_records.path
+field_name: path
+entity_type: node
+bundle: register_records
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

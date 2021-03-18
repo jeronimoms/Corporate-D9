@@ -1,0 +1,22 @@
+uuid: 34f55355-a494-4919-8595-bd8107f82959
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.register_records
+id: node.register_records.status
+field_name: status
+entity_type: node
+bundle: register_records
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,20 @@
+uuid: b17171da-0c9e-4d13-bee5-1e90cc37ad8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.musculoskeletal_disorders
+  module:
+    - path
+id: node.musculoskeletal_disorders.path
+field_name: path
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

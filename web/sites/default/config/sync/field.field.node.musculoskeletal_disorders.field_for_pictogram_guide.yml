@@ -14,7 +14,7 @@ bundle: musculoskeletal_disorders
 label: 'Recommended for EU-OSHA pictogram guide'
 description: 'Please indicate if the resource contains elements that EU-OSHA could adapt to make pictograms'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

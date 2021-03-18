@@ -1,0 +1,77 @@
+# Migration file for creating "publication translations" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_publication_i18n                    # -----  CHANGE
+label: 'Node: Publication Translations'                   # -----  CHANGE
+
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node_entity_translation
+  node_type: publication                     # -----  CHANGE
+destination:
+  plugin: entity:node
+  translations: true
+  destination_module: content_translation
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - ncw_node_publication
+
+process:
+  nid: entity_id
+  type: type
+  langcode: language
+  title: title
+  body: body
+  content_translation_source: source
+  content_translation_outdated: translate
+  uid: node_uid
+  status: status
+
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_author: field_author
+  field_banner_publications_office: field_banner_publications_office
+
+  field_related_oshwiki_articles: field_related_oshwiki_articles
+  field_related_publications: field_related_publications
+  field_oshwiki_categories:
+    -
+      plugin: sub_process
+      source: field_oshwiki_categories
+      process:
+        target_id: tid
+  # Images.
+
+  field_image_media:
+    plugin: file_id_lookup_translations
+    source: field_cover_image
+    migration:
+      - ncw_node_publication_field_image_media_1
+    no_stub: true
+
+  # Documents.
+  field_file_media:
+    plugin: file_id_lookup_translations
+    source: field_file
+    migration:
+      - ncw_node_publication_media_documents_1
+    no_stub: true
+  field_publication_res_files:
+    plugin: file_id_lookup_translations
+    source: field_publication_related_res
+    migration:
+      - ncw_node_publication_media_documents_1
+    no_stub: true
+

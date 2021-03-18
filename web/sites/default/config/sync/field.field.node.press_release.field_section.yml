@@ -15,7 +15,7 @@ bundle: press_release
 label: Section
 description: 'Select the proper editorial group for this content.'
 required: true
-translatable: true
+translatable: false
 default_value:
   -
     target_uuid: 1228157b-62d1-4858-a6db-6c78828ad1c9
