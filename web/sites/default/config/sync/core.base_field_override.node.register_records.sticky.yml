@@ -1,0 +1,22 @@
+uuid: f0c17535-8828-4733-9bc8-c85e57a49b2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.register_records
+id: node.register_records.sticky
+field_name: sticky
+entity_type: node
+bundle: register_records
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

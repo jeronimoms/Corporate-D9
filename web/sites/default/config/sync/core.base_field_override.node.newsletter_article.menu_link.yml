@@ -1,0 +1,20 @@
+uuid: 15b2736a-a6cc-4a9d-908b-535e3edee213
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.newsletter_article
+id: node.newsletter_article.menu_link
+field_name: menu_link
+entity_type: node
+bundle: newsletter_article
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

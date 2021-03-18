@@ -13,7 +13,7 @@ bundle: musculoskeletal_disorders
 label: 'Worker groups covered (vulnerable groups etc.)'
 description: 'Please select the type of workers covered in the material from the drop down list'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

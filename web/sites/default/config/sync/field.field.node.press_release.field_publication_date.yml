@@ -14,7 +14,7 @@ bundle: press_release
 label: 'Publication date'
 description: 'Please select the date of publication, if it is not possible to identify leave it empty.'
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     default_date_type: now

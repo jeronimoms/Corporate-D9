@@ -14,7 +14,7 @@ bundle: musculoskeletal_disorders
 label: Languages
 description: 'Please add a language from the list'
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

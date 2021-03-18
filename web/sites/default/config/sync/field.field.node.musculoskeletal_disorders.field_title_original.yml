@@ -12,7 +12,7 @@ bundle: musculoskeletal_disorders
 label: 'Title (Original)'
 description: 'Please fill in the original title of the material'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
