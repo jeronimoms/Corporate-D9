@@ -1,24 +1,20 @@
-uuid: 34322310-7ca5-4817-9217-a4e51e250da9
+uuid: 72331a2d-b228-4870-94b0-38931074effc
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_section
-    - node.type.publication
+    - node.type.25th_anniversary
     - taxonomy.vocabulary.section
-  content:
-    - 'taxonomy_term:section:35cd45a5-1768-4fed-a5b1-f3957254554f'
-id: node.publication.field_section
+id: node.25th_anniversary.field_section
 field_name: field_section
 entity_type: node
-bundle: publication
+bundle: 25th_anniversary
 label: Section
-description: "Select the proper editorial group for this content.\r\n"
+description: 'Select the proper editorial group for this content.'
 required: true
-translatable: false
-default_value:
-  -
-    target_uuid: 35cd45a5-1768-4fed-a5b1-f3957254554f
+translatable: true
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

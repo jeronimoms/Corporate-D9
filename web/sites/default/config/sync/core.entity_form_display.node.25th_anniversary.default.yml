@@ -4,12 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.25th_anniversary.body
+    - field.field.node.25th_anniversary.field_image_media
+    - field.field.node.25th_anniversary.field_language
     - field.field.node.25th_anniversary.field_publication_date
+    - field.field.node.25th_anniversary.field_section
     - field.field.node.25th_anniversary.field_summary
     - field.field.node.25th_anniversary.field_tags
     - node.type.25th_anniversary
   module:
     - datetime
+    - languagefield
+    - media_library
     - text
 id: node.25th_anniversary.default
 targetEntityType: node
@@ -18,13 +23,28 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 8
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+    region: content
+  field_image_media:
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_language:
+    weight: 6
+    settings:
+      format:
+        name: name
+    third_party_settings: {  }
+    type: languagefield_select
     region: content
   field_publication_date:
     type: datetime_datelist
@@ -35,6 +55,12 @@ content:
       time_type: '24'
       increment: 15
     third_party_settings: {  }
+  field_section:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_summary:
     weight: 2
     settings:
@@ -56,22 +82,17 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
-    weight: 100
-    settings: {  }
-    region: content
-    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
     region: content
     settings:
       size: 255
-      placeholder: ''
+      placeholder: 'Title. Max 255 characters.'
     third_party_settings: {  }
 hidden:
   created: true
+  moderation_state: true
   path: true
   promote: true
   status: true

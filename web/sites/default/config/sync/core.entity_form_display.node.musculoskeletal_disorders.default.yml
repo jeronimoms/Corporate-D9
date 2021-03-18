@@ -39,6 +39,7 @@ dependencies:
     - field.field.node.musculoskeletal_disorders.field_worker_groups_other
     - node.type.musculoskeletal_disorders
   module:
+    - chosen_field
     - datetime
     - languagefield
     - link
@@ -115,13 +116,9 @@ content:
     region: content
   field_hazards:
     weight: 13
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_hazards_other:
     weight: 14
@@ -133,13 +130,9 @@ content:
     region: content
   field_health_effects:
     weight: 15
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_languages_other:
     weight: 11
@@ -151,13 +144,9 @@ content:
     region: content
   field_material_country:
     weight: 8
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_material_purpose_other:
     weight: 22
@@ -169,13 +158,9 @@ content:
     region: content
   field_msd_priority_area:
     weight: 2
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_msd_provider:
     type: entity_reference_paragraphs
@@ -222,13 +207,9 @@ content:
     region: content
   field_prevention_measures:
     weight: 19
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_prevention_measures_other:
     weight: 20
@@ -240,29 +221,24 @@ content:
     region: content
   field_publication_year:
     weight: 7
-    settings: {  }
+    settings:
+      date_order: YMD
+      time_type: none
+      increment: 15
     third_party_settings: {  }
-    type: datetime_default
+    type: datetime_datelist
     region: content
   field_purpose_of_the_material:
     weight: 21
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_resource_type:
     weight: 29
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
+    type: chosen_select
     region: content
   field_resource_type_other:
     weight: 30
@@ -274,33 +250,21 @@ content:
     region: content
   field_section:
     weight: 0
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_sector_industry_covered:
     weight: 12
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_target_audience:
     weight: 27
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_target_group_other:
     weight: 28
@@ -326,13 +290,9 @@ content:
     region: content
   field_worker_groups_covered:
     weight: 17
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_worker_groups_other:
     weight: 18

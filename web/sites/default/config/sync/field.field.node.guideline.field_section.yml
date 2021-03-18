@@ -13,8 +13,8 @@ field_name: field_section
 entity_type: node
 bundle: guideline
 label: Section
-description: ''
-required: false
+description: 'Select the proper editorial group for this content.'
+required: true
 translatable: false
 default_value:
   -

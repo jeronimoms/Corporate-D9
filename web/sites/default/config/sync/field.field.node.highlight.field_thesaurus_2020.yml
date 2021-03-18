@@ -10,7 +10,7 @@ id: node.highlight.field_thesaurus_2020
 field_name: field_thesaurus_2020
 entity_type: node
 bundle: highlight
-label: 'Thesaurus 2020'
+label: Thesaurus
 description: ''
 required: false
 translatable: false
@@ -19,12 +19,11 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    behaviors:
-      views-select-list:
-        status: 0
+    target_bundles:
+      thesaurus: thesaurus
     sort:
       field: _none
       direction: ASC
-    target_bundles:
-      thesaurus: thesaurus
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.25th_anniversary.body
+    - field.field.node.25th_anniversary.field_image_media
+    - field.field.node.25th_anniversary.field_language
     - field.field.node.25th_anniversary.field_publication_date
+    - field.field.node.25th_anniversary.field_section
     - field.field.node.25th_anniversary.field_summary
     - field.field.node.25th_anniversary.field_tags
     - node.type.25th_anniversary
@@ -23,6 +26,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_image_media:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_summary:
     type: basic_string
     weight: 1
@@ -32,7 +43,9 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
+  field_language: true
   field_publication_date: true
+  field_section: true
   field_tags: true
   langcode: true
   links: true

@@ -12,7 +12,7 @@ field_name: field_publication_date
 entity_type: node
 bundle: job_vacancies
 label: 'Publication date'
-description: ''
+description: 'Please select the date of publication, if it is not possible to identify leave it empty.'
 required: true
 translatable: true
 default_value:

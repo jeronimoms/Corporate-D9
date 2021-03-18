@@ -1,22 +1,19 @@
-uuid: 1812df44-4df6-40a2-a9b8-77609235b239
+uuid: 684e341e-a94c-469f-a2f6-be8ee6a47b30
 langcode: en
 status: true
 dependencies:
   module:
-    - dynamic_entity_reference
     - paragraphs
     - taxonomy
 id: paragraph.field_type_of_provider
 field_name: field_type_of_provider
 entity_type: paragraph
-type: dynamic_entity_reference
+type: entity_reference
 settings:
-  exclude_entity_types: false
-  entity_type_ids:
-    taxonomy_term: taxonomy_term
-module: dynamic_entity_reference
+  target_type: taxonomy_term
+module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

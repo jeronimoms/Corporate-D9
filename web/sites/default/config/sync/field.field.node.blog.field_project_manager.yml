@@ -10,7 +10,7 @@ field_name: field_project_manager
 entity_type: node
 bundle: blog
 label: 'Project manager'
-description: ''
+description: "The person that will receive notifications on e-mail when a new comment is published.\r\n"
 required: true
 translatable: false
 default_value: {  }
