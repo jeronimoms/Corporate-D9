@@ -1,0 +1,18 @@
+uuid: 5424fd4c-4b91-4a3d-b658-ef64c2c627c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.musculoskeletal_disorders
+id: node.musculoskeletal_disorders.changed
+field_name: changed
+entity_type: node
+bundle: musculoskeletal_disorders
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

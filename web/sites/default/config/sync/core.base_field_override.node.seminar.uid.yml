@@ -1,0 +1,20 @@
+uuid: 03f9df28-ee55-4173-9ebf-7c8a7fc1502c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.seminar
+id: node.seminar.uid
+field_name: uid
+entity_type: node
+bundle: seminar
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

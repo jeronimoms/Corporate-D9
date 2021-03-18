@@ -1,0 +1,18 @@
+uuid: 71ae3412-fdec-4d2d-b058-2c80f3628e50
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.newsletter_article
+id: node.newsletter_article.metatag
+field_name: metatag
+entity_type: node
+bundle: newsletter_article
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

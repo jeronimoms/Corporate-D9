@@ -22,7 +22,6 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
-    - napo_node_napo_video_media_videos_1
 
 process:
   nid:
@@ -80,7 +79,7 @@ process:
     source: field_video
     migration: napo_node_napo_video_media_videos_1
     no_stub: true
-  field_youtube: field_youtube
+  field_youtube/value: field_youtube/0/input
   field_publication_date:
     - plugin: sub_process
       source: field_publication_date
@@ -114,3 +113,4 @@ process:
         target_id:
           plugin: get
           source: tid
+

@@ -1,0 +1,22 @@
+uuid: d1e639c2-c2a8-4be8-bc85-4a6c6a12e4d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.seminar
+id: node.seminar.status
+field_name: status
+entity_type: node
+bundle: seminar
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

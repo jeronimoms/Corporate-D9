@@ -13,7 +13,7 @@ bundle: press_release
 label: Tags
 description: "Select Tags for this content.\r\n"
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

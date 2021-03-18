@@ -15,7 +15,7 @@ bundle: seminar
 label: Section
 description: 'Select the proper editorial group for this content.'
 required: true
-translatable: true
+translatable: false
 default_value:
   -
     target_uuid: 6a2f0cf3-3779-49da-9ae8-15de1aa5a286

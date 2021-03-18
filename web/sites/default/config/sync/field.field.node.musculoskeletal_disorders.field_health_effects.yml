@@ -13,7 +13,7 @@ bundle: musculoskeletal_disorders
 label: 'Health effects'
 description: 'Please select the type of health effect from the drop down list'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,18 @@
+uuid: 0ae42cd3-861c-40da-9eef-841783edcc72
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.musculoskeletal_disorders
+id: node.musculoskeletal_disorders.title
+field_name: title
+entity_type: node
+bundle: musculoskeletal_disorders
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

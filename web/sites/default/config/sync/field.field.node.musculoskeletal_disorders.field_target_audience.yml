@@ -13,7 +13,7 @@ bundle: musculoskeletal_disorders
 label: 'Target audience'
 description: 'Please select a target audience from the drop down list'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

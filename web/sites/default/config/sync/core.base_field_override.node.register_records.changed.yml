@@ -1,0 +1,18 @@
+uuid: 452439d7-c24a-488c-987d-d0de8f3b7b53
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.register_records
+id: node.register_records.changed
+field_name: changed
+entity_type: node
+bundle: register_records
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
