@@ -1,0 +1,20 @@
+uuid: 27bf01f5-a93b-43a3-a564-98d413eea938
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.note_to_editor
+  module:
+    - path
+id: node.note_to_editor.path
+field_name: path
+entity_type: node
+bundle: note_to_editor
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

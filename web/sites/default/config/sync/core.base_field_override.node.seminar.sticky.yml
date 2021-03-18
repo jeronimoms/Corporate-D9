@@ -1,0 +1,22 @@
+uuid: 55c62464-c423-4af8-9c8c-d56d47d207ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.seminar
+id: node.seminar.sticky
+field_name: sticky
+entity_type: node
+bundle: seminar
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

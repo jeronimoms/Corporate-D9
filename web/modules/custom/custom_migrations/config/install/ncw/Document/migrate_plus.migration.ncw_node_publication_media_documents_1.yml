@@ -13,7 +13,7 @@ source:
   d7_file_url: 'https://osha.europa.eu/sites/default/files/'
   field_names:
     - field_file
-    - field_publication_res_files
+    - field_publication_related_res
 
 destination:
   plugin: entity:media
@@ -40,7 +40,7 @@ process:
 
   # Map the field document
   field_media_document/title: title
-
+  field_media_description: field_file_description
   field_media_document/target_id:
     plugin: media_file_copy
     move: FALSE

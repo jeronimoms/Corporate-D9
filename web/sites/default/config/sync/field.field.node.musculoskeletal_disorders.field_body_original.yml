@@ -14,7 +14,7 @@ bundle: musculoskeletal_disorders
 label: 'Description (original language)'
 description: 'Please add a short description in original language (only if a description is available on the website or material – no extra drafting or translation)'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

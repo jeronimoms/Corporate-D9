@@ -13,7 +13,7 @@ bundle: musculoskeletal_disorders
 label: 'Sector / Indrustry covered'
 description: 'Please add the NACE code(s) of the sector(s) covered in the material. Use the NACE Rev 2'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

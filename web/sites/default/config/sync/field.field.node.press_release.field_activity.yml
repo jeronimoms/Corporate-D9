@@ -13,7 +13,7 @@ bundle: press_release
 label: Activity
 description: 'Select Activity for this content.'
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

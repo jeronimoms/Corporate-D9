@@ -1,0 +1,18 @@
+uuid: 5892974b-5257-4b19-952b-c520c51e9e05
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.newsletter_article
+id: node.newsletter_article.created
+field_name: created
+entity_type: node
+bundle: newsletter_article
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

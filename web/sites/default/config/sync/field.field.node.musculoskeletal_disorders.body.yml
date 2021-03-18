@@ -14,7 +14,7 @@ bundle: musculoskeletal_disorders
 label: "Description (English)\t"
 description: 'Please describe the material (max. 150 words) Please note: the first paragraph will be displayed as short description, please take this into consideration when you are writing the first paragraph.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

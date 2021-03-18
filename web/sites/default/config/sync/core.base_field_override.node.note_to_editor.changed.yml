@@ -1,0 +1,18 @@
+uuid: 5985a783-638b-4d71-9375-a7135c65a594
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.note_to_editor
+id: node.note_to_editor.changed
+field_name: changed
+entity_type: node
+bundle: note_to_editor
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

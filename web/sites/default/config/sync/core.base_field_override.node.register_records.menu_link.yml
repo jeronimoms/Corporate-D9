@@ -1,0 +1,20 @@
+uuid: 1fd4a688-3325-4229-a2c9-1b72d3977740
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.register_records
+id: node.register_records.menu_link
+field_name: menu_link
+entity_type: node
+bundle: register_records
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: 31281971-9e20-4013-8598-0b94422b270b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.seminar
+  module:
+    - path
+id: node.seminar.path
+field_name: path
+entity_type: node
+bundle: seminar
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
