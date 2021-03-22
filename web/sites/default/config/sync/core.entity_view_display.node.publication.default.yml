@@ -31,10 +31,12 @@ dependencies:
     - field.field.node.publication.field_tags
     - field.field.node.publication.field_thesaurus_2020
     - field.field.node.publication.field_wiki_categories
+    - image.style.cover_images
     - node.type.publication
   module:
     - datetime
     - field_group
+    - media
     - text
     - user
 third_party_settings:
@@ -89,9 +91,10 @@ content:
     weight: 1
     label: hidden
     settings:
-      link: true
+      image_style: cover_images
+      image_link: ''
     third_party_settings: {  }
-    type: entity_reference_label
+    type: media_thumbnail
     region: content
   field_publication_date:
     weight: 0
