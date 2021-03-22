@@ -1,17 +1,17 @@
-uuid: fbe2fbc8-1090-49bb-8a0c-f96810b6550c
+uuid: 88be7929-b3a1-42cc-934c-e901e46fe864
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_image_media
-    - media.type.image_caption
-    - node.type.publication
-id: node.publication.field_image_media
+    - media.type.image
+    - node.type.25th_anniversary
+id: node.25th_anniversary.field_image_media
 field_name: field_image_media
 entity_type: node
-bundle: publication
-label: 'Cover image'
-description: 'The cover image that will be displayed on page.'
+bundle: 25th_anniversary
+label: Image
+description: ''
 required: false
 translatable: true
 default_value: {  }
@@ -20,10 +20,10 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image_caption: image_caption
+      image: image
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: image
+    auto_create_bundle: ''
 field_type: entity_reference

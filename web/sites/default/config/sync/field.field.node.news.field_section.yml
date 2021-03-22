@@ -1,24 +1,24 @@
-uuid: 34322310-7ca5-4817-9217-a4e51e250da9
+uuid: 5a07d077-dda6-4ca2-af35-70a79cef037a
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_section
-    - node.type.publication
+    - node.type.news
     - taxonomy.vocabulary.section
   content:
-    - 'taxonomy_term:section:35cd45a5-1768-4fed-a5b1-f3957254554f'
-id: node.publication.field_section
+    - 'taxonomy_term:section:39134f63-d147-4a3b-bf3a-bf96ece042f8'
+id: node.news.field_section
 field_name: field_section
 entity_type: node
-bundle: publication
+bundle: news
 label: Section
-description: "Select the proper editorial group for this content.\r\n"
+description: 'Select the proper editorial group for this content.'
 required: true
-translatable: false
+translatable: true
 default_value:
   -
-    target_uuid: 35cd45a5-1768-4fed-a5b1-f3957254554f
+    target_uuid: 39134f63-d147-4a3b-bf3a-bf96ece042f8
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

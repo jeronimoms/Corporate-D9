@@ -110,10 +110,11 @@ content:
   field_available_in_languages:
     weight: 11
     settings:
-      format:
-        name: name
+      size: '60'
+      autocomplete_route_name: languagefield.autocomplete
+      placeholder: ''
     third_party_settings: {  }
-    type: languagefield_select
+    type: languagefield_autocomplete_tags
     region: content
   field_biological_hazard:
     weight: 19
@@ -298,13 +299,9 @@ content:
     region: content
   field_material_country:
     weight: 9
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
+    type: options_select
     region: content
   field_material_purpose_other:
     weight: 36

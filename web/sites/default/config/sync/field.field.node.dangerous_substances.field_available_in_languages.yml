@@ -12,7 +12,7 @@ field_name: field_available_in_languages
 entity_type: node
 bundle: dangerous_substances
 label: 'Available in languages'
-description: ''
+description: 'Please add a language code from the list'
 required: true
 translatable: false
 default_value: {  }

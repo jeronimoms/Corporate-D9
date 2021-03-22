@@ -22,6 +22,7 @@ dependencies:
     - datetime
     - entity_browser
     - media_library
+    - multiple_selects
     - text
 id: node.blog.default
 targetEntityType: node
@@ -130,13 +131,9 @@ content:
     region: content
   field_thesaurus_2020:
     weight: 10
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: multiple_options_select
     region: content
   title:
     type: string_textfield

@@ -11,7 +11,6 @@ dependencies:
     - field.field.paragraph.paragraph_provider.field_url
     - paragraphs.paragraphs_type.paragraph_provider
   module:
-    - dynamic_entity_reference
     - field_group
     - link
 third_party_settings:
@@ -36,7 +35,7 @@ bundle: paragraph_provider
 mode: default
 content:
   field_other_type_provider:
-    weight: 10
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -69,13 +68,9 @@ content:
     region: content
   field_type_of_provider:
     weight: 3
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 40
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: dynamic_entity_reference_default
+    type: options_select
     region: content
   field_url:
     weight: 12

@@ -32,7 +32,7 @@ content:
     type: link_default
     region: content
   field_language:
-    weight: 26
+    weight: 2
     settings:
       format:
         name: name
@@ -53,13 +53,6 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -70,6 +63,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  langcode: true
   moderation_state: true
   path: true
   promote: true
