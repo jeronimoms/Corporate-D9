@@ -132,7 +132,7 @@ class VwApproversController extends ControllerBase implements ContainerInjection
         'user_id' => $this->getUserName($data->user_id),
         'user_mail' => $this->getUserMail($data->user_id),
         'status' => $data->status,
-        'operation' => Link::createFromRoute('Delete', 'vesafe_workflow.delete_form',
+        'operation' => Link::createFromRoute('Remove', 'vesafe_workflow.delete_form',
         [
           'node_id' => $node->id(),
           'user_id' => $data->user_id,
