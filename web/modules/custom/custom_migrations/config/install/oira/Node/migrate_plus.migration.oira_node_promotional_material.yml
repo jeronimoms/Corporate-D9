@@ -25,8 +25,8 @@ migration_dependencies:
     - oira_node_promotional_material_media_images_1
 
 process:
-#  nid: tnid
-#  vid: vid
+  nid: tnid
+  vid: vid
   type:
     - plugin: default_value
       default_value: promotional_material              # -----  CHANGE
