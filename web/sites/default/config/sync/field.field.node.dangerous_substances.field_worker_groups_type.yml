@@ -11,7 +11,7 @@ field_name: field_worker_groups_type
 entity_type: node
 bundle: dangerous_substances
 label: 'Worker groups covered (vulnerable groups etc.)'
-description: ''
+description: 'Please select the type of workers covered in the material from the drop down list'
 required: false
 translatable: false
 default_value: {  }

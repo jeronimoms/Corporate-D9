@@ -88,7 +88,7 @@ content:
   field_publication_date:
     weight: 4
     settings:
-      date_order: YMD
+      date_order: MDY
       time_type: '24'
       increment: 15
     third_party_settings: {  }

@@ -12,7 +12,7 @@ field_name: body
 entity_type: node
 bundle: dangerous_substances
 label: 'Content (English)'
-description: 'Please fill in the English title of the material'
+description: 'Please describe the material (max. 150 words) Please note: the first paragraph will be displayed as short description, Please take this into consideration when you are writing the first paragraph. Please use "Paste from Word" button when you copy text from MS Word.'
 required: false
 translatable: false
 default_value: {  }

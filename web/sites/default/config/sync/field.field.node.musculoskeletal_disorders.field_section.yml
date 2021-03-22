@@ -6,15 +6,19 @@ dependencies:
     - field.storage.node.field_section
     - node.type.musculoskeletal_disorders
     - taxonomy.vocabulary.section
+  content:
+    - 'taxonomy_term:section:acfee8c1-990c-41c7-9987-6939a49d5074'
 id: node.musculoskeletal_disorders.field_section
 field_name: field_section
 entity_type: node
 bundle: musculoskeletal_disorders
 label: Section
-description: ''
+description: 'Select the proper editorial group for this content.'
 required: false
-translatable: false
-default_value: {  }
+translatable: true
+default_value:
+  -
+    target_uuid: acfee8c1-990c-41c7-9987-6939a49d5074
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

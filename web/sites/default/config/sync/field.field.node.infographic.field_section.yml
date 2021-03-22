@@ -6,15 +6,19 @@ dependencies:
     - field.storage.node.field_section
     - node.type.infographic
     - taxonomy.vocabulary.section
+  content:
+    - 'taxonomy_term:section:a2737431-0c40-409e-b182-347cdd6dd9bf'
 id: node.infographic.field_section
 field_name: field_section
 entity_type: node
 bundle: infographic
 label: Section
-description: ''
+description: 'Select the proper editorial group for this content.'
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: a2737431-0c40-409e-b182-347cdd6dd9bf
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

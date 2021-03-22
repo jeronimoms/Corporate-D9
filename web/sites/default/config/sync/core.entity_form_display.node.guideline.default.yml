@@ -63,11 +63,10 @@ content:
   field_available_in_languages:
     weight: 8
     settings:
-      size: '60'
-      autocomplete_route_name: languagefield.autocomplete
-      placeholder: ''
+      format:
+        name: name
     third_party_settings: {  }
-    type: languagefield_autocomplete
+    type: languagefield_select
     region: content
   field_expiration_date:
     weight: 11
@@ -101,9 +100,9 @@ content:
   field_publication_date:
     weight: 3
     settings:
-      increment: 15
-      date_order: YMD
+      date_order: MDY
       time_type: '24'
+      increment: 15
     third_party_settings: {  }
     type: datetime_datelist
     region: content

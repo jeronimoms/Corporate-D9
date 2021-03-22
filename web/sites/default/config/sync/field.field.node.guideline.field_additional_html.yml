@@ -12,7 +12,7 @@ field_name: field_additional_html
 entity_type: node
 bundle: guideline
 label: 'Additional html'
-description: ''
+description: 'Use it for script tags or other external HTML structure like iframe; this field it''s not translated; it''s displayed after body field.'
 required: false
 translatable: false
 default_value: {  }
