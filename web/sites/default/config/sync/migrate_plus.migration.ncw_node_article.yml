@@ -16,24 +16,47 @@ source:
   plugin: ev_d7_node
   node_type: article
 process:
-  id: tnid
+  nid:
+    -
+      plugin: get
+      source: nid
   vid: vid
   type:
     -
       plugin: default_value
-      default_value: article
+      default_value: publication
   langcode:
     plugin: default_value
     source: language
-    default_value: und
-  title: title
-  body: body
-  uid: node_uid
-  status: status
-  created: created
-  changed: changed
-  promote: promote
-  sticky: sticky
+    default_value: en
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
