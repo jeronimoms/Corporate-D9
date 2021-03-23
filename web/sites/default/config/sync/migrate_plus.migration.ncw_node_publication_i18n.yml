@@ -25,7 +25,14 @@ process:
     map:
       pt: pt-pt
   title: title
-  body: body
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
   content_translation_source: source
   content_translation_outdated: translate
   field_archived: field_archived
