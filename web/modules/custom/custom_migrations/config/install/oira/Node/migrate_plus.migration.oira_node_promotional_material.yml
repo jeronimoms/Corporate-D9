@@ -47,6 +47,7 @@ process:
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_oira: field_oira
+  field_wf_notification: field_wf_notification
   field_promotional_material_type:
     plugin: sub_process
     source: field_promotional_material_type
@@ -84,6 +85,13 @@ process:
     - plugin: format_date
       from_format: 'Y-m-d H:i:s'
       to_format: 'Y-m-d\TH:i:s'
+  field_country:
+    - plugin: sub_process
+      source: field_country
+      process:
+        target_id:
+          plugin: get
+          source: tid
   field_image:
     plugin: file_id_lookup
     source: field_image
