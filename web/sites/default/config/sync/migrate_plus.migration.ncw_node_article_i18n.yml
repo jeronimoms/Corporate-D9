@@ -25,7 +25,14 @@ process:
     map:
       pt: pt-pt
   title: title
-  body: body
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
   content_translation_source: source
   content_translation_outdated: translate
   field_aditional_resources: field_aditional_resources
@@ -105,6 +112,12 @@ process:
       source: field_thesaurus_2020
       process:
         target_id: nid
+  field_image_media:
+    plugin: file_id_lookup_translations
+    source: field_image
+    migration:
+      - ncw_node_article_field_image_media_1_es
+    no_stub: true
 destination:
   plugin: 'entity:node'
   translations: true
