@@ -1,4 +1,4 @@
-uuid: e9f69330-61db-4527-85ac-1281206a79e6
+uuid: 1b6170a2-9cb8-4ce0-908b-106283171db0
 langcode: en
 status: true
 dependencies:
@@ -16,7 +16,10 @@ source:
   plugin: ev_d7_node
   node_type: publication
 process:
-  id: tnid
+  nid:
+    -
+      plugin: get
+      source: nid
   vid: vid
   type:
     -
@@ -26,14 +29,34 @@ process:
     plugin: default_value
     source: language
     default_value: en
-  title: title
-  body: body
-  uid: node_uid
-  status: status
-  created: created
-  changed: changed
-  promote: promote
-  sticky: sticky
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
