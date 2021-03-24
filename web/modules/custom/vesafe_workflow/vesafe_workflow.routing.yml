@@ -36,3 +36,13 @@ vesafe_workflow.delete_form:
     _access: 'TRUE'
   options:
     _admin_route: TRUE
+
+vesafe_workflow.set_weight:
+  path: '/vesafe_workflow/user_weight/{list}/{node}/{user}/{weight}'
+  defaults:
+    _controller: '\Drupal\vesafe_workflow\Controller\VwUserListController::setWeight'
+    _title: 'Set the weight of a user in a list'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: TRUE
