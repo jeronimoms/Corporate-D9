@@ -117,7 +117,6 @@ class VwApproversController extends ControllerBase implements ContainerInjection
     $content['form_add']['node_id']['#value'] = $node->id();
     $content['form_add']['node_id']['#attributes']['class'] = ['vesafe-workflow-node-field'];
 
-    $content['#attached']['library'][] = 'core/jquery.ui.draggable';
     return $content;
   }
 
