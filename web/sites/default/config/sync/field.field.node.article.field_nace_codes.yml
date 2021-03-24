@@ -13,7 +13,7 @@ bundle: article
 label: Nace
 description: 'Select Nace code for this content.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

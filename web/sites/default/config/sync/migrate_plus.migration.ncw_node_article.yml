@@ -16,8 +16,10 @@ source:
   plugin: ev_d7_node
   node_type: article
 process:
-  id: tnid
-  vid: vid
+  nid:
+    -
+      plugin: get
+      source: nid
   type:
     -
       plugin: default_value
@@ -25,15 +27,35 @@ process:
   langcode:
     plugin: default_value
     source: language
-    default_value: und
-  title: title
-  body: body
-  uid: node_uid
-  status: status
-  created: created
-  changed: changed
-  promote: promote
-  sticky: sticky
+    default_value: en
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
@@ -65,7 +87,7 @@ process:
       process:
         value:
           plugin: format_date
-          from_format: Y-m-d
+          from_format: 'Y-m-d H:i:s'
           to_format: 'Y-m-d\TH:i:s'
           from_timezone: Europe/Madrid
           to_timezone: Europe/Madrid
@@ -120,6 +142,12 @@ process:
       source: field_thesaurus_2020
       process:
         target_id: nid
+  field_image_caption:
+    plugin: file_id_lookup
+    source: field_image
+    migration:
+      - ncw_node_article_field_image_media_1
+    no_stub: true
 destination:
   plugin: 'entity:node'
 migration_dependencies:

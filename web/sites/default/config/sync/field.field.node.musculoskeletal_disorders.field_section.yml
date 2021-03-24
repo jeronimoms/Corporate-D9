@@ -15,7 +15,7 @@ bundle: musculoskeletal_disorders
 label: Section
 description: 'Select the proper editorial group for this content.'
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     target_uuid: acfee8c1-990c-41c7-9987-6939a49d5074

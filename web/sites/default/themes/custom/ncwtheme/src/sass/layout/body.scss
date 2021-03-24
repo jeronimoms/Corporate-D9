@@ -71,6 +71,13 @@ span.see-more-arrow.minor-size{
   }
 }
 
+span.label{
+  font-family: 'Open Sans',sans-serif;
+  color: $text-color-blue;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
 
 /*Headings*/
 h1, h2, a, label{
@@ -126,7 +133,7 @@ h3{
   }
 }
 
-h3.related{
+h3.custom-border{
   width: 100%;
   float: left;
   background: url(../images/grey-h3-line.png) 0 60% repeat-x;
@@ -135,6 +142,26 @@ h3.related{
   span{
     background: $bg-color-white;
     padding-right: 1em;
+  }
+}
+
+.content-related{
+  h2{
+    font-size: 1.4rem;
+    padding-top: 1rem;
+  }
+  h3.custom-border-related{
+    width: 100%;
+    float: none;
+    background: url(../images/grey-h3-line.png) 0 60% repeat-x;
+    color: $text-color-grey-h3;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    span{
+      background: $bg-color-blue-light;
+      padding-right: 1em;
+    }
   }
 }
 
@@ -253,4 +280,100 @@ h3.home{
   color: #7c7d81;
   font-size: 0.8rem;
   font-weight: bold;
+}
+
+/* Publications */
+body.node--type-publication{
+  /*** To avoid horizontal scrollbar because some browsers understand 100vw with the vertical scroll ***/
+  max-width: 100%;
+  overflow-x: hidden;
+  /*** ***/
+}
+.download-pdf.no-bg{
+  background: transparent;
+  padding: 0;
+}
+.node--type-publication{
+  h1{
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 600;
+  }
+  .publications-row{
+    display: flex;
+  }
+  .publications-detail-right-column{
+    width: 100%;
+    padding-left: 2rem;
+  }
+  .field--name-field-image-media{
+    img{
+      float: left;
+    }
+  }
+  .content-publication-info{
+    display: flex;
+    justify-content: space-between;
+    .content-label{
+      display: flex;
+      .label{
+        padding-right: 5px;
+      }
+      .field{
+        font-size: 0.8rem;
+        line-height: 20px;
+      }
+    }
+  }
+  .datetime{
+    display: block;
+    font-size: 0.9rem;
+  }
+  .field.field--name-field-tags{
+    > ul{
+      >li{
+        padding-right: 0;
+        > a:before{
+          content: ',';
+          padding-right: 3px;
+        }
+      }
+      >:nth-child(1){
+        > a:before{
+          content: none;
+        }
+      }
+    }
+  }
+  .field--type-entity-reference{
+    padding-bottom: 1rem;
+  }
+  .related-resources-fluid{
+    clear: both;
+    @extend .full-width;
+    background: $bg-color-blue-light;
+    padding: 0;
+    width: 100vw;
+    position: relative;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    .publications-detail-right-column{
+      padding-top: 1rem;
+      padding-right: 6rem;
+    }
+    .field--name-field-aditional-resources{
+      .field__item{
+        margin-bottom: 1.5rem;
+      }
+    }
+    .node--type-publication{
+      background: $bg-color-white;
+      h2{
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+    }
+  }
 }
