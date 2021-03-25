@@ -38,9 +38,9 @@ process:
     source: target_id
 
   # Map the field image
-  field_media_image/alt: alt
+  field_media_image/alt: file_name
   field_media_image/title: title
-  field_media_description: field_file_description
+  field_media_description: description
   field_media_image/target_id:
     plugin: media_file_copy
     move: TRUE
