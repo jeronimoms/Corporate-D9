@@ -1,19 +1,18 @@
-# File to Media Migration configuration for vesafe_good_practice_media_image migration
+# File to Media Migration configuration for oira_good_practice_media_image migration
 
-id: napo_node_napo_image_media_images_1
-label: 'Napo Image: Media Images Step 1'
-migration_group: napo_migrate_media
+id: oira_node_wiki_page_media_images_1
+label: 'Wiki Page: Media Images Step 1'
+migration_group: oira_migrate_media
 
 source:
   key: migrate
   langcode: und
   plugin: media_entity_generator_d7
   entity_type: node
-  bundle: napo_image
-  d7_file_url: 'https://www.napofilm.net/sites/default/files/'
+  bundle: wiki_page
+  d7_file_url: 'https://oiraproject.eu/sites/default/files/'
   field_names:
     - field_image
-
 destination:
   plugin: entity:media
 
@@ -38,14 +37,15 @@ process:
     source: target_id
 
   # Map the field image
-  field_media_image/alt: file_name
+  field_media_image/alt: alt
   field_media_image/title: title
   field_media_image/target_id:
     plugin: media_file_copy
-    move: TRUE
+    move: FALSE
     reuse: TRUE
-    path: 'public://images/napo_image/'
+    path: 'public://'
     source: file_path
+
   langcode: langcode
 
   uid:

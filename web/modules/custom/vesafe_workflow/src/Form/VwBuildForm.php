@@ -137,6 +137,11 @@ class VwBuildForm extends FormBase {
                 'not null' => TRUE,
                 'default' => '',
               ],
+              'weight' => [
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => 0,
+              ],
             ],
             'primary key' => ['id'],
           ]);

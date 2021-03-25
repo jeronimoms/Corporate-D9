@@ -87,6 +87,21 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "colorbox/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "colorbox"
+                },
+                "dist": {
+                    "url": "https://github.com/jackmoore/colorbox/archive/1.x.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -107,6 +122,7 @@
         "drupal/chosen": "^3.0",
         "drupal/ckeditor_font": "^1.1",
         "drupal/clientside_validation": "^3.0@RC",
+        "drupal/colorbox": "^1.7",
         "drupal/conditional_fields": "^1.0@alpha",
         "drupal/config_split": "^1.7",
         "drupal/contact_us": "^2.1",
@@ -167,7 +183,7 @@
         "drupal/lang_dropdown": "^2.0@beta",
         "drupal/languagefield": "^1.5",
         "drupal/layoutcomponents": "^1.20@beta",
-        "drupal/ldap": "^4.0@beta",
+        "drupal/ldap": "4.0-beta1",
         "drupal/ldap_auth": "^1.20",
         "drupal/libraries": "^3.0@beta",
         "drupal/like_and_dislike": "^1.0@beta",
@@ -198,6 +214,7 @@
         "drupal/printfriendly": "^3.5",
         "drupal/purge": "^3.0",
         "drupal/quicktabs": "^3.0@alpha",
+        "drupal/quiz": "^6.0@alpha",
         "drupal/r4032login": "^2.0",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/recaptcha": "^3.0",
@@ -234,6 +251,7 @@
         "drupal/views_accordion": "^2.0",
         "drupal/views_block_area": "^1.0@beta",
         "drupal/views_block_filter_block": "^1.0",
+        "drupal/views_bootstrap": "^4.3",
         "drupal/views_bulk_operations": "^3.10",
         "drupal/views_contextual_filters_or": "^1.2",
         "drupal/views_data_export": "^1.0",
@@ -268,9 +286,7 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "Uninstalled custom theme stuck in config blocking config import" : "https://www.drupal.org/files/issues/2020-09-23/2898274-29.patch",
                 "Cannot override content field block title" : "https://www.drupal.org/files/issues/2019-05-20/3055818-3.patch",
-                "Ultimate cron logger error": "https://www.drupal.org/files/issues/2020-12-03/3128548-15-StatementInterface.patch",
                 "Make the exposed filter as token": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
                 "On null isTranslatable": "https://www.drupal.org/files/issues/2019-12-05/2928108-49.patch"
             },
@@ -284,8 +300,8 @@
             "drupal/simple_block": {
                 "Editor form warning": "patches/simple_block-edit-form-warning.patch"
             },
-            "drupal/varnish_purge": {
-                "Config annotation missing": "https://www.drupal.org/files/issues/2020-06-05/3146499-2.patch"
+            "drupal/ldap": {
+                "Config annotation missing": "patches/ldap-orphaned_accounts_no_ldap_entry.patch"
             }
         },
         "patchLevel": {
