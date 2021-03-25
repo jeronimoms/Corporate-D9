@@ -1,17 +1,17 @@
-uuid: 3136f850-762e-4057-88d7-d3c7bf7d6965
+uuid: bcde269c-42a6-4c42-835d-3b231558ba1a
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.main
-id: menu_link_content.main.title
+    - system.menu.features
+id: menu_link_content.features.title
 field_name: title
 entity_type: menu_link_content
-bundle: main
+bundle: features
 label: 'Menu link title'
 description: 'The text to be used for this link in the menu.'
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

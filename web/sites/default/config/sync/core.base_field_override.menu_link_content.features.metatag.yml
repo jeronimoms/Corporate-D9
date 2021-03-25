@@ -1,0 +1,18 @@
+uuid: 4423f6b4-bd5c-4cf5-a412-36959005f6e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.features
+id: menu_link_content.features.metatag
+field_name: metatag
+entity_type: menu_link_content
+bundle: features
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
