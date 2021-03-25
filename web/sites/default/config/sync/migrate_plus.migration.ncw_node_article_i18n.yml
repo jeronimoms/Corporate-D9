@@ -92,8 +92,22 @@ process:
       source: field_sector
       process:
         target_id: tid
-  field_summary: field_summary
-  field_body_revamp: field_body_revamp
+  field_summary_html:
+    -
+      plugin: get
+      source: field_summary
+  field_summary_html/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_body_revamp:
+    -
+      plugin: get
+      source: field_body_revamp
+  field_body_revamp/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
   field_tags:
     -
       plugin: sub_process
@@ -106,12 +120,7 @@ process:
       source: field_nace_codes
       process:
         target_id: tid
-  field_thesaurus_2020:
-    -
-      plugin: sub_process
-      source: field_thesaurus_2020
-      process:
-        target_id: nid
+  field_thesaurus_2020: field_thesaurus_2020
   field_image_media:
     plugin: file_id_lookup_translations
     source: field_image
