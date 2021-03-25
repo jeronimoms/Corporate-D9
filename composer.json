@@ -304,6 +304,9 @@
             },
             "drupal/varnish_purge": {
                 "Config annotation missing": "https://www.drupal.org/files/issues/2020-06-05/3146499-2.patch"
+            },
+            "drupal/ldap": {
+                "Config annotation missing": "patches/ldap-orphaned_accounts_no_ldap_entry.patch"
             }
         },
         "patchLevel": {

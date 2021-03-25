@@ -1,0 +1,17 @@
+diff --git a/ldap_user/src/Processor/OrphanProcessor.php b/ldap_user/src/Processor/OrphanProcessor.php
+old mode 100644
+new mode 100755
+index 4011b3d..37b0ef5
+--- a/ldap_user/src/Processor/OrphanProcessor.php
++++ b/ldap_user/src/Processor/OrphanProcessor.php
+@@ -399,7 +399,9 @@ class OrphanProcessor {
+         $filter = "($persistentUidProperty=" . $this->binaryFilter($persistentUid) . ")";
+       }
+       else {
+-        $filter = "($persistentUidProperty=$persistentUid)";
++        $str = explode(',', $persistentUid);
++        $uid = $str[0];
++        $filter = "($uid)";
+       }
+ 
+       $this->ldapUserManager->setServerById($serverId);
