@@ -1,13 +1,13 @@
-uuid: 28960be4-474a-4617-957b-6c11db58820c
+uuid: 0cb38e91-2f12-4e9b-9ab4-50f1c9659d73
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.menu_link_content.footer-menu.field_image_menu_
-    - system.menu.footer-menu
-id: menu_link_content.footer-menu.default
+    - field.field.menu_link_content.menu-footer-menu.field_image_menu_
+    - system.menu.menu-footer-menu
+id: menu_link_content.menu-footer-menu.default
 targetEntityType: menu_link_content
-bundle: footer-menu
+bundle: menu-footer-menu
 mode: default
 content:
   children:
@@ -17,11 +17,12 @@ content:
     third_party_settings: {  }
   field_image_menu_:
     weight: 2
-    label: above
+    label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
 hidden:
   langcode: true

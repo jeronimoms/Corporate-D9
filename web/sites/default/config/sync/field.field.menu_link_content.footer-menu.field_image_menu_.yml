@@ -1,19 +1,19 @@
-uuid: 37f882f9-c22b-45c5-82f8-9c8c57ab26b1
+uuid: 218e52d9-1866-4d5c-a33f-06ff148db857
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.menu_link_content.field_image
+    - field.storage.menu_link_content.field_image_menu_
     - media.type.image_and_link
     - system.menu.footer-menu
-id: menu_link_content.footer-menu.field_image
-field_name: field_image
+id: menu_link_content.footer-menu.field_image_menu_
+field_name: field_image_menu_
 entity_type: menu_link_content
 bundle: footer-menu
-label: Image
+label: 'Image menu'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
