@@ -1,27 +1,25 @@
-uuid: c80bf92e-4689-42f2-a912-82a1c5569b16
+uuid: 18f87fd5-1e0f-4549-8078-c7eb1b4cb093
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.menu_link_content.footer-menu.field_image_menu_
-    - system.menu.footer-menu
+    - field.field.menu_link_content.menu-footer-menu.field_image_menu_
+    - system.menu.menu-footer-menu
   module:
     - link
+    - media_library
     - menu_item_extras
-id: menu_link_content.footer-menu.default
+id: menu_link_content.menu-footer-menu.default
 targetEntityType: menu_link_content
-bundle: footer-menu
+bundle: menu-footer-menu
 mode: default
 content:
   field_image_menu_:
-    weight: 21
+    weight: 1
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   langcode:
     type: language_select
@@ -37,6 +35,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
     third_party_settings: {  }
   view_mode:
     type: menu_item_extras_view_mode_selector_select

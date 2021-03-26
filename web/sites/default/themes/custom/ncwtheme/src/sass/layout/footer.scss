@@ -80,12 +80,13 @@ footer.site-footer{
     margin-bottom: 0;
     a{
       color: $text-color-white;
+      border-bottom: 0;
     }
   }
 }
 
 /* Menu links and Social media */
-nav#block-footermenu{
+nav#block-footermenu-2{
   width: 100%;
   border: 0;
   margin: 0;
