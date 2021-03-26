@@ -24,3 +24,15 @@ jQuery(document).ready(function($){
   });
 })
 
+// Accordions
+
+jQuery(document).ready(function($) {
+
+  $(".wysiwyg_accordion h3").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.wysiwyg_accordion_panel').slideToggle();
+  });
+
+
+});
+
