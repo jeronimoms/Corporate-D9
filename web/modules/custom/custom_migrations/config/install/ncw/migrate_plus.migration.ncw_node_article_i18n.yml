@@ -106,7 +106,7 @@ process:
       source: field_sector
       process:
         target_id: tid
-field_summary_html:
+  field_summary_html:
   - plugin: get
     source: field_summary
   'field_summary_html/0/format':
