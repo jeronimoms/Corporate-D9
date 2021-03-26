@@ -1,0 +1,45 @@
+/* Accordions */
+.wysiwyg_accordion{
+  h3{
+    position: relative;
+    font-family: 'Open Sans Condensed';
+    color: $text-color-blue;
+    background: $bg-color-blue-accordion;
+    height: auto;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 0.5em;
+    padding-right: 1.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    border: 0px;
+    margin-top: 0; /*no margin - to fix text effect - add border*/
+    border-top: 5px solid #FFF;
+    border-bottom: 5px solid #FFF;
+    margin-bottom: 0;
+    cursor: pointer;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 17px;
+      background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+      top: 30%;
+      right: 20px;
+    }
+  }
+  h3.active{
+    &::after{
+      width: 17px;
+      background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+      right: 17px;
+    }
+  }
+  h3:focus{
+    outline: none;
+  }
+  .wysiwyg_accordion_panel{
+    display: none;
+    padding: 10px 0;
+  }
+}
