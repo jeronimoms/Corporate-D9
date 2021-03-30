@@ -29,7 +29,9 @@ class EvNode extends Node {
       ->execute()
       ->fetchCol();
     if (!empty($workbench_access[0])){
-      $row->setSourceProperty('workbench_access', [0 => ['tid' => $workbench_access[0]]]);
+      if (is_int($workbench_access[0])) {
+        $row->setSourceProperty('workbench_access', [0 => ['tid' => $workbench_access[0]]]);
+      }
     }
 
     return parent::prepareRow($row);
