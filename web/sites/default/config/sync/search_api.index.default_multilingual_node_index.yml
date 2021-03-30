@@ -16,6 +16,7 @@ dependencies:
     - field.storage.node.field_date_of_directive
     - field.storage.node.field_seminar_end_date
     - field.storage.node.field_nace_codes
+    - field.storage.node.field_pages_count
     - field.storage.node.field_publication_date
     - field.storage.node.field_publication_type
     - field.storage.node.field_satisfaction_rate
@@ -149,6 +150,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_nace_codes
+  field_pages_count:
+    label: 'Number of pages'
+    datasource_id: 'entity:node'
+    property_path: field_pages_count
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_pages_count
   field_publication_date:
     label: 'Publication date'
     datasource_id: 'entity:node'
