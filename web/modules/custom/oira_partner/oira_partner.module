@@ -1,0 +1,23 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\oira_partner\OpEntity;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function oira_partner_entity_presave(EntityInterface $entity) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(OpEntity::class)
+    ->entityPreSave($entity);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function oira_partner_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(OpEntity::class)
+    ->entityFormAlter($form, $form_state, $form_id);
+}
