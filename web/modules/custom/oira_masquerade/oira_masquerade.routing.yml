@@ -1,0 +1,19 @@
+oira_masquerade.modal:
+  path: '/oira_masquerade'
+  defaults:
+    _controller: '\Drupal\oira_masquerade\Controller\OmController::modalContent'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: TRUE
+
+oira_masquerade.back:
+  path: '/oira_masquerade/back'
+  defaults:
+    _controller: '\Drupal\oira_masquerade\Controller\OmController::switchBackUser'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: TRUE
