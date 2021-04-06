@@ -15,10 +15,12 @@ dependencies:
     - field.storage.node.field_country_code
     - field.storage.node.field_date_of_directive
     - field.storage.node.field_seminar_end_date
+    - field.storage.node.field_image_media
     - field.storage.node.field_nace_codes
     - field.storage.node.field_pages_count
     - field.storage.node.field_publication_date
     - field.storage.node.field_publication_type
+    - field.storage.node.field_publication_res_files
     - field.storage.node.field_satisfaction_rate
     - field.storage.node.field_seminar_start_date
     - field.storage.node.field_summary
@@ -142,6 +144,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_date_of_directive
+  field_image_media:
+    label: Image
+    datasource_id: 'entity:node'
+    property_path: field_image_media
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_image_media
   field_nace_codes:
     label: Nace
     datasource_id: 'entity:node'
@@ -166,6 +176,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_publication_date
+  field_publication_res_files:
+    label: 'Resources (files)'
+    datasource_id: 'entity:node'
+    property_path: field_publication_res_files
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_publication_res_files
   field_publication_type:
     label: 'Publication Type'
     datasource_id: 'entity:node'
