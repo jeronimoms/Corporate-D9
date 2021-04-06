@@ -139,6 +139,24 @@ h2{
   }
 }
 
+h2.related{
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid $bg-color-blue;
+}
+
+.sidebar-second{
+  .block-views{
+    h2{
+      font-size: 1rem;
+      font-weight: bold;
+      padding-top: 10px;
+      padding-bottom: 5px;
+    }
+  }
+}
+
 .path-frontpage{
   h2{
     font-size: 1.6rem;
@@ -225,6 +243,49 @@ h3.home{
   margin-left: auto;
 }
 
+
+/* Sidebar second */
+.sidebar-second{
+  .block-views{
+    background: url(../images/separator.jpg) repeat-x 100% 100%;
+    padding: 0 10px 30px 10px;
+  }
+  .views-row{
+    padding-left: 15px;
+    padding-right: 15px;
+    a {
+      display: block;
+      font-size: 0.8rem;
+      line-height: 17px;
+      padding-bottom: 10px;
+      background: url(../images/li_arrow.png) no-repeat 1px 2px;
+      padding-left: 15px;
+    }
+  }
+  .more-link{
+    text-align: right;
+    a{
+      display: inline-block;
+      background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
+      padding: 5px 30px 5px 5px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-decoration: none;
+      &:hover{
+        color: $text-color-white;
+        background: url(../images/arrow.png) no-repeat $bg-color-blue calc(100% - 5px) 9px;
+        -webkit-transition: background-color 800ms linear;
+        -moz-transition: background-color 800ms linear;
+        -o-transition: background-color 800ms linear;
+        -ms-transition: background-color 800ms linear;
+        transition: background-color 800ms linear;
+      }
+      &:before{
+        content: none;
+      }
+    }
+  }
+}
 /* Share this on articles icons */
 #share-this-on{
   float: left;
@@ -412,6 +473,12 @@ body.node--type-publication{
 }
 
 /* Articles */
+#main{
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
 .node--type-article{
   .content-headings-related{
     padding-top: 2rem;

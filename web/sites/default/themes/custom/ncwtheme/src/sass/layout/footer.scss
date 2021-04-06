@@ -17,18 +17,20 @@ footer.site-footer{
             width: 103px;
             margin-right: 20px;
             > a{
-              display: none;
+              display: block;
+              color: $text-color-white;
+              border-right: 0;
+              font-size: 0.6rem;
+              font-weight: bold;
+              padding-left: 0;
+              padding-top: 5px;
             }
             ul.menu-level-1{
               list-style: none;
               li{
                 width: 100%;
                 a{
-                  display: block;
-                  color: $text-color-white;
-                  font-size: 0.6rem;
-                  font-weight: bold;
-                  padding-bottom: 5px;
+                  display: none;
                 }
                 ul.menu-level-2{
                   list-style: none;
@@ -57,6 +59,7 @@ footer.site-footer{
               font-size: 0.6rem;
               font-weight: bold;
             }
+
             .field--type-image{
               display: none;
             }
@@ -72,7 +75,7 @@ footer.site-footer{
   width: 100%;
   color: $text-color-white;
   border-top: 1px solid $bg-color-white;
-  padding: 1rem 2rem 0.2rem 2rem;
+  padding: 0.5rem 2rem 0.2rem 2rem;
   margin: 0;
   p{
     color: $text-color-white;
@@ -90,7 +93,7 @@ nav#block-footermenu-2{
   width: 100%;
   border: 0;
   margin: 0;
-  padding: 1rem 1.5rem 2rem 2rem;
+  padding: 0 1.5rem 2rem 2rem;
   ul.menu-level-0{
     list-style: none;
     li.menu-item{
@@ -102,6 +105,7 @@ nav#block-footermenu-2{
         list-style: none;
         li{
           float: left;
+          padding-right: 10px;
           a{
             display: inline-block;
             color: $text-color-white;
@@ -110,6 +114,9 @@ nav#block-footermenu-2{
             padding-left: 0;
             padding-right: 5px;
           }
+        }
+        li:last-child{
+          padding-right: 0;
         }
       }
     }
