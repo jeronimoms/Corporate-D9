@@ -150,6 +150,45 @@ input[type=search] {
   padding: 10px 0;
 }
 
+ul.pagination {
+  margin-top: 1rem;
+}
+ul.pagination .page-item {
+  border: 1px solid #cfddee;
+  margin-right: 0.5rem;
+  padding: 0;
+}
+ul.pagination .page-item:hover {
+  border: 1px solid #003399;
+}
+ul.pagination .page-item.active {
+  border: 1px solid #003399;
+}
+ul.pagination .page-item.active .page-link {
+  color: #dc2f82;
+  background-color: #FFF;
+  border: 0;
+}
+ul.pagination .page-link {
+  margin-left: 0;
+  border: 0;
+  color: #003399;
+  font-weight: bold;
+  padding: 12px 15px;
+}
+ul.pagination .page-link:hover {
+  background-color: #FFF;
+}
+ul.pagination .page-item.first, ul.pagination .page-item.prev, ul.pagination .pager__item--next, ul.pagination .page-item.last, ul.pagination .page-item[role=presentation] {
+  border: 0;
+}
+ul.pagination .page-item.first a, ul.pagination .page-item.prev a, ul.pagination .pager__item--next a, ul.pagination .page-item.last a, ul.pagination .page-item[role=presentation] a {
+  color: #dc2f82;
+  font-size: 2rem;
+  font-weight: 400;
+  height: 10px;
+  margin-top: -12px;
+}
 /* Common elements */
 body {
   position: relative;
@@ -1356,7 +1395,7 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item.menu-item--expanded:nth-chil
   float: left;
   margin-right: 0.5rem;
 }
-.view-publications .views-field-title a {
+.view-publications h2 a {
   display: block;
   font-size: 1rem;
   font-weight: 700;
@@ -1378,8 +1417,37 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item.menu-item--expanded:nth-chil
 }
 
 /* Publications view */
-.two-column h1 {
+.tools-and-publications-publications .two-column h1 {
   display: none;
+}
+.tools-and-publications-publications .revamp-row {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  background: url("../images/back-tit-blue.png") repeat-x 100% 100%;
+}
+.tools-and-publications-publications .revamp-row .publications-right-column {
+  padding-left: 2rem;
+}
+.tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
+  display: flex;
+  justify-content: space-between;
+}
+.tools-and-publications-publications .revamp-row .publications-right-column h2 {
+  font-weight: 400;
+  font-size: 1.35rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.result_summary {
+  display: block;
+  color: #003399;
+  font-weight: 600;
+  float: right;
+  clear: both;
+  margin-top: -50px;
 }
 
 @media only screen and (max-width: 1200px) {
