@@ -1,0 +1,96 @@
+/* Node publications */
+.node-publications-custom{
+  h1{
+    padding-bottom: 1rem;
+  }
+  h2{
+    display: none;
+  }
+  p{
+    color: $text-color-blue;
+  }
+}
+
+/* Publications Slide 3 items */
+.view-publications{
+  .views-col{
+    background: #FFF;
+    padding: 10px 10px 0 0;
+    border-right: 15px solid $bg-color-blue-light;
+  }
+  .views-field-field-image-media{
+    .field-content{
+      float: left;
+      margin-right: 0.5rem;
+    }
+  }
+
+  h2{
+    a{
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      line-height: 19px;
+    }
+  }
+
+  .views-field-field-publication-type{
+    .views-label{
+      float: left;
+      color: $text-color-blue;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .field-content{
+      float: left;
+      color: $text-color-blue;
+      font-size: 0.9rem;
+      padding-left: 5px;
+    }
+  }
+}
+
+/* Publications view */
+.tools-and-publications-publications{
+  .two-column{
+    h1{
+      display: none;
+    }
+  }
+  .revamp-row{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    background: url("../images/back-tit-blue.png") repeat-x 100% 100%;
+    .publications-left-column{
+
+    }
+    .publications-right-column{
+      padding-left: 2rem;
+      .content-publication-info {
+        display: flex;
+        justify-content: space-between;
+      }
+      h2{
+        font-weight: 400;
+        font-size: 1.35rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.result_summary{
+  display: block;
+  color: $text-color-blue;
+  font-weight: 600;
+  float: right;
+  clear: both;
+  margin-top: -50px;
+}
+
+

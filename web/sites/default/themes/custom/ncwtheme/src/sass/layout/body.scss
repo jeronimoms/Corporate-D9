@@ -111,6 +111,20 @@ span.label{
   font-size: 0.8rem;
 }
 
+/* Content Fluid */
+.content-fluid {
+  clear: both;
+  @extend .full-width;
+  background: $bg-color-blue-light;
+  padding: 0;
+  width: 100vw;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 
 /*Headings*/
 h1, h2, a, label{
@@ -473,12 +487,15 @@ body.node--type-publication{
 }
 
 /* Articles */
-#main{
-  img{
-    width: 100%;
-    height: auto;
+.node--type-article{
+  #main{
+    img{
+      width: 100%;
+      height: auto;
+    }
   }
 }
+
 .node--type-article{
   .content-headings-related{
     padding-top: 2rem;
