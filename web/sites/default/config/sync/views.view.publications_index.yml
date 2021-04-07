@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_image_media
     - field.storage.node.field_pages_count
     - field.storage.node.field_publication_date
+    - field.storage.node.field_publication_type
     - image.style.cover_images
     - search_api.index.default_multilingual_node_index
   module:
@@ -73,15 +74,20 @@ display:
         type: grid
         options:
           grouping: {  }
-          columns: 1
-          automatic_width: true
+          columns: 12
+          automatic_width: false
           alignment: horizontal
-          col_class_default: true
+          col_class_default: false
           col_class_custom: ''
-          row_class_default: true
+          row_class_default: false
           row_class_custom: ''
       row:
         type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
         field_image_media:
           id: field_image_media
@@ -91,7 +97,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -184,7 +190,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -247,15 +253,15 @@ display:
             multi_type: separator
             multi_separator: ', '
           plugin_id: search_api_field
-        type:
-          id: type
+        field_publication_type:
+          id: field_publication_type
           table: search_api_index_default_multilingual_node_index
-          field: type
+          field: field_publication_type
           relationship: none
           group_type: group
           admin_label: ''
           label: Type
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -317,7 +323,126 @@ display:
             multi_type: separator
             multi_separator: ', '
             display_methods:
-              node_type:
+              activity:
+                display_method: label
+                view_mode: default
+              agency:
+                display_method: label
+              article_types:
+                display_method: label
+                view_mode: default
+              attachment_file_type:
+                display_method: label
+              banner_links:
+                display_method: label
+              biological_hazard:
+                display_method: label
+              contact_topic:
+                display_method: label
+              contact_type:
+                display_method: label
+              contact_type_of_sender:
+                display_method: label
+              country:
+                display_method: label
+              country_status:
+                display_method: label
+              directive_type:
+                display_method: label
+              esener:
+                display_method: label
+                view_mode: default
+              evaluation:
+                display_method: label
+              evaluation_quality_criteria:
+                display_method: label
+              exposure_route:
+                display_method: label
+              fop_link_sections:
+                display_method: label
+              glossary:
+                display_method: label
+              glossary_the:
+                display_method: label
+              glossary_type:
+                display_method: label
+              grade:
+                display_method: label
+              hashtag_terms:
+                display_method: label
+              hazard_health_effects:
+                display_method: label
+              hazard_physical_state:
+                display_method: label
+              hazards:
+                display_method: label
+              hazmap_categories:
+                display_method: label
+              health_effects:
+                display_method: label
+              legislation_category:
+                display_method: label
+              material_objective:
+                display_method: label
+              material_purpose:
+                display_method: label
+              msd_priority_area:
+                display_method: label
+              msds_glossary:
+                display_method: label
+              nace_codes:
+                display_method: label
+              newsletter_sections:
+                display_method: label
+              organised_by:
+                display_method: label
+              photo_gallery_type:
+                display_method: label
+              prevention_measures:
+                display_method: label
+              prevention_measures_msd:
+                display_method: label
+              priority_area:
+                display_method: label
+              provider_type:
+                display_method: label
+              publication_types:
+                display_method: label
+              purpose_of_material:
+                display_method: label
+              related_icons:
+                display_method: label
+              relevant_for:
+                display_method: label
+              resource_type:
+                display_method: label
+              section:
+                display_method: label
+              tags:
+                display_method: label
+              target_audience:
+                display_method: label
+              target_group:
+                display_method: label
+              thesaurus:
+                display_method: label
+              tooltips:
+                display_method: label
+              user_mention_terms:
+                display_method: label
+              wg_category:
+                display_method: label
+              wg_role_1:
+                display_method: label
+              wg_role_2:
+                display_method: label
+              wiki_categories:
+                display_method: label
+              worker_groups:
+                display_method: label
+              worker_groups_covered:
+                display_method: label
+              workflow_status:
                 display_method: label
           plugin_id: search_api_field
         field_pages_count:
@@ -328,7 +453,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -410,7 +535,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -472,6 +597,55 @@ display:
             multi_type: separator
             multi_separator: ', '
           plugin_id: search_api_field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"revamp-row\">\r\n<div class=\"publications-left-column\">\r\n{{ field_image_media }}\r\n</div>\r\n<div class=\"publications-right-column\">\r\n<div class=\"content-publication-info\">\r\n<span class=\"date-display-single\">{{ field_publication_date }}</span>\r\n<span class=\"label\"><strong>Type: </strong>{{ field_publication_type }}</span>\r\n<span class=\"pages\">{{ field_pages_count }}</span>\r\n</div>\r\n<h2>{{ title }}</h2>\r\n</div>\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -815,6 +989,7 @@ display:
         - 'config:field.storage.node.field_image_media'
         - 'config:field.storage.node.field_pages_count'
         - 'config:field.storage.node.field_publication_date'
+        - 'config:field.storage.node.field_publication_type'
         - 'config:search_api.index.default_multilingual_node_index'
   page_1:
     display_plugin: page
@@ -824,7 +999,7 @@ display:
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      path: tools-and-publications/publications_
+      path: tools-and-publications/publications
       exposed_block: true
     cache_metadata:
       max-age: -1
@@ -840,4 +1015,5 @@ display:
         - 'config:field.storage.node.field_image_media'
         - 'config:field.storage.node.field_pages_count'
         - 'config:field.storage.node.field_publication_date'
+        - 'config:field.storage.node.field_publication_type'
         - 'config:search_api.index.default_multilingual_node_index'
