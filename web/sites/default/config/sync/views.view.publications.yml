@@ -68,7 +68,7 @@ display:
           automatic_width: false
           alignment: horizontal
           col_class_default: false
-          col_class_custom: 'views-col col-12 col-sm-4'
+          col_class_custom: 'views-col col-12 col-sm-12 col-lg-4'
           row_class_default: false
           row_class_custom: ''
       row:
@@ -292,14 +292,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
-            word_boundary: true
+            max_length: 105
+            word_boundary: false
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: false
+            trim: true
             preserve_tags: ''
             html: false
           element_type: h2
@@ -433,9 +433,9 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
+          element_wrapper_type: span
+          element_wrapper_class: see-more-arrow
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
