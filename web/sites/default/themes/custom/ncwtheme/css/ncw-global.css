@@ -78,7 +78,7 @@
   background: #e8eef7;
 }
 
-.full-width, .node--type-publication .related-resources-fluid {
+.full-width, .node--type-publication .related-resources-fluid, .content-fluid {
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
@@ -245,6 +245,19 @@ span.label {
   color: #003399;
   font-weight: bold;
   font-size: 0.8rem;
+}
+
+/* Content Fluid */
+.content-fluid {
+  clear: both;
+  background: #cfddee;
+  padding: 0;
+  width: 100vw;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 /*Headings*/
@@ -580,7 +593,7 @@ body.node--type-publication {
 }
 
 /* Articles */
-#main img {
+.node--type-article #main img {
   width: 100%;
   height: auto;
 }
@@ -1319,6 +1332,53 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item.menu-item--expanded:nth-chil
 }
 
 .mean-expand {
+  display: none;
+}
+
+/* Node publications */
+.node-publications-custom h1 {
+  padding-bottom: 1rem;
+}
+.node-publications-custom h2 {
+  display: none;
+}
+.node-publications-custom p {
+  color: #003399;
+}
+
+/* Publications Slide 3 items */
+.view-publications .views-col {
+  background: #FFF;
+  padding: 10px 10px 0 0;
+  border-right: 15px solid #cfddee;
+}
+.view-publications .views-field-field-image-media .field-content {
+  float: left;
+  margin-right: 0.5rem;
+}
+.view-publications .views-field-title a {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 19px;
+}
+.view-publications .views-field-field-publication-type .views-label {
+  float: left;
+  color: #003399;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.view-publications .views-field-field-publication-type .field-content {
+  float: left;
+  color: #003399;
+  font-size: 0.9rem;
+  padding-left: 5px;
+}
+
+/* Publications view */
+.two-column h1 {
   display: none;
 }
 

@@ -24,15 +24,19 @@ jQuery(document).ready(function($){
   });
 })
 
-// Accordions
-
 jQuery(document).ready(function($) {
-
+  // Accordions
   $(".wysiwyg_accordion h3").click(function(){
     $(this).toggleClass("active");
     $(this).next('.wysiwyg_accordion_panel').slideToggle();
   });
 
+  // Pager index
+  $('.pagination').each(function () {
+    let itemLength = $(this).find('.page-item').length;
+    let lastItemIndex=itemLength - 1;
+    $(this).find('.page-item').eq(lastItemIndex).addClass('last');
+  });
 
 });
 
