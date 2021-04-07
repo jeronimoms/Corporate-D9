@@ -55,13 +55,18 @@ class OmBlock extends BlockBase implements ContainerFactoryPluginInterface {
    * {@inheritdoc}
    */
   protected function blockAccess(AccountInterface $account) {
-    if ($account->isAnonymous()) {
+    if ($account->isAnonymous() && !$this->masquerade->isMasquerading()) {
       // Do not allow masquerade as anonymous user, use private browsing.
       return AccessResult::forbidden();
     }
+
+    if ($this->masquerade->isMasquerading()) {
+      // Allow if the user is masquerade.
+      return AccessResult::allowed();
+    }
+
     // Display block for all users that has any of masquerade permissions.
-    return AccessResult::allowedIfHasPermissions($account, $this->masquerade->getPermissions(), 'OR')
-      ->addCacheContexts(['session.is_masquerading']);
+    return AccessResult::allowedIfHasPermissions($account, $this->masquerade->getPermissions());
   }
 
   /**
