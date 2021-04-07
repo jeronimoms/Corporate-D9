@@ -274,6 +274,20 @@ h2 a:hover {
   transition: all 1s;
 }
 
+h2.related {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #003399;
+}
+
+.sidebar-second .block-views h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
 .path-frontpage h2 {
   font-size: 1.6rem;
   font-weight: 700;
@@ -350,6 +364,47 @@ h3.home a:hover {
 
 .push-right {
   margin-left: auto;
+}
+
+/* Sidebar second */
+.sidebar-second .block-views {
+  background: url(../images/separator.jpg) repeat-x 100% 100%;
+  padding: 0 10px 30px 10px;
+}
+.sidebar-second .views-row {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.sidebar-second .views-row a {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 17px;
+  padding-bottom: 10px;
+  background: url(../images/li_arrow.png) no-repeat 1px 2px;
+  padding-left: 15px;
+}
+.sidebar-second .more-link {
+  text-align: right;
+}
+.sidebar-second .more-link a {
+  display: inline-block;
+  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
+  padding: 5px 30px 5px 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.sidebar-second .more-link a:hover {
+  color: #FFF;
+  background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
+  -webkit-transition: background-color 800ms linear;
+  -moz-transition: background-color 800ms linear;
+  -o-transition: background-color 800ms linear;
+  -ms-transition: background-color 800ms linear;
+  transition: background-color 800ms linear;
+}
+.sidebar-second .more-link a:before {
+  content: none;
 }
 
 /* Share this on articles icons */
@@ -525,6 +580,11 @@ body.node--type-publication {
 }
 
 /* Articles */
+#main img {
+  width: 100%;
+  height: auto;
+}
+
 .node--type-article .content-headings-related {
   padding-top: 2rem;
 }
@@ -598,7 +658,13 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigat
   margin-right: 20px;
 }
 footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigation ul.menu-level-0 li.menu-item > a {
-  display: none;
+  display: block;
+  color: #FFF;
+  border-right: 0;
+  font-size: 0.6rem;
+  font-weight: bold;
+  padding-left: 0;
+  padding-top: 5px;
 }
 footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigation ul.menu-level-0 li.menu-item ul.menu-level-1 {
   list-style: none;
@@ -607,11 +673,7 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigat
   width: 100%;
 }
 footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigation ul.menu-level-0 li.menu-item ul.menu-level-1 li a {
-  display: block;
-  color: #FFF;
-  font-size: 0.6rem;
-  font-weight: bold;
-  padding-bottom: 5px;
+  display: none;
 }
 footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigation ul.menu-level-0 li.menu-item ul.menu-level-1 li ul.menu-level-2 {
   list-style: none;
@@ -647,7 +709,7 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigat
   width: 100%;
   color: #FFF;
   border-top: 1px solid #FFF;
-  padding: 1rem 2rem 0.2rem 2rem;
+  padding: 0.5rem 2rem 0.2rem 2rem;
   margin: 0;
 }
 #block-copyrigth p {
@@ -665,7 +727,7 @@ nav#block-footermenu-2 {
   width: 100%;
   border: 0;
   margin: 0;
-  padding: 1rem 1.5rem 2rem 2rem;
+  padding: 0 1.5rem 2rem 2rem;
 }
 nav#block-footermenu-2 ul.menu-level-0 {
   list-style: none;
@@ -679,6 +741,7 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 {
 }
 nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 li {
   float: left;
+  padding-right: 10px;
 }
 nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 li a {
   display: inline-block;
@@ -687,6 +750,9 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 li a {
   border-right: 0;
   padding-left: 0;
   padding-right: 5px;
+}
+nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 li:last-child {
+  padding-right: 0;
 }
 nav#block-footermenu-2 ul.menu-level-0 li.menu-item.menu-item--expanded:nth-child(1) {
   float: left;
