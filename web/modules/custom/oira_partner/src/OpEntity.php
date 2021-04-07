@@ -78,7 +78,9 @@ class OpEntity implements ContainerInjectionInterface {
       }
 
       // Update the node field.
-      $entity->set($field_name, $partner_node->id());
+      if ($entity->hasField($field_name)) {
+        $entity->set($field_name, $partner_node->id());
+      }
     }
   }
 

@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\oira_partner_content_count\OpCcView;
+use Drupal\oira_partner_content_count\OpCcTheme;
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function oira_partner_content_count_views_data_alter(array &$data) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(OpCcView::class)
+    ->viewsDataAlter($data);
+}
+
+/**
+ * Implements hook_theme().
+ */
+function oira_partner_content_count_theme($existing, $type, $theme, $path) {
+  return \Drupal::classResolver()
+    ->getInstanceFromDefinition(OpCcTheme::class)
+    ->theme($existing, $type, $theme, $path);
+}
