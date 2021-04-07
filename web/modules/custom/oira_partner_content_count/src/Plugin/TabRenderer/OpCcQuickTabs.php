@@ -30,7 +30,7 @@ class OpCcQuickTabs extends QuickTabs {
         $view = $page['#block']['#view'];
         $view_id = $page['#block']['#display_id'];
         $view->execute($view_id);
-        $pages_counter[] = $view->execute($view_id);
+        $pages_counter[] = $view->total_rows;
       }
     }
 
