@@ -1,17 +1,19 @@
-# File to Media Migration configuration for vesafe_good_practice_media_image migration
+# File to Media Migration configuration for NCW seminar migration
 
-id: ncw_node_news_field_image_media_caption_1
-label: 'news: Media Image with caption Step 1'
+id: ncw_node_seminar_media_documents_1
+label: 'Seminar Documents'
 migration_group: ncw_migrate_nodes
-source:
 
-  plugin: ev_media_generator_caption
-  entity_type: node
-  bundle: news
+source:
+  key: migrate
   langcode: en
-  d7_file_url: 'https://www.osha.europa.eu/sites/default/files/'
+  plugin: media_entity_generator_d7
+  entity_type: node
+  bundle: seminar
+  d7_file_url: 'https://osha.europa.eu/sites/default/files/'
   field_names:
-    - field_image
+    - field_related_resources
+    - field_report
 
 destination:
   plugin: entity:media
@@ -19,7 +21,7 @@ destination:
 process:
   bundle:
     plugin: default_value
-    default_value: image_caption
+    default_value: document
 
   # Using the alt tag if available, else the file name.
   name:
@@ -36,14 +38,12 @@ process:
     plugin: check_duplicate
     source: target_id
 
-  # Map the field image
-  field_media_image/alt: alt
-  field_media_image/title: title
-  field_description: field_file_description
-  field_caption_copyrigth_: caption
-  field_media_image/target_id:
+  # Map the field document
+  field_media_document/title: title
+  field_media_description: field_file_description
+  field_media_document/target_id:
     plugin: media_file_copy
-    move: TRUE
+    move: FALSE
     reuse: TRUE
     path: 'public://'
     source: file_path
@@ -57,7 +57,6 @@ process:
       source: field_nace_codes
       process:
         target_id: tid
-
   langcode: langcode
 
   uid:
