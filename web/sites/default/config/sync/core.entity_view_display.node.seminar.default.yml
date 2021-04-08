@@ -37,15 +37,15 @@ third_party_settings:
       format_type: html_element
       region: content
       format_settings:
-        id: ''
-        classes: ''
         element: div
-        show_label: false
+        show_label: true
         label_element: h3
         label_element_classes: ''
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: 'group-seminar-event-details field-group-div'
       label: 'Event Details'
 id: node.seminar.default
 targetEntityType: node
@@ -59,18 +59,9 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_expiration_date:
-    weight: 6
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_location:
     weight: 16
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -78,21 +69,12 @@ content:
     region: content
   field_pages_count:
     weight: 3
-    label: above
+    label: inline
     settings:
       thousand_separator: ''
-      prefix_suffix: true
+      prefix_suffix: false
     third_party_settings: {  }
     type: number_integer
-    region: content
-  field_publication_date:
-    weight: 5
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_related_resources_media:
     type: entity_reference_entity_view
@@ -114,16 +96,16 @@ content:
     region: content
   field_seminar_end_date:
     weight: 18
-    label: above
+    label: inline
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: medium
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_seminar_start_date:
     weight: 17
-    label: above
+    label: inline
     settings:
       format_type: medium
       timezone_override: ''
@@ -135,6 +117,8 @@ hidden:
   field_activity: true
   field_archived: true
   field_country_code: true
+  field_expiration_date: true
+  field_publication_date: true
   field_section: true
   field_show_eu_flag: true
   field_tags: true
