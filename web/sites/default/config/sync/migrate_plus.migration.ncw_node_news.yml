@@ -1,28 +1,20 @@
-# Migration file for creating "news" nodes from BBDD.
-#
-# This file contains much of the information which we
-# used to specify in the "Migration" class in Drupal 7.
-
-##################### BASIC INFORMATION ###################
-
-id: ncw_node_news                    # -----  CHANGE
-label: 'Node: news'                   # -----  CHANGE
-audit: true
-migration_group: ncw_migrate_nodes
-deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
-source:
-  plugin: ev_d7_node
-  node_type: news                     # -----  CHANGE
-destination:
-  plugin: entity:node
+uuid: 7907b967-612a-4bd8-b6ad-9da700c482aa
+langcode: en
+status: true
 dependencies:
   enforced:
     module:
       - custom_migrations
-migration_dependencies:
-  required:
-    - d7_user
-
+id: ncw_node_news
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: news'
+source:
+  plugin: ev_d7_node
+  node_type: news
 process:
   nid:
     -
@@ -30,12 +22,13 @@ process:
       source: nid
   vid: vid
   type:
-    - plugin: default_value
-      default_value: news              # -----  CHANGE
+    -
+      plugin: default_value
+      default_value: news
   langcode:
     plugin: default_value
     source: language
-    default_value: "en"
+    default_value: en
   title:
     -
       plugin: get
@@ -44,11 +37,10 @@ process:
     -
       plugin: get
       source: body
-  'body/0/format':
+  body/0/format:
     -
       plugin: default_value
       default_value: full_html
-
   uid:
     -
       plugin: get
@@ -68,8 +60,7 @@ process:
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_aditional_resources: field_aditional_resources    # necesito news y slideshare para comprobar
+  field_aditional_resources: field_aditional_resources
   field_archived: field_archived
   field_show_on: field_show_on
   field_migrate_hwc: field_migrate_hwc
@@ -81,18 +72,19 @@ process:
       process:
         target_id: tid
   field_activity:
-  -
-    plugin: sub_process
-    source: field_activity
-    process:
-      target_id: tid
+    -
+      plugin: sub_process
+      source: field_activity
+      process:
+        target_id: tid
   field_section:
-    - plugin: sub_process
+    -
+      plugin: sub_process
       source: workbench_access
       process:
         target_id: tid
   field_character_count: field_character_count
-  field_expiration_date:                #revisar
+  field_expiration_date:
     -
       plugin: sub_process
       source: field_expiration_date
@@ -101,8 +93,8 @@ process:
           plugin: format_date
           from_format: 'Y-m-d H:i:s'
           to_format: 'Y-m-d\TH:i:s'
-          from_timezone: 'Europe/Madrid'
-          to_timezone: 'Europe/Madrid'
+          from_timezone: Europe/Madrid
+          to_timezone: Europe/Madrid
           settings:
             validate_format: false
           source: value
@@ -114,7 +106,7 @@ process:
         target_id: tid
   field_related_oshwiki_newss: field_related_oshwiki_newss
   field_page_count: field_page_count
-  field_publication_date:       #revisar
+  field_publication_date:
     -
       plugin: sub_process
       source: field_publication_date
@@ -123,8 +115,8 @@ process:
           plugin: format_date
           from_format: 'Y-m-d H:i:s'
           to_format: 'Y-m-d\TH:i:s'
-          from_timezone: 'Europe/Madrid'
-          to_timezone: 'Europe/Madrid'
+          from_timezone: Europe/Madrid
+          to_timezone: Europe/Madrid
           source: value
   field_recommended_newss: field_recommended_newss
   field_recommended_resources: field_recommended_resources
@@ -135,19 +127,21 @@ process:
       process:
         target_id: tid
   field_summary_html:
-    - plugin: get
+    -
+      plugin: get
       source: field_summary
-  'field_summary_html/0/format':
-    - plugin: default_value
+  field_summary_html/0/format:
+    -
+      plugin: default_value
       default_value: full_html
-
   field_body_revamp:
-   - plugin: get
-     source: field_body_revamp
-  'field_body_revamp/0/format':
-    - plugin: default_value
+    -
+      plugin: get
+      source: field_body_revamp
+  field_body_revamp/0/format:
+    -
+      plugin: default_value
       default_value: full_html
-
   field_tags:
     -
       plugin: sub_process
@@ -160,12 +154,14 @@ process:
       source: field_nace_codes
       process:
         target_id: tid
-
   field_thesaurus_2020: field_thesaurus_2020
-  # Images.
   field_image_media:
     plugin: file_id_lookup
     source: field_image
     migration: ncw_node_news_field_image_media_caption_1
     no_stub: true
-
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - d7_user
