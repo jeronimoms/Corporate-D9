@@ -37,17 +37,13 @@ ul.pagination{
       margin-top: -12px;
     }
   }
+}
 
-  .page-item.first{
-
-  }
-  .page-item.prev{
-
-  }
-  .pager__item--next{
-
-  }
-  .page-item.last{
-
-  }
+.pager-total{
+  display: block;
+  color: $text-color-blue;
+  font-weight: 600;
+  float: right;
+  clear: both;
+  margin-top: -50px;
 }
