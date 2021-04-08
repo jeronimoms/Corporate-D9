@@ -119,7 +119,7 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
     $build = $this->htmlElement([
       'practical_tool' => [
         'count' => $count_pt,
-        'href' => Url::fromRoute('entity.node.canonical', ['node' => $current_node->id()])->toString() . '#practical_tool',
+        'href' => Url::fromRoute('entity.node.canonical', ['node' => $current_node->id()])->toString() . '#oira-tools',
       ],
       'news' => [
         'count' => $count_news,
@@ -127,7 +127,7 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
       ],
       'promotional_resources' => [
         'count' => $count_pr,
-        'href' => Url::fromRoute('entity.node.canonical', ['node' => $current_node->id()])->toString() . '#promotional_material',
+        'href' => Url::fromRoute('entity.node.canonical', ['node' => $current_node->id()])->toString() . '#promotional-resources',
       ],
     ]);
 
@@ -143,15 +143,15 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
     if (empty($data)) {
       $data = [
         'practical_tool' => [
-          'count' => 0,
+          'count' => '-',
           'href' => '',
         ],
         'news' => [
-          'count' => 0,
+          'count' => '-',
           'href' => '',
         ],
         'promotional_resources' => [
-          'count' => 0,
+          'count' => '-',
           'href' => '',
         ],
       ];

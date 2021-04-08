@@ -17,6 +17,9 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  */
 class OpCcQuickTabs extends QuickTabs {
 
+  /**
+   * {@inheritdoc}
+   */
   public function render(QuickTabsInstance $instance) {
     // Default output.
     $build =  parent::render($instance);
@@ -30,7 +33,7 @@ class OpCcQuickTabs extends QuickTabs {
         $view = $page['#block']['#view'];
         $view_id = $page['#block']['#display_id'];
         $view->execute($view_id);
-        $pages_counter[] = $view->execute($view_id);
+        $pages_counter[] = $view->total_rows;
       }
     }
 
@@ -42,6 +45,8 @@ class OpCcQuickTabs extends QuickTabs {
       }
       $items[$i][0]['#title'] = new TranslatableMarkup('@title (@count)', ['@title' => $items[$i][0]['#title']->render(),'@count' => $pages_counter[$i]]);
     }
+
+    $build['#attached']['library'][] = 'oira_partner_content_count/oira_partner_content_count.quicktabs';
 
     return $build;
   }
