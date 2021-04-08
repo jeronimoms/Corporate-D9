@@ -17,6 +17,9 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  */
 class OpCcQuickTabs extends QuickTabs {
 
+  /**
+   * {@inheritdoc}
+   */
   public function render(QuickTabsInstance $instance) {
     // Default output.
     $build =  parent::render($instance);
