@@ -1,0 +1,28 @@
+uuid: 9873307d-fb88-4e79-bf76-f9d24cc38d89
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.tags
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: topics
+theme: ncwtheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:tags'
+settings:
+  id: 'facet_block:tags'
+  label: Topics
+  provider: facets
+  label_display: visible
+  block_id: topics
+visibility:
+  request_path:
+    id: request_path
+    pages: /tools-and-publications/publications
+    negate: false
