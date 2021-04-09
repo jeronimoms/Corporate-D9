@@ -332,55 +332,79 @@ form #edit-actions {
     width: 100%;
   }
 }
-ul.pagination {
-  margin-top: 1rem;
+nav.pager {
+  display: flex;
+  justify-content: center;
 }
-ul.pagination .page-item {
-  border: 1px solid #cfddee;
-  margin-right: 0.5rem;
+nav.pager ul.pager__items {
+  margin-top: 1rem;
   padding: 0;
 }
-ul.pagination .page-item:hover {
-  border: 1px solid #003399;
+nav.pager ul.pager__items .pager__item {
+  float: left;
+  margin-right: 12px;
 }
-ul.pagination .page-item.active {
-  border: 1px solid #003399;
-}
-ul.pagination .page-item.active .page-link {
+nav.pager ul.pager__items .pager__item.is-active a {
   color: #dc2f82;
   background-color: #FFF;
-  border: 0;
+  border: 1px solid #003399;
 }
-ul.pagination .page-link {
-  margin-left: 0;
-  border: 0;
+nav.pager ul.pager__items a {
   color: #003399;
+  font-size: 0.9rem;
+  border: 1px solid #cfddee;
   font-weight: bold;
-  padding: 12px 15px;
+  padding: 10px 15px;
+  margin-left: 0;
 }
-ul.pagination .page-link:hover {
-  background-color: #FFF;
+nav.pager ul.pager__items a:hover {
+  background-color: transparent;
+  border: 1px solid #003399;
+  text-decoration: none;
 }
-ul.pagination .page-item.first, ul.pagination .page-item.prev, ul.pagination .pager__item--next, ul.pagination .page-item.last, ul.pagination .page-item[role=presentation] {
+nav.pager ul.pager__items .pager__item--first, nav.pager ul.pager__items .pager__item--previous, nav.pager ul.pager__items .pager__item--next, nav.pager ul.pager__items .pager__item--last, nav.pager ul.pager__items .pagerer-breaker {
+  margin-right: 0;
+}
+nav.pager ul.pager__items .pager__item--first a, nav.pager ul.pager__items .pager__item--previous a, nav.pager ul.pager__items .pager__item--next a, nav.pager ul.pager__items .pager__item--last a, nav.pager ul.pager__items .pagerer-breaker a {
   border: 0;
-}
-ul.pagination .page-item.first a, ul.pagination .page-item.prev a, ul.pagination .pager__item--next a, ul.pagination .page-item.last a, ul.pagination .page-item[role=presentation] a {
+  display: inline-block;
   color: #dc2f82;
   font-size: 2rem;
   font-weight: 400;
   height: 10px;
-  margin-top: -12px;
+  margin-top: -22px;
 }
 
 .pager-total {
   display: block;
+  font-size: 0.85rem;
   color: #003399;
   font-weight: 600;
   float: right;
   clear: both;
-  margin-top: -50px;
+  margin-top: -60px;
 }
 
+div.pagerer-right-pane {
+  display: none;
+}
+
+/* Responsive */
+@media only screen and (max-width: 767px) {
+  div.pagerer-left-pane, .pager-total {
+    display: none;
+  }
+
+  div.pagerer-right-pane {
+    display: block;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .pager__item--first a, .pager__item--previous a, .pager__item--next a, .pager__item--last a, .pagerer-breaker a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
 /* Common elements */
 body {
   position: relative;
