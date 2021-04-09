@@ -155,6 +155,7 @@ input[type=search] {
   border: 1px solid #003399;
   border-radius: 5px;
   padding: 1rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 .block-facets h2 {
@@ -214,6 +215,12 @@ input[type=search] {
   margin-top: 0;
 }
 
+/* Common styles to Fields */
+.views-exposed-form {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
 form .form-control, form .custom-select {
   height: 37px;
   border: 1px solid #003399;
@@ -228,6 +235,10 @@ form .chosen-container-single .chosen-single {
   border: 0;
   background: none;
 }
+form #edit-actions {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 #edit-search-api-fulltext {
   margin-top: 32px;
@@ -240,8 +251,8 @@ form .chosen-container-single .chosen-single {
 #edit-submit-publications-index {
   position: absolute;
   width: 20px;
-  top: 62px;
-  left: 247px;
+  top: 33px;
+  left: 233px;
   background: url(../images/pink-search.png) no-repeat 96% 55%;
   border: 0;
   text-indent: -9999999px;
@@ -252,6 +263,53 @@ form .chosen-container-single .chosen-single {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+}
+
+.chosen-container-multi.custom-select {
+  padding-left: 0;
+  height: auto;
+}
+
+.chosen-container-multi .chosen-choices {
+  border: 0;
+  background-image: none;
+  margin-top: -3px;
+}
+.chosen-container-multi .chosen-choices li.search-choice {
+  border: none;
+  background: none;
+  box-shadow: none;
+  color: #003399;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice span {
+  display: block;
+  padding-top: 2px;
+}
+
+.chosen-container-active .chosen-choices {
+  box-shadow: none;
+}
+
+#edit-reset {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  font-size: 0.9rem;
+  background-color: #FFF;
+  border-color: #FFF;
+  color: #003399;
+  border-bottom: 1px solid #dc2f82;
+  border-radius: 0;
+  padding: 0;
+}
+
+/* Custom styles in Pages */
+.tools-and-publications-publications .view-filters fieldset {
+  width: 33%;
+}
+.tools-and-publications-publications .view-filters fieldset:nth-child(2) {
+  order: 3;
 }
 
 ul.pagination {
@@ -393,11 +451,15 @@ span.see-more-arrow.minor-size a:hover {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
 }
 
-span.label {
+span.label, span.pages {
   font-family: "Open Sans", sans-serif;
   color: #003399;
   font-weight: bold;
   font-size: 0.8rem;
+}
+
+span.pages {
+  font-weight: normal;
 }
 
 /* Content Fluid */
@@ -1494,6 +1556,9 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item.menu-item--expanded:nth-chil
 }
 
 /* Node publications */
+.node-publications-custom {
+  /*Hide Share Links*/
+}
 .node-publications-custom h1 {
   padding-bottom: 1rem;
 }
@@ -1502,6 +1567,9 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item.menu-item--expanded:nth-chil
 }
 .node-publications-custom p {
   color: #003399;
+}
+.node-publications-custom #share-this-on {
+  display: none;
 }
 
 /* Publications Slide 3 items */
@@ -1548,16 +1616,28 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item.menu-item--expanded:nth-chil
 .tools-and-publications-publications .revamp-row {
   display: flex;
   margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   background: url("../images/back-tit-blue.png") repeat-x 100% 100%;
 }
 .tools-and-publications-publications .revamp-row .publications-right-column {
+  width: 100%;
   padding-left: 2rem;
 }
 .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
   display: flex;
-  justify-content: space-between;
+}
+.tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
+  width: 20%;
+}
+.tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
+  width: 65%;
+  font-weight: normal;
+}
+.tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
+  width: 15%;
+  text-align: right;
+  padding-right: 15px;
 }
 .tools-and-publications-publications .revamp-row .publications-right-column h2 {
   font-weight: 400;
