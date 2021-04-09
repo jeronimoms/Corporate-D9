@@ -89,6 +89,70 @@
             }
         },
         {
+        "type": "package",
+        "package": {
+            "name": "jquery.hoverintent/library",
+            "version": "1.10.1",
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "jquery.hoverIntent"
+            },
+            "dist": {
+                "url": "https://github.com/briancherne/jquery-hoverIntent/archive/refs/tags/v1.10.1.zip",
+                "type": "zip"
+            }
+        }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "json2/library",
+                "version": "0.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "json2"
+                },
+                "source": {
+                    "url": "https://github.com/douglascrockford/JSON-js",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery.pause/library",
+                "version": "0.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.pause"
+                },
+                "source": {
+                    "url": "https://github.com/tobia/Pause",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery.cycle/library",
+                "version": "0.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.cycle"
+                },
+                "source": {
+                    "url": "https://github.com/malsup/cycle",
+                    "type": "git",
+                    "reference": "3.0.3-a"
+                }
+            }
+        },
+
+        {
             "type": "package",
             "package": {
                 "name": "colorbox/library",
@@ -271,7 +335,11 @@
         "drupal/youtube": "^1.2",
         "drush/drush": "^10.3",
         "facets_range_widget/library": "^1.11",
+        "jquery.cycle/library": "^0.1.0",
+        "jquery.hoverintent/library": "^1.10",
+        "jquery.pause/library": "^0.1.0",
         "jquery_touch_punch/library": "^0.2.3",
+        "json2/library": "^0.1.0",
         "slick/library": "^1.8"
     },
     "require-dev": {
