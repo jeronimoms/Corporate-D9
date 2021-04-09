@@ -17,6 +17,7 @@
 
 /* Publications Slide 3 items */
 .view-publications{
+  padding-top: 1.5rem;
   .views-col{
     background: #FFF;
     padding: 10px 10px 0 0;
@@ -101,6 +102,51 @@
       }
     }
   }
+}
+
+/* Rsponsive */
+@media only screen and (max-width : 1200px) {
+  /* Publications Slide 3 items */
+  .view-publications {
+    .views-col {
+      min-height: 185px;
+      padding: 10px;
+      border-bottom: 15px solid $bg-color-blue-light;
+    }
+
+    .views-field-field-image-media {
+      display: none;
+    }
+  }
+
+  /* Publications view*/
+  .tools-and-publications-publications{
+    .revamp-row{
+      .publications-left-column{
+        display: none;
+      }
+      .publications-right-column{
+        padding-left: 0;
+        .content-publication-info {
+          display: flex;
+          span:nth-child(1){
+            width: 20%;
+          }
+          span:nth-child(2){
+            width: 65%;
+            font-weight: normal;
+          }
+          span:nth-child(3){
+            width: 15%;
+            text-align: right;
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+
 }
 
 
