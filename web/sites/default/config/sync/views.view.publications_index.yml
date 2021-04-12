@@ -13,6 +13,7 @@ dependencies:
     - better_exposed_filters
     - datetime
     - media
+    - pagerer
     - search_api
 id: publications_index
 label: 'Publications Index'
@@ -88,26 +89,21 @@ display:
                   collapsible: false
                   is_secondary: false
       pager:
-        type: full
+        type: pagerer
         options:
+          preset: pagination
           items_per_page: 10
           offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: ‹
-            next: ›
-            first: «
-            last: »
+          id: '0'
+          total_pages: ''
           expose:
-            items_per_page: false
+            items_per_page: 0
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
+            items_per_page_options_all: 0
             items_per_page_options_all_label: '- All -'
-            offset: false
+            offset: 0
             offset_label: Offset
-          quantity: 9
       style:
         type: grid
         options:

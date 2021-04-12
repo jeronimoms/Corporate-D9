@@ -36,6 +36,11 @@ targetEntityType: node
 bundle: news
 mode: default
 content:
+  addtoany:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     type: text_default
     weight: 3
@@ -78,7 +83,6 @@ content:
     type: text_default
     region: content
 hidden:
-  addtoany: true
   comment_node_news: true
   field_activity: true
   field_archived: true
