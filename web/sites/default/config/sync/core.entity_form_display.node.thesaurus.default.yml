@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.thesaurus.field_term_reference
     - node.type.thesaurus
   module:
-    - comment
+    - content_moderation
     - entity_reference_tree
     - path
     - text
@@ -24,15 +24,9 @@ targetEntityType: node
 bundle: thesaurus
 mode: default
 content:
-  comment_node_thesaurus:
-    type: comment_default
-    weight: 18
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -118,27 +112,19 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 12
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 12
-    region: content
-    third_party_settings: {  }
   status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 17
-    region: content
-    third_party_settings: {  }
-  sticky:
     type: boolean_checkbox
     settings:
       display_label: true
@@ -154,13 +140,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 13
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 19
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60
@@ -169,8 +155,11 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 16
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  comment_node_thesaurus: true
+  promote: true
+  sticky: true

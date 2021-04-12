@@ -957,10 +957,22 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          order: ASC
+          order: DESC
           exposed: true
           expose:
             label: 'Publication date'
+          plugin_id: search_api
+        title:
+          id: title
+          table: search_api_index_default_multilingual_node_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: true
+          expose:
+            label: Alphabetically
           plugin_id: search_api
         search_api_relevance:
           id: search_api_relevance
@@ -973,18 +985,6 @@ display:
           exposed: true
           expose:
             label: Relevance
-          plugin_id: search_api
-        title:
-          id: title
-          table: search_api_index_default_multilingual_node_index
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: true
-          expose:
-            label: Alphabetically
           plugin_id: search_api
       title: Publications
       header:

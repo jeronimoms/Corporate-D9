@@ -41,7 +41,7 @@ dependencies:
     - field.field.node.events.field_website_of_event
     - node.type.events
   module:
-    - comment
+    - content_moderation
     - datetime_range
     - file
     - link
@@ -53,7 +53,7 @@ bundle: events
 mode: default
 content:
   body:
-    weight: 24
+    weight: 23
     type: text_textarea_with_summary
     settings:
       rows: 9
@@ -62,26 +62,20 @@ content:
       show_summary: false
     third_party_settings: {  }
     region: content
-  comment_node_events:
-    type: comment_default
-    weight: 33
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
-    weight: 35
+    weight: 34
     region: content
     settings: {  }
     third_party_settings: {  }
   field_activity:
     type: options_select
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_adonis:
-    weight: 14
+    weight: 13
     type: string_textfield
     settings:
       size: 60
@@ -89,7 +83,7 @@ content:
     third_party_settings: {  }
     region: content
   field_agency_initial_contact:
-    weight: 19
+    weight: 18
     type: string_textfield
     settings:
       size: 60
@@ -97,7 +91,7 @@ content:
     third_party_settings: {  }
     region: content
   field_agency_rep_confirmed:
-    weight: 20
+    weight: 19
     type: string_textfield
     settings:
       size: 60
@@ -106,12 +100,12 @@ content:
     region: content
   field_agency_role:
     type: options_select
-    weight: 18
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_agenda:
-    weight: 13
+    weight: 12
     type: options_select
     settings: {  }
     third_party_settings: {  }
@@ -125,13 +119,13 @@ content:
     third_party_settings: {  }
     region: content
   field_color:
-    weight: 26
+    weight: 25
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_comments_summary_after_eve:
-    weight: 23
+    weight: 22
     type: string_textfield
     settings:
       size: 255
@@ -157,13 +151,13 @@ content:
     third_party_settings: {  }
     region: content
   field_for_the_web:
-    weight: 9
+    weight: 8
     type: options_buttons
     settings: {  }
     third_party_settings: {  }
     region: content
   field_key_performance:
-    weight: 10
+    weight: 9
     type: options_select
     settings: {  }
     third_party_settings: {  }
@@ -177,13 +171,13 @@ content:
     third_party_settings: {  }
     region: content
   field_media_promotion:
-    weight: 22
+    weight: 21
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_migrate_hwc:
-    weight: 28
+    weight: 27
     type: boolean_checkbox
     settings:
       display_label: true
@@ -198,45 +192,45 @@ content:
     third_party_settings: {  }
     region: content
   field_publications_exhibition_su:
-    weight: 21
+    weight: 20
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_related_documents:
-    weight: 25
+    weight: 24
     type: file_generic
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     region: content
   field_show_eu_flag:
-    weight: 27
+    weight: 26
     type: boolean_checkbox
     settings:
       display_label: true
     third_party_settings: {  }
     region: content
   field_show_on:
-    weight: 29
+    weight: 28
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_tags:
-    weight: 17
+    weight: 16
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_unit_ref:
-    weight: 15
+    weight: 14
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_website_of_event:
-    weight: 11
+    weight: 10
     type: link_default
     settings:
       placeholder_url: ''
@@ -250,31 +244,23 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 29
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 36
-    region: content
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 32
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 37
     region: content
     third_party_settings: {  }
   title:
@@ -286,13 +272,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 34
+    weight: 33
     settings:
       match_operator: CONTAINS
       size: 60
@@ -306,6 +292,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  comment_node_events: true
   field_agency_contact_reply: true
   field_event_in_amp: true
   field_flickr_date: true
@@ -315,3 +302,5 @@ hidden:
   field_satisfaction_rate: true
   field_show_in_ncw: true
   field_source_url: true
+  promote: true
+  sticky: true
