@@ -22,6 +22,11 @@ targetEntityType: node
 bundle: calls
 mode: default
 content:
+  addtoany:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
     type: text_default
@@ -47,7 +52,6 @@ content:
     type: entity_reference_label
     region: content
 hidden:
-  addtoany: true
   field_activity: true
   field_archived: true
   field_author: true

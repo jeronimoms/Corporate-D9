@@ -28,6 +28,11 @@ targetEntityType: node
 bundle: press_release
 mode: default
 content:
+  addtoany:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     weight: 4
     label: hidden
@@ -83,7 +88,6 @@ content:
     type: basic_string
     region: content
 hidden:
-  addtoany: true
   field_activity: true
   field_archived: true
   field_expiration_date: true
