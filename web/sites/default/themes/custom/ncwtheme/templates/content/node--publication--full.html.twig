@@ -108,7 +108,7 @@
           </div>
       </div>
     </div>
-    {% if content.field_aditional_resources %}
+    {% if content.field_aditional_resources|render %}
       <div class="related-resources-fluid">
           <div class="content-related container">
             <h2>{{ 'Related resources' | trans }}</h2>
