@@ -6,10 +6,14 @@
 
 @import 'components/accordion';
 @import 'components/buttons';
+@import 'components/facets';
+@import 'components/forms-fields';
 @import 'components/grid';
+@import 'components/headings';
 @import 'components/helper';
 @import 'components/links';
 @import 'components/modal';
+@import 'components/pager';
 
 @import 'layout/body';
 @import 'layout/breadcrumbs';
@@ -18,6 +22,8 @@
 @import 'layout/home';
 @import 'layout/menu';
 @import 'layout/section';
+
+@import 'displays/publications';
 
 @import 'responsive/common/common-responsive';
 @import 'responsive/tablet/tablet-responsive';

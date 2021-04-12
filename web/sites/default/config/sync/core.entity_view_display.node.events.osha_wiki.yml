@@ -47,12 +47,7 @@ id: node.events.osha_wiki
 targetEntityType: node
 bundle: events
 mode: osha_wiki
-content:
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
+content: {  }
 hidden:
   addtoany: true
   body: true
@@ -92,4 +87,5 @@ hidden:
   field_unit_ref: true
   field_website_of_event: true
   langcode: true
+  links: true
   search_api_excerpt: true

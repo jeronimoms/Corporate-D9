@@ -29,6 +29,12 @@
   }
 
   /* Footer */
+  #block-mainnavigation{
+    display: none;
+  }
+  #block-copyrigth{
+    border-top: 0;
+  }
   nav#block-footermenu{
     ul.menu-level-0{
       li.menu-item.menu-item--expanded:nth-child(2){

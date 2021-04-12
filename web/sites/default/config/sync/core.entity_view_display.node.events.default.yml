@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_events.default
     - field.field.node.events.body
     - field.field.node.events.comment_node_events
     - field.field.node.events.field_activity
@@ -42,37 +41,111 @@ dependencies:
     - field.field.node.events.field_website_of_event
     - node.type.events
   module:
-    - comment
-    - datetime
     - datetime_range
+    - field_group
     - file
+    - link
     - options
     - text
     - user
+third_party_settings:
+  field_group:
+    group_events_event_details:
+      children:
+        - field_location
+        - field_city
+        - field_country_code
+        - field_organization
+        - field_date
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: content
+      format_settings:
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'group-events-event-details field-group-div'
+      label: 'Event Details'
+    group_events_description:
+      children:
+        - body
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'group-events-description field-group-div'
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Description
+    group_events_link:
+      children:
+        - field_website_of_event
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'group-events-links field-group-div'
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Link
+    group_events_related_documents:
+      children:
+        - field_related_documents
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'group-events-related-documents field-group-div'
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Related resources'
 id: node.events.default
 targetEntityType: node
 bundle: events
 mode: default
 content:
+  addtoany:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
-    weight: 3
+    weight: 2
     type: text_default
     settings: {  }
     third_party_settings: {  }
     region: content
-  comment_node_events:
-    label: hidden
-    type: comment_default
-    weight: 20
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    region: content
   field_city:
     label: inline
-    weight: 25
+    weight: 6
     type: string
     settings:
       link_to_entity: false
@@ -80,33 +153,24 @@ content:
     region: content
   field_country_code:
     label: inline
-    weight: 26
+    weight: 7
     type: list_default
     settings: {  }
     third_party_settings: {  }
     region: content
   field_date:
-    weight: 102
-    label: above
+    weight: 9
+    label: inline
     settings:
-      separator: '-'
-      format_type: medium
       timezone_override: ''
+      format_type: only_day
+      separator: to
     third_party_settings: {  }
     type: daterange_default
     region: content
-  field_flickr_date:
-    label: above
-    weight: 5
-    type: datetime_default
-    settings:
-      format_type: long
-      timezone_override: ''
-    third_party_settings: {  }
-    region: content
   field_location:
     label: inline
-    weight: 24
+    weight: 5
     type: string
     settings:
       link_to_entity: false
@@ -114,26 +178,33 @@ content:
     region: content
   field_organization:
     label: inline
-    weight: 27
+    weight: 8
     type: basic_string
     settings: {  }
     third_party_settings: {  }
     region: content
   field_related_documents:
     label: hidden
-    weight: 19
+    weight: 6
     type: file_default
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
+  field_website_of_event:
+    type: link
+    weight: 12
     region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
 hidden:
-  addtoany: true
+  comment_node_events: true
   field_activity: true
   field_adonis: true
   field_agency_contact_reply: true
@@ -145,6 +216,7 @@ hidden:
   field_comments_summary_after_eve: true
   field_event_in_amp: true
   field_event_type: true
+  field_flickr_date: true
   field_for_the_web: true
   field_key_performance: true
   field_media_promotion: true
@@ -160,6 +232,6 @@ hidden:
   field_source_url: true
   field_tags: true
   field_unit_ref: true
-  field_website_of_event: true
   langcode: true
+  links: true
   search_api_excerpt: true

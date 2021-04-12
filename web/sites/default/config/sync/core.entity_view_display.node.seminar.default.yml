@@ -30,22 +30,22 @@ third_party_settings:
     group_event_details:
       children:
         - field_location
-        - field_seminar_start_date
         - field_seminar_end_date
+        - field_seminar_start_date
       parent_name: ''
       weight: 1
       format_type: html_element
       region: content
       format_settings:
-        id: ''
-        classes: ''
         element: div
-        show_label: false
+        show_label: true
         label_element: h3
         label_element_classes: ''
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: 'group-seminar-event-details field-group-div'
       label: 'Event Details'
 id: node.seminar.default
 targetEntityType: node
@@ -53,88 +53,72 @@ bundle: seminar
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
     weight: 0
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_expiration_date:
-    weight: 6
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_location:
-    weight: 16
-    label: above
+    type: string
+    weight: 0
+    region: content
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: content
   field_pages_count:
+    type: number_integer
     weight: 3
-    label: above
+    region: content
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_publication_date:
-    weight: 5
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_related_resources_media:
     type: entity_reference_entity_view
     weight: 4
+    region: content
     label: above
     settings:
+      link: true
       view_mode: default
-      link: false
     third_party_settings: {  }
-    region: content
   field_report_media:
     type: entity_reference_entity_view
     weight: 2
+    region: content
     label: above
     settings:
+      link: true
       view_mode: default
-      link: false
     third_party_settings: {  }
-    region: content
   field_seminar_end_date:
-    weight: 18
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
     type: datetime_default
+    weight: 1
     region: content
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
   field_seminar_start_date:
-    weight: 17
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
     type: datetime_default
+    weight: 2
     region: content
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
 hidden:
   addtoany: true
   field_activity: true
   field_archived: true
   field_country_code: true
+  field_expiration_date: true
+  field_publication_date: true
   field_section: true
   field_show_eu_flag: true
   field_tags: true

@@ -44,6 +44,7 @@ dependencies:
     - languagefield
     - link
     - paragraphs
+    - path
     - text
 id: node.musculoskeletal_disorders.default
 targetEntityType: node
@@ -60,6 +61,12 @@ content:
       show_summary: false
     third_party_settings: {  }
     region: content
+  created:
+    type: datetime_timestamp
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_available_in_languages:
     weight: 10
     settings:
@@ -302,6 +309,27 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  moderation_state:
+    type: string_textfield
+    weight: 35
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 36
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 38
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 3
@@ -310,13 +338,22 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 39
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 37
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  created: true
   langcode: true
-  moderation_state: true
-  path: true
   promote: true
-  status: true
   sticky: true
-  uid: true
-  url_redirects: true

@@ -1,0 +1,25 @@
+uuid: 7628b4ba-5ebe-4256-b409-ab76fe9f57ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.related_content
+  module:
+    - views
+  theme:
+    - ncwtheme
+id: views_block__related_content_block_3
+theme: ncwtheme
+region: sidebar_second
+weight: -8
+provider: null
+plugin: 'views_block:related_content-block_3'
+settings:
+  id: 'views_block:related_content-block_3'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }

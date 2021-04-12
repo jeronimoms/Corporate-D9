@@ -45,34 +45,40 @@
   <div class="breadcrumb-fluid">
     <div class="container"> {{ page.breadcrumb }}</div>
   </div>
-  {% if page.sidebar_first %}
-    <div class="content-two-columns">
-      <div{{ sidebar_first_attributes }}>
-        <aside class="section col-md-4" role="complementary">
-          {{ page.sidebar_first }}
-        </aside>
+<div class="container">
+  <div class="row">
+    {% set has_sidebar_first = page.sidebar_first|render|striptags|trim is not empty %}
+    {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
+    {% if page.sidebar_first %}
+      <aside class="section col-12 col-lg-3" role="complementary">
+        {{ page.sidebar_first }}
+      </aside>
+    {% endif %}
+    {% if not has_sidebar_first and not has_sidebar_second %}
+      <div id="main" class="col-12 col-md-12 one-column">
+    {% endif %}
+    {% if has_sidebar_first and not has_sidebar_second %}
+      <div id="main" class="col-12 col-lg-9 two-column mx-auto">
+    {% endif %}
+    {% if not has_sidebar_first and has_sidebar_second %}
+      <div id="main" class="col-12 col-lg-9 two-column mx-auto">
+    {% endif %}
+    {% if has_sidebar_first and has_sidebar_second %}
+      <div id="main" class="col-12 col-lg-6 three-column mx-auto">
+    {% endif %}
+        <section class="section">
+          <a id="main-content" tabindex="-1"></a>
+          {{ page.content }}
+        </section>
       </div>
-  {% endif %}
-  {% if page.sidebar_first %}
-    <div id="main" class="col-md-8 two-column">
-  {% else %}
-    <div id="main">
-  {% endif %}
-      <section class="section">
-        <a id="main-content" tabindex="-1"></a>
-        <div class="container">{{ page.content }}</div>
-      </section>
-  </div>
-      {% if page.sidebar_first %}
-    </div>
-      {% endif %}
-  {% if page.sidebar_second %}
-    <div{{ sidebar_second_attributes }}>
-      <aside class="section" role="complementary">
+    {% if has_sidebar_second %}
+      <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
+        <h2 class="related">{{ 'Related' | trans }}</h2>
         {{ page.sidebar_second }}
       </aside>
+    {% endif %}
     </div>
-  {% endif %}
+</div>
 {% endblock %}
 
 {% block footer %}

@@ -11,7 +11,7 @@ audit: true
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
-  plugin: d7_node
+  plugin: ev_d7_node
   node_type: news                     # -----  CHANGE
 destination:
   plugin: entity:node
@@ -77,4 +77,8 @@ process:
       target_id:
         plugin: get
         source: tid
-
+  field_workbench_access:
+    - plugin: sub_process
+      source: workbench_access
+      process:
+        target_id: tid
