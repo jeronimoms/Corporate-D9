@@ -2,6 +2,8 @@ uuid: 9ab02f17-bdaa-4814-9816-7ea74014a3e7
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - ncwtheme
 _core:
@@ -19,4 +21,8 @@ settings:
   label_display: '0'
   primary: true
   secondary: true
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: ''
+    negate: true
