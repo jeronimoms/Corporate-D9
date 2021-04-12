@@ -1,8 +1,9 @@
-uuid: ee384bef-6209-4e3b-ba11-418894962ff5
+uuid: 3a3ae39c-1b91-4330-8c93-6e1518f7a7e5
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_view_mode.node.newsletter_alt
     - field.field.node.seminar.body
     - field.field.node.seminar.field_activity
     - field.field.node.seminar.field_archived
@@ -23,6 +24,7 @@ dependencies:
   module:
     - datetime
     - field_group
+    - layout_builder
     - text
     - user
 third_party_settings:
@@ -30,8 +32,8 @@ third_party_settings:
     group_event_details:
       children:
         - field_location
-        - field_seminar_end_date
         - field_seminar_start_date
+        - field_seminar_end_date
       parent_name: ''
       weight: 1
       format_type: html_element
@@ -47,71 +49,74 @@ third_party_settings:
         id: ''
         classes: 'group-seminar-event-details field-group-div'
       label: 'Event Details'
-id: node.seminar.default
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.seminar.newsletter_alt
 targetEntityType: node
 bundle: seminar
-mode: default
+mode: newsletter_alt
 content:
   body:
+    label: hidden
     type: text_default
     weight: 0
-    region: content
-    label: hidden
     settings: {  }
     third_party_settings: {  }
-  field_location:
-    type: string
-    weight: 0
     region: content
+  field_location:
+    weight: 16
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  field_pages_count:
-    type: number_integer
-    weight: 3
+    type: string
     region: content
-    label: inline
+  field_pages_count:
+    weight: 3
+    label: hidden
     settings:
       thousand_separator: ''
-      prefix_suffix: true
+      prefix_suffix: false
     third_party_settings: {  }
+    type: number_integer
+    region: content
   field_related_resources_media:
     type: entity_reference_entity_view
     weight: 4
-    region: content
     label: above
     settings:
-      link: true
       view_mode: default
+      link: false
     third_party_settings: {  }
+    region: content
   field_report_media:
     type: entity_reference_entity_view
     weight: 2
-    region: content
     label: above
     settings:
-      link: true
       view_mode: default
+      link: false
     third_party_settings: {  }
+    region: content
   field_seminar_end_date:
-    type: datetime_default
-    weight: 1
-    region: content
+    weight: 18
     label: inline
     settings:
       timezone_override: ''
       format_type: short
     third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_seminar_start_date:
-    type: datetime_default
-    weight: 2
-    region: content
+    weight: 17
     label: inline
     settings:
       timezone_override: ''
       format_type: short
     third_party_settings: {  }
+    type: datetime_default
+    region: content
 hidden:
   addtoany: true
   field_activity: true
