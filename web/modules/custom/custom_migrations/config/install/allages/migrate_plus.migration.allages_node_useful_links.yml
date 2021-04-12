@@ -1,0 +1,64 @@
+# Migration file for creating "useful_links" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: allages_node_useful_links                    # -----  CHANGE
+label: 'Node: Useful links'                   # -----  CHANGE
+audit: true
+migration_group: allages_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: useful_links                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user                 # -----  CHANGE
+
+process:
+  #nid: tnid   #comentar si no es bbdd limpia
+  #vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: useful_links              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_link:
+    plugin: field_link
+    source: field_link
+  field_category:
+    - plugin: sub_process
+      source: field_category
+      process:
+        target_id:
+          plugin: get
+          source: tid
+  field_theme:
+    - plugin: migration_lookup
+      migration: allages_node_themes
+      source: field_theme
+
+
