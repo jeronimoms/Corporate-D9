@@ -15,6 +15,9 @@ form{
   }
   label{
     display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 2px;
   }
   .chosen-container-single .chosen-single{
     border: 0;
@@ -27,7 +30,7 @@ form{
 }
 
 #edit-search-api-fulltext{
-  margin-top: 32px;
+  margin-top: 24px;
 }
 
 .form-item-search-api-fulltext{
@@ -37,8 +40,8 @@ form{
 #edit-submit-publications-index {
   position: absolute;
   width: 20px;
-  top: 33px;
-  left: 233px;
+  top: 24px;
+  left: 27%;
   background: url(../images/pink-search.png) no-repeat 96% 55%;
   border: 0;
   text-indent: -9999999px;
@@ -92,6 +95,7 @@ form{
 }
 
 /* Custom styles in Pages */
+/*Publications*/
 .tools-and-publications-publications{
   .view-filters{
     fieldset{
@@ -102,3 +106,28 @@ form{
     }
   }
 }
+
+
+/* Rsponsive Filters */
+@media only screen and (max-width : 767px) {
+
+  #edit-submit-publications-index {
+    left: 89%;
+  }
+
+  .chosen-container-multi.custom-select{
+    width: 100% !important;
+  }
+
+  /* Custom styles in Pages */
+  /*Publications*/
+  .tools-and-publications-publications {
+    .view-filters {
+      fieldset {
+        width: 100%;
+      }
+    }
+  }
+
+}
+
