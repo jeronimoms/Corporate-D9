@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_activity
     - node.type.page
   module:
     - text
@@ -16,20 +17,23 @@ bundle: page
 mode: default
 content:
   addtoany:
-    weight: 101
+    weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   body:
     label: hidden
     type: text_default
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   links:
-    weight: 101
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_activity: true
   langcode: true
   search_api_excerpt: true
