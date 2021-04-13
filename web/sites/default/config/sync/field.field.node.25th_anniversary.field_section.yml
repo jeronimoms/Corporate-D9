@@ -13,7 +13,7 @@ bundle: 25th_anniversary
 label: Section
 description: 'Select the proper editorial group for this content.'
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

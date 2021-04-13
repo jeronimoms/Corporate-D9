@@ -1,0 +1,18 @@
+uuid: ddf5c815-f477-482b-9f97-0ca87c352e0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.publication_slideshow
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: entity_subqueue.publication_slideshow
+target_entity_type_id: entity_subqueue
+target_bundle: publication_slideshow
+default_langcode: site_default
+language_alterable: false
