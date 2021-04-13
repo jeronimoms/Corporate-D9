@@ -375,6 +375,9 @@
             },
             "drupal/ldap": {
                 "Config annotation missing": "patches/ldap-orphaned_accounts_no_ldap_entry.patch"
+            },
+            "drupal/draggableviews": {
+                "DraggableViews not working after update to 2.0.0": "https://www.drupal.org/files/issues/2020-10-07/draggableviews-sort_handler_specify_order_view-2767437-78.patch"
             }
         },
         "patchLevel": {
