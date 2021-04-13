@@ -215,6 +215,9 @@ class OmForm implements ContainerInjectionInterface {
    */
   public function isPartnerPublished(User $user) {
     $nid = $this->getNodePartnerByUser($user);
+    if (!isset($nid) || empty($nid)) {
+      return FALSE;
+    }
     /** @var \Drupal\node\Entity\Node $node */
     $node = $this->entityTypeManager->getStorage('node')->load($nid);
     return boolval($node->get('status')->getString());
