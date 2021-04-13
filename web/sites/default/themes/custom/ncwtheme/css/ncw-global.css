@@ -528,6 +528,10 @@ div.pagerer-right-pane {
   }
 }
 /* Common elements */
+html {
+  font-size: 100%;
+}
+
 body {
   position: relative;
   font-family: "Open Sans", sans-serif;

@@ -30,5 +30,24 @@ jQuery(document).ready(function($) {
     $(this).toggleClass("active");
     $(this).next('.wysiwyg_accordion_panel').slideToggle();
   });
+
+  $('#_biggify').on('click', function() {
+    var fontSize = $('html').css('font-size');
+    var newFontSize = parseInt(fontSize)+1;
+
+    $('html').css('font-size', newFontSize+'px')
+  })
+
+  $('#_smallify').on('click', function() {
+    var fontSize = $('html').css('font-size');
+    var newFontSize = parseInt(fontSize)-1;
+
+    $('html').css('font-size', newFontSize+'px')
+  })
+
+  $('#_reset').on('click', function() {
+    $('html').css('font-size', '16px')
+  })
+
 });
 
