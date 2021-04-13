@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.related_content
   module:
+    - ctools
     - views
   theme:
     - ncwtheme
@@ -22,4 +23,19 @@ settings:
   views_label: ''
   items_per_page: none
   context_mapping: {  }
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      25th_anniversary: 25th_anniversary
+      events: events
+      guideline: guideline
+      highlight: highlight
+      infographic: infographic
+      news: news
+      press_release: press_release
+      seminar: seminar
+      wiki_page: wiki_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
