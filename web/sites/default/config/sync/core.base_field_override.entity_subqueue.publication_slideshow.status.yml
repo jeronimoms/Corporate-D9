@@ -1,0 +1,22 @@
+uuid: 55931c40-15d8-405e-8d19-18065bb50940
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.publication_slideshow
+id: entity_subqueue.publication_slideshow.status
+field_name: status
+entity_type: entity_subqueue
+bundle: publication_slideshow
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

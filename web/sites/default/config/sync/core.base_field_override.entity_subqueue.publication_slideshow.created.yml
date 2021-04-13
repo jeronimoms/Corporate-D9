@@ -1,0 +1,18 @@
+uuid: a723ad7b-d3ee-401f-a95a-3b06c8004780
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.publication_slideshow
+id: entity_subqueue.publication_slideshow.created
+field_name: created
+entity_type: entity_subqueue
+bundle: publication_slideshow
+label: 'Authored on'
+description: 'The time that the subqueue was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created
