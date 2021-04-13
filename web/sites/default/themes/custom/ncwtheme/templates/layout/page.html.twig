@@ -47,21 +47,23 @@
   </div>
 <div class="container">
   <div class="row">
+    {% set has_sidebar_first = page.sidebar_first|render|striptags|trim is not empty %}
+    {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
     {% if page.sidebar_first %}
       <aside class="section col-12 col-lg-3" role="complementary">
         {{ page.sidebar_first }}
       </aside>
     {% endif %}
-    {% if not page.sidebar_first and not page.sidebar_second %}
+    {% if not has_sidebar_first and not has_sidebar_second %}
       <div id="main" class="col-12 col-md-12 one-column">
     {% endif %}
-    {% if page.sidebar_first and not page.sidebar_second %}
+    {% if has_sidebar_first and not has_sidebar_second %}
       <div id="main" class="col-12 col-lg-9 two-column mx-auto">
     {% endif %}
-    {% if not page.sidebar_first and page.sidebar_second %}
+    {% if not has_sidebar_first and has_sidebar_second %}
       <div id="main" class="col-12 col-lg-9 two-column mx-auto">
     {% endif %}
-    {% if page.sidebar_first and page.sidebar_second %}
+    {% if has_sidebar_first and has_sidebar_second %}
       <div id="main" class="col-12 col-lg-6 three-column mx-auto">
     {% endif %}
         <section class="section">
@@ -69,7 +71,7 @@
           {{ page.content }}
         </section>
       </div>
-    {% if page.sidebar_second %}
+    {% if has_sidebar_second %}
       <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
         <h2 class="related">{{ 'Related' | trans }}</h2>
         {{ page.sidebar_second }}

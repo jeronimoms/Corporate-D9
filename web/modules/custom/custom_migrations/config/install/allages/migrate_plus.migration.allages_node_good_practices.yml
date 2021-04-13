@@ -1,0 +1,60 @@
+# Migration file for creating "good_practices" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: allages_node_good_practices                    # -----  CHANGE
+label: 'Node: Good Practices'                   # -----  CHANGE
+audit: true
+migration_group: allages_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: good_practices                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user                # -----  CHANGE
+
+process:
+  #nid: tnid   #comentar si no es bbdd limpia
+  #vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: good_practices              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  # field_text: field_text
+  'field_text/value': field_text
+  'field_text/format':
+    - plugin: default_value
+      default_value: restricted_html
+
+  field_short_text: field_short_text
+  field_theme:
+    - plugin: migration_lookup
+      migration: allages_node_themes
+      source: field_theme
+
