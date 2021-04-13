@@ -1,0 +1,57 @@
+# Migration file for creating "lessons" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: allages_node_lessons                    # -----  CHANGE
+label: 'Node: Lessons'                      # -----  CHANGE
+audit: true
+migration_group: allages_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: steps                        # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - allages_taxonomy_profile                  # -----  CHANGE
+
+process:
+  #nid: tnid   #comentar si no es bbdd limpia
+  #vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: steps              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_text_1: field_text_1
+  field_text_2: field_text_2
+  field_profile:
+    - plugin: sub_process
+      source: field_profile
+      process:
+        target_id:
+          plugin: get
+          source: tid

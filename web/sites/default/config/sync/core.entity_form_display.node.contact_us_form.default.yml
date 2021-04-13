@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.contact_us_form.field_contact_us_query
     - node.type.contact_us_form
   module:
+    - content_moderation
     - path
 _core:
   default_config_hash: Kd55wopqToSuX6etpUa3ateri1mkjQAzrPMw5OKa_iw
@@ -23,12 +24,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_contact_us_address:
-    weight: 125
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -36,7 +37,7 @@ content:
     type: string_textfield
     region: content
   field_contact_us_company_name:
-    weight: 123
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -44,7 +45,7 @@ content:
     type: string_textfield
     region: content
   field_contact_us_country:
-    weight: 126
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -52,7 +53,7 @@ content:
     type: string_textfield
     region: content
   field_contact_us_designation:
-    weight: 124
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -60,7 +61,7 @@ content:
     type: string_textfield
     region: content
   field_contact_us_email:
-    weight: 127
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -68,7 +69,7 @@ content:
     type: email_default
     region: content
   field_contact_us_name:
-    weight: 122
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -76,7 +77,7 @@ content:
     type: string_textfield
     region: content
   field_contact_us_phone:
-    weight: 128
+    weight: 8
     settings:
       size: 60
       placeholder: ''
@@ -84,7 +85,7 @@ content:
     type: string_textfield
     region: content
   field_contact_us_query:
-    weight: 129
+    weight: 9
     settings:
       rows: 5
       placeholder: ''
@@ -93,41 +94,33 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 10
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 11
     region: content
     settings: {  }
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 15
-    region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
+    weight: 13
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -135,16 +128,19 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 12
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
-hidden: {  }
+hidden:
+  promote: true
+  sticky: true

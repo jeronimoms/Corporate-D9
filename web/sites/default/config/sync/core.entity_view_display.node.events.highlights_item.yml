@@ -57,11 +57,6 @@ content:
       trim_length: 400
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
   addtoany: true
   comment_node_events: true
@@ -100,4 +95,5 @@ hidden:
   field_unit_ref: true
   field_website_of_event: true
   langcode: true
+  links: true
   search_api_excerpt: true

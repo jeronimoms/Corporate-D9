@@ -8,7 +8,9 @@ dependencies:
     - field.field.node.youtube.field_youtube
     - node.type.youtube
   module:
+    - content_moderation
     - datetime
+    - path
     - text
     - youtube
 id: node.youtube.default
@@ -26,8 +28,14 @@ content:
     third_party_settings: {  }
     type: text_textarea_with_summary
     region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_video_length:
-    weight: 26
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -41,9 +49,22 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 5
     settings: {  }
     region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -53,12 +74,27 @@ content:
       size: 255
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  created: true
   langcode: true
-  path: true
   promote: true
-  status: true
   sticky: true
-  uid: true
-  url_redirects: true

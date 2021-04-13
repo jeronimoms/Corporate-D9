@@ -1,0 +1,57 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: allages_taxonomy_categories_useful_links # ----- CHANGE
+label: 'Terms: categories_useful_links' # ----- CHANGE
+audit: true
+migration_group: allages_migrate # ----- CHANGE
+deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
+source:
+  plugin: d7_taxonomy_term
+  bundle: categories_useful_links # ----- CHANGE
+destination:
+  plugin: entity:taxonomy_term
+migration_dependencies:
+  optional:
+    - d7_field_instance     # ----- CHANGE
+process:
+  tid: tid
+  vid:
+    -
+      plugin: default_value
+      default_value: categories_useful_links   # ----- CHANGE
+  name: name
+  'description/value': description_field_value
+  #'description/format': format
+  'description/format':
+    - plugin: default_value
+      default_value: restricted_html
+  weight: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: allages_taxonomy_categories_useful_links
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+  'path/pathauto':
+    plugin: default_value
+    default_value: 0 # Disable pathauto.
+  'path/alias': alias
+
+  ### ADD FIELDS CUSTOM OF ENTITY ### # ----- CHANGE
+

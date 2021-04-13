@@ -27,6 +27,7 @@ dependencies:
   module:
     - languagefield
     - media_library
+    - path
     - text
 id: node.register_records.default
 targetEntityType: node
@@ -43,6 +44,12 @@ content:
       show_summary: false
     third_party_settings: {  }
     region: content
+  created:
+    type: datetime_timestamp
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_activity:
     weight: 21
     settings: {  }
@@ -181,6 +188,27 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: string_textfield
+    weight: 22
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 25
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -189,12 +217,21 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  created: true
-  moderation_state: true
-  path: true
   promote: true
-  status: true
   sticky: true
-  uid: true
-  url_redirects: true

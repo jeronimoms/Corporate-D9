@@ -89,6 +89,70 @@
             }
         },
         {
+        "type": "package",
+        "package": {
+            "name": "jquery.hoverintent/library",
+            "version": "1.10.1",
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "jquery.hoverIntent"
+            },
+            "dist": {
+                "url": "https://github.com/briancherne/jquery-hoverIntent/archive/refs/tags/v1.10.1.zip",
+                "type": "zip"
+            }
+        }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "json2/library",
+                "version": "0.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "json2"
+                },
+                "source": {
+                    "url": "https://github.com/douglascrockford/JSON-js",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery.pause/library",
+                "version": "0.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.pause"
+                },
+                "source": {
+                    "url": "https://github.com/tobia/Pause",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery.cycle/library",
+                "version": "0.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.cycle"
+                },
+                "source": {
+                    "url": "https://github.com/malsup/cycle",
+                    "type": "git",
+                    "reference": "3.0.3-a"
+                }
+            }
+        },
+
+        {
             "type": "package",
             "package": {
                 "name": "colorbox/library",
@@ -123,6 +187,7 @@
         "drupal/ckeditor_font": "^1.1",
         "drupal/clientside_validation": "^3.0@RC",
         "drupal/colorbox": "^1.7",
+        "drupal/colorbox_inline": "^1.2",
         "drupal/conditional_fields": "^1.0@alpha",
         "drupal/config_split": "^1.7",
         "drupal/contact_us": "^2.1",
@@ -140,6 +205,7 @@
         "drupal/diff": "^1.0",
         "drupal/draggableviews": "^2.0",
         "drupal/dropdown_language": "^2.6",
+        "drupal/ds": "^3.12",
         "drupal/dynamic_entity_reference": "^2.0@alpha",
         "drupal/easy_breadcrumb": "^1.13",
         "drupal/editor_advanced_link": "^1.8",
@@ -271,7 +337,11 @@
         "drupal/youtube": "^1.2",
         "drush/drush": "^10.3",
         "facets_range_widget/library": "^1.11",
+        "jquery.cycle/library": "^0.1.0",
+        "jquery.hoverintent/library": "^1.10",
+        "jquery.pause/library": "^0.1.0",
         "jquery_touch_punch/library": "^0.2.3",
+        "json2/library": "^0.1.0",
         "slick/library": "^1.8"
     },
     "require-dev": {

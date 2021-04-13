@@ -1,0 +1,133 @@
+uuid: 3a3ae39c-1b91-4330-8c93-6e1518f7a7e5
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter_alt
+    - field.field.node.seminar.body
+    - field.field.node.seminar.field_activity
+    - field.field.node.seminar.field_archived
+    - field.field.node.seminar.field_country_code
+    - field.field.node.seminar.field_expiration_date
+    - field.field.node.seminar.field_location
+    - field.field.node.seminar.field_pages_count
+    - field.field.node.seminar.field_publication_date
+    - field.field.node.seminar.field_related_resources_media
+    - field.field.node.seminar.field_report_media
+    - field.field.node.seminar.field_section
+    - field.field.node.seminar.field_seminar_end_date
+    - field.field.node.seminar.field_seminar_start_date
+    - field.field.node.seminar.field_show_eu_flag
+    - field.field.node.seminar.field_tags
+    - field.field.node.seminar.field_thesaurus_2020
+    - node.type.seminar
+  module:
+    - datetime
+    - field_group
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_event_details:
+      children:
+        - field_location
+        - field_seminar_start_date
+        - field_seminar_end_date
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'group-seminar-event-details field-group-div'
+      label: 'Event Details'
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.seminar.newsletter_alt
+targetEntityType: node
+bundle: seminar
+mode: newsletter_alt
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_location:
+    weight: 16
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pages_count:
+    weight: 3
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: false
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_related_resources_media:
+    type: entity_reference_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_report_media:
+    type: entity_reference_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_seminar_end_date:
+    weight: 18
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_seminar_start_date:
+    weight: 17
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  addtoany: true
+  field_activity: true
+  field_archived: true
+  field_country_code: true
+  field_expiration_date: true
+  field_publication_date: true
+  field_section: true
+  field_show_eu_flag: true
+  field_tags: true
+  field_thesaurus_2020: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -24,51 +24,118 @@ dependencies:
     - field.field.node.news.field_summary_html
     - field.field.node.news.field_tags
     - field.field.node.news.field_thesaurus_2020
+    - image.style.medium
     - node.type.news
   module:
     - datetime
+    - ds
+    - media
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_image_media
+        - field_publication_date
+        - node_title
+        - field_summary_html
+        - body
+        - field_aditional_resources
+        - field_flickr_date
+        - addtoany
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h1
+          class: ''
+          exclude_node_title: '1'
+          link: false
 id: node.news.default
 targetEntityType: node
 bundle: news
 mode: default
 content:
+  addtoany:
+    weight: 7
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    type: text_default
+    weight: 4
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_aditional_resources:
+    type: entity_reference_entity_view
+    weight: 5
+    region: ds_content
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+  field_flickr_date:
+    type: datetime_plain
+    weight: 6
+    region: ds_content
+    label: above
+    settings:
+      timezone_override: ''
+    third_party_settings: {  }
   field_image_media:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
-      link: true
+      image_style: medium
+      image_link: ''
     third_party_settings: {  }
-    type: entity_reference_label
-    region: content
+    type: media_thumbnail
+    region: ds_content
   field_publication_date:
     label: hidden
-    weight: 0
+    weight: 1
     type: datetime_default
     settings:
       timezone_override: ''
       format_type: only_day
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_summary_html:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
 hidden:
-  addtoany: true
-  body: true
   comment_node_news: true
   field_activity: true
-  field_aditional_resources: true
   field_archived: true
   field_avoid_archived: true
   field_character_count: true
   field_expiration_date: true
-  field_flickr_date: true
   field_migrate_hwc: true
   field_migration_source: true
   field_page_count: true

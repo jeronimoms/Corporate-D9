@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "31e6de8c09027799c32aae40c08104af",
+    "content-hash": "eda25ae5057124841110a668528bbd40",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3378,6 +3378,55 @@
             }
         },
         {
+            "name": "drupal/colorbox_inline",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/colorbox_inline.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/colorbox_inline-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "75240db01e2f410d60ef837fd454e932e288cab9"
+            },
+            "require": {
+                "drupal/colorbox": "*",
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1598593268",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "NickDickinsonWilde",
+                    "homepage": "https://www.drupal.org/user/3094661"
+                },
+                {
+                    "name": "Sam152",
+                    "homepage": "https://www.drupal.org/user/1485048"
+                }
+            ],
+            "description": "Enabled the \"colorbox inline\" functionality for Drupal 8.",
+            "homepage": "https://www.drupal.org/project/colorbox_inline",
+            "support": {
+                "source": "https://git.drupalcode.org/project/colorbox_inline"
+            }
+        },
+        {
             "name": "drupal/colorbutton",
             "version": "1.2.0",
             "source": {
@@ -4115,6 +4164,13 @@
                         "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
                         "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                     }
+                },
+                "patches_applied": {
+                    "Cannot override content field block title": "https://www.drupal.org/files/issues/2019-05-20/3055818-3.patch",
+                    "Make the exposed filter as token": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
+                    "On null isTranslatable": "https://www.drupal.org/files/issues/2019-12-05/2928108-49.patch",
+                    "Issue 2685749: Add a Machine Name widget to core.": "https://www.drupal.org/files/issues/2019-12-16/2685749-73.patch",
+                    "Reorder sections": "https://www.drupal.org/files/issues/2020-03-20/layout_builder_3080606-reorder-layout-sections-29_1.patch"
                 }
             },
             "autoload": {
@@ -4832,6 +4888,76 @@
             "homepage": "https://www.drupal.org/project/dropdown_language",
             "support": {
                 "source": "https://git.drupalcode.org/project/dropdown_language"
+            }
+        },
+        {
+            "name": "drupal/ds",
+            "version": "3.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ds.git",
+                "reference": "8.x-3.12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ds-8.x-3.12.zip",
+                "reference": "8.x-3.12",
+                "shasum": "0df49ccc28af94186a6c08aa4233f435c539b273"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "require-dev": {
+                "drupal/devel": "3.x-dev",
+                "drupal/field_group": "3.x-dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.12",
+                    "datestamp": "1615995335",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Bram Goffings",
+                    "homepage": "https://www.drupal.org/user/172527",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Kristof De Jaeger",
+                    "homepage": "http://realize.be/",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Brecht Ceyssens",
+                    "homepage": "https://www.drupal.org/user/591438",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "swentel",
+                    "homepage": "https://www.drupal.org/user/107403"
+                }
+            ],
+            "description": "Extend the display options for every entity type.",
+            "homepage": "https://www.drupal.org/project/ds",
+            "keywords": [
+                "drupal",
+                "layout",
+                "php"
+            ],
+            "support": {
+                "source": "http://git.drupal.org/project/ds.git",
+                "issues": "https://www.drupal.org/project/issues/ds",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {
@@ -7187,6 +7313,10 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Revision on inline blocks": "https://www.drupal.org/files/issues/2020-07-25/inline_entity_form_inlineBlocks_3161487.2.patch",
+                    "Block form not saved": "https://www.drupal.org/files/issues/2020-03-04/fix-ief-layout-block-3117510-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8059,7 +8189,8 @@
                 "source": "http://cgit.drupalcode.org/languagefield",
                 "issues": "http://drupal.org/project/languagefield",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
+            },
+            "time": "2020-04-28T07:13:29+00:00"
         },
         {
             "name": "drupal/layoutcomponents",
@@ -8276,6 +8407,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Config annotation missing": "patches/ldap-orphaned_accounts_no_ldap_entry.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8639,6 +8773,10 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Token warnings": "https://www.drupal.org/files/issues/2020-08-14/problem-with-display-of-custom-data-in-layout-manager-3110226-8.patch",
+                    "Custom link": "https://www.drupal.org/files/issues/2020-11-10/3181802-invalid-token-replacement-when-using-layout-builder.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -9086,10 +9224,6 @@
                 {
                     "name": "JohnAlbin",
                     "homepage": "https://www.drupal.org/user/32095"
-                },
-                {
-                    "name": "RenatoG",
-                    "homepage": "https://www.drupal.org/user/3326031"
                 },
                 {
                     "name": "joelpittet",
@@ -11058,7 +11192,8 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/rules",
                 "issues": "https://www.drupal.org/project/issues/rules"
-            }
+            },
+            "time": "2020-12-23T01:17:33+00:00"
         },
         {
             "name": "drupal/scanner",
@@ -11584,6 +11719,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Editor form warning": "patches/simple_block-edit-form-warning.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -11819,16 +11957,24 @@
                     "role": "Maintainer"
                 },
                 {
+                    "name": "chrisjlee",
+                    "homepage": "https://www.drupal.org/user/760600"
+                },
+                {
+                    "name": "drywall",
+                    "homepage": "https://www.drupal.org/user/192591"
+                },
+                {
+                    "name": "jsenich",
+                    "homepage": "https://www.drupal.org/user/58871"
+                },
+                {
+                    "name": "markie",
+                    "homepage": "https://www.drupal.org/user/206687"
+                },
+                {
                     "name": "newsignature",
                     "homepage": "https://www.drupal.org/user/765518"
-                },
-                {
-                    "name": "ultimike",
-                    "homepage": "https://www.drupal.org/user/51132"
-                },
-                {
-                    "name": "volkswagenchick",
-                    "homepage": "https://www.drupal.org/user/3332522"
                 }
             ],
             "description": "Provides a more robust alternative to 'summary or trimmed' textfield format.",
@@ -15122,6 +15268,44 @@
             "time": "2018-06-28T20:32:51+00:00"
         },
         {
+            "name": "jquery.cycle/library",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/malsup/cycle",
+                "reference": "3.0.3-a"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "jquery.cycle"
+            }
+        },
+        {
+            "name": "jquery.hoverintent/library",
+            "version": "1.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/briancherne/jquery-hoverIntent/archive/refs/tags/v1.10.1.zip"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "jquery.hoverIntent"
+            }
+        },
+        {
+            "name": "jquery.pause/library",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tobia/Pause",
+                "reference": "master"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "jquery.pause"
+            }
+        },
+        {
             "name": "jquery_touch_punch/library",
             "version": "0.2.3",
             "dist": {
@@ -15131,6 +15315,19 @@
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery-ui-touch-punch"
+            }
+        },
+        {
+            "name": "json2/library",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/douglascrockford/JSON-js",
+                "reference": "master"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "json2"
             }
         },
         {
@@ -20274,5 +20471,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
