@@ -7,14 +7,16 @@
         {{ page.top_header_logos }}
       </div>
       <div class="push-right">
-        <div class="font-size-print">
-          <span class="a_small"><a title="Smaller text" onclick="zoomSmall()">a</a></span>
-          <span class="a_medium"><a title="Optimised defaults" onclick="zoomMedium()">a</a></span>
-          <span class="a_big"><a title="Bigger text" onclick="zoomBig()">a</a></span>
-          <a href="#" onclick="if(window.print)window.print();" class="print-friendly" title="Print page"></a>
-        </div>
-        <div class="header-menu-news">
-          {{ page.header }}
+        <div class="content-first-row">
+          <div class="font-size-print">
+            <span id="_smallify" class="a_small"><a title="Smaller text">a</a></span>
+            <span id="_reset" class="a_medium"><a title="Optimised defaults">a</a></span>
+            <span id="_biggify" class="a_big"><a title="Bigger text">a</a></span>
+            <a href="#" onclick="if(window.print)window.print();" class="print-friendly" title="Print page"></a>
+          </div>
+          <div class="header-social-menu">
+            {{ page.header }}
+          </div>
         </div>
         <div class="header-blocks">
           {{ page.header_form }}
