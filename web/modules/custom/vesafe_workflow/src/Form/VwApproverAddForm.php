@@ -309,7 +309,7 @@ class VwApproverAddForm extends FormBase {
 
       // Set access if the user is administrator.
       if ($user->hasRole('administrator')) {
-        $output[$user->id()] = $user->getDisplayName();
+        //$output[$user->id()] = $user->getDisplayName();
       }
     }
 
