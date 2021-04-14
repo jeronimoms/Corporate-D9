@@ -1,0 +1,9 @@
+ncw_migration.config:
+  path: '/admin/config/system/ncw-migration'
+  defaults:
+    _form: '\Drupal\ncw_migration\Form\NmConfigurationForm'
+    _title: 'NCW migration configuration'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE
