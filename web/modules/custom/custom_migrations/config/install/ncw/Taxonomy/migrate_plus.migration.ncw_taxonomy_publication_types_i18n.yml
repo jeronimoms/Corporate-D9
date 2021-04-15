@@ -32,7 +32,12 @@ process:
     plugin: migration_lookup
     migration: ncw_taxonomy_publication_types         # -----  CHANGE
     source: tid
-  langcode: ltlanguage  # Use the language from the locales_target table.
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: ltlanguage
+    map:
+      'pt': 'pt-pt'
   vid:
     -
       plugin: default_value

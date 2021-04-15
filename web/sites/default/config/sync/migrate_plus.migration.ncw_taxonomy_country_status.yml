@@ -1,0 +1,44 @@
+uuid: a0ffacc2-f5be-49d4-95b2-f2b3f34e2325
+langcode: en
+status: true
+dependencies: {  }
+id: ncw_taxonomy_country_status
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate
+label: 'Terms: Country status'
+source:
+  plugin: d7_taxonomy_term
+  bundle: country_status
+process:
+  tid: tid
+  vid:
+    -
+      plugin: default_value
+      default_value: country_status
+  name: name
+  description/value: description
+  description/format: format
+  weight: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: ncw_taxonomy_country_status
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies:
+  optional:
+    - d7_field_instance
