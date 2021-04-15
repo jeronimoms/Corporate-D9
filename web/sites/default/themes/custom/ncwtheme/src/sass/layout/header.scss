@@ -31,7 +31,6 @@
   align-content: center;
   margin-left: 0;
   margin-right: 0;
-
   .region-top-header-logos {
     float: left;
     margin-left: 1rem;
@@ -51,7 +50,7 @@
 }
 
 .font-size-print{
-  float: right;
+  float: left;
   span{
     a{
       color: $text-color-blue;
@@ -77,25 +76,26 @@
   .print-friendly{
     display: inline-block;
     background: url("../images/share_print_blue.png") no-repeat;
-    width: 26px;
+    width: 24px;
     height: 20px;
   }
 }
 
-.header-menu-news{
-  float: right;
-  margin-left: 7px;
-  margin-top: 6px;
-  #block-socialmenu{
-    ul{
-      padding: 0;
-      margin: 0;
-    }
+.content-first-row{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#block-socialmenu{
+  .menu.menu-level-0{
+    padding: 0;
+    margin: 5px 0 0 5px;
   }
 }
 
 .header-blocks{
   clear: both;
+  float: right;
   section.row{
     margin-right: 0;
     nav{
