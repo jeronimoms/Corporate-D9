@@ -28,7 +28,7 @@ class OpCcQuickTabs extends QuickTabs {
 
     // Get the num of results of each tab.
     foreach ($pages as $i => $page) {
-      if (is_numeric($i) && array_key_exists('#block', $page)) {
+      if (is_numeric($i) && array_key_exists('#block', $page) && array_key_exists('#view', $page['#block'])) {
         /** @var \Drupal\views\ViewExecutable $view */
         $view = $page['#block']['#view'];
         $view_id = $page['#block']['#display_id'];
