@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.view
     - entityqueue.entity_queue.homepage_news_and_events
     - field.storage.node.field_publication_date
     - node.type.news
@@ -58,12 +58,21 @@ display:
           items_per_page: 2
           offset: 0
       style:
-        type: default
+        type: grid
+        options:
+          uses_fields: false
+          columns: 12
+          automatic_width: false
+          alignment: horizontal
+          col_class_default: false
+          col_class_custom: ''
+          row_class_default: false
+          row_class_custom: revamp-row
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: view
       fields:
         field_publication_date:
           id: field_publication_date
@@ -334,7 +343,7 @@ display:
       block_description: 'OSH news'
       rendering_language: '***LANGUAGE_language_content***'
       display_description: ''
-      use_more: true
+      use_more: false
       defaults:
         use_more: false
         use_more_always: false
@@ -686,7 +695,19 @@ display:
       defaults:
         pager: false
         title: false
-      title: 'OSH news list'
+        footer: false
+      title: 'OSH news'
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: '<div class="pager-total"><span>@start - @end / @total</span></div>'
+          plugin_id: result
     cache_metadata:
       max-age: -1
       contexts:
