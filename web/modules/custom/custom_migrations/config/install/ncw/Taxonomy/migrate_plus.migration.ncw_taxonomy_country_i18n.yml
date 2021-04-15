@@ -7,13 +7,13 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: ncw_taxonomy_country_status_i18n               # -----  CHANGE
-label: 'Terms: Country status Translations'         # -----  CHANGE
+id: ncw_taxonomy_country_i18n               # -----  CHANGE
+label: 'Terms: Country Translations'         # -----  CHANGE
 audit: true
 migration_group: ncw_migrate                # -----  CHANGE
 source:
   plugin: d7_locale_terms
-  bundle: country_status                            # -----  CHANGE
+  bundle: country                            # -----  CHANGE
   translations: true
 destination:
   plugin: entity:taxonomy_term
@@ -25,12 +25,12 @@ dependencies:
 
 migration_dependencies:
   required:
-    - ncw_taxonomy_country_status                  # -----  CHANGE
+    - ncw_taxonomy_country                  # -----  CHANGE
 
 process:
   tid:
     plugin: migration_lookup
-    migration: ncw_taxonomy_country_status         # -----  CHANGE
+    migration: ncw_taxonomy_country         # -----  CHANGE
     source: tid
   langcode:
     plugin: static_map
@@ -41,14 +41,14 @@ process:
   vid:
     -
       plugin: default_value
-      default_value: country_status                 # -----  CHANGE
+      default_value: country                 # -----  CHANGE
   name: name_field_value
   parent_id:
     - plugin: skip_on_empty
       method: process
       source: parent
     - plugin: migration_lookup
-      migration: ncw_taxonomy_country_status
+      migration: ncw_taxonomy_country
   parent:
     plugin: default_value
     default_value: 0

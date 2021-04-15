@@ -1,0 +1,113 @@
+# Migration file for creating "press_contact" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_press_contact                    # -----  CHANGE
+label: 'Node: press_contact'                   # -----  CHANGE
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: ev_d7_node
+  node_type: press_contact                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  vid: vid
+  type:
+    - plugin: default_value
+      default_value: press_contact              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_press_contact_job_title: field_press_contact_job_title
+  field_personal_title: field_personal_title
+  field_press_contact_organization: field_press_contact_organization
+  field_location: field_press_contact_location
+  field_country:
+    - plugin: sub_process
+      source: field_country
+      process:
+        target_id: tid
+  field_city: field_city
+  field_zip_code: field_zip_code
+  field_press_contact_email/0/value: field_press_contact_email/0/email
+  field_press_contact_phone: field_press_contact_phone
+  field_contact_type:
+    -
+      plugin: sub_process
+      source: field_contact_type
+      process:
+        target_id: tid
+  field_wg_role_1:
+  -
+    plugin: sub_process
+    source: field_wg_role_1
+    process:
+      target_id: tid
+  field_wg_role_2:
+    - plugin: sub_process
+      source: field_wg_role_2
+      process:
+        target_id: tid
+  field_wg_category:
+    -
+      plugin: sub_process
+      source: field_wg_category
+      process:
+        target_id: tid
+  field_website:
+    plugin: field_link
+    source: field_website
+  field_is_advisory: field_is_advisory
+  field_is_observer: field_is_observer
+  field_contact_uuid: field_contact_uuid
