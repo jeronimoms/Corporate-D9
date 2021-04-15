@@ -24,6 +24,13 @@ h2{
     }
   }
 }
+.node--view-mode-full{
+  /* h2 in node Full details */
+  h2 {
+    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
+  }
+}
 
 h2.related{
   font-weight: bold;
@@ -122,15 +129,6 @@ h3.home{
     font-size: 1.6rem;
     font-weight: 700;
     border-bottom: 0;
-  }
-}
-
-.node--type-news{
-  h1{
-    font-size: 1.35rem;
-  }
-  .field--name-field-summary-html{
-    color: $text-color-black;
   }
 }
 
