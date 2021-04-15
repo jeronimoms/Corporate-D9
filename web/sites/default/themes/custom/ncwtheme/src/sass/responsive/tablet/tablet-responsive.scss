@@ -206,4 +206,18 @@
     }
   }
 
+  /* Page - Highlight, News and Events content link */
+  .news-events{
+    #main{
+      ul{
+        li{
+          width: 45%;
+        }
+        li:nth-child(3){
+          float: none;
+        }
+      }
+    }
+  }
+
 }/* End Media 990px */

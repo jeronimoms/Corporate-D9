@@ -1,0 +1,39 @@
+/* View View List */
+.revamp-row{
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  background: url("../images/back-tit-blue.png") repeat-x 100% 100%;
+  h2 {
+    margin-top: 0em;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .field--name-field-summary-html{
+    padding-top: 0;
+  }
+  .node{
+    .field--name-field-image-media{
+      float: left;
+      margin-right: 1.5rem;
+    }
+  }
+  div.see-more-arrow{
+    width: 100%;
+    text-align: right;
+  }
+}
+
+/* Responsive View List */
+@media only screen and (max-width : 991px) {
+  .revamp-row{
+    .node{
+      .field--name-field-image-media{
+        display: none;
+      }
+    }
+  }
+}
+
+
