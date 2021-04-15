@@ -1,20 +1,17 @@
-uuid: 01aeff5d-ab51-4f0e-abba-590fec49e1f1
-langcode: und
+uuid: dc40a032-eb1b-4838-b15a-38befad9e001
+langcode: en
 status: true
 dependencies:
   module:
-    - file
+    - media
     - node
 id: node.field_press_contact_cv
 field_name: field_press_contact_cv
 entity_type: node
-type: file
+type: entity_reference
 settings:
-  display_default: true
-  display_field: true
-  uri_scheme: public
-  target_type: file
-module: file
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

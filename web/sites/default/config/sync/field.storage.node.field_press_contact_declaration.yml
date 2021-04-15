@@ -1,20 +1,17 @@
-uuid: 0a7ac8a0-c2fe-4c10-8a1b-38ca2b056a1e
-langcode: und
+uuid: a6fe12c6-78a2-4506-b902-41c1eddb8eee
+langcode: en
 status: true
 dependencies:
   module:
-    - file
+    - media
     - node
 id: node.field_press_contact_declaration
 field_name: field_press_contact_declaration
 entity_type: node
-type: file
+type: entity_reference
 settings:
-  display_default: true
-  display_field: true
-  uri_scheme: public
-  target_type: file
-module: file
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

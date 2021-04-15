@@ -24,7 +24,6 @@ dependencies:
     - field.field.node.press_contact.field_zip_code
     - node.type.press_contact
   module:
-    - file
     - link
     - spamspan
     - user
@@ -102,20 +101,22 @@ content:
     type: string
     region: content
   field_press_contact_cv:
+    type: entity_reference_entity_view
     weight: 14
     label: above
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: file_default
     region: content
   field_press_contact_declaration:
+    type: entity_reference_entity_view
     weight: 15
     label: above
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: file_default
     region: content
   field_press_contact_email:
     weight: 3
