@@ -25,7 +25,10 @@ h2{
   }
 }
 .node--view-mode-full{
-  /* h2 in node Full details */
+  /* h1 - h2 - node Full details */
+  h1{
+    padding-bottom: 0.5rem;
+  }
   h2 {
     padding-top: 0.2rem;
     padding-bottom: 0.5rem;

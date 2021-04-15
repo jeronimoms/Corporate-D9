@@ -456,7 +456,10 @@ h2 a:hover {
 }
 
 .node--view-mode-full {
-  /* h2 in node Full details */
+  /* h1 - h2 - node Full details */
+}
+.node--view-mode-full h1 {
+  padding-bottom: 0.5rem;
 }
 .node--view-mode-full h2 {
   padding-top: 0.2rem;
