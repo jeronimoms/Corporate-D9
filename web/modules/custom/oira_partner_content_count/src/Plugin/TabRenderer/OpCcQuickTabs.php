@@ -28,19 +28,23 @@ class OpCcQuickTabs extends QuickTabs {
 
     // Get the num of results of each tab.
     foreach ($pages as $i => $page) {
-      if (is_numeric($i)) {
+      if (is_numeric($i) && array_key_exists('#block', $page)) {
         /** @var \Drupal\views\ViewExecutable $view */
         $view = $page['#block']['#view'];
         $view_id = $page['#block']['#display_id'];
-        $view->execute($view_id);
-        $pages_counter[] = $view->total_rows;
+        if (isset($view_id)) {
+          $view->execute($view_id);
+          $pages_counter[] = $view->total_rows;
+        }
       }
     }
 
     // Modify the tab titles with the counter.
     $items = &$build[0]['#items'];
     foreach ($items as $i => $item) {
-      if ($i == 0) {
+      /** @var \Drupal\Core\StringTranslation\TranslatableMarkup $title */
+      $title = $item[0]['#title'];
+      if ($title->render() == $this->t('Show all')->render()) {
         continue;
       }
       $items[$i][0]['#title'] = new TranslatableMarkup('@title (@count)', ['@title' => $items[$i][0]['#title']->render(),'@count' => $pages_counter[$i]]);
