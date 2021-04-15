@@ -10,7 +10,7 @@
 id: oira_taxonomy_sector       # -----  CHANGE
 label: 'Terms: Sector'         # -----  CHANGE
 audit: true
-migration_group: oira_migrate   # -----  CHANGE
+migration_group: oira_migrate_tax   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
