@@ -1,0 +1,22 @@
+uuid: 6432c8ab-1cab-49ce-85d1-3ce4a14f9e7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thesaurus
+id: node.thesaurus.status
+field_name: status
+entity_type: node
+bundle: thesaurus
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
