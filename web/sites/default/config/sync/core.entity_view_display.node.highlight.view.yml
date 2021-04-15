@@ -1,40 +1,40 @@
-uuid: f3e34777-82b8-4eb0-84e9-9030ddc14ec2
+uuid: 70492962-a65d-4fef-b72a-680421165a1e
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.view
-    - field.field.node.news.body
-    - field.field.node.news.comment_node_news
-    - field.field.node.news.field_activity
-    - field.field.node.news.field_aditional_resources
-    - field.field.node.news.field_archived
-    - field.field.node.news.field_avoid_archived
-    - field.field.node.news.field_character_count
-    - field.field.node.news.field_expiration_date
-    - field.field.node.news.field_flickr_date
-    - field.field.node.news.field_image_media
-    - field.field.node.news.field_migrate_hwc
-    - field.field.node.news.field_migration_source
-    - field.field.node.news.field_page_count
-    - field.field.node.news.field_publication_date
-    - field.field.node.news.field_section
-    - field.field.node.news.field_show_in_ncw
-    - field.field.node.news.field_show_on
-    - field.field.node.news.field_source_url
-    - field.field.node.news.field_summary_html
-    - field.field.node.news.field_tags
-    - field.field.node.news.field_thesaurus_2020
+    - field.field.node.highlight.body
+    - field.field.node.highlight.comment_node_highlight
+    - field.field.node.highlight.field_activity
+    - field.field.node.highlight.field_aditional_resources
+    - field.field.node.highlight.field_archived
+    - field.field.node.highlight.field_avoid_archived
+    - field.field.node.highlight.field_character_count
+    - field.field.node.highlight.field_expiration_date
+    - field.field.node.highlight.field_flickr_date
+    - field.field.node.highlight.field_image_media
+    - field.field.node.highlight.field_image_oshmail_media
+    - field.field.node.highlight.field_migrate_hwc
+    - field.field.node.highlight.field_page_count
+    - field.field.node.highlight.field_publication_date
+    - field.field.node.highlight.field_section
+    - field.field.node.highlight.field_show_on
+    - field.field.node.highlight.field_tags
+    - field.field.node.highlight.field_thesaurus_2020
     - image.style.view_images
-    - node.type.news
+    - node.type.highlight
   module:
     - datetime
     - ds
     - layout_builder
     - media
-    - smart_trim
+    - text
     - user
 third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
   ds:
     layout:
       id: ds_1col
@@ -56,7 +56,7 @@ third_party_settings:
         - field_publication_date
         - node_title
         - field_image_media
-        - field_summary_html
+        - body
     fields:
       node_title:
         plugin_id: node_title
@@ -68,14 +68,19 @@ third_party_settings:
           wrapper: h2
           class: ''
           exclude_node_title: '1'
-  layout_builder:
-    allow_custom: false
-    enabled: false
-id: node.news.view
+id: node.highlight.view
 targetEntityType: node
-bundle: news
+bundle: highlight
 mode: view
 content:
+  body:
+    label: hidden
+    weight: 3
+    type: text_summary_or_trimmed
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: ds_content
   field_image_media:
     weight: 2
     label: hidden
@@ -94,29 +99,9 @@ content:
       format_type: only_day
     third_party_settings: {  }
     region: ds_content
-  field_summary_html:
-    weight: 3
-    label: hidden
-    settings:
-      trim_length: 380
-      trim_type: chars
-      trim_suffix: ...
-      wrap_class: trimmed
-      more_link: true
-      more_text: 'Show details'
-      more_class: 'see-more-arrow minor-size'
-      trim_options:
-        text: true
-        trim_zero: false
-      wrap_output: false
-      summary_handler: full
-    third_party_settings: {  }
-    type: smart_trim
-    region: ds_content
 hidden:
   addtoany: true
-  body: true
-  comment_node_news: true
+  comment_node_highlight: true
   field_activity: true
   field_aditional_resources: true
   field_archived: true
@@ -124,13 +109,11 @@ hidden:
   field_character_count: true
   field_expiration_date: true
   field_flickr_date: true
+  field_image_oshmail_media: true
   field_migrate_hwc: true
-  field_migration_source: true
   field_page_count: true
   field_section: true
-  field_show_in_ncw: true
   field_show_on: true
-  field_source_url: true
   field_tags: true
   field_thesaurus_2020: true
   langcode: true
