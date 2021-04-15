@@ -20,22 +20,7 @@ settings:
   handler_settings:
     include_anonymous: true
     filter:
-      type: role
-      role:
-        project_manager: project_manager
-        approver: approver
-        administrator: '0'
-        editor: '0'
-        review_manager: '0'
-        translation_manager: '0'
-        translation_liaison: '0'
-        layout_validator: '0'
-        content_validator: '0'
-        events_coordinator: '0'
-        events_editor: '0'
-        osh_collaborator: '0'
-        news_editor: '0'
-        read_only: '0'
+      type: _none
     target_bundles: null
     sort:
       field: _none
