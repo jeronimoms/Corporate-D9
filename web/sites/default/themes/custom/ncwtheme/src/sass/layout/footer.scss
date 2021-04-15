@@ -125,6 +125,7 @@ nav#block-footermenu-2{
     }
     li.menu-item.menu-item--expanded:nth-child(2){
       float: right;
+      margin-top: -2px;
       margin-right: 0;
       > div > ul > li > a{
         /* Hide ico title link */
@@ -142,25 +143,24 @@ nav#block-footermenu-2{
     }
   }
 }
-nav#block-footermenu-2{
-  body.user-logged-in{
-    #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(4){
-      display: none;
-    }
-    #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(5){
-      display: block;
-    }
+
+/* Privacy policy for logged in users */
+body.user-logged-in{
+  #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(5){
+    display: none;
+  }
+  #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(6){
+    display: block;
   }
 }
 
-nav#block-footermenu-2 {
-  body {
-    #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(4) {
-      display: block;
-    }
-
-    #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(5) {
-      display: none;
-    }
+/* Privacy policy for NON logged in users */
+body{
+  #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(5) {
+    display: block;
+  }
+  #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(6) {
+    display: none;
   }
 }
+
