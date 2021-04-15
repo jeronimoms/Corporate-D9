@@ -436,7 +436,7 @@ h1, h2, a, label, .page-title-h1 {
 
 h1, .page-title-h1 {
   font-size: 2rem;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
@@ -456,10 +456,7 @@ h2 a:hover {
 }
 
 .node--view-mode-full {
-  /* h1 - h2 - node Full details */
-}
-.node--view-mode-full h1 {
-  padding-bottom: 0.5rem;
+  /* h2 - node Full details */
 }
 .node--view-mode-full h2 {
   padding-top: 0.2rem;
@@ -1168,33 +1165,6 @@ body #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(6) {
   display: none;
 }
 
-/* Breadcrumbs */
-.featured-top {
-  border-bottom: 2px solid #cfddee;
-  padding-bottom: 5px;
-  margin-bottom: 2em;
-  background-color: #FFF;
-}
-.featured-top #block-ncwtheme-breadcrumbs {
-  font-size: 0.8rem;
-  font-weight: lighter;
-  border: 0;
-  clear: both;
-  padding: 1em 15px 0 15px;
-  max-width: 1160px;
-  margin: 0 auto;
-}
-.featured-top #block-ncwtheme-breadcrumbs a {
-  color: #003399;
-  font-weight: bold;
-  text-decoration: none;
-  border-bottom: 1px solid #dc2f82;
-}
-.featured-top #block-ncwtheme-breadcrumbs a:hover {
-  transition: border-bottom 1s;
-  border-bottom: 1px solid #003399;
-}
-
 .top-header-content {
   height: 135px;
   display: flex;
@@ -1248,33 +1218,59 @@ body #block-footermenu-2 > ul > li:nth-child(1) > div > ul > li:nth-child(6) {
   justify-content: flex-end;
 }
 
+/* Share links */
 #block-socialmenu .menu.menu-level-0 {
   padding: 0;
   margin: 5px 0 0 5px;
 }
 
-.header-blocks {
-  clear: both;
-  float: right;
+/* Links in header - Menu with News & Events and Press */
+.header-links {
+  float: left;
 }
-.header-blocks section.row {
+.header-links section.row {
   margin-right: 0;
 }
-.header-blocks section.row nav ul {
+.header-links section.row nav ul {
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0;
 }
-.header-blocks section.row nav ul li {
+.header-links section.row nav ul li {
   padding: 0;
   margin: 0;
 }
-.header-blocks section.row nav ul li a {
+.header-links section.row nav ul li a {
   font-size: 0.8rem;
   color: #003399;
   padding: 0;
   font-weight: bold;
+}
+
+/* Block to the Header Language selector and Search */
+.header-language-search {
+  display: flex;
+  flex-direction: column;
+  /* Language Selector - Module - Language Switcher Dropdown */
+  /* Search input text box */
+}
+.header-language-search .row {
+  display: block;
+}
+.header-language-search .form-group {
+  margin-bottom: 0;
+}
+.header-language-search .content.container-inline {
+  clear: both;
+}
+.header-language-search .block-lang-dropdown {
+  float: right;
+  margin-right: 20px;
+}
+.header-language-search #block-ncwtheme-search {
+  float: right;
+  clear: both;
 }
 
 /* Hide menu link to view only the Share links images in header and footer */
