@@ -51,9 +51,9 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_image_media
         - field_publication_date
         - node_title
+        - field_image_media
         - field_summary_html
         - body
         - field_aditional_resources
@@ -62,11 +62,11 @@ third_party_settings:
     fields:
       node_title:
         plugin_id: node_title
-        weight: 2
+        weight: 1
         label: hidden
         formatter: default
         settings:
-          wrapper: h1
+          wrapper: h2
           class: ''
           exclude_node_title: '1'
           link: false
@@ -105,7 +105,7 @@ content:
       timezone_override: ''
     third_party_settings: {  }
   field_image_media:
-    weight: 0
+    weight: 2
     label: hidden
     settings:
       image_style: medium
@@ -115,7 +115,7 @@ content:
     region: ds_content
   field_publication_date:
     label: hidden
-    weight: 1
+    weight: 0
     type: datetime_default
     settings:
       timezone_override: ''

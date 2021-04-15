@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.view
     - entityqueue.entity_queue.homepage_news_and_events
     - field.storage.node.field_publication_date
     - node.type.news
@@ -11,6 +11,8 @@ dependencies:
     - datetime
     - entityqueue
     - node
+    - pagerer
+    - smart_trim
     - user
 id: osh_news
 label: 'OSH news'
@@ -57,12 +59,21 @@ display:
           items_per_page: 2
           offset: 0
       style:
-        type: default
+        type: grid
+        options:
+          uses_fields: false
+          columns: 12
+          automatic_width: false
+          alignment: vertical
+          col_class_default: false
+          col_class_custom: ''
+          row_class_default: false
+          row_class_custom: revamp-row
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: view
       fields:
         field_publication_date:
           id: field_publication_date
@@ -333,7 +344,7 @@ display:
       block_description: 'OSH news'
       rendering_language: '***LANGUAGE_language_content***'
       display_description: ''
-      use_more: true
+      use_more: false
       defaults:
         use_more: false
         use_more_always: false
@@ -435,6 +446,59 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        view_node_1:
+          id: view_node_1
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: view
+          output_url_as_text: true
+          absolute: false
+          entity_type: node
+          plugin_id: entity_link
         title:
           id: title
           table: node_field_data
@@ -447,8 +511,8 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: false
-            path: ''
+            make_link: true
+            path: '{{ view_node_1 }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -484,9 +548,19 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: smart_trim
           settings:
-            link_to_entity: true
+            trim_length: 70
+            trim_type: chars
+            trim_suffix: ...
+            wrap_output: false
+            wrap_class: trimmed
+            more_link: false
+            more_text: More
+            more_class: more-link
+            trim_options:
+              text: false
+              trim_zero: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -667,30 +741,37 @@ display:
       path: oshnews
       display_description: ''
       pager:
-        type: full
+        type: pagerer
         options:
+          preset: pagination
           items_per_page: 10
           offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
+          id: '0'
+          total_pages: ''
           expose:
-            items_per_page: false
+            items_per_page: 0
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
+            items_per_page_options_all: 0
             items_per_page_options_all_label: '- All -'
-            offset: false
+            offset: 0
             offset_label: Offset
-          quantity: 9
       defaults:
         pager: false
         title: false
-      title: 'OSH news list'
+        footer: false
+      title: 'OSH news'
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: '<div class="pager-total"><span>@start - @end / @total</span></div>'
+          plugin_id: result
     cache_metadata:
       max-age: -1
       contexts:

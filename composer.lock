@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eda25ae5057124841110a668528bbd40",
+    "content-hash": "5e934bc2b73e0d686260fb4b7ad327a2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -197,6 +197,18 @@
             "type": "drupal-library",
             "extra": {
                 "installer-name": "chosen"
+            }
+        },
+        {
+            "name": "colorbox/library",
+            "version": "1.8.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/jackmoore/colorbox/archive/1.x.zip"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "colorbox"
             }
         },
         {
@@ -4794,6 +4806,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "DraggableViews not working after update to 2.0.0": "https://www.drupal.org/files/issues/2020-10-07/draggableviews-sort_handler_specify_order_view-2767437-78.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

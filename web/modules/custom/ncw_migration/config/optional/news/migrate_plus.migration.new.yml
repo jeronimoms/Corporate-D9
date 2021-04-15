@@ -1,0 +1,97 @@
+# This migration demonstrates a simple import from a JSON file.
+id: new
+label: 'Node: New'
+migration_group: ncw_migration
+migration_tags:
+  - new
+  - new_default
+
+destination:
+  default_bundle: news
+  plugin: 'entity:node'
+
+migration_dependencies: {  }
+
+dependencies:
+  enforced:
+    module:
+      - ncw_migration
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: nm_json
+  include_raw_data: true
+  urls: https://osha.europa.eu/export/list/news/oira+risk_assessment+microenterprises
+  ids:
+    nid:
+      type: integer
+  item_selector: 'items/'
+  constants:
+    lang: en
+    source_url: https://osha.europa.eu/sites/default/files/news/
+    destination_directory: public://ncw/news/
+  fields:
+    -
+      name: nid
+      label: 'Nid'
+      selector: item/nid
+    -
+      name: title
+      label: 'Title'
+      selector: item/title_field/en
+    -
+      name: body
+      label: 'Body'
+      selector: item/body
+    -
+      name: source_image
+      label: 'Field Image'
+      selector: item/field_image/en
+    -
+      name: status
+      label: "Status"
+      selector: item/translations/data/en/status
+    -
+      name: created
+      label: "Created"
+      selector: item/translations/data/en/created
+    -
+      name: changed
+      label: "Changed"
+      selector: item/translations/data/en/changed
+    -
+      name: promote
+      label: "Promote"
+      selector: item/promote
+    -
+      name: sticky
+      label: "Sticky"
+      selector: item/sticky
+
+
+process:
+  langcode: constants/lang
+  title: title
+
+
+
+
+
+  field_image/target_id:
+    -
+      plugin: file_copy
+      source:
+        - https://osha.europa.eu/sites/default/files/news/childhood%20education_A%20-%2072.png
+        - public://ncw/news/hola.png
+    -
+      plugin: entity_generate
+      value_key: uri
+      entity_type: file
+  field_image/alt: '@title'
+  field_image/title: '@title'
+
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
