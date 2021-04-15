@@ -1,0 +1,30 @@
+diff --git a/src/LinkExtractorService.php b/src/LinkExtractorService.php
+index b39b534..57d053e 100644
+--- a/src/LinkExtractorService.php
++++ b/src/LinkExtractorService.php
+@@ -380,14 +380,17 @@ class LinkExtractorService {
+     $isExists = $isExistsQuery->execute()->fetchField();
+ 
+     if (empty($isExists)) {
+-      $this->database
+-        ->insert('linkchecker_index')
+-        ->fields([
+-          'entity_id' => $entity->id(),
+-          'entity_type' => $entity->getEntityTypeId(),
+-          'last_extracted_time' => $this->time->getCurrentTime(),
+-        ])
+-        ->execute();
++        try {
++            $this->database
++                ->insert('linkchecker_index')
++                ->fields([
++                    'entity_id' => $entity->id(),
++                    'entity_type' => $entity->getEntityTypeId(),
++                    'last_extracted_time' => $this->time->getCurrentTime(),
++                ])
++                ->execute();
++        } catch (\Exception $e) {
++        }
+     }
+     else {
+       $this->database->update('linkchecker_index')
