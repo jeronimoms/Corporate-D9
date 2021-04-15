@@ -47,7 +47,9 @@ class OpCcQuickTabs extends QuickTabs {
       if ($title->render() == $this->t('Show all')->render()) {
         continue;
       }
-      $items[$i][0]['#title'] = new TranslatableMarkup('@title (@count)', ['@title' => $items[$i][0]['#title']->render(),'@count' => $pages_counter[$i]]);
+      if (isset($pages_counter[$i])) {
+        $items[$i][0]['#title'] = new TranslatableMarkup('@title (@count)', ['@title' => $items[$i][0]['#title']->render(),'@count' => $pages_counter[$i]]);
+      }
     }
 
     $build['#attached']['library'][] = 'oira_partner_content_count/oira_partner_content_count.quicktabs';
