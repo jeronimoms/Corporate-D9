@@ -98,38 +98,21 @@ display:
       style:
         type: grid
         options:
-          uses_fields: false
-          columns: 12
+          grouping: {  }
+          columns: 8
           automatic_width: false
           alignment: vertical
           col_class_default: false
-          col_class_custom: ''
+          col_class_custom: col-8
           row_class_default: false
           row_class_custom: revamp-row
       row:
-        type: search_api
+        type: fields
         options:
-          view_modes:
-            'entity:node':
-              25th_anniversary: default
-              article: default
-              blog: default
-              calls: default
-              dangerous_substances: default
-              directive: default
-              e_guide: default
-              events: default
-              fop_page: default
-              guideline: default
-              highlight: default
-              infographic: default
-              job_vacancies: default
-              news: default
-              press_contact: default
-              press_release: default
-              publication: default
-              seminar: view
-              wiki_page: default
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
         nid:
           id: nid
@@ -320,7 +303,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h3
+          element_type: h2
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -887,7 +870,7 @@ display:
           value:
             en: en
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: search_api_language_op
             label: Language
