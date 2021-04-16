@@ -54,6 +54,7 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
       $nm_item = $item['item'];
       $nm_nid = $nm_item['nid'];
       $nm_url = $nm_root_url . '/export/node/' . $nm_nid;
+      ksm($nm_url);
       $response = $this->getDataFetcherPlugin()->getResponseContent($nm_url);
       $response_data = json_decode($response, TRUE);
 
@@ -65,6 +66,7 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
       $items_new[$i]['item'] = json_decode($response, TRUE);
     }
 
+    ksm($items_new);
     return $items_new;
   }
 
