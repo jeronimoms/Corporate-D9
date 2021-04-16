@@ -11,7 +11,7 @@ field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: ncw_migrate
-label: 'Terms: glossary type Translations'
+label: 'Terms: publication types type Translations'
 source:
   plugin: d7_locale_terms
   bundle: publication_types
@@ -21,7 +21,12 @@ process:
     plugin: migration_lookup
     migration: ncw_taxonomy_publication_types
     source: tid
-  langcode: ltlanguage
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: ltlanguage
+    map:
+      pt: pt-pt
   vid:
     -
       plugin: default_value

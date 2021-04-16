@@ -1,0 +1,18 @@
+uuid: aef3ae2f-4bf8-4282-85a8-e1f7ed9635ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thesaurus
+id: node.thesaurus.metatag
+field_name: metatag
+entity_type: node
+bundle: thesaurus
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
