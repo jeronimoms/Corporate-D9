@@ -28,8 +28,8 @@ source:
   item_selector: 'items/'
   constants:
     lang: en
-    source_url: https://osha.europa.eu/sites/default/files/news/
-    destination_directory: public://ncw/news/
+    file_source: https://osha.europa.eu/sites/default/files/news
+    file_dest: public://ncw/images/news
   fields:
     -
       name: nid
@@ -46,7 +46,7 @@ source:
     -
       name: source_image
       label: 'Field Image'
-      selector: item/field_image/en
+      selector: item/field_image/en/0
     -
       name: status
       label: "Status"
@@ -73,16 +73,26 @@ process:
   langcode: constants/lang
   title: title
 
+  file_source:
+    -
+      plugin: nm_url_transform
+      source: source_image/uri
+    -
+      plugin: urlencode
 
-
-
+  file_dest:
+    - plugin: concat
+      delimiter: /
+      source:
+        - constants/file_dest
+        - source_image/filename
 
   field_image/target_id:
     -
       plugin: file_copy
       source:
-        - https://osha.europa.eu/sites/default/files/news/childhood%20education_A%20-%2072.png
-        - public://ncw/news/hola.png
+        - '@file_source'
+        - '@file_dest'
     -
       plugin: entity_generate
       value_key: uri

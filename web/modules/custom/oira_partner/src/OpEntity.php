@@ -4,10 +4,9 @@ namespace Drupal\oira_partner;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\node\Entity\Node;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\oira_partner\OpEntityUpdateManager;
 
 /**
  * General class for entity hooks.
@@ -15,11 +14,11 @@ use Drupal\Core\Form\FormStateInterface;
 class OpEntity implements ContainerInjectionInterface {
 
   /**
-   * The entity type manager.
+   * The Oria entity update manager
    *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   * @var \Drupal\oira_partner\OpEntityUpdateManager
    */
-  protected $entityTypeManager;
+  protected $opEntityManager;
 
   /**
    * The array of fields.
@@ -31,8 +30,8 @@ class OpEntity implements ContainerInjectionInterface {
   /**
    * {@inheritdoc}
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
-    $this->entityTypeManager = $entity_type_manager;
+  public function __construct(OpEntityUpdateManager $op_entity_manager) {
+    $this->opEntityManager = $op_entity_manager;
     $this->fields = [
       'field_co_author' => 'field_co_author_node',
       'field_workbench_access' => 'field_related_partners',
@@ -44,7 +43,7 @@ class OpEntity implements ContainerInjectionInterface {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity_type.manager')
+      $container->get('oira_partner.update')
     );
   }
 
@@ -52,36 +51,7 @@ class OpEntity implements ContainerInjectionInterface {
    * Implements hook_entity_presave().
    */
   public function entityPreSave(EntityInterface $entity) {
-    // Ignore if the entity isn't a node.
-    if (!$entity instanceof Node) {
-      return;
-    }
-
-    foreach ($this->fields as $key => $field_name) {
-      // Ignore if the entity doesn't have the one of fields.
-      if (!$entity->hasField($key)) {
-        continue;
-      }
-
-      // The workbench access id.
-      $access_id = $entity->get($key)->getString();
-      if (empty($access_id)) {
-        continue;
-      }
-
-      // Find the node with the current workbench access id.
-      $partner = $this->entityTypeManager->getStorage('node')->loadByProperties(['type' => 'partner', 'field_workbench_access' => $access_id]);
-      /** @var \Drupal\node\Entity\Node $partner_node */
-      $partner_node = reset($partner);
-      if (empty($partner)) {
-        continue;
-      }
-
-      // Update the node field.
-      if ($entity->hasField($field_name)) {
-        $entity->set($field_name, $partner_node->id());
-      }
-    }
+    $this->opEntityManager->updatePartners($entity);
   }
 
   /**
@@ -96,7 +66,7 @@ class OpEntity implements ContainerInjectionInterface {
             continue;
           }
           // Hidde the field.
-          $form[$field_name]['#attributes']['class'][] = 'hidden';
+          //$form[$field_name]['#attributes']['class'][] = 'hidden';
         }
       }
     }

@@ -1,0 +1,92 @@
+# Migration file for creating "e_guide" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_e_guide                    # -----  CHANGE
+label: 'Node: e_guide'                   # -----  CHANGE
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: ev_d7_node
+  node_type: e_guide                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+
+  type:
+    - plugin: default_value
+      default_value: e_guide              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_country:
+    - plugin: sub_process
+      source: field_country
+      process:
+        target_id: tid
+  field_link:
+    plugin: field_link
+    source: field_link
+  field_external_url:
+    plugin: field_link
+    source: field_external_url
+  field_section:
+    - plugin: sub_process
+      source: workbench_access
+      process:
+        target_id: tid
+  field_language:
+    - plugin: sub_process
+      source: field_language
+      process:
+        value: value
