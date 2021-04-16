@@ -29,7 +29,7 @@ dependencies:
     - ds
     - layout_builder
     - media
-    - text
+    - smart_trim
     - user
 third_party_settings:
   layout_builder:
@@ -76,9 +76,20 @@ content:
   body:
     label: hidden
     weight: 3
-    type: text_summary_or_trimmed
+    type: smart_trim
     settings:
-      trim_length: 600
+      trim_length: 380
+      trim_type: chars
+      trim_suffix: ...
+      wrap_class: trimmed
+      more_link: true
+      more_text: 'Show details'
+      more_class: 'see-more-arrow minor-size'
+      summary_handler: trim
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
     third_party_settings: {  }
     region: ds_content
   field_image_media:
