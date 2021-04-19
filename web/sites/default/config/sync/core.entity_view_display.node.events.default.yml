@@ -30,7 +30,7 @@ dependencies:
     - field.field.node.events.field_organization
     - field.field.node.events.field_organized_by_eu_osha
     - field.field.node.events.field_publications_exhibition_su
-    - field.field.node.events.field_related_resources_media
+    - field.field.node.events.field_related_documents
     - field.field.node.events.field_satisfaction_rate
     - field.field.node.events.field_show_eu_flag
     - field.field.node.events.field_show_in_ncw
@@ -43,6 +43,7 @@ dependencies:
   module:
     - datetime_range
     - field_group
+    - file
     - link
     - options
     - text
@@ -108,7 +109,8 @@ third_party_settings:
         speed: fast
       label: Link
     group_events_related_documents:
-      children: {  }
+      children:
+        - field_related_documents
       parent_name: ''
       weight: 3
       format_type: html_element
@@ -130,7 +132,7 @@ bundle: events
 mode: default
 content:
   addtoany:
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -181,13 +183,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_related_resources_media:
-    weight: 4
-    label: above
+  field_related_documents:
+    label: hidden
+    weight: 6
+    type: file_default
     settings:
-      link: true
+      use_description_as_link_text: true
     third_party_settings: {  }
-    type: entity_reference_label
     region: content
   field_website_of_event:
     type: link

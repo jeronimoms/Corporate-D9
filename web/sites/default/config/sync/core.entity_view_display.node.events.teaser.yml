@@ -31,7 +31,7 @@ dependencies:
     - field.field.node.events.field_organization
     - field.field.node.events.field_organized_by_eu_osha
     - field.field.node.events.field_publications_exhibition_su
-    - field.field.node.events.field_related_resources_media
+    - field.field.node.events.field_related_documents
     - field.field.node.events.field_satisfaction_rate
     - field.field.node.events.field_show_eu_flag
     - field.field.node.events.field_show_in_ncw
@@ -101,7 +101,7 @@ hidden:
   field_organization: true
   field_organized_by_eu_osha: true
   field_publications_exhibition_su: true
-  field_related_resources_media: true
+  field_related_documents: true
   field_satisfaction_rate: true
   field_show_eu_flag: true
   field_show_in_ncw: true
