@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_section
     - paragraphs.paragraphs_type.fop_link
-    - taxonomy.vocabulary.section
+    - taxonomy.vocabulary.fop_link_sections
 id: paragraph.fop_link.field_section
 field_name: field_section
 entity_type: paragraph
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      section: section
+      fop_link_sections: fop_link_sections
     sort:
       field: name
       direction: asc

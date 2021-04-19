@@ -1,0 +1,75 @@
+uuid: 72b3adf9-9a12-4961-8954-884dad26f8ba
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_fop_page_i18n
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: page translations'
+source:
+  plugin: d7_node_entity_translation
+  node_type: fop_page
+process:
+  nid: entity_id
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      pt: pt-pt
+  title: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_country:
+    -
+      plugin: sub_process
+      source: field_country
+      process:
+        target_id: tid
+  field_main_fop_url:
+    plugin: field_link
+    source: field_main_fop_url
+  field_archived: field_archived
+  field_fop_link:
+    plugin: field_link
+    source: field_fop_link
+destination:
+  plugin: 'entity:node'
+  translations: true
+  destination_module: content_translation
+migration_dependencies:
+  required:
+    - d7_user
+    - ncw_node_fop_page
