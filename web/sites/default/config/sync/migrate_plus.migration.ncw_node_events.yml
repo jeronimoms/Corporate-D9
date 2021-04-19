@@ -1,26 +1,20 @@
-# Migration file for creating "events" nodes from BBDD.
-#
-
-##################### BASIC INFORMATION ###################
-
-id: ncw_node_events                    # -----  CHANGE
-label: 'Node: events'                   # -----  CHANGE
-audit: true
-migration_group: ncw_migrate_nodes
-deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
-source:
-  plugin: d7_node
-  node_type: events                     # -----  CHANGE
-destination:
-  plugin: entity:node
+uuid: 66f5b50f-c306-4750-bda5-b99ec1e018e4
+langcode: en
+status: true
 dependencies:
   enforced:
     module:
       - custom_migrations
-migration_dependencies:
-  required:
-    - d7_user
-
+id: ncw_node_events
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: events'
+source:
+  plugin: d7_node
+  node_type: events
 process:
   nid:
     -
@@ -28,12 +22,13 @@ process:
       source: nid
   vid: vid
   type:
-    - plugin: default_value
-      default_value: events              # -----  CHANGE
+    -
+      plugin: default_value
+      default_value: events
   langcode:
     plugin: default_value
     source: language
-    default_value: "en"
+    default_value: en
   title:
     -
       plugin: get
@@ -42,11 +37,10 @@ process:
     -
       plugin: get
       source: body
-  'body/0/format':
+  body/0/format:
     -
       plugin: default_value
       default_value: full_html
-
   uid:
     -
       plugin: get
@@ -66,7 +60,6 @@ process:
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_organization: field_organization
   field_country_code: field_country_code
   field_city: field_city
@@ -81,12 +74,14 @@ process:
   field_adonis: field_adonis
   field_unit_ref: field_unit_ref
   field_activity:
-    - plugin: sub_process
+    -
+      plugin: sub_process
       source: field_activity
       process:
         target_id: tid
   field_tags:
-    - plugin: sub_process
+    -
+      plugin: sub_process
       source: field_tags
       process:
         target_id: tid
@@ -112,3 +107,8 @@ process:
     migration:
       - ncw_node_events_media_documents
     no_stub: true
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - d7_user
