@@ -30,7 +30,7 @@ dependencies:
     - field.field.node.events.field_organization
     - field.field.node.events.field_organized_by_eu_osha
     - field.field.node.events.field_publications_exhibition_su
-    - field.field.node.events.field_related_resources_media
+    - field.field.node.events.field_related_documents
     - field.field.node.events.field_satisfaction_rate
     - field.field.node.events.field_show_eu_flag
     - field.field.node.events.field_show_in_ncw
@@ -43,8 +43,8 @@ dependencies:
   module:
     - content_moderation
     - datetime_range
+    - file
     - link
-    - media_library
     - path
     - text
 id: node.events.default
@@ -197,12 +197,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_related_resources_media:
+  field_related_documents:
     weight: 24
+    type: file_generic
     settings:
-      media_types: {  }
+      progress_indicator: throbber
     third_party_settings: {  }
-    type: media_library_widget
     region: content
   field_show_eu_flag:
     weight: 26

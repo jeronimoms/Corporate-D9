@@ -10,8 +10,8 @@ dependencies:
     - ncwtheme
 id: headermenu
 theme: ncwtheme
-region: header_links
-weight: -13
+region: header_form
+weight: -12
 provider: null
 plugin: 'menu_block:header-menu'
 settings:
