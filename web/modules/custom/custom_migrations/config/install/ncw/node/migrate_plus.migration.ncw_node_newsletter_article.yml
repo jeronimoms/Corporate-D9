@@ -1,0 +1,71 @@
+# Migration file for creating "newsletter_article" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_newsletter_article                    # -----  CHANGE
+label: 'Node: newsletter_article'                   # -----  CHANGE
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: newsletter_article                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+
+  type:
+    - plugin: default_value
+      default_value: newsletter_article              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+
