@@ -1,4 +1,4 @@
-# Migration file for creating "Taxonomy terms Country" from BBDD.
+# Migration file for creating "Taxonomy terms legislation_category" from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
@@ -7,14 +7,14 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: ncw_taxonomy_country       # -----  CHANGE
-label: 'Terms: country'         # -----  CHANGE
+id: ncw_taxonomy_legislation_category       # -----  CHANGE
+label: 'Terms: legislation_category'         # -----  CHANGE
 audit: true
 migration_group: ncw_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
-  bundle: country               # -----  CHANGE
+  bundle: legislation_category               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
@@ -25,7 +25,7 @@ process:
   vid:
     -
       plugin: default_value
-      default_value: country    # -----  CHANGE
+      default_value: legislation_category    # -----  CHANGE
   name: name
   'description/value': description
   'description/format': format
@@ -37,7 +37,7 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: ncw_taxonomy_country
+      migration: ncw_taxonomy_legislation_category
   parent:
     plugin: default_value
     default_value: 0
@@ -45,15 +45,9 @@ process:
   forum_container: is_container
   changed: timestamp
   langcode: language
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_iso2: field_iso2
-  field_country_status:
-    - plugin: sub_process
-      source: field_country_status
-      process:
-        target_id:
-          plugin: get
-          source: tid
+  field_directive_category_code: field_directive_category_code
+  field_guideline_category_code: field_guideline_category_code
+
 
 
 
