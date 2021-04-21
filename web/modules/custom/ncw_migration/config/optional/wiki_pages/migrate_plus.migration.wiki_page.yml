@@ -80,6 +80,7 @@ source:
 
 
 process:
+  nid: nid
   langcode: constants/lang
   title: title
   field_summary/0/value: field_summary/en/0/value
@@ -93,9 +94,8 @@ process:
   field_wiki_categories:
     -
       plugin: nm_taxonomy_term
-      source:
-        - field_wiki_categories/name
-        - field_wiki_categories/vocabulary_machine_name
+      source: field_wiki_categories
+
   field_migration_source:
     -
       plugin: default_value
