@@ -1,0 +1,71 @@
+# Migration file for translate "note_to_editor" nodes from BBDD.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_note_to_editor_i18n                    # -----  CHANGE
+label: 'Node: note_to_editor translations'                   # -----  CHANGE
+
+
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node_entity_translation
+  node_type: note_to_editor
+destination:
+  plugin: entity:node
+  translations: true
+  destination_module: content_translation
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - ncw_node_note_to_editor
+
+process:
+  nid: entity_id
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      'pt': 'pt-pt'
+  title: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_activity:
+    -
+      plugin: sub_process
+      source: field_activity
+      process:
+        target_id: tid
