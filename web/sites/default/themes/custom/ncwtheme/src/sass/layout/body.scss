@@ -280,10 +280,11 @@ body {
 }
 
 .target-blank-v2 {
-  background: url(../images/external_link-v2.png) no-repeat scroll right 2px rgba(0, 0, 0, 0);
+  background: url(../images/external_link-v2.png) no-repeat scroll right 4px rgba(0, 0, 0, 0);
   padding-right: 16px;
   float: none;
   display: inline-block;
+  font-size: 0.9rem;
 }
 
 
@@ -399,4 +400,101 @@ body {
   .field--name-field-aditional-resources{
     clear: both;
   }
+  .field--name-body{
+    font-size: 0.9rem;
+    p{
+      margin: 0.2rem 0 0.5rem;
+    }
+    a{
+      font-size: 0.9rem;
+    }
+  }
+  iframe{
+    width: 100%;
+  }
 }
+
+/* Basic pages */
+.page-node-5468{
+  h2{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* FOPS View*/
+.node--type-article {
+  #main {
+    .view-fop-flags{
+      padding-top: 2rem;
+      h3{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-weight: bold;
+      }
+      ul{
+        padding-left: 2rem;
+        li{
+          float: left;
+          width: 6rem;
+          height: 9rem;
+          img{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #CCC;
+          }
+          .views-field-title{
+            a{
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* FOPs detail */
+.block-views-blockfop-contacts-block-1{
+  h2{
+    padding-bottom: 0.5rem;
+  }
+}
+.view-fop-contacts {
+  .view-content.row{
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 0.9rem;
+    line-height: 24px;
+  }
+  ul {
+    li {
+      .views-field {
+        clear: both;
+      }
+      .views-label {
+        float: left;
+        padding-right: 5px;
+      }
+      .views-field-field-zip-code{
+        float: left;
+        padding-right: 5px;
+      }
+      .views-field-field-city{
+        clear: none;
+      }
+      .views-label-title{
+        width: 100%;
+      }
+      .views-field-field-press-contact-email{
+        float: left;
+        padding-right: 5px;
+        .field-content{
+          float: left;
+        }
+      }
+    }
+  }
+}
+
