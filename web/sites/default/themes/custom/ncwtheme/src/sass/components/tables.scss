@@ -32,3 +32,21 @@
     }
   }
 }
+
+.contact-us-0{
+  #main{
+    .node--type-article{
+      table{
+        border-collapse: initial;
+        tr{
+          th{
+            border: 0;
+          }
+          td{
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+}
