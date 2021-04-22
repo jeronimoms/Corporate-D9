@@ -68,13 +68,21 @@ display:
           items_per_page: 5
           offset: 0
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
+          default_row_class: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
         field_press_contact_organization:
           id: field_press_contact_organization
@@ -744,7 +752,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: 'target-blank-v2 '
           element_label_type: ''
           element_label_class: ''
           element_label_colon: true
@@ -762,7 +770,7 @@ display:
             url_only: false
             url_plain: false
             rel: '0'
-            target: '0'
+            target: _blank
           group_column: ''
           group_columns: {  }
           group_rows: true

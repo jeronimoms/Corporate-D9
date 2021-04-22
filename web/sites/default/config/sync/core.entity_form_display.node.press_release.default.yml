@@ -21,6 +21,7 @@ dependencies:
     - node.type.press_release
   module:
     - chosen_field
+    - content_moderation
     - datetime
     - entity_browser
     - media_library
@@ -156,12 +157,10 @@ content:
     type: multiple_options_select
     region: content
   moderation_state:
-    type: string_textfield
+    type: moderation_state_default
     weight: 16
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -183,6 +182,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
