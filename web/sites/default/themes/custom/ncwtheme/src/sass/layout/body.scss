@@ -399,4 +399,20 @@ body {
   .field--name-field-aditional-resources{
     clear: both;
   }
+  .field--name-body{
+    p{
+      margin: 0.2rem 0 0.5rem;
+    }
+  }
+  iframe{
+    width: 100%;
+  }
+}
+
+/* Basic pages */
+.page-node-5468{
+  h2{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }

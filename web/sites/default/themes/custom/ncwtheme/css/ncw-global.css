@@ -128,10 +128,10 @@ input[type=search] {
   height: auto;
   font-size: 1.3rem;
   font-weight: bold;
-  padding-left: 0.5em;
-  padding-right: 1.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding-left: 0.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
   border: 0px;
   margin-top: 0;
   /*no margin - to fix text effect - add border*/
@@ -660,6 +660,37 @@ div.pagerer-right-pane {
     padding-right: 5px;
   }
 }
+#main .node--type-article table {
+  margin-top: 1rem;
+  border-color: grey;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+#main .node--type-article table tr {
+  background: #FFF;
+}
+#main .node--type-article table tr th {
+  color: #000;
+  font-size: 0.9rem;
+  background: #FFF;
+  font-weight: bold;
+  border: 1px solid grey;
+}
+#main .node--type-article table tr td {
+  font-size: 1rem;
+  padding: 0.9rem;
+  border: 1px solid grey;
+}
+#main .node--type-article table tr td p {
+  font-size: 0.9rem;
+}
+#main .node--type-article table tr td img {
+  width: auto;
+  height: auto;
+}
+
 /* Common elements */
 html {
   font-size: 100%;
@@ -1005,6 +1036,18 @@ body ul li .introduction-title a:hover {
 }
 .node--type-article .field--name-field-aditional-resources {
   clear: both;
+}
+.node--type-article .field--name-body p {
+  margin: 0.2rem 0 0.5rem;
+}
+.node--type-article iframe {
+  width: 100%;
+}
+
+/* Basic pages */
+.page-node-5468 h2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* Breadcrumbs */
