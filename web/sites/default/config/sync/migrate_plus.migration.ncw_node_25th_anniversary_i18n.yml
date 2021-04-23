@@ -1,0 +1,89 @@
+uuid: d7761bc6-20e3-47f0-9507-b364ac91bf1f
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_25th_anniversary_i18n
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: 25th anniversary pages translations'
+source:
+  plugin: d7_node_entity_translation
+  node_type: 25th_anniversary
+process:
+  nid: entity_id
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      pt: pt-pt
+  title: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_summary_html:
+    -
+      plugin: get
+      source: field_summary
+  field_summary_html/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_publication_date:
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: Europe/Madrid
+          to_timezone: Europe/Madrid
+          source: value
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_language: field_language
+destination:
+  plugin: 'entity:node'
+  translations: true
+  destination_module: content_translation
+migration_dependencies:
+  required:
+    - d7_user
+    - ncw_node_25th_anniversary

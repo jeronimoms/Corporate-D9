@@ -8,12 +8,11 @@ dependencies:
     - field.field.node.25th_anniversary.field_language
     - field.field.node.25th_anniversary.field_publication_date
     - field.field.node.25th_anniversary.field_section
-    - field.field.node.25th_anniversary.field_summary
+    - field.field.node.25th_anniversary.field_summary_html
     - field.field.node.25th_anniversary.field_tags
     - node.type.25th_anniversary
   module:
     - datetime
-    - languagefield
     - media_library
     - path
     - text
@@ -24,7 +23,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 8
+    weight: 6
     settings:
       rows: 9
       summary_rows: 3
@@ -34,7 +33,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -44,14 +43,6 @@ content:
       media_types: {  }
     third_party_settings: {  }
     type: media_library_widget
-    region: content
-  field_language:
-    weight: 6
-    settings:
-      format:
-        name: name
-    third_party_settings: {  }
-    type: languagefield_select
     region: content
   field_publication_date:
     type: datetime_datelist
@@ -63,18 +54,18 @@ content:
       increment: 15
     third_party_settings: {  }
   field_section:
-    weight: 7
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
-  field_summary:
+  field_summary_html:
     weight: 2
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
+    type: text_textarea
     region: content
   field_tags:
     weight: 1
@@ -82,16 +73,9 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  langcode:
-    type: language_select
-    weight: 5
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   moderation_state:
     type: string_textfield
-    weight: 9
+    weight: 7
     region: content
     settings:
       size: 60
@@ -99,13 +83,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 12
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -120,7 +104,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 13
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -129,11 +113,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_language: true
+  langcode: true
   promote: true
   sticky: true
   translation: true

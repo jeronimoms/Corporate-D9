@@ -1,12 +1,14 @@
-uuid: 9e408806-1453-40bb-85c7-ff590f222b73
+uuid: f20e0489-b457-40b5-b16b-678153368a8a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_summary
+    - field.storage.node.field_summary_html
     - node.type.25th_anniversary
-id: node.25th_anniversary.field_summary
-field_name: field_summary
+  module:
+    - text
+id: node.25th_anniversary.field_summary_html
+field_name: field_summary_html
 entity_type: node
 bundle: 25th_anniversary
 label: Summary
@@ -16,4 +18,4 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long
