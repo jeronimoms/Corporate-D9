@@ -55,7 +55,16 @@ display:
           items_per_page: 30
           offset: 0
       style:
-        type: default
+        type: grid
+        options:
+          grouping: {  }
+          columns: 12
+          automatic_width: false
+          alignment: vertical
+          col_class_default: false
+          col_class_custom: ''
+          row_class_default: false
+          row_class_custom: 'revamp-row no-flex'
       row:
         type: fields
       fields:
@@ -1037,14 +1046,16 @@ display:
       rendering_language: '***LANGUAGE_language_content***'
       title: 'Processed calls for contractors'
       style:
-        type: html_list
+        type: grid
         options:
           grouping: {  }
-          row_class: ''
-          default_row_class: true
-          type: ul
-          wrapper_class: item-list
-          class: ''
+          columns: 12
+          automatic_width: false
+          alignment: horizontal
+          col_class_default: false
+          col_class_custom: ''
+          row_class_default: false
+          row_class_custom: revamp-row
       row:
         type: fields
         options: {  }
@@ -1385,6 +1396,28 @@ display:
       defaults:
         title: false
       rendering_language: '***LANGUAGE_language_content***'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_publication_date'
+  open_calls:
+    display_plugin: page
+    id: open_calls
+    display_title: 'Open Calls'
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      display_description: ''
+      title: 'Open calls'
+      defaults:
+        title: false
+      rendering_language: '***LANGUAGE_language_content***'
+      path: about-eu-osha/procurement
     cache_metadata:
       max-age: -1
       contexts:
