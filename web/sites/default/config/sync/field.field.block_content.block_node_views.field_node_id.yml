@@ -1,0 +1,243 @@
+uuid: abd9670e-eca9-4441-a11c-9c7a3f021f63
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_node_views
+    - field.storage.block_content.field_node_id
+  module:
+    - dynamic_entity_reference
+id: block_content.block_node_views.field_node_id
+field_name: field_node_id
+entity_type: block_content
+bundle: block_node_views
+label: 'Node ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  block:
+    handler: 'default:block'
+    handler_settings: {  }
+  block_content:
+    handler: 'default:block_content'
+    handler_settings: {  }
+  block_content_type:
+    handler: 'default:block_content_type'
+    handler_settings: {  }
+  block_group_content:
+    handler: 'default:block_group_content'
+    handler_settings: {  }
+  comment_type:
+    handler: 'default:comment_type'
+    handler_settings: {  }
+  comment:
+    handler: 'default:comment'
+    handler_settings: {  }
+  contact_message:
+    handler: 'default:contact_message'
+    handler_settings: {  }
+  contact_form:
+    handler: 'default:contact_form'
+    handler_settings: {  }
+  content_moderation_state:
+    handler: 'default:content_moderation_state'
+    handler_settings: {  }
+  crop:
+    handler: 'default:crop'
+    handler_settings: {  }
+  crop_type:
+    handler: 'default:crop_type'
+    handler_settings: {  }
+  editor:
+    handler: 'default:editor'
+    handler_settings: {  }
+  entity_browser:
+    handler: 'default:entity_browser'
+    handler_settings: {  }
+  entity_queue:
+    handler: 'default:entity_queue'
+    handler_settings: {  }
+  entity_subqueue:
+    handler: 'default:entity_subqueue'
+    handler_settings: {  }
+  facets_facet_source:
+    handler: 'default:facets_facet_source'
+    handler_settings: {  }
+  facets_facet:
+    handler: 'default:facets_facet'
+    handler_settings: {  }
+  field_storage_config:
+    handler: 'default:field_storage_config'
+    handler_settings: {  }
+  field_config:
+    handler: 'default:field_config'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
+    handler_settings: {  }
+  file_type:
+    handler: 'default:file_type'
+    handler_settings: {  }
+  filter_format:
+    handler: 'default:filter_format'
+    handler_settings: {  }
+  image_style:
+    handler: 'default:image_style'
+    handler_settings: {  }
+  imce_profile:
+    handler: 'default:imce_profile'
+    handler_settings: {  }
+  job_schedule:
+    handler: 'default:job_schedule'
+    handler_settings: {  }
+  language_content_settings:
+    handler: 'default:language_content_settings'
+    handler_settings: {  }
+  configurable_language:
+    handler: 'default:configurable_language'
+    handler_settings: {  }
+  custom_language:
+    handler: 'default:custom_language'
+    handler_settings: {  }
+  linkit_profile:
+    handler: 'default:linkit_profile'
+    handler_settings: {  }
+  media:
+    handler: 'default:media'
+    handler_settings: {  }
+  media_type:
+    handler: 'default:media_type'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings: {  }
+  metatag_defaults:
+    handler: 'default:metatag_defaults'
+    handler_settings: {  }
+  migration_group:
+    handler: 'default:migration_group'
+    handler_settings: {  }
+  migration:
+    handler: 'default:migration'
+    handler_settings: {  }
+  node_type:
+    handler: 'default:node_type'
+    handler_settings: {  }
+  node:
+    handler: 'default:node'
+    handler_settings: {  }
+  pagerer_preset:
+    handler: 'default:pagerer_preset'
+    handler_settings: {  }
+  path_alias:
+    handler: 'default:path_alias'
+    handler_settings: {  }
+  behavior_settings:
+    handler: 'default:behavior_settings'
+    handler_settings: {  }
+  rdf_mapping:
+    handler: 'default:rdf_mapping'
+    handler_settings: {  }
+  redirect:
+    handler: 'default:redirect'
+    handler_settings: {  }
+  responsive_image_style:
+    handler: 'default:responsive_image_style'
+    handler_settings: {  }
+  search_page:
+    handler: 'default:search_page'
+    handler_settings: {  }
+  search_api_index:
+    handler: 'default:search_api_index'
+    handler_settings: {  }
+  search_api_server:
+    handler: 'default:search_api_server'
+    handler_settings: {  }
+  search_api_task:
+    handler: 'default:search_api_task'
+    handler_settings: {  }
+  solr_request_dispatcher:
+    handler: 'default:solr_request_dispatcher'
+    handler_settings: {  }
+  solr_field_type:
+    handler: 'default:solr_field_type'
+    handler_settings: {  }
+  solr_request_handler:
+    handler: 'default:solr_request_handler'
+    handler_settings: {  }
+  solr_cache:
+    handler: 'default:solr_cache'
+    handler_settings: {  }
+  shortcut:
+    handler: 'default:shortcut'
+    handler_settings: {  }
+  shortcut_set:
+    handler: 'default:shortcut_set'
+    handler_settings: {  }
+  menu:
+    handler: 'default:menu'
+    handler_settings: {  }
+  action:
+    handler: 'default:action'
+    handler_settings: {  }
+  taxonomy_vocabulary:
+    handler: 'default:taxonomy_vocabulary'
+    handler_settings: {  }
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings: {  }
+  tour:
+    handler: 'default:tour'
+    handler_settings: {  }
+  user:
+    handler: 'default:user'
+    handler_settings: {  }
+  user_role:
+    handler: 'default:user_role'
+    handler_settings: {  }
+  section_association:
+    handler: 'default:section_association'
+    handler_settings: {  }
+  access_scheme:
+    handler: 'default:access_scheme'
+    handler_settings: {  }
+  workflow:
+    handler: 'default:workflow'
+    handler_settings: {  }
+  pathauto_pattern:
+    handler: 'default:pathauto_pattern'
+    handler_settings: {  }
+  view:
+    handler: 'default:view'
+    handler_settings: {  }
+  paragraph:
+    handler: 'default:paragraph'
+    handler_settings: {  }
+  paragraphs_type:
+    handler: 'default:paragraphs_type'
+    handler_settings: {  }
+  cookie_category:
+    handler: 'default:cookie_category'
+    handler_settings: {  }
+  entity_view_display:
+    handler: 'default:entity_view_display'
+    handler_settings: {  }
+  entity_form_mode:
+    handler: 'default:entity_form_mode'
+    handler_settings: {  }
+  entity_view_mode:
+    handler: 'default:entity_view_mode'
+    handler_settings: {  }
+  entity_form_display:
+    handler: 'default:entity_form_display'
+    handler_settings: {  }
+  base_field_override:
+    handler: 'default:base_field_override'
+    handler_settings: {  }
+  date_format:
+    handler: 'default:date_format'
+    handler_settings: {  }
+field_type: dynamic_entity_reference
