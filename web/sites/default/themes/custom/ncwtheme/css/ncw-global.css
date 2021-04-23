@@ -2141,6 +2141,11 @@ body.node--type-publication {
     padding-right: 15px;
   }
 }
+/* View node header - Node related with the View - Placed before the View */
+.custom-view-node-header {
+  padding-bottom: 2rem;
+}
+
 /* View View List */
 .revamp-row {
   display: flex;
@@ -2177,6 +2182,15 @@ body.node--type-publication {
     display: none;
   }
 }
+/* Blog - View */
+.view-blog .views-field-field-image-caption {
+  float: left;
+  margin-right: 1rem;
+}
+.view-blog .views-field-field-summary-html {
+  min-height: 5rem;
+}
+
 @media only screen and (max-width: 1200px) {
   /* Home page */
   #main-wrapper {
