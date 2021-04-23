@@ -26,6 +26,10 @@
   }
 }
 
+.revamp-row.no-flex{
+  display: block;
+}
+
 /* Responsive View List */
 @media only screen and (max-width : 991px) {
   .revamp-row{

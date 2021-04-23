@@ -161,6 +161,10 @@ input[type=search] {
   display: none;
   padding: 10px 0;
 }
+.wysiwyg_accordion .wysiwyg_accordion_panel.views {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
 .btn-primary {
   background: #003399;
@@ -1053,9 +1057,6 @@ body ul li .introduction-title a:hover {
 }
 .node--type-article .field--name-body p {
   margin: 0.2rem 0 0.5rem;
-}
-.node--type-article .field--name-body a {
-  font-size: 0.9rem;
 }
 .node--type-article iframe {
   width: 100%;
@@ -2164,6 +2165,10 @@ body.node--type-publication {
   width: 100%;
   text-align: right;
   padding-top: 0.5rem;
+}
+
+.revamp-row.no-flex {
+  display: block;
 }
 
 /* Responsive View List */
