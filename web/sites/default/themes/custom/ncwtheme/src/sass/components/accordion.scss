@@ -47,3 +47,67 @@
     padding-right: 15px;
   }
 }
+
+.sidebar-second{
+  .view-grouping{
+    width: 100%;
+    .view-grouping-header {
+      position: relative;
+      font-family: 'Open Sans Condensed';
+      color: $text-color-blue;
+      background: $bg-color-blue-accordion;
+      height: auto;
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding-left: 0.5rem;
+      padding-right: 1.5rem;
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+      border: 0px;
+      margin-top: 0; /*no margin - to fix text effect - add border*/
+      border-top: 5px solid #FFF;
+      border-bottom: 5px solid #FFF;
+      margin-bottom: 0;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 17px;
+        background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+        top: 30%;
+        right: 20px;
+      }
+    }
+  }
+  .view-grouping-header.active{
+    &::after{
+      width: 17px;
+      background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+      right: 17px;
+    }
+  }
+  .view-grouping-content{
+    display: none;
+    padding: 10px;
+    a {
+      display: block;
+      font-size: 0.8rem;
+      line-height: 17px;
+      padding-bottom: 10px;
+      background: url(../images/li_arrow.png) no-repeat 1px 2px;
+      padding-left: 15px;
+    }
+  }
+}
+
+.block-views-blockblog-block-2{
+  .view-blog{
+    .view-content.row{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+

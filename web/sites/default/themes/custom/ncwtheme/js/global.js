@@ -31,6 +31,13 @@ jQuery(document).ready(function($) {
     $(this).next('.wysiwyg_accordion_panel').slideToggle();
   });
 
+  $(".sidebar-second .view-grouping .view-grouping-header").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.view-grouping-content').slideToggle();
+  });
+
+
+  // Text resize
   $('#_biggify').on('click', function() {
     var fontSize = $('html').css('font-size');
     var newFontSize = parseInt(fontSize)+1;
