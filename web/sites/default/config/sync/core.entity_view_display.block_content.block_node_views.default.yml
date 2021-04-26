@@ -37,13 +37,12 @@ content:
     weight: 0
     label: hidden
     settings:
+      node:
+        view_mode: header_view_node
       comment:
         view_mode: default
         link: false
       contact_message:
-        view_mode: default
-        link: false
-      node:
         view_mode: default
         link: false
       content_moderation_state:

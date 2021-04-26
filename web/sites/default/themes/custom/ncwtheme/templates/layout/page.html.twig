@@ -71,7 +71,7 @@
     {% if has_sidebar_first and has_sidebar_second %}
       <div id="main" class="col-12 col-lg-6 three-column mx-auto">
     {% endif %}
-        <section class="section">
+        <section class="section container custom-view-node-header">
           <a id="main-content" tabindex="-1"></a>
           {{ page.node_view }}
         </section>
@@ -82,7 +82,11 @@
       </div>
     {% if has_sidebar_second %}
       <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
-        <h2 class="related">{{ 'Related' | trans }}</h2>
+        {% if node.bundle == 'blog' %}
+          <h2 class="related">{{ 'Posts by date' | trans }}</h2>
+        {% else %}
+          <h2 class="related">{{ 'Related' | trans }}</h2>
+        {% endif %}
         {{ page.sidebar_second }}
       </aside>
     {% endif %}
