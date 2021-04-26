@@ -56,5 +56,10 @@ jQuery(document).ready(function($) {
     $('html').css('font-size', '16px')
   })
 
+  //Move AddToAny to the bottom page
+  if ($(".move-add-to-any")[0]) {
+    $('#share-this-on').appendTo('.move-add-to-any');
+  }
+
 });
 
