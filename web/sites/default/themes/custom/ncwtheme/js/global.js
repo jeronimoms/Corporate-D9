@@ -61,5 +61,23 @@ jQuery(document).ready(function($) {
     $('#share-this-on').appendTo('.move-add-to-any');
   }
 
+  //CLick on Search in Responsive menu - Show input seach box
+  if ($(".toolbar-tray-horizontal.is-active")[0]) {
+    $('#header').addClass('toolbar-tray-open');
+  }
+  $("#toolbar-item-administration").click(function(){
+    $('#header').removeClass('toolbar-tray-open');
+    if ($(".toolbar-tray-horizontal.is-active")[0]) {
+      $('#header').addClass('toolbar-tray-open');
+    }else{
+      $('#header').removeClass('toolbar-tray-open');
+    }
+  });
+
+  $("#block-ncwtheme-search").click(function(){
+    $('#block-ncwtheme-search .btn-primary').addClass('activate');
+    $('#search-block-form .form-search').addClass('activate');
+  });
+
 });
 
