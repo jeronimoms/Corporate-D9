@@ -1,8 +1,9 @@
-uuid: d7917f7e-a5d3-4787-8a3a-17c1341c4e63
+uuid: fcce4ef6-9d75-413f-ba8d-3398e6d614ad
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.view
     - field.field.node.guideline.body
     - field.field.node.guideline.field_activity
     - field.field.node.guideline.field_additional_html
@@ -19,67 +20,50 @@ dependencies:
     - field.field.node.guideline.field_thesaurus_2020
     - node.type.guideline
   module:
-    - languagefield
-    - link
-    - text
+    - layout_builder
+    - smart_trim
     - user
-id: node.guideline.default
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.guideline.view
 targetEntityType: node
 bundle: guideline
-mode: default
+mode: view
 content:
   body:
     label: hidden
-    type: text_default
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_additional_html:
-    type: text_default
-    weight: 4
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  field_available_in_languages:
-    type: languagefield_default
-    weight: 3
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-      format:
-        name: name
-    third_party_settings: {  }
-  field_external_url:
-    type: link
-    weight: 2
-    region: content
-    label: inline
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-  field_summary:
-    type: basic_string
+    type: smart_trim
     weight: 0
-    region: content
-    label: hidden
-    settings: {  }
+    settings:
+      trim_length: 300
+      trim_type: chars
+      trim_suffix: ...
+      wrap_class: trimmed
+      more_link: true
+      more_text: 'Read more'
+      more_class: 'see-more-arrow minor-size'
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
     third_party_settings: {  }
+    region: content
 hidden:
   addtoany: true
   field_activity: true
+  field_additional_html: true
   field_archived: true
+  field_available_in_languages: true
   field_expiration_date: true
+  field_external_url: true
   field_legislation_category: true
   field_nace_codes: true
   field_publication_date: true
   field_section: true
+  field_summary: true
   field_tags: true
   field_thesaurus_2020: true
   langcode: true
