@@ -1,0 +1,22 @@
+uuid: c4190d95-0300-408d-bf21-2eda1d1582c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: seminars
+label: seminars
+type: 'canonical_entities:node'
+pattern: 'tools-and-resources/seminars/[node:title]'
+selection_criteria:
+  fe15cf05-580f-48ea-a970-f573fa0b342e:
+    id: node_type
+    bundles:
+      seminar: seminar
+    negate: false
+    context_mapping:
+      node: node
+    uuid: fe15cf05-580f-48ea-a970-f573fa0b342e
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,14 @@
+uuid: ea07f78f-7565-4877-b625-941840449189
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term_general
+label: 'Taxonomy term general'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary]/[term:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

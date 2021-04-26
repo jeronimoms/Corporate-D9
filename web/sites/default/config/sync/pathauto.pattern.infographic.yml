@@ -1,0 +1,22 @@
+uuid: 31846aae-7360-4d2c-b047-1e6b828c6a07
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: infographic
+label: Infographic
+type: 'canonical_entities:node'
+pattern: 'tools-and-publications/infographics/[node:title]'
+selection_criteria:
+  1ed757b3-3a4d-4da6-beef-5fd4c84fe591:
+    id: node_type
+    bundles:
+      infographic: infographic
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 1ed757b3-3a4d-4da6-beef-5fd4c84fe591
+selection_logic: and
+weight: -5
+relationships: {  }

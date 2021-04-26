@@ -1,0 +1,22 @@
+uuid: 19ba4f22-bc39-4b75-9ab4-1953ac6b43f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: dangerous_substances
+label: 'Dangerous substances'
+type: 'canonical_entities:node'
+pattern: 'themes/dangerous-substances/practical-tools-dangerous-substances/[node:title]'
+selection_criteria:
+  3bbd6401-2748-4fd6-b881-c1188677efe5:
+    id: node_type
+    bundles:
+      dangerous_substances: dangerous_substances
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 3bbd6401-2748-4fd6-b881-c1188677efe5
+selection_logic: and
+weight: -5
+relationships: {  }
