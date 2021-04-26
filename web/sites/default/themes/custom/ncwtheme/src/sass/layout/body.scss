@@ -243,9 +243,13 @@ body {
 #share-this-on{
   float: left;
   padding-top: 1rem;
+
   .text-share {
+    float: left;
     font-size: 0.9rem;
+    margin-top: 3px;
     padding-right: 10px;
+
   }
   .a2a_svg{
     svg {
@@ -256,15 +260,36 @@ body {
     background-color: transparent !important;
   }
   .a2a_button_facebook{
+    float: left;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    margin-right: 10px;
     background: url(../images/share_facebook.png) no-repeat;
   }
   .a2a_button_twitter{
+    float: left;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    margin-right: 10px;
     background: url(../images/share_twitter.png) no-repeat;
   }
   .a2a_button_linkedin_share{
+    float: left;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    margin-right: 10px;
     background: url(../images/share_in.png) no-repeat;
+    span{
+      width: 20px;
+    }
     button{
-      display: none !important;
+      visibility: hidden !important;
     }
   }
   .print-icon{

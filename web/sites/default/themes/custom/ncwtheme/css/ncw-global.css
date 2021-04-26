@@ -970,7 +970,9 @@ body ul li .introduction-title a:hover {
   padding-top: 1rem;
 }
 #share-this-on .text-share {
+  float: left;
   font-size: 0.9rem;
+  margin-top: 3px;
   padding-right: 10px;
 }
 #share-this-on .a2a_svg svg {
@@ -980,16 +982,37 @@ body ul li .introduction-title a:hover {
   background-color: transparent !important;
 }
 #share-this-on .a2a_button_facebook {
+  float: left;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  margin-right: 10px;
   background: url(../images/share_facebook.png) no-repeat;
 }
 #share-this-on .a2a_button_twitter {
+  float: left;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  margin-right: 10px;
   background: url(../images/share_twitter.png) no-repeat;
 }
 #share-this-on .a2a_button_linkedin_share {
+  float: left;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  margin-right: 10px;
   background: url(../images/share_in.png) no-repeat;
 }
+#share-this-on .a2a_button_linkedin_share span {
+  width: 20px;
+}
 #share-this-on .a2a_button_linkedin_share button {
-  display: none !important;
+  visibility: hidden !important;
 }
 #share-this-on .print-icon {
   display: block;
