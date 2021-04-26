@@ -77,4 +77,12 @@
       }
     }
   }
+  /* Blog Detail */
+  .node--type-blog{
+    .field--name-field-image-caption{
+      float: none;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
 }/* End Media 480px */
