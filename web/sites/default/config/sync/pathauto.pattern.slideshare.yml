@@ -1,0 +1,22 @@
+uuid: c52290c0-01ef-44ed-acd6-604a41326d64
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: slideshare
+label: Slideshare
+type: 'canonical_entities:node'
+pattern: 'additional-resources/slideshare/[node:title]'
+selection_criteria:
+  6e2e4065-c829-4e64-8d56-7165e35dd302:
+    id: node_type
+    bundles:
+      slideshare: slideshare
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6e2e4065-c829-4e64-8d56-7165e35dd302
+selection_logic: and
+weight: -5
+relationships: {  }
