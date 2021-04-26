@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
     - core.entity_view_mode.node.view
     - field.storage.node.field_legislation_category
     - field.storage.taxonomy_term.field_guideline_category_code
@@ -642,10 +641,10 @@ display:
           columns: 12
           automatic_width: false
           alignment: vertical
-          col_class_default: true
+          col_class_default: false
           col_class_custom: ''
-          row_class_default: true
-          row_class_custom: revamp-row
+          row_class_default: false
+          row_class_custom: 'revamp-row no-flex'
       row:
         type: 'entity:node'
         options:
