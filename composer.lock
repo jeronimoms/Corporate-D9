@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a82099b4cc93ffd0bf148d0289c91a48",
+    "content-hash": "d77714bb2f897ae9699af46eb84f6a6f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -12991,6 +12991,62 @@
             }
         },
         {
+            "name": "drupal/url_redirect",
+            "version": "2.62.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/url_redirect.git",
+                "reference": "8.x-2.62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/url_redirect-8.x-2.62.zip",
+                "reference": "8.x-2.62",
+                "shasum": "4753b3d4e334c4a94f58adea92c6a5d84a4fe589"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.62",
+                    "datestamp": "1592668927",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "JeroenT",
+                    "homepage": "https://www.drupal.org/user/2228934"
+                },
+                {
+                    "name": "Nitesh Sethia",
+                    "homepage": "https://www.drupal.org/user/2474982"
+                },
+                {
+                    "name": "ajay_reddy",
+                    "homepage": "https://www.drupal.org/user/3261994"
+                },
+                {
+                    "name": "mahaveer003",
+                    "homepage": "https://www.drupal.org/user/3063119"
+                }
+            ],
+            "description": "Redirect User / Role for specific menu item.",
+            "homepage": "https://www.drupal.org/project/url_redirect",
+            "support": {
+                "source": "https://git.drupalcode.org/project/url_redirect"
+            }
+        },
+        {
             "name": "drupal/variationcache",
             "version": "1.0.0",
             "source": {
@@ -20557,5 +20613,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
