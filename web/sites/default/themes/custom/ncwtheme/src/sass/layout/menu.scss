@@ -121,196 +121,71 @@
   }
 
   /* Links News and Press */
-  #header {
-    .header-links {
-      section.row {
-        nav {
-          position: absolute;
-          width: auto;
-          left: 302px;
-          z-index: 1;
+  #block-headermenu{
+    position: absolute;
+    width: auto;
+    left: 302px;
+    z-index: 1;
+    ul {
+      display: block;
+      li {
+        padding: 0;
+        margin: 0;
+        float: left;
+        margin-right: 9px;
 
-          ul {
-            display: block;
-
-            li {
-              padding: 0;
-              margin: 0;
-              float: left;
-              margin-right: 9px;
-
-              a {
-                color: $text-color-white;
-              }
-            }
-          }
+        a {
+          color: $text-color-white;
         }
       }
     }
   }
 
   /* Language */
-  #header {
-    .header-language-search {
-      #lang_dropdown_form_lang-dropdown-form{
-        background: none;
-      }
-      .block-lang-dropdown {
-        position: absolute;
-        left: 62px;
-        margin-right: 20px;
-        z-index: 2;
-      }
-      select.custom-select {
-        background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
-      }
-    }
+  #lang_dropdown_form_lang-dropdown-form {
+    background: none;
+  }
+  .block-lang-dropdown {
+    position: absolute;
+    left: 62px;
+    top: 11px;
+  }
+  select.custom-select {
+    background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
+    color: $text-color-white;
   }
 
   /* Search */
   #block-ncwtheme-search {
     position: absolute;
-    right: 5px;
+    top: 9px;
+    right: 25px;
     z-index: 9;
   }
 
-  #header{
-    .header-language-search {
-      #search-block-form {
-        .form-search {
-          display: none;
-        }
-        #edit-keys.activate, #edit-keys--2.activate{
-          display: block;
-          margin-right: 15px;
-          width: 165px;
-          margin-top: 2px;
-        }
-        #edit-actions {
-          position: relative;
-          .btn-primary {
-            background: url(../images/menu-search-ico.png) no-repeat scroll 1px 1px transparent;
-            pointer-events: none;
-            cursor: pointer;
-          }
-          .btn-primary.activate{
-            pointer-events: auto;
-            cursor: pointer;
-          }
-        }
-      }
+  #edit-keys, #edit-keys--2 {
+    display: none;
+  }
+
+  #edit-keys.activate, #edit-keys--2.activate {
+    display: block;
+    margin-right: 0px;
+    width: 150px;
+    margin-top: -5px;
+  }
+
+  #edit-actions {
+    position: relative;
+    .btn-primary {
+      background: url(../images/menu-search-ico.png) no-repeat scroll 1px 1px transparent;
+      pointer-events: none;
+      cursor: pointer;
+      text-indent: -9999px;
+    }
+    .btn-primary.activate {
+      pointer-events: auto;
+      cursor: pointer;
     }
   }
 
-  /* Position when Toolbar is NOT opened */
-  body.user-logged-in {
-    #header {
-      .header-links {
-        section.row {
-          nav {
-            top: 194px;
-          }
-        }
-      }
-
-      .header-language-search {
-        .block-lang-dropdown {
-          top: 194px;
-        }
-      }
-
-      #block-ncwtheme-search {
-        top: 190px;
-      }
-    }
-  }
-
-  /* Position when Toolbar is opened */
-  body.user-logged-in {
-    #header.toolbar-tray-open {
-      .header-links {
-        section.row {
-          nav {
-            top: 228px;
-          }
-        }
-      }
-
-      .header-language-search {
-        .block-lang-dropdown {
-          top: 228px;
-        }
-      }
-
-      #block-ncwtheme-search {
-        top: 224px;
-      }
-    }
-  }
-
-  /* Position when Not Logged */
-  #header{
-    .header-links {
-      section.row {
-        nav {
-          top: 153px;
-        }
-      }
-    }
-    .header-language-search {
-      .block-lang-dropdown {
-        top: 153px;
-      }
-    }
-    #block-ncwtheme-search {
-      top: 150px;
-    }
-  }
-
-}
-@media only screen and (max-width : 976px) {
-
-
-  /* Position when Toolbar is NOT opened */
-  body.user-logged-in {
-    #header {
-      .header-links {
-        section.row {
-          nav {
-            top: 194px;
-          }
-        }
-      }
-      .header-language-search {
-        .block-lang-dropdown {
-          top: 194px;
-        }
-      }
-
-      #block-ncwtheme-search {
-        top: 190px;
-      }
-    }
-  }
-
-
-  /* Position when Not Logged */
-  #header{
-    .header-links {
-      section.row {
-        nav {
-          top: 153px;
-        }
-      }
-    }
-    .header-language-search {
-      .block-lang-dropdown {
-        top: 153px;
-      }
-    }
-    #block-ncwtheme-search {
-      top: 150px;
-    }
-  }
-
-}
+} /* End Media 991px */
