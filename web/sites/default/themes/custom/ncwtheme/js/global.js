@@ -94,6 +94,13 @@ jQuery(document).ready(function($) {
     }
   });
 
+  //Left menu in sidebar first
+  $(".sidebar-first .menu-level-1 .menu-item--expanded > a").after("<span class='mean-expand-custom'>&nbsp;</span>");
+  $('.sidebar-first .menu-level-1 .mean-expand-custom').click(function(){
+    $(this).parent().children('div').children('ul').slideToggle();
+    $(this).toggleClass('active');
+  });
+
 });
 
 //Move Language Selector to the menu responsive

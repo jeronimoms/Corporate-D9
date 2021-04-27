@@ -1,0 +1,81 @@
+.sidebar-first{
+  .menu--main{
+    ul{
+      list-style: none;
+      padding-left: 0;
+      li{
+        position: relative;
+        width: 100%;
+        a{
+          display: inline-block;
+          color: $text-color-blue;
+          font-size: 1.3rem;
+          font-weight: 600;
+          border-bottom: 0;
+          padding-bottom: 15px;
+          &:hover{
+            opacity: 0.9;
+            transition: all 500ms;
+          }
+        }
+        ul{
+          list-style: none;
+          padding-left: 0;
+          li{
+            width: 100%;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border-bottom: 2px dotted $bg-color-blue-light;
+            a{
+              display: inline-block;
+              color: $text-color-grey;
+              font-size: 0.75rem;
+              font-weight: 700;
+              border-bottom: 0;
+              padding-bottom: 0;
+              &:hover{
+                opacity: 0.9;
+              }
+            }
+            ul.menu-level-2{
+              display: none;
+              li{
+                width: 100%;
+                a{
+                  padding-left: 15px;
+                }
+              }
+              li:last-child{
+                border-bottom: 0;
+              }
+            }
+          }
+          li.is-expanded{
+            ul{
+              li:last-child{
+                border-bottom: 0;
+                padding-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mean-expand-custom{
+  display: block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  top: 4px;
+  background: url(../images/ico-plus.png) no-repeat 9px 8px;
+  &.active{
+    background: url("../images/ico_minor.png") no-repeat 10px 11px;
+  }
+}
+
