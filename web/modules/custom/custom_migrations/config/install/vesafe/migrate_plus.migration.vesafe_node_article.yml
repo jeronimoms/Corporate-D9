@@ -52,6 +52,12 @@ process:
     -
       plugin: default_value
       default_value: full_html
+  field_summary:
+    - plugin: get
+      source: field_summary
+  'field_summary/0/format':
+    - plugin: default_value
+      default_value: full_html
   field_publication_date:
     -
       plugin: sub_process
