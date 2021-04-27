@@ -20,7 +20,7 @@
     #search-block-form{
       position: relative;
       padding: 0 15px;
-      #edit-keys{
+      #edit-keys, #edit-keys--2{
         width: 140px;
         height: 21px;
         margin-right: 35px;
@@ -28,8 +28,8 @@
       }
       #edit-actions{
         position: absolute;
-        top: 3px;
-        right: 19px;
+        top: 0;
+        right: 20px;
         .btn-primary{
           background: url(../images/searchico.png) no-repeat scroll 1px 1px transparent;
           text-indent: -99999px;

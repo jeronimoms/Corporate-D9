@@ -38,11 +38,13 @@ process:
   field_subtitle/format:
     - plugin: default_value
       default_value: full_html
+  field_summary:
+    - plugin: get
+      source: field_summary/0
+  field_summary/format:
+    - plugin: default_value
+      default_value: full_html
   body/value: body/0/value
-  body/summary:
-    -
-      plugin: strip_tags
-      source: field_summary/0/value
   body/format:
     -
       plugin: default_value

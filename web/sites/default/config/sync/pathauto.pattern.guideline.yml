@@ -1,0 +1,22 @@
+uuid: bd609f3b-c533-4315-bfa4-c0b1a0405d99
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: guideline
+label: Guideline
+type: 'canonical_entities:node'
+pattern: 'legislation/guidelines/[node:title]'
+selection_criteria:
+  5f9f35f9-1ba8-4eda-ba44-9b37b6f8f328:
+    id: node_type
+    bundles:
+      guideline: guideline
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5f9f35f9-1ba8-4eda-ba44-9b37b6f8f328
+selection_logic: and
+weight: -5
+relationships: {  }
