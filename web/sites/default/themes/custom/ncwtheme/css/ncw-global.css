@@ -666,6 +666,10 @@ h3.home a:hover {
   opacity: 0.9;
   transition: all 500ms;
 }
+.sidebar-first .menu--main ul li a.is-active {
+  font-weight: bold;
+  color: #003399;
+}
 .sidebar-first .menu--main ul li ul {
   list-style: none;
   padding-left: 0;
@@ -682,10 +686,18 @@ h3.home a:hover {
   font-size: 0.75rem;
   font-weight: 700;
   border-bottom: 0;
+  padding-right: 35px;
   padding-bottom: 0;
 }
 .sidebar-first .menu--main ul li ul li a:hover {
   opacity: 0.9;
+}
+.sidebar-first .menu--main ul li ul li a.is-active {
+  width: 100%;
+  font-weight: bold;
+  color: #003399;
+  background: url(../images/arrow-left-menu.png) 98% no-repeat;
+  padding-right: 35px;
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
   display: none;
@@ -696,8 +708,21 @@ h3.home a:hover {
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a {
   padding-left: 15px;
 }
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 li a.is-active {
+  font-weight: bold;
+  color: #003399;
+}
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 li:last-child {
   border-bottom: 0;
+}
+.sidebar-first .menu--main ul li ul li.menu-item--active-trail ul.menu-level-2 {
+  display: block;
+}
+.sidebar-first .menu--main ul li ul li.menu-item--active-trail .mean-expand-custom {
+  background: url("../images/ico_minor.png") no-repeat 10px 11px;
+}
+.sidebar-first .menu--main ul li ul li.menu-item--active-trail .mean-expand-custom.active {
+  background: url("../images/ico-plus.png") no-repeat 10px 11px;
 }
 .sidebar-first .menu--main ul li ul li.is-expanded ul li:last-child {
   border-bottom: 0;
@@ -710,7 +735,7 @@ h3.home a:hover {
   height: 30px;
   cursor: pointer;
   position: absolute;
-  z-index: 9999;
+  z-index: 1;
   right: 0;
   top: 4px;
   background: url(../images/ico-plus.png) no-repeat 9px 8px;
