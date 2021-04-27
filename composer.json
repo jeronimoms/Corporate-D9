@@ -384,6 +384,9 @@
             },
             "drupal/linkchecker": {
                 "Fix error ordering deleted and added entityqueue": "patches/linkchecker-error_ordering_deleted_added_entityqueue.patch"
+            },
+            "drupal/entity_browser": {
+                "Can't remove attached image": "https://www.drupal.org/files/issues/2019-09-27/entity_browser-remove-attached-image-2811747-12.patch"
             }
         },
         "patchLevel": {
