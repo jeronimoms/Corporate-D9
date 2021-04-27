@@ -12,7 +12,7 @@ dependencies:
 id: seminar_tags
 theme: ncwtheme
 region: sidebar_first
-weight: 0
+weight: -15
 provider: null
 plugin: 'facet_block:seminar_tags'
 settings:
