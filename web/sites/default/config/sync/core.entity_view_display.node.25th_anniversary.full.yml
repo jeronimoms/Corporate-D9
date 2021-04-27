@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.25th_anniversary.field_language
     - field.field.node.25th_anniversary.field_publication_date
     - field.field.node.25th_anniversary.field_section
-    - field.field.node.25th_anniversary.field_summary
+    - field.field.node.25th_anniversary.field_summary_html
     - field.field.node.25th_anniversary.field_tags
     - node.type.25th_anniversary
   module:
@@ -32,19 +32,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_summary:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
 hidden:
   addtoany: true
   field_image_media: true
   field_language: true
   field_publication_date: true
   field_section: true
+  field_summary_html: true
   field_tags: true
   langcode: true
   links: true

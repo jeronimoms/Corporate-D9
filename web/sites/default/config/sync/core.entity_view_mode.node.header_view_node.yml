@@ -1,0 +1,10 @@
+uuid: abdc4436-f247-430d-9c64-8567ea0051e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.header_view_node
+label: 'Header view node'
+targetEntityType: node
+cache: true

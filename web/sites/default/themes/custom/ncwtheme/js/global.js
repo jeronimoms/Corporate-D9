@@ -31,6 +31,13 @@ jQuery(document).ready(function($) {
     $(this).next('.wysiwyg_accordion_panel').slideToggle();
   });
 
+  $(".sidebar-second .view-grouping .view-grouping-header").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.view-grouping-content').slideToggle();
+  });
+
+
+  // Text resize
   $('#_biggify').on('click', function() {
     var fontSize = $('html').css('font-size');
     var newFontSize = parseInt(fontSize)+1;
@@ -48,6 +55,11 @@ jQuery(document).ready(function($) {
   $('#_reset').on('click', function() {
     $('html').css('font-size', '16px')
   })
+
+  //Move AddToAny to the bottom page
+  if ($(".move-add-to-any")[0]) {
+    $('#share-this-on').appendTo('.move-add-to-any');
+  }
 
 });
 

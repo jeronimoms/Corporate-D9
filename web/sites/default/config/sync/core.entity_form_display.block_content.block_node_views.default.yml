@@ -1,0 +1,40 @@
+uuid: 99a715c1-2637-4be2-8c78-07aec9ad5786
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_node_views
+    - field.field.block_content.block_node_views.field_node_id
+  module:
+    - dynamic_entity_reference
+id: block_content.block_node_views.default
+targetEntityType: block_content
+bundle: block_node_views
+mode: default
+content:
+  field_node_id:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: dynamic_entity_reference_default
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

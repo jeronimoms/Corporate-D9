@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.press_release.field_publication_date
     - field.field.node.press_release.field_quote
     - field.field.node.press_release.field_section
-    - field.field.node.press_release.field_summary
+    - field.field.node.press_release.field_summary_html
     - field.field.node.press_release.field_tags
     - field.field.node.press_release.field_thesaurus_2020
     - node.type.press_release
@@ -80,12 +80,12 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
-  field_summary:
-    weight: 2
-    label: hidden
+  field_summary_html:
+    weight: 8
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
     region: content
 hidden:
   field_activity: true

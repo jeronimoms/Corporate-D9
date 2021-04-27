@@ -1,0 +1,30 @@
+uuid: dc1ed58b-f947-4f41-a066-005aa04d38f6
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_node_views:2b89c9f6-0edb-4b1e-8254-91da2be6669e'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: nodeviewblog
+theme: ncwtheme
+region: node_view
+weight: 0
+provider: null
+plugin: 'block_content:2b89c9f6-0edb-4b1e-8254-91da2be6669e'
+settings:
+  id: 'block_content:2b89c9f6-0edb-4b1e-8254-91da2be6669e'
+  label: 'Node view Blog'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /tools-and-resources/blog
+    negate: false

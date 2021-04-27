@@ -1,0 +1,22 @@
+uuid: 4cb91495-66ea-4930-8e45-43d18a777fe7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: youtube
+label: Youtube
+type: 'canonical_entities:node'
+pattern: 'additional-resources/youtube/[node:title]'
+selection_criteria:
+  c1138c3b-e304-4a74-8d26-4e54aa1f0962:
+    id: node_type
+    bundles:
+      youtube: youtube
+    negate: false
+    context_mapping:
+      node: node
+    uuid: c1138c3b-e304-4a74-8d26-4e54aa1f0962
+selection_logic: and
+weight: -5
+relationships: {  }

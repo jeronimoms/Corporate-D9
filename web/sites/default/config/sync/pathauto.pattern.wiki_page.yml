@@ -1,0 +1,22 @@
+uuid: 9c301b48-cb63-4557-97d5-4fb70cad26aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: wiki_page
+label: 'Wiki page'
+type: 'canonical_entities:node'
+pattern: '/oshwiki/[node:title]'
+selection_criteria:
+  bd8cbd7c-cc78-43e3-ab47-02e5a4df3121:
+    id: node_type
+    bundles:
+      wiki_page: wiki_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: bd8cbd7c-cc78-43e3-ab47-02e5a4df3121
+selection_logic: and
+weight: -5
+relationships: {  }
