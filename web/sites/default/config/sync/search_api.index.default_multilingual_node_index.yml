@@ -14,6 +14,7 @@ dependencies:
     - field.storage.node.field_available_in_languages
     - field.storage.node.body
     - field.storage.node.field_country_code
+    - field.storage.node.field_date
     - field.storage.node.field_date_of_directive
     - field.storage.node.field_seminar_end_date
     - field.storage.node.field_image_media
@@ -100,6 +101,14 @@ field_settings:
     dependencies:
       module:
         - node
+  end_value:
+    label: 'Date » End date value'
+    datasource_id: 'entity:node'
+    property_path: 'field_date:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date
   field_activity:
     label: Activity
     datasource_id: 'entity:node'
@@ -148,6 +157,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_country_code
+  field_date:
+    label: Date
+    datasource_id: 'entity:node'
+    property_path: field_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date
   field_date_of_directive:
     label: 'Date of directive'
     datasource_id: 'entity:node'

@@ -247,6 +247,7 @@ display:
         sorts: false
         fields: false
         query: false
+        relationships: false
       style:
         type: table
         options:
@@ -451,8 +452,8 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: false
-            path: ''
+            make_link: true
+            path: '/legislation/guidelines/{{ field_guideline_category_code }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -490,7 +491,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -511,6 +512,16 @@ display:
           replica: false
           query_comment: ''
           query_tags: {  }
+      relationships:
+        field_legislation_category:
+          id: field_legislation_category
+          table: node__field_legislation_category
+          field: field_legislation_category
+          relationship: none
+          group_type: group
+          admin_label: 'field_legislation_category: Taxonomy term'
+          required: true
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
