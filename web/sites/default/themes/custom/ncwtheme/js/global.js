@@ -102,10 +102,11 @@ jQuery(document).ready(function($) {
     $(this).toggleClass('no-active');
   });
 
-  var text = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(2) > a").text();
-  var text2 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3) > a").text();
+  // Breadcrumbs - Hide duplicate items
+  var text_breadcrumb_item_2 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(2) > a").text();
+  var text_breadcrumb_item_3 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3) > a").text();
 
-  if ( text == text2 ){
+  if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
     $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
     $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
   }
