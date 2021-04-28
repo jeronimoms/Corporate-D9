@@ -1,0 +1,45 @@
+.node-events-form{
+  .layout-region-node-main{
+    .field--name-title,
+    .field--name-field-organization,
+    .field--name-field-country-code,
+    .field--name-field-city,
+    .field--name-body
+    {
+    label{
+        background: url(../images/eye-backend.png) no-repeat 1px -3px;
+        padding-left: 30px;
+      }
+    }
+    .field--name-field-date{
+      fieldset{
+        background: url(../images/eye-backend.png) no-repeat 3px 7px;
+        padding-left: 30px;
+      }
+    }
+    .field--name-field-website-of-event{
+      h4{
+        background: url(../images/eye-backend.png) no-repeat 1px -4px;
+        padding-left: 30px;
+        height: 18px;
+        display: block;
+      }
+    }
+    .field--name-field-related-documents{
+      .seven-details__summary{
+        span:first-child{
+          background: url(../images/eye-backend.png) no-repeat 1px -5px;
+          padding-left: 30px;
+        }
+      }
+    }
+    .field--name-body {
+      .form-type-select {
+        label {
+          background: transparent;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

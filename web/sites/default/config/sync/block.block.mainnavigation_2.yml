@@ -1,0 +1,34 @@
+uuid: 40f9dd37-e9ed-4636-b02c-0678a11cc5af
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+    - system
+  theme:
+    - ncwtheme
+id: mainnavigation_2
+theme: ncwtheme
+region: sidebar_first
+weight: -18
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation level 2'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: active
+  level: 2
+  depth: 5
+  expand: false
+  parent: 'main:'
+  suggestion: main
+visibility:
+  request_path:
+    id: request_path
+    pages: "node/5445\r\nthemes/dangerous-substances/practical-tools-dangerous-substances\r\nphoto-gallery\r\nphoto-gallery/*\r\ntools-and-publications\r\nthemes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders\r\ntools-and-resources\r\nnews-events\r\noshevents"
+    negate: true

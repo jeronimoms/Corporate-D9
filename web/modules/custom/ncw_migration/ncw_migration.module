@@ -1,1 +1,13 @@
 <?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\ncw_migration\NmForm;
+
+/**
+ * Implements hook_form_alter().
+ */
+function ncw_migration_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  Drupal::classResolver()
+    ->getInstanceFromDefinition(NmForm::class)
+    ->formAlter($form, $form_state, $form_id);
+}

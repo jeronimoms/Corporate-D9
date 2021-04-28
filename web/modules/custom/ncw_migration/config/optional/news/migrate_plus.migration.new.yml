@@ -40,13 +40,25 @@ source:
       label: 'Title'
       selector: item/title_field/en
     -
+      name: field_summary
+      label: 'Field Summary'
+      selector: item/field_summary
+    -
       name: body
       label: 'Body'
       selector: item/body
     -
+      name: field_publication_date
+      label: "Field Publication Date"
+      selector: item/field_publication_date
+    -
       name: source_image
       label: 'Field Image'
       selector: item/field_image/en/0
+    -
+      name: field_tags
+      label: "Field Tags"
+      selector: item/field_tags
     -
       name: status
       label: "Status"
@@ -70,36 +82,75 @@ source:
 
 
 process:
+  nid: nid
   langcode: constants/lang
   title: title
-
+  field_summary/0/value: field_summary/en/0/value
+  field_summary/0/format:
+    plugin: static_map
+    bypass: true
+    source: field_summary/en/0/format
+    map:
+      full_html_minimal: basic_html
+  body/0/value: body/en/0/value
+  body/0/format:
+    plugin: static_map
+    bypass: true
+    source: body/en/0/format
+    map:
+      full_html_minimal: basic_html
   file_source:
     -
       plugin: nm_url_transform
       source: source_image/uri
     -
       plugin: urlencode
-
   file_dest:
     - plugin: concat
       delimiter: /
       source:
         - constants/file_dest
         - source_image/filename
-
-  field_image/target_id:
-    -
-      plugin: file_copy
+  file:
+    - plugin: file_copy
       source:
         - '@file_source'
         - '@file_dest'
-    -
-      plugin: entity_generate
+    - plugin: entity_generate
       value_key: uri
       entity_type: file
-  field_image/alt: '@title'
-  field_image/title: '@title'
+  field_image/target_id:
+    -
+      plugin: entity_generate
+      value_key: mid
+      bundle_key: vid
+      entity_type: media
+      bundle: image
+      source: '@file'
+      default_values:
+        bundle: image
+        mid: null
+        vid: null
+      values:
+        field_media_image: '@file'
+  field_publication_date:
+    - plugin: sub_process
+      source: field_publication_date/und
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_tags:
+    -
+      plugin: nm_taxonomy_term
+      source: field_tags
 
+  field_migration_source:
+    -
+      plugin: default_value
+      default_value: ncw
   status: status
   created: created
   changed: changed

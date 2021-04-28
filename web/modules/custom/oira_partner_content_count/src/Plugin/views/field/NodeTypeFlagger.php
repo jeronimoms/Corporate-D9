@@ -100,6 +100,7 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
       ->getStorage('node')
       ->loadByProperties([
         'field_workbench_access' => $access_id,
+        'status' => 1,
       ]);
 
     // Sum the node type.
@@ -113,6 +114,18 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
       if($node->bundle() == 'promotional_material'){
         $count_pr++;
       }
+    }
+
+    if ($count_pt == 0) {
+      $count_pt = '-';
+    }
+
+    if ($count_news == 0) {
+      $count_news = '-';
+    }
+
+    if ($count_pr == 0) {
+      $count_pr = '-';
     }
 
     // Set the new output with the data.

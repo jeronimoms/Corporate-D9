@@ -13,7 +13,7 @@ bundle: register_records
 label: 'Events and meetings'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

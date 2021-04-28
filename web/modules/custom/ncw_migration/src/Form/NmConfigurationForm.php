@@ -49,38 +49,6 @@ class NmConfigurationForm extends ConfigFormBase {
       '#required' => TRUE,
     ];
 
-    $form['country_status_endpoint'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Tax country status endpoint URI'),
-      '#description' => $this->t('Uri that will be appended to the Root endpoint URL defined'),
-      '#default_value' => $config->get('country_status_endpoint'),
-      '#required' => TRUE,
-    ];
-
-    $form['country_endpoint'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Tax country endpoint URI'),
-      '#description' => $this->t('Uri that will be appended to the Root endpoint URL defined'),
-      '#default_value' => $config->get('country_endpoint'),
-      '#required' => TRUE,
-    ];
-
-    $form['tag_endpoint'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Tax tags endpoint URI'),
-      '#description' => $this->t('Uri that will be appended to the Root endpoint URL defined'),
-      '#default_value' => $config->get('tag_endpoint'),
-      '#required' => TRUE,
-    ];
-
-    $form['wiki_categories_endpoint'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Wiki categories endpoint URI'),
-      '#description' => $this->t('Uri that will be appended to the Root endpoint URL defined'),
-      '#default_value' => $config->get('wiki_categories_endpoint'),
-      '#required' => TRUE,
-    ];
-
     $form['wiki_pages_endpoint'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Wiki pages endpoint URI'),
@@ -111,10 +79,6 @@ class NmConfigurationForm extends ConfigFormBase {
     $this->config('ncw_migration.config')
       ->set('highlights_endpoint', $values['highlights_endpoint'])
       ->set('news_endpoint', $values['news_endpoint'])
-      ->set('country_status_endpoint', $values['country_status_endpoint'])
-      ->set('country_endpoint', $values['country_endpoint'])
-      ->set('tag_endpoint', $values['tag_endpoint'])
-      ->set('wiki_categories_endpoint', $values['wiki_categories_endpoint'])
       ->set('wiki_pages_endpoint', $values['wiki_pages_endpoint'])
       ->set('root_endpoint', $values['root_endpoint'])
       ->save();

@@ -81,9 +81,7 @@ process:
     source: field_wiki_page_url/fi
   field_wiki_categories:
     plugin: nm_taxonomy_term
-    source:
-    - field_wiki_categories/name
-    - field_wiki_categories/vocabulary_machine_name
+    source: field_wiki_categories
   field_updated:
     - plugin: sub_process
       source: field_updated/und

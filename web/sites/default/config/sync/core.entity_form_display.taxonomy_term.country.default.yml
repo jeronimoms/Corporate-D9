@@ -26,18 +26,14 @@ content:
       rows: 5
     third_party_settings: {  }
   field_country_status:
-    type: entity_reference_autocomplete
-    weight: 5
+    type: options_select
+    weight: 4
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_flag:
     type: image_image
-    weight: 6
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber
@@ -45,7 +41,7 @@ content:
     third_party_settings: {  }
   field_iso2:
     type: string_textfield
-    weight: 7
+    weight: 3
     region: content
     settings:
       size: 60
@@ -68,7 +64,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 3
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -76,11 +72,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 8
     region: content
     third_party_settings: {  }
   translation:
-    weight: 8
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }

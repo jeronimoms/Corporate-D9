@@ -3,6 +3,7 @@
 namespace Drupal\vesafe_structure;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * General class for Form hooks.
@@ -19,6 +20,12 @@ class VsForm {
       // Include new form submission.
       array_unshift($form['actions']['submit']['#submit'], [$this, 'didYouKnowSubmitAlter']);
     }
+
+    // Change "Authored on" to "Creation date".
+    if ($form_id == 'node_key_article_edit_form') {
+      $form['created']['widget'][0]['value']['#title'] = new TranslatableMarkup('Creation date');
+    }
+
   }
 
   /**

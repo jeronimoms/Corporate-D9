@@ -24,6 +24,13 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
   protected $configFactory;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
@@ -34,6 +41,7 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
     );
 
     $instance->configFactory = $container->get('config.factory');
+    $instance->entityTypeManager = $container->get('entity_type.manager');
 
     return $instance;
   }
@@ -42,6 +50,7 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
    * {@inheritdoc}
    */
   public function getSourceData($url) {
+
     // NCW URL configuration.
     $config = $this->configFactory->getEditable('ncw_migration.config');
     $nm_root_url = $config->get('root_endpoint');
@@ -54,7 +63,6 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
       $nm_item = $item['item'];
       $nm_nid = $nm_item['nid'];
       $nm_url = $nm_root_url . '/export/node/' . $nm_nid;
-      ksm($nm_url);
       $response = $this->getDataFetcherPlugin()->getResponseContent($nm_url);
       $response_data = json_decode($response, TRUE);
 
@@ -62,8 +70,23 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
         continue;
       }
 
-      // Convert objects to associative arrays.
-      $items_new[$i]['item'] = json_decode($response, TRUE);
+      // Get the data decoded.
+      $decoded_data = json_decode($response, TRUE);
+
+      // If the node already exists, update it.
+      $node = $this->entityTypeManager->getStorage('node')->loadByProperties(['title' => $decoded_data['title']]);
+      if (!empty($node)) {
+        /** @var \Drupal\node\Entity\Node  $node */
+        $node = reset($node);
+        $decoded_data['nid'] = $node->id();
+
+        // Set as false to do not update this field if the node already exists.
+        $decoded_data['field_image'] = 'ignore';
+      }
+
+
+      // Set the new item.
+      $items_new[$i]['item'] = $decoded_data;
     }
 
     ksm($items_new);

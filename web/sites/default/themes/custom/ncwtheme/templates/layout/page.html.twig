@@ -1,6 +1,6 @@
 {% extends "@bootstrap_barrio/layout/page.html.twig" %}
 {% block head %}
-<header id="navbar" role="banner" class="{{ navbar_classes }}">
+<div id="navbar" role="banner" class="{{ navbar_classes }}">
   <div class="top-header-container">
     <div class="top-header-content row">
       <div class="header-logo">
@@ -43,7 +43,7 @@
         <button class="navbar-toggler navbar-toggler-left collapsed" type="button" data-toggle="collapse" data-target="#CollapsingLeft" aria-controls="CollapsingLeft" aria-expanded="false" aria-label="Toggle navigation"></button>
       {% endif %}
     </nav>
-</header>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -55,7 +55,7 @@
     {% set has_sidebar_first = page.sidebar_first|render|striptags|trim is not empty %}
     {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
     {% if has_sidebar_first %}
-      <aside class="section col-12 col-lg-3" role="complementary">
+      <aside class="section col-12 col-lg-3 sidebar-first" role="complementary">
         {{ page.sidebar_first }}
       </aside>
     {% endif %}
@@ -71,6 +71,10 @@
     {% if has_sidebar_first and has_sidebar_second %}
       <div id="main" class="col-12 col-lg-6 three-column mx-auto">
     {% endif %}
+        <section class="section container custom-view-node-header">
+          <a id="main-content" tabindex="-1"></a>
+          {{ page.node_view }}
+        </section>
         <section class="section">
           <a id="main-content" tabindex="-1"></a>
           {{ page.content }}
@@ -78,7 +82,11 @@
       </div>
     {% if has_sidebar_second %}
       <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
-        <h2 class="related">{{ 'Related' | trans }}</h2>
+        {% if node.bundle == 'blog' %}
+          <h2 class="related">{{ 'Posts by date' | trans }}</h2>
+        {% else %}
+          <h2 class="related">{{ 'Related' | trans }}</h2>
+        {% endif %}
         {{ page.sidebar_second }}
       </aside>
     {% endif %}

@@ -1,5 +1,46 @@
-/* Common styles to Fields */
+/* Header Fields - Language selector - Search */
+#header{
+  .header-language-search{
+    #lang_dropdown_form_lang-dropdown-form{
+      background: url(../images/languageico.png) no-repeat scroll 99% 1px transparent;
+    }
+    select.custom-select{
+      height: 21px;
+      color: $text-color-white;
+      background: url(../images/icoSelect.png) no-repeat scroll 94% center $bg-color-pink;
+      cursor: pointer;
+      border-radius: 0;
+      border: 0 none;
+      display: block;
+      float: right;
+      margin-right: 30px;
+      padding: 0 0 0 10px;
+    }
 
+    #search-block-form{
+      position: relative;
+      padding: 0 15px;
+      #edit-keys, #edit-keys--2{
+        width: 140px;
+        height: 21px;
+        margin-right: 35px;
+        border-radius: 0;
+      }
+      #edit-actions{
+        position: absolute;
+        top: 0;
+        right: 20px;
+        .btn-primary{
+          background: url(../images/searchico.png) no-repeat scroll 1px 1px transparent;
+          text-indent: -99999px;
+        }
+      }
+    }
+  }
+}
+
+
+/* Common styles to Fields */
 .views-exposed-form{
   position: relative;
   padding-bottom: 2.5rem;

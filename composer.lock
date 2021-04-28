@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e934bc2b73e0d686260fb4b7ad327a2",
+    "content-hash": "d77714bb2f897ae9699af46eb84f6a6f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6982,6 +6982,73 @@
             }
         },
         {
+            "name": "drupal/htmlmail",
+            "version": "3.0.0-alpha3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/htmlmail.git",
+                "reference": "8.x-3.0-alpha3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/htmlmail-8.x-3.0-alpha3.zip",
+                "reference": "8.x-3.0-alpha3",
+                "shasum": "d2d3d145531bc1e2d29e86cfa49853a4c622fa27"
+            },
+            "require": {
+                "drupal/core": "^8.8.2 || ^9",
+                "drupal/mailsystem": "^4.2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.0-alpha3",
+                    "datestamp": "1613730655",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "gaurav.kapoor",
+                    "homepage": "https://www.drupal.org/user/3495331",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Nafes",
+                    "homepage": "https://www.drupal.org/user/2489926",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/u/RenatoG",
+                    "email": "renatog@ciandt.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "salvis",
+                    "homepage": "https://www.drupal.org/u/salvis",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "salvis",
+                    "homepage": "https://www.drupal.org/user/82964"
+                }
+            ],
+            "description": "Enables HTML in system emails.",
+            "homepage": "https://www.drupal.org/project/htmlmail",
+            "support": {
+                "source": "https://git.drupalcode.org/project/htmlmail",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
             "name": "drupal/image_field_caption",
             "version": "1.1.0",
             "source": {
@@ -8735,6 +8802,9 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
+                },
+                "patches_applied": {
+                    "Fix error ordering deleted and added entityqueue": "patches/linkchecker-error_ordering_deleted_added_entityqueue.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -12918,6 +12988,62 @@
             "homepage": "https://www.drupal.org/project/ultimate_cron",
             "support": {
                 "source": "https://git.drupalcode.org/project/ultimate_cron"
+            }
+        },
+        {
+            "name": "drupal/url_redirect",
+            "version": "2.62.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/url_redirect.git",
+                "reference": "8.x-2.62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/url_redirect-8.x-2.62.zip",
+                "reference": "8.x-2.62",
+                "shasum": "4753b3d4e334c4a94f58adea92c6a5d84a4fe589"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.62",
+                    "datestamp": "1592668927",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "JeroenT",
+                    "homepage": "https://www.drupal.org/user/2228934"
+                },
+                {
+                    "name": "Nitesh Sethia",
+                    "homepage": "https://www.drupal.org/user/2474982"
+                },
+                {
+                    "name": "ajay_reddy",
+                    "homepage": "https://www.drupal.org/user/3261994"
+                },
+                {
+                    "name": "mahaveer003",
+                    "homepage": "https://www.drupal.org/user/3063119"
+                }
+            ],
+            "description": "Redirect User / Role for specific menu item.",
+            "homepage": "https://www.drupal.org/project/url_redirect",
+            "support": {
+                "source": "https://git.drupalcode.org/project/url_redirect"
             }
         },
         {
@@ -20455,6 +20581,7 @@
         "drupal/feeds_ex": 15,
         "drupal/feeds_tamper": 10,
         "drupal/file_entity": 10,
+        "drupal/htmlmail": 15,
         "drupal/jsonapi_resources": 10,
         "drupal/lang_dropdown": 10,
         "drupal/layoutcomponents": 10,
@@ -20486,5 +20613,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

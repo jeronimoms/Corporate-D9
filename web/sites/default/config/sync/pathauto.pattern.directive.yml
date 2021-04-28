@@ -1,0 +1,22 @@
+uuid: 1cba9cd4-34ed-44cf-b523-31ba03d5de93
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: directive
+label: Directive
+type: 'canonical_entities:node'
+pattern: 'legislation/directive/[node:title]'
+selection_criteria:
+  8dd1b700-3e0c-4514-81a5-47c218da356c:
+    id: node_type
+    bundles:
+      directive: directive
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 8dd1b700-3e0c-4514-81a5-47c218da356c
+selection_logic: and
+weight: -5
+relationships: {  }

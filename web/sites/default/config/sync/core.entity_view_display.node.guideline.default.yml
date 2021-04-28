@@ -36,24 +36,26 @@ content:
     third_party_settings: {  }
     region: content
   field_additional_html:
+    type: text_default
     weight: 4
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   field_available_in_languages:
+    type: languagefield_default
     weight: 3
+    region: content
     label: above
     settings:
       link_to_entity: false
       format:
         name: name
     third_party_settings: {  }
-    type: languagefield_default
-    region: content
   field_external_url:
+    type: link
     weight: 2
+    region: content
     label: inline
     settings:
       trim_length: 80
@@ -62,15 +64,13 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
-    region: content
   field_summary:
+    type: basic_string
     weight: 0
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
-    region: content
 hidden:
   addtoany: true
   field_activity: true

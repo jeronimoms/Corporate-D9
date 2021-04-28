@@ -1,0 +1,23 @@
+uuid: c27bdcd4-96a1-4b80-9dc6-d6a64682adbd
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: term_activity
+label: 'Term: Activity'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'activity/[term:field_activity_code]'
+selection_criteria:
+  591bf6fd-88cd-4949-af6a-d30dcf0f0a5f:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      activity: activity
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 591bf6fd-88cd-4949-af6a-d30dcf0f0a5f
+selection_logic: and
+weight: -5
+relationships: {  }

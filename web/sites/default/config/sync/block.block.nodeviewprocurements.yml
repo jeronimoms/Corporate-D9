@@ -1,0 +1,30 @@
+uuid: dafb7fe5-ecce-427b-b925-0b15a42cc632
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_node_views:f5dc4627-6181-4207-89fe-d573e476cd32'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: nodeviewprocurements
+theme: ncwtheme
+region: node_view
+weight: 0
+provider: null
+plugin: 'block_content:f5dc4627-6181-4207-89fe-d573e476cd32'
+settings:
+  id: 'block_content:f5dc4627-6181-4207-89fe-d573e476cd32'
+  label: 'Node view Procurements'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/procurement
+    negate: false

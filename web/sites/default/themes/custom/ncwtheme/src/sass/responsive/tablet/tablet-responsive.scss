@@ -67,7 +67,10 @@
 
 
 @media only screen and (max-width : 991px) {
-
+  /* Breadcrumbs */
+  .breadcrumb-fluid{
+    display: none;
+  }
   /* Menu responsive */
   #navbar-main {
     padding: 0;

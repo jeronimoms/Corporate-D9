@@ -7,6 +7,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\migrate\MigrateSkipProcessException;
 
 /**
  * This plugin replace body value from new value.
@@ -43,12 +44,14 @@ class NmTaxonomyTerm extends ProcessPluginBase implements ContainerFactoryPlugin
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    $term_name = $value[0];
-    $vocabulary_name = $value[1];
+
+    if (empty($value)) {
+      throw new MigrateSkipProcessException();
+    }
 
     $term = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties([
-      'name' => $term_name,
-      'vid' => $vocabulary_name,
+      'name' => $value['name'],
+      'vid' => $value['vocabulary_machine_name'],
     ]);
 
     /** @var \Drupal\taxonomy\Entity\Term $term */

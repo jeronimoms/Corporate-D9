@@ -1,0 +1,176 @@
+# This migration demonstrates a simple import from a JSON file.
+id: highlight
+label: 'Node: Highlight'
+migration_group: ncw_migration
+migration_tags:
+  - highlight
+  - highlight_default
+
+destination:
+  default_bundle: news
+  plugin: 'entity:node'
+  overwrite_properties:
+    - title
+    - body
+    - field_publication_date
+    - field_tags
+    - status
+    - created
+    - changed
+    - promote
+    - sticky
+migration_dependencies: {  }
+
+dependencies:
+  enforced:
+    module:
+      - ncw_migration
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: nm_json
+  include_raw_data: true
+  urls: https://osha.europa.eu/export/list/highlight/oira+risk_assessment+microenterprises
+  ids:
+    nid:
+      type: integer
+  item_selector: 'items/'
+  constants:
+    lang: en
+    file_source: https://osha.europa.eu/sites/default/files/news
+    file_dest: public://ncw/images/news
+  fields:
+    -
+      name: nid
+      label: 'Nid'
+      selector: item/nid
+    -
+      name: title
+      label: 'Title'
+      selector: item/title_field/en
+    -
+      name: body
+      label: 'Body'
+      selector: item/body
+    -
+      name: field_publication_date
+      label: "Field Publication Date"
+      selector: item/field_publication_date
+    -
+      name: source_image
+      label: 'Field Image'
+      selector: item/field_image/en/0
+    -
+      name: field_tags
+      label: "Field Tags"
+      selector: item/field_tags
+    -
+      name: status
+      label: "Status"
+      selector: item/translations/data/en/status
+    -
+      name: created
+      label: "Created"
+      selector: item/translations/data/en/created
+    -
+      name: changed
+      label: "Changed"
+      selector: item/translations/data/en/changed
+    -
+      name: promote
+      label: "Promote"
+      selector: item/promote
+    -
+      name: sticky
+      label: "Sticky"
+      selector: item/sticky
+
+
+process:
+  nid: nid
+  langcode: constants/lang
+  title: title
+  body/0/value: body/en/0/value
+  body/0/format:
+    plugin: static_map
+    bypass: true
+    source: body/en/0/format
+    map:
+      full_html_minimal: basic_html
+  file_source:
+    -
+      plugin: skip_on_empty_multiple
+      method: process
+      source: source_image
+    -
+      plugin: nm_url_transform
+      source: source_image/uri
+    -
+      plugin: urlencode
+  file_dest:
+    -
+      plugin: skip_on_empty_multiple
+      method: process
+      source: source_image
+    - plugin: concat
+      delimiter: /
+      source:
+        - constants/file_dest
+        - source_image/filename
+
+  file:
+    -
+      plugin: skip_on_empty_multiple
+      method: process
+      source: source_image
+    - plugin: file_copy
+      source:
+        - '@file_source'
+        - '@file_dest'
+    - plugin: entity_generate
+      value_key: uri
+      entity_type: file
+
+  media:
+    - plugin: skip_on_empty_multiple
+      method: process
+      source: source_image
+    - plugin: entity_generate
+      value_key: mid
+      bundle_key: vid
+      entity_type: media
+      bundle: image
+      source: '@file'
+      default_values:
+        bundle: image
+        mid: null
+        vid: null
+      values:
+        field_media_image: '@file'
+
+  field_image/target_id: '@media'
+  field_image_home_latest_news/target_id: '@media'
+
+  field_publication_date:
+    - plugin: sub_process
+      source: field_publication_date/und
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_tags:
+    -
+      plugin: nm_taxonomy_term
+      source: field_tags
+
+  field_migration_source:
+    -
+      plugin: default_value
+      default_value: ncw
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
