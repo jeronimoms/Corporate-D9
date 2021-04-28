@@ -42,12 +42,14 @@
                 opacity: 0.9;
               }
             }
-            a.is-active{
-              width: 100%;
-              font-weight: bold;
-              color: $text-color-blue;
-              background: url(../images/arrow-left-menu.png) 98% no-repeat;
-              padding-right: 35px;
+            a.is-active::after{
+              content: "";
+              display: inline-block;
+              width: 19px;
+              height: 11px;
+              background: url(../images/arrow-left-menu.png) 1px 1px no-repeat;
+              padding-right: 0;
+              margin-left: 5px;
             }
             ul.menu-level-2{
               display: none;

@@ -692,12 +692,14 @@ h3.home a:hover {
 .sidebar-first .menu--main ul li ul li a:hover {
   opacity: 0.9;
 }
-.sidebar-first .menu--main ul li ul li a.is-active {
-  width: 100%;
-  font-weight: bold;
-  color: #003399;
-  background: url(../images/arrow-left-menu.png) 98% no-repeat;
-  padding-right: 35px;
+.sidebar-first .menu--main ul li ul li a.is-active::after {
+  content: "";
+  display: inline-block;
+  width: 19px;
+  height: 11px;
+  background: url(../images/arrow-left-menu.png) 1px 1px no-repeat;
+  padding-right: 0;
+  margin-left: 5px;
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
   display: none;
