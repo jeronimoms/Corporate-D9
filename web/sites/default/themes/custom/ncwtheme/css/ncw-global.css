@@ -717,6 +717,22 @@ h3.home a:hover {
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 li:last-child {
   border-bottom: 0;
 }
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 {
+  display: none;
+}
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li {
+  width: 100%;
+}
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li a {
+  padding-left: 30px;
+}
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li a.is-active {
+  font-weight: bold;
+  color: #003399;
+}
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li:last-child {
+  border-bottom: 0;
+}
 .sidebar-first .menu--main ul li ul li.menu-item--active-trail ul.menu-level-2 {
   display: block;
 }
