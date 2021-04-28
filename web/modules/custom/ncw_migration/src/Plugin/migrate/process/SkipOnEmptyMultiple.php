@@ -2,8 +2,11 @@
 
 namespace Drupal\ncw_migration\Plugin\migrate\process;
 
+use Drupal\migrate\MigrateException;
 use Drupal\migrate\MigrateExecutableInterface;
-use Drupal\migrate\Plugin\migrate\process\SkipOnEmpty;
+use Drupal\migrate\MigrateSkipProcessException;
+use Drupal\migrate\MigrateSkipRowException;
+use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 
 /**
@@ -18,30 +21,19 @@ use Drupal\migrate\Row;
  *   handle_multiples = TRUE
  * )
  */
-class SkipOnEmptyMultiple extends SkipOnEmpty {
-
-  /**
-   * Indicate whether there are multiple values for this field.
-   *
-   * @var bool
-   */
-  protected $multiple;
+class SkipOnEmptyMultiple extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
    */
-  public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    // Set multiple.
-    $this->multiple = is_array($value) && !empty($value);
-
-    return parent::transform($value, $migrate_executable, $row, $destination_property);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function multiple() {
-    return $this->multiple;
+  public function process($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+    if (!is_array($value)) {
+      ksm($value);
+      if (empty($value)) {
+        throw new MigrateSkipProcessException();
+      }
+    }
+    return $value;
   }
 
 }

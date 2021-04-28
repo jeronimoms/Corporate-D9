@@ -17,3 +17,13 @@ function ncw_backend_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
     -> viewsQueryAlter( $view, $query);
 }
 
+
+function ncw_backend_page_attachments(array &$attachments) {
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+  if ($is_admin) {
+    $attachments['#attached']['library'][] = 'ncw_backend/ncw_backend';
+    return;
+  }
+
+}
+

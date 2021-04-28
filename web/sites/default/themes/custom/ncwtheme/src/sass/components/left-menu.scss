@@ -18,6 +18,10 @@
             transition: all 500ms;
           }
         }
+        a.is-active{
+          font-weight: bold;
+          color: $text-color-blue;
+        }
         ul{
           list-style: none;
           padding-left: 0;
@@ -32,10 +36,20 @@
               font-size: 0.75rem;
               font-weight: 700;
               border-bottom: 0;
+              padding-right: 35px;
               padding-bottom: 0;
               &:hover{
                 opacity: 0.9;
               }
+            }
+            a.is-active::after{
+              content: "";
+              display: inline-block;
+              width: 19px;
+              height: 11px;
+              background: url(../images/arrow-left-menu.png) 1px 1px no-repeat;
+              padding-right: 0;
+              margin-left: 5px;
             }
             ul.menu-level-2{
               display: none;
@@ -44,9 +58,40 @@
                 a{
                   padding-left: 15px;
                 }
+                a.is-active{
+                  font-weight: bold;
+                  color: $text-color-blue;
+                }
               }
               li:last-child{
                 border-bottom: 0;
+              }
+              ul.menu-level-3{
+                display: none;
+                li{
+                  width: 100%;
+                  a{
+                    padding-left: 30px;
+                  }
+                  a.is-active{
+                    font-weight: bold;
+                    color: $text-color-blue;
+                  }
+                }
+                li:last-child{
+                  border-bottom: 0;
+                }
+              }
+            }
+          }
+          li.menu-item--active-trail{
+            ul.menu-level-2{
+              display: block;
+            }
+            .mean-expand-custom{
+              background: url("../images/ico_minor.png") no-repeat 10px 11px;
+              &.active{
+                background: url("../images/ico-plus.png") no-repeat 10px 11px;
               }
             }
           }
@@ -70,7 +115,7 @@
   height: 30px;
   cursor: pointer;
   position: absolute;
-  z-index: 9999;
+  z-index: 1;
   right: 0;
   top: 4px;
   background: url(../images/ico-plus.png) no-repeat 9px 8px;
@@ -78,4 +123,6 @@
     background: url("../images/ico_minor.png") no-repeat 10px 11px;
   }
 }
+
+
 

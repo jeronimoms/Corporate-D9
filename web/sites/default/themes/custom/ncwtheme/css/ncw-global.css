@@ -666,6 +666,10 @@ h3.home a:hover {
   opacity: 0.9;
   transition: all 500ms;
 }
+.sidebar-first .menu--main ul li a.is-active {
+  font-weight: bold;
+  color: #003399;
+}
 .sidebar-first .menu--main ul li ul {
   list-style: none;
   padding-left: 0;
@@ -682,10 +686,20 @@ h3.home a:hover {
   font-size: 0.75rem;
   font-weight: 700;
   border-bottom: 0;
+  padding-right: 35px;
   padding-bottom: 0;
 }
 .sidebar-first .menu--main ul li ul li a:hover {
   opacity: 0.9;
+}
+.sidebar-first .menu--main ul li ul li a.is-active::after {
+  content: "";
+  display: inline-block;
+  width: 19px;
+  height: 11px;
+  background: url(../images/arrow-left-menu.png) 1px 1px no-repeat;
+  padding-right: 0;
+  margin-left: 5px;
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
   display: none;
@@ -696,8 +710,37 @@ h3.home a:hover {
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a {
   padding-left: 15px;
 }
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 li a.is-active {
+  font-weight: bold;
+  color: #003399;
+}
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 li:last-child {
   border-bottom: 0;
+}
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 {
+  display: none;
+}
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li {
+  width: 100%;
+}
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li a {
+  padding-left: 30px;
+}
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li a.is-active {
+  font-weight: bold;
+  color: #003399;
+}
+.sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li:last-child {
+  border-bottom: 0;
+}
+.sidebar-first .menu--main ul li ul li.menu-item--active-trail ul.menu-level-2 {
+  display: block;
+}
+.sidebar-first .menu--main ul li ul li.menu-item--active-trail .mean-expand-custom {
+  background: url("../images/ico_minor.png") no-repeat 10px 11px;
+}
+.sidebar-first .menu--main ul li ul li.menu-item--active-trail .mean-expand-custom.active {
+  background: url("../images/ico-plus.png") no-repeat 10px 11px;
 }
 .sidebar-first .menu--main ul li ul li.is-expanded ul li:last-child {
   border-bottom: 0;
@@ -710,7 +753,7 @@ h3.home a:hover {
   height: 30px;
   cursor: pointer;
   position: absolute;
-  z-index: 9999;
+  z-index: 1;
   right: 0;
   top: 4px;
   background: url(../images/ico-plus.png) no-repeat 9px 8px;
@@ -1285,6 +1328,29 @@ body ul li .introduction-title a:hover {
   float: left;
 }
 
+/* Sitemap */
+.sitemap-item h2 {
+  display: none;
+}
+.sitemap-item ul.menu-level-0 {
+  padding-left: 20px;
+}
+.sitemap-item ul li {
+  width: 100%;
+}
+.sitemap-item ul li a {
+  font-size: 0.9rem;
+  border-bottom: 1px solid #c72272;
+}
+.sitemap-item ul li a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #003399;
+  transition: border-bottom 1s;
+}
+.sitemap-item ul li img {
+  display: none;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
@@ -1293,6 +1359,7 @@ body ul li .introduction-title a:hover {
   background-color: #FFF;
 }
 .breadcrumb-fluid .breadcrumb {
+  visibility: hidden;
   font-size: 0.8rem;
   font-weight: lighter;
   border: 0px;
@@ -1309,6 +1376,9 @@ body ul li .introduction-title a:hover {
 .breadcrumb-fluid .breadcrumb a:hover {
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
+}
+.breadcrumb-fluid .breadcrumb.custom-visible {
+  visibility: visible;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -2375,6 +2445,11 @@ body.node--type-publication {
 /* View node header - Node related with the View - Placed before the View */
 .custom-view-node-header {
   padding-bottom: 2rem;
+}
+.custom-view-node-header img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 /* View View List */

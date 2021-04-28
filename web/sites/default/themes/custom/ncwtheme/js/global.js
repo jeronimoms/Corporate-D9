@@ -95,11 +95,21 @@ jQuery(document).ready(function($) {
   });
 
   //Left menu in sidebar first
-  $(".sidebar-first .menu-level-1 .menu-item--expanded > a").after("<span class='mean-expand-custom'>&nbsp;</span>");
+  $(".sidebar-first .menu-level-1 .menu-item--expanded > a").after("<span class='mean-expand-custom no-active'>&nbsp;</span>");
   $('.sidebar-first .menu-level-1 .mean-expand-custom').click(function(){
     $(this).parent().children('div').children('ul').slideToggle();
     $(this).toggleClass('active');
+    $(this).toggleClass('no-active');
   });
+
+  // Breadcrumbs - Hide duplicate items
+  var text_breadcrumb_item_2 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(2) > a").text();
+  var text_breadcrumb_item_3 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3) > a").text();
+
+  if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
+    $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
+    $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
+  }
 
 });
 
