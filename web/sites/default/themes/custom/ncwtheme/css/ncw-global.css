@@ -1328,6 +1328,29 @@ body ul li .introduction-title a:hover {
   float: left;
 }
 
+/* Sitemap */
+.sitemap-item h2 {
+  display: none;
+}
+.sitemap-item ul.menu-level-0 {
+  padding-left: 20px;
+}
+.sitemap-item ul li {
+  width: 100%;
+}
+.sitemap-item ul li a {
+  font-size: 0.9rem;
+  border-bottom: 1px solid #c72272;
+}
+.sitemap-item ul li a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #003399;
+  transition: border-bottom 1s;
+}
+.sitemap-item ul li img {
+  display: none;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
@@ -2422,6 +2445,11 @@ body.node--type-publication {
 /* View node header - Node related with the View - Placed before the View */
 .custom-view-node-header {
   padding-bottom: 2rem;
+}
+.custom-view-node-header img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 /* View View List */
