@@ -50,7 +50,7 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
    * {@inheritdoc}
    */
   public function getSourceData($url) {
-    ksm($this->get);
+
     // NCW URL configuration.
     $config = $this->configFactory->getEditable('ncw_migration.config');
     $nm_root_url = $config->get('root_endpoint');
@@ -79,7 +79,9 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
         /** @var \Drupal\node\Entity\Node  $node */
         $node = reset($node);
         $decoded_data['nid'] = $node->id();
-        $decoded_data['field_tags'] = '';
+
+        // Set as false to do not update this field if the node already exists.
+        $decoded_data['field_image'] = FALSE;
       }
 
 
@@ -87,6 +89,7 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
       $items_new[$i]['item'] = $decoded_data;
     }
 
+    ksm($items_new);
     return $items_new;
   }
 

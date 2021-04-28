@@ -1,14 +1,13 @@
 <?php
 
-use Drupal\migrate\Plugin\MigrationInterface;
-use Drupal\migrate\Plugin\MigrateSourceInterface;
-use Drupal\migrate\Row;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\ncw_migration\NmForm;
 
 /**
- * Implements hook_migration_plugins_alter().
+ * Implements hook_form_alter().
  */
-function ncw_migration_migration_plugins_alter(array &$migrations) {
-  ksm('yo');
-  //ksm($migrations);
+function ncw_migration_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  Drupal::classResolver()
+    ->getInstanceFromDefinition(NmForm::class)
+    ->formAlter($form, $form_state, $form_id);
 }
-
