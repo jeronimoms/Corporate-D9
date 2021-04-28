@@ -99,17 +99,30 @@ process:
       full_html_minimal: basic_html
   file_source:
     -
+      plugin: skip_on_empty_multiple
+      method: process
+      source: source_image
+    -
       plugin: nm_url_transform
       source: source_image/uri
     -
       plugin: urlencode
   file_dest:
+    -
+      plugin: skip_on_empty_multiple
+      method: process
+      source: source_image
     - plugin: concat
       delimiter: /
       source:
         - constants/file_dest
         - source_image/filename
+
   file:
+    -
+      plugin: skip_on_empty_multiple
+      method: process
+      source: source_image
     - plugin: file_copy
       source:
         - '@file_source'
@@ -117,14 +130,12 @@ process:
     - plugin: entity_generate
       value_key: uri
       entity_type: file
-  field_image/target_id:
-    -
-      plugin: skip_on_value
+
+  media:
+    - plugin: skip_on_empty_multiple
       method: process
-      source: '@file'
-      value: false
-    -
-      plugin: entity_generate
+      source: source_image
+    - plugin: entity_generate
       value_key: mid
       bundle_key: vid
       entity_type: media
@@ -136,6 +147,10 @@ process:
         vid: null
       values:
         field_media_image: '@file'
+
+  field_image/target_id: '@media'
+  field_image_home_latest_news/target_id: '@media'
+
   field_publication_date:
     - plugin: sub_process
       source: field_publication_date/und
