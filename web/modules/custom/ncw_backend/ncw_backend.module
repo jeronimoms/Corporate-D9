@@ -1,0 +1,19 @@
+<?php
+use Drupal\ncw_backend\ncwViewQA;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+
+/**
+ * Implements hook_views_query_alter().
+ * @param ViewExecutable $view
+ * @param QueryPluginBase $query
+ * @return mixed
+ */
+function ncw_backend_views_query_alter(ViewExecutable $view, QueryPluginBase $query)
+{
+    return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(ncwViewQA::class)
+    -> viewsQueryAlter( $view, $query);
+}
+

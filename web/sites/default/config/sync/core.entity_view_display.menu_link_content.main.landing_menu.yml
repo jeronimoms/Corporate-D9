@@ -1,0 +1,44 @@
+uuid: 332c7806-716a-4db1-ac49-ed15a7314a40
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.menu_link_content.landing_menu
+    - field.field.menu_link_content.main.field_image_menu_main
+    - system.menu.main
+  module:
+    - layout_builder
+    - linked_field
+    - media
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: menu_link_content.main.landing_menu
+targetEntityType: menu_link_content
+bundle: main
+mode: landing_menu
+content:
+  children:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_menu_main:
+    type: media_thumbnail
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: link
+        advanced: {  }
+        token: ''
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
