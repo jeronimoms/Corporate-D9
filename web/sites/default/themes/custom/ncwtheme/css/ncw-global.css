@@ -2248,6 +2248,9 @@ body.user-logged-in.toolbar-tray-open #header {
   margin-bottom: 3rem;
 }
 
+.view-landing-menu {
+  padding-top: 1rem;
+}
 .view-landing-menu .views-view-grid > div {
   display: flex;
   flex-wrap: wrap;

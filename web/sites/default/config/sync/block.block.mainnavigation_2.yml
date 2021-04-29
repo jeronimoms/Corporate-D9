@@ -24,9 +24,11 @@ settings:
   follow_parent: active
   level: 2
   depth: 5
-  expand: false
+  expand_all_items: false
   parent: 'main:'
   suggestion: main
+  label_type: block
+  label_link: false
 visibility:
   request_path:
     id: request_path
