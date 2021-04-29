@@ -7,9 +7,9 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: oira_node_basic_page_i18n                         # -----  CHANGE
+id: allages_node_basic_page_i18n                         # -----  CHANGE
 label: 'Node: Basic Page i18n'                # -----  CHANGE
-migration_group: oira_migrate_node
+migration_group: allages_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation
@@ -25,7 +25,7 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
-    - oira_node_basic_page                            # -----  CHANGE
+    - allages_node_basic_page                            # -----  CHANGE
 
 process:
   nid: entity_id

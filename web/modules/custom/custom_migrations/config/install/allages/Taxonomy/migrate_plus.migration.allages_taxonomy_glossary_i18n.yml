@@ -81,7 +81,11 @@ process:
       default_value: glossary                 # -----  CHANGE
   name: name_field_value
   'description/value': description_field_value
-  'description/format': format
+  #'description/format': format
+  'description/format':
+    - plugin: default_value
+      default_value: full_html
+
   parent_id:
     - plugin: skip_on_empty
       method: process
