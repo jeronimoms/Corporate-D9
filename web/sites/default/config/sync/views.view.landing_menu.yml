@@ -301,20 +301,7 @@ display:
       title: 'landing menu'
       header: {  }
       footer: {  }
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: Nada
-            format: basic_html
-          plugin_id: text
+      empty: {  }
       relationships: {  }
       arguments:
         parent:
