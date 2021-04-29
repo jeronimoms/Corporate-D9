@@ -81,7 +81,7 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
         $decoded_data['nid'] = $node->id();
 
         // Set as false to do not update this field if the node already exists.
-        $decoded_data['field_image'] = 'ignore';
+        $decoded_data['field_image'] = [];
       }
 
 
@@ -89,7 +89,6 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
       $items_new[$i]['item'] = $decoded_data;
     }
 
-    ksm($items_new);
     return $items_new;
   }
 

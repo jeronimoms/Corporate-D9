@@ -2,12 +2,10 @@
 
 namespace Drupal\ncw_migration\Plugin\migrate\process;
 
-use Drupal\migrate\MigrateException;
-use Drupal\migrate\MigrateExecutableInterface;
-use Drupal\migrate\MigrateSkipProcessException;
-use Drupal\migrate\MigrateSkipRowException;
 use Drupal\migrate\ProcessPluginBase;
+use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
+use Drupal\migrate\MigrateSkipProcessException;
 
 /**
  * Skip on empty images.
@@ -22,12 +20,7 @@ class SkipOnEmptyImage extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function process($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    if (!is_array($value)) {
-      if (empty($value)) {
-        throw new MigrateSkipProcessException();
-      }
-    }
-    return $value;
+    throw new MigrateSkipProcessException();
   }
 
 }

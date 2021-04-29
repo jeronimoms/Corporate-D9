@@ -101,19 +101,11 @@ process:
       full_html_minimal: basic_html
   file_source:
     -
-      plugin: skip_on_empty_image
-      method: process
-      source: source_image
-    -
       plugin: nm_url_transform
       source: source_image/uri
     -
       plugin: urlencode
   file_dest:
-    -
-      plugin: skip_on_empty_image
-      method: process
-      source: source_image
     - plugin: concat
       delimiter: /
       source:
