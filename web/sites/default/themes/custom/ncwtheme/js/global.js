@@ -101,6 +101,16 @@ jQuery(document).ready(function($) {
     $(this).toggleClass('active');
     $(this).toggleClass('no-active');
   });
+
+  // Breadcrumbs - Hide duplicate items
+  var text_breadcrumb_item_2 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(2) > a").text();
+  var text_breadcrumb_item_3 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3) > a").text();
+
+  if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
+    $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
+    $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
+  }
+
 });
 
 //Move Language Selector to the menu responsive

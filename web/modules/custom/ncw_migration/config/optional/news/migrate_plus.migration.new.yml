@@ -112,6 +112,10 @@ process:
         - constants/file_dest
         - source_image/filename
   file:
+    -
+      plugin: skip_on_empty_image
+      method: process
+      source: source_image
     - plugin: file_copy
       source:
         - '@file_source'
@@ -119,9 +123,11 @@ process:
     - plugin: entity_generate
       value_key: uri
       entity_type: file
-  field_image/target_id:
-    -
-      plugin: entity_generate
+  media:
+    - plugin: skip_on_empty_image
+      method: process
+      source: source_image
+    - plugin: entity_generate
       value_key: mid
       bundle_key: vid
       entity_type: media
@@ -133,6 +139,8 @@ process:
         vid: null
       values:
         field_media_image: '@file'
+  field_image/target_id: '@media'
+  field_image_home_latest_news/target_id: '@media'
   field_publication_date:
     - plugin: sub_process
       source: field_publication_date/und

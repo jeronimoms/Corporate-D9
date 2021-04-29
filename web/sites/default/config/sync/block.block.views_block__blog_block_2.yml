@@ -5,7 +5,7 @@ dependencies:
   config:
     - views.view.blog
   module:
-    - ctools
+    - system
     - views
   theme:
     - ncwtheme
@@ -23,10 +23,7 @@ settings:
   views_label: ''
   items_per_page: none
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      blog: blog
+  request_path:
+    id: request_path
+    pages: "/tools-and-resources/blog\r\n/blog/*"
     negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'

@@ -1,18 +1,17 @@
-# File to Media Migration configuration for allages_good_practice_media_image migration
+# File to Media Migration configuration for allages Themes migration
 
-id: allages_node_good_practices_media_images_1
-label: 'Good practices: Step 1'
-migration_group: allages_migrate_media
-
+id: allages_node_themes_field_image_media
+label: 'Themes: Media Image'
+migration_group: allages_migrate_node_media
 source:
-  key: migrate
-  langcode: und
+
   plugin: media_entity_generator_d7
   entity_type: node
-  bundle: good_practices
+  bundle: themes
+  langcode: und
   d7_file_url: 'https://eguides.osha.europa.eu/all-ages/sites/default/files/'
   field_names:
-    - field_image_step
+    - field_theme_image
 
 destination:
   plugin: entity:media
@@ -40,19 +39,18 @@ process:
   # Map the field image
   field_media_image/alt: alt
   field_media_image/title: title
-  field_media_description: field_file_description
+  field_description: field_file_description
   field_media_image/target_id:
     plugin: media_file_copy
     move: TRUE
     reuse: TRUE
-    path: 'public://images/good_practices/'
+    path: 'public://'
     source: file_path
   langcode: langcode
 
   uid:
     plugin: default_value
     default_value: 1
-
 
 dependencies:
   module:

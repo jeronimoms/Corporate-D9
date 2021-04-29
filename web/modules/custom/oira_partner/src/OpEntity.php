@@ -66,7 +66,7 @@ class OpEntity implements ContainerInjectionInterface {
             continue;
           }
           // Hidde the field.
-          //$form[$field_name]['#attributes']['class'][] = 'hidden';
+          $form[$field_name]['#attributes']['class'][] = 'hidden';
         }
       }
     }

@@ -25,7 +25,7 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
-    - allages_node_themes_i18n                            # -----  CHANGE
+    - allages_node_themes
 
 process:
   nid: entity_id
@@ -97,6 +97,11 @@ process:
   field_order: field_order
   field_sections:
     - plugin: migration_lookup
-      migration: allages_node_lessons_i18n
+      migration: allages_node_lessons
       source: field_sections
+  field_theme_image:
+    plugin: file_id_lookup
+    source: field_theme_image
+    migration: allages_node_themes_field_image_media
+    no_stub: true
 

@@ -88,3 +88,10 @@ process:
   ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
   field_text: field_text
   field_sources: field_sources
+
+  field_image_step:
+    plugin: file_id_lookup
+    source: field_image_step
+    migration: allages_node_did_you_know_field_image_media
+    no_stub: true
+

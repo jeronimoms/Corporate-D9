@@ -13,7 +13,7 @@ migration_group: allages_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation
-  node_type: lessons                                # -----  CHANGE
+  node_type: steps                                # -----  CHANGE
 destination:
   plugin: entity:node
   translations: true
@@ -87,7 +87,10 @@ process:
   content_translation_outdated: translate
   ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
   field_text_1: field_text_1
-  field_text_2: field_text_2
+  'field_text_2/value': field_text_2
+  'field_text_2/format':
+    - plugin: default_value
+      default_value: restricted_html
   field_profile:
     - plugin: sub_process
       source: field_profile
@@ -95,3 +98,8 @@ process:
         target_id:
           plugin: get
           source: tid
+  field_image_step:
+    plugin: file_id_lookup
+    source: field_image_step
+    migration: allages_node_lessons_field_image_media
+    no_stub: true
