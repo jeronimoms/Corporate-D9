@@ -1,0 +1,28 @@
+uuid: 5d13313b-1ce0-46c5-b7fe-cf73be7f3d25
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.25th_anniversary_articles
+  module:
+    - system
+    - views
+  theme:
+    - ncwtheme
+id: exposedform25th_anniversary_articlespage_25_anniversary_view
+theme: ncwtheme
+region: content
+weight: -15
+provider: null
+plugin: 'views_exposed_filter_block:25th_anniversary_articles-page_25_anniversary_view'
+settings:
+  id: 'views_exposed_filter_block:25th_anniversary_articles-page_25_anniversary_view'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/our-story/look-back-future/25-anniversary-articles
+    negate: false

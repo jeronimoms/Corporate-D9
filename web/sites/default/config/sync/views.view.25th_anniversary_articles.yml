@@ -5,6 +5,8 @@ dependencies:
   config:
     - search_api.index.25th_anniversary
   module:
+    - better_exposed_filters
+    - pagerer
     - search_api
 id: 25th_anniversary_articles
 label: '25th Anniversary articles'
@@ -33,50 +35,89 @@ display:
           skip_access: false
           preserve_facet_query_args: false
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            sort:
+              plugin_id: default
+              advanced:
+                combine: false
+                combine_rewrite: ''
+                reset: false
+                reset_label: ''
+                collapsible: false
+                collapsible_label: 'Sort options'
+                is_secondary: false
+            filter:
+              search_api_fulltext:
+                plugin_id: default
+                advanced:
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
       pager:
-        type: full
+        type: pagerer
         options:
+          preset: pagination
           items_per_page: 5
           offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-            first: '« First'
-            last: 'Last »'
+          id: '0'
+          total_pages: ''
           expose:
-            items_per_page: false
+            items_per_page: 0
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
+            items_per_page_options_all: 0
             items_per_page_options_all_label: '- All -'
-            offset: false
+            offset: 0
             offset_label: Offset
-          quantity: 9
       style:
-        type: table
+        type: grid
+        options:
+          grouping: {  }
+          columns: 12
+          automatic_width: false
+          alignment: vertical
+          col_class_default: false
+          col_class_custom: ''
+          row_class_default: false
+          row_class_custom: 'revamp-row no-flex'
       row:
         type: fields
+        options:
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
       fields:
-        title:
-          id: title
-          table: search_api_index_25th_anniversary
-          field: title
+        nid:
+          id: nid
+          table: search_api_datasource_25th_anniversary_entity_node
+          field: nid
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -117,6 +158,89 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_numeric
+          fallback_options:
+            set_precision: false
+            precision: 0
+            decimal: .
+            separator: ','
+            format_plural: false
+            format_plural_string: !!binary MQNAY291bnQ=
+            prefix: ''
+            suffix: ''
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            format_plural_values:
+              - '1'
+              - '@count'
+          entity_type: node
+          plugin_id: search_api_field
+        title:
+          id: title
+          table: search_api_index_25th_anniversary
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h2
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
           type: string
           settings:
             link_to_entity: true
@@ -138,6 +262,55 @@ display:
             multi_type: separator
             multi_separator: ', '
           plugin_id: search_api_field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<a href="/node/{{ nid }}">See more</a>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: see-more-arrow
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
       filters:
         type:
           id: type
@@ -237,10 +410,7 @@ display:
             group_items: {  }
           parse_mode: terms
           min_length: null
-          fields:
-            - body
-            - field_summary
-            - title
+          fields: {  }
           plugin_id: search_api_fulltext
         status:
           id: status
@@ -289,62 +459,23 @@ display:
           admin_label: ''
           operator: in
           value:
-            en: en
-            bg: bg
-            es: es
-            cs: cs
-            da: da
-            de: de
-            et: et
-            el: el
-            fr: fr
-            hr: hr
-            it: it
-            lv: lv
-            lt: lt
-            hu: hu
-            mt: mt
-            nl: nl
-            pl: pl
-            pt: pt
-            ro: ro
-            sk: sk
-            sl: sl
-            fi: fi
-            sv: sv
-            is: is
-            'no': 'no'
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 1
-          exposed: true
+          exposed: false
           expose:
-            operator_id: search_api_language_op
-            label: 'Item language'
+            operator_id: ''
+            label: ''
             description: ''
             use_operator: false
-            operator: search_api_language_op
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
-            identifier: search_api_language
+            identifier: ''
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              review_manager: '0'
-              project_manager: '0'
-              approver: '0'
-              translation_manager: '0'
-              translation_liaison: '0'
-              layout_validator: '0'
-              content_validator: '0'
-              events_coordinator: '0'
-              events_editor: '0'
-              osh_collaborator: '0'
-              news_editor: '0'
-              read_only: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -360,18 +491,6 @@ display:
             group_items: {  }
           plugin_id: search_api_language
       sorts:
-        field_publication_date:
-          id: field_publication_date
-          table: search_api_index_25th_anniversary
-          field: field_publication_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: true
-          expose:
-            label: 'Publication date'
-          plugin_id: search_api
         search_api_relevance:
           id: search_api_relevance
           table: search_api_index_25th_anniversary
@@ -383,6 +502,18 @@ display:
           exposed: true
           expose:
             label: Relevance
+          plugin_id: search_api
+        field_publication_date:
+          id: field_publication_date
+          table: search_api_index_25th_anniversary
+          field: field_publication_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'Publication date'
           plugin_id: search_api
       title: '25th Anniversary'
       header:
@@ -402,6 +533,9 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -410,7 +544,6 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.25th_anniversary'
@@ -423,6 +556,7 @@ display:
       display_extenders:
         metatag_display_extender: {  }
       path: about-eu-osha/our-story/look-back-future/25-anniversary-articles
+      exposed_block: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -431,7 +565,6 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.25th_anniversary'
