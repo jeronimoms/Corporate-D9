@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
 
   //Move AddToAny to the bottom page
   if ($(".move-add-to-any")[0]) {
-    $('#share-this-on').appendTo('.move-add-to-any');
+    $('.addtoany_list').appendTo('.move-add-to-any');
   }
 
   //Show input search when click in Search button responsive menu
