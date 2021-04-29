@@ -1,18 +1,18 @@
-# Migration file for creating "lessons" nodes from BBDD.
+# Migration file for creating "themes" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
 
 ##################### BASIC INFORMATION ###################
 
-id: allages_node_lessons                    # -----  CHANGE
-label: 'Node: Lessons'                      # -----  CHANGE
+id: allages_node_themes                    # -----  CHANGE
+label: 'Node: Themes'                   # -----  CHANGE
 audit: true
 migration_group: allages_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
-  node_type: steps                        # -----  CHANGE
+  node_type: themes                     # -----  CHANGE
 destination:
   plugin: entity:node
 dependencies:
@@ -22,14 +22,13 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
-    - allages_taxonomy_profile                  # -----  CHANGE
 
 process:
-  #nid: tnid   #comentar si no es bbdd limpia
+  nid: tnid   #comentar si no es bbdd limpia
   #vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value
-      default_value: steps              # -----  CHANGE
+      default_value: themes              # -----  CHANGE
   langcode:
     plugin: default_value
     source: language
@@ -46,12 +45,21 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_text_1: field_text_1
-  field_text_2: field_text_2
   field_profile:
-    - plugin: sub_process
-      source: field_profile
-      process:
-        target_id:
-          plugin: get
-          source: tid
+    plugin: sub_process
+    source: field_profile
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_more_info: field_more_info
+  field_order: field_order
+  field_sections:
+    - plugin: migration_lookup
+      migration: allages_node_lessons
+      source: field_sections
+  field_theme_image:
+    plugin: file_id_lookup
+    source: field_theme_image
+    migration: allages_node_themes_field_image_media
+    no_stub: true
