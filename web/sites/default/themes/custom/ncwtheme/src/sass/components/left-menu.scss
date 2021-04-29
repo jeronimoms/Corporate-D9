@@ -42,12 +42,14 @@
                 opacity: 0.9;
               }
             }
-            a.is-active{
-              width: 100%;
-              font-weight: bold;
-              color: $text-color-blue;
-              background: url(../images/arrow-left-menu.png) 98% no-repeat;
-              padding-right: 35px;
+            a.is-active::after{
+              content: "";
+              display: inline-block;
+              width: 19px;
+              height: 11px;
+              background: url(../images/arrow-left-menu.png) 1px 1px no-repeat;
+              padding-right: 0;
+              margin-left: 5px;
             }
             ul.menu-level-2{
               display: none;
@@ -63,6 +65,22 @@
               }
               li:last-child{
                 border-bottom: 0;
+              }
+              ul.menu-level-3{
+                display: none;
+                li{
+                  width: 100%;
+                  a{
+                    padding-left: 30px;
+                  }
+                  a.is-active{
+                    font-weight: bold;
+                    color: $text-color-blue;
+                  }
+                }
+                li:last-child{
+                  border-bottom: 0;
+                }
               }
             }
           }

@@ -1,0 +1,10 @@
+uuid: b5e7a37f-f339-4f77-9155-7236f9e24df3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.landing_menu
+label: 'landing menu'
+targetEntityType: menu_link_content
+cache: true
