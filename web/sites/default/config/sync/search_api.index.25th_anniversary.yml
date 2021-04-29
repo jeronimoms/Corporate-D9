@@ -9,7 +9,6 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_publication_date
-    - field.storage.node.field_summary
     - field.storage.node.field_tags
     - search_api.server.solr
 third_party_settings:
@@ -74,14 +73,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_publication_date
-  field_summary:
-    label: Summary
-    datasource_id: 'entity:node'
-    property_path: field_summary
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_summary
   field_tags:
     label: Tags
     datasource_id: 'entity:node'
