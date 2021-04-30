@@ -35,11 +35,6 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
-  addtoany:
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   body:
     label: hidden
     weight: 3
@@ -95,6 +90,7 @@ content:
     type: text_default
     region: content
 hidden:
+  addtoany: true
   field_activity: true
   field_archived: true
   field_article_type: true
