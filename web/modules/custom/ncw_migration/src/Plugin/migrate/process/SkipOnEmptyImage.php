@@ -20,7 +20,15 @@ class SkipOnEmptyImage extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function process($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    throw new MigrateSkipProcessException();
+    if ($destination_property == 'field_image/target_id' || $destination_property == 'media') {
+      $source_image = $row->getSourceProperty('source_image');
+      ksm($source_image);
+      if (array_key_exists('ignore', $source_image) && $source_image['ignore'] == TRUE) {
+        ksm('nop');
+        throw new MigrateSkipProcessException();
+      }
+    }
+    return $value;
   }
 
 }

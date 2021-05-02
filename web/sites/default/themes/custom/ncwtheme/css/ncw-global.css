@@ -1088,7 +1088,7 @@ body ul li .introduction-title a:hover {
 #share-this-on .text-share {
   float: left;
   font-size: 0.9rem;
-  margin-top: 3px;
+  margin-top: -3px;
   padding-right: 10px;
 }
 #share-this-on .a2a_svg svg {
@@ -2085,7 +2085,11 @@ body.user-logged-in.toolbar-tray-open #header {
   text-align: center;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) > a {
-  display: none;
+  display: block;
+  width: 42px;
+  height: 22px;
+  text-indent: -9999px;
+  background: url(../images/ico_home.png) no-repeat 10px 0px;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) .field--type-entity-reference {
   margin: 0;
@@ -2112,7 +2116,7 @@ body.user-logged-in.toolbar-tray-open #header {
   display: block;
   background: #FFF;
   left: 0;
-  margin-left: -1.3em;
+  margin-left: -17px;
   margin-top: 1em;
   border-top: 5px solid #cfddee;
   border-bottom: 5px solid #003399;
@@ -2230,6 +2234,58 @@ body.user-logged-in.toolbar-tray-open #header {
   }
 }
 /* End Media 991px */
+.two-column .view-landing-menu .view-col {
+  width: 31%;
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+}
+
+.three-column .view-landing-menu .view-col {
+  width: 47%;
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+}
+
+.view-landing-menu {
+  padding-top: 1rem;
+}
+.view-landing-menu .views-view-grid > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.view-landing-menu .view-col {
+  display: flex;
+  flex-direction: column;
+}
+.view-landing-menu .view-col > div {
+  flex: 1;
+}
+.view-landing-menu .view-col > div > a:first-child {
+  font-family: "Open Sans Condensed", sans-serif;
+  width: 100%;
+  display: block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  border-bottom: 10px solid #cfddee;
+  padding-right: 25px;
+  padding-bottom: 5px;
+  background-position: calc(100% - 5px) 9px;
+}
+.view-landing-menu .view-col > div > a:first-child:hover {
+  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
+  border-bottom: 10px solid #dc2f82;
+  transition: all 1s;
+}
+.view-landing-menu .view-col img {
+  width: 100%;
+  height: auto;
+}
+
 .page-user-login form.user-login-form {
   max-width: 50%;
   padding-top: 1rem;
