@@ -28,6 +28,7 @@ module:
   content_moderation: 0
   contextual: 0
   crop: 0
+  csv_serialization: 0
   ctools: 0
   custom_migrations: 0
   date_popup: 0
@@ -117,6 +118,7 @@ module:
   path_alias: 0
   pathologic: 0
   pdfpreview: 0
+  phpexcel: 0
   quickedit: 0
   r4032login: 0
   rabbit_hole: 0
@@ -124,10 +126,12 @@ module:
   redirect: 0
   reroute_email: 0
   responsive_image: 0
+  rest: 0
   search: 0
   search_api: 0
   search_api_solr: 0
   search_api_solr_admin: 0
+  serialization: 0
   shortcut: 0
   shs: 0
   sitemap: 0
@@ -151,6 +155,7 @@ module:
   user: 0
   video_embed_field: 0
   views_bulk_operations: 0
+  views_data_export: 0
   views_slideshow: 0
   views_templates: 0
   views_ui: 0
