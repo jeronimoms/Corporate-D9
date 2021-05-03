@@ -30,10 +30,6 @@ class OpEntityUpdateManager {
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
     $this->entityTypeManager = $entity_type_manager;
-    $this->fields = [
-      'field_co_author' => 'field_co_author_node',
-      'field_workbench_access' => 'field_related_partners',
-    ];
   }
 
   /**
@@ -54,10 +50,25 @@ class OpEntityUpdateManager {
    * @var bool $save
    *   If the entity should be saved.
    */
-  public function updatePartners(EntityInterface $entity, $save = FALSE) {
+  public function updatePartners(EntityInterface $entity, $save = FALSE, $inverse = FALSE) {
     // Ignore if the entity isn't a node.
     if (!$entity instanceof Node) {
       return;
+    }
+
+    if ($inverse) {
+      $this->fields = [
+        'field_co_author_node' => 'field_co_author',
+        'field_related_partners' => 'field_workbench_access',
+        'field_third_partner_node' => 'field_third_partner',
+      ];
+    }
+    else {
+      $this->fields = [
+        'field_co_author' => 'field_co_author_node',
+        'field_workbench_access' => 'field_related_partners',
+        'field_third_partner' => 'field_third_partner_node',
+      ];
     }
 
     foreach ($this->fields as $key => $field_name) {
@@ -72,17 +83,27 @@ class OpEntityUpdateManager {
         continue;
       }
 
+
       // Find the node with the current workbench access id.
-      $partner = $this->entityTypeManager->getStorage('node')->loadByProperties(['type' => 'partner', 'field_workbench_access' => $access_id]);
-      /** @var \Drupal\node\Entity\Node $partner_node */
-      $partner_node = reset($partner);
+      if ($inverse) {
+        $partner = $this->entityTypeManager->getStorage('node')->load($access_id);
+        if (!empty($partner)) {
+          $id = $partner->get('field_workbench_access')->getString();
+        }
+      } else {
+        $partner = $this->entityTypeManager->getStorage('node')->loadByProperties(['type' => 'partner', 'field_workbench_access' => $access_id]);
+        /** @var \Drupal\node\Entity\Node $partner_node */
+        $partner_node = reset($partner);
+        $id = $partner_node->id();
+      }
+
       if (empty($partner)) {
         continue;
       }
 
       // Update the node field.
       if ($entity->hasField($field_name)) {
-        $entity->set($field_name, $partner_node->id());
+        $entity->set($field_name, $id);
         if ($save) {
           $entity->save();
         }

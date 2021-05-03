@@ -161,7 +161,7 @@ process:
           source: value
   field_tags:
     -
-      plugin: nm_taxonomy_term
+      plugin: nm_taxonomy_term_news
       source: field_tags
 
   field_migration_source:

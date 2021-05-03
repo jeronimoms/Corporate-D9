@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.directive.field_thesaurus_2020
     - node.type.directive
   module:
+    - content_moderation
     - datetime
     - multiple_selects
     - path
@@ -128,12 +129,10 @@ content:
     type: multiple_options_select
     region: content
   moderation_state:
-    type: string_textfield
+    type: moderation_state_default
     weight: 14
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
