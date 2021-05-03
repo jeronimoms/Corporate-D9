@@ -516,18 +516,7 @@ display:
             label: 'Publication date'
           plugin_id: search_api
       title: '25th Anniversary'
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content: ''
-          plugin_id: text_custom
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
