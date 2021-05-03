@@ -1,0 +1,182 @@
+uuid: 0df36c57-7c73-44cb-8233-ca203670babe
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - node
+    - search_api
+  config:
+    - field.storage.node.field_context
+    - field.storage.node.field_definition
+    - field.storage.node.field_father
+    - field.storage.node.field_full_url
+    - field.storage.node.field_glossary_the
+    - field.storage.node.field_synonyms
+    - field.storage.node.field_term_id
+    - field.storage.node.field_term_reference
+    - search_api.server.solr
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: thesaurus_term_index
+name: 'Thesaurus term index'
+description: ''
+read_only: false
+field_settings:
+  field_context:
+    label: Context
+    datasource_id: 'entity:node'
+    property_path: field_context
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_context
+  field_definition:
+    label: Definition
+    datasource_id: 'entity:node'
+    property_path: field_definition
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_definition
+  field_father:
+    label: Father
+    datasource_id: 'entity:node'
+    property_path: field_father
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_father
+  field_full_url:
+    label: 'Full URL'
+    datasource_id: 'entity:node'
+    property_path: field_full_url
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_full_url
+  field_glossary_the:
+    label: Glossary
+    datasource_id: 'entity:node'
+    property_path: field_glossary_the
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_glossary_the
+  field_synonyms:
+    label: Synonyms
+    datasource_id: 'entity:node'
+    property_path: field_synonyms
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_synonyms
+  field_term_id:
+    label: 'Term ID'
+    datasource_id: 'entity:node'
+    property_path: field_term_id
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_term_id
+  field_term_reference:
+    label: 'Term reference'
+    datasource_id: 'entity:node'
+    property_path: field_term_reference
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_term_reference
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  uid:
+    label: 'Authored by'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - thesaurus
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: solr

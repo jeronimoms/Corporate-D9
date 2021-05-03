@@ -1,0 +1,28 @@
+uuid: b28df857-b53c-4ea2-8121-0c6de3706b25
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.thesaurus_front_indexed
+  module:
+    - system
+    - views
+  theme:
+    - ncwtheme
+id: exposedformthesaurus_front_indexedthesaurus_search
+theme: ncwtheme
+region: content
+weight: -15
+provider: null
+plugin: 'views_exposed_filter_block:thesaurus_front_indexed-thesaurus_search'
+settings:
+  id: 'views_exposed_filter_block:thesaurus_front_indexed-thesaurus_search'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /tools-and-resources/eu-osha-thesaurus
+    negate: false
