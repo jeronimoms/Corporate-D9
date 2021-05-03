@@ -33,9 +33,9 @@ class OpEntity implements ContainerInjectionInterface {
   public function __construct(OpEntityUpdateManager $op_entity_manager) {
     $this->opEntityManager = $op_entity_manager;
     $this->fields = [
-      'field_co_author' => 'field_co_author_node',
-      'field_workbench_access' => 'field_related_partners',
-      'field_third_partner_node' => 'field_third_partner_node',
+      'field_co_author_node' => 'field_co_author',
+      'field_related_partners' => 'field_workbench_access',
+      'field_third_partner_node' => 'field_third_partner',
     ];
   }
 
@@ -67,7 +67,7 @@ class OpEntity implements ContainerInjectionInterface {
             continue;
           }
           // Hidde the field.
-          //$form[$field_name]['#attributes']['class'][] = 'hidden';
+          $form[$field_name]['#attributes']['class'][] = 'hidden';
         }
       }
     }
