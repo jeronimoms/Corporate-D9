@@ -35,6 +35,7 @@ class OpEntity implements ContainerInjectionInterface {
     $this->fields = [
       'field_co_author' => 'field_co_author_node',
       'field_workbench_access' => 'field_related_partners',
+      'field_third_partner_node' => 'field_third_partner_node',
     ];
   }
 
@@ -51,7 +52,7 @@ class OpEntity implements ContainerInjectionInterface {
    * Implements hook_entity_presave().
    */
   public function entityPreSave(EntityInterface $entity) {
-    $this->opEntityManager->updatePartners($entity);
+    $this->opEntityManager->updatePartners($entity, FALSE, TRUE);
   }
 
   /**
@@ -66,7 +67,7 @@ class OpEntity implements ContainerInjectionInterface {
             continue;
           }
           // Hidde the field.
-          $form[$field_name]['#attributes']['class'][] = 'hidden';
+          //$form[$field_name]['#attributes']['class'][] = 'hidden';
         }
       }
     }
