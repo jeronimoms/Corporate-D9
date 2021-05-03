@@ -1266,7 +1266,7 @@ display:
           require_value: false
           reduce_duplicates: false
           plugin_id: taxonomy_index_tid
-      rendering_language: '***LANGUAGE_entity_default***'
+      rendering_language: '***LANGUAGE_language_content***'
       block_hide_empty: true
       use_more: true
       use_more_always: true
@@ -1751,7 +1751,7 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: node_nid
-      rendering_language: '***LANGUAGE_entity_default***'
+      rendering_language: '***LANGUAGE_language_content***'
       block_hide_empty: true
       use_more: true
       use_more_always: true
@@ -3296,7 +3296,7 @@ display:
           reduce_duplicates: false
           plugin_id: taxonomy_index_tid
       block_hide_empty: true
-      rendering_language: '***LANGUAGE_entity_default***'
+      rendering_language: '***LANGUAGE_language_content***'
       use_more: true
       use_more_always: true
       use_more_text: 'View all'
