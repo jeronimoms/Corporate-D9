@@ -3,3 +3,8 @@ ncw_migration:
   parent: system.admin_config_system
   description: 'Configuration of endpoints for NCW migrations'
   route_name: ncw_migration.config
+ncw_migration.migrations:
+  title: 'Migrate'
+  route_name: entity.migration_group.list
+  parent_id: system.admin_content
+  weight: 10

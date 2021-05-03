@@ -13,10 +13,10 @@ use Drupal\migrate\MigrateSkipProcessException;
  * This plugin replace body value from new value.
  *
  * @MigrateProcessPlugin(
- *   id = "nm_taxonomy_term",
+ *   id = "nm_taxonomy_term_news",
  * )
  */
-class NmTaxonomyTerm extends ProcessPluginBase implements ContainerFactoryPluginInterface{
+class NmTaxonomyTermNews extends ProcessPluginBase implements ContainerFactoryPluginInterface{
 
   /**
    * The entity type manager.
@@ -44,15 +44,14 @@ class NmTaxonomyTerm extends ProcessPluginBase implements ContainerFactoryPlugin
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+
     if (empty($value)) {
       throw new MigrateSkipProcessException();
     }
 
-    $field_wiki_categories = $row->getSourceProperty('field_wiki_categories');
-
     $term = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties([
-      'name' => $field_wiki_categories['name'],
-      'vid' => $field_wiki_categories['vocabulary_machine_name'],
+      'name' => $value['name'],
+      'vid' => $value['vocabulary_machine_name'],
     ]);
 
     /** @var \Drupal\taxonomy\Entity\Term $term */
