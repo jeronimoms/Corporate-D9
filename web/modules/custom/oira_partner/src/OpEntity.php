@@ -33,8 +33,9 @@ class OpEntity implements ContainerInjectionInterface {
   public function __construct(OpEntityUpdateManager $op_entity_manager) {
     $this->opEntityManager = $op_entity_manager;
     $this->fields = [
-      'field_co_author' => 'field_co_author_node',
-      'field_workbench_access' => 'field_related_partners',
+      'field_co_author_node' => 'field_co_author',
+      'field_related_partners' => 'field_workbench_access',
+      'field_third_partner_node' => 'field_third_partner',
     ];
   }
 
@@ -51,7 +52,7 @@ class OpEntity implements ContainerInjectionInterface {
    * Implements hook_entity_presave().
    */
   public function entityPreSave(EntityInterface $entity) {
-    $this->opEntityManager->updatePartners($entity);
+    $this->opEntityManager->updatePartners($entity, FALSE, TRUE);
   }
 
   /**

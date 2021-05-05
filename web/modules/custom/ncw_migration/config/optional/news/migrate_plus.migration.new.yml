@@ -112,10 +112,6 @@ process:
         - constants/file_dest
         - source_image/filename
   file:
-    -
-      plugin: skip_on_empty_image
-      method: process
-      source: source_image
     - plugin: file_copy
       source:
         - '@file_source'
@@ -126,7 +122,7 @@ process:
   media:
     - plugin: skip_on_empty_image
       method: process
-      source: source_image
+      source: '@file'
     - plugin: entity_generate
       value_key: mid
       bundle_key: vid
@@ -139,8 +135,22 @@ process:
         vid: null
       values:
         field_media_image: '@file'
-  field_image/target_id: '@media'
-  field_image_home_latest_news/target_id: '@media'
+  field_image/target_id:
+    -
+      plugin: skip_on_empty_image
+      method: process
+      source: '@media'
+    -
+      plugin: default_value
+      default_value: '@media'
+  field_image_home_latest_news/target_id:
+    -
+      plugin: skip_on_empty_image
+      method: process
+      source: '@media'
+    -
+      plugin: default_value
+      default_value: '@media'
   field_publication_date:
     - plugin: sub_process
       source: field_publication_date/und
@@ -152,7 +162,7 @@ process:
           source: value
   field_tags:
     -
-      plugin: nm_taxonomy_term
+      plugin: nm_taxonomy_term_news
       source: field_tags
 
   field_migration_source:
