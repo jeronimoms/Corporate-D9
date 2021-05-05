@@ -31,6 +31,7 @@ source:
   data_parser_plugin: nm_json
   include_raw_data: true
   urls: https://osha.europa.eu/export/list/highlight/oira+risk_assessment+microenterprises
+  content_type: highlights
   ids:
     nid:
       type: integer

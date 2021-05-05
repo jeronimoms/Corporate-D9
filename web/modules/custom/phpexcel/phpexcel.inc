@@ -57,7 +57,7 @@ define('PHPEXCEL_SUCCESS', 10);
  */
 function phpexcel_export($headers = array(), $data = array(), $path = '', $options = NULL) {
   if (empty($headers) && empty($options['ignore_headers'])) {
-    \Drupal::logger('phpexcel')->error("No header was provided, and the 'ignore_headers' option was 
+    \Drupal::logger('phpexcel')->error("No header was provided, and the 'ignore_headers' option was
 not set to TRUE. Excel export aborted.");
 
     return PHPEXCEL_ERROR_NO_HEADERS;
@@ -79,7 +79,7 @@ not set to TRUE. Excel export aborted.");
     return PHPEXCEL_ERROR_PATH_NOT_WRITABLE;
   }
 
-  $library = libraries_load('PHPExcel');
+  $library = \Drupal::service('libraries.manager')->load('PHPExcel');
 
   if (empty($library['loaded'])) {
     \Drupal::logger('phpecel')->error("Couldn't find the PHPExcel library. Excel export aborted.");
@@ -138,7 +138,8 @@ not set to TRUE. Excel export aborted.");
     }
   }
 
-  $format = isset($options['format']) ? drupal_strtolower($options['format']) : @end(explode('.', $path));
+  $array = explode('.', $path);
+  $format = isset($options['format']) ? mb_strtolower($options['format']) : @end($array);
 
   switch ($format) {
     case 'xlsx':
@@ -368,7 +369,7 @@ function _phpexcel_set_columns($xls, &$data, $headers = NULL, $options = array()
  */
 function phpexcel_import($path, $keyed_by_headers = TRUE, $keyed_by_worksheet = FALSE, $custom_calls = array()) {
   if (is_readable($path)) {
-    $library = libraries_load('PHPExcel');
+    $library = \Drupal::service('libraries.manager')->load('PHPExcel');
 
     if (!empty($library['loaded'])) {
       // Determine caching method.
@@ -428,10 +429,10 @@ function phpexcel_import($path, $keyed_by_headers = TRUE, $keyed_by_worksheet = 
 
           foreach ($cells as $cell) {
             $value = $cell->getValue();
-            $value = \Drupal\Component\Utility\Unicode::strlen($value) ? trim($value) : '';
+            $value = mb_strlen($value) ? trim($value) : '';
 
             if (!$j && $keyed_by_headers) {
-              $value = \Drupal\Component\Utility\Unicode::strlen($value) ? $value : $k;
+              $value = mb_strlen($value) ? $value : $k;
 
               phpexcel_invoke(
                 'import',
@@ -515,7 +516,7 @@ function phpexcel_import($path, $keyed_by_headers = TRUE, $keyed_by_worksheet = 
       return $data;
     }
     else {
-      \Drupal::logger('phpexcel')->error("Couldn't find the PHPExcel library. Excel import 
+      \Drupal::logger('phpexcel')->error("Couldn't find the PHPExcel library. Excel import
 aborted.");
 
       return PHPEXCEL_ERROR_LIBRARY_NOT_FOUND;
@@ -591,7 +592,7 @@ function _phpexcel_get_cache_settings() {
       break;
 
     case 'cache_to_apc':
-      $cache_method = PHPExcel_CachedObjectStorageFactory::cache_to_apc;
+      $cache_method =  PHPExcel_CachedObjectStorageFactory::cache_to_apc;
       $cache_settings = array(
         'cacheTime' => $phpexcel_config->get('apc_cachetime')
       );
