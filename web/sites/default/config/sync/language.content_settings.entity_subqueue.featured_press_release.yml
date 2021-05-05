@@ -1,9 +1,9 @@
-uuid: 8eaf61b6-4e8c-4805-ae4f-b68772a0e1f9
+uuid: 803f8bdb-316f-4f8a-a145-c2710a647db8
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.block_node_views
+    - entityqueue.entity_queue.featured_press_release
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: block_content.block_node_views
-target_entity_type_id: block_content
-target_bundle: block_node_views
+id: entity_subqueue.featured_press_release
+target_entity_type_id: entity_subqueue
+target_bundle: featured_press_release
 default_langcode: site_default
 language_alterable: false
