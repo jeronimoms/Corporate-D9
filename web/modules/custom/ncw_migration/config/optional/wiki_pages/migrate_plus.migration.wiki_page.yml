@@ -22,6 +22,7 @@ source:
   data_parser_plugin: nm_json
   include_raw_data: true
   urls: https://osha.europa.eu/export/oira_wiki
+  content_type: wiki_pages
   ids:
     nid:
       type: integer

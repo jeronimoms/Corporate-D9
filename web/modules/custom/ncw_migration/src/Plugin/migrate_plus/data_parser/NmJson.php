@@ -55,7 +55,7 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
     $nm_root_url = $config->get('root_endpoint');
 
     // Get the default items.
-    $items =  parent::getSourceData($url);
+    $items =  parent::getSourceData($nm_root_url . $config->get($this->configuration['content_type'] . '_endpoint'));
     $items_new = [];
     // Find the data by item.
     foreach ($items as $i => $item) {
