@@ -366,7 +366,8 @@
             "drupal/core": {
                 "Cannot override content field block title" : "https://www.drupal.org/files/issues/2019-05-20/3055818-3.patch",
                 "Make the exposed filter as token": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
-                "On null isTranslatable": "https://www.drupal.org/files/issues/2019-12-05/2928108-49.patch"
+                "On null isTranslatable": "https://www.drupal.org/files/issues/2019-12-05/2928108-49.patch",
+                "if you don't want to translate your URL alias": "https://www.drupal.org/files/issues/2020-01-26/2689459-127.patch"
             },
             "drupal/linked_field": {
                 "Token warnings": "https://www.drupal.org/files/issues/2020-08-14/problem-with-display-of-custom-data-in-layout-manager-3110226-8.patch",
@@ -386,6 +387,9 @@
             },
             "drupal/entity_browser": {
                 "Can't remove attached image": "https://www.drupal.org/files/issues/2019-09-27/entity_browser-remove-attached-image-2811747-12.patch"
+            },
+            "drupal/views_bulk_operations": {
+                "VBO does not preserve query metadata added by other modules": "https://www.drupal.org/files/issues/2020-10-23/views_bulk_operations-preserve-query-metadata-8.x-2.x-branch.patch"
             }
         },
         "patchLevel": {
