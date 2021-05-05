@@ -1,0 +1,18 @@
+uuid: 99a8feb3-abe8-4c14-be00-1d44a6bef5a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.featured_press_release
+id: entity_subqueue.featured_press_release.created
+field_name: created
+entity_type: entity_subqueue
+bundle: featured_press_release
+label: 'Authored on'
+description: 'The time that the subqueue was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

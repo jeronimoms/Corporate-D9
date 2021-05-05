@@ -1,0 +1,24 @@
+uuid: 1213eaa9-764a-440b-9834-e601be2ea28e
+langcode: en
+status: false
+dependencies:
+  config:
+    - search_api.index.25th_anniversary
+    - views.view.25th_anniversary_articles
+  module:
+    - views
+    - search_api_autocomplete
+id: 25th_anniversary_articles
+label: '25th Anniversary articles'
+index_id: 25th_anniversary
+suggester_settings:
+  server:
+    fields: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:25th_anniversary_articles':
+    displays:
+      default: true
+      selected: {  }
+options: {  }

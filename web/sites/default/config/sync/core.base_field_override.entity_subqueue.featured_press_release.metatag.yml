@@ -1,0 +1,18 @@
+uuid: 5a4176bc-e627-4424-a8d1-9ca6a0d5dd66
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.featured_press_release
+id: entity_subqueue.featured_press_release.metatag
+field_name: metatag
+entity_type: entity_subqueue
+bundle: featured_press_release
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
