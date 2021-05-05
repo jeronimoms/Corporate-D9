@@ -1,0 +1,22 @@
+uuid: 4ef74b95-fd1c-4110-b5c9-30544b4dc273
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.featured_press_release
+id: entity_subqueue.featured_press_release.status
+field_name: status
+entity_type: entity_subqueue
+bundle: featured_press_release
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
