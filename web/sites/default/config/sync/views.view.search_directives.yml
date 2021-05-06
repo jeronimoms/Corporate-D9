@@ -38,8 +38,8 @@ display:
         type: bef
         options:
           submit_button: Search
-          reset_button: false
-          reset_button_label: Reset
+          reset_button: true
+          reset_button_label: 'Clear filter'
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -58,6 +58,13 @@ display:
               secondary_open: false
             filter:
               search_api_fulltext:
+                plugin_id: default
+                advanced:
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              search_api_fulltext_1:
                 plugin_id: default
                 advanced:
                   rewrite:
@@ -92,12 +99,29 @@ display:
           row_class_default: false
           row_class_custom: 'revamp-row no-flex'
       row:
-        type: fields
+        type: search_api
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          view_modes:
+            'entity:node':
+              25th_anniversary: default
+              article: default
+              blog: default
+              calls: default
+              dangerous_substances: default
+              directive: view
+              e_guide: default
+              events: default
+              fop_page: default
+              guideline: default
+              highlight: default
+              infographic: default
+              job_vacancies: default
+              news: default
+              press_contact: default
+              press_release: default
+              publication: default
+              seminar: default
+              wiki_page: default
       fields:
         title:
           id: title
@@ -222,7 +246,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Free text search'
+            label: Search
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -290,7 +314,7 @@ display:
             operator: search_api_fulltext_1_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: search_api_fulltext_1
+            identifier: search_api_fulltext_title
             required: false
             remember: false
             multiple: false
@@ -527,13 +551,18 @@ display:
   search_directory_page:
     display_plugin: page
     id: search_directory_page
-    display_title: Page
+    display_title: 'Search directives'
     position: 1
     display_options:
       display_extenders:
         metatag_display_extender: {  }
       path: search/directives
       exposed_block: true
+      display_description: ''
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
