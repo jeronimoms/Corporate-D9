@@ -1,20 +1,20 @@
-# Migration file for creating "basic_page" nodes from BBDD.
+# Migration file for creating "quiz" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
 
 ##################### BASIC INFORMATION ###################
 
-id: allages_node_basic_page                    # -----  CHANGE
-label: 'Node: Basic Page'                   # -----  CHANGE
+id: allages_node_quiz                    # -----  CHANGE
+label: 'Node: Quiz'                   # -----  CHANGE
 audit: true
-migration_group: allages_migrate_node
+migration_group: allages_migrate_quiz
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
-  node_type: page                     # -----  CHANGE
+  node_type: quiz                     # -----  CHANGE
 destination:
-  plugin: entity:node
+  plugin: entity:quiz
 dependencies:
   enforced:
     module:
@@ -28,7 +28,7 @@ process:
   #vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value
-      default_value: page              # -----  CHANGE
+      default_value: quiz              # -----  CHANGE
   langcode:
     plugin: default_value
     source: language
@@ -45,4 +45,7 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_summary: field_summary
+  pass_rate: pass_rate
+  quiz_date__value: quiz_date__value
+  quiz_date__end_value: quiz_date__end_value
+
