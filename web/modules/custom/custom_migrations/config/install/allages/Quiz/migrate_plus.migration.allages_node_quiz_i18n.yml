@@ -1,4 +1,4 @@
-# Migration file for creating "lessons_i18n" nodes from BBDD.
+# Migration file for creating "quiz_i18n" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
@@ -7,13 +7,13 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: allages_node_lessons_i18n                         # -----  CHANGE
-label: 'Node: Lessons i18n'                # -----  CHANGE
-migration_group: allages_migrate_node
+id: allages_node_quiz_i18n                         # -----  CHANGE
+label: 'Node: Quiz i18n'                # -----  CHANGE
+migration_group: allages_migrate_quiz
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation
-  node_type: steps                                # -----  CHANGE
+  node_type: quiz                                # -----  CHANGE
 destination:
   plugin: entity:node
   translations: true
@@ -25,7 +25,7 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
-    - allages_node_lessons                            # -----  CHANGE
+    - allages_node_quiz                            # -----  CHANGE
 
 process:
   nid: entity_id
@@ -87,10 +87,8 @@ process:
   content_translation_outdated: translate
   ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
   field_text_1: field_text_1
-  field_text_2:
-    - plugin: get
-      source: field_text_2
-  'field_text_2/0/format':
+  'field_text_2/value': field_text_2
+  'field_text_2/format':
     - plugin: default_value
       default_value: restricted_html
   field_profile:
@@ -103,5 +101,5 @@ process:
   field_image_step:
     plugin: file_id_lookup
     source: field_image_step
-    migration: allages_node_lessons_field_image_media
+    migration: allages_node_quiz_field_image_media
     no_stub: true
