@@ -21,9 +21,10 @@ class VsForm {
       array_unshift($form['actions']['submit']['#submit'], [$this, 'didYouKnowSubmitAlter']);
     }
 
-    // Change "Authored on" to "Creation date".
-    if ($form_id == 'node_key_article_edit_form') {
+    // Change "Authored on" to "Creation date" and disable field editing.
+    if ($form_id == 'node_key_article_edit_form' || $form_id == 'node_key_article_form' ) {
       $form['created']['widget'][0]['value']['#title'] = new TranslatableMarkup('Creation date');
+      $form['created']['#disabled'] = TRUE;
     }
 
   }
