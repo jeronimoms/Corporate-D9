@@ -89,33 +89,43 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
       return $build;
     }
 
-    // Get the workbench access of the node
     $access_id = $current_node->get('field_workbench_access')->getString();
-    if (empty($access_id)) {
-      return $build;
+    if (!empty($access_id)) {
+      // Count by field_workbench_access.
+      $nodes = $this->entityTypeManager
+        ->getStorage('node')
+        ->loadByProperties([
+          'field_workbench_access' => $access_id,
+          'status' => 1,
+        ]);
+
+      // Sum the node type.
+      $this->countNodes($nodes, $count_pt, $count_news, $count_pr);
+
+      // Count by field_co_author.
+      $nodes = $this->entityTypeManager
+        ->getStorage('node')
+        ->loadByProperties([
+          'field_co_author' => $access_id,
+          'status' => 1,
+        ]);
+
+      // Sum the node type.
+      $this->countNodes($nodes, $count_pt, $count_news, $count_pr);
+
+      // Count by field_third_partner.
+      $nodes = $this->entityTypeManager
+        ->getStorage('node')
+        ->loadByProperties([
+          'field_third_partner' => $access_id,
+          'status' => 1,
+        ]);
+
+      // Sum the node type.
+      $this->countNodes($nodes, $count_pt, $count_news, $count_pr);
     }
 
-    // Get the nodes that contain how workbench access the access_id.
-    $nodes = $this->entityTypeManager
-      ->getStorage('node')
-      ->loadByProperties([
-        'field_workbench_access' => $access_id,
-        'status' => 1,
-      ]);
-
-    // Sum the node type.
-    foreach ($nodes as $node){
-      if($node->bundle() == 'practical_tool'){
-        $count_pt++;
-      }
-      if($node->bundle() == 'news'){
-        $count_news++;
-      }
-      if($node->bundle() == 'promotional_material'){
-        $count_pr++;
-      }
-    }
-
+    // Normalize the values.
     if ($count_pt == 0) {
       $count_pt = '-';
     }
@@ -145,6 +155,32 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
     ]);
 
     return $build;
+  }
+
+  /**
+   * Return an array with the output.
+   *
+   * @param array $nodes
+   *   The array of nodes.
+   * @param $count_pt
+   *   The counter.
+   * @param $count_news
+   *   The counter.
+   * @param $count_pr
+   *   The counter.
+   */
+  public function countNodes(array $nodes, &$count_pt, &$count_news, &$count_pr) {
+    foreach ($nodes as $node){
+      if($node->bundle() == 'practical_tool'){
+        $count_pt++;
+      }
+      if($node->bundle() == 'news'){
+        $count_news++;
+      }
+      if($node->bundle() == 'promotional_material'){
+        $count_pr++;
+      }
+    }
   }
 
   /**
