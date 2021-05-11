@@ -102,7 +102,7 @@ class OpEntity implements ContainerInjectionInterface {
       if ($form['#entity_type'] == 'node') {
         foreach ($this->fields as $key => $field_name) {
           // Ignore if the entity doesn't have the one of fields.
-          if (!array_key_exists($field_name, $form)) {
+          if (!array_key_exists($key, $form)) {
             continue;
           }
           // Hidde the field.
@@ -117,6 +117,7 @@ class OpEntity implements ContainerInjectionInterface {
 
             // Get the country by partner
             $country_label = $this->opEntityManager->getCountryFromPartner($term_id);
+            ksm($country_label);
             if (isset($country_label)) {
               // Set the new label
               $options[$term_id] = $country_label . ' - ' . $options[$term_id];
