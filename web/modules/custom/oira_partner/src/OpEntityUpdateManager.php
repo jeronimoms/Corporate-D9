@@ -4,7 +4,9 @@ namespace Drupal\oira_partner;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Tests\search\Kernel\SearchMatchTest;
 
 /**
  * OpEntityUpdateManager to update the Oira entities.
@@ -19,6 +21,13 @@ class OpEntityUpdateManager {
   protected $entityTypeManager;
 
   /**
+   * The AccountInterface object.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $account;
+
+  /**
    * The array of fields.
    *
    * @var array
@@ -28,8 +37,9 @@ class OpEntityUpdateManager {
   /**
    * {@inheritdoc}
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, AccountInterface $account) {
     $this->entityTypeManager = $entity_type_manager;
+    $this->account = $account;
   }
 
   /**
@@ -94,7 +104,9 @@ class OpEntityUpdateManager {
         $partner = $this->entityTypeManager->getStorage('node')->loadByProperties(['type' => 'partner', 'field_workbench_access' => $access_id]);
         /** @var \Drupal\node\Entity\Node $partner_node */
         $partner_node = reset($partner);
-        $id = $partner_node->id();
+        if ($partner_node) {
+          $id = $partner_node->id();
+        }
       }
 
       if (empty($partner)) {
@@ -109,6 +121,39 @@ class OpEntityUpdateManager {
         }
       }
     }
+  }
+
+  public function getTermParent() {
+    $user = $this->entityTypeManager->getStorage('user')->load($this->account->id());
+    // The user guid associated with the partner.
+    $guid = $user->get('field_user_partner_guid')->getString();
+
+    // Looking for the partner associated.
+    $term_entity = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['vid' => 'section', 'field_ldap_section_code' => $guid]);
+
+    /** @var \Drupal\taxonomy\Entity\Term  $term */
+    $term = reset($term_entity);
+    if (!$term) {
+      return '';
+    }
+    return $term->id();
+  }
+
+  public function getCountryFromPartner($partner_id) {
+    $nodes = $this->entityTypeManager->getStorage('node')->loadByProperties(['type' => 'partner', 'field_workbench_access' => $partner_id]);
+    /** @var \Drupal\node\Entity\Node $partner_node */
+    $partner_node = reset($nodes);
+    if ($partner_node) {
+      if ($partner_node->hasField('field_country')) {
+        $country_id = $partner_node->get('field_country')->getString();
+        /** @var \Drupal\taxonomy\Entity\Term  $term_entity */
+        $term_entity = $this->entityTypeManager->getStorage('taxonomy_term')->load($country_id);
+        if ($term_entity) {
+          return $term_entity->label();
+        }
+      }
+    }
+    return NULL;
   }
 
 }

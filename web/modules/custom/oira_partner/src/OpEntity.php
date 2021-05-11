@@ -3,6 +3,9 @@
 namespace Drupal\oira_partner;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -27,15 +30,32 @@ class OpEntity implements ContainerInjectionInterface {
    */
   protected $fields;
 
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * The AccountInterface object.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $account;
+
   /**
    * {@inheritdoc}
    */
-  public function __construct(OpEntityUpdateManager $op_entity_manager) {
+  public function __construct(OpEntityUpdateManager $op_entity_manager, EntityTypeManagerInterface $entity_type_manager, AccountInterface $account) {
     $this->opEntityManager = $op_entity_manager;
+    $this->entityTypeManager = $entity_type_manager;
+    $this->account = $account;
     $this->fields = [
-      'field_co_author_node' => 'field_co_author',
-      'field_related_partners' => 'field_workbench_access',
-      'field_third_partner_node' => 'field_third_partner',
+      'field_co_author' => 'field_co_author_node',
+      'field_workbench_access' => 'field_related_partners',
+      'field_third_partner' => 'field_third_partner_node',
     ];
   }
 
@@ -44,7 +64,9 @@ class OpEntity implements ContainerInjectionInterface {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('oira_partner.update')
+      $container->get('oira_partner.update'),
+      $container->get('entity_type.manager'),
+      $container->get('current_user')
     );
   }
 
@@ -52,7 +74,24 @@ class OpEntity implements ContainerInjectionInterface {
    * Implements hook_entity_presave().
    */
   public function entityPreSave(EntityInterface $entity) {
-    $this->opEntityManager->updatePartners($entity, FALSE, TRUE);
+    // Store the fields if the user is parner.
+    if (in_array('partner', $this->account->getRoles())) {
+      if ($entity instanceof Node) {
+        foreach ($this->fields as $key => $field_name) {
+          // Ignore if the entity doesn't have the one of fields.
+          if ($entity->hasField($key)) {
+            $entity->set($key, $this->opEntityManager->getTermParent());
+          }
+          if ($entity->hasField($field_name)) {
+            $this->opEntityManager->updatePartners($entity, FALSE, FALSE);
+          }
+        }
+      }
+      return;
+    }
+
+    // Store the field from normal edito form.
+    $this->opEntityManager->updatePartners($entity, FALSE, FALSE);
   }
 
   /**
@@ -68,6 +107,27 @@ class OpEntity implements ContainerInjectionInterface {
           }
           // Hidde the field.
           $form[$field_name]['#attributes']['class'][] = 'hidden';
+
+          // Change any option to "COUNTRY - OPTION".
+          $options = &$form[$key]['widget']['#options'];
+          foreach ($options as $term_id => $name) {
+            if ($term_id == '_none') {
+              continue;
+            }
+
+            // Get the country by partner
+            $country_label = $this->opEntityManager->getCountryFromPartner($term_id);
+            if (isset($country_label)) {
+              // Set the new label
+              $options[$term_id] = $country_label . ' - ' . $options[$term_id];
+            }
+          }
+
+          // If the user is a partner, hidde the fields too.
+          if (in_array('partner', $this->account->getRoles())) {
+            // Hidde the field.
+            $form[$key]['#attributes']['class'][] = 'hidden';
+          }
         }
       }
     }
