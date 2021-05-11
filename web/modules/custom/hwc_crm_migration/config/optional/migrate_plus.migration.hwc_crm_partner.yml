@@ -1,0 +1,204 @@
+# This migration demonstrates a simple import from a JSON file.
+id: hwc_crm_partner
+label: 'Node: Partner'
+migration_group: hwc_crm_migration
+migration_tags:
+  - partner
+
+destination:
+  default_bundle: partner
+  plugin: 'entity:node'
+
+migration_dependencies: {  }
+
+dependencies:
+  enforced:
+    module:
+      - hwc_crm_migration
+source:
+  plugin: url
+  data_parser_plugin: xml
+  urls: public://hwc_crm_migration/xml/OIRA_GroupPublicProfile.xml
+  content_type: partner
+  ids:
+    field_guid_organisation:
+      type: string
+  item_selector: /Report/Table0/Table0_Group0_Collection/Table0_Group0_Header0/Detail_Collection/Details
+  constants:
+    lang: en
+    file_source: https://osha.europa.eu/sites/default/files/news
+    file_dest: public://ncw/images/news
+  fields:
+    -
+      name: field_guid_organisation
+      label: 'field_guid_organisation'
+      selector: '@Table0_Details1'
+    -
+      name: title
+      label: 'Title'
+      selector: '@Textbox1'
+    -
+      name: field_general_email
+      label: 'field_general_email'
+      selector: '@Textbox2'
+    -
+      name: field_general_phone
+      label: 'field_general_phone'
+      selector: '@Textbox3'
+    -
+      name: field_website
+      label: 'field_website'
+      selector: '@Textbox4'
+    -
+      name: field_logo
+      label: 'field_logo'
+      selector: '@Textbox5'
+    -
+      name: field_logo_type
+      label: 'field_logo_type'
+      selector: '@Textbox6'
+    -
+      name: field_orgtype
+      label: 'field_orgtype'
+      selector: '@Textbox23'
+    -
+      name: field_social_profile_1
+      label: 'field_social_profile_1'
+      selector: '@Textbox7'
+    -
+      name: field_social_profile_2
+      label: 'field_social_profile_2'
+      selector: '@Textbox8'
+    -
+      name: field_social_profile_3
+      label: 'field_social_profile_3'
+      selector: '@Textbox9'
+    -
+      name: field_social_profile_4
+      label: 'field_social_profile_4'
+      selector: '@Textbox10'
+    -
+      name: field_social_profile_5
+      label: 'field_social_profile_5'
+      selector: '@Textbox11'
+    -
+      name: field_social_profile_6
+      label: 'field_social_profile_6'
+      selector: '@Textbox19'
+    -
+      name: field_social_profile_7
+      label: 'field_social_profile_7'
+      selector: '@Textbox20'
+    -
+      name: field_ph_address
+      label: 'field_ph_address'
+      selector: '@Textbox12'
+    -
+      name: field_ph_cp
+      label: 'field_ph_cp'
+      selector: '@Textbox13'
+    -
+      name: field_country
+      label: 'field_country'
+      selector: '@Textbox14'
+    -
+      name: field_ph_town
+      label: 'field_ph_town'
+      selector: '@Textbox21'
+    -
+      name: field_guid_main_contact
+      label: 'field_guid_main_contact'
+      selector: '@Textbox15'
+    -
+      name: field_main_contact
+      label: 'field_main_contact'
+      selector: '@Textbox16'
+    -
+      name: field_main_contact_1
+      label: 'field_main_contact_1'
+      selector: '@Textbox17'
+    -
+      name: field_main_contact_email
+      label: 'field_main_contact_email'
+      selector: '@Textbox18'
+    -
+      name: field_dedicated_oira_website
+      label: 'field_dedicated_oira_website'
+      selector: '@Textbox24'
+    -
+      name: field_partner_type
+      label: 'field_partner_type'
+      selector: '@Textbox22'
+    -
+      name: field_oira_eu_level
+      label: 'field_oira_eu_level'
+      selector: '@Textbox46'
+process:
+  title: title
+  field_guid_organisation: field_guid_organisation
+  field_general_email: field_general_email
+  field_general_phone: field_general_phone
+  field_website/0/uri: field_website
+  field_orgtype:
+    -
+      plugin: hcm_taxonomy_term_name
+      source: field_orgtype
+      vocabulary: organisation_type
+      create: true
+  field_social_profile/0/uri: field_social_profile_1
+  field_social_profile/1/uri: field_social_profile_2
+  field_social_profile/2/uri: field_social_profile_3
+  field_social_profile/3/uri: field_social_profile_4
+  field_social_profile/4/uri: field_social_profile_5
+  field_social_profile/5/uri: field_social_profile_6
+  field_social_profile/6/uri: field_social_profile_7
+  field_ph_address: field_ph_address
+  field_ph_cp: field_ph_cp
+  field_country:
+    -
+      plugin: hcm_taxonomy_term_name
+      source: field_country
+      vocabulary: country
+  UcCountry:
+    -
+      plugin: hcm_ucfirst
+      source: field_country
+  field_ph_town:
+    -
+      plugin: concat
+      delimiter: ', '
+      source:
+        - field_ph_town
+        - '@UcCountry'
+  field_guid_main_contact: field_guid_main_contact
+  field_main_contact:
+    -
+      plugin: concat
+      delimiter: ' '
+      source:
+        - field_main_contact
+        - field_main_contact_1
+  field_main_contact_email: field_main_contact_email
+  field_dedicated_oira_website/0/uri: field_dedicated_oira_website
+  field_logo/target_id:
+    -
+      plugin: hcm_image
+      source: field_logo
+  field_partner_type:
+    -
+      plugin: hcm_taxonomy_term_name
+      source: field_partner_type
+      vocabulary: partner_types
+      create: true
+  field_workbench_access:
+    -
+      plugin: hcm_taxonomy_term_name
+      source: title
+      vocabulary: section
+      create: true
+      data:
+        field_ldap_section_code: field_guid_organisation
+  field_oira_eu_level:
+    -
+      plugin: hcm_eu_level
+      source: field_oira_eu_level
