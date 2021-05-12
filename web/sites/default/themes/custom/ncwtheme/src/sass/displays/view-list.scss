@@ -62,4 +62,29 @@
   }
 }
 
+/*** View related icons ***/
+.view-related-icons {
+  .view-content.row {
+    margin: 0;
+  }
+  .views-field-nothing {
+    a {
+      display: block;
+      padding: 10px;
+      margin: 0 0 20px;
+      background: $bg-color-blue-block;
+      font-family: $font-family-sans-condensed;
+      font-size: 1.25rem;
+      color: $text-color-black;
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
 
+.block-osha-wiki {
+  padding: 10px;
+  margin: 0 0 20px;
+  background: $bg-color-blue-block;
+}

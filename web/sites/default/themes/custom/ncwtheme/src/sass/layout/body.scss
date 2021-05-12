@@ -477,6 +477,57 @@ body {
         }
       }
     }
+    .field--name-field-related-oshwiki-articles {
+      margin-top: 0.8rem;
+      margin-bottom: 10px;
+      background: $bg-color-blue-light-2;
+      > .field__label {
+        margin-bottom: 0.5rem;
+        padding: 12px 2.6rem;
+        background: $bg-color-blue url(../images/related_wiki_head_big.jpg) left center no-repeat;
+        color: white;
+        font-family: $font-family-sans-condensed;
+        font-size: 1.75rem;
+      }
+      .field__items {
+        > .field__item {
+
+          border-bottom: 8px solid $bg-color-white;
+          header {
+            background-color: $bg-color-blue-wiki;
+            color: $text-color-white;
+            padding-left: 2.6rem;
+            margin-left: 0;
+            h2 {
+              padding: 0.5rem 0;
+            }
+            h2, a {
+              color: $text-color-white;
+              font-size: 1.3125rem;
+              font-family: $font-family-sans-condensed;
+              font-weight: 400;
+            }
+          }
+          .field--name-field-summary-html {
+            margin: 1.8rem 0;
+            padding: 0 2.6rem;
+            color: $text-color-black;
+          }
+          &:after {
+            padding-top: 0.5rem;
+            display: block;
+            content:"";
+            height: 1px;
+            width: 100%;
+            border-bottom: 1px dashed $bg-color-blue-light;
+            background: $bg-color-white;
+          }
+          &:last-child:after {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
 
