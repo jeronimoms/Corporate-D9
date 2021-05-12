@@ -21,8 +21,7 @@ dependencies:
       - custom_migrations
 migration_dependencies:
   required:
-    - d7_user                # -----  CHANGE
-
+    - d7_user
 process:
   nid: tnid   #comentar si no es bbdd limpia
   #vid: vid  #comentar si no es bbdd limpia
@@ -46,12 +45,12 @@ process:
   revision_timestamp: timestamp
 
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  # field_text: field_text
-  'field_text/value': field_text
-  'field_text/format':
+  field_text:
+    - plugin: get
+      source: field_text
+  'field_text/0/format':
     - plugin: default_value
       default_value: restricted_html
-
   field_short_text: field_short_text
   field_theme:
     - plugin: migration_lookup

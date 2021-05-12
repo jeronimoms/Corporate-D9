@@ -1,0 +1,23 @@
+uuid: 91cabf9f-4dc5-4946-a770-aa24c1c54857
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_wiki_url
+    - taxonomy.vocabulary.wiki_categories
+  module:
+    - link
+id: taxonomy_term.wiki_categories.field_wiki_url
+field_name: field_wiki_url
+entity_type: taxonomy_term
+bundle: wiki_categories
+label: 'Wiki url'
+description: 'Url of the wiki categories'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

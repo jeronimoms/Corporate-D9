@@ -31,6 +31,9 @@ class HwcCron implements ContainerInjectionInterface{
    */
   protected $entityTypeManager;
 
+  /**
+   * Implements hook_cron().
+   */
   public function __construct(MigrationPluginManager $migration_manager, EntityTypeManagerInterface $entity_type_manager) {
     $this->migrationManager = $migration_manager;
     $this->entityTypeManager = $entity_type_manager;

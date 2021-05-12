@@ -86,3 +86,7 @@ process:
   content_translation_source: source
   content_translation_outdated: translate
   ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
+  field_summary:
+    -
+      plugin: strip_tags
+      source: field_summary/0/value

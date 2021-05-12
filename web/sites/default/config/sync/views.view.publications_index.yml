@@ -1046,6 +1046,10 @@ display:
         metatag_display_extender: {  }
       path: tools-and-publications/publications
       exposed_block: false
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:

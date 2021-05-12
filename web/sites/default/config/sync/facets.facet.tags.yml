@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: tags
-name: Topics
+name: 'Topics (Publication)'
 url_alias: facet_tags
 weight: -1
 min_count: 1

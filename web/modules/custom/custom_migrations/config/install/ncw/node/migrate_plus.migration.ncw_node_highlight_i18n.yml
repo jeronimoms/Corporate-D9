@@ -47,10 +47,7 @@ process:
     -
       plugin: get
       source: node_uid
-  status:
-    -
-      plugin: get
-      source: status
+
   created:
     -
       plugin: get

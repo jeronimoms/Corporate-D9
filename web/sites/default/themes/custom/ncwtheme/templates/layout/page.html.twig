@@ -84,6 +84,11 @@
       </div>
     {% if has_sidebar_second %}
       <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
+        {% if node.bundle == 'article' %}
+        {{ drupal_view('related_icons', 'block_1',node.nid.0.value) }}
+        {{ drupal_view('oshwiki', 'block_1',node.nid.0.value) }}
+        {% endif %}
+
         {% if node.bundle == 'blog' %}
           <h2 class="related">{{ 'Posts by date' | trans }}</h2>
         {% else %}

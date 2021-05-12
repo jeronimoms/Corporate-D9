@@ -24,7 +24,7 @@ migration_dependencies:
     - d7_user
 
 process:
-  #nid: tnid   #comentar si no es bbdd limpia
+  nid: tnid   #comentar si no es bbdd limpia
   #vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value
@@ -45,4 +45,4 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-
+  field_summary: field_summary
