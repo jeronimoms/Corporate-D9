@@ -1,0 +1,9 @@
+oira_workflow.config:
+  path: '/admin/config/system/oira-config'
+  defaults:
+    _form: '\Drupal\oira_workflow\Form\OwOiraConfigForm'
+    _title: 'Oira configuratión'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE
