@@ -166,6 +166,66 @@
                     "type": "zip"
                 }
             }
+        },
+
+        {
+
+            "type": "package",
+            "package": {
+                "name": "fakeobjects/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "fakeobjects"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "link/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "link"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/link/releases/link_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "w8tcha/ckeditor-wordcount-plugin",
+                "version": "1.17.8",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin/releases/download/v1.17.8/CKEditor-WordCount-Plugin.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "resize/library",
+                "version": "1.17.8",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "resize"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/resize/releases/resize_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+
         }
     ],
     "require": {
@@ -319,6 +379,7 @@
         "drupal/textfield_counter": "^2.0",
         "drupal/tmgmt": "^1.11",
         "drupal/token": "^1.9",
+        "drupal/translation_views": "^1.0@alpha",
         "drupal/twig_tweak": "^3.0",
         "drupal/twitter_block": "^3.0@alpha",
         "drupal/ultimate_cron": "^2.0@alpha",
