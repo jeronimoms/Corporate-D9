@@ -491,17 +491,16 @@ body {
       }
       .field__items {
         > .field__item {
-
           border-bottom: 8px solid $bg-color-white;
-          header {
+          .field--name-node-title {
             background-color: $bg-color-blue-wiki;
             color: $text-color-white;
             padding-left: 2.6rem;
             margin-left: 0;
-            h2 {
+            h3 {
               padding: 0.5rem 0;
             }
-            h2, a {
+            h3 {
               color: $text-color-white;
               font-size: 1.3125rem;
               font-family: $font-family-sans-condensed;
@@ -512,6 +511,42 @@ body {
             margin: 1.8rem 0;
             padding: 0 2.6rem;
             color: $text-color-black;
+          }
+          .field--name-field-wiki-page-url {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 1.8rem;
+            padding-bottom: 1rem;
+            font-weight: bold;
+            font-family: $font-family-sans-condensed;
+            font-size: 1.125rem;
+            a {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              &:before {
+                content: "";
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                order: 2;
+                margin: 0 2px 0 5px;
+                background: url(../images/external_link.png) center right no-repeat;
+              }
+              &:after {
+                order: 3;
+                content: "";
+                display: inline-block;
+                margin-left: 15px;
+                background: url(../images/flecha.png) center center no-repeat;
+                width: 19px;
+                height: 11px;
+              }
+              &:hover {
+                text-decoration: none;
+              }
+            }
           }
           &:after {
             padding-top: 0.5rem;

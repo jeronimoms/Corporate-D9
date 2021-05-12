@@ -1307,16 +1307,16 @@ body ul li .introduction-title a:hover {
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item {
   border-bottom: 8px solid #FFF;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item header {
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title {
   background-color: #325bad;
   color: #FFF;
   padding-left: 2.6rem;
   margin-left: 0;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item header h2 {
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title h3 {
   padding: 0.5rem 0;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item header h2, .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item header a {
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title h3 {
   color: #FFF;
   font-size: 1.3125rem;
   font-family: "Open Sans Condensed", sans-serif;
@@ -1326,6 +1326,42 @@ body ul li .introduction-title a:hover {
   margin: 1.8rem 0;
   padding: 0 2.6rem;
   color: #000;
+}
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1.8rem;
+  padding-bottom: 1rem;
+  font-weight: bold;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.125rem;
+}
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  order: 2;
+  margin: 0 2px 0 5px;
+  background: url(../images/external_link.png) center right no-repeat;
+}
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:after {
+  order: 3;
+  content: "";
+  display: inline-block;
+  margin-left: 15px;
+  background: url(../images/flecha.png) center center no-repeat;
+  width: 19px;
+  height: 11px;
+}
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:hover {
+  text-decoration: none;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item:after {
   padding-top: 0.5rem;
@@ -2607,6 +2643,7 @@ body.node--type-publication {
 }
 .view-related-icons .views-field-nothing a {
   display: block;
+  width: 100%;
   padding: 10px;
   margin: 0 0 20px;
   background: #ecf1fb;
