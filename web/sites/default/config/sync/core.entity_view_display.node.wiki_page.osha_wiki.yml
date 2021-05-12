@@ -16,9 +16,35 @@ dependencies:
     - field.field.node.wiki_page.field_wiki_page_url
     - node.type.wiki_page
   module:
+    - ds
     - link
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - node_title
+        - field_summary_html
+        - field_wiki_page_url
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h3
+          class: ''
+          exclude_node_title: '1'
+          link: false
 id: node.wiki_page.osha_wiki
 targetEntityType: node
 bundle: wiki_page
@@ -26,31 +52,34 @@ mode: osha_wiki
 content:
   field_summary_html:
     type: text_default
-    weight: 0
+    weight: 1
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_wiki_page_url:
     label: hidden
-    weight: 1
-    type: link_separate
+    weight: 2
+    type: link
     settings:
       trim_length: 80
       target: _blank
       url_only: false
       url_plain: false
       rel: '0'
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ' Read full OSHwiki article'
+            lb-col: true
+            classes: {  }
     region: content
-  links:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   addtoany: true
   body: true
+  breadcrumbs: true
   comment_node_wiki_page: true
   field_nace_codes: true
   field_tags: true
@@ -59,4 +88,5 @@ hidden:
   field_updated: true
   field_wiki_categories: true
   langcode: true
+  links: true
   search_api_excerpt: true

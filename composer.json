@@ -166,6 +166,66 @@
                     "type": "zip"
                 }
             }
+        },
+
+        {
+
+            "type": "package",
+            "package": {
+                "name": "fakeobjects/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "fakeobjects"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "link/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "link"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/link/releases/link_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "w8tcha/ckeditor-wordcount-plugin",
+                "version": "1.17.8",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin/releases/download/v1.17.8/CKEditor-WordCount-Plugin.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "resize/library",
+                "version": "1.17.8",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "resize"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/resize/releases/resize_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+
         }
     ],
     "require": {
@@ -176,6 +236,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/addtoany": "^1.14",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/anchor_link": "^2.5",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/better_social_sharing_buttons": "^3.1",
         "drupal/blockgroup": "^1.5",
@@ -185,7 +246,10 @@
         "drupal/calendar": "^1.0@alpha",
         "drupal/captcha": "^1.1",
         "drupal/chosen": "^3.0",
+        "drupal/ckeditor_accordion": "^1.3",
         "drupal/ckeditor_font": "^1.1",
+        "drupal/ckeditor_resize": "^1.3",
+        "drupal/ckwordcount": "^2.0",
         "drupal/clientside_validation": "^3.0@RC",
         "drupal/colorbox": "^1.7",
         "drupal/colorbox_inline": "^1.2",
@@ -319,6 +383,7 @@
         "drupal/textfield_counter": "^2.0",
         "drupal/tmgmt": "^1.11",
         "drupal/token": "^1.9",
+        "drupal/translation_views": "^1.0@alpha",
         "drupal/twig_tweak": "^3.0",
         "drupal/twitter_block": "^3.0@alpha",
         "drupal/ultimate_cron": "^2.0@alpha",
@@ -344,12 +409,16 @@
         "drupal/youtube": "^1.2",
         "drush/drush": "^10.3",
         "facets_range_widget/library": "^1.11",
+        "fakeobjects/library": "^1.8",
         "jquery.cycle/library": "^0.1.0",
         "jquery.hoverintent/library": "^1.10",
         "jquery.pause/library": "^0.1.0",
         "jquery_touch_punch/library": "^0.2.3",
         "json2/library": "^0.1.0",
-        "slick/library": "^1.8"
+        "link/library": "^1.8",
+        "resize/library": "^1.17",
+        "slick/library": "^1.8",
+        "w8tcha/ckeditor-wordcount-plugin": "^1.17"
     },
     "require-dev": {
         "kint-php/kint": "^3.3"
