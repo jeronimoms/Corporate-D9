@@ -1,15 +1,15 @@
-uuid: 7cb551e1-25e8-4b2f-9437-e9e24095e0cf
+uuid: 9c240c95-7d3b-4151-84b6-f4574d8dd31b
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.fop_page
+    - node.type.events
   module:
     - path
-id: node.fop_page.path
+id: node.events.path
 field_name: path
 entity_type: node
-bundle: fop_page
+bundle: events
 label: 'URL alias'
 description: ''
 required: false

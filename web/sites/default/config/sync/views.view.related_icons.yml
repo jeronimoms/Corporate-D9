@@ -53,7 +53,7 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: none
+        type: some
         options:
           items_per_page: 0
           offset: 0
@@ -366,7 +366,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'field_resources: Taxonomy term'
-          required: false
+          required: true
           plugin_id: standard
       arguments:
         nid:
@@ -428,6 +428,7 @@ display:
         metatag_display_extender: {  }
       rendering_language: '***LANGUAGE_language_interface***'
       block_description: 'Related Icons'
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:

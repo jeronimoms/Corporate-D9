@@ -1,15 +1,15 @@
-uuid: 7cb551e1-25e8-4b2f-9437-e9e24095e0cf
+uuid: 9592e753-afd2-493f-a258-cb8081ecf7d6
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.fop_page
+    - node.type.news
   module:
     - path
-id: node.fop_page.path
+id: node.news.path
 field_name: path
 entity_type: node
-bundle: fop_page
+bundle: news
 label: 'URL alias'
 description: ''
 required: false
