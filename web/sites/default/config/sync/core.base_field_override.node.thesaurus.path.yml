@@ -1,15 +1,15 @@
-uuid: 7cb551e1-25e8-4b2f-9437-e9e24095e0cf
+uuid: b68b336f-66ae-4ae0-831b-4ce142713e19
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.fop_page
+    - node.type.thesaurus
   module:
     - path
-id: node.fop_page.path
+id: node.thesaurus.path
 field_name: path
 entity_type: node
-bundle: fop_page
+bundle: thesaurus
 label: 'URL alias'
 description: ''
 required: false
