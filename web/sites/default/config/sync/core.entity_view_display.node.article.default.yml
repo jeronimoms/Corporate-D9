@@ -112,6 +112,7 @@ content:
     type: text_default
     region: content
 hidden:
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_article_type: true

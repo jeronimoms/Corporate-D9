@@ -6,30 +6,32 @@ dependencies:
     - search_api_solr
     - node
     - search_api
+    - file
+    - media
   config:
+    - field.storage.node.body
+    - field.storage.node.field_date
     - field.storage.node.field_activity
     - field.storage.node.field_aditional_resources
     - field.storage.node.field_article_type
     - field.storage.node.field_author
     - field.storage.node.field_available_in_languages
-    - field.storage.node.body
     - field.storage.node.field_country_code
-    - field.storage.node.field_date
     - field.storage.node.field_date_of_directive
-    - field.storage.node.field_seminar_end_date
     - field.storage.node.field_image_media
     - field.storage.node.field_language
     - field.storage.node.field_nace_codes
     - field.storage.node.field_pages_count
-    - field.storage.node.field_wiki_categories
     - field.storage.node.field_publication_date
-    - field.storage.node.field_publication_type
     - field.storage.node.field_publication_res_files
+    - field.storage.node.field_publication_type
     - field.storage.node.field_satisfaction_rate
+    - field.storage.node.field_seminar_end_date
     - field.storage.node.field_seminar_start_date
     - field.storage.node.field_summary
     - field.storage.node.field_tags
     - field.storage.node.field_updated
+    - field.storage.node.field_wiki_categories
     - search_api.server.solr
 third_party_settings:
   search_api_solr:
@@ -332,6 +334,17 @@ field_settings:
       module:
         - node
 datasource_settings:
+  'entity:file':
+    bundles:
+      default: true
+      selected: {  }
+  'entity:media':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
   'entity:node':
     bundles:
       default: false
@@ -361,9 +374,23 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields:
+      - field_summary
+      - title
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_date_range: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
 tracker_settings:
   default:
     indexing_order: fifo
