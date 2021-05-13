@@ -34,6 +34,7 @@ content:
     type: link
     region: content
 hidden:
+  breadcrumbs: true
   field_tags: true
   langcode: true
   search_api_excerpt: true
