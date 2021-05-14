@@ -221,6 +221,60 @@ input[type=search] {
   margin-right: 0;
 }
 
+/*Blocks right column*/
+.view-oshwiki .views-row {
+  width: 100%;
+}
+.view-oshwiki .views-row .block-osha-wiki {
+  padding: 10px;
+  margin: 0 0 20px;
+  background: #ecf1fb;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki .separatorOsHWiki {
+  height: 5px;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki #OSHWikiDivTit {
+  display: flex;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki #OSHWikiDivTit .imgOSHWiki {
+  margin-right: 10px;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki .p2 {
+  font-size: 0.8rem;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki .p3 {
+  text-align: right;
+  margin-right: 10px;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki .p3 a {
+  background: transparent;
+  font-weight: bold;
+}
+
+/* View related icons */
+.view-related-icons .view-content.row {
+  margin: 0;
+}
+.view-related-icons .related-resources-boxes {
+  width: 100%;
+}
+.view-related-icons .views-field-nothing a {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 20px;
+  background: #ecf1fb;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.25rem;
+  color: #000;
+}
+.view-related-icons .views-field-nothing a img {
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+}
+
 .btn-primary {
   background: #003399;
   border: 0;
@@ -1460,15 +1514,22 @@ body ul li .introduction-title a:hover {
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
 }
-.breadcrumb-fluid .breadcrumb.custom-visible {
-  visibility: visible;
+.breadcrumb-fluid .breadcrumb-item.active {
+  color: #003399;
+}
+.breadcrumb-fluid .breadcrumb-item.active::after {
+  display: inline-block;
+  width: 20px;
+  margin-left: 3px;
+  padding-right: 0;
+  content: "";
+  background: url(../images/delimiter-on.png) no-repeat 0px 5px;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
   width: 20px;
   padding-right: 0;
-  color: #6c757d;
   content: "";
   background: url(../images/delimiter-off.png) no-repeat 0px 5px;
 }
@@ -2649,30 +2710,6 @@ body.node--type-publication {
 }
 .view-blog .views-field-field-summary-html {
   min-height: 5rem;
-}
-
-/*** View related icons ***/
-.view-related-icons .view-content.row {
-  margin: 0;
-}
-.view-related-icons .views-field-nothing a {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin: 0 0 20px;
-  background: #ecf1fb;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 1.25rem;
-  color: #000;
-}
-.view-related-icons .views-field-nothing a img {
-  margin-right: 0.5rem;
-}
-
-.block-osha-wiki {
-  padding: 10px;
-  margin: 0 0 20px;
-  background: #ecf1fb;
 }
 
 @media only screen and (max-width: 1200px) {
