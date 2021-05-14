@@ -1443,7 +1443,6 @@ body ul li .introduction-title a:hover {
   background-color: #FFF;
 }
 .breadcrumb-fluid .breadcrumb {
-  visibility: hidden;
   font-size: 0.8rem;
   font-weight: lighter;
   border: 0px;
@@ -1918,58 +1917,6 @@ body.user-logged-in.toolbar-tray-open #header {
   position: absolute;
   width: 100%;
   height: 100%;
-}
-
-/* View Highlights */
-.view-highlight {
-  float: left;
-}
-.view-highlight .views-row {
-  background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
-  float: left;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
-  width: 100%;
-}
-.view-highlight .views-row .views-field-field-image-media {
-  float: left;
-  margin-right: 1rem;
-  width: 220px;
-  height: 220px;
-}
-.view-highlight .views-row .views-field-body {
-  font-size: 0.9rem;
-  line-height: 20px;
-}
-.view-highlight .views-row h3 a {
-  color: #003399;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.3rem;
-  line-height: 1.1em;
-  text-decoration: none;
-  padding: 0;
-  border-bottom: 0px;
-  font-weight: bold;
-}
-.view-highlight .views-row h3 a:hover {
-  text-decoration: underline;
-}
-.view-highlight .views-row .see-more-arrow {
-  margin-top: 2.5rem;
-  float: right;
-}
-.view-highlight .views-row:nth-child(2) .views-field-field-image-media {
-  float: right;
-  padding-right: 0;
-  margin-left: 1em;
-  margin-right: 0;
-}
-.view-highlight .views-row:nth-child(2) .see-more-arrow {
-  float: left;
-}
-.view-highlight .views-row:nth-child(3) {
-  background: transparent;
-  padding-bottom: 0.5rem;
 }
 
 .more-link.revamp {
@@ -2582,6 +2529,73 @@ body.node--type-publication {
     padding-right: 15px;
   }
 }
+/* View Highlights(Home) and Press releases */
+.view-highlight, .view-press-releases {
+  float: left;
+}
+.view-highlight .views-row, .view-press-releases .views-row {
+  background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  float: left;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  width: 100%;
+}
+.view-highlight .views-row .views-field-field-image-media, .view-press-releases .views-row .views-field-field-image-media {
+  float: left;
+  margin-right: 1rem;
+  width: 220px;
+  height: 220px;
+}
+.view-highlight .views-row .views-field-body, .view-press-releases .views-row .views-field-body {
+  font-size: 0.9rem;
+  line-height: 20px;
+}
+.view-highlight .views-row h3 a, .view-press-releases .views-row h3 a {
+  color: #003399;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.1em;
+  text-decoration: none;
+  padding: 0;
+  border-bottom: 0px;
+  font-weight: bold;
+}
+.view-highlight .views-row h3 a:hover, .view-press-releases .views-row h3 a:hover {
+  text-decoration: underline;
+}
+.view-highlight .views-row .see-more-arrow, .view-press-releases .views-row .see-more-arrow {
+  margin-top: 2.5rem;
+  float: right;
+}
+.view-highlight .views-row:nth-child(even) .views-field-field-image-media, .view-press-releases .views-row:nth-child(even) .views-field-field-image-media {
+  float: right;
+  padding-right: 0;
+  margin-left: 1em;
+  margin-right: 0;
+}
+.view-highlight .views-row:nth-child(even) .see-more-arrow, .view-press-releases .views-row:nth-child(even) .see-more-arrow {
+  float: left;
+}
+.view-highlight .views-row:nth-child(3), .view-press-releases .views-row:nth-child(3) {
+  background: transparent;
+  padding-bottom: 0.5rem;
+}
+
+.view-press-releases {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.view-press-releases .view-header {
+  font-size: 1.35rem;
+  color: #003399;
+  font-weight: 600;
+  margin-left: -15px;
+}
+.view-press-releases .views-row:nth-child(3) {
+  background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  padding-bottom: 1.5rem;
+}
+
 /* View node header - Node related with the View - Placed before the View */
 .custom-view-node-header {
   padding-bottom: 2rem;
