@@ -139,64 +139,6 @@
   }
 }
 
-/* View Highlights */
-
-.view-highlight{
-  float: left;
-  .views-row{
-    background: url('../images/separator_home.jpg') repeat-x scroll 0% 100% rgba(0,0,0,0);
-    float: left;
-    padding-top: 1rem;
-    padding-bottom: 1.5rem;
-    width: 100%;
-    .views-field-field-image-media{
-      float: left;
-      margin-right: 1rem;
-      width: 220px;
-      height: 220px;
-    }
-    .views-field-body{
-      font-size: 0.9rem;
-      line-height: 20px;
-    }
-    h3{
-      a{
-        color: $text-color-blue;
-        font-family: 'Open Sans',sans-serif;
-        font-size: 1.3rem;
-        line-height: 1.1em;
-        text-decoration: none;
-        padding: 0;
-        border-bottom: 0px;
-        font-weight: bold;
-        &:hover{
-          text-decoration: underline;
-        }
-      }
-    }
-    .see-more-arrow{
-      margin-top: 2.5rem;
-      float: right;
-    }
-  }
-  .views-row:nth-child(2) {
-    .views-field-field-image-media{
-      float: right;
-      padding-right: 0;
-      margin-left: 1em;
-      margin-right: 0;
-    }
-    .see-more-arrow {
-      float: left;
-    }
-  }
-
-  .views-row:nth-child(3){
-    background: transparent;
-    padding-bottom: 0.5rem;
-  }
-}
-
 .more-link.revamp {
   width: 100%;
   float: left;
