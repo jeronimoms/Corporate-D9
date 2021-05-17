@@ -816,6 +816,42 @@ h3.home a:hover {
   background: url("../images/ico_minor.png") no-repeat 10px 11px;
 }
 
+.sidebar-first .views-exposed-form {
+  display: inline-block;
+  clear: both;
+  margin-top: 1rem;
+}
+.sidebar-first .views-exposed-form h2 {
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: lighter;
+  margin: 1rem 0 0 0;
+  padding: 1rem 0 1rem;
+  background: none repeat scroll 0 0 #FFFFFF;
+  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  border-top: 5px solid #cfddee;
+}
+.sidebar-first .views-exposed-form .form-row {
+  padding-top: 1rem;
+}
+.sidebar-first .views-exposed-form .form-row label {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.sidebar-first .views-exposed-form .form-row button.btn-primary {
+  background: #FFF;
+  color: #003399;
+  border: 1px solid #003399;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.sidebar-first .views-exposed-form .form-row button.btn-primary:hover {
+  background: #003399;
+  color: #FFF;
+}
+
 nav.pager {
   display: flex;
   justify-content: center;
