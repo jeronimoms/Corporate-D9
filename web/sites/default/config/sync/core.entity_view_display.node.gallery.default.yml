@@ -1,0 +1,125 @@
+uuid: 12cb1b94-7453-428f-ad1c-5f0bb5dc94cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gallery.field_album_pictures
+    - field.field.node.gallery.field_cover_photo
+    - field.field.node.gallery.field_gallery_flickr_link
+    - field.field.node.gallery.field_photo_gallery_type
+    - field.field.node.gallery.field_publication_date
+    - field.field.node.gallery.field_section
+    - field.field.node.gallery.field_tags
+    - image.style.1000x1000
+    - node.type.gallery
+  module:
+    - datetime
+    - ds
+    - image
+    - linked_field
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_publication_date
+        - node_title
+        - field_cover_photo
+        - field_album_pictures
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: node.gallery.default
+targetEntityType: node
+bundle: gallery
+mode: default
+content:
+  field_album_pictures:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: max_325x325
+      image_link: ''
+    third_party_settings:
+      ds:
+        ds_limit: '3'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_gallery_flickr_link
+        advanced: {  }
+        token: ''
+    type: image
+    region: ds_content
+  field_cover_photo:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: 1000x1000
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_gallery_flickr_link
+        advanced: {  }
+        token: ''
+    type: image
+    region: ds_content
+  field_publication_date:
+    weight: 0
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: only_day
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: datetime_default
+    region: ds_content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  field_gallery_flickr_link: true
+  field_photo_gallery_type: true
+  field_section: true
+  field_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

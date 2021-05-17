@@ -1,0 +1,21 @@
+uuid: e148b2f8-c307-4737-a8f5-9ce822fa279c
+langcode: en
+status: true
+dependencies: {  }
+id: search_site_header_form
+label: 'Search Site Header Form'
+selector: views-exposed-form-search-api-search-api-block
+minChar: 3
+autoSubmit: true
+autoRedirect: true
+maxSuggestions: 10
+noResultLabel: 'No results found for [search-phrase]. Click to perform full search.'
+noResultValue: '[search-phrase]'
+noResultLink: ''
+moreResultsLabel: 'View all results for [search-phrase].'
+moreResultsValue: '[search-phrase]'
+moreResultsLink: ''
+source: 'autocompletion_callbacks_nodes::nodes_autocompletion_callback'
+theme: basic-blue.css
+editable: true
+deletable: true
