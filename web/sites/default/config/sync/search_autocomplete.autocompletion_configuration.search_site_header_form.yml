@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: search_site_header_form
 label: 'Search Site Header Form'
-selector: views-exposed-form-search-api-search-api-block
+selector: '#edit-search-api-fulltext'
 minChar: 3
 autoSubmit: true
 autoRedirect: true

@@ -1,0 +1,15 @@
+uuid: e80e2269-02f5-442c-9512-8a1bf8741530
+langcode: en
+status: true
+dependencies: {  }
+id: articles
+label: Articles
+description: ''
+entityType: node
+entityBundle: article
+language: und
+breadcrumbPaths: '[node:menu-link:root:url]'
+breadcrumbTitles: '[node:menu-link:root]'
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''
