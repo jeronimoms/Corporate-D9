@@ -13,7 +13,7 @@ migration_group: allages_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation
-  node_type: basic_page                                # -----  CHANGE
+  node_type: page                                # -----  CHANGE
 destination:
   plugin: entity:node
   translations: true
@@ -86,7 +86,4 @@ process:
   content_translation_source: source
   content_translation_outdated: translate
   ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
-  field_summary:
-    -
-      plugin: strip_tags
-      source: field_summary/0/value
+  field_summary: body_summary

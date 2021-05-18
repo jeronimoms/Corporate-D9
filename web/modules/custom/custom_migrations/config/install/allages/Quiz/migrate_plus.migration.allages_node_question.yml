@@ -1,20 +1,20 @@
-# Migration file for creating "good_practices" nodes from BBDD.
+# Migration file for creating "quiz" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
 
 ##################### BASIC INFORMATION ###################
 
-id: allages_node_good_practices                    # -----  CHANGE
-label: 'Node: Good Practices'                   # -----  CHANGE
+id: allages_node_question                    # -----  CHANGE
+label: 'Node: Quiz'                   # -----  CHANGE
 audit: true
-migration_group: allages_migrate_node
+migration_group: allages_migrate_quiz
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
-  node_type: good_practices                     # -----  CHANGE
+  node_type: quiz_multichoice_answers                     # -----  CHANGE
 destination:
-  plugin: entity:node
+  plugin: entity:quiz_question
 dependencies:
   enforced:
     module:
@@ -22,12 +22,13 @@ dependencies:
 migration_dependencies:
   required:
     - d7_user
+
 process:
   nid: tnid   #comentar si no es bbdd limpia
   #vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value
-      default_value: good_practices              # -----  CHANGE
+      default_value: quiz_question              # -----  CHANGE
   langcode:
     plugin: default_value
     source: language
@@ -43,24 +44,6 @@ process:
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
-
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_text:
-    - plugin: get
-      source: field_text
-  'field_text/0/format':
-    - plugin: default_value
-      default_value: basic_html
-  field_short_text:
-    - plugin: get
-      source: field_short_text
-  field_theme:
-    - plugin: migration_lookup
-      migration: allages_node_themes
-      source: field_theme
-  field_image_step:
-    plugin: file_id_lookup
-    source: field_image_step
-    migration: allages_node_good_practices_field_image_media
-    no_stub: true
+  body_format: answer_format
 
