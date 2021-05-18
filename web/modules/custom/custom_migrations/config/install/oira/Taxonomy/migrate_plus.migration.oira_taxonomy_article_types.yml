@@ -1,4 +1,4 @@
-# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+# Migration file for creating "Taxonomy terms Article types" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
@@ -13,7 +13,7 @@ audit: true
 migration_group: oira_migrate_tax    # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
-  plugin: d7_taxonomy_term
+  plugin: d7_taxonomy_term_custom
   bundle: article_types               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
@@ -45,6 +45,10 @@ process:
   forum_container: is_container
   changed: timestamp
   langcode: language
+  path/pathauto:
+    plugin: default_value
+    default_value: 0 # Disable pathauto.
+  path/alias: alias
 
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_article_type_code:

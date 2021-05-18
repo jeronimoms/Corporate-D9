@@ -1,0 +1,62 @@
+# Migration file for creating "practical_tool" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_node_private_album                    # -----  CHANGE
+label: 'Node: Private Album'                   # -----  CHANGE
+audit: true
+migration_group: oira_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: ev_d7_node
+  node_type: private_album                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - oira_node_private_album_media_images_1
+
+process:
+  nid: tnid   #comentar si no es bbdd limpia
+  vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: private_album              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_multiple_sector:
+    - plugin: sub_process
+      source: field_multiple_sector
+      process:
+        target_id:
+          plugin: get
+          source: tid
+
+  field_private_images:
+    plugin: file_id_lookup
+    source: field_private_images
+    migration: oira_node_private_album_media_images_1
+    no_stub: true
+

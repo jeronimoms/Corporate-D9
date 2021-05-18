@@ -44,7 +44,7 @@ process:
       plugin: default_value
       default_value: country_status                 # -----  CHANGE
   name: name_field_value
-  'description/value': description
+  'description/value': description_field_value
   'description/format': format
   weight: weight
   parent_id:

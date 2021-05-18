@@ -15,6 +15,9 @@ source:
   plugin: d7_locale_terms
   bundle: country                            # -----  CHANGE
   translations: true
+  constants:
+    file_source: https://oiraproject.eu/sites/default/files
+    file_dest: public://
 destination:
   plugin: entity:taxonomy_term
   translations: true
@@ -44,7 +47,7 @@ process:
       plugin: default_value
       default_value: country                 # -----  CHANGE
   name: name_field_value
-  'description/value': description
+  'description/value': description_field_value
   'description/format': format
   weight: weight
   parent_id:
@@ -71,6 +74,25 @@ process:
   field_ncw_fp_link:
     plugin: field_link
     source: field_ncw_fp_link
-  field_flag: field_flag # Image -- Error
+  file_source:
+    - plugin: concat
+      delimiter: /
+      source:
+        - constants/file_source
+        - field_flag_url
+    - plugin: urlencode
+  file_dest:
+    - plugin: concat
+      source:
+        - constants/file_dest
+        - field_flag_url
+  field_flag:
+    - plugin: file_copy
+      source:
+        - '@file_source'
+        - '@file_dest'
+    - plugin: entity_generate
+      value_key: uri
+      entity_type: file
 
 

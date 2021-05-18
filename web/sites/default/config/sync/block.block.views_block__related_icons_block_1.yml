@@ -1,0 +1,33 @@
+uuid: 4b60dc95-6099-489a-b138-949d482f23fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.related_icons
+  module:
+    - ctools
+    - views
+  theme:
+    - ncwtheme
+id: views_block__related_icons_block_1
+theme: ncwtheme
+region: sidebar_second
+weight: -24
+provider: null
+plugin: 'views_block:related_icons-block_1'
+settings:
+  id: 'views_block:related_icons-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,57 @@
+# Migration file for creating "practical_tool" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_node_slide                    # -----  CHANGE
+label: 'Node: Slide'                   # -----  CHANGE
+audit: true
+migration_group: oira_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: ev_d7_node
+  node_type: slide                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - oira_node_slide_media_images_1
+
+process:
+  nid: tnid   #comentar si no es bbdd limpia
+  vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: slide              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_link:
+    plugin: field_link
+    source: field_link
+  field_image:
+    plugin: file_id_lookup
+    source: field_image
+    migration: oira_node_slide_media_images_1
+    no_stub: true
+

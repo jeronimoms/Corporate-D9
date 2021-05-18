@@ -55,6 +55,13 @@ process:
         target_id:
           plugin: get
           source: tid
+  field_third_partner:
+    - plugin: sub_process
+      source: field_third_partner
+      process:
+        target_id:
+          plugin: get
+          source: tid
   field_country:
     - plugin: sub_process
       source: field_country
