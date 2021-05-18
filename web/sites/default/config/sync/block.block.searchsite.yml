@@ -2,10 +2,6 @@ uuid: 3f090773-a9bb-4706-8911-f107e8dd45ef
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:6136809b-bb3c-430b-8c51-27cc78bb1b12'
-  module:
-    - block_content
   theme:
     - ncwtheme
 id: searchsite
