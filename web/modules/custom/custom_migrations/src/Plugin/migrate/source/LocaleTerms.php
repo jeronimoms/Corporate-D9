@@ -59,6 +59,64 @@ class LocaleTerms extends Term {
       ->fetchCol();
     $row->setSourceProperty('description_field_value', $desc[0]);
 
+    // Set alias by lang.
+    $alias = $this->select('url_alias', 'ua')
+      ->fields('ua', ['alias'])
+      ->where("ua.source = CONCAT('taxonomy/term/', :tid) AND language = :lang", [
+        ':tid' => $row->getSourceProperty('tid'),
+        ':lang' => 'en'
+      ])
+      ->execute()
+      ->fetchCol();
+
+    if ($alias[0]) {
+      $alias_text = $alias[0];
+    }
+    else {
+      $alias_text = '';
+    }
+
+    $row->setSourceProperty('alias', '/' . $alias_text);
+
+    // Country images.
+    $field_flag = $row->getSourceProperty('field_flag');
+    if (isset($field_flag) && isset($field_flag[0])) {
+      $field_flag_fid = $field_flag[0]['fid'];
+      $image = $this->select('file_managed', 'fm')
+        ->fields('fm', ['uri'])
+        ->where("fm.fid = :fid", [
+          ':fid' => $field_flag_fid,
+        ])
+        ->execute()
+        ->fetchCol();
+
+      if (isset($image[0])) {
+        $url = str_replace('public://', '', $image[0]);
+        $row->setSourceProperty('field_flag_url', $url);
+
+      }
+    }
+
+    // Field images.
+    $field_image = $row->getSourceProperty('field_image');
+    if (isset($field_image) && isset($field_image[0])) {
+      $field_image_fid = $field_image[0]['fid'];
+      $image = $this->select('file_managed', 'fm')
+        ->fields('fm', ['uri'])
+        ->where("fm.fid = :fid", [
+          ':fid' => $field_image_fid,
+        ])
+        ->execute()
+        ->fetchCol();
+
+      if (isset($image[0])) {
+        $url = str_replace('public://', '', $image[0]);
+        $row->setSourceProperty('field_image_url', $url);
+
+      }
+    }
+
+
     // Set specific include field.
 //    $includeField = $this->select('field_data_field_nace_includes', 'fdf')
 //      ->fields('fdf', ['field_nace_includes_value'])
