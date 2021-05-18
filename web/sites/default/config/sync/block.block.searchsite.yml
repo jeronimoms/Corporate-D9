@@ -1,7 +1,11 @@
-uuid: 3f090773-a9bb-4706-8911-f107e8dd45ef
+uuid: ce8a128b-fe2d-4930-80aa-efb141bd693c
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:b26af753-3f5d-4513-9674-87faaac13581'
+  module:
+    - block_content
   theme:
     - ncwtheme
 id: searchsite
@@ -9,9 +13,9 @@ theme: ncwtheme
 region: header_form
 weight: 0
 provider: null
-plugin: 'block_content:6136809b-bb3c-430b-8c51-27cc78bb1b12'
+plugin: 'block_content:b26af753-3f5d-4513-9674-87faaac13581'
 settings:
-  id: 'block_content:6136809b-bb3c-430b-8c51-27cc78bb1b12'
+  id: 'block_content:b26af753-3f5d-4513-9674-87faaac13581'
   label: 'Search site'
   provider: block_content
   label_display: '0'

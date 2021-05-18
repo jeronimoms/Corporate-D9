@@ -12,7 +12,8 @@ entity_settings:
   target_type: node
   handler: 'default:node'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      press_contact: press_contact
     sort:
       field: _none
       direction: ASC
