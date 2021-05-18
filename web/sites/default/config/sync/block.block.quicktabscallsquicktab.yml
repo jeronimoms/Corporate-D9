@@ -1,0 +1,25 @@
+uuid: 80a01c5d-dcd1-4e11-87e9-66fe0f239784
+langcode: en
+status: true
+dependencies:
+  module:
+    - quicktabs
+    - system
+  theme:
+    - ncwtheme
+id: quicktabscallsquicktab
+theme: ncwtheme
+region: content
+weight: -14
+provider: null
+plugin: 'quicktabs_block:calls_quicktab'
+settings:
+  id: 'quicktabs_block:calls_quicktab'
+  label: 'QuickTabs - Calls quicktab'
+  provider: quicktabs
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/1472
+    negate: false
