@@ -51,10 +51,6 @@
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
-<div class="content-headings-related">
-  <h2>{{ 'Related resources' | trans }}</h2>
-  <h3 class="custom-border"><span>{{ 'Related publications' | trans }}</span></h3>
-</div>
 
 
 {% if label_hidden %}
@@ -66,7 +62,9 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
+      <div{{ attributes.addClass(classes, 'field__item') }}>
+        <a target="_blank" href="{{ item.content['#url'] }}">{{ 'Read full OSHwiki article' | trans}}</a>
+      </div>
     {% endfor %}
   {% endif %}
 {% else %}
