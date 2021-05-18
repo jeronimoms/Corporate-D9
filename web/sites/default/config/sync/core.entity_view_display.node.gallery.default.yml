@@ -16,6 +16,7 @@ dependencies:
     - datetime
     - ds
     - image
+    - link
     - linked_field
     - user
 third_party_settings:
@@ -41,6 +42,7 @@ third_party_settings:
         - node_title
         - field_cover_photo
         - field_album_pictures
+        - field_gallery_flickr_link
     fields:
       node_title:
         plugin_id: node_title
@@ -91,6 +93,18 @@ content:
         token: ''
     type: image
     region: ds_content
+  field_gallery_flickr_link:
+    type: link
+    weight: 4
+    region: ds_content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
   field_publication_date:
     weight: 0
     label: hidden
@@ -110,7 +124,6 @@ content:
 hidden:
   addtoany: true
   breadcrumbs: true
-  field_gallery_flickr_link: true
   field_photo_gallery_type: true
   field_section: true
   field_tags: true
