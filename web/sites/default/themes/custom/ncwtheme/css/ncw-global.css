@@ -221,6 +221,63 @@ input[type=search] {
   margin-right: 0;
 }
 
+/* Sidebar second */
+.sidebar-second .related-views {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.sidebar-second .related-views .views-element-container.block.block-views {
+  float: left;
+  width: 100%;
+  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.3rem;
+  padding-bottom: 1.6rem;
+}
+.sidebar-second .related-views .views-element-container.block.block-views h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+.sidebar-second .views-row {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.sidebar-second .views-row a {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 17px;
+  padding-bottom: 10px;
+  background: url(../images/li_arrow.png) no-repeat 1px 2px;
+  padding-left: 15px;
+}
+.sidebar-second .more-link {
+  text-align: right;
+}
+.sidebar-second .more-link a {
+  display: inline-block;
+  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
+  padding: 5px 30px 5px 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.sidebar-second .more-link a:hover {
+  color: #FFF;
+  background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
+  -webkit-transition: background-color 800ms linear;
+  -moz-transition: background-color 800ms linear;
+  -o-transition: background-color 800ms linear;
+  -ms-transition: background-color 800ms linear;
+  transition: background-color 800ms linear;
+}
+.sidebar-second .more-link a:before {
+  content: none;
+}
+
 /*Blocks right column*/
 .view-oshwiki .views-row {
   width: 100%;
@@ -273,6 +330,40 @@ input[type=search] {
 .view-related-icons .views-field-nothing a img {
   margin-top: 0.2rem;
   margin-right: 0.5rem;
+}
+
+/* Press contacts */
+.sidebar-second .views-element-container.block.block-views h2 {
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #003399;
+}
+.sidebar-second .view-press-contacts .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.sidebar-second .view-press-contacts .view-content.row .views-row {
+  float: left;
+  width: 100%;
+  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.3rem;
+  padding-bottom: 0.6rem;
+}
+.sidebar-second .view-press-contacts .view-content.row .views-row .field-content {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+.sidebar-second .view-press-contacts .view-content.row .views-row .views-field-field-press-contact-job-title {
+  font-weight: bold;
+}
+.sidebar-second .view-press-contacts .view-content.row .views-row .views-field-field-press-contact-email a {
+  background: url("../images/mailto.png") 0 4px transparent no-repeat;
+  padding-left: 17px;
 }
 
 .btn-primary {
@@ -453,6 +544,8 @@ div#sliding-popup {
   margin-right: 0;
   border-radius: 0;
   margin-top: 0;
+  background: #003399;
+  color: #FFF;
 }
 #header .header-language-search #block-searchsite #edit-actions--2 {
   position: absolute;
@@ -1131,47 +1224,6 @@ body ul li .introduction-title a:hover {
 .push-right {
   margin-left: auto;
   margin-right: 30px;
-}
-
-/* Sidebar second */
-.sidebar-second .block-views {
-  background: url(../images/separator.jpg) repeat-x 100% 100%;
-  padding: 0 10px 30px 10px;
-}
-.sidebar-second .views-row {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.sidebar-second .views-row a {
-  display: block;
-  font-size: 0.8rem;
-  line-height: 17px;
-  padding-bottom: 10px;
-  background: url(../images/li_arrow.png) no-repeat 1px 2px;
-  padding-left: 15px;
-}
-.sidebar-second .more-link {
-  text-align: right;
-}
-.sidebar-second .more-link a {
-  display: inline-block;
-  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
-  padding: 5px 30px 5px 5px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-.sidebar-second .more-link a:hover {
-  color: #FFF;
-  background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
-  -webkit-transition: background-color 800ms linear;
-  -moz-transition: background-color 800ms linear;
-  -o-transition: background-color 800ms linear;
-  -ms-transition: background-color 800ms linear;
-  transition: background-color 800ms linear;
-}
-.sidebar-second .more-link a:before {
-  content: none;
 }
 
 /* Share this on articles icons */
