@@ -41,5 +41,9 @@ function ncwtheme_preprocess_html(&$variables){
   $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
   $path_alias = ltrim($path_alias, '/');
   $variables['attributes']['class'][] = \Drupal\Component\Utility\Html::cleanCssIdentifier($path_alias);
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['head_title']['title'] = t('European Agency for Safety & Health at Work - Information, statistics, legislation and risk assessment tools.');
+  }
 }
+
 

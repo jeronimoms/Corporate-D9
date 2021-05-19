@@ -1,0 +1,29 @@
+uuid: 456e0803-ccf8-4b92-9188-93d2b3686a5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.gallery
+    - taxonomy.vocabulary.section
+id: node.gallery.field_section
+field_name: field_section
+entity_type: node
+bundle: gallery
+label: Section
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      section: section
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

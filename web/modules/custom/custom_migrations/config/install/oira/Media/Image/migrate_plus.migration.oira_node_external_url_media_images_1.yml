@@ -1,7 +1,7 @@
 # File to Media Migration configuration for oira_good_practice_media_image migration
 
-id: oira_node_partner_media_images_1
-label: 'Partner: Media Images Step 1'
+id: oira_node_external_url_media_images_1
+label: 'External Url: Media Images Step 1'
 migration_group: oira_migrate_media
 
 source:
@@ -9,10 +9,10 @@ source:
   langcode: und
   plugin: media_entity_generator_d7
   entity_type: node
-  bundle: partner
+  bundle: external_url
   d7_file_url: 'https://oiraproject.eu/sites/default/files/'
   field_names:
-    - field_logo
+    - field_image
 destination:
   plugin: entity:media
 
@@ -45,10 +45,15 @@ process:
     reuse: TRUE
     path: 'public://'
     source: file_path
+
   langcode: langcode
+
   uid:
     plugin: default_value
     default_value: 1
+
+
+
 dependencies:
   module:
     - custom_migrations

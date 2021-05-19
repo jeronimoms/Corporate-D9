@@ -1,6 +1,6 @@
 uuid: 73231567-7f1a-4107-b5e7-fd8e8cf2494e
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - node
@@ -9,7 +9,7 @@ _core:
 id: node_search
 label: Content
 path: node
-weight: -10
+weight: -9
 plugin: node_search
 configuration:
   rankings: {  }

@@ -1,0 +1,20 @@
+uuid: c5fd999a-d095-4337-a68f-3ce9897adef1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.banner
+  module:
+    - path
+id: node.banner.path
+field_name: path
+entity_type: node
+bundle: banner
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

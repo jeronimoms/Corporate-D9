@@ -3,269 +3,17 @@ message:
   value: ''
   format: plain_text
 plugins:
-  book:
-    enabled: false
-    weight: 0
-  'vocabulary:nace_codes':
+  frontpage:
     enabled: false
     weight: 0
     settings:
-      title: 'Nace Codes'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:priority_area':
+      title: 'Front page'
+      rss: /rss.xml
+  'vocabulary:section':
     enabled: false
     weight: 0
     settings:
-      title: 'Priority area'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:prevention_measures_msd':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'MSD Prevention measures'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:prevention_measures':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Level of prevention'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:photo_gallery_type':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Photo Gallery Type'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:organised_by':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Organised by'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:newsletter_sections':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Newsletter sections'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:msds_glossary':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'MSDs Glossary'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:publication_types':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Publication Types'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:msd_priority_area':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'MSD Priority area'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:material_purpose':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Type of information / purpose of the material'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:material_objective':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Type of visualisation material'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:legislation_category':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Legislation category'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:health_effects':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'MSD Health effects'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:hazmap_categories':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Hazmap categories'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:provider_type':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Type of provider'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:purpose_of_material':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'MSD Purpose of the material'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:hazard_physical_state':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Chemical and biological hazards related to state and occurrence in the workplace'
+      title: Section
       show_description: false
       show_count: false
       term_depth: 9
@@ -291,116 +39,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:worker_groups_covered':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'MSD Worker groups covered'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:worker_groups':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Type of workers'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:wiki_categories':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Wiki Categories'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:wg_role_2':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'WG Role 2'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:wg_role_1':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'WG Role 1'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:wg_category':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'WG Category'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
   'vocabulary:tooltips':
     enabled: false
     weight: 0
     settings:
       title: Tooltips
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:related_icons':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Related icons'
       show_description: false
       show_count: false
       term_depth: 9
@@ -471,11 +114,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:section':
+  'vocabulary:resource_type':
     enabled: false
     weight: 0
     settings:
-      title: Section
+      title: 'MSD Type of visual resource'
       show_description: false
       show_count: false
       term_depth: 9
@@ -486,11 +129,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:resource_type':
+  'vocabulary:wg_role_1':
     enabled: false
     weight: 0
     settings:
-      title: 'MSD Type of visual resource'
+      title: 'WG Role 1'
       show_description: false
       show_count: false
       term_depth: 9
@@ -516,11 +159,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:hazards':
+  'vocabulary:related_icons':
     enabled: false
     weight: 0
     settings:
-      title: 'MSD Hazards'
+      title: 'Related icons'
       show_description: false
       show_count: false
       term_depth: 9
@@ -531,11 +174,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:hazard_health_effects':
+  'vocabulary:purpose_of_material':
     enabled: false
     weight: 0
     settings:
-      title: 'Chemical hazards related to health effects'
+      title: 'MSD Purpose of the material'
       show_description: false
       show_count: false
       term_depth: 9
@@ -546,53 +189,101 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  frontpage:
-    enabled: true
+  'vocabulary:publication_types':
+    enabled: false
     weight: 0
     settings:
-      title: 'Front page'
-      rss: /rss.xml
-  'menu:menu-footer-menu':
+      title: 'Publication Types'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:provider_type':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Type of provider'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:priority_area':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Priority area'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:wg_category':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'WG Category'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:wg_role_2':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'WG Role 2'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:prevention_measures':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Level of prevention'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'menu:footer-menu':
     enabled: false
     weight: 0
     settings:
       title: 'Footer Menu'
-      show_disabled: false
-  'vocabulary:agency':
-    enabled: false
-    weight: 0
-    settings:
-      title: Agency
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:activity':
-    enabled: false
-    weight: 0
-    settings:
-      title: Activity
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'menu:workbench':
-    enabled: false
-    weight: 0
-    settings:
-      title: Workbench
       show_disabled: false
   'menu:tools':
     enabled: false
@@ -612,17 +303,35 @@ plugins:
     settings:
       title: Search
       show_disabled: false
+  'menu:menu-footer-menu':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Footer Menu'
+      show_disabled: false
   'menu:main':
     enabled: true
     weight: 0
     settings:
       title: 'Main navigation'
       show_disabled: false
-  'vocabulary:attachment_file_type':
+  'menu:header-menu':
     enabled: false
     weight: 0
     settings:
-      title: 'Attachment file type'
+      title: 'Header menu'
+      show_disabled: false
+  'menu:footer':
+    enabled: false
+    weight: 0
+    settings:
+      title: Footer
+      show_disabled: false
+  'vocabulary:wiki_categories':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Wiki Categories'
       show_description: false
       show_count: false
       term_depth: 9
@@ -633,24 +342,6 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'menu:header-menu':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Header menu'
-      show_disabled: false
-  'menu:footer-menu':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Footer Menu'
-      show_disabled: false
-  'menu:footer':
-    enabled: false
-    weight: 0
-    settings:
-      title: Footer
-      show_disabled: false
   'menu:features':
     enabled: false
     weight: 0
@@ -675,11 +366,11 @@ plugins:
     settings:
       title: 'User account menu'
       show_disabled: false
-  'vocabulary:article_types':
+  'vocabulary:workflow_status':
     enabled: false
     weight: 0
     settings:
-      title: 'Article Types'
+      title: 'Workflow status'
       show_description: false
       show_count: false
       term_depth: 9
@@ -690,11 +381,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:banner_links':
+  'vocabulary:worker_groups_covered':
     enabled: false
     weight: 0
     settings:
-      title: 'Banner links'
+      title: 'MSD Worker groups covered'
       show_description: false
       show_count: false
       term_depth: 9
@@ -705,11 +396,59 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:hashtag_terms':
+  'vocabulary:worker_groups':
     enabled: false
     weight: 0
     settings:
-      title: 'Hashtag Terms'
+      title: 'Type of workers'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:prevention_measures_msd':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'MSD Prevention measures'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:photo_gallery_type':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Photo Gallery Type'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  book:
+    enabled: false
+    weight: 0
+  'vocabulary:contact_type_of_sender':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Contact Type of Sender'
       show_description: false
       show_count: false
       term_depth: 9
@@ -735,116 +474,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:grade':
-    enabled: false
-    weight: 0
-    settings:
-      title: Grade
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:glossary_type':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Glossary type'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:glossary_the':
-    enabled: false
-    weight: 0
-    settings:
-      title: Glossary_THE
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:glossary':
-    enabled: false
-    weight: 0
-    settings:
-      title: Glossary
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:fop_link_sections':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'FOP Link Sections'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:exposure_route':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Exposure route'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
   'vocabulary:evaluation':
     enabled: false
     weight: 0
     settings:
       title: 'Quality/ Assessment criteria'
-      show_description: false
-      show_count: false
-      term_depth: 9
-      term_count_threshold: 0
-      customize_link: false
-      term_link: entity.taxonomy_term.canonical|taxonomy_term
-      always_link: false
-      enable_rss: false
-      rss_link: view.taxonomy_term.feed_1|arg_0
-      rss_depth: 9
-  'vocabulary:biological_hazard':
-    enabled: false
-    weight: 0
-    settings:
-      title: 'Biological hazard'
       show_description: false
       show_count: false
       term_depth: 9
@@ -915,11 +549,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:contact_type_of_sender':
+  'vocabulary:contact_type':
     enabled: false
     weight: 0
     settings:
-      title: 'Contact Type of Sender'
+      title: 'Contact Type'
       show_description: false
       show_count: false
       term_depth: 9
@@ -930,11 +564,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:contact_type':
+  'vocabulary:fop_link_sections':
     enabled: false
     weight: 0
     settings:
-      title: 'Contact Type'
+      title: 'FOP Link Sections'
       show_description: false
       show_count: false
       term_depth: 9
@@ -960,11 +594,11 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
-  'vocabulary:workflow_status':
+  'vocabulary:biological_hazard':
     enabled: false
     weight: 0
     settings:
-      title: 'Workflow status'
+      title: 'Biological hazard'
       show_description: false
       show_count: false
       term_depth: 9
@@ -975,6 +609,372 @@ plugins:
       enable_rss: false
       rss_link: view.taxonomy_term.feed_1|arg_0
       rss_depth: 9
+  'vocabulary:banner_links':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Banner links'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:attachment_file_type':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Attachment file type'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:article_types':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Article Types'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:agency':
+    enabled: false
+    weight: 0
+    settings:
+      title: Agency
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:activity':
+    enabled: false
+    weight: 0
+    settings:
+      title: Activity
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:exposure_route':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Exposure route'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:glossary':
+    enabled: false
+    weight: 0
+    settings:
+      title: Glossary
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:organised_by':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Organised by'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:legislation_category':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Legislation category'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:newsletter_sections':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Newsletter sections'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:nace_codes':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Nace Codes'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:msds_glossary':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'MSDs Glossary'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:msd_priority_area':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'MSD Priority area'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:material_purpose':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Type of information / purpose of the material'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:material_objective':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Type of visualisation material'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:health_effects':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'MSD Health effects'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:glossary_the':
+    enabled: false
+    weight: 0
+    settings:
+      title: Glossary_THE
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:hazmap_categories':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Hazmap categories'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:hazards':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'MSD Hazards'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:hazard_physical_state':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Chemical and biological hazards related to state and occurrence in the workplace'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:hazard_health_effects':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Chemical hazards related to health effects'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:hashtag_terms':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Hashtag Terms'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:grade':
+    enabled: false
+    weight: 0
+    settings:
+      title: Grade
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'vocabulary:glossary_type':
+    enabled: false
+    weight: 0
+    settings:
+      title: 'Glossary type'
+      show_description: false
+      show_count: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+  'menu:workbench':
+    enabled: false
+    weight: 0
+    settings:
+      title: Workbench
+      show_disabled: false
 include_css: true
 _core:
   default_config_hash: xu0yG13sSQJcXrOJJqsn44W_hUWAIFHVlphrzxT2ycU

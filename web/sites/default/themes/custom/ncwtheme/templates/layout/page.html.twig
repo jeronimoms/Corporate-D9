@@ -53,7 +53,10 @@
 <div class="container">
   <div class="row">
     {% set has_sidebar_first = page.sidebar_first|render|striptags|trim is not empty %}
-    {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
+    {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty or sidebar_second_related|render|striptags|trim is not empty %}
+    {% set has_sidebar_second_related = page.sidebar_second_related|render|striptags|trim is not empty %}
+    {% set has_node_view_blog = page.node_view|render|striptags|trim is not empty %}
+
     {% if has_sidebar_first %}
       <aside class="section col-12 col-lg-3 sidebar-first" role="complementary">
         {{ page.sidebar_first }}
@@ -84,17 +87,17 @@
       </div>
     {% if has_sidebar_second %}
       <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
-        {% if node.bundle == 'article' %}
-        {{ drupal_view('related_icons', 'block_1',node.nid.0.value) }}
-        {{ drupal_view('oshwiki', 'block_1',node.nid.0.value) }}
-        {% endif %}
-
-        {% if node.bundle == 'blog' %}
+        {% if node.bundle == 'blog' or has_node_view_blog == 'true' %}
           <h2 class="related">{{ 'Posts by date' | trans }}</h2>
-        {% else %}
-          <h2 class="related">{{ 'Related' | trans }}</h2>
         {% endif %}
         {{ page.sidebar_second }}
+        {% if has_sidebar_second_related %}
+          <h2 class="related">{{ 'Related' | trans }}</h2>
+          <div class="related-views">
+            {{ page.sidebar_second_related }}
+          </div>
+        {% endif %}
+
       </aside>
     {% endif %}
     </div>

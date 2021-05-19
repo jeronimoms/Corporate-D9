@@ -11,7 +11,7 @@ audit: true
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
-  plugin: d7_node
+  plugin: d7_node_moderation_state
   node_type: article                     # -----  CHANGE
 destination:
   plugin: entity:node
@@ -34,29 +34,18 @@ process:
     source: language
     default_value: "und"
   title: title
+  field_summary_article: field_summary/0
   body: body
-  uid: node_uid
-  status: status
-  created: created
-  changed: changed
-  promote: promote
-  sticky: sticky
-  revision_uid: revision_uid
-  revision_log: log
-  revision_timestamp: timestamp
-  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_aditional_resources: field_aditional_resources    # necesito news y slideshare para comprobar
   field_archived: field_archived
   field_article_type:
-    -
-      plugin: sub_process
+    - plugin: sub_process
       source: field_article_type
       process:
         target_id: tid
   field_character_count: field_character_count
-  field_expiration_date:                #revisar
-    -
-      plugin: sub_process
+  field_expiration_date: #revisar
+    - plugin: sub_process
       source: field_expiration_date
       process:
         value:
@@ -69,16 +58,14 @@ process:
             validate_format: false
           source: value
   field_wiki_categories:
-    -
-      plugin: sub_process
+    - plugin: sub_process
       source: field_wiki_categories
       process:
         target_id: tid
   field_related_oshwiki_articles: field_related_oshwiki_articles
   field_page_count: field_page_count
-  field_publication_date:       #revisar
-    -
-      plugin: sub_process
+  field_publication_date: #revisar
+    - plugin: sub_process
       source: field_publication_date
       process:
         value:
@@ -91,15 +78,23 @@ process:
   field_recommended_articles: field_recommended_articles
   field_recommended_resources: field_recommended_resources
   field_sector:
-    -
-      plugin: sub_process
+    - plugin: sub_process
       source: field_sector
       process:
         target_id: tid
   field_summary: field_summary
   field_tags:
-    -
-      plugin: sub_process
+    - plugin: sub_process
       source: field_tags
       process:
         target_id: tid
+  uid: node_uid
+  status: status
+  moderation_state: moderation_state
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp

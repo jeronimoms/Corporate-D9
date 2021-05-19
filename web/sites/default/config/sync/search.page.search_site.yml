@@ -1,0 +1,14 @@
+uuid: fcab8aa4-feb3-4170-9b2b-cce8e10cdddd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: search_site
+label: 'Search site'
+path: site
+weight: -10
+plugin: node_search
+configuration:
+  rankings:
+    relevance: 5

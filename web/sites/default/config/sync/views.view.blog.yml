@@ -1591,7 +1591,7 @@ display:
             title_enable: false
             title: All
           title_enable: true
-          title: '%1'
+          title: '{{ arguments.field_publication_date_value_year_month }}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
@@ -1611,7 +1611,7 @@ display:
             fail: 'not found'
           validate_options: {  }
           plugin_id: datetime_year_month
-      path: blog/%
+      path: blog
     cache_metadata:
       max-age: -1
       contexts:

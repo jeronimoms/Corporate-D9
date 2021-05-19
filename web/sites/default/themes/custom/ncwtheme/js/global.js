@@ -26,9 +26,11 @@ jQuery(document).ready(function($){
 
 jQuery(document).ready(function($) {
   // Accordions
+  $(".wysiwyg_accordion h3:nth-child(1)").addClass('active');
+  $(".wysiwyg_accordion div:nth-child(2)").css('display','block');
   $(".wysiwyg_accordion h3").click(function(){
-    $(this).toggleClass("active");
-    $(this).next('.wysiwyg_accordion_panel').slideToggle();
+      $(this).toggleClass("active");
+      $(this).next('.wysiwyg_accordion_panel').slideToggle();
   });
 
   $(".sidebar-second .view-grouping .view-grouping-header").click(function(){
@@ -101,15 +103,6 @@ jQuery(document).ready(function($) {
     $(this).toggleClass('active');
     $(this).toggleClass('no-active');
   });
-
-  // Breadcrumbs - Hide duplicate items
-  var text_breadcrumb_item_2 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(2) > a").text();
-  var text_breadcrumb_item_3 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3) > a").text();
-
-  if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
-    $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
-    $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
-  }
 
 });
 
