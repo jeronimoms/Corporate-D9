@@ -37,6 +37,7 @@ process:
   body: body
   uid: node_uid
   status: status
+  moderation_state: moderation_state
   created: created
   changed: changed
   promote: promote
