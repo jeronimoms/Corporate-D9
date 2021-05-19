@@ -11,7 +11,7 @@ audit: true
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
-  plugin: d7_node
+  plugin: d7_node_moderation_state
   node_type: article                     # -----  CHANGE
 destination:
   plugin: entity:node
@@ -90,6 +90,7 @@ process:
         target_id: tid
   uid: node_uid
   status: status
+  moderation_state: moderation_state
   created: created
   changed: changed
   promote: promote

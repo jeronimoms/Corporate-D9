@@ -15,7 +15,7 @@ noResultLink: ''
 moreResultsLabel: 'View all results for [search-phrase].'
 moreResultsValue: '[search-phrase]'
 moreResultsLink: ''
-source: 'autocompletion_callbacks_nodes::nodes_autocompletion_callback'
+source: 'search_autocomplete::search_site_autocomplete'
 theme: basic-blue.css
 editable: true
 deletable: true
