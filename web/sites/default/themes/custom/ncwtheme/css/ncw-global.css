@@ -1948,6 +1948,7 @@ body.user-logged-in.toolbar-tray-open #header {
   flex-direction: column;
   /* Language Selector - Module - Language Switcher Dropdown */
   /* Search input text box */
+  /*Search autocomplete*/
 }
 .header-language-search .row {
   display: block;
@@ -1965,6 +1966,57 @@ body.user-logged-in.toolbar-tray-open #header {
 .header-language-search #block-ncwtheme-search {
   float: right;
   clear: both;
+}
+.header-language-search #ui-id-1 {
+  left: -211px !important;
+}
+.header-language-search ul[data-sa-theme=basic-blue] {
+  padding-bottom: 1em;
+}
+.header-language-search ul[data-sa-theme=basic-blue] .ui-autocomplete-field-group.banner {
+  background: none;
+}
+.header-language-search ul[data-sa-theme=basic-blue] .ui-autocomplete-field-group {
+  background: url("../images/separator_home.jpg") repeat-x scroll 43% 0 rgba(0, 0, 0, 0);
+  color: #000;
+  float: left;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.15em;
+  font-weight: lighter;
+  margin: 0.5em 0 0 1em;
+  padding: 1em 0 0.5em;
+  width: 90%;
+  border: 0;
+  text-align: left;
+}
+.header-language-search ul[data-sa-theme=basic-blue] .ui-menu-item-first {
+  border: 0px;
+}
+.header-language-search ul[data-sa-theme=basic-blue].ui-menu .ui-menu-item a {
+  background: url("../images/li_arrow.png") no-repeat scroll 5% 5px transparent;
+  color: #003399 !important;
+  padding-left: 2.5em;
+  text-decoration: none;
+  clear: both;
+}
+.header-language-search ul[data-sa-theme=basic-blue] .ui-autocomplete-fields > *:first-child {
+  color: #003399 !important;
+  font-weight: 600;
+  padding-right: 10px;
+}
+.header-language-search ul[data-sa-theme=basic-blue] > li.ui-menu-item.ui-state-focus, .header-language-search ul[data-sa-theme=basic-blue] > li.ui-menu-item:hover {
+  background: transparent;
+  border-top-color: transparent;
+}
+.header-language-search ul[data-sa-theme=basic-blue] > *, .header-language-search ul[data-sa-theme=basic-blue] > *.ui-state-focus, .header-language-search ul[data-sa-theme=basic-blue] > *:hover {
+  border: 0;
+}
+.header-language-search .ui-state-hover, .header-language-search .ui-widget-content .ui-state-hover, .header-language-search .ui-widget-header .ui-state-hover, .header-language-search .ui-state-focus, .header-language-search .ui-widget-content .ui-state-focus, .header-language-search .ui-widget-header .ui-state-focus {
+  outline: inherit;
+  border: 0px;
+}
+.header-language-search .ui-autocomplete-field-created {
+  display: none !important;
 }
 
 /* Hide menu link to view only the Share links images in header and footer */
