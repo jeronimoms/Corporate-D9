@@ -128,7 +128,7 @@ class VwCmn implements ContainerInjectionInterface {
     // list if exists.
     if ($notification->getOriginalId() == 'final_draft_to') {
       $next_user = $this->helper->getNextUser($table);
-      if (empty($next_user)) {
+      if (!empty($next_user)) {
         $data['to'] = [
           0 => $next_user->getEmail(),
         ];
@@ -152,7 +152,7 @@ class VwCmn implements ContainerInjectionInterface {
     // list if exists.
     if ($notification->getOriginalId() == 'to_be_approved_to_approved') {
       $next_user = $this->helper->getNextUser($table);
-      if (empty($next_user)) {
+      if (!empty($next_user)) {
         $data['to'] = [
           0 => $next_user->getEmail(),
         ];
