@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.entity_additional_reference
     - field.field.node.highlight.body
     - field.field.node.highlight.comment_node_highlight
     - field.field.node.highlight.field_activity
@@ -17,13 +18,15 @@ dependencies:
     - field.field.node.highlight.field_migrate_hwc
     - field.field.node.highlight.field_page_count
     - field.field.node.highlight.field_publication_date
+    - field.field.node.highlight.field_section
     - field.field.node.highlight.field_show_on
     - field.field.node.highlight.field_tags
-    - field.field.node.highlight.field_thesaurus
     - field.field.node.highlight.field_thesaurus_2020
     - node.type.highlight
   module:
+    - content_moderation
     - datetime
+    - entity_browser
     - media_library
     - path
     - text
@@ -33,7 +36,7 @@ bundle: highlight
 mode: default
 content:
   body:
-    weight: 6
+    weight: 4
     type: text_textarea_with_summary
     settings:
       rows: 9
@@ -44,48 +47,55 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_activity:
-    weight: 13
+    weight: 9
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_aditional_resources:
-    type: entity_reference_autocomplete
-    weight: 15
+    type: entity_browser_entity_reference
+    weight: 11
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      entity_browser: entity_additional_reference
+      field_widget_display: label
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_edit: false
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
     third_party_settings: {  }
   field_archived:
-    weight: 14
+    weight: 10
     type: boolean_checkbox
     settings:
       display_label: true
     third_party_settings: {  }
     region: content
   field_avoid_archived:
-    weight: 18
+    weight: 14
     type: boolean_checkbox
     settings:
       display_label: true
     third_party_settings: {  }
     region: content
   field_expiration_date:
-    weight: 8
-    type: datetime_default
-    settings: {  }
+    weight: 6
+    type: datetime_datelist
+    settings:
+      date_order: MDY
+      time_type: '24'
+      increment: 15
     third_party_settings: {  }
     region: content
   field_image_media:
-    weight: 4
+    weight: 2
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -93,106 +103,81 @@ content:
     region: content
   field_image_oshmail_media:
     type: media_library_widget
-    weight: 26
+    weight: 3
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_migrate_hwc:
-    weight: 17
+    weight: 13
     type: boolean_checkbox
     settings:
       display_label: true
     third_party_settings: {  }
     region: content
   field_publication_date:
-    weight: 7
-    type: datetime_default
-    settings: {  }
+    weight: 5
+    type: datetime_datelist
+    settings:
+      date_order: MDY
+      time_type: '24'
+      increment: 15
     third_party_settings: {  }
     region: content
+  field_section:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_show_on:
-    weight: 16
+    weight: 12
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_tags:
-    weight: 9
+    weight: 7
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_thesaurus:
-    type: entity_reference_autocomplete
-    weight: 10
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_thesaurus_2020:
-    type: entity_reference_autocomplete
-    weight: 11
+    type: options_select
+    weight: 8
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 1
+  moderation_state:
+    type: moderation_state_default
+    weight: 15
     region: content
-    settings:
-      include_locked: true
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 22
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 20
-    region: content
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
+    weight: 18
+    region: content
     settings:
       display_label: true
-    weight: 24
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 21
-    region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  translation:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 19
     settings:
       match_operator: CONTAINS
       size: 60
@@ -201,7 +186,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 23
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -210,3 +195,7 @@ hidden:
   field_character_count: true
   field_flickr_date: true
   field_page_count: true
+  langcode: true
+  promote: true
+  sticky: true
+  translation: true

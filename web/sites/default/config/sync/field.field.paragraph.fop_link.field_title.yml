@@ -1,0 +1,19 @@
+uuid: bdbab31b-2c8a-4372-9fc9-b61b118fa959
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.fop_link
+id: paragraph.fop_link.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: fop_link
+label: Title
+description: 'The link title is limited to 128 characters maximum.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

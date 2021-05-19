@@ -1,0 +1,22 @@
+uuid: ee0d9675-343f-45ab-963d-740151e4dbec
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dangerous_substances
+id: node.dangerous_substances.promote
+field_name: promote
+entity_type: node
+bundle: dangerous_substances
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

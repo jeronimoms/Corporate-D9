@@ -8,82 +8,127 @@ dependencies:
     - field.field.node.blog.field_archived
     - field.field.node.blog.field_author
     - field.field.node.blog.field_expiration_date
-    - field.field.node.blog.field_image_media
+    - field.field.node.blog.field_image_caption
     - field.field.node.blog.field_nace_codes
     - field.field.node.blog.field_project_manager
     - field.field.node.blog.field_publication_date
     - field.field.node.blog.field_section
-    - field.field.node.blog.field_summary
+    - field.field.node.blog.field_summary_html
     - field.field.node.blog.field_tags
     - field.field.node.blog.field_thesaurus_2020
     - image.style.medium
     - node.type.blog
   module:
     - datetime
+    - ds
+    - field_group
     - media
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_publication_date
+        - node_title
+        - field_image_caption
+        - field_summary_html
+        - group_group_right
+        - body
+        - addtoany
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+  field_group:
+    group_group_right:
+      children:
+        - field_image_caption
+        - field_summary_html
+        - body
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: group-flex-manage-display
+      label: 'Group Flex'
 id: node.blog.default
 targetEntityType: node
 bundle: blog
 mode: default
 content:
+  addtoany:
+    weight: 6
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
     type: text_default
     weight: 4
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_author:
+    region: ds_content
+  field_image_caption:
     weight: 2
     label: hidden
     settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_image_media:
-    weight: 0
-    label: hidden
-    settings:
       image_style: medium
-      image_link: media
+      image_link: ''
     third_party_settings: {  }
     type: media_thumbnail
-    region: content
+    region: ds_content
   field_publication_date:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       timezone_override: ''
       format_type: only_day
     third_party_settings: {  }
     type: datetime_default
-    region: content
-  field_summary:
+    region: ds_content
+  field_summary_html:
     weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
-    region: content
-  field_tags:
-    weight: 5
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
+    type: text_default
+    region: ds_content
 hidden:
-  addtoany: true
   field_activity: true
   field_archived: true
+  field_author: true
   field_expiration_date: true
   field_nace_codes: true
   field_project_manager: true
   field_section: true
+  field_tags: true
   field_thesaurus_2020: true
   langcode: true
   links: true

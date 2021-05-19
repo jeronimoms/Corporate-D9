@@ -1,0 +1,20 @@
+uuid: 53cf5e3c-ffc9-4507-89f2-299a7b945f47
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thesaurus
+id: node.thesaurus.uid
+field_name: uid
+entity_type: node
+bundle: thesaurus
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

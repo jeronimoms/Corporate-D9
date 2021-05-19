@@ -1,0 +1,5 @@
+ncw_migration.migrations:
+  title: 'Migrate'
+  route_name: entity.migration_group.list
+  base_route: system.admin_content
+  weight: 10

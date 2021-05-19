@@ -12,9 +12,9 @@ field_name: field_disclaimer
 entity_type: node
 bundle: dangerous_substances
 label: Disclaimer
-description: ''
+description: 'Please add the disclaimer for the material. Please use "Paste from Word" button when you copy text from MS Word'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

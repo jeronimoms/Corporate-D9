@@ -1,0 +1,144 @@
+# Migration file for creating "press_release" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_press_release                    # -----  CHANGE
+label: 'Node: press_release'                   # -----  CHANGE
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: ev_d7_node
+  node_type: press_release                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+
+  type:
+    - plugin: default_value
+      default_value: press_release              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_aditional_resources: field_aditional_resources
+  field_archived: field_archived
+  field_summary_html:
+    - plugin: get
+      source: field_summary
+  'field_summary_html/0/format':
+    - plugin: default_value
+      default_value: full_html
+  field_activity:
+  -
+    plugin: sub_process
+    source: field_activity
+    process:
+      target_id: tid
+  field_section:
+    - plugin: sub_process
+      source: workbench_access
+      process:
+        target_id: tid
+  field_expiration_date:                #revisar
+    -
+      plugin: sub_process
+      source: field_expiration_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          settings:
+            validate_format: false
+          source: value
+  field_publication_date:       #revisar
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_pr_embargo_date: #revisar
+    - plugin: sub_process
+      source: field_pr_embargo_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_quote: field_quote
+  field_thesaurus_2020: field_thesaurus_2020
+  field_pr_notes_to_editor: field_pr_notes_to_editor
+
+  # Images.
+  field_image_media:
+    plugin: file_id_lookup
+    source: field_image
+    migration: ncw_node_press_release_field_image_media_caption
+    no_stub: true
+

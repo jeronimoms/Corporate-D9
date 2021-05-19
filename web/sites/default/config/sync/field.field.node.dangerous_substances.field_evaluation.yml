@@ -11,9 +11,9 @@ field_name: field_evaluation
 entity_type: node
 bundle: dangerous_substances
 label: Evaluation
-description: ''
+description: "Please click on the quality criteria (several clicks possible)\r\n"
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

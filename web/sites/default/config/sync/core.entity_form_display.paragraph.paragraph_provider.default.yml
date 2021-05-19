@@ -1,0 +1,85 @@
+uuid: 3f78e9ad-b457-4c4a-bfd3-11dd473d07a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_provider.field_other_type_provider
+    - field.field.paragraph.paragraph_provider.field_provider_name_english
+    - field.field.paragraph.paragraph_provider.field_provider_name_original
+    - field.field.paragraph.paragraph_provider.field_title
+    - field.field.paragraph.paragraph_provider.field_type_of_provider
+    - field.field.paragraph.paragraph_provider.field_url
+    - paragraphs.paragraphs_type.paragraph_provider
+  module:
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_provider_url:
+      children:
+        - field_title
+        - field_url
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Provider url'
+id: paragraph.paragraph_provider.default
+targetEntityType: paragraph
+bundle: paragraph_provider
+mode: default
+content:
+  field_other_type_provider:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_provider_name_english:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_provider_name_original:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_type_of_provider:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_url:
+    weight: 12
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

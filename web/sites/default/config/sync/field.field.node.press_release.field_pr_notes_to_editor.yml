@@ -1,0 +1,31 @@
+uuid: 8bf7559e-919b-48fc-a4f6-541709458d10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pr_notes_to_editor
+    - node.type.infographic
+    - node.type.note_to_editor
+    - node.type.press_release
+id: node.press_release.field_pr_notes_to_editor
+field_name: field_pr_notes_to_editor
+entity_type: node
+bundle: press_release
+label: 'Notes to editor'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      infographic: infographic
+      note_to_editor: note_to_editor
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: infographic
+field_type: entity_reference

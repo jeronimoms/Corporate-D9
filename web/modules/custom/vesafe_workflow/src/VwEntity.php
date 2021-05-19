@@ -215,6 +215,10 @@ class VwEntity implements ContainerInjectionInterface {
    * @see \hook_local_tasks_alter()
    */
   public function localTastAlter(&$local_tasks) {
+
+    // Remove un used tab.
+    unset($local_tasks['content_moderation.moderated_content']);
+
     // Get VW default settings.
     $config = $this->configFactory->getEditable('vesafe_workflow.general');
     $lists = $config->get('lists');

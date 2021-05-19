@@ -1,0 +1,22 @@
+uuid: a0b61fb5-021b-4106-b334-4b18944e86dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.msd_provider
+id: paragraph.msd_provider.status
+field_name: status
+entity_type: paragraph
+bundle: msd_provider
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

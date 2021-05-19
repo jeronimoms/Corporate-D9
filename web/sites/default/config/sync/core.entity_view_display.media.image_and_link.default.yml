@@ -6,6 +6,8 @@ dependencies:
     - field.field.media.image_and_link.field_external_link
     - field.field.media.image_and_link.field_link_image
     - field.field.media.image_and_link.field_media_image_1
+    - field.field.media.image_and_link.field_nace
+    - field.field.media.image_and_link.field_tags
     - image.style.large
     - media.type.image_and_link
   module:
@@ -46,6 +48,22 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_nace:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tags:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
 hidden:
   addtoany: true

@@ -1,0 +1,18 @@
+uuid: 34decd4d-24ea-430c-9bcc-2049f21a62c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-search
+id: menu_link_content.menu-search.description
+field_name: description
+entity_type: menu_link_content
+bundle: menu-search
+label: Description
+description: 'Shown when hovering over the menu link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

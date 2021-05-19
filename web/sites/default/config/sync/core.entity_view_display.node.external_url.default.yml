@@ -1,0 +1,32 @@
+uuid: 91febeb8-eb00-410e-9086-27f7dc3d420d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.external_url.field_external_url
+    - node.type.external_url
+  module:
+    - link
+    - user
+id: node.external_url.default
+targetEntityType: node
+bundle: external_url
+mode: default
+content:
+  field_external_url:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,101 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: allages_taxonomy_glossary_i18n               # -----  CHANGE
+label: 'Terms: glossary Translations'         # -----  CHANGE
+audit: true
+migration_group: allages_migrate                # -----  CHANGE
+source:
+  plugin: d7_locale_terms
+  bundle: glossary                            # -----  CHANGE
+  translations: true
+destination:
+  plugin: entity:taxonomy_term
+  translations: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+migration_dependencies:
+  required:
+    - allages_taxonomy_glossary                  # -----  CHANGE
+
+process:
+  tid:
+    plugin: migration_lookup
+    migration: allages_taxonomy_glossary         # -----  CHANGE
+    source: tid
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: ltlanguage
+    map:
+      'AU_de': 'AU-de'
+      'BE_nl': 'BE-nl'
+      'BE_fr': 'BE-fr'
+      'BU_bg': 'BU-bg'
+      'CR_hr': 'CR-hr'
+      'CY_el': 'CY-el'
+      'CZ_cs': 'CZ-cs'
+      'DE_da': 'DE-da'
+      'ET_et': 'ET-et'
+      'FI_fi': 'FI-fi'
+      'FI_sv': 'FI-sv'
+      'FR_fr': 'FR-fr'
+      'GE_de': 'GE-de'
+      'GR_el': 'GR-el'
+      'HU_hu': 'HU-hu'
+      'IS_is': 'IS-is'
+      'IR_en': 'IR-en'
+      'IT_it': 'IT-it'
+      'LV_lv': 'LV-lv'
+      'LT_lt': 'LT-lt'
+      'LB_fr': 'LB-fr'
+      'LB_de': 'LB-de'
+      'MT_en': 'MT-en'
+      'MT_mt': 'MT-mt'
+      'NE_nl': 'NE-nl'
+      'NN_nn': 'NN-nn'
+      'PL_pl': 'PL-pl'
+      'PT_pt': 'PT-pt'
+      'RO_ro': 'RO-ro'
+      'SK_sk': 'SK-sk'
+      'SL_sl': 'SL-sl'
+      'ES_es': 'ES-es'
+      'SV_sv': 'SV-sv'
+      'SWZ_fr': 'SWZ-fr'
+      'SWZ_de': 'SWZ-de'
+      'SWZ_it': 'SWZ-it'
+      'UK_en': 'UK-en'
+
+  vid:
+    -
+      plugin: default_value
+      default_value: glossary                 # -----  CHANGE
+  name: name_field_value
+  'description/value': description_field_value
+  #'description/format': format
+  'description/format':
+    - plugin: default_value
+      default_value: full_html
+
+  parent_id:
+    - plugin: skip_on_empty
+      method: process
+      source: parent
+    - plugin: migration_lookup
+      migration: allages_taxonomy_glossary
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGE

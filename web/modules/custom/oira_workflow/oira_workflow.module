@@ -1,0 +1,12 @@
+<?php
+
+use Drupal\oira_workflow\OwCron;
+
+/**
+ * Implements hook_cron().
+ */
+function oira_workflow_cron() {
+  Drupal::classResolver()
+    ->getInstanceFromDefinition(OwCron::class)
+    ->cron();
+}

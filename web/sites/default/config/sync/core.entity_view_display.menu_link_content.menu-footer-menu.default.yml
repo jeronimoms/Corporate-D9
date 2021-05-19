@@ -1,0 +1,29 @@
+uuid: 0cb38e91-2f12-4e9b-9ab4-50f1c9659d73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.menu-footer-menu.field_image_menu_
+    - system.menu.menu-footer-menu
+id: menu_link_content.menu-footer-menu.default
+targetEntityType: menu_link_content
+bundle: menu-footer-menu
+mode: default
+content:
+  children:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_menu_:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

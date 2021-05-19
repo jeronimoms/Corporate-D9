@@ -23,12 +23,15 @@ module:
   comment: 0
   conditional_fields: 0
   config: 0
+  config_translation: 0
   contact: 0
   contact_us: 0
   content_moderation: 0
   contextual: 0
   crop: 0
+  csv_serialization: 0
   ctools: 0
+  custom_breadcrumbs: 0
   custom_migrations: 0
   date_popup: 0
   datetime: 0
@@ -39,7 +42,6 @@ module:
   dropdown_language: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
-  easy_breadcrumb: 0
   editor: 0
   entity: 0
   entity_browser: 0
@@ -55,6 +57,7 @@ module:
   field_ui: 0
   file: 0
   file_entity: 0
+  file_mdm: 0
   filter: 0
   help: 0
   history: 0
@@ -62,6 +65,7 @@ module:
   image: 0
   image_field_caption: 0
   image_widget_crop: 0
+  imagemagick: 0
   imce: 0
   inline_entity_form: 0
   job_scheduler: 0
@@ -74,7 +78,10 @@ module:
   jquery_ui_slider: 0
   jquery_ui_tooltip: 0
   jquery_ui_touch_punch: 0
+  lang_dropdown: 0
   language: 0
+  language_neutral_aliases: 0
+  languagefield: 0
   layout_builder: 0
   layout_discovery: 0
   layoutcomponents: 0
@@ -87,9 +94,9 @@ module:
   media_library: 0
   media_library_form_element: 0
   menu_block: 0
-  menu_export: 0
   menu_item_extras: 0
   menu_link_content: 0
+  menu_trail_by_path: 0
   menu_ui: 0
   meta_position: 0
   metatag: 0
@@ -102,6 +109,7 @@ module:
   migrate_plus: 0
   migrate_tools: 0
   multiple_selects: 0
+  ncw_backend: 0
   node: 0
   node_export: 0
   node_revision_delete: 0
@@ -111,23 +119,32 @@ module:
   path: 0
   path_alias: 0
   pathologic: 0
+  pdfpreview: 0
+  phpexcel: 0
   quickedit: 0
+  quicktabs: 0
+  quicktabs_accordion: 0
   r4032login: 0
   rabbit_hole: 0
   rdf: 0
   redirect: 0
   reroute_email: 0
   responsive_image: 0
+  rest: 0
   search: 0
   search_api: 0
+  search_api_autocomplete: 0
   search_api_solr: 0
   search_api_solr_admin: 0
+  search_autocomplete: 0
+  serialization: 0
   shortcut: 0
   shs: 0
   sitemap: 0
   sliderwidget: 0
   smart_trim: 0
   smtp: 0
+  sophron: 0
   spamspan: 0
   system: 0
   tamper: 0
@@ -135,6 +152,9 @@ module:
   taxonomy_access_fix: 0
   taxonomy_manager: 0
   text: 0
+  tmgmt: 0
+  tmgmt_file: 0
+  tmgmt_locale: 0
   token: 0
   toolbar: 0
   tour: 0
@@ -144,6 +164,7 @@ module:
   user: 0
   video_embed_field: 0
   views_bulk_operations: 0
+  views_data_export: 0
   views_slideshow: 0
   views_templates: 0
   views_ui: 0
@@ -151,9 +172,12 @@ module:
   workbench_access: 0
   workflows: 0
   youtube: 0
+  ds: 1
   pathauto: 1
+  ds_extras: 2
   content_translation: 10
   views: 10
+  paragraphs: 11
   linked_field: 100
   standard: 1000
   eu_cookie_compliance: 1001

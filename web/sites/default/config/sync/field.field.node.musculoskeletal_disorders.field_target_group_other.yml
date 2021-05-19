@@ -1,0 +1,19 @@
+uuid: 55ca37ab-77ae-4a32-9185-43a0d0830363
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_target_group_other
+    - node.type.musculoskeletal_disorders
+id: node.musculoskeletal_disorders.field_target_group_other
+field_name: field_target_group_other
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Target audiences other'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

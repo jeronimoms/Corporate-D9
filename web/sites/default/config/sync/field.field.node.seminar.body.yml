@@ -1,0 +1,23 @@
+uuid: 21b8ae88-a27c-4893-8b73-92f91c0b2640
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.seminar
+  module:
+    - text
+id: node.seminar.body
+field_name: body
+entity_type: node
+bundle: seminar
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

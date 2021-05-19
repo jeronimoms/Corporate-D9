@@ -12,9 +12,9 @@ field_name: field_ownership_information
 entity_type: node
 bundle: dangerous_substances
 label: 'Ownership information'
-description: ''
+description: 'Please add the ownership information for the material. Please use "Paste from Word" button when you copy text from MS Word'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

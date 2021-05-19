@@ -6,12 +6,12 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_news                    # -----  CHANGE
-label: 'Node: news'                   # -----  CHANGE
+label: 'Node: News'                   # -----  CHANGE
 audit: true
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
-  plugin: d7_node
+  plugin: ev_d7_node
   node_type: news                     # -----  CHANGE
 destination:
   plugin: entity:node
@@ -37,6 +37,7 @@ process:
   body: body
   uid: node_uid
   status: status
+  moderation_state: moderation_state
   created: created
   changed: changed
   promote: promote
@@ -77,4 +78,8 @@ process:
       target_id:
         plugin: get
         source: tid
-
+  field_workbench_access:
+    - plugin: sub_process
+      source: workbench_access
+      process:
+        target_id: tid

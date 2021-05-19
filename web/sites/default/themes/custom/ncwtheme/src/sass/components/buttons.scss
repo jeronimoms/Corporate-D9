@@ -1,0 +1,20 @@
+.btn-primary{
+  background: $bg-color-blue;
+  border: 0;
+  &:hover{
+    background: $bg-color-blue-light;
+    color: $text-color-blue;
+  }
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
+  box-shadow: none;
+  background: $bg-color-blue-light;
+  color: $text-color-blue;
+}
+
+.btn-primary.focus, .btn-primary:focus{
+  background: $bg-color-blue-light;
+  color: $text-color-blue;
+  box-shadow: none;
+}

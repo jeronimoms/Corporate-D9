@@ -1,0 +1,29 @@
+uuid: 7bae374f-0a1c-4229-9744-ab8b7ce3406c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wiki_categories
+    - node.type.register_records
+    - taxonomy.vocabulary.wiki_categories
+id: node.register_records.field_wiki_categories
+field_name: field_wiki_categories
+entity_type: node
+bundle: register_records
+label: 'OSHwiki category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      wiki_categories: wiki_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

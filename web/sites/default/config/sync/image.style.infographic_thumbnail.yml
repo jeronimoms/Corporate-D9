@@ -1,0 +1,25 @@
+uuid: ad0ce54a-5f68-4bbd-95c2-b6ea4407c7fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.infhograpic
+  module:
+    - crop
+name: infographic_thumbnail
+label: 'Infographic thumbnail 350-260'
+effects:
+  0d0394ee-f6b8-4d87-be56-33522c1d8c29:
+    uuid: 0d0394ee-f6b8-4d87-be56-33522c1d8c29
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: infhograpic
+  b19f8542-e6f4-47a6-9df8-9b48022cf3a1:
+    uuid: b19f8542-e6f4-47a6-9df8-9b48022cf3a1
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 350
+      height: 260
+      anchor: center-center

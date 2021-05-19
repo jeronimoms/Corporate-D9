@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_taxonomy_sector_i18n               # -----  CHANGE
-label: 'Terms: Sector Translations'         # -----  CHANGE
+label: 'Terms: Sector i18n'         # -----  CHANGE
 audit: true
 migration_group: oira_migrate_tax                # -----  CHANGE
 source:
@@ -44,7 +44,7 @@ process:
       plugin: default_value
       default_value: sector                 # -----  CHANGE
   name: name_field_value
-  'description/value': description
+  'description/value': description_field_value
   'description/format': format
   weight: weight
   parent_id:
@@ -59,4 +59,8 @@ process:
     source: '@parent_id'
   forum_container: is_container
   changed: timestamp
+  path/pathauto:
+    plugin: default_value
+    default_value: 0 # Disable pathauto.
+  path/alias: alias
   ### ADD FIELDS CUSTOM OF ENTITY ###        # -----  CHANGE

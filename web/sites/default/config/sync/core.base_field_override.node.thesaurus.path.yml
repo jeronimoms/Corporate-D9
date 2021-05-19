@@ -1,0 +1,20 @@
+uuid: b68b336f-66ae-4ae0-831b-4ce142713e19
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thesaurus
+  module:
+    - path
+id: node.thesaurus.path
+field_name: path
+entity_type: node
+bundle: thesaurus
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

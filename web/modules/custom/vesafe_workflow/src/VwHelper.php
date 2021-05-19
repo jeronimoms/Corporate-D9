@@ -143,11 +143,14 @@ class VwHelper {
    *   The table name.
    */
   public function getModerationList($table) {
-    $query = $this->database->select("vesafe_workflow_$table", 'v')
-      ->condition('node_id', $this->getLastRevisionNode()->id(), '=')
-      ->fields('v', ['id', 'node_id', 'user_id', 'status']);
-
-    return $query->execute()->fetchAll();
+    try {
+      $query = $this->database->select("vesafe_workflow_$table", 'v')
+        ->condition('node_id', $this->getLastRevisionNode()->id(), '=')
+        ->fields('v', ['id', 'node_id', 'user_id', 'status', 'weight']);
+      $query->orderBy('v.weight');
+      return $query->execute()->fetchAll();
+    } catch (\Exception $e) {
+    }
   }
 
   /**
@@ -179,6 +182,30 @@ class VwHelper {
   }
 
   /**
+   * Delete a user in the list.
+   *
+   * @param string $table
+   *   The table name.
+   * @param array $fields
+   *   The array with fields.
+   */
+  public function deleteUserToList($table, array $fields) {
+    $this->database->delete("vesafe_workflow_$table")
+      ->condition('node_id', $fields['node_id'])
+      ->condition('user_id', $fields['user_id'])
+      ->execute();
+  }
+
+  public function setUserWeight($table, array $fields) {
+    $this->database->update("vesafe_workflow_$table")
+      ->fields([
+        'weight' => $fields['weight'],
+      ])
+      ->condition('node_id', $fields['node_id'])
+      ->condition('user_id', $fields['user_id'])->execute();
+  }
+
+  /**
    * Set the status to approve of user list.
    *
    * @param string $table
@@ -205,10 +232,30 @@ class VwHelper {
    */
   public function getNextUser($table) {
     $users = $this->getModerationList($table);
-    foreach ($users as $i => $user) {
-      if ($user->user_id == $this->account->id()) {
-        return $this->entityTypeManager->getStorage('user')->load($users[($i + 1)]->user_id);
+    if ($users) {
+      foreach ($users as $i => $user) {
+        if ($user->user_id == $this->account->id()) {
+          return $this->entityTypeManager->getStorage('user')->load($users[($i + 1)]->user_id);
+        }
       }
+    }
+
+    return [];
+  }
+
+  /**
+   * Gets the previous user of list.
+   *
+   * @param string $table
+   *   The table name.
+   *
+   * @return array|\Drupal\user\Entity\User
+   *   The next user.
+   */
+  public function getLastUserList($table) {
+    $users = $this->getModerationList($table);
+    if (!empty($users)) {
+      return $users[count($users) - 1];
     }
 
     return [];

@@ -8,7 +8,7 @@
 id: napo_node_faq                    # -----  CHANGE
 label: 'Node: Faq'                   # -----  CHANGE
 audit: true
-migration_group: napo_migrate
+migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node

@@ -1,0 +1,29 @@
+uuid: 3d53f6b7-c9a5-4be1-a645-bb6446a6f422
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog
+  module:
+    - system
+    - views
+  theme:
+    - ncwtheme
+id: views_block__blog_block_2
+theme: ncwtheme
+region: sidebar_second
+weight: -20
+provider: null
+plugin: 'views_block:blog-block_2'
+settings:
+  id: 'views_block:blog-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/tools-and-resources/blog\r\n/blog/*"
+    negate: false

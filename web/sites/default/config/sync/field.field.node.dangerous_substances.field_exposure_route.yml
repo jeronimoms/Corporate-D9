@@ -11,9 +11,9 @@ field_name: field_exposure_route
 entity_type: node
 bundle: dangerous_substances
 label: 'Exposure route'
-description: ''
+description: 'Please select the exposure route'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -13,10 +13,13 @@ migration_tags: null
 migration_group: ncw_migrate_nodes
 label: 'Node: Article'
 source:
-  plugin: d7_node
+  plugin: ev_d7_node
   node_type: article
 process:
-  id: tnid
+  nid:
+    -
+      plugin: get
+      source: nid
   vid: vid
   type:
     -
@@ -25,15 +28,35 @@ process:
   langcode:
     plugin: default_value
     source: language
-    default_value: und
-  title: title
-  body: body
-  uid: node_uid
-  status: status
-  created: created
-  changed: changed
-  promote: promote
-  sticky: sticky
+    default_value: en
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
   revision_uid: revision_uid
   revision_log: log
   revision_timestamp: timestamp
@@ -65,7 +88,7 @@ process:
       process:
         value:
           plugin: format_date
-          from_format: Y-m-d
+          from_format: 'Y-m-d H:i:s'
           to_format: 'Y-m-d\TH:i:s'
           from_timezone: Europe/Madrid
           to_timezone: Europe/Madrid
@@ -100,8 +123,22 @@ process:
       source: field_sector
       process:
         target_id: tid
-  field_summary: field_summary
-  field_body_revamp: field_body_revamp
+  field_summary_html:
+    -
+      plugin: get
+      source: field_summary
+  field_summary_html/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_body_revamp:
+    -
+      plugin: get
+      source: field_body_revamp
+  field_body_revamp/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
   field_tags:
     -
       plugin: sub_process
@@ -114,12 +151,13 @@ process:
       source: field_nace_codes
       process:
         target_id: tid
-  field_thesaurus_2020:
-    -
-      plugin: sub_process
-      source: field_thesaurus_2020
-      process:
-        target_id: nid
+  field_thesaurus_2020: field_thesaurus_2020
+  field_image_caption:
+    plugin: file_id_lookup
+    source: field_image
+    migration:
+      - ncw_node_article_field_image_media_1
+    no_stub: true
 destination:
   plugin: 'entity:node'
 migration_dependencies:

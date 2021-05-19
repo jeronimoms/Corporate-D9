@@ -1,0 +1,29 @@
+uuid: 310ccba9-982c-4f5f-9738-074b1932437d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_worker_groups_covered
+    - node.type.musculoskeletal_disorders
+    - taxonomy.vocabulary.worker_groups_covered
+id: node.musculoskeletal_disorders.field_worker_groups_covered
+field_name: field_worker_groups_covered
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Worker groups covered (vulnerable groups etc.)'
+description: 'Please select the type of workers covered in the material from the drop down list'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      worker_groups_covered: worker_groups_covered
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

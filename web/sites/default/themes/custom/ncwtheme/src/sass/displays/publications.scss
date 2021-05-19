@@ -1,0 +1,243 @@
+/* Node publications */
+.node-publications-custom{
+  h1{
+    padding-bottom: 1rem;
+  }
+  h2{
+    display: none;
+  }
+  p{
+    color: $text-color-blue;
+  }
+  /*Hide Share Links*/
+  #share-this-on{
+    display: none;
+  }
+}
+
+/* Publications Slide 3 items */
+.view-publications{
+  padding-top: 1.5rem;
+  .views-col{
+    background: #FFF;
+    padding: 10px 10px 0 0;
+    border-right: 15px solid $bg-color-blue-light;
+  }
+  .views-field-field-image-media{
+    .field-content{
+      float: left;
+      margin-right: 0.5rem;
+    }
+  }
+
+  h2{
+    a{
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      line-height: 19px;
+    }
+  }
+
+  .views-field-field-publication-type{
+    .views-label{
+      float: left;
+      color: $text-color-blue;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .field-content{
+      float: left;
+      color: $text-color-blue;
+      font-size: 0.9rem;
+      padding-left: 5px;
+    }
+  }
+  .see-more-arrow{
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/* Publications view */
+.tools-and-publications-publications{
+  .two-column{
+    h1{
+      display: none;
+    }
+  }
+  .revamp-row{
+    .publications-right-column{
+      width: 100%;
+      padding-left: 2rem;
+      .content-publication-info {
+        display: flex;
+        span:nth-child(1){
+          width: 20%;
+        }
+        span:nth-child(2){
+          width: 65%;
+          font-weight: normal;
+        }
+        span:nth-child(3){
+          width: 15%;
+          text-align: right;
+          padding-right: 15px;
+        }
+      }
+      h2{
+        font-weight: 400;
+        font-size: 1.35rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+
+/* Publications Detail */
+body.node--type-publication{
+  /*** To avoid horizontal scrollbar because some browsers understand 100vw with the vertical scroll ***/
+  max-width: 100%;
+  overflow-x: hidden;
+  /*** ***/
+}
+.download-pdf.no-bg{
+  background: transparent;
+  padding: 0;
+}
+.node--type-publication{
+  h1{
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 600;
+  }
+  .publications-row{
+    display: flex;
+  }
+  .publications-detail-right-column{
+    width: 100%;
+    padding-left: 2rem;
+  }
+  .field--name-field-image-media{
+    img{
+      float: left;
+    }
+  }
+  .content-publication-info{
+    display: flex;
+    justify-content: space-between;
+    .content-label{
+      display: flex;
+      .label{
+        padding-right: 5px;
+      }
+      .field{
+        font-size: 0.8rem;
+        line-height: 20px;
+      }
+    }
+  }
+  .datetime{
+    display: block;
+    font-size: 0.9rem;
+  }
+  .field.field--name-field-tags{
+    > ul{
+      >li{
+        padding-right: 0;
+        > a:before{
+          content: ',';
+          padding-right: 3px;
+        }
+      }
+      >:nth-child(1){
+        > a:before{
+          content: none;
+        }
+      }
+    }
+  }
+  .field--type-entity-reference{
+    padding-bottom: 1rem;
+  }
+  .related-resources-fluid{
+    clear: both;
+    @extend .full-width;
+    background: $bg-color-blue-light;
+    padding: 0;
+    width: 100vw;
+    position: relative;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    .publications-detail-right-column{
+      padding-top: 1rem;
+      padding-right: 6rem;
+    }
+    .field--name-field-aditional-resources{
+      .field__item{
+        margin-bottom: 1.5rem;
+      }
+    }
+    .node--type-publication{
+      background: $bg-color-white;
+      h2{
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+/* Rsponsive */
+@media only screen and (max-width : 1200px) {
+  /* Publications Slide 3 items */
+  .view-publications {
+    .views-col {
+      min-height: 185px;
+      padding: 10px;
+      border-bottom: 15px solid $bg-color-blue-light;
+    }
+
+    .views-field-field-image-media {
+      display: none;
+    }
+  }
+
+  /* Publications view*/
+  .tools-and-publications-publications{
+    .revamp-row{
+      .publications-left-column{
+        display: none;
+      }
+      .publications-right-column{
+        padding-left: 0;
+        .content-publication-info {
+          display: flex;
+          span:nth-child(1){
+            width: 20%;
+          }
+          span:nth-child(2){
+            width: 65%;
+            font-weight: normal;
+          }
+          span:nth-child(3){
+            width: 15%;
+            text-align: right;
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+

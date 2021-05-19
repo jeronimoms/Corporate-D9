@@ -1,0 +1,4 @@
+services:
+  oira_partner.update:
+    class: \Drupal\oira_partner\OpEntityUpdateManager
+    arguments: [ '@entity_type.manager', '@current_user' ]

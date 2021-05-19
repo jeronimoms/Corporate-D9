@@ -1,0 +1,41 @@
+uuid: a3e35bad-7dd1-4afd-933d-e3abc8ea41c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aditional_resources
+    - node.type.events
+    - node.type.external_url
+    - node.type.file
+    - node.type.infographic
+    - node.type.news
+    - node.type.press_release
+    - node.type.slideshare
+    - node.type.youtube
+id: node.press_release.field_aditional_resources
+field_name: field_aditional_resources
+entity_type: node
+bundle: press_release
+label: 'Additional resources'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      events: events
+      external_url: external_url
+      file: file
+      infographic: infographic
+      news: news
+      slideshare: slideshare
+      youtube: youtube
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: events
+field_type: entity_reference

@@ -1,0 +1,145 @@
+# Migration file for creating "guideline" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_guideline                    # -----  CHANGE
+label: 'Node: guideline'                   # -----  CHANGE
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: ev_d7_node
+  node_type: guideline                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  vid: vid
+  type:
+    - plugin: default_value
+      default_value: guideline              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_archived: field_archived
+  field_external_url:
+      plugin: field_link
+      source: field_external_url
+  field_available_in_languages: field_available_in_languages
+  field_legislation_category:
+    -
+      plugin: sub_process
+      source: field_legislation_category
+      process:
+        target_id: tid
+  field_activity:
+  -
+    plugin: sub_process
+    source: field_activity
+    process:
+      target_id: tid
+  field_section:
+    - plugin: sub_process
+      source: workbench_access
+      process:
+        target_id: tid
+
+  field_expiration_date:                #revisar
+    -
+      plugin: sub_process
+      source: field_expiration_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          settings:
+            validate_format: false
+          source: value
+  field_publication_date:       #revisar
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_summary: field_summary
+
+  field_additional_html:
+   - plugin: get
+     source: field_additional_html
+  'field_additional_html/0/format':
+    - plugin: default_value
+      default_value: full_html
+
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_nace_codes:
+    -
+      plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
+
+  field_thesaurus_2020: field_thesaurus_2020
+
+

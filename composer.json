@@ -87,15 +87,156 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+        "type": "package",
+        "package": {
+            "name": "jquery.hoverintent/library",
+            "version": "1.10.1",
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "jquery.hoverIntent"
+            },
+            "dist": {
+                "url": "https://github.com/briancherne/jquery-hoverIntent/archive/refs/tags/v1.10.1.zip",
+                "type": "zip"
+            }
+        }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "json2/library",
+                "version": "0.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "json2"
+                },
+                "source": {
+                    "url": "https://github.com/douglascrockford/JSON-js",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery.pause/library",
+                "version": "0.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.pause"
+                },
+                "source": {
+                    "url": "https://github.com/tobia/Pause",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery.cycle/library",
+                "version": "0.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.cycle"
+                },
+                "source": {
+                    "url": "https://github.com/malsup/cycle",
+                    "type": "git",
+                    "reference": "3.0.3-a"
+                }
+            }
+        },
+
+        {
+            "type": "package",
+            "package": {
+                "name": "colorbox/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "colorbox"
+                },
+                "dist": {
+                    "url": "https://github.com/jackmoore/colorbox/archive/1.x.zip",
+                    "type": "zip"
+                }
+            }
+        },
+
+        {
+
+            "type": "package",
+            "package": {
+                "name": "fakeobjects/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "fakeobjects"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "link/library",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "link"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/link/releases/link_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "w8tcha/ckeditor-wordcount-plugin",
+                "version": "1.17.8",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin/releases/download/v1.17.8/CKEditor-WordCount-Plugin.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "resize/library",
+                "version": "1.17.8",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "resize"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/resize/releases/resize_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+
         }
     ],
     "require": {
         "blazy/library": "^1.8",
         "chosen/library": "^1.8",
+        "colorbox/library": "^1.8",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/addtoany": "^1.14",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/anchor_link": "^2.5",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/better_social_sharing_buttons": "^3.1",
         "drupal/blockgroup": "^1.5",
@@ -105,8 +246,13 @@
         "drupal/calendar": "^1.0@alpha",
         "drupal/captcha": "^1.1",
         "drupal/chosen": "^3.0",
+        "drupal/ckeditor_accordion": "^1.3",
         "drupal/ckeditor_font": "^1.1",
+        "drupal/ckeditor_resize": "^1.3",
+        "drupal/ckwordcount": "^2.0",
         "drupal/clientside_validation": "^3.0@RC",
+        "drupal/colorbox": "^1.7",
+        "drupal/colorbox_inline": "^1.2",
         "drupal/conditional_fields": "^1.0@alpha",
         "drupal/config_split": "^1.7",
         "drupal/contact_us": "^2.1",
@@ -118,14 +264,18 @@
         "drupal/crop": "^2.1",
         "drupal/csv_serialization": "^2.0@beta",
         "drupal/ctools": "^3.4",
+        "drupal/custom_breadcrumbs": "^1.0@alpha",
         "drupal/custom_formatters": "^3.0@beta",
         "drupal/date_popup": "^1.1",
         "drupal/devel": "^4.1",
         "drupal/diff": "^1.0",
         "drupal/draggableviews": "^2.0",
         "drupal/dropdown_language": "^2.6",
+        "drupal/ds": "^3.12",
         "drupal/dynamic_entity_reference": "^2.0@alpha",
         "drupal/easy_breadcrumb": "^1.13",
+        "drupal/easy_install": "^10.4",
+        "drupal/editor_advanced_link": "^1.8",
         "drupal/entity": "^1.2",
         "drupal/entity_collector": "^1.0@alpha",
         "drupal/entity_print": "^2.2",
@@ -148,9 +298,11 @@
         "drupal/file_entity": "^2.0@beta",
         "drupal/group": "^1.3",
         "drupal/hreflang": "^1.3",
+        "drupal/htmlmail": "^3.0@alpha",
         "drupal/image_field_caption": "^1.1",
         "drupal/image_url_formatter": "^1.0",
         "drupal/image_widget_crop": "^2.3",
+        "drupal/imagemagick": "^3",
         "drupal/imce": "^2.3",
         "drupal/job_scheduler": "^3.1",
         "drupal/jquery_ui": "^1.4",
@@ -163,9 +315,11 @@
         "drupal/jquery_ui_tabs": "^1.1",
         "drupal/jquery_ui_touch_punch": "^1.0",
         "drupal/jsonapi_resources": "^1.0@beta",
+        "drupal/lang_dropdown": "^2.0@beta",
+        "drupal/language_neutral_aliases": "^3.0",
         "drupal/languagefield": "^1.5",
         "drupal/layoutcomponents": "^1.20@beta",
-        "drupal/ldap": "^4.0@beta",
+        "drupal/ldap": "4.0-beta1",
         "drupal/ldap_auth": "^1.20",
         "drupal/libraries": "^3.0@beta",
         "drupal/like_and_dislike": "^1.0@beta",
@@ -176,6 +330,7 @@
         "drupal/matomo": "^1.11",
         "drupal/memcache": "^2.2",
         "drupal/menu_block": "^1.6",
+        "drupal/menu_breadcrumb": "^1.14",
         "drupal/menu_export": "^1.3",
         "drupal/menu_item_extras": "^2.13",
         "drupal/menu_item_fields": "^1.5",
@@ -188,16 +343,20 @@
         "drupal/multiple_selects": "^1.0",
         "drupal/node_export": "^1.0@alpha",
         "drupal/node_revision_delete": "^1.0@RC",
+        "drupal/onomasticon": "^2.0",
         "drupal/pagerer": "^2.0",
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
         "drupal/pathologic": "^1.0@alpha",
+        "drupal/pdfpreview": "^1.0",
         "drupal/printfriendly": "^3.5",
         "drupal/purge": "^3.0",
         "drupal/quicktabs": "^3.0@alpha",
+        "drupal/quiz": "^6.0@alpha",
         "drupal/r4032login": "^2.0",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/recaptcha": "^3.0",
+        "drupal/recaptcha_v3": "^1.4",
         "drupal/redirect": "^1.6",
         "drupal/reroute_email": "^2.0",
         "drupal/responsive_menu": "^4.4",
@@ -222,17 +381,23 @@
         "drupal/tamper": "^1.0@alpha",
         "drupal/taxonomy_access_fix": "^3.1",
         "drupal/taxonomy_manager": "^2.0",
+        "drupal/textfield_counter": "^2.0",
         "drupal/tmgmt": "^1.11",
         "drupal/token": "^1.9",
+        "drupal/translation_views": "^1.0@alpha",
         "drupal/twig_tweak": "^3.0",
         "drupal/twitter_block": "^3.0@alpha",
         "drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/url_redirect": "^2.62",
         "drupal/varnish_purge": "^2.0",
         "drupal/views_accordion": "^2.0",
         "drupal/views_block_area": "^1.0@beta",
         "drupal/views_block_filter_block": "^1.0",
+        "drupal/views_bootstrap": "^4.3",
         "drupal/views_bulk_operations": "^3.10",
+        "drupal/views_contextual_filters_or": "^1.2",
         "drupal/views_data_export": "^1.0",
+        "drupal/views_infinite_scroll": "^1.8",
         "drupal/views_json_source": "^1.0",
         "drupal/views_slideshow": "^4.8",
         "drupal/views_templates": "^1.1",
@@ -245,8 +410,16 @@
         "drupal/youtube": "^1.2",
         "drush/drush": "^10.3",
         "facets_range_widget/library": "^1.11",
+        "fakeobjects/library": "^1.8",
+        "jquery.cycle/library": "^0.1.0",
+        "jquery.hoverintent/library": "^1.10",
+        "jquery.pause/library": "^0.1.0",
         "jquery_touch_punch/library": "^0.2.3",
-        "slick/library": "^1.8"
+        "json2/library": "^0.1.0",
+        "link/library": "^1.8",
+        "resize/library": "^1.17",
+        "slick/library": "^1.8",
+        "w8tcha/ckeditor-wordcount-plugin": "^1.17"
     },
     "require-dev": {
         "kint-php/kint": "^3.3"
@@ -263,10 +436,11 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "Uninstalled custom theme stuck in config blocking config import" : "https://www.drupal.org/files/issues/2020-09-23/2898274-29.patch",
                 "Cannot override content field block title" : "https://www.drupal.org/files/issues/2019-05-20/3055818-3.patch",
-                "Ultimate cron logger error": "https://www.drupal.org/files/issues/2020-12-03/3128548-15-StatementInterface.patch",
-                "Make the exposed filter as token": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch"
+                "Make the exposed filter as token": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
+                "On null isTranslatable": "https://www.drupal.org/files/issues/2019-12-05/2928108-49.patch",
+                "if you don't want to translate your URL alias": "https://www.drupal.org/files/issues/2020-01-26/2689459-127.patch",
+                "Disabled text formats can't be seen in the GUI": "https://www.drupal.org/files/issues/2020-05-20/2502637-82_0.patch"
             },
             "drupal/linked_field": {
                 "Token warnings": "https://www.drupal.org/files/issues/2020-08-14/problem-with-display-of-custom-data-in-layout-manager-3110226-8.patch",
@@ -275,11 +449,20 @@
             "drupal/inline_entity_form": {
                 "Revision on inline blocks": "https://www.drupal.org/files/issues/2020-07-25/inline_entity_form_inlineBlocks_3161487.2.patch"
             },
-            "drupal/simple_block": {
-                "Editor form warning": "patches/simple_block-edit-form-warning.patch"
+            "drupal/ldap": {
+                "Config annotation missing": "patches/ldap-orphaned_accounts_no_ldap_entry.patch"
             },
-            "drupal/varnish_purge": {
-                "Config annotation missing": "https://www.drupal.org/files/issues/2020-06-05/3146499-2.patch"
+            "drupal/draggableviews": {
+                "DraggableViews not working after update to 2.0.0": "https://www.drupal.org/files/issues/2020-10-07/draggableviews-sort_handler_specify_order_view-2767437-78.patch"
+            },
+            "drupal/linkchecker": {
+                "Fix error ordering deleted and added entityqueue": "patches/linkchecker-error_ordering_deleted_added_entityqueue.patch"
+            },
+            "drupal/entity_browser": {
+                "Can't remove attached image": "https://www.drupal.org/files/issues/2019-09-27/entity_browser-remove-attached-image-2811747-12.patch"
+            },
+            "drupal/views_bulk_operations": {
+                "VBO does not preserve query metadata added by other modules": "https://www.drupal.org/files/issues/2020-10-23/views_bulk_operations-preserve-query-metadata-8.x-2.x-branch.patch"
             }
         },
         "patchLevel": {

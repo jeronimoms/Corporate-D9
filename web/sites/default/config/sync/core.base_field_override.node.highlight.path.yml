@@ -1,0 +1,20 @@
+uuid: 2128e7cb-d805-4c1a-b336-d7691486de1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.highlight
+  module:
+    - path
+id: node.highlight.path
+field_name: path
+entity_type: node
+bundle: highlight
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

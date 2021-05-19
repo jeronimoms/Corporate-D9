@@ -5,11 +5,19 @@
 @import 'base/variables';
 
 @import 'components/accordion';
+@import 'components/blocks-right-column';
 @import 'components/buttons';
+@import 'components/cookies';
+@import 'components/facets';
+@import 'components/forms-fields';
 @import 'components/grid';
+@import 'components/headings';
 @import 'components/helper';
+@import 'components/sidebar-first';
 @import 'components/links';
 @import 'components/modal';
+@import 'components/pager';
+@import 'components/tables';
 
 @import 'layout/body';
 @import 'layout/breadcrumbs';
@@ -17,7 +25,12 @@
 @import 'layout/header';
 @import 'layout/home';
 @import 'layout/menu';
+@import 'layout/menu-landing-pages';
 @import 'layout/section';
+
+@import 'displays/login';
+@import 'displays/publications';
+@import 'displays/view-list';
 
 @import 'responsive/common/common-responsive';
 @import 'responsive/tablet/tablet-responsive';

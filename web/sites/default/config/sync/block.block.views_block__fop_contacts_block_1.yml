@@ -1,0 +1,33 @@
+uuid: 1b86ff13-6fe2-47c1-ae3e-593c00a24350
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.fop_contacts
+  module:
+    - ctools
+    - views
+  theme:
+    - ncwtheme
+id: views_block__fop_contacts_block_1
+theme: ncwtheme
+region: content
+weight: -17
+provider: null
+plugin: 'views_block:fop_contacts-block_1'
+settings:
+  id: 'views_block:fop_contacts-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      fop_page: fop_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

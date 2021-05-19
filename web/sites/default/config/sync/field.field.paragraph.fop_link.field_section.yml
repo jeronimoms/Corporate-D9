@@ -1,0 +1,29 @@
+uuid: f773973d-7d06-464c-80fc-33475dd26b5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section
+    - paragraphs.paragraphs_type.fop_link
+    - taxonomy.vocabulary.fop_link_sections
+id: paragraph.fop_link.field_section
+field_name: field_section
+entity_type: paragraph
+bundle: fop_link
+label: Section
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      fop_link_sections: fop_link_sections
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,29 @@
+uuid: c1845e1b-2b18-486f-96eb-d42e27885c48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.register_records
+    - taxonomy.vocabulary.tags
+id: node.register_records.field_tags
+field_name: field_tags
+entity_type: node
+bundle: register_records
+label: Tags
+description: 'Select Tags for this content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

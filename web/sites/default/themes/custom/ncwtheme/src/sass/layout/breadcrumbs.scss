@@ -22,13 +22,23 @@
       }
     }
   }
+  .breadcrumb-item.active{
+    color: $text-color-blue;
+    &::after{
+      display: inline-block;
+      width: 20px;
+      margin-left: 3px;
+      padding-right: 0;
+      content: "";
+      background: url(../images/delimiter-on.png) no-repeat 0px 5px;
+    }
+  }
 }
 
 .breadcrumb-item+.breadcrumb-item::before{
   display: inline-block;
   width: 20px;
   padding-right: 0;
-  color: #6c757d;
   content: "";
   background: url(../images/delimiter-off.png) no-repeat 0px 5px;
 }

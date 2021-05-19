@@ -11,9 +11,9 @@ field_name: field_target_group
 entity_type: node
 bundle: dangerous_substances
 label: 'Target group'
-description: ''
+description: 'Please select a target group from the drop down list'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

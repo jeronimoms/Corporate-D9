@@ -1,0 +1,42 @@
+uuid: cebb012f-66cb-4a6d-9c75-6fa2214f5778
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.related_content
+  module:
+    - ctools
+    - views
+  theme:
+    - ncwtheme
+id: views_block__related_content_block_5
+theme: ncwtheme
+region: sidebar_second_related
+weight: -23
+provider: null
+plugin: 'views_block:related_content-block_5'
+settings:
+  id: 'views_block:related_content-block_5'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      25th_anniversary: 25th_anniversary
+      article: article
+      events: events
+      guideline: guideline
+      highlight: highlight
+      infographic: infographic
+      news: news
+      press_release: press_release
+      seminar: seminar
+      wiki_page: wiki_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

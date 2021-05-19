@@ -1,0 +1,151 @@
+uuid: 4a7acbd8-7bf6-46dc-814e-a2d08533c64a
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_job_vacancies
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: job_vacancies'
+source:
+  plugin: d7_node
+  node_type: job_vacancies
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  vid: vid
+  type:
+    -
+      plugin: default_value
+      default_value: job_vacancies
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: en
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_job_vacancies_agency:
+    -
+      plugin: sub_process
+      source: field_job_vacancies_agency
+      process:
+        target_id: tid
+  field_job_vacancies_ref_id: field_job_vacancies_ref_id
+  field_job_vacancies_contact_type: field_job_vacancies_contact_type
+  field_job_vacancies_grade:
+    -
+      plugin: sub_process
+      source: field_job_vacancies_grade
+      process:
+        target_id: tid
+  field_job_vacancies_location: field_job_vacancies_location
+  field_country_code: field_country_code
+  field_job_vacancies_type: field_job_vacancies_type
+  field_location: field_location
+  field_activity:
+    -
+      plugin: sub_process
+      source: field_activity
+      process:
+        target_id: tid
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_summary: field_summary
+  field_publication_date:
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: Europe/Madrid
+          to_timezone: Europe/Madrid
+          source: value
+  field_expiration_date:
+    -
+      plugin: sub_process
+      source: field_expiration_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: Europe/Madrid
+          to_timezone: Europe/Madrid
+          source: value
+  field_job_vacancies_deadline:
+    -
+      plugin: sub_process
+      source: field_job_vacancies_deadline
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: Europe/Madrid
+          to_timezone: Europe/Madrid
+          source: value
+  field_nace_codes:
+    -
+      plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
+  field_thesaurus_2020: field_thesaurus_2020
+  field_author: field_author
+  field_job_vacancies_shortlisted: field_job_vacancies_shortlisted
+  field_reserve_list: field_reserve_list
+  field_archived: field_archived
+  field_file_media:
+    plugin: file_id_lookup
+    source: field_related_resources
+    migration:
+      - ncw_node_job_vacancies_media_documents
+    no_stub: true
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - d7_user

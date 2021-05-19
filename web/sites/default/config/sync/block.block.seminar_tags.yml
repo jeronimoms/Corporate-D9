@@ -1,0 +1,28 @@
+uuid: 5dfb498f-4aab-4624-b679-1116c6908892
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.seminar_tags
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: seminar_tags
+theme: ncwtheme
+region: sidebar_first
+weight: -17
+provider: null
+plugin: 'facet_block:seminar_tags'
+settings:
+  id: 'facet_block:seminar_tags'
+  label: Topics
+  provider: facets
+  label_display: visible
+  block_id: seminar_tags
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/*'
+    negate: false

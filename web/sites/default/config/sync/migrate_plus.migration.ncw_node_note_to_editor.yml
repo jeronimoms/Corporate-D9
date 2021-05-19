@@ -1,0 +1,66 @@
+uuid: 481b3371-d44d-4ced-909a-b7fca0dfa8e7
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_note_to_editor
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: note_to_editor'
+source:
+  plugin: d7_node
+  node_type: note_to_editor
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: note_to_editor
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: en
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - d7_user

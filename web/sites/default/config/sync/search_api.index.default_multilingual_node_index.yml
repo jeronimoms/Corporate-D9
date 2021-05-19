@@ -1,0 +1,400 @@
+uuid: e2f5025b-deff-4be5-a307-8417ccd8dfb6
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - node
+    - search_api
+    - file
+    - media
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_date
+    - field.storage.node.field_activity
+    - field.storage.node.field_aditional_resources
+    - field.storage.node.field_article_type
+    - field.storage.node.field_author
+    - field.storage.node.field_available_in_languages
+    - field.storage.node.field_country_code
+    - field.storage.node.field_date_of_directive
+    - field.storage.node.field_image_media
+    - field.storage.node.field_language
+    - field.storage.node.field_nace_codes
+    - field.storage.node.field_pages_count
+    - field.storage.node.field_publication_date
+    - field.storage.node.field_publication_res_files
+    - field.storage.node.field_publication_type
+    - field.storage.node.field_satisfaction_rate
+    - field.storage.node.field_seminar_end_date
+    - field.storage.node.field_seminar_start_date
+    - field.storage.node.field_summary
+    - field.storage.node.field_tags
+    - field.storage.node.field_updated
+    - field.storage.node.field_wiki_categories
+    - search_api.server.solr
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: default_multilingual_node_index
+name: 'Default multilingual node index'
+description: 'An automatically created search index for indexing multilingual node data. Might be configured to specific needs.'
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  end_value:
+    label: 'Date » End date value'
+    datasource_id: 'entity:node'
+    property_path: 'field_date:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date
+  field_activity:
+    label: Activity
+    datasource_id: 'entity:node'
+    property_path: field_activity
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_activity
+  field_aditional_resources:
+    label: 'Additional resources'
+    datasource_id: 'entity:node'
+    property_path: field_aditional_resources
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_aditional_resources
+  field_article_type:
+    label: 'Article type'
+    datasource_id: 'entity:node'
+    property_path: field_article_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_article_type
+  field_author:
+    label: Author(s)
+    datasource_id: 'entity:node'
+    property_path: field_author
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_author
+  field_available_in_languages:
+    label: 'Available in languages'
+    datasource_id: 'entity:node'
+    property_path: field_available_in_languages
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_available_in_languages
+  field_country_code:
+    label: Country
+    datasource_id: 'entity:node'
+    property_path: field_country_code
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_country_code
+  field_date:
+    label: Date
+    datasource_id: 'entity:node'
+    property_path: field_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date
+  field_date_of_directive:
+    label: 'Date of directive'
+    datasource_id: 'entity:node'
+    property_path: field_date_of_directive
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date_of_directive
+  field_image_media:
+    label: Image
+    datasource_id: 'entity:node'
+    property_path: field_image_media
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_image_media
+  field_language:
+    label: Language
+    datasource_id: 'entity:node'
+    property_path: field_language
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_language
+  field_nace_codes:
+    label: Nace
+    datasource_id: 'entity:node'
+    property_path: field_nace_codes
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_nace_codes
+  field_pages_count:
+    label: 'Number of pages'
+    datasource_id: 'entity:node'
+    property_path: field_pages_count
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_pages_count
+  field_publication_date:
+    label: 'Publication date'
+    datasource_id: 'entity:node'
+    property_path: field_publication_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_publication_date
+  field_publication_res_files:
+    label: 'Resources (files)'
+    datasource_id: 'entity:node'
+    property_path: field_publication_res_files
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_publication_res_files
+  field_publication_type:
+    label: 'Publication Type'
+    datasource_id: 'entity:node'
+    property_path: field_publication_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_publication_type
+  field_satisfaction_rate:
+    label: 'Satisfaction rate'
+    datasource_id: 'entity:node'
+    property_path: field_satisfaction_rate
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_satisfaction_rate
+  field_seminar_end_date:
+    label: 'End date (Seminar)'
+    datasource_id: 'entity:node'
+    property_path: field_seminar_end_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_seminar_end_date
+  field_seminar_start_date:
+    label: 'Start date (Seminar)'
+    datasource_id: 'entity:node'
+    property_path: field_seminar_start_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_seminar_start_date
+  field_summary:
+    label: Summary
+    datasource_id: 'entity:node'
+    property_path: field_summary
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_summary
+  field_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: field_tags
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+  field_updated:
+    label: Updated
+    datasource_id: 'entity:node'
+    property_path: field_updated
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_updated
+  field_wiki_categories:
+    label: 'OSHwiki category'
+    datasource_id: 'entity:node'
+    property_path: field_wiki_categories
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_wiki_categories
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  url:
+    label: URI
+    property_path: search_api_url
+    type: string
+    configuration:
+      absolute: false
+  vid:
+    label: 'Revision ID'
+    datasource_id: 'entity:node'
+    property_path: vid
+    type: integer
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:file':
+    bundles:
+      default: true
+      selected: {  }
+  'entity:media':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - 25th_anniversary
+        - article
+        - blog
+        - calls
+        - dangerous_substances
+        - directive
+        - e_guide
+        - events
+        - fop_page
+        - guideline
+        - highlight
+        - infographic
+        - job_vacancies
+        - news
+        - press_contact
+        - press_release
+        - publication
+        - seminar
+        - wiki_page
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields:
+      - field_summary
+      - title
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: solr

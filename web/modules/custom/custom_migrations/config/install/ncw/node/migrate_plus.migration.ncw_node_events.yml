@@ -1,0 +1,114 @@
+# Migration file for creating "events" nodes from BBDD.
+#
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_events                    # -----  CHANGE
+label: 'Node: events'                   # -----  CHANGE
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: events                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  vid: vid
+  type:
+    - plugin: default_value
+      default_value: events              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_organization: field_organization
+  field_country_code: field_country_code
+  field_city: field_city
+  field_location: field_location
+  field_date: field_date
+  field_for_the_web: field_for_the_web
+  field_key_performance: field_key_performance
+  field_website_of_event:
+    plugin: field_link
+    source: field_website_of_event
+  field_agenda: field_agenda
+  field_adonis: field_adonis
+  field_unit_ref: field_unit_ref
+  field_activity:
+    - plugin: sub_process
+      source: field_activity
+      process:
+        target_id: tid
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_agency_role: field_agency_role
+  field_agency_initial_contact: field_agency_initial_contact
+  field_agency_rep_confirmed: field_agency_rep_confirmed
+  field_publications_exhibition_su: field_publications_exhibition_su
+  field_media_promotion: field_media_promotion
+  field_comments_summary_after_eve: field_comments_summary_after_eve
+  field_color: field_color
+  field_show_eu_flag: field_show_eu_flag
+  field_show_on: field_show_on
+  field_migrate_hwc: field_migrate_hwc
+  field_events_type:
+    -
+      plugin: sub_process
+      source: field_events_type
+      process:
+        target_id: tid
+  field_related_resources_media:
+    plugin: file_id_lookup
+    source: field_related_documents
+    migration:
+      - ncw_node_events_media_documents
+    no_stub: true

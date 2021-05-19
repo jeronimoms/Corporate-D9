@@ -1,0 +1,179 @@
+/* Header Fields - Language selector - Search */
+#header{
+  .header-language-search{
+    #lang_dropdown_form_lang-dropdown-form{
+      background: url(../images/languageico.png) no-repeat scroll 99% 1px transparent;
+    }
+    select.custom-select{
+      height: 21px;
+      color: $text-color-white;
+      background: url(../images/icoSelect.png) no-repeat scroll 94% center $bg-color-pink;
+      cursor: pointer;
+      border-radius: 0;
+      border: 0 none;
+      display: block;
+      float: right;
+      margin-right: 30px;
+      padding: 0 0 0 10px;
+    }
+    #block-searchsite{
+      position: relative;
+      padding: 0;
+      clear: both;
+      float: right;
+      margin-right: 50px;
+      #edit-search-api-fulltext, #edit-keys--2{
+        width: 140px;
+        height: 21px;
+        margin-right: 0;
+        border-radius: 0;
+        margin-top: 0;
+        background: $bg-color-blue;
+        color: $text-color-white;
+      }
+      #edit-actions--2{
+        position: absolute;
+        top: 0;
+        right: -30px;
+        .btn-primary{
+          background: url(../images/searchico.png) no-repeat scroll 1px 1px transparent;
+          text-indent: -99999px;
+        }
+      }
+    }
+  }
+}
+
+
+/* Common styles to Fields */
+.views-exposed-form{
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+form{
+  .form-control, .custom-select{
+    height: 37px;
+    border: 1px solid $bg-color-blue;
+    border-radius: 5px;
+    color: $text-color-blue;
+    font-size: 13px;
+  }
+  label{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  .chosen-container-single .chosen-single{
+    border: 0;
+    background: none;
+  }
+  #edit-actions{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+#edit-search-api-fulltext{
+  margin-top: 24px;
+}
+
+.form-item-search-api-fulltext{
+  position: relative;
+}
+
+#edit-submit-publications-index {
+  position: absolute;
+  width: 20px;
+  top: 24px;
+  left: 27%;
+  background: url(../images/pink-search.png) no-repeat 96% 55%;
+  border: 0;
+  text-indent: -9999999px;
+}
+
+
+.custom-select{
+  background: url(../images/pink-select.png) no-repeat scroll 94% center #FFF;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.chosen-container-multi.custom-select{
+  padding-left: 0;
+  height: auto;
+}
+
+.chosen-container-multi .chosen-choices{
+  border: 0;
+  background-image: none;
+  margin-top: -3px;
+  li.search-choice {
+    border: none;
+    background: none;
+    box-shadow: none;
+    color: $text-color-blue;
+  }
+}
+
+.chosen-container-multi .chosen-choices li.search-choice span{
+  display: block;
+  padding-top: 2px;
+}
+
+.chosen-container-active .chosen-choices{
+  box-shadow: none;
+}
+
+#edit-reset{
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  font-size: 0.9rem;
+  background-color: $bg-color-white;
+  border-color: $bg-color-white;
+  color: $text-color-blue;
+  border-bottom: 1px solid $text-color-pink;
+  border-radius: 0;
+  padding: 0;
+}
+
+/* Custom styles in Pages */
+/*Publications*/
+.tools-and-publications-publications{
+  .view-filters{
+    fieldset{
+      width: 33%;
+    }
+    fieldset:nth-child(2){
+      order: 3;
+    }
+  }
+}
+
+
+/* Rsponsive Filters */
+@media only screen and (max-width : 767px) {
+
+  #edit-submit-publications-index {
+    left: 89%;
+  }
+
+  .chosen-container-multi.custom-select{
+    width: 100% !important;
+  }
+
+  /* Custom styles in Pages */
+  /*Publications*/
+  .tools-and-publications-publications {
+    .view-filters {
+      fieldset {
+        width: 100%;
+      }
+    }
+  }
+
+}
+

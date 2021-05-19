@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.publication.field_banner_publications_office
     - field.field.node.publication.field_booklet
     - field.field.node.publication.field_expiration_date
-    - field.field.node.publication.field_file
+    - field.field.node.publication.field_file_media
     - field.field.node.publication.field_image_media
     - field.field.node.publication.field_msd_priority_area
     - field.field.node.publication.field_nace_codes
@@ -21,7 +21,7 @@ dependencies:
     - field.field.node.publication.field_priority_area
     - field.field.node.publication.field_publication_bookshop_id
     - field.field.node.publication.field_publication_date
-    - field.field.node.publication.field_publication_related_res
+    - field.field.node.publication.field_publication_res_files
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_related_oshwiki_articles
     - field.field.node.publication.field_related_publications
@@ -31,19 +31,22 @@ dependencies:
     - field.field.node.publication.field_tags
     - field.field.node.publication.field_thesaurus_2020
     - field.field.node.publication.field_wiki_categories
+    - image.style.cover_images
     - node.type.publication
   module:
     - datetime
     - field_group
-    - file
+    - media
     - text
     - user
 third_party_settings:
   field_group:
     group_summary_resources:
-      children: {  }
+      children:
+        - field_file_media
+        - field_publication_res_files
       parent_name: ''
-      weight: 11
+      weight: 7
       format_type: html_element
       region: content
       format_settings:
@@ -64,57 +67,59 @@ mode: default
 content:
   body:
     type: text_default
-    weight: 2
+    weight: 6
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_aditional_resources:
     type: entity_reference_entity_view
-    weight: 6
+    weight: 8
     region: content
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      view_mode: osha_resources
+      link: false
     third_party_settings: {  }
-  field_banner_publications_office:
-    type: boolean
-    weight: 4
-    region: content
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-  field_file:
-    weight: 5
-    label: hidden
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  field_image_media:
-    weight: 1
+  field_file_media:
+    weight: 10
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_pages_count:
-    type: number_integer
-    weight: 3
+  field_image_media:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: cover_images
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_page_count:
+    type: number_decimal
+    weight: 4
     region: content
     label: hidden
     settings:
       thousand_separator: ''
+      decimal_separator: .
+      scale: 2
       prefix_suffix: true
     third_party_settings: {  }
+  field_pages_count_updated:
+    type: datetime_default
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
   field_publication_date:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       timezone_override: ''
@@ -122,17 +127,18 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_publication_related_res:
-    type: file_table
-    weight: 10
-    region: content
+  field_publication_res_files:
+    type: entity_reference_entity_view
+    weight: 11
     label: hidden
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
+    region: content
   field_publication_type:
     type: entity_reference_label
-    weight: 7
+    weight: 3
     region: content
     label: hidden
     settings:
@@ -149,7 +155,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_label
-    weight: 8
+    weight: 5
     region: content
     label: hidden
     settings:
@@ -160,12 +166,12 @@ hidden:
   field_activity: true
   field_archived: true
   field_author: true
+  field_banner_publications_office: true
   field_booklet: true
   field_expiration_date: true
   field_msd_priority_area: true
   field_nace_codes: true
-  field_page_count: true
-  field_pages_count_updated: true
+  field_pages_count: true
   field_priority_area: true
   field_publication_bookshop_id: true
   field_related_oshwiki_articles: true

@@ -1,0 +1,19 @@
+uuid: e743e3d0-a181-45b3-8b51-656e4f9a05a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_type_other
+    - node.type.musculoskeletal_disorders
+id: node.musculoskeletal_disorders.field_resource_type_other
+field_name: field_resource_type_other
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Type of visual resource other'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

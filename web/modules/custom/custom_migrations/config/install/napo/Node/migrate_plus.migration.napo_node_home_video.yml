@@ -1,0 +1,81 @@
+# Migration file for creating "lesson" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: napo_node_home_video                    # -----  CHANGE
+label: 'Node: Home Video'                   # -----  CHANGE
+audit: true
+migration_group: napo_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node
+  node_type: home_video                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - napo_node_home_video_video_media_videos_1
+
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: home_video
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  # Images.
+  field_image:
+    plugin: file_id_lookup
+    source: field_image
+    migration: napo_node_home_video_media_images_1
+    no_stub: true
+  field_poster_image:
+    plugin: file_id_lookup
+    source: field_poster_image
+    migration: napo_node_home_video_media_images_1
+    no_stub: true
+  # Documents.
+  field_video:
+    plugin: file_id_lookup
+    source: field_video
+    migration:
+      - napo_node_home_video_video_media_videos_1
+    no_stub: true
+  field_url:
+    plugin: field_link
+    source: field_url

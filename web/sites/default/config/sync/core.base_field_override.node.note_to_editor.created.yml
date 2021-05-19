@@ -1,0 +1,18 @@
+uuid: 713cf95f-9e2d-4020-b2b1-dcd88a60bdcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.note_to_editor
+id: node.note_to_editor.created
+field_name: created
+entity_type: node
+bundle: note_to_editor
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,24 @@
+uuid: 3d2fb640-4cb3-40c5-81e2-9fc7584bc219
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.job_vacancies
+  module:
+    - datetime
+id: node.job_vacancies.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: job_vacancies
+label: 'Publication date'
+description: 'Please select the date of publication, if it is not possible to identify leave it empty.'
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

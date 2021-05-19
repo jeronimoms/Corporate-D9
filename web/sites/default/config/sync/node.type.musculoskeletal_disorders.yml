@@ -1,0 +1,18 @@
+uuid: 03cb778d-2a53-41d6-ba27-cf3da552b077
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Musculoskeletal Disorders'
+type: musculoskeletal_disorders
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

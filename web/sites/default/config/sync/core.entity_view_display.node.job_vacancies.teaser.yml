@@ -1,0 +1,73 @@
+uuid: e98a2f8b-c17d-4d27-ad5d-c714e3eaed10
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.job_vacancies.body
+    - field.field.node.job_vacancies.field_activity
+    - field.field.node.job_vacancies.field_archived
+    - field.field.node.job_vacancies.field_author
+    - field.field.node.job_vacancies.field_expiration_date
+    - field.field.node.job_vacancies.field_file_media
+    - field.field.node.job_vacancies.field_job_vacancies_agency
+    - field.field.node.job_vacancies.field_job_vacancies_contact_type
+    - field.field.node.job_vacancies.field_job_vacancies_deadline
+    - field.field.node.job_vacancies.field_job_vacancies_grade
+    - field.field.node.job_vacancies.field_job_vacancies_location
+    - field.field.node.job_vacancies.field_job_vacancies_ref_id
+    - field.field.node.job_vacancies.field_job_vacancies_shortlisted
+    - field.field.node.job_vacancies.field_job_vacancies_type
+    - field.field.node.job_vacancies.field_nace_codes
+    - field.field.node.job_vacancies.field_publication_date
+    - field.field.node.job_vacancies.field_reserve_list
+    - field.field.node.job_vacancies.field_section
+    - field.field.node.job_vacancies.field_summary
+    - field.field.node.job_vacancies.field_tags
+    - field.field.node.job_vacancies.field_thesaurus_2020
+    - node.type.job_vacancies
+  module:
+    - text
+    - user
+id: node.job_vacancies.teaser
+targetEntityType: node
+bundle: job_vacancies
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_activity: true
+  field_archived: true
+  field_author: true
+  field_expiration_date: true
+  field_file_media: true
+  field_job_vacancies_agency: true
+  field_job_vacancies_contact_type: true
+  field_job_vacancies_deadline: true
+  field_job_vacancies_grade: true
+  field_job_vacancies_location: true
+  field_job_vacancies_ref_id: true
+  field_job_vacancies_shortlisted: true
+  field_job_vacancies_type: true
+  field_nace_codes: true
+  field_publication_date: true
+  field_reserve_list: true
+  field_section: true
+  field_summary: true
+  field_tags: true
+  field_thesaurus_2020: true
+  langcode: true
+  search_api_excerpt: true

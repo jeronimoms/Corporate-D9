@@ -12,9 +12,9 @@ field_name: field_contact_address
 entity_type: node
 bundle: dangerous_substances
 label: 'Contact address'
-description: ''
+description: 'Please add the contact address for the material. Please use "Paste from Word" button when you copy text from MS Word'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

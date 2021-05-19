@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: napo_node_msds_activities_i18n                         # -----  CHANGE
-label: 'Node: MSDs activities Translations'                # -----  CHANGE
+label: 'Node: MSDS Activities i18n'                # -----  CHANGE
 migration_group: napo_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
@@ -30,12 +30,10 @@ migration_dependencies:
 process:
   nid: entity_id
   type: type
-  #  langcode: language
   langcode:
     plugin: static_map
     bypass: true
     source: language
-    #    default_value: 'und'
     map:
       'pt': 'pt-pt'
   title: title
@@ -52,20 +50,27 @@ process:
   content_translation_source: source
   content_translation_outdated: translate
   ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
-  field_activities: field_activities
-  field_activity: field_activity
-  field_assessment: field_assessment
-  field_concluding_questions: field_concluding_questions
-  field_conversation_started: field_conversation_started
-  field_conversation_starters_cove: field_conversation_starters_cove
+  field_conversation_started:
+    plugin: file_id_lookup
+    source: field_conversation_started
+    migration:
+      - napo_node_msds_activities_media_documents_1
+    no_stub: true
+  field_conversation_starters_cove:
+    plugin: file_id_lookup
+    source: field_conversation_starters_cove
+    migration:
+      - napo_node_msds_activities_media_images_1
+    no_stub: true
+  field_activity:
+    plugin: file_id_lookup
+    source: field_activity
+    migration:
+      - napo_node_msds_activities_media_documents_1
+    no_stub: true
   field_introductory_text: field_introductory_text
   field_learning_objectives: field_learning_objectives
-  field_msds_video: field_msds_video
-  field_resources_related: field_resources_related
-  field_msds_resources_required: field_msds_resources_required
-  field_tags:
-    - plugin: sub_process
-      source: field_tags
-      process:
-        target_id: tid
+  field_activities: field_activities
+  field_concluding_questions: field_concluding_questions
+  field_assessment: field_assessment
 

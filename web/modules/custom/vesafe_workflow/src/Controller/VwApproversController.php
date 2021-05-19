@@ -92,6 +92,8 @@ class VwApproversController extends ControllerBase implements ContainerInjection
    * {@inheritdoc}
    */
   public function list(Node $node, $list_name) {
+
+
     $state = $this->helper->getNodeModerationState();
     if (!isset($state)) {
       return [
@@ -109,46 +111,6 @@ class VwApproversController extends ControllerBase implements ContainerInjection
     $plugin_block = $this->blockManager->createInstance('vesafe_workflow_block', []);
     $content['block'] = $plugin_block->build();
 
-    // Pre table message.
-    $content['message'] = [
-      '#markup' => $this->t('List of @name', ['@name' => $list_name]),
-    ];
-
-    // Default table.
-    $rows = [];
-    $headers = [
-      $this->t('User'),
-      $this->t('Mail'),
-      $this->t('Status'),
-      $this->t('Operations'),
-    ];
-
-    // Get the actual entries from database.
-    $results = $this->helper->getModerationList($table);
-
-    // Create the rows.
-    foreach ($results as $data) {
-      $rows[] = [
-        'user_id' => $this->getUserName($data->user_id),
-        'user_mail' => $this->getUserMail($data->user_id),
-        'status' => $data->status,
-        'operation' => Link::createFromRoute('Delete', 'vesafe_workflow.delete_form',
-        [
-          'node_id' => $node->id(),
-          'user_id' => $data->user_id,
-          'back_url' => $table,
-        ]
-        ),
-      ];
-    }
-
-    // Final table output.
-    $content['table'] = [
-      '#type' => 'table',
-      '#header' => $headers,
-      '#rows' => $rows,
-      '#empty' => t('No users found'),
-    ];
 
     // Show the Approver form to add users inline.
     $content['form_add'] = $this->formBuilder->getForm(VwApproverAddForm::class, $table);

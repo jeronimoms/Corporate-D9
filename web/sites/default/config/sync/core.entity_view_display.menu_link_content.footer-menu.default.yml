@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.menu_link_content.footer-menu.field_image
+    - field.field.menu_link_content.footer-menu.field_image_menu_
     - system.menu.footer-menu
 id: menu_link_content.footer-menu.default
 targetEntityType: menu_link_content
@@ -15,14 +15,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_image:
-    type: entity_reference_entity_view
+  field_image_menu_:
     weight: 2
-    label: hidden
+    label: above
     settings:
-      view_mode: default
-      link: false
+      link: true
     third_party_settings: {  }
+    type: entity_reference_label
     region: content
 hidden:
   langcode: true

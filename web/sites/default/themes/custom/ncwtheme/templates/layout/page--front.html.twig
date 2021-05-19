@@ -1,0 +1,97 @@
+{% extends "@bootstrap_barrio/layout/page.html.twig" %}
+{% block head %}
+<div id="navbar" role="banner" class="{{ navbar_classes }}">
+  <div class="top-header-container">
+    <div class="top-header-content row">
+      <div class="header-logo">
+        {{ page.top_header_logos }}
+      </div>
+      <div class="push-right">
+        <div class="content-first-row">
+          <div class="font-size-print">
+            <span id="_smallify" class="a_small"><a title="Smaller text">a</a></span>
+            <span id="_reset" class="a_medium"><a title="Optimised defaults">a</a></span>
+            <span id="_biggify" class="a_big"><a title="Bigger text">a</a></span>
+            <a href="#" onclick="if(window.print)window.print();" class="print-friendly" title="Print page"></a>
+          </div>
+          <div class="header-social-menu">
+            {{ page.header }}
+          </div>
+        </div>
+        <div class="header-links">
+          {{ page.header_links}}
+        </div>
+        <div class="header-language-search">
+          {{ page.header_form }}
+        </div>
+      </div>
+    </div>
+  </div>
+   <nav{{ navbar_attributes }}>
+      {% if page.primary_menu %}
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="CollapsingNavbar">
+            {{ page.primary_menu }}
+        </div>
+      {% endif %}
+      {% if sidebar_collapse %}
+        <button class="navbar-toggler navbar-toggler-left collapsed" type="button" data-toggle="collapse" data-target="#CollapsingLeft" aria-controls="CollapsingLeft" aria-expanded="false" aria-label="Toggle navigation"></button>
+      {% endif %}
+    </nav>
+</div>
+{% endblock %}
+
+{% block content %}
+  <aside class="page-front-container">
+    <div class="home-intro">
+      {{ drupal_view('osha_home_page_banners', 'home_page_banner_top') }}
+    </div>
+    <div class="left_column">
+      <div class="content-highlight-home">
+        <h2>{{ 'Highlights' | trans }}</h2>
+        {{ drupal_view('highlight', 'block_2') }}
+      </div>
+      <div class="content-news-events">
+        <h2> {{ 'News & Events' | trans }}</h2>
+        <div class="wrap-news-events">
+          <div class="news-home">
+            {{ drupal_view('osh_news', 'front') }}
+          </div>
+          <div class="events-home">
+            {{ drupal_view('homepage_events', 'block_1') }}
+          </div>
+        </div>
+        <div class="content-links-news-events">
+          <div class="more-link revamp">
+            <a href="/en/oshnews">View all news</a><a class="link-view-home" href="/en/events">View all events</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="sidebars_second sidebars_second_home">
+      {{ drupal_entity('block', 'twitterblock') }}
+    </aside>
+  </div>
+  <div class="home-recommended-resources">
+    <div class="page-front-container">
+      <h2> {{ 'Recommended resources' | trans }}</h2>
+      {{ drupal_view('osha_home_page_banners', 'home_page_banner_footer') }}
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  <div class="{{ container }}" >
+    {% if page.footer_end %}
+      <div class="site-footer__bottom">
+        {{ page.footer_end }}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

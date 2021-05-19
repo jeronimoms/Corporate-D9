@@ -1,0 +1,91 @@
+# Migration file for creating "wiki_page" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: oira_node_wiki_page                    # -----  CHANGE
+label: 'Node: Wiki Page'                   # -----  CHANGE
+audit: true
+migration_group: oira_migrate_node
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: ev_d7_node
+  node_type: wiki_page                    # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - oira_node_wiki_page_media_images_1
+
+process:
+  nid: tnid   #comentar si no es bbdd limpia
+  vid: vid  #comentar si no es bbdd limpia
+  type:
+    - plugin: default_value
+      default_value: wiki_page              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  body: body
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_revised_date/value:
+    - plugin: extract
+      source: field_revised_date
+      index:
+        - '0'
+        - value
+    - plugin: format_date
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
+  field_updated/value:
+    - plugin: extract
+      source: field_updated
+      index:
+        - '0'
+        - value
+    - plugin: format_date
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
+  field_summary: field_summary
+  field_migration_source: field_migration_source
+  field_tags:
+    plugin: sub_process
+    source: field_tags
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_wiki_categories:
+    plugin: sub_process
+    source: field_wiki_categories
+    process:
+      target_id:
+        plugin: get
+        source: tid
+  field_wiki_page_url:
+    plugin: field_link
+    source: field_wiki_page_url
+  field_image:
+    plugin: file_id_lookup
+    source: field_image
+    migration: oira_node_wiki_page_media_images_1
+    no_stub: true
+

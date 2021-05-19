@@ -6,15 +6,19 @@ dependencies:
     - field.storage.node.field_section
     - node.type.publication
     - taxonomy.vocabulary.section
+  content:
+    - 'taxonomy_term:section:35cd45a5-1768-4fed-a5b1-f3957254554f'
 id: node.publication.field_section
 field_name: field_section
 entity_type: node
 bundle: publication
 label: Section
-description: ''
+description: "Select the proper editorial group for this content.\r\n"
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 35cd45a5-1768-4fed-a5b1-f3957254554f
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

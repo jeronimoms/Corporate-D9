@@ -53,3 +53,16 @@ drush cim -l vesafe -y
 
 echo 'Clearing caches for Vesafe site'
 drush cr -l vesafe -y
+
+# Update Napo site.
+echo 'Runing updb for Napo site'
+drush updb -l napo -y
+
+echo 'Clearing caches for Napo site'
+drush cr -l napo -y
+
+echo 'Importing configuration for Napo site'
+drush cim -l napo -y
+
+echo 'Clearing caches for Napo site'
+drush cr -l napo -y

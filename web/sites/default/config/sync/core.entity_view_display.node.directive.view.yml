@@ -1,0 +1,105 @@
+uuid: c4c2b2a3-5fac-480a-98c7-5e6ada9301a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.view
+    - field.field.node.directive.body
+    - field.field.node.directive.field_activity
+    - field.field.node.directive.field_archived
+    - field.field.node.directive.field_date_of_directive
+    - field.field.node.directive.field_directive_type
+    - field.field.node.directive.field_expiration_date
+    - field.field.node.directive.field_legislation_category
+    - field.field.node.directive.field_nace_codes
+    - field.field.node.directive.field_publication_date
+    - field.field.node.directive.field_section
+    - field.field.node.directive.field_summary
+    - field.field.node.directive.field_tags
+    - field.field.node.directive.field_thesaurus_2020
+    - node.type.directive
+  module:
+    - ds
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - node_changed_date
+        - field_summary
+        - node_link
+    fields:
+      node_changed_date:
+        plugin_id: node_changed_date
+        weight: 1
+        label: inline
+        formatter: ds_post_date_only_day
+      node_link:
+        plugin_id: node_link
+        weight: 3
+        label: hidden
+        formatter: default
+        settings:
+          'link text': 'Show details'
+          'link class': ''
+          wrapper: span
+          class: see-more-arrow
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+          exclude_node_title: '1'
+id: node.directive.view
+targetEntityType: node
+bundle: directive
+mode: view
+content:
+  field_summary:
+    type: basic_string
+    weight: 2
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  field_activity: true
+  field_archived: true
+  field_date_of_directive: true
+  field_directive_type: true
+  field_expiration_date: true
+  field_legislation_category: true
+  field_nace_codes: true
+  field_publication_date: true
+  field_section: true
+  field_tags: true
+  field_thesaurus_2020: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

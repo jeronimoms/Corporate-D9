@@ -1,0 +1,29 @@
+uuid: 7779ff36-4932-48d1-8ce9-1855e99437be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activity
+    - node.type.press_release
+    - taxonomy.vocabulary.activity
+id: node.press_release.field_activity
+field_name: field_activity
+entity_type: node
+bundle: press_release
+label: Activity
+description: 'Select Activity for this content.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      activity: activity
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

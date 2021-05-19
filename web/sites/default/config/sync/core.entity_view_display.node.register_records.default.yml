@@ -1,0 +1,217 @@
+uuid: eda958eb-073e-448b-b9e7-9326960facbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.register_records.body
+    - field.field.node.register_records.field_activity
+    - field.field.node.register_records.field_documentation_media
+    - field.field.node.register_records.field_events_meetings_media
+    - field.field.node.register_records.field_finance_procurement_media
+    - field.field.node.register_records.field_general_services_media
+    - field.field.node.register_records.field_governance_media
+    - field.field.node.register_records.field_human_resources_media
+    - field.field.node.register_records.field_ict_media
+    - field.field.node.register_records.field_language
+    - field.field.node.register_records.field_missions_media
+    - field.field.node.register_records.field_relationship_management_me
+    - field.field.node.register_records.field_research_activities_media
+    - field.field.node.register_records.field_section
+    - field.field.node.register_records.field_staff_committee_media
+    - field.field.node.register_records.field_summary
+    - field.field.node.register_records.field_surveys_media
+    - field.field.node.register_records.field_tags
+    - field.field.node.register_records.field_websites_online_serv_media
+    - field.field.node.register_records.field_wiki_categories
+    - node.type.register_records
+  module:
+    - languagefield
+    - text
+    - user
+id: node.register_records.default
+targetEntityType: node
+bundle: register_records
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_activity:
+    weight: 120
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_documentation_media:
+    type: entity_reference_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_events_meetings_media:
+    type: entity_reference_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_finance_procurement_media:
+    type: entity_reference_entity_view
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_general_services_media:
+    type: entity_reference_entity_view
+    weight: 107
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_governance_media:
+    type: entity_reference_entity_view
+    weight: 108
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_human_resources_media:
+    type: entity_reference_entity_view
+    weight: 109
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_ict_media:
+    type: entity_reference_entity_view
+    weight: 110
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_language:
+    weight: 117
+    label: above
+    settings:
+      link_to_entity: false
+      format:
+        name: name
+    third_party_settings: {  }
+    type: languagefield_default
+    region: content
+  field_missions_media:
+    type: entity_reference_entity_view
+    weight: 111
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_relationship_management_me:
+    type: entity_reference_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_research_activities_media:
+    type: entity_reference_entity_view
+    weight: 112
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_section:
+    weight: 116
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_staff_committee_media:
+    type: entity_reference_entity_view
+    weight: 113
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_summary:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_surveys_media:
+    type: entity_reference_entity_view
+    weight: 114
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_tags:
+    weight: 118
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_websites_online_serv_media:
+    type: entity_reference_entity_view
+    weight: 115
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_wiki_categories:
+    weight: 119
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

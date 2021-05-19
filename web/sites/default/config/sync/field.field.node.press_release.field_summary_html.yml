@@ -1,0 +1,21 @@
+uuid: 13fa4f28-5d6e-403d-a0c4-fe9c1468fb47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary_html
+    - node.type.press_release
+  module:
+    - text
+id: node.press_release.field_summary_html
+field_name: field_summary_html
+entity_type: node
+bundle: press_release
+label: Summary
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,29 @@
+uuid: 697329f2-40ed-4481-80b5-b29d8b9b9064
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type_of_provider
+    - paragraphs.paragraphs_type.paragraph_provider
+    - taxonomy.vocabulary.provider_type
+id: paragraph.paragraph_provider.field_type_of_provider
+field_name: field_type_of_provider
+entity_type: paragraph
+bundle: paragraph_provider
+label: 'Type of provider'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      provider_type: provider_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,29 @@
+uuid: f96407b7-0a3b-4c46-acfd-fb7d83e351c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_health_effects
+    - node.type.musculoskeletal_disorders
+    - taxonomy.vocabulary.health_effects
+id: node.musculoskeletal_disorders.field_health_effects
+field_name: field_health_effects
+entity_type: node
+bundle: musculoskeletal_disorders
+label: 'Health effects'
+description: 'Please select the type of health effect from the drop down list'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      health_effects: health_effects
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,18 @@
+uuid: 9d1ebbb5-aa47-45d2-ac23-856855515cd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.seminar
+id: node.seminar.created
+field_name: created
+entity_type: node
+bundle: seminar
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

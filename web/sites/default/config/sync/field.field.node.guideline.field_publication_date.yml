@@ -1,0 +1,24 @@
+uuid: 0a1027d1-aec5-4d97-98b4-d953c9a19227
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.guideline
+  module:
+    - datetime
+id: node.guideline.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: guideline
+label: 'Publication date'
+description: 'Please select the date of publication, if it is not possible to identify leave it empty.'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

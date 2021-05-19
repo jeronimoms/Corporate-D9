@@ -1,0 +1,11 @@
+uuid: 92c7406f-c76a-4bcc-bd82-265e3d03d058
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.osh_mail
+id: crop.osh_mail
+target_entity_type_id: crop
+target_bundle: osh_mail
+default_langcode: site_default
+language_alterable: false

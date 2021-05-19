@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Update all nodes with partner association.
+ */
+function oira_partner_update_8001() {
+  \Drupal::service('oira_partner.update')->updateAll();
+}

@@ -1,0 +1,29 @@
+uuid: 72331a2d-b228-4870-94b0-38931074effc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.25th_anniversary
+    - taxonomy.vocabulary.section
+id: node.25th_anniversary.field_section
+field_name: field_section
+entity_type: node
+bundle: 25th_anniversary
+label: Section
+description: 'Select the proper editorial group for this content.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      section: section
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

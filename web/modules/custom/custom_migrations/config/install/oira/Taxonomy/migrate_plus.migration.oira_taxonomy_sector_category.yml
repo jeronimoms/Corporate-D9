@@ -13,7 +13,7 @@ audit: true
 migration_group: oira_migrate_tax   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
-  plugin: d7_taxonomy_term
+  plugin: d7_taxonomy_term_custom
   bundle: sector_category               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
@@ -45,7 +45,10 @@ process:
   forum_container: is_container
   changed: timestamp
   langcode: language
-
+  path/pathauto:
+    plugin: default_value
+    default_value: 0 # Disable pathauto.
+  path/alias: alias
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
 
 

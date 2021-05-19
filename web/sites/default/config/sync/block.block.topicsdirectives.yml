@@ -1,0 +1,28 @@
+uuid: 68192a78-97cc-4e3f-8cff-893737b2fdb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.directive_topics
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: topicsdirectives
+theme: ncwtheme
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'facet_block:directive_topics'
+settings:
+  id: 'facet_block:directive_topics'
+  label: Topics
+  provider: facets
+  label_display: visible
+  block_id: topicsdirectives
+visibility:
+  request_path:
+    id: request_path
+    pages: /search/directives
+    negate: false

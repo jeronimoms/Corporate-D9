@@ -479,19 +479,34 @@ display:
           group: 1
           exposed: false
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: field_date_end_value_op
+            label: 'Date (field_date:end_value)'
             description: ''
             use_operator: false
-            operator: ''
+            operator: field_date_end_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
+            identifier: field_date_end_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''

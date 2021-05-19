@@ -18,8 +18,10 @@ dependencies:
     - field.field.node.directive.field_thesaurus_2020
     - node.type.directive
   module:
+    - content_moderation
     - datetime
     - multiple_selects
+    - path
     - text
 id: node.directive.default
 targetEntityType: node
@@ -36,6 +38,12 @@ content:
       show_summary: false
     third_party_settings: {  }
     region: content
+  created:
+    type: datetime_timestamp
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_activity:
     weight: 13
     settings: {  }
@@ -88,7 +96,7 @@ content:
   field_publication_date:
     weight: 4
     settings:
-      date_order: YMD
+      date_order: MDY
       time_type: '24'
       increment: 15
     third_party_settings: {  }
@@ -120,6 +128,25 @@ content:
     third_party_settings: {  }
     type: multiple_options_select
     region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 1
@@ -128,13 +155,22 @@ content:
       size: 255
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 18
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  created: true
   langcode: true
-  moderation_state: true
-  path: true
   promote: true
-  status: true
   sticky: true
-  uid: true
-  url_redirects: true

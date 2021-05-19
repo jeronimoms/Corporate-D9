@@ -1,0 +1,26 @@
+uuid: 0d4aa742-dd5b-4908-b013-8c54a9a9af10
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: press_contacts
+label: 'Press contacts'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      press_contact: press_contact
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

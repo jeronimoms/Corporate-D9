@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_news_i18n                         # -----  CHANGE
-label: 'Node: news Translations'                # -----  CHANGE
+label: 'Node: News i18n'                # -----  CHANGE
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
@@ -41,6 +41,7 @@ process:
   body: body
   uid: uid
   status: status
+  moderation_state: moderation_state
   created: created
   changed: changed
   promote: promote

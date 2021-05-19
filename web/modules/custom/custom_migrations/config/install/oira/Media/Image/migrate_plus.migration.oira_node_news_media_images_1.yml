@@ -1,0 +1,64 @@
+# File to Media Migration configuration for oira_good_practice_media_image migration
+
+id: oira_node_news_media_images_1
+label: 'News: Media Images Step 1'
+migration_group: oira_migrate_media
+
+source:
+  key: migrate
+  langcode: und
+  plugin: media_entity_generator_d7
+  entity_type: node
+  bundle: news
+  d7_file_url: 'https://oiraproject.eu/sites/default/files/'
+  field_names:
+    - field_image
+    - field_image_home_latest_news
+
+destination:
+  plugin: entity:media
+
+process:
+  bundle:
+    plugin: default_value
+    default_value: image
+
+  # Using the alt tag if available, else the file name.
+  name:
+    plugin: media_name
+    source: file_name
+
+  # This process plugin will skip the whole row if a existing media is found.
+  existing_media_file:
+    plugin: check_media_duplicate
+    source: target_id
+
+  # This process plugin will skip the whole row if a duplicate image is found.
+  unique_file_id:
+    plugin: check_duplicate
+    source: target_id
+
+  # Map the field image
+  field_media_image/alt: alt
+  field_media_image/title: title
+  field_media_image/target_id:
+    plugin: media_file_copy
+    move: FALSE
+    reuse: TRUE
+    path: 'public://'
+    source: file_path
+
+  langcode: langcode
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+
+
+dependencies:
+  module:
+    - custom_migrations
+  enforced:
+    module:
+      - custom_migrations

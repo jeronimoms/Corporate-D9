@@ -1,0 +1,76 @@
+nav.pager{
+    display: flex;
+    justify-content: center;
+    ul.pager__items{
+    margin-top: 1rem;
+    padding: 0;
+    .pager__item{
+      float: left;
+      margin-right: 12px;
+    }
+    .pager__item.is-active{
+      a{
+        color: $text-color-pink;
+        background-color: $bg-color-white;
+        border: 1px solid $bg-color-blue;
+      }
+    }
+    a{
+      color: $text-color-blue;
+      font-size: 0.9rem;
+      border: 1px solid $bg-color-blue-light;
+      font-weight: bold;
+      padding: 10px 15px;
+      margin-left: 0;
+      &:hover {
+        background-color: transparent;
+        border: 1px solid $bg-color-blue;
+        text-decoration: none;
+      }
+    }
+
+    .pager__item--first, .pager__item--previous, .pager__item--next, .pager__item--last, .pagerer-breaker{
+      margin-right: 0;
+      a{
+        border: 0;
+        display: inline-block;
+        color: $text-color-pink;
+        font-size: 2rem;
+        font-weight: 400;
+        height: 10px;
+        margin-top: -22px;
+      }
+    }
+  }
+}
+.pager-total{
+  display: block;
+  font-size: 0.85rem;
+  color: $text-color-blue;
+  font-weight: 600;
+  float: right;
+  clear: both;
+  margin-top: -50px;
+}
+
+div.pagerer-right-pane{
+  display: none;
+}
+
+/* Responsive */
+@media only screen and (max-width : 767px) {
+  div.pagerer-left-pane, .pager-total{
+    display: none;
+  }
+  div.pagerer-right-pane{
+    display: block;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .pager__item--first, .pager__item--previous, .pager__item--next, .pager__item--last, .pagerer-breaker {
+    a {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}

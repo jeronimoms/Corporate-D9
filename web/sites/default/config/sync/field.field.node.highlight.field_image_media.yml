@@ -11,9 +11,9 @@ field_name: field_image_media
 entity_type: node
 bundle: highlight
 label: Image
-description: ''
+description: 'The header image that will be displayed on page.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

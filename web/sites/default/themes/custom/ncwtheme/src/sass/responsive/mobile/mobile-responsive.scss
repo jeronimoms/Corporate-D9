@@ -62,3 +62,27 @@
   }
 
 }/* End Media 768px */
+
+@media only screen and (max-width : 480px) {
+  /* Page - Highlight, News and Events content link */
+  .news-events {
+    #main {
+      ul {
+        li {
+          width: 100%;
+          .text_news_events{
+            min-height: auto;
+          }
+        }
+      }
+    }
+  }
+  /* Blog Detail */
+  .node--type-blog{
+    .field--name-field-image-caption{
+      float: none;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+}/* End Media 480px */

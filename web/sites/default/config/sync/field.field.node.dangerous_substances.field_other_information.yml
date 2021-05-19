@@ -12,9 +12,9 @@ field_name: field_other_information
 entity_type: node
 bundle: dangerous_substances
 label: 'Other information'
-description: ''
+description: 'Please add the other information for the material. Please use "Paste from Word" button when you copy text from MS Word'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

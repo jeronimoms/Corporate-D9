@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: oira_node_faq_i18n                         # -----  CHANGE
-label: 'Node: Faq Translations'                # -----  CHANGE
+label: 'Node: Faq i18n'                # -----  CHANGE
 migration_group: oira_migrate_node
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:

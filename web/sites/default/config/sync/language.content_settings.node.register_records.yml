@@ -1,0 +1,18 @@
+uuid: 681b928e-1b65-4c9c-b7be-823edc21b692
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.register_records
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.register_records
+target_entity_type_id: node
+target_bundle: register_records
+default_langcode: site_default
+language_alterable: true

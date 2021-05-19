@@ -1,0 +1,29 @@
+uuid: 4e72af87-a4ed-4b53-b25c-0cf1b3c50799
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_general_services_media
+    - media.type.document
+    - node.type.register_records
+id: node.register_records.field_general_services_media
+field_name: field_general_services_media
+entity_type: node
+bundle: register_records
+label: 'General Services'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

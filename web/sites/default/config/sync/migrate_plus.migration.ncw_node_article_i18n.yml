@@ -1,0 +1,137 @@
+uuid: c62177ef-3ac4-44ec-8e41-27545b03ee82
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_article_i18n
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: article translations'
+source:
+  plugin: d7_node_entity_translation
+  node_type: article
+process:
+  nid: entity_id
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      pt: pt-pt
+  title: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  content_translation_source: source
+  content_translation_outdated: translate
+  field_aditional_resources: field_aditional_resources
+  field_archived: field_archived
+  field_article_type:
+    -
+      plugin: sub_process
+      source: field_article_type
+      process:
+        target_id: tid
+  field_activity:
+    -
+      plugin: sub_process
+      source: field_activity
+      process:
+        target_id: tid
+  field_character_count: field_character_count
+  field_expiration_date:
+    -
+      plugin: sub_process
+      source: field_expiration_date
+      process:
+        value:
+          plugin: format_date
+          from_format: Y-m-d
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: Europe/Madrid
+          to_timezone: Europe/Madrid
+          settings:
+            validate_format: false
+          source: value
+  field_wiki_categories:
+    -
+      plugin: sub_process
+      source: field_wiki_categories
+      process:
+        target_id: tid
+  field_related_oshwiki_articles: field_related_oshwiki_articles
+  field_page_count: field_page_count
+  field_publication_date:
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: Europe/Madrid
+          to_timezone: Europe/Madrid
+          source: value
+  field_recommended_articles: field_recommended_articles
+  field_recommended_resources: field_recommended_resources
+  field_sector:
+    -
+      plugin: sub_process
+      source: field_sector
+      process:
+        target_id: tid
+  field_summary_html:
+    -
+      plugin: get
+      source: field_summary
+  field_summary_html/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_body_revamp:
+    -
+      plugin: get
+      source: field_body_revamp
+  field_body_revamp/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_nace_codes:
+    -
+      plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
+  field_thesaurus_2020: field_thesaurus_2020
+  field_image_media:
+    plugin: file_id_lookup_translations
+    source: field_image
+    migration:
+      - ncw_node_article_field_image_media_1_es
+    no_stub: true
+destination:
+  plugin: 'entity:node'
+  translations: true
+  destination_module: content_translation
+migration_dependencies:
+  required:
+    - d7_user
+    - ncw_node_article

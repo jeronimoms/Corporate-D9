@@ -31,3 +31,16 @@ drush cim -l vesafe -y
 
 echo 'Clearing caches for Vesafe site'
 drush cr -l vesafe -y
+
+# Update Oira site.
+echo 'Runing updb for Oira site'
+drush updb -l oira -y
+
+echo 'Clearing caches for Oira site'
+drush cr -l oira -y
+
+echo 'Importing configuration for Oira site'
+drush cim -l oira -y
+
+echo 'Clearing caches for Oira site'
+drush cr -l oira -y

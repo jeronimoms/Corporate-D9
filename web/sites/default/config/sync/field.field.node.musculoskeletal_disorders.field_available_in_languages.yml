@@ -1,0 +1,21 @@
+uuid: 97b72884-6c37-49eb-9af1-d4f449d64b94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_available_in_languages
+    - node.type.musculoskeletal_disorders
+  module:
+    - languagefield
+id: node.musculoskeletal_disorders.field_available_in_languages
+field_name: field_available_in_languages
+entity_type: node
+bundle: musculoskeletal_disorders
+label: Languages
+description: 'Please add a language from the list'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: language_field

@@ -1,27 +1,29 @@
-uuid: b3fa58bd-8e83-4949-9283-2c0e8187c64e
+uuid: 7b79aa8d-6600-4327-b023-da21b67d7487
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_press_contact_declaration
+    - media.type.document
     - node.type.press_contact
-  module:
-    - file
 id: node.press_contact.field_press_contact_declaration
 field_name: field_press_contact_declaration
 entity_type: node
 bundle: press_contact
-label: 'Declaration of Interests'
+label: 'Declaration of interest'
 description: 'Contact Declaration of Interests file.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: ''
-  file_extensions: txt
-  max_filesize: ''
-  description_field: false
-  handler: 'default:file'
-  handler_settings: {  }
-field_type: file
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

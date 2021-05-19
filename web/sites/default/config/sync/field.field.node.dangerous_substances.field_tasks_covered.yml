@@ -11,9 +11,9 @@ field_name: field_tasks_covered
 entity_type: node
 bundle: dangerous_substances
 label: 'Tasks covered'
-description: ''
+description: 'Please select the HAZMAP categories from the drop down list'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.article_publication_additional_resources
     - field.field.node.news.body
     - field.field.node.news.comment_node_news
     - field.field.node.news.field_activity
@@ -12,22 +13,24 @@ dependencies:
     - field.field.node.news.field_character_count
     - field.field.node.news.field_expiration_date
     - field.field.node.news.field_flickr_date
-    - field.field.node.news.field_image_caption
+    - field.field.node.news.field_image_media
     - field.field.node.news.field_migrate_hwc
     - field.field.node.news.field_migration_source
     - field.field.node.news.field_page_count
     - field.field.node.news.field_publication_date
+    - field.field.node.news.field_section
     - field.field.node.news.field_show_in_ncw
     - field.field.node.news.field_show_on
     - field.field.node.news.field_source_url
     - field.field.node.news.field_summary_html
     - field.field.node.news.field_tags
-    - field.field.node.news.field_thesaurus
     - field.field.node.news.field_thesaurus_2020
     - node.type.news
   module:
     - datetime
+    - entity_browser
     - media_library
+    - multiple_selects
     - path
     - text
 id: node.news.default
@@ -36,7 +39,7 @@ bundle: news
 mode: default
 content:
   body:
-    weight: 7
+    weight: 6
     type: text_textarea_with_summary
     settings:
       rows: 9
@@ -47,74 +50,90 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_activity:
-    weight: 12
+    weight: 9
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_aditional_resources:
-    type: entity_reference_autocomplete
-    weight: 14
+    type: entity_browser_entity_reference
+    weight: 11
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      entity_browser: article_publication_additional_resources
+      field_widget_display: label
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_edit: false
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
     third_party_settings: {  }
   field_archived:
-    weight: 13
+    weight: 10
     type: boolean_checkbox
     settings:
       display_label: true
     third_party_settings: {  }
     region: content
   field_avoid_archived:
-    weight: 17
+    weight: 14
     type: boolean_checkbox
     settings:
       display_label: true
     third_party_settings: {  }
     region: content
   field_expiration_date:
-    weight: 6
-    type: datetime_default
-    settings: {  }
+    weight: 5
+    type: datetime_datelist
+    settings:
+      date_order: MDY
+      time_type: '24'
+      increment: 15
     third_party_settings: {  }
     region: content
-  field_image_caption:
-    type: media_library_widget
-    weight: 2
+  field_image_media:
+    weight: 3
     settings:
       media_types: {  }
     third_party_settings: {  }
+    type: media_library_widget
     region: content
   field_migrate_hwc:
-    weight: 15
+    weight: 12
     type: boolean_checkbox
     settings:
       display_label: true
     third_party_settings: {  }
     region: content
   field_publication_date:
-    weight: 5
-    type: datetime_default
-    settings: {  }
+    weight: 4
+    type: datetime_datelist
+    settings:
+      date_order: MDY
+      time_type: '24'
+      increment: 15
     third_party_settings: {  }
     region: content
+  field_section:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_show_on:
-    weight: 16
+    weight: 13
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_summary_html:
-    weight: 1
+    weight: 2
     settings:
       rows: 10
       placeholder: ''
@@ -122,66 +141,58 @@ content:
     type: text_textarea
     region: content
   field_tags:
-    weight: 8
+    weight: 7
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_thesaurus:
-    type: entity_reference_autocomplete
-    weight: 9
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_thesaurus_2020:
-    type: entity_reference_autocomplete
-    weight: 10
+    type: multiple_options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: string_textfield
+    weight: 15
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 4
-    region: content
-    settings:
-      include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 20
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
+    weight: 18
+    region: content
     settings:
       display_label: true
-    weight: 19
-    region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  translation:
-    weight: 3
+  uid:
+    type: entity_reference_autocomplete
+    weight: 19
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 18
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -193,6 +204,7 @@ hidden:
   field_page_count: true
   field_show_in_ncw: true
   field_source_url: true
+  langcode: true
   promote: true
   sticky: true
-  uid: true
+  translation: true

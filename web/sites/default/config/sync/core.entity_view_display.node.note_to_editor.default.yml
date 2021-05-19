@@ -1,0 +1,27 @@
+uuid: b2aac805-1a0e-465b-856e-70b71eae8353
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.note_to_editor.body
+    - node.type.note_to_editor
+  module:
+    - text
+    - user
+id: node.note_to_editor.default
+targetEntityType: node
+bundle: note_to_editor
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

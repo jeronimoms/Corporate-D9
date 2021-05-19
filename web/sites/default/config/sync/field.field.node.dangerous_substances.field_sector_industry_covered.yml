@@ -11,9 +11,9 @@ field_name: field_sector_industry_covered
 entity_type: node
 bundle: dangerous_substances
 label: 'Sector / Indrustry covered'
-description: ''
+description: 'Please add the NACE code of the sector covered in the material'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

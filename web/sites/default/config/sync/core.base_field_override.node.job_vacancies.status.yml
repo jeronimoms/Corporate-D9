@@ -1,0 +1,22 @@
+uuid: 10dc6968-4e79-4f96-9a22-54e891728153
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.job_vacancies
+id: node.job_vacancies.status
+field_name: status
+entity_type: node
+bundle: job_vacancies
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: c59a5579-4893-44ad-9b68-f5a35a4b0b4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.note_to_editor
+id: node.note_to_editor.title
+field_name: title
+entity_type: node
+bundle: note_to_editor
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
