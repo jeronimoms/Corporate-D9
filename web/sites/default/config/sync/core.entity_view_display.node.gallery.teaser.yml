@@ -1,0 +1,38 @@
+uuid: 202e3fb5-086c-43a7-a43d-ed650390ce18
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gallery.field_album_pictures
+    - field.field.node.gallery.field_cover_photo
+    - field.field.node.gallery.field_gallery_flickr_link
+    - field.field.node.gallery.field_photo_gallery_type
+    - field.field.node.gallery.field_publication_date
+    - field.field.node.gallery.field_section
+    - field.field.node.gallery.field_tags
+    - node.type.gallery
+  module:
+    - user
+id: node.gallery.teaser
+targetEntityType: node
+bundle: gallery
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  field_album_pictures: true
+  field_cover_photo: true
+  field_gallery_flickr_link: true
+  field_photo_gallery_type: true
+  field_publication_date: true
+  field_section: true
+  field_tags: true
+  langcode: true
+  search_api_excerpt: true

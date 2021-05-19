@@ -1,12 +1,10 @@
-uuid: a2ef3378-cbcd-4995-a02e-18be59b33eb5
+uuid: e148b2f8-c307-4737-a8f5-9ce822fa279c
 langcode: en
-status: false
+status: true
 dependencies: {  }
-_core:
-  default_config_hash: 2lo0hIx3RV2AgnE1fkdPLRQcYWGamMyouBoe2OiYk24
-id: search_block
-label: 'Search Block'
-selector: ''
+id: search_site_header_form
+label: 'Search Site Header Form'
+selector: '#edit-search-api-fulltext'
 minChar: 3
 autoSubmit: true
 autoRedirect: true
@@ -17,7 +15,7 @@ noResultLink: ''
 moreResultsLabel: 'View all results for [search-phrase].'
 moreResultsValue: '[search-phrase]'
 moreResultsLink: ''
-source: 'autocompletion_callbacks_nodes::nodes_autocompletion_callback'
+source: 'search_autocomplete::search_site_autocomplete'
 theme: basic-blue.css
 editable: true
-deletable: false
+deletable: true

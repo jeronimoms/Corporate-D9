@@ -26,9 +26,11 @@ jQuery(document).ready(function($){
 
 jQuery(document).ready(function($) {
   // Accordions
+  $(".wysiwyg_accordion h3:nth-child(1)").addClass('active');
+  $(".wysiwyg_accordion div:nth-child(2)").css('display','block');
   $(".wysiwyg_accordion h3").click(function(){
-    $(this).toggleClass("active");
-    $(this).next('.wysiwyg_accordion_panel').slideToggle();
+      $(this).toggleClass("active");
+      $(this).next('.wysiwyg_accordion_panel').slideToggle();
   });
 
   $(".sidebar-second .view-grouping .view-grouping-header").click(function(){

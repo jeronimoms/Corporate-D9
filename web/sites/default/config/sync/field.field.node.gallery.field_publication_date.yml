@@ -1,0 +1,24 @@
+uuid: 3474768b-55a9-4d7d-a4bc-da9111adbce6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.gallery
+  module:
+    - datetime
+id: node.gallery.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: gallery
+label: 'Publication date'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime
