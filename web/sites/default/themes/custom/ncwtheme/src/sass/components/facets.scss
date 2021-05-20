@@ -100,6 +100,7 @@
   h2.active{
     &::after {
       background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+      right: 18px;
     }
   }
 
