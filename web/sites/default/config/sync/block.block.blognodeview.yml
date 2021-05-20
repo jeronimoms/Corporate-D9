@@ -1,0 +1,27 @@
+uuid: 53f22708-b1fa-4b44-bda7-395915e836c5
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - ncwtheme
+id: blognodeview
+theme: ncwtheme
+region: top_header
+weight: -25
+provider: null
+plugin: 'block_content:38ef297f-2d02-44f1-b52a-5aef5e50a3e3'
+settings:
+  id: 'block_content:38ef297f-2d02-44f1-b52a-5aef5e50a3e3'
+  label: 'Blog node view'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /tools-and-resources/blog
+    negate: false
