@@ -38,6 +38,16 @@ jQuery(document).ready(function($) {
     $(this).next('.view-grouping-content').slideToggle();
   });
 
+  $(".sidebar-first #block-contenttypesearchsite-2 h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).next().next('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-contenttypesearchsite h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).next().next('.content').slideToggle();
+  });
+
 
   // Text resize
   $('#_biggify').on('click', function() {
