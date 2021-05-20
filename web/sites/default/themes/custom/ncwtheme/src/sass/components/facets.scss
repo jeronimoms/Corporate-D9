@@ -73,7 +73,7 @@
 }
 
 /* Facets Accordions */
-#block-contenttypesearchsite , #block-contenttypesearchsite-2{
+#block-topics-2 , #block-contenttypesearchsite-2{
   border:0;
   padding: 0;
   margin-top: 0;
@@ -81,6 +81,7 @@
   border-bottom: 10px solid #FFF;
   margin-bottom: 0;
   h2{
+    position: relative;
     background: $bg-color-blue-accordion;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;

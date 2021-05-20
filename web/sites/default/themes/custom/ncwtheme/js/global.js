@@ -40,12 +40,12 @@ jQuery(document).ready(function($) {
 
   $(".sidebar-first #block-contenttypesearchsite-2 h2").click(function(){
     $(this).toggleClass("active");
-    $(this).next().next('.content').slideToggle();
+    $(this).next('.content').slideToggle();
   });
 
-  $(".sidebar-first #block-contenttypesearchsite h2").click(function(){
+  $(".sidebar-first #block-topics-2 h2").click(function(){
     $(this).toggleClass("active");
-    $(this).next().next('.content').slideToggle();
+    $(this).next('.content').slideToggle();
   });
 
 

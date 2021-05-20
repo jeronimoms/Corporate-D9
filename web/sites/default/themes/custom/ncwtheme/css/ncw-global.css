@@ -552,7 +552,7 @@ div#sliding-popup {
 }
 
 /* Facets Accordions */
-#block-contenttypesearchsite, #block-contenttypesearchsite-2 {
+#block-topics-2, #block-contenttypesearchsite-2 {
   border: 0;
   padding: 0;
   margin-top: 0;
@@ -560,14 +560,15 @@ div#sliding-popup {
   border-bottom: 10px solid #FFF;
   margin-bottom: 0;
 }
-#block-contenttypesearchsite h2, #block-contenttypesearchsite-2 h2 {
+#block-topics-2 h2, #block-contenttypesearchsite-2 h2 {
+  position: relative;
   background: #e8eef7;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
   padding-left: 0.5rem;
   cursor: pointer;
 }
-#block-contenttypesearchsite h2::after, #block-contenttypesearchsite-2 h2::after {
+#block-topics-2 h2::after, #block-contenttypesearchsite-2 h2::after {
   content: "";
   position: absolute;
   width: 20px;
@@ -576,18 +577,18 @@ div#sliding-popup {
   top: 12px;
   right: 20px;
 }
-#block-contenttypesearchsite h2.active::after, #block-contenttypesearchsite-2 h2.active::after {
+#block-topics-2 h2.active::after, #block-contenttypesearchsite-2 h2.active::after {
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
 }
-#block-contenttypesearchsite .content, #block-contenttypesearchsite-2 .content {
+#block-topics-2 .content, #block-contenttypesearchsite-2 .content {
   background: #FFF;
   display: none;
 }
-#block-contenttypesearchsite .content ul, #block-contenttypesearchsite-2 .content ul {
+#block-topics-2 .content ul, #block-contenttypesearchsite-2 .content ul {
   list-style: none;
   padding-left: 0;
 }
-#block-contenttypesearchsite .content ul a, #block-contenttypesearchsite-2 .content ul a {
+#block-topics-2 .content ul a, #block-contenttypesearchsite-2 .content ul a {
   display: block;
   color: #57565b;
   font-size: 0.9rem;
