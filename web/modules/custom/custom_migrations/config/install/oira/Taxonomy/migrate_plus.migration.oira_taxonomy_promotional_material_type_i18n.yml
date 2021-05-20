@@ -38,7 +38,7 @@ process:
   langcode:
     plugin: static_map
     bypass: true
-    source: ltlanguage
+    source: language
     map:
       'pt': 'pt-pt'
       'no': 'nn'

@@ -93,6 +93,7 @@ process:
         target_id: tid
   uid: uid
   status: status
+  moderation_state: moderation_state
   created: created
   changed: changed
   promote: promote
