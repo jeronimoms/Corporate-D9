@@ -1976,18 +1976,27 @@ body.user-logged-in.toolbar-tray-open #header {
 .header-language-search ul[data-sa-theme=basic-blue] .ui-autocomplete-field-group.banner {
   background: none;
 }
-.header-language-search ul[data-sa-theme=basic-blue] .ui-autocomplete-field-group {
-  background: url("../images/separator_home.jpg") repeat-x scroll 43% 0 rgba(0, 0, 0, 0);
-  color: #000;
-  float: left;
+.header-language-search ul[data-sa-theme=basic-blue].ui-menu .ui-autocomplete-field-group.ui-menu-item {
   font-family: "Open Sans Condensed", sans-serif;
-  font-size: 1.15em;
+  font-size: 1rem;
+  padding-left: 0;
+  background: transparent;
+  color: #000 !important;
+  background: url("../images/separator_home.jpg") repeat-x scroll 43% 0 rgba(0, 0, 0, 0);
+  float: left;
   font-weight: lighter;
   margin: 0.5em 0 0 1em;
   padding: 1em 0 0.5em;
   width: 90%;
   border: 0;
   text-align: left;
+}
+.header-language-search ul[data-sa-theme=basic-blue].ui-menu .ui-autocomplete-field-group.ui-menu-item a {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.15rem;
+  padding-left: 0;
+  background: transparent;
+  color: #000 !important;
 }
 .header-language-search ul[data-sa-theme=basic-blue] .ui-menu-item-first {
   border: 0px;

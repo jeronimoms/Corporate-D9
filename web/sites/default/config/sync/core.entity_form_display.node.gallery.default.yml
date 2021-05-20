@@ -13,6 +13,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.gallery
   module:
+    - chosen_field
     - content_moderation
     - datetime
     - image
@@ -76,13 +77,9 @@ content:
     region: content
   field_tags:
     weight: 7
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   langcode:
     type: language_select
@@ -137,9 +134,9 @@ content:
     weight: 9
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
     region: content
     third_party_settings: {  }
   url_redirects:
