@@ -1,28 +1,28 @@
-uuid: de48ada9-5669-4305-a5e7-1eeb9a1c789c
+uuid: b0100244-88ca-483b-8150-9ea84f38d69a
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.content_type
+    - facets.facet.topics
   module:
     - facets
     - system
   theme:
     - ncwtheme
-id: contenttypesearchsite
+id: topics_2
 theme: ncwtheme
 region: sidebar_first
-weight: -12
+weight: 0
 provider: null
-plugin: 'facet_block:content_type'
+plugin: 'facet_block:topics'
 settings:
-  id: 'facet_block:content_type'
+  id: 'facet_block:topics'
   label: Topics
   provider: facets
   label_display: visible
-  block_id: contenttypesearchsite
+  block_id: topics_2
 visibility:
   request_path:
     id: request_path
-    pages: none
+    pages: /search/site
     negate: false
