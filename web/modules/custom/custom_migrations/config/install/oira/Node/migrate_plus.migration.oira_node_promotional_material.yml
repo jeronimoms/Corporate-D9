@@ -26,7 +26,6 @@ migration_dependencies:
 
 process:
   nid: tnid
-  vid: vid
   type:
     - plugin: default_value
       default_value: promotional_material              # -----  CHANGE
@@ -38,6 +37,7 @@ process:
   body: body
   uid: node_uid
   status: status
+  moderation_state: moderation_state
   created: created
   changed: changed
   promote: promote

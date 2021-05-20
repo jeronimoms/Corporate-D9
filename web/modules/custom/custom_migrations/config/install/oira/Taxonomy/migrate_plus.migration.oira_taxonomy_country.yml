@@ -13,7 +13,7 @@ audit: true
 migration_group: oira_migrate_tax   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
-  plugin: d7_taxonomy_term
+  plugin: d7_taxonomy_term_custom
   bundle: country               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
@@ -45,7 +45,10 @@ process:
   forum_container: is_container
   changed: timestamp
   langcode: language
-
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
+  path/alias: alias
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_iso2: field_iso2
   field_country_status:
@@ -58,7 +61,6 @@ process:
   field_ncw_fp_link:
     plugin: field_link
     source: field_ncw_fp_link
-  field_flag: field_flag # Image -- Error
 
 
 

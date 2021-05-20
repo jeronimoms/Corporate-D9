@@ -143,11 +143,14 @@ class VwHelper {
    *   The table name.
    */
   public function getModerationList($table) {
-    $query = $this->database->select("vesafe_workflow_$table", 'v')
-      ->condition('node_id', $this->getLastRevisionNode()->id(), '=')
-      ->fields('v', ['id', 'node_id', 'user_id', 'status', 'weight']);
-    $query->orderBy('v.weight');
-    return $query->execute()->fetchAll();
+    try {
+      $query = $this->database->select("vesafe_workflow_$table", 'v')
+        ->condition('node_id', $this->getLastRevisionNode()->id(), '=')
+        ->fields('v', ['id', 'node_id', 'user_id', 'status', 'weight']);
+      $query->orderBy('v.weight');
+      return $query->execute()->fetchAll();
+    } catch (\Exception $e) {
+    }
   }
 
   /**
@@ -229,9 +232,11 @@ class VwHelper {
    */
   public function getNextUser($table) {
     $users = $this->getModerationList($table);
-    foreach ($users as $i => $user) {
-      if ($user->user_id == $this->account->id()) {
-        return $this->entityTypeManager->getStorage('user')->load($users[($i + 1)]->user_id);
+    if ($users) {
+      foreach ($users as $i => $user) {
+        if ($user->user_id == $this->account->id()) {
+          return $this->entityTypeManager->getStorage('user')->load($users[($i + 1)]->user_id);
+        }
       }
     }
 

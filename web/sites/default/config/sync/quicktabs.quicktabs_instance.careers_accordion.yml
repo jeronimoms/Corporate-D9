@@ -1,0 +1,180 @@
+uuid: fbb543cf-bf50-4a65-b890-d4a1c4b3534b
+langcode: en
+status: true
+dependencies: {  }
+id: careers_accordion
+label: 'Careers accordion'
+renderer: accordion_tabs
+options:
+  quick_tabs:
+    class: ''
+    style: ''
+    ajax: false
+  accordion_tabs:
+    jquery_ui:
+      collapsible: true
+      heightStyle: auto
+hide_empty_tabs: false
+default_tab: 9999
+configuration_data:
+  -
+    title: 'Who we employ'
+    weight: 0
+    type: node_content
+    content:
+      view_content:
+        options:
+          vid: 25th_anniversary_articles
+          display: default
+          args: ''
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: '5330'
+          view_mode: teaser
+          hide_title: true
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+  -
+    title: 'Reserve lists'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: vacancies
+          display: page_5
+          args: ''
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+  -
+    title: 'Vacancies - Open'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: vacancies
+          display: page_1
+          args: ''
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+  -
+    title: 'Vacancies - Evaluation underway'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: vacancies
+          display: page_3
+          args: ''
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+  -
+    title: 'Vacancies - Completed'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: vacancies
+          display: page_2
+          args: ''
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+  -
+    title: Spontaneous
+    weight: 0
+    type: node_content
+    content:
+      view_content:
+        options:
+          vid: 25th_anniversary_articles
+          display: default
+          args: ''
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: '5332'
+          view_mode: teaser
+          hide_title: true
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+  -
+    title: Enquiries
+    weight: 0
+    type: node_content
+    content:
+      view_content:
+        options:
+          vid: 25th_anniversary_articles
+          display: default
+          args: ''
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: '5333'
+          view_mode: teaser
+          hide_title: true
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab

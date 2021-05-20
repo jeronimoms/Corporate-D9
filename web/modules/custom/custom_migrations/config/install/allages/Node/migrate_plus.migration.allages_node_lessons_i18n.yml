@@ -86,13 +86,18 @@ process:
   content_translation_source: source
   content_translation_outdated: translate
   ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
-  field_text_1: field_text_1
+  field_text_1:
+    - plugin: get
+      source: field_text_1
+  'field_text_1/0/format':
+    - plugin: default_value
+      default_value: basic_html
   field_text_2:
     - plugin: get
       source: field_text_2
   'field_text_2/0/format':
     - plugin: default_value
-      default_value: restricted_html
+      default_value: basic_html
   field_profile:
     - plugin: sub_process
       source: field_profile

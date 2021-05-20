@@ -141,7 +141,7 @@ process:
   field_website/0/uri: field_website
   field_orgtype:
     -
-      plugin: hcm_taxonomy_term_name
+      plugin: hcm_taxonomy_term_type
       source: field_orgtype
       vocabulary: organisation_type
       create: true
@@ -186,13 +186,13 @@ process:
       source: field_logo
   field_partner_type:
     -
-      plugin: hcm_taxonomy_term_name
+      plugin: hcm_taxonomy_term_type
       source: field_partner_type
       vocabulary: partner_types
       create: true
   field_workbench_access:
     -
-      plugin: hcm_taxonomy_term_name
+      plugin: hcm_taxonomy_term_type
       source: title
       vocabulary: section
       create: true

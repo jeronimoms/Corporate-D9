@@ -1,0 +1,29 @@
+uuid: fdb12328-67f3-4263-9355-43940f6a584f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.press_contacts
+  module:
+    - system
+    - views
+  theme:
+    - ncwtheme
+id: views_block__press_contacts_block_1
+theme: ncwtheme
+region: sidebar_second
+weight: -25
+provider: null
+plugin: 'views_block:press_contacts-block_1'
+settings:
+  id: 'views_block:press_contacts-block_1'
+  label: 'Press contacts'
+  provider: views
+  label_display: visible
+  views_label: 'Press contacts'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/press-room
+    negate: false
