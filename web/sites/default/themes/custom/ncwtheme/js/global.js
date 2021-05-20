@@ -104,6 +104,12 @@ jQuery(document).ready(function($) {
     $(this).toggleClass('no-active');
   });
 
+  //Breadcumbs - Fix &amp;
+  $('.breadcrumb-item a').each(function() {
+    var text = $(this).text();
+    $(this).text(text.replace('&amp;', '&'));
+  });
+
 });
 
 //Move Language Selector to the menu responsive
