@@ -151,16 +151,14 @@ body.user-logged-in.toolbar-tray-open{
     clear: both;
   }
 
+  .views-exposed-form{
+    padding-bottom: 0;
+  }
+
   /* Language Selector - Module - Language Switcher Dropdown */
   .block-lang-dropdown{
     float: right;
     margin-right: 20px;
-  }
-
-  /* Search input text box */
-  #block-ncwtheme-search{
-    float: right;
-    clear: both;
   }
 
   /*Search autocomplete*/
