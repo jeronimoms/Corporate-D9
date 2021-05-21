@@ -101,6 +101,7 @@ class VwApproveForm extends FormBase {
     // Update the status of current user.
     $this->helper->approveUser($form_state->get('vesafe_workflow_table'));
 
+
     // If all users approved the content, then set the node as the.
     // next state defined in the list.
     if ($this->helper->getModerationListStatus($form_state->get('vesafe_workflow_table'))) {
