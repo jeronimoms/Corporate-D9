@@ -16,34 +16,37 @@
       margin-right: 30px;
       padding: 0 0 0 10px;
     }
-    #block-searchsite{
-      position: relative;
-      padding: 0;
-      clear: both;
-      float: right;
-      margin-right: 50px;
-      #edit-search-api-fulltext, #edit-keys--2{
-        width: 140px;
-        height: 21px;
-        margin-right: 0;
-        border-radius: 0;
-        margin-top: 0;
-        background: $bg-color-blue;
-        color: $text-color-white;
-      }
-      #edit-actions--2{
-        position: absolute;
-        top: 0;
-        right: -30px;
-        .btn-primary{
-          background: url(../images/searchico.png) no-repeat scroll 1px 1px transparent;
-          text-indent: -99999px;
-        }
-      }
-    }
   }
 }
 
+#block-searchsite{
+  position: relative;
+  padding: 0;
+  clear: both;
+  float: right;
+  margin-right: 50px;
+  #edit-search-api-fulltext, #edit-keys--2{
+    width: 140px;
+    height: 21px;
+    margin-right: 0;
+    border-radius: 0;
+    margin-top: 0;
+    background: $bg-color-blue;
+    color: $text-color-white;
+    padding: 0 10px 0 10px;
+  }
+  #edit-actions--2{
+    position: absolute;
+    top: 0;
+    right: -46px;
+    .btn-primary{
+      width: 35px;
+      background: url(../images/searchico.png) no-repeat scroll 1px 1px transparent;
+      text-indent: -99999px;
+      outline: 0;
+    }
+  }
+}
 
 /* Common styles to Fields */
 .views-exposed-form{

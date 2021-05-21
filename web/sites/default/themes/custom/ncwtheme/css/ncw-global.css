@@ -612,14 +612,15 @@ div#sliding-popup {
   margin-right: 30px;
   padding: 0 0 0 10px;
 }
-#header .header-language-search #block-searchsite {
+
+#block-searchsite {
   position: relative;
   padding: 0;
   clear: both;
   float: right;
   margin-right: 50px;
 }
-#header .header-language-search #block-searchsite #edit-search-api-fulltext, #header .header-language-search #block-searchsite #edit-keys--2 {
+#block-searchsite #edit-search-api-fulltext, #block-searchsite #edit-keys--2 {
   width: 140px;
   height: 21px;
   margin-right: 0;
@@ -627,15 +628,18 @@ div#sliding-popup {
   margin-top: 0;
   background: #003399;
   color: #FFF;
+  padding: 0 10px 0 10px;
 }
-#header .header-language-search #block-searchsite #edit-actions--2 {
+#block-searchsite #edit-actions--2 {
   position: absolute;
   top: 0;
-  right: -30px;
+  right: -46px;
 }
-#header .header-language-search #block-searchsite #edit-actions--2 .btn-primary {
+#block-searchsite #edit-actions--2 .btn-primary {
+  width: 35px;
   background: url(../images/searchico.png) no-repeat scroll 1px 1px transparent;
   text-indent: -99999px;
+  outline: 0;
 }
 
 /* Common styles to Fields */
@@ -1996,7 +2000,6 @@ body.user-logged-in.toolbar-tray-open #header {
   display: flex;
   flex-direction: column;
   /* Language Selector - Module - Language Switcher Dropdown */
-  /* Search input text box */
   /*Search autocomplete*/
 }
 .header-language-search .row {
@@ -2008,13 +2011,12 @@ body.user-logged-in.toolbar-tray-open #header {
 .header-language-search .content.container-inline {
   clear: both;
 }
+.header-language-search .views-exposed-form {
+  padding-bottom: 0;
+}
 .header-language-search .block-lang-dropdown {
   float: right;
   margin-right: 20px;
-}
-.header-language-search #block-ncwtheme-search {
-  float: right;
-  clear: both;
 }
 .header-language-search #ui-id-1 {
   left: -211px !important;
@@ -2494,7 +2496,7 @@ body.user-logged-in.toolbar-tray-open #header {
   #block-headermenu {
     position: absolute;
     width: auto;
-    left: 302px;
+    left: 225px;
     z-index: 1;
   }
   #block-headermenu ul {
@@ -2526,40 +2528,74 @@ body.user-logged-in.toolbar-tray-open #header {
     color: #FFF;
   }
 
-  /* Search */
-  #block-ncwtheme-search {
-    position: absolute;
-    top: 9px;
-    right: 25px;
-    z-index: 9;
-  }
-
-  #edit-keys, #edit-keys--2 {
+  #edit-search-api-fulltext {
     display: none;
   }
 
-  #edit-keys.activate, #edit-keys--2.activate {
+  #edit-search-api-fulltext.activate {
     display: block;
     margin-right: 0px;
     width: 150px;
     margin-top: -5px;
   }
 
-  #edit-actions {
+  .nav-link--en-news-events {
+    text-indent: -9999px;
+    background: url(../images/ico-news-events-menu.png) 1px 9px no-repeat;
+    width: 25px;
+    height: 35px;
+  }
+
+  #block-searchsite {
+    position: relative;
+    padding: 0;
+    clear: both;
+    float: right;
+    position: absolute;
+    right: 1px;
+    width: 58px;
+    top: 12px;
+  }
+  #block-searchsite #edit-actions, #block-searchsite #edit-actions--2 {
     position: relative;
   }
-  #edit-actions .btn-primary {
+  #block-searchsite #edit-actions .btn-primary, #block-searchsite #edit-actions--2 .btn-primary {
     background: url(../images/menu-search-ico.png) no-repeat scroll 1px 1px transparent;
     pointer-events: none;
     cursor: pointer;
     text-indent: -9999px;
+    position: relative;
+    top: 5px;
+    right: -27px;
   }
-  #edit-actions .btn-primary.activate {
+  #block-searchsite #edit-actions .btn-primary.activate, #block-searchsite #edit-actions--2 .btn-primary.activate {
     pointer-events: auto;
     cursor: pointer;
   }
+
+  #block-searchsite #edit-search-api-fulltext, #block-searchsite #edit-keys--2 {
+    width: 140px;
+    height: 21px;
+    margin-right: 0;
+    border-radius: 0;
+    margin-top: 0;
+    color: #000;
+    padding: 0 10px 0 10px;
+    position: absolute;
+    right: -14px;
+    top: 7px;
+    background: #FFF;
+    z-index: 99;
+  }
 }
 /* End Media 991px */
+.one-column .view-landing-menu .view-col {
+  width: 23.2%;
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+}
+
 .two-column .view-landing-menu .view-col {
   width: 31%;
   float: left;
@@ -2612,6 +2648,34 @@ body.user-logged-in.toolbar-tray-open #header {
   height: auto;
 }
 
+@media only screen and (max-width: 1024px) {
+  .one-column .view-landing-menu .view-col {
+    width: 31%;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .two-column .view-landing-menu .view-col, .three-column .view-landing-menu .view-col {
+    width: 46%;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .one-column .view-landing-menu .view-col {
+    width: 46%;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .one-column .view-landing-menu .view-col, .two-column .view-landing-menu .view-col, .three-column .view-landing-menu .view-col {
+    width: 98%;
+  }
+}
 .page-user-login form.user-login-form {
   max-width: 50%;
   padding-top: 1rem;
