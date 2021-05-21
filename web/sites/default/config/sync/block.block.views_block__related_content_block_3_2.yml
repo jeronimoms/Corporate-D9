@@ -1,4 +1,4 @@
-uuid: 7628b4ba-5ebe-4256-b409-ab76fe9f57ef
+uuid: 7ce5174b-6d0c-4e4a-8f21-764cea286da3
 langcode: en
 status: true
 dependencies:
@@ -6,14 +6,13 @@ dependencies:
     - views.view.related_content
   module:
     - ctools
-    - system
     - views
   theme:
     - ncwtheme
-id: views_block__related_content_block_3
+id: views_block__related_content_block_3_2
 theme: ncwtheme
 region: sidebar_second_related
-weight: -26
+weight: -24
 provider: null
 plugin: 'views_block:related_content-block_3'
 settings:
@@ -30,18 +29,6 @@ visibility:
     bundles:
       25th_anniversary: 25th_anniversary
       article: article
-      events: events
-      guideline: guideline
-      highlight: highlight
-      infographic: infographic
-      news: news
-      press_release: press_release
-      seminar: seminar
-      wiki_page: wiki_page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  request_path:
-    id: request_path
-    pages: ''
-    negate: true

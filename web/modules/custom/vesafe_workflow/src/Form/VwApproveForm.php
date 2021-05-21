@@ -106,6 +106,11 @@ class VwApproveForm extends FormBase {
     if ($this->helper->getModerationListStatus($form_state->get('vesafe_workflow_table'))) {
       $this->helper->setNodeModerationState($form_state->get('vesafe_workflow_list_configuration')['workflow_state_next']);
     }
+    else {
+      // Auto save the current node to run the email handle.
+      $node = $this->helper->getLastRevisionNode();
+      $node->save();
+    }
   }
 
   /**

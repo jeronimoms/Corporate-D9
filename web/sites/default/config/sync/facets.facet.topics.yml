@@ -1,4 +1,4 @@
-uuid: faaef921-9a07-45e4-8994-039b218ec4f3
+uuid: 139b7027-acfd-4efd-a11f-0d69c92c1e4f
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
     - views.view.search
   module:
     - search_api
-id: topics_site_search_
-name: 'Topics (Site search)'
-url_alias: topics_site_search_
+id: topics
+name: Topics
+url_alias: topics
 weight: 0
 min_count: 1
 show_only_one_result: false
@@ -23,14 +23,14 @@ widget:
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
-    show_reset_link: false
+    show_reset_link: true
     reset_text: 'Show all'
-    hide_reset_when_no_selection: false
+    hide_reset_when_no_selection: true
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
 enable_parent_when_child_gets_disabled: true
-hard_limit: 50
+hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
@@ -40,13 +40,6 @@ processor_configs:
       sort: 20
     settings:
       sort: ASC
-  count_limit:
-    processor_id: count_limit
-    weights:
-      build: 50
-    settings:
-      minimum_items: 1
-      maximum_items: null
   count_widget_order:
     processor_id: count_widget_order
     weights:
@@ -58,7 +51,12 @@ processor_configs:
     weights:
       sort: 40
     settings:
-      sort: DESC
+      sort: ASC
+  list_item:
+    processor_id: list_item
+    weights:
+      build: 5
+    settings: {  }
   translate_entity:
     processor_id: translate_entity
     weights:
