@@ -34,6 +34,10 @@
   color: #FFF;
 }
 
+.text-color-facets {
+  color: #57565b;
+}
+
 /* background colours */
 .bg-color-blue {
   background: #003399;
@@ -545,6 +549,51 @@ div#sliding-popup {
 }
 .facets-widget-checkbox .checkbox {
   margin-top: 0;
+}
+
+/* Facets Accordions */
+#block-topics-2, #block-contenttypesearchsite-2 {
+  border: 0;
+  padding: 0;
+  margin-top: 0;
+  border-radius: 0;
+  border-bottom: 10px solid #FFF;
+  margin-bottom: 0;
+}
+#block-topics-2 h2, #block-contenttypesearchsite-2 h2 {
+  position: relative;
+  background: #e8eef7;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  cursor: pointer;
+}
+#block-topics-2 h2::after, #block-contenttypesearchsite-2 h2::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 17px;
+  background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+  top: 12px;
+  right: 20px;
+}
+#block-topics-2 h2.active::after, #block-contenttypesearchsite-2 h2.active::after {
+  background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+  right: 18px;
+}
+#block-topics-2 .content, #block-contenttypesearchsite-2 .content {
+  background: #FFF;
+  display: none;
+}
+#block-topics-2 .content ul, #block-contenttypesearchsite-2 .content ul {
+  list-style: none;
+  padding-left: 0;
+}
+#block-topics-2 .content ul a, #block-contenttypesearchsite-2 .content ul a {
+  display: block;
+  color: #57565b;
+  font-size: 0.9rem;
+  padding: 5px 0 5px 0.5rem;
 }
 
 /* Header Fields - Language selector - Search */
