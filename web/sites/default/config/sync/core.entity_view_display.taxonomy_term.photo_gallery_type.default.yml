@@ -1,0 +1,35 @@
+uuid: 27847b63-dfcb-467c-b9dd-b1b50e7468a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.photo_gallery_type.field_image
+    - taxonomy.vocabulary.photo_gallery_type
+  module:
+    - image
+    - text
+id: taxonomy_term.photo_gallery_type.default
+targetEntityType: taxonomy_term
+bundle: photo_gallery_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: image
+    weight: 1
+    region: content
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

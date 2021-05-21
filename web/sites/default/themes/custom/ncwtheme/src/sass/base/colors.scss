@@ -15,6 +15,7 @@ $text-color-grey: #57575a;
 $text-color-grey-h3: #5a5a5b;
 $text-color-grey-light: #7c7d81;
 $text-color-white: #FFF;
+$text-color-facets: #57565b;
 
 .text-color-blue{
   color: $text-color-blue;
@@ -36,6 +37,9 @@ $text-color-white: #FFF;
 }
 .text-color-white{
   color: $text-color-white;
+}
+.text-color-facets{
+  color: $text-color-facets;
 }
 
 /* background colours */
