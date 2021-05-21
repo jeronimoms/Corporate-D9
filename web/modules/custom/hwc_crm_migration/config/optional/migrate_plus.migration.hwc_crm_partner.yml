@@ -18,7 +18,7 @@ dependencies:
 source:
   plugin: url
   data_parser_plugin: xml
-  urls: public://hwc_crm_migration/xml/OIRA_GroupPublicProfile.xml
+  urls: /var/local/hwc/crm_data/OIRA_GroupPublicProfile.xml
   content_type: partner
   ids:
     field_guid_organisation:
