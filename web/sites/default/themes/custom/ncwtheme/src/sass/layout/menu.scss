@@ -128,7 +128,7 @@
   #block-headermenu{
     position: absolute;
     width: auto;
-    left: 302px;
+    left: 225px;
     z-index: 1;
     ul {
       display: block;
@@ -159,37 +159,64 @@
     color: $text-color-white;
   }
 
-  /* Search */
-  #block-ncwtheme-search {
-    position: absolute;
-    top: 9px;
-    right: 25px;
-    z-index: 9;
-  }
-
-  #edit-keys, #edit-keys--2 {
+  #edit-search-api-fulltext {
     display: none;
   }
 
-  #edit-keys.activate, #edit-keys--2.activate {
+  #edit-search-api-fulltext.activate {
     display: block;
     margin-right: 0px;
     width: 150px;
     margin-top: -5px;
   }
 
-  #edit-actions {
-    position: relative;
-    .btn-primary {
-      background: url(../images/menu-search-ico.png) no-repeat scroll 1px 1px transparent;
-      pointer-events: none;
-      cursor: pointer;
-      text-indent: -9999px;
-    }
-    .btn-primary.activate {
-      pointer-events: auto;
-      cursor: pointer;
+  .nav-link--en-news-events{
+    text-indent: -9999px;
+    background: url(../images/ico-news-events-menu.png)1px 9px no-repeat;
+    width: 25px;
+    height: 35px;
+  }
+  #block-searchsite{
+      position: relative;
+      padding: 0;
+      clear: both;
+      float: right;
+      position: absolute;
+      right: 1px;
+      width: 58px;
+      top: 12px;
+    #edit-actions , #edit-actions--2{
+      position: relative;
+      .btn-primary {
+        background: url(../images/menu-search-ico.png) no-repeat scroll 1px 1px transparent;
+        pointer-events: none;
+        cursor: pointer;
+        text-indent: -9999px;
+        position: relative;
+        top: 5px;
+        right: -27px;
+      }
+      .btn-primary.activate {
+        pointer-events: auto;
+        cursor: pointer;
+      }
     }
   }
+
+  #block-searchsite #edit-search-api-fulltext, #block-searchsite #edit-keys--2 {
+    width: 140px;
+    height: 21px;
+    margin-right: 0;
+    border-radius: 0;
+    margin-top: 0;
+    color: #000;
+    padding: 0 10px 0 10px;
+    position: absolute;
+    right: -14px;
+    top: 7px;
+    background: #FFF;
+    z-index: 99;
+  }
+
 
 } /* End Media 991px */
