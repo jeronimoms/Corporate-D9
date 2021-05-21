@@ -639,6 +639,7 @@ div#sliding-popup {
   width: 35px;
   background: url(../images/searchico.png) no-repeat scroll 1px 1px transparent;
   text-indent: -99999px;
+  outline: 0;
 }
 
 /* Common styles to Fields */
@@ -2588,6 +2589,13 @@ body.user-logged-in.toolbar-tray-open #header {
   }
 }
 /* End Media 991px */
+.one-column .view-landing-menu .view-col {
+  width: 23.2%;
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+}
+
 .two-column .view-landing-menu .view-col {
   width: 31%;
   float: left;
@@ -2640,6 +2648,34 @@ body.user-logged-in.toolbar-tray-open #header {
   height: auto;
 }
 
+@media only screen and (max-width: 1024px) {
+  .one-column .view-landing-menu .view-col {
+    width: 31%;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .two-column .view-landing-menu .view-col, .three-column .view-landing-menu .view-col {
+    width: 46%;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .one-column .view-landing-menu .view-col {
+    width: 46%;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .one-column .view-landing-menu .view-col, .two-column .view-landing-menu .view-col, .three-column .view-landing-menu .view-col {
+    width: 98%;
+  }
+}
 .page-user-login form.user-login-form {
   max-width: 50%;
   padding-top: 1rem;
