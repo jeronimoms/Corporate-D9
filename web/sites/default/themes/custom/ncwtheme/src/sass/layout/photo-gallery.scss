@@ -1,0 +1,54 @@
+.view-photo-gallery-album{
+  .gallery-item-view{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    .views-field-name{
+      display: flex;
+      height: 100%;
+      background: $bg-color-blue;
+      h2{
+        line-height: 22px;
+        padding: 1rem;
+        a{
+          font-size: 0.9rem;
+          color: $text-color-white;
+        }
+      }
+    }
+    img{
+      width: 100%;
+      height: auto;
+      max-height: 234px;
+    }
+  }
+}
+
+.field--type-image.field--name-field-cover-photo{
+  float: none;
+  width: 100%;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.field--name-field-gallery-link{
+  width: 100%;
+  clear: both;
+  a{
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}
+
+.node{
+  .field--name-field-album-pictures.field--type-image{
+    display: flex;
+    margin-top: 1rem;
+    .field__item{
+      margin-right: 1rem;
+    }
+  }
+}
+
