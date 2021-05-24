@@ -1,0 +1,30 @@
+uuid: af4509f5-79d5-43a9-af7c-7a9bae042b46
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4c9f0469-3f98-48c8-92bb-8cc02d5536a7'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: headerthesaurus
+theme: ncwtheme
+region: content
+weight: -21
+provider: null
+plugin: 'block_content:4c9f0469-3f98-48c8-92bb-8cc02d5536a7'
+settings:
+  id: 'block_content:4c9f0469-3f98-48c8-92bb-8cc02d5536a7'
+  label: 'Header Thesaurus'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/tools-and-resources/eu-osha-thesaurus\r\n/tools-and-resources/eu-osha-thesaurus/hierarchical\r\n/tools-and-resources/eu-osha-thesaurus/alphabetical"
+    negate: false

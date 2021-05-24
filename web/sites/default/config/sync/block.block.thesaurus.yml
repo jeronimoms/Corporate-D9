@@ -1,0 +1,36 @@
+uuid: 8fda2881-9236-4f1f-a52f-ad74c4b1d584
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.thesaurus
+  module:
+    - menu_block
+    - system
+  theme:
+    - ncwtheme
+id: thesaurus
+theme: ncwtheme
+region: content
+weight: -17
+provider: null
+plugin: 'menu_block:thesaurus'
+settings:
+  id: 'menu_block:thesaurus'
+  label: Thesaurus
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'thesaurus:'
+  suggestion: thesaurus
+  label_type: block
+  label_link: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/tools-and-resources/eu-osha-thesaurus\r\n/tools-and-resources/eu-osha-thesaurus/hierarchical\r\n/tools-and-resources/eu-osha-thesaurus/alphabetical"
+    negate: false
