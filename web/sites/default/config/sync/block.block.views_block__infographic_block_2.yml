@@ -1,0 +1,30 @@
+uuid: 70b1cd33-6f4c-4c9a-8b7f-376b51b4e902
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.infographic
+  module:
+    - system
+    - views
+  theme:
+    - ncwtheme
+id: views_block__infographic_block_2
+theme: ncwtheme
+region: content
+weight: -16
+provider: null
+plugin: 'views_block:infographic-block_2'
+settings:
+  id: 'views_block:infographic-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/5429\r\n/node/5429/*\r\n/tools-and-publications/infographics/*\r\n/tools-and-publications/infographics"
+    negate: false
