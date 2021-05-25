@@ -1,0 +1,15 @@
+uuid: 8432729f-5d09-4891-8d74-7f30f104e49b
+langcode: en
+status: true
+dependencies: {  }
+id: views
+label: 'Photo Gallery'
+description: ''
+entityType: node
+entityBundle: _none
+language: und
+breadcrumbPaths: "/about-eu-osha\r\n/photo-gallery"
+breadcrumbTitles: "About EU-OSHA\r\nPhoto Gallery"
+type: '2'
+pathPattern: '/photo-gallery/*'
+extraCacheContexts: ''
