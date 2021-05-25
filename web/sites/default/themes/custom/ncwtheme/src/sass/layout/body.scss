@@ -141,7 +141,27 @@ span.pages{
   font-weight: normal;
 }
 
-/* Links introduction title Highlight, News and Events */
+.view-header{
+  .back-to-link {
+    float: right;
+    font-weight: 600;
+    background: url(../images/arrow-back.png) no-repeat 1px 11px;
+    padding-left: 25px;
+    font-size: 0.9rem;
+    padding-top: 5px;
+  }
+}
+
+.back-to-link {
+  float: right;
+  font-weight: 600;
+  background: url(../images/arrow-back.png) no-repeat 1px 15px;
+  padding-left: 25px;
+  font-size: 0.9rem;
+  padding-top: 10px;
+}
+
+  /* Links introduction title Highlight, News and Events */
 body {
   ul {
     li {

@@ -1265,6 +1265,24 @@ span.pages {
   font-weight: normal;
 }
 
+.view-header .back-to-link {
+  float: right;
+  font-weight: 600;
+  background: url(../images/arrow-back.png) no-repeat 1px 11px;
+  padding-left: 25px;
+  font-size: 0.9rem;
+  padding-top: 5px;
+}
+
+.back-to-link {
+  float: right;
+  font-weight: 600;
+  background: url(../images/arrow-back.png) no-repeat 1px 15px;
+  padding-left: 25px;
+  font-size: 0.9rem;
+  padding-top: 10px;
+}
+
 /* Links introduction title Highlight, News and Events */
 body ul li .introduction-title a {
   font-family: "Open Sans Condensed", sans-serif;
@@ -2676,28 +2694,47 @@ body.user-logged-in.toolbar-tray-open #header {
     width: 98%;
   }
 }
-.view-photo-gallery-album .gallery-item-view {
+.page-view-photo-gallery h1 {
+  float: left;
+  width: 80%;
+}
+
+.view-photo-gallery-album .view-content, .view-photo-gallery .view-content {
+  clear: both;
+}
+.view-photo-gallery-album .gallery-item-view, .view-photo-gallery .gallery-item-view {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
 }
-.view-photo-gallery-album .gallery-item-view .views-field-name {
+.view-photo-gallery-album .gallery-item-view .views-field-field-publication-date, .view-photo-gallery .gallery-item-view .views-field-field-publication-date {
+  background: #003399;
+  padding: 1rem 1rem 0 1rem;
+}
+.view-photo-gallery-album .gallery-item-view .views-field-field-publication-date .datetime, .view-photo-gallery .gallery-item-view .views-field-field-publication-date .datetime {
+  color: #FFF;
+}
+.view-photo-gallery-album .gallery-item-view .views-field-name, .view-photo-gallery-album .gallery-item-view .views-field-title, .view-photo-gallery .gallery-item-view .views-field-name, .view-photo-gallery .gallery-item-view .views-field-title {
   display: flex;
   height: 100%;
   background: #003399;
 }
-.view-photo-gallery-album .gallery-item-view .views-field-name h2 {
+.view-photo-gallery-album .gallery-item-view .views-field-name h2, .view-photo-gallery-album .gallery-item-view .views-field-title h2, .view-photo-gallery .gallery-item-view .views-field-name h2, .view-photo-gallery .gallery-item-view .views-field-title h2 {
   line-height: 22px;
   padding: 1rem;
 }
-.view-photo-gallery-album .gallery-item-view .views-field-name h2 a {
+.view-photo-gallery-album .gallery-item-view .views-field-name h2 a, .view-photo-gallery-album .gallery-item-view .views-field-title h2 a, .view-photo-gallery .gallery-item-view .views-field-name h2 a, .view-photo-gallery .gallery-item-view .views-field-title h2 a {
   font-size: 0.9rem;
   color: #FFF;
 }
-.view-photo-gallery-album .gallery-item-view img {
+.view-photo-gallery-album .gallery-item-view img, .view-photo-gallery .gallery-item-view img {
   width: 100%;
   height: auto;
   max-height: 234px;
+}
+
+.view-photo-gallery .gallery-item-view .views-field-title h2 {
+  padding: 0 1rem 1rem 1rem;
 }
 
 .field--type-image.field--name-field-cover-photo {
@@ -3308,6 +3345,12 @@ body.node--type-publication {
   }
 }
 /* End Media 768px */
+@media only screen and (max-width: 576px) {
+  .view-photo-gallery-album .gallery-item-view img, .view-photo-gallery .gallery-item-view img {
+    max-height: none;
+  }
+}
+/* End Media 480px */
 @media only screen and (max-width: 480px) {
   /* Page - Highlight, News and Events content link */
   .news-events #main ul li {
