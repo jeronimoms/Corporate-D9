@@ -12,7 +12,7 @@ dependencies:
 id: exposedformthesaurus_front_indexedthesaurus_search
 theme: ncwtheme
 region: content
-weight: -19
+weight: -20
 provider: null
 plugin: 'views_exposed_filter_block:thesaurus_front_indexed-thesaurus_search'
 settings:
@@ -24,5 +24,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /tools-and-resources/eu-osha-thesaurus
+    pages: "/tools-and-resources/eu-osha-thesaurus\r\n/tools-and-resources/eu-osha-thesaurus/hierarchical\r\n/tools-and-resources/eu-osha-thesaurus/alphabetical"
     negate: false
