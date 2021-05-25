@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.gallery.field_album_pictures
     - field.field.node.gallery.field_cover_photo
-    - field.field.node.gallery.field_gallery_flickr_link
+    - field.field.node.gallery.field_gallery_link
     - field.field.node.gallery.field_photo_gallery_type
     - field.field.node.gallery.field_publication_date
     - field.field.node.gallery.field_section
@@ -46,8 +46,8 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
-  field_gallery_flickr_link:
-    weight: 5
+  field_gallery_link:
+    weight: 26
     settings:
       placeholder_url: ''
       placeholder_title: ''
