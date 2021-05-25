@@ -26,7 +26,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -47,7 +47,7 @@ content:
     type: image_image
     region: content
   field_gallery_link:
-    weight: 26
+    weight: 13
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -55,7 +55,7 @@ content:
     type: link_default
     region: content
   field_photo_gallery_type:
-    weight: 8
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -76,27 +76,27 @@ content:
     type: options_select
     region: content
   field_tags:
-    weight: 7
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   langcode:
     type: language_select
-    weight: 6
+    weight: 5
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 15
+    weight: 11
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -104,17 +104,10 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 8
     region: content
     third_party_settings: {  }
   status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
-    region: content
-    third_party_settings: {  }
-  sticky:
     type: boolean_checkbox
     settings:
       display_label: true
@@ -131,7 +124,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 15
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -140,8 +133,9 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  sticky: true
