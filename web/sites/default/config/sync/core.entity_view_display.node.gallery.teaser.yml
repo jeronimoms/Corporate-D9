@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.gallery.field_album_pictures
     - field.field.node.gallery.field_cover_photo
-    - field.field.node.gallery.field_gallery_flickr_link
+    - field.field.node.gallery.field_gallery_link
     - field.field.node.gallery.field_photo_gallery_type
     - field.field.node.gallery.field_publication_date
     - field.field.node.gallery.field_section
@@ -29,7 +29,7 @@ hidden:
   breadcrumbs: true
   field_album_pictures: true
   field_cover_photo: true
-  field_gallery_flickr_link: true
+  field_gallery_link: true
   field_photo_gallery_type: true
   field_publication_date: true
   field_section: true

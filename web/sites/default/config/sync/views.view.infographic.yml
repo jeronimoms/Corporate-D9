@@ -4,15 +4,14 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_image_media
     - field.storage.node.field_tags
     - field.storage.node.field_thumbnail_media
-    - image.style.infographic_thumbnail
     - image.style.medium
     - node.type.infographic
     - taxonomy.vocabulary.tags
   module:
     - datetime
+    - entityreference_extensions
     - media
     - node
     - taxonomy
@@ -43,7 +42,7 @@ display:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: true
+          distinct: false
           replica: false
           query_comment: ''
           query_tags: {  }
@@ -521,8 +520,6 @@ display:
         arguments: false
         fields: false
         pager: false
-        style: false
-        row: false
       arguments:
         field_tags_target_id:
           id: field_tags_target_id
@@ -531,20 +528,16 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          default_action: default
+          default_action: ignore
           exception:
             value: all
             title_enable: false
             title: All
           title_enable: false
           title: ''
-          default_argument_type: taxonomy_tid
+          default_argument_type: fixed
           default_argument_options:
-            node: true
-            anyall: ','
-            term_page: '0'
-            limit: false
-            vids: {  }
+            argument: ''
           default_argument_skip_url: false
           summary_options:
             base_path: ''
@@ -634,70 +627,6 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-        field_image_media:
-          id: field_image_media
-          table: node__field_image_media
-          field: field_image_media
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
-          settings:
-            image_style: infographic_thumbnail
-            image_link: content
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         field_thumbnail_media:
           id: field_thumbnail_media
           table: node__field_thumbnail_media
@@ -742,14 +671,14 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: '{{ field_image_media }}'
+          empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: infographic_thumbnail
+            image_style: medium
             image_link: content
           group_column: target_id
           group_columns: {  }
@@ -828,15 +757,6 @@ display:
         type: none
         options:
           offset: 0
-      style:
-        type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-      row:
-        type: fields
-        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -846,7 +766,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_image_media'
         - 'config:field.storage.node.field_thumbnail_media'
     deleted: false
   block_3:
@@ -879,10 +798,10 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: true
-            text: ' <a href="/node/5429/{{ field_tags__target_id }}">{{ field_tags }}</a> |'
+            text: '<a href="/node/5429?tid={{ field_tags__target_id }}"> {{ field_tags }}</a>'
             make_link: false
             path: '/node/5429?tid={{ field_tags__target_id }}'
             absolute: false
@@ -895,7 +814,7 @@ display:
             link_class: ''
             prefix: ''
             suffix: ''
-            target: ''
+            target: '/node/5429?tid={{ field_tags__target_id }}'
             nl2br: false
             max_length: 0
             word_boundary: true
@@ -920,9 +839,17 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
+          type: entity_reference_label_delta
           settings:
-            link: false
+            link: 0
+            limit:
+              number: ''
+              offset: null
+              reverse: false
+              limit_before_sort: false
+            sort:
+              field: ''
+              asc: false
           group_column: target_id
           group_columns: {  }
           group_rows: false
@@ -934,78 +861,21 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
       pager:
         type: none
         options:
           offset: 0
-      group_by: false
+      group_by: true
       sorts: {  }
       style:
         type: default
         options:
-          grouping:
-            -
-              field: field_tags
-              rendered: false
-              rendered_strip: false
+          grouping: {  }
           row_class: ''
-          default_row_class: false
+          default_row_class: true
       row:
         type: fields
-        options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:

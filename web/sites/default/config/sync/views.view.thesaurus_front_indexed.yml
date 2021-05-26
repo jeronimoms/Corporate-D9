@@ -8,10 +8,14 @@ dependencies:
     - search_api.index.thesaurus_term_index
   module:
     - better_exposed_filters
+    - csv_serialization
     - pagerer
+    - rest
     - search_api
+    - serialization
     - text
     - user
+    - views_data_export
 id: thesaurus_front_indexed
 label: 'Thesaurus front indexed'
 module: views
@@ -469,19 +473,34 @@ display:
           group: 1
           exposed: false
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: search_api_language_op
+            label: 'Item language'
             description: ''
             use_operator: false
-            operator: ''
+            operator: search_api_language_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
+            identifier: search_api_language
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -614,6 +633,123 @@ display:
         - 'config:field.storage.node.field_definition'
         - 'config:field.storage.node.field_synonyms'
         - 'config:search_api.index.thesaurus_term_index'
+  data_export_1:
+    display_plugin: data_export
+    id: data_export_1
+    display_title: 'Data export'
+    position: 3
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      path: tools-and-resources/eu-osha-thesaurus/search/export
+      filename: EU-OSHA_thesaurus_search_results.csv
+      automatic_download: true
+      store_in_public_file_directory: null
+      redirect_to_display: none
+      custom_redirect_path: false
+      include_query_params: false
+      style:
+        type: data_export
+        options:
+          formats:
+            csv: csv
+          csv_settings:
+            delimiter: ','
+            enclosure: '"'
+            escape_char: \
+            strip_tags: true
+            trim: true
+            encoding: utf8
+            utf8_bom: '0'
+            use_serializer_encode_only: false
+      displays:
+        default: '0'
+        thesaurus_search: '0'
+      query:
+        type: views_query
+        options:
+          skip_access: 0
+          bypass_access: 0
+          preserve_facet_query_args: 0
+      defaults:
+        query: false
+        filters: false
+        filter_groups: false
+      filters:
+        search_api_language:
+          id: search_api_language
+          table: search_api_index_thesaurus_term_index
+          field: search_api_language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: search_api_language_op
+            label: 'Item language'
+            description: ''
+            use_operator: false
+            operator: search_api_language_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_api_language
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_language
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      export_method: standard
+      export_batch_size: 1000
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - 'url.query_args:sort_by'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_definition'
+        - 'config:field.storage.node.field_synonyms'
+        - 'config:search_api.index.thesaurus_term_index'
   thesaurus_search:
     display_plugin: page
     id: thesaurus_search
@@ -625,6 +761,19 @@ display:
       path: tools-and-resources/eu-osha-thesaurus
       exposed_block: true
       display_description: ''
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: "<div class=\"download-content-theasaurus\">\r\n<div class=\"download-content-theasaurus-label\">Download</div>\r\n\r\n<div class=\"download-content-theasaurus-action\"><a href=\"/tools-and-resources/eu-osha-thesaurus/search/export\">Download now</a></div>\r\n</div>\r\n<div class=\"pager-total\"><span>@start - @end / @total</span></div>"
+          plugin_id: result
+      defaults:
+        footer: false
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,85 @@
+.page-view-photo-gallery{
+  h1{
+    float: left;
+    width: 80%;
+  }
+}
+
+.view-photo-gallery-album, .view-photo-gallery{
+  .view-content{
+    clear: both;
+  }
+  .gallery-item-view{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    .views-field-field-publication-date{
+      background: $bg-color-blue;
+      padding: 1rem 1rem 0 1rem;
+      .datetime{
+        color: $text-color-white;
+      }
+    }
+    .views-field-name, .views-field-title{
+      display: flex;
+      height: 100%;
+      background: $bg-color-blue;
+      h2{
+        line-height: 22px;
+        padding: 1rem;
+        a{
+          font-size: 0.9rem;
+          color: $text-color-white;
+        }
+      }
+    }
+    img{
+      width: 100%;
+      height: auto;
+      max-height: 234px;
+    }
+  }
+}
+
+.view-photo-gallery{
+  .gallery-item-view {
+    .views-field-title{
+      h2{
+        padding: 0 1rem 1rem 1rem;
+      }
+    }
+  }
+}
+
+.field--type-image.field--name-field-cover-photo{
+  float: none;
+  width: 100%;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.field--name-field-gallery-link{
+  width: 100%;
+  clear: both;
+  a{
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}
+
+.node{
+  .field--name-field-album-pictures.field--type-image{
+    display: flex;
+    margin-top: 1rem;
+    .field__item{
+      margin-right: 1rem;
+    }
+  }
+}
+
+
+
+
+
