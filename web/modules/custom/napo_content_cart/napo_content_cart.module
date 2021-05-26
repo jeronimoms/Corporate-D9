@@ -1,0 +1,47 @@
+<?php
+
+use Drupal\Core\TempStore\PrivateTempStore;
+use Drupal\napo_content_cart\NccView;
+
+/**
+ * Implements HOOK_HELP().
+ */
+function napo_content_cart_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+
+    // Main module help for the block module.
+    case 'help.page.content_cart':
+      return '<p> Este módulo almacena en una libreria temporal <strong>PrivateTempStore</strong>
+los Napo_videos para poder descargarlos desde un carrito.</p><p>Se precisa poner un link/boton en el twig del tipo de contenido
+para poder añadir a la cesta.  El enlace es:</p>
+<p>Para añadir al carro: /content_cart/add/{node.id}</p>
+<p>Parar descargar directamente: /content_cart/download/{node.id}</p>
+';
+
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function napo_content_cart_theme($existing, $type, $theme, $path) {
+  return [
+    'ncc_element_modal' => [
+      'variables' => [
+        'message' => NULL,
+        'image' => NULL,
+        'title' => NULL,
+        'button' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function napo_content_cart_views_data_alter(array &$data) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(NccView::class)
+    ->viewsDataAlter($data);
+}

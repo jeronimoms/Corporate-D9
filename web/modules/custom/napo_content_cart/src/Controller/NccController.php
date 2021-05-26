@@ -1,10 +1,11 @@
 <?php
 
-namespace Drupal\content_cart\Controller;
+namespace Drupal\napo_content_cart\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\TempStore\PrivateTempStore;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Url;
@@ -18,12 +19,13 @@ use Drupal\Core\Ajax\HtmlCommand;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Cookie;
 use Twig\Error\RuntimeError;
+use Drupal\Core\Ajax\AlertCommand;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * General class for node like controller.
  */
-class CartController extends ControllerBase implements ContainerInjectionInterface
-{
+class NccController extends ControllerBase implements ContainerInjectionInterface {
 
   /**
    * The Request object.
@@ -31,6 +33,7 @@ class CartController extends ControllerBase implements ContainerInjectionInterfa
    * @var \Symfony\Component\HttpFoundation\Request
    */
   protected $request;
+
   /**
    * @var PrivateTempStoreFactory
    */
@@ -40,8 +43,7 @@ class CartController extends ControllerBase implements ContainerInjectionInterfa
   /**
    * {@inheritdoc}
    */
-  public function __construct(RequestStack $request_stack, PrivateTempStoreFactory $privateTempStoreFactory)
-  {
+  public function __construct(RequestStack $request_stack, PrivateTempStoreFactory $privateTempStoreFactory) {
     $this->request = $request_stack->getCurrentRequest();
     $this->privateTempStoreFactory = $privateTempStoreFactory;
   }
@@ -81,35 +83,52 @@ class CartController extends ControllerBase implements ContainerInjectionInterfa
   /**
    * {@inheritdoc}
    */
-  public function addcart(Node $node)
-  {
-    $type = $node->getType();
+  public function addcart(Node $node) {
+    /** @var PrivateTempStore $store */
+    $store = $this->privateTempStoreFactory->get('napo_content_cart.downloads');
+    $ids = $store->get('video_downloads');
 
-    if ($type == 'napo_video') {
-      /** @var PrivateTempStore $store */
-      $store = $this->privateTempStoreFactory->get('content_cart.downloads');
-      $ids = $store->get('video_downloads');
-
-      if (empty($ids)) {
-        $ids = [];
+    if (isset($ids)) {
+      if (!array_key_exists($node->id(), $ids)) {
+        $ids[$node->id()] = $node;
       }
-      foreach ($ids as $id) {
-        if ($id == $node->id()) {
-          $contain = true;
-        } else {
-          $contain = false;
-        }
-
+      else {
+        return [
+          '#theme' => 'ncc_element_modal',
+          '#message' => new TranslatableMarkup('Item already added'),
+          '#button' => $this->getDefaultButton(),
+        ];
       }
-      if ($contain == false) {
-        $ids[] = $node->id();
-      }
-      $store->set('video_downloads', $ids);
-      $this->viewList($ids);
-
-      return TRUE;
-
     }
+    else {
+      $ids[$node->id()] = $node;
+    }
+
+    //$store->set('video_downloads', $ids);
+
+    $build = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['my_top_message'],
+      ],
+    ];
+
+    $build['content'] = [
+      '#theme' => 'ncc_element_modal',
+      '#title' => $node->getTitle(),
+      '#message' => new TranslatableMarkup('1 item added to the Download centre yyyy'),
+      '#button' => $this->getDefaultButton(),
+      '#attached' => [
+        'library' => ['core/drupal.dialog.ajax'],
+      ]
+    ];
+
+
+    $response = new AjaxResponse();
+    $response->addCommand(new HtmlCommand('', $build));
+
+
+    return $response;
 
   }
 
@@ -123,13 +142,33 @@ class CartController extends ControllerBase implements ContainerInjectionInterfa
     $store->delete('video_downloads');
 
   }
-  public function deleteone(Node $node)
-  {
-//    /** @var PrivateTempStore $store */
-//    $store = $this->privateTempStoreFactory->get('content_cart.downloads');
-//    $store->delete('video_downloads');
-    // TODO Delete ONE
 
+  public function deleteone(Node $node) {
+    /** @var PrivateTempStore $store */
+    $store = $this->privateTempStoreFactory->get('napo_content_cart.downloads');
+    $ids = $store->get('video_downloads');
+
+    if (isset($ids)) {
+      if (array_key_exists($node->id(), $ids)) {
+        unset($ids[$node->id()]);
+      }
+      else {
+        return [
+          '#theme' => 'ncc_element_modal',
+          '#message' => new TranslatableMarkup('Element not found'),
+          '#button' => $this->getDefaultButton(),
+        ];
+      }
+    }
+
+    $store->set('video_downloads', $ids);
+
+    return [
+      '#theme' => 'ncc_element_modal',
+      '#title' => $node->getTitle(),
+      '#message' => new TranslatableMarkup('1 item removed from the Download centre'),
+      '#button' => $this->getDefaultButton(),
+    ];
   }
 
   public function viewList($ids) {
@@ -226,5 +265,20 @@ class CartController extends ControllerBase implements ContainerInjectionInterfa
 
     return $build;
 
+  }
+
+  public function getDefaultButton() {
+    return [
+      '#type' => 'link',
+      '#title' => $this->t('Access to Download centre'),
+      '#url' => Url::fromRoute('content_cart.viewList',
+        [],
+        [
+          'attributes' => [
+            'class' => ['btn'],
+          ],
+        ],
+      ),
+    ];
   }
 }
