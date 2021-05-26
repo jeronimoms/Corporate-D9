@@ -1770,7 +1770,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: true
-          content: "Show calls:\r\n{% set currentYear = \"now\"|date(\"Y\") %}\r\n<ul class=\"calls__list\">\r\n<li class=\"call__item\"><a href=\"/about-eu-osha/procurement/calls_archive\">Show all</a></li>\r\n{% for i in currentYear..2013 %}\r\n    <li class=\"call__item\"><a href=\"/about-eu-osha/procurement/calls_archive/{{ i }}\">{{ i }}</a></li>\r\n{% endfor %}\r\n\r\n<a href=\"/inside-eu-osha/procurement\">Back to calls</a>"
+          content: "{{  'Show calls:'  | trans }}\r\n{% set currentYear = \"now\"|date(\"Y\") %}\r\n<ul class=\"calls__list\">\r\n<li class=\"call__item\"><a href=\"/about-eu-osha/procurement/calls_archive/all\">{{  'All calls:'  | trans }}</a></li>\r\n{% for i in currentYear..2013 %}\r\n    <li class=\"call__item\"><a href=\"/about-eu-osha/procurement/calls_archive/{{ i }}\">{{ i }}</a></li>\r\n{% endfor %}\r\n<div class=\"parent-back-to-link\">\r\n<a class=\"back-to-link pull-right\" href=\"/inside-eu-osha/procurement\">{{  'Back to calls'  | trans }}</a>\r\n</div>"
           plugin_id: text_custom
       rendering_language: '***LANGUAGE_language_content***'
       title: 'Processed calls for contractors'
@@ -2111,7 +2111,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: true
-          content: "Show calls:\r\n{% set currentYear = \"now\"|date(\"Y\") %}\r\n<ul class=\"calls__list\">\r\n<li class=\"call__item\"><a href=\"/about-eu-osha/procurement/calls_archive\">Show all</a></li>\r\n{% for i in currentYear..2013 %}\r\n    <li class=\"call__item\"><a href=\"/about-eu-osha/procurement/calls_archive/{{ i }}\">{{ i }}</a></li>\r\n{% endfor %}\r\n\r\n<a href=\"/inside-eu-osha/procurement\">Back to calls</a>"
+          content: "{{ 'Show calls:'|t }}\r\n{% set currentYear = \"now\"|date(\"Y\") %}\r\n<ul class=\"calls__list\">\r\n<li class=\"call__item\"><a href=\"/about-eu-osha/procurement/calls_archive\">{{ 'All calls:'|t }}</a></li>\r\n{% for i in currentYear..2013 %}\r\n    <li class=\"call__item\"><a href=\"/about-eu-osha/procurement/calls_archive/{{ i }}\">{{ i }}</a></li>\r\n{% endfor %}\r\n<div class=\"parent-back-to-link\">\r\n<a class=\"back-to-link pull-right\" href=\"/inside-eu-osha/procurement\">{{ 'Back to calls'|t }}</a>\r\n</div>"
           plugin_id: text_custom
       rendering_language: '***LANGUAGE_language_content***'
       title: 'Processed calls for contractors'
