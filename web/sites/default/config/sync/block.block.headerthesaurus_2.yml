@@ -2,7 +2,10 @@ uuid: ba71ba32-e180-4efd-99dc-0c0a85ed69ee
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:db2c3fec-8615-4ac6-91b8-be4904dcfebd'
   module:
+    - block_content
     - system
   theme:
     - ncwtheme
@@ -15,7 +18,7 @@ plugin: 'block_content:db2c3fec-8615-4ac6-91b8-be4904dcfebd'
 settings:
   id: 'block_content:db2c3fec-8615-4ac6-91b8-be4904dcfebd'
   label: 'Header Thesaurus'
-  provider: core
+  provider: block_content
   label_display: '0'
   status: true
   info: ''
