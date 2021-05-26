@@ -1,0 +1,17 @@
+
+<div>
+  {% if message is not empty %}
+    <div class="ncc-message">{{ message }}</div>
+  {% endif %}
+  <div class="row">
+    {% if image is not empty %}
+    <div class="col-sm-12 col-md-6 ncc-image">{{ image }}</div>
+    {% endif %}
+    {% if title is not empty %}
+      <div class="col-sm-12 col-md-6 ncc-title">{{ title }}</div>
+    {% endif %}
+  </div>
+  {% if button is not empty %}
+    <div class="ncc-button">{{ button }}</div>
+  {% endif %}
+</div>

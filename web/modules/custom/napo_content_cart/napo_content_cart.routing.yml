@@ -1,7 +1,7 @@
 content_cart.addcart:
   path: '/content_cart/add/{node}'
   defaults:
-    _controller: '\Drupal\content_cart\Controller\CartController::addcart'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::addcart'
   requirements:
     _permission: 'access content'
   options:
@@ -11,7 +11,7 @@ content_cart.addcart:
 content_cart.truncatecart:
   path: '/content_cart/delete'
   defaults:
-    _controller: '\Drupal\content_cart\Controller\CartController::truncatecart'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::truncatecart'
   requirements:
     _permission: 'access content'
   options:
@@ -21,7 +21,7 @@ content_cart.truncatecart:
 content_cart.deleteone:
   path: '/content_cart/delete/{node}'
   defaults:
-    _controller: '\Drupal\content_cart\Controller\CartController::deleteone'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::deleteone'
   requirements:
     _permission: 'access content'
   options:
@@ -31,7 +31,7 @@ content_cart.deleteone:
 content_cart.downloadnode:
   path: '/content_cart/download/{node}'
   defaults:
-    _controller: '\Drupal\content_cart\Controller\CartController::downloadnode'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::downloadnode'
   requirements:
     _permission: 'access content'
   options:
@@ -42,7 +42,7 @@ content_cart.downloadnode:
 content_cart.viewList:
   path: '/content_cart/viewList'
   defaults:
-    _controller: '\Drupal\content_cart\Controller\CartController::viewList'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::viewList'
   requirements:
     _permission: 'access content'
   options:
