@@ -663,8 +663,8 @@ display:
             utf8_bom: '0'
             use_serializer_encode_only: false
       displays:
-        thesaurus_search: thesaurus_search
         default: '0'
+        thesaurus_search: '0'
       query:
         type: views_query
         options:
@@ -761,6 +761,19 @@ display:
       path: tools-and-resources/eu-osha-thesaurus
       exposed_block: true
       display_description: ''
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: "<div class=\"download-content-theasaurus\">\r\n<div class=\"download-content-theasaurus-label\">Download</div>\r\n\r\n<div class=\"download-content-theasaurus-action\"><a href=\"/tools-and-resources/eu-osha-thesaurus/search/export\">Download now</a></div>\r\n</div>\r\n<div class=\"pager-total\"><span>@start - @end / @total</span></div>"
+          plugin_id: result
+      defaults:
+        footer: false
     cache_metadata:
       max-age: -1
       contexts:
