@@ -164,6 +164,7 @@ body.user-logged-in.toolbar-tray-open{
   /*Search autocomplete*/
   #ui-id-1{
     left: -211px !important;
+    display: block !important;
   }
   ul[data-sa-theme="basic-blue"]{
     padding-bottom:1em;
@@ -193,6 +194,7 @@ body.user-logged-in.toolbar-tray-open{
       color: $text-color-black !important;
     }
   }
+
   ul[data-sa-theme="basic-blue"] .ui-menu-item-first{
     border:0px;
   }
@@ -202,6 +204,17 @@ body.user-logged-in.toolbar-tray-open{
     padding-left: 2.5em;
     text-decoration: none;
     clear: both;
+  }
+  ul[data-sa-theme="basic-blue"].ui-menu .ui-menu-item:last-child a{
+    background: transparent;
+    font-weight: bold;
+    text-align: center;
+    .ui-autocomplete-field{
+      .ui-autocomplete-field{
+        font-weight: bold;
+        padding-top: 10px;
+      }
+    }
   }
   ul[data-sa-theme="basic-blue"] .ui-autocomplete-fields > *:first-child{
     color: $text-color-blue !important;

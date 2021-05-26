@@ -136,3 +136,57 @@
     min-height: 5rem;
   }
 }
+
+/* Procurement - Archieved calls */
+.view-display-id-block_archived_calls{
+  .calls__wrapper{
+    width: 100%;
+  }
+  .calls__list{
+    list-style: none;
+    width: 100%;
+    margin-top: 1rem;
+    padding-left: 17px;
+    .call__item{
+      width: 100%;
+      margin-bottom: 0.2rem;
+      padding-top: 0;
+      padding-bottom: 1.5rem;
+      background: url(../images/separator.jpg) repeat-x 100% 100%;
+      a{
+        border-bottom: 1px solid $bg-color-pink;
+        &:hover{
+          text-decoration: none;
+          border-bottom: 1px solid $bg-color-blue;
+        }
+      }
+    }
+  }
+}
+
+.view-calls.view-display-id-page_1{
+  .view-header{
+    color: $text-color-blue;
+  }
+  .calls__list{
+    list-style: none;
+    width: 100%;
+    margin-top: 1rem;
+    padding-left: 0;
+    .call__item{
+      float: left;
+      margin-right: 0;
+      padding-right: 2px;
+      a{
+        padding-right: 5px;
+        &.active-custom{
+          font-weight: bold;
+        }
+      }
+      &:after{
+        content: '|';
+        display: inline-block;
+      }
+    }
+  }
+}
