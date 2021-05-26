@@ -120,6 +120,20 @@ jQuery(document).ready(function($) {
     $(this).text(text.replace('&amp;', '&'));
   });
 
+  //Archivied calls - Add class custom-active in year
+  if ($(".view-display-id-page_1")[0]) {
+    let url = $(location).attr('href');
+    //The year is in the URL
+    let urlKey = url.replace(/\/\s*$/, "").split('/').pop();
+    $('.view-display-id-page_1 .call__item a').filter(function () {
+      return $(this).text() == urlKey;
+    }).addClass('active-custom');
+    //Add the active class to the left menu 'Procurement'
+    $('.menu-level-1 > li:nth-child(6)').addClass('menu-item--active-trail');
+    $('.menu-level-1 > li:nth-child(6) a').addClass('is-active');
+
+  }
+
 });
 
 //Move Language Selector to the menu responsive
