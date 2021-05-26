@@ -11,8 +11,8 @@ dependencies:
     - ncwtheme
 id: views_block__infographic_block_3
 theme: ncwtheme
-region: content
-weight: -18
+region: node_view
+weight: -24
 provider: null
 plugin: 'views_block:infographic-block_3'
 settings:
@@ -25,5 +25,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/tools-and-publications/infographics/*\r\n/node/5429\r\n/tools-and-publications/infographics"
+    pages: /tools-and-resources/infographics
     negate: false
