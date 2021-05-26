@@ -161,6 +161,19 @@ span.pages{
   padding-top: 10px;
 }
 
+.more-link {
+  a{
+    float: right;
+    font-weight: 600;
+    background: url(../images/arrow.png) no-repeat 100% 14px;
+    padding-right: 25px;
+    font-size: 0.9rem;
+    padding-top: 10px;
+  }
+}
+
+
+
   /* Links introduction title Highlight, News and Events */
 body {
   ul {
