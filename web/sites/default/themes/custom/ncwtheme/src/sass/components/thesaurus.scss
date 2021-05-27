@@ -1,0 +1,37 @@
+.field--name-body {
+  .hierarchical-tree {
+    list-style: none;
+    li {
+      margin: 0;
+      padding: 0;
+      a {
+        border-bottom: none;
+        font-weight: 600;
+      }
+    }
+    ul {
+      margin-left: 30px;
+    }
+    .item-list {
+      > ul {
+        display: none;
+      }
+    }
+    .expand_menu {
+      display: inline-block;
+      width: 12px;
+      margin-right: 8px;
+      background: url(../images/ico-no-child-tree.png) center no-repeat;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    li.has-child > .expand_menu {
+      background: url(../images/ico-plus-tree.png) center no-repeat;
+      &.expanded {
+        background: url(../images/ico-minor.png) center no-repeat;
+      }
+    }
+  }
+}
+

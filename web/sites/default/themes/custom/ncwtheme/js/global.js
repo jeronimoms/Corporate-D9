@@ -136,9 +136,9 @@ jQuery(document).ready(function($) {
   }
 
   //Hierarchical view
-  $("#tree .has-child .expand_menu").click(function(){
+  $("#tree .has-child > .expand_menu").click(function(){
     $(this).toggleClass('expanded');
-    $(this).parents('.has-child').find('.item-list ul').slideToggle('slow');
+    $(this).parent('.has-child').find('.item-list ul').slideToggle('slow');
   });
 
 });
