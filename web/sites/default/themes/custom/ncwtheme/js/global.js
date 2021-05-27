@@ -122,7 +122,7 @@ jQuery(document).ready(function($) {
 
 
   //Archivied calls - Add class custom-active in year
-  if ($(".view-display-id-page_1")[0]) {
+  if ($(".view-id-calls.view-display-id-page_1")[0]) {
     let url = $(location).attr('href');
     //The year is in the URL
     let urlKey = url.replace(/\/\s*$/, "").split('/').pop();
