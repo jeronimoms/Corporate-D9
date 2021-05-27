@@ -12,7 +12,7 @@ field_name: field_album_pictures
 entity_type: node
 bundle: gallery
 label: 'Album pictures'
-description: ''
+description: "The images should be:\r\nwidth: 350px;\r\nheight: 230px;"
 required: false
 translatable: false
 default_value: {  }
