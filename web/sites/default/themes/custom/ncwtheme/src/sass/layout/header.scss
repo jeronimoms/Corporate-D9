@@ -164,6 +164,7 @@ body.user-logged-in.toolbar-tray-open{
   /*Search autocomplete*/
   #ui-id-1{
     left: -211px !important;
+    display: block !important;
   }
   ul[data-sa-theme="basic-blue"]{
     padding-bottom:1em;
@@ -193,6 +194,9 @@ body.user-logged-in.toolbar-tray-open{
       color: $text-color-black !important;
     }
   }
+  ul[data-sa-theme="basic-blue"] > div.ui-autocomplete-field-group{
+    margin-top: 10px;
+  }
 
   ul[data-sa-theme="basic-blue"] .ui-menu-item-first{
     border:0px;
@@ -215,11 +219,19 @@ body.user-logged-in.toolbar-tray-open{
       }
     }
   }
+  ul[data-sa-theme="basic-blue"] > div.ui-autocomplete-field-group.more_results + li.ui-menu-item .ui-autocomplete-fields > *:first-child{
+    font-weight: bold;
+    padding-top: 10px;
+  }
   ul[data-sa-theme="basic-blue"] .ui-autocomplete-fields > *:first-child{
     color: $text-color-blue !important;
     font-weight: 600;
     padding-right: 10px;
   }
+  ul[data-sa-theme="basic-blue"] > div.ui-autocomplete-field-group {
+    margin-top: 1rem;
+  }
+
   ul[data-sa-theme="basic-blue"] > li.ui-menu-item.ui-state-focus, ul[data-sa-theme="basic-blue"] > li.ui-menu-item:hover {
     background: transparent;
     border-top-color: transparent;

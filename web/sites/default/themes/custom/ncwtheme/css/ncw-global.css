@@ -2053,6 +2053,7 @@ body.user-logged-in.toolbar-tray-open #header {
 }
 .header-language-search #ui-id-1 {
   left: -211px !important;
+  display: block !important;
 }
 .header-language-search ul[data-sa-theme=basic-blue] {
   padding-bottom: 1em;
@@ -2082,6 +2083,9 @@ body.user-logged-in.toolbar-tray-open #header {
   background: transparent;
   color: #000 !important;
 }
+.header-language-search ul[data-sa-theme=basic-blue] > div.ui-autocomplete-field-group {
+  margin-top: 10px;
+}
 .header-language-search ul[data-sa-theme=basic-blue] .ui-menu-item-first {
   border: 0px;
 }
@@ -2101,10 +2105,17 @@ body.user-logged-in.toolbar-tray-open #header {
   font-weight: bold;
   padding-top: 10px;
 }
+.header-language-search ul[data-sa-theme=basic-blue] > div.ui-autocomplete-field-group.more_results + li.ui-menu-item .ui-autocomplete-fields > *:first-child {
+  font-weight: bold;
+  padding-top: 10px;
+}
 .header-language-search ul[data-sa-theme=basic-blue] .ui-autocomplete-fields > *:first-child {
   color: #003399 !important;
   font-weight: 600;
   padding-right: 10px;
+}
+.header-language-search ul[data-sa-theme=basic-blue] > div.ui-autocomplete-field-group {
+  margin-top: 1rem;
 }
 .header-language-search ul[data-sa-theme=basic-blue] > li.ui-menu-item.ui-state-focus, .header-language-search ul[data-sa-theme=basic-blue] > li.ui-menu-item:hover {
   background: transparent;
@@ -3215,6 +3226,9 @@ body.node--type-publication {
 /* Tags filters Years - Used similiar CSS in Infographics scss */
 .view-calls.view-display-id-page_1 .view-header {
   color: #003399;
+}
+.view-calls.view-display-id-page_1 .view-content {
+  clear: both;
 }
 .view-calls.view-display-id-page_1 .calls__list {
   list-style: none;
