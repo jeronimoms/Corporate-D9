@@ -1,0 +1,30 @@
+uuid: 6e177748-1fa0-4bcf-a7bf-a8aacaef6f24
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_node_views:a270deb0-c7c4-46ca-8e14-fee6064af2ca'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: nodeviewinfographics
+theme: ncwtheme
+region: node_view
+weight: -25
+provider: null
+plugin: 'block_content:a270deb0-c7c4-46ca-8e14-fee6064af2ca'
+settings:
+  id: 'block_content:a270deb0-c7c4-46ca-8e14-fee6064af2ca'
+  label: 'Node view Infographics'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /tools-and-resources/infographics
+    negate: false
