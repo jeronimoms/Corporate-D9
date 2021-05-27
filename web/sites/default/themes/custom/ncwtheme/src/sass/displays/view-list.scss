@@ -169,6 +169,9 @@
   .view-header{
     color: $text-color-blue;
   }
+  .view-content{
+    clear: both;
+  }
   .calls__list{
     list-style: none;
     width: 100%;
