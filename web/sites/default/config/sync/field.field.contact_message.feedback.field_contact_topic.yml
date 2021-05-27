@@ -1,0 +1,19 @@
+uuid: d43f3441-130d-4a26-8434-b2a64dabb470
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+    - field.storage.contact_message.field_contact_topic
+id: contact_message.feedback.field_contact_topic
+field_name: field_contact_topic
+entity_type: contact_message
+bundle: feedback
+label: Topic
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
