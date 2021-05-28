@@ -2,6 +2,8 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\oira_masquerade\OmForm;
+use Drupal\oira_masquerade\OmView;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_alter().
@@ -12,14 +14,19 @@ function oira_masquerade_form_alter(&$form, FormStateInterface $form_state, $for
     ->formAlter($form, $form_state, $form_id);
 }
 
-/*
- * @see \hook_local_tasks_alter()
- */
-
 /**
  * Implements hook_local_tasks_alter().
  */
-function oira_masquerade_local_tasks_alter(&$local_tasks)
-{
+function oira_masquerade_local_tasks_alter(&$local_tasks) {
   unset($local_tasks['content_moderation.moderated_content']);
+}
+
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function oira_masquerade_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  Drupal::classResolver()
+    ->getInstanceFromDefinition(OmView::class)
+    ->viewPreView($view, $display_id, $args);
 }
