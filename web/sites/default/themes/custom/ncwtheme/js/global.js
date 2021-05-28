@@ -142,6 +142,16 @@ jQuery(document).ready(function($) {
     $(this).parent('.has-child').find('> .item-list > ul').slideToggle('slow');
   });
 
+  //Tooltip Thesaurus
+  if ($(".content-tooltip img")[0]) {
+    $('.content-tooltip img').click(function() {
+      $(".thesaurus-tooltip").fadeIn(300);
+    });
+    $('.close-thes-tooltip').click(function() {
+      $(".thesaurus-tooltip").fadeOut(300);
+    });
+  }
+
 });
 
 //Move Language Selector to the menu responsive
