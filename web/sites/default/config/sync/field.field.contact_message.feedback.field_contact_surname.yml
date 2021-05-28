@@ -1,0 +1,19 @@
+uuid: ef87d4c0-4f60-4475-9d38-50229e88db2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+    - field.storage.contact_message.field_contact_surname
+id: contact_message.feedback.field_contact_surname
+field_name: field_contact_surname
+entity_type: contact_message
+bundle: feedback
+label: 'Your surname'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
