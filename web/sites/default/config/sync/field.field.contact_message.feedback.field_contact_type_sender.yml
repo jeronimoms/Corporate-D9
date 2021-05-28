@@ -1,0 +1,29 @@
+uuid: c579fff8-50c0-4dc9-bc79-563195a14d1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+    - field.storage.contact_message.field_contact_type_sender
+    - taxonomy.vocabulary.contact_type_of_sender
+id: contact_message.feedback.field_contact_type_sender
+field_name: field_contact_type_sender
+entity_type: contact_message
+bundle: feedback
+label: 'Type of sender'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      contact_type_of_sender: contact_type_of_sender
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

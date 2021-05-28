@@ -402,6 +402,10 @@ input[type=search] {
   padding-left: 17px;
 }
 
+.block-views-blockblog-block-2 {
+  margin-bottom: 2rem;
+}
+
 .btn-primary {
   background: #003399;
   border: 0;
@@ -1152,6 +1156,39 @@ div.pagerer-right-pane {
 }
 .contact-us-0 #main .node--type-article table tr td {
   border: 0;
+}
+
+.field--name-body .hierarchical-tree {
+  list-style: none;
+}
+.field--name-body .hierarchical-tree li {
+  margin: 0;
+  padding: 0;
+}
+.field--name-body .hierarchical-tree li a {
+  border-bottom: none;
+  font-weight: 600;
+}
+.field--name-body .hierarchical-tree ul {
+  margin-left: 30px;
+}
+.field--name-body .hierarchical-tree .item-list > ul {
+  display: none;
+}
+.field--name-body .hierarchical-tree .expand_menu {
+  display: inline-block;
+  width: 12px;
+  margin-right: 8px;
+  background: url(../images/ico-no-child-tree.png) center no-repeat;
+}
+.field--name-body .hierarchical-tree .expand_menu:hover {
+  cursor: pointer;
+}
+.field--name-body .hierarchical-tree li.has-child > .expand_menu {
+  background: url(../images/ico-plus-tree.png) center no-repeat;
+}
+.field--name-body .hierarchical-tree li.has-child > .expand_menu.expanded {
+  background: url(../images/ico-minor.png) center no-repeat;
 }
 
 /* Common elements */
@@ -2728,75 +2765,6 @@ body.user-logged-in.toolbar-tray-open #header {
     width: 98%;
   }
 }
-.page-view-photo-gallery h1 {
-  float: left;
-  width: 80%;
-}
-
-.view-photo-gallery-album .view-content, .view-photo-gallery .view-content {
-  clear: both;
-}
-.view-photo-gallery-album .gallery-item-view, .view-photo-gallery .gallery-item-view {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-.view-photo-gallery-album .gallery-item-view .views-field-field-publication-date, .view-photo-gallery .gallery-item-view .views-field-field-publication-date {
-  background: #003399;
-  padding: 1rem 1rem 0 1rem;
-}
-.view-photo-gallery-album .gallery-item-view .views-field-field-publication-date .datetime, .view-photo-gallery .gallery-item-view .views-field-field-publication-date .datetime {
-  color: #FFF;
-}
-.view-photo-gallery-album .gallery-item-view .views-field-name, .view-photo-gallery-album .gallery-item-view .views-field-title, .view-photo-gallery .gallery-item-view .views-field-name, .view-photo-gallery .gallery-item-view .views-field-title {
-  display: flex;
-  height: 100%;
-  background: #003399;
-}
-.view-photo-gallery-album .gallery-item-view .views-field-name h2, .view-photo-gallery-album .gallery-item-view .views-field-title h2, .view-photo-gallery .gallery-item-view .views-field-name h2, .view-photo-gallery .gallery-item-view .views-field-title h2 {
-  line-height: 22px;
-  padding: 1rem;
-}
-.view-photo-gallery-album .gallery-item-view .views-field-name h2 a, .view-photo-gallery-album .gallery-item-view .views-field-title h2 a, .view-photo-gallery .gallery-item-view .views-field-name h2 a, .view-photo-gallery .gallery-item-view .views-field-title h2 a {
-  font-size: 0.9rem;
-  color: #FFF;
-}
-.view-photo-gallery-album .gallery-item-view img, .view-photo-gallery .gallery-item-view img {
-  width: 100%;
-  height: auto;
-  max-height: 234px;
-}
-
-.view-photo-gallery .gallery-item-view .views-field-title h2 {
-  padding: 0 1rem 1rem 1rem;
-}
-
-.field--type-image.field--name-field-cover-photo {
-  float: none;
-  width: 100%;
-}
-.field--type-image.field--name-field-cover-photo img {
-  width: 100%;
-  height: auto;
-}
-
-.field--name-field-gallery-link {
-  width: 100%;
-  clear: both;
-}
-.field--name-field-gallery-link a {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.node .field--name-field-album-pictures.field--type-image {
-  display: flex;
-  margin-top: 1rem;
-}
-.node .field--name-field-album-pictures.field--type-image .field__item {
-  margin-right: 1rem;
-}
-
 .page-view-infographic .custom-view-node-header {
   padding-bottom: 0rem;
 }
@@ -2868,6 +2836,106 @@ body.user-logged-in.toolbar-tray-open #header {
   padding-top: 1rem;
 }
 
+.page-view-photo-gallery h1 {
+  float: left;
+  width: 80%;
+}
+
+.view-photo-gallery-album .view-content, .view-photo-gallery .view-content {
+  clear: both;
+}
+.view-photo-gallery-album .gallery-item-view, .view-photo-gallery .gallery-item-view {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.view-photo-gallery-album .gallery-item-view .views-field-field-publication-date, .view-photo-gallery .gallery-item-view .views-field-field-publication-date {
+  background: #003399;
+  padding: 1rem 1rem 0 1rem;
+}
+.view-photo-gallery-album .gallery-item-view .views-field-field-publication-date .datetime, .view-photo-gallery .gallery-item-view .views-field-field-publication-date .datetime {
+  color: #FFF;
+}
+.view-photo-gallery-album .gallery-item-view .views-field-name, .view-photo-gallery-album .gallery-item-view .views-field-title, .view-photo-gallery .gallery-item-view .views-field-name, .view-photo-gallery .gallery-item-view .views-field-title {
+  display: flex;
+  height: 100%;
+  background: #003399;
+}
+.view-photo-gallery-album .gallery-item-view .views-field-name h2, .view-photo-gallery-album .gallery-item-view .views-field-title h2, .view-photo-gallery .gallery-item-view .views-field-name h2, .view-photo-gallery .gallery-item-view .views-field-title h2 {
+  line-height: 22px;
+  padding: 1rem;
+}
+.view-photo-gallery-album .gallery-item-view .views-field-name h2 a, .view-photo-gallery-album .gallery-item-view .views-field-title h2 a, .view-photo-gallery .gallery-item-view .views-field-name h2 a, .view-photo-gallery .gallery-item-view .views-field-title h2 a {
+  font-size: 0.9rem;
+  color: #FFF;
+}
+.view-photo-gallery-album .gallery-item-view img, .view-photo-gallery .gallery-item-view img {
+  width: 100%;
+  height: auto;
+  max-height: 234px;
+}
+
+.view-photo-gallery .gallery-item-view .views-field-title h2 {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.field--type-image.field--name-field-cover-photo {
+  float: none;
+  width: 100%;
+}
+.field--type-image.field--name-field-cover-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.node--type-gallery .field--name-field-album-pictures.field--type-image {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 0;
+}
+.node--type-gallery .field--name-field-album-pictures.field--type-image .field__item {
+  width: 33%;
+  margin-right: 30px;
+}
+.node--type-gallery .field--name-field-album-pictures.field--type-image .field__item img {
+  width: 100%;
+  height: auto;
+}
+.node--type-gallery .field--name-field-album-pictures.field--type-image .field__item:nth-child(3) {
+  margin-right: 0;
+}
+
+.field--name-field-gallery-link {
+  width: 100%;
+  clear: both;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.field--name-field-gallery-link a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: url(../images/arrow.png) 100% 9px no-repeat;
+  padding-right: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .node--type-gallery .field--name-field-album-pictures.field--type-image {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item {
+    width: 100%;
+    margin-right: 0;
+  }
+  .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item img {
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+}
+/* End Media 768px */
 /* Node publications */
 .node-publications-custom {
   /*Hide Share Links*/

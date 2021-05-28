@@ -423,7 +423,18 @@ display:
           plugin_id: entity_queue_position
       title: 'Press contacts'
       header: {  }
-      footer: {  }
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: '<div class="more-link"><a href="/about-eu-osha/press-room/press-kit">EU-OSHA Press kit</a></div>'
+          plugin_id: text_custom
       empty: {  }
       relationships:
         entityqueue_relationship:
