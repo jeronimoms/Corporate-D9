@@ -2884,18 +2884,10 @@ body.user-logged-in.toolbar-tray-open #header {
   height: auto;
 }
 
-.field--name-field-gallery-link {
-  width: 100%;
-  clear: both;
-}
-.field--name-field-gallery-link a {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
 .node--type-gallery .field--name-field-album-pictures.field--type-image {
   display: flex;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   margin-right: 0;
 }
 .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item {
@@ -2908,6 +2900,19 @@ body.user-logged-in.toolbar-tray-open #header {
 }
 .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item:nth-child(3) {
   margin-right: 0;
+}
+
+.field--name-field-gallery-link {
+  width: 100%;
+  clear: both;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.field--name-field-gallery-link a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: url(../images/arrow.png) 100% 9px no-repeat;
+  padding-right: 1.5rem;
 }
 
 @media only screen and (max-width: 768px) {

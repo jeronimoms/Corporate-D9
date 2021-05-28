@@ -60,19 +60,11 @@
   }
 }
 
-.field--name-field-gallery-link{
-  width: 100%;
-  clear: both;
-  a{
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-}
-
 .node--type-gallery{
   .field--name-field-album-pictures.field--type-image{
     display: flex;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     margin-right: 0;
     .field__item{
       width: 33%;
@@ -85,6 +77,19 @@
     .field__item:nth-child(3){
       margin-right: 0;
     }
+  }
+}
+
+.field--name-field-gallery-link{
+  width: 100%;
+  clear: both;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  a{
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: url(../images/arrow.png) 100% 9px no-repeat;
+    padding-right: 1.5rem;
   }
 }
 
