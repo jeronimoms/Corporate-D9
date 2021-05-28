@@ -136,9 +136,10 @@ jQuery(document).ready(function($) {
   }
 
   //Hierarchical view
+  $('#tree ul').css('display', 'none');
   $("#tree .has-child > .expand_menu").click(function(){
     $(this).toggleClass('expanded');
-    $(this).parent('.has-child').find('.item-list ul').slideToggle('slow');
+    $(this).parent('.has-child').find('> .item-list > ul').slideToggle('slow');
   });
 
 });
