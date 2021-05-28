@@ -1154,6 +1154,39 @@ div.pagerer-right-pane {
   border: 0;
 }
 
+.field--name-body .hierarchical-tree {
+  list-style: none;
+}
+.field--name-body .hierarchical-tree li {
+  margin: 0;
+  padding: 0;
+}
+.field--name-body .hierarchical-tree li a {
+  border-bottom: none;
+  font-weight: 600;
+}
+.field--name-body .hierarchical-tree ul {
+  margin-left: 30px;
+}
+.field--name-body .hierarchical-tree .item-list > ul {
+  display: none;
+}
+.field--name-body .hierarchical-tree .expand_menu {
+  display: inline-block;
+  width: 12px;
+  margin-right: 8px;
+  background: url(../images/ico-no-child-tree.png) center no-repeat;
+}
+.field--name-body .hierarchical-tree .expand_menu:hover {
+  cursor: pointer;
+}
+.field--name-body .hierarchical-tree li.has-child > .expand_menu {
+  background: url(../images/ico-plus-tree.png) center no-repeat;
+}
+.field--name-body .hierarchical-tree li.has-child > .expand_menu.expanded {
+  background: url(../images/ico-minor.png) center no-repeat;
+}
+
 /* Common elements */
 html {
   font-size: 100%;
