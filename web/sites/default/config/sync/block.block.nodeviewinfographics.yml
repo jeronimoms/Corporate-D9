@@ -26,5 +26,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /tools-and-resources/infographics
+    pages: "/tools-and-resources/infographics/*\r\n/tools-and-resources/infographics"
     negate: false
