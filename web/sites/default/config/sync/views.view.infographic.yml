@@ -539,9 +539,9 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="/node/5429?tid={{ field_tags__target_id }}"> {{ field_tags }}</a>'
+            text: '<a href="/tools-and-resources/infographics/{{ field_tags__target_id }}"> {{ field_tags }}</a>'
             make_link: false
-            path: '/node/5429?tid={{ field_tags__target_id }}'
+            path: '/tools-and-resources/infographics/{{ field_tags__target_id }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -552,7 +552,7 @@ display:
             link_class: ''
             prefix: ''
             suffix: ''
-            target: '/node/5429?tid={{ field_tags__target_id }}'
+            target: '/tools-and-resources/infographics/{{ field_tags__target_id }}'
             nl2br: false
             max_length: 0
             word_boundary: true
