@@ -120,6 +120,7 @@ jQuery(document).ready(function($) {
     $(this).text(text.replace('&amp;', '&'));
   });
 
+
   //Archivied calls - Add class custom-active in year
   if ($(".view-id-calls.view-display-id-page_1")[0]) {
     let url = $(location).attr('href');
@@ -133,6 +134,12 @@ jQuery(document).ready(function($) {
     $('.menu-level-1 > li:nth-child(6) a').addClass('is-active');
 
   }
+
+  //Hierarchical view
+  $("#tree .has-child > .expand_menu").click(function(){
+    $(this).toggleClass('expanded');
+    $(this).parent('.has-child').find('.item-list ul').slideToggle('slow');
+  });
 
 });
 
