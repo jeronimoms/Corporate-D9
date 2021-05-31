@@ -526,6 +526,7 @@ display:
         sorts: false
         style: false
         row: false
+        header: false
       arguments: {  }
       fields:
         field_tags:
@@ -614,6 +615,18 @@ display:
       row:
         type: fields
         options: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: '<a href="/tools-and-resources/infographics">All topics</a>'
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:
