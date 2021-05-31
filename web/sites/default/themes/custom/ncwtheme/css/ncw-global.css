@@ -1309,6 +1309,11 @@ div.pagerer-right-pane {
   font-size: 0.9rem;
 }
 
+.views-field-field-definition {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 /* Common elements */
 html {
   font-size: 100%;
@@ -2886,14 +2891,12 @@ body.user-logged-in.toolbar-tray-open #header {
 .page-view-infographic .custom-view-node-header {
   padding-bottom: 0rem;
 }
-
-.block-views-blockinfographic-block-3 h2 {
+.page-view-infographic .block-views-blockinfographic-block-3 h2 {
   font-size: 0.9rem;
   color: #000;
   font-weight: normal;
 }
-
-.view-display-id-block_3 .view-content.row {
+.page-view-infographic .view-display-id-block_3 .view-content.row {
   margin-top: 10px;
   width: 100%;
   margin-bottom: 0.2rem;
@@ -2901,28 +2904,27 @@ body.user-logged-in.toolbar-tray-open #header {
   padding-bottom: 1.5rem;
   background: url(../images/separator.jpg) repeat-x 100% 100%;
 }
-.view-display-id-block_3 .views-row a {
+.page-view-infographic .view-display-id-block_3 .views-row a {
   display: inline-block;
   font-size: 0.9rem;
   margin-right: 5px;
   padding-bottom: 5px;
 }
-.view-display-id-block_3 .views-row a:after {
+.page-view-infographic .view-display-id-block_3 .views-row a:after {
   content: "|";
   font-size: 1rem;
   display: inline-block;
   padding-left: 5px;
   font-weight: bold;
 }
-
-.view-infographic .views-view-grid .row {
+.page-view-infographic .view-infographic .views-view-grid .row {
   align-items: flex-end;
 }
-.view-infographic .view-content.row {
+.page-view-infographic .view-infographic .view-content.row {
   margin-left: 0;
   margin-right: 0;
 }
-.view-infographic h2 a {
+.page-view-infographic .view-infographic h2 a {
   font-family: "Open Sans Condensed", sans-serif;
   width: 100%;
   display: block;
@@ -2936,15 +2938,15 @@ body.user-logged-in.toolbar-tray-open #header {
   background-position: calc(100% - 5px) 9px;
   line-height: 22px;
 }
-.view-infographic h2 a:hover {
+.page-view-infographic .view-infographic h2 a:hover {
   background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
   border-bottom: 10px solid #dc2f82;
   transition: all 1s;
 }
-.view-infographic .infographic-item-view {
+.page-view-infographic .view-infographic .infographic-item-view {
   padding-bottom: 2rem;
 }
-.view-infographic .infographic-item-view img {
+.page-view-infographic .view-infographic .infographic-item-view img {
   width: 100%;
   height: auto;
 }
