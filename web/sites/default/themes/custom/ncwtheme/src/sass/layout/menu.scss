@@ -27,7 +27,7 @@
       padding-left: 0;
 
       > li.menu-item:nth-child(1) {
-        width: 3%;
+        width: 65px;
         border-left: 0;
         text-align: center;
         > a{
@@ -129,6 +129,7 @@
     position: absolute;
     width: auto;
     left: 225px;
+    top: 8px;
     z-index: 1;
     ul {
       display: block;

@@ -257,155 +257,6 @@ input[type=search] {
   margin-right: 0;
 }
 
-/* Sidebar second */
-.sidebar-second .related-views {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.sidebar-second .related-views .views-element-container.block.block-views {
-  float: left;
-  width: 100%;
-  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0.3rem;
-  padding-bottom: 1.6rem;
-}
-.sidebar-second .related-views .views-element-container.block.block-views h2 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 0;
-  border-bottom: 0;
-}
-.sidebar-second .views-row {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.sidebar-second .views-row a {
-  display: block;
-  font-size: 0.8rem;
-  line-height: 17px;
-  padding-bottom: 10px;
-  background: url(../images/li_arrow.png) no-repeat 1px 2px;
-  padding-left: 15px;
-}
-.sidebar-second .more-link {
-  text-align: right;
-}
-.sidebar-second .more-link a {
-  display: inline-block;
-  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
-  padding: 5px 30px 5px 5px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-.sidebar-second .more-link a:hover {
-  color: #FFF;
-  background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
-  -webkit-transition: background-color 800ms linear;
-  -moz-transition: background-color 800ms linear;
-  -o-transition: background-color 800ms linear;
-  -ms-transition: background-color 800ms linear;
-  transition: background-color 800ms linear;
-}
-.sidebar-second .more-link a:before {
-  content: none;
-}
-
-/*Blocks right column*/
-.view-oshwiki .views-row {
-  width: 100%;
-}
-.view-oshwiki .views-row .block-osha-wiki {
-  padding: 10px;
-  margin: 0 0 20px;
-  background: #ecf1fb;
-}
-.view-oshwiki .views-row .block-osha-wiki .OSHWiki .separatorOsHWiki {
-  height: 5px;
-}
-.view-oshwiki .views-row .block-osha-wiki .OSHWiki #OSHWikiDivTit {
-  display: flex;
-}
-.view-oshwiki .views-row .block-osha-wiki .OSHWiki #OSHWikiDivTit .imgOSHWiki {
-  margin-right: 10px;
-}
-.view-oshwiki .views-row .block-osha-wiki .OSHWiki .p2 {
-  font-size: 0.8rem;
-  padding-top: 1.3rem;
-  padding-bottom: 1.3rem;
-}
-.view-oshwiki .views-row .block-osha-wiki .OSHWiki .p3 {
-  text-align: right;
-  margin-right: 10px;
-}
-.view-oshwiki .views-row .block-osha-wiki .OSHWiki .p3 a {
-  background: transparent;
-  font-weight: bold;
-}
-
-/* View related icons */
-.view-related-icons .view-content.row {
-  margin: 0;
-}
-.view-related-icons .related-resources-boxes {
-  width: 100%;
-}
-.view-related-icons .views-field-nothing a {
-  display: flex;
-  width: 100%;
-  padding: 10px;
-  margin: 0 0 20px;
-  background: #ecf1fb;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 1.25rem;
-  color: #000;
-}
-.view-related-icons .views-field-nothing a img {
-  margin-top: 0.2rem;
-  margin-right: 0.5rem;
-}
-
-/* Press contacts */
-.sidebar-second .views-element-container.block.block-views h2 {
-  font-size: 1.35rem;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-bottom: 5px solid #003399;
-}
-.sidebar-second .view-press-contacts .view-content.row {
-  margin-left: 0;
-  margin-right: 0;
-}
-.sidebar-second .view-press-contacts .view-content.row .views-row {
-  float: left;
-  width: 100%;
-  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0.3rem;
-  padding-bottom: 0.6rem;
-}
-.sidebar-second .view-press-contacts .view-content.row .views-row .field-content {
-  display: block;
-  font-size: 0.85rem;
-  margin-bottom: 0.3rem;
-}
-.sidebar-second .view-press-contacts .view-content.row .views-row .views-field-field-press-contact-job-title {
-  font-weight: bold;
-}
-.sidebar-second .view-press-contacts .view-content.row .views-row .views-field-field-press-contact-email a {
-  background: url("../images/mailto.png") 0 4px transparent no-repeat;
-  padding-left: 17px;
-}
-
-.block-views-blockblog-block-2 {
-  margin-bottom: 2rem;
-}
-
 .btn-primary {
   background: #003399;
   border: 0;
@@ -811,13 +662,6 @@ h2.related {
   border-bottom: 5px solid #003399;
 }
 
-.sidebar-second .block-views h2 {
-  font-size: 1rem;
-  font-weight: bold;
-  padding-top: 10px;
-  padding-bottom: 5px;
-}
-
 .path-frontpage h2 {
   font-size: 1.6rem;
   font-weight: 700;
@@ -892,9 +736,14 @@ h3.home a:hover {
   border-bottom: 0;
 }
 
+.sidebar-first {
+  margin-bottom: 2rem;
+}
 .sidebar-first .menu--main ul {
   list-style: none;
+  margin-top: 10px;
   padding-left: 0;
+  margin-block-end: 0px;
 }
 .sidebar-first .menu--main ul li {
   position: relative;
@@ -906,7 +755,7 @@ h3.home a:hover {
   font-size: 1.3rem;
   font-weight: 600;
   border-bottom: 0;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 .sidebar-first .menu--main ul li a:hover {
   opacity: 0.9;
@@ -1042,6 +891,168 @@ h3.home a:hover {
 .sidebar-first .views-exposed-form .form-row button.btn-primary:hover {
   background: #003399;
   color: #FFF;
+}
+
+/* Sidebar second */
+.sidebar-second .block-block-content, .sidebar-second .block-aggregator {
+  clear: both;
+  margin-top: 2rem;
+}
+.sidebar-second .block-aggregator .list-group-item {
+  border: 0;
+}
+.sidebar-second .block-aggregator .list-group-item a {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 17px;
+  padding-bottom: 10px;
+  background: url(../images/li_arrow.png) no-repeat 1px 2px;
+  padding-left: 15px;
+}
+.sidebar-second .block h2 {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #003399;
+}
+
+.sidebar-second .related-views {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.sidebar-second .related-views .views-element-container.block.block-views {
+  float: left;
+  width: 100%;
+  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.3rem;
+  padding-bottom: 1.6rem;
+}
+.sidebar-second .views-row {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.sidebar-second .views-row a {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 17px;
+  padding-bottom: 10px;
+  background: url(../images/li_arrow.png) no-repeat 1px 2px;
+  padding-left: 15px;
+}
+.sidebar-second .more-link {
+  text-align: right;
+}
+.sidebar-second .more-link a {
+  display: inline-block;
+  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
+  padding: 5px 30px 5px 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.sidebar-second .more-link a:hover {
+  color: #FFF;
+  background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
+  -webkit-transition: background-color 800ms linear;
+  -moz-transition: background-color 800ms linear;
+  -o-transition: background-color 800ms linear;
+  -ms-transition: background-color 800ms linear;
+  transition: background-color 800ms linear;
+}
+.sidebar-second .more-link a:before {
+  content: none;
+}
+
+/*Blocks right column*/
+.view-oshwiki .views-row {
+  width: 100%;
+}
+.view-oshwiki .views-row .block-osha-wiki {
+  padding: 10px;
+  margin: 0 0 20px;
+  background: #ecf1fb;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki .separatorOsHWiki {
+  height: 5px;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki #OSHWikiDivTit {
+  display: flex;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki #OSHWikiDivTit .imgOSHWiki {
+  margin-right: 10px;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki .p2 {
+  font-size: 0.8rem;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki .p3 {
+  text-align: right;
+  margin-right: 10px;
+}
+.view-oshwiki .views-row .block-osha-wiki .OSHWiki .p3 a {
+  background: transparent;
+  font-weight: bold;
+}
+
+/* View related icons */
+.view-related-icons .view-content.row {
+  margin: 0;
+}
+.view-related-icons .related-resources-boxes {
+  width: 100%;
+}
+.view-related-icons .views-field-nothing a {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 20px;
+  background: #ecf1fb;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.25rem;
+  color: #000;
+}
+.view-related-icons .views-field-nothing a img {
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+}
+
+/* Press contacts */
+.sidebar-second .view-press-contacts .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.sidebar-second .view-press-contacts .view-content.row .views-row {
+  float: left;
+  width: 100%;
+  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.3rem;
+  padding-bottom: 0.6rem;
+}
+.sidebar-second .view-press-contacts .view-content.row .views-row .field-content {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+.sidebar-second .view-press-contacts .view-content.row .views-row .views-field-field-press-contact-job-title {
+  font-weight: bold;
+}
+.sidebar-second .view-press-contacts .view-content.row .views-row .views-field-field-press-contact-email a {
+  background: url("../images/mailto.png") 0 4px transparent no-repeat;
+  padding-left: 17px;
+}
+.sidebar-second .view-press-contacts .view-footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.block-views-blockblog-block-2 {
+  margin-bottom: 2rem;
 }
 
 nav.pager {
@@ -2620,7 +2631,7 @@ body.user-logged-in.toolbar-tray-open #header {
   padding-left: 0;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) {
-  width: 3%;
+  width: 65px;
   border-left: 0;
   text-align: center;
 }
@@ -2709,6 +2720,7 @@ body.user-logged-in.toolbar-tray-open #header {
     position: absolute;
     width: auto;
     left: 225px;
+    top: 8px;
     z-index: 1;
   }
   #block-headermenu ul {
@@ -3348,6 +3360,7 @@ body.node--type-publication {
   padding-bottom: 0.5rem;
 }
 
+/* Press releases */
 .view-press-releases {
   padding-left: 15px;
   padding-right: 15px;
@@ -3357,6 +3370,9 @@ body.node--type-publication {
   color: #003399;
   font-weight: 600;
   margin-left: -15px;
+}
+.view-press-releases .views-row .see-more-arrow {
+  margin-top: 0.8rem;
 }
 .view-press-releases .views-row:nth-child(3) {
   background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
@@ -3470,6 +3486,32 @@ body.node--type-publication {
 .view-calls.view-display-id-page_1 .calls__list .call__item:after {
   content: "|";
   display: inline-block;
+}
+
+/* General Search */
+.block-views-exposed-filter-blocksearch-site.views-exposed-form {
+  padding-bottom: 0;
+}
+
+.view-search .views-field-url a {
+  display: block;
+  color: #c72272;
+  margin-bottom: 0.3rem;
+}
+.view-search .views-field-url a:hover {
+  text-decoration: underline;
+}
+
+.views-field-type {
+  /* View tags */
+  background-color: #9ABBDB;
+  color: #FFF;
+  font-size: 0.9rem;
+  padding: 2px 0.8rem;
+  margin-right: 1rem;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 1200px) {
