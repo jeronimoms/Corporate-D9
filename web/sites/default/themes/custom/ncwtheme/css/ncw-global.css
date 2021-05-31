@@ -2888,6 +2888,39 @@ body.user-logged-in.toolbar-tray-open #header {
     width: 98%;
   }
 }
+body.contact form.contact-form {
+  width: 80%;
+  background: #e8ecf5;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border: 1px solid #003399;
+  border-radius: 3px;
+}
+body.contact form.contact-form label {
+  margin-top: 0.5rem;
+  padding-bottom: 5px;
+  font-weight: 600;
+}
+body.contact form.contact-form .custom-select {
+  background: url(../images/pink-select.png) no-repeat scroll 98.5% center #FFF;
+}
+body.contact form.contact-form .form-control {
+  color: #000;
+}
+body.contact form.contact-form textarea.form-control {
+  height: 150px;
+}
+body.contact form.contact-form button.btn-primary {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  body.contact form.contact-form {
+    width: 100%;
+  }
+}
+/* End Media 768px */
 .page-view-infographic .custom-view-node-header {
   padding-bottom: 0rem;
 }
