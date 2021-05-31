@@ -3,6 +3,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\oira_masquerade\OmForm;
 use Drupal\oira_masquerade\OmView;
+use Drupal\oira_masquerade\OmLink;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -29,4 +30,16 @@ function oira_masquerade_views_pre_view(ViewExecutable $view, $display_id, array
   Drupal::classResolver()
     ->getInstanceFromDefinition(OmView::class)
     ->viewPreView($view, $display_id, $args);
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+/**
+ * Implements hook_link_alter().
+ */
+function oira_masquerade_link_alter(&$variables) {
+  Drupal::classResolver()
+    ->getInstanceFromDefinition(OmLink::class)
+    ->linkAlter($variables);
 }

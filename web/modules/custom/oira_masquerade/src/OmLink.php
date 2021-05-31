@@ -3,12 +3,12 @@
 namespace Drupal\oira_masquerade;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
-use Drupal\oira_masquerade\OmMasqueradeManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\masquerade\Masquerade;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\views\ViewExecutable;
 
-class OmView implements ContainerInjectionInterface {
+class OmLink implements ContainerInjectionInterface {
 
   /**
    * The masquerade manager.
@@ -43,14 +43,27 @@ class OmView implements ContainerInjectionInterface {
   }
 
   /**
-   * Implements hook_views_pre_view().
+   * Implements hook_link_alter().
    */
-  public function viewPreView(ViewExecutable $view, $display_id, array &$args) {
-    if ($view->id() == 'partner_content') {
-      if ($this->masquerade->isMasquerading()) {
-        $partner = $this->masqueradeManager->getPartnerId();
-        if ($partner !== 0) {
-          $args[0] = $partner;
+  public function linkAlter(&$variables) {
+    // End process if is not masqueraded.
+    if (!$this->masquerade->isMasquerading()) {
+      return;
+    }
+
+    // Get the correct partner id.
+    $partner_id = $this->masqueradeManager->getPartnerId();
+    if (empty($partner_id) || !isset($partner_id)) {
+      return;
+    }
+
+    /** @var \Drupal\Core\Url $url */
+    $url = &$variables['url'];
+    if (!$url->isExternal() && $variables['text']) {
+      $parameters = $url->getRouteParameters();
+      if (array_key_exists('node', $parameters)) {
+        if ($parameters['node'] == '1158') {
+          $url->setRouteParameter('node', $partner_id);
         }
       }
     }

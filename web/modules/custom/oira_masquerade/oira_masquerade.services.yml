@@ -1,0 +1,4 @@
+services:
+  oira_masquerade.masquerade.manager:
+    class: Drupal\oira_masquerade\OmMasqueradeManager
+    arguments: ['@entity_type.manager', '@current_user']
