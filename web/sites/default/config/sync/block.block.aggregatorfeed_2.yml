@@ -1,16 +1,16 @@
-uuid: 0bd540e7-ec64-48d6-ae86-2d73e1f84099
+uuid: 2936cc88-3189-447a-9554-2135a9cdcda6
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - aggregator
     - system
   theme:
     - ncwtheme
-id: aggregatorfeed
+id: aggregatorfeed_2
 theme: ncwtheme
 region: sidebar_second
-weight: -21
+weight: 0
 provider: null
 plugin: aggregator_feed_block
 settings:

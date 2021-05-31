@@ -970,7 +970,7 @@ display:
       row:
         type: fields
         options: {  }
-      path: tools-and-resources/infographics/%
+      path: tools-and-resources/infographics
       query:
         type: views_query
         options:
@@ -979,6 +979,7 @@ display:
           replica: false
           query_comment: ''
           query_tags: null
+      enabled: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -1325,7 +1326,7 @@ display:
       row:
         type: fields
         options: {  }
-      path: tools-and-resources/infographics
+      path: tools-and-resources/infographics/%
       query:
         type: views_query
         options:
