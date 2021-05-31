@@ -136,10 +136,21 @@ jQuery(document).ready(function($) {
   }
 
   //Hierarchical view
+  $('#tree ul').css('display', 'none');
   $("#tree .has-child > .expand_menu").click(function(){
     $(this).toggleClass('expanded');
-    $(this).parent('.has-child').find('.item-list ul').slideToggle('slow');
+    $(this).parent('.has-child').find('> .item-list > ul').slideToggle('slow');
   });
+
+  //Tooltip Thesaurus
+  if ($(".content-tooltip img")[0]) {
+    $('.content-tooltip img').click(function() {
+      $(".thesaurus-tooltip").fadeIn(300);
+    });
+    $('.close-thes-tooltip').click(function() {
+      $(".thesaurus-tooltip").fadeOut(300);
+    });
+  }
 
 });
 
