@@ -1,0 +1,18 @@
+uuid: 8a7e303f-f52b-4b2a-9ab0-85cea3c63698
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.thesaurus
+id: menu_link_content.thesaurus.description
+field_name: description
+entity_type: menu_link_content
+bundle: thesaurus
+label: Description
+description: 'Shown when hovering over the menu link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

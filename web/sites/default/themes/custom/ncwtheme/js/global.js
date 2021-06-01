@@ -73,6 +73,19 @@ jQuery(document).ready(function($) {
     $('.addtoany_list').appendTo('.move-add-to-any');
   }
 
+  //Move infographic filter
+  if ($(".views-row.moved-by-jquery")[0]) {
+    $('.views-row.moved-by-jquery').prependTo('.page-view-infographic .view-infographic.view-display-id-block_3  .view-content.row');
+  }
+
+  //Move Donwload box in Thesaurus footer view
+  if ($(".view-footer .download-content-theasaurus")[0]) {
+    $('.view-footer .download-content-theasaurus').addClass('custom-class-jquery');
+    $('.view-footer .download-content-theasaurus').prependTo('.pagerer-container');
+
+  }
+
+
   //Show input search when click in Search button responsive menu
   $("#block-searchsite").click(function(){
     $('#block-searchsite .btn-primary').addClass('activate');

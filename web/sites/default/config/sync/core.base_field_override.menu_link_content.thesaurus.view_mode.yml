@@ -1,0 +1,18 @@
+uuid: 5e96d6e7-0125-4554-8ce9-2c41851ad607
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.thesaurus
+id: menu_link_content.thesaurus.view_mode
+field_name: view_mode
+entity_type: menu_link_content
+bundle: thesaurus
+label: 'View mode'
+description: 'Per item view mode selector.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

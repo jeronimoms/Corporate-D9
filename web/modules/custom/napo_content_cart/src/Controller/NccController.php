@@ -2,6 +2,7 @@
 
 namespace Drupal\napo_content_cart\Controller;
 
+use Drupal\Core\Ajax\InsertCommand;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Link;
@@ -10,7 +11,9 @@ use Drupal\Core\TempStore\PrivateTempStore;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Url;
 use Drupal\media\Entity\Media;
+use Drupal\napo_content_cart\NccCartTrait;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Ajax\AjaxResponse;
@@ -20,12 +23,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Cookie;
 use Twig\Error\RuntimeError;
 use Drupal\Core\Ajax\AlertCommand;
+use Drupal\Core\Ajax\OpenDialogCommand;
+use Drupal\Core\Ajax\ReplaceCommand;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * General class for node like controller.
  */
 class NccController extends ControllerBase implements ContainerInjectionInterface {
+
+  use NccCartTrait;
 
   /**
    * The Request object.
@@ -51,8 +58,7 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container)
-  {
+  public static function create(ContainerInterface $container) {
     return new static(
       $container->get('request_stack'),
       $container->get('tempstore.private')
@@ -116,17 +122,16 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
     $build['content'] = [
       '#theme' => 'ncc_element_modal',
       '#title' => $node->getTitle(),
-      '#message' => new TranslatableMarkup('1 item added to the Download centre yyyy'),
+      '#message' => new TranslatableMarkup('1 item added to the Download centre'),
       '#button' => $this->getDefaultButton(),
       '#attached' => [
         'library' => ['core/drupal.dialog.ajax'],
       ]
     ];
 
-
     $response = new AjaxResponse();
-    $response->addCommand(new HtmlCommand('', $build));
-
+    $response->addCommand(new ReplaceCommand('.napo-cart-add', $this->removeElement($node)));
+    $response->addCommand(new OpenDialogCommand('#add-cart', 'hola', $build, ['width' => 400]));
 
     return $response;
 
@@ -135,8 +140,7 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
   /**
    * {@inheritdoc}
    */
-  public function truncatecart()
-  {
+  public function truncatecart() {
     /** @var PrivateTempStore $store */
     $store = $this->privateTempStoreFactory->get('content_cart.downloads');
     $store->delete('video_downloads');
@@ -152,23 +156,32 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
       if (array_key_exists($node->id(), $ids)) {
         unset($ids[$node->id()]);
       }
-      else {
-        return [
-          '#theme' => 'ncc_element_modal',
-          '#message' => new TranslatableMarkup('Element not found'),
-          '#button' => $this->getDefaultButton(),
-        ];
-      }
     }
 
     $store->set('video_downloads', $ids);
 
-    return [
+    $build = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['my_top_message'],
+      ],
+    ];
+
+    $build['content'] = [
       '#theme' => 'ncc_element_modal',
       '#title' => $node->getTitle(),
-      '#message' => new TranslatableMarkup('1 item removed from the Download centre'),
+      '#message' => new TranslatableMarkup('1 item removed to the Download centre'),
       '#button' => $this->getDefaultButton(),
+      '#attached' => [
+        'library' => ['core/drupal.dialog.ajax'],
+      ]
     ];
+
+    $response = new AjaxResponse();
+    $response->addCommand(new ReplaceCommand('.napo-cart-delete', $this->addElement($node)));
+    $response->addCommand(new OpenDialogCommand('#remove-cart', 'hola', $build, ['width' => 400]));
+
+    return $response;
   }
 
   public function viewList($ids) {

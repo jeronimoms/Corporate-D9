@@ -1,0 +1,18 @@
+uuid: ebb8a937-f23a-4f2a-9492-3948fa662c7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.press_contacts
+id: entity_subqueue.press_contacts.metatag
+field_name: metatag
+entity_type: entity_subqueue
+bundle: press_contacts
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

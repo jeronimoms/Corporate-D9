@@ -1,0 +1,18 @@
+uuid: aa8a88ab-97d5-4831-be1c-cdd576e915fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.thesaurus
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: menu_link_content.thesaurus
+target_entity_type_id: menu_link_content
+target_bundle: thesaurus
+default_langcode: site_default
+language_alterable: false

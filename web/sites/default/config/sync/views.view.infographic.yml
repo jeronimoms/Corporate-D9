@@ -625,7 +625,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<a href="/tools-and-resources/infographics">All topics</a>'
+          content: '<div class="views-row moved-by-jquery"><a href="/tools-and-resources/infographics">All topics</a></div>'
           plugin_id: text_custom
     cache_metadata:
       max-age: -1

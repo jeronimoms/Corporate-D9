@@ -72,14 +72,7 @@ process:
     -
       plugin: default_value
       default_value: full_html
-  field_father:
-    -
-      plugin: sub_process
-      source: field_father
-      process:
-        target_id:
-          plugin: get
-          source: nid
+  field_father: field_father
   field_glossary_the:
     -
       plugin: sub_process

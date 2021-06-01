@@ -1,0 +1,11 @@
+uuid: 7c3e936c-3f2b-44a4-b35c-e9811792bc8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - aggregator
+id: aggregator_feed.aggregator_feed
+target_entity_type_id: aggregator_feed
+target_bundle: aggregator_feed
+default_langcode: site_default
+language_alterable: false
