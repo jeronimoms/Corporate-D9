@@ -1,9 +1,9 @@
-uuid: 45f72804-6f2a-450a-85db-ca22dcfa72b4
+uuid: ded6dbcd-37e2-4ec9-a1d2-1e09ae498f87
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.gallery
+    - entityqueue.entity_queue.press_contacts
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.gallery
-target_entity_type_id: node
-target_bundle: gallery
+id: entity_subqueue.press_contacts
+target_entity_type_id: entity_subqueue
+target_bundle: press_contacts
 default_langcode: site_default
 language_alterable: false

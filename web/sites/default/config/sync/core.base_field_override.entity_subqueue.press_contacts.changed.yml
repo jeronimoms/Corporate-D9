@@ -1,0 +1,18 @@
+uuid: 9779b3ed-f838-4fe5-84d1-477b8609f4f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.press_contacts
+id: entity_subqueue.press_contacts.changed
+field_name: changed
+entity_type: entity_subqueue
+bundle: press_contacts
+label: Changed
+description: 'The time that the subqueue was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

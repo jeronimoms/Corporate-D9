@@ -1,0 +1,18 @@
+uuid: 97bcbc59-7896-48e4-81e8-04cd837cab0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.gallery
+id: node.gallery.moderation_state
+field_name: moderation_state
+entity_type: node
+bundle: gallery
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,20 +1,20 @@
-uuid: c989ea57-1877-4ad3-a94d-4bdced5bbb9b
+uuid: f4cc4e62-b6bf-435b-80da-e4b1972fe424
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.gallery
-id: node.gallery.promote
-field_name: promote
+id: node.gallery.status
+field_name: status
 entity_type: node
 bundle: gallery
-label: 'Promoted to front page'
+label: Published
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'
