@@ -3199,9 +3199,16 @@ body.node--type-publication {
   border-radius: 3px;
 }
 
+.download-content-theasaurus.custom-class-jquery {
+  float: right;
+  margin-bottom: 1rem;
+}
+
 .download-content-theasaurus-label {
   display: flex;
   position: relative;
+  color: #003399;
+  font-weight: 600;
 }
 
 .download-content-theasaurus label {
@@ -3217,10 +3224,14 @@ body.node--type-publication {
 }
 
 .download-content-theasaurus-action a {
-  background: url(../images/download-thesaurus.png) no-repeat 100% 2px;
+  background: url(../images/download-thesaurus.png) no-repeat 99% 2px;
   padding-right: 1.5rem;
 }
 
+.content-tooltip {
+  color: #000;
+  font-weight: normal;
+}
 .content-tooltip img {
   cursor: pointer;
   margin-top: -3px;
@@ -3230,7 +3241,7 @@ body.node--type-publication {
 .thesaurus-tooltip {
   display: none;
   position: absolute;
-  width: 225px;
+  width: 278px;
   height: auto;
   top: 30px;
   left: -2px;
@@ -3244,9 +3255,10 @@ body.node--type-publication {
 }
 
 .close-thes-tooltip {
-  text-indent: -9999x;
+  visibility: hidden;
 }
 .close-thes-tooltip:after {
+  visibility: visible;
   content: "x";
   position: absolute;
   font-size: 1.3rem;
