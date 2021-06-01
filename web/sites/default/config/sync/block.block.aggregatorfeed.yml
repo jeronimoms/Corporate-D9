@@ -1,4 +1,4 @@
-uuid: 0bd540e7-ec64-48d6-ae86-2d73e1f84099
+uuid: 426c5061-03c8-4211-932b-e7d2523411f1
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
 id: aggregatorfeed
 theme: ncwtheme
 region: sidebar_second
-weight: -22
+weight: 0
 provider: null
 plugin: aggregator_feed_block
 settings:
@@ -18,7 +18,7 @@ settings:
   label: 'EU-OSHA in the media'
   provider: aggregator
   label_display: visible
-  block_count: 2
+  block_count: 3
   feed: '1'
 visibility:
   request_path:

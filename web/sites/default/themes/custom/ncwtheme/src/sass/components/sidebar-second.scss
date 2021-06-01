@@ -1,4 +1,32 @@
 /* Sidebar second */
+.sidebar-second {
+  .block-block-content, .block-aggregator{
+    clear: both;
+    margin-top: 2rem;
+  }
+  .block-aggregator{
+    .list-group-item{
+      border: 0;
+      a{
+        display: block;
+        font-size: 0.8rem;
+        line-height: 17px;
+        padding-bottom: 10px;
+        background: url(../images/li_arrow.png) no-repeat 1px 2px;
+        padding-left: 15px;
+      }
+    }
+  }
+  .block{
+    h2{
+      font-size: 1.05rem;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-bottom: 5px solid $bg-color-blue;
+    }
+  }
+}
 .sidebar-second{
   .related-views{
     padding-left: 20px;
@@ -11,13 +39,6 @@
       padding-right: 0;
       padding-top: 0.3rem;
       padding-bottom: 1.6rem;
-      h2{
-        font-size: 1rem;
-        font-weight: bold;
-        margin-top: 0;
-        margin-bottom: 0;
-        border-bottom: 0;
-      }
     }
   }
    .views-row{
@@ -122,15 +143,6 @@
 
 /* Press contacts */
 .sidebar-second{
-  .views-element-container.block.block-views{
-    h2{
-      font-size: 1.35rem;
-      font-weight: bold;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border-bottom: 5px solid $bg-color-blue;
-    }
-  }
   .view-press-contacts {
     .view-content.row{
       margin-left: 0;
@@ -159,10 +171,30 @@
         }
       }
     }
+    .view-footer{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
   }
 }
-
 .block-views-blockblog-block-2{
   margin-bottom: 2rem;
 }
 
+#block-followuson--2{
+  background: $bg-color-blue-light-2;
+  padding: 0.5rem 1rem 1rem 1rem;
+  h2{
+    border-bottom: 0;
+    padding: 0 0 0.5rem 0;
+    margin: 0;
+  }
+  img{
+    margin-right: 10px;
+  }
+}
+
+#become-partner-intro, #join-list-intro{
+  font-size: 0.8rem;
+  padding-bottom: 10px;
+}

@@ -5,7 +5,6 @@
 @import 'base/variables';
 
 @import 'components/accordion';
-@import 'components/blocks-right-column';
 @import 'components/buttons';
 @import 'components/cookies';
 @import 'components/facets';
@@ -14,6 +13,7 @@
 @import 'components/headings';
 @import 'components/helper';
 @import 'components/sidebar-first';
+@import 'components/sidebar-second';
 @import 'components/links';
 @import 'components/modal';
 @import 'components/pager';
@@ -29,6 +29,7 @@
 @import 'layout/menu-landing-pages';
 @import 'layout/section';
 
+@import 'displays/forms';
 @import 'displays/infographics';
 @import 'displays/login';
 @import 'displays/photo-gallery';

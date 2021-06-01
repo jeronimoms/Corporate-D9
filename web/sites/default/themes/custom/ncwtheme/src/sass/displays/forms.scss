@@ -1,0 +1,39 @@
+body.contact{
+  form.contact-form{
+    width: 80%;
+    background: $bg-color-blue-light-2;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border: 1px solid $bg-color-blue;
+    border-radius: 3px;
+    label{
+      margin-top: 0.5rem;
+      padding-bottom: 5px;
+      font-weight: 600;
+    }
+    .custom-select {
+      background: url(../images/pink-select.png) no-repeat scroll 98.5% center #FFF;
+    }
+    .form-control{
+      color: $text-color-black;
+    }
+    textarea.form-control{
+      height: 150px;
+    }
+    button.btn-primary{
+      margin-top: 2rem;
+    }
+  }
+}
+
+
+@media only screen and (max-width : 768px) {
+  body.contact{
+    form.contact-form{
+      width: 100%;
+    }
+  }
+
+
+}/* End Media 768px */
