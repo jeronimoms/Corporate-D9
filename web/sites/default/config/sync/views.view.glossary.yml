@@ -8,6 +8,7 @@ dependencies:
     - system.menu.main
   module:
     - node
+    - pagerer
     - text
     - user
 _core:
@@ -324,18 +325,21 @@ display:
           value:
             '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 1
-          exposed: true
+          exposed: false
           expose:
+            operator_id: langcode_op
+            label: 'Translation language'
+            description: null
             use_operator: false
             operator: langcode_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: langcode
-            label: 'Translation language'
-            description: null
+            required: false
             remember: false
             multiple: false
-            required: false
+            remember_roles:
+              authenticated: authenticated
             reduce: false
           is_grouped: false
           group_info:
@@ -457,7 +461,7 @@ display:
             base_path: ''
             items_per_page: 25
             inline: true
-            separator: ' | '
+            separator: ''
             count: false
             override: false
           summary:
@@ -513,18 +517,16 @@ display:
       display_extenders:
         metatag_display_extender: {  }
       style:
-        type: html_list
+        type: default
         options:
           grouping: {  }
-          row_class: ''
-          default_row_class: true
-          type: ul
-          wrapper_class: item-list
-          class: ''
+          row_class: 'revamp-row no-flex'
+          default_row_class: false
       defaults:
         style: false
         row: false
         fields: false
+        pager: false
       row:
         type: fields
         options:
@@ -701,8 +703,8 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: see-more-arrow
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -713,6 +715,22 @@ display:
           absolute: false
           entity_type: node
           plugin_id: entity_link
+      pager:
+        type: pagerer
+        options:
+          preset: pagination
+          items_per_page: 50
+          offset: 0
+          id: '0'
+          total_pages: '0'
+          expose:
+            items_per_page: 0
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: 0
+            items_per_page_options_all_label: '- All -'
+            offset: 0
+            offset_label: Offset
     cache_metadata:
       contexts:
         - 'languages:language_content'
