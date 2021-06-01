@@ -531,7 +531,7 @@ form #edit-actions {
   padding-right: 0;
 }
 
-#edit-search-api-fulltext {
+.tools-and-publications-publications #edit-search-api-fulltext {
   margin-top: 24px;
 }
 
@@ -1185,162 +1185,6 @@ div.pagerer-right-pane {
 }
 .contact-us-0 #main .node--type-article table tr td {
   border: 0;
-}
-
-#block-headerthesaurus-2 .header__wrapper {
-  display: flex;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-#block-headerthesaurus-2 .header__wrapper .header__col:first-child {
-  display: flex;
-  width: 60%;
-  margin-right: 25px;
-  color: #003399;
-  align-items: center;
-}
-#block-headerthesaurus-2 .header__wrapper .header__col:first-child p {
-  margin-bottom: 0;
-}
-
-.download-content-theasaurus {
-  display: flex;
-  place-content: space-between;
-  background-color: #e8ecf5;
-  border: 2px solid #cfddee;
-  width: 310px;
-  height: 100%;
-  align-items: center;
-  min-height: 30px;
-  padding: 10px 15px;
-  border-radius: 3px;
-}
-
-.download-content-theasaurus-label {
-  display: flex;
-  position: relative;
-}
-
-.download-content-theasaurus label {
-  display: flex;
-  color: #003399;
-  align-items: center;
-  font-weight: bold;
-  padding-top: 9px;
-  display: block;
-  line-height: 14px;
-  word-break: break-all;
-  width: auto;
-}
-
-.download-content-theasaurus-action a {
-  background: url(../images/download-thesaurus.png) no-repeat 100% 2px;
-  padding-right: 1.5rem;
-}
-
-.content-tooltip img {
-  cursor: pointer;
-  margin-top: 5px;
-  margin-left: 3px;
-}
-
-.thesaurus-tooltip {
-  display: none;
-  position: absolute;
-  width: 225px;
-  height: auto;
-  top: 30px;
-  left: -2px;
-  background: #FFF;
-  padding: 1.5rem 1rem 1rem 1rem;
-  border: 1px solid #dedede;
-  border-radius: 3px;
-  font-size: 0.9em;
-  line-height: 18px;
-  z-index: 999;
-}
-
-.close-thes-tooltip {
-  position: absolute;
-  font-size: 1.3rem;
-  top: 0;
-  right: 7px;
-  color: #003399;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.block-views-exposed-filter-blockthesaurus-front-indexed-thesaurus-search.views-exposed-form {
-  padding-top: 2.5rem;
-}
-
-#block-thesaurus ul {
-  border-bottom: 2px solid #cfddee;
-  margin-bottom: 1rem;
-}
-#block-thesaurus ul .nav-item.menu-item--active-trail:after {
-  content: "";
-  display: block;
-  position: absolute;
-  min-width: 150px;
-  left: 0;
-  border-bottom: 2px solid #c72272;
-}
-#block-thesaurus ul .nav-item.menu-item--active-trail a {
-  font-weight: bold;
-}
-#block-thesaurus ul .nav-item {
-  min-width: 150px;
-  text-align: center;
-}
-#block-thesaurus ul .nav-item a {
-  font-size: 0.9rem;
-}
-#block-thesaurus ul .nav-item a:hover {
-  font-weight: bold;
-}
-
-.field--name-body .hierarchical-tree {
-  list-style: none;
-}
-.field--name-body .hierarchical-tree li {
-  margin: 0;
-  padding: 0;
-}
-.field--name-body .hierarchical-tree li a {
-  border-bottom: none;
-  font-weight: 600;
-}
-.field--name-body .hierarchical-tree ul {
-  margin-left: 30px;
-}
-.field--name-body .hierarchical-tree .item-list > ul {
-  display: none;
-}
-.field--name-body .hierarchical-tree .expand_menu {
-  display: inline-block;
-  width: 12px;
-  margin-right: 8px;
-  background: url(../images/ico-no-child-tree.png) center no-repeat;
-}
-.field--name-body .hierarchical-tree .expand_menu:hover {
-  cursor: pointer;
-}
-.field--name-body .hierarchical-tree li.has-child > .expand_menu {
-  background: url(../images/ico-plus-tree.png) center no-repeat;
-}
-.field--name-body .hierarchical-tree li.has-child > .expand_menu.expanded {
-  background: url(../images/ico-minor.png) center no-repeat;
-}
-
-.views-label-field-synonyms {
-  color: #003399;
-  font-size: 0.9rem;
-}
-
-.views-field-field-definition {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 /* Common elements */
@@ -3326,6 +3170,187 @@ body.node--type-publication {
     padding-right: 15px;
   }
 }
+#block-headerthesaurus-2 .header__wrapper {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+#block-headerthesaurus-2 .header__wrapper .header__col:first-child {
+  display: flex;
+  width: 60%;
+  margin-right: 25px;
+  color: #003399;
+  align-items: center;
+}
+#block-headerthesaurus-2 .header__wrapper .header__col:first-child p {
+  margin-bottom: 0;
+}
+
+.download-content-theasaurus {
+  display: flex;
+  place-content: space-between;
+  background-color: #e8ecf5;
+  border: 2px solid #cfddee;
+  width: 310px;
+  height: 100%;
+  align-items: center;
+  min-height: 30px;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.download-content-theasaurus-label {
+  display: flex;
+  position: relative;
+}
+
+.download-content-theasaurus label {
+  display: flex;
+  color: #003399;
+  align-items: center;
+  font-weight: bold;
+  padding-top: 9px;
+  display: block;
+  line-height: 14px;
+  word-break: break-all;
+  width: auto;
+}
+
+.download-content-theasaurus-action a {
+  background: url(../images/download-thesaurus.png) no-repeat 100% 2px;
+  padding-right: 1.5rem;
+}
+
+.content-tooltip img {
+  cursor: pointer;
+  margin-top: -3px;
+  margin-left: 3px;
+}
+
+.thesaurus-tooltip {
+  display: none;
+  position: absolute;
+  width: 225px;
+  height: auto;
+  top: 30px;
+  left: -2px;
+  background: #FFF;
+  padding: 1.5rem 1rem 1rem 1rem;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  font-size: 0.9em;
+  line-height: 18px;
+  z-index: 999;
+}
+
+.close-thes-tooltip {
+  text-indent: -9999x;
+}
+.close-thes-tooltip:after {
+  content: "x";
+  position: absolute;
+  font-size: 1.3rem;
+  top: 0;
+  right: 7px;
+  color: #003399;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.block-views-exposed-filter-blockthesaurus-front-indexed-thesaurus-search.views-exposed-form {
+  padding-top: 2.5rem;
+}
+
+#block-thesaurus ul {
+  border-bottom: 2px solid #cfddee;
+  margin-bottom: 1rem;
+}
+#block-thesaurus ul .nav-item.menu-item--active-trail:after {
+  content: "";
+  display: block;
+  position: absolute;
+  min-width: 160px;
+  left: 0;
+  border-bottom: 2px solid #c72272;
+}
+#block-thesaurus ul .nav-item.menu-item--active-trail a {
+  font-weight: bold;
+}
+#block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after {
+  left: 160px;
+}
+#block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after {
+  left: 320px;
+}
+#block-thesaurus ul .nav-item {
+  min-width: 160px;
+  text-align: center;
+}
+#block-thesaurus ul .nav-item a {
+  font-size: 0.9rem;
+}
+#block-thesaurus ul .nav-item a:hover {
+  font-weight: bold;
+}
+
+.field--name-body .hierarchical-tree {
+  list-style: none;
+}
+.field--name-body .hierarchical-tree li {
+  margin: 0;
+  padding: 0;
+}
+.field--name-body .hierarchical-tree li a {
+  border-bottom: none;
+  font-weight: 600;
+}
+.field--name-body .hierarchical-tree ul {
+  margin-left: 30px;
+}
+.field--name-body .hierarchical-tree .item-list > ul {
+  display: none;
+}
+.field--name-body .hierarchical-tree .expand_menu {
+  display: inline-block;
+  width: 12px;
+  margin-right: 8px;
+  background: url(../images/ico-no-child-tree.png) center no-repeat;
+}
+.field--name-body .hierarchical-tree .expand_menu:hover {
+  cursor: pointer;
+}
+.field--name-body .hierarchical-tree li.has-child > .expand_menu {
+  background: url(../images/ico-plus-tree.png) center no-repeat;
+}
+.field--name-body .hierarchical-tree li.has-child > .expand_menu.expanded {
+  background: url(../images/ico-minor.png) center no-repeat;
+}
+
+.views-label-field-synonyms {
+  color: #003399;
+  font-size: 0.9rem;
+}
+
+.views-field-field-definition {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Alphabetical view */
+.view-display-id-attachment_1 {
+  border-top: 2px solid #003399;
+  border-bottom: 2px solid #003399;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.view-display-id-attachment_1 .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.view-display-id-attachment_1 .views-summary a {
+  font-weight: 600;
+}
+
 /* View Highlights(Home) and Press releases */
 .view-highlight, .view-press-releases {
   float: left;

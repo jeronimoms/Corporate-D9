@@ -52,7 +52,7 @@
 .content-tooltip{
   img{
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: -3px;
     margin-left: 3px;
   }
 }
@@ -72,13 +72,17 @@
   z-index: 999;
 }
 .close-thes-tooltip {
-  position: absolute;
-  font-size: 1.3rem;
-  top: 0;
-  right: 7px;
-  color: $text-color-blue;
-  font-weight: bold;
-  cursor: pointer;
+  text-indent: -9999x;
+  &:after{
+    content: 'x';
+    position: absolute;
+    font-size: 1.3rem;
+    top: 0;
+    right: 7px;
+    color: $text-color-blue;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 
 .block-views-exposed-filter-blockthesaurus-front-indexed-thesaurus-search.views-exposed-form{
@@ -95,7 +99,7 @@
         content: '';
         display: block;
         position: absolute;
-        min-width: 150px;
+        min-width: 160px;
         left: 0;
         border-bottom: 2px solid $bg-color-pink;
       }
@@ -103,8 +107,18 @@
         font-weight: bold;
       }
     }
+    .nav-item.menu-item--active-trail:nth-child(2) {
+      &:after {
+        left: 160px;
+      }
+    }
+    .nav-item.menu-item--active-trail:nth-child(3) {
+      &:after {
+        left: 320px;
+      }
+    }
     .nav-item{
-      min-width: 150px;
+      min-width: 160px;
       text-align: center;
       a{
         font-size: 0.9rem;
@@ -165,4 +179,19 @@
 
 
 
-
+/* Alphabetical view */
+.view-display-id-attachment_1{
+  border-top: 2px solid $bg-color-blue;
+  border-bottom: 2px solid $bg-color-blue;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  .view-content.row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .views-summary{
+    a{
+      font-weight: 600;
+    }
+  }
+}
