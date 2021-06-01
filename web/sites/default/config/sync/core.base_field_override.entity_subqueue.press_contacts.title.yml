@@ -1,0 +1,18 @@
+uuid: 9913a992-2923-4d8b-9dae-c0e7e54ac3f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.press_contacts
+id: entity_subqueue.press_contacts.title
+field_name: title
+entity_type: entity_subqueue
+bundle: press_contacts
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

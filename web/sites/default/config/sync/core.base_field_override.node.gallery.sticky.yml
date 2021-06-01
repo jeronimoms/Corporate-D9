@@ -1,14 +1,14 @@
-uuid: c989ea57-1877-4ad3-a94d-4bdced5bbb9b
+uuid: a33944bb-874d-4e34-bf28-e3621512624d
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.gallery
-id: node.gallery.promote
-field_name: promote
+id: node.gallery.sticky
+field_name: sticky
 entity_type: node
 bundle: gallery
-label: 'Promoted to front page'
+label: 'Sticky at top of lists'
 description: ''
 required: false
 translatable: false
