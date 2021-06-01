@@ -19,8 +19,8 @@ settings:
   id: 'views_exposed_filter_block:search-site'
   label: ''
   provider: views
-  label_display: '0'
-  views_label: ''
+  label_display: visible
+  views_label: 'Filter results'
 visibility:
   request_path:
     id: request_path

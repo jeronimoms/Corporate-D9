@@ -1055,6 +1055,24 @@ h3.home a:hover {
   margin-bottom: 2rem;
 }
 
+#block-followuson--2 {
+  background: #e8ecf5;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+#block-followuson--2 h2 {
+  border-bottom: 0;
+  padding: 0 0 0.5rem 0;
+  margin: 0;
+}
+#block-followuson--2 img {
+  margin-right: 10px;
+}
+
+#become-partner-intro, #join-list-intro {
+  font-size: 0.8rem;
+  padding-bottom: 10px;
+}
+
 nav.pager {
   display: flex;
   justify-content: center;
