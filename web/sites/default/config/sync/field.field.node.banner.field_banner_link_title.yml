@@ -13,7 +13,7 @@ bundle: banner
 label: 'Link title'
 description: 'Select Link title for this content.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
