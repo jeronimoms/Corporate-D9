@@ -1,20 +1,20 @@
-# Migration file for creating "quiz" nodes from BBDD.
+# Migration file for creating "quiz question" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
 
 ##################### BASIC INFORMATION ###################
 
-id: allages_node_quiz                    # -----  CHANGE
-label: 'Node: Quiz'                   # -----  CHANGE
+id: allages_node_truefalse                    # -----  CHANGE
+label: 'Node: Quiz True False Question'                   # -----  CHANGE
 audit: true
 migration_group: allages_migrate_quiz
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node
-  node_type: quiz                     # -----  CHANGE
+  node_type: truefalse                     # -----  CHANGE
 destination:
-  plugin: entity:quiz
+  plugin: entity:quiz_question
 dependencies:
   enforced:
     module:
@@ -28,13 +28,20 @@ process:
   #vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value
-      default_value: quiz              # -----  CHANGE
+      default_value: truefalse              # -----  CHANGE
   langcode:
     plugin: default_value
     source: language
     default_value: "und"
   title: title
-  body: body
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: restricted_html
   uid: node_uid
   status: status
   created: created
@@ -45,4 +52,3 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-
