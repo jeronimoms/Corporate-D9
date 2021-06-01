@@ -2858,6 +2858,13 @@ body.contact form.contact-form button.btn-primary {
   height: auto;
 }
 
+@media only screen and (max-width: 576px) {
+  .page-view-infographic .infographic-item-view {
+    max-width: 350px;
+    margin: auto 2rem;
+  }
+}
+/* End Media 576px */
 .page-user-login form.user-login-form {
   max-width: 50%;
   padding-top: 1rem;
@@ -3822,7 +3829,7 @@ body.node--type-publication {
     max-height: none;
   }
 }
-/* End Media 480px */
+/* End Media 576px */
 @media only screen and (max-width: 480px) {
   /* Page - Highlight, News and Events content link */
   .news-events #main ul li {
