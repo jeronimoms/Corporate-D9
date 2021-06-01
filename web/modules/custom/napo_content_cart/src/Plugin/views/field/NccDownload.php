@@ -7,6 +7,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\TempStore\PrivateTempStore;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Url;
+use Drupal\napo_content_cart\NccCartTrait;
 use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
 use Drupal\node\Entity\Node;
@@ -23,6 +24,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * }
  */
 class NccDownload extends FieldPluginBase implements ContainerFactoryPluginInterface {
+
+  use NccCartTrait;
 
   /**
    * The entity type manager.
@@ -92,61 +95,17 @@ class NccDownload extends FieldPluginBase implements ContainerFactoryPluginInter
     $ids = $store->get('video_downloads');
 
     if (isset($ids) && array_key_exists($node->id(), $ids)) {
-      $link = [
-        '#type' => 'link',
-        '#title' => $this->t('Remove Video'),
-        '#url' => Url::fromRoute('content_cart.deleteone',
-          [
-            'node' => $node->id(),
-            'nojs' => 'nojs'
-          ],
-          [
-            'attributes' => [
-              'class' => ['use-ajax', 'node_in_content_cart'],
-              'data-dialog-type' => 'dialog',
-            ],
-          ],
-        ),
-      ];
+      $link = $this->removeElement($node);
     }
     else {
-      $link = [
-        '#type' => 'link',
-        '#title' => $this->t('Download Video'),
-        '#url' => Url::fromRoute('content_cart.addcart',
-          [
-            'node' => $node->id(),
-          ],
-          [
-            'attributes' => [
-              'class' => ['use-ajax'],
-              'data-dialog-type' => 'dialog',
-            ],
-          ],
-        ),
-      ];
+      $link = $this->addElement($node);
     }
 
-    $link = [
-      '#type' => 'link',
-      '#title' => $this->t('Download Video'),
-      '#url' => Url::fromRoute('content_cart.addcart',
-        [
-          'node' => $node->id(),
-        ],
-        [
-          'attributes' => [
-            'class' => ['use-ajax'],
-            'data-dialog-type' => 'dialog',
-          ],
-        ],
-      ),
-    ];
 
     return [
       '#type' => 'container',
       '#attributes' => [
-        'class' => 'download-video',
+        'class' => 'download-videoa',
       ],
       'content' => $link,
     ];
