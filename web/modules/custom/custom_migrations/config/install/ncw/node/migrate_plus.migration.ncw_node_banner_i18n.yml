@@ -1,0 +1,56 @@
+# Migration file for creating "banner" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_banner_i18n
+label: 'Node: banner translations'
+
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node_entity_translation
+  node_type: banner                                # -----  CHANGE
+destination:
+  plugin: entity:node
+  translations: true
+  destination_module: content_translation
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - d7_user
+    - ncw_node_banner                            # -----  CHANGE
+
+process:
+  nid: entity_id
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      'pt': 'pt-pt'
+  title: title
+
+
+
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_banner_link:
+    plugin: field_link
+    source: field_banner_link
+
+  field_copyright: field_copyright
+  field_banner_link_title:
+    - plugin: sub_process
+      source: field_banner_link_title
+      process:
+        target_id: tid
+  field_summary:
+    - plugin: get
+      source: field_summary
+  field_subtitle: field_subtitle
