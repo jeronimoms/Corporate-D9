@@ -79,3 +79,13 @@
     }
   }
 }
+
+
+@media only screen and (max-width : 576px) {
+  .page-view-infographic {
+    .infographic-item-view {
+      max-width: 350px;
+      margin: auto 2rem;
+    }
+  }
+}/* End Media 576px */
