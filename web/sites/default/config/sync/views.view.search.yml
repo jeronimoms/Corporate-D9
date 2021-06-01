@@ -949,17 +949,7 @@ display:
             label: 'Publication date'
           plugin_id: search_api
       title: Search
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          content: '<div class="pager-total"><span>@start - @end / @total</span></div>'
-          plugin_id: result
+      header: {  }
       footer:
         result:
           id: result
