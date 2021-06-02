@@ -9,10 +9,10 @@
       <div class="push-right">
         <div class="content-first-row">
           <div class="font-size-print">
-            <span id="_smallify" class="a_small"><a title="Smaller text">a</a></span>
-            <span id="_reset" class="a_medium"><a title="Optimised defaults">a</a></span>
-            <span id="_biggify" class="a_big"><a title="Bigger text">a</a></span>
-            <a href="#" onclick="if(window.print)window.print();" class="print-friendly" title="Print page"></a>
+            <span id="_smallify" class="a_small"><a title="{{ 'Smaller text' | trans }}">a</a></span>
+            <span id="_reset" class="a_medium"><a title="{{ 'Optimised defaults' | trans }}">a</a></span>
+            <span id="_biggify" class="a_big"><a title="{{ 'Bigger text' | trans }}">a</a></span>
+            <a href="#" onclick="if(window.print)window.print();" class="print-friendly" title="{{ 'Print page' | trans }}"></a>
           </div>
           <div class="header-social-menu">
             {{ page.header }}
