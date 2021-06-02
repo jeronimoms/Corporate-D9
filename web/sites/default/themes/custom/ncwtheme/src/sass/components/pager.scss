@@ -4,6 +4,7 @@ nav.pager{
     ul.pager__items{
     margin-top: 1rem;
     padding: 0;
+
     .pager__item{
       float: left;
       margin-right: 12px;
@@ -29,7 +30,7 @@ nav.pager{
       }
     }
 
-    .pager__item--first, .pager__item--previous, .pager__item--next, .pager__item--last, .pagerer-breaker{
+    .pager__item--first, .pager__item--previous, .pager__item--next, .pager__item--last{
       margin-right: 0;
       a{
         border: 0;
@@ -40,6 +41,10 @@ nav.pager{
         height: 10px;
         margin-top: -22px;
       }
+    }
+    .pagerer-breaker{
+      margin-left: 6px;
+      margin-right: 6px;
     }
   }
 }
