@@ -1,0 +1,22 @@
+uuid: f6c8c9ee-6a1b-4988-b9a1-283d271ac05b
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.press_contacts
+id: entity_subqueue.press_contacts.status
+field_name: status
+entity_type: entity_subqueue
+bundle: press_contacts
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

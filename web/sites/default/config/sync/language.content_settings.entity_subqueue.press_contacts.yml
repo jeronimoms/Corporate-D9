@@ -1,0 +1,18 @@
+uuid: ded6dbcd-37e2-4ec9-a1d2-1e09ae498f87
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.press_contacts
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: entity_subqueue.press_contacts
+target_entity_type_id: entity_subqueue
+target_bundle: press_contacts
+default_langcode: site_default
+language_alterable: false

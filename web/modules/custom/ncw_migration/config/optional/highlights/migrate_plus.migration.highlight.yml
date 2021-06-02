@@ -170,6 +170,9 @@ process:
       plugin: default_value
       default_value: ncw
   status: status
+  moderation_state:
+    - plugin: nm_content_moderation
+      source: status
   created: created
   changed: changed
   promote: promote

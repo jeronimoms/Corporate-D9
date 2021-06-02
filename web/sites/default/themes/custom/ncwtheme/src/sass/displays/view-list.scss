@@ -56,7 +56,7 @@
   }
 }
 
-
+/* Press releases */
 .view-press-releases{
   padding-left: 15px;
   padding-right: 15px;
@@ -65,6 +65,11 @@
     color: $text-color-blue;
     font-weight: 600;
     margin-left: -15px;
+  }
+  .views-row{
+    .see-more-arrow{
+      margin-top: 0.8rem;
+    }
   }
   .views-row:nth-child(3){
     background: url('../images/separator_home.jpg') repeat-x scroll 0% 100% rgba(0,0,0,0);
@@ -135,4 +140,92 @@
   .views-field-field-summary-html{
     min-height: 5rem;
   }
+}
+
+/* Procurement - Archieved calls */
+.view-display-id-block_archived_calls{
+  .calls__wrapper{
+    width: 100%;
+  }
+  .calls__list{
+    list-style: none;
+    width: 100%;
+    margin-top: 1rem;
+    padding-left: 17px;
+    .call__item{
+      width: 100%;
+      margin-bottom: 0.2rem;
+      padding-top: 0;
+      padding-bottom: 1.5rem;
+      background: url(../images/separator.jpg) repeat-x 100% 100%;
+      a{
+        border-bottom: 1px solid $bg-color-pink;
+        &:hover{
+          text-decoration: none;
+          border-bottom: 1px solid $bg-color-blue;
+        }
+      }
+    }
+  }
+}
+
+/* Tags filters Years - Used similiar CSS in Infographics scss */
+.view-calls.view-display-id-page_1{
+  .view-header{
+    color: $text-color-blue;
+  }
+  .view-content{
+    clear: both;
+  }
+  .calls__list{
+    list-style: none;
+    width: 100%;
+    margin-top: 1rem;
+    padding-left: 0;
+    .call__item{
+      float: left;
+      margin-right: 0;
+      padding-right: 2px;
+      a{
+        padding-right: 5px;
+        &.active-custom{
+          font-weight: bold;
+        }
+      }
+      &:after{
+        content: '|';
+        display: inline-block;
+      }
+    }
+  }
+}
+
+/* General Search */
+.block-views-exposed-filter-blocksearch-site.views-exposed-form{
+  padding-bottom: 0;
+}
+
+.view-search{
+  .views-field-url{
+    a{
+      display: block;
+      color: $text-color-pink;
+      margin-bottom: 0.3rem;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.views-field-type{
+  /* View tags */
+  background-color: $bg-color-view-tags;
+  color: $text-color-white;
+  font-size: 0.9rem;
+  padding: 2px 0.8rem;
+  margin-right: 1rem;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+  border-radius: 5px;
 }

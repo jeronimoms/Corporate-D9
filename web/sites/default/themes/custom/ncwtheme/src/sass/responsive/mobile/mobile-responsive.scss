@@ -63,6 +63,18 @@
 
 }/* End Media 768px */
 
+@media only screen and (max-width : 576px) {
+
+  .view-photo-gallery-album, .view-photo-gallery{
+    .gallery-item-view{
+      img{
+        max-height: none;
+      }
+    }
+  }
+
+}/* End Media 576px */
+
 @media only screen and (max-width : 480px) {
   /* Page - Highlight, News and Events content link */
   .news-events {

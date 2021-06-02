@@ -73,6 +73,19 @@ jQuery(document).ready(function($) {
     $('.addtoany_list').appendTo('.move-add-to-any');
   }
 
+  //Move infographic filter
+  if ($(".views-row.moved-by-jquery")[0]) {
+    $('.views-row.moved-by-jquery').prependTo('.page-view-infographic .view-infographic.view-display-id-block_3  .view-content.row');
+  }
+
+  //Move Donwload box in Thesaurus footer view
+  if ($(".view-footer .download-content-theasaurus")[0]) {
+    $('.view-footer .download-content-theasaurus').addClass('custom-class-jquery');
+    $('.view-footer .download-content-theasaurus').prependTo('.pagerer-container');
+
+  }
+
+
   //Show input search when click in Search button responsive menu
   $("#block-searchsite").click(function(){
     $('#block-searchsite .btn-primary').addClass('activate');
@@ -119,6 +132,38 @@ jQuery(document).ready(function($) {
     var text = $(this).text();
     $(this).text(text.replace('&amp;', '&'));
   });
+
+
+  //Archivied calls - Add class custom-active in year
+  if ($(".view-id-calls.view-display-id-page_1")[0]) {
+    let url = $(location).attr('href');
+    //The year is in the URL
+    let urlKey = url.replace(/\/\s*$/, "").split('/').pop();
+    $('.view-display-id-page_1 .call__item a').filter(function () {
+      return $(this).text() == urlKey;
+    }).addClass('active-custom');
+    //Add the active class to the left menu 'Procurement'
+    $('.menu-level-1 > li:nth-child(6)').addClass('menu-item--active-trail');
+    $('.menu-level-1 > li:nth-child(6) a').addClass('is-active');
+
+  }
+
+  //Hierarchical view
+  $('#tree ul').css('display', 'none');
+  $("#tree .has-child > .expand_menu").click(function(){
+    $(this).toggleClass('expanded');
+    $(this).parent('.has-child').find('> .item-list > ul').slideToggle('slow');
+  });
+
+  //Tooltip Thesaurus
+  if ($(".content-tooltip img")[0]) {
+    $('.content-tooltip img').click(function() {
+      $(".thesaurus-tooltip").fadeIn(300);
+    });
+    $('.close-thes-tooltip').click(function() {
+      $(".thesaurus-tooltip").fadeOut(300);
+    });
+  }
 
 });
 

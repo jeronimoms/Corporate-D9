@@ -1,0 +1,50 @@
+uuid: eb416a96-7640-47dc-9677-1d86025a1a62
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_banner_i18n
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: banner translations'
+source:
+  plugin: d7_node_entity_translation
+  node_type: banner
+process:
+  nid: entity_id
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      pt: pt-pt
+  title: title
+  field_banner_link:
+    plugin: field_link
+    source: field_banner_link
+  field_copyright: field_copyright
+  field_banner_link_title:
+    -
+      plugin: sub_process
+      source: field_banner_link_title
+      process:
+        target_id: tid
+  field_summary:
+    -
+      plugin: get
+      source: field_summary
+  field_subtitle: field_subtitle
+destination:
+  plugin: 'entity:node'
+  translations: true
+  destination_module: content_translation
+migration_dependencies:
+  required:
+    - d7_user
+    - ncw_node_banner

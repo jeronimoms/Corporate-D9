@@ -1,0 +1,27 @@
+uuid: 426c5061-03c8-4211-932b-e7d2523411f1
+langcode: en
+status: true
+dependencies:
+  module:
+    - aggregator
+    - system
+  theme:
+    - ncwtheme
+id: aggregatorfeed
+theme: ncwtheme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: aggregator_feed_block
+settings:
+  id: aggregator_feed_block
+  label: 'EU-OSHA in the media'
+  provider: aggregator
+  label_display: visible
+  block_count: 3
+  feed: '1'
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/press-room
+    negate: false

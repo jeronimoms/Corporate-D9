@@ -1,0 +1,18 @@
+uuid: 61bf3760-c800-468e-9b25-f2278abaab1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.press_contacts
+id: entity_subqueue.press_contacts.created
+field_name: created
+entity_type: entity_subqueue
+bundle: press_contacts
+label: 'Authored on'
+description: 'The time that the subqueue was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

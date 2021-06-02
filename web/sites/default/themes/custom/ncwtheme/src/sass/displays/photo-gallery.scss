@@ -1,0 +1,120 @@
+.page-view-photo-gallery{
+  h1{
+    float: left;
+    width: 80%;
+  }
+}
+
+.view-photo-gallery-album, .view-photo-gallery{
+  .view-content{
+    clear: both;
+  }
+  .gallery-item-view{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    .views-field-field-publication-date{
+      background: $bg-color-blue;
+      padding: 1rem 1rem 0 1rem;
+      .datetime{
+        color: $text-color-white;
+      }
+    }
+    .views-field-name, .views-field-title{
+      display: flex;
+      height: 100%;
+      background: $bg-color-blue;
+      h2{
+        line-height: 22px;
+        padding: 1rem;
+        a{
+          font-size: 0.9rem;
+          color: $text-color-white;
+        }
+      }
+    }
+    img{
+      width: 100%;
+      height: auto;
+      max-height: 234px;
+    }
+  }
+}
+
+.view-photo-gallery{
+  .gallery-item-view {
+    .views-field-title{
+      h2{
+        padding: 0 1rem 1rem 1rem;
+      }
+    }
+  }
+}
+
+.field--type-image.field--name-field-cover-photo{
+  float: none;
+  width: 100%;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.node--type-gallery{
+  .field--name-field-album-pictures.field--type-image{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 0;
+    .field__item{
+      width: 33%;
+      margin-right: 30px;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .field__item:nth-child(3){
+      margin-right: 0;
+    }
+  }
+}
+
+.field--name-field-gallery-link{
+  width: 100%;
+  clear: both;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  a{
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: url(../images/arrow.png) 100% 9px no-repeat;
+    padding-right: 1.5rem;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+
+  .node--type-gallery{
+    .field--name-field-album-pictures.field--type-image{
+      display: block;
+      width: 100%;
+      text-align: center;
+      .field__item{
+        width: 100%;
+        margin-right: 0;
+        img{
+          max-width: 350px;
+          height: auto;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+}/* End Media 768px */
+
+
+
+
+

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.gallery.field_album_pictures
     - field.field.node.gallery.field_cover_photo
-    - field.field.node.gallery.field_gallery_flickr_link
+    - field.field.node.gallery.field_gallery_link
     - field.field.node.gallery.field_photo_gallery_type
     - field.field.node.gallery.field_publication_date
     - field.field.node.gallery.field_section
@@ -42,7 +42,7 @@ third_party_settings:
         - node_title
         - field_cover_photo
         - field_album_pictures
-        - field_gallery_flickr_link
+        - field_gallery_link
     fields:
       node_title:
         plugin_id: node_title
@@ -58,7 +58,7 @@ content:
     weight: 3
     label: hidden
     settings:
-      image_style: max_325x325
+      image_style: photo_gallery
       image_link: ''
     third_party_settings:
       ds:
@@ -88,23 +88,30 @@ content:
       linked_field:
         linked: '1'
         type: field
-        destination: field_gallery_flickr_link
+        destination: field_gallery_link
         advanced: {  }
         token: ''
     type: image
     region: ds_content
-  field_gallery_flickr_link:
-    type: link
-    weight: 4
-    region: ds_content
-    label: above
+  field_gallery_link:
+    weight: 5
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
+      url_plain: true
+      target: _blank
       url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
+      rel: '0'
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: 'Full gallery link'
+            lb-col: false
+            classes: {  }
+    type: link
+    region: ds_content
   field_publication_date:
     weight: 0
     label: hidden

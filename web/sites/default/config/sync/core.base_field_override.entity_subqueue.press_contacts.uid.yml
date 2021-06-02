@@ -1,0 +1,20 @@
+uuid: 6d704658-4155-4401-b8c9-678c600d0655
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.press_contacts
+id: entity_subqueue.press_contacts.uid
+field_name: uid
+entity_type: entity_subqueue
+bundle: press_contacts
+label: 'User ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\entityqueue\Entity\EntitySubqueue::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

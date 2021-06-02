@@ -1,0 +1,211 @@
+#block-headerthesaurus-2{
+  .header__wrapper{
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    .header__col:first-child{
+      display: flex;
+      width: 60%;
+      margin-right: 25px;
+      color: $text-color-blue;
+      align-items: center;
+      p{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.download-content-theasaurus {
+  display: flex;
+  place-content: space-between;
+  background-color: $bg-color-blue-light-2;
+  border: 2px solid $bg-color-blue-light;
+  width: 310px;
+  height: 100%;
+  align-items: center;
+  min-height: 30px;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.download-content-theasaurus.custom-class-jquery{
+  float: right;
+  margin-bottom: 1rem;
+}
+
+.download-content-theasaurus-label{
+  display: flex;
+  position: relative;
+  color: $text-color-blue;
+  font-weight: 600;
+}
+.download-content-theasaurus label {
+  display: flex;
+  color: $text-color-blue;
+  align-items: center;
+  font-weight: bold;
+  padding-top: 9px;
+  display: block;
+  line-height: 14px;
+  word-break: break-all;
+  width: auto;
+}
+.download-content-theasaurus-action{
+  a{
+    background: url(../images/download-thesaurus.png) no-repeat 99% 2px;
+    padding-right: 1.5rem;
+  }
+}
+.content-tooltip{
+  color: $text-color-black;
+  font-weight: normal;
+  img{
+    cursor: pointer;
+    margin-top: -3px;
+    margin-left: 3px;
+  }
+}
+.thesaurus-tooltip {
+  display: none;
+  position: absolute;
+  width: 278px;
+  height: auto;
+  top: 30px;
+  left: -2px;
+  background: #FFF;
+  padding: 1.5rem 1rem 1rem 1rem;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  font-size: 0.9em;
+  line-height: 18px;
+  z-index: 999;
+}
+.close-thes-tooltip {
+  visibility: hidden;
+  &:after{
+    visibility: visible;
+    content: 'x';
+    position: absolute;
+    font-size: 1.3rem;
+    top: 0;
+    right: 7px;
+    color: $text-color-blue;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.block-views-exposed-filter-blockthesaurus-front-indexed-thesaurus-search.views-exposed-form{
+  padding-top: 2.5rem;
+}
+
+
+#block-thesaurus{
+  ul{
+    border-bottom: 2px solid $bg-color-blue-light;
+    margin-bottom: 1rem;
+    .nav-item.menu-item--active-trail{
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        min-width: 160px;
+        left: 0;
+        border-bottom: 2px solid $bg-color-pink;
+      }
+      a{
+        font-weight: bold;
+      }
+    }
+    .nav-item.menu-item--active-trail:nth-child(2) {
+      &:after {
+        left: 160px;
+      }
+    }
+    .nav-item.menu-item--active-trail:nth-child(3) {
+      &:after {
+        left: 320px;
+      }
+    }
+    .nav-item{
+      min-width: 160px;
+      text-align: center;
+      a{
+        font-size: 0.9rem;
+        &:hover{
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.field--name-body {
+  .hierarchical-tree {
+    list-style: none;
+    li {
+      margin: 0;
+      padding: 0;
+      a {
+        border-bottom: none;
+        font-weight: 600;
+      }
+    }
+    ul {
+      margin-left: 30px;
+    }
+    .item-list {
+      > ul {
+        display: none;
+      }
+    }
+    .expand_menu {
+      display: inline-block;
+      width: 12px;
+      margin-right: 8px;
+      background: url(../images/ico-no-child-tree.png) center no-repeat;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    li.has-child > .expand_menu {
+      background: url(../images/ico-plus-tree.png) center no-repeat;
+      &.expanded {
+        background: url(../images/ico-minor.png) center no-repeat;
+      }
+    }
+  }
+}
+
+.views-label-field-synonyms{
+  color: $text-color-blue;
+  font-size: 0.9rem;
+}
+
+.views-field-field-definition{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+
+/* Alphabetical view */
+.view-display-id-attachment_1{
+  border-top: 2px solid $bg-color-blue;
+  border-bottom: 2px solid $bg-color-blue;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  .view-content.row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .views-summary{
+    display: inline-block;
+    margin-right: 1rem;
+    a{
+      font-weight: 600;
+    }
+  }
+}

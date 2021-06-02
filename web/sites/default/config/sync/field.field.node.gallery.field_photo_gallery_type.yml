@@ -12,8 +12,8 @@ entity_type: node
 bundle: gallery
 label: 'Photo Gallery Type'
 description: ''
-required: false
-translatable: true
+required: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
