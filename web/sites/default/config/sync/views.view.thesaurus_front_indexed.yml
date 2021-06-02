@@ -421,7 +421,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="/node/{{ nid }}">See more</a>'
+            text: '<a class="pull-right" href="/node/{{ nid }}">See more</a>'
             make_link: false
             path: ''
             absolute: false
