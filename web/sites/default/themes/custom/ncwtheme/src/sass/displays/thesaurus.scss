@@ -195,12 +195,15 @@
   border-top: 2px solid $bg-color-blue;
   border-bottom: 2px solid $bg-color-blue;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
   .view-content.row{
     margin-left: 0;
     margin-right: 0;
   }
   .views-summary{
+    display: inline-block;
+    margin-right: 1rem;
     a{
       font-weight: 600;
     }
