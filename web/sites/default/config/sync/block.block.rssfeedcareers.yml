@@ -1,0 +1,30 @@
+uuid: 3445edc0-fae3-4df9-8e08-78ab8771ada2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:705ff7b2-963e-40f0-9aae-919d7190a957'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: rssfeedcareers
+theme: ncwtheme
+region: sidebar_second
+weight: -31
+provider: null
+plugin: 'block_content:705ff7b2-963e-40f0-9aae-919d7190a957'
+settings:
+  id: 'block_content:705ff7b2-963e-40f0-9aae-919d7190a957'
+  label: 'RSS Feed (Careers)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /careers
+    negate: false
