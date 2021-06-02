@@ -1,0 +1,29 @@
+uuid: 5d30f125-8723-4db0-bdc9-5b0f6b68f898
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.upcoming_events
+  module:
+    - system
+    - views
+  theme:
+    - ncwtheme
+id: views_block__upcoming_events_block_1
+theme: ncwtheme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:upcoming_events-block_1'
+settings:
+  id: 'views_block:upcoming_events-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/blog/*\r\n/highlights/*\r\n/oshnews/*\r\n/tools-and-resources/seminars/*\r\n/tools-and-resources/blog\r\n/node/5445"
+    negate: false
