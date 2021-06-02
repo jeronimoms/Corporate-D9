@@ -421,7 +421,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a class="pull-right" href="/node/{{ nid }}">See more</a>'
+            text: '<a href="/node/{{ nid }}">See more</a>'
             make_link: false
             path: ''
             absolute: false
@@ -446,7 +446,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: div
           element_class: 'see-more-arrow minor-size'
           element_label_type: ''
           element_label_class: ''

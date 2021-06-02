@@ -3360,11 +3360,16 @@ body.node--type-publication {
   border-top: 2px solid #003399;
   border-bottom: 2px solid #003399;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 .view-display-id-attachment_1 .view-content.row {
   margin-left: 0;
   margin-right: 0;
+}
+.view-display-id-attachment_1 .views-summary {
+  display: inline-block;
+  margin-right: 1rem;
 }
 .view-display-id-attachment_1 .views-summary a {
   font-weight: 600;
