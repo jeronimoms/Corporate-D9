@@ -847,7 +847,6 @@ display:
             mt: mt
             nl: nl
             pl: pl
-            pt: pt
             ro: ro
             sk: sk
             sl: sl
@@ -868,7 +867,7 @@ display:
             identifier: search_api_language
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'

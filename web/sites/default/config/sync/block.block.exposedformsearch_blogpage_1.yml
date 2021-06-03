@@ -1,0 +1,28 @@
+uuid: aeb8dace-bb88-4bbe-95cf-d1bd55700873
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_blog
+  module:
+    - system
+    - views
+  theme:
+    - ncwtheme
+id: exposedformsearch_blogpage_1
+theme: ncwtheme
+region: content
+weight: -21
+provider: null
+plugin: 'views_exposed_filter_block:search_blog-page_1'
+settings:
+  id: 'views_exposed_filter_block:search_blog-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: "/blog\r\n/search/blog"
+    negate: false
