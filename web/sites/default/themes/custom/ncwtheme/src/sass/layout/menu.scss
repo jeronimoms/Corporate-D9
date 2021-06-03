@@ -147,6 +147,16 @@
   }
 
   /* Language */
+  .header{
+    select.custom-select {
+      background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
+      color: $text-color-white;
+    }
+    #edit-search-api-fulltext {
+      display: none;
+    }
+  }
+
   #lang_dropdown_form_lang-dropdown-form {
     background: none;
   }
@@ -154,14 +164,6 @@
     position: absolute;
     left: 62px;
     top: 11px;
-  }
-  select.custom-select {
-    background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
-    color: $text-color-white;
-  }
-
-  #edit-search-api-fulltext {
-    display: none;
   }
 
   #edit-search-api-fulltext.activate {
