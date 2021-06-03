@@ -1,6 +1,4 @@
-
-
-
+/* View */
 .view-events{
   .views-exposed-form{
     margin-top: 2rem;
@@ -172,4 +170,44 @@
 }
 .code_CA{
   background: url(../images/ico-events/big/Canada-180x180.png) no-repeat;
+}
+
+/* Node events */
+.node--type-events{
+  #main{
+    h3.events-title{
+      background: url(../images/separator.jpg) repeat-x scroll 0 100% rgba(0,0,0,0);
+      margin-top: 1rem;
+      margin-bottom: 5px;
+      padding-bottom: 15px;
+    }
+    .field__label{
+      font-weight: normal ;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      &:after{
+        content: ':';
+        display: inline-block;
+      }
+    }
+    .field__item{
+      color: $text-color-blue;
+      font-size: 0.9rem;
+      padding-bottom: 10px;
+
+    }
+    .field--type-text-with-summary{
+      color: $text-color-black;
+    }
+    .field--name-field-website-of-event{
+      a{
+        text-decoration: none;
+        background: url(../images/li_arrow.png) no-repeat scroll 0 50% transparent;
+        font-weight: bold;
+        padding-left: 1em;
+        font-size: 0.8rem;
+        border-bottom: 0px;
+      }
+    }
+  }
 }
