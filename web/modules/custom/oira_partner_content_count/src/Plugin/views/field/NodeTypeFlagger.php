@@ -25,7 +25,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * "views_data" = "Drupal\views\EntityViewsData"
  * }
  */
-class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginInterface{
+class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * The entity type manager.

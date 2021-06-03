@@ -48,10 +48,30 @@
   }
 }
 
+/* Files images */
+#main{
+  .file{
+    a{
+      padding-left: 3px;
+    }
+  }
+  .file--application-pdf {
+    background-image: url(../images/file-icons/application-pdf.png);
+  }
+}
+
 /* Common styles to Fields */
 .views-exposed-form{
   position: relative;
   padding-bottom: 2.5rem;
+  .btn-primary{
+    margin-left: 5px;
+  }
+}
+input[type="date" i]::-webkit-calendar-picker-indicator {
+  margin-left: 0px;
+  background: transparent;
+  cursor: pointer;
 }
 
 form{
@@ -61,6 +81,12 @@ form{
     border-radius: 5px;
     color: $text-color-blue;
     font-size: 13px;
+  }
+  .form-date{
+    width: 135px;
+    padding-right: 5px;
+    background: url(../images/ico-calendar.png) no-repeat scroll 96% center #FFF;
+    cursor: pointer;
   }
   label{
     display: block;

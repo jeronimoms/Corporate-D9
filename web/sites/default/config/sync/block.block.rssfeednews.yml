@@ -1,0 +1,30 @@
+uuid: d1c99a96-537d-4ddf-93c4-d2e5116bcdd2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:79b81f99-50b5-4064-9248-979dd923fe90'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: rssfeednews
+theme: ncwtheme
+region: sidebar_second
+weight: -27
+provider: null
+plugin: 'block_content:79b81f99-50b5-4064-9248-979dd923fe90'
+settings:
+  id: 'block_content:79b81f99-50b5-4064-9248-979dd923fe90'
+  label: 'RSS Feed (News)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /oshnews
+    negate: false
