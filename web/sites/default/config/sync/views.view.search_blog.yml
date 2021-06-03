@@ -1,27 +1,27 @@
-uuid: 0ba05dcd-e955-4104-a431-cbdf9f4e6c4e
+uuid: 58023ad0-1013-4dd3-a197-b10ca906f34f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_definition
-    - field.storage.node.field_synonyms
-    - search_api.index.thesaurus_term_index
+    - field.storage.node.field_image_caption
+    - field.storage.node.field_publication_date
+    - field.storage.node.field_summary
+    - field.storage.node.field_summary_html
+    - image.style.thumbnail
+    - search_api.index.default_multilingual_node_index
   module:
     - better_exposed_filters
-    - csv_serialization
+    - datetime
+    - media
     - pagerer
-    - rest
     - search_api
-    - serialization
-    - text
-    - user
-    - views_data_export
-id: thesaurus_front_indexed
-label: 'Thesaurus front indexed'
+    - smart_trim
+id: search_blog
+label: 'Search blog'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_thesaurus_term_index
+base_table: search_api_index_default_multilingual_node_index
 base_field: search_api_id
 display:
   default:
@@ -31,9 +31,8 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
-        options:
-          perm: 'access content'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -47,10 +46,10 @@ display:
         type: bef
         options:
           submit_button: Search
-          reset_button: false
-          reset_button_label: Reset
+          reset_button: true
+          reset_button_label: 'Clear filter'
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: false
+          expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
           text_input_required: 'Select any filter and click on Apply to see results'
@@ -65,16 +64,6 @@ display:
               allow_secondary: false
               secondary_label: 'Advanced options'
               secondary_open: false
-            sort:
-              plugin_id: default
-              advanced:
-                combine: false
-                combine_rewrite: ''
-                reset: false
-                reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
-                is_secondary: false
             filter:
               search_api_fulltext:
                 plugin_id: default
@@ -118,9 +107,174 @@ display:
           separator: ''
           hide_empty: false
       fields:
+        field_image_caption:
+          id: field_image_caption
+          table: search_api_datasource_default_multilingual_node_index_entity_node
+          field: field_image_caption
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: media_thumbnail
+          settings:
+            image_style: thumbnail
+            image_link: ''
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_entity
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            display_methods:
+              audio:
+                display_method: label
+                view_mode: default
+              document:
+                display_method: label
+                view_mode: default
+              image:
+                display_method: label
+                view_mode: default
+              image_and_link:
+                display_method: label
+                view_mode: default
+              image_caption:
+                display_method: label
+                view_mode: default
+              remote_video:
+                display_method: label
+                view_mode: default
+              video:
+                display_method: label
+                view_mode: default
+          entity_type: node
+          plugin_id: search_api_field
+        field_publication_date:
+          id: field_publication_date
+          table: search_api_index_default_multilingual_node_index
+          field: field_publication_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: only_day
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          plugin_id: search_api_field
         title:
           id: title
-          table: search_api_index_thesaurus_term_index
+          table: search_api_index_default_multilingual_node_index
           field: title
           relationship: none
           group_type: group
@@ -188,80 +342,10 @@ display:
             multi_type: separator
             multi_separator: ', '
           plugin_id: search_api_field
-        field_synonyms:
-          id: field_synonyms
-          table: search_api_index_thesaurus_term_index
-          field: field_synonyms
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Synonyms:'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: true
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          plugin_id: search_api_field
-        field_definition:
-          id: field_definition
-          table: search_api_index_thesaurus_term_index
-          field: field_definition
+        field_summary:
+          id: field_summary
+          table: search_api_index_default_multilingual_node_index
+          field: field_summary
           relationship: none
           group_type: group
           admin_label: ''
@@ -303,11 +387,11 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: true
+          hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
+          type: basic_string
           settings: {  }
           group_column: value
           group_columns: {  }
@@ -327,15 +411,15 @@ display:
             multi_type: separator
             multi_separator: ', '
           plugin_id: search_api_field
-        nid:
-          id: nid
-          table: search_api_datasource_thesaurus_term_index_entity_node
-          field: nid
+        field_summary_html:
+          id: field_summary_html
+          table: search_api_datasource_default_multilingual_node_index_entity_node
+          field: field_summary_html
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -376,10 +460,19 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_integer
+          type: smart_trim
           settings:
-            thousand_separator: ''
-            prefix_suffix: true
+            trim_length: 600
+            trim_type: chars
+            trim_suffix: ''
+            wrap_output: false
+            wrap_class: trimmed
+            more_link: true
+            more_text: 'Read more'
+            more_class: 'see-more-arrow minor-size'
+            trim_options:
+              text: false
+              trim_zero: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -390,117 +483,80 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: false
-          fallback_handler: search_api_numeric
+          field_rendering: true
+          fallback_handler: search_api
           fallback_options:
-            set_precision: false
-            precision: 0
-            decimal: .
-            separator: ','
-            format_plural: false
-            format_plural_string: !!binary MQNAY291bnQ=
-            prefix: ''
-            suffix: ''
             link_to_item: false
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-            format_plural_values:
-              - '1'
-              - '@count'
           entity_type: node
           plugin_id: search_api_field
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: '<a class="pull-right" href="/node/{{ nid }}">See more</a>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: 'see-more-arrow minor-size'
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
       filters:
-        search_api_language:
-          id: search_api_language
-          table: search_api_index_thesaurus_term_index
-          field: search_api_language
+        status:
+          id: status
+          table: search_api_index_default_multilingual_node_index
+          field: status
           relationship: none
           group_type: group
           admin_label: ''
-          operator: in
-          value:
-            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          operator: '='
+          value: '1'
           group: 1
           exposed: false
           expose:
-            operator_id: search_api_language_op
-            label: 'Item language'
+            operator_id: ''
+            label: ''
             description: ''
             use_operator: false
-            operator: search_api_language_op
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
-            identifier: search_api_language
+            identifier: ''
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              review_manager: '0'
-              project_manager: '0'
-              approver: '0'
-              translation_manager: '0'
-              translation_liaison: '0'
-              layout_validator: '0'
-              content_validator: '0'
-              events_coordinator: '0'
-              events_editor: '0'
-              osh_collaborator: '0'
-              news_editor: '0'
-              read_only: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_boolean
+        type:
+          id: type
+          table: search_api_index_default_multilingual_node_index
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            blog: blog
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
             reduce: false
           is_grouped: false
           group_info:
@@ -514,21 +570,22 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_language
+          reduce_duplicates: false
+          plugin_id: search_api_options
         search_api_fulltext:
           id: search_api_fulltext
-          table: search_api_index_thesaurus_term_index
+          table: search_api_index_default_multilingual_node_index
           field: search_api_fulltext
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
+          operator: and
           value: ''
           group: 1
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: Search
+            label: 'Free text search'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -573,36 +630,121 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - field_definition
-            - field_synonyms
+            - body
+            - field_summary
             - title
           plugin_id: search_api_fulltext
-      sorts:
-        title:
-          id: title
-          table: search_api_index_thesaurus_term_index
-          field: title
+        field_publication_date:
+          id: field_publication_date
+          table: search_api_index_default_multilingual_node_index
+          field: field_publication_date
           relationship: none
           group_type: group
           admin_label: ''
-          order: ASC
-          exposed: true
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
           expose:
-            label: Alphabetically
-          plugin_id: search_api
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_date
+        search_api_language:
+          id: search_api_language
+          table: search_api_index_default_multilingual_node_index
+          field: search_api_language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            en: en
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_language
+      sorts:
         search_api_relevance:
           id: search_api_relevance
-          table: search_api_index_thesaurus_term_index
+          table: search_api_index_default_multilingual_node_index
           field: search_api_relevance
           relationship: none
           group_type: group
           admin_label: ''
           order: DESC
-          exposed: true
+          exposed: false
           expose:
-            label: Relevance
+            label: ''
           plugin_id: search_api
-      title: 'EU-OSHA thesaurus'
+        field_publication_date:
+          id: field_publication_date
+          table: search_api_index_default_multilingual_node_index
+          field: field_publication_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+      title: 'Search blog'
       header: {  }
       footer:
         result:
@@ -626,217 +768,23 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
-        - user.permissions
       tags:
-        - 'config:field.storage.node.field_definition'
-        - 'config:field.storage.node.field_synonyms'
-        - 'config:search_api.index.thesaurus_term_index'
-  data_export_1:
-    display_plugin: data_export
-    id: data_export_1
-    display_title: 'Data export'
-    position: 3
-    display_options:
-      display_extenders:
-        metatag_display_extender: {  }
-      path: tools-and-resources/eu-osha-thesaurus/search/export
-      filename: EU-OSHA_thesaurus_search_results.csv
-      automatic_download: true
-      store_in_public_file_directory: null
-      redirect_to_display: none
-      custom_redirect_path: false
-      include_query_params: false
-      style:
-        type: data_export
-        options:
-          formats:
-            csv: csv
-          csv_settings:
-            delimiter: ','
-            enclosure: '"'
-            escape_char: \
-            strip_tags: true
-            trim: true
-            encoding: utf8
-            utf8_bom: '0'
-            use_serializer_encode_only: false
-      displays:
-        thesaurus_search: thesaurus_search
-        default: '0'
-      query:
-        type: views_query
-        options:
-          skip_access: 0
-          bypass_access: 0
-          preserve_facet_query_args: 0
-      defaults:
-        query: false
-        filters: false
-        filter_groups: false
-      filters:
-        search_api_language:
-          id: search_api_language
-          table: search_api_index_thesaurus_term_index
-          field: search_api_language
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: search_api_language_op
-            label: 'Item language'
-            description: ''
-            use_operator: false
-            operator: search_api_language_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: search_api_language
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              review_manager: '0'
-              project_manager: '0'
-              approver: '0'
-              translation_manager: '0'
-              translation_liaison: '0'
-              layout_validator: '0'
-              content_validator: '0'
-              events_coordinator: '0'
-              events_editor: '0'
-              osh_collaborator: '0'
-              news_editor: '0'
-              read_only: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_language
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_thesaurus_term_index
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: search_api_fulltext_op
-            label: search
-            description: ''
-            use_operator: false
-            operator: search_api_fulltext_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: search_api_fulltext
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              review_manager: '0'
-              project_manager: '0'
-              approver: '0'
-              translation_manager: '0'
-              translation_liaison: '0'
-              layout_validator: '0'
-              content_validator: '0'
-              events_coordinator: '0'
-              events_editor: '0'
-              osh_collaborator: '0'
-              news_editor: '0'
-              read_only: '0'
-            placeholder: ''
-            expose_fields: false
-            searched_fields_id: search_api_fulltext_searched_fields
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields:
-            - field_definition
-            - field_synonyms
-            - title
-          plugin_id: search_api_fulltext
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      export_method: standard
-      export_batch_size: 1000
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - request_format
-        - url
-        - 'url.query_args:sort_by'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_definition'
-        - 'config:field.storage.node.field_synonyms'
-        - 'config:search_api.index.thesaurus_term_index'
-  thesaurus_search:
+        - 'config:field.storage.node.field_image_caption'
+        - 'config:field.storage.node.field_publication_date'
+        - 'config:field.storage.node.field_summary'
+        - 'config:field.storage.node.field_summary_html'
+        - 'config:search_api.index.default_multilingual_node_index'
+  page_1:
     display_plugin: page
-    id: thesaurus_search
-    display_title: Search
+    id: page_1
+    display_title: Page
     position: 1
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      path: tools-and-resources/eu-osha-thesaurus
+      path: search/blog
       exposed_block: true
-      display_description: ''
-      footer:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          content: '<div class="pager-total"><span>@start - @end / @total</span></div>'
-          plugin_id: result
-      defaults:
-        footer: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -844,10 +792,10 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
-        - user.permissions
       tags:
-        - 'config:field.storage.node.field_definition'
-        - 'config:field.storage.node.field_synonyms'
-        - 'config:search_api.index.thesaurus_term_index'
+        - 'config:field.storage.node.field_image_caption'
+        - 'config:field.storage.node.field_publication_date'
+        - 'config:field.storage.node.field_summary'
+        - 'config:field.storage.node.field_summary_html'
+        - 'config:search_api.index.default_multilingual_node_index'

@@ -517,16 +517,11 @@ display:
       display_extenders:
         metatag_display_extender: {  }
       style:
-        type: grid
+        type: default
         options:
           grouping: {  }
-          columns: 12
-          automatic_width: false
-          alignment: vertical
-          col_class_default: false
-          col_class_custom: ''
-          row_class_default: false
-          row_class_custom: 'revamp-row no-flex'
+          row_class: 'revamp-row no-flex'
+          default_row_class: false
       defaults:
         style: false
         row: false
@@ -576,7 +571,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
+          element_type: '0'
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -709,7 +704,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: div
-          element_wrapper_class: 'see-more-arrow minor-size'
+          element_wrapper_class: see-more-arrow
           element_default_classes: true
           empty: ''
           hide_empty: false
