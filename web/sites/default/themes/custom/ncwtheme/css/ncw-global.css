@@ -2098,6 +2098,19 @@ body ul li .introduction-title a:hover {
   }
 }
 /* End Media 768px */
+@media only screen and (max-width: 768px) {
+  .view-events .form-row {
+    display: block;
+  }
+  .view-events .form-row #edit-search-api-fulltext {
+    margin-top: 7px;
+  }
+
+  .box-events-summary .left-column {
+    display: none;
+  }
+}
+/* End Media 768px */
 footer.site-footer {
   padding: 0;
   font-family: "Open Sans";
@@ -2925,6 +2938,9 @@ body.user-logged-in.toolbar-tray-open #header {
     background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
     color: #FFF;
   }
+  .header #edit-search-api-fulltext {
+    display: none;
+  }
 
   #lang_dropdown_form_lang-dropdown-form {
     background: none;
@@ -2934,10 +2950,6 @@ body.user-logged-in.toolbar-tray-open #header {
     position: absolute;
     left: 62px;
     top: 11px;
-  }
-
-  #edit-search-api-fulltext {
-    display: none;
   }
 
   #edit-search-api-fulltext.activate {

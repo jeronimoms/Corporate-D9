@@ -219,3 +219,19 @@
     }
   }
 }/* End Media 768px */
+
+@media only screen and (max-width : 768px) {
+  .view-events{
+    .form-row{
+      display: block;
+      #edit-search-api-fulltext {
+        margin-top: 7px;
+      }
+    }
+  }
+  .box-events-summary{
+    .left-column {
+      display: none;
+    }
+  }
+}/* End Media 768px */

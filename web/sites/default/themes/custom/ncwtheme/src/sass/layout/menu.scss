@@ -152,6 +152,9 @@
       background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
       color: $text-color-white;
     }
+    #edit-search-api-fulltext {
+      display: none;
+    }
   }
 
   #lang_dropdown_form_lang-dropdown-form {
@@ -161,10 +164,6 @@
     position: absolute;
     left: 62px;
     top: 11px;
-  }
-
-  #edit-search-api-fulltext {
-    display: none;
   }
 
   #edit-search-api-fulltext.activate {
