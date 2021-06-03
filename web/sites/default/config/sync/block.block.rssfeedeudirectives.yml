@@ -1,0 +1,30 @@
+uuid: 4d03eb5f-9150-4ba1-8d9e-47e3c0a60a8d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b5a50ea1-fb74-4b35-a6ee-7378bce7070a'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: rssfeedeudirectives
+theme: ncwtheme
+region: sidebar_second
+weight: -29
+provider: null
+plugin: 'block_content:b5a50ea1-fb74-4b35-a6ee-7378bce7070a'
+settings:
+  id: 'block_content:b5a50ea1-fb74-4b35-a6ee-7378bce7070a'
+  label: 'RSS Feed (EU Directives)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /safety-and-health-legislation/european-directives
+    negate: false

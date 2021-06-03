@@ -663,8 +663,8 @@ display:
             utf8_bom: '0'
             use_serializer_encode_only: false
       displays:
+        thesaurus_search: thesaurus_search
         default: '0'
-        thesaurus_search: '0'
       query:
         type: views_query
         options:
@@ -731,6 +731,68 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_language
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_thesaurus_term_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: search
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_api_fulltext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
+            placeholder: ''
+            expose_fields: false
+            searched_fields_id: search_api_fulltext_searched_fields
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields:
+            - field_definition
+            - field_synonyms
+            - title
+          plugin_id: search_api_fulltext
       filter_groups:
         operator: AND
         groups:
@@ -743,6 +805,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - request_format
+        - url
         - 'url.query_args:sort_by'
         - 'user.node_grants:view'
         - user.permissions
@@ -770,7 +833,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: "<div class=\"download-content-theasaurus\">\r\n<div class=\"download-content-theasaurus-label\">Download</div>\r\n\r\n<div class=\"download-content-theasaurus-action\"><a href=\"/tools-and-resources/eu-osha-thesaurus/search/export\">Download now</a></div>\r\n</div>\r\n<div class=\"pager-total\"><span>@start - @end / @total</span></div>"
+          content: '<div class="pager-total"><span>@start - @end / @total</span></div>'
           plugin_id: result
       defaults:
         footer: false

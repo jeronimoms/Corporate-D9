@@ -1,0 +1,30 @@
+uuid: 0e1bd067-680c-4104-895e-5d657a4721f9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8c24e419-7f18-4f8e-8296-9eb087ed9557'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: rssfeedeuguidelines
+theme: ncwtheme
+region: sidebar_second
+weight: -28
+provider: null
+plugin: 'block_content:8c24e419-7f18-4f8e-8296-9eb087ed9557'
+settings:
+  id: 'block_content:8c24e419-7f18-4f8e-8296-9eb087ed9557'
+  label: 'RSS Feed (EU Guidelines)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /safety-and-health-legislation/european-guidelines
+    negate: false

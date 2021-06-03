@@ -1,0 +1,30 @@
+uuid: 3b0c3e06-7d3c-44d7-b9fb-416ac986286a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:52a8673b-58e6-4f6c-a2b5-37ccb252b3aa'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: rssfeedprocurement
+theme: ncwtheme
+region: sidebar_second
+weight: -30
+provider: null
+plugin: 'block_content:52a8673b-58e6-4f6c-a2b5-37ccb252b3aa'
+settings:
+  id: 'block_content:52a8673b-58e6-4f6c-a2b5-37ccb252b3aa'
+  label: 'RSS Feed (Procurement)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/procurement
+    negate: false
