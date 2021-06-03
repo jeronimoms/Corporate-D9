@@ -47,7 +47,6 @@
       padding-bottom: 10px;
     }
   }
-
 }
 
 .event_country{
@@ -211,3 +210,12 @@
     }
   }
 }
+
+/* Responsive */
+@media only screen and (max-width : 768px) {
+  .box-events-summary{
+    .left-column {
+      display: none;
+    }
+  }
+}/* End Media 768px */

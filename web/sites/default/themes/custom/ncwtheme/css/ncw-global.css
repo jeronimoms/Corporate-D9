@@ -2091,6 +2091,13 @@ body ul li .introduction-title a:hover {
   border-bottom: 0px;
 }
 
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .box-events-summary .left-column {
+    display: none;
+  }
+}
+/* End Media 768px */
 footer.site-footer {
   padding: 0;
   font-family: "Open Sans";
@@ -2914,6 +2921,11 @@ body.user-logged-in.toolbar-tray-open #header {
   }
 
   /* Language */
+  .header select.custom-select {
+    background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
+    color: #FFF;
+  }
+
   #lang_dropdown_form_lang-dropdown-form {
     background: none;
   }
@@ -2922,11 +2934,6 @@ body.user-logged-in.toolbar-tray-open #header {
     position: absolute;
     left: 62px;
     top: 11px;
-  }
-
-  select.custom-select {
-    background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
-    color: #FFF;
   }
 
   #edit-search-api-fulltext {
