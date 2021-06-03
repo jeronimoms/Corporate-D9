@@ -48,6 +48,18 @@
   }
 }
 
+/* Files images */
+#main{
+  .file{
+    a{
+      padding-left: 3px;
+    }
+  }
+  .file--application-pdf {
+    background-image: url(../images/file-icons/application-pdf.png);
+  }
+}
+
 /* Common styles to Fields */
 .views-exposed-form{
   position: relative;

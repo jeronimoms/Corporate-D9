@@ -503,6 +503,14 @@ div#sliding-popup {
   outline: 0;
 }
 
+/* Files images */
+#main .file a {
+  padding-left: 3px;
+}
+#main .file--application-pdf {
+  background-image: url(../images/file-icons/application-pdf.png);
+}
+
 /* Common styles to Fields */
 .views-exposed-form {
   position: relative;
@@ -1332,6 +1340,14 @@ span.pages {
   padding-top: 5px;
 }
 
+.h1-back-wrapper {
+  display: flex;
+}
+
+.pull-right-flex {
+  margin-left: auto;
+}
+
 .back-to-link {
   float: right;
   font-weight: 600;
@@ -1796,6 +1812,7 @@ body ul li .introduction-title a:hover {
   background: url(../images/delimiter-off.png) no-repeat 0px 5px;
 }
 
+/* View */
 .view-events .views-exposed-form {
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -2000,6 +2017,39 @@ body ul li .introduction-title a:hover {
 
 .code_CA {
   background: url(../images/ico-events/big/Canada-180x180.png) no-repeat;
+}
+
+/* Node events */
+.node--type-events #main h3.events-title {
+  background: url(../images/separator.jpg) repeat-x scroll 0 100% rgba(0, 0, 0, 0);
+  margin-top: 1rem;
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+}
+.node--type-events #main .field__label {
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+.node--type-events #main .field__label:after {
+  content: ":";
+  display: inline-block;
+}
+.node--type-events #main .field__item {
+  color: #003399;
+  font-size: 0.9rem;
+  padding-bottom: 10px;
+}
+.node--type-events #main .field--type-text-with-summary {
+  color: #000;
+}
+.node--type-events #main .field--name-field-website-of-event a {
+  text-decoration: none;
+  background: url(../images/li_arrow.png) no-repeat scroll 0 50% transparent;
+  font-weight: bold;
+  padding-left: 1em;
+  font-size: 0.8rem;
+  border-bottom: 0px;
 }
 
 footer.site-footer {
