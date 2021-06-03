@@ -612,7 +612,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+            en: en
           group: 1
           exposed: false
           expose:
@@ -975,7 +975,7 @@ display:
         metatag_display_extender: {  }
       display_description: ''
       block_description: 'Home page banner top'
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       relationships:
         entityqueue_relationship:
           id: entityqueue_relationship
