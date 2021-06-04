@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "508af2e9f2c49e9ade28386c33462c48",
+    "content-hash": "9103cf14aa5ea1ba04cdb05523ad77b6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2904,10 +2904,6 @@
                     "homepage": "https://www.drupal.org/user/160302"
                 },
                 {
-                    "name": "paulocs",
-                    "homepage": "https://www.drupal.org/user/3640109"
-                },
-                {
                     "name": "solide-echt",
                     "homepage": "https://www.drupal.org/user/46176"
                 }
@@ -2957,10 +2953,6 @@
                 {
                     "name": "joelpittet",
                     "homepage": "https://www.drupal.org/user/160302"
-                },
-                {
-                    "name": "paulocs",
-                    "homepage": "https://www.drupal.org/user/3640109"
                 },
                 {
                     "name": "solide-echt",
@@ -3555,7 +3547,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.7",
-                    "datestamp": "1615218004",
+                    "datestamp": "1614960641",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3585,10 +3577,6 @@
                 {
                     "name": "Sam152",
                     "homepage": "https://www.drupal.org/user/1485048"
-                },
-                {
-                    "name": "frjo",
-                    "homepage": "https://www.drupal.org/user/5546"
                 },
                 {
                     "name": "jdwfly",
@@ -3749,6 +3737,10 @@
                 {
                     "name": "Adyax",
                     "homepage": "https://www.adyax.com/"
+                },
+                {
+                    "name": "OlgaRabodzei",
+                    "homepage": "https://www.drupal.org/user/3389198"
                 },
                 {
                     "name": "colan",
@@ -4389,6 +4381,15 @@
                         "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
                         "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                     }
+                },
+                "patches_applied": {
+                    "Cannot override content field block title": "https://www.drupal.org/files/issues/2019-05-20/3055818-3.patch",
+                    "Make the exposed filter as token": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
+                    "On null isTranslatable": "https://www.drupal.org/files/issues/2019-12-05/2928108-49.patch",
+                    "if you don't want to translate your URL alias": "https://www.drupal.org/files/issues/2020-01-26/2689459-127.patch",
+                    "Disabled text formats can't be seen in the GUI": "https://www.drupal.org/files/issues/2020-05-20/2502637-82_0.patch",
+                    "Issue 2685749: Add a Machine Name widget to core.": "https://www.drupal.org/files/issues/2019-12-16/2685749-73.patch",
+                    "Reorder sections": "https://www.drupal.org/files/issues/2020-03-20/layout_builder_3080606-reorder-layout-sections-29_1.patch"
                 }
             },
             "autoload": {
@@ -5086,6 +5087,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "DraggableViews not working after update to 2.0.0": "https://www.drupal.org/files/issues/2020-10-07/draggableviews-sort_handler_specify_order_view-2767437-78.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5332,7 +5336,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.15",
-                    "datestamp": "1615310482",
+                    "datestamp": "1615310468",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5645,6 +5649,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Can't remove attached image": "https://www.drupal.org/files/issues/2019-09-27/entity_browser-remove-attached-image-2811747-12.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6440,7 +6447,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.6",
-                    "datestamp": "1615218226",
+                    "datestamp": "1614961993",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7774,6 +7781,10 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Revision on inline blocks": "https://www.drupal.org/files/issues/2020-07-25/inline_entity_form_inlineBlocks_3161487.2.patch",
+                    "Block form not saved": "https://www.drupal.org/files/issues/2020-03-04/fix-ief-layout-block-3117510-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8559,6 +8570,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "VBO does not preserve query metadata added by other modules": "https://www.drupal.org/files/issues/2021-01-05/3190976-lang_dropdown-chosen-js-error-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8693,6 +8707,54 @@
                 "source": "http://cgit.drupalcode.org/languagefield",
                 "issues": "http://drupal.org/project/languagefield",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/languageicons",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/languageicons.git",
+                "reference": "8.x-1.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/languageicons-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "1b2ffa57dabfc7717d5474c7066a43e8fcdfa28a"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1609835079",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Freso",
+                    "homepage": "https://www.drupal.org/user/27504"
+                },
+                {
+                    "name": "pfrenssen",
+                    "homepage": "https://www.drupal.org/user/382067"
+                }
+            ],
+            "description": "Adds icons to language links.",
+            "homepage": "https://www.drupal.org/project/languageicons",
+            "support": {
+                "source": "https://git.drupalcode.org/project/languageicons"
             }
         },
         {
@@ -8910,6 +8972,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Config annotation missing": "patches/ldap-orphaned_accounts_no_ldap_entry.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -9220,6 +9285,9 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
+                },
+                "patches_applied": {
+                    "Fix error ordering deleted and added entityqueue": "patches/linkchecker-error_ordering_deleted_added_entityqueue.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -9273,6 +9341,10 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Token warnings": "https://www.drupal.org/files/issues/2020-08-14/problem-with-display-of-custom-data-in-layout-manager-3110226-8.patch",
+                    "Custom link": "https://www.drupal.org/files/issues/2020-11-10/3181802-invalid-token-replacement-when-using-layout-builder.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -11858,7 +11930,8 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/rules",
                 "issues": "https://www.drupal.org/project/issues/rules"
-            }
+            },
+            "time": "2021-04-23T05:38:33+00:00"
         },
         {
             "name": "drupal/scanner",
@@ -12620,16 +12693,24 @@
                     "role": "Maintainer"
                 },
                 {
+                    "name": "chrisjlee",
+                    "homepage": "https://www.drupal.org/user/760600"
+                },
+                {
+                    "name": "drywall",
+                    "homepage": "https://www.drupal.org/user/192591"
+                },
+                {
+                    "name": "jsenich",
+                    "homepage": "https://www.drupal.org/user/58871"
+                },
+                {
+                    "name": "markie",
+                    "homepage": "https://www.drupal.org/user/206687"
+                },
+                {
                     "name": "newsignature",
                     "homepage": "https://www.drupal.org/user/765518"
-                },
-                {
-                    "name": "ultimike",
-                    "homepage": "https://www.drupal.org/user/51132"
-                },
-                {
-                    "name": "volkswagenchick",
-                    "homepage": "https://www.drupal.org/user/3332522"
                 }
             ],
             "description": "Provides a more robust alternative to 'summary or trimmed' textfield format.",
@@ -12736,7 +12817,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-2.8",
-                    "datestamp": "1615222684",
+                    "datestamp": "1615222638",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -14102,6 +14183,9 @@
                     "services": {
                         "drush.services.yml": "^9 || ^10"
                     }
+                },
+                "patches_applied": {
+                    "VBO does not preserve query metadata added by other modules": "https://www.drupal.org/files/issues/2020-10-23/views_bulk_operations-preserve-query-metadata-8.x-2.x-branch.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -21231,6 +21315,7 @@
         "drupal/htmlmail": 15,
         "drupal/jsonapi_resources": 10,
         "drupal/lang_dropdown": 10,
+        "drupal/languageicons": 10,
         "drupal/layoutcomponents": 10,
         "drupal/libraries": 10,
         "drupal/like_and_dislike": 10,
@@ -21261,5 +21346,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
