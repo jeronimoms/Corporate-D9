@@ -1135,6 +1135,14 @@ h3.home a:hover {
   padding-bottom: 10px;
 }
 
+.rss-link {
+  display: block;
+  font-weight: bold;
+  background: url(../images/rss.png) no-repeat;
+  padding-left: 25px;
+  margin-top: -1rem;
+}
+
 nav.pager {
   display: flex;
   justify-content: center;
@@ -1563,9 +1571,10 @@ body ul li .introduction-title a:hover {
 }
 
 /* Articles */
-.node--type-article #main img {
+.node--type-article #main .field--name-field-image-caption img {
   width: 100%;
   height: auto;
+  margin-bottom: 1rem;
 }
 
 .facets-widget-checkbox ul {
