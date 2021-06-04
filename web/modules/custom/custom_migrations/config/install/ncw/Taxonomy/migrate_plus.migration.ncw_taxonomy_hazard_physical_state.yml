@@ -1,4 +1,4 @@
-# Migration file for creating "Taxonomy terms activity" from BBDD.
+# Migration file for creating "Taxonomy terms Wiki categories" from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
@@ -7,14 +7,14 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: ncw_taxonomy_activity       # -----  CHANGE
-label: 'Terms: Activity'         # -----  CHANGE
+id: ncw_taxonomy_hazard_physical_state       # -----  CHANGE
+label: 'Terms: hazard_physical_state'         # -----  CHANGE
 audit: true
 migration_group: ncw_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
-  bundle: activity               # -----  CHANGE
+  bundle: hazard_physical_state               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
@@ -25,7 +25,7 @@ process:
   vid:
     -
       plugin: default_value
-      default_value: activity    # -----  CHANGE
+      default_value: hazard_physical_state    # -----  CHANGE
   name: name
   'description/value': description
   'description/format': format
@@ -37,7 +37,7 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: ncw_taxonomy_activity
+      migration: ncw_taxonomy_hazard_physical_state
   parent:
     plugin: default_value
     default_value: 0
@@ -46,8 +46,8 @@ process:
   changed: timestamp
   langcode: language
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_activity_code: field_activity_code
-  field_activity_level: field_activity_level
+  field_hazard_health_effects_code: field_hazard_health_effects_code
+  field_thesaurus_id: field_thesaurus_id
 
 
 
