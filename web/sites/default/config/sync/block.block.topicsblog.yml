@@ -1,28 +1,28 @@
-uuid: de48ada9-5669-4305-a5e7-1eeb9a1c789c
+uuid: a7503f84-4500-451a-a722-bc4f84ae3dbb
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.content_type
+    - facets.facet.blog_topic
   module:
     - facets
     - system
   theme:
     - ncwtheme
-id: contenttypesearchsite
+id: topicsblog
 theme: ncwtheme
 region: sidebar_first
-weight: -22
+weight: -20
 provider: null
-plugin: 'facet_block:content_type'
+plugin: 'facet_block:blog_topic'
 settings:
-  id: 'facet_block:content_type'
+  id: 'facet_block:blog_topic'
   label: Topics
   provider: facets
   label_display: visible
-  block_id: contenttypesearchsite
+  block_id: topicsblog
 visibility:
   request_path:
     id: request_path
-    pages: none
+    pages: /search/blog
     negate: false
