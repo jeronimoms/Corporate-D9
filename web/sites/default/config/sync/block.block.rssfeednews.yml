@@ -1,9 +1,9 @@
-uuid: d1c99a96-537d-4ddf-93c4-d2e5116bcdd2
+uuid: bd715958-17c8-437c-a699-cb98bfef5990
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:79b81f99-50b5-4064-9248-979dd923fe90'
+    - 'block_content:basic:ae84d473-a57f-4238-905d-5c675e4a73eb'
   module:
     - block_content
     - system
@@ -14,9 +14,9 @@ theme: ncwtheme
 region: sidebar_second
 weight: -27
 provider: null
-plugin: 'block_content:79b81f99-50b5-4064-9248-979dd923fe90'
+plugin: 'block_content:ae84d473-a57f-4238-905d-5c675e4a73eb'
 settings:
-  id: 'block_content:79b81f99-50b5-4064-9248-979dd923fe90'
+  id: 'block_content:ae84d473-a57f-4238-905d-5c675e4a73eb'
   label: 'RSS Feed (News)'
   provider: block_content
   label_display: '0'
