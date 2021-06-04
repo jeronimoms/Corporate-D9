@@ -1607,20 +1607,7 @@ display:
       use_more: true
       use_more_always: false
       use_more_text: 'View all'
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: 'No hay'
-            format: basic_html
-          plugin_id: text
+      empty: {  }
     cache_metadata:
       max-age: -1
       contexts:

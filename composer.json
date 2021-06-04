@@ -318,6 +318,7 @@
         "drupal/lang_dropdown": "^2.0@beta",
         "drupal/language_neutral_aliases": "^3.0",
         "drupal/languagefield": "^1.5",
+        "drupal/languageicons": "^1.0@beta",
         "drupal/layoutcomponents": "^1.20@beta",
         "drupal/ldap": "4.0-beta1",
         "drupal/ldap_auth": "^1.20",
@@ -463,6 +464,9 @@
             },
             "drupal/views_bulk_operations": {
                 "VBO does not preserve query metadata added by other modules": "https://www.drupal.org/files/issues/2020-10-23/views_bulk_operations-preserve-query-metadata-8.x-2.x-branch.patch"
+            },
+            "drupal/lang_dropdown": {
+                "VBO does not preserve query metadata added by other modules": "https://www.drupal.org/files/issues/2021-01-05/3190976-lang_dropdown-chosen-js-error-2.patch"
             }
         },
         "patchLevel": {

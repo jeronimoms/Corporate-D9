@@ -1,19 +1,21 @@
-uuid: c4587dda-9e5d-46eb-9e00-0d29c9d908d5
+uuid: de79acc7-b5d4-4eb2-bd4e-4c2cae3280b9
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:ab584f62-8ac6-4328-90ab-1c5813b2d442'
   module:
     - system
   theme:
     - ncwtheme
-id: rssfeedpressreleases
+id: rssfeedpressreleases_2
 theme: ncwtheme
 region: sidebar_second
 weight: -32
 provider: null
-plugin: 'block_content:57690f51-103d-41c9-b9fc-d347d68fff3b'
+plugin: 'block_content:ab584f62-8ac6-4328-90ab-1c5813b2d442'
 settings:
-  id: 'block_content:57690f51-103d-41c9-b9fc-d347d68fff3b'
+  id: 'block_content:ab584f62-8ac6-4328-90ab-1c5813b2d442'
   label: 'RSS Feed (Press releases)'
   provider: block_content
   label_display: '0'
@@ -23,5 +25,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/about-eu-osha/press-room\r\n/about-eu-osha/press-room/*"
+    pages: /about-eu-osha/press-room
     negate: false

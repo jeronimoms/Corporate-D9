@@ -507,8 +507,47 @@ div#sliding-popup {
 #main .file a {
   padding-left: 3px;
 }
+#main .file--application-octet-stream {
+  background-image: url(../images/file-icons/application-octet-stream.png);
+}
 #main .file--application-pdf {
   background-image: url(../images/file-icons/application-pdf.png);
+}
+#main .file--application-x-executable {
+  background-image: url(../images/file-icons/application-x-executable.png);
+}
+#main .file--package-x-generic {
+  background-image: url(../images/file-icons/package-x-generic.png);
+}
+#main .file--x-office-spreadsheet {
+  background-image: url(../images/file-icons/x-office-spreadsheet.png);
+}
+#main .file--x-office-document {
+  background-image: url(../../images/file-icons/x-office-document.png);
+}
+#main .file--x-office-presentation {
+  background-image: url(../images/file-icons/x-office-presentation.png);
+}
+#main .file--text-x-script {
+  background-image: url(../images/file-icons/text-x-script.png);
+}
+#main .file--text-html {
+  background-image: url(../images/file-icons/text-html.png);
+}
+#main .file--text-plain {
+  background-image: url(../images/file-icons/text-plain.png);
+}
+#main .file--audio {
+  background-image: url(../images/file-icons/audio-x-generic.png);
+}
+#main .file--video {
+  background-image: url(../images/file-icons/video-x-generic.png);
+}
+#main .file--text {
+  background-image: url(../images/file-icons/text-x-generic.png);
+}
+#main .file--image {
+  background-image: url(../images/file-icons/image-x-generic.png);
 }
 
 /* Common styles to Fields */
@@ -2052,6 +2091,26 @@ body ul li .introduction-title a:hover {
   border-bottom: 0px;
 }
 
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .box-events-summary .left-column {
+    display: none;
+  }
+}
+/* End Media 768px */
+@media only screen and (max-width: 768px) {
+  .view-events .form-row {
+    display: block;
+  }
+  .view-events .form-row #edit-search-api-fulltext {
+    margin-top: 7px;
+  }
+
+  .box-events-summary .left-column {
+    display: none;
+  }
+}
+/* End Media 768px */
 footer.site-footer {
   padding: 0;
   font-family: "Open Sans";
@@ -2875,6 +2934,14 @@ body.user-logged-in.toolbar-tray-open #header {
   }
 
   /* Language */
+  .header select.custom-select {
+    background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
+    color: #FFF;
+  }
+  .header #edit-search-api-fulltext {
+    display: none;
+  }
+
   #lang_dropdown_form_lang-dropdown-form {
     background: none;
   }
@@ -2883,15 +2950,6 @@ body.user-logged-in.toolbar-tray-open #header {
     position: absolute;
     left: 62px;
     top: 11px;
-  }
-
-  select.custom-select {
-    background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
-    color: #FFF;
-  }
-
-  #edit-search-api-fulltext {
-    display: none;
   }
 
   #edit-search-api-fulltext.activate {

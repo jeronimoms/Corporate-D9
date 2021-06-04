@@ -1,0 +1,30 @@
+uuid: 89490ff4-b243-4ce3-b351-d3c6a1d82d4e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_node_views:1b2e1dfa-2a67-4f38-8879-3d123e28e08e'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: nodeviewevents_2
+theme: ncwtheme
+region: node_view
+weight: 0
+provider: null
+plugin: 'block_content:1b2e1dfa-2a67-4f38-8879-3d123e28e08e'
+settings:
+  id: 'block_content:1b2e1dfa-2a67-4f38-8879-3d123e28e08e'
+  label: 'Node view events'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /oshevents
+    negate: false

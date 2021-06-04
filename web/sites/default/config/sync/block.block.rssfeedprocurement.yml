@@ -1,7 +1,9 @@
-uuid: 3b0c3e06-7d3c-44d7-b9fb-416ac986286a
+uuid: 9a3c8c74-e4ae-4a61-ae65-61f1acd0ad74
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:8bb0c768-5104-4e57-b911-3c4ba035d29f'
   module:
     - system
   theme:
@@ -11,9 +13,9 @@ theme: ncwtheme
 region: sidebar_second
 weight: -30
 provider: null
-plugin: 'block_content:52a8673b-58e6-4f6c-a2b5-37ccb252b3aa'
+plugin: 'block_content:8bb0c768-5104-4e57-b911-3c4ba035d29f'
 settings:
-  id: 'block_content:52a8673b-58e6-4f6c-a2b5-37ccb252b3aa'
+  id: 'block_content:8bb0c768-5104-4e57-b911-3c4ba035d29f'
   label: 'RSS Feed (Procurement)'
   provider: block_content
   label_display: '0'
