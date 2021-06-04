@@ -1,0 +1,69 @@
+uuid: 6264d70e-3881-4921-a53c-71342b635602
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.worker_groups.field_thesaurus_id
+    - field.field.taxonomy_term.worker_groups.field_worker_groups_code
+    - taxonomy.vocabulary.worker_groups
+  module:
+    - path
+    - text
+id: taxonomy_term.worker_groups.default
+targetEntityType: taxonomy_term
+bundle: worker_groups
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_thesaurus_id:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_worker_groups_code:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+hidden: {  }
