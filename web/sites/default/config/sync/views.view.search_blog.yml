@@ -785,6 +785,10 @@ display:
         metatag_display_extender: {  }
       path: search/blog
       exposed_block: true
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
