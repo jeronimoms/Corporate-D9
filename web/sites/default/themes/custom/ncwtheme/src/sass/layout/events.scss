@@ -1,4 +1,64 @@
-/* View */
+/* Views */
+
+.view-eu-osha-event-summaries{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  .events-summary-col{
+    height: 100%;
+    background: $bg-color-white;
+    padding-bottom: 1rem;
+    .left-column , .right-column{
+      padding: 1rem;
+    }
+    .field-content{
+      display: flex;
+      align-items: center;
+      h2{
+        font-size: 1rem;
+        line-height: initial;
+        padding-bottom: 1rem;
+      }
+      div.see-more-arrow{
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+      }
+    }
+  }
+  .events-summary-col:nth-child(1){
+    border-right: 10px solid $bg-color-blue-light;
+  }
+  .events-summary-col:nth-child(2){
+    border-left: 10px solid $bg-color-blue-light;
+  }
+}
+
+.oshevents{
+  .more-link.revamp {
+    width: 100%;
+    float: left;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 19px;
+    background: url(../images/img-border-more-link.png) repeat-x center 50%;
+    a{
+      float: none;
+      color: $text-color-blue;
+      background: $bg-color-white;
+      font-weight: 700;
+      border: 2px solid $bg-color-blue;
+      padding: 5px 24px;
+      text-decoration: none;
+      &:hover{
+        color: $text-color-white;
+        background: $bg-color-blue;
+        transition: all 500ms;
+      }
+    }
+  }
+}
+
+
 .view-events{
   .views-exposed-form{
     margin-top: 2rem;
@@ -172,6 +232,19 @@
 }
 
 /* Node events */
+.node-event-twig-custom{
+  color: $text-color-blue;
+  h2{
+    display: none;
+  }
+  h4{
+    font-size: 0.9rem;
+    color: $text-color-blue;
+    strong{
+      font-weight: 600;
+    }
+  }
+}
 .node--type-events{
   #main{
     h3.events-title{
@@ -213,14 +286,23 @@
 
 /* Responsive */
 @media only screen and (max-width : 768px) {
+  .view-eu-osha-event-summaries {
+    .row{
+      display: block;
+    }
+    .events-summary-col:nth-child(1){
+      border-right: 0;
+      border-bottom: 20px solid $bg-color-blue-light;
+    }
+    .events-summary-col:nth-child(2){
+      border-left: 0;
+    }
+  }
   .box-events-summary{
     .left-column {
       display: none;
     }
   }
-}/* End Media 768px */
-
-@media only screen and (max-width : 768px) {
   .view-events{
     .form-row{
       display: block;
@@ -229,9 +311,11 @@
       }
     }
   }
-  .box-events-summary{
+  .oshevents {
     .left-column {
       display: none;
     }
   }
+
 }/* End Media 768px */
+

@@ -356,9 +356,12 @@ body {
 /* Articles */
 .node--type-article{
   #main{
-    img{
-      width: 100%;
-      height: auto;
+    .field--name-field-image-caption{
+      img{
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+      }
     }
   }
 }
