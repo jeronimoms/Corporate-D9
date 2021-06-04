@@ -1,23 +1,23 @@
-uuid: 80387ba7-4d45-4da2-ba13-0b2c45157a64
+uuid: 47f2dcad-1b93-4b85-868d-fd30e636690b
 langcode: en
 status: true
 dependencies: {  }
-id: ncw_taxonomy_photo_gallery_type
+id: ncw_taxonomy_prevention_measures
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: ncw_migrate
-label: 'Terms: photo_gallery_type'
+label: 'Terms: prevention_measures'
 source:
   plugin: d7_taxonomy_term
-  bundle: photo_gallery_type
+  bundle: prevention_measures
 process:
   tid: tid
   vid:
     -
       plugin: default_value
-      default_value: photo_gallery_type
+      default_value: prevention_measures
   name: name
   description/value: description
   description/format: format
@@ -29,7 +29,7 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: ncw_taxonomy_photo_gallery_type
+      migration: ncw_taxonomy_prevention_measures
   parent:
     plugin: default_value
     default_value: 0
@@ -37,6 +37,9 @@ process:
   forum_container: is_container
   changed: timestamp
   langcode: language
+  field_prevention_measures_code: field_prevention_measures_code
+  field_prevention_level: field_prevention_level
+  field_thesaurus_id: field_thesaurus_id
 destination:
   plugin: 'entity:taxonomy_term'
 migration_dependencies:

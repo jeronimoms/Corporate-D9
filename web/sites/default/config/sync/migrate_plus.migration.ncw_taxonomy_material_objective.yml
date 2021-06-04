@@ -1,23 +1,23 @@
-uuid: 80387ba7-4d45-4da2-ba13-0b2c45157a64
+uuid: babb949b-5cd9-4353-bd23-3c30d2132fb0
 langcode: en
 status: true
 dependencies: {  }
-id: ncw_taxonomy_photo_gallery_type
+id: ncw_taxonomy_material_objective
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: ncw_migrate
-label: 'Terms: photo_gallery_type'
+label: 'Terms: material_objective'
 source:
   plugin: d7_taxonomy_term
-  bundle: photo_gallery_type
+  bundle: material_objective
 process:
   tid: tid
   vid:
     -
       plugin: default_value
-      default_value: photo_gallery_type
+      default_value: material_objective
   name: name
   description/value: description
   description/format: format
@@ -29,7 +29,7 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: ncw_taxonomy_photo_gallery_type
+      migration: ncw_taxonomy_material_objective
   parent:
     plugin: default_value
     default_value: 0
@@ -37,6 +37,7 @@ process:
   forum_container: is_container
   changed: timestamp
   langcode: language
+  field_material_objective_code: field_material_objective_code
 destination:
   plugin: 'entity:taxonomy_term'
 migration_dependencies:

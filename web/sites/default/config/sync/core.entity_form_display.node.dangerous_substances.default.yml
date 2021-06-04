@@ -60,6 +60,7 @@ dependencies:
     - field.field.node.dangerous_substances.field_worker_groups_type
     - node.type.dangerous_substances
   module:
+    - chosen_field
     - content_moderation
     - datetime
     - field_group
@@ -119,9 +120,7 @@ content:
     weight: 11
     settings:
       format:
-        iso: iso
         name: name
-        name_native: 0
     third_party_settings: {  }
     type: languagefield_select
     region: content
@@ -129,7 +128,7 @@ content:
     weight: 19
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_biological_hazard_other:
     weight: 20
@@ -207,7 +206,7 @@ content:
     weight: 41
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_evaluation_other:
     weight: 42
@@ -221,7 +220,7 @@ content:
     weight: 25
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_exposure_route_other:
     weight: 26
@@ -255,7 +254,7 @@ content:
     weight: 23
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_hazard_health_other:
     weight: 24
@@ -277,7 +276,7 @@ content:
     weight: 21
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_image_media:
     weight: 50
@@ -324,7 +323,7 @@ content:
     weight: 35
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_measurement_method:
     weight: 30
@@ -393,7 +392,7 @@ content:
     weight: 33
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_prevention_measures_other:
     weight: 34
@@ -407,7 +406,7 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_publication_year:
     weight: 8
@@ -465,7 +464,7 @@ content:
     weight: 39
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_target_group_other:
     weight: 40
@@ -509,7 +508,7 @@ content:
     weight: 43
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_worker_groups_other:
     weight: 32
@@ -523,7 +522,7 @@ content:
     weight: 31
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   moderation_state:
     type: moderation_state_default
