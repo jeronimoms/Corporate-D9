@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+use Drupal\oira_tool\OtView;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function oira_tool_views_pre_render(ViewExecutable $view) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(OtView::class)
+    ->viewsPreRender($view);
+}
