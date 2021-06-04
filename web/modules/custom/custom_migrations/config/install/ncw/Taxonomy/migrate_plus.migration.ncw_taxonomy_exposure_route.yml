@@ -1,4 +1,4 @@
-# Migration file for creating "Taxonomy terms activity" from BBDD.
+# Migration file for creating "Taxonomy terms Exposure routes" from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
@@ -7,14 +7,14 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: ncw_taxonomy_activity       # -----  CHANGE
-label: 'Terms: Activity'         # -----  CHANGE
+id: ncw_taxonomy_exposure_route       # -----  CHANGE
+label: 'Terms: exposure_route'         # -----  CHANGE
 audit: true
 migration_group: ncw_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
 source:
   plugin: d7_taxonomy_term
-  bundle: activity               # -----  CHANGE
+  bundle: exposure_route               # -----  CHANGE
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
@@ -25,7 +25,7 @@ process:
   vid:
     -
       plugin: default_value
-      default_value: activity    # -----  CHANGE
+      default_value: exposure_route    # -----  CHANGE
   name: name
   'description/value': description
   'description/format': format
@@ -37,7 +37,7 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: ncw_taxonomy_activity
+      migration: ncw_taxonomy_exposure_route
   parent:
     plugin: default_value
     default_value: 0
@@ -46,8 +46,8 @@ process:
   changed: timestamp
   langcode: language
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_activity_code: field_activity_code
-  field_activity_level: field_activity_level
+  field_exposure_route_code: field_exposure_route_code
+  field_thesaurus_id: field_thesaurus_id
 
 
 
