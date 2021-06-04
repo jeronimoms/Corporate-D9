@@ -1860,7 +1860,63 @@ body ul li .introduction-title a:hover {
   background: url(../images/delimiter-off.png) no-repeat 0px 5px;
 }
 
-/* View */
+/* Views */
+.view-eu-osha-event-summaries {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.view-eu-osha-event-summaries .events-summary-col {
+  height: 100%;
+  background: #FFF;
+  padding-bottom: 1rem;
+}
+.view-eu-osha-event-summaries .events-summary-col .left-column, .view-eu-osha-event-summaries .events-summary-col .right-column {
+  padding: 1rem;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content {
+  display: flex;
+  align-items: center;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content h2 {
+  font-size: 1rem;
+  line-height: initial;
+  padding-bottom: 1rem;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content div.see-more-arrow {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+.view-eu-osha-event-summaries .events-summary-col:nth-child(1) {
+  border-right: 10px solid #cfddee;
+}
+.view-eu-osha-event-summaries .events-summary-col:nth-child(2) {
+  border-left: 10px solid #cfddee;
+}
+
+.oshevents .more-link.revamp {
+  width: 100%;
+  float: left;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 19px;
+  background: url(../images/img-border-more-link.png) repeat-x center 50%;
+}
+.oshevents .more-link.revamp a {
+  float: none;
+  color: #003399;
+  background: #FFF;
+  font-weight: 700;
+  border: 2px solid #003399;
+  padding: 5px 24px;
+  text-decoration: none;
+}
+.oshevents .more-link.revamp a:hover {
+  color: #FFF;
+  background: #003399;
+  transition: all 500ms;
+}
+
 .view-events .views-exposed-form {
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -2068,6 +2124,20 @@ body ul li .introduction-title a:hover {
 }
 
 /* Node events */
+.node-event-twig-custom {
+  color: #003399;
+}
+.node-event-twig-custom h2 {
+  display: none;
+}
+.node-event-twig-custom h4 {
+  font-size: 0.9rem;
+  color: #003399;
+}
+.node-event-twig-custom h4 strong {
+  font-weight: 600;
+}
+
 .node--type-events #main h3.events-title {
   background: url(../images/separator.jpg) repeat-x scroll 0 100% rgba(0, 0, 0, 0);
   margin-top: 1rem;
@@ -2102,12 +2172,21 @@ body ul li .introduction-title a:hover {
 
 /* Responsive */
 @media only screen and (max-width: 768px) {
+  .view-eu-osha-event-summaries .row {
+    display: block;
+  }
+  .view-eu-osha-event-summaries .events-summary-col:nth-child(1) {
+    border-right: 0;
+    border-bottom: 20px solid #cfddee;
+  }
+  .view-eu-osha-event-summaries .events-summary-col:nth-child(2) {
+    border-left: 0;
+  }
+
   .box-events-summary .left-column {
     display: none;
   }
-}
-/* End Media 768px */
-@media only screen and (max-width: 768px) {
+
   .view-events .form-row {
     display: block;
   }
@@ -2115,7 +2194,7 @@ body ul li .introduction-title a:hover {
     margin-top: 7px;
   }
 
-  .box-events-summary .left-column {
+  .oshevents .left-column {
     display: none;
   }
 }
