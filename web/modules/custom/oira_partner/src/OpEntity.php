@@ -79,8 +79,13 @@ class OpEntity implements ContainerInjectionInterface {
   public function entityPreSave(EntityInterface $entity) {
     // Store the fields if the user is parner.
     if (in_array('partner', $this->account->getRoles())) {
-      if ($entity instanceof Node) {
+      if ($entity->hasField('field_workbench_access')) {
         $entity->set('field_workbench_access', $this->opEntityManager->getTermParent());
+      }
+      foreach ($this->fields as $key => $field_name) {
+        if ($entity->hasField($field_name)) {
+          $this->opEntityManager->updatePartners($entity, FALSE, FALSE);
+        }
       }
       return;
     }
