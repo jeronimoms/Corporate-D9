@@ -132,6 +132,7 @@ class OpEntity implements ContainerInjectionInterface {
             $form['actions']['save_final']['#value'] = $this->t('Submit this new item to validation');
             $form['actions']['save_final']['#weight'] = 999;
             $form['actions']['save_final']['#submit'][] = [$this, 'omSubmit'];
+            $form['actions']['save_final']['#attributes']['class'][] = 'oira-save';
           }
         }
       }
