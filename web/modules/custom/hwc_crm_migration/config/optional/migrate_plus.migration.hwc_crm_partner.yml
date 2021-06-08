@@ -202,3 +202,7 @@ process:
     -
       plugin: hcm_eu_level
       source: field_oira_eu_level
+  user:
+    -
+      plugin: hcm_user
+      source: field_partner_type
