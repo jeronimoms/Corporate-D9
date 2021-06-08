@@ -78,14 +78,6 @@ jQuery(document).ready(function($) {
     $('.views-row.moved-by-jquery').prependTo('.page-view-infographic .view-infographic.view-display-id-block_3  .view-content.row');
   }
 
-  //Move Donwload box in Thesaurus footer view
-  if ($(".view-footer .download-content-theasaurus")[0]) {
-    $('.view-footer .download-content-theasaurus').addClass('custom-class-jquery');
-    $('.view-footer .download-content-theasaurus').prependTo('.pagerer-container');
-
-  }
-
-
   //Show input search when click in Search button responsive menu
   $("#block-searchsite").click(function(){
     $('#block-searchsite .btn-primary').addClass('activate');
@@ -163,6 +155,15 @@ jQuery(document).ready(function($) {
     $('.close-thes-tooltip').click(function() {
       $(".thesaurus-tooltip").fadeOut(300);
     });
+  }
+
+  //Display clear filter button if url has parameter
+  if ($("#edit-reset")[0]) {
+    let url = window.location.href;
+    if(url.includes('?')){
+      $('#edit-reset').addClass('custom-active');
+      $('.views-exposed-form').addClass('custom-active-filter');
+    }
   }
 
 });

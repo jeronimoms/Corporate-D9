@@ -7,6 +7,7 @@ body{
   font-family: 'Open Sans', sans-serif;
   background: $bg-color-white;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body{
@@ -526,6 +527,7 @@ body {
               display: flex;
               justify-content: flex-end;
               align-items: center;
+              font-size: 1rem;
               &:before {
                 content: "";
                 display: inline-block;
