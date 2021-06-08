@@ -1,0 +1,23 @@
+uuid: 4c615501-3295-457c-9155-d7416c1c0185
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: msds_glossary_node_title_
+label: 'MSD Glossary'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/msds-glossary/[term:name]'
+selection_criteria:
+  ed43cd78-273e-4c9e-ab82-889ff7f57e23:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      msds_glossary: msds_glossary
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: ed43cd78-273e-4c9e-ab82-889ff7f57e23
+selection_logic: and
+weight: -5
+relationships: {  }
