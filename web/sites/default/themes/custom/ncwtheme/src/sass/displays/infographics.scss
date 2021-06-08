@@ -82,10 +82,16 @@
 
 
 @media only screen and (max-width : 576px) {
-  .page-view-infographic {
-    .infographic-item-view {
-      max-width: 350px;
-      margin: auto 2rem;
+  .page-view-infographic{
+    .view-infographic{
+      .views-view-grid{
+        .row{
+          justify-content: center;
+          .infographic-item-view {
+            max-width: 350px;
+          }
+        }
+      }
     }
   }
 }/* End Media 576px */

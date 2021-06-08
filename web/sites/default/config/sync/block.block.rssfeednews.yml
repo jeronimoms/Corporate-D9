@@ -5,13 +5,14 @@ dependencies:
   content:
     - 'block_content:basic:ae84d473-a57f-4238-905d-5c675e4a73eb'
   module:
+    - block_content
     - system
   theme:
     - ncwtheme
 id: rssfeednews
 theme: ncwtheme
 region: sidebar_second
-weight: -27
+weight: -28
 provider: null
 plugin: 'block_content:ae84d473-a57f-4238-905d-5c675e4a73eb'
 settings:
