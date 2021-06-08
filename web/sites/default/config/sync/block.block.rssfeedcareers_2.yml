@@ -5,13 +5,14 @@ dependencies:
   content:
     - 'block_content:basic:034befd7-9f4e-471b-b66c-aa84ee0b10b7'
   module:
+    - block_content
     - system
   theme:
     - ncwtheme
 id: rssfeedcareers_2
 theme: ncwtheme
 region: sidebar_second
-weight: -31
+weight: -32
 provider: null
 plugin: 'block_content:034befd7-9f4e-471b-b66c-aa84ee0b10b7'
 settings:

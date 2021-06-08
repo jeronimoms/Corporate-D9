@@ -407,7 +407,7 @@ div#sliding-popup {
 }
 
 /* Facets Accordions */
-#block-topics-2, #block-contenttypesearchsite-2 {
+#block-topics-2, #block-contenttypesearchsite-2, #block-topicsblog {
   border: 0;
   padding: 0;
   margin-top: 0;
@@ -415,7 +415,7 @@ div#sliding-popup {
   border-bottom: 10px solid #FFF;
   margin-bottom: 0;
 }
-#block-topics-2 h2, #block-contenttypesearchsite-2 h2 {
+#block-topics-2 h2, #block-contenttypesearchsite-2 h2, #block-topicsblog h2 {
   position: relative;
   background: #e8eef7;
   padding-top: 0.3rem;
@@ -423,7 +423,7 @@ div#sliding-popup {
   padding-left: 0.5rem;
   cursor: pointer;
 }
-#block-topics-2 h2::after, #block-contenttypesearchsite-2 h2::after {
+#block-topics-2 h2::after, #block-contenttypesearchsite-2 h2::after, #block-topicsblog h2::after {
   content: "";
   position: absolute;
   width: 20px;
@@ -432,19 +432,19 @@ div#sliding-popup {
   top: 12px;
   right: 20px;
 }
-#block-topics-2 h2.active::after, #block-contenttypesearchsite-2 h2.active::after {
+#block-topics-2 h2.active::after, #block-contenttypesearchsite-2 h2.active::after, #block-topicsblog h2.active::after {
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 18px;
 }
-#block-topics-2 .content, #block-contenttypesearchsite-2 .content {
+#block-topics-2 .content, #block-contenttypesearchsite-2 .content, #block-topicsblog .content {
   background: #FFF;
   display: none;
 }
-#block-topics-2 .content ul, #block-contenttypesearchsite-2 .content ul {
+#block-topics-2 .content ul, #block-contenttypesearchsite-2 .content ul, #block-topicsblog .content ul {
   list-style: none;
   padding-left: 0;
 }
-#block-topics-2 .content ul a, #block-contenttypesearchsite-2 .content ul a {
+#block-topics-2 .content ul a, #block-contenttypesearchsite-2 .content ul a, #block-topicsblog .content ul a {
   display: block;
   color: #57565b;
   font-size: 0.9rem;
@@ -997,6 +997,10 @@ h3.home a:hover {
   margin-bottom: 10px;
   border-bottom: 5px solid #003399;
 }
+.sidebar-second .block.block-twitter-block h2 {
+  font-size: 1.35rem;
+  border-bottom: 0;
+}
 
 .sidebar-second .related-views {
   padding-left: 20px;
@@ -1372,10 +1376,13 @@ body .see-more-arrow a:hover, body .link_news_events a:hover {
   transition: background-color 800ms linear;
 }
 
-body ul li .link_news_events {
-  float: right;
+body .news_and_events.block-menu-block ul li {
+  position: relative;
 }
-body ul li .link_news_events a {
+body .news_and_events.block-menu-block ul li .link_news_events a {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   border-bottom: 0;
 }
 
@@ -1631,11 +1638,13 @@ body ul li .introduction-title a:hover {
 }
 .news-events #main ul li {
   float: left;
-  width: 30%;
+  width: 240px;
+  min-height: 320px;
   margin-right: 1rem;
 }
 .news-events #main ul li .text_news_events {
   min-height: 65px;
+  padding-top: 5px;
 }
 
 /* Articles */
@@ -1670,6 +1679,7 @@ body ul li .introduction-title a:hover {
 /* FOPS View*/
 .node--type-article #main .view-fop-flags {
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .node--type-article #main .view-fop-flags h3 {
   padding-top: 0.5rem;
@@ -1776,6 +1786,10 @@ body ul li .introduction-title a:hover {
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item:last-child:after {
   display: none;
+}
+
+.about-eu-osha-national-focal-points-focal-points-index .node__content img {
+  padding-left: 10px;
 }
 
 /* FOPs detail */
@@ -1890,7 +1904,7 @@ body ul li .introduction-title a:hover {
 .view-eu-osha-event-summaries .events-summary-col {
   height: 100%;
   background: #FFF;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
 }
 .view-eu-osha-event-summaries .events-summary-col .left-column, .view-eu-osha-event-summaries .events-summary-col .right-column {
   padding: 1rem;
@@ -1902,7 +1916,8 @@ body ul li .introduction-title a:hover {
 .view-eu-osha-event-summaries .events-summary-col .field-content h2 {
   font-size: 1rem;
   line-height: initial;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .view-eu-osha-event-summaries .events-summary-col .field-content div.see-more-arrow {
   position: absolute;
@@ -3951,12 +3966,19 @@ body.node--type-publication {
 }
 
 /* Blog - View */
-.view-blog .views-field-field-image-caption {
+.view-blog .views-field-field-image-caption, .view-search-blog .views-field-field-image-caption {
   float: left;
   margin-right: 1rem;
 }
-.view-blog .views-field-field-summary-html {
-  min-height: 5rem;
+.view-blog .views-field-field-summary-html strong, .view-search-blog .views-field-field-summary-html strong {
+  font-weight: normal;
+}
+.view-blog .revamp-row.no-flex, .view-search-blog .revamp-row.no-flex {
+  min-height: 12rem;
+}
+
+.block-views-exposed-filter-blocksearch-blog-page-1 h2 {
+  padding-bottom: 1rem;
 }
 
 /* Procurement - Archieved calls */

@@ -108,12 +108,17 @@ body{
 }
 
 body {
-  ul {
-    li {
-      .link_news_events {
-        float: right;
-        a {
-          border-bottom: 0;
+  .news_and_events.block-menu-block{
+    ul {
+      li {
+        position: relative;
+        .link_news_events {
+          a {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-bottom: 0;
+          }
         }
       }
     }
@@ -407,10 +412,12 @@ body {
       padding: 1rem 0 0 0;
       li{
         float: left;
-        width: 30%;
+        width: 240px;
+        min-height: 320px;
         margin-right: 1rem;
         .text_news_events{
           min-height: 65px;
+          padding-top: 5px;
         }
       }
     }
@@ -455,6 +462,7 @@ body {
   #main {
     .view-fop-flags{
       padding-top: 2rem;
+      padding-bottom: 2rem;
       h3{
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
@@ -569,6 +577,13 @@ body {
   }
 }
 
+.about-eu-osha-national-focal-points-focal-points-index{
+  .node__content{
+    img{
+      padding-left: 10px;
+    }
+  }
+}
 
 /* FOPs detail */
 .block-views-blockfop-contacts-block-1{

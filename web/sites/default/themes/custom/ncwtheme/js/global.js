@@ -38,12 +38,18 @@ jQuery(document).ready(function($) {
     $(this).next('.view-grouping-content').slideToggle();
   });
 
+  //Facets Accordions
   $(".sidebar-first #block-contenttypesearchsite-2 h2").click(function(){
     $(this).toggleClass("active");
     $(this).parent().find('.content').slideToggle();
   });
 
   $(".sidebar-first #block-topics-2 h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-topicsblog h2").click(function(){
     $(this).toggleClass("active");
     $(this).parent().find('.content').slideToggle();
   });
@@ -124,7 +130,6 @@ jQuery(document).ready(function($) {
     var text = $(this).text();
     $(this).text(text.replace('&amp;', '&'));
   });
-
 
   //Archivied calls - Add class custom-active in year
   if ($(".view-id-calls.view-display-id-page_1")[0]) {

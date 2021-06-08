@@ -121,13 +121,24 @@
 }
 
 /* Blog - View */
-.view-blog{
+.view-blog, .view-search-blog{
   .views-field-field-image-caption{
     float: left;
     margin-right: 1rem;
   }
   .views-field-field-summary-html{
-    min-height: 5rem;
+    strong{
+      font-weight: normal;
+    }
+  }
+  .revamp-row.no-flex {
+    min-height: 12rem;
+  }
+}
+
+.block-views-exposed-filter-blocksearch-blog-page-1{
+  h2{
+    padding-bottom: 1rem;
   }
 }
 
