@@ -43,3 +43,10 @@
     }
   }
 }
+.field--name-field-publication-date, .field--name-field-expiration-date{
+  .chosen-container{
+    width: 100% !important;
+    min-width: 140px !important;
+  }
+}
+
