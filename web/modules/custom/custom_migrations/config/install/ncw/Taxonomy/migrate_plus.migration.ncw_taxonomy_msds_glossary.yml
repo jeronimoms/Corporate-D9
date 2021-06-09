@@ -28,7 +28,9 @@ process:
       default_value: msds_glossary    # -----  CHANGE
   name: name
   'description/value': description
-  'description/format': full_html
+  'description/format':
+    - plugin: default_value
+      default_value: full_html
   weight: weight
   parent_id:
     -
