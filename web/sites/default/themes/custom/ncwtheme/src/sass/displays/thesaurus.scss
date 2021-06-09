@@ -188,7 +188,11 @@
   padding-bottom: 1rem;
 }
 
-
+.view-thesaurus-front-indexed{
+  .views-field-nothing{
+    text-align: right;
+  }
+}
 
 /* Alphabetical view */
 .view-display-id-attachment_1{
@@ -209,3 +213,15 @@
     }
   }
 }
+
+.page-view-thesaurus-front-indexed{
+  .feed-icons{
+    float: right;
+    margin-top: 1em;
+    margin-bottom: 1rem;
+  }
+  .csv-feed .feed-icon {
+    background: url(../images/download-thesaurus.png) no-repeat 99% 0;
+  }
+}
+

@@ -117,4 +117,12 @@
       }
     }
   }
+  .view-landing-menu{
+    .view-col{
+      > div {
+        max-width: 240px;
+        margin: 0 auto;
+      }
+    }
+  }
 }

@@ -38,12 +38,18 @@ jQuery(document).ready(function($) {
     $(this).next('.view-grouping-content').slideToggle();
   });
 
+  //Facets Accordions
   $(".sidebar-first #block-contenttypesearchsite-2 h2").click(function(){
     $(this).toggleClass("active");
     $(this).parent().find('.content').slideToggle();
   });
 
   $(".sidebar-first #block-topics-2 h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-topicsblog h2").click(function(){
     $(this).toggleClass("active");
     $(this).parent().find('.content').slideToggle();
   });
@@ -77,14 +83,6 @@ jQuery(document).ready(function($) {
   if ($(".views-row.moved-by-jquery")[0]) {
     $('.views-row.moved-by-jquery').prependTo('.page-view-infographic .view-infographic.view-display-id-block_3  .view-content.row');
   }
-
-  //Move Donwload box in Thesaurus footer view
-  if ($(".view-footer .download-content-theasaurus")[0]) {
-    $('.view-footer .download-content-theasaurus').addClass('custom-class-jquery');
-    $('.view-footer .download-content-theasaurus').prependTo('.pagerer-container');
-
-  }
-
 
   //Show input search when click in Search button responsive menu
   $("#block-searchsite").click(function(){
@@ -133,7 +131,6 @@ jQuery(document).ready(function($) {
     $(this).text(text.replace('&amp;', '&'));
   });
 
-
   //Archivied calls - Add class custom-active in year
   if ($(".view-id-calls.view-display-id-page_1")[0]) {
     let url = $(location).attr('href');
@@ -163,6 +160,15 @@ jQuery(document).ready(function($) {
     $('.close-thes-tooltip').click(function() {
       $(".thesaurus-tooltip").fadeOut(300);
     });
+  }
+
+  //Display clear filter button if url has parameter
+  if ($("#edit-reset")[0]) {
+    let url = window.location.href;
+    if(url.includes('?')){
+      $('#edit-reset').addClass('custom-active');
+      $('.views-exposed-form').addClass('custom-active-filter');
+    }
   }
 
 });

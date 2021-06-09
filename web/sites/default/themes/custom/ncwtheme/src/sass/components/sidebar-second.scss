@@ -26,7 +26,14 @@
       border-bottom: 5px solid $bg-color-blue;
     }
   }
+  .block.block-twitter-block{
+    h2{
+      font-size: 1.35rem;
+      border-bottom: 0;
+    }
+  }
 }
+
 .sidebar-second{
   .related-views{
     padding-left: 20px;
@@ -205,4 +212,5 @@
   background: url(../images/rss.png) no-repeat;
   padding-left: 25px;
   margin-top: -1rem;
+  padding-bottom: 1rem;
 }
