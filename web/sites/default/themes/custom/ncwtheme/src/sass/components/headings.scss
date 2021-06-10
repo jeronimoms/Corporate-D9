@@ -44,14 +44,6 @@ h2{
       }
     }
   }
-  a[target=_blank] {
-    background: url(../images/external_link-v2.png) no-repeat scroll right 4px rgba(0, 0, 0, 0);
-    padding-right: 16px;
-    float: none;
-    &:hover{
-      background: url(../images/external_link-v2-hover.png) no-repeat scroll right 4px rgba(0, 0, 0, 0);
-    }
-  }
 }
 
 h2.related{

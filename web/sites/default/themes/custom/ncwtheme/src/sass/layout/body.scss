@@ -113,9 +113,6 @@ body {
         position: relative;
         .link_news_events {
           a {
-            position: absolute;
-            right: 0;
-            bottom: 0;
             border-bottom: 0;
           }
         }
@@ -318,6 +315,21 @@ body {
   }
 }
 
+#main{
+  .node--view-mode-full, .view{
+    a[target=_blank] {
+      background: url(../images/external_link-v2.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
+      padding-right: 16px;
+      float: none;
+      border-bottom: 1px solid $bg-color-pink;
+      &:hover{
+        background: url(../images/external_link-v2-hover.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
+        border-bottom: 1px solid $bg-color-blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
 
 /* END Common elements */
 
@@ -394,19 +406,66 @@ body {
 }
 
 /* Page - Highlight, News and Events content link */
+html[lang=de]{
+  .news-events{
+    #main{
+      ul {
+        li {
+          .introduction-title {
+            height: 100px;
+            a{
+              font-size: 1.1rem;
+            }
+          }
+          .text_news_events {
+            min-height: 140px;
+          }
+        }
+      }
+    }
+  }
+}
+html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
+  .news-events{
+    #main{
+      ul {
+        li {
+          .introduction-title {
+            height: 100px;
+          }
+          .text_news_events {
+            min-height: 140px;
+          }
+        }
+      }
+    }
+  }
+}
 .news-events{
   #main{
-    ul{
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
       list-style: none;
       padding: 1rem 0 0 0;
-      li{
-        float: left;
+      li {
         width: 240px;
-        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
         margin-right: 1rem;
-        .text_news_events{
-          min-height: 65px;
+        .introduction-title {
+          display: flex;
+          height: auto;
+          align-items: flex-end;
+        }
+        .text_news_events {
           padding-top: 5px;
+          min-height: 110px;
+        }
+        .link_news_events{
+          text-align: right;
         }
       }
     }

@@ -84,7 +84,10 @@
           width: 22rem;
           padding: 10px 10px 10px 20px;
           a{
-           font-family: 'Open Sans Condensed';
+            display: block;
+            font-family: 'Open Sans Condensed';
+            font-size: 1.05rem;
+            padding-top: 5px;
           }
           li {
             width: 100%;
@@ -106,6 +109,9 @@
                 }
               }
             }
+          }
+          li.menu-item--expanded:nth-child(2) {
+            margin-top: 1rem;
           }
         }
       }
