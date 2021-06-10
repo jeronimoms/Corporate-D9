@@ -52,15 +52,20 @@ display:
         options:
           offset: 0
       style:
-        type: default
+        type: grid
         options:
           grouping:
             -
               field: nothing
               rendered: true
               rendered_strip: false
-          row_class: ''
-          default_row_class: true
+          columns: 12
+          automatic_width: false
+          alignment: vertical
+          col_class_default: false
+          col_class_custom: ''
+          row_class_default: false
+          row_class_custom: 'revamp-row no-flex'
       row:
         type: fields
       fields:
@@ -495,7 +500,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<span><a href="#glossary-{{ name_1 }}">{{ name_1 }}</a></span>'
+            text: '<span><a class="term-glosssary-msd-letter" href="#glossary-{{ name_1 }}">{{ name_1 }}</a></span>'
             make_link: false
             path: ''
             absolute: false
