@@ -54,6 +54,13 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.content').slideToggle();
   });
 
+  //View MSD glossary accordion #block-ncwtheme-content > div > div > div > div.view-content.row > div:nth-child(8)
+  $(".view-view-glossary > div.view-content.row > h3:nth-child(7)").addClass('active');
+  $(".view-view-glossary > div.view-content.row > div:nth-child(8)").css('display','block');
+  $(".view-view-glossary h3").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.views-view-grid').slideToggle();
+  });
 
   // Text resize
   $('#_biggify').on('click', function() {
@@ -169,6 +176,26 @@ jQuery(document).ready(function($) {
       $('#edit-reset').addClass('custom-active');
       $('.views-exposed-form').addClass('custom-active-filter');
     }
+  }
+
+  //Remove equal elements in MSD Glosaary filter
+  if ($(".view-msd-glossary")[0]) {
+    var seen = {};
+    $('.term-glosssary-msd-letter').each(function() {
+      var txt = $(this).text();
+      if (seen[txt])
+        $(this).remove();
+      else
+        seen[txt] = true;
+    });
+    //Scroll up the anchor
+    $(".term-glosssary-msd-letter").click(function(event){
+      setTimeout(function() {
+        $('html,body').animate({
+          scrollTop: $(window).scrollTop() -500
+        });
+      }, 100);
+    });
   }
 
 });

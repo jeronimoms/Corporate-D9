@@ -1,7 +1,9 @@
 /* Accordions */
-.wysiwyg_accordion, .quicktabs-accordion{
+.wysiwyg_accordion, .quicktabs-accordion, .view-view-glossary{
+  margin-top: 1rem;
   h3{
     position: relative;
+    width: 100%;
     font-family: 'Open Sans Condensed';
     color: $text-color-blue;
     background: $bg-color-blue-accordion;

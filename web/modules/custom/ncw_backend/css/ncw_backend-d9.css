@@ -25,4 +25,9 @@
   padding-left: 0;
 }
 
+.field--name-field-publication-date .chosen-container, .field--name-field-expiration-date .chosen-container {
+  width: 100% !important;
+  min-width: 140px !important;
+}
+
 /*# sourceMappingURL=ncw_backend-d9.css.map */

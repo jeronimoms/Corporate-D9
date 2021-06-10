@@ -124,11 +124,13 @@ input[type=search] {
 }
 
 /* Accordions */
-.wysiwyg_accordion, .quicktabs-accordion {
+.wysiwyg_accordion, .quicktabs-accordion, .view-view-glossary {
+  margin-top: 1rem;
   /*Quick tabs accordions*/
 }
-.wysiwyg_accordion h3, .quicktabs-accordion h3 {
+.wysiwyg_accordion h3, .quicktabs-accordion h3, .view-view-glossary h3 {
   position: relative;
+  width: 100%;
   font-family: "Open Sans Condensed";
   color: #003399;
   background: #e8eef7;
@@ -147,7 +149,7 @@ input[type=search] {
   margin-bottom: 0;
   cursor: pointer;
 }
-.wysiwyg_accordion h3::after, .quicktabs-accordion h3::after {
+.wysiwyg_accordion h3::after, .quicktabs-accordion h3::after, .view-view-glossary h3::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -156,49 +158,49 @@ input[type=search] {
   top: 30%;
   right: 20px;
 }
-.wysiwyg_accordion h3.active::after, .wysiwyg_accordion h3.ui-state-active::after, .quicktabs-accordion h3.active::after, .quicktabs-accordion h3.ui-state-active::after {
+.wysiwyg_accordion h3.active::after, .wysiwyg_accordion h3.ui-state-active::after, .quicktabs-accordion h3.active::after, .quicktabs-accordion h3.ui-state-active::after, .view-view-glossary h3.active::after, .view-view-glossary h3.ui-state-active::after {
   width: 17px;
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 17px;
 }
-.wysiwyg_accordion h3:focus, .quicktabs-accordion h3:focus {
+.wysiwyg_accordion h3:focus, .quicktabs-accordion h3:focus, .view-view-glossary h3:focus {
   outline: none;
 }
-.wysiwyg_accordion .wysiwyg_accordion_panel, .quicktabs-accordion .wysiwyg_accordion_panel {
+.wysiwyg_accordion .wysiwyg_accordion_panel, .quicktabs-accordion .wysiwyg_accordion_panel, .view-view-glossary .wysiwyg_accordion_panel {
   display: none;
   padding: 10px 0;
 }
-.wysiwyg_accordion .wysiwyg_accordion_panel.views, .quicktabs-accordion .wysiwyg_accordion_panel.views {
+.wysiwyg_accordion .wysiwyg_accordion_panel.views, .quicktabs-accordion .wysiwyg_accordion_panel.views, .view-view-glossary .wysiwyg_accordion_panel.views {
   padding-left: 15px;
   padding-right: 15px;
 }
-.wysiwyg_accordion .ui-state-default a, .wysiwyg_accordion .ui-state-default a:link, .wysiwyg_accordion .ui-state-default a:visited, .wysiwyg_accordion a.ui-button, .wysiwyg_accordion a:link.ui-button, .wysiwyg_accordion a:visited.ui-button, .wysiwyg_accordion .ui-button, .quicktabs-accordion .ui-state-default a, .quicktabs-accordion .ui-state-default a:link, .quicktabs-accordion .ui-state-default a:visited, .quicktabs-accordion a.ui-button, .quicktabs-accordion a:link.ui-button, .quicktabs-accordion a:visited.ui-button, .quicktabs-accordion .ui-button {
+.wysiwyg_accordion .ui-state-default a, .wysiwyg_accordion .ui-state-default a:link, .wysiwyg_accordion .ui-state-default a:visited, .wysiwyg_accordion a.ui-button, .wysiwyg_accordion a:link.ui-button, .wysiwyg_accordion a:visited.ui-button, .wysiwyg_accordion .ui-button, .quicktabs-accordion .ui-state-default a, .quicktabs-accordion .ui-state-default a:link, .quicktabs-accordion .ui-state-default a:visited, .quicktabs-accordion a.ui-button, .quicktabs-accordion a:link.ui-button, .quicktabs-accordion a:visited.ui-button, .quicktabs-accordion .ui-button, .view-view-glossary .ui-state-default a, .view-view-glossary .ui-state-default a:link, .view-view-glossary .ui-state-default a:visited, .view-view-glossary a.ui-button, .view-view-glossary a:link.ui-button, .view-view-glossary a:visited.ui-button, .view-view-glossary .ui-button {
   font-family: "Open Sans Condensed";
   color: #003399;
   font-size: 1.3rem;
   font-weight: bold;
 }
-.wysiwyg_accordion .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active, .quicktabs-accordion .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active {
+.wysiwyg_accordion .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active, .quicktabs-accordion .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active, .view-view-glossary .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active {
   height: auto !important;
   color: #000;
   padding: 10px 0;
   border: 0;
   overflow: hidden;
 }
-.wysiwyg_accordion .ui-icon-triangle-1-e, .wysiwyg_accordion .ui-icon-triangle-1-s, .quicktabs-accordion .ui-icon-triangle-1-e, .quicktabs-accordion .ui-icon-triangle-1-s {
+.wysiwyg_accordion .ui-icon-triangle-1-e, .wysiwyg_accordion .ui-icon-triangle-1-s, .quicktabs-accordion .ui-icon-triangle-1-e, .quicktabs-accordion .ui-icon-triangle-1-s, .view-view-glossary .ui-icon-triangle-1-e, .view-view-glossary .ui-icon-triangle-1-s {
   display: none;
 }
-.wysiwyg_accordion .ui-accordion-content, .quicktabs-accordion .ui-accordion-content {
+.wysiwyg_accordion .ui-accordion-content, .quicktabs-accordion .ui-accordion-content, .view-view-glossary .ui-accordion-content {
   padding: 10px 0 !important;
 }
-.wysiwyg_accordion .ui-accordion-content .view, .quicktabs-accordion .ui-accordion-content .view {
+.wysiwyg_accordion .ui-accordion-content .view, .quicktabs-accordion .ui-accordion-content .view, .view-view-glossary .ui-accordion-content .view {
   padding-left: 10px;
   padding-right: 10px;
 }
-.wysiwyg_accordion .ui-accordion-content .views-field-view-node, .quicktabs-accordion .ui-accordion-content .views-field-view-node {
+.wysiwyg_accordion .ui-accordion-content .views-field-view-node, .quicktabs-accordion .ui-accordion-content .views-field-view-node, .view-view-glossary .ui-accordion-content .views-field-view-node {
   text-align: right;
 }
-.wysiwyg_accordion .ui-widget-content a, .quicktabs-accordion .ui-widget-content a {
+.wysiwyg_accordion .ui-widget-content a, .quicktabs-accordion .ui-widget-content a, .view-view-glossary .ui-widget-content a {
   color: #003399;
 }
 
@@ -732,8 +734,30 @@ h2 a:hover {
   /* h2 - node Full details */
 }
 .node--view-mode-full h2 {
-  padding-top: 0.2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+.node--view-mode-full h3 {
+  padding-top: 1rem;
   padding-bottom: 0.5rem;
+}
+.node--view-mode-full h3 a {
+  color: #003399;
+  text-decoration: none;
+  border-bottom: 1px solid #c72272;
+}
+.node--view-mode-full h3 a:hover {
+  text-decoration: none;
+  transition: border-bottom 1s;
+  border-bottom: 1px solid #003399;
+}
+.node--view-mode-full a[target=_blank] {
+  background: url(../images/external_link-v2.png) no-repeat scroll right 4px rgba(0, 0, 0, 0);
+  padding-right: 16px;
+  float: none;
+}
+.node--view-mode-full a[target=_blank]:hover {
+  background: url(../images/external_link-v2-hover.png) no-repeat scroll right 4px rgba(0, 0, 0, 0);
 }
 
 h2.related {
@@ -845,6 +869,8 @@ h3.home a:hover {
 .sidebar-first .menu--main ul li a.is-active {
   font-weight: bold;
   color: #003399;
+  padding-right: 30px;
+  max-width: 225px;
 }
 .sidebar-first .menu--main ul li ul {
   list-style: none;
@@ -862,7 +888,7 @@ h3.home a:hover {
   font-size: 0.75rem;
   font-weight: 700;
   border-bottom: 0;
-  padding-right: 35px;
+  padding-right: 10px;
   padding-bottom: 0;
 }
 .sidebar-first .menu--main ul li ul li a:hover {
@@ -879,6 +905,7 @@ h3.home a:hover {
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
   display: none;
+  margin-top: 0;
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 li {
   width: 100%;
@@ -889,6 +916,8 @@ h3.home a:hover {
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a.is-active {
   font-weight: bold;
   color: #003399;
+  padding-right: 30px;
+  max-width: 225px;
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 li:last-child {
   border-bottom: 0;
@@ -911,6 +940,7 @@ h3.home a:hover {
 }
 .sidebar-first .menu--main ul li ul li.menu-item--active-trail ul.menu-level-2 {
   display: block;
+  margin-top: 0;
 }
 .sidebar-first .menu--main ul li ul li.menu-item--active-trail .mean-expand-custom {
   background: url("../images/ico_minor.png") no-repeat 10px 11px;
@@ -924,14 +954,10 @@ h3.home a:hover {
 }
 
 .mean-expand-custom {
-  display: block;
+  display: inline-block;
   width: 30px;
   height: 30px;
   cursor: pointer;
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  top: 4px;
   background: url(../images/ico-plus.png) no-repeat 9px 8px;
 }
 .mean-expand-custom.active {
@@ -1003,6 +1029,14 @@ h3.home a:hover {
 }
 
 .sidebar-second .related-views {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.sidebar-second .related-views .region-sidebar-second-related .block h2 {
+  font-size: 1.05rem;
+  border-bottom: 0;
+}
+.sidebar-second .related-views .region-sidebar-second-related .block .views-row {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -1484,7 +1518,7 @@ body ul li .introduction-title a:hover {
 
 .push-right {
   margin-left: auto;
-  margin-right: 30px;
+  margin-right: 50px;
 }
 
 /* Share this on articles icons */
@@ -1555,6 +1589,9 @@ body ul li .introduction-title a:hover {
   display: inline-block;
   font-size: 0.9rem;
 }
+.target-blank-v2:hover {
+  background: url(../images/external_link-v2-hover.png) no-repeat scroll right 4px rgba(0, 0, 0, 0);
+}
 
 /* END Common elements */
 /* Twetter Block */
@@ -1596,13 +1633,6 @@ body ul li .introduction-title a:hover {
   color: #7c7d81;
   font-size: 0.8rem;
   font-weight: bold;
-}
-
-/* Articles */
-.node--type-article #main .field--name-field-image-caption img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
 }
 
 .facets-widget-checkbox ul {
@@ -1648,6 +1678,11 @@ body ul li .introduction-title a:hover {
 }
 
 /* Articles */
+.node--type-article #main .field--name-field-image-caption img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
 .node--type-article .content-headings-related {
   padding-top: 2rem;
 }
@@ -1668,6 +1703,7 @@ body ul li .introduction-title a:hover {
 }
 .node--type-article iframe {
   width: 100%;
+  margin-top: 0.5rem;
 }
 
 /* Basic pages */
@@ -1753,6 +1789,7 @@ body ul li .introduction-title a:hover {
   justify-content: flex-end;
   align-items: center;
   font-size: 1rem;
+  background: transparent;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:before {
   content: "";
@@ -1761,7 +1798,7 @@ body ul li .introduction-title a:hover {
   height: 16px;
   order: 2;
   margin: 0 2px 0 5px;
-  background: url(../images/external_link.png) center right no-repeat;
+  background: url(../images/external_link-v2.png) center right no-repeat;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:after {
   order: 3;
@@ -1774,6 +1811,9 @@ body ul li .introduction-title a:hover {
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:hover {
   text-decoration: none;
+}
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:hover:before {
+  background: url(../images/external_link-v2-hover.png) center right no-repeat;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item:after {
   padding-top: 0.5rem;
@@ -3259,6 +3299,64 @@ body.contact form.contact-form button.btn-primary {
   }
 }
 /* End Media 768px */
+.view-msd-glossary .term-glosssary-msd-letter {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.view-msd-glossary h3 {
+  display: block;
+  width: 100%;
+  color: #003399;
+  font-size: 1.45rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.view-msd-glossary h3:after {
+  content: "";
+  display: block;
+  width: calc(100% - 35px);
+  border-bottom: 1px solid #003399;
+  margin-left: 35px;
+  margin-top: -7px;
+}
+.view-msd-glossary .revamp-row h2 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.view-msd-glossary .revamp-row p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Accordions glossary view */
+.view-view-glossary .views-view-grid {
+  display: none;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.view-view-glossary .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.view-view-glossary .field-content {
+  font-size: 0.9rem;
+}
+.view-view-glossary .views-field-name {
+  color: #003399;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+.view-view-glossary .views-field-name strong {
+  font-weight: 600;
+}
+.view-view-glossary p {
+  margin-bottom: 0;
+}
+
 .page-view-infographic .custom-view-node-header {
   padding-bottom: 0rem;
 }

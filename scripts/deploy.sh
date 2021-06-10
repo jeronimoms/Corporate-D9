@@ -20,6 +20,9 @@ git submodule update --recursive
 composer install
 
 # Update Vesafe site.
+echo 'Clearing caches for Vesafe site'
+drush cr -l vesafe -y
+
 echo 'Runing updb for Vesafe site'
 drush updb -l vesafe -y
 
@@ -33,6 +36,9 @@ echo 'Clearing caches for Vesafe site'
 drush cr -l vesafe -y
 
 # Update Oira site.
+echo 'Clearing caches for Oira site'
+drush cr -l oira -y
+
 echo 'Runing updb for Oira site'
 drush updb -l oira -y
 
@@ -46,6 +52,9 @@ echo 'Clearing caches for Oira site'
 drush cr -l oira -y
 
 # Update Napo site.
+echo 'Clearing caches for Napo site'
+drush cr -l napo -y
+
 echo 'Runing updb for Napo site'
 drush updb -l napo -y
 
@@ -57,3 +66,19 @@ drush cim -l napo -y
 
 echo 'Clearing caches for Napo site'
 drush cr -l napo -y
+
+# Update Allages site.
+echo 'Clearing caches for Allages site'
+drush cr -l allages -y
+
+echo 'Runing updb for Allages site'
+drush updb -l allages -y
+
+echo 'Clearing caches for Allages site'
+drush cr -l allages -y
+
+echo 'Importing configuration for Allages site'
+drush cim -l allages -y
+
+echo 'Clearing caches for Allages site'
+drush cr -l allages -y

@@ -54,15 +54,20 @@ display:
         options:
           offset: 0
       style:
-        type: default
+        type: grid
         options:
           grouping:
             -
               field: field_glossary_type
               rendered: true
               rendered_strip: false
-          row_class: ''
-          default_row_class: true
+          columns: 12
+          automatic_width: false
+          alignment: vertical
+          col_class_default: false
+          col_class_custom: accordion-column
+          row_class_default: false
+          row_class_custom: 'accordion-row revamp-row no-flex'
       row:
         type: fields
       fields:
