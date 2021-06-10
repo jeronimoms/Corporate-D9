@@ -24,6 +24,8 @@
         a.is-active{
           font-weight: bold;
           color: $text-color-blue;
+          padding-right: 30px;
+          max-width: 225px;
         }
         ul{
           list-style: none;
@@ -39,7 +41,7 @@
               font-size: 0.75rem;
               font-weight: 700;
               border-bottom: 0;
-              padding-right: 35px;
+              padding-right: 10px;
               padding-bottom: 0;
               &:hover{
                 opacity: 0.9;
@@ -56,6 +58,7 @@
             }
             ul.menu-level-2{
               display: none;
+              margin-top: 0;
               li{
                 width: 100%;
                 a{
@@ -64,6 +67,8 @@
                 a.is-active{
                   font-weight: bold;
                   color: $text-color-blue;
+                  padding-right: 30px;
+                  max-width: 225px;
                 }
               }
               li:last-child{
@@ -90,6 +95,7 @@
           li.menu-item--active-trail{
             ul.menu-level-2{
               display: block;
+              margin-top: 0;
             }
             .mean-expand-custom{
               background: url("../images/ico_minor.png") no-repeat 10px 11px;
@@ -113,14 +119,10 @@
 }
 
 .mean-expand-custom{
-  display: block;
+  display: inline-block;
   width: 30px;
   height: 30px;
   cursor: pointer;
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  top: 4px;
   background: url(../images/ico-plus.png) no-repeat 9px 8px;
   &.active{
     background: url("../images/ico_minor.png") no-repeat 10px 11px;

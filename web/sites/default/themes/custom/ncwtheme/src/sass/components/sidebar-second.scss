@@ -38,6 +38,18 @@
   .related-views{
     padding-left: 20px;
     padding-right: 20px;
+    .region-sidebar-second-related{
+      .block{
+        h2{
+          font-size: 1.05rem;
+          border-bottom: 0;
+        }
+        .views-row {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+    }
     .views-element-container.block.block-views{
       float: left;
       width: 100%;
