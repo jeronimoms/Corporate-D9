@@ -47,7 +47,7 @@ third_party_settings:
         - field_file_media
         - field_publication_res_files
       parent_name: ''
-      weight: 7
+      weight: 6
       format_type: html_element
       region: content
       format_settings:
@@ -68,14 +68,14 @@ mode: default
 content:
   body:
     type: text_default
-    weight: 6
+    weight: 5
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_aditional_resources:
     type: entity_reference_entity_view
-    weight: 8
+    weight: 7
     region: content
     label: hidden
     settings:
@@ -99,25 +99,14 @@ content:
     third_party_settings: {  }
     type: media_thumbnail
     region: content
-  field_page_count:
-    type: number_decimal
-    weight: 4
+  field_pages_count:
+    type: number_integer
+    weight: 3
     region: content
-    label: hidden
+    label: above
     settings:
       thousand_separator: ''
-      decimal_separator: .
-      scale: 2
       prefix_suffix: true
-    third_party_settings: {  }
-  field_pages_count_updated:
-    type: datetime_default
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      format_type: medium
-      timezone_override: ''
     third_party_settings: {  }
   field_publication_date:
     weight: 1
@@ -139,7 +128,7 @@ content:
     region: content
   field_publication_type:
     type: entity_reference_label
-    weight: 3
+    weight: 2
     region: content
     label: hidden
     settings:
@@ -147,7 +136,7 @@ content:
     third_party_settings: {  }
   field_related_publications:
     type: entity_reference_entity_view
-    weight: 9
+    weight: 8
     region: content
     label: hidden
     settings:
@@ -164,7 +153,7 @@ content:
             classes: {  }
   field_tags:
     type: entity_reference_label
-    weight: 5
+    weight: 4
     region: content
     label: hidden
     settings:
@@ -181,7 +170,8 @@ hidden:
   field_expiration_date: true
   field_msd_priority_area: true
   field_nace_codes: true
-  field_pages_count: true
+  field_page_count: true
+  field_pages_count_updated: true
   field_priority_area: true
   field_publication_bookshop_id: true
   field_related_oshwiki_articles: true

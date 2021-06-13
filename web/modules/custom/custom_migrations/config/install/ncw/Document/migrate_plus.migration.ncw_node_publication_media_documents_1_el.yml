@@ -1,0 +1,71 @@
+# File to Media Migration configuration for NCW publication migration
+
+id: ncw_node_publication_media_documents_1_el
+label: 'Publication Documents'
+migration_group: ncw_migrate_nodes
+
+source:
+  key: migrate
+  langcode: el
+  plugin: media_entity_generator_d7
+  entity_type: node
+  bundle: publication
+  d7_file_url: 'https://osha.europa.eu/sites/default/files/'
+  field_names:
+    - field_file
+    - field_publication_related_res
+
+destination:
+  plugin: entity:media
+
+process:
+  bundle:
+    plugin: default_value
+    default_value: document
+
+  # Using the alt tag if available, else the file name.
+  name:
+    plugin: media_name
+    source: file_name
+
+  # This process plugin will skip the whole row if a existing media is found.
+  existing_media_file:
+    plugin: check_media_duplicate
+    source: target_id
+
+  # This process plugin will skip the whole row if a duplicate image is found.
+  unique_file_id:
+    plugin: check_duplicate
+    source: target_id
+
+  # Map the field document
+  field_media_document/title: title
+  field_media_description: field_file_description
+  field_media_document/target_id:
+    plugin: media_file_copy
+    move: FALSE
+    reuse: TRUE
+    path: 'public://'
+    source: file_path
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_nace_codes:
+    - plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
+  langcode: langcode
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+dependencies:
+  module:
+    - custom_migrations
+  enforced:
+    module:
+      - custom_migrations
