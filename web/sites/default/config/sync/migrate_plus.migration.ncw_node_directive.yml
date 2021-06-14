@@ -153,6 +153,4 @@ process:
   field_thesaurus_2020: field_thesaurus_2020
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - d7_user
+migration_dependencies: null

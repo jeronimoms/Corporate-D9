@@ -21,7 +21,6 @@ dependencies:
       - custom_migrations
 migration_dependencies:
   required:
-    - d7_user
     - ncw_node_note_to_editor
 
 process:

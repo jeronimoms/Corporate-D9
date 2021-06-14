@@ -18,8 +18,6 @@ dependencies:
     module:
       - custom_migrations
 migration_dependencies:
-  required:
-    - d7_user
 
 process:
   nid:
