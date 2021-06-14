@@ -124,11 +124,91 @@ input[type=search] {
 }
 
 /* Accordions */
-.wysiwyg_accordion, .quicktabs-accordion, .view-view-glossary {
+#main .wysiwyg_accordion, #main .quicktabs-accordion, #main .view-view-glossary {
   margin-top: 1rem;
   /*Quick tabs accordions*/
 }
-.wysiwyg_accordion h3, .quicktabs-accordion h3, .view-view-glossary h3 {
+#main .wysiwyg_accordion h3, #main .quicktabs-accordion h3, #main .view-view-glossary h3 {
+  position: relative;
+  width: 100%;
+  font-family: "Open Sans Condensed";
+  color: #003399;
+  background: #e8eef7;
+  height: auto;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-right: 2.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  border: 0;
+  margin-top: 0;
+  /*no margin - to fix text effect - add border*/
+  border-top: 5px solid #FFF;
+  border-bottom: 5px solid #FFF;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+#main .wysiwyg_accordion h3::after, #main .quicktabs-accordion h3::after, #main .view-view-glossary h3::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 17px;
+  background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+  top: 30%;
+  right: 20px;
+}
+#main .wysiwyg_accordion h3.active::after, #main .wysiwyg_accordion h3.ui-state-active::after, #main .quicktabs-accordion h3.active::after, #main .quicktabs-accordion h3.ui-state-active::after, #main .view-view-glossary h3.active::after, #main .view-view-glossary h3.ui-state-active::after {
+  width: 17px;
+  background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+  right: 17px;
+}
+#main .wysiwyg_accordion h3:focus, #main .quicktabs-accordion h3:focus, #main .view-view-glossary h3:focus {
+  outline: none;
+}
+#main .wysiwyg_accordion .wysiwyg_accordion_panel, #main .quicktabs-accordion .wysiwyg_accordion_panel, #main .view-view-glossary .wysiwyg_accordion_panel {
+  display: none;
+  padding: 10px 0;
+}
+#main .wysiwyg_accordion .wysiwyg_accordion_panel.views, #main .quicktabs-accordion .wysiwyg_accordion_panel.views, #main .view-view-glossary .wysiwyg_accordion_panel.views {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#main .wysiwyg_accordion .ui-state-default a, #main .wysiwyg_accordion .ui-state-default a:link, #main .wysiwyg_accordion .ui-state-default a:visited, #main .wysiwyg_accordion a.ui-button, #main .wysiwyg_accordion a:link.ui-button, #main .wysiwyg_accordion a:visited.ui-button, #main .wysiwyg_accordion .ui-button, #main .quicktabs-accordion .ui-state-default a, #main .quicktabs-accordion .ui-state-default a:link, #main .quicktabs-accordion .ui-state-default a:visited, #main .quicktabs-accordion a.ui-button, #main .quicktabs-accordion a:link.ui-button, #main .quicktabs-accordion a:visited.ui-button, #main .quicktabs-accordion .ui-button, #main .view-view-glossary .ui-state-default a, #main .view-view-glossary .ui-state-default a:link, #main .view-view-glossary .ui-state-default a:visited, #main .view-view-glossary a.ui-button, #main .view-view-glossary a:link.ui-button, #main .view-view-glossary a:visited.ui-button, #main .view-view-glossary .ui-button {
+  font-family: "Open Sans Condensed";
+  color: #003399;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+#main .wysiwyg_accordion .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active, #main .quicktabs-accordion .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active, #main .view-view-glossary .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active {
+  height: auto !important;
+  color: #000;
+  padding: 10px 0;
+  border: 0;
+  overflow: hidden;
+}
+#main .wysiwyg_accordion .ui-icon-triangle-1-e, #main .wysiwyg_accordion .ui-icon-triangle-1-s, #main .quicktabs-accordion .ui-icon-triangle-1-e, #main .quicktabs-accordion .ui-icon-triangle-1-s, #main .view-view-glossary .ui-icon-triangle-1-e, #main .view-view-glossary .ui-icon-triangle-1-s {
+  display: none;
+}
+#main .wysiwyg_accordion .ui-accordion-content, #main .quicktabs-accordion .ui-accordion-content, #main .view-view-glossary .ui-accordion-content {
+  padding: 10px 0 !important;
+}
+#main .wysiwyg_accordion .ui-accordion-content .view, #main .quicktabs-accordion .ui-accordion-content .view, #main .view-view-glossary .ui-accordion-content .view {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#main .wysiwyg_accordion .ui-accordion-content .views-field-view-node, #main .quicktabs-accordion .ui-accordion-content .views-field-view-node, #main .view-view-glossary .ui-accordion-content .views-field-view-node {
+  text-align: right;
+}
+#main .wysiwyg_accordion .ui-widget-content a, #main .quicktabs-accordion .ui-widget-content a, #main .view-view-glossary .ui-widget-content a {
+  color: #003399;
+}
+
+/* view-board-members */
+.view-board-members .view-grouping {
+  width: 100%;
+}
+.view-board-members .view-grouping-header {
   position: relative;
   width: 100%;
   font-family: "Open Sans Condensed";
@@ -149,7 +229,7 @@ input[type=search] {
   margin-bottom: 0;
   cursor: pointer;
 }
-.wysiwyg_accordion h3::after, .quicktabs-accordion h3::after, .view-view-glossary h3::after {
+.view-board-members .view-grouping-header::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -158,50 +238,23 @@ input[type=search] {
   top: 30%;
   right: 20px;
 }
-.wysiwyg_accordion h3.active::after, .wysiwyg_accordion h3.ui-state-active::after, .quicktabs-accordion h3.active::after, .quicktabs-accordion h3.ui-state-active::after, .view-view-glossary h3.active::after, .view-view-glossary h3.ui-state-active::after {
+.view-board-members .view-grouping-header.active::after, .view-board-members .view-grouping-header.ui-state-active::after {
   width: 17px;
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 17px;
 }
-.wysiwyg_accordion h3:focus, .quicktabs-accordion h3:focus, .view-view-glossary h3:focus {
-  outline: none;
-}
-.wysiwyg_accordion .wysiwyg_accordion_panel, .quicktabs-accordion .wysiwyg_accordion_panel, .view-view-glossary .wysiwyg_accordion_panel {
+.view-board-members .view-grouping-content {
   display: none;
-  padding: 10px 0;
+  padding: 10px 8px;
 }
-.wysiwyg_accordion .wysiwyg_accordion_panel.views, .quicktabs-accordion .wysiwyg_accordion_panel.views, .view-view-glossary .wysiwyg_accordion_panel.views {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.wysiwyg_accordion .ui-state-default a, .wysiwyg_accordion .ui-state-default a:link, .wysiwyg_accordion .ui-state-default a:visited, .wysiwyg_accordion a.ui-button, .wysiwyg_accordion a:link.ui-button, .wysiwyg_accordion a:visited.ui-button, .wysiwyg_accordion .ui-button, .quicktabs-accordion .ui-state-default a, .quicktabs-accordion .ui-state-default a:link, .quicktabs-accordion .ui-state-default a:visited, .quicktabs-accordion a.ui-button, .quicktabs-accordion a:link.ui-button, .quicktabs-accordion a:visited.ui-button, .quicktabs-accordion .ui-button, .view-view-glossary .ui-state-default a, .view-view-glossary .ui-state-default a:link, .view-view-glossary .ui-state-default a:visited, .view-view-glossary a.ui-button, .view-view-glossary a:link.ui-button, .view-view-glossary a:visited.ui-button, .view-view-glossary .ui-button {
-  font-family: "Open Sans Condensed";
+.view-board-members .item-list h3 {
   color: #003399;
-  font-size: 1.3rem;
-  font-weight: bold;
 }
-.wysiwyg_accordion .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active, .quicktabs-accordion .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active, .view-view-glossary .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active {
-  height: auto !important;
-  color: #000;
-  padding: 10px 0;
-  border: 0;
-  overflow: hidden;
-}
-.wysiwyg_accordion .ui-icon-triangle-1-e, .wysiwyg_accordion .ui-icon-triangle-1-s, .quicktabs-accordion .ui-icon-triangle-1-e, .quicktabs-accordion .ui-icon-triangle-1-s, .view-view-glossary .ui-icon-triangle-1-e, .view-view-glossary .ui-icon-triangle-1-s {
-  display: none;
-}
-.wysiwyg_accordion .ui-accordion-content, .quicktabs-accordion .ui-accordion-content, .view-view-glossary .ui-accordion-content {
-  padding: 10px 0 !important;
-}
-.wysiwyg_accordion .ui-accordion-content .view, .quicktabs-accordion .ui-accordion-content .view, .view-view-glossary .ui-accordion-content .view {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.wysiwyg_accordion .ui-accordion-content .views-field-view-node, .quicktabs-accordion .ui-accordion-content .views-field-view-node, .view-view-glossary .ui-accordion-content .views-field-view-node {
-  text-align: right;
-}
-.wysiwyg_accordion .ui-widget-content a, .quicktabs-accordion .ui-widget-content a, .view-view-glossary .ui-widget-content a {
-  color: #003399;
+.view-board-members .item-list ul li {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .sidebar-second .view-grouping {
@@ -880,6 +933,7 @@ h3.home a:hover {
 }
 .sidebar-first .menu--main ul li ul li a {
   display: inline-block;
+  min-width: 98px;
   color: #57575a;
   font-size: 0.75rem;
   font-weight: 700;
@@ -920,6 +974,7 @@ h3.home a:hover {
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 {
   display: none;
+  margin-top: 0;
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li {
   width: 100%;
@@ -938,11 +993,14 @@ h3.home a:hover {
   display: block;
   margin-top: 0;
 }
-.sidebar-first .menu--main ul li ul li.menu-item--active-trail .mean-expand-custom {
+.sidebar-first .menu--main ul li ul li.menu-item--active-trail ul.menu-level-2 .mean-expand-custom {
   background: url("../images/ico_minor.png") no-repeat 10px 11px;
 }
-.sidebar-first .menu--main ul li ul li.menu-item--active-trail .mean-expand-custom.active {
+.sidebar-first .menu--main ul li ul li.menu-item--active-trail ul.menu-level-2 .mean-expand-custom.active {
   background: url("../images/ico-plus.png") no-repeat 10px 11px;
+}
+.sidebar-first .menu--main ul li ul li.menu-item--active-trail ul.menu-level-2 ul.menu-level-3 {
+  display: block;
 }
 .sidebar-first .menu--main ul li ul li.is-expanded ul li:last-child {
   border-bottom: 0;
@@ -959,6 +1017,13 @@ h3.home a:hover {
 }
 .mean-expand-custom.active {
   background: url("../images/ico_minor.png") no-repeat 50%;
+}
+
+.menu-level-1 li.menu-item--active-trail .mean-expand-custom.no-active {
+  background: url("../images/ico_minor.png") no-repeat 50%;
+}
+.menu-level-1 li.menu-item--active-trail .mean-expand-custom.active {
+  background: url("../images/ico-plus.png") no-repeat 50%;
 }
 
 .sidebar-first .views-exposed-form {
@@ -1972,6 +2037,24 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   display: none;
 }
 
+/* e-Guides links /tools-and-resources/e-guides/e-guide-managing-stress-and-psychosocial-risks */
+.e-guide-links img {
+  float: left;
+  margin-right: 1rem;
+}
+.e-guide-links p {
+  padding-top: 2rem;
+}
+.e-guide-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.e-guide-links ul li {
+  padding: 0 0.2rem;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
@@ -2894,6 +2977,7 @@ body.user-logged-in.toolbar-tray-open #header {
 }
 .path-frontpage .more-link.revamp a {
   float: none;
+  font-size: 1rem;
   color: #003399;
   background: #FFF;
   font-weight: 700;
@@ -4534,6 +4618,12 @@ body.node--type-publication {
     float: none;
     margin-right: 0;
     margin-bottom: 1rem;
+  }
+
+  /* e-Guides links /tools-and-resources/e-guides/e-guide-managing-stress-and-psychosocial-risks */
+  .e-guide-links img {
+    float: none;
+    margin-right: 0;
   }
 }
 /* End Media 480px */

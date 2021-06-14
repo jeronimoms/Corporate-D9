@@ -763,3 +763,24 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
     }
   }
 }
+
+/* e-Guides links /tools-and-resources/e-guides/e-guide-managing-stress-and-psychosocial-risks */
+.e-guide-links{
+  img{
+    float: left;
+    margin-right: 1rem;
+  }
+  p{
+    padding-top: 2rem;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    li{
+      padding: 0 0.2rem;
+    }
+  }
+}
+
