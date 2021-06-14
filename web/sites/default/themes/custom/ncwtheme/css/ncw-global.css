@@ -1469,6 +1469,29 @@ span.pages {
   padding-top: 10px;
 }
 
+/* Links download */
+#main .node--view-mode-full a[target=_blank].link-download {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: transparent;
+  border-bottom: 1px solid #FFF;
+  padding-left: 0;
+  padding-right: 0;
+}
+#main .node--view-mode-full a[target=_blank].link-download:hover {
+  background: transparent;
+}
+#main .node--view-mode-full a[target=_blank].link-download:before {
+  content: " ";
+  display: inline-block;
+  background: url(../images/download-thesaurus.png) no-repeat 1px 3px;
+  width: 22px;
+  height: 20px;
+  padding-right: 1px;
+  vertical-align: text-bottom;
+}
+
 /* Links introduction title Highlight, News and Events */
 body ul li .introduction-title a {
   font-family: "Open Sans Condensed", sans-serif;
@@ -1513,6 +1536,25 @@ body ul li .introduction-title a:hover {
 .push-right {
   margin-left: auto;
   margin-right: 50px;
+}
+
+/* File icons */
+.ico-img {
+  display: inline-block;
+  background: url(../images/file-icons/image-x-generic.png) no-repeat 1px 4px;
+  width: 20px;
+  height: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.ico-pdf {
+  display: inline-block;
+  background: url(../images/file-icons/application-pdf.png) no-repeat 1px 4px;
+  width: 20px;
+  height: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 /* Share this on articles icons */
@@ -1625,6 +1667,10 @@ body ul li .introduction-title a:hover {
 }
 
 /* Infographics */
+.node--type-infographic {
+  margin-bottom: 1rem;
+}
+
 .download-img, .download-pdf {
   background: #fbfbfb;
   padding: 1rem;
