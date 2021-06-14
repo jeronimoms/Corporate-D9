@@ -23,13 +23,17 @@ dependencies:
       - custom_migrations
 migration_dependencies:
   required:
-    - d7_user
     - ncw_node_infographic                            # -----  CHANGE
 
 process:
   nid: entity_id
   type: type
-  langcode: language
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      'pt': 'pt-pt'
   title: title
   body: body
   content_translation_source: source
