@@ -1,0 +1,20 @@
+uuid: e0c7bb74-a2ea-4c8f-acc6-52883a4cbc94
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 6wgXMbTWVfjhYZ3wFXLy3vAISxQeKEJz9SdNqt9SLMY
+name: 'Default newsletter'
+id: default
+description: 'This is an example newsletter. Change it.'
+format: plain
+priority: 0
+receipt: true
+from_name: 'Safety and health at work EU-OSHA'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: ruben.ramos@bilbomatica.es
+hyperlinks: false
+allowed_handlers: {  }
+new_account: none
+access: default
+weight: 0
