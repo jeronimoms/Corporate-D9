@@ -141,7 +141,7 @@ input[type=search] {
   padding-right: 2.5rem;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
-  border: 0px;
+  border: 0;
   margin-top: 0;
   /*no margin - to fix text effect - add border*/
   border-top: 5px solid #FFF;
@@ -202,6 +202,59 @@ input[type=search] {
 }
 #main .wysiwyg_accordion .ui-widget-content a, #main .quicktabs-accordion .ui-widget-content a, #main .view-view-glossary .ui-widget-content a {
   color: #003399;
+}
+
+/* view-board-members */
+.view-board-members .view-grouping {
+  width: 100%;
+}
+.view-board-members .view-grouping-header {
+  position: relative;
+  width: 100%;
+  font-family: "Open Sans Condensed";
+  color: #003399;
+  background: #e8eef7;
+  height: auto;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-right: 2.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  border: 0px;
+  margin-top: 0;
+  /*no margin - to fix text effect - add border*/
+  border-top: 5px solid #FFF;
+  border-bottom: 5px solid #FFF;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.view-board-members .view-grouping-header::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 17px;
+  background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+  top: 30%;
+  right: 20px;
+}
+.view-board-members .view-grouping-header.active::after, .view-board-members .view-grouping-header.ui-state-active::after {
+  width: 17px;
+  background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+  right: 17px;
+}
+.view-board-members .view-grouping-content {
+  display: none;
+  padding: 10px 8px;
+}
+.view-board-members .item-list h3 {
+  color: #003399;
+}
+.view-board-members .item-list ul li {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .sidebar-second .view-grouping {

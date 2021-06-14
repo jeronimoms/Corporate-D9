@@ -62,6 +62,12 @@ jQuery(document).ready(function($) {
     $(this).next('.views-view-grid').slideToggle();
   });
 
+  // View Accordions view-board-members
+  $(".view-board-members .view-grouping-header").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.view-board-members .view-grouping-content').slideToggle();
+  });
+
   // Text resize
   $('#_biggify').on('click', function() {
     var fontSize = $('html').css('font-size');
