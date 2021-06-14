@@ -20,15 +20,12 @@ dependencies:
     module:
       - custom_migrations
 migration_dependencies:
-  required:
-    - d7_user
 
 process:
   nid:
     -
       plugin: get
       source: nid
-  vid: vid
   type:
     - plugin: default_value
       default_value: banner             # -----  CHANGE

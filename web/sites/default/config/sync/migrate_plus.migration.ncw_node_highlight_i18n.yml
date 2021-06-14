@@ -149,5 +149,4 @@ destination:
   destination_module: content_translation
 migration_dependencies:
   required:
-    - d7_user
     - ncw_node_highlight

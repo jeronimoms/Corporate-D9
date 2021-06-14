@@ -106,6 +106,4 @@ process:
   field_contact_uuid: field_contact_uuid
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - d7_user
+migration_dependencies: null
