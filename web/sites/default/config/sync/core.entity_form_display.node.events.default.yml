@@ -19,7 +19,6 @@ dependencies:
     - field.field.node.events.field_date
     - field.field.node.events.field_event_in_amp
     - field.field.node.events.field_event_type
-    - field.field.node.events.field_flickr_date
     - field.field.node.events.field_for_the_web
     - field.field.node.events.field_key_performance
     - field.field.node.events.field_location
@@ -295,7 +294,6 @@ hidden:
   comment_node_events: true
   field_agency_contact_reply: true
   field_event_in_amp: true
-  field_flickr_date: true
   field_migration_source: true
   field_number_of_attendees: true
   field_organized_by_eu_osha: true
