@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-3 col-lg-3">{{ image }}</div>
+    <div class="col-sm-12 col-md-9 col-lg-9">
+      <a href="{{ url }}">{{ title }}</a>
+      <p>
+        {{ description }}
+      </p>
+      <div class="ncc-content-cart-download">
+        <div class="row">
+          <div class="col-md-9 col-lg-9">{{ 'Download this film as'|t }} <span>{{ file.filemime }}</span></div>
+          <div class="col-md-3 col-lg-3">
+            <ul>
+              <li>{{ file.filemime }}</li>
+            </ul>
+            {{ remove }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -19,7 +19,7 @@ content_cart.truncatecart:
       user:
         type: entity:node
 content_cart.deleteone:
-  path: '/content_cart/delete/{node}'
+  path: '/content_cart/delete/{node}/{centre}'
   defaults:
     _controller: '\Drupal\napo_content_cart\Controller\NccController::deleteone'
   requirements:
