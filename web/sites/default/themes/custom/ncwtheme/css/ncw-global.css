@@ -641,7 +641,7 @@ form label {
   display: block;
   font-size: 0.9rem;
   font-weight: bold;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 form .chosen-container-single .chosen-single {
   border: 0;
@@ -3777,10 +3777,10 @@ body.contact form.contact-form button.btn-primary {
   display: flex;
 }
 .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
-  width: 20%;
+  width: 40%;
 }
 .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
-  width: 65%;
+  width: 55%;
   font-weight: normal;
 }
 .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
@@ -3793,6 +3793,12 @@ body.contact form.contact-form button.btn-primary {
   font-size: 1.35rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.custom-number {
+  padding-right: 5px;
+  font-size: 0.9rem;
+  color: #003399;
 }
 
 /* Publications Detail */
@@ -3836,7 +3842,7 @@ body.node--type-publication {
   padding-right: 5px;
 }
 .node--type-publication .content-publication-info .content-label .field {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 20px;
 }
 .node--type-publication .datetime {
@@ -3904,6 +3910,7 @@ body.node--type-publication {
   }
   .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
     width: 20%;
+    display: flex;
   }
   .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
     width: 65%;
@@ -3913,6 +3920,22 @@ body.node--type-publication {
     width: 15%;
     text-align: right;
     padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  /* Publications view*/
+  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
+    display: block;
+  }
+  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
+    width: 100%;
+  }
+  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
+    width: 78%;
+    display: inline-block;
+  }
+  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
+    width: 100%;
   }
 }
 #block-headerthesaurus-2 .header__wrapper {
@@ -4377,6 +4400,10 @@ body.node--type-publication {
     padding-right: 1rem;
   }
 
+  .node-publications-custom {
+    padding-top: 1rem;
+  }
+
   /* Footer */
   #block-mainnavigation {
     display: none;
@@ -4595,6 +4622,11 @@ body.node--type-publication {
   }
   .content-news-events .wrap-news-events .events-home .views-row {
     width: 100%;
+  }
+
+  /* Left menu */
+  .sidebar-first .menu-level-0 {
+    display: none;
   }
 }
 /* End Media 768px */

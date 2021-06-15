@@ -88,8 +88,8 @@
               {{ content.field_publication_type }}
             </div>
             <div class="content-label">
-              <span class="label">{{ 'Pages:' | trans }}</span>
-              {{ content.field_page_count }}
+              {% set pages = content.field_pages_count.0 %}
+              <span class="custom-number">{{ pages['#markup'] }} {{ 'pages' | trans }}</span>
             </div>
           </div>
           {% if label %}

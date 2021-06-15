@@ -60,6 +60,12 @@
       }
     }
   }
+  /* Left menu */
+  .sidebar-first{
+    .menu-level-0{
+      display: none;
+    }
+  }
 
 }/* End Media 768px */
 
