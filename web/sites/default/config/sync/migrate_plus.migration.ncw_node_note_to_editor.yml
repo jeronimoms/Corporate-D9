@@ -61,6 +61,4 @@ process:
   revision_timestamp: timestamp
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - d7_user
+migration_dependencies: null

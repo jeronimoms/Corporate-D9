@@ -23,13 +23,17 @@ dependencies:
       - custom_migrations
 migration_dependencies:
   required:
-    - d7_user
     - ncw_node_infographic                            # -----  CHANGE
 
 process:
   nid: entity_id
   type: type
-  langcode: language
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      'pt': 'pt-pt'
   title: title
   body: body
   content_translation_source: source
@@ -91,12 +95,62 @@ process:
     source: field_image
     migration:
       - ncw_node_infographic_field_image_media_1_es
+      - ncw_node_infographic_field_image_media_1_bg
+      - ncw_node_infographic_field_image_media_1_cs
+      - ncw_node_infographic_field_image_media_1_da
+      - ncw_node_infographic_field_image_media_1_et
+      - ncw_node_infographic_field_image_media_1_el
+      - ncw_node_infographic_field_image_media_1_de
+      - ncw_node_infographic_field_image_media_1_fr
+      - ncw_node_infographic_field_image_media_1_hr
+      - ncw_node_infographic_field_image_media_1_it
+      - ncw_node_infographic_field_image_media_1_lt
+      - ncw_node_infographic_field_image_media_1_lv
+      - ncw_node_infographic_field_image_media_1_hu
+      - ncw_node_infographic_field_image_media_1_mt
+      - ncw_node_infographic_field_image_media_1_nl
+      - ncw_node_infographic_field_image_media_1_pl
+      - ncw_node_infographic_field_image_media_1_pt
+      - ncw_node_infographic_field_image_media_1_ro
+      - ncw_node_infographic_field_image_media_1_sk
+      - ncw_node_infographic_field_image_media_1_sl
+      - ncw_node_infographic_field_image_media_1_fi
+      - ncw_node_infographic_field_image_media_1_sv
+      - ncw_node_infographic_field_image_media_1_is
+      - ncw_node_infographic_field_image_media_1_no
+      - ncw_node_infographic_field_image_media_1_tr
+
     no_stub: true
   field_thumbnail_media:
     plugin: file_id_lookup_translations
     source: field_thumbnail
     migration:
       - ncw_node_infographic_field_image_media_caption_1_es
+      - ncw_node_infographic_field_image_media_caption_1_bg
+      - ncw_node_infographic_field_image_media_caption_1_cs
+      - ncw_node_infographic_field_image_media_caption_1_da
+      - ncw_node_infographic_field_image_media_caption_1_de
+      - ncw_node_infographic_field_image_media_caption_1_et
+      - ncw_node_infographic_field_image_media_caption_1_el
+      - ncw_node_infographic_field_image_media_caption_1_fr
+      - ncw_node_infographic_field_image_media_caption_1_hr
+      - ncw_node_infographic_field_image_media_caption_1_it
+      - ncw_node_infographic_field_image_media_caption_1_lt
+      - ncw_node_infographic_field_image_media_caption_1_lv
+      - ncw_node_infographic_field_image_media_caption_1_hu
+      - ncw_node_infographic_field_image_media_caption_1_mt
+      - ncw_node_infographic_field_image_media_caption_1_nl
+      - ncw_node_infographic_field_image_media_caption_1_pt
+      - ncw_node_infographic_field_image_media_caption_1_pl
+      - ncw_node_infographic_field_image_media_caption_1_ro
+      - ncw_node_infographic_field_image_media_caption_1_sk
+      - ncw_node_infographic_field_image_media_caption_1_sl
+      - ncw_node_infographic_field_image_media_caption_1_fi
+      - ncw_node_infographic_field_image_media_caption_1_sv
+      - ncw_node_infographic_field_image_media_caption_1_is
+      - ncw_node_infographic_field_image_media_caption_1_no
+      - ncw_node_infographic_field_image_media_caption_1_tr
+
     no_stub: true
  # Documents.
   field_file_media:
@@ -104,4 +158,28 @@ process:
     source: field_file
     migration:
       - ncw_node_infographics_media_documents_1_es
+      - ncw_node_infographics_media_documents_1_bg
+      - ncw_node_infographics_media_documents_1_cs
+      - ncw_node_infographics_media_documents_1_da
+      - ncw_node_infographics_media_documents_1_de
+      - ncw_node_infographics_media_documents_1_et
+      - ncw_node_infographics_media_documents_1_el
+      - ncw_node_infographics_media_documents_1_fr
+      - ncw_node_infographics_media_documents_1_hr
+      - ncw_node_infographics_media_documents_1_it
+      - ncw_node_infographics_media_documents_1_lv
+      - ncw_node_infographics_media_documents_1_lt
+      - ncw_node_infographics_media_documents_1_hu
+      - ncw_node_infographics_media_documents_1_mt
+      - ncw_node_infographics_media_documents_1_nl
+      - ncw_node_infographics_media_documents_1_pl
+      - ncw_node_infographics_media_documents_1_pt
+      - ncw_node_infographics_media_documents_1_ro
+      - ncw_node_infographics_media_documents_1_sk
+      - ncw_node_infographics_media_documents_1_sl
+      - ncw_node_infographics_media_documents_1_fi
+      - ncw_node_infographics_media_documents_1_sv
+      - ncw_node_infographics_media_documents_1_is
+      - ncw_node_infographics_media_documents_1_no
+      - ncw_node_infographics_media_documents_1_tr
     no_stub: true

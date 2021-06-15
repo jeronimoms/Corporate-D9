@@ -160,6 +160,4 @@ process:
     no_stub: true
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - d7_user
+migration_dependencies: null

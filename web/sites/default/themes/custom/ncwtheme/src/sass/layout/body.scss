@@ -113,9 +113,6 @@ body {
         position: relative;
         .link_news_events {
           a {
-            position: absolute;
-            right: 0;
-            bottom: 0;
             border-bottom: 0;
           }
         }
@@ -185,9 +182,35 @@ span.pages{
   }
 }
 
+/* Links download */
+#main{
+  .node--view-mode-full{
+    a[target=_blank].link-download{
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: transparent;
+      border-bottom: 1px solid $bg-color-white;
+      padding-left: 0;
+      padding-right: 0;
+      &:hover{
+        background: transparent;
+      }
+      &:before{
+        content: ' ';
+        display: inline-block;
+        background: url(../images/download-thesaurus.png) no-repeat 1px 3px;
+        width: 22px;
+        height: 20px;
+        padding-right: 1px;
+        vertical-align: text-bottom;
+      }
+    }
+  }
+}
 
 
-  /* Links introduction title Highlight, News and Events */
+/* Links introduction title Highlight, News and Events */
 body {
   ul {
     li {
@@ -240,6 +263,24 @@ body {
 .push-right{
   margin-left: auto;
   margin-right: 50px;
+}
+
+/* File icons */
+.ico-img {
+  display: inline-block;
+  background: url(../images/file-icons/image-x-generic.png) no-repeat 1px 4px;
+  width: 20px;
+  height: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.ico-pdf{
+  display: inline-block;
+  background: url(../images/file-icons/application-pdf.png) no-repeat 1px 4px;
+  width: 20px;
+  height: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 /* Share this on articles icons */
@@ -318,6 +359,21 @@ body {
   }
 }
 
+#main{
+  .node--view-mode-full, .view{
+    a[target=_blank] {
+      background: url(../images/external_link-v2.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
+      padding-right: 16px;
+      float: none;
+      border-bottom: 1px solid $bg-color-pink;
+      &:hover{
+        background: url(../images/external_link-v2-hover.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
+        border-bottom: 1px solid $bg-color-blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
 
 /* END Common elements */
 
@@ -346,6 +402,9 @@ body {
 }
 
 /* Infographics */
+.node--type-infographic{
+  margin-bottom: 1rem;
+}
 .download-img, .download-pdf{
   background: $bg-color-grey-light;
   padding: 1rem;
@@ -394,19 +453,66 @@ body {
 }
 
 /* Page - Highlight, News and Events content link */
+html[lang=de]{
+  .news-events{
+    #main{
+      ul {
+        li {
+          .introduction-title {
+            height: 100px;
+            a{
+              font-size: 1.1rem;
+            }
+          }
+          .text_news_events {
+            min-height: 140px;
+          }
+        }
+      }
+    }
+  }
+}
+html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
+  .news-events{
+    #main{
+      ul {
+        li {
+          .introduction-title {
+            height: 100px;
+          }
+          .text_news_events {
+            min-height: 140px;
+          }
+        }
+      }
+    }
+  }
+}
 .news-events{
   #main{
-    ul{
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
       list-style: none;
       padding: 1rem 0 0 0;
-      li{
-        float: left;
+      li {
         width: 240px;
-        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
         margin-right: 1rem;
-        .text_news_events{
-          min-height: 65px;
+        .introduction-title {
+          display: flex;
+          height: auto;
+          align-items: flex-end;
+        }
+        .text_news_events {
           padding-top: 5px;
+          min-height: 110px;
+        }
+        .link_news_events{
+          text-align: right;
         }
       }
     }
@@ -657,3 +763,24 @@ body {
     }
   }
 }
+
+/* e-Guides links /tools-and-resources/e-guides/e-guide-managing-stress-and-psychosocial-risks */
+.e-guide-links{
+  img{
+    float: left;
+    margin-right: 1rem;
+  }
+  p{
+    padding-top: 2rem;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    li{
+      padding: 0 0.2rem;
+    }
+  }
+}
+

@@ -1,7 +1,104 @@
 /* Accordions */
-.wysiwyg_accordion, .quicktabs-accordion, .view-view-glossary{
-  margin-top: 1rem;
-  h3{
+#main {
+  .wysiwyg_accordion, .quicktabs-accordion, .view-view-glossary {
+    margin-top: 1rem;
+    h3 {
+      position: relative;
+      width: 100%;
+      font-family: 'Open Sans Condensed';
+      color: $text-color-blue;
+      background: $bg-color-blue-accordion;
+      height: auto;
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding-left: 0.5rem;
+      padding-right: 2.5rem;
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+      border: 0;
+      margin-top: 0; /*no margin - to fix text effect - add border*/
+      border-top: 5px solid #FFF;
+      border-bottom: 5px solid #FFF;
+      margin-bottom: 0;
+      cursor: pointer;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 17px;
+        background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+        top: 30%;
+        right: 20px;
+      }
+    }
+
+    h3.active, h3.ui-state-active {
+      &::after {
+        width: 17px;
+        background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+        right: 17px;
+      }
+    }
+
+    h3:focus {
+      outline: none;
+    }
+
+    .wysiwyg_accordion_panel {
+      display: none;
+      padding: 10px 0;
+    }
+
+    .wysiwyg_accordion_panel.views {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    /*Quick tabs accordions*/
+    .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button {
+      font-family: 'Open Sans Condensed';
+      color: $text-color-blue;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active {
+      height: auto !important;
+      color: $text-color-black;
+      padding: 10px 0;
+      border: 0;
+      overflow: hidden;
+    }
+
+    .ui-icon-triangle-1-e, .ui-icon-triangle-1-s {
+      display: none;
+    }
+
+    .ui-accordion-content {
+      padding: 10px 0 !important;
+
+      .view {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .views-field-view-node {
+        text-align: right;
+      }
+    }
+
+    .ui-widget-content a {
+      color: $text-color-blue;
+    }
+  }
+}
+
+/* view-board-members */
+.view-board-members{
+  .view-grouping{
+    width: 100%;
+  }
+  .view-grouping-header{
     position: relative;
     width: 100%;
     font-family: 'Open Sans Condensed';
@@ -20,7 +117,7 @@
     border-bottom: 5px solid #FFF;
     margin-bottom: 0;
     cursor: pointer;
-    &::after{
+    &::after {
       content: '';
       position: absolute;
       width: 10px;
@@ -30,56 +127,32 @@
       right: 20px;
     }
   }
-  h3.active, h3.ui-state-active{
-    &::after{
+  .view-grouping-header.active, .view-grouping-header.ui-state-active {
+    &::after {
       width: 17px;
       background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
       right: 17px;
     }
   }
-  h3:focus{
-    outline: none;
-  }
-  .wysiwyg_accordion_panel{
+  .view-grouping-content{
     display: none;
-    padding: 10px 0;
+    padding: 10px 8px;
   }
-  .wysiwyg_accordion_panel.views{
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  /*Quick tabs accordions*/
-  .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button{
-    font-family: 'Open Sans Condensed';
-    color: $text-color-blue;
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
-  .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active{
-    height: auto!important;
-    color: $text-color-black;
-    padding: 10px 0;
-    border: 0;
-    overflow: hidden;
-  }
-  .ui-icon-triangle-1-e, .ui-icon-triangle-1-s{
-    display: none;
-  }
-  .ui-accordion-content{
-    padding: 10px 0 !important;
-    .view{
-      padding-left: 10px;
-      padding-right: 10px;
+  .item-list{
+    h3{
+      color: $text-color-blue;
     }
-    .views-field-view-node{
-      text-align: right;
+    ul{
+      li{
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+      }
     }
-  }
-  .ui-widget-content a{
-    color: $text-color-blue;
   }
 }
+
 
 .sidebar-second{
   .view-grouping{

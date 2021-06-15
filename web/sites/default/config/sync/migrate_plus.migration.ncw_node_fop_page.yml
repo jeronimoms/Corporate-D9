@@ -80,6 +80,4 @@ process:
     source: field_fop_link
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - d7_user
+migration_dependencies: null

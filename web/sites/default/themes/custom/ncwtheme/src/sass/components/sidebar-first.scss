@@ -9,6 +9,7 @@
       li{
         position: relative;
         width: 100%;
+        align-items: center;
         a{
           display: inline-block;
           color: $text-color-blue;
@@ -16,6 +17,7 @@
           font-weight: 600;
           border-bottom: 0;
           padding-bottom: 5px;
+          max-width: 225px;
           &:hover{
             opacity: 0.9;
             transition: all 500ms;
@@ -31,12 +33,15 @@
           list-style: none;
           padding-left: 0;
           li{
+            display: flex;
+            flex-wrap: wrap;
             width: 100%;
             padding-top: 4px;
             padding-bottom: 4px;
             border-bottom: 2px dotted $bg-color-blue-light;
             a{
               display: inline-block;
+              min-width: 98px;
               color: $text-color-grey;
               font-size: 0.75rem;
               font-weight: 700;
@@ -76,6 +81,7 @@
               }
               ul.menu-level-3{
                 display: none;
+                margin-top: 0;
                 li{
                   width: 100%;
                   a{
@@ -96,11 +102,14 @@
             ul.menu-level-2{
               display: block;
               margin-top: 0;
-            }
-            .mean-expand-custom{
-              background: url("../images/ico_minor.png") no-repeat 10px 11px;
-              &.active{
-                background: url("../images/ico-plus.png") no-repeat 10px 11px;
+              .mean-expand-custom{
+                background: url("../images/ico_minor.png") no-repeat 10px 11px;
+                &.active{
+                  background: url("../images/ico-plus.png") no-repeat 10px 11px;
+                }
+              }
+              ul.menu-level-3{
+                display: block;
               }
             }
           }
@@ -119,13 +128,25 @@
 }
 
 .mean-expand-custom{
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   width: 30px;
   height: 30px;
   cursor: pointer;
-  background: url(../images/ico-plus.png) no-repeat 9px 8px;
+  background: url(../images/ico-plus.png) no-repeat 50%;
   &.active{
-    background: url("../images/ico_minor.png") no-repeat 10px 11px;
+    background: url("../images/ico_minor.png") no-repeat 50%;
+  }
+}
+
+.menu-level-1{
+  li.menu-item--active-trail{
+    .mean-expand-custom.no-active{
+      background: url("../images/ico_minor.png") no-repeat 50%;
+    }
+    .mean-expand-custom.active{
+      background: url("../images/ico-plus.png") no-repeat 50%;
+    }
   }
 }
 
