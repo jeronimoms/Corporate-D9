@@ -243,6 +243,15 @@ body.node--type-publication{
     }
   }
 }
+@media only screen and (max-width : 768px) {
+  .tools-and-publications-publications {
+    .view-filters {
+      fieldset:nth-child(3) {
+        width: 100%;
+      }
+    }
+  }
+}
 
 @media only screen and (max-width : 580px) {
   /* Publications view*/

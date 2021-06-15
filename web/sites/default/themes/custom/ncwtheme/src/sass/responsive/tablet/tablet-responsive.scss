@@ -81,7 +81,6 @@
     background: $bg-color-blue;
     .navbar-toggler {
       padding: 1rem;
-
       .icon-bar {
         background-color: $bg-color-white;
         display: block;
@@ -96,8 +95,10 @@
     #block-ncwtheme-main-menu{
       ul.menu-level-0{
         width: 100%;
+        float: left;
         display: block;
-        padding-bottom: 1.5rem;
+        background: $bg-color-blue-light;
+        padding-bottom: 1rem;
         > li.menu-item:nth-child(1) {
           width: 100%;
           text-align: left;
@@ -126,6 +127,7 @@
         > li.menu-item{
           float: none;
           width: 100%;
+          clear: both;
           text-align: left;
           border-left: 0;
           padding: 1rem 0 0 1rem;
@@ -153,9 +155,12 @@
               background: url(../images/li_arrow.png) no-repeat 1em 10px;
               padding: 0 0 1em 2rem;
               a{
+                width: 76%;
                 color: $text-color-blue;
                 font-size: 1.3rem;
+                font-family: 'Open Sans';
                 opacity: .75;
+                padding-top: 0;
               }
               ul.menu-level-2 {
                 display: none;
@@ -187,6 +192,11 @@
 
   .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:hover ul.menu-level-1{
     margin-left: 0;
+  }
+
+  /*Publication item*/
+  #block-ncwtheme-main-menu > ul > li.menu-item.menu-item--active-trail > span{
+    display: none;
   }
 
   .navbar-collapse{

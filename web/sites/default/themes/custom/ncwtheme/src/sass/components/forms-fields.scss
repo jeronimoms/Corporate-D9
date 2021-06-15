@@ -159,7 +159,7 @@ form{
 }
 
 .custom-select{
-  background: url(../images/pink-select.png) no-repeat scroll 94% center #FFF;
+  background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;

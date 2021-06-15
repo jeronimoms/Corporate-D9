@@ -661,7 +661,7 @@ form #edit-actions {
 }
 
 .custom-select {
-  background: url(../images/pink-select.png) no-repeat scroll 94% center #FFF;
+  background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -3922,6 +3922,11 @@ body.node--type-publication {
     padding-right: 15px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .tools-and-publications-publications .view-filters fieldset:nth-child(3) {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 580px) {
   /* Publications view*/
   .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
@@ -4460,8 +4465,10 @@ body.node--type-publication {
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 {
     width: 100%;
+    float: left;
     display: block;
-    padding-bottom: 1.5rem;
+    background: #cfddee;
+    padding-bottom: 1rem;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) {
     width: 100%;
@@ -4485,6 +4492,7 @@ body.node--type-publication {
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item {
     float: none;
     width: 100%;
+    clear: both;
     text-align: left;
     border-left: 0;
     padding: 1rem 0 0 1rem;
@@ -4511,9 +4519,12 @@ body.node--type-publication {
     padding: 0 0 1em 2rem;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 li a {
+    width: 76%;
     color: #003399;
     font-size: 1.3rem;
+    font-family: "Open Sans";
     opacity: 0.75;
+    padding-top: 0;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 li ul.menu-level-1 li ul.menu-level-2 {
     display: none;
@@ -4539,6 +4550,11 @@ body.node--type-publication {
 
   .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:hover ul.menu-level-1 {
     margin-left: 0;
+  }
+
+  /*Publication item*/
+  #block-ncwtheme-main-menu > ul > li.menu-item.menu-item--active-trail > span {
+    display: none;
   }
 
   .navbar-collapse .container {
