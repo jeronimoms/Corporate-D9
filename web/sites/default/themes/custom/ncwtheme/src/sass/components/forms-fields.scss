@@ -136,7 +136,7 @@ form{
     display: block;
     font-size: 0.9rem;
     font-weight: bold;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   .chosen-container-single .chosen-single{
     border: 0;
@@ -159,7 +159,7 @@ form{
 }
 
 .custom-select{
-  background: url(../images/pink-select.png) no-repeat scroll 94% center #FFF;
+  background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
