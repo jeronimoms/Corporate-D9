@@ -1,4 +1,4 @@
-uuid: 8cfd5428-e0dd-4c91-a8dd-9c8cccde4858
+uuid: 2e183ecb-0d43-432f-9547-4abc3c2c8910
 langcode: en
 status: true
 dependencies:
@@ -41,7 +41,7 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: ncw_taxonomy_glossary
+      migration: ncw_taxonomy_msds_glossary
   parent:
     plugin: default_value
     default_value: 0

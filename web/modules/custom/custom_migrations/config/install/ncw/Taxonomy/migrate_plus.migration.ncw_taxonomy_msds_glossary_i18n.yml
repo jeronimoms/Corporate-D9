@@ -1,4 +1,4 @@
-# Migration file for creating "Taxonomy msdsd glossary translations"
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
@@ -44,17 +44,16 @@ process:
       default_value: msds_glossary                 # -----  CHANGE
   name: name_field_value
   'description/value': description_field_value
-  'description/format': full_html
+  'description/format': 'full_html'
   parent_id:
     - plugin: skip_on_empty
       method: process
       source: parent
     - plugin: migration_lookup
-      migration: ncw_taxonomy_glossary
+      migration: ncw_taxonomy_msds_glossary
   parent:
     plugin: default_value
     default_value: 0
     source: '@parent_id'
   forum_container: is_container
   changed: timestamp
-
