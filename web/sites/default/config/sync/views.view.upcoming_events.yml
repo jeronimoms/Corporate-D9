@@ -163,14 +163,11 @@ display:
       display_extenders:
         metatag_display_extender: {  }
       style:
-        type: html_list
+        type: default
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          type: ul
-          wrapper_class: item-list
-          class: ''
       defaults:
         style: false
         row: false

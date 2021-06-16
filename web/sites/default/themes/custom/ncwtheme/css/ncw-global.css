@@ -1097,6 +1097,7 @@ h3.home a:hover {
 .sidebar-second .related-views .region-sidebar-second-related .block h2 {
   font-size: 1.05rem;
   border-bottom: 0;
+  margin-top: 0;
 }
 .sidebar-second .related-views .region-sidebar-second-related .block .views-row {
   padding-left: 20px;
@@ -1261,6 +1262,31 @@ h3.home a:hover {
   padding-left: 25px;
   margin-top: -1rem;
   padding-bottom: 1rem;
+}
+
+/* Upcoming events */
+#block-views-block-upcoming-events-block-1--2 {
+  background: transparent;
+}
+#block-views-block-upcoming-events-block-1--2 h2 {
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #003399;
+}
+#block-views-block-upcoming-events-block-1--2 .views-row {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+#block-views-block-upcoming-events-block-1--2 .views-field-nothing {
+  padding-bottom: 3px;
+}
+#block-views-block-upcoming-events-block-1--2 .views-field-nothing .field-content {
+  display: block;
+  font-size: 0.8rem;
+  color: #003399;
+  font-weight: 700;
 }
 
 nav.pager {
