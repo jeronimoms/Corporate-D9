@@ -913,32 +913,9 @@ display:
           admin_label: ''
           operator: in
           value:
-            en: en
-            bg: bg
-            es: es
-            cs: cs
-            da: da
-            de: de
-            et: et
-            el: el
-            fr: fr
-            hr: hr
-            it: it
-            lv: lv
-            lt: lt
-            hu: hu
-            mt: mt
-            nl: nl
-            pl: pl
-            ro: ro
-            sk: sk
-            sl: sl
-            fi: fi
-            sv: sv
-            is: is
-            'no': 'no'
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: search_api_language_op
             label: 'Available in languages'
