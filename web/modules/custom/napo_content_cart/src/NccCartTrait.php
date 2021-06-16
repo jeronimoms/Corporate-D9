@@ -20,24 +20,25 @@ trait NccCartTrait {
         ],
         [
           'attributes' => [
-            'class' => ['use-ajax', 'napo-cart-add'],
+            'class' => ['use-ajax', 'napo-cart-add-' . $node->id()],
           ],
         ],
       ),
     ];
   }
 
-  protected function removeElement(Node $node) {
+  protected function removeElement(Node $node, $centre = 0) {
     return [
       '#type' => 'link',
       '#title' => $this->t('Remove Video'),
       '#url' => Url::fromRoute('content_cart.deleteone',
         [
           'node' => $node->id(),
+          'centre' => $centre,
         ],
         [
           'attributes' => [
-            'class' => ['use-ajax', 'napo-cart-delete'],
+            'class' => ['use-ajax', 'napo-cart-delete-' . $node->id()],
           ],
         ],
       ),

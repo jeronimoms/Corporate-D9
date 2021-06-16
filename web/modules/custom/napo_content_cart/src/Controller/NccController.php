@@ -14,6 +14,7 @@ use Drupal\media\Entity\Media;
 use Drupal\napo_content_cart\NccCartTrait;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Ajax\AjaxResponse;
@@ -25,7 +26,8 @@ use Twig\Error\RuntimeError;
 use Drupal\Core\Ajax\AlertCommand;
 use Drupal\Core\Ajax\OpenDialogCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
-use Symfony\Component\HttpFoundation\Response;
+use Drupal\Core\Ajax\RemoveCommand;
+use Drupal\Core\Ajax\CloseDialogCommand;
 
 /**
  * General class for node like controller.
@@ -91,7 +93,7 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
    */
   public function addcart(Node $node) {
     /** @var PrivateTempStore $store */
-    $store = $this->privateTempStoreFactory->get('napo_content_cart.downloads');
+    $store = $this->getContentCartStore();
     $ids = $store->get('video_downloads');
 
     if (isset($ids)) {
@@ -110,7 +112,7 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
       $ids[$node->id()] = $node;
     }
 
-    //$store->set('video_downloads', $ids);
+    $store->set('video_downloads', $ids);
 
     $build = [
       '#type' => 'container',
@@ -129,9 +131,12 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
       ]
     ];
 
+
+
     $response = new AjaxResponse();
-    $response->addCommand(new ReplaceCommand('.napo-cart-add', $this->removeElement($node)));
-    $response->addCommand(new OpenDialogCommand('#add-cart', 'hola', $build, ['width' => 400]));
+    $response->addCommand(new HtmlCommand('.header-download-centre', $this->t('Download Centre(@count)', ['@count' => (count($ids))])));
+    $response->addCommand(new ReplaceCommand('.napo-cart-add-' . $node->id(), $this->removeElement($node)));
+    $response->addCommand(new OpenDialogCommand('#add-cart', '', $build, ['width' => 400]));
 
     return $response;
 
@@ -147,9 +152,9 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
 
   }
 
-  public function deleteone(Node $node) {
+  public function deleteone(Node $node, $centre = 0) {
     /** @var PrivateTempStore $store */
-    $store = $this->privateTempStoreFactory->get('napo_content_cart.downloads');
+    $store = $this->getContentCartStore();
     $ids = $store->get('video_downloads');
 
     if (isset($ids)) {
@@ -177,107 +182,53 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
       ]
     ];
 
+
     $response = new AjaxResponse();
-    $response->addCommand(new ReplaceCommand('.napo-cart-delete', $this->addElement($node)));
-    $response->addCommand(new OpenDialogCommand('#remove-cart', 'hola', $build, ['width' => 400]));
+    $response->addCommand(new HtmlCommand('.header-download-centre', $this->t('Download Centre(@count)', ['@count' => (count($ids))])));
+    if ($centre == 1) {
+      $response->addCommand(new RemoveCommand('.ncc-element-id-' . $node->id()));
+      if (count($ids) == 0) {
+        $response->addCommand(new RemoveCommand('.ncc-table'));
+        $response->addCommand(new RemoveCommand('.ncc-submit-all'));
+        $response->addCommand(new ReplaceCommand('.ncc-message', $this->getDefaultMessage()));
+      }
+    }
+    else {
+      $response->addCommand(new ReplaceCommand('.napo-cart-delete-' . $node->id(), $this->addElement($node)));
+    }
+    $response->addCommand(new OpenDialogCommand('#remove-cart', '', $build, ['width' => 400]));
 
     return $response;
   }
 
-  public function viewList($ids) {
-
-    //Prepare the link options to add later to the URL object.
-    $link_options = [
-      'attributes' => [
-        'target' => '_blank',
-        'class' => [
-          'button'
-        ],
-      ],
-    ];
-
-    $rows = [];
-
-
-    /**
-     * @var \Drupal\media\Entity\Media $tempnode
-     *
-     * This foreach is to prepare the rows of the table.
-     */
-    foreach ($ids as $id) {
-
-      $mid = $id->get('field_video')->target_id;;
-      $media = Media::load($mid);
-      $node = Node::load($id);
-
-      $filename = $media->get('name')->value;
-//      $uri_prefix = 'public://videos/napo_video/';
-//      $uri = $uri_prefix . $filename;
-//      $headers = [
-//        'Content-Type' => 'video/mp4',
-//        'Content-Description' => 'Video Download',
-//        'Content-Disposition' => 'attachment; filename=' . $filename
-//      ];
-//      $butom_download = new BinaryFileResponse($uri, 200, $headers, true );
-
-//      //Create the 2 URL using the routes.
-//      $tempnode_download_url = $butom_download;
-//      $tempnode_delete_url = Url::fromRoute('eco_tempnodes.delete', $id);
-//
-//      //Prepare the URL with the options for the creation of the link
-//      $tempnode_download_url->setOptions($link_options);
-//      $tempnode_delete_url->setOptions($link_options);
-//
-//      //Create the 2 links
-//      $tempnode_download_link = Link::fromTextAndUrl($this->t('Download'), $tempnode_download_url);
-//      $tempnode_delete_link = Link::fromTextAndUrl($this->t('Delete'), $tempnode_delete_url);
-
-      //Prepare the row of the asset.
-      $rows[] = [
-        'data' => [
-          // Cells.
-          $filename,
-//          $this->dateFormatter->format($tempnode->getCreatedTime(), 'short'),
-//          $tempnode->label(),
-//          $this->dateFormatter->format($tempnode->getCreatedTime(), 'short'),
-//          $tempnode_download_link,
-//          $tempnode_delete_link
-        ],
+  public function viewList() {
+    /** @var PrivateTempStore $store */
+    $store = $this->getContentCartStore();
+    $ids = $store->get('video_downloads');
+    if (!$ids) {
+      return [
+        '#markup' => $this->getDefaultMessage(),
       ];
     }
-    //End Foreach
 
-    //The headers of the table
-    $header = [
-      $this->t('File'),
-//      $this->t('Year'),
-//      $this->t('Type'),
-//      $this->t('Created'),
-//      $this->t('Download'),
-//      $this->t('Delete'),
-    ];
+    $form = \Drupal::formBuilder()->getForm(\Drupal\napo_content_cart\Form\NccDownloadCentreForm::class, $ids);
 
-    $build = [
-      '#theme' => 'cart_block'
-    ];
 
-    $table_array = [];
-    $table_array['tempnode_table'] = [
-      '#type' => 'table',
-      '#header' => $header,
-      '#rows' => $rows,
-      '#empty' => $this->t('No videos available.'),
-    ];
+    return $form;
 
-    //Added the pager.
-      $table_array['pager'] = [
-      '#type' => 'pager',
-    ];
+  }
 
-    $build['#table'] = $table_array;
+  public function getContentCartStore() {
+    return $this->privateTempStoreFactory->get('napo_content_cart.downloads');
+  }
 
-    return $build;
-
+  public function getDefaultMessage() {
+    return new TranslatableMarkup(
+      'To download complete Napo films or selected scenes to your PC go to the Napo website (' .
+      '<a href="/">www.napofilm.com</a>) and go to the film or the scene you want to download. You can either click on the \'Download\' button '.
+      '<span class="glyphicon napo-film-video-download-form-title inline-icon"></span>, or add your video to the download centre, by clicking on the \'Add to download centre\' button ' .
+      '<span class="glyphicon content-cart-add-to-cart-btn inline-icon content_cart_check_submit-processed" aria-hidden="true"></span>'
+    );
   }
 
   public function getDefaultButton() {

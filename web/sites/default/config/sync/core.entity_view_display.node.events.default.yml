@@ -19,7 +19,6 @@ dependencies:
     - field.field.node.events.field_date
     - field.field.node.events.field_event_in_amp
     - field.field.node.events.field_event_type
-    - field.field.node.events.field_flickr_date
     - field.field.node.events.field_for_the_web
     - field.field.node.events.field_key_performance
     - field.field.node.events.field_location
@@ -251,7 +250,6 @@ hidden:
   field_comments_summary_after_eve: true
   field_event_in_amp: true
   field_event_type: true
-  field_flickr_date: true
   field_for_the_web: true
   field_key_performance: true
   field_media_promotion: true

@@ -8,7 +8,7 @@
 ##################### BASIC INFORMATION ###################
 
 id: ncw_taxonomy_msds_glossary       # -----  CHANGE
-label: 'Terms: msds_Glossary'         # -----  CHANGE
+label: 'Terms: msds_glossary'         # -----  CHANGE
 audit: true
 migration_group: ncw_migrate   # -----  CHANGE
 deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
@@ -28,9 +28,7 @@ process:
       default_value: msds_glossary    # -----  CHANGE
   name: name
   'description/value': description
-  'description/format':
-    - plugin: default_value
-      default_value: full_html
+  'description/format': 'full html'
   weight: weight
   parent_id:
     -
@@ -47,3 +45,5 @@ process:
   forum_container: is_container
   changed: timestamp
   langcode: language
+
+

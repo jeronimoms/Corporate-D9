@@ -34,6 +34,16 @@ function napo_content_cart_theme($existing, $type, $theme, $path) {
         'button' => NULL,
       ],
     ],
+    'ncc_element_download' => [
+      'variables' => [
+        'image' => NULL,
+        'title' => NULL,
+        'description' => NULL,
+        'url' => NULL,
+        'file' => NULL,
+        'remove' => NULL,
+      ],
+    ],
   ];
 }
 

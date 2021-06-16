@@ -24,7 +24,7 @@ process:
     -
       plugin: get
       source: nid
-  vid: vid
+
   type:
     - plugin: default_value
       default_value: events              # -----  CHANGE
@@ -69,7 +69,20 @@ process:
   field_country_code: field_country_code
   field_city: field_city
   field_location: field_location
-  field_date: field_date
+  field_date:
+    plugin: sub_process
+    source: field_start_date
+    process:
+      value:
+        plugin: format_date
+        source: value
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d'
+      end_value:
+        plugin: format_date
+        source: value2
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d'
   field_for_the_web: field_for_the_web
   field_key_performance: field_key_performance
   field_website_of_event:

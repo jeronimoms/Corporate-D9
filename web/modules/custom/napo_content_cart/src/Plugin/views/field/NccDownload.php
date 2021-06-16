@@ -105,7 +105,7 @@ class NccDownload extends FieldPluginBase implements ContainerFactoryPluginInter
     return [
       '#type' => 'container',
       '#attributes' => [
-        'class' => 'download-videoa',
+        'class' => 'download-videos',
       ],
       'content' => $link,
     ];
