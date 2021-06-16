@@ -70,27 +70,6 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
   /**
    * {@inheritdoc}
    */
-  public function downloadnode(Node $node)
-  {
-    $mid = $node->get('field_video')->target_id;
-    $media = Media::load($mid);
-    $filename = $media->get('name')->value;
-
-    $uri_prefix = 'public://videos/napo_video/';
-    $uri = $uri_prefix . $filename;
-    $headers = [
-      'Content-Type' => 'video/mp4',
-      'Content-Description' => 'Video Download',
-      'Content-Disposition' => 'attachment; filename=' . $filename
-    ];
-
-    return new BinaryFileResponse($uri, 200, $headers, true );
-
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function addcart(Node $node) {
     /** @var PrivateTempStore $store */
     $store = $this->getContentCartStore();
@@ -139,16 +118,6 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
     $response->addCommand(new OpenDialogCommand('#add-cart', '', $build, ['width' => 400]));
 
     return $response;
-
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function truncatecart() {
-    /** @var PrivateTempStore $store */
-    $store = $this->privateTempStoreFactory->get('content_cart.downloads');
-    $store->delete('video_downloads');
 
   }
 
