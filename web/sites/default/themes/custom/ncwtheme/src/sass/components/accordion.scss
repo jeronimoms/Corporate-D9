@@ -93,10 +93,14 @@
   }
 }
 
-/* view-board-members */
-.view-board-members{
+/* view board members / view advisory groups */
+.view-board-members, .view-advisory-groups{
   .view-grouping{
     width: 100%;
+  }
+  .view-content.row{
+    margin-left: 0;
+    margin-right: 0;
   }
   .view-grouping-header{
     position: relative;
@@ -141,11 +145,15 @@
   .item-list{
     h3{
       color: $text-color-blue;
+      font-weight: 600;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
     }
     ul{
       li{
         display: block;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         margin-bottom: 1rem;
         padding-bottom: 1rem;
       }

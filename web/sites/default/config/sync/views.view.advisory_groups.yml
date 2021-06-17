@@ -71,6 +71,10 @@ display:
               field: field_contact_type
               rendered: true
               rendered_strip: false
+            -
+              field: field_wg_category
+              rendered: true
+              rendered_strip: false
           row_class: revamp-row
           default_row_class: true
           type: ul
