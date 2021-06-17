@@ -204,11 +204,15 @@ input[type=search] {
   color: #003399;
 }
 
-/* view-board-members */
-.view-board-members .view-grouping {
+/* view board members / view advisory groups */
+.view-board-members .view-grouping, .view-advisory-groups .view-grouping {
   width: 100%;
 }
-.view-board-members .view-grouping-header {
+.view-board-members .view-content.row, .view-advisory-groups .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.view-board-members .view-grouping-header, .view-advisory-groups .view-grouping-header {
   position: relative;
   width: 100%;
   font-family: "Open Sans Condensed";
@@ -229,7 +233,7 @@ input[type=search] {
   margin-bottom: 0;
   cursor: pointer;
 }
-.view-board-members .view-grouping-header::after {
+.view-board-members .view-grouping-header::after, .view-advisory-groups .view-grouping-header::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -238,21 +242,25 @@ input[type=search] {
   top: 30%;
   right: 20px;
 }
-.view-board-members .view-grouping-header.active::after, .view-board-members .view-grouping-header.ui-state-active::after {
+.view-board-members .view-grouping-header.active::after, .view-board-members .view-grouping-header.ui-state-active::after, .view-advisory-groups .view-grouping-header.active::after, .view-advisory-groups .view-grouping-header.ui-state-active::after {
   width: 17px;
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 17px;
 }
-.view-board-members .view-grouping-content {
+.view-board-members .view-grouping-content, .view-advisory-groups .view-grouping-content {
   display: none;
   padding: 10px 8px;
 }
-.view-board-members .item-list h3 {
+.view-board-members .item-list h3, .view-advisory-groups .item-list h3 {
   color: #003399;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
-.view-board-members .item-list ul li {
+.view-board-members .item-list ul li, .view-advisory-groups .item-list ul li {
   display: block;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
 }
@@ -988,6 +996,7 @@ h3.home a:hover {
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li:last-child {
   border-bottom: 0;
+  padding-bottom: 0;
 }
 .sidebar-first .menu--main ul li ul li.menu-item--active-trail ul.menu-level-2 {
   display: block;
@@ -1088,6 +1097,11 @@ h3.home a:hover {
 .sidebar-second .block.block-twitter-block h2 {
   font-size: 1.35rem;
   border-bottom: 0;
+}
+
+.region-sidebar-second-others.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .sidebar-second .related-views {
