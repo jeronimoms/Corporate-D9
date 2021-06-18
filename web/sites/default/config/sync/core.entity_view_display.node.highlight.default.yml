@@ -53,7 +53,6 @@ third_party_settings:
         - field_image_media
         - body
         - field_aditional_resources
-        - addtoany
     fields:
       node_title:
         plugin_id: node_title
@@ -65,11 +64,6 @@ targetEntityType: node
 bundle: highlight
 mode: default
 content:
-  addtoany:
-    weight: 5
-    region: ds_content
-    settings: {  }
-    third_party_settings: {  }
   body:
     label: hidden
     weight: 3
@@ -105,6 +99,8 @@ content:
     third_party_settings: {  }
     region: ds_content
 hidden:
+  addtoany: true
+  breadcrumbs: true
   comment_node_highlight: true
   field_activity: true
   field_archived: true
