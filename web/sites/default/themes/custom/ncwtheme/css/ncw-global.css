@@ -1289,24 +1289,24 @@ h3.home a:hover {
 }
 
 /* Upcoming events */
-#block-views-block-upcoming-events-block-1--2 {
+.block-views-blockupcoming-events-block-1 {
   background: transparent;
 }
-#block-views-block-upcoming-events-block-1--2 h2 {
+.block-views-blockupcoming-events-block-1 h2 {
   font-size: 1.35rem;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 20px;
   border-bottom: 5px solid #003399;
 }
-#block-views-block-upcoming-events-block-1--2 .views-row {
+.block-views-blockupcoming-events-block-1 .views-row {
   padding-left: 25px;
   padding-right: 25px;
 }
-#block-views-block-upcoming-events-block-1--2 .views-field-nothing {
+.block-views-blockupcoming-events-block-1 .views-field-nothing {
   padding-bottom: 3px;
 }
-#block-views-block-upcoming-events-block-1--2 .views-field-nothing .field-content {
+.block-views-blockupcoming-events-block-1 .views-field-nothing .field-content {
   display: block;
   font-size: 0.8rem;
   color: #003399;
