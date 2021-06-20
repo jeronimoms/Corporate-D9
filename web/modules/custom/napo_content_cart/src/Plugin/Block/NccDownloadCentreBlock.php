@@ -69,7 +69,7 @@ class NccDownloadCentreBlock extends BlockBase implements ContainerFactoryPlugin
     return [
       '#type' => 'link',
       '#title' => $this->t('Download Centre(@count)', ['@count' => count($items)]),
-      '#url' => Url::fromRoute('content_cart.viewList', [], [
+      '#url' => Url::fromRoute('content_cart.list', [], [
         'attributes' => [
           'class' => ['header-download-centre'],
         ]

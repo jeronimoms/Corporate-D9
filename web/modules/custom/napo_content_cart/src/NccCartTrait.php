@@ -6,15 +6,24 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 
+/**
+ * Methods to help Cart elements.
+ */
 trait NccCartTrait {
 
   use StringTranslationTrait;
 
+  /**
+   * Get the add element.
+   *
+   * @return array
+   *   The array with the link.
+   */
   protected function addElement(Node $node) {
     return [
       '#type' => 'link',
       '#title' => $this->t('Download Video'),
-      '#url' => Url::fromRoute('content_cart.addcart',
+      '#url' => Url::fromRoute('content_cart.add',
         [
           'node' => $node->id(),
         ],
@@ -27,11 +36,17 @@ trait NccCartTrait {
     ];
   }
 
+  /**
+   * Get the remove element.
+   *
+   * @return array
+   *   The array with the link.
+   */
   protected function removeElement(Node $node, $centre = 0) {
     return [
       '#type' => 'link',
       '#title' => $this->t('Remove Video'),
-      '#url' => Url::fromRoute('content_cart.deleteone',
+      '#url' => Url::fromRoute('content_cart.delete',
         [
           'node' => $node->id(),
           'centre' => $centre,

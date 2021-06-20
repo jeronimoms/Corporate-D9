@@ -101,7 +101,6 @@ class NccDownload extends FieldPluginBase implements ContainerFactoryPluginInter
       $link = $this->addElement($node);
     }
 
-
     return [
       '#type' => 'container',
       '#attributes' => [
@@ -113,6 +112,5 @@ class NccDownload extends FieldPluginBase implements ContainerFactoryPluginInter
       ]
     ];
   }
-
 
 }
