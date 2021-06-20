@@ -204,11 +204,15 @@ input[type=search] {
   color: #003399;
 }
 
-/* view-board-members */
-.view-board-members .view-grouping {
+/* view board members / view advisory groups */
+.view-board-members .view-grouping, .view-advisory-groups .view-grouping {
   width: 100%;
 }
-.view-board-members .view-grouping-header {
+.view-board-members .view-content.row, .view-advisory-groups .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.view-board-members .view-grouping-header, .view-advisory-groups .view-grouping-header {
   position: relative;
   width: 100%;
   font-family: "Open Sans Condensed";
@@ -229,7 +233,7 @@ input[type=search] {
   margin-bottom: 0;
   cursor: pointer;
 }
-.view-board-members .view-grouping-header::after {
+.view-board-members .view-grouping-header::after, .view-advisory-groups .view-grouping-header::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -238,21 +242,25 @@ input[type=search] {
   top: 30%;
   right: 20px;
 }
-.view-board-members .view-grouping-header.active::after, .view-board-members .view-grouping-header.ui-state-active::after {
+.view-board-members .view-grouping-header.active::after, .view-board-members .view-grouping-header.ui-state-active::after, .view-advisory-groups .view-grouping-header.active::after, .view-advisory-groups .view-grouping-header.ui-state-active::after {
   width: 17px;
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 17px;
 }
-.view-board-members .view-grouping-content {
+.view-board-members .view-grouping-content, .view-advisory-groups .view-grouping-content {
   display: none;
   padding: 10px 8px;
 }
-.view-board-members .item-list h3 {
+.view-board-members .item-list h3, .view-advisory-groups .item-list h3 {
   color: #003399;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
-.view-board-members .item-list ul li {
+.view-board-members .item-list ul li, .view-advisory-groups .item-list ul li {
   display: block;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
 }
@@ -660,11 +668,21 @@ form #edit-actions {
   position: relative;
 }
 
-.custom-select {
+.custom-select, .facets-dropdown {
   background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+}
+
+.facets-dropdown {
+  width: 100%;
+  height: 37px;
+  border: 1px solid #003399;
+  border-radius: 5px;
+  color: #003399;
+  font-size: 13px;
+  padding-left: 12px;
 }
 
 .chosen-container-multi.custom-select {
@@ -988,6 +1006,7 @@ h3.home a:hover {
 }
 .sidebar-first .menu--main ul li ul li ul.menu-level-2 ul.menu-level-3 li:last-child {
   border-bottom: 0;
+  padding-bottom: 0;
 }
 .sidebar-first .menu--main ul li ul li.menu-item--active-trail ul.menu-level-2 {
   display: block;
@@ -1088,6 +1107,11 @@ h3.home a:hover {
 .sidebar-second .block.block-twitter-block h2 {
   font-size: 1.35rem;
   border-bottom: 0;
+}
+
+.region-sidebar-second-others.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .sidebar-second .related-views {
@@ -1265,24 +1289,24 @@ h3.home a:hover {
 }
 
 /* Upcoming events */
-#block-views-block-upcoming-events-block-1--2 {
+.block-views-blockupcoming-events-block-1 {
   background: transparent;
 }
-#block-views-block-upcoming-events-block-1--2 h2 {
+.block-views-blockupcoming-events-block-1 h2 {
   font-size: 1.35rem;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 20px;
   border-bottom: 5px solid #003399;
 }
-#block-views-block-upcoming-events-block-1--2 .views-row {
+.block-views-blockupcoming-events-block-1 .views-row {
   padding-left: 25px;
   padding-right: 25px;
 }
-#block-views-block-upcoming-events-block-1--2 .views-field-nothing {
+.block-views-blockupcoming-events-block-1 .views-field-nothing {
   padding-bottom: 3px;
 }
-#block-views-block-upcoming-events-block-1--2 .views-field-nothing .field-content {
+.block-views-blockupcoming-events-block-1 .views-field-nothing .field-content {
   display: block;
   font-size: 0.8rem;
   color: #003399;

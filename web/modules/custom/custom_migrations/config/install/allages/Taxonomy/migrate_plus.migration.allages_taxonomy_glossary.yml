@@ -31,7 +31,7 @@ process:
   #'description/format': format
   'description/format':
     - plugin: default_value
-      default_value: full_html
+      default_value: basic_html
 
   weight: weight
   parent_id:

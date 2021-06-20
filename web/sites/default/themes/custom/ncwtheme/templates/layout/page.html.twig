@@ -54,7 +54,8 @@
   <div class="row">
     {% set has_sidebar_first = page.sidebar_first is not empty %}
     {% set has_sidebar_second_related = page.sidebar_second_related|render|striptags|trim is not empty %}
-    {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty or has_sidebar_second_related %}
+    {% set has_sidebar_second_others = page.sidebar_second_others|render|striptags|trim is not empty %}
+    {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty or has_sidebar_second_related or has_sidebar_second_others %}
     {% set has_node_view_blog = page.node_view|render|striptags|trim is not empty %}
 
     {% if has_sidebar_first %}
@@ -97,7 +98,7 @@
             {{ page.sidebar_second_related }}
           </div>
         {% endif %}
-
+        {{ page.sidebar_second_others }}
       </aside>
     {% endif %}
     </div>

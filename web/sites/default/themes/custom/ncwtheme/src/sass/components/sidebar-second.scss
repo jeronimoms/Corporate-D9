@@ -34,6 +34,11 @@
   }
 }
 
+.region-sidebar-second-others.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .sidebar-second{
   .related-views{
     padding-left: 20px;
@@ -229,7 +234,7 @@
 }
 
 /* Upcoming events */
-#block-views-block-upcoming-events-block-1--2{
+.block-views-blockupcoming-events-block-1{
   background: transparent;
   h2{
     font-size: 1.35rem;

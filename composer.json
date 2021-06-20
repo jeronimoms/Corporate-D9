@@ -469,6 +469,9 @@
             },
             "drupal/lang_dropdown": {
                 "VBO does not preserve query metadata added by other modules": "https://www.drupal.org/files/issues/2021-01-05/3190976-lang_dropdown-chosen-js-error-2.patch"
+            },
+            "drupal/url_redirect": {
+                "Entity type url_redirect UrlRedirect is missing": "https://www.drupal.org/files/issues/2020-12-21/3173650-4.patch"
             }
         },
         "patchLevel": {
@@ -479,8 +482,7 @@
                 "web-root": "web/"
             },
             "file-mapping": {
-                "[web-root]/.htaccess": false,
-                "[web-root]/robots.txt": false
+                "[web-root]/.htaccess": false
             }
         },
         "installer-paths": {
