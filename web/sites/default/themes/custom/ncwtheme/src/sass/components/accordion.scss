@@ -47,6 +47,9 @@
     .wysiwyg_accordion_panel {
       display: none;
       padding: 10px 0;
+      p.wysiwyg_accordion_panel{
+        display: block;
+      }
     }
 
     .wysiwyg_accordion_panel.views {
