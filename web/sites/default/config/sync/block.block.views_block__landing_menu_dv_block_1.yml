@@ -1,29 +1,28 @@
-uuid: 40b6d6bf-105b-4c76-8600-216860c60a3c
+uuid: d6592038-a237-4252-96a8-5d6d7e3aa848
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.landing_menu
+    - views.view.landing_menu_dv
   module:
     - ctools
     - system
     - views
   theme:
     - ncwtheme
-id: views_block__landing_menu_block_1
+id: views_block__landing_menu_dv_block_1
 theme: ncwtheme
 region: content
-weight: -21
+weight: -20
 provider: null
-plugin: 'views_block:landing_menu-block_1'
+plugin: 'views_block:landing_menu_dv-block_1'
 settings:
-  id: 'views_block:landing_menu-block_1'
+  id: 'views_block:landing_menu_dv-block_1'
   label: ''
   provider: views
   label_display: '0'
   views_label: ''
   items_per_page: none
-  context_mapping: {  }
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
@@ -35,4 +34,4 @@ visibility:
   request_path:
     id: request_path
     pages: /facts-and-figures/data-visualisation
-    negate: true
+    negate: false
