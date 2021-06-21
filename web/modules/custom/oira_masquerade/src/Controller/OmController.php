@@ -5,6 +5,7 @@ namespace Drupal\oira_masquerade\Controller;
 use Drupal\Core\Block\BlockManager;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\EventSubscriber\RedirectResponseSubscriber;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -15,6 +16,8 @@ use Drupal\masquerade\Masquerade;
  * General class for Oira Masquerade controller.
  */
 class OmController extends ControllerBase implements ContainerInjectionInterface {
+
+  use DependencySerializationTrait;
 
   /**
    * The block manager.
