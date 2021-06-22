@@ -46,11 +46,10 @@ third_party_settings:
       ds_content:
         - field_publication_date
         - node_title
+        - group_group_right
         - field_image_caption
         - field_summary_html
-        - group_group_right
         - body
-        - addtoany
     fields:
       node_title:
         plugin_id: node_title
@@ -64,7 +63,7 @@ third_party_settings:
         - field_summary_html
         - body
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: html_element
       region: ds_content
       format_settings:
@@ -83,11 +82,6 @@ targetEntityType: node
 bundle: blog
 mode: default
 content:
-  addtoany:
-    weight: 6
-    region: ds_content
-    settings: {  }
-    third_party_settings: {  }
   body:
     label: hidden
     type: text_default
@@ -121,6 +115,8 @@ content:
     type: text_default
     region: ds_content
 hidden:
+  addtoany: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_author: true

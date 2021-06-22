@@ -10,7 +10,7 @@ dependencies:
 id: addtoanybuttons
 theme: ncwtheme
 region: content
-weight: -17
+weight: -18
 provider: null
 plugin: addtoany_block
 settings:
@@ -21,5 +21,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/publications/*'
+    pages: "/publications/*\r\n/tools-and-resources/seminars/*"
     negate: true

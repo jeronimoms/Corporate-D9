@@ -132,6 +132,10 @@ body {
   }
 }
 
+.see-more-arrow.pull-right{
+  float: right;
+}
+
 span.label, span.pages{
   font-family: 'Open Sans',sans-serif;
   color: $text-color-blue;
@@ -784,3 +788,11 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
   }
 }
 
+/* Blog Search */
+.page-view-search-blog{
+  .block-views-exposed-filter-blocksearch-blog-page-1{
+    h2{
+      display: none;
+    }
+  }
+}
