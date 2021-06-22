@@ -170,6 +170,9 @@ input[type=search] {
   display: none;
   padding: 10px 0;
 }
+#main .wysiwyg_accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .quicktabs-accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .view-view-glossary .wysiwyg_accordion_panel p.wysiwyg_accordion_panel {
+  display: block;
+}
 #main .wysiwyg_accordion .wysiwyg_accordion_panel.views, #main .quicktabs-accordion .wysiwyg_accordion_panel.views, #main .view-view-glossary .wysiwyg_accordion_panel.views {
   padding-left: 15px;
   padding-right: 15px;
@@ -1289,24 +1292,24 @@ h3.home a:hover {
 }
 
 /* Upcoming events */
-#block-views-block-upcoming-events-block-1--2 {
+.block-views-blockupcoming-events-block-1 {
   background: transparent;
 }
-#block-views-block-upcoming-events-block-1--2 h2 {
+.block-views-blockupcoming-events-block-1 h2 {
   font-size: 1.35rem;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 20px;
   border-bottom: 5px solid #003399;
 }
-#block-views-block-upcoming-events-block-1--2 .views-row {
+.block-views-blockupcoming-events-block-1 .views-row {
   padding-left: 25px;
   padding-right: 25px;
 }
-#block-views-block-upcoming-events-block-1--2 .views-field-nothing {
+.block-views-blockupcoming-events-block-1 .views-field-nothing {
   padding-bottom: 3px;
 }
-#block-views-block-upcoming-events-block-1--2 .views-field-nothing .field-content {
+.block-views-blockupcoming-events-block-1 .views-field-nothing .field-content {
   display: block;
   font-size: 0.8rem;
   color: #003399;
@@ -3398,43 +3401,44 @@ body.user-logged-in.toolbar-tray-open #header {
   }
 }
 /* End Media 991px */
-.one-column .view-landing-menu .view-col {
+/* .view-landing-menu-dv, special view to "Data visualisation" Facts & Figures - Data visualisation */
+.one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col {
   width: 23.2%;
   float: left;
   margin-right: 1rem;
   margin-bottom: 3rem;
 }
 
-.two-column .view-landing-menu .view-col {
+.two-column .view-landing-menu .view-col, .two-column .view-landing-menu-dv .view-col {
   width: 31%;
   float: left;
   margin-right: 1rem;
   margin-bottom: 3rem;
 }
 
-.three-column .view-landing-menu .view-col {
+.three-column .view-landing-menu .view-col, .three-column .view-landing-menu-dv .view-col {
   width: 47%;
   float: left;
   margin-right: 1rem;
   margin-bottom: 3rem;
 }
 
-.view-landing-menu {
+.view-landing-menu, .view-landing-menu-dv {
   padding-top: 1rem;
 }
-.view-landing-menu .views-view-grid > div {
+.view-landing-menu .views-view-grid > div, .view-landing-menu-dv .views-view-grid > div {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
 }
-.view-landing-menu .view-col {
+.view-landing-menu .view-col, .view-landing-menu-dv .view-col {
   display: flex;
   flex-direction: column;
 }
-.view-landing-menu .view-col > div {
+.view-landing-menu .view-col > div, .view-landing-menu-dv .view-col > div {
   flex: 1;
 }
-.view-landing-menu .view-col > div > a:first-child {
+.view-landing-menu .view-col > div > a:first-child, .view-landing-menu-dv .view-col > div > a:first-child {
   font-family: "Open Sans Condensed", sans-serif;
   width: 100%;
   display: block;
@@ -3447,25 +3451,25 @@ body.user-logged-in.toolbar-tray-open #header {
   padding-bottom: 5px;
   background-position: calc(100% - 5px) 9px;
 }
-.view-landing-menu .view-col > div > a:first-child:hover {
+.view-landing-menu .view-col > div > a:first-child:hover, .view-landing-menu-dv .view-col > div > a:first-child:hover {
   background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
   border-bottom: 10px solid #dc2f82;
   transition: all 1s;
 }
-.view-landing-menu .view-col img {
+.view-landing-menu .view-col img, .view-landing-menu-dv .view-col img {
   width: 100%;
   height: auto;
 }
 
 @media only screen and (max-width: 1024px) {
-  .one-column .view-landing-menu .view-col {
+  .one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col {
     width: 31%;
     float: left;
     margin-right: 1rem;
     margin-bottom: 3rem;
   }
 
-  .two-column .view-landing-menu .view-col, .three-column .view-landing-menu .view-col {
+  .two-column .view-landing-menu .view-col, .two-column .view-landing-menu-dv .view-col, .three-column .view-landing-menu .view-col, .three-column .view-landing-menu-dv .view-col {
     width: 46%;
     float: left;
     margin-right: 1rem;
@@ -3473,7 +3477,7 @@ body.user-logged-in.toolbar-tray-open #header {
   }
 }
 @media only screen and (max-width: 768px) {
-  .one-column .view-landing-menu .view-col {
+  .one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col {
     width: 46%;
     float: left;
     margin-right: 1rem;
@@ -3481,11 +3485,11 @@ body.user-logged-in.toolbar-tray-open #header {
   }
 }
 @media only screen and (max-width: 480px) {
-  .one-column .view-landing-menu .view-col, .two-column .view-landing-menu .view-col, .three-column .view-landing-menu .view-col {
+  .one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col, .two-column .view-landing-menu .view-col, .two-column .view-landing-menu-dv .view-col, .three-column .view-landing-menu .view-col, .three-column .view-landing-menu-dv .view-col {
     width: 98%;
   }
 
-  .view-landing-menu .view-col > div {
+  .view-landing-menu .view-col > div, .view-landing-menu-dv .view-col > div {
     max-width: 240px;
     margin: 0 auto;
   }

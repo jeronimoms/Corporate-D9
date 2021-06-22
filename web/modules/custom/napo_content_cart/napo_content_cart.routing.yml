@@ -1,7 +1,7 @@
-content_cart.addcart:
+content_cart.add:
   path: '/content_cart/add/{node}'
   defaults:
-    _controller: '\Drupal\napo_content_cart\Controller\NccController::addcart'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::add'
   requirements:
     _permission: 'access content'
   options:
@@ -9,10 +9,10 @@ content_cart.addcart:
       user:
         type: entity:node
 
-content_cart.deleteone:
+content_cart.delete:
   path: '/content_cart/delete/{node}/{centre}'
   defaults:
-    _controller: '\Drupal\napo_content_cart\Controller\NccController::deleteone'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::delete'
   requirements:
     _permission: 'access content'
   options:
@@ -20,10 +20,11 @@ content_cart.deleteone:
       user:
         type: entity:node
 
-content_cart.viewList:
-  path: '/content_cart/viewList'
+content_cart.list:
+  path: '/download-centre/{file}'
   defaults:
-    _controller: '\Drupal\napo_content_cart\Controller\NccController::viewList'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::getList'
+    file: NULL
   requirements:
     _permission: 'access content'
   options:

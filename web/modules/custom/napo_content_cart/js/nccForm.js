@@ -6,7 +6,9 @@
 (function ($, Drupal, drupalSettings) {
   Drupal.behaviors.nccForm = {
     attach: function (context, settings) {
-      console.log('hola');
+      $('#edit-download-all').on('click', function (){
+        console.log('yolo');
+      })
     }
   };
 })(jQuery, Drupal, drupalSettings);

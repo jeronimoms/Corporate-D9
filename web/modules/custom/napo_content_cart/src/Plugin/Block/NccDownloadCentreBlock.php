@@ -66,10 +66,14 @@ class NccDownloadCentreBlock extends BlockBase implements ContainerFactoryPlugin
     $temp = $this->tempStoreFactory->get('napo_content_cart.downloads');
     $items = $temp->get('video_downloads');
 
+    if (!is_array($items)) {
+      $items = [];
+    }
+
     return [
       '#type' => 'link',
       '#title' => $this->t('Download Centre(@count)', ['@count' => count($items)]),
-      '#url' => Url::fromRoute('content_cart.viewList', [], [
+      '#url' => Url::fromRoute('content_cart.list', [], [
         'attributes' => [
           'class' => ['header-download-centre'],
         ]
