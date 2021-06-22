@@ -96,7 +96,7 @@ content:
     third_party_settings: {  }
   field_seminar_end_date:
     type: datetime_default
-    weight: 1
+    weight: 2
     region: content
     label: inline
     settings:
@@ -105,7 +105,7 @@ content:
     third_party_settings: {  }
   field_seminar_start_date:
     type: datetime_default
-    weight: 2
+    weight: 1
     region: content
     label: inline
     settings:
@@ -114,6 +114,7 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_country_code: true
