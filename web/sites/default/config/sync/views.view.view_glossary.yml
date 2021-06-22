@@ -9,7 +9,6 @@ dependencies:
   module:
     - taxonomy
     - text
-    - user
 id: view_glossary
 label: Glossary
 module: views
@@ -25,9 +24,8 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
-        options:
-          perm: 'access content'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -454,7 +452,6 @@ display:
         - 'languages:language_interface'
         - url
         - user
-        - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_glossary_type'
   page_1:
@@ -473,6 +470,5 @@ display:
         - 'languages:language_interface'
         - url
         - user
-        - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_glossary_type'
