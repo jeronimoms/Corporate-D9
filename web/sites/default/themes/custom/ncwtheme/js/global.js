@@ -54,6 +54,26 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.content').slideToggle();
   });
 
+  $(".sidebar-first #block-dateofdirective h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-topicsdirectives h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-guideline-topics h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-seminar-tags h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
   //View MSD glossary accordion #block-ncwtheme-content > div > div > div > div.view-content.row > div:nth-child(8)
   $(".view-view-glossary > div.view-content.row > h3:nth-child(7)").addClass('active');
   $(".view-view-glossary > div.view-content.row > div:nth-child(8)").css('display','block');
@@ -96,6 +116,11 @@ jQuery(document).ready(function($) {
   //Move AddToAny to the bottom page
   if ($(".move-add-to-any")[0]) {
     $('.addtoany_list').appendTo('.move-add-to-any');
+  }
+
+  //Move Search Blog
+  if ($(".move-block-search-blog")[0]) {
+    $('.block-views-exposed-filter-blocksearch-blog-page-1').appendTo('.move-block-search-blog');
   }
 
   //Move infographic filter
