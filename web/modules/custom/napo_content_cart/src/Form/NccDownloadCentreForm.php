@@ -121,7 +121,7 @@ class NccDownloadCentreForm extends FormBase {
             '#image' => $media_build,
             '#title' => $element->getTitle(),
             '#url' => Url::fromRoute('entity.node.canonical', ['node' => $id])->toString(),
-            '#description' => $element->get('body')->getString(),
+            '#description' => substr($element->get('body')->getString(), 0, 300) . '...',
             '#file' => $file,
             '#remove' => $this->removeElement($element, 1)
           ],

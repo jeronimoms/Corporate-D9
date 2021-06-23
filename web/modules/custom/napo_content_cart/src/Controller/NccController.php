@@ -186,17 +186,29 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
       '#attributes' => [
         'class' => ['ncc-dialog'],
       ],
+      'content' => [
+        '#theme' => 'ncc_element_modal',
+        '#elements' => [],
+        '#message' => new TranslatableMarkup('1 item removed to the Download centre'),
+        '#button' => $this->getDefaultButton(),
+        '#attached' => [
+          'library' => ['core/drupal.dialog.ajax'],
+        ],
+      ],
     ];
 
-    $build['content'] = [
-      '#theme' => 'ncc_element_modal',
-      '#title' => $node->getTitle(),
-      '#message' => new TranslatableMarkup('1 item removed to the Download centre'),
-      '#button' => $this->getDefaultButton(),
-      '#attached' => [
-        'library' => ['core/drupal.dialog.ajax'],
-      ]
-    ];
+    // Include the elements.
+    foreach ($ids as $id => $ids_node) {
+      // Generate the current node media build.
+      $media = $this->entityTypeManager->getStorage('media')->load($ids_node->get('field_image')->getString());
+      $media_build = $this->entityTypeManager->getViewBuilder('media')->view($media);
+
+      // Include the arrays.
+      $build['content']['#elements'][] = [
+        'title' => $ids_node->getTitle(),
+        'image' => $media_build,
+      ];
+    }
 
 
     $response = new AjaxResponse();
