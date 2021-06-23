@@ -3,6 +3,7 @@
 namespace Drupal\oira_partner;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -18,6 +19,8 @@ use Drupal\oira_partner\OpEntityUpdateManager;
 class OpEntity implements ContainerInjectionInterface {
 
   use StringTranslationTrait;
+  use DependencySerializationTrait;
+
 
   /**
    * The Oria entity update manager

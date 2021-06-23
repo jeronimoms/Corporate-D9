@@ -230,6 +230,13 @@
   border-radius: 5px;
 }
 
+.field--name-node-changed-date{
+  margin-bottom: 0.5rem;
+  .field__label:after{
+    content: ':';
+    display: inline-block;
+  }
+}
 
 /* Responsive View List */
 @media only screen and (max-width : 991px) {

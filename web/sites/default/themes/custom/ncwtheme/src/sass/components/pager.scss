@@ -58,6 +58,12 @@ nav.pager{
   margin-top: -50px;
 }
 
+.view-search-blog{
+  .pager-total{
+    margin-top: 0;
+  }
+}
+
 div.pagerer-right-pane{
   display: none;
 }

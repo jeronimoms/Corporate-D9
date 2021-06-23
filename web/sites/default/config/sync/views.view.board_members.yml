@@ -27,7 +27,6 @@ dependencies:
   module:
     - node
     - taxonomy
-    - user
 id: board_members
 label: 'Board members'
 module: views
@@ -43,9 +42,8 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
-        options:
-          perm: 'access content'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -1327,7 +1325,6 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_city'
         - 'config:field.storage.node.field_country'
@@ -1607,7 +1604,6 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_city'
         - 'config:field.storage.node.field_country'
@@ -1846,7 +1842,6 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_city'
         - 'config:field.storage.node.field_country'
@@ -2072,7 +2067,6 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_city'
         - 'config:field.storage.node.field_country'
@@ -2256,7 +2250,6 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_city'
         - 'config:field.storage.node.field_country'
