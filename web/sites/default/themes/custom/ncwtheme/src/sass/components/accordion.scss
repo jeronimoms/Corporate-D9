@@ -97,7 +97,7 @@
 }
 
 /* view board members / view advisory groups */
-.view-board-members, .view-advisory-groups{
+.view-board-members, .view-advisory-groups, .view-seminar{
   .view-grouping{
     width: 100%;
   }
@@ -133,6 +133,9 @@
       top: 30%;
       right: 20px;
     }
+    .datetime{
+      font-size: 1.3rem;
+    }
   }
   .view-grouping-header.active, .view-grouping-header.ui-state-active {
     &::after {
@@ -164,6 +167,44 @@
   }
 }
 
+.view-seminar {
+  .view-grouping-content {
+    padding: 0px 8px;
+    .item-list{
+      h3{
+        display: none;
+      }
+      .views-field-field-seminar-start-date{
+        float: left;
+        margin-right: 5px;
+      }
+      .views-field-field-location{
+        font-size: 0.8rem;
+        .field-content{
+          padding-top: 4px;
+        }
+      }
+      .views-field-title{
+        display: block;
+        width: 100%;
+        float: none;
+        clear: both;
+        a{
+          display: block;
+          font-size: 1.2rem;
+          padding-top: 5px;
+          padding-bottom: 10px;
+        }
+      }
+      .views-field-body{
+        padding-bottom: 10px;
+      }
+      .views-field-view-node{
+        text-align: right;
+      }
+    }
+  }
+}
 
 .sidebar-second{
   .view-grouping{

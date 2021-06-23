@@ -56,20 +56,22 @@ display:
         options:
           offset: 0
       style:
-        type: grid
+        type: html_list
         options:
           grouping:
             -
               field: field_seminar_start_date_1
               rendered: true
-              rendered_strip: true
-          columns: 12
-          automatic_width: false
-          alignment: vertical
-          col_class_default: false
-          col_class_custom: accordion-column
-          row_class_default: false
-          row_class_custom: 'accordion-row revamp-row no-flex'
+              rendered_strip: false
+            -
+              field: field_seminar_start_date
+              rendered: true
+              rendered_strip: false
+          row_class: revamp-row
+          default_row_class: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: fields
       fields:
