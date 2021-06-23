@@ -63,7 +63,13 @@ third_party_settings:
           'link text': 'Show details'
           'link class': ''
           wrapper: span
-          class: see-more-arrow
+          class: 'see-more-arrow minor-size pull-right'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
       node_title:
         plugin_id: node_title
         weight: 0
@@ -89,6 +95,7 @@ content:
 hidden:
   addtoany: true
   body: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_date_of_directive: true

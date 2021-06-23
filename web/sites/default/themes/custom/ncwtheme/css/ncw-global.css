@@ -208,14 +208,14 @@ input[type=search] {
 }
 
 /* view board members / view advisory groups */
-.view-board-members .view-grouping, .view-advisory-groups .view-grouping {
+.view-board-members .view-grouping, .view-advisory-groups .view-grouping, .view-seminar .view-grouping {
   width: 100%;
 }
-.view-board-members .view-content.row, .view-advisory-groups .view-content.row {
+.view-board-members .view-content.row, .view-advisory-groups .view-content.row, .view-seminar .view-content.row {
   margin-left: 0;
   margin-right: 0;
 }
-.view-board-members .view-grouping-header, .view-advisory-groups .view-grouping-header {
+.view-board-members .view-grouping-header, .view-advisory-groups .view-grouping-header, .view-seminar .view-grouping-header {
   position: relative;
   width: 100%;
   font-family: "Open Sans Condensed";
@@ -236,7 +236,7 @@ input[type=search] {
   margin-bottom: 0;
   cursor: pointer;
 }
-.view-board-members .view-grouping-header::after, .view-advisory-groups .view-grouping-header::after {
+.view-board-members .view-grouping-header::after, .view-advisory-groups .view-grouping-header::after, .view-seminar .view-grouping-header::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -245,27 +245,65 @@ input[type=search] {
   top: 30%;
   right: 20px;
 }
-.view-board-members .view-grouping-header.active::after, .view-board-members .view-grouping-header.ui-state-active::after, .view-advisory-groups .view-grouping-header.active::after, .view-advisory-groups .view-grouping-header.ui-state-active::after {
+.view-board-members .view-grouping-header .datetime, .view-advisory-groups .view-grouping-header .datetime, .view-seminar .view-grouping-header .datetime {
+  font-size: 1.3rem;
+}
+.view-board-members .view-grouping-header.active::after, .view-board-members .view-grouping-header.ui-state-active::after, .view-advisory-groups .view-grouping-header.active::after, .view-advisory-groups .view-grouping-header.ui-state-active::after, .view-seminar .view-grouping-header.active::after, .view-seminar .view-grouping-header.ui-state-active::after {
   width: 17px;
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 17px;
 }
-.view-board-members .view-grouping-content, .view-advisory-groups .view-grouping-content {
+.view-board-members .view-grouping-content, .view-advisory-groups .view-grouping-content, .view-seminar .view-grouping-content {
   display: none;
   padding: 10px 8px;
 }
-.view-board-members .item-list h3, .view-advisory-groups .item-list h3 {
+.view-board-members .item-list h3, .view-advisory-groups .item-list h3, .view-seminar .item-list h3 {
   color: #003399;
   font-weight: 600;
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
 }
-.view-board-members .item-list ul li, .view-advisory-groups .item-list ul li {
+.view-board-members .item-list ul li, .view-advisory-groups .item-list ul li, .view-seminar .item-list ul li {
   display: block;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
+}
+
+.view-seminar .view-grouping-content {
+  padding: 0px 8px;
+}
+.view-seminar .view-grouping-content .item-list h3 {
+  display: none;
+}
+.view-seminar .view-grouping-content .item-list .views-field-field-seminar-start-date {
+  float: left;
+  margin-right: 5px;
+}
+.view-seminar .view-grouping-content .item-list .views-field-field-location {
+  font-size: 0.8rem;
+}
+.view-seminar .view-grouping-content .item-list .views-field-field-location .field-content {
+  padding-top: 4px;
+}
+.view-seminar .view-grouping-content .item-list .views-field-title {
+  display: block;
+  width: 100%;
+  float: none;
+  clear: both;
+}
+.view-seminar .view-grouping-content .item-list .views-field-title a {
+  display: block;
+  font-size: 1.2rem;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.view-seminar .view-grouping-content .item-list .views-field-body {
+  padding-bottom: 10px;
+}
+.view-seminar .view-grouping-content .item-list .views-field-view-node {
+  text-align: right;
 }
 
 .sidebar-second .view-grouping {
@@ -473,7 +511,7 @@ div#sliding-popup {
 }
 
 /* Facets Accordions */
-#block-topics-2, #block-contenttypesearchsite-2, #block-topicsblog {
+#block-topics-2, #block-contenttypesearchsite-2, #block-topicsblog, #block-dateofdirective, #block-topicsdirectives, #block-guideline-topics, #block-seminar-tags {
   border: 0;
   padding: 0;
   margin-top: 0;
@@ -481,7 +519,7 @@ div#sliding-popup {
   border-bottom: 10px solid #FFF;
   margin-bottom: 0;
 }
-#block-topics-2 h2, #block-contenttypesearchsite-2 h2, #block-topicsblog h2 {
+#block-topics-2 h2, #block-contenttypesearchsite-2 h2, #block-topicsblog h2, #block-dateofdirective h2, #block-topicsdirectives h2, #block-guideline-topics h2, #block-seminar-tags h2 {
   position: relative;
   background: #e8eef7;
   padding-top: 0.3rem;
@@ -489,7 +527,7 @@ div#sliding-popup {
   padding-left: 0.5rem;
   cursor: pointer;
 }
-#block-topics-2 h2::after, #block-contenttypesearchsite-2 h2::after, #block-topicsblog h2::after {
+#block-topics-2 h2::after, #block-contenttypesearchsite-2 h2::after, #block-topicsblog h2::after, #block-dateofdirective h2::after, #block-topicsdirectives h2::after, #block-guideline-topics h2::after, #block-seminar-tags h2::after {
   content: "";
   position: absolute;
   width: 20px;
@@ -498,23 +536,27 @@ div#sliding-popup {
   top: 12px;
   right: 20px;
 }
-#block-topics-2 h2.active::after, #block-contenttypesearchsite-2 h2.active::after, #block-topicsblog h2.active::after {
+#block-topics-2 h2.active::after, #block-contenttypesearchsite-2 h2.active::after, #block-topicsblog h2.active::after, #block-dateofdirective h2.active::after, #block-topicsdirectives h2.active::after, #block-guideline-topics h2.active::after, #block-seminar-tags h2.active::after {
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 18px;
 }
-#block-topics-2 .content, #block-contenttypesearchsite-2 .content, #block-topicsblog .content {
+#block-topics-2 .content, #block-contenttypesearchsite-2 .content, #block-topicsblog .content, #block-dateofdirective .content, #block-topicsdirectives .content, #block-guideline-topics .content, #block-seminar-tags .content {
   background: #FFF;
   display: none;
 }
-#block-topics-2 .content ul, #block-contenttypesearchsite-2 .content ul, #block-topicsblog .content ul {
+#block-topics-2 .content ul, #block-contenttypesearchsite-2 .content ul, #block-topicsblog .content ul, #block-dateofdirective .content ul, #block-topicsdirectives .content ul, #block-guideline-topics .content ul, #block-seminar-tags .content ul {
   list-style: none;
   padding-left: 0;
 }
-#block-topics-2 .content ul a, #block-contenttypesearchsite-2 .content ul a, #block-topicsblog .content ul a {
+#block-topics-2 .content ul a, #block-contenttypesearchsite-2 .content ul a, #block-topicsblog .content ul a, #block-dateofdirective .content ul a, #block-topicsdirectives .content ul a, #block-guideline-topics .content ul a, #block-seminar-tags .content ul a {
   display: block;
   color: #57565b;
   font-size: 0.9rem;
   padding: 5px 0 5px 0.5rem;
+}
+#block-topics-2 .content select, #block-topics-2 .content input, #block-contenttypesearchsite-2 .content select, #block-contenttypesearchsite-2 .content input, #block-topicsblog .content select, #block-topicsblog .content input, #block-dateofdirective .content select, #block-dateofdirective .content input, #block-topicsdirectives .content select, #block-topicsdirectives .content input, #block-guideline-topics .content select, #block-guideline-topics .content input, #block-seminar-tags .content select, #block-seminar-tags .content input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .facets-soft-limit-link {
@@ -1028,6 +1070,10 @@ h3.home a:hover {
   border-bottom: 0;
   padding-bottom: 0;
 }
+.sidebar-first .views-exposed-form .btn-primary {
+  margin-left: 0;
+  margin-right: 5px;
+}
 
 .mean-expand-custom {
   display: flex;
@@ -1373,6 +1419,10 @@ nav.pager ul.pager__items .pagerer-breaker {
   margin-top: -50px;
 }
 
+.view-search-blog .pager-total {
+  margin-top: 0;
+}
+
 div.pagerer-right-pane {
   display: none;
 }
@@ -1539,6 +1589,10 @@ body .news_and_events.block-menu-block ul li .link_news_events a {
 }
 .see-more-arrow.minor-size a:hover {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
+}
+
+.see-more-arrow.pull-right {
+  float: right;
 }
 
 span.label, span.pages {
@@ -2106,6 +2160,11 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 }
 .e-guide-links ul li {
   padding: 0 0.2rem;
+}
+
+/* Blog Search */
+.page-view-search-blog .block-views-exposed-filter-blocksearch-blog-page-1 h2 {
+  display: none;
 }
 
 /* Breadcrumbs */
@@ -4424,6 +4483,14 @@ body.node--type-publication {
   margin-bottom: 0.3rem;
   display: inline-block;
   border-radius: 5px;
+}
+
+.field--name-node-changed-date {
+  margin-bottom: 0.5rem;
+}
+.field--name-node-changed-date .field__label:after {
+  content: ":";
+  display: inline-block;
 }
 
 /* Responsive View List */

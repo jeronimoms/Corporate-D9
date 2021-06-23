@@ -2,10 +2,13 @@
 
 namespace Drupal\oira_masquerade;
 
+use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountProxy;
 
 class OmMasqueradeManager {
+
+  use DependencySerializationTrait;
 
   /**
    * The entity type manager.

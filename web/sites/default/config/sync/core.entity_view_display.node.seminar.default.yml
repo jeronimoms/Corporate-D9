@@ -182,7 +182,7 @@ content:
   field_seminar_end_date:
     type: datetime_default
     weight: 2
-    region: ds_content
+    region: content
     label: inline
     settings:
       timezone_override: ''
@@ -191,7 +191,7 @@ content:
   field_seminar_start_date:
     type: datetime_default
     weight: 1
-    region: ds_content
+    region: content
     label: inline
     settings:
       timezone_override: ''

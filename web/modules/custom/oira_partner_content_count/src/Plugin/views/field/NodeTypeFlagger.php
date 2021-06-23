@@ -13,6 +13,7 @@ use Drupal\Core\Url;
 use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
 use Drupal\node\Entity\Node;
+use Drupal\views\Views;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -77,9 +78,6 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
   public function render(ResultRow $values) {
     // Set the initial output.
     $build = $this->htmlElement();
-    $count_pt = 0;
-    $count_news = 0;
-    $count_pr = 0;
 
     /** @var \Drupal\node\Entity\Node $node */
     $current_node = $values->_entity;
@@ -89,53 +87,41 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
       return $build;
     }
 
-    $access_id = $current_node->get('field_workbench_access')->getString();
-    if (!empty($access_id)) {
-      // Count by field_workbench_access.
-      $nodes = $this->entityTypeManager
-        ->getStorage('node')
-        ->loadByProperties([
-          'field_workbench_access' => $access_id,
-          'status' => 1,
-        ]);
 
-      // Sum the node type.
-      $this->countNodes($nodes, $count_pt, $count_news, $count_pr);
+    /** @var \Drupal\views\Entity\View $view_pt */
+    $view_pt = $this->entityTypeManager->getStorage('view')->load('country_partner_content');
+    $view_pt = Views::executableFactory()->get($view_pt);
+    $view_pt->setDisplay('block_3');
+    $view_pt->setArguments([$current_node->id(), $current_node->id(), $current_node->id()]);
+    $view_pt->execute();
+    $count_pt = count($view_pt->result);
 
-      // Count by field_co_author.
-      $nodes = $this->entityTypeManager
-        ->getStorage('node')
-        ->loadByProperties([
-          'field_co_author' => $access_id,
-          'status' => 1,
-        ]);
-
-      // Sum the node type.
-      $this->countNodes($nodes, $count_pt, $count_news, $count_pr);
-
-      // Count by field_third_partner.
-      $nodes = $this->entityTypeManager
-        ->getStorage('node')
-        ->loadByProperties([
-          'field_third_partner' => $access_id,
-          'status' => 1,
-        ]);
-
-      // Sum the node type.
-      $this->countNodes($nodes, $count_pt, $count_news, $count_pr);
-    }
-
-    // Normalize the values.
     if ($count_pt == 0) {
       $count_pt = '-';
     }
 
-    if ($count_news == 0) {
-      $count_news = '-';
-    }
+    /** @var \Drupal\views\Entity\View $view_pr */
+    $view_pr = $this->entityTypeManager->getStorage('view')->load('country_partner_content');
+    $view_pr = Views::executableFactory()->get($view_pr);
+    $view_pr->setDisplay('block_5');
+    $view_pr->setArguments([$current_node->id(), $current_node->id()]);
+    $view_pr->execute();
+    $count_pr = count($view_pr->result);
 
     if ($count_pr == 0) {
       $count_pr = '-';
+    }
+
+    /** @var \Drupal\views\Entity\View $view_news */
+    $view_news = $this->entityTypeManager->getStorage('view')->load('country_partner_content');
+    $view_news = Views::executableFactory()->get($view_news);
+    $view_news->setDisplay('block_4');
+    $view_news->setArguments([$current_node->id(), $current_node->id()]);
+    $view_news->execute();
+    $count_news = count($view_news->result);
+
+    if ($count_news == 0) {
+      $count_news = '-';
     }
 
     // Set the new output with the data.
@@ -155,32 +141,6 @@ class NodeTypeFlagger extends FieldPluginBase implements ContainerFactoryPluginI
     ]);
 
     return $build;
-  }
-
-  /**
-   * Return an array with the output.
-   *
-   * @param array $nodes
-   *   The array of nodes.
-   * @param $count_pt
-   *   The counter.
-   * @param $count_news
-   *   The counter.
-   * @param $count_pr
-   *   The counter.
-   */
-  public function countNodes(array $nodes, &$count_pt, &$count_news, &$count_pr) {
-    foreach ($nodes as $node){
-      if($node->bundle() == 'practical_tool'){
-        $count_pt++;
-      }
-      if($node->bundle() == 'news'){
-        $count_news++;
-      }
-      if($node->bundle() == 'promotional_material'){
-        $count_pr++;
-      }
-    }
   }
 
   /**

@@ -186,17 +186,29 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
       '#attributes' => [
         'class' => ['ncc-dialog'],
       ],
+      'content' => [
+        '#theme' => 'ncc_element_modal',
+        '#elements' => [],
+        '#message' => new TranslatableMarkup('1 item removed to the Download centre'),
+        '#button' => $this->getDefaultButton(),
+        '#attached' => [
+          'library' => ['core/drupal.dialog.ajax'],
+        ],
+      ],
     ];
 
-    $build['content'] = [
-      '#theme' => 'ncc_element_modal',
-      '#title' => $node->getTitle(),
-      '#message' => new TranslatableMarkup('1 item removed to the Download centre'),
-      '#button' => $this->getDefaultButton(),
-      '#attached' => [
-        'library' => ['core/drupal.dialog.ajax'],
-      ]
-    ];
+    // Include the elements.
+    foreach ($ids as $id => $ids_node) {
+      // Generate the current node media build.
+      $media = $this->entityTypeManager->getStorage('media')->load($ids_node->get('field_image')->getString());
+      $media_build = $this->entityTypeManager->getViewBuilder('media')->view($media);
+
+      // Include the arrays.
+      $build['content']['#elements'][] = [
+        'title' => $ids_node->getTitle(),
+        'image' => $media_build,
+      ];
+    }
 
 
     $response = new AjaxResponse();
@@ -270,10 +282,10 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
    */
   public function getDefaultMessage() {
     return new TranslatableMarkup(
-      'To download complete Napo films or selected scenes to your PC go to the Napo website (' .
+      '<div class="download-centre-empty">To download complete Napo films or selected scenes to your PC go to the Napo website (' .
       '<a href="/">www.napofilm.com</a>) and go to the film or the scene you want to download. You can either click on the \'Download\' button '.
       '<span class="glyphicon napo-film-video-download-form-title inline-icon"></span>, or add your video to the download centre, by clicking on the \'Add to download centre\' button ' .
-      '<span class="glyphicon content-cart-add-to-cart-btn inline-icon content_cart_check_submit-processed" aria-hidden="true"></span>'
+      '<span class="glyphicon content-cart-add-to-cart-btn inline-icon content_cart_check_submit-processed" aria-hidden="true"></span></div>'
     );
   }
 
