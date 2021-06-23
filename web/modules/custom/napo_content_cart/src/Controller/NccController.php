@@ -270,10 +270,10 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
    */
   public function getDefaultMessage() {
     return new TranslatableMarkup(
-      'To download complete Napo films or selected scenes to your PC go to the Napo website (' .
+      '<div class="download-centre-empty">To download complete Napo films or selected scenes to your PC go to the Napo website (' .
       '<a href="/">www.napofilm.com</a>) and go to the film or the scene you want to download. You can either click on the \'Download\' button '.
       '<span class="glyphicon napo-film-video-download-form-title inline-icon"></span>, or add your video to the download centre, by clicking on the \'Add to download centre\' button ' .
-      '<span class="glyphicon content-cart-add-to-cart-btn inline-icon content_cart_check_submit-processed" aria-hidden="true"></span>'
+      '<span class="glyphicon content-cart-add-to-cart-btn inline-icon content_cart_check_submit-processed" aria-hidden="true"></span></div>div>'
     );
   }
 
