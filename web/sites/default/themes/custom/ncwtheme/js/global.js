@@ -74,6 +74,12 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.content').slideToggle();
   });
 
+  // Facet with view FOPS detail
+  $(".sidebar-first .view-fop-flags h3").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.fop-country-list').slideToggle();
+  });
+
   //View MSD glossary accordion #block-ncwtheme-content > div > div > div > div.view-content.row > div:nth-child(8)
   $(".view-view-glossary > div.view-content.row > h3:nth-child(7)").addClass('active');
   $(".view-view-glossary > div.view-content.row > div:nth-child(8)").css('display','block');
