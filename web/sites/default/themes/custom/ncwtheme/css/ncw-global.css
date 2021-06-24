@@ -2081,6 +2081,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   align-items: center;
   font-size: 1rem;
   background: transparent;
+  border-bottom: 0;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:before {
   content: "";

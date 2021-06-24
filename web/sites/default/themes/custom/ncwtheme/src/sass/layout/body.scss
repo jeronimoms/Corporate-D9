@@ -646,6 +646,7 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
               align-items: center;
               font-size: 1rem;
               background: transparent;
+              border-bottom: 0;
               &:before {
                 content: "";
                 display: inline-block;
