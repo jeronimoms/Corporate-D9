@@ -41,6 +41,10 @@
 .view-admin-events #view-field-adonis-table-column {
   min-width: 120px;
 }
+.view-admin-events #view-field-publications-exhibition-su-table-column a {
+  word-break: break-all;
+  min-width: 120px;
+}
 .view-admin-events .views-field-field-website-of-event a {
   word-break: break-all;
 }
