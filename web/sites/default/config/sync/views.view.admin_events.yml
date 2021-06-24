@@ -32,14 +32,18 @@ dependencies:
     - user.role.project_manager
     - user.role.review_manager
   module:
+    - csv_serialization
     - datetime
     - datetime_range
     - link
     - node
     - options
     - pagerer
+    - rest
+    - serialization
     - taxonomy
     - user
+    - views_data_export
 id: admin_events
 label: Events
 module: views
@@ -1578,7 +1582,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Published
+          label: 'Published Status'
           exclude: false
           alter:
             alter_text: false
@@ -1751,7 +1755,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Dropbutton
+          label: Action
           exclude: false
           alter:
             alter_text: false
@@ -1814,7 +1818,7 @@ display:
             field_comments_summary_after_eve: '0'
             field_key_performance: '0'
             field_adonis: '0'
-            uid: '0'
+            name: '0'
             status: '0'
           destination: true
           plugin_id: dropbutton
@@ -2446,7 +2450,7 @@ display:
             identifier: field_agency_role_value
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
@@ -3092,7 +3096,7 @@ display:
         options:
           grouping:
             -
-              field: field_date_1
+              field: nothing
               rendered: true
               rendered_strip: false
           row_class: ''
@@ -3391,7 +3395,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
+            max_length: 4
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -3417,7 +3421,7 @@ display:
           type: daterange_default
           settings:
             timezone_override: ''
-            format_type: eu_short_date
+            format_type: only_day
             separator: ' to'
           group_column: value
           group_columns: {  }
@@ -3436,7 +3440,72 @@ display:
           field: field_date
           relationship: none
           group_type: group
-          admin_label: 'Start date for grouping'
+          admin_label: 'year only'
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: '{{ field_date_1 }} - Events'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 4
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: true
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: daterange_default
+          settings:
+            timezone_override: ''
+            format_type: only_year
+            separator: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Date for grouping'
           label: ''
           exclude: true
           alter:
@@ -3477,24 +3546,8 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: daterange_default
-          settings:
-            timezone_override: ''
-            format_type: only_year
-            separator: '-'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
+          hide_alter_empty: false
+          plugin_id: custom
       filters:
         status:
           id: status
@@ -3597,6 +3650,64 @@ display:
         - 'config:field.storage.node.field_country_code'
         - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_organization'
+  data_export_1:
+    display_plugin: data_export
+    id: data_export_1
+    display_title: 'Data export'
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      path: admin/content/events-export
+      display_description: ''
+      rendering_language: '***LANGUAGE_language_interface***'
+      style:
+        type: data_export
+        options:
+          formats:
+            csv: csv
+          csv_settings:
+            delimiter: ','
+            enclosure: '"'
+            escape_char: \
+            strip_tags: true
+            trim: true
+            encoding: utf8
+            utf8_bom: '0'
+            use_serializer_encode_only: false
+      filename: events.csv
+      automatic_download: false
+      store_in_public_file_directory: null
+      redirect_to_display: none
+      custom_redirect_path: false
+      include_query_params: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_activity'
+        - 'config:field.storage.node.field_adonis'
+        - 'config:field.storage.node.field_agency_rep_confirmed'
+        - 'config:field.storage.node.field_agency_role'
+        - 'config:field.storage.node.field_agenda'
+        - 'config:field.storage.node.field_city'
+        - 'config:field.storage.node.field_color'
+        - 'config:field.storage.node.field_comments_summary_after_eve'
+        - 'config:field.storage.node.field_country_code'
+        - 'config:field.storage.node.field_date'
+        - 'config:field.storage.node.field_event_type'
+        - 'config:field.storage.node.field_for_the_web'
+        - 'config:field.storage.node.field_key_performance'
+        - 'config:field.storage.node.field_media_promotion'
+        - 'config:field.storage.node.field_organization'
+        - 'config:field.storage.node.field_publications_exhibition_su'
+        - 'config:field.storage.node.field_website_of_event'
   page_1:
     display_plugin: page
     id: page_1
