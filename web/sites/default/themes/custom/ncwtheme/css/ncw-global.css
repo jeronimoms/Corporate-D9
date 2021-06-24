@@ -4262,11 +4262,26 @@ body.node--type-publication {
   margin-right: 0;
 }
 .view-display-id-attachment_1 .views-summary {
-  display: inline-block;
-  margin-right: 1rem;
+  margin-right: 0;
 }
 .view-display-id-attachment_1 .views-summary a {
   font-weight: 600;
+  margin-right: 0.5rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.view-display-id-attachment_1 .views-summary a.is-active {
+  border-bottom: 2px solid #c72272;
+  padding-bottom: 3px;
+}
+.view-display-id-attachment_1 .views-summary:nth-child(1) {
+  order: 40;
+}
+.view-display-id-attachment_1 .views-summary:nth-child(2) {
+  order: 41;
+}
+.view-display-id-attachment_1 .views-summary:nth-child(3) {
+  order: 42;
 }
 
 .page-view-thesaurus-front-indexed .feed-icons {
