@@ -4202,6 +4202,27 @@ body.node--type-publication {
   font-weight: bold;
 }
 
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:after {
+  min-width: 205px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2) {
+  min-width: 215px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after {
+  min-width: 215px;
+  left: 205px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3) {
+  min-width: 200px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after {
+  left: 410px;
+  min-width: 185px;
+}
+html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .nav-item, html[lang=fr] #block-thesaurus ul .nav-item, html[lang=hr] #block-thesaurus ul .nav-item, html[lang=lv] #block-thesaurus ul .nav-item, html[lang=nl] #block-thesaurus ul .nav-item, html[lang=pt] #block-thesaurus ul .nav-item, html[lang=bg] #block-thesaurus ul .nav-item, html[lang=cs] #block-thesaurus ul .nav-item {
+  min-width: 200px;
+}
+
 .field--name-body .hierarchical-tree {
   list-style: none;
 }
