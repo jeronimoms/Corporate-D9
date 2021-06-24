@@ -57,6 +57,22 @@
 }
 
 /* View Events colours */
+.view-admin-events{
+  #view-title-table-column{
+    min-width: 250px;
+  }
+  #view-field-adonis-table-column{
+    min-width: 120px;
+  }
+  .views-field-field-website-of-event{
+    a{
+      word-break: break-all;
+    }
+  }
+  .views-field-field-adonis{
+    word-break: break-all;
+  }
+}
 tr.red{
   td{
     color: red;
