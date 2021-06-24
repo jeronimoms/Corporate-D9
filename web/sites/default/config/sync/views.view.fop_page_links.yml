@@ -57,7 +57,7 @@ display:
           items_per_page: 0
           offset: 0
       style:
-        type: default
+        type: html_list
         options:
           grouping:
             -
@@ -66,6 +66,9 @@ display:
               rendered_strip: false
           row_class: ''
           default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: fields
       fields:
@@ -235,7 +238,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: h2
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -249,8 +252,7 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings:
-            link_to_entity: false
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
