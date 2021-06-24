@@ -1,0 +1,249 @@
+# Migration file for creating "dangerous_substances" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_dangerous_substances                    # -----  CHANGE
+label: 'Node: dangerous_substances'                   # -----  CHANGE
+audit: true
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: ev_d7_node
+  node_type: dangerous_substances                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  vid: vid
+  type:
+    - plugin: default_value
+      default_value: dangerous_substances              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
+  field_advertising: field_advertising
+  field_available_in_languages: field_available_in_languages
+  field_biological_hazard:
+    - plugin: sub_process
+      source: field_biological_hazard
+      process:
+        target_id: tid
+
+  field_biological_hazard_other: field_biological_hazard_other
+  field_cas_number: field_cas_number
+  field_contact_address	:
+    - plugin: get
+      source: field_contact_address
+  'field_contact_address/0/format':
+    - plugin: default_value
+      default_value: full_html
+  field_body_original:
+    - plugin: get
+      source: field_body_original
+  'field_body_original/0/format':
+    - plugin: default_value
+      default_value: full_html
+
+  field_material_country:
+    - plugin: sub_process
+      source: field_material_country
+      process:
+        target_id: tid
+
+  field_country_other: field_country_other
+  field_disclaimer:
+    - plugin: get
+      source: field_disclaimer
+  'field_disclaimer/0/format':
+    - plugin: default_value
+      default_value: full_html
+
+  field_ec_number: field_ec_number
+  field_evaluation:
+    - plugin: sub_process
+      source: field_evaluation
+      process:
+        target_id: tid
+  field_evaluation_other: field_evaluation_other
+  field_exposure_route:
+    - plugin: sub_process
+      source: field_exposure_route
+      process:
+        target_id: tid
+  field_exposure_route_other: field_exposure_route_other
+  field_media_format: field_media_format
+  field_hazard_health_effects:
+    - plugin: sub_process
+      source: field_hazard_health_effects
+      process:
+        target_id: tid
+
+  field_hazard_health_effects_other : field_hazard_health_effects_other
+  field_hazard_physical_state:
+    - plugin: sub_process
+      source: field_hazard_physical_state
+      process:
+        target_id: tid
+  field_hazard_physical_state_other: field_hazard_physical_state_other
+  field_intellectual_property_righ: field_intellectual_property_righ
+  field_languages_other: field_languages_other
+  field_measurement_method: field_measurement_method
+  field_non_applicable_url: field_non_applicable_url
+  field_notes: field_notes
+  field_original_desc_language: field_original_desc_language
+  field_original_desc_lang_other: field_original_desc_lang_other
+  field_other_information: field_other_information
+  field_ownership_information: field_ownership_information
+  field_prevention_measure_type :
+    - plugin: sub_process
+      source: field_prevention_measure_type
+      process:
+        target_id: tid
+
+  field_prevention_measures_other: field_prevention_measures_other
+  field_priority_area:
+    - plugin: sub_process
+      source: field_priority_area
+      process:
+        target_id: tid
+  field_fc_provider: field_fc_provider
+  field_material_purpose_type:
+    - plugin: sub_process
+      source: field_material_purpose_type
+      process:
+        target_id: tid
+  field_material_purpose_other: field_material_purpose_other
+  field_rights_description: field_rights_description
+  field_section: field_section
+  field_sector_industry_covered:
+    - plugin: sub_process
+      source: field_sector_industry_covered
+      process:
+        target_id: tid
+
+  field_sector_industry_other: field_sector_industry_other
+  field_selected_for_analysis: field_selected_for_analysis
+  field_substance_description:
+    - plugin: get
+      source: field_summary
+  'field_substance_description/0/format':
+    - plugin: default_value
+      default_value: full_html
+
+  field_target_group:
+    - plugin: sub_process
+      source: field_target_group
+      process:
+        target_id: tid
+
+
+  field_target_group_other: field_target_group_other
+  field_tasks_covered :
+    - plugin: sub_process
+      source: field_tasks_covered
+      process:
+        target_id: tid
+
+  field_tasks_other: field_tasks_other
+  field_title_original: field_title_original
+  field_item_type: field_item_type
+  field_visualisation_material_typ:
+    - plugin: sub_process
+      source: field_visualisation_material_typ
+      process:
+        target_id: tid
+
+  field_visualisation_mat_other: field_visualisation_mat_other
+  field_external_url:
+    plugin: field_link
+    source: field_external_url
+  field_worker_groups_type:
+    - plugin: sub_process
+      source: field_worker_groups_type
+      process:
+        target_id: tid
+  field_worker_groups_other: field_worker_groups_other
+  field_publication_year :
+    -
+      plugin: sub_process
+      source: field_publication_year
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
