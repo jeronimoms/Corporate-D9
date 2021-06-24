@@ -1,0 +1,7 @@
+services:
+  oira_tool.twig_extensions:
+    class: Drupal\oira_tool\OtTwigExtension
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: twig.extension }
+
