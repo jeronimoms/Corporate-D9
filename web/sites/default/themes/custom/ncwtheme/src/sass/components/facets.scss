@@ -129,3 +129,54 @@
   font-weight: 600;
   padding-left: 10px;
 }
+
+/* FOP detail "Facets" */
+.sidebar-first{
+  .block-views-blockfop-flags-block-2{
+    .view-content.row{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .view-grouping {
+    width: 100%;
+    h3{
+      position: relative;
+      font-size: 0.9rem;
+      color: $text-color-blue;
+      font-weight: 600;
+      background: $bg-color-blue-accordion;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      padding-left: 0.5rem;
+      cursor: pointer;
+      line-height: 30px;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 17px;
+        background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+        top: 30%;
+        right: 20px;
+      }
+    }
+    h3.active{
+      &::after{
+        width: 17px;
+        background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+        right: 17px;
+      }
+    }
+    .fop-country-list{
+      display: none;
+      padding: 0 0 0.5rem 0;
+      a {
+        display: block;
+        color: $text-color-facets;
+        font-size: 0.9rem;
+        padding: 5px 0 5px 0.5rem;
+      }
+    }
+  }
+}
