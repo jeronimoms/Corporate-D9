@@ -55,3 +55,42 @@
     width: 400px !important;
   }
 }
+
+/* View Events colours */
+tr.red{
+  td{
+    color: red;
+  }
+}
+tr.black{
+  td{
+    color: black;
+  }
+}
+tr.grey{
+  td{
+    color: grey;
+  }
+}
+th.views-field-field-color, td.views-field-field-color{
+  display: none;
+}
+
+.colours{
+  div{
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 10px;
+  }
+  .red{
+    background: red;
+  }
+  .black{
+    background: black;
+  }
+  .grey{
+    background: grey;
+  }
+}
+
