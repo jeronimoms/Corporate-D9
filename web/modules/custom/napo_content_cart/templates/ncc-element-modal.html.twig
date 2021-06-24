@@ -3,7 +3,6 @@
     <div class="ncc-message">{{ message }}</div>
   {% endif %}
   {% for element in elements %}
-    {{ dpm(element) }}
     <div class="row">
       {% if element.image is not empty %}
         <div class="col-sm-12 col-md-6 ncc-image">{{ element.image }}</div>

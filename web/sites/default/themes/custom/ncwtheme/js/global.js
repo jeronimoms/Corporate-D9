@@ -241,6 +241,10 @@ jQuery(document).ready(function($) {
     });
   }
 
+  // Add class active in menu Glossary when filtered by letter
+  if (window.location.href.indexOf("alphabetical") > -1) {
+    $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
+  }
 });
 
 //Move Language Selector to the menu responsive
