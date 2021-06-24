@@ -1,12 +1,14 @@
-uuid: 1df128c6-8965-4c0a-92e4-4f7f0ea3c217
+uuid: 6dce4e39-643f-4b53-bafa-36c844259ac8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_summary
+    - field.storage.node.field_substance_description
     - node.type.dangerous_substances
-id: node.dangerous_substances.field_summary
-field_name: field_summary
+  module:
+    - text
+id: node.dangerous_substances.field_substance_description
+field_name: field_substance_description
 entity_type: node
 bundle: dangerous_substances
 label: 'Substance Description'
@@ -16,4 +18,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long
