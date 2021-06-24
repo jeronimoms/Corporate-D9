@@ -38,6 +38,7 @@
   display: flex;
   position: relative;
   color: $text-color-blue;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 .download-content-theasaurus label {
@@ -136,6 +137,35 @@
         &:hover{
           font-weight: bold;
         }
+      }
+    }
+  }
+}
+
+html[lang=de], html[lang=el], html[lang=fr], html[lang=hr], html[lang=lv], html[lang=nl], html[lang=pt], html[lang=bg], html[lang=cs]{
+  #block-thesaurus{
+    ul{
+      .nav-item.menu-item--active-trail{
+        &:after{
+          min-width: 205px;
+        }
+      }
+      .nav-item.menu-item--active-trail:nth-child(2) {
+        min-width: 215px;
+        &:after {
+          min-width: 215px;
+          left: 205px;
+        }
+      }
+      .nav-item.menu-item--active-trail:nth-child(3) {
+        min-width: 200px;
+        &:after {
+          left: 410px;
+          min-width: 185px;
+        }
+      }
+      .nav-item {
+        min-width: 200px;
       }
     }
   }

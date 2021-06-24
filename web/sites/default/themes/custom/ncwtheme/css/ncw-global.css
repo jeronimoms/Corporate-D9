@@ -1362,6 +1362,44 @@ h3.home a:hover {
   font-weight: 700;
 }
 
+/* FOPs detail */
+.node--type-fop-page .sidebar-second h3 a {
+  width: 100%;
+  display: block;
+  clear: both;
+  color: #003399;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-bottom: 0;
+  margin-top: 0;
+  pointer-events: none;
+  background: transparent;
+  padding-left: 0;
+  padding-bottom: 3px;
+  padding-top: 0;
+}
+.node--type-fop-page .sidebar-second .item-list {
+  float: left;
+  width: 100%;
+  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.3rem;
+  padding-bottom: 10px;
+}
+.node--type-fop-page .sidebar-second .views-field-nothing {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.node--type-fop-page .sidebar-second a {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 17px;
+  padding-bottom: 10px;
+  background: url(../images/li_arrow.png) no-repeat 1px 2px;
+  padding-left: 15px;
+}
+
 nav.pager {
   display: flex;
   justify-content: center;
@@ -2043,6 +2081,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   align-items: center;
   font-size: 1rem;
   background: transparent;
+  border-bottom: 0;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:before {
   content: "";
@@ -4105,6 +4144,7 @@ body.node--type-publication {
   display: flex;
   position: relative;
   color: #003399;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
@@ -4200,6 +4240,27 @@ body.node--type-publication {
 }
 #block-thesaurus ul .nav-item a:hover {
   font-weight: bold;
+}
+
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:after {
+  min-width: 205px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2) {
+  min-width: 215px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after {
+  min-width: 215px;
+  left: 205px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3) {
+  min-width: 200px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after {
+  left: 410px;
+  min-width: 185px;
+}
+html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .nav-item, html[lang=fr] #block-thesaurus ul .nav-item, html[lang=hr] #block-thesaurus ul .nav-item, html[lang=lv] #block-thesaurus ul .nav-item, html[lang=nl] #block-thesaurus ul .nav-item, html[lang=pt] #block-thesaurus ul .nav-item, html[lang=bg] #block-thesaurus ul .nav-item, html[lang=cs] #block-thesaurus ul .nav-item {
+  min-width: 200px;
 }
 
 .field--name-body .hierarchical-tree {
