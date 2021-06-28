@@ -211,6 +211,34 @@
                 }
             }
         },
+
+        {
+            "type": "package",
+            "package": {
+                "name": "recurser/jquery-simple-color",
+                "version": "master",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/recurser/jquery-simple-color.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "bgrins/spectrum",
+                "version": "1.8.0",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/bgrins/spectrum.git",
+                    "type": "git",
+                    "reference": "1.8.0"
+                }
+            }
+        },
+
         {
             "type": "package",
             "package": {
@@ -229,6 +257,7 @@
         }
     ],
     "require": {
+        "bgrins/spectrum": "^1.8",
         "blazy/library": "^1.8",
         "chosen/library": "^1.8",
         "colorbox/library": "^1.8",
@@ -422,6 +451,7 @@
         "jquery_touch_punch/library": "^0.2.3",
         "json2/library": "^0.1.0",
         "link/library": "^1.8",
+        "recurser/jquery-simple-color": "master",
         "resize/library": "^1.17",
         "slick/library": "^1.8",
         "w8tcha/ckeditor-wordcount-plugin": "^1.17"
