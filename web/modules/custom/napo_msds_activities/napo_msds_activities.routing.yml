@@ -1,0 +1,32 @@
+napo_msds_activities.delete:
+  path: '/nma/{file}/download'
+  defaults:
+    _controller: '\Drupal\napo_msds_activities\Controller\NmaDownloadController::downloadFile'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      file:
+        type: entity:file
+
+napo_msds_activities.guidance:
+  path: '/node/{node}/guidance'
+  defaults:
+    _controller: '\Drupal\napo_msds_activities\Controller\NmaDownloadController::downloadGuidance'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+napo_msds_activities.all:
+  path: '/node/{node}/download-all'
+  defaults:
+    _controller: '\Drupal\napo_msds_activities\Controller\NmaDownloadController::downloadAll'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
