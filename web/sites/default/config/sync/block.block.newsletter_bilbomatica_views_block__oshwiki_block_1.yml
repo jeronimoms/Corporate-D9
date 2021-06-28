@@ -1,0 +1,38 @@
+uuid: e67e53c0-4380-49cf-aafc-c8834acfd83a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.oshwiki
+  module:
+    - ctools
+    - system
+    - views
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_views_block__oshwiki_block_1
+theme: newsletter_bilbomatica
+region: sidebar_second
+weight: -26
+provider: null
+plugin: 'views_block:oshwiki-block_1'
+settings:
+  id: 'views_block:oshwiki-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /safety-and-health-legislation
+    negate: true

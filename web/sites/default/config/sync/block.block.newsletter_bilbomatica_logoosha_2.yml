@@ -1,0 +1,25 @@
+uuid: 888b49cd-cd54-4d6e-ba46-0db0eaaa901b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_image:9e7c79b2-76b7-4af6-9910-9c25239698ae'
+  module:
+    - block_content
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_logoosha_2
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:9e7c79b2-76b7-4af6-9910-9c25239698ae'
+settings:
+  id: 'block_content:9e7c79b2-76b7-4af6-9910-9c25239698ae'
+  label: 'Logo OSHA'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: 5db85555-ed3b-4614-ac7e-e13095e73669
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - newsletter_bilbomatica
+_core:
+  default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
+id: newsletter_bilbomatica_main_menu
+theme: newsletter_bilbomatica
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 3
+  expand_all_items: true
+visibility: {  }

@@ -1,0 +1,30 @@
+uuid: 5191f54b-e09a-461a-bdb1-be6c7a51f625
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8bb0c768-5104-4e57-b911-3c4ba035d29f'
+  module:
+    - block_content
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_rssfeedprocurement
+theme: newsletter_bilbomatica
+region: sidebar_second
+weight: -32
+provider: null
+plugin: 'block_content:8bb0c768-5104-4e57-b911-3c4ba035d29f'
+settings:
+  id: 'block_content:8bb0c768-5104-4e57-b911-3c4ba035d29f'
+  label: 'RSS Feed (Procurement)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/procurement
+    negate: false

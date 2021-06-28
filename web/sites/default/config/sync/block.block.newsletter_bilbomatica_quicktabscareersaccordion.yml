@@ -1,0 +1,25 @@
+uuid: ad71170a-d88f-4d27-ac69-719aa66f49ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - quicktabs
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_quicktabscareersaccordion
+theme: newsletter_bilbomatica
+region: content
+weight: -20
+provider: null
+plugin: 'quicktabs_block:careers_accordion'
+settings:
+  id: 'quicktabs_block:careers_accordion'
+  label: 'QuickTabs - Careers accordion'
+  provider: quicktabs
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/21
+    negate: false

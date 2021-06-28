@@ -1,0 +1,30 @@
+uuid: b713a077-b1aa-49bd-8918-6b48c45bf1e0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ae84d473-a57f-4238-905d-5c675e4a73eb'
+  module:
+    - block_content
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_rssfeednews
+theme: newsletter_bilbomatica
+region: sidebar_second
+weight: -29
+provider: null
+plugin: 'block_content:ae84d473-a57f-4238-905d-5c675e4a73eb'
+settings:
+  id: 'block_content:ae84d473-a57f-4238-905d-5c675e4a73eb'
+  label: 'RSS Feed (News)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /oshnews
+    negate: false

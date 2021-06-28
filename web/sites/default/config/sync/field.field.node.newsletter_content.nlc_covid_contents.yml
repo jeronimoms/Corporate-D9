@@ -1,0 +1,31 @@
+uuid: 224f3ad3-f2f7-4eb5-b80a-fea9306bef22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_covid_contents
+    - node.type.article
+    - node.type.newsletter_content
+_core:
+  default_config_hash: t9RPNC_MPnf9hpoJUfjTcw2BIbJWaRnLE5hn4YYIEG4
+id: node.newsletter_content.nlc_covid_contents
+field_name: nlc_covid_contents
+entity_type: node
+bundle: newsletter_content
+label: Contents
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

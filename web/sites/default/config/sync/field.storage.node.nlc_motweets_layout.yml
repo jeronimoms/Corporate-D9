@@ -1,0 +1,29 @@
+uuid: adb2deb2-d998-459e-9e45-f9f8700978c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: _8lHhf1uyLLqqwkVyEtlJ2zqfWw8yx7-sT26XmahzEw
+id: node.nlc_motweets_layout
+field_name: nlc_motweets_layout
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: '1 Column'
+    -
+      value: '2'
+      label: '2 Columns'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

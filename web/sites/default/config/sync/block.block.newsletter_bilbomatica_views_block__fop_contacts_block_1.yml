@@ -1,0 +1,33 @@
+uuid: c14a6c3e-42d0-4bea-8a2d-c65fccba13e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.fop_contacts
+  module:
+    - ctools
+    - views
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_views_block__fop_contacts_block_1
+theme: newsletter_bilbomatica
+region: content
+weight: -23
+provider: null
+plugin: 'views_block:fop_contacts-block_1'
+settings:
+  id: 'views_block:fop_contacts-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      fop_page: fop_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

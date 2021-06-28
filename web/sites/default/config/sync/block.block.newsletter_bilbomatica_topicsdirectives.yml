@@ -1,0 +1,28 @@
+uuid: a7ab8d18-75fa-49cd-8c00-bdba207da224
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.directive_topics
+  module:
+    - facets
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_topicsdirectives
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -24
+provider: null
+plugin: 'facet_block:directive_topics'
+settings:
+  id: 'facet_block:directive_topics'
+  label: Topics
+  provider: facets
+  label_display: visible
+  block_id: topicsdirectives
+visibility:
+  request_path:
+    id: request_path
+    pages: /search/directives
+    negate: false

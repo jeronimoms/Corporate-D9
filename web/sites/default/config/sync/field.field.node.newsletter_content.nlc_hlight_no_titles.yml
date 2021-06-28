@@ -1,0 +1,25 @@
+uuid: 806ff7de-5a26-4661-99b7-c7da080d369b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_hlight_no_titles
+    - node.type.newsletter_content
+_core:
+  default_config_hash: PqCBKFj3GzbQfK2BEmu884E-yrCAfjgeE1ripbip1Vo
+id: node.newsletter_content.nlc_hlight_no_titles
+field_name: nlc_hlight_no_titles
+entity_type: node
+bundle: newsletter_content
+label: 'No titles'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
