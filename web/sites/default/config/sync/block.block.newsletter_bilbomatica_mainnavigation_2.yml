@@ -1,0 +1,36 @@
+uuid: 22552906-f53e-46d5-9741-73b08bfad687
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_mainnavigation_2
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -33
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation level 2'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: active
+  level: 2
+  depth: 6
+  expand_all_items: false
+  parent: 'main:'
+  suggestion: main
+  label_type: block
+  label_link: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/5445\r\n/themes/dangerous-substances/practical-tools-dangerous-substances\r\n/photo-gallery\r\n/photo-gallery/*\r\n/tools-and-publications\r\n/themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders\r\n/tools-and-resources\r\n/tools-and-resources/blog\r\n/tools-and-resources/blog/*\r\n/blog/*\r\n/news-events\r\n/oshevents\r\n/highlights\r\n/highlights/*"
+    negate: true

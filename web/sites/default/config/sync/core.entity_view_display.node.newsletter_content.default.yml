@@ -1,0 +1,510 @@
+uuid: bfc77141-a691-4360-8719-13e2f1a6cbd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.newsletter_content.nlc_covid_bg
+    - field.field.node.newsletter_content.nlc_covid_contents
+    - field.field.node.newsletter_content.nlc_covid_img
+    - field.field.node.newsletter_content.nlc_covid_layout
+    - field.field.node.newsletter_content.nlc_covid_title
+    - field.field.node.newsletter_content.nlc_eunews_bgcolor
+    - field.field.node.newsletter_content.nlc_eunews_contents
+    - field.field.node.newsletter_content.nlc_eunews_img
+    - field.field.node.newsletter_content.nlc_eunews_layout
+    - field.field.node.newsletter_content.nlc_eunews_title
+    - field.field.node.newsletter_content.nlc_healt_layout
+    - field.field.node.newsletter_content.nlc_healthy_bg
+    - field.field.node.newsletter_content.nlc_healthy_contents
+    - field.field.node.newsletter_content.nlc_healthy_img
+    - field.field.node.newsletter_content.nlc_healthy_title
+    - field.field.node.newsletter_content.nlc_hlight_bg
+    - field.field.node.newsletter_content.nlc_hlight_content
+    - field.field.node.newsletter_content.nlc_hlight_layout
+    - field.field.node.newsletter_content.nlc_hlight_no_titles
+    - field.field.node.newsletter_content.nlc_hlight_title
+    - field.field.node.newsletter_content.nlc_hlight_view_all
+    - field.field.node.newsletter_content.nlc_id_in_piwik
+    - field.field.node.newsletter_content.nlc_monews_contents
+    - field.field.node.newsletter_content.nlc_monews_title
+    - field.field.node.newsletter_content.nlc_motweets_bgcolor
+    - field.field.node.newsletter_content.nlc_motweets_layout
+    - field.field.node.newsletter_content.nlc_nat_layout
+    - field.field.node.newsletter_content.nlc_national_bg_color
+    - field.field.node.newsletter_content.nlc_national_contents
+    - field.field.node.newsletter_content.nlc_national_img
+    - field.field.node.newsletter_content.nlc_national_title
+    - field.field.node.newsletter_content.nlc_oira_bg_color
+    - field.field.node.newsletter_content.nlc_oira_contents
+    - field.field.node.newsletter_content.nlc_oira_img
+    - field.field.node.newsletter_content.nlc_oira_layout
+    - field.field.node.newsletter_content.nlc_oira_title
+    - field.field.node.newsletter_content.nlc_publication_date
+    - field.field.node.newsletter_content.nlc_tweets_title
+    - field.field.node.newsletter_content.nlc_videos_bg
+    - field.field.node.newsletter_content.nlc_videos_content
+    - field.field.node.newsletter_content.nlc_videos_title
+    - field.field.node.newsletter_content.nlc_wiki_bgcolor
+    - field.field.node.newsletter_content.nlc_wiki_contents
+    - field.field.node.newsletter_content.nlc_wiki_img
+    - field.field.node.newsletter_content.nlc_wiki_layout
+    - field.field.node.newsletter_content.nlc_wiki_title
+    - field.field.node.newsletter_content.simplenews_issue
+    - node.type.newsletter_content
+  module:
+    - color_field
+    - datetime
+    - ds
+    - link
+    - options
+    - user
+_core:
+  default_config_hash: 77nMZ_NPalFSzrlpxO8kSVpmteeVsJtbDFeJDpAO228
+id: node.newsletter_content.default
+targetEntityType: node
+bundle: newsletter_content
+mode: default
+content:
+  nlc_covid_bg:
+    weight: 24
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  nlc_covid_contents:
+    weight: 22
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  nlc_covid_img:
+    type: entity_reference_entity_view
+    weight: 23
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  nlc_covid_layout:
+    weight: 33
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  nlc_covid_title:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_eunews_bgcolor:
+    weight: 28
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  nlc_eunews_contents:
+    weight: 29
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  nlc_eunews_img:
+    type: entity_reference_entity_view
+    weight: 36
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  nlc_eunews_layout:
+    weight: 34
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  nlc_eunews_title:
+    weight: 27
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_healt_layout:
+    weight: 30
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  nlc_healthy_bg:
+    weight: 12
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: color_field_formatter_text
+    region: content
+  nlc_healthy_contents:
+    weight: 10
+    label: hidden
+    settings:
+      link: true
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: content
+  nlc_healthy_img:
+    type: entity_reference_entity_view
+    weight: 11
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  nlc_healthy_title:
+    weight: 9
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_hlight_bg:
+    weight: 4
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  nlc_hlight_content:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+  nlc_hlight_layout:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  nlc_hlight_no_titles:
+    weight: 3
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  nlc_hlight_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_hlight_view_all:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  nlc_id_in_piwik:
+    weight: 25
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_monews_contents:
+    weight: 44
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  nlc_monews_title:
+    weight: 42
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_motweets_bgcolor:
+    weight: 45
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  nlc_motweets_layout:
+    weight: 43
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  nlc_nat_layout:
+    weight: 31
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  nlc_national_bg_color:
+    weight: 16
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: color_field_formatter_text
+    region: content
+  nlc_national_contents:
+    weight: 14
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  nlc_national_img:
+    type: entity_reference_entity_view
+    weight: 15
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  nlc_national_title:
+    weight: 13
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_oira_bg_color:
+    weight: 20
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  nlc_oira_contents:
+    weight: 18
+    label: hidden
+    settings:
+      link: true
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: content
+  nlc_oira_img:
+    type: entity_reference_entity_view
+    weight: 19
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  nlc_oira_layout:
+    weight: 32
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  nlc_oira_title:
+    weight: 17
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_publication_date:
+    weight: 26
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F Y'
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: datetime_custom
+    region: content
+  nlc_tweets_title:
+    weight: 41
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_videos_bg:
+    weight: 8
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  nlc_videos_content:
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+  nlc_videos_title:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  nlc_wiki_bgcolor:
+    weight: 39
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  nlc_wiki_contents:
+    weight: 38
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  nlc_wiki_img:
+    type: entity_reference_entity_view
+    weight: 37
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  nlc_wiki_layout:
+    weight: 40
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  nlc_wiki_title:
+    weight: 35
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  simplenews_issue: true

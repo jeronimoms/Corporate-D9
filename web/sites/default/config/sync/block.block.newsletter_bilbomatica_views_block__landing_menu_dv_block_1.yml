@@ -1,0 +1,37 @@
+uuid: 9e520eac-dbad-404e-ae83-649298a943b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.landing_menu_dv
+  module:
+    - ctools
+    - system
+    - views
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_views_block__landing_menu_dv_block_1
+theme: newsletter_bilbomatica
+region: content
+weight: -21
+provider: null
+plugin: 'views_block:landing_menu_dv-block_1'
+settings:
+  id: 'views_block:landing_menu_dv-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /facts-and-figures/data-visualisation
+    negate: false

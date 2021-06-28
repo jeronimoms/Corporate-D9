@@ -1,0 +1,30 @@
+uuid: 5dc8638d-f88d-4361-8b21-91d5eff320b7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:db2c3fec-8615-4ac6-91b8-be4904dcfebd'
+  module:
+    - block_content
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_headerthesaurus_2
+theme: newsletter_bilbomatica
+region: content
+weight: -31
+provider: null
+plugin: 'block_content:db2c3fec-8615-4ac6-91b8-be4904dcfebd'
+settings:
+  id: 'block_content:db2c3fec-8615-4ac6-91b8-be4904dcfebd'
+  label: 'Header Thesaurus'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/tools-and-resources/eu-osha-thesaurus\r\n/tools-and-resources/eu-osha-thesaurus/hierarchical\r\n/tools-and-resources/eu-osha-thesaurus/alphabetical\r\n/tools-and-resources/eu-osha-thesaurus/term/*"
+    negate: false

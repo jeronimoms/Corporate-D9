@@ -1,0 +1,22 @@
+uuid: 4361a698-9b46-4dc6-a780-f3b3b61d183b
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+_core:
+  default_config_hash: GUbohXvrAzBBZOxhrQVdq_BFj54BYvgBF0el2W9JnXs
+id: node.nlc_wiki_bgcolor
+field_name: nlc_wiki_bgcolor
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,28 @@
+uuid: aa57561f-dcc2-41c5-a010-187d69e8efbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.thesaurus_front_indexed
+  module:
+    - system
+    - views
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_exposedformthesaurus_front_indexedthesaurus_search
+theme: newsletter_bilbomatica
+region: content
+weight: -28
+provider: null
+plugin: 'views_exposed_filter_block:thesaurus_front_indexed-thesaurus_search'
+settings:
+  id: 'views_exposed_filter_block:thesaurus_front_indexed-thesaurus_search'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: "/tools-and-resources/eu-osha-thesaurus\r\n/tools-and-resources/eu-osha-thesaurus/hierarchical\r\n/tools-and-resources/eu-osha-thesaurus/alphabetical\r\n/tools-and-resources/eu-osha-thesaurus/alphabetical/*"
+    negate: false

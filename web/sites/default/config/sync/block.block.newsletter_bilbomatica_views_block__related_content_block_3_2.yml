@@ -1,0 +1,34 @@
+uuid: 86d392cf-4cc3-4c32-9af9-81c1761b86ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.related_content
+  module:
+    - ctools
+    - views
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_views_block__related_content_block_3_2
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -33
+provider: null
+plugin: 'views_block:related_content-block_3'
+settings:
+  id: 'views_block:related_content-block_3'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      25th_anniversary: 25th_anniversary
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

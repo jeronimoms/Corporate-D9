@@ -1,0 +1,30 @@
+uuid: 0c0ebb7d-f8c2-427b-9810-5cd4a9ac7622
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ab584f62-8ac6-4328-90ab-1c5813b2d442'
+  module:
+    - block_content
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_rssfeedpressreleases_2
+theme: newsletter_bilbomatica
+region: sidebar_second
+weight: -34
+provider: null
+plugin: 'block_content:ab584f62-8ac6-4328-90ab-1c5813b2d442'
+settings:
+  id: 'block_content:ab584f62-8ac6-4328-90ab-1c5813b2d442'
+  label: 'RSS Feed (Press releases)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/press-room
+    negate: false

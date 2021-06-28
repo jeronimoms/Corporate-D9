@@ -1,0 +1,24 @@
+uuid: d6919c3c-83b9-4573-a0a5-611a0e02632a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_hlight_bg
+    - node.type.newsletter_content
+  module:
+    - color_field
+_core:
+  default_config_hash: warT1epv2etbZznJxaeb8wNd9a0AAqLds2fOjcnAWk0
+id: node.newsletter_content.nlc_hlight_bg
+field_name: nlc_hlight_bg
+entity_type: node
+bundle: newsletter_content
+label: 'BG Color Hlight'
+description: 'Allows you to add / edit a background color for the section'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

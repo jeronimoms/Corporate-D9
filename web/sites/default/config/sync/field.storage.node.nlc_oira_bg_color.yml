@@ -1,0 +1,22 @@
+uuid: 0234739a-3bec-4d3a-9800-d16cabc8ff7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+_core:
+  default_config_hash: WCD7BOA5SnYWLrcw2q_mrhObE7I6loRPVQmqbmoCfGw
+id: node.nlc_oira_bg_color
+field_name: nlc_oira_bg_color
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
