@@ -1,0 +1,30 @@
+uuid: e5976f29-0eb1-4257-9036-3572ff1e44f5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:cbdfa9b1-c35a-4f18-a981-7fd071ba4521'
+  module:
+    - block_content
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_joinournewsdistributionlist
+theme: newsletter_bilbomatica
+region: sidebar_second
+weight: -24
+provider: null
+plugin: 'block_content:cbdfa9b1-c35a-4f18-a981-7fd071ba4521'
+settings:
+  id: 'block_content:cbdfa9b1-c35a-4f18-a981-7fd071ba4521'
+  label: 'Join our news distribution list'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/press-room
+    negate: false

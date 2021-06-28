@@ -1,0 +1,17 @@
+name: Newsletter Content
+description: 'Create Newsletter Content Type'
+package: Bilbomatica
+
+type: module
+core_version_requirement: ^8.8.0 || ^9.0
+
+dependencies:
+  - simplenews
+  - color_field
+  - datetime
+  - field_group
+  - link
+  - media_library
+  - path
+
+

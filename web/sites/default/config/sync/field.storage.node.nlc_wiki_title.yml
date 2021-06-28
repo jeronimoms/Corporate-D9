@@ -1,0 +1,23 @@
+uuid: 33c9c21a-11e4-4d68-9abe-999e88413103
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: q08kR0blPAuvT-3eXRS3S56PYxESkEKs0y6h8-U9zuI
+id: node.nlc_wiki_title
+field_name: nlc_wiki_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

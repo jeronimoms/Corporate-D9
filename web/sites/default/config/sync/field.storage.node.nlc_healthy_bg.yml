@@ -1,0 +1,22 @@
+uuid: 3227a761-854c-4a44-9c05-70a885dc8136
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+_core:
+  default_config_hash: qv5E_4ahMreirJPvLMR0tzp4W7TQq_8_gbHpvJrE3sQ
+id: node.nlc_healthy_bg
+field_name: nlc_healthy_bg
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

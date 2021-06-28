@@ -1,0 +1,31 @@
+uuid: e2a8092d-7d99-4727-a3da-7a34c9e825aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-menu
+  module:
+    - menu_block
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_headermenu
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'menu_block:header-menu'
+settings:
+  id: 'menu_block:header-menu'
+  label: 'Header menu'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'header-menu:'
+  suggestion: header_menu
+  label_type: block
+  label_link: false
+visibility: {  }

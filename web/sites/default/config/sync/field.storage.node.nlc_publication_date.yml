@@ -1,0 +1,22 @@
+uuid: 6a090b87-e981-45a1-83fe-23744d5a7b1c
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+_core:
+  default_config_hash: by93x30ad-PcSoAcR6YOLOHujuGr26Q788dUI_whTL8
+id: node.nlc_publication_date
+field_name: nlc_publication_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

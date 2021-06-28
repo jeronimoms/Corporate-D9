@@ -1,0 +1,21 @@
+uuid: 56b4eaa3-1ac2-4427-bac4-8be5c582fd80
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Vm0LK4ona_xiqWEe1W6Jq1hQNejNqrpe9FSU0x0SPCI
+id: node.nlc_monews_contents
+field_name: nlc_monews_contents
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

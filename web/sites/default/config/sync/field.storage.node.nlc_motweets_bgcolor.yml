@@ -1,0 +1,22 @@
+uuid: d20f963d-4f8c-41d3-adf2-abe4ff9b57d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+_core:
+  default_config_hash: 3ukAH0RdBoyuYu3dIE-bwu0kxDdpAbNOWUPj2dC0Fe8
+id: node.nlc_motweets_bgcolor
+field_name: nlc_motweets_bgcolor
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

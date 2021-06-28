@@ -1,0 +1,24 @@
+uuid: 38a32989-ee92-4a90-be54-f227f8a5efc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_motweets_bgcolor
+    - node.type.newsletter_content
+  module:
+    - color_field
+_core:
+  default_config_hash: miRzyYOIAhOvXL972Lk93QxEM1n4mCsvdH_I3BRWrYw
+id: node.newsletter_content.nlc_motweets_bgcolor
+field_name: nlc_motweets_bgcolor
+entity_type: node
+bundle: newsletter_content
+label: 'BG Color MoTweets'
+description: 'Allows you to add / edit the background color of the block'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

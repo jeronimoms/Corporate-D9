@@ -1,0 +1,30 @@
+uuid: e23d56b1-2f0a-4a8d-af62-955a0532a663
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_node_views:1b2e1dfa-2a67-4f38-8879-3d123e28e08e'
+  module:
+    - block_content
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_nodeviewevents_2
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:1b2e1dfa-2a67-4f38-8879-3d123e28e08e'
+settings:
+  id: 'block_content:1b2e1dfa-2a67-4f38-8879-3d123e28e08e'
+  label: 'Node view events'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /oshevents
+    negate: false

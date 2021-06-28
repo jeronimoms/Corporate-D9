@@ -1,0 +1,25 @@
+uuid: 44fcb4c8-a294-4522-902d-adf78490b0b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_nat_layout
+    - node.type.newsletter_content
+  module:
+    - options
+_core:
+  default_config_hash: QvOW_FIODmdGOyKDCJYAxUyGmlyHFgRKIMkiLancC-8
+id: node.newsletter_content.nlc_nat_layout
+field_name: nlc_nat_layout
+entity_type: node
+bundle: newsletter_content
+label: 'Layout Nat'
+description: 'Allows you to choose between one or two columns for the presentation of the contents of the block'
+required: false
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

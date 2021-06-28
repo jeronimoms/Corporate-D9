@@ -1,0 +1,25 @@
+uuid: 2f6b1a34-ef67-46d7-820d-eadd9487adcd
+langcode: en
+status: true
+dependencies:
+  module:
+    - quicktabs
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_quicktabscallsquicktab
+theme: newsletter_bilbomatica
+region: content
+weight: -19
+provider: null
+plugin: 'quicktabs_block:calls_quicktab'
+settings:
+  id: 'quicktabs_block:calls_quicktab'
+  label: 'QuickTabs - Calls quicktab'
+  provider: quicktabs
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/1472
+    negate: false

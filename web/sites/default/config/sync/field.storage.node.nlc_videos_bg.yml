@@ -1,0 +1,22 @@
+uuid: 70dd1d9f-8191-4694-80fb-69cb238c2dc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+_core:
+  default_config_hash: y-SM0zRBf4zbm7HLbUMCnbhoFQMVb77F6hL2iARYPB0
+id: node.nlc_videos_bg
+field_name: nlc_videos_bg
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,33 @@
+uuid: 2dc93ae0-bf91-490c-8733-13cd46386729
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.fop_page_links
+  module:
+    - ctools
+    - views
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_views_block__fop_page_links_block_2
+theme: newsletter_bilbomatica
+region: sidebar_second
+weight: -22
+provider: null
+plugin: 'views_block:fop_page_links-block_2'
+settings:
+  id: 'views_block:fop_page_links-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      fop_page: fop_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

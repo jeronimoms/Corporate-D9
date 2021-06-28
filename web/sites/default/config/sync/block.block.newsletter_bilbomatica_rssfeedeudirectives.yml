@@ -1,0 +1,30 @@
+uuid: 497ef938-a1e4-42ca-ae79-ad9675c78317
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d0c9edf0-c47e-4e79-b482-0d53a055cbba'
+  module:
+    - block_content
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_rssfeedeudirectives
+theme: newsletter_bilbomatica
+region: sidebar_second
+weight: -31
+provider: null
+plugin: 'block_content:d0c9edf0-c47e-4e79-b482-0d53a055cbba'
+settings:
+  id: 'block_content:d0c9edf0-c47e-4e79-b482-0d53a055cbba'
+  label: 'RSS Feed (EU Directives)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /safety-and-health-legislation/european-directives
+    negate: false

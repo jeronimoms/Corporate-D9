@@ -1,0 +1,23 @@
+uuid: c29f707f-2a32-4685-9198-1ee2215b569c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: BpHKTp6FOh_gWpgxw0gVFq04o60w49SLwNtnCKD33Es
+id: node.nlc_healthy_title
+field_name: nlc_healthy_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

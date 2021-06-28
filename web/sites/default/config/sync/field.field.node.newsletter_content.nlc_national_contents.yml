@@ -1,0 +1,31 @@
+uuid: 753293cd-cc9d-4454-bd95-745adeef7770
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_national_contents
+    - node.type.highlight
+    - node.type.newsletter_content
+_core:
+  default_config_hash: DwMff4-Htq0swdDT_ItfLowQToSX_MH50igcQvdPixs
+id: node.newsletter_content.nlc_national_contents
+field_name: nlc_national_contents
+entity_type: node
+bundle: newsletter_content
+label: 'National contents'
+description: 'It allows adding the contents of the section'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      highlight: highlight
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

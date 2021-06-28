@@ -1,0 +1,23 @@
+uuid: 72e02eea-c0f1-4337-ac0d-897b024f0633
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_wiki_title
+    - node.type.newsletter_content
+_core:
+  default_config_hash: 2lp9xuX5iFdgf-VkypMTHuFBcyHNu6BKtdi1L52CDHQ
+id: node.newsletter_content.nlc_wiki_title
+field_name: nlc_wiki_title
+entity_type: node
+bundle: newsletter_content
+label: 'Block Title Wiki'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: OSHwiki
+default_value_callback: ''
+settings: {  }
+field_type: string

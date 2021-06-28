@@ -1,0 +1,20 @@
+.htmlmail-simplenews-body {
+  width: 600px;
+  background-color: #def2c4;
+  color: #665446;
+  padding: 10px;
+  border: 2px solid #665446;
+}
+/*Links*/
+a,
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  color: #e5683f;
+}
+.table.newsletter-container {
+  background: #ff6600;
+
+}

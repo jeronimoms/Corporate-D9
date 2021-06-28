@@ -1,0 +1,20 @@
+#field.field.node.newsletter_content.nlc_id_in_piwik.yml
+
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_id_in_piwik
+    - node.type.newsletter_content
+id: node.newsletter_content.nlc_id_in_piwik
+field_name: nlc_id_in_piwik
+entity_type: node
+bundle: newsletter_content
+label: 'Campaign ID in Piwik'
+description: 'Allows you to add the Campaign ID in Piwik'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
