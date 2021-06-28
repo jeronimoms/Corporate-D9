@@ -1,0 +1,25 @@
+uuid: 8e150875-2b00-41ce-841e-6a5305b8de2d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5a3b99ad-113b-45ed-9542-c308545fd7da'
+  module:
+    - block_content
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_copyrigth
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'block_content:5a3b99ad-113b-45ed-9542-c308545fd7da'
+settings:
+  id: 'block_content:5a3b99ad-113b-45ed-9542-c308545fd7da'
+  label: Copyrigth
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

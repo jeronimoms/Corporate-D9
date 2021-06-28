@@ -1,0 +1,26 @@
+uuid: dc89a151-2b99-45c4-aa43-cff005107dba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_publication_date
+    - node.type.newsletter_content
+  module:
+    - datetime
+_core:
+  default_config_hash: eRlF2n7LsSrx-IPxvE_4ihGNePAxn0k_MhaxQZcoRQk
+id: node.newsletter_content.nlc_publication_date
+field_name: nlc_publication_date
+entity_type: node
+bundle: newsletter_content
+label: 'Publication Date'
+description: 'It allows adding the date of publication of the Newsletter'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

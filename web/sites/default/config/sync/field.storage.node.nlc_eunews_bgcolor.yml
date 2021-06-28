@@ -1,0 +1,22 @@
+uuid: e1dccf53-1859-4124-bf50-8cda3a6d3e91
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+_core:
+  default_config_hash: iRNqbIk9VQGv1hLq41sXrFAAS-805xNUrmtSCLulNJA
+id: node.nlc_eunews_bgcolor
+field_name: nlc_eunews_bgcolor
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,31 @@
+uuid: 7fb7a638-b6f9-433d-a951-36e656959d1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_eunews_img
+    - media.type.image
+    - node.type.newsletter_content
+_core:
+  default_config_hash: grzlkbBvT7R8dtpNupK4frrwpESHkTGAOKWL5Zox0eo
+id: node.newsletter_content.nlc_eunews_img
+field_name: nlc_eunews_img
+entity_type: node
+bundle: newsletter_content
+label: 'Section Image EU News'
+description: 'Allows you to add / edit the image of the section'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

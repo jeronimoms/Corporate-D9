@@ -1,0 +1,25 @@
+uuid: 34673803-d1c3-4893-8fd0-f874ce180d5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_motweets_layout
+    - node.type.newsletter_content
+  module:
+    - options
+_core:
+  default_config_hash: S4-rwgU-fhKplS4JysUigVjqcbgkMnX8MC2eQ-xUe8w
+id: node.newsletter_content.nlc_motweets_layout
+field_name: nlc_motweets_layout
+entity_type: node
+bundle: newsletter_content
+label: ' Layout More and Twits'
+description: 'Allows you to choose between one or two columns for the presentation of the contents of the block'
+required: false
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

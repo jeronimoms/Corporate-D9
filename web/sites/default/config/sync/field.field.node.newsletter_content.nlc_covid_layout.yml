@@ -1,0 +1,25 @@
+uuid: 986ee97e-532f-403f-a1ef-9b4ebd57998a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_covid_layout
+    - node.type.newsletter_content
+  module:
+    - options
+_core:
+  default_config_hash: CAh47nLdu1AqXPU01OMKOh5TGTJrnTEc8jzA4xphApY
+id: node.newsletter_content.nlc_covid_layout
+field_name: nlc_covid_layout
+entity_type: node
+bundle: newsletter_content
+label: 'Layout Covid'
+description: 'Allows you to choose between the columns to display the contents of the block'
+required: false
+translatable: false
+default_value:
+  -
+    value: '2'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

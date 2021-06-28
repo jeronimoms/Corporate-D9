@@ -1,0 +1,20 @@
+uuid: d3e9dba6-863c-47a1-b900-771960ca459a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - workbench
+    parent: 'workbench:'
+_core:
+  default_config_hash: eDoXB6GSqlvcxGIyHsEAcq3i9eg6sfuLhhMW2VvWUwg
+name: Newsletter
+type: newsletter_content
+description: 'Allows you to create the type of content that will be sent as a Newsletter'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

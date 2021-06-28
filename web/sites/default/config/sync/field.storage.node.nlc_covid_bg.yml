@@ -1,0 +1,22 @@
+uuid: 4145a3dc-b8c2-46dc-868e-dd2b70f2772f
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+_core:
+  default_config_hash: Z-TTnlHfdJFChjnhP8lu2gj8rnz7-YYWHCW1POGziIk
+id: node.nlc_covid_bg
+field_name: nlc_covid_bg
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

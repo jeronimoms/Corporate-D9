@@ -1,0 +1,22 @@
+#field.field.node.newsletter_content.nlc_wiki_title.yml
+
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_wiki_title
+    - node.type.newsletter_content
+id: node.newsletter_content.nlc_wiki_title
+field_name: nlc_wiki_title
+entity_type: node
+bundle: newsletter_content
+label: 'Block Title Wiki'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: OSHwiki
+default_value_callback: ''
+settings: {  }
+field_type: string

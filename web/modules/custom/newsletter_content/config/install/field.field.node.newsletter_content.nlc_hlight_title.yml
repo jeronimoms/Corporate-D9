@@ -1,0 +1,22 @@
+#field.field.node.newsletter_content.nlc_hlight_title.yml
+
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_hlight_title
+    - node.type.newsletter_content
+id: node.newsletter_content.nlc_hlight_title
+field_name: nlc_hlight_title
+entity_type: node
+bundle: newsletter_content
+label: 'Highlights section title'
+description: 'Allows you to edit the title of the section'
+required: false
+translatable: false
+default_value:
+  -
+    value: Highlights
+default_value_callback: ''
+settings: {  }
+field_type: string

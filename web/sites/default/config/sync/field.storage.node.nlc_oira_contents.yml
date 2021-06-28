@@ -1,0 +1,21 @@
+uuid: acf780db-34e1-4f99-a674-6eb4f5a4f5b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: c5An6_dCoVhBHowxYIuA3JQY2RvF-srVRa6g4oiDAhE
+id: node.nlc_oira_contents
+field_name: nlc_oira_contents
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

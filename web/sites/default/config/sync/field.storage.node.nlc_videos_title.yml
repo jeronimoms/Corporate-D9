@@ -1,0 +1,23 @@
+uuid: 98add51d-dba4-4020-9e8d-2f53e4eba39f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Y4DwLvUQugQOQZOpzQPdTVenVFsv6zh2WFrp8PXbYzw
+id: node.nlc_videos_title
+field_name: nlc_videos_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

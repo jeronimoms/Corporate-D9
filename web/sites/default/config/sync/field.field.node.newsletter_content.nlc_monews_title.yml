@@ -1,0 +1,23 @@
+uuid: 261f2d17-345a-4c4a-9b82-763c0fc84354
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_monews_title
+    - node.type.newsletter_content
+_core:
+  default_config_hash: 4nnVtiQV_6NI-vjvo30mT69RqAbRi5N2sag4cwNsexs
+id: node.newsletter_content.nlc_monews_title
+field_name: nlc_monews_title
+entity_type: node
+bundle: newsletter_content
+label: 'Block Title More News'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'More news'
+default_value_callback: ''
+settings: {  }
+field_type: string

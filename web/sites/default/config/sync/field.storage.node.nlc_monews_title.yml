@@ -1,0 +1,23 @@
+uuid: 77d5dc24-619e-4529-a61f-3330bba36a31
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: T_yqgsUmcuDdmB5dyONzMSF_KFgXHpy9cORb-mFKtsY
+id: node.nlc_monews_title
+field_name: nlc_monews_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

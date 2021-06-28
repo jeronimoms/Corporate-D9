@@ -1,9 +1,9 @@
 hash_expiration: 86400
 newsletter:
-  format: plain
+  format: html
   priority: 0
   receipt: true
-  from_address: ruben.ramos@bilbomatica.es
+  from_address: iarias@bilbomatica.es
   from_name: 'Safety and health at work EU-OSHA'
 subscriber:
   sync_fields: true
