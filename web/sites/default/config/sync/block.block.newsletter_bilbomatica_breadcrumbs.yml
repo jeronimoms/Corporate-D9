@@ -1,0 +1,22 @@
+uuid: 2386d0dd-b54f-4bae-b4cc-24d02fd7a7d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - newsletter_bilbomatica
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: newsletter_bilbomatica_breadcrumbs
+theme: newsletter_bilbomatica
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

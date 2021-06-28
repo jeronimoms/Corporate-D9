@@ -1,0 +1,20 @@
+uuid: 7b3a75d9-4cb9-4e80-95a3-d66670f88d91
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 9r2pBjFNB4fLE2jl6VbCrrZdfpcX3X86pn4GO5X6ONA
+id: node.nlc_hlight_no_titles
+field_name: nlc_hlight_no_titles
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

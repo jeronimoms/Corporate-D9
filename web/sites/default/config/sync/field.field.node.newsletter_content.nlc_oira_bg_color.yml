@@ -1,0 +1,27 @@
+uuid: 4abaae53-4bf0-4139-9af6-0acac5d46219
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_oira_bg_color
+    - node.type.newsletter_content
+  module:
+    - color_field
+_core:
+  default_config_hash: q7gALDSEPGWUeBolS3xgBsv13394btl1sK2R-Jkl7hQ
+id: node.newsletter_content.nlc_oira_bg_color
+field_name: nlc_oira_bg_color
+entity_type: node
+bundle: newsletter_content
+label: 'BG Color Oira'
+description: 'Allows you to add / edit the background color of the block'
+required: false
+translatable: false
+default_value:
+  -
+    color: '#dfd8e4'
+    opacity: null
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

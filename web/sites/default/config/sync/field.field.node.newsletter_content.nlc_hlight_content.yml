@@ -1,0 +1,31 @@
+uuid: 52261f3a-4ff2-43c0-a4a5-6d79f5cf72b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_hlight_content
+    - node.type.highlight
+    - node.type.newsletter_content
+_core:
+  default_config_hash: _4fyGk6dFciQr5S_xnEfCSlxZ1f8HyBTrUbJmLA9ZQk
+id: node.newsletter_content.nlc_hlight_content
+field_name: nlc_hlight_content
+entity_type: node
+bundle: newsletter_content
+label: 'Highlights content'
+description: 'It allows adding the contents of the section'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      highlight: highlight
+    sort:
+      field: title
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

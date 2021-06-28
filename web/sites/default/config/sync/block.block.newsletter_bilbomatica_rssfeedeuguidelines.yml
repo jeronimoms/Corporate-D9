@@ -1,0 +1,30 @@
+uuid: d7676d8c-a0d7-40ef-82ad-92ca4913f0ff
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:155f73d4-62b4-4a99-99e6-968911bb6027'
+  module:
+    - block_content
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_rssfeedeuguidelines
+theme: newsletter_bilbomatica
+region: sidebar_second
+weight: -30
+provider: null
+plugin: 'block_content:155f73d4-62b4-4a99-99e6-968911bb6027'
+settings:
+  id: 'block_content:155f73d4-62b4-4a99-99e6-968911bb6027'
+  label: 'RSS Feed (EU Guidelines)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /safety-and-health-legislation/european-guidelines
+    negate: false

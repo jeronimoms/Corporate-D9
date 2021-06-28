@@ -1,0 +1,24 @@
+uuid: 11a51107-e391-472c-8ca7-3cb3568c4134
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_videos_bg
+    - node.type.newsletter_content
+  module:
+    - color_field
+_core:
+  default_config_hash: ZdNLxKLw9eqsz6fZvsAgCld4VCCRqLSXvWWywahLyzs
+id: node.newsletter_content.nlc_videos_bg
+field_name: nlc_videos_bg
+entity_type: node
+bundle: newsletter_content
+label: 'BG Color Video'
+description: 'Allows you to add / edit a background color for the section'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type
