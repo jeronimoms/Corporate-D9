@@ -1,0 +1,24 @@
+uuid: 39d7a898-7955-401f-9eb1-1119bef48b47
+langcode: en
+status: true
+dependencies: {  }
+id: local
+label: local
+description: ''
+folder: sites/default/config/local
+module:
+  custom_migrations: 0
+  migrate: 0
+  migrate_drupal: 0
+  migrate_file_to_media: 0
+  migrate_plus: 0
+  migrate_tools: 0
+theme: {  }
+blacklist:
+  - migrate_drupal.settings
+  - 'migrate_plus*'
+graylist:
+  - 'search_api_solr*'
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

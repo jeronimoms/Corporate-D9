@@ -7,15 +7,14 @@ _core:
 name: 'Default newsletter'
 id: default
 description: 'This is an example newsletter. Change it.'
-format: html
+format: plain
 priority: 0
 receipt: true
 from_name: 'Safety and health at work EU-OSHA'
 subject: '[[simplenews-newsletter:name]] [node:title]'
-from_address: iarias@bilbomatica.es
+from_address: ruben.ramos@bilbomatica.es
 hyperlinks: false
-allowed_handlers:
-  simplenews_all: '0'
+allowed_handlers: {  }
 new_account: none
 access: default
 weight: 0

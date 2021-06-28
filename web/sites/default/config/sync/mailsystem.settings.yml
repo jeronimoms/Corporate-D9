@@ -1,4 +1,4 @@
-theme: newsletter_bilbomatica
+theme: current
 defaults:
   sender: php_mail
   formatter: php_mail
@@ -8,8 +8,4 @@ modules:
   swiftmailer:
     none:
       formatter: swiftmailer
-      sender: php_mail
-  simplenews:
-    none:
-      formatter: swiftmailer
-      sender: php_mail
+      sender: swiftmailer
