@@ -1,0 +1,13 @@
+<div class="download-box">
+  <div class="download-title">
+    {{ 'Download' | trans }}
+  </div>
+  <!-- TODO Download -->
+  <ul>
+    <li><a href="/{{ lang }}/nma/{{ video.fid }}/download">{{ 'Video'|t }} <span class="related_size">({{ video.size }} MB)</span></a></li>
+    <li><a href="/{{ lang }}/nma/{{ activity.fid }}/download">{{ 'Activity'|t }} <span class="related_size">({{ activity.size }} KB)</span></a></li>
+    <li><a href="/{{ lang }}/node/{{ node.id }}/guidance">{{ 'Facilitator guidance'|t }}</a></li>
+    <li><a href="/{{ lang }}/node/{{ node.id }}/download-all">{{ 'Download all'|t }}</a></li>
+  </ul>
+  <!-- END TODO Download -->
+</div>
