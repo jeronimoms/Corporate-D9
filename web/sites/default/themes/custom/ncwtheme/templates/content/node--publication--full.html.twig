@@ -99,7 +99,9 @@
               <h2><a href="{{ url }}" class="node__title-link" rel="bookmark">{{ label }}</a></h2>
             {% endif %}
           {% endif %}
-          <span class="label keywords">{{ 'Keywords:' | trans }}</span>
+          {% if content.field_tags.0 %}
+            <span class="label keywords">{{ 'Keywords:' | trans }}</span>
+          {% endif %}
           {{ content.field_tags }}
           {{ content.body }}
           <div class="download-pdf no-bg">
