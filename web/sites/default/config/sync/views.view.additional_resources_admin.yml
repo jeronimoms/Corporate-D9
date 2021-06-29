@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_section
     - node.type.external_url
     - node.type.file
-    - node.type.flickr
     - node.type.infographic
     - node.type.slideshare
     - node.type.youtube
@@ -597,7 +596,6 @@ display:
           value:
             external_url: external_url
             file: file
-            flickr: flickr
             infographic: infographic
             slideshare: slideshare
             youtube: youtube
