@@ -84,7 +84,10 @@
           width: 22rem;
           padding: 10px 10px 10px 20px;
           a{
-           font-family: 'Open Sans Condensed';
+            display: block;
+            font-family: 'Open Sans Condensed';
+            font-size: 1.05rem;
+            padding-top: 5px;
           }
           li {
             width: 100%;
@@ -106,6 +109,9 @@
                 }
               }
             }
+          }
+          li.menu-item--expanded:nth-child(2) {
+            margin-top: 1rem;
           }
         }
       }
@@ -147,6 +153,16 @@
   }
 
   /* Language */
+  .header{
+    select.custom-select {
+      background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
+      color: $text-color-white;
+    }
+    #edit-search-api-fulltext {
+      display: none;
+    }
+  }
+
   #lang_dropdown_form_lang-dropdown-form {
     background: none;
   }
@@ -154,14 +170,6 @@
     position: absolute;
     left: 62px;
     top: 11px;
-  }
-  select.custom-select {
-    background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
-    color: $text-color-white;
-  }
-
-  #edit-search-api-fulltext {
-    display: none;
   }
 
   #edit-search-api-fulltext.activate {

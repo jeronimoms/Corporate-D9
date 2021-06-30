@@ -88,8 +88,8 @@
               {{ content.field_publication_type }}
             </div>
             <div class="content-label">
-              <span class="label">{{ 'Pages:' | trans }}</span>
-              {{ content.field_page_count }}
+              {% set pages = content.field_pages_count.0 %}
+              <span class="custom-number">{{ pages['#markup'] }} {{ 'pages' | trans }}</span>
             </div>
           </div>
           {% if label %}
@@ -99,12 +99,14 @@
               <h2><a href="{{ url }}" class="node__title-link" rel="bookmark">{{ label }}</a></h2>
             {% endif %}
           {% endif %}
-          <span class="label keywords">{{ 'Keywords:' | trans }}</span>
+          {% if content.field_tags.0 %}
+            <span class="label keywords">{{ 'Keywords:' | trans }}</span>
+          {% endif %}
           {{ content.field_tags }}
           {{ content.body }}
           <div class="download-pdf no-bg">
-            <span class="label_multilang_file">{{ 'Download "PDF" in:' | trans }}</span>
-            <a class="target-blank-v2" target="_blank" href="{{ node.field_file_media|file_url }}">EN</a>
+            <span class="label_multilang_file">{{ 'Download' | trans }}</span><span class="ico-pdf"></span><span class="label_multilang_file">{{ 'in:' | trans }}</span>
+            <a class="link-download" target="_blank" href="{{ node.field_file_media|file_url }}">EN</a>
           </div>
       </div>
     </div>

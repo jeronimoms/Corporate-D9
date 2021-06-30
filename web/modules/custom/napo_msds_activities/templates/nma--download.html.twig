@@ -1,0 +1,25 @@
+<div class="download-box">
+  <div class="download-title">
+    {{ 'Download' | trans }}
+  </div>
+  <ul>
+    {% if video %}
+      <li><a href="/{{ lang }}/nma/{{ video.fid }}/download">{{ 'Video'|t }} <span class="related_size">({{ video.size }} MB)</span></a></li>
+    {% endif %}
+    {% if activity %}
+      <li><a href="/{{ lang }}/nma/{{ activity.fid }}/download">{{ 'Activity'|t }} <span class="related_size">({{ activity.size }} KB)</span></a></li>
+    {% endif %}
+    {% if lesson %}
+      <li><a href="/{{ lang }}/nma/{{ lesson.fid }}/download">{{ 'Lesson'|t }} <span class="related_size">({{ lesson.size }} KB)</span></a></li>
+    {% endif %}
+    {% if node %}
+      {% if guidance %}
+        <li><a href="/{{ lang }}/node/{{ node.id }}/guidance">{{ guidance }}</a></li>
+      {% endif %}
+      {% if resources %}
+        <li><a href="/{{ lang }}/node/{{ node.id }}/resources">{{ resources }}</a></li>
+      {% endif %}
+      <li><a href="/{{ lang }}/node/{{ node.id }}/download-all">{{ 'Download all'|t }}</a></li>
+    {% endif %}
+  </ul>
+</div>

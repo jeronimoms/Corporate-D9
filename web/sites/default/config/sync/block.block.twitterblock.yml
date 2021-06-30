@@ -9,8 +9,8 @@ dependencies:
     - ncwtheme
 id: twitterblock
 theme: ncwtheme
-region: sidebar_second
-weight: -25
+region: sidebar_second_others
+weight: -32
 provider: null
 plugin: twitter_block
 settings:
@@ -37,5 +37,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
+    pages: "/tools-and-resources/blog\r\n<front>\r\n/search/blog"
     negate: false

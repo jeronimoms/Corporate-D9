@@ -1,0 +1,139 @@
+# Migration file for creating "Seminar" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_node_seminar_i18n                         # -----  CHANGE
+label: 'Node: seminar Translations'                # -----  CHANGE
+migration_group: ncw_migrate_nodes
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+source:
+  plugin: d7_node_entity_translation
+  node_type: seminar                                # -----  CHANGE
+destination:
+  plugin: entity:node
+  translations: true
+  destination_module: content_translation
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
+  required:
+    - ncw_node_seminar                            # -----  CHANGE
+
+process:
+  nid: entity_id
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      'pt': 'pt-pt'
+  title: title
+  body: body
+  uid: uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  content_translation_source: source
+  content_translation_outdated: translate
+  ### ADD FIELDS CUSTOM OF ENTITY ###            # -----  CHANGE
+field_country_code: field_country_code
+  field_seminar_end_date: #revisar
+      - plugin: sub_process
+        source: field_seminar_end_date
+        process:
+          value:
+            plugin: format_date
+            from_format: 'Y-m-d H:i:s'
+            to_format: 'Y-m-d\TH:i:s'
+            from_timezone: 'Europe/Madrid'
+            to_timezone: 'Europe/Madrid'
+            settings:
+              validate_format: false
+            source: value
+  field_seminar_start_date: #revisar
+    - plugin: sub_process
+      source: field_seminar_start_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          settings:
+            validate_format: false
+          source: value
+  field_location: field_seminar_location
+  field_archived: field_archived
+  field_seminar_type:
+    -
+      plugin: sub_process
+      source: field_seminar_type
+      process:
+        target_id: tid
+  field_activity:
+    -
+      plugin: sub_process
+      source: field_activity
+      process:
+        target_id: tid
+  field_section:
+    - plugin: sub_process
+      source: workbench_access
+      process:
+        target_id: tid
+  field_character_count: field_character_count
+  field_show_eu_flag: field_show_eu_flag
+  field_expiration_date:                #revisar
+    -
+      plugin: sub_process
+      source: field_expiration_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          settings:
+            validate_format: false
+          source: value
+  field_page_count: field_page_count
+  field_pages_count: field_pages_count
+  field_publication_date:       #revisar
+    -
+      plugin: sub_process
+      source: field_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: 'Europe/Madrid'
+          to_timezone: 'Europe/Madrid'
+          source: value
+  field_thesaurus_2020: field_thesaurus_2020
+  # Documents.
+  field_related_resources_media:
+    plugin: file_id_lookup
+    source: field_related_resources
+    migration:
+      - ncw_node_seminar_media_documents_1
+    no_stub: true
+  field_report_media:
+    plugin: file_id_lookup
+    source: field_report
+    migration:
+      - ncw_node_seminar_media_documents_1
+    no_stub: true
+

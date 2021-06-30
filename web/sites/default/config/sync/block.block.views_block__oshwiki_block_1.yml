@@ -6,6 +6,7 @@ dependencies:
     - views.view.oshwiki
   module:
     - ctools
+    - system
     - views
   theme:
     - ncwtheme
@@ -31,3 +32,7 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /safety-and-health-legislation
+    negate: true

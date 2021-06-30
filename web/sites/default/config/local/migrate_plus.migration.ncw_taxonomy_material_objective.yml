@@ -1,0 +1,45 @@
+uuid: babb949b-5cd9-4353-bd23-3c30d2132fb0
+langcode: en
+status: true
+dependencies: {  }
+id: ncw_taxonomy_material_objective
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate
+label: 'Terms: material_objective'
+source:
+  plugin: d7_taxonomy_term
+  bundle: material_objective
+process:
+  tid: tid
+  vid:
+    -
+      plugin: default_value
+      default_value: material_objective
+  name: name
+  description/value: description
+  description/format: format
+  weight: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: ncw_taxonomy_material_objective
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+  field_material_objective_code: field_material_objective_code
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies:
+  optional:
+    - d7_field_instance

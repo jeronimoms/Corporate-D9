@@ -1694,8 +1694,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           fields:
-            delete_node: delete_node
             edit_node: edit_node
+            delete_node: delete_node
             title: '0'
             field_father: '0'
             field_full_url: '0'
@@ -1704,6 +1704,7 @@ display:
             field_context: '0'
             field_synonyms: '0'
             field_term_reference: '0'
+            field_glossary_the: '0'
             field_notes: '0'
           destination: true
           plugin_id: dropbutton
@@ -1824,10 +1825,10 @@ display:
         groups:
           1: AND
       use_ajax: true
+      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args

@@ -1,0 +1,25 @@
+uuid: 2ae1051c-397f-4e9f-b72d-23237742babf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_wiki_layout
+    - node.type.newsletter_content
+  module:
+    - options
+_core:
+  default_config_hash: ozAbvZje5hrezfAiBUQQr8JOEs8OPRyKMHXHBktwcJg
+id: node.newsletter_content.nlc_wiki_layout
+field_name: nlc_wiki_layout
+entity_type: node
+bundle: newsletter_content
+label: 'Layout Wiki'
+description: 'Allows you to choose between one or two columns for the presentation of the contents of the block'
+required: false
+translatable: false
+default_value:
+  -
+    value: '2'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

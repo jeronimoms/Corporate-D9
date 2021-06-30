@@ -24,11 +24,35 @@ h2{
     }
   }
 }
+
+.field--name-body{
+  h2.Textfo , h2.Textbullet{
+    strong{
+      color: $text-color-black;
+      font-weight: 400;
+    }
+  }
+}
+
 .node--view-mode-full{
   /* h2 - node Full details */
   h2 {
-    padding-top: 0.2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
+  h3 {
+    padding-top: 1rem;
     padding-bottom: 0.5rem;
+    a{
+      color: $text-color-blue;
+      text-decoration: none;
+      border-bottom: 1px solid $bg-color-pink;
+      &:hover {
+        text-decoration: none;
+        transition: border-bottom 1s;
+        border-bottom: 1px solid $bg-color-blue;
+      }
+    }
   }
 }
 

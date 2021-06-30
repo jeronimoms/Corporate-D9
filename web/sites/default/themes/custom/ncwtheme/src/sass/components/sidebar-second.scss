@@ -26,11 +26,36 @@
       border-bottom: 5px solid $bg-color-blue;
     }
   }
+  .block.block-twitter-block{
+    h2{
+      font-size: 1.35rem;
+      border-bottom: 0;
+    }
+  }
 }
+
+.region-sidebar-second-others.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .sidebar-second{
   .related-views{
     padding-left: 20px;
     padding-right: 20px;
+    .region-sidebar-second-related{
+      .block{
+        h2{
+          font-size: 1.05rem;
+          border-bottom: 0;
+          margin-top: 0;
+        }
+        .views-row {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+    }
     .views-element-container.block.block-views{
       float: left;
       width: 100%;
@@ -181,7 +206,7 @@
   margin-bottom: 2rem;
 }
 
-#block-followuson--2{
+#block-followuson--2, #block-followuson{
   background: $bg-color-blue-light-2;
   padding: 0.5rem 1rem 1rem 1rem;
   h2{
@@ -197,4 +222,83 @@
 #become-partner-intro, #join-list-intro{
   font-size: 0.8rem;
   padding-bottom: 10px;
+}
+
+.rss-link{
+  display: block;
+  font-weight: bold;
+  background: url(../images/rss.png) no-repeat;
+  padding-left: 25px;
+  margin-top: -1rem;
+  padding-bottom: 1rem;
+}
+
+/* Upcoming events */
+.block-views-blockupcoming-events-block-1{
+  background: transparent;
+  h2{
+    font-size: 1.35rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #003399;
+  }
+  .views-row {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .views-field-nothing{
+    padding-bottom: 3px;
+    .field-content{
+      display: block;
+      font-size: 0.8rem;
+      color: $text-color-blue;
+      font-weight: 700;
+    }
+  }
+}
+
+/* FOPs detail */
+.node--type-fop-page{
+  .sidebar-second{
+    h3{
+      a{
+        width: 100%;
+        display: block;
+        clear: both;
+        color: $text-color-blue;
+        font-size: 1.05rem;
+        font-weight: bold;
+        border-bottom: 0;
+        margin-top: 0;
+        pointer-events: none;
+        background: transparent;
+        padding-left: 0;
+        padding-bottom: 3px;
+        padding-top: 0;
+      }
+
+    }
+    .item-list{
+      float: left;
+      width: 100%;
+      background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0.3rem;
+      padding-bottom: 10px;
+    }
+    .views-field-nothing{
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    a {
+      display: block;
+      font-size: 0.8rem;
+      line-height: 17px;
+      padding-bottom: 10px;
+      background: url(../images/li_arrow.png) no-repeat 1px 2px;
+      padding-left: 15px;
+    }
+  }
 }

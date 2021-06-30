@@ -1,0 +1,28 @@
+uuid: a7503f84-4500-451a-a722-bc4f84ae3dbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.blog_topic
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: topicsblog
+theme: ncwtheme
+region: sidebar_first
+weight: -20
+provider: null
+plugin: 'facet_block:blog_topic'
+settings:
+  id: 'facet_block:blog_topic'
+  label: Topics
+  provider: facets
+  label_display: visible
+  block_id: topicsblog
+visibility:
+  request_path:
+    id: request_path
+    pages: /search/blog
+    negate: false

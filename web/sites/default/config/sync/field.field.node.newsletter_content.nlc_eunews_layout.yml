@@ -1,0 +1,25 @@
+uuid: 477c8394-208b-41ef-9b18-6b4ac49979f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_eunews_layout
+    - node.type.newsletter_content
+  module:
+    - options
+_core:
+  default_config_hash: fS_fR98pOK_VGepUvlaAHhLyeiYRnJiiCFXfmHrPysM
+id: node.newsletter_content.nlc_eunews_layout
+field_name: nlc_eunews_layout
+entity_type: node
+bundle: newsletter_content
+label: 'Layout Eu News'
+description: 'Allows you to choose between one or two columns for the presentation of the contents of the block'
+required: false
+translatable: false
+default_value:
+  -
+    value: '2'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

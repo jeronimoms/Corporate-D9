@@ -6,13 +6,14 @@ dependencies:
     - views.view.landing_menu
   module:
     - ctools
+    - system
     - views
   theme:
     - ncwtheme
 id: views_block__landing_menu_block_1
 theme: ncwtheme
 region: content
-weight: -14
+weight: -22
 provider: null
 plugin: 'views_block:landing_menu-block_1'
 settings:
@@ -31,3 +32,7 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /facts-and-figures/data-visualisation
+    negate: true

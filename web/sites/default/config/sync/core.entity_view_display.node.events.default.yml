@@ -19,7 +19,6 @@ dependencies:
     - field.field.node.events.field_date
     - field.field.node.events.field_event_in_amp
     - field.field.node.events.field_event_type
-    - field.field.node.events.field_flickr_date
     - field.field.node.events.field_for_the_web
     - field.field.node.events.field_key_performance
     - field.field.node.events.field_location
@@ -42,6 +41,7 @@ dependencies:
     - node.type.events
   module:
     - datetime_range
+    - ds
     - field_group
     - file
     - link
@@ -58,14 +58,14 @@ third_party_settings:
         - field_organization
         - field_date
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: html_element
-      region: content
+      region: ds_content
       format_settings:
         element: div
         show_label: true
         label_element: h3
-        label_element_classes: ''
+        label_element_classes: events-title
         attributes: ''
         effect: none
         speed: fast
@@ -76,90 +76,122 @@ third_party_settings:
       children:
         - body
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: html_element
-      region: content
+      region: ds_content
       format_settings:
-        id: ''
-        classes: 'group-events-description field-group-div'
         element: div
         show_label: true
         label_element: h3
-        label_element_classes: ''
+        label_element_classes: events-title
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: 'group-events-description field-group-div'
       label: Description
     group_events_link:
       children:
         - field_website_of_event
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: html_element
-      region: content
+      region: ds_content
       format_settings:
-        id: ''
-        classes: 'group-events-links field-group-div'
         element: div
         show_label: true
         label_element: h3
-        label_element_classes: ''
+        label_element_classes: events-title
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: 'group-events-links field-group-div'
       label: Link
     group_events_related_documents:
       children:
         - field_related_documents
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: html_element
-      region: content
+      region: ds_content
       format_settings:
-        id: ''
-        classes: 'group-events-related-documents field-group-div'
         element: div
         show_label: true
         label_element: h3
-        label_element_classes: ''
+        label_element_classes: events-title
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: 'group-events-related-documents field-group-div'
       label: 'Related resources'
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - body
+        - group_events_event_details
+        - field_related_documents
+        - group_events_description
+        - field_location
+        - field_website_of_event
+        - group_events_link
+        - field_city
+        - group_events_related_documents
+        - field_country_code
+        - field_organization
+        - field_date
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
 id: node.events.default
 targetEntityType: node
 bundle: events
 mode: default
 content:
-  addtoany:
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   body:
     label: hidden
-    weight: 2
+    weight: 1
     type: text_default
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_city:
     label: inline
-    weight: 6
+    weight: 3
     type: string
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_country_code:
     label: inline
-    weight: 7
+    weight: 4
     type: list_default
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_date:
-    weight: 9
+    weight: 6
     label: inline
     settings:
       timezone_override: ''
@@ -167,34 +199,34 @@ content:
       separator: to
     third_party_settings: {  }
     type: daterange_default
-    region: content
+    region: ds_content
   field_location:
     label: inline
-    weight: 5
+    weight: 2
     type: string
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_organization:
     label: inline
-    weight: 8
+    weight: 5
     type: basic_string
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_related_documents:
     label: hidden
-    weight: 6
+    weight: 2
     type: file_default
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_website_of_event:
     type: link
-    weight: 12
-    region: content
+    weight: 2
+    region: ds_content
     label: hidden
     settings:
       trim_length: 80
@@ -204,6 +236,8 @@ content:
       target: '0'
     third_party_settings: {  }
 hidden:
+  addtoany: true
+  breadcrumbs: true
   comment_node_events: true
   field_activity: true
   field_adonis: true
@@ -216,7 +250,6 @@ hidden:
   field_comments_summary_after_eve: true
   field_event_in_amp: true
   field_event_type: true
-  field_flickr_date: true
   field_for_the_web: true
   field_key_performance: true
   field_media_promotion: true

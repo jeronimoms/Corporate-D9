@@ -16,11 +16,6 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  addtoany:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   body:
     label: hidden
     type: text_default
@@ -29,11 +24,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   links:
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  addtoany: true
+  breadcrumbs: true
   field_activity: true
   langcode: true
   search_api_excerpt: true

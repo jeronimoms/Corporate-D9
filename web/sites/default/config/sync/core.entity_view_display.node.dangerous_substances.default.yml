@@ -48,7 +48,7 @@ dependencies:
     - field.field.node.dangerous_substances.field_sector_industry_covered
     - field.field.node.dangerous_substances.field_sector_industry_other
     - field.field.node.dangerous_substances.field_selected_for_analysis
-    - field.field.node.dangerous_substances.field_summary
+    - field.field.node.dangerous_substances.field_substance_description
     - field.field.node.dangerous_substances.field_target_group
     - field.field.node.dangerous_substances.field_target_group_other
     - field.field.node.dangerous_substances.field_tasks_covered
@@ -431,6 +431,13 @@ content:
     third_party_settings: {  }
     type: boolean
     region: content
+  field_substance_description:
+    weight: 54
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_summary:
     weight: 19
     label: above
@@ -512,6 +519,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_section: true
   langcode: true
   links: true

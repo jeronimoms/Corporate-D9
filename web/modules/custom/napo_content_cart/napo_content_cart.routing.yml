@@ -1,37 +1,7 @@
-content_cart.addcart:
+content_cart.add:
   path: '/content_cart/add/{node}'
   defaults:
-    _controller: '\Drupal\napo_content_cart\Controller\NccController::addcart'
-  requirements:
-    _permission: 'access content'
-  options:
-    parameters:
-      user:
-        type: entity:node
-content_cart.truncatecart:
-  path: '/content_cart/delete'
-  defaults:
-    _controller: '\Drupal\napo_content_cart\Controller\NccController::truncatecart'
-  requirements:
-    _permission: 'access content'
-  options:
-    parameters:
-      user:
-        type: entity:node
-content_cart.deleteone:
-  path: '/content_cart/delete/{node}'
-  defaults:
-    _controller: '\Drupal\napo_content_cart\Controller\NccController::deleteone'
-  requirements:
-    _permission: 'access content'
-  options:
-    parameters:
-      user:
-        type: entity:node
-content_cart.downloadnode:
-  path: '/content_cart/download/{node}'
-  defaults:
-    _controller: '\Drupal\napo_content_cart\Controller\NccController::downloadnode'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::add'
   requirements:
     _permission: 'access content'
   options:
@@ -39,10 +9,22 @@ content_cart.downloadnode:
       user:
         type: entity:node
 
-content_cart.viewList:
-  path: '/content_cart/viewList'
+content_cart.delete:
+  path: '/content_cart/delete/{node}/{centre}'
   defaults:
-    _controller: '\Drupal\napo_content_cart\Controller\NccController::viewList'
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::delete'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      user:
+        type: entity:node
+
+content_cart.list:
+  path: '/download-centre/{file}'
+  defaults:
+    _controller: '\Drupal\napo_content_cart\Controller\NccController::getList'
+    file: NULL
   requirements:
     _permission: 'access content'
   options:

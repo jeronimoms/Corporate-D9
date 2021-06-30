@@ -1,0 +1,12 @@
+name: Newsletter Bilbomatica
+type: theme
+description: 'Custom Theme for Newsletter'
+
+core_version_requirement: ^8.8.0 || ^9.0
+
+base theme: "bootstrap_barrio"
+
+libraries:
+  - newsletter_bilbomatica/newsletter_global
+
+

@@ -26,18 +26,28 @@ jQuery(document).ready(function($){
 
 jQuery(document).ready(function($) {
   // Accordions
-  $(".wysiwyg_accordion h3:nth-child(1)").addClass('active');
-  $(".wysiwyg_accordion div:nth-child(2)").css('display','block');
-  $(".wysiwyg_accordion h3").click(function(){
+  if (!$('body').hasClass("node--type-thesaurus")) {
+    $(".wysiwyg_accordion h3:nth-child(1)").addClass('active');
+    $(".wysiwyg_accordion div:nth-child(2)").css('display', 'block');
+    $(".wysiwyg_accordion h3").click(function () {
       $(this).toggleClass("active");
       $(this).next('.wysiwyg_accordion_panel').slideToggle();
-  });
+    });
+  }
+
+  if ($('body').hasClass("node--type-thesaurus")) {
+    $(".wysiwyg_accordion h3").click(function () {
+      $(this).toggleClass("active");
+      $(this).next('.wysiwyg_accordion_panel').slideToggle();
+    });
+  }
 
   $(".sidebar-second .view-grouping .view-grouping-header").click(function(){
     $(this).toggleClass("active");
     $(this).next('.view-grouping-content').slideToggle();
   });
 
+  //Facets Accordions
   $(".sidebar-first #block-contenttypesearchsite-2 h2").click(function(){
     $(this).toggleClass("active");
     $(this).parent().find('.content').slideToggle();
@@ -48,6 +58,62 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.content').slideToggle();
   });
 
+  $(".sidebar-first #block-topicsblog h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-dateofdirective h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-topicsdirectives h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-guideline-topics h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  $(".sidebar-first #block-seminar-tags h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  // Facet with view FOPS detail
+  $(".sidebar-first .view-fop-flags h3").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.fop-country-list').slideToggle();
+  });
+
+  //View MSD glossary accordion #block-ncwtheme-content > div > div > div > div.view-content.row > div:nth-child(8)
+  $(".view-view-glossary > div.view-content.row > h3:nth-child(7)").addClass('active');
+  $(".view-view-glossary > div.view-content.row > div:nth-child(8)").css('display','block');
+  $(".view-view-glossary h3").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.views-view-grid').slideToggle();
+  });
+
+  // View Accordions view-board-members
+  $(".view-board-members .view-grouping-header").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.view-board-members .view-grouping-content').slideToggle();
+  });
+
+  // View Accordions view-advisory-groups
+  $(".view-advisory-groups .view-grouping-header").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.view-advisory-groups .view-grouping-content').slideToggle();
+  });
+
+  // View Accordions view-seminar
+  $(".view-seminar .view-grouping-header").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.view-seminar .view-grouping-content').slideToggle();
+  });
 
   // Text resize
   $('#_biggify').on('click', function() {
@@ -73,18 +139,21 @@ jQuery(document).ready(function($) {
     $('.addtoany_list').appendTo('.move-add-to-any');
   }
 
+  //Move block theasaurus in Thesaurus Detail
+  if ($(".move-block-thesaurus")[0]) {
+    $('#block-headerthesaurus-2').appendTo('.move-block-thesaurus');
+  }
+
+
+  //Move Search Blog
+  if ($(".move-block-search-blog")[0]) {
+    $('.block-views-exposed-filter-blocksearch-blog-page-1').appendTo('.move-block-search-blog');
+  }
+
   //Move infographic filter
   if ($(".views-row.moved-by-jquery")[0]) {
     $('.views-row.moved-by-jquery').prependTo('.page-view-infographic .view-infographic.view-display-id-block_3  .view-content.row');
   }
-
-  //Move Donwload box in Thesaurus footer view
-  if ($(".view-footer .download-content-theasaurus")[0]) {
-    $('.view-footer .download-content-theasaurus').addClass('custom-class-jquery');
-    $('.view-footer .download-content-theasaurus').prependTo('.pagerer-container');
-
-  }
-
 
   //Show input search when click in Search button responsive menu
   $("#block-searchsite").click(function(){
@@ -133,7 +202,6 @@ jQuery(document).ready(function($) {
     $(this).text(text.replace('&amp;', '&'));
   });
 
-
   //Archivied calls - Add class custom-active in year
   if ($(".view-id-calls.view-display-id-page_1")[0]) {
     let url = $(location).attr('href');
@@ -165,6 +233,39 @@ jQuery(document).ready(function($) {
     });
   }
 
+  //Display clear filter button if url has parameter
+  if ($("#edit-reset")[0]) {
+    let url = window.location.href;
+    if(url.includes('?')){
+      $('#edit-reset').addClass('custom-active');
+      $('.views-exposed-form').addClass('custom-active-filter');
+    }
+  }
+
+  //Remove equal elements in MSD Glosaary filter
+  if ($(".view-msd-glossary")[0]) {
+    var seen = {};
+    $('.term-glosssary-msd-letter').each(function() {
+      var txt = $(this).text();
+      if (seen[txt])
+        $(this).remove();
+      else
+        seen[txt] = true;
+    });
+    //Scroll up the anchor
+    $(".term-glosssary-msd-letter").click(function(event){
+      setTimeout(function() {
+        $('html,body').animate({
+          scrollTop: $(window).scrollTop() -500
+        });
+      }, 100);
+    });
+  }
+
+  // Add class active in menu Glossary when filtered by letter
+  if (window.location.href.indexOf("alphabetical") > -1) {
+    $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
+  }
 });
 
 //Move Language Selector to the menu responsive

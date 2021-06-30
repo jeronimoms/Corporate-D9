@@ -1,0 +1,26 @@
+#field.field.node.newsletter_content.nlc_covid_bg.yml
+
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_covid_bg
+    - node.type.newsletter_content
+  module:
+    - color_field
+id: node.newsletter_content.nlc_covid_bg
+field_name: nlc_covid_bg
+entity_type: node
+bundle: newsletter_content
+label: 'BG Color Covid'
+description: 'Allows you to add / edit the background color of the block'
+required: false
+translatable: false
+default_value:
+  -
+    color: '#ffffff'
+    opacity: null
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

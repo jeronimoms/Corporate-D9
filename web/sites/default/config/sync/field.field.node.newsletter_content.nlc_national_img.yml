@@ -1,0 +1,34 @@
+uuid: 8fce2ddc-91d4-42a7-a340-f28ca17e6235
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_national_img
+    - media.type.image
+    - node.type.newsletter_content
+_core:
+  default_config_hash: rQoPccCiKyEHk0ytt0hbzgXsEwQfZ16eML7pFKPqShA
+id: node.newsletter_content.nlc_national_img
+field_name: nlc_national_img
+entity_type: node
+bundle: newsletter_content
+label: 'Section Image Nat'
+description: 'Allows you to add / edit the image of the section'
+required: false
+translatable: false
+default_value:
+  -
+    weight: 0
+    target_uuid: 1b51e2fb-0f45-449a-bacc-0743e36ed57b
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

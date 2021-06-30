@@ -101,15 +101,16 @@ class NccDownload extends FieldPluginBase implements ContainerFactoryPluginInter
       $link = $this->addElement($node);
     }
 
-
     return [
       '#type' => 'container',
       '#attributes' => [
-        'class' => 'download-videoa',
+        'class' => 'download-videos',
       ],
       'content' => $link,
+      '#attached' => [
+        'library' => ['napo_content_cart/napo_content_cart.form'],
+      ]
     ];
   }
-
 
 }

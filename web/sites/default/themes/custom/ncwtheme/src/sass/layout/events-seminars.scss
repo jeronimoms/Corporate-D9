@@ -1,0 +1,339 @@
+/* Views */
+
+.view-eu-osha-event-summaries{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  .events-summary-col{
+    height: 100%;
+    background: $bg-color-white;
+    padding-bottom: 1.5rem;
+    .left-column , .right-column{
+      padding: 1rem;
+    }
+    .field-content{
+      display: flex;
+      align-items: center;
+      h2{
+        font-size: 1rem;
+        line-height: initial;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      div.see-more-arrow{
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+      }
+    }
+  }
+  .events-summary-col:nth-child(1){
+    border-right: 10px solid $bg-color-blue-light;
+  }
+  .events-summary-col:nth-child(2){
+    border-left: 10px solid $bg-color-blue-light;
+  }
+}
+
+.oshevents{
+  .more-link.revamp {
+    width: 100%;
+    float: left;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 19px;
+    background: url(../images/img-border-more-link.png) repeat-x center 50%;
+    a{
+      float: none;
+      color: $text-color-blue;
+      background: $bg-color-white;
+      font-weight: 700;
+      border: 2px solid $bg-color-blue;
+      padding: 5px 24px;
+      text-decoration: none;
+      &:hover{
+        color: $text-color-white;
+        background: $bg-color-blue;
+        transition: all 500ms;
+      }
+    }
+  }
+}
+
+
+.view-events{
+  .views-exposed-form{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+  }
+  #edit-search-api-fulltext{
+    margin-top: 23px;
+  }
+  .view-content.row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  h3 {
+    width: 100%;
+    float: left;
+    background: url(../images/blue-h2-line.png) 0 50% repeat-x;
+    color: $text-color-blue;
+    margin: 1.5em 0 0 0;
+    padding: 0;
+    time{
+      background: $bg-color-white;
+      font-size: 1.3rem;
+      font-weight: 600;
+      padding-right: 1em;
+    }
+  }
+  .revamp-row{
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+.box-events-summary{
+  display: flex;
+  margin-top: 2rem;
+  .left-column {
+    width: 145px;
+    margin-right: 2rem;
+  }
+  .right-column{
+    .event-country{
+      display: block;
+      font-size: 0.9rem;
+      color: $text-color-blue;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.event_country{
+  width: 99px;
+  height: 109px;
+  margin: 0 auto;
+  background: url(../images/ico-events/big/default-calendar-180x180.png) no-repeat center;
+  background-size: contain !important;
+}
+.code_EN{
+  background: url(../images/ico-events/big/England-180x180.png) no-repeat center;
+}
+.code_At{
+  background: url(../images/ico-events/big/Austria-180x180.png) no-repeat center;
+}
+.code_CH{
+  background: url(../images/ico-events/big/Switzerland-180x180.png) no-repeat center;
+}
+.code_BG{
+  background: url(../images/ico-events/big/Bulgaria-180x180.png) no-repeat center;
+}
+.code_BE{
+  background: url(../images/ico-events/big/Belgium-180x180.png) no-repeat center;
+}
+.code_CZ{
+  background: url(../images/ico-events/big/Czech-Republic-180x180.png) no-repeat center;
+}
+.code_CS{
+  background: url(../images/ico-events/big/Czech-Republic-180x180.png) no-repeat center;
+}
+.code_DK{
+  background: url(../images/ico-events/big/Denmark-180x180.png) no-repeat center;
+}
+.code_DE{
+  background: url(../images/ico-events/big/Germany-180x180.png) no-repeat center;
+}
+.code_EL{
+  background: url(../images/ico-events/big/Greece-180x180.png) no-repeat center;
+}
+.code_ES{
+  background: url(../images/ico-events/big/Spain-180x180.png) no-repeat center;
+}
+.code_EU{
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+.code_EE{
+  background: url(../images/ico-events/big/Estonia-180x180.png) no-repeat center;
+}
+.code_FI{
+  background: url(../images/ico-events/big/Finland-180x180.png) no-repeat center;
+}
+.code_HR{
+  background: url(../images/ico-events/big/Croatia-180x180.png) no-repeat center;
+}
+.code_FR{
+  background: url(../images/ico-events/big/France-180x180.png) no-repeat center;
+}
+.code_HU{
+  background: url(../images/ico-events/big/Hungary-180x180.png) no-repeat center;
+}
+.code_IS{
+  background: url(../images/ico-events/big/Iceland-180x180.png) no-repeat center;
+}
+.code_IT{
+  background: url(../images/ico-events/big/Italy-180x180.png) no-repeat center;
+}
+.code_LV{
+  background: url(../images/ico-events/big/Latvia-180x180.png) no-repeat center;
+}
+.code_LT{
+  background: url(../images/ico-events/big/Lithuania-180x180.png) no-repeat center;
+}
+.code_LU{
+  background: url(../images/ico-events/big/Luxembourg-180x180.png) no-repeat center;
+}
+.code_LI{
+  background: url(../images/ico-events/big/Liechtenstein-180x180.png) no-repeat center;
+}
+.code_NL{
+  background: url(../images/ico-events/big/Netherlands-180x180.png) no-repeat center;
+}
+.code_MT{
+  background: url(../images/ico-events/big/Malta-180x180.png) no-repeat center;
+}
+.code_NO{
+  background: url(../images/ico-events/big/Norway-180x180.png) no-repeat center;
+}
+.code_PL{
+  background: url(../images/ico-events/big/Poland-180x180.png) no-repeat center;
+}
+.code_PT{
+  background: url(../images/ico-events/big/Portugal-180x180.png) no-repeat center;
+}
+.code_RO{
+  background: url(../images/ico-events/big/Romania-180x180.png) no-repeat center;
+}
+.code_SK{
+  background: url(../images/ico-events/big/Slovakia-180x180.png) no-repeat center;
+}
+.code_SI{
+  background: url(../images/ico-events/big/Slovenia-180x180.png) no-repeat center;
+}
+.code_SE{
+  background: url(../images/ico-events/big/Sweden-180x180.png) no-repeat center;
+}
+.code_IE{
+  background: url(../images/ico-events/big/Ireland-180x180.png) no-repeat center;
+}
+.code_UK{
+  background: url(../images/ico-events/big/United-Kingdom-180x180.png) no-repeat center;
+}
+.code_CN{
+  background: url(../images/ico-events/big/China-180x180.png) no-repeat center;
+}
+.code_CY{
+  background: url(../images/ico-events/big/Republic-of-Cyprus-180x180.png) no-repeat center;
+}
+.code_US{
+  background: url(../images/ico-events/big/eeuu-180x180.png) no-repeat center;
+}
+.code_CA{
+  background: url(../images/ico-events/big/Canada-180x180.png) no-repeat;
+}
+
+/* Node events */
+.node-event-twig-custom{
+  color: $text-color-blue;
+  h2{
+    display: none;
+  }
+  h4{
+    font-size: 0.9rem;
+    color: $text-color-blue;
+    strong{
+      font-weight: 600;
+    }
+  }
+}
+.node--type-events, .node--type-seminar{
+  #main{
+    h3{
+      font-family: "Open Sans Condensed",sans-serif;
+      font-size: 1.45rem;
+      background: url(../images/separator.jpg) repeat-x scroll 0 100% rgba(0,0,0,0);
+      margin-top: 1rem;
+      margin-bottom: 5px;
+      padding-bottom: 15px;
+    }
+    .field__label{
+      font-weight: normal ;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      &:after{
+        content: ':';
+        display: inline-block;
+      }
+    }
+    .field__item{
+      color: $text-color-blue;
+      font-size: 0.9rem;
+      padding-bottom: 10px;
+
+    }
+    .field--type-text-with-summary{
+      color: $text-color-black;
+    }
+    .field--name-field-website-of-event{
+      a{
+        text-decoration: none;
+        background: url(../images/li_arrow.png) no-repeat scroll 0 50% transparent;
+        font-weight: bold;
+        padding-left: 1em;
+        font-size: 0.8rem;
+        border-bottom: 0px;
+      }
+    }
+  }
+}
+
+.node--type-seminar{
+  #main{
+    .field--name-field-pages-count{
+      .field__label{
+        text-transform: initial;
+        padding-bottom: 10px;
+        &:after{
+          content: ':';
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media only screen and (max-width : 768px) {
+  .view-eu-osha-event-summaries {
+    .row{
+      display: block;
+    }
+    .events-summary-col:nth-child(1){
+      border-right: 0;
+      border-bottom: 20px solid $bg-color-blue-light;
+    }
+    .events-summary-col:nth-child(2){
+      border-left: 0;
+    }
+  }
+  .box-events-summary{
+    .left-column {
+      display: none;
+    }
+  }
+  .view-events{
+    .form-row{
+      display: block;
+      #edit-search-api-fulltext {
+        margin-top: 7px;
+      }
+    }
+  }
+  .oshevents {
+    .left-column {
+      display: none;
+    }
+  }
+
+}/* End Media 768px */
+

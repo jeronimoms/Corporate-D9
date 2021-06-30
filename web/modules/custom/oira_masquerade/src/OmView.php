@@ -3,12 +3,15 @@
 namespace Drupal\oira_masquerade;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\oira_masquerade\OmMasqueradeManager;
 use Drupal\masquerade\Masquerade;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\views\ViewExecutable;
 
 class OmView implements ContainerInjectionInterface {
+
+  use DependencySerializationTrait;
 
   /**
    * The masquerade manager.

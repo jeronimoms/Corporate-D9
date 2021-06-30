@@ -1,0 +1,59 @@
+# Migration file for creating "Taxonomy terms Section" nodes from BBDD.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+##################### BASIC INFORMATION ###################
+
+id: ncw_taxonomy_msds_glossary_i18n               # -----  CHANGE
+label: 'Terms: msds_glossary Translations'         # -----  CHANGE
+audit: true
+migration_group: ncw_migrate                # -----  CHANGE
+source:
+  plugin: d7_locale_terms
+  bundle: msds_glossary                            # -----  CHANGE
+  translations: true
+destination:
+  plugin: entity:taxonomy_term
+  translations: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+
+migration_dependencies:
+  required:
+    - ncw_taxonomy_msds_glossary                  # -----  CHANGE
+
+process:
+  tid:
+    plugin: migration_lookup
+    migration: ncw_taxonomy_msds_glossary         # -----  CHANGE
+    source: tid
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: ltlanguage
+    map:
+      'pt': 'pt-pt'
+  vid:
+    -
+      plugin: default_value
+      default_value: msds_glossary                 # -----  CHANGE
+  name: name_field_value
+  'description/value': description_field_value
+  'description/format': 'full_html'
+  parent_id:
+    - plugin: skip_on_empty
+      method: process
+      source: parent
+    - plugin: migration_lookup
+      migration: ncw_taxonomy_msds_glossary
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp

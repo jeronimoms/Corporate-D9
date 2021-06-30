@@ -57,7 +57,11 @@
  */
 $sites = [
   // Staging sites.
+  'testd9.osha.europa.eu' => 'default',
+  'testd9.napofilm.net' => 'napo',
+  'testd9.oiraproject.eu' => 'oira',
   'testd9-eguides.osha.europa.eu.vehicle-safety' => 'vesafe',
+  'testd9-eguides.osha.europa.eu.all-ages' => 'allages',
   // Develop sites.
   'osha.bilbomatica.es' => 'default',
   'napo.bilbomatica.es' => 'napo',

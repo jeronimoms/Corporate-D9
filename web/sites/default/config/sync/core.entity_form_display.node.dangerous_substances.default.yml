@@ -48,7 +48,7 @@ dependencies:
     - field.field.node.dangerous_substances.field_sector_industry_covered
     - field.field.node.dangerous_substances.field_sector_industry_other
     - field.field.node.dangerous_substances.field_selected_for_analysis
-    - field.field.node.dangerous_substances.field_summary
+    - field.field.node.dangerous_substances.field_substance_description
     - field.field.node.dangerous_substances.field_target_group
     - field.field.node.dangerous_substances.field_target_group_other
     - field.field.node.dangerous_substances.field_tasks_covered
@@ -60,6 +60,8 @@ dependencies:
     - field.field.node.dangerous_substances.field_worker_groups_type
     - node.type.dangerous_substances
   module:
+    - chosen_field
+    - content_moderation
     - datetime
     - field_group
     - languagefield
@@ -117,17 +119,16 @@ content:
   field_available_in_languages:
     weight: 11
     settings:
-      size: '60'
-      autocomplete_route_name: languagefield.autocomplete
-      placeholder: ''
+      format:
+        name: name
     third_party_settings: {  }
-    type: languagefield_autocomplete_tags
+    type: languagefield_select
     region: content
   field_biological_hazard:
     weight: 19
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_biological_hazard_other:
     weight: 20
@@ -205,7 +206,7 @@ content:
     weight: 41
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_evaluation_other:
     weight: 42
@@ -219,7 +220,7 @@ content:
     weight: 25
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_exposure_route_other:
     weight: 26
@@ -253,7 +254,7 @@ content:
     weight: 23
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_hazard_health_other:
     weight: 24
@@ -275,7 +276,7 @@ content:
     weight: 21
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_image_media:
     weight: 50
@@ -322,7 +323,7 @@ content:
     weight: 35
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_measurement_method:
     weight: 30
@@ -391,7 +392,7 @@ content:
     weight: 33
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_prevention_measures_other:
     weight: 34
@@ -405,7 +406,7 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_publication_year:
     weight: 8
@@ -451,6 +452,14 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_substance_description:
+    weight: 27
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_summary:
     weight: 27
     settings:
@@ -463,7 +472,7 @@ content:
     weight: 39
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_target_group_other:
     weight: 40
@@ -507,7 +516,7 @@ content:
     weight: 43
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_worker_groups_other:
     weight: 32
@@ -521,15 +530,13 @@ content:
     weight: 31
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   moderation_state:
-    type: string_textfield
+    type: moderation_state_default
     weight: 53
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path

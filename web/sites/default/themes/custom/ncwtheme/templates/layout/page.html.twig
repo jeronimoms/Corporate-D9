@@ -52,10 +52,11 @@
   </div>
 <div class="container">
   <div class="row">
-    {% set has_sidebar_first = page.sidebar_first is not empty %}
-    {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty or sidebar_second_related|render|striptags|trim is not empty %}
+    {% set has_sidebar_first = page.sidebar_first|render|striptags|trim is not empty or page.sidebar_first.guideline_topics is not empty%}
     {% set has_sidebar_second_related = page.sidebar_second_related|render|striptags|trim is not empty %}
-    {% set has_node_view_blog = page.node_view|render|striptags|trim is not empty %}
+    {% set has_sidebar_second_others = page.sidebar_second_others|render|striptags|trim is not empty %}
+    {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty or has_sidebar_second_related or has_sidebar_second_others %}
+    {% set has_view_blog = page.sidebar_second.views_block__blog_block_2|render|striptags|trim is not empty %}
 
     {% if has_sidebar_first %}
       <aside class="section col-12 col-lg-3 sidebar-first" role="complementary">
@@ -72,7 +73,7 @@
       <div id="main" class="col-12 col-lg-9 two-column mx-auto">
     {% endif %}
     {% if has_sidebar_first and has_sidebar_second %}
-      <div id="main" class="col-12 col-lg-6 three-column mx-auto">
+      <div id="main" class="col-12 col-lg-6 three-column mx-auto"
     {% endif %}
         {% if page.node_view %}
           <section class="section container custom-view-node-header">
@@ -87,7 +88,7 @@
       </div>
     {% if has_sidebar_second %}
       <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
-        {% if node.bundle == 'blog' or has_node_view_blog == 'true' %}
+        {% if node.bundle == 'blog' or has_view_blog == 'true' %}
           <h2 class="related">{{ 'Posts by date' | trans }}</h2>
         {% endif %}
         {{ page.sidebar_second }}
@@ -97,7 +98,7 @@
             {{ page.sidebar_second_related }}
           </div>
         {% endif %}
-
+        {{ page.sidebar_second_others }}
       </aside>
     {% endif %}
     </div>

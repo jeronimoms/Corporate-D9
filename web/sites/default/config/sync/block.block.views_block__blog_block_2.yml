@@ -12,7 +12,7 @@ dependencies:
 id: views_block__blog_block_2
 theme: ncwtheme
 region: sidebar_second
-weight: -19
+weight: -21
 provider: null
 plugin: 'views_block:blog-block_2'
 settings:
@@ -25,5 +25,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/tools-and-resources/blog\r\n/blog/*"
+    pages: "/tools-and-resources/blog\r\n/blog/*\r\n/search/blog"
     negate: false

@@ -1,0 +1,46 @@
+uuid: 900a05c3-bec2-4e4f-9d3b-ea21a6e428f0
+langcode: en
+status: true
+dependencies: {  }
+id: ncw_taxonomy_provider_type
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate
+label: 'Terms: provider_type'
+source:
+  plugin: d7_taxonomy_term
+  bundle: provider_type
+process:
+  tid: tid
+  vid:
+    -
+      plugin: default_value
+      default_value: provider_type
+  name: name
+  description/value: description
+  description/format: format
+  weight: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: ncw_taxonomy_provider_type
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+  field_provider_type_code: field_provider_type_code
+  field_thesaurus_id: field_thesaurus_id
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies:
+  optional:
+    - d7_field_instance

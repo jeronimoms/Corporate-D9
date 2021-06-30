@@ -6,13 +6,14 @@ dependencies:
     - views.view.related_content
   module:
     - ctools
+    - system
     - views
   theme:
     - ncwtheme
 id: views_block__related_content_block_2
 theme: ncwtheme
 region: sidebar_second_related
-weight: -25
+weight: -32
 provider: null
 plugin: 'views_block:related_content-block_2'
 settings:
@@ -29,6 +30,7 @@ visibility:
     bundles:
       25th_anniversary: 25th_anniversary
       article: article
+      blog: blog
       events: events
       guideline: guideline
       highlight: highlight
@@ -40,3 +42,7 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /safety-and-health-legislation
+    negate: true

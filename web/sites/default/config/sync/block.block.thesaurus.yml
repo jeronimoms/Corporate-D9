@@ -12,7 +12,7 @@ dependencies:
 id: thesaurus
 theme: ncwtheme
 region: content
-weight: -18
+weight: -26
 provider: null
 plugin: 'menu_block:thesaurus'
 settings:
@@ -32,5 +32,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/tools-and-resources/eu-osha-thesaurus\r\n/tools-and-resources/eu-osha-thesaurus/hierarchical\r\n/tools-and-resources/eu-osha-thesaurus/alphabetical"
+    pages: "/tools-and-resources/eu-osha-thesaurus\r\n/tools-and-resources/eu-osha-thesaurus/hierarchical\r\n/tools-and-resources/eu-osha-thesaurus/alphabetical\r\n/tools-and-resources/eu-osha-thesaurus/alphabetical/*"
     negate: false

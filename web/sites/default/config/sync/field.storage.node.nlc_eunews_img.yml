@@ -1,0 +1,22 @@
+uuid: 5b272958-2fe5-47b0-9e69-c5b171f3ed33
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+_core:
+  default_config_hash: 1uhS4kU5yu46ROqZhdAZ5iVgclh32ahqLqo0Cd3dolo
+id: node.nlc_eunews_img
+field_name: nlc_eunews_img
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

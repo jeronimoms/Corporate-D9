@@ -1,0 +1,28 @@
+uuid: 0ce9b162-a926-437f-8838-b10ca7325b00
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.guideline_tags
+  module:
+    - facets
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_guideline_topics
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -25
+provider: null
+plugin: 'facet_block:guideline_tags'
+settings:
+  id: 'facet_block:guideline_tags'
+  label: Topics
+  provider: facets
+  label_display: visible
+  block_id: guideline_topics
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/*'
+    negate: false

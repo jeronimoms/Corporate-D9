@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+  <div class="h1-back-wrapper">
+    <h1>{{ 'EU-OSHA thesaurus' | trans }}</h1>
+    <a href="/oshevents" class="pull-right-flex back-to-link">{{ 'Back to list of terms' | trans }}</a>
+  </div>
+  <div class="move-block-thesaurus"><!-- Move block thesaurus by jQuery --></div>
+  <div class="titles-thesaurus-detail">
+    <h2>{{ ds_content.field_term_id }}</h2>
+    <span><img src="/{{ directory }}/images/info-thesaurus.png" alt="{{ 'Info' |trans}}" title="{{ 'ID of the term' |trans}}"/></span>
+    <span class="separator-thesaurus">-</span>
+    {{ ds_content.node_title }}
+  </div>
+  <div class="link-thesaurus-detail">
+    <a href="/tools-and-resources/eu-osha-thesaurus/hierarchical">{{ 'Hierarchical View' | trans }}</a>
+  </div>
+  {{ ds_content.field_definition }}
+  <div>
+    <div class="field__label">{{ 'Context:' | trans }} <img src="/{{ directory }}/images/info-thesaurus.png" alt="{{ 'Info' |trans}}" title="{{ 'The context where the keyword has been used' |trans}}"/></div>
+    <div class="content-context">{{ ds_content.field_context }}</div>
+  </div>
+  {{ ds_content.field_term_reference }}
+  {{ ds_content.field_notes }}
+  <div class="wysiwyg_accordion">
+    <h3>
+      {{ 'Translaions' | trans }}
+    </h3>
+    <div class="wysiwyg_accordion_panel views">
+
+    </div>
+  </div>
+
+</{{ ds_content_wrapper }}>

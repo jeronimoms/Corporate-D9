@@ -1,0 +1,21 @@
+uuid: 1b961227-dc41-4a68-b89e-f5f580a78b48
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: kCdDKJENVy57hjZXk3Th2ptWaJFSs5h66g26N2pCmjU
+id: node.nlc_videos_content
+field_name: nlc_videos_content
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -10,6 +10,7 @@ use Drupal\Core\Session\AccountProxy;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\user\Entity\User;
+use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * General class for Form hooks.
@@ -34,11 +35,19 @@ class OmForm implements ContainerInjectionInterface {
   protected $account;
 
   /**
+   * The Messenger object.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, AccountProxy $account) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, AccountProxy $account, MessengerInterface $messenger) {
     $this->entityTypeManager = $entity_type_manager;
     $this->account = $account;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -47,7 +56,8 @@ class OmForm implements ContainerInjectionInterface {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity_type.manager'),
-      $container->get('current_user')
+      $container->get('current_user'),
+      $container->get('messenger')
     );
   }
 
@@ -134,6 +144,7 @@ class OmForm implements ContainerInjectionInterface {
    *   The form state object
    */
   public function omSubmit(array &$form, FormStateInterface $form_state) {
+    $this->messenger->addMessage($this->t('You are now masquerading as @email', ['@email' => $this->account->getAccount()->getEmail()]));
     // Redirect to partner page.
     $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('om_partner_nid')]);
   }

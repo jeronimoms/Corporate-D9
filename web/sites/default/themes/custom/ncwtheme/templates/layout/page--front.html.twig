@@ -68,12 +68,13 @@
         </div>
         <div class="content-links-news-events">
           <div class="more-link revamp">
-            <a href="/en/oshnews">{{ 'View all news' | trans }}</a><a class="link-view-home" href="/en/oshevents">{{ 'View all events' | trans }}</a>
+            <a href="/oshnews">{{ 'View all news' | trans }}</a><a class="link-view-home" href="/oshevents">{{ 'View all events' | trans }}</a>
           </div>
         </div>
       </div>
     </div>
     <aside class="sidebars_second sidebars_second_home">
+      {{ drupal_entity('block', 'simplenewssubscription') }}
       {{ drupal_entity('block', 'twitterblock') }}
     </aside>
   </div>

@@ -43,3 +43,70 @@
     }
   }
 }
+.field--name-field-publication-date, .field--name-field-expiration-date{
+  .chosen-container{
+    width: 100% !important;
+    min-width: 140px !important;
+  }
+}
+
+.form-item-menu-menu-parent{
+  .menu-parent-select{
+    width: 400px !important;
+  }
+}
+
+/* View Events colours */
+.view-admin-events{
+  #view-title-table-column{
+    min-width: 250px;
+  }
+  #view-field-adonis-table-column{
+    min-width: 120px;
+  }
+  .views-field-field-website-of-event{
+    a{
+      word-break: break-all;
+    }
+  }
+  .views-field-field-adonis{
+    word-break: break-all;
+  }
+}
+tr.red{
+  td{
+    color: red;
+  }
+}
+tr.black{
+  td{
+    color: black;
+  }
+}
+tr.grey{
+  td{
+    color: grey;
+  }
+}
+th.views-field-field-color, td.views-field-field-color{
+  display: none;
+}
+
+.colours{
+  div{
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 10px;
+  }
+  .red{
+    background: red;
+  }
+  .black{
+    background: black;
+  }
+  .grey{
+    background: grey;
+  }
+}
+

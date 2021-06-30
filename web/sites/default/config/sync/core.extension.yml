@@ -24,6 +24,8 @@ module:
   comment: 0
   conditional_fields: 0
   config: 0
+  config_filter: 0
+  config_split: 0
   config_translation: 0
   contact: 0
   contact_us: 0
@@ -33,7 +35,6 @@ module:
   csv_serialization: 0
   ctools: 0
   custom_breadcrumbs: 0
-  custom_migrations: 0
   date_popup: 0
   datetime: 0
   datetime_range: 0
@@ -104,13 +105,9 @@ module:
   metatag_dc: 0
   metatag_verification: 0
   metatag_views: 0
-  migrate: 0
-  migrate_drupal: 0
-  migrate_file_to_media: 0
-  migrate_plus: 0
-  migrate_tools: 0
   multiple_selects: 0
   ncw_backend: 0
+  newsletter_content: 0
   node: 0
   node_export: 0
   node_revision_delete: 0
@@ -141,12 +138,14 @@ module:
   serialization: 0
   shortcut: 0
   shs: 0
+  simplenews: 0
   sitemap: 0
   sliderwidget: 0
   smart_trim: 0
   smtp: 0
   sophron: 0
   spamspan: 0
+  swiftmailer: 0
   system: 0
   tamper: 0
   taxonomy: 0
@@ -175,6 +174,7 @@ module:
   youtube: 0
   ds: 1
   pathauto: 1
+  xmlsitemap: 1
   ds_extras: 2
   content_translation: 10
   views: 10
@@ -187,6 +187,7 @@ theme:
   bootstrap_barrio: 0
   ncwtheme: 0
   claro: 0
+  newsletter_bilbomatica: 0
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

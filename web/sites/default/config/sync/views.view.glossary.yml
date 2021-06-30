@@ -35,7 +35,7 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      use_ajax: true
+      use_ajax: false
       access:
         type: perm
         options:

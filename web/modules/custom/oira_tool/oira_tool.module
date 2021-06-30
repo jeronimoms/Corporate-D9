@@ -1,0 +1,42 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+use Drupal\oira_tool\OtView;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views_contextual_filters_or\Plugin\views\query\ExtendedSql;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function oira_tool_views_pre_render(ViewExecutable $view) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(OtView::class)
+    ->viewsPreRender($view);
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function oira_tool_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == 'country_partner_content' && $view->current_display == 'block_3') {
+    if ($query instanceof ExtendedSql) {
+      $conditions = $query->where;
+      if (array_key_exists(0, $conditions)) {
+        if (array_key_exists('conditions', $conditions[0])) {
+          if (array_key_exists(3, $conditions[0]['conditions'])) {
+            $sector_condition = $conditions[0]['conditions'][3];
+            unset($conditions[0]['conditions'][3]);
+            $conditions[] = [
+              'conditions' => [0 => $sector_condition],
+              'args' => [],
+              'type' => 'AND',
+            ];
+
+            $query->where = $conditions;
+            $view->query = $query;
+          }
+        }
+      }
+    }
+  }
+}

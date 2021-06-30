@@ -4,12 +4,13 @@ status: true
 dependencies:
   module:
     - addtoany
+    - system
   theme:
     - ncwtheme
 id: addtoanybuttons
 theme: ncwtheme
 region: content
-weight: -11
+weight: -18
 provider: null
 plugin: addtoany_block
 settings:
@@ -17,4 +18,8 @@ settings:
   label: 'AddToAny buttons'
   provider: addtoany
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/publications/*\r\n/tools-and-resources/seminars/*"
+    negate: true

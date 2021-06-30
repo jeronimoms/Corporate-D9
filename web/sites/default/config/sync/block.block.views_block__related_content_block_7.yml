@@ -12,7 +12,7 @@ dependencies:
 id: views_block__related_content_block_7
 theme: ncwtheme
 region: sidebar_second_related
-weight: -24
+weight: -31
 provider: null
 plugin: 'views_block:related_content-block_7'
 settings:
@@ -29,6 +29,7 @@ visibility:
     bundles:
       25th_anniversary: 25th_anniversary
       article: article
+      blog: blog
       events: events
       guideline: guideline
       highlight: highlight
