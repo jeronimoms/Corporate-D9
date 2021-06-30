@@ -2252,6 +2252,36 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   display: none;
 }
 
+/* EU-OSHA in the Media */
+body.path-aggregator article.aggregator-item {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+  background: url(../images/back-tit-blue.png) repeat-x 100% 100%;
+}
+body.path-aggregator h3 {
+  margin-bottom: 0;
+}
+body.path-aggregator h3 a {
+  font-size: 1.35rem;
+  color: #003399;
+  margin-bottom: 0;
+  padding-left: 0;
+  font-weight: 400;
+  line-height: 30px;
+}
+body.path-aggregator .field--type-entity-reference, body.path-aggregator .field--name-author {
+  display: none;
+}
+body.path-aggregator .field--name-timestamp {
+  font-size: 0.8rem;
+  color: #003399;
+  font-weight: 600;
+}
+body.path-aggregator .item-description {
+  padding-top: 1rem;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
