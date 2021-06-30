@@ -13,6 +13,7 @@ use Drupal\Core\TempStore\PrivateTempStore;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Url;
 use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
 use Drupal\napo_content_cart\NccCartTrait;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -93,14 +94,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
   }
 
   /**
-   * Add a new element to the cart.
+   * Download a file.
    *
-   * @param \Drupal\node\Entity\Node $node
-   *   The node object to add.
+   * @param \Drupal\file\Entity\File $file
+   *   The file object.
    *
-   * @return array|\Drupal\Core\Ajax\AjaxResponse
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
    */
-  public function downloadFile($file) {
+  public function downloadFile(File $file) {
     $headers = [
       'Content-Type' => 'text/' . $file->getMimeType(),
       'Content-Description' => 'File Download',
@@ -112,6 +113,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     return new BinaryFileResponse($uri, 200, $headers, true);
   }
 
+  /**
+   * Download a file.
+   *
+   * @param string $name
+   *   The file name.
+   *
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
+   */
   public function downloadZip($name) {
     // If the file is passed to download, generate the headers.
     $headers = [
@@ -128,6 +137,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     return $binary;
   }
 
+  /**
+   * Download guidance files.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node object.
+   *
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
+   */
   public function downloadGuidance(Node $node) {
     $this->prepareFolder('msds_download');
 
@@ -145,11 +162,8 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
 
       $medias = $this->getGuidanceFiles($node);
 
-      foreach ($medias as $media_id) {
-        /** @var \Drupal\media\Entity\Media $media */
-        $media = $this->entityTypeManager->getStorage('media')->load($media_id);
-        $video_fid = $media->get('field_media_document')->getValue()['0']['target_id'];
-        $file = $this->entityTypeManager->getStorage('file')->load($video_fid);
+      foreach ($medias as $item) {
+        $file = $this->entityTypeManager->getStorage('file')->load($this->getMediaFile($item));
         $file_uri = $this->fileSystem->realpath($file->getFileUri());
         if ($file_uri) {
           $zip->addFile($file_uri, $file->getFilename());
@@ -160,19 +174,73 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
 
       return $this->downloadZip($name);
     }
+
+    if ($node->getType() == 'lesson') {
+      $media = $this->getGuidanceFiles($node);
+      $file = $this->entityTypeManager->getStorage('file')->load($this->getMediaFile($media));
+      return $this->downloadFile($file);
+    }
   }
 
-  public function downloadAll(Node $node) {
-    $this->prepareFolder('msds_download_all');
+  /**
+   * Download resource files.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node object.
+   *
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
+   */
+  public function downloadResources(Node $node) {
+    $this->prepareFolder('msds_download');
 
     // Generate the path.
-    $destination = $this->fileSystem->realpath('public://msds_download_all/');
+    $destination = $this->fileSystem->realpath('public://msds_download/');
 
-    if ($node->getType() == 'msds_activities') {
+    if ($node->getType() == 'lesson') {
       // Generate the name of new zip.
-      $name = 'guidance_' . $this->getNextItem('msds_download_all');
+      $name = 'resources_required_' . $this->getNextItem('msds_download');
       $new_name = $name . '.zip';
 
+      // Create the new file.
+      $zip = new \ZipArchive;
+      $zip->open($destination . '/' . $new_name, \ZipArchive::CREATE);
+
+      $medias = $this->getRelatedResources($node);
+
+      foreach ($medias as $item) {
+        $file = $this->entityTypeManager->getStorage('file')->load($this->getMediaFile($item));
+        $file_uri = $this->fileSystem->realpath($file->getFileUri());
+        if ($file_uri) {
+          $zip->addFile($file_uri, $file->getFilename());
+        }
+      }
+
+      $zip->close();
+
+      return $this->downloadZip($name);
+    }
+
+  }
+
+  /**
+   * Download all files.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node object.
+   *
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
+   */
+  public function downloadAll(Node $node) {
+    $this->prepareFolder('msds_download');
+
+    // Generate the path.
+    $destination = $this->fileSystem->realpath('public://msds_download/');
+
+    // Generate the name of new zip.
+    $name = 'download_' . $this->getNextItem('msds_download');
+    $new_name = $name . '.zip';
+
+    if ($node->getType() == 'msds_activities') {
       // Create the new file.
       $zip = new \ZipArchive;
       $zip->open($destination . '/' . $new_name, \ZipArchive::CREATE);
@@ -182,7 +250,30 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
       $files[] = $this->getActivityFile($node);
 
       foreach ($files as $item) {
-        $file = $this->entityTypeManager->getStorage('file')->load($item);
+        $file = $this->entityTypeManager->getStorage('file')->load($this->getMediaFile($item));
+        $file_uri = $this->fileSystem->realpath($file->getFileUri());
+        if ($file_uri) {
+          $zip->addFile($file_uri, $file->getFilename());
+        }
+      }
+
+      $zip->close();
+
+      return $this->downloadZip($name);
+    }
+
+    if ($node->getType() == 'lesson') {
+      // Create the new file.
+      $zip = new \ZipArchive;
+      $zip->open($destination . '/' . $new_name, \ZipArchive::CREATE);
+
+      $files = $this->getRelatedResources($node);
+      $files[] = $this->getGuidanceFiles($node);
+      $files[] = $this->getVideoFile($node);
+      $files[] = $this->getLessonFile($node);
+
+      foreach ($files as $item) {
+        $file = $this->entityTypeManager->getStorage('file')->load($this->getMediaFile($item));
         $file_uri = $this->fileSystem->realpath($file->getFileUri());
         if ($file_uri) {
           $zip->addFile($file_uri, $file->getFilename());
@@ -195,40 +286,120 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     }
   }
 
+  /**
+   * Get media file id's.
+   *
+   * @param string $media_id
+   *   The media id.
+   *
+   * @return array|string
+   */
+  public function getMediaFile($media_id) {
+    $media = $this->entityTypeManager->getStorage('media')->load($media_id);
+    if ($media->bundle() == 'document') {
+      return $media->get('field_media_document')->getValue()['0']['target_id'];
+    }
+    if ($media->bundle() == 'image') {
+      return $media->get('field_media_image')->getValue()['0']['target_id'];
+    }
+    if ($media->bundle() == 'video') {
+      return $media->get('field_media_video_file')->getValue()['0']['target_id'];
+    }
+
+    return [];
+  }
+
+  /**
+   * Get video file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node obejct.
+   *
+   * @return string
+   */
   public function getVideoFile(Node $node) {
-    $video_ref = $node->get('field_msds_video')->getString();
-    $video_ref = $this->entityTypeManager->getStorage('node')->load($video_ref);
-    $media = $this->entityTypeManager->getStorage('media')->load($video_ref->get('field_video')->getString());
-    return $media->get('field_media_video_file')->getValue()['0']['target_id'];
+    if ($node->getType() == 'msds_activities') {
+      $video_ref = $this->entityTypeManager->getStorage('node')->load($node->get('field_msds_video')->getString());
+      return $video_ref->get('field_video')->getString();
+    }
+
+    if ($node->getType() == 'lesson') {
+      $video_ref = $this->entityTypeManager->getStorage('node')->load($node->get('field_lesson_video')->getString());
+      return $video_ref->get('field_video')->getString();
+    }
   }
 
+  /**
+   * Get activity file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node obejct.
+   *
+   * @return string
+   */
   public function getActivityFile(Node $node) {
-    $activity_ref = $node->get('field_activity')->getString();
-    /** @var \Drupal\media\Entity\Media $activity_media */
-    $activity_media = $this->entityTypeManager->getStorage('media')->load($activity_ref);
-    if ($activity_media->bundle() == 'document') {
-      $media = $activity_media->get('field_media_document')->getValue()['0']['target_id'];
-    }
-    else {
-      $media = $activity_media->get('field_media_image')->getValue()['0']['target_id'];
-    }
-
-    return $media;
+    return $node->get('field_activity')->getString();
   }
 
+  /**
+   * Get lesson file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node obejct.
+   *
+   * @return string
+   */
+  public function getLessonFile(Node $node) {
+    return $node->get('field_file')->getString();
+  }
+
+  /**
+   * Get guidance file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node obejct.
+   *
+   * @return string|array
+   */
   public function getGuidanceFiles(Node $node) {
     $medias = [];
-    $node_ref = $this->entityTypeManager->getStorage('node')->load(408);
-    $medias[] = $node_ref->get('field_guidance_file')->getString();
-    $medias[] = $node_ref->get('field_glossary')->getString();
-    $medias[] = $node_ref->get('field_list_of_activities')->getString();
+
+    if ($node->getType() == 'msds_activities') {
+      $node_ref = $this->entityTypeManager->getStorage('node')->load(408);
+      $medias[] = $node_ref->get('field_guidance_file')->getString();
+      $medias[] = $node_ref->get('field_glossary')->getString();
+      $medias[] = $node_ref->get('field_list_of_activities')->getString();
+    }
+
+    if ($node->getType() == 'lesson') {
+      $node_ref = $this->entityTypeManager->getStorage('node')->load(407);
+      $medias = $node_ref->get('field_guidance_file')->getString();
+    }
 
     return $medias;
   }
 
-  public function getAllFiles(Node $node) {
-    $medias = $this->getGuidanceFiles($node);
-
+  /**
+   * Get related resources file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node object.
+   *
+   * @return string|array
+   */
+  public function getRelatedResources(Node $node) {
+    if ($node->getType() == 'lesson') {
+      $medias = [];
+      $refs = explode(',', str_replace(' ', '', $node->get('field_resources_required')->getString()));
+      foreach ($refs as $item) {
+        $item_node = $this->entityTypeManager->getStorage('node')->load($item);
+        $item_media = $item_node->get('field_file')->getString();
+        if ($item_media) {
+          $medias[] = $item_media;
+        }
+      }
+      return $medias;
+    }
   }
 
   /**

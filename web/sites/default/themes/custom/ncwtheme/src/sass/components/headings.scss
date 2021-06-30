@@ -24,6 +24,16 @@ h2{
     }
   }
 }
+
+.field--name-body{
+  h2.Textfo , h2.Textbullet{
+    strong{
+      color: $text-color-black;
+      font-weight: 400;
+    }
+  }
+}
+
 .node--view-mode-full{
   /* h2 - node Full details */
   h2 {

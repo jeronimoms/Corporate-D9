@@ -12,6 +12,9 @@ function napo_msds_activities_theme($existing, $type, $theme, $path) {
         'lang' => NULL,
         'video' => NULL,
         'activity' => NULL,
+        'lesson' => NULL,
+        'guidance' => NULL,
+        'resources' => NULL,
       ],
     ],
   ];

@@ -8,7 +8,6 @@ use Drupal\Core\File\FileSystem;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 
@@ -40,13 +39,6 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
   protected $entityTypeManager;
 
   /**
-   * Drupal\Core\File\FileSystem definition.
-   *
-   * @var \Drupal\Core\File\FileSystem
-   */
-  protected $fileSystem;
-
-  /**
    * Drupal\Core\Language\LanguageManagerInterface definition.
    *
    * @var \Drupal\Core\Language\LanguageManagerInterface
@@ -56,11 +48,10 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
   /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, RouteMatchInterface $route_match, EntityTypeManagerInterface $entity_type_manager, FileSystem $file_system, LanguageManagerInterface $language_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, RouteMatchInterface $route_match, EntityTypeManagerInterface $entity_type_manager, LanguageManagerInterface $language_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->routeMatch = $route_match;
     $this->entityTypeManager = $entity_type_manager;
-    $this->fileSystem = $file_system;
     $this->languageManager = $language_manager;
   }
 
@@ -74,7 +65,6 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
       $plugin_definition,
       $container->get('current_route_match'),
       $container->get('entity_type.manager'),
-      $container->get('file_system'),
       $container->get('language_manager')
     );
   }
@@ -93,39 +83,59 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
   public function build() {
     /** @var \Drupal\node\Entity\Node $node */
     $node = $this->routeMatch->getParameter('node');
-    if (!$node || $node->getType() !== 'msds_activities') {
+
+    if (!$node) {
       return [];
     }
 
-    // Process video link.
     $video = [];
-    $video_ref = $node->get('field_msds_video')->getString();
-    if ($video_ref) {
-      /** @var \Drupal\node\Entity\Node $video_ref */
-      $video_ref = $this->entityTypeManager->getStorage('node')->load($video_ref);
+    $activity = [];
+    $guidance = [];
+    $lesson = [];
+    $resources = [];
+
+    if ($node->getType() == 'msds_activities') {
+      // MSDS Video
+      $video_ref = $node->get('field_msds_video')->getString();
       if ($video_ref) {
-        $video_media = $this->entityTypeManager->getStorage('media')->load($video_ref->get('field_video')->getString());
-        $video['fid'] = $video_media->get('field_media_video_file')->getValue()['0']['target_id'];
-        $file = $this->entityTypeManager->getStorage('file')->load($video['fid']);;
-        $video['size'] = round($file->getSize() / 1024 / 1024,2);
+        $video_ref = $this->entityTypeManager->getStorage('node')->load($video_ref);
+        if ($video_ref) {
+          $video = $this->normalizeMedia($video_ref->get('field_video')->getString());
+        }
       }
+
+      // MSDS Activity.
+      $activity_ref = $node->get('field_activity')->getString();
+      if ($activity_ref) {
+        $activity = $this->normalizeMedia($activity_ref);
+      }
+
+      // MSDS Guidance.
+      $guidance = $this->t('Facilitator guidance');
     }
 
-    // Process activity link.
-    $activity = [];
-    $activity_ref = $node->get('field_activity')->getString();
-    if ($activity_ref) {
-      /** @var \Drupal\media\Entity\Media $activity_media */
-      $activity_media = $this->entityTypeManager->getStorage('media')->load($activity_ref);
-      if ($activity_media->bundle() == 'document') {
-        $activity['fid'] = $activity_media->get('field_media_document')->getValue()['0']['target_id'];
-      }
-      else {
-        $activity['fid'] = $activity_media->get('field_media_image')->getValue()['0']['target_id'];
+    if ($node->getType() == 'lesson') {
+      // LESSON Video
+      $video_ref = $node->get('field_lesson_video')->getString();
+      if ($video_ref) {
+        $video_ref = $this->entityTypeManager->getStorage('node')->load($video_ref);
+        if ($video_ref) {
+          $video = $this->normalizeMedia($video_ref->get('field_video')->getString());
+        }
       }
 
-      $file = $this->entityTypeManager->getStorage('file')->load($activity['fid']);;
-      $activity['size'] = round($file->getSize() / 1024,2);
+      // LESSON Lesson.
+      $lesson_ref = $node->get('field_file')->getString();
+      if ($lesson_ref) {
+        $lesson = $this->normalizeMedia($lesson_ref);
+      }
+
+      // LESSON Guidance.
+      $guidance = $this->t('Teacher guidance');
+
+      // LESSON Resources.
+      $resources = $this->t('Related Resources');
+
     }
 
     return [
@@ -134,7 +144,49 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
       '#lang' => $this->languageManager->getCurrentLanguage()->getId(),
       '#video' => $video,
       '#activity' => $activity,
+      '#lesson' => $lesson,
+      '#guidance' => $guidance,
+      '#resources' => $resources,
     ];
+  }
+
+  /**
+   * Normalize the object for twig.
+   *
+   * @param $media_id
+   *   The node object to add.
+   *
+   * @return array
+   */
+  public function normalizeMedia($media_id) {
+    $file = $this->entityTypeManager->getStorage('file')->load($this->getMediaFileId($media_id));
+    return [
+      'fid' => $file->get('fid')->getString(),
+      'size' => round($file->getSize() / 1024,2),
+    ];
+  }
+
+  /**
+   * Get the media id's dependly the bundle.
+   *
+   * @param $media_id
+   *   The node object to add.
+   *
+   * @return string|array
+   */
+  public function getMediaFileId($media_id) {
+    $media = $this->entityTypeManager->getStorage('media')->load($media_id);
+    if ($media->bundle() == 'document') {
+      return $media->get('field_media_document')->getValue()['0']['target_id'];
+    }
+    if ($media->bundle() == 'image') {
+      return $media->get('field_media_image')->getValue()['0']['target_id'];
+    }
+    if ($media->bundle() == 'video') {
+      return $media->get('field_media_video_file')->getValue()['0']['target_id'];
+    }
+
+    return [];
   }
 
 }

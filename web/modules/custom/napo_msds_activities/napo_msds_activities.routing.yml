@@ -20,6 +20,17 @@ napo_msds_activities.guidance:
       node:
         type: entity:node
 
+napo_msds_activities.resources:
+  path: '/node/{node}/resources'
+  defaults:
+    _controller: '\Drupal\napo_msds_activities\Controller\NmaDownloadController::downloadResources'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
 napo_msds_activities.all:
   path: '/node/{node}/download-all'
   defaults:
