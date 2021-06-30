@@ -559,6 +559,12 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
   }
   .field--name-field-aditional-resources{
     clear: both;
+    .node--type-youtube{
+      h2{
+        padding-bottom: 0;
+        font-size: 1rem;
+      }
+    }
   }
   .field--name-body{
     font-size: 0.9rem;

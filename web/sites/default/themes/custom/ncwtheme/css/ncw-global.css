@@ -880,6 +880,11 @@ h2 a:hover {
   transition: all 1s;
 }
 
+.field--name-body h2.Textfo strong, .field--name-body h2.Textbullet strong {
+  color: #000;
+  font-weight: 400;
+}
+
 .node--view-mode-full {
   /* h2 - node Full details */
 }
@@ -2031,6 +2036,10 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 }
 .node--type-article .field--name-field-aditional-resources {
   clear: both;
+}
+.node--type-article .field--name-field-aditional-resources .node--type-youtube h2 {
+  padding-bottom: 0;
+  font-size: 1rem;
 }
 .node--type-article .field--name-body {
   font-size: 0.9rem;
