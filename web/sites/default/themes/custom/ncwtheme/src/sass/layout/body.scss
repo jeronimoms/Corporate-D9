@@ -95,7 +95,7 @@ body{
       border-bottom: 0;
       &:hover {
         background: url(../images/arrow.png) no-repeat $bg-color-blue calc(100% - 10px) 15px;
-        color: $text-color-white;
+        color: $text-color-white !important;
         -webkit-transition: background-color 800ms linear;
         -moz-transition: background-color 800ms linear;
         -o-transition: background-color 800ms linear;
@@ -136,11 +136,25 @@ body {
   float: right;
 }
 
+.node-readmore{
+  padding: 0;
+}
+
+/* Labels */
 span.label, span.pages{
   font-family: 'Open Sans',sans-serif;
   color: $text-color-blue;
   font-weight: bold;
   font-size: 0.8rem;
+}
+
+.node--view-mode-full{
+  .field--label-above{
+    padding-bottom: 1rem;
+    .field__label{
+      font-weight: 600;
+    }
+  }
 }
 
 span.pages{
