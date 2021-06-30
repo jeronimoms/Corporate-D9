@@ -8,7 +8,6 @@ use Drupal\Core\File\FileSystem;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 
@@ -40,13 +39,6 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
   protected $entityTypeManager;
 
   /**
-   * Drupal\Core\File\FileSystem definition.
-   *
-   * @var \Drupal\Core\File\FileSystem
-   */
-  protected $fileSystem;
-
-  /**
    * Drupal\Core\Language\LanguageManagerInterface definition.
    *
    * @var \Drupal\Core\Language\LanguageManagerInterface
@@ -56,11 +48,10 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
   /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, RouteMatchInterface $route_match, EntityTypeManagerInterface $entity_type_manager, FileSystem $file_system, LanguageManagerInterface $language_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, RouteMatchInterface $route_match, EntityTypeManagerInterface $entity_type_manager, LanguageManagerInterface $language_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->routeMatch = $route_match;
     $this->entityTypeManager = $entity_type_manager;
-    $this->fileSystem = $file_system;
     $this->languageManager = $language_manager;
   }
 
@@ -74,7 +65,6 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
       $plugin_definition,
       $container->get('current_route_match'),
       $container->get('entity_type.manager'),
-      $container->get('file_system'),
       $container->get('language_manager')
     );
   }
@@ -160,6 +150,14 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
     ];
   }
 
+  /**
+   * Normalize the object for twig.
+   *
+   * @param $media_id
+   *   The node object to add.
+   *
+   * @return array
+   */
   public function normalizeMedia($media_id) {
     $file = $this->entityTypeManager->getStorage('file')->load($this->getMediaFileId($media_id));
     return [
@@ -168,6 +166,14 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
     ];
   }
 
+  /**
+   * Get the media id's dependly the bundle.
+   *
+   * @param $media_id
+   *   The node object to add.
+   *
+   * @return string|array
+   */
   public function getMediaFileId($media_id) {
     $media = $this->entityTypeManager->getStorage('media')->load($media_id);
     if ($media->bundle() == 'document') {

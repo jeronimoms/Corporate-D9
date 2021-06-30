@@ -94,14 +94,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
   }
 
   /**
-   * Add a new element to the cart.
+   * Download a file.
    *
-   * @param \Drupal\node\Entity\Node $node
-   *   The node object to add.
+   * @param \Drupal\file\Entity\File $file
+   *   The file object.
    *
-   * @return array|\Drupal\Core\Ajax\AjaxResponse
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
    */
-  public function downloadFile($file) {
+  public function downloadFile(File $file) {
     $headers = [
       'Content-Type' => 'text/' . $file->getMimeType(),
       'Content-Description' => 'File Download',
@@ -113,6 +113,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     return new BinaryFileResponse($uri, 200, $headers, true);
   }
 
+  /**
+   * Download a file.
+   *
+   * @param string $name
+   *   The file name.
+   *
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
+   */
   public function downloadZip($name) {
     // If the file is passed to download, generate the headers.
     $headers = [
@@ -129,6 +137,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     return $binary;
   }
 
+  /**
+   * Download guidance files.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node object.
+   *
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
+   */
   public function downloadGuidance(Node $node) {
     $this->prepareFolder('msds_download');
 
@@ -166,6 +182,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     }
   }
 
+  /**
+   * Download resource files.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node object.
+   *
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
+   */
   public function downloadResources(Node $node) {
     $this->prepareFolder('msds_download');
 
@@ -198,6 +222,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
 
   }
 
+  /**
+   * Download all files.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node object.
+   *
+   * @return array|\Symfony\Component\HttpFoundation\BinaryFileResponse
+   */
   public function downloadAll(Node $node) {
     $this->prepareFolder('msds_download');
 
@@ -254,6 +286,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     }
   }
 
+  /**
+   * Get media file id's.
+   *
+   * @param string $media_id
+   *   The media id.
+   *
+   * @return array|string
+   */
   public function getMediaFile($media_id) {
     $media = $this->entityTypeManager->getStorage('media')->load($media_id);
     if ($media->bundle() == 'document') {
@@ -269,6 +309,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     return [];
   }
 
+  /**
+   * Get video file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node obejct.
+   *
+   * @return string
+   */
   public function getVideoFile(Node $node) {
     if ($node->getType() == 'msds_activities') {
       $video_ref = $this->entityTypeManager->getStorage('node')->load($node->get('field_msds_video')->getString());
@@ -281,14 +329,38 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     }
   }
 
+  /**
+   * Get activity file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node obejct.
+   *
+   * @return string
+   */
   public function getActivityFile(Node $node) {
     return $node->get('field_activity')->getString();
   }
 
+  /**
+   * Get lesson file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node obejct.
+   *
+   * @return string
+   */
   public function getLessonFile(Node $node) {
     return $node->get('field_file')->getString();
   }
 
+  /**
+   * Get guidance file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node obejct.
+   *
+   * @return string|array
+   */
   public function getGuidanceFiles(Node $node) {
     $medias = [];
 
@@ -307,6 +379,14 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
     return $medias;
   }
 
+  /**
+   * Get related resources file id's.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node object.
+   *
+   * @return string|array
+   */
   public function getRelatedResources(Node $node) {
     if ($node->getType() == 'lesson') {
       $medias = [];
