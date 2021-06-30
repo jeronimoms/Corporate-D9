@@ -1,0 +1,10 @@
+napo_film.modal:
+  path: '/napos-films/{node}/scenes/show'
+  defaults:
+    _controller: '\Drupal\napo_film\Controller\NfModalController::show'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      user:
+        type: entity:node
