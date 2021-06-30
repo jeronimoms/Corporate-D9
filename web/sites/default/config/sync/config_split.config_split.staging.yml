@@ -14,10 +14,13 @@ module:
   ldap_servers: 0
   ldap_user: 0
   matomo: 0
+  memcache: 0
+  memcache_admin: 0
   externalauth: 10
 theme: {  }
 blacklist: {  }
-graylist: {  }
+graylist:
+  - search_api.server.solr
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
