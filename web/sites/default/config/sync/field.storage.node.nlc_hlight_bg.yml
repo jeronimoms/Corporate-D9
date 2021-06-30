@@ -1,0 +1,22 @@
+uuid: d6022b6b-b892-43cd-8289-5f8b5802ce03
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+_core:
+  default_config_hash: EfMKkWgEp8d_lc3HoRJDXrHJLDt_XdN_eJ4LEI_cDGI
+id: node.nlc_hlight_bg
+field_name: nlc_hlight_bg
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

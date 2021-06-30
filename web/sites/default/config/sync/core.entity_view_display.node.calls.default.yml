@@ -15,43 +15,70 @@ dependencies:
     - node.type.calls
   module:
     - datetime
+    - ds
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - body
+        - field_calls_deadline
+        - field_related_resources_media
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
 id: node.calls.default
 targetEntityType: node
 bundle: calls
 mode: default
 content:
-  addtoany:
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   body:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_calls_deadline:
-    weight: 1
+    weight: 2
     label: above
     settings:
       timezone_override: ''
       format_type: short
     third_party_settings: {  }
     type: datetime_default
-    region: content
+    region: ds_content
   field_related_resources_media:
-    weight: 2
+    weight: 3
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
 hidden:
+  addtoany: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_author: true

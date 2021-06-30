@@ -6,7 +6,6 @@ dependencies:
     - node.type.events
     - node.type.external_url
     - node.type.file
-    - node.type.flickr
     - node.type.infographic
     - node.type.news
     - node.type.publication
@@ -308,7 +307,6 @@ display:
             events: events
             external_url: external_url
             file: file
-            flickr: flickr
             infographic: infographic
             news: news
             publication: publication
@@ -499,7 +497,6 @@ display:
           operator: in
           value:
             file: file
-            flickr: flickr
             infographic: infographic
             publication: publication
             slideshare: slideshare

@@ -1,0 +1,29 @@
+uuid: caf1456c-a2c5-4e0c-a2ed-b3dbac897d6a
+langcode: en
+status: false
+dependencies:
+  module:
+    - simplenews
+    - system
+  theme:
+    - ncwtheme
+id: simplenewssubscription
+theme: ncwtheme
+region: sidebar_second_others
+weight: 0
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  provider: simplenews
+  label_display: '0'
+  newsletters:
+    default: default
+  message: 'Stay informed - subscribe to our newsletter.'
+  unique_id: default_newsletter
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

@@ -1,0 +1,30 @@
+uuid: dad23c72-e5bf-48fc-a349-56039e471790
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:034befd7-9f4e-471b-b66c-aa84ee0b10b7'
+  module:
+    - block_content
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_rssfeedcareers_2
+theme: newsletter_bilbomatica
+region: sidebar_second
+weight: -33
+provider: null
+plugin: 'block_content:034befd7-9f4e-471b-b66c-aa84ee0b10b7'
+settings:
+  id: 'block_content:034befd7-9f4e-471b-b66c-aa84ee0b10b7'
+  label: 'RSS Feed (Careers)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /careers
+    negate: false

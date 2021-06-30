@@ -1,0 +1,20 @@
+uuid: 9daf9bf7-41f1-43f0-b1e3-c850493c53cf
+langcode: en
+status: true
+dependencies:
+  theme:
+    - newsletter_bilbomatica
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: newsletter_bilbomatica_local_actions
+theme: newsletter_bilbomatica
+region: content
+weight: -32
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

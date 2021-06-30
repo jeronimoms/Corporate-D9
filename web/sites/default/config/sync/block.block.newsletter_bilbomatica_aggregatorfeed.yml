@@ -1,0 +1,27 @@
+uuid: ee191696-ea2d-4e07-b91b-48a04e729436
+langcode: en
+status: true
+dependencies:
+  module:
+    - aggregator
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_aggregatorfeed
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -33
+provider: null
+plugin: aggregator_feed_block
+settings:
+  id: aggregator_feed_block
+  label: 'EU-OSHA in the media'
+  provider: aggregator
+  label_display: visible
+  block_count: 3
+  feed: '1'
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/press-room
+    negate: false

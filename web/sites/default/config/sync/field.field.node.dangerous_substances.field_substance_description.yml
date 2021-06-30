@@ -1,0 +1,21 @@
+uuid: 6dce4e39-643f-4b53-bafa-36c844259ac8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_substance_description
+    - node.type.dangerous_substances
+  module:
+    - text
+id: node.dangerous_substances.field_substance_description
+field_name: field_substance_description
+entity_type: node
+bundle: dangerous_substances
+label: 'Substance Description'
+description: 'Please add the name of the substance or substance group. Please use "Paste from Word" button when you copy text from MS Word'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

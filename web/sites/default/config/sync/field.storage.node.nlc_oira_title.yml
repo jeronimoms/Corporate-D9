@@ -1,0 +1,23 @@
+uuid: e0582110-d959-4123-b664-96381dd51ae5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: VkLwzW_OWrly6YKjCK4HMHA-SZhI2mo6NBdZSpgJkvo
+id: node.nlc_oira_title
+field_name: nlc_oira_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: de64665f-559f-415c-8049-66ad302bb1e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_hlight_layout
+    - node.type.newsletter_content
+  module:
+    - options
+_core:
+  default_config_hash: QUCM2uC3mrmQjd3ToZrLEQpe--6yiqzMcdnJr2xJBCU
+id: node.newsletter_content.nlc_hlight_layout
+field_name: nlc_hlight_layout
+entity_type: node
+bundle: newsletter_content
+label: Layout
+description: 'Allows you to choose between the columns to display the contents of the block'
+required: false
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

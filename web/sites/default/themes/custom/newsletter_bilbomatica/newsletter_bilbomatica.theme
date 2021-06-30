@@ -1,0 +1,12 @@
+<?php
+/**
+ * Process variables to format email messages.
+ *
+ * @see htmlmail.tpl.php
+ */
+function newsletter_bilbomatica_preprocess_simplenews_newsletter_body(&$variables) {
+
+  $variables['hlcontents'] = views_embed_view('newsl_hl_contents', 'hl_content_block');
+
+
+}

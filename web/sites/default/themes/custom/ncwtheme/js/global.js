@@ -26,12 +26,21 @@ jQuery(document).ready(function($){
 
 jQuery(document).ready(function($) {
   // Accordions
-  $(".wysiwyg_accordion h3:nth-child(1)").addClass('active');
-  $(".wysiwyg_accordion div:nth-child(2)").css('display','block');
-  $(".wysiwyg_accordion h3").click(function(){
+  if (!$('body').hasClass("node--type-thesaurus")) {
+    $(".wysiwyg_accordion h3:nth-child(1)").addClass('active');
+    $(".wysiwyg_accordion div:nth-child(2)").css('display', 'block');
+    $(".wysiwyg_accordion h3").click(function () {
       $(this).toggleClass("active");
       $(this).next('.wysiwyg_accordion_panel').slideToggle();
-  });
+    });
+  }
+
+  if ($('body').hasClass("node--type-thesaurus")) {
+    $(".wysiwyg_accordion h3").click(function () {
+      $(this).toggleClass("active");
+      $(this).next('.wysiwyg_accordion_panel').slideToggle();
+    });
+  }
 
   $(".sidebar-second .view-grouping .view-grouping-header").click(function(){
     $(this).toggleClass("active");
@@ -72,6 +81,12 @@ jQuery(document).ready(function($) {
   $(".sidebar-first #block-seminar-tags h2").click(function(){
     $(this).toggleClass("active");
     $(this).parent().find('.content').slideToggle();
+  });
+
+  // Facet with view FOPS detail
+  $(".sidebar-first .view-fop-flags h3").click(function(){
+    $(this).toggleClass("active");
+    $(this).next('.fop-country-list').slideToggle();
   });
 
   //View MSD glossary accordion #block-ncwtheme-content > div > div > div > div.view-content.row > div:nth-child(8)
@@ -123,6 +138,12 @@ jQuery(document).ready(function($) {
   if ($(".move-add-to-any")[0]) {
     $('.addtoany_list').appendTo('.move-add-to-any');
   }
+
+  //Move block theasaurus in Thesaurus Detail
+  if ($(".move-block-thesaurus")[0]) {
+    $('#block-headerthesaurus-2').appendTo('.move-block-thesaurus');
+  }
+
 
   //Move Search Blog
   if ($(".move-block-search-blog")[0]) {
@@ -241,6 +262,10 @@ jQuery(document).ready(function($) {
     });
   }
 
+  // Add class active in menu Glossary when filtered by letter
+  if (window.location.href.indexOf("alphabetical") > -1) {
+    $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
+  }
 });
 
 //Move Language Selector to the menu responsive

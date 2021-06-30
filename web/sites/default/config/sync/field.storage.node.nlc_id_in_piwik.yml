@@ -1,0 +1,23 @@
+uuid: b6b120c0-6181-4439-80cf-3156e1646db1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: LXnx9lfUhBXqnL4x9L5K3Wtz6L-fR335jzCD10RXCWs
+id: node.nlc_id_in_piwik
+field_name: nlc_id_in_piwik
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

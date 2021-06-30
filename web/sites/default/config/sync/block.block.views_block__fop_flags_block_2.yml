@@ -1,0 +1,32 @@
+uuid: 7477c2af-f20c-4b84-8f2b-7827469aa2c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.fop_flags
+  module:
+    - node
+    - views
+  theme:
+    - ncwtheme
+id: views_block__fop_flags_block_2
+theme: ncwtheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_block:fop_flags-block_2'
+settings:
+  id: 'views_block:fop_flags-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      fop_page: fop_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

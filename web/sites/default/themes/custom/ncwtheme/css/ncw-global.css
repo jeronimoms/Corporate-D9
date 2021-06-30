@@ -565,6 +565,51 @@ div#sliding-popup {
   padding-left: 10px;
 }
 
+/* FOP detail "Facets" */
+.sidebar-first .block-views-blockfop-flags-block-2 .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.sidebar-first .view-grouping {
+  width: 100%;
+}
+.sidebar-first .view-grouping h3 {
+  position: relative;
+  font-size: 0.9rem;
+  color: #003399;
+  font-weight: 600;
+  background: #e8eef7;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  cursor: pointer;
+  line-height: 30px;
+}
+.sidebar-first .view-grouping h3::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 17px;
+  background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+  top: 30%;
+  right: 20px;
+}
+.sidebar-first .view-grouping h3.active::after {
+  width: 17px;
+  background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+  right: 17px;
+}
+.sidebar-first .view-grouping .fop-country-list {
+  display: none;
+  padding: 0 0 0.5rem 0;
+}
+.sidebar-first .view-grouping .fop-country-list a {
+  display: block;
+  color: #57565b;
+  font-size: 0.9rem;
+  padding: 5px 0 5px 0.5rem;
+}
+
 /* Header Fields - Language selector - Search */
 #header .header-language-search #lang_dropdown_form_lang-dropdown-form {
   background: url(../images/languageico.png) no-repeat scroll 99% 1px transparent;
@@ -787,22 +832,11 @@ form #edit-actions {
 .tools-and-publications-publications .view-filters fieldset:nth-child(2) {
   order: 3;
 }
-.tools-and-publications-publications .view-filters #edit-actions {
-  order: 4;
+.tools-and-publications-publications .view-filters .views-exposed-form .btn-primary {
+  margin-left: 0;
+  margin-right: 10px;
 }
 
-/* Commented - Waiting EU_OSHA approve */
-/*
-#edit-submit-publications-index {
-  position: absolute;
-  width: 20px;
-  top: 24px;
-  left: 27%;
-  background: url(../images/pink-search.png) no-repeat 96% 55%;
-  border: 0;
-  text-indent: -9999999px;
-}
-*/
 /* Rsponsive Filters */
 @media only screen and (max-width: 767px) {
   #edit-submit-publications-index {
@@ -844,6 +878,11 @@ h2 a {
 h2 a:hover {
   text-decoration: underline;
   transition: all 1s;
+}
+
+.field--name-body h2.Textfo strong, .field--name-body h2.Textbullet strong {
+  color: #000;
+  font-weight: 400;
 }
 
 .node--view-mode-full {
@@ -1310,16 +1349,16 @@ h3.home a:hover {
   margin-bottom: 2rem;
 }
 
-#block-followuson--2 {
+#block-followuson--2, #block-followuson {
   background: #e8ecf5;
   padding: 0.5rem 1rem 1rem 1rem;
 }
-#block-followuson--2 h2 {
+#block-followuson--2 h2, #block-followuson h2 {
   border-bottom: 0;
   padding: 0 0 0.5rem 0;
   margin: 0;
 }
-#block-followuson--2 img {
+#block-followuson--2 img, #block-followuson img {
   margin-right: 10px;
 }
 
@@ -1360,6 +1399,44 @@ h3.home a:hover {
   font-size: 0.8rem;
   color: #003399;
   font-weight: 700;
+}
+
+/* FOPs detail */
+.node--type-fop-page .sidebar-second h3 a {
+  width: 100%;
+  display: block;
+  clear: both;
+  color: #003399;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-bottom: 0;
+  margin-top: 0;
+  pointer-events: none;
+  background: transparent;
+  padding-left: 0;
+  padding-bottom: 3px;
+  padding-top: 0;
+}
+.node--type-fop-page .sidebar-second .item-list {
+  float: left;
+  width: 100%;
+  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.3rem;
+  padding-bottom: 10px;
+}
+.node--type-fop-page .sidebar-second .views-field-nothing {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.node--type-fop-page .sidebar-second a {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 17px;
+  padding-bottom: 10px;
+  background: url(../images/li_arrow.png) no-repeat 1px 2px;
+  padding-left: 15px;
 }
 
 nav.pager {
@@ -1567,7 +1644,7 @@ body .see-more-arrow a, body .link_news_events a {
 }
 body .see-more-arrow a:hover, body .link_news_events a:hover {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 10px) 15px;
-  color: #FFF;
+  color: #FFF !important;
   -webkit-transition: background-color 800ms linear;
   -moz-transition: background-color 800ms linear;
   -o-transition: background-color 800ms linear;
@@ -1595,11 +1672,23 @@ body .news_and_events.block-menu-block ul li .link_news_events a {
   float: right;
 }
 
+.node-readmore {
+  padding: 0;
+}
+
+/* Labels */
 span.label, span.pages {
   font-family: "Open Sans", sans-serif;
   color: #003399;
   font-weight: bold;
   font-size: 0.8rem;
+}
+
+.node--view-mode-full .field--label-above {
+  padding-bottom: 1rem;
+}
+.node--view-mode-full .field--label-above .field__label {
+  font-weight: 600;
 }
 
 span.pages {
@@ -1948,6 +2037,10 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 .node--type-article .field--name-field-aditional-resources {
   clear: both;
 }
+.node--type-article .field--name-field-aditional-resources .node--type-youtube h2 {
+  padding-bottom: 0;
+  font-size: 1rem;
+}
 .node--type-article .field--name-body {
   font-size: 0.9rem;
 }
@@ -2043,6 +2136,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   align-items: center;
   font-size: 1rem;
   background: transparent;
+  border-bottom: 0;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:before {
   content: "";
@@ -2165,6 +2259,36 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 /* Blog Search */
 .page-view-search-blog .block-views-exposed-filter-blocksearch-blog-page-1 h2 {
   display: none;
+}
+
+/* EU-OSHA in the Media */
+body.path-aggregator article.aggregator-item {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+  background: url(../images/back-tit-blue.png) repeat-x 100% 100%;
+}
+body.path-aggregator article.aggregator-item h3 {
+  margin-bottom: 0;
+}
+body.path-aggregator article.aggregator-item h3 a {
+  font-size: 1.35rem;
+  color: #003399;
+  margin-bottom: 0;
+  padding-left: 0;
+  font-weight: 400;
+  line-height: 30px;
+}
+body.path-aggregator article.aggregator-item .field--type-entity-reference, body.path-aggregator article.aggregator-item .field--name-author {
+  display: none;
+}
+body.path-aggregator article.aggregator-item .field--name-timestamp {
+  font-size: 0.8rem;
+  color: #003399;
+  font-weight: 600;
+}
+body.path-aggregator article.aggregator-item .item-description {
+  padding-top: 1rem;
 }
 
 /* Breadcrumbs */
@@ -3882,6 +4006,17 @@ body.contact form.contact-form button.btn-primary {
   font-size: 0.9rem;
   padding-left: 5px;
 }
+.view-publications .views-field-field-pages-count {
+  color: #003399;
+  position: absolute;
+  right: 9px;
+  top: 12px;
+  font-size: 0.8rem;
+  display: flex;
+}
+.view-publications .views-field-field-pages-count .views-label-field-pages-count {
+  padding-right: 3px;
+}
 .view-publications .see-more-arrow {
   display: block;
   position: absolute;
@@ -4105,6 +4240,7 @@ body.node--type-publication {
   display: flex;
   position: relative;
   color: #003399;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
@@ -4202,6 +4338,27 @@ body.node--type-publication {
   font-weight: bold;
 }
 
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:after, html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:after {
+  min-width: 205px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2), html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2) {
+  min-width: 215px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after, html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(2):after {
+  min-width: 215px;
+  left: 205px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3), html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3) {
+  min-width: 200px;
+}
+html[lang=de] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=el] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=fr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=hr] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=lv] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=nl] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=pt] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=bg] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after, html[lang=cs] #block-thesaurus ul .nav-item.menu-item--active-trail:nth-child(3):after {
+  left: 410px;
+  min-width: 185px;
+}
+html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .nav-item, html[lang=fr] #block-thesaurus ul .nav-item, html[lang=hr] #block-thesaurus ul .nav-item, html[lang=lv] #block-thesaurus ul .nav-item, html[lang=nl] #block-thesaurus ul .nav-item, html[lang=pt] #block-thesaurus ul .nav-item, html[lang=bg] #block-thesaurus ul .nav-item, html[lang=cs] #block-thesaurus ul .nav-item {
+  min-width: 200px;
+}
+
 .field--name-body .hierarchical-tree {
   list-style: none;
 }
@@ -4262,11 +4419,26 @@ body.node--type-publication {
   margin-right: 0;
 }
 .view-display-id-attachment_1 .views-summary {
-  display: inline-block;
-  margin-right: 1rem;
+  margin-right: 0;
 }
 .view-display-id-attachment_1 .views-summary a {
   font-weight: 600;
+  margin-right: 0.5rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.view-display-id-attachment_1 .views-summary a.is-active {
+  border-bottom: 2px solid #c72272;
+  padding-bottom: 3px;
+}
+.view-display-id-attachment_1 .views-summary:nth-child(1) {
+  order: 40;
+}
+.view-display-id-attachment_1 .views-summary:nth-child(2) {
+  order: 41;
+}
+.view-display-id-attachment_1 .views-summary:nth-child(3) {
+  order: 42;
 }
 
 .page-view-thesaurus-front-indexed .feed-icons {
@@ -4278,6 +4450,94 @@ body.node--type-publication {
   background: url(../images/download-thesaurus.png) no-repeat 99% 0;
 }
 
+/* Thesaurus detail */
+.node--type-thesaurus h1 {
+  margin-bottom: 0;
+}
+.node--type-thesaurus .titles-thesaurus-detail {
+  display: flex;
+}
+.node--type-thesaurus .titles-thesaurus-detail img {
+  margin-top: 12px;
+  margin-left: 5px;
+}
+.node--type-thesaurus .titles-thesaurus-detail .separator-thesaurus {
+  display: inline-flex;
+  font-size: 1.35rem;
+  color: #003399;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.node--type-thesaurus .move-block-thesaurus {
+  border-bottom: 1px solid #003399;
+  margin-bottom: 0.5rem;
+}
+.node--type-thesaurus #block-headerthesaurus-2 .header__wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.node--type-thesaurus #block-headerthesaurus-2 .header__wrapper > div:nth-child(2) {
+  display: grid;
+  width: 40%;
+  justify-content: end;
+}
+.node--type-thesaurus h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.node--type-thesaurus h2 p {
+  padding: 0;
+  margin: 0;
+}
+.node--type-thesaurus .link-thesaurus-detail {
+  clear: both;
+}
+.node--type-thesaurus .link-thesaurus-detail a {
+  background: url(../images/arrow.png) no-repeat scroll 96% center #b7c6e3;
+  border: 0 none;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-right: 2.3em;
+  text-align: right;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+  width: auto;
+  float: left;
+  padding-left: 10px;
+  border-bottom: 0;
+}
+.node--type-thesaurus .field__label {
+  font-weight: 600;
+  clear: both;
+}
+.node--type-thesaurus .content-context .field__label {
+  display: none;
+}
+.node--type-thesaurus .field--name-field-context .field__label:after {
+  content: "";
+  display: inline-block;
+  background: url("../images/info-thesaurus.png") no-repeat 0 0;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  #block-headerthesaurus-2 .header__wrapper {
+    display: block;
+  }
+  #block-headerthesaurus-2 .header__wrapper .header__col:first-child {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .node--type-thesaurus #block-headerthesaurus-2 .header__wrapper > div:nth-child(2) {
+    display: block;
+  }
+}
+/* End Media 768px */
 /* View Highlights(Home) and Press releases */
 .view-highlight, .view-press-releases {
   float: left;

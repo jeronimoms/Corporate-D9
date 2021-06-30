@@ -58,7 +58,6 @@ third_party_settings:
         - body
         - field_aditional_resources
         - field_flickr_date
-        - addtoany
     fields:
       node_title:
         plugin_id: node_title
@@ -75,11 +74,6 @@ targetEntityType: node
 bundle: news
 mode: default
 content:
-  addtoany:
-    weight: 7
-    region: ds_content
-    settings: {  }
-    third_party_settings: {  }
   body:
     type: text_default
     weight: 4
@@ -130,6 +124,8 @@ content:
     type: text_default
     region: ds_content
 hidden:
+  addtoany: true
+  breadcrumbs: true
   comment_node_news: true
   field_activity: true
   field_archived: true

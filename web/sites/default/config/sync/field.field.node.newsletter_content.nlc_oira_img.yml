@@ -1,0 +1,34 @@
+uuid: 9f1cebbb-891d-4654-b6da-b334ee1eaa1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.nlc_oira_img
+    - media.type.image
+    - node.type.newsletter_content
+_core:
+  default_config_hash: Uol3QCiF_Tw469epikDOso0UijJbDn2KJUm8xah_IlU
+id: node.newsletter_content.nlc_oira_img
+field_name: nlc_oira_img
+entity_type: node
+bundle: newsletter_content
+label: 'Section Image Oira'
+description: 'Allows you to add / edit the image of the section'
+required: false
+translatable: false
+default_value:
+  -
+    weight: 0
+    target_uuid: 4be7f1a2-5a83-4f81-8349-9668ce43705e
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

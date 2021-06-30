@@ -1,0 +1,22 @@
+uuid: 1b1f9ee0-f6f4-46fc-be25-ff94c33912b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+_core:
+  default_config_hash: cksKFC_sL3phzKpB6N7jrKE4Z8igb3g3Jx8HC2PGqAQ
+id: node.nlc_wiki_img
+field_name: nlc_wiki_img
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
