@@ -51,11 +51,15 @@
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
+{% set has_video = items.0.content['#node'].type.0.target_id %}
 <div class="content-headings-related">
   <h2>{{ 'Related resources' | trans }}</h2>
-  <h3 class="custom-border"><span>{{ 'Related publications' | trans }}</span></h3>
+  {% if has_video == 'youtube' %}
+    <h3 class="custom-border"><span>{{ 'Videos' | trans }}</span></h3>
+  {% else %}
+    <h3 class="custom-border"><span>{{ 'Related publications' | trans }}</span></h3>
+  {% endif %}
 </div>
-
 
 {% if label_hidden %}
   {% if multiple %}
