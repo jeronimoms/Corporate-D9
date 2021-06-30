@@ -832,22 +832,11 @@ form #edit-actions {
 .tools-and-publications-publications .view-filters fieldset:nth-child(2) {
   order: 3;
 }
-.tools-and-publications-publications .view-filters #edit-actions {
-  order: 4;
+.tools-and-publications-publications .view-filters .views-exposed-form .btn-primary {
+  margin-left: 0;
+  margin-right: 10px;
 }
 
-/* Commented - Waiting EU_OSHA approve */
-/*
-#edit-submit-publications-index {
-  position: absolute;
-  width: 20px;
-  top: 24px;
-  left: 27%;
-  background: url(../images/pink-search.png) no-repeat 96% 55%;
-  border: 0;
-  text-indent: -9999999px;
-}
-*/
 /* Rsponsive Filters */
 @media only screen and (max-width: 767px) {
   #edit-submit-publications-index {
@@ -1650,7 +1639,7 @@ body .see-more-arrow a, body .link_news_events a {
 }
 body .see-more-arrow a:hover, body .link_news_events a:hover {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 10px) 15px;
-  color: #FFF;
+  color: #FFF !important;
   -webkit-transition: background-color 800ms linear;
   -moz-transition: background-color 800ms linear;
   -o-transition: background-color 800ms linear;
@@ -1678,11 +1667,23 @@ body .news_and_events.block-menu-block ul li .link_news_events a {
   float: right;
 }
 
+.node-readmore {
+  padding: 0;
+}
+
+/* Labels */
 span.label, span.pages {
   font-family: "Open Sans", sans-serif;
   color: #003399;
   font-weight: bold;
   font-size: 0.8rem;
+}
+
+.node--view-mode-full .field--label-above {
+  padding-bottom: 1rem;
+}
+.node--view-mode-full .field--label-above .field__label {
+  font-weight: 600;
 }
 
 span.pages {

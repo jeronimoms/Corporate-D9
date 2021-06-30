@@ -233,26 +233,12 @@ form{
     fieldset:nth-child(2){
       order: 3;
     }
-    #edit-actions{
-      order: 4;
+    .views-exposed-form .btn-primary {
+      margin-left: 0;
+      margin-right: 10px;
     }
   }
 }
-
-/* Commented - Waiting EU_OSHA approve */
-/*
-#edit-submit-publications-index {
-  position: absolute;
-  width: 20px;
-  top: 24px;
-  left: 27%;
-  background: url(../images/pink-search.png) no-repeat 96% 55%;
-  border: 0;
-  text-indent: -9999999px;
-}
-*/
-
-
 
 /* Rsponsive Filters */
 @media only screen and (max-width : 767px) {
