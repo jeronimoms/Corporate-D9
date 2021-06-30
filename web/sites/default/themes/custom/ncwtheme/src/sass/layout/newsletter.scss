@@ -1,0 +1,20 @@
+/* This SASS only apply in the Web, not in the email - outlook
+   View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
+*/
+.node--type-newsletter-content{
+  table{
+    tr{
+      background: transparent;
+    }
+  }
+  table tr th, table tr th a, table tr th a:hover, table tr th a:focus {
+    color: $text-color-blue;
+    font-weight: 600;
+  }
+  tr td, tr th {
+    padding: 4px 9px;
+    border: 0;
+    text-align: left;
+  }
+}
+

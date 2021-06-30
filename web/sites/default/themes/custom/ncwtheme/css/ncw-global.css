@@ -3688,6 +3688,22 @@ body.user-logged-in.toolbar-tray-open #header {
     margin: 0 auto;
   }
 }
+/* This SASS only apply in the Web, not in the email - outlook
+   View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
+*/
+.node--type-newsletter-content table tr {
+  background: transparent;
+}
+.node--type-newsletter-content table tr th, .node--type-newsletter-content table tr th a, .node--type-newsletter-content table tr th a:hover, .node--type-newsletter-content table tr th a:focus {
+  color: #003399;
+  font-weight: 600;
+}
+.node--type-newsletter-content tr td, .node--type-newsletter-content tr th {
+  padding: 4px 9px;
+  border: 0;
+  text-align: left;
+}
+
 body.contact form.contact-form {
   width: 80%;
   background: #e8ecf5;

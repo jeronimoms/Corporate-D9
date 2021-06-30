@@ -16,5 +16,8 @@ a:active {
 }
 .table.newsletter-container {
   background: #ff6600;
+}
 
+.newsletter-container tr{
+  background: red;
 }
