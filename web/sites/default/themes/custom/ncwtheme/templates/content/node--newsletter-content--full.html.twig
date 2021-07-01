@@ -376,6 +376,7 @@
                               <tr style="border: 0;">
                                 <td colspan="2"
                                     style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
+                                  {{ drupal_dump (content.nlc_healthy_contents) }}
                                   {{ content.nlc_healthy_contents }}
                                 </td>
                               </tr>
@@ -681,6 +682,7 @@
                 </table>
                 <!-- END EU news bites SECTION -->
               {% endif %}
+
               {% if content.nlc_wiki_contents.0 %}
                 <!-- Wiki -->
                 <table
@@ -703,8 +705,8 @@
                     <th width="310" class="template-column newsletter-half-image"
                         style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ content.nlc_wiki_bgcolor.0 }};">
                       <img
-                        src="{{ file_url(content.nlc_wiki_img[0]['#media'].field_media_image.entity.uri.value) }}"
-                        style="max-width: 100%; display: block; margin: auto; background-color: {{ content.nlc_covid_bg.0 }};">
+                        src="https://osha.europa.eu/sites/default/files/newsletter_images/OSHwiki_0.png"
+                        style="max-width: 100%; display: block; margin: auto; background-color: {{ content.nlc_wiki_bgcolor.0 }};">
                     </th>
                     <th class="template-column newsletter-half-content"
                         style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ content.nlc_wiki_bgcolor.0 }};">
@@ -770,8 +772,7 @@
                                    style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
                               <thead>
                               <tr style="border: 0;">
-                                <th rowspan="2" width="300"
-                                    style="background-color: transparent; border: 0; font-weight: normal; text-transform: none; padding: 0px; padding-bottom: 10px; vertical-align: top; padding-top: 0px; padding-right: 20px; text-align: center; max-width: 300px;"
+                                <th rowspan="2" style="background-color: transparent; border: 0; font-weight: normal; text-transform: none; padding: 0px; padding-bottom: 10px; vertical-align: top; padding-top: 0px; padding-right: 20px; text-align: center;"
                                     class="template-column template-image">
                                   <table border="0" cellpadding="0" cellspacing="0" width="100%"
                                          style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
