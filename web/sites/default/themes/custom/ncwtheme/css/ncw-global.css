@@ -3699,9 +3699,15 @@ body.user-logged-in.toolbar-tray-open #header {
   font-weight: 600;
 }
 .node--type-newsletter-content tr td, .node--type-newsletter-content tr th {
-  padding: 4px 9px;
+  padding: 0;
   border: 0;
   text-align: left;
+}
+.node--type-newsletter-content .node--unpublished {
+  padding: 20px 6px 0;
+}
+.node--type-newsletter-content .field__item {
+  padding-bottom: 10px;
 }
 
 body.contact form.contact-form {
