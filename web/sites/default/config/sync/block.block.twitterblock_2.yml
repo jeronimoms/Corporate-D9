@@ -1,4 +1,4 @@
-uuid: 08d9f434-7bdc-45b9-8d24-660f2a845c20
+uuid: 4a209d5e-b426-4630-a808-571fff8814bd
 langcode: en
 status: true
 dependencies:
@@ -7,17 +7,17 @@ dependencies:
     - twitter_block
   theme:
     - ncwtheme
-id: twitterblock
+id: twitterblock_2
 theme: ncwtheme
 region: sidebar_second_others
-weight: -32
+weight: 0
 provider: null
 plugin: twitter_block
 settings:
   id: twitter_block
-  label: 'Latest tweets'
+  label: 'Twitter block for Newsletter'
   provider: twitter_block
-  label_display: visible
+  label_display: '0'
   username: EU_OSHA
   theme: ''
   link_color: ''
@@ -37,5 +37,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/tools-and-resources/blog\r\n<front>\r\n/search/blog\r\n"
+    pages: '/newsletter/*'
     negate: false

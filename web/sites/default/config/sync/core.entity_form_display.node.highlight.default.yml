@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.highlight.field_show_on
     - field.field.node.highlight.field_tags
     - field.field.node.highlight.field_thesaurus_2020
+    - field.field.node.highlight.simplenews_issue
     - node.type.highlight
   module:
     - content_moderation
@@ -29,6 +30,7 @@ dependencies:
     - entity_browser
     - media_library
     - path
+    - simplenews
     - text
 id: node.highlight.default
 targetEntityType: node
@@ -160,6 +162,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  simplenews_issue:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: simplenews_issue
+    region: content
   status:
     type: boolean_checkbox
     weight: 18

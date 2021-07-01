@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.highlight.field_show_on
     - field.field.node.highlight.field_tags
     - field.field.node.highlight.field_thesaurus_2020
+    - field.field.node.highlight.simplenews_issue
     - node.type.highlight
   module:
     - user
@@ -38,6 +39,7 @@ content:
 hidden:
   addtoany: true
   body: true
+  breadcrumbs: true
   comment_node_highlight: true
   field_activity: true
   field_aditional_resources: true
@@ -57,3 +59,4 @@ hidden:
   field_thesaurus_2020: true
   langcode: true
   search_api_excerpt: true
+  simplenews_issue: true

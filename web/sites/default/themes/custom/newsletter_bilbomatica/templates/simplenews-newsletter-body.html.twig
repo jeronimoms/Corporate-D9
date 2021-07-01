@@ -384,7 +384,7 @@
                           <tr style="border: 0;">
                             <td colspan="2"
                                 style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                              {{ build.nlc_healthy_contents }}
+                              {{ build.nlc_healthy_contents|render }}
                             </td>
                           </tr>
                           </tbody>
@@ -458,7 +458,7 @@
                           <tr style="border: 0;">
                             <td colspan="2"
                                 style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                              {{ build.nlc_national_contents }}
+                              {{ build.nlc_national_contents|render }}
                             </td>
                           </tr>
                           </tbody>
@@ -529,8 +529,9 @@
                                style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                           <tbody>
                           <tr style="border: 0;">
-                            <td colspan="2"
-                            {{ build.nlc_oira_contents }}
+                            <td colspan="2">
+                              {{ build.nlc_oira_contents|render }}
+                              {{ build.nlc_national_contents|render }}
                             </td>
                           </tr>
                           </tbody>
@@ -592,7 +593,7 @@
                           <tr style="border: 0;">
                             <td colspan="2"
                                 style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                              {{ build.nlc_covid_contents }}
+                              {{ build.nlc_covid_contents|render }}
                             </td>
                           </tr>
                           </tbody>
@@ -654,7 +655,7 @@
                           <tr style="border: 0;">
                             <td colspan="2"
                                 style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                              {{ build.nlc_eunews_contents }}
+                              {{ build.nlc_eunews_contents|render }}
                             </td>
                           </tr>
                           </tbody>
@@ -712,7 +713,7 @@
                           <tr style="border: 0;">
                             <td colspan="2"
                                 style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                              {{ build.nlc_covid_contents }}
+                              {{ build.nlc_covid_contents|render }}
                             </td>
                           </tr>
                           </tbody>
@@ -767,7 +768,7 @@
                           <tr style="border: 0;">
                             <td colspan="2"
                                 style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                              {{ build.nlc_motweets_layout }}
+                              {{ build.nlc_motweets_layout|render }}
                             </td>
                           </tr>
                           </tbody>
