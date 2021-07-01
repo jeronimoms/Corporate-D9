@@ -3709,6 +3709,13 @@ body.user-logged-in.toolbar-tray-open #header {
 .node--type-newsletter-content .field__item {
   padding-bottom: 10px;
 }
+.node--type-newsletter-content .block-twitter-block {
+  height: 457px;
+  margin-top: 20px;
+}
+.node--type-newsletter-content figure {
+  margin: 0;
+}
 
 body.contact form.contact-form {
   width: 80%;

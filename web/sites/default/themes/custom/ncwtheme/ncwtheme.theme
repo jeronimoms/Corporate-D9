@@ -45,6 +45,11 @@ function ncwtheme_preprocess_html(&$variables){
   if (\Drupal::service('path.matcher')->isFrontPage()) {
     $variables['head_title']['title'] = t('European Agency for Safety & Health at Work - Information, statistics, legislation and risk assessment tools.');
   }
+  $variables['hlcontents'] = views_embed_view('highlight', 'page');
+}
+
+function ncwtheme_preprocess_newsletter_content_full(&$variables) {
+  $variables['hlcontents'] = views_embed_view('highlight', 'page');
 }
 
 

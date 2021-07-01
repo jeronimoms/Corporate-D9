@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.article.field_tags
     - field.field.node.article.field_thesaurus_2020
     - field.field.node.article.field_wiki_categories
+    - field.field.node.article.simplenews_issue
     - node.type.article
   module:
     - ds
@@ -127,3 +128,4 @@ hidden:
   langcode: true
   links: true
   search_api_excerpt: true
+  simplenews_issue: true
