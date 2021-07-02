@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.newsletter_content.field_view_twetter_block
     - field.field.node.newsletter_content.nlc_covid_bg
     - field.field.node.newsletter_content.nlc_covid_contents
     - field.field.node.newsletter_content.nlc_covid_img
@@ -344,6 +345,7 @@ third_party_settings:
         - nlc_monews_title
         - nlc_monews_contents
         - nlc_motweets_bgcolor
+        - field_view_twetter_block
       parent_name: group_more_new_tweets
       weight: 27
       format_type: details
@@ -368,6 +370,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_view_twetter_block:
+    weight: 30
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   langcode:
     type: language_select
     weight: 13
