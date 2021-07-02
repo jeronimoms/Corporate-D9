@@ -1,23 +1,25 @@
-sids: {  }
+sids:
+  osha: osha
+  osha_write: '0'
 authenticationMode: mixed
 loginUIUsernameTxt: ''
 loginUIPasswordTxt: ''
 ldapUserHelpLinkUrl: ''
 ldapUserHelpLinkText: ''
-emailOption: disable
+emailOption: allow
 emailUpdate: update_notify
 emailTemplateHandling: none
-emailTemplate: '@username@example.com'
+emailTemplate: '@username@fake-domain.com'
 emailTemplateUsageResolveConflict: false
 emailTemplateUsageNeverUpdate: false
 emailTemplateUsagePromptUser: false
 emailTemplateUsageRedirectOnLogin: false
-emailTemplateUsagePromptRegex: '.*@example\\.com'
-passwordOption: hide
+emailTemplateUsagePromptRegex: '.*@fake-domain\.com'
+passwordOption: allow
 allowOnlyIfTextInDn: {  }
 excludeIfTextInDn: {  }
-excludeIfNoAuthorizations: null
-skipAdministrators: true
+excludeIfNoAuthorizations: false
+skipAdministrators: false
 langcode: en
 _core:
   default_config_hash: 9DgabkLztscclWQDjei_mAOpxP6xdbp_Iu5L5z6Nsbg

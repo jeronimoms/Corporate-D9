@@ -1,0 +1,68 @@
+uuid: 375d8112-df39-41f9-85fa-0e01c2e63e98
+langcode: en
+status: true
+dependencies: {  }
+id: osha
+label: Osha
+description: null
+provider: ldap_provider
+consumer: authorization_drupal_roles
+provider_config:
+  status:
+    server: osha
+    only_ldap_authenticated: true
+  filter_and_mappings:
+    use_first_attr_as_groupid: false
+provider_mappings:
+  -
+    query: 'cn=ADMIN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|administrator'
+    is_regex: false
+  -
+    query: 'cn=APPROVER,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Approver'
+    is_regex: false
+  -
+    query: 'cn=EDIT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=EVENTCOOR,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Events Coordinator'
+    is_regex: false
+  -
+    query: 'cn=EVENTEDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Events Editor'
+    is_regex: false
+  -
+    query: 'cn=LAYVAL,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Layout Validator'
+    is_regex: false
+  -
+    query: 'cn=TRLIAS,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Translation Liaison'
+    is_regex: false
+  -
+    query: 'cn=TRLMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Translation Manager'
+    is_regex: false
+  -
+    query: 'cn=READ,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|authenticated user'
+    is_regex: false
+consumer_config: {  }
+consumer_mappings:
+  -
+    role: administrator
+  -
+    role: approver
+  -
+    role: editor
+  -
+    role: events_coordinator
+  -
+    role: events_editor
+  -
+    role: layout_validator
+  -
+    role: translation_liaison
+  -
+    role: translation_manager
+  -
+    role: read_only
+synchronization_modes:
+  user_logon: user_logon
+synchronization_actions:
+  revoke_provider_provisioned: revoke_provider_provisioned
+  create_consumers: create_consumers
