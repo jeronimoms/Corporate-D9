@@ -1,0 +1,23 @@
+uuid: ce709880-87aa-4cad-9486-7a540ce06782
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.simplenews_issue
+    - node.type.highlight
+  module:
+    - simplenews
+id: node.highlight.simplenews_issue
+field_name: simplenews_issue
+entity_type: node
+bundle: highlight
+label: Issue
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:simplenews_newsletter'
+  handler_settings: {  }
+field_type: simplenews_issue

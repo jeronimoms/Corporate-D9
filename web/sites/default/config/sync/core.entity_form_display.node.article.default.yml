@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.article.field_tags
     - field.field.node.article.field_thesaurus_2020
     - field.field.node.article.field_wiki_categories
+    - field.field.node.article.simplenews_issue
     - node.type.article
     - workflows.workflow.editorial
   module:
@@ -33,6 +34,7 @@ dependencies:
     - media_library
     - metatag
     - path
+    - simplenews
     - text
 _core:
   default_config_hash: 6VUXB1jTUjK5zjkfMa2Kd2WW4sFUlgfBlfJSx01qLpU
@@ -228,6 +230,12 @@ content:
     weight: 27
     region: content
     third_party_settings: {  }
+  simplenews_issue:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: simplenews_issue
+    region: content
   status:
     type: boolean_checkbox
     settings:
