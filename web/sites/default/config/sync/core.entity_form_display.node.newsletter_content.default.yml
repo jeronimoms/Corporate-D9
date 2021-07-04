@@ -341,7 +341,6 @@ third_party_settings:
       label: 'More New & Tweets'
     group_more_tweets_contents:
       children:
-        - nlc_motweets_layout
         - nlc_tweets_title
         - nlc_monews_title
         - nlc_monews_contents
@@ -617,12 +616,6 @@ content:
     third_party_settings: {  }
     type: color_field_widget_spectrum
     region: content
-  nlc_motweets_layout:
-    weight: 25
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   nlc_nat_layout:
     weight: 20
     settings: {  }
@@ -857,4 +850,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  nlc_motweets_layout: true
