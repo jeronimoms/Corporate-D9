@@ -3717,6 +3717,45 @@ body.user-logged-in.toolbar-tray-open #header {
   margin: 0;
 }
 
+/* Block Newsletter Home page - Right sidebar */
+.newsletter-block-wrapper {
+  background: #ecf1fb;
+  padding: 25px 20px;
+  margin-top: 10px;
+  margin-bottom: 2rem;
+  color: #003399;
+  font-size: 0.9rem;
+  border-radius: 3px;
+}
+.newsletter-block-wrapper a {
+  display: block;
+  margin-top: 5px;
+  text-decoration: underline;
+}
+.newsletter-block-wrapper a:hover {
+  text-decoration: none;
+}
+.newsletter-block-wrapper .form-item-agree-processing-personal-data {
+  display: flex;
+  padding-bottom: 1rem;
+}
+.newsletter-block-wrapper .form-item-agree-processing-personal-data .option {
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-top: -4px;
+  margin-left: 10px;
+}
+.newsletter-block-wrapper #edit-mail-wrapper {
+  margin-top: 10px;
+}
+.newsletter-block-wrapper #edit-mail-wrapper label {
+  font-weight: 400;
+}
+.newsletter-block-wrapper #edit-actions {
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
 body.contact form.contact-form {
   width: 80%;
   background: #e8ecf5;

@@ -152,7 +152,12 @@ jQuery(document).ready(function($) {
 
   //Move infographic filter
   if ($(".views-row.moved-by-jquery")[0]) {
-    $('.views-row.moved-by-jquery').prependTo('.page-view-infographic .view-infographic.view-display-id-block_3  .view-content.row');
+    $('.views-row.moved-by-jquery').prependTo('.page-view-infographic .view-infographic.view-display-id-block_3 .view-content.row');
+  }
+
+  //Move Newsletter subscribe home block
+  if ($(".move-subscribe-button-by-jquery")[0]) {
+    $('#edit-actions').appendTo('.move-subscribe-button-by-jquery');
   }
 
   //Show input search when click in Search button responsive menu

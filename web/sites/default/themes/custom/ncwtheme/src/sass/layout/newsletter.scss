@@ -31,3 +31,41 @@
   }
 }
 
+/* Block Newsletter Home page - Right sidebar */
+.newsletter-block-wrapper{
+  background: $bg-color-blue-block;
+  padding: 25px 20px;
+  margin-top: 10px;
+  margin-bottom: 2rem;
+  color: $text-color-blue;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  a{
+    display: block;
+    margin-top: 5px;
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .form-item-agree-processing-personal-data{
+    display: flex;
+    padding-bottom: 1rem;
+    .option{
+      font-weight: normal;
+      margin-bottom: 0;
+      margin-top: -4px;
+      margin-left: 10px;
+    }
+  }
+  #edit-mail-wrapper{
+    margin-top: 10px;
+    label{
+      font-weight: 400;
+    }
+  }
+  #edit-actions{
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+}
