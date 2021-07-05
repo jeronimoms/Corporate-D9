@@ -3,7 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.25th_anniversary
     - node.type.article
+    - node.type.calls
+    - node.type.directive
+    - node.type.events
+    - node.type.guideline
+    - node.type.highlight
+    - node.type.infographic
+    - node.type.job_vacancies
+    - node.type.news
+    - node.type.newsletter_content
+    - node.type.press_release
+    - node.type.publication
+    - node.type.register_records
+    - node.type.seminar
   module:
     - content_moderation
 _core:
@@ -13,40 +27,47 @@ label: Editorial
 type: content_moderation
 type_settings:
   states:
-    archived:
-      label: Archived
-      weight: 5
+    approved:
       published: false
-      default_revision: true
+      default_revision: false
+      label: Approved
+      weight: -2
     draft:
       label: Draft
       published: false
       default_revision: false
-      weight: -5
+      weight: -4
+    final_draft:
+      published: false
+      default_revision: true
+      label: 'Final Draft'
+      weight: -1
     published:
       label: Published
       published: true
       default_revision: true
+      weight: 3
+    ready_to_publish:
+      published: false
+      default_revision: false
+      label: 'Ready To Publish'
+      weight: 2
+    rejected:
+      published: false
+      default_revision: false
+      label: Rejected
+      weight: -3
+    to_be_approved:
+      published: false
+      default_revision: false
+      label: 'To Be Approved'
+      weight: 1
+    to_be_reviewed:
+      published: false
+      default_revision: false
+      label: 'To Be Reviewed'
       weight: 0
   transitions:
-    archive:
-      label: Archive
-      from:
-        - published
-      to: archived
-      weight: 2
-    archived_draft:
-      label: 'Restore to Draft'
-      from:
-        - archived
-      to: draft
-      weight: 3
-    archived_published:
-      label: Restore
-      from:
-        - archived
-      to: published
-      weight: 4
     create_new_draft:
       label: 'Create New Draft'
       to: draft
@@ -63,5 +84,19 @@ type_settings:
         - published
   entity_types:
     node:
+      - 25th_anniversary
       - article
+      - calls
+      - directive
+      - events
+      - guideline
+      - highlight
+      - infographic
+      - job_vacancies
+      - news
+      - newsletter_content
+      - press_release
+      - publication
+      - register_records
+      - seminar
   default_moderation_state: published
