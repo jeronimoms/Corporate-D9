@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+{% set highlight_title = ds_content.node_title.0.0.0['#context'] %}
+{{ drupal_dump(highlight_title.entity_url) }}
+{{ drupal_dump(highlight_title.entity_url['#options']) }}
+{{ drupal_dump(highlight_title.entity_url['#options'].entity) }}
+{{ drupal_dump(highlight_title.entity_url['#options'].entity['#values']) }}
+{{ drupal_dump(highlight_title.entity_url['#options'].entity['#values'].nid) }}
+
+
+<tr class="twig-template-for-highlights">
+  <td>
+    {{ ds_content.field_image_media }}
+  </td>
+  <td style="padding-left: 20px; vertical-align: text-bottom;">
+    {{ ds_content.field_publication_date }}
+    <h2">
+      <a  href="/node/TODO" style="color: #003399; text-decoration: none; font-size: 1.1rem;">
+        {{ highlight_title.output }}
+      </a>
+    </h2>
+    {{ ds_content.body }}
+  </td>
+</tr>
+</{{ ds_content_wrapper }}>

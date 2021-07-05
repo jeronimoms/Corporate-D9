@@ -61,6 +61,17 @@ third_party_settings:
         weight: 2
         label: hidden
         formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+          exclude_node_title: '1'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   layout_builder:
     allow_custom: false
     enabled: false
@@ -74,7 +85,7 @@ content:
     weight: 3
     type: smart_trim
     settings:
-      trim_length: 350
+      trim_length: 250
       trim_type: chars
       trim_suffix: ...
       wrap_class: trimmed
