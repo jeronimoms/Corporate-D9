@@ -68,20 +68,202 @@ type_settings:
       label: 'To Be Reviewed'
       weight: 0
   transitions:
+    approve_rejected_content:
+      label: 'Approve rejected content'
+      from:
+        - rejected
+      to: ready_to_publish
+      weight: 5
+    content_approved_and_publishing:
+      label: 'Content approved and publishing'
+      from:
+        - approved
+      to: published
+      weight: 8
+    content_approved_and_ready_to_publish:
+      label: 'Content approved and ready to publish'
+      from:
+        - approved
+      to: ready_to_publish
+      weight: 7
+    content_rejected_by_the_project_manager:
+      label: 'Content rejected by the Project Manager'
+      from:
+        - approved
+      to: final_draft
+      weight: 6
     create_new_draft:
       label: 'Create New Draft'
       to: draft
-      weight: 0
+      weight: -16
       from:
         - draft
         - published
+    final_draft_to_final_draft:
+      label: 'Final Draft to Final Draft'
+      from:
+        - final_draft
+      to: final_draft
+      weight: -5
+    from_draft_to_to_be_reviewed:
+      label: 'From draft to to be reviewed'
+      from:
+        - draft
+      to: to_be_reviewed
+      weight: -3
+    project_manager_rejects_rejected_content:
+      label: 'Project Manager rejects Rejected content'
+      from:
+        - rejected
+      to: final_draft
+      weight: 3
     publish:
       label: Publish
       to: published
-      weight: 1
+      weight: -12
       from:
         - draft
         - published
+        - to_be_approved
+    publishing:
+      label: Publishing
+      from:
+        - ready_to_publish
+      to: published
+      weight: 15
+    rejecting:
+      label: Rejecting
+      from:
+        - to_be_approved
+      to: rejected
+      weight: 13
+    rejecting_final_draft:
+      label: 'Rejecting Final Draft'
+      from:
+        - to_be_reviewed
+      to: draft
+      weight: 9
+    review_manager_accepts_rejected_content:
+      label: 'Review manager accepts Rejected content'
+      from:
+        - rejected
+      to: to_be_approved
+      weight: 4
+    review_manager_rejects_rejected_content:
+      label: 'Review manager rejects Rejected content'
+      from:
+        - rejected
+      to: draft
+      weight: 2
+    send_back_to_be_reviewed:
+      label: 'Send back to be reviewed'
+      from:
+        - to_be_approved
+      to: to_be_reviewed
+      weight: -11
+    send_back_to_draft:
+      label: 'Send back to draft - Rejecting Draft as Final'
+      from:
+        - final_draft
+      to: draft
+      weight: -8
+    send_back_to_final_draft:
+      label: 'Content reviewed rejected by the Project Manager'
+      from:
+        - to_be_reviewed
+      to: final_draft
+      weight: 10
+    send_back_to_final_draft_from_approved:
+      label: 'Send back to final draft from approved'
+      from:
+        - to_be_approved
+      to: final_draft
+      weight: -4
+    send_to_be_approved:
+      label: 'Requesting Approval'
+      from:
+        - to_be_reviewed
+      to: to_be_approved
+      weight: 11
+    send_to_be_approved_from_draft:
+      label: 'Send to be approved from draft'
+      from:
+        - draft
+      to: to_be_approved
+      weight: -2
+    send_to_be_approved_from_final_draft:
+      label: 'Send to be approved from final draft - Skip Review process'
+      from:
+        - final_draft
+      to: to_be_approved
+      weight: -10
+    send_to_be_reviewed:
+      label: 'Reviewing Final Draft'
+      from:
+        - final_draft
+      to: to_be_reviewed
+      weight: -14
+    send_to_final_draft:
+      label: 'Send to final draft'
+      from:
+        - draft
+        - ready_to_publish
+      to: final_draft
+      weight: -15
+    send_to_final_draft_from_publish:
+      label: 'Send to final draft from publish'
+      from:
+        - published
+      to: final_draft
+      weight: 1
+    send_to_publish_from_final_draft:
+      label: 'Send to publish from final draft'
+      from:
+        - final_draft
+      to: published
+      weight: 0
+    send_to_publish_from_reviewed:
+      label: 'Send to publish from reviewed'
+      from:
+        - to_be_reviewed
+      to: published
+      weight: -9
+    send_to_ready_to_publish:
+      label: 'Send to ready to publish'
+      from:
+        - to_be_approved
+      to: ready_to_publish
+      weight: -13
+    send_to_ready_to_publish_from_draft_:
+      label: "Send to ready to publish from draft\t"
+      from:
+        - draft
+      to: ready_to_publish
+      weight: -7
+    send_to_ready_to_publish_from_final_draft:
+      label: 'Send to ready to publish from final draft - Skip review and approval, ready to publish'
+      from:
+        - final_draft
+      to: ready_to_publish
+      weight: -1
+    send_to_ready_to_publish_from_published:
+      label: 'Send to ready to publish from published'
+      from:
+        - published
+      to: ready_to_publish
+      weight: -6
+    send_to_ready_to_publish_from_to_be_reviewed:
+      label: 'Finish review, skip approval'
+      from:
+        - to_be_reviewed
+      to: ready_to_publish
+      weight: 12
+    to_be_approved_to_approved:
+      label: Approving
+      from:
+        - to_be_approved
+      to: approved
+      weight: 14
   entity_types:
     node:
       - 25th_anniversary
@@ -99,4 +281,4 @@ type_settings:
       - publication
       - register_records
       - seminar
-  default_moderation_state: published
+  default_moderation_state: draft
