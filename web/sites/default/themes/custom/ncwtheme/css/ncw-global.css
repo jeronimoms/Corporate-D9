@@ -3695,6 +3695,10 @@ body.user-logged-in.toolbar-tray-open #header {
   font-size: 1.1rem;
   line-height: 22px;
 }
+.node--type-newsletter-content .field--name-field-image-oshmail-media {
+  float: left;
+  margin-right: 20px;
+}
 .node--type-newsletter-content table tr {
   background: transparent;
 }
