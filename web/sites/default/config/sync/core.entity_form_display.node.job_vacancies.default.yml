@@ -25,8 +25,10 @@ dependencies:
     - field.field.node.job_vacancies.field_tags
     - field.field.node.job_vacancies.field_thesaurus_2020
     - node.type.job_vacancies
+    - workflows.workflow.editorial
   module:
     - chosen_field
+    - content_moderation
     - datetime
     - media_library
     - path
@@ -202,12 +204,10 @@ content:
     type: entity_reference_autocomplete
     region: content
   moderation_state:
-    type: string_textfield
+    type: moderation_state_default
     weight: 22
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path

@@ -12,7 +12,10 @@ field_name: field_color
 entity_type: node
 bundle: events
 label: Color
-description: "Red: TBD - TBC <br />\nBlack - Confirmed <br />\nGrey - Only web or not attendance"
+description: |-
+  Red: TBD - TBC <br />
+  Black - Confirmed <br />
+  Grey - Only web or not attendance
 required: false
 translatable: false
 default_value: {  }
