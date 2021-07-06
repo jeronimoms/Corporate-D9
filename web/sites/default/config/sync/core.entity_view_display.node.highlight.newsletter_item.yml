@@ -1,8 +1,9 @@
-uuid: ed5db755-2372-4798-aeec-b481679dbdad
+uuid: 4dbc83e4-2fe8-4a19-ab01-42bc991db444
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.newsletter_item
     - field.field.node.highlight.body
     - field.field.node.highlight.comment_node_highlight
     - field.field.node.highlight.field_activity
@@ -22,13 +23,14 @@ dependencies:
     - field.field.node.highlight.field_tags
     - field.field.node.highlight.field_thesaurus_2020
     - field.field.node.highlight.simplenews_issue
-    - image.style.medium
+    - image.style.oshmail
     - node.type.highlight
   module:
     - datetime
     - ds
+    - layout_builder
     - media
-    - text
+    - smart_trim
     - user
 third_party_settings:
   ds:
@@ -49,56 +51,80 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - content_moderation_control
+        - field_image_media
         - field_publication_date
         - node_title
-        - field_image_media
         - body
-        - field_aditional_resources
     fields:
       node_title:
         plugin_id: node_title
-        weight: 1
+        weight: 2
         label: hidden
         formatter: default
-id: node.highlight.default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+          exclude_node_title: '1'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.highlight.newsletter_item
 targetEntityType: node
 bundle: highlight
-mode: default
+mode: newsletter_item
 content:
   body:
     label: hidden
     weight: 3
-    type: text_default
-    settings: {  }
-    third_party_settings: {  }
-    region: ds_content
-  content_moderation_control:
-    weight: -20
-    region: ds_content
-    settings: {  }
-    third_party_settings: {  }
-  field_aditional_resources:
-    label: above
-    weight: 4
-    type: entity_reference_entity_view
+    type: smart_trim
     settings:
-      view_mode: osha_resources
-      link: false
-    third_party_settings: {  }
+      trim_length: 250
+      trim_type: chars
+      trim_suffix: ...
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     region: ds_content
   field_image_media:
-    weight: 2
+    weight: 0
     label: hidden
     settings:
-      image_style: medium
+      image_style: oshmail
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: media_thumbnail
     region: ds_content
   field_publication_date:
     label: hidden
-    weight: 0
+    weight: 1
     type: datetime_default
     settings:
       timezone_override: ''
@@ -109,7 +135,9 @@ hidden:
   addtoany: true
   breadcrumbs: true
   comment_node_highlight: true
+  content_moderation_control: true
   field_activity: true
+  field_aditional_resources: true
   field_archived: true
   field_avoid_archived: true
   field_character_count: true

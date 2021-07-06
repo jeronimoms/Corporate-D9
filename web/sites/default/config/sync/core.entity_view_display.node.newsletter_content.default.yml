@@ -67,6 +67,11 @@ targetEntityType: node
 bundle: newsletter_content
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_url_alias:
     weight: 47
     label: above
@@ -236,7 +241,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: newsletter_item
       link: false
     third_party_settings:
       ds:

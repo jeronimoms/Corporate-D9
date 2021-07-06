@@ -3691,6 +3691,10 @@ body.user-logged-in.toolbar-tray-open #header {
 /* This SASS only apply in the Web, not in the email - outlook
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
+.node--type-newsletter-content h2 {
+  font-size: 1.1rem;
+  line-height: 22px;
+}
 .node--type-newsletter-content table tr {
   background: transparent;
 }

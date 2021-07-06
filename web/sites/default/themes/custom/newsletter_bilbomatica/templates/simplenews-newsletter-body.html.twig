@@ -265,7 +265,9 @@
                       <tr style="border: 0;">
                         <td
                           style="vertical-align: top; padding: 0; border: 0; border-bottom: 1px dashed #dddddd; padding-bottom: 2em;">
-                          {{ build.nlc_hlight_content }}
+                          {% for key, item in build.nlc_hlight_content if key|first != '#' %}
+                            {{ drupal_entity('node', item['#node'].id , 'newsletter_item') }}
+                          {% endfor %}
                         </td>
                       </tr>
                       </tbody>
