@@ -51,7 +51,7 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_image_media
+        - field_image_oshmail_media
         - field_publication_date
         - node_title
         - body
@@ -106,8 +106,10 @@ content:
             lb-col: false
             classes: {  }
     region: ds_content
-  field_image_media:
+  field_image_oshmail_media:
+    type: media_thumbnail
     weight: 0
+    region: ds_content
     label: hidden
     settings:
       image_style: oshmail
@@ -120,8 +122,6 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: media_thumbnail
-    region: ds_content
   field_publication_date:
     label: hidden
     weight: 1
@@ -143,7 +143,7 @@ hidden:
   field_character_count: true
   field_expiration_date: true
   field_flickr_date: true
-  field_image_oshmail_media: true
+  field_image_media: true
   field_migrate_hwc: true
   field_page_count: true
   field_section: true
