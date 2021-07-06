@@ -611,10 +611,15 @@ div#sliding-popup {
 }
 
 /* Header Fields - Language selector - Search */
-#header .header-language-search #lang_dropdown_form_lang-dropdown-form {
+#header .header-language-search .block-language-dropdown-blocklanguage-content {
   background: url(../images/languageico.png) no-repeat scroll 99% 1px transparent;
 }
-#header .header-language-search select.custom-select {
+#header .header-language-search .block-language-dropdown-blocklanguage-content fieldset.mb-3 {
+  margin-bottom: 0 !important;
+}
+#header .header-language-search #edit-lang-dropdown-select {
+  font-size: 0.9rem;
+  font-weight: 400;
   height: 21px;
   color: #FFF;
   background: url(../images/icoSelect.png) no-repeat scroll 94% center #c72272;
@@ -624,7 +629,10 @@ div#sliding-popup {
   display: block;
   float: right;
   margin-right: 30px;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 12px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 #block-searchsite {
