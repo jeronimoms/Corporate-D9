@@ -1,1 +1,33 @@
 <?php
+
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function napo_film_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == "napo_s_film_episodes") {
+    $currentPath = \Drupal::service('path.current')->getPath();
+    $matches = [];
+    // Extract node path from view route.
+    if(preg_match('#.*(/napos-films/[\w,\-]*)/view-scenes#', $currentPath, $matches)) {
+      if (isset($matches[1])) {
+        // Search node by alias and extract nid.
+        $nodePath = \Drupal::service('path_alias.manager')->getPathByAlias($matches[1]);
+        if(preg_match('/node\/(\d+)/', $nodePath, $matches)) {
+          // Iterate over where clause to find exact expression to modify.
+          foreach ($query->where as $keyWhere => $whereClause) {
+            foreach ($whereClause['conditions'] as $keyCondition => $condition) {
+              if(strpos($condition['field'], 'node__field_napo_film.field_napo_film_target_id') !== false){
+                // Set correct value con expression and view parameters for render.
+                $query->where[$keyWhere]['conditions'][$keyCondition]['value'][':node__field_napo_film_field_napo_film_target_id'] = $matches[1];
+                $view->setArguments([$matches[1]]);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
