@@ -6,6 +6,9 @@
     font-size: 1.1rem;
     line-height: 22px;
   }
+  .datetime, .field--name-created{
+    font-weight: normal;
+  }
   .field--name-field-image-oshmail-media{
     float: left;
     margin-right: 20px;
@@ -13,6 +16,7 @@
   table{
     tr{
       background: transparent;
+      border: 0;
     }
   }
   table tr th, table tr th a, table tr th a:hover, table tr th a:focus {
@@ -39,6 +43,7 @@
           padding-bottom: 0;
           margin-bottom: 0;
           border-bottom: 0;
+          color: $text-color-black;
         }
       }
       .field__item:nth-child(1) {
@@ -50,11 +55,31 @@
           padding-bottom: 10px;
         }
       }
-      .field field--name-body{
-        color: $text-color-black;
-      }
     }
   }
+  .field--name-body{
+    color: $text-color-black;
+    color: #000;
+    padding-top: 5px;
+  }
+  .section-videos{
+    .field--type-created{
+      font-weight: normal;
+      font-size: 13px;
+    }
+    h2{
+      padding-bottom: 10px;
+      a{
+        font-size: 18px;
+      }
+    }
+    .field--name-body{
+      color: $text-color-black;
+      font-size: 13px;
+      font-weight: normal;
+    }
+  }
+
   #node-21174 > tbody > tr > td > div > div:nth-child(1)
   .block-twitter-block{
     height: 457px;
@@ -101,5 +126,16 @@
   #edit-actions{
     margin-bottom: 0;
     margin-top: 1rem;
+  }
+  .form-submit{
+    width: 100%;
+    font-size: 1rem;
+    color: $text-color-blue;
+    font-weight: bold;
+    background: $bg-color-blue-button;
+    margin-bottom: 10px;
+    &:hover{
+      opacity: 0.8;
+    }
   }
 }

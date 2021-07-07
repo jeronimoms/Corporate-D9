@@ -157,7 +157,7 @@ jQuery(document).ready(function($) {
 
   //Move Newsletter subscribe home block
   if ($(".move-subscribe-button-by-jquery")[0]) {
-    $('#edit-actions').appendTo('.move-subscribe-button-by-jquery');
+    $('.newsletter-block-wrapper button').appendTo('.move-subscribe-button-by-jquery');
   }
 
   //Show input search when click in Search button responsive menu
