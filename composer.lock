@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51d69cec5fee162bb5a7a6e542b4b146",
+    "content-hash": "5aee0d1313d0b50b016ee9dd47ae9f2b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -12395,6 +12395,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "value.autocomplete is not a function": "https://www.drupal.org/files/issues/2021-06-24/value-autocomplete-not-function-3220334-3.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
