@@ -100,7 +100,11 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
       if ($video_ref) {
         $video_ref = $this->entityTypeManager->getStorage('node')->load($video_ref);
         if ($video_ref) {
-          $video = $this->normalizeMedia($video_ref->get('field_video')->getString());
+          $ref = $video_ref->get('field_video')->getValue();
+          if (is_array($ref) && count($ref) > 0) {
+            $ref = $ref[0]['target_id'];
+          }
+          $video = $this->normalizeMedia($ref);
         }
       }
 
@@ -159,11 +163,17 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
    * @return array
    */
   public function normalizeMedia($media_id) {
-    $file = $this->entityTypeManager->getStorage('file')->load($this->getMediaFileId($media_id));
-    return [
-      'fid' => $file->get('fid')->getString(),
-      'size' => round($file->getSize() / 1024,2),
-    ];
+    if (!empty($media_id)) {
+      $media_file_id = $this->getMediaFileId($media_id);
+      if ($media_file_id) {
+        $file = $this->entityTypeManager->getStorage('file')->load($media_file_id);
+        return [
+          'fid' => $file->get('fid')->getString(),
+          'size' => round($file->getSize() / 1024,2),
+        ];
+      }
+    }
+    return [];
   }
 
   /**
@@ -176,14 +186,16 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
    */
   public function getMediaFileId($media_id) {
     $media = $this->entityTypeManager->getStorage('media')->load($media_id);
-    if ($media->bundle() == 'document') {
-      return $media->get('field_media_document')->getValue()['0']['target_id'];
-    }
-    if ($media->bundle() == 'image') {
-      return $media->get('field_media_image')->getValue()['0']['target_id'];
-    }
-    if ($media->bundle() == 'video') {
-      return $media->get('field_media_video_file')->getValue()['0']['target_id'];
+    if ($media) {
+      if ($media->bundle() == 'document') {
+        return $media->get('field_media_document')->getValue()['0']['target_id'];
+      }
+      if ($media->bundle() == 'image') {
+        return $media->get('field_media_image')->getValue()['0']['target_id'];
+      }
+      if ($media->bundle() == 'video') {
+        return $media->get('field_media_video_file')->getValue()['0']['target_id'];
+      }
     }
 
     return [];

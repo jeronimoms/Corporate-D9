@@ -8,3 +8,14 @@ napo_film.modal:
     parameters:
       user:
         type: entity:node
+
+napo_film.download:
+  path: '/napos-films/{node}/video/download'
+  defaults:
+    _controller: '\Drupal\napo_film\Controller\NfFilmDownloadController::filmDownload'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node

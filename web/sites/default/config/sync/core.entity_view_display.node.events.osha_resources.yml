@@ -39,6 +39,7 @@ dependencies:
     - field.field.node.events.field_tags
     - field.field.node.events.field_unit_ref
     - field.field.node.events.field_website_of_event
+    - field.field.node.events.simplenews_issue
     - node.type.events
   module:
     - user
@@ -47,6 +48,11 @@ targetEntityType: node
 bundle: events
 mode: osha_resources
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
@@ -92,3 +98,4 @@ hidden:
   field_website_of_event: true
   langcode: true
   search_api_excerpt: true
+  simplenews_issue: true

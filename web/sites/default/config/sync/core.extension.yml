@@ -22,7 +22,6 @@ module:
   color: 0
   color_field: 0
   comment: 0
-  conditional_fields: 0
   config: 0
   config_filter: 0
   config_split: 0
@@ -30,6 +29,7 @@ module:
   contact: 0
   contact_us: 0
   content_moderation: 0
+  content_moderation_notifications: 0
   contextual: 0
   crop: 0
   csv_serialization: 0
@@ -186,7 +186,6 @@ theme:
   seven: 0
   bootstrap_barrio: 0
   ncwtheme: 0
-  claro: 0
   newsletter_bilbomatica: 0
 profile: standard
 _core:

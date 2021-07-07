@@ -1,6 +1,6 @@
 uuid: e19f3e1a-9ccc-4fbc-af09-5affed0d9ca4
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: staging
 label: Staging
@@ -8,6 +8,7 @@ description: ''
 folder: sites/default/config/staging
 module:
   authorization: 0
+  authorization_drupal_roles: 0
   ldap_authentication: 0
   ldap_authorization: 0
   ldap_query: 0

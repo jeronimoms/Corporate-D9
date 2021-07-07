@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.newsletter_content.field_url_alias
+    - field.field.node.newsletter_content.field_view_twetter_block
     - field.field.node.newsletter_content.nlc_covid_bg
     - field.field.node.newsletter_content.nlc_covid_contents
     - field.field.node.newsletter_content.nlc_covid_img
@@ -66,7 +68,7 @@ third_party_settings:
       children:
         - group_highlights_content
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: fieldset
       region: content
       format_settings:
@@ -100,7 +102,7 @@ third_party_settings:
       children:
         - group_videos_content
       parent_name: ''
-      weight: 2
+      weight: 9
       format_type: fieldset
       region: content
       format_settings:
@@ -329,7 +331,7 @@ third_party_settings:
       children:
         - group_more_tweets_contents
       parent_name: ''
-      weight: 9
+      weight: 10
       format_type: fieldset
       region: content
       format_settings:
@@ -339,11 +341,11 @@ third_party_settings:
       label: 'More New & Tweets'
     group_more_tweets_contents:
       children:
-        - nlc_motweets_layout
         - nlc_tweets_title
         - nlc_monews_title
         - nlc_monews_contents
         - nlc_motweets_bgcolor
+        - field_view_twetter_block
       parent_name: group_more_new_tweets
       weight: 27
       format_type: details
@@ -364,20 +366,35 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 17
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_url_alias:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_view_twetter_block:
+    weight: 30
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   langcode:
     type: language_select
-    weight: 15
+    weight: 14
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 14
+    weight: 13
     settings: {  }
     region: content
     third_party_settings: {  }
@@ -599,12 +616,6 @@ content:
     third_party_settings: {  }
     type: color_field_widget_spectrum
     region: content
-  nlc_motweets_layout:
-    weight: 25
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   nlc_nat_layout:
     weight: 20
     settings: {  }
@@ -780,7 +791,7 @@ content:
     region: content
   path:
     type: path
-    weight: 20
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -788,11 +799,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 18
+    weight: 17
     region: content
     third_party_settings: {  }
   simplenews_issue:
-    weight: 41
+    weight: 22
     settings: {  }
     third_party_settings: {  }
     type: simplenews_issue
@@ -801,14 +812,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 22
+    weight: 21
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 19
+    weight: 18
     region: content
     third_party_settings: {  }
   title:
@@ -826,7 +837,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 16
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -835,8 +846,9 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 21
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  nlc_motweets_layout: true

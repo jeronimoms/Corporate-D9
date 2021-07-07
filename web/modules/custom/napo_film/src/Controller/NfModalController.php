@@ -84,12 +84,9 @@ class NfModalController extends ControllerBase implements ContainerInjectionInte
    * {@inheritdoc}
    */
   public function show(Node $node) {
-
-
-    $render_controller = \Drupal::entityTypeManager()->getViewBuilder($node->getEntityTypeId());
+    $render_controller = $this->entityTypeManager->getViewBuilder($node->getEntityTypeId());
     $render_output = $render_controller->view($node, 'video_modal');
-
-
+    //unset($render_output['#cache']);
     return $render_output;
   }
 

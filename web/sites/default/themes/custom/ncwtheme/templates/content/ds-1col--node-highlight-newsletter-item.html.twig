@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+
+
+{% set publication_date = ds_content.field_publication_date.0['#text'] %}
+{% set highlight_title = ds_content.node_title.0.0.0['#context'] %}
+{% set highlight_url = ds_content.node_title.0.0.0['#context'].entity_url.routeParameters.node %}
+
+<tr class="twig-template-for-highlights">
+  <td style="padding-top: 20px;">
+    {{ ds_content.field_image_oshmail_media }}
+  </td>
+  <td style="padding-left: 20px; padding-top: 20px; vertical-align: text-bottom;">
+    <span style="color: #003399; text-decoration: none; font-size: 14px;">
+     {{ publication_date }}
+    </span>
+    <h2>
+      <a  href="/node/{{ highlight_url }}" style="color: #003399; text-decoration: none; font-size: 18px;">
+        {{ highlight_title.output }}
+      </a>
+    </h2>
+    <span style="font-size: 13px; line-height: 20px; font-family: Arial;">
+      {{ ds_content.body }}
+    </span>
+    <a href="/node/{{ highlight_url }}" style="display: block; color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold; padding-top: 20px;">
+      {{ 'See more' | trans }} <img src="https://osha.europa.eu/sites/all/themes/osha_frontend/images/flecha.png" alt="{{ 'See more' | trans }}">
+    </a>
+  </td>
+</tr>
+<tr>
+  <td colspan="2" style="padding-top: 20px; border-bottom: 1px dashed #dddddd;"></td>
+</tr>
+</{{ ds_content_wrapper }}>

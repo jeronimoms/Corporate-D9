@@ -39,6 +39,7 @@ dependencies:
     - field.field.node.events.field_tags
     - field.field.node.events.field_unit_ref
     - field.field.node.events.field_website_of_event
+    - field.field.node.events.simplenews_issue
     - node.type.events
   module:
     - user
@@ -46,7 +47,12 @@ id: node.events.dangerous_substances
 targetEntityType: node
 bundle: events
 mode: dangerous_substances
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   addtoany: true
   body: true
@@ -88,3 +94,4 @@ hidden:
   langcode: true
   links: true
   search_api_excerpt: true
+  simplenews_issue: true

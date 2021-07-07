@@ -39,6 +39,7 @@ dependencies:
     - field.field.node.events.field_tags
     - field.field.node.events.field_unit_ref
     - field.field.node.events.field_website_of_event
+    - field.field.node.events.simplenews_issue
     - node.type.events
   module:
     - text
@@ -54,6 +55,11 @@ content:
     type: text_summary_or_trimmed
     settings:
       trim_length: 400
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
     third_party_settings: {  }
     region: content
 hidden:
@@ -96,3 +102,4 @@ hidden:
   langcode: true
   links: true
   search_api_excerpt: true
+  simplenews_issue: true

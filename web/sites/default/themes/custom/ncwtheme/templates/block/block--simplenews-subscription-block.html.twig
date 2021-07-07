@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div id="block-osha-newsletter-osha-newsletter-subscribe" class="block block-osha-newsletter first odd">
+      <h2 class="block__title block-title home">
+        <a href="/en/oshmail-newsletter">OSHmail newsletter</a>
+      </h2>
+      <div class="newsletter-block-wrapper">
+        <div class="text-block-newsletter">
+          <span>Get our monthly update on safety and health at work.</span>
+          <a href="/en/oshmail-newsletter">See more info</a>
+        </div>
+        <!-- Module Simple news input and button subscribe -->
+        <div{{ content_attributes.addClass('content') }}>
+          {{ content }}
+        </div>
+        <!-- END Module Simple news input and button subscribe -->
+        <div id="newsletter-subscription-form-wrapper">
+          <form action="/en" method="post" id="osha-newsletter-block-subscribe-form" accept-charset="UTF-8"><div>
+              <div class="form-item form-type-checkbox form-item-agree-processing-personal-data">
+                <input type="checkbox" id="edit-agree-processing-personal-data" name="agree_processing_personal_data" value="1" class="form-checkbox">
+                <label class="option" for="edit-agree-processing-personal-data">I agree to the processing of my personal data </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="move-subscribe-button-by-jquery"><!-- Move subscribe button by jQuery --></div>
+        <a class="privacy-policy-oshmail" href="/en/oshmail-newsletter/privacy-statement-oshmail">Privacy notice</a>
+        <input type="hidden" name="form_build_id" value="form-nr-bxdBOww8CYAy3f4BCFD77sCUGty9VozEZcdhLwOU">
+      </div>
+    </div>
+  {% endblock %}
+</div>
