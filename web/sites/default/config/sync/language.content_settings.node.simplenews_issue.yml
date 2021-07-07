@@ -1,18 +1,18 @@
-uuid: 30cbf82c-1ac8-47a9-9b83-7df785e871f4
+uuid: 58d4a1aa-b314-4e15-9af7-43550f99c6f1
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.publication
+    - node.type.simplenews_issue
   module:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: true
+    enabled: false
     bundle_settings:
-      untranslatable_fields_hide: '1'
-id: node.publication
+      untranslatable_fields_hide: '0'
+id: node.simplenews_issue
 target_entity_type_id: node
-target_bundle: publication
+target_bundle: simplenews_issue
 default_langcode: site_default
 language_alterable: false
