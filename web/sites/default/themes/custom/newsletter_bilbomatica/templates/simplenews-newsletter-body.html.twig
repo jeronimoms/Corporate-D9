@@ -263,8 +263,7 @@
                            style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
                       <tbody>
                       <tr style="border: 0;">
-                        <td
-                          style="vertical-align: top; padding: 0; border: 0; border-bottom: 1px dashed #dddddd; padding-bottom: 2em;">
+                        <td>
                           {% for key, item in build.nlc_hlight_content if key|first != '#' %}
                             {{ drupal_entity('node', item['#node'].id , 'newsletter_item') }}
                           {% endfor %}

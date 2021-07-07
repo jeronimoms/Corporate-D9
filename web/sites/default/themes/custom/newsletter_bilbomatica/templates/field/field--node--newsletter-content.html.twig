@@ -68,24 +68,45 @@
             <span style="color:#003399; font-weight: 600; font-size: 13px;">></span>
           </td>
           <td style="padding-bottom: 30px;">
-            <a style="color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold;" href="{{ item.content['#url'] }}">{{ item.content['#title'] }}</a>
+            <a href="{{ item.content['#url'] }}" style="color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold;">{{ item.content['#title'] }}</a>
           </td>
         </tr>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes, 'field__item') }}>222{{ item.content }}</div>
+      {{ drupal_dump(items) }}
+      {{ drupal_dump(item.content.field_image_for_oshmail) }}
+      {{ drupal_dump(item.content['#node'].field_image_for_oshmail.0) }}
+      <tr>
+        <td style="width: 300px; height: 200px">
+            IMG
+        </td>
+        <td style="text-align: left;">
+          + date
+          <br>
+          <h2>
+            <a href="/node/{{ item.content['#node'].nid.0.value }}" style="color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 18px; font-weight: bold;">
+              {{ item.content['#node'].label }}
+            </a>
+          </h2>
+          + body
+          <br>
+          +see more
+        </td>
+      </tr>
+
+      <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}
   <div{{ attributes.addClass(classes) }}>
-    <div{{ title_attributes.addClass(title_classes) }}>33333{{ label }}</div>
+    <div{{ title_attributes.addClass(title_classes) }}>33333_test{{ label }}</div>
     {% if multiple %}
       <div class='field__items'>
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('field__item') }}>44444{{ item.content }}</div>
+      <div{{ item.attributes.addClass('field__item') }}>44444_test{{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>

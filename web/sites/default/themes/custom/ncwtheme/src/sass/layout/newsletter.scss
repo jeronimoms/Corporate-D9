@@ -27,15 +27,41 @@
   .node--unpublished {
     padding: 20px 6px 0;
   }
-  .field__item{
-    padding-bottom: 10px;
+  .twig-wrapper-nlc_hlight_content{
+    .field--name-nlc-hlight-content{
+      .field__item{
+        padding-top: 10px;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        border-bottom: 1px dashed #dddddd;
+        .field__item{
+          padding-top: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
+          border-bottom: 0;
+        }
+      }
+      .field__item:nth-child(1) {
+        padding-top: 0;
+      }
+      h2{
+        a{
+          display: block;
+          padding-bottom: 10px;
+        }
+      }
+      .field field--name-body{
+        color: $text-color-black;
+      }
+    }
   }
+  #node-21174 > tbody > tr > td > div > div:nth-child(1)
   .block-twitter-block{
     height: 457px;
     margin-top: 20px;
   }
   figure {
-    margin: 0;
+    margin: 10px 0 0 0;
   }
 }
 
