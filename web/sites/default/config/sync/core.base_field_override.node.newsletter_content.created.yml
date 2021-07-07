@@ -1,0 +1,18 @@
+uuid: 5a629075-2dd2-467e-aa64-6c64a9359d43
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.newsletter_content
+id: node.newsletter_content.created
+field_name: created
+entity_type: node
+bundle: newsletter_content
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created
