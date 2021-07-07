@@ -60,6 +60,7 @@ process:
     -
       plugin: get
       source: changed
+  moderation_state: moderation_state
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_video_type:
     - plugin: sub_process
