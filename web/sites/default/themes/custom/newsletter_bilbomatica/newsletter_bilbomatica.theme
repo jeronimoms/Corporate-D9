@@ -5,8 +5,9 @@
  * @see htmlmail.tpl.php
  */
 function newsletter_bilbomatica_preprocess_simplenews_newsletter_body(&$variables) {
-
-  $variables['hlcontents'] = views_embed_view('newsl_hl_contents', 'hl_content_block');
-
-
+  // Load block
+  $block = \Drupal\block\Entity\Block::load('twitterblock_2');
+  $variables['block_view'] = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($block);
 }

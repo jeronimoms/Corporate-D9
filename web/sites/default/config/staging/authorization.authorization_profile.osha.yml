@@ -1,0 +1,568 @@
+uuid: 375d8112-df39-41f9-85fa-0e01c2e63e98
+langcode: en
+status: true
+dependencies: {  }
+id: osha
+label: Osha
+description: null
+provider: ldap_provider
+consumer: authorization_drupal_roles
+provider_config:
+  status:
+    server: osha
+    only_ldap_authenticated: true
+  filter_and_mappings:
+    use_first_attr_as_groupid: false
+provider_mappings:
+  -
+    query: 'cn=ADMIN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|administrator'
+    is_regex: false
+  -
+    query: 'cn=APPROVER,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Approver'
+    is_regex: false
+  -
+    query: 'cn=ANNREP_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=EVENTCOOR,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Events Coordinator'
+    is_regex: false
+  -
+    query: 'cn=EVENTEDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Events Editor'
+    is_regex: false
+  -
+    query: 'cn=LAYVAL,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Layout Validator'
+    is_regex: false
+  -
+    query: 'cn=TRLIAS,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Translation Liaison'
+    is_regex: false
+  -
+    query: 'cn=TRLMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Translation Manager'
+    is_regex: false
+  -
+    query: 'cn=READ,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|authenticated user'
+    is_regex: false
+  -
+    query: 'cn=ACCESS_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=AWRACT_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=BLOG_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=CAREER_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=CONTUS_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=CORPCM_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=DANGSU_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=DPO_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=ERO_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=ESENER_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=EVENTEDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=FACTFI_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=FINANC_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=FRAUPR_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=GENDER_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=GPAWA_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=GREENJ_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=HWCAM_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=INTDOC_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=LEADWP_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=LEGNOT_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=MAINOE_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=MUSCDIDB_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=MUSCDI_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=NANOMA_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=NEWSEDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OIRA_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OPENET_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHCB_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHMSE_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHOW_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHPOL_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHSTR_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHTHE_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHTOOLS_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHWIK_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PROCUR_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PROOM_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PRVPOL_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PSYRST_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PUBLIC_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=SEMIN_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=SENSTF_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=STRNET_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=VESAFE_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=WRDIS_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=YOUNGW_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=ANNREP_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=ACCESS_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=AWRACT_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=BLOG_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=CAREER_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=CONTUS_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=CORPCM_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=DANGSU_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=DPO_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=ERO_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=ESENER_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=EVENTEDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=FACTFI_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=FINANC_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=FRAUPR_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=GENDER_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=GPAWA_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=GREENJ_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=HWCAM_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=INTDOC_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=LEADWP_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=LEGNOT_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=MAINOE_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=MUSCDIDB_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=MUSCDI_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=NANOMA_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=NEWSEDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OIRA_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OPENET_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHCB_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHMSE_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHOW_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHPOL_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHSTR_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHTHE_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHTOOLS_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHWIK_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PROCUR_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PROOM_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PRVPOL_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PSYRST_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=PUBLIC_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=SEMIN_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=SENSTF_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=STRNET_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=VESAFE_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=WRDIS_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=YOUNGW_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=CAREER_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=INTDOC_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=SEMIN_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=LEGIS_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=LEGIS_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+consumer_config: {  }
+consumer_mappings:
+  -
+    role: administrator
+  -
+    role: approver
+  -
+    role: editor
+  -
+    role: events_coordinator
+  -
+    role: events_editor
+  -
+    role: layout_validator
+  -
+    role: translation_liaison
+  -
+    role: translation_manager
+  -
+    role: read_only
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: editor
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: project_manager
+  -
+    role: review_manager
+  -
+    role: review_manager
+  -
+    role: review_manager
+  -
+    role: review_manager
+  -
+    role: project_manager
+synchronization_modes:
+  user_logon: user_logon
+synchronization_actions:
+  revoke_provider_provisioned: revoke_provider_provisioned
+  create_consumers: create_consumers

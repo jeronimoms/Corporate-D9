@@ -25,6 +25,7 @@ mail:
   throttle: 20
   spool_progress_expiration: 3600
   spool_expire: 0
-  debug: false
+  debug: true
+  source_cache: null
 _core:
   default_config_hash: rnNxnXMi72RPRPGLvuGLUXirl-f-OJtK4sv1xY84Xd0

@@ -18,7 +18,9 @@ dependencies:
     - field.field.node.guideline.field_tags
     - field.field.node.guideline.field_thesaurus_2020
     - node.type.guideline
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - datetime
     - languagefield
     - link
@@ -140,12 +142,10 @@ content:
     type: multiple_options_select
     region: content
   moderation_state:
-    type: string_textfield
+    type: moderation_state_default
     weight: 15
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
