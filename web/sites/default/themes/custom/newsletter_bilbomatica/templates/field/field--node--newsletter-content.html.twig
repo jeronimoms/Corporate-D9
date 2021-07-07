@@ -59,6 +59,12 @@
         <tr class="twig-template-for-blocks-items">
           <td colspan="2" style="vertical-align: top;padding-bottom: 5px;">
             <span style="color:#003399; font-weight: normal; font-size: 13px;">
+              {% if item.content['#options'].entity.field_country_code.0.value %}
+                {{ item.content['#options'].entity.field_country_code.0.value }}
+              {% endif %}
+              {% if item.content['#options'].entity.field_city.0.value %}
+                {{ item.content['#options'].entity.field_city.0.value }}<span class="separator-event">,</span>
+              {% endif %}
               {{ item.content['#options'].entity.field_publication_date.0.value|date('d/m/Y') }}
             </span>
           </td>
