@@ -4990,6 +4990,10 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
     margin-bottom: 4px;
     border-radius: 1px;
   }
+  #navbar-main #block-ncwtheme-main-menu > ul > li:nth-child(4) > span {
+    /* Hide publications expand ico */
+    display: none;
+  }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 {
     width: 100%;
     float: left;
@@ -5005,7 +5009,7 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
     display: none;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) > a {
-    display: none;
+    margin-left: -10px;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) .field--type-entity-reference img {
     margin: 0;
