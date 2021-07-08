@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.newsletter_content.field_events_section_title
     - field.field.node.newsletter_content.field_nlc_events_content
+    - field.field.node.newsletter_content.field_oshmail_title
     - field.field.node.newsletter_content.field_url_alias
     - field.field.node.newsletter_content.field_view_twetter_block
     - field.field.node.newsletter_content.nlc_covid_bg
@@ -89,6 +90,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_oshmail_title:
+    weight: 50
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_url_alias:
     weight: 47

@@ -3699,6 +3699,9 @@ body.user-logged-in.toolbar-tray-open #header {
 /* This SASS only apply in the Web, not in the email - outlook
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
+.node--type-newsletter-content h1.title {
+  display: none;
+}
 .node--type-newsletter-content h2 {
   font-size: 1.1rem;
   line-height: 22px;
@@ -3708,7 +3711,6 @@ body.user-logged-in.toolbar-tray-open #header {
 }
 .node--type-newsletter-content .field--name-field-image-oshmail-media {
   float: left;
-  margin-right: 20px;
 }
 .node--type-newsletter-content table tr {
   background: transparent;
@@ -3755,23 +3757,20 @@ body.user-logged-in.toolbar-tray-open #header {
   font-weight: normal;
   font-size: 13px;
 }
-.node--type-newsletter-content .section-videos h2 {
-  padding-bottom: 10px;
-}
-.node--type-newsletter-content .section-videos h2 a {
-  font-size: 18px;
-}
 .node--type-newsletter-content .section-videos .field--name-body {
   color: #000;
   font-size: 13px;
   font-weight: normal;
 }
-.node--type-newsletter-content #node-21174 > tbody > tr > td > div > div:nth-child(1) .block-twitter-block {
-  height: 457px;
+.node--type-newsletter-content .block-twitter-block {
+  height: 300px;
   margin-top: 20px;
 }
 .node--type-newsletter-content figure {
   margin: 10px 0 0 0;
+}
+.node--type-newsletter-content table.newsletter-events {
+  margin: 0;
 }
 
 /* Block Newsletter Home page - Right sidebar */
