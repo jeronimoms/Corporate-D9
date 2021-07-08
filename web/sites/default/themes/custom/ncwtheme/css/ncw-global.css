@@ -3623,6 +3623,11 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   margin-bottom: 3rem;
 }
 
+/* MNCW-245 */
+body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-col, body.facts-and-figures-data-visualisation .two-column .view-landing-menu-dv .view-col {
+  width: 32%;
+}
+
 .three-column .view-landing-menu .view-col, .three-column .view-landing-menu-dv .view-col {
   width: 47%;
   float: left;
