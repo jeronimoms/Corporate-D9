@@ -3604,6 +3604,10 @@ body.user-logged-in.toolbar-tray-open #header {
 }
 /* End Media 991px */
 /* .view-landing-menu-dv, special view to "Data visualisation" Facts & Figures - Data visualisation */
+body.tools-and-resources article.node--type-article.node--promoted .field--name-body p {
+  color: #003399;
+}
+
 .one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col {
   width: 23.2%;
   float: left;

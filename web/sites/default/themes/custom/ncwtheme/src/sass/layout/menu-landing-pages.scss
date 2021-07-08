@@ -1,5 +1,15 @@
 /* .view-landing-menu-dv, special view to "Data visualisation" Facts & Figures - Data visualisation */
 
+body.tools-and-resources{
+  article.node--type-article.node--promoted{
+    .field--name-body{
+      p{
+        color: $text-color-blue;
+      }
+    }
+  }
+}
+
 .one-column{
   .view-landing-menu, .view-landing-menu-dv{
     .view-col{
