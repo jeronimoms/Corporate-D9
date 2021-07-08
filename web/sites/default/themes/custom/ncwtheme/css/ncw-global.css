@@ -1504,6 +1504,10 @@ nav.pager ul.pager__items .pagerer-breaker {
   margin-top: -50px;
 }
 
+.pager-total.without-pager {
+  margin-top: 0;
+}
+
 .view-search-blog .pager-total {
   margin-top: 0;
 }
@@ -4752,6 +4756,11 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .view-press-releases .views-row:nth-child(3) {
   background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
   padding-bottom: 1.5rem;
+}
+
+/* View seminars filtered*/
+.view-search-seminars .view-content {
+  clear: both;
 }
 
 /* View node header - Node related with the View - Placed before the View */
