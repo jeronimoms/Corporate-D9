@@ -299,7 +299,9 @@
                         <tbody>
                         <tr style="border: 0;">
                           <td class="twig-wrapper-nlc_hlight_content" style="vertical-align: top; padding: 0; border: 0;">
-                            {{ content.nlc_hlight_content }}
+                            {% for key, item in content.nlc_hlight_content if key|first != '#' %}
+                              {{ drupal_entity('node', item['#node'].id , 'newsletter_item') }}
+                            {% endfor %}
                           </td>
                         </tr>
                         </tbody>
@@ -312,7 +314,7 @@
                        style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                   <tbody>
                   <tr class="odd" style="border: 0; background-color: transparent;">
-                    <td align="Right" style="vertical-align: top; padding: 0; border: 0; padding-bottom: 20px;">
+                    <td style="vertical-align: top; padding: 0; border: 0; padding-bottom: 20px; text-align: right;">
                       <a href="{{ content.nlc_hlight_view_all[0]['#url'] }}" class="view-all see-more PROPRO"
                         style="color: #003399; text-decoration: none; font-size: 16px;">{{ content.nlc_hlight_view_all[0]['#title'] }}
                         <img
