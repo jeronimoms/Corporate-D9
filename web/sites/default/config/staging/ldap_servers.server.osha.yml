@@ -5,7 +5,7 @@ dependencies: {  }
 id: osha
 label: Osha
 type: openldap
-account_name_attr: osha_admin
+account_name_attr: ''
 address: 194.30.35.128
 basedn:
   - 'ou=people,dc=osha,dc=europa,dc=eu'

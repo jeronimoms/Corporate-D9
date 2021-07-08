@@ -212,7 +212,21 @@ display:
           entity_type: menu_link_content
           entity_field: enabled
           plugin_id: boolean
-      sorts: {  }
+      sorts:
+        weight:
+          id: weight
+          table: menu_link_content_data
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: menu_link_content
+          entity_field: weight
+          plugin_id: standard
       title: 'landing menu DV'
       header: {  }
       footer: {  }
