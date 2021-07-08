@@ -86,12 +86,12 @@
   {% endif %}
 {% else %}
   <div{{ attributes.addClass(classes) }}>
-    <div{{ title_attributes.addClass(title_classes) }}>33333_test{{ label }}</div>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% if multiple %}
       <div class='field__items'>
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('field__item') }}>44444_test{{ item.content }}</div>
+      <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>

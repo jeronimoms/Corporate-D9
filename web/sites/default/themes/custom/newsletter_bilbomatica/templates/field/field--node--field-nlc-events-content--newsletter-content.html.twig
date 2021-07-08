@@ -39,17 +39,17 @@
 #}
 {%
   set classes = [
-    'field',
-    'field--name-' ~ field_name|clean_class,
-    'field--type-' ~ field_type|clean_class,
-    'field--label-' ~ label_display,
-  ]
+  'field',
+  'field--name-' ~ field_name|clean_class,
+  'field--type-' ~ field_type|clean_class,
+  'field--label-' ~ label_display,
+]
 %}
 {%
   set title_classes = [
-    'field__label',
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
+  'field__label',
+  label_display == 'visually_hidden' ? 'visually-hidden',
+]
 %}
 
 {% if label_hidden %}
@@ -57,7 +57,7 @@
     {% for item in items|batch(2) %}
       <tr class="twig-template-for-blocks-items field-events-twig">
         {% for column in item %}
-         <td style="background: #003399; padding-bottom: 20px; border-right: 10px solid #FFFFFF; border-bottom: 10px solid #FFF">
+          <td style="background: #003399; padding-bottom: 20px; border-right: 10px solid #FFFFFF; border-bottom: 10px solid #FFF">
             <table class="newsletter-events" style="width: 355px;">
               <tr>
                 <td style="padding-top: 20px; padding-left: 20px; padding-right: 10px; vertical-align: top;">
@@ -101,13 +101,13 @@
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% if multiple %}
-      <div class='field__items'>
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
+    <div class='field__items'>
+      {% endif %}
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+      {% if multiple %}
+    </div>
     {% endif %}
   </div>
 {% endif %}
