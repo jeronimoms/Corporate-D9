@@ -1,0 +1,24 @@
+uuid: c46c6a91-a988-44ff-8619-58914c34e76d
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.default_multilingual_node_index
+    - views.view.search_autocomplete
+  module:
+    - views
+    - search_api_autocomplete
+id: search_autocomplete
+label: search_autocomplete
+index_id: default_multilingual_node_index
+suggester_settings:
+  server:
+    fields: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:search_autocomplete':
+    displays:
+      default: true
+      selected: {  }
+options: {  }

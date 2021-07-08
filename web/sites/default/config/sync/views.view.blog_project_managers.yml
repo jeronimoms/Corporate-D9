@@ -25,7 +25,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access user profiles'
+          perm: 'create blog content'
       cache:
         type: tag
         options: {  }
@@ -272,7 +272,8 @@ display:
     display_title: 'Entity browser'
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
     cache_metadata:
       max-age: -1
       contexts:
