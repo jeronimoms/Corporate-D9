@@ -57,7 +57,7 @@
               <tbody>
               <tr style="border: 0;">
                 <td
-                  style="vertical-align: top; padding: 0; border: 0; font-size: 12px; padding-left: 30px; padding-right: 30px; font-family: Arial,sans-serif;">
+                  style="vertical-align: top; padding: 5px; border: 0; font-size: 12px; padding-left: 30px; padding-right: 30px; font-family: Arial,sans-serif;">
                   <a href="/bg{{ build.field_url_alias.0}}"
                      style="text-decoration: none; color: #606060;">Български</a> <span
                     style="color: #606060;"> | </span>
@@ -177,9 +177,6 @@
             </table>
           </td>
         </tr>
-        <!-- <tr>
-              <td colspan="2" style="background-color:#003399; width:800px; height: 4px;" valign="top"></td>
-            </tr> -->
         </tbody>
       </table>
       <table border="0" cellpadding="0" cellspacing="0" width="100%"
@@ -188,25 +185,28 @@
         <tbody>
         <tr style="border: 0;">
           <td class="osha-logos"
-              style="border: 0; text-align: left; line-height: 1.1; vertical-align: bottom; padding: 10px 20px 10px 20px;">
-            <a href="https://osha.europa.eu/en?pk_campaign=oshmail_2021_03"
-               style="color: #0074BD; text-decoration: none;"><img
-                style="border: 0px; width: 247px; max-width: 247px; height: 87px; max-height: 87px;"
-                typeof="foaf:Image"
-                src="https://osha.europa.eu/sites/all/modules/osha/osha_newsletter/images/EU-OSHA-en.png" width="247"
-                height="84" alt="European Agency for Safety and Health at Work"></a><img
-              style="border: 0px; margin-left: 20px; width: 63px; max-width: 63px; height: 41px; max-height: 41px;"
-              typeof="foaf:Image"
-              src="https://osha.europa.eu/sites/all/modules/osha/osha_newsletter/images/europeLogo.png" width="63"
-              height="41" alt="EU">
+              style="border: 0; text-align: left; line-height: 1.1; vertical-align: top; padding: 0 20px 20px 20px;">
+            <a href="https://osha.europa.eu/en"
+               style="color: #0074BD; text-decoration: none;">
+              <img style="border: 0px; width: 247px; max-width: 247px; height: 87px; max-height: 87px;" typeof="foaf:Image" src="https://osha.europa.eu/sites/all/modules/osha/osha_newsletter/images/EU-OSHA-en.png" width="247"
+                   height="84" alt="European Agency for Safety and Health at Work">
+            </a>
+            <img style="border: 0px; margin-left: 20px; vertical-align: top; margin-top: 27px;" typeof="foaf:Image" src="https://osha.europa.eu/sites/all/modules/osha/osha_newsletter/images/europeLogo.png" width="63" height="41" alt="EU">
           </td>
           <td class="osha-info"
-              style="border: 0; line-height: 1.1; vertical-align: bottom; padding: 10px 20px 10px 20px;">
-            <div class="newsletter-number"
-                 style="color: #003399; font-size: 20px; font-weight: 200; text-align: right;">
-              OSHmail {{ build.nlc_id_in_piwik.0 }}</div>
-            <div class="newsletter-month"
-                 style="color: #DC2F82; font-size: 26px; text-align: right;">{{ build.nlc_publication_date.0 }}</div>
+              style="border: 0; line-height: 1.1; vertical-align: middle; padding: 5px 20px 10px 20px;">
+            <table style="width: 100%;">
+              <tr>
+                <td class="newsletter-number" style="color: #003399; font-size: 20px; font-weight: 200; text-align: right;">
+                  {{ build.field_oshmail_title.0 }}
+                </td>
+              </tr>
+              <tr>
+                <td style="color: #DC2F82; font-size: 26px; text-align: right; padding-top: 10px;">
+                  {{ build.nlc_publication_date.0 }}
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
         </tbody>
@@ -220,11 +220,11 @@
                    style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
               <tbody>
               <tr style="border: 0;">
+                <td style="vertical-align: middle; border: 0; padding: 20px; line-height: 1.1; background-color: #003399; width: 70%; text-align: left; font-size: 24px; font-weight: 300; color: #ffffff; font-family: Oswald, Arial,sans-serif;">
+                  {{ 'Occupational Safety and Health News – Europe' | trans }}
+                </td>
                 <td
-                  style="vertical-align: top; border: 0; padding: 20px 20px 10px 20px; line-height: 1.1; background-color: #003399; width: 70%; text-align: left; font-size: 24px; font-weight: 200; color: #ffffff; font-family: Oswald, Arial,sans-serif;">
-                  {{ label.0 }}             </td>
-                <td
-                  style="vertical-align: top; border: 0; padding: 20px 20px 10px 20px; line-height: 1.1; background-color: #003399; width: 30%; text-align: right; font-size: 14px; font-weight: 200; color: #ffffff; font-family: Oswald, Arial,sans-serif;"
+                  style="vertical-align: middle; border: 0; padding: 20px; line-height: 1.1; background-color: #003399; width: 30%; text-align: right; font-size: 14px; font-weight: 300; color: #ffffff; font-family: Oswald, Arial,sans-serif;"
                   class="hidden-print">
                   <a
                     href="mailto:?subject=OSH%20Newsletter:%20OSHmail%20222&amp;body=Check%20out%20this%20newsletter:%20https://osha.europa.eu/en/entity-collection/oshmail_222"
@@ -279,7 +279,7 @@
                      style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <tbody>
                 <tr class="odd" style="border: 0; background-color: transparent;">
-                  <td align="Right" style="vertical-align: top; padding: 0; border: 0; padding-bottom: 20px;">
+                  <td align="Right" style="vertical-align: top; padding: 0; border: 0; padding-bottom: 0;">
                     <a href="{{ build.nlc_hlight_view_all[0]['#url'] }}" class="view-all see-more"
                        style="color: #003399; text-decoration: none; font-size: 16px;">{{ build.nlc_hlight_view_all[0]['#title'] }}
                       <img
@@ -299,72 +299,72 @@
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
-                <tr style="border: 0;">
-                  <th class="section-title" colspan="2"
-                      style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
-                    <span>{{ build.nlc_healthy_title.0 }}</span></th>
-                </tr>
-                <tr style="border: 0;">
-                  <th colspan="2"
-                      style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                    &nbsp;
-                  </th>
-                </tr>
-                <tr style="border: 0;">
-                  <th width="310" class="template-column newsletter-half-image"
-                      style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_healthy_bg.0 }};">
-                    {% if build.nlc_healthy_img|render is empty %}
-                      <img src="https://osha.europa.eu/sites/default/files/newsletter_images/ball_news.png" style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_healthy_bg.0 }};"/>
-                    {% else %}
-                      <img src="{{ file_url(build.nlc_healthy_img[0]['#media'].field_media_image.entity.uri.value) }}"
-                           style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_healthy_bg.0 }};">
-                    {% endif %}
-                  </th>
-                  <th class="template-column newsletter-half-content"
-                      style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_healthy_bg.0 }};">
-                    <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
-                           cellpadding="0" cellspacing="0"
-                           style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
-                      <thead>
-                      <tr style="border: 0;">
-                        <th colspan="1"
-                            style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                          &nbsp;
-                        </th>
-                      </tr>
-                      <tr class="row newsletter-full-width-list-row" style="border: 0;">
-                        <th class="item newsletter-full-width-list-item"
-                            style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
-                          <table id="node-21129" border="0" cellpadding="0" cellspacing="0" width="100%"
-                                 class="newsletter-item news"
-                                 style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
-                            <tbody>
-                            <tr style="border: 0;">
-                              <td colspan="2"
-                                  style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                {{ build.nlc_healthy_contents }}
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </th>
-                      </tr>
-                      <tr style="border: 0;">
-                        <th colspan="1"
-                            style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                          &nbsp;
-                        </th>
-                      </tr>
-                      </thead>
-                    </table>
-                  </th>
-                </tr>
-                <tr style="border: 0;">
-                  <th colspan="2"
-                      style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                    &nbsp;
-                  </th>
-                </tr>
+                  <tr style="border: 0;">
+                    <th class="section-title" colspan="2"
+                        style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
+                      <span>{{ build.nlc_healthy_title.0 }}</span></th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th width="310" class="template-column newsletter-half-image"
+                        style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_healthy_bg.0 }};">
+                      {% if build.nlc_healthy_img|render is empty %}
+                        <img src="https://osha.europa.eu/sites/default/files/newsletter_images/ball_news.png" style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_healthy_bg.0 }};"/>
+                      {% else %}
+                        <img src="{{ file_url(build.nlc_healthy_img[0]['#media'].field_media_image.entity.uri.value) }}"
+                             style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_healthy_bg.0 }};">
+                      {% endif %}
+                    </th>
+                    <th class="template-column newsletter-half-content"
+                        style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_healthy_bg.0 }};">
+                      <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
+                             cellpadding="0" cellspacing="0"
+                             style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
+                        <thead>
+                        <tr style="border: 0;">
+                          <th colspan="1"
+                              style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                            &nbsp;
+                          </th>
+                        </tr>
+                        <tr class="row newsletter-full-width-list-row" style="border: 0;">
+                          <th class="item newsletter-full-width-list-item"
+                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                            <table id="node-21129" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                   class="newsletter-item news"
+                                   style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
+                              <tbody>
+                              <tr style="border: 0;">
+                                <td colspan="2"
+                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
+                                  {{ build.nlc_healthy_contents }}
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </th>
+                        </tr>
+                        <tr style="border: 0;">
+                          <th colspan="1"
+                              style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                            &nbsp;
+                          </th>
+                        </tr>
+                        </thead>
+                      </table>
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
                 </thead>
               </table>
               <!-- END Healthy Workplaces Campaign SECTION  -->
@@ -377,73 +377,73 @@
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
-                <tr style="border: 0;">
-                  <th class="section-title" colspan="2"
-                      style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
-                    <span>{{ build.nlc_national_title.0 }}</span></th>
-                </tr>
-                <tr style="border: 0;">
-                  <th colspan="2"
-                      style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                    &nbsp;
-                  </th>
-                </tr>
-                <tr style="border: 0;">
-                  <th width="310" class="template-column newsletter-half-image"
-                      style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_national_bg_color.0 }};">
-                    {% if build.nlc_national_img|render is empty %}
-                      <img src="https://osha.europa.eu/sites/default/files/newsletter_images/National-focal-points.png" style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_national_bg_color.0 }};"/>
-                    {% else %}
-                      <img
-                        src="{{ file_url(build.nlc_national_img[0]['#media'].field_media_image.entity.uri.value) }}"
-                        style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_national_bg_color.0 }};">
-                    {% endif %}
-                  </th>
-                  <th class="template-column newsletter-half-content"
-                      style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_national_bg_color.0 }};">
-                    <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
-                           cellpadding="0" cellspacing="0"
-                           style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
-                      <thead>
-                      <tr style="border: 0;">
-                        <th colspan="1"
-                            style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                          &nbsp;
-                        </th>
-                      </tr>
-                      <tr class="row newsletter-full-width-list-row" style="border: 0;">
-                        <th class="item newsletter-full-width-list-item"
-                            style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
-                          <table id="node-20970" border="0" cellpadding="0" cellspacing="0" width="100%"
-                                 class="newsletter-item events"
-                                 style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
-                            <tbody>
-                            <tr style="border: 0;">
-                              <td colspan="2"
-                                  style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                {{ build.nlc_national_contents }}
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </th>
-                      </tr>
-                      <tr style="border: 0;">
-                        <th colspan="1"
-                            style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                          &nbsp;
-                        </th>
-                      </tr>
-                      </thead>
-                    </table>
-                  </th>
-                </tr>
-                <tr style="border: 0;">
-                  <th colspan="2"
-                      style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                    &nbsp;
-                  </th>
-                </tr>
+                  <tr style="border: 0;">
+                    <th class="section-title" colspan="2"
+                        style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
+                      <span>{{ build.nlc_national_title.0 }}</span></th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th width="310" class="template-column newsletter-half-image"
+                        style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_national_bg_color.0 }};">
+                      {% if build.nlc_national_img|render is empty %}
+                        <img src="https://osha.europa.eu/sites/default/files/newsletter_images/National-focal-points.png" style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_national_bg_color.0 }};"/>
+                      {% else %}
+                        <img
+                          src="{{ file_url(build.nlc_national_img[0]['#media'].field_media_image.entity.uri.value) }}"
+                          style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_national_bg_color.0 }};">
+                      {% endif %}
+                    </th>
+                    <th class="template-column newsletter-half-content"
+                        style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_national_bg_color.0 }};">
+                      <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
+                             cellpadding="0" cellspacing="0"
+                             style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
+                        <thead>
+                        <tr style="border: 0;">
+                          <th colspan="1"
+                              style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                            &nbsp;
+                          </th>
+                        </tr>
+                        <tr class="row newsletter-full-width-list-row" style="border: 0;">
+                          <th class="item newsletter-full-width-list-item"
+                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                            <table id="node-20970" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                   class="newsletter-item events"
+                                   style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
+                              <tbody>
+                              <tr style="border: 0;">
+                                <td colspan="2"
+                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
+                                  {{ build.nlc_national_contents }}
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </th>
+                        </tr>
+                        <tr style="border: 0;">
+                          <th colspan="1"
+                              style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                            &nbsp;
+                          </th>
+                        </tr>
+                        </thead>
+                      </table>
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
                 </thead>
               </table>
               <!-- END National Focal Points in action SECTION  -->
@@ -456,65 +456,65 @@
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
-                <tr style="border: 0;">
-                  <th class="section-title" colspan="2"
-                      style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
-                    <span>{{ build.nlc_oira_title.0 }}</span></th>
-                </tr>
-                <tr style="border: 0;">
-                  <th colspan="2"
-                      style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                    &nbsp;
-                  </th>
-                </tr>
-                <tr style="border: 0;">
-                  <th width="310" class="template-column newsletter-half-image"
-                      style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 380px; background-color: {{ build.nlc_oira_bg_color.0 }};">
-                    {% if build.nlc_oira_img|render is empty %}
-                      <img src="https://osha.europa.eu/sites/default/files/newsletter_images/OiRA.png" style="max-width: 100%; display: block; margin: auto;"/>
-                    {% else %}
-                      <img src="{{ file_url(build.nlc_oira_img[0]['#media'].field_media_image.entity.uri.value) }}"
-                           style="display:block;margin:auto">
-                    {% endif %}
-                  </th>
-                  <th class="template-column newsletter-half-content"
-                      style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; max-width: 380px; background-color: {{ build.nlc_oira_bg_color.0 }};">
-                    <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
-                           cellpadding="0" cellspacing="0"
-                           style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
-                      <thead>
-                      <tr style="border: 0;">
-                        <th colspan="1"
-                            style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                          &nbsp;
-                        </th>
-                      </tr>
-                      <tr class="row newsletter-full-width-list-row" style="border: 0;">
-                        <th class="item newsletter-full-width-list-item"
-                            style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
-                          <table id="node-21398" border="0" cellpadding="0" cellspacing="0" width="100%"
-                                 class="newsletter-item news"
-                                 style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
-                            <tbody>
-                            <tr style="border: 0;">
-                              <td colspan="2">
-                                {{ build.nlc_oira_contents }}
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </th>
-                      </tr>
-                      </thead>
-                    </table>
-                  </th>
-                </tr>
-                <tr style="border: 0;">
-                  <th colspan="2"
-                      style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                    &nbsp;
-                  </th>
-                </tr>
+                  <tr style="border: 0;">
+                    <th class="section-title" colspan="2"
+                        style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
+                      <span>{{ build.nlc_oira_title.0 }}</span></th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th width="310" class="template-column newsletter-half-image"
+                        style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 380px; background-color: {{ build.nlc_oira_bg_color.0 }};">
+                      {% if build.nlc_oira_img|render is empty %}
+                        <img src="https://osha.europa.eu/sites/default/files/newsletter_images/OiRA.png" style="max-width: 100%; display: block; margin: auto;"/>
+                      {% else %}
+                        <img src="{{ file_url(build.nlc_oira_img[0]['#media'].field_media_image.entity.uri.value) }}"
+                             style="display:block;margin:auto">
+                      {% endif %}
+                    </th>
+                    <th class="template-column newsletter-half-content"
+                        style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; max-width: 380px; background-color: {{ build.nlc_oira_bg_color.0 }};">
+                      <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
+                             cellpadding="0" cellspacing="0"
+                             style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
+                        <thead>
+                        <tr style="border: 0;">
+                          <th colspan="1"
+                              style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                            &nbsp;
+                          </th>
+                        </tr>
+                        <tr class="row newsletter-full-width-list-row" style="border: 0;">
+                          <th class="item newsletter-full-width-list-item"
+                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                            <table id="node-21398" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                   class="newsletter-item news"
+                                   style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
+                              <tbody>
+                              <tr style="border: 0;">
+                                <td colspan="2">
+                                  {{ build.nlc_oira_contents }}
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </th>
+                        </tr>
+                        </thead>
+                      </table>
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
                 </thead>
               </table>
               <!-- END OiRA - Online interactive Risk Assessment SECTION  -->
@@ -527,61 +527,67 @@
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
-                <tr style="border: 0;">
-                  <th class="section-title" colspan="2"
-                      style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
-                    <span>{{ build.nlc_covid_title.0 }}</span></th>
-                </tr>
-                <tr style="border: 0;">
-                  <th colspan="2"
-                      style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                    &nbsp;
-                  </th>
-                </tr>
-                <tr style="border: 0;">
-                  <th width="310" class="template-column newsletter-half-image"
-                      style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_covid_bg.0 }};">
-                    {% if build.nlc_covid_img|render is empty %}
-                      <img src="https://osha.europa.eu/sites/default/files/newsletter_images/covid-19_0.png" style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_covid_bg.0 }};"/>
-                    {% else %}
-                      <img
-                        src="{{ file_url(build.nlc_covid_img[0]['#media'].field_media_image.entity.uri.value) }}"
-                        style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_covid_bg.0 }};">
-                    {% endif %}
-                  </th>
-                  <th class="template-column newsletter-half-content"
-                      style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_covid_bg.0 }};">
-                    <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
-                           cellpadding="0" cellspacing="0"
-                           style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
-                      <thead>
-                      <tr style="border: 0;">
-                        <th colspan="1"
-                            style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                          &nbsp;
-                        </th>
-                      </tr>
-                      <tr class="row newsletter-full-width-list-row" style="border: 0;">
-                        <th class="item newsletter-full-width-list-item"
-                            style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
-                          <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
-                                 class="newsletter-item news"
-                                 style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
-                            <tbody>
-                            <tr style="border: 0;">
-                              <td colspan="2"
-                                  style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                {{ build.nlc_covid_contents }}
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </th>
-                      </tr>
-                      </thead>
-                    </table>
-                  </th>
-                </tr>
+                  <tr style="border: 0;">
+                    <th class="section-title" colspan="2"
+                        style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
+                      <span>{{ build.nlc_covid_title.0 }}</span></th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th width="310" class="template-column newsletter-half-image"
+                        style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_covid_bg.0 }};">
+                      {% if build.nlc_covid_img|render is empty %}
+                        <img src="https://osha.europa.eu/sites/default/files/newsletter_images/covid-19_0.png" style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_covid_bg.0 }};"/>
+                      {% else %}
+                        <img
+                          src="{{ file_url(build.nlc_covid_img[0]['#media'].field_media_image.entity.uri.value) }}"
+                          style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_covid_bg.0 }};">
+                      {% endif %}
+                    </th>
+                    <th class="template-column newsletter-half-content"
+                        style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_covid_bg.0 }};">
+                      <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
+                             cellpadding="0" cellspacing="0"
+                             style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
+                        <thead>
+                        <tr style="border: 0;">
+                          <th colspan="1"
+                              style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                            &nbsp;
+                          </th>
+                        </tr>
+                        <tr class="row newsletter-full-width-list-row" style="border: 0;">
+                          <th class="item newsletter-full-width-list-item"
+                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                            <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                   class="newsletter-item news"
+                                   style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
+                              <tbody>
+                              <tr style="border: 0;">
+                                <td colspan="2"
+                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
+                                  {{ build.nlc_covid_contents }}
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </th>
+                        </tr>
+                        </thead>
+                      </table>
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
                 </thead>
               </table>
               <!-- END COVID-19 outbreak and workplace safety and health SECTION -->
@@ -594,61 +600,67 @@
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
-                <tr style="border: 0;">
-                  <th class="section-title" colspan="2"
-                      style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
-                    <span>{{ build.nlc_eunews_title.0 }}</span></th>
-                </tr>
-                <tr style="border: 0;">
-                  <th colspan="2"
-                      style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                    &nbsp;
-                  </th>
-                </tr>
-                <tr style="border: 0;">
-                  <th width="310" class="template-column newsletter-half-image"
-                      style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_eunews_bgcolor.0 }};">
-                    {% if build.nlc_eunews_img|render is empty %}
-                      <img src="https://osha.europa.eu/sites/default/files/newsletter_images/EU-New-bites.png" style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_eunews_bgcolor.0 }};"/>
-                    {% else %}
-                      <img
-                        src="{{ file_url(build.nlc_eunews_img[0]['#media'].field_media_image.entity.uri.value) }}"
-                        style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_covid_bg.0 }};">
-                    {% endif %}
-                  </th>
-                  <th class="template-column newsletter-half-content"
-                      style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_eunews_bgcolor.0 }};">
-                    <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
-                           cellpadding="0" cellspacing="0"
-                           style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
-                      <thead>
-                      <tr style="border: 0;">
-                        <th colspan="1"
-                            style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                          &nbsp;
-                        </th>
-                      </tr>
-                      <tr class="row newsletter-full-width-list-row" style="border: 0;">
-                        <th class="item newsletter-full-width-list-item"
-                            style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
-                          <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
-                                 class="newsletter-item news"
-                                 style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
-                            <tbody>
-                            <tr style="border: 0;">
-                              <td colspan="2"
-                                  style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                {{ build.nlc_eunews_contents }}
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </th>
-                      </tr>
-                      </thead>
-                    </table>
-                  </th>
-                </tr>
+                  <tr style="border: 0;">
+                    <th class="section-title" colspan="2"
+                        style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
+                      <span>{{ build.nlc_eunews_title.0 }}</span></th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th width="310" class="template-column newsletter-half-image"
+                        style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_eunews_bgcolor.0 }};">
+                      {% if build.nlc_eunews_img|render is empty %}
+                        <img src="https://osha.europa.eu/sites/default/files/newsletter_images/EU-New-bites.png" style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_eunews_bgcolor.0 }};"/>
+                      {% else %}
+                        <img
+                          src="{{ file_url(build.nlc_eunews_img[0]['#media'].field_media_image.entity.uri.value) }}"
+                          style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_covid_bg.0 }};">
+                      {% endif %}
+                    </th>
+                    <th class="template-column newsletter-half-content"
+                        style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_eunews_bgcolor.0 }};">
+                      <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
+                             cellpadding="0" cellspacing="0"
+                             style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
+                        <thead>
+                        <tr style="border: 0;">
+                          <th colspan="1"
+                              style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                            &nbsp;
+                          </th>
+                        </tr>
+                        <tr class="row newsletter-full-width-list-row" style="border: 0;">
+                          <th class="item newsletter-full-width-list-item"
+                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                            <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                   class="newsletter-item news"
+                                   style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
+                              <tbody>
+                              <tr style="border: 0;">
+                                <td colspan="2"
+                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
+                                  {{ build.nlc_eunews_contents }}
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </th>
+                        </tr>
+                        </thead>
+                      </table>
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
                 </thead>
               </table>
               <!-- END EU news bites SECTION -->
@@ -661,57 +673,63 @@
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
-                <tr style="border: 0;">
-                  <th class="section-title" colspan="2"
-                      style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
-                    <span>{{ build.nlc_wiki_title.0 }}</span></th>
-                </tr>
-                <tr style="border: 0;">
-                  <th colspan="2"
-                      style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                    &nbsp;
-                  </th>
-                </tr>
-                <tr style="border: 0;">
-                  <th width="310" class="template-column newsletter-half-image"
-                      style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_wiki_bgcolor.0 }};">
-                    <img
-                      src="https://osha.europa.eu/sites/default/files/newsletter_images/OSHwiki_0.png"
-                      style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_wiki_bgcolor.0 }};">
-                  </th>
-                  <th class="template-column newsletter-half-content"
-                      style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_wiki_bgcolor.0 }};">
-                    <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
-                           cellpadding="0" cellspacing="0"
-                           style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
-                      <thead>
-                      <tr style="border: 0;">
-                        <th colspan="1"
-                            style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
-                          &nbsp;
-                        </th>
-                      </tr>
-                      <tr class="row newsletter-full-width-list-row" style="border: 0;">
-                        <th class="item newsletter-full-width-list-item"
-                            style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
-                          <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
-                                 class="newsletter-item news"
-                                 style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
-                            <tbody>
-                            <tr style="border: 0;">
-                              <td colspan="2"
-                                  style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                {{ build.nlc_wiki_contents }}
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </th>
-                      </tr>
-                      </thead>
-                    </table>
-                  </th>
-                </tr>
+                  <tr style="border: 0;">
+                    <th class="section-title" colspan="2"
+                        style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
+                      <span>{{ build.nlc_wiki_title.0 }}</span></th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th width="310" class="template-column newsletter-half-image"
+                        style="border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; height: 100%; vertical-align: middle; max-width: 310px; background-color: {{ build.nlc_wiki_bgcolor.0 }};">
+                      <img
+                        src="https://osha.europa.eu/sites/default/files/newsletter_images/OSHwiki_0.png"
+                        style="max-width: 100%; display: block; margin: auto; background-color: {{ build.nlc_wiki_bgcolor.0 }};">
+                    </th>
+                    <th class="template-column newsletter-half-content"
+                        style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: {{ build.nlc_wiki_bgcolor.0 }};">
+                      <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
+                             cellpadding="0" cellspacing="0"
+                             style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
+                        <thead>
+                        <tr style="border: 0;">
+                          <th colspan="1"
+                              style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 10px 10px 5px 10px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                            &nbsp;
+                          </th>
+                        </tr>
+                        <tr class="row newsletter-full-width-list-row" style="border: 0;">
+                          <th class="item newsletter-full-width-list-item"
+                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                            <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                   class="newsletter-item news"
+                                   style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
+                              <tbody>
+                              <tr style="border: 0;">
+                                <td colspan="2"
+                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
+                                  {{ build.nlc_wiki_contents }}
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </th>
+                        </tr>
+                        </thead>
+                      </table>
+                    </th>
+                  </tr>
+                  <tr style="border: 0;">
+                    <th colspan="2"
+                        style="vertical-align: top; background-color: transparent; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; padding-top: 0; padding-bottom: 20px; font-size: 0px; line-height: 0px; mso-line-height-rule: exactly;">
+                      &nbsp;
+                    </th>
+                  </tr>
                 </thead>
               </table>
               <!-- END Wiki -->
@@ -770,19 +788,20 @@
               <!-- END Video SECTION  -->
             {% endif %}
 
-            {% if build.field_view_twetter_block.0['#markup'] == 'On' %}
+            {% set has_twitter = build.field_view_twetter_block.0['#markup'] == 'On' %}
+            {% set has_more_news = build.nlc_monews_contents.0 %}
+
+            {% if has_twitter and has_more_news %}
               <!-- More News and Tweeter  -->
-              <table class="newsletter-full-width-details newsletter-section template-container more-news-and-twitter"
-                     width="100%" cellpadding="0" cellspacing="0"
-                     style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
+              <table style="width: 100%;">
                 <tbdoy>
                   <tr style="border: 0">
-                    <td style="vertical-align: top;">
+                    <td style="vertical-align: top; width: 500px;">
                       {% if build.nlc_monews_contents.0 %}
                         <!-- More News Section SECTION -->
                         <table class="newsletter-half-image-left newsletter-section template-container section-covid-19-outbreak-and-workplace-safety-and-health"
-                               width="100%" cellpadding="0" cellspacing="0"
-                               style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; width: 100%">
+                               width="90%" cellpadding="0" cellspacing="0"
+                               style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
                           <thead>
                           <tr style="border: 0;">
                             <th class="section-title" colspan="2"
@@ -800,7 +819,7 @@
                                 style="vertical-align: top; border: 0; font-weight: normal; text-align: left; text-transform: none; padding: 0px; background-color: #ffffff;">
                               <table class="newsletter-full-width-list newsletter-section template-container" width="100%"
                                      cellpadding="0" cellspacing="0"
-                                     style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
+                                     style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px;">
                                 <thead>
                                 <tr class="row newsletter-full-width-list-row" style="border: 0;">
                                   <th class="item newsletter-full-width-list-item"
@@ -827,7 +846,7 @@
                         <!-- END News Section SECTION -->
                       {% endif %}
                     </td>
-                    <td style="vertical-align: top;width:35%; padding-left: 40px;">
+                    <td style="vertical-align: top; width: 260px">
                       <!-- Twitter block -->
                       <table
                         class="newsletter-half-image-left newsletter-section template-container section-covid-19-outbreak-and-workplace-safety-and-health"
@@ -842,8 +861,8 @@
                         </thead>
                         <tbody>
                         <tr>
-                          <td style="width: 350px;">
-                            <a href="https://twitter.com/EU_OSHA" style="display: block; color: #003399; padding-top: 20px;">
+                          <td>
+                            <a href="https://twitter.com/EU_OSHA" style="display: block; color: #003399; padding-top: 25px;">
                               {{ 'Go to EU-OSHA Twitter' | trans }}
                             </a>
                           </td>
@@ -856,9 +875,11 @@
                 </tbdoy>
               </table>
               <!-- END More News and Tweeter  -->
-            {% else %}
+            {% endif %}
+
+            {% if has_more_news and not has_twitter %}
               <!-- More News NOT Tweeter  -->
-              <table>
+              <table style="width: 100%;">
                 <tbdoy>
                   <tr style="border: 0">
                     <td style="vertical-align: top;">
@@ -916,6 +937,100 @@
               </table>
               <!-- END More News NOT Tweeter  -->
             {% endif %}
+
+            {% if has_twitter and not has_more_news  %}
+              <!-- NOT More News and  YES Tweeter  -->
+              <table style="width: 100%;">
+                <tbdoy>
+                  <tr style="border: 0">
+                    <td>
+                      <!-- Twitter block -->
+                      <table
+                        class="newsletter-half-image-left newsletter-section template-container section-covid-19-outbreak-and-workplace-safety-and-health"
+                        width="100%" cellpadding="0" cellspacing="0"
+                        style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 100%;">
+                        <thead>
+                        <tr style="border: 0;">
+                          <th class="section-title" colspan="2"
+                              style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
+                            <span>Tweets</span><img src="https://osha.europa.eu/sites/all/modules/osha/osha_newsletter/images/twitter-gray.png" alt="" style="margin-left: 10px;"></th>
+                        </tr>
+                        </thead>
+                      </table>
+                      <table
+                        class="newsletter-half-image-left newsletter-section template-container section-covid-19-outbreak-and-workplace-safety-and-health"
+                        width="100%" cellpadding="0" cellspacing="0"
+                        style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 350px;">
+                        <tr>
+                          <td style="padding-bottom: 20px;">
+                            <a href="https://twitter.com/EU_OSHA" style="display: block; color: #003399; padding-top: 20px;">
+                              {{ 'Go to EU-OSHA Twitter' | trans }}
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- END Twitter block -->
+                    </td>
+                  </tr>
+                </tbdoy>
+              </table>
+              <!-- END NOT More News and YES Tweeter  -->
+            {% endif %}
+
+            {% if build.field_nlc_events_content.0 %}
+              <!-- Events SECTION  -->
+              <table class="newsletter-full-width-details newsletter-section template-container section-events"
+                     width="100%" cellpadding="0" cellspacing="0"
+                     style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
+                <thead>
+                <tr style="border: 0;">
+                  <th class="section-title"
+                      style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
+                    <span>{{ build.field_events_section_title.0 }}</span></th>
+                </tr>
+                <tr class="newsletter-full-width-details-row" style="border: 0; border-bottom: none;">
+                  <th class="item newsletter-full-width-details-item"
+                      style="vertical-align: top; background-color: transparent; padding: 0px; padding-top: 20px; padding-bottom: 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                    <table id="node-21257" border="0" cellpadding="0" cellspacing="0" width="100%"
+                           class="highlight-item"
+                           style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
+                      <tbody>
+                      <tr style="border: 0;">
+                        <td
+                          style="vertical-align: top; padding: 0; border: 0;">
+                          <table border="0" cellpadding="0" cellspacing="0" class="item-thumbnail-and-title"
+                                 width="100%"
+                                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
+                            <thead>
+                            <tr style="border: 0;">
+                              <th rowspan="2" style="background-color: transparent; border: 0; text-align: center;"
+                                  class="template-column template-image">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                       style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
+                                  <tbody>
+                                  <tr style="border: 0;">
+                                    <td align="center" style="vertical-align: top; padding: 0; border: 0;">
+                                      {{ build.field_nlc_events_content }}
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </th>
+                            </tr>
+                            </thead>
+                          </table>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </th>
+                </tr>
+                </thead>
+              </table>
+              <!-- END Events SECTION  -->
+            {% endif %}
+
+
           </td>
         </tr>
 
