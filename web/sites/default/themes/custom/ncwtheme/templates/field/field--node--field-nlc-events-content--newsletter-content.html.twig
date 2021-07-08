@@ -54,31 +54,32 @@
 
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes.addClass(classes, 'field__items') }}>
+      <tr class="twig-template-for-blocks-items field-events-twig">
       {% for item in items %}
-        <tr class="twig-template-for-blocks-items">
-          <td colspan="2" style="vertical-align: top;padding-bottom: 5px;">
-            <span style="color:#003399; font-weight: normal; font-size: 13px;">
-              {% if item.content['#options'].entity.field_country_code.0.value %}
-                {{ item.content['#options'].entity.field_country_code.0.value }}
-              {% endif %}
-              {% if item.content['#options'].entity.field_city.0.value %}
-                {{ item.content['#options'].entity.field_city.0.value }}<span class="separator-event">,</span>
-              {% endif %}
-              {{ item.content['#options'].entity.field_publication_date.0.value|date('d/m/Y') }}
-            </span>
+          <td>
+            <table style="width: 350px; background: #003399;">
+              <tr>
+                <td style="padding: 10px 10px 0 10px; vertical-align: top">
+                  <span style="color:#FFFFFF; font-weight: normal; font-size: 13px;">
+                    {% if item.content['#options'].entity.field_country_code.0.value %}
+                      {{ item.content['#options'].entity.field_country_code.0.value }}
+                    {% endif %}
+                    {% if item.content['#options'].entity.field_city.0.value %}
+                      {{ item.content['#options'].entity.field_city.0.value }}<span class="separator-event">,</span>
+                    {% endif %}
+                    {{ item.content['#options'].entity.field_publication_date.0.value|date('d/m/Y') }}
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0 10px 10px 10px; vertical-align: top">
+                  <a href="{{ item.content['#url'] }}" style="color: #FFFFFF; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold;">{{ item.content['#title'] }}</a>
+                </td>
+              </tr>
+            </table>
           </td>
-        </tr>
-        <tr class="twig-template-for-blocks-items">
-          <td style="width: 5px; vertical-align: top; padding-right: 5px;">
-            <span style="color:#003399; font-weight: 600; font-size: 13px;">></span>
-          </td>
-          <td style="padding-bottom: 30px;">
-            <a href="{{ item.content['#url'] }}" style="color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold;">{{ item.content['#title'] }}</a>
-          </td>
-        </tr>
-      {% endfor %}
-    </div>
+        {% endfor %}
+      </tr>
   {% else %}
     {% for item in items %}
       <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
@@ -91,7 +92,7 @@
       <div class='field__items'>
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('field__item') }}>44444_test{{ item.content }}</div>
+      <div{{ item.attributes.addClass('field__item') }}>44444_yiah_test{{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>

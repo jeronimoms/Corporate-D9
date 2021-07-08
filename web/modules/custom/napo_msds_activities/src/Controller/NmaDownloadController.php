@@ -320,7 +320,15 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
   public function getVideoFile(Node $node) {
     if ($node->getType() == 'msds_activities') {
       $video_ref = $this->entityTypeManager->getStorage('node')->load($node->get('field_msds_video')->getString());
-      return $video_ref->get('field_video')->getString();
+      $ref = $video_ref->get('field_video')->getValue();
+      if (is_array($ref)) {
+        $ref = $ref[0]['target_id'];
+      }
+      else {
+        $ref = $ref['target_id'];
+      }
+
+      return $ref;
     }
 
     if ($node->getType() == 'lesson') {
@@ -370,6 +378,8 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
       $medias[] = $node_ref->get('field_glossary')->getString();
       $medias[] = $node_ref->get('field_list_of_activities')->getString();
     }
+
+
 
     if ($node->getType() == 'lesson') {
       $node_ref = $this->entityTypeManager->getStorage('node')->load(407);

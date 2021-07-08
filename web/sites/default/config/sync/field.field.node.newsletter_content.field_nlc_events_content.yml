@@ -1,20 +1,17 @@
-uuid: 7cd66101-15ff-4629-81ad-fc9d3a6e9851
+uuid: 45551bb6-ec85-4ede-9f7c-bcc4edec3f9a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.nlc_national_contents
+    - field.storage.node.field_nlc_events_content
     - node.type.events
-    - node.type.highlight
     - node.type.newsletter_content
-_core:
-  default_config_hash: DwMff4-Htq0swdDT_ItfLowQToSX_MH50igcQvdPixs
-id: node.newsletter_content.nlc_national_contents
-field_name: nlc_national_contents
+id: node.newsletter_content.field_nlc_events_content
+field_name: field_nlc_events_content
 entity_type: node
 bundle: newsletter_content
-label: 'National contents'
-description: 'It allows adding the contents of the section'
+label: 'Events content'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -24,10 +21,9 @@ settings:
   handler_settings:
     target_bundles:
       events: events
-      highlight: highlight
     sort:
       field: title
       direction: ASC
     auto_create: false
-    auto_create_bundle: events
+    auto_create_bundle: ''
 field_type: entity_reference

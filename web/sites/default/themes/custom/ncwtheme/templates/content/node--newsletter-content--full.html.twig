@@ -947,6 +947,60 @@
                 </table>
                 <!-- END More News NOT Tweeter  -->
               {% endif %}
+
+              {% if content.field_nlc_events_content.0 %}
+                <!-- Events SECTION  -->
+                <table class="newsletter-full-width-details newsletter-section template-container section-videos"
+                       width="100%" cellpadding="0" cellspacing="0"
+                       style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
+                  <thead>
+                  <tr style="border: 0;">
+                    <th class="section-title"
+                        style="vertical-align: top; border: 0; background-color: transparent; color: #003399; border-style: none none solid none; border-bottom-width: 4px; border-bottom-color: #003399; font-size: 20px; font-weight: 500; height: 25px; text-align: left; text-transform: none; padding: 10px 0 10px 0;">
+                      <span>{{ content.field_events_section_title.0 }}</span></th>
+                  </tr>
+                  <tr class="newsletter-full-width-details-row" style="border: 0; border-bottom: none;">
+                    <th class="item newsletter-full-width-details-item"
+                        style="vertical-align: top; background-color: transparent; padding: 0px; padding-top: 20px; padding-bottom: 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                      <table id="node-21257" border="0" cellpadding="0" cellspacing="0" width="100%"
+                             class="highlight-item"
+                             style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
+                        <tbody>
+                        <tr style="border: 0;">
+                          <td
+                            style="vertical-align: top; padding: 0; border: 0; border-bottom: 1px dashed #dddddd;">
+                            <table border="0" cellpadding="0" cellspacing="0" class="item-thumbnail-and-title"
+                                   width="100%"
+                                   style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
+                              <thead>
+                              <tr style="border: 0;">
+                                <th rowspan="2" style="background-color: transparent; border: 0; text-align: center;"
+                                    class="template-column template-image">
+                                  <table border="0" cellpadding="0" cellspacing="0" width="45%"
+                                         style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
+                                    <tbody>
+                                    <tr style="border: 0;">
+                                      <td align="center" style="vertical-align: top; padding: 0; border: 0;">
+                                        {{ content.field_nlc_events_content }}
+                                      </td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                </th>
+                              </tr>
+                              </thead>
+                            </table>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </th>
+                  </tr>
+                  </thead>
+                </table>
+                <!-- END Events SECTION  -->
+              {% endif %}
+
             </td>
           </tr>
 
