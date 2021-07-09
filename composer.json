@@ -454,7 +454,10 @@
         "recurser/jquery-simple-color": "master",
         "resize/library": "^1.17",
         "slick/library": "^1.8",
-        "w8tcha/ckeditor-wordcount-plugin": "^1.17"
+        "w8tcha/ckeditor-wordcount-plugin": "^1.17",
+        "ext-xmlwriter": "*",
+        "ext-simplexml": "*",
+        "ext-xmlreader": "*"
     },
     "require-dev": {
         "kint-php/kint": "^3.3"

@@ -1,5 +1,15 @@
 /* .view-landing-menu-dv, special view to "Data visualisation" Facts & Figures - Data visualisation */
 
+body.tools-and-resources{
+  article.node--type-article.node--promoted{
+    .field--name-body{
+      p{
+        color: $text-color-blue;
+      }
+    }
+  }
+}
+
 .one-column{
   .view-landing-menu, .view-landing-menu-dv{
     .view-col{
@@ -19,7 +29,17 @@
       float: left;
       margin-right: 1rem;
       margin-bottom: 3rem;
+    }
+  }
+}
 
+/* MNCW-245 */
+body.facts-and-figures-data-visualisation{
+  .two-column{
+    .view-landing-menu, .view-landing-menu-dv{
+      .view-col{
+        width: 32%;
+      }
     }
   }
 }
