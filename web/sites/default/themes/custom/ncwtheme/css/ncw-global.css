@@ -2636,9 +2636,13 @@ body.path-aggregator article.aggregator-item .item-description {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.45rem;
   background: url(../images/separator.jpg) repeat-x scroll 0 100% rgba(0, 0, 0, 0);
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: 5px;
+  padding-top: 0;
   padding-bottom: 15px;
+}
+.node--type-events #main .group-events-event-details, .node--type-seminar #main .group-events-event-details {
+  padding-bottom: 0.5rem;
 }
 .node--type-events #main .field__label, .node--type-seminar #main .field__label {
   font-weight: normal;
