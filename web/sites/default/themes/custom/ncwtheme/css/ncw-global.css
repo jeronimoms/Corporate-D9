@@ -4928,6 +4928,12 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
 }
 /* End Media 576px */
+@media only screen and (max-width: 1615px) {
+  /* Menu in two lines */
+  body {
+    padding-top: 220px !important;
+  }
+}
 @media only screen and (max-width: 1200px) {
   /* Home page */
   #main-wrapper {
