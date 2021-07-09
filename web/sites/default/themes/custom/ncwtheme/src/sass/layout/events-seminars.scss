@@ -257,7 +257,7 @@
       padding-top: 0;
       padding-bottom: 15px;
     }
-    .group-events-event-details{
+    .group-events-event-details, .group-seminar-event-details{
       padding-bottom: 0.5rem;
     }
     .field__label{
@@ -273,7 +273,9 @@
       color: $text-color-blue;
       font-size: 0.9rem;
       padding-bottom: 10px;
-
+      p{
+        margin-bottom: 0;
+      }
     }
     .field--type-text-with-summary{
       color: $text-color-black;

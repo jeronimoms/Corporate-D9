@@ -2641,7 +2641,7 @@ body.path-aggregator article.aggregator-item .item-description {
   padding-top: 0;
   padding-bottom: 15px;
 }
-.node--type-events #main .group-events-event-details, .node--type-seminar #main .group-events-event-details {
+.node--type-events #main .group-events-event-details, .node--type-events #main .group-seminar-event-details, .node--type-seminar #main .group-events-event-details, .node--type-seminar #main .group-seminar-event-details {
   padding-bottom: 0.5rem;
 }
 .node--type-events #main .field__label, .node--type-seminar #main .field__label {
@@ -2657,6 +2657,9 @@ body.path-aggregator article.aggregator-item .item-description {
   color: #003399;
   font-size: 0.9rem;
   padding-bottom: 10px;
+}
+.node--type-events #main .field__item p, .node--type-seminar #main .field__item p {
+  margin-bottom: 0;
 }
 .node--type-events #main .field--type-text-with-summary, .node--type-seminar #main .field--type-text-with-summary {
   color: #000;
