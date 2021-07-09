@@ -3,6 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.newsletter_content.field_events_section_title
+    - field.field.node.newsletter_content.field_nlc_events_content
+    - field.field.node.newsletter_content.field_oshmail_title
+    - field.field.node.newsletter_content.field_url_alias
+    - field.field.node.newsletter_content.field_view_twetter_block
     - field.field.node.newsletter_content.nlc_covid_bg
     - field.field.node.newsletter_content.nlc_covid_contents
     - field.field.node.newsletter_content.nlc_covid_img
@@ -65,6 +70,53 @@ targetEntityType: node
 bundle: newsletter_content
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_events_section_title:
+    weight: 49
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nlc_events_content:
+    weight: 48
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_oshmail_title:
+    weight: 50
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_url_alias:
+    weight: 47
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_view_twetter_block:
+    weight: 46
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   nlc_covid_bg:
     weight: 24
     label: hidden
@@ -216,7 +268,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: newsletter_item
       link: false
     third_party_settings:
       ds:
@@ -440,7 +492,7 @@ content:
     weight: 7
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: newsletter_item
       link: false
     third_party_settings:
       ds:

@@ -1,0 +1,29 @@
+uuid: 45551bb6-ec85-4ede-9f7c-bcc4edec3f9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nlc_events_content
+    - node.type.events
+    - node.type.newsletter_content
+id: node.newsletter_content.field_nlc_events_content
+field_name: field_nlc_events_content
+entity_type: node
+bundle: newsletter_content
+label: 'Events content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      events: events
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

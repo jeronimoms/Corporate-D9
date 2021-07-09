@@ -1,0 +1,23 @@
+uuid: 7f3de9e2-ea37-45a1-8a2e-80954fc9f25c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_view_twetter_block
+    - node.type.newsletter_content
+id: node.newsletter_content.field_view_twetter_block
+field_name: field_view_twetter_block
+entity_type: node
+bundle: newsletter_content
+label: 'Add Twitter Block'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

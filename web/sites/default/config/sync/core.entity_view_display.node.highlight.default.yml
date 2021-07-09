@@ -49,6 +49,7 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - content_moderation_control
         - field_publication_date
         - node_title
         - field_image_media
@@ -72,6 +73,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: ds_content
+  content_moderation_control:
+    weight: -20
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
   field_aditional_resources:
     label: above
     weight: 4

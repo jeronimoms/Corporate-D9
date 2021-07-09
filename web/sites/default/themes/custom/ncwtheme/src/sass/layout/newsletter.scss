@@ -2,9 +2,23 @@
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
 .node--type-newsletter-content{
+  h1.title{
+    display: none;
+  }
+  h2{
+    font-size: 1.1rem;
+    line-height: 22px;
+  }
+  .datetime, .field--name-created{
+    font-weight: normal;
+  }
+  .field--name-field-image-oshmail-media{
+    float: left;
+  }
   table{
     tr{
       background: transparent;
+      border: 0;
     }
   }
   table tr th, table tr th a, table tr th a:hover, table tr th a:focus {
@@ -19,15 +33,110 @@
   .node--unpublished {
     padding: 20px 6px 0;
   }
-  .field__item{
-    padding-bottom: 10px;
+  .twig-wrapper-nlc_hlight_content{
+    .field--name-nlc-hlight-content{
+      .field__item{
+        padding-top: 10px;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        border-bottom: 1px dashed #dddddd;
+        .field__item{
+          padding-top: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
+          border-bottom: 0;
+          color: $text-color-black;
+        }
+      }
+      .field__item:nth-child(1) {
+        padding-top: 0;
+      }
+      h2{
+        a{
+          display: block;
+          padding-bottom: 10px;
+        }
+      }
+    }
   }
+  .field--name-body{
+    color: $text-color-black;
+    color: #000;
+    padding-top: 5px;
+  }
+  .section-videos{
+    .field--type-created{
+      font-weight: normal;
+      font-size: 13px;
+    }
+    .field--name-body{
+      color: $text-color-black;
+      font-size: 13px;
+      font-weight: normal;
+    }
+  }
+
   .block-twitter-block{
-    height: 457px;
+    height: 300px;
     margin-top: 20px;
   }
+
   figure {
+    margin: 10px 0 0 0;
+  }
+
+  table.newsletter-events{
     margin: 0;
   }
+
 }
 
+/* Block Newsletter Home page - Right sidebar */
+.newsletter-block-wrapper{
+  background: $bg-color-blue-block;
+  padding: 25px 20px;
+  margin-top: 10px;
+  margin-bottom: 2rem;
+  color: $text-color-blue;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  a{
+    display: block;
+    margin-top: 5px;
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .form-item-agree-processing-personal-data{
+    display: flex;
+    padding-bottom: 1rem;
+    .option{
+      font-weight: normal;
+      margin-bottom: 0;
+      margin-top: -4px;
+      margin-left: 10px;
+    }
+  }
+  #edit-mail-wrapper{
+    margin-top: 10px;
+    label{
+      font-weight: 400;
+    }
+  }
+  #edit-actions{
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+  .form-submit{
+    width: 100%;
+    font-size: 1rem;
+    color: $text-color-blue;
+    font-weight: bold;
+    background: $bg-color-blue-button;
+    margin-bottom: 10px;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}

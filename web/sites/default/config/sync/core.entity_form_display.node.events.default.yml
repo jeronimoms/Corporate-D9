@@ -38,13 +38,16 @@ dependencies:
     - field.field.node.events.field_tags
     - field.field.node.events.field_unit_ref
     - field.field.node.events.field_website_of_event
+    - field.field.node.events.simplenews_issue
     - node.type.events
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - datetime_range
     - file
     - link
     - path
+    - simplenews
     - text
 id: node.events.default
 targetEntityType: node
@@ -255,6 +258,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  simplenews_issue:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: simplenews_issue
+    region: content
   status:
     type: boolean_checkbox
     settings:

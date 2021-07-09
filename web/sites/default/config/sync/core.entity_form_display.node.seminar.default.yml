@@ -20,8 +20,10 @@ dependencies:
     - field.field.node.seminar.field_tags
     - field.field.node.seminar.field_thesaurus_2020
     - node.type.seminar
+    - workflows.workflow.editorial
   module:
     - chosen_field
+    - content_moderation
     - datetime
     - media_library
     - multiple_selects
@@ -158,12 +160,10 @@ content:
     type: multiple_options_select
     region: content
   moderation_state:
-    type: string_textfield
+    type: moderation_state_default
     weight: 17
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path

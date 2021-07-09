@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.nlc_national_contents
+    - node.type.events
     - node.type.highlight
     - node.type.newsletter_content
 _core:
@@ -22,10 +23,11 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
+      events: events
       highlight: highlight
     sort:
       field: title
       direction: ASC
     auto_create: false
-    auto_create_bundle: article
+    auto_create_bundle: events
 field_type: entity_reference

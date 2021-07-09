@@ -1,6 +1,6 @@
 uuid: 39d7a898-7955-401f-9eb1-1119bef48b47
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: local
 label: local
@@ -18,7 +18,7 @@ blacklist:
   - migrate_drupal.settings
   - 'migrate_plus*'
 graylist:
-  - 'search_api_solr*'
+  - search_api.server.solr
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

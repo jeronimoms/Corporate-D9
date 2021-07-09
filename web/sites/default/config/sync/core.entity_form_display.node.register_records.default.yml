@@ -24,7 +24,9 @@ dependencies:
     - field.field.node.register_records.field_websites_online_serv_media
     - field.field.node.register_records.field_wiki_categories
     - node.type.register_records
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - languagefield
     - media_library
     - path
@@ -189,12 +191,10 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
-    type: string_textfield
+    type: moderation_state_default
     weight: 22
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -216,6 +216,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
