@@ -78,10 +78,18 @@
 
 
 @media only screen and (max-width : 991px) {
+  /* Left menu */
+  .sidebar-first{
+    .menu-level-0{
+      display: none;
+    }
+  }
+
   /* Breadcrumbs */
   .breadcrumb-fluid{
     display: none;
   }
+
   /* Menu responsive */
   #navbar-main {
     padding: 0;

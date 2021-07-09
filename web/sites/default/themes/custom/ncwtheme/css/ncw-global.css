@@ -4997,6 +4997,11 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 /* End Media 1024px */
 @media only screen and (max-width: 991px) {
+  /* Left menu */
+  .sidebar-first .menu-level-0 {
+    display: none;
+  }
+
   /* Breadcrumbs */
   .breadcrumb-fluid {
     display: none;
@@ -5198,11 +5203,6 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
   .content-news-events .wrap-news-events .events-home .views-row {
     width: 100%;
-  }
-
-  /* Left menu */
-  .sidebar-first .menu-level-0 {
-    display: none;
   }
 }
 /* End Media 768px */
