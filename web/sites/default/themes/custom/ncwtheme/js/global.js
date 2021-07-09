@@ -89,7 +89,7 @@ jQuery(document).ready(function($) {
     $(this).next('.fop-country-list').slideToggle();
   });
 
-  //View MSD glossary accordion #block-ncwtheme-content > div > div > div > div.view-content.row > div:nth-child(8)
+  //View MSD glossary accordion
   $(".view-view-glossary > div.view-content.row > h3:nth-child(7)").addClass('active');
   $(".view-view-glossary > div.view-content.row > div:nth-child(8)").css('display','block');
   $(".view-view-glossary h3").click(function(){
@@ -114,6 +114,9 @@ jQuery(document).ready(function($) {
     $(this).toggleClass("active");
     $(this).next('.view-seminar .view-grouping-content').slideToggle();
   });
+
+  //View Careers 3th accordion opened
+  $( "#block-quicktabscareersaccordion #ui-id-6" ).trigger( "click" );
 
   // Text resize
   $('#_biggify').on('click', function() {
@@ -143,7 +146,6 @@ jQuery(document).ready(function($) {
   if ($(".move-block-thesaurus")[0]) {
     $('#block-headerthesaurus-2').appendTo('.move-block-thesaurus');
   }
-
 
   //Move Search Blog
   if ($(".move-block-search-blog")[0]) {
