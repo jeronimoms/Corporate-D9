@@ -1,0 +1,113 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{%
+  set classes = [
+  'field',
+  'field--name-' ~ field_name|clean_class,
+  'field--type-' ~ field_type|clean_class,
+  'field--label-' ~ label_display,
+]
+%}
+{%
+  set title_classes = [
+  'field__label',
+  label_display == 'visually_hidden' ? 'visually-hidden',
+]
+%}
+
+{% if label_hidden %}
+  {% if multiple %}
+    {% for item in items|batch(2) %}
+      <tr class="twig-template-for-blocks-items field-events-twig">
+        {% for column in item %}
+          <td style="background: #003399; padding-bottom: 20px; border-right: 10px solid #FFFFFF; border-bottom: 10px solid #FFF">
+            <table class="newsletter-events" style="width: 355px;">
+              <tr>
+                <td style="padding-top: 20px; padding-left: 20px; padding-right: 10px; vertical-align: top;">
+                  <img style="border: 0px; width:40px; height:40px;" typeof="foaf:Image" src="http://ddev.ddev.site/sites/default/files/inline-images/img-calendar.png" width="40" height="40" alt="calendar">
+                </td>
+                <td style="padding: 20px 10px 0 10px; vertical-align: top; text-align: left;">
+                  <span style="color:#FFFFFF; font-weight: normal; font-size: 13px;">
+                    {% if column.content['#options'].entity.field_country_code.0.value %}
+                      {{ column.content['#options'].entity.field_country_code.0.value }}
+                    {% endif %}
+                    {% if column.content['#options'].entity.field_city.0.value %}
+                      {{ column.content['#options'].entity.field_city.0.value }}<span class="separator-event">,</span>
+                    {% endif %}
+                    {{ column.content['#options'].entity.field_date.0.value|date('d/m/Y') }}
+                  </span>
+                  <br>
+                  <a href="{{ column.content['#url'] }}" style="display: block; height: 70px; color: #FFFFFF; padding-top: 5px; padding-bottom: 10px; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold;">
+                    {{ column.content['#title'] }}
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="2" style="vertical-align: top; text-align: right; padding-bottom: 10px;">
+        <a href="/oshevents" style="display: block; color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold; padding-top: 20px;">
+          {{ 'View all' | trans }} <img src="https://osha.europa.eu/sites/all/themes/osha_frontend/images/flecha.png" alt="{{ 'See more' | trans }}">
+        </a>
+      </td>
+    </tr>
+
+  {% else %}
+    {% for item in items %}
+      <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% if multiple %}
+    <div class='field__items'>
+      {% endif %}
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+      {% if multiple %}
+    </div>
+    {% endif %}
+  </div>
+{% endif %}

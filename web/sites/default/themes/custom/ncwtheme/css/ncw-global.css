@@ -1504,6 +1504,10 @@ nav.pager ul.pager__items .pagerer-breaker {
   margin-top: -50px;
 }
 
+.pager-total.without-pager {
+  margin-top: 0;
+}
+
 .view-search-blog .pager-total {
   margin-top: 0;
 }
@@ -2096,6 +2100,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   margin-top: 0.8rem;
   margin-bottom: 10px;
   background: #e8ecf5;
+  padding-bottom: 0;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles > .field__label {
   margin-bottom: 0.5rem;
@@ -3604,6 +3609,10 @@ body.user-logged-in.toolbar-tray-open #header {
 }
 /* End Media 991px */
 /* .view-landing-menu-dv, special view to "Data visualisation" Facts & Figures - Data visualisation */
+body.tools-and-resources article.node--type-article.node--promoted .field--name-body p {
+  color: #003399;
+}
+
 .one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col {
   width: 23.2%;
   float: left;
@@ -3616,6 +3625,11 @@ body.user-logged-in.toolbar-tray-open #header {
   float: left;
   margin-right: 1rem;
   margin-bottom: 3rem;
+}
+
+/* MNCW-245 */
+body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-col, body.facts-and-figures-data-visualisation .two-column .view-landing-menu-dv .view-col {
+  width: 32%;
 }
 
 .three-column .view-landing-menu .view-col, .three-column .view-landing-menu-dv .view-col {
@@ -3699,6 +3713,9 @@ body.user-logged-in.toolbar-tray-open #header {
 /* This SASS only apply in the Web, not in the email - outlook
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
+.node--type-newsletter-content h1.title {
+  display: none;
+}
 .node--type-newsletter-content h2 {
   font-size: 1.1rem;
   line-height: 22px;
@@ -3708,7 +3725,6 @@ body.user-logged-in.toolbar-tray-open #header {
 }
 .node--type-newsletter-content .field--name-field-image-oshmail-media {
   float: left;
-  margin-right: 20px;
 }
 .node--type-newsletter-content table tr {
   background: transparent;
@@ -3755,23 +3771,20 @@ body.user-logged-in.toolbar-tray-open #header {
   font-weight: normal;
   font-size: 13px;
 }
-.node--type-newsletter-content .section-videos h2 {
-  padding-bottom: 10px;
-}
-.node--type-newsletter-content .section-videos h2 a {
-  font-size: 18px;
-}
 .node--type-newsletter-content .section-videos .field--name-body {
   color: #000;
   font-size: 13px;
   font-weight: normal;
 }
-.node--type-newsletter-content #node-21174 > tbody > tr > td > div > div:nth-child(1) .block-twitter-block {
-  height: 457px;
+.node--type-newsletter-content .block-twitter-block {
+  height: 300px;
   margin-top: 20px;
 }
 .node--type-newsletter-content figure {
   margin: 10px 0 0 0;
+}
+.node--type-newsletter-content table.newsletter-events {
+  margin: 0;
 }
 
 /* Block Newsletter Home page - Right sidebar */
@@ -4745,6 +4758,11 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   padding-bottom: 1.5rem;
 }
 
+/* View seminars filtered*/
+.view-search-seminars .view-content {
+  clear: both;
+}
+
 /* View node header - Node related with the View - Placed before the View */
 .custom-view-node-header {
   padding-bottom: 2rem;
@@ -4991,6 +5009,10 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
     margin-bottom: 4px;
     border-radius: 1px;
   }
+  #navbar-main #block-ncwtheme-main-menu > ul > li:nth-child(4) > span {
+    /* Hide publications expand ico */
+    display: none;
+  }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 {
     width: 100%;
     float: left;
@@ -5006,7 +5028,7 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
     display: none;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) > a {
-    display: none;
+    margin-left: -10px;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) .field--type-entity-reference img {
     margin: 0;
