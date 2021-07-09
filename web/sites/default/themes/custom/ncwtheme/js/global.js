@@ -160,6 +160,13 @@ jQuery(document).ready(function($) {
     $('.newsletter-block-wrapper button').appendTo('.move-subscribe-button-by-jquery');
   }
 
+  //Fix display pages footer view if we haven't pagination
+  if ($(".pagerer-container")[0]) {
+    $('.pager-total').addClass('with-pager');
+  }else{
+    $('.pager-total').addClass('without-pager');
+  }
+
   //Show input search when click in Search button responsive menu
   $("#block-searchsite").click(function(){
     $('#block-searchsite .btn-primary').addClass('activate');
