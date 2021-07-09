@@ -1,0 +1,56 @@
+uuid: 7b0d413c-81c3-4319-b688-c935e49e4be9
+langcode: en
+status: true
+dependencies:
+  module:
+    - tmgmt_file
+name: xml_cdt
+label: 'XML CDT'
+description: ''
+auto_accept: false
+weight: null
+plugin: file
+settings:
+  export_format: xml
+  format_configuration:
+    target: ''
+  xliff_cdata: false
+  xliff_processing: false
+  allow_override: false
+  scheme: public
+remote_languages_mappings:
+  bg: bg
+  cs: cs
+  da: da
+  de: de
+  et: et
+  el: el
+  en: en
+  es: es
+  fr: fr
+  hr: hr
+  it: it
+  lv: lv
+  lt: lt
+  hu: hu
+  mt: mt
+  nl: nl
+  'no': 'no'
+  pl: pl
+  pt-pt: pt-pt
+  ro: ro
+  sk: sk
+  sl: sl
+  fi: fi
+  sv: sv
+  is: is
+  ga: ga
+  sq: sq
+  bs: bs
+  mk: mk
+  ru: ru
+  sr: sr
+  sh: sh
+  tr: tr
+  nol: nol
+  other: other
