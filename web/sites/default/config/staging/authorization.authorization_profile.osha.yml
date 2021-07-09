@@ -15,31 +15,31 @@ provider_config:
     use_first_attr_as_groupid: false
 provider_mappings:
   -
-    query: 'cn=ADMIN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|administrator'
+    query: 'cn=ADMIN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
-    query: 'cn=APPROVER,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Approver'
+    query: 'cn=APPROVER,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
     query: 'cn=ANNREP_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
-    query: 'cn=EVENTCOOR,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Events Coordinator'
+    query: 'cn=EVENTCOOR,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
-    query: 'cn=EVENTEDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Events Editor'
+    query: 'cn=EVENTEDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
-    query: 'cn=LAYVAL,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Layout Validator'
+    query: 'cn=LAYVAL,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
-    query: 'cn=TRLIAS,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Translation Liaison'
+    query: 'cn=TRLIAS,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
-    query: 'cn=TRLMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|Translation Manager'
+    query: 'cn=TRLMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
-    query: 'cn=READ,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu|authenticated user'
+    query: 'cn=READ,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
     query: 'cn=ACCESS_EDT,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
@@ -327,16 +327,16 @@ provider_mappings:
     query: 'cn=YOUNGW_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
-    query: 'cn=CAREER_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    query: 'cn=LEGIS_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
-    query: 'cn=INTDOC_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    query: 'cn=MLINGUA_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
+    is_regex: false
+  -
+    query: 'cn=OSHA_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
     query: 'cn=SEMIN_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
-    is_regex: false
-  -
-    query: 'cn=LEGIS_RVMN,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
     is_regex: false
   -
     query: 'cn=LEGIS_PM,ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
