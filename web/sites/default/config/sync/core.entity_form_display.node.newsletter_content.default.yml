@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.newsletter_content.field_events_section_title
     - field.field.node.newsletter_content.field_month_year
     - field.field.node.newsletter_content.field_nlc_events_content
-    - field.field.node.newsletter_content.field_onth
     - field.field.node.newsletter_content.field_oshmail_title
     - field.field.node.newsletter_content.field_url_alias
     - field.field.node.newsletter_content.field_view_twetter_block
@@ -429,14 +428,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_onth:
-    weight: 26
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   field_oshmail_title:
     weight: 1
