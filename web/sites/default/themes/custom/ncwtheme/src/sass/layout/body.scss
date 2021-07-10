@@ -850,3 +850,13 @@ body.path-aggregator{
     }
   }
 }
+
+.page-view-events, .page-view-publications-index{
+  .node-event-twig-custom, .node-publications-custom{
+    .node--type-article{
+      .field--name-body{
+        max-width: 70%;
+      }
+    }
+  }
+}

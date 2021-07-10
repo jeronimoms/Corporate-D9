@@ -60,6 +60,18 @@
       }
     }
   }
+
+  /* Events and Publications intro text */
+  .page-view-events, .page-view-publications-index{
+    .node-event-twig-custom, .node-publications-custom{
+      .node--type-article{
+        .field--name-body{
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
 }/* End Media 768px */
 
 @media only screen and (max-width : 576px) {
