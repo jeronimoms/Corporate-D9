@@ -965,6 +965,21 @@ h3.custom-border span {
   padding-right: 1em;
 }
 
+h3.h3-files-resources {
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.first-child-custom-js h3.h3-files-resources {
+  margin-top: 0;
+}
+
+.field--name-field-aditional-resources .to-show-custom-js h3.h3-files-resources {
+  display: block;
+}
+
 .content-related h2 {
   font-size: 1.4rem;
   padding-top: 1rem;
@@ -2049,10 +2064,13 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   padding-top: 2rem;
 }
 .node--type-article .content-headings-related h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 .node--type-article .content-headings-related h3 {
   margin-bottom: 1.5rem;
+}
+.node--type-article .custom-file-twig .field__label {
+  display: none;
 }
 .node--type-article .field--name-field-aditional-resources {
   clear: both;
@@ -2060,6 +2078,22 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 .node--type-article .field--name-field-aditional-resources .node--type-youtube h2 {
   padding-bottom: 0;
   font-size: 1rem;
+}
+.node--type-article .field--name-field-aditional-resources article {
+  clear: both;
+}
+.node--type-article .field--name-field-aditional-resources .publication-field article {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  background: url(../images/separator.jpg) repeat-x 100% 0;
+}
+.node--type-article .field--name-field-aditional-resources .publication-field article.no-border-custom-js {
+  background: transparent;
+  padding-top: 0;
+  border-top: 0;
+}
+.node--type-article .field--name-field-aditional-resources iframe {
+  margin-top: 0;
 }
 .node--type-article .field--name-body {
   font-size: 0.9rem;

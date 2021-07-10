@@ -168,6 +168,16 @@ jQuery(document).ready(function($) {
     $('.block-views-blocklanding-menu-block-1').addClass('moved-by-jquery');
   }
 
+  //Hide titles en Related resource item
+  $(".file-field:first").addClass('to-show-custom-js');
+  $(".youtube-field:first").addClass('to-show-custom-js');
+  $(".publication-field:first").addClass('to-show-custom-js');
+  $(".publication-field:first article").addClass('no-border-custom-js');
+  $(".slideshare-field:first").addClass('to-show-custom-js');
+  $(".infographic-field:first").addClass('to-show-custom-js');
+  $(".to-show-custom-js:first").addClass('first-child-custom-js');
+
+
   //Fix display pages footer view if we haven't pagination
   if ($(".pagerer-container")[0]) {
     $('.pager-total').addClass('with-pager');

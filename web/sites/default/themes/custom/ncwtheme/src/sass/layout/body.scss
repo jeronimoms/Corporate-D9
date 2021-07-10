@@ -551,10 +551,15 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
   .content-headings-related{
     padding-top: 2rem;
     h2{
-      margin-bottom: 2rem;
+      margin-bottom: 0;
     }
     h3{
       margin-bottom: 1.5rem;
+    }
+  }
+  .custom-file-twig{
+    .field__label{
+      display: none;
     }
   }
   .field--name-field-aditional-resources{
@@ -564,6 +569,24 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
         padding-bottom: 0;
         font-size: 1rem;
       }
+    }
+    article{
+      clear: both;
+    }
+    .publication-field{
+      article{
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        background: url(../images/separator.jpg) repeat-x 100% 0;
+      }
+      article.no-border-custom-js{
+        background: transparent;
+        padding-top: 0;
+        border-top:0;
+      }
+    }
+    iframe{
+      margin-top: 0;
     }
   }
   .field--name-body{
