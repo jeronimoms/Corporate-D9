@@ -3890,6 +3890,39 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
   opacity: 0.8;
 }
 
+/* Content node/9 /oshmail-newsletter */
+.wraper-blog-and-img {
+  display: flex;
+}
+.wraper-blog-and-img .block-newsletter {
+  margin-right: 1rem;
+}
+.wraper-blog-and-img .block-newsletter .newsletter-block-wrapper {
+  margin-top: 0;
+}
+.wraper-blog-and-img .block-newsletter h2 {
+  display: none;
+}
+
+.sidebar-second .view-newsletter-items {
+  border-top: 2px solid #003399;
+}
+.sidebar-second .view-newsletter-items .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.sidebar-second .view-newsletter-items .views-row {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 2px solid #003399;
+}
+.sidebar-second .view-newsletter-items .views-row .views-field-nothing a {
+  font-size: 1rem;
+  background: url(../images/arrow.png) no-repeat 98% 3px;
+  padding-left: 5px;
+  padding-bottom: 0;
+}
+
 body.contact form.contact-form {
   width: 80%;
   background: #e8ecf5;

@@ -1,0 +1,19 @@
+uuid: bfb9406b-1109-47c5-95f7-258ad55a4bfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_month_year
+    - node.type.newsletter_content
+id: node.newsletter_content.field_month_year
+field_name: field_month_year
+entity_type: node
+bundle: newsletter_content
+label: 'Month - Year'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

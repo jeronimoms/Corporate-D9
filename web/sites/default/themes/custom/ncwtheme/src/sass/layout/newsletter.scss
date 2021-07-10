@@ -140,3 +140,41 @@
     }
   }
 }
+
+/* Content node/9 /oshmail-newsletter */
+.wraper-blog-and-img{
+  display: flex;
+  .block-newsletter{
+    margin-right: 1rem;
+    .newsletter-block-wrapper{
+      margin-top: 0;
+    }
+    h2{
+      display: none;
+    }
+  }
+}
+
+.sidebar-second{
+  .view-newsletter-items{
+    border-top: 2px solid $bg-color-blue;
+    .view-content.row{
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .views-row{
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 2px solid $bg-color-blue;
+      .views-field-nothing{
+        a{
+          font-size: 1rem;
+          background: url(../images/arrow.png) no-repeat 98% 3px;
+          padding-left: 5px;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
