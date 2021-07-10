@@ -162,6 +162,12 @@ jQuery(document).ready(function($) {
     $('.newsletter-block-wrapper button').appendTo('.move-subscribe-button-by-jquery');
   }
 
+  //Move Menu block Wiki block before
+  if ($("div").hasClass('field--name-field-related-oshwiki-articles') && $("div").hasClass('block-views-blocklanding-menu-block-1')) {
+    $('.block-views-blocklanding-menu-block-1').appendTo('article .field--name-body');
+    $('.block-views-blocklanding-menu-block-1').addClass('moved-by-jquery');
+  }
+
   //Fix display pages footer view if we haven't pagination
   if ($(".pagerer-container")[0]) {
     $('.pager-total').addClass('with-pager');
