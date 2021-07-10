@@ -24,6 +24,7 @@ content_cart.list:
   path: '/download-centre/{file}'
   defaults:
     _controller: '\Drupal\napo_content_cart\Controller\NccController::getList'
+    _title_callback: '\Drupal\napo_content_cart\Controller\NccController::getTitle'
     file: NULL
   requirements:
     _permission: 'access content'
