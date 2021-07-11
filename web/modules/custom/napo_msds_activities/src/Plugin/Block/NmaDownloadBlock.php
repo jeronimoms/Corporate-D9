@@ -83,6 +83,7 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
   public function build() {
     /** @var \Drupal\node\Entity\Node $node */
     $node = $this->routeMatch->getParameter('node');
+    $default = $node->getTranslation('en');
 
     if (!$node) {
       return [];
@@ -101,6 +102,9 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
         $video_ref = $this->entityTypeManager->getStorage('node')->load($video_ref);
         if ($video_ref) {
           $ref = $video_ref->get('field_video')->getValue();
+          if (empty($ref)) {
+            $ref = $default->get('field_video')->getString();
+          }
           if (is_array($ref) && count($ref) > 0) {
             $ref = $ref[0]['target_id'];
           }
@@ -110,6 +114,10 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
 
       // MSDS Activity.
       $activity_ref = $node->get('field_activity')->getString();
+      if (empty($activity_ref)) {
+        $activity_ref = $default->get('field_activity')->getString();
+      }
+
       if ($activity_ref) {
         $activity = $this->normalizeMedia($activity_ref);
       }
@@ -124,12 +132,21 @@ class NmaDownloadBlock extends BlockBase implements ContainerFactoryPluginInterf
       if ($video_ref) {
         $video_ref = $this->entityTypeManager->getStorage('node')->load($video_ref);
         if ($video_ref) {
-          $video = $this->normalizeMedia($video_ref->get('field_video')->getString());
+          $video_ref_trans = $video_ref->getTranslation('en');
+          $video_ref = $video_ref->get('field_video')->getString();
+          if (empty($video_ref)) {
+            $video_ref = $video_ref_trans->get('field_video')->getString();
+          }
+          $video = $this->normalizeMedia($video_ref);
         }
       }
 
       // LESSON Lesson.
       $lesson_ref = $node->get('field_file')->getString();
+      if (empty($lesson_ref)) {
+        $lesson_ref = $default->get('field_file')->getString();
+      }
+
       if ($lesson_ref) {
         $lesson = $this->normalizeMedia($lesson_ref);
       }
