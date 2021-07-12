@@ -1,0 +1,21 @@
+services:
+  osha_workflow.helper:
+    class: Drupal\osha_workflow\VwHelper
+    arguments: ['@current_user', '@database', '@current_route_match', '@entity_type.manager', '@content_moderation.moderation_information']
+
+  osha_workflow.route_subscriber:
+    class: Drupal\osha_workflow\Routing\VwRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  osha_workflow.access_checker:
+    class: Drupal\osha_workflow\Access\VwApproverAccessCheck
+    arguments: ['@current_user', '@osha_workflow.helper']
+    tags:
+      - { name: access_check, applies_to: _osha_workflow_access_check }
+
+  osha_workflow.access_checker.list:
+    class: Drupal\osha_workflow\Access\VwListAccessCheck
+    arguments: ['@current_user', '@osha_workflow.helper']
+    tags:
+      - { name: access_check, applies_to: _osha_workflow_access_check_list }
