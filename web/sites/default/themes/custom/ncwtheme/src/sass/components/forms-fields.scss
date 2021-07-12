@@ -266,6 +266,19 @@ select, .facets-dropdown{
   }
 }
 
+.tools-and-resources-eu-osha-thesaurus-hierarchical,
+.tools-and-resources-eu-osha-thesaurus-alphabetical,
+.page-view-thesaurus-front-indexed
+{
+  .views-exposed-form .btn-primary {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  .form-row>fieldset.form-item-sort-by{
+    order: 3;
+  }
+}
+
 /* Rsponsive Filters */
 @media only screen and (max-width : 767px) {
 

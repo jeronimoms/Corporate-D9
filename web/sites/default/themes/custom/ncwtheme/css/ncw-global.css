@@ -866,6 +866,18 @@ select, .facets-dropdown {
   order: 7;
 }
 
+.tools-and-resources-eu-osha-thesaurus-hierarchical .views-exposed-form .btn-primary,
+.tools-and-resources-eu-osha-thesaurus-alphabetical .views-exposed-form .btn-primary,
+.page-view-thesaurus-front-indexed .views-exposed-form .btn-primary {
+  margin-left: 0;
+  margin-right: 5px;
+}
+.tools-and-resources-eu-osha-thesaurus-hierarchical .form-row > fieldset.form-item-sort-by,
+.tools-and-resources-eu-osha-thesaurus-alphabetical .form-row > fieldset.form-item-sort-by,
+.page-view-thesaurus-front-indexed .form-row > fieldset.form-item-sort-by {
+  order: 3;
+}
+
 /* Rsponsive Filters */
 @media only screen and (max-width: 767px) {
   #edit-submit-publications-index {
@@ -5114,8 +5126,15 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 /* End Media 1024px */
 @media only screen and (max-width: 991px) {
   /* Left menu */
+  .sidebar-first {
+    margin-bottom: 0;
+  }
   .sidebar-first .menu-level-0 {
     display: none;
+  }
+
+  #block-headerthesaurus-2 .header__wrapper {
+    margin-top: 0;
   }
 
   /* Breadcrumbs */
