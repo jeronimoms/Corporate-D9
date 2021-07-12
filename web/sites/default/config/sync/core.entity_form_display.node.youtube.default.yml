@@ -15,7 +15,6 @@ dependencies:
     - datetime
     - image
     - path
-    - simplenews
     - text
     - youtube
 id: node.youtube.default
@@ -72,12 +71,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  simplenews_issue:
-    weight: 12
-    settings: {  }
-    third_party_settings: {  }
-    type: simplenews_issue
-    region: content
   status:
     type: boolean_checkbox
     weight: 9
@@ -116,4 +109,5 @@ content:
 hidden:
   langcode: true
   promote: true
+  simplenews_issue: true
   sticky: true

@@ -25,6 +25,7 @@ dependencies:
     - field.field.node.news.field_summary_html
     - field.field.node.news.field_tags
     - field.field.node.news.field_thesaurus_2020
+    - field.field.node.news.simplenews_issue
     - image.style.medium
     - node.type.news
   module:
@@ -44,6 +45,11 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_aditional_resources:
     type: entity_reference_entity_view
     weight: 4
@@ -80,6 +86,7 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
+  breadcrumbs: true
   comment_node_news: true
   field_activity: true
   field_archived: true
@@ -99,3 +106,4 @@ hidden:
   langcode: true
   links: true
   search_api_excerpt: true
+  simplenews_issue: true
