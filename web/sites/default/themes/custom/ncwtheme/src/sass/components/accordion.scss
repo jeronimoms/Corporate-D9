@@ -47,6 +47,11 @@
     .wysiwyg_accordion_panel {
       display: none;
       padding: 10px 0;
+      h4{
+        font-size: 1rem;
+        font-weight: 600;
+        padding-top: 0.5rem;
+      }
       p.wysiwyg_accordion_panel{
         display: block;
       }
