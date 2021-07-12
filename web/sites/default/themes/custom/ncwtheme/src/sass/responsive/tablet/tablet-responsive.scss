@@ -80,9 +80,14 @@
 @media only screen and (max-width : 991px) {
   /* Left menu */
   .sidebar-first{
+    margin-bottom: 0;
     .menu-level-0{
       display: none;
     }
+  }
+
+  #block-headerthesaurus-2 .header__wrapper{
+    margin-top: 0;
   }
 
   /* Breadcrumbs */

@@ -170,6 +170,11 @@ input[type=search] {
   display: none;
   padding: 10px 0;
 }
+#main .wysiwyg_accordion .wysiwyg_accordion_panel h4, #main .quicktabs-accordion .wysiwyg_accordion_panel h4, #main .view-view-glossary .wysiwyg_accordion_panel h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  padding-top: 0.5rem;
+}
 #main .wysiwyg_accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .quicktabs-accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .view-view-glossary .wysiwyg_accordion_panel p.wysiwyg_accordion_panel {
   display: block;
 }
@@ -718,6 +723,7 @@ div#sliding-popup {
 }
 .views-exposed-form .btn-primary {
   margin-left: 5px;
+  line-height: 1.6;
 }
 
 .views-exposed-form.custom-active-filter {
@@ -849,6 +855,29 @@ select, .facets-dropdown {
   margin-right: 10px;
 }
 
+.page-view-events .views-exposed-form .btn-primary {
+  margin-left: 0;
+  margin-right: 5px;
+}
+.page-view-events .form-row > fieldset.form-item-field-country-code {
+  order: 6;
+}
+.page-view-events .form-row > fieldset.form-item-sort-by {
+  order: 7;
+}
+
+.tools-and-resources-eu-osha-thesaurus-hierarchical .views-exposed-form .btn-primary,
+.tools-and-resources-eu-osha-thesaurus-alphabetical .views-exposed-form .btn-primary,
+.page-view-thesaurus-front-indexed .views-exposed-form .btn-primary {
+  margin-left: 0;
+  margin-right: 5px;
+}
+.tools-and-resources-eu-osha-thesaurus-hierarchical .form-row > fieldset.form-item-sort-by,
+.tools-and-resources-eu-osha-thesaurus-alphabetical .form-row > fieldset.form-item-sort-by,
+.page-view-thesaurus-front-indexed .form-row > fieldset.form-item-sort-by {
+  order: 3;
+}
+
 /* Rsponsive Filters */
 @media only screen and (max-width: 767px) {
   #edit-submit-publications-index {
@@ -903,6 +932,10 @@ h2 a:hover {
 .node--view-mode-full h2 {
   padding-top: 0.5rem;
   padding-bottom: 1rem;
+  clear: both;
+}
+.node--view-mode-full h2 strong {
+  font-weight: 600;
 }
 .node--view-mode-full h3 {
   padding-top: 1rem;
@@ -2046,6 +2079,10 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   height: auto;
   align-items: flex-end;
 }
+.news-events #main ul li .introduction-image img {
+  width: 100%;
+  height: auto;
+}
 .news-events #main ul li .text_news_events {
   padding-top: 5px;
   min-height: 110px;
@@ -2459,7 +2496,7 @@ body.path-aggregator article.aggregator-item .item-description {
   padding-bottom: 0;
 }
 .view-events #edit-search-api-fulltext {
-  margin-top: 23px;
+  margin-top: 24px;
 }
 .view-events .view-content.row {
   margin-left: 0;
@@ -5093,8 +5130,15 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 /* End Media 1024px */
 @media only screen and (max-width: 991px) {
   /* Left menu */
+  .sidebar-first {
+    margin-bottom: 0;
+  }
   .sidebar-first .menu-level-0 {
     display: none;
+  }
+
+  #block-headerthesaurus-2 .header__wrapper {
+    margin-top: 0;
   }
 
   /* Breadcrumbs */
