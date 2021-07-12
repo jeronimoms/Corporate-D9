@@ -525,6 +525,12 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
           height: auto;
           align-items: flex-end;
         }
+        .introduction-image{
+          img{
+            width: 100%;
+            height: auto;
+          }
+        }
         .text_news_events {
           padding-top: 5px;
           min-height: 110px;

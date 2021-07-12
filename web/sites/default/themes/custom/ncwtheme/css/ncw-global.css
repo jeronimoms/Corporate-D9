@@ -2079,6 +2079,10 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   height: auto;
   align-items: flex-end;
 }
+.news-events #main ul li .introduction-image img {
+  width: 100%;
+  height: auto;
+}
 .news-events #main ul li .text_news_events {
   padding-top: 5px;
   min-height: 110px;
