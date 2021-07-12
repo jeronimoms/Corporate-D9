@@ -51,11 +51,10 @@ content:
       crop_preview_image_style: home_news
       progress_indicator: throbber
       crop_list:
-        - osh_mail
+        - articles_crop
         - custom_crop_
-      crop_types_required:
         - osh_mail
-        - custom_crop_
+      crop_types_required: {  }
       show_crop_area: false
     third_party_settings:
       imce:
