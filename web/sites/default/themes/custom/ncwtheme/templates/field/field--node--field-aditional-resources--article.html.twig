@@ -51,21 +51,30 @@
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
-{% set has_video = items.0.content['#node'].type.0.target_id %}
+
 <div class="content-headings-related">
   <h2>{{ 'Related resources' | trans }}</h2>
-  {% if has_video == 'youtube' %}
-    <h3 class="custom-border"><span>{{ 'Videos' | trans }}</span></h3>
-  {% else %}
-    <h3 class="custom-border"><span>{{ 'Related publications' | trans }}</span></h3>
-  {% endif %}
 </div>
 
 {% if label_hidden %}
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field__items') }}>
       {% for item in items %}
-        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+        {% if  item.content['#node'].type.0.target_id == 'file' %}
+        <div class="field-item file-field">{{ item.content }}</div>
+        {% endif %}
+        {% if  item.content['#node'].type.0.target_id ==  'youtube' %}
+          <div class="field-item youtube-field">{{ item.content }}</div>
+        {% endif %}
+        {% if  item.content['#node'].type.0.target_id ==  'publication' %}
+          <div class="field-item publication-field">{{ item.content }}</div>
+        {% endif %}
+        {% if  item.content['#node'].type.0.target_id ==  'slideshare' %}
+          <div class="field-item slideshare-field">{{ item.content }}</div>
+        {% endif %}
+        {% if  item.content['#node'].type.0.target_id ==  'infographic' %}
+          <div class="field-item infographic-field">{{ item.content }}</div>
+        {% endif %}
       {% endfor %}
     </div>
   {% else %}

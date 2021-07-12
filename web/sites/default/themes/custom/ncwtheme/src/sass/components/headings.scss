@@ -56,6 +56,14 @@ h2{
   }
 }
 
+.node--type-article{
+  .field--name-body{
+    h3{
+      font-weight: 600;
+    }
+  }
+}
+
 h2.related{
   font-weight: bold;
   margin-top: 10px;
@@ -99,6 +107,27 @@ h3.custom-border{
   span{
     background: $bg-color-white;
     padding-right: 1em;
+  }
+}
+
+h3.h3-files-resources {
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.first-child-custom-js{
+  h3.h3-files-resources {
+    margin-top: 0;
+  }
+}
+
+.field--name-field-aditional-resources{
+  .to-show-custom-js{
+    h3.h3-files-resources{
+      display: block;
+    }
   }
 }
 

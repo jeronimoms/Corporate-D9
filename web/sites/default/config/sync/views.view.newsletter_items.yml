@@ -1,21 +1,17 @@
-uuid: 5fc01311-1b7d-401e-89c9-f14aaa44a8b2
+uuid: cb2375fb-90a8-455b-b2b8-16dc4fe67dcc
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
-    - field.storage.node.field_country_code
-    - field.storage.node.field_location
-    - field.storage.node.field_seminar_start_date
-    - node.type.seminar
+    - field.storage.node.field_month_year
+    - field.storage.node.field_oshmail_title
+    - field.storage.node.field_url_alias
+    - node.type.newsletter_content
   module:
-    - datetime
     - node
-    - options
-    - smart_trim
     - user
-id: eu_osha_event_summaries
-label: 'EU-OSHA Event Summaries'
+id: newsletter_items
+label: 'Newsletter items'
 module: views
 description: ''
 tag: ''
@@ -25,7 +21,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Default
     position: 0
     display_options:
       access:
@@ -56,90 +52,17 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 2
+          items_per_page: 6
           offset: 0
       style:
-        type: grid
-        options:
-          grouping: {  }
-          columns: 12
-          automatic_width: false
-          alignment: vertical
-          col_class_default: false
-          col_class_custom: 'col-12 col-md-6 views-col events-summary-col'
-          row_class_default: false
-          row_class_custom: row
+        type: default
       row:
         type: fields
       fields:
-        field_seminar_start_date:
-          id: field_seminar_start_date
-          table: node__field_seminar_start_date
-          field: field_seminar_start_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_default
-          settings:
-            timezone_override: ''
-            format_type: only_day
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_location:
-          id: field_location
-          table: node__field_location
-          field: field_location
+        field_oshmail_title:
+          id: field_oshmail_title
+          table: node__field_oshmail_title
+          field: field_oshmail_title
           relationship: none
           group_type: group
           admin_label: ''
@@ -199,10 +122,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        field_month_year:
+          id: field_month_year
+          table: node__field_month_year
+          field: field_month_year
           relationship: none
           group_type: group
           admin_label: ''
@@ -225,14 +148,77 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 100
-            word_boundary: false
+            max_length: 0
+            word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: true
-            trim: true
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_url_alias:
+          id: field_url_alias
+          table: node__field_url_alias
+          field: field_url_alias
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
             preserve_tags: ''
             html: false
           element_type: ''
@@ -261,197 +247,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-        view_node:
-          id: view_node
-          table: node
-          field: view_node
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          text: view
-          output_url_as_text: true
-          absolute: false
-          entity_type: node
-          plugin_id: entity_link
-        body:
-          id: body
-          table: node__body
-          field: body
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: smart_trim
-          settings:
-            trim_length: 40
-            trim_type: chars
-            trim_suffix: ...
-            wrap_output: false
-            wrap_class: trimmed
-            more_link: true
-            more_text: 'See more'
-            more_class: 'see-more-arrow minor-size'
-            summary_handler: ignore
-            trim_options:
-              text: true
-              trim_zero: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_country_code:
-          id: field_country_code
-          table: node__field_country_code
-          field: field_country_code
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_key
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
           plugin_id: field
         nothing:
           id: nothing
@@ -464,9 +259,9 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"left-column\">\r\n  <div class=\"event_country code_{{ field_country_code }}\"> </div>\r\n</div>\r\n<div class=\"right-column\">\r\n  <span class=\"publication-date\">{{ field_seminar_start_date }}</span>\r\n  <h2><a href={{ view_node }}>{{ title }}</a></h2>\r\n  <p class=\"summary\">{{ body }}</p>\r\n</div>"
-            make_link: false
-            path: ''
+            text: '{{ field_oshmail_title }} - {{ field_month_year }}'
+            make_link: true
+            path: '{{ field_url_alias }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -525,7 +320,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            seminar: seminar
+            newsletter_content: newsletter_content
           group: 1
           exposed: false
           expose:
@@ -558,74 +353,28 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        langcode:
-          id: langcode
-          table: node_field_data
-          field: langcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: langcode
-          plugin_id: language
       sorts:
-        field_seminar_start_date_value:
-          id: field_seminar_start_date_value
-          table: node__field_seminar_start_date
-          field: field_seminar_start_date_value
+        status:
+          id: status
+          table: node_field_data
+          field: status
           relationship: none
           group_type: group
           admin_label: ''
-          order: DESC
+          order: ASC
           exposed: false
           expose:
             label: ''
-          granularity: minute
-          plugin_id: datetime
-      title: 'EU-OSHA Event Summaries'
+          entity_type: node
+          entity_field: status
+          plugin_id: standard
+      title: ''
       header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      use_more: false
-      use_more_always: true
-      use_more_text: 'See all reports of past year'
-      link_url: /tools-and-resources/seminars
-      link_display: custom_url
     cache_metadata:
       max-age: -1
       contexts:
@@ -634,10 +383,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_country_code'
-        - 'config:field.storage.node.field_location'
-        - 'config:field.storage.node.field_seminar_start_date'
+        - 'config:field.storage.node.field_month_year'
+        - 'config:field.storage.node.field_oshmail_title'
+        - 'config:field.storage.node.field_url_alias'
   block_1:
     display_plugin: block
     id: block_1
@@ -646,16 +394,14 @@ display:
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      block_description: 'EU-OSHA Events Summaries'
-      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_country_code'
-        - 'config:field.storage.node.field_location'
-        - 'config:field.storage.node.field_seminar_start_date'
+        - 'config:field.storage.node.field_month_year'
+        - 'config:field.storage.node.field_oshmail_title'
+        - 'config:field.storage.node.field_url_alias'
