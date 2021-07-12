@@ -564,6 +564,54 @@ div#sliding-popup {
   margin-bottom: 1rem;
 }
 
+.page-view-dangerous-substances-overview .block-facet--links {
+  border: 0;
+  padding: 0;
+  margin-top: 0;
+  border-radius: 0;
+  border-bottom: 10px solid #FFF;
+  margin-bottom: 0;
+}
+.page-view-dangerous-substances-overview .block-facet--links h2 {
+  position: relative;
+  background: #e8eef7;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  cursor: pointer;
+}
+.page-view-dangerous-substances-overview .block-facet--links h2::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 17px;
+  background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+  top: 12px;
+  right: 20px;
+}
+.page-view-dangerous-substances-overview .block-facet--links h2.active::after {
+  background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+  right: 18px;
+}
+.page-view-dangerous-substances-overview .block-facet--links .content {
+  background: #FFF;
+  display: none;
+}
+.page-view-dangerous-substances-overview .block-facet--links .content ul {
+  list-style: none;
+  padding-left: 0;
+}
+.page-view-dangerous-substances-overview .block-facet--links .content ul a {
+  display: block;
+  color: #57565b;
+  font-size: 0.9rem;
+  padding: 5px 0 5px 0.5rem;
+}
+.page-view-dangerous-substances-overview .block-facet--links .content select, .page-view-dangerous-substances-overview .block-facet--links .content input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .facets-soft-limit-link {
   font-size: 0.9rem;
   font-weight: 600;
@@ -768,10 +816,6 @@ form #edit-actions {
   padding-right: 0;
 }
 
-.tools-and-publications-publications #edit-search-api-fulltext {
-  margin-top: 24px;
-}
-
 .form-item-search-api-fulltext {
   position: relative;
 }
@@ -876,6 +920,17 @@ select, .facets-dropdown {
 .tools-and-resources-eu-osha-thesaurus-alphabetical .form-row > fieldset.form-item-sort-by,
 .page-view-thesaurus-front-indexed .form-row > fieldset.form-item-sort-by {
   order: 3;
+}
+
+.page-view-dangerous-substances-overview .views-exposed-form .btn-primary {
+  margin-left: 0;
+  margin-right: 5px;
+}
+.page-view-dangerous-substances-overview .form-row > fieldset.form-item-sort-by {
+  order: 3;
+}
+.page-view-dangerous-substances-overview .form-row > .form-item-sort-order {
+  order: 4;
 }
 
 /* Rsponsive Filters */
@@ -2495,9 +2550,6 @@ body.path-aggregator article.aggregator-item .item-description {
   margin-bottom: 1rem;
   padding-bottom: 0;
 }
-.view-events #edit-search-api-fulltext {
-  margin-top: 24px;
-}
 .view-events .view-content.row {
   margin-left: 0;
   margin-right: 0;
@@ -2780,9 +2832,6 @@ body.path-aggregator article.aggregator-item .item-description {
 
   .view-events .form-row {
     display: block;
-  }
-  .view-events .form-row #edit-search-api-fulltext {
-    margin-top: 7px;
   }
 
   .oshevents .left-column {

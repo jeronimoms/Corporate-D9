@@ -161,12 +161,6 @@ form{
   }
 }
 
-.tools-and-publications-publications{
-  #edit-search-api-fulltext{
-    margin-top: 24px;
-  }
-}
-
 .form-item-search-api-fulltext{
   position: relative;
 }
@@ -276,6 +270,19 @@ select, .facets-dropdown{
   }
   .form-row>fieldset.form-item-sort-by{
     order: 3;
+  }
+}
+
+.page-view-dangerous-substances-overview{
+  .views-exposed-form .btn-primary {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  .form-row>fieldset.form-item-sort-by{
+    order: 3;
+  }
+  .form-row>.form-item-sort-order{
+    order: 4;
   }
 }
 
