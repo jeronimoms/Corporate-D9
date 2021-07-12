@@ -113,6 +113,7 @@
   padding-bottom: 1rem;
   .btn-primary{
     margin-left: 5px;
+    line-height: 1.6;
   }
 }
 
@@ -249,6 +250,19 @@ select, .facets-dropdown{
       margin-left: 0;
       margin-right: 10px;
     }
+  }
+}
+
+.page-view-events{
+  .views-exposed-form .btn-primary {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  .form-row>fieldset.form-item-field-country-code{
+    order: 6;
+  }
+  .form-row>fieldset.form-item-sort-by{
+    order: 7;
   }
 }
 

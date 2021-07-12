@@ -718,6 +718,7 @@ div#sliding-popup {
 }
 .views-exposed-form .btn-primary {
   margin-left: 5px;
+  line-height: 1.6;
 }
 
 .views-exposed-form.custom-active-filter {
@@ -847,6 +848,17 @@ select, .facets-dropdown {
 .tools-and-publications-publications .view-filters .views-exposed-form .btn-primary {
   margin-left: 0;
   margin-right: 10px;
+}
+
+.page-view-events .views-exposed-form .btn-primary {
+  margin-left: 0;
+  margin-right: 5px;
+}
+.page-view-events .form-row > fieldset.form-item-field-country-code {
+  order: 6;
+}
+.page-view-events .form-row > fieldset.form-item-sort-by {
+  order: 7;
 }
 
 /* Rsponsive Filters */
@@ -2459,7 +2471,7 @@ body.path-aggregator article.aggregator-item .item-description {
   padding-bottom: 0;
 }
 .view-events #edit-search-api-fulltext {
-  margin-top: 23px;
+  margin-top: 24px;
 }
 .view-events .view-content.row {
   margin-left: 0;
