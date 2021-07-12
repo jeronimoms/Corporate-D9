@@ -1,3 +1,10 @@
+@media only screen and (max-width : 1615px) {
+  /* Menu in two lines */
+  body {
+    padding-top: 220px !important;
+  }
+}
+
 @media only screen and (max-width : 1200px) {
   /* Home page */
   #main-wrapper{
@@ -71,10 +78,18 @@
 
 
 @media only screen and (max-width : 991px) {
+  /* Left menu */
+  .sidebar-first{
+    .menu-level-0{
+      display: none;
+    }
+  }
+
   /* Breadcrumbs */
   .breadcrumb-fluid{
     display: none;
   }
+
   /* Menu responsive */
   #navbar-main {
     padding: 0;
@@ -92,6 +107,11 @@
       }
     }
 
+    #block-ncwtheme-main-menu > ul > li:nth-child(4) > span{
+      /* Hide publications expand ico */
+      display: none;
+    }
+
     #block-ncwtheme-main-menu{
       ul.menu-level-0{
         width: 100%;
@@ -106,7 +126,7 @@
             display: none;
           }
           > a{
-            display: none;
+            margin-left: -10px;
           }
           .field--type-entity-reference{
             img{

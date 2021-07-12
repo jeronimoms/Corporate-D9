@@ -320,7 +320,13 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
   public function getVideoFile(Node $node) {
     if ($node->getType() == 'msds_activities') {
       $video_ref = $this->entityTypeManager->getStorage('node')->load($node->get('field_msds_video')->getString());
+      $video_ref_trans = $video_ref->getTranslation('en');
       $ref = $video_ref->get('field_video')->getValue();
+
+      if (empty($ref)) {
+        $ref = $video_ref_trans->get('field_video')->getValue();
+      }
+
       if (is_array($ref)) {
         $ref = $ref[0]['target_id'];
       }
@@ -333,7 +339,13 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
 
     if ($node->getType() == 'lesson') {
       $video_ref = $this->entityTypeManager->getStorage('node')->load($node->get('field_lesson_video')->getString());
-      return $video_ref->get('field_video')->getString();
+      $video_ref_trans = $video_ref->getTranslation('en');
+      $media = $video_ref->get('field_video')->getString();
+      if (empty($media)) {
+        $media = $video_ref_trans->get('field_video')->getString();
+      }
+
+      return $media;
     }
   }
 
@@ -346,7 +358,12 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
    * @return string
    */
   public function getActivityFile(Node $node) {
-    return $node->get('field_activity')->getString();
+    $translation = $node->getTranslation('en');
+    $media = $node->get('field_activity')->getString();
+    if (empty($media)) {
+      $media = $translation->get('field_activity')->getString();
+    }
+    return $media;
   }
 
   /**
@@ -358,7 +375,12 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
    * @return string
    */
   public function getLessonFile(Node $node) {
-    return $node->get('field_file')->getString();
+    $translation = $node->getTranslation('en');
+    $media = $node->get('field_file')->getString();
+    if (empty($media)) {
+      $media = $translation->get('field_file')->getString();
+    }
+    return $media;
   }
 
   /**
@@ -372,18 +394,21 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
   public function getGuidanceFiles(Node $node) {
     $medias = [];
 
+    $default = $node->getTranslation('en');
+
     if ($node->getType() == 'msds_activities') {
       $node_ref = $this->entityTypeManager->getStorage('node')->load(408);
-      $medias[] = $node_ref->get('field_guidance_file')->getString();
-      $medias[] = $node_ref->get('field_glossary')->getString();
-      $medias[] = $node_ref->get('field_list_of_activities')->getString();
+      $medias[] = (!empty($node_ref->get('field_guidance_file')->getString())) ? $node_ref->get('field_guidance_file')->getString() : $default->get('field_guidance_file')->getString();
+      $medias[] = (!empty($node_ref->get('field_glossary')->getString())) ? $node_ref->get('field_glossary')->getString() : $default->get('field_glossary')->getString();
+      $medias[] = (!empty($node_ref->get('field_list_of_activities')->getString())) ? $node_ref->get('field_list_of_activities')->getString() : $default->get('field_list_of_activities')->getString();
     }
 
 
 
     if ($node->getType() == 'lesson') {
       $node_ref = $this->entityTypeManager->getStorage('node')->load(407);
-      $medias = $node_ref->get('field_guidance_file')->getString();
+      $node_ref_trans = $node_ref->getTranslation('en');
+      $medias = (!empty($node_ref->get('field_guidance_file')->getString())) ? $node_ref->get('field_guidance_file')->getString() : $node_ref_trans->get('field_guidance_file')->getString();
     }
 
     return $medias;
@@ -403,7 +428,11 @@ class NmaDownloadController extends ControllerBase implements ContainerInjection
       $refs = explode(',', str_replace(' ', '', $node->get('field_resources_required')->getString()));
       foreach ($refs as $item) {
         $item_node = $this->entityTypeManager->getStorage('node')->load($item);
+        $item_node_trans = $item_node->getTranslation('en');
         $item_media = $item_node->get('field_file')->getString();
+        if (empty($item_media)) {
+          $item_media = $item_node_trans->get('field_file')->getString();
+        }
         if ($item_media) {
           $medias[] = $item_media;
         }

@@ -60,10 +60,23 @@
       }
     }
   }
-  /* Left menu */
-  .sidebar-first{
-    .menu-level-0{
-      display: none;
+
+  /* Events and Publications intro text */
+  .page-view-events, .page-view-publications-index{
+    .node-event-twig-custom, .node-publications-custom{
+      .node--type-article{
+        .field--name-body{
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .h1-back-wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+    h1{
+      margin-top: 1rem;
     }
   }
 

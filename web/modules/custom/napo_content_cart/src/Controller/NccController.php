@@ -79,6 +79,13 @@ class NccController extends ControllerBase implements ContainerInjectionInterfac
   }
 
   /**
+   * Returns a page title.
+   */
+  public function getTitle() {
+    return  $this->t('Download Centre');
+  }
+
+  /**
    * Add a new element to the cart.
    *
    * @param \Drupal\node\Entity\Node $node

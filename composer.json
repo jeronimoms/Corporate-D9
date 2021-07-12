@@ -306,6 +306,7 @@
         "drupal/easy_install": "^10.4",
         "drupal/editor_advanced_link": "^1.8",
         "drupal/entity": "^1.2",
+        "drupal/entity_browser": "^2.6",
         "drupal/entity_collector": "^1.0@alpha",
         "drupal/entity_print": "^2.2",
         "drupal/entity_reference_revisions": "^1.8",
@@ -314,7 +315,6 @@
         "drupal/entityqueue": "^1.2",
         "drupal/entityreference_extensions": "^1.2",
         "drupal/eu_cookie_compliance": "^1.14",
-        "drupal/event": "^1.0@alpha",
         "drupal/exclude_node_title": "^1.1",
         "drupal/extlink": "^1.5",
         "drupal/extra_field": "^2.0",
@@ -454,7 +454,10 @@
         "recurser/jquery-simple-color": "master",
         "resize/library": "^1.17",
         "slick/library": "^1.8",
-        "w8tcha/ckeditor-wordcount-plugin": "^1.17"
+        "w8tcha/ckeditor-wordcount-plugin": "^1.17",
+        "ext-xmlwriter": "*",
+        "ext-simplexml": "*",
+        "ext-xmlreader": "*"
     },
     "require-dev": {
         "kint-php/kint": "^3.3"
@@ -486,9 +489,6 @@
             },
             "drupal/ldap": {
                 "Config annotation missing": "patches/ldap-orphaned_accounts_no_ldap_entry.patch"
-            },
-            "drupal/draggableviews": {
-                "DraggableViews not working after update to 2.0.0": "https://www.drupal.org/files/issues/2020-10-07/draggableviews-sort_handler_specify_order_view-2767437-78.patch"
             },
             "drupal/linkchecker": {
                 "Fix error ordering deleted and added entityqueue": "patches/linkchecker-error_ordering_deleted_added_entityqueue.patch"

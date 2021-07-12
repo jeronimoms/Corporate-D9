@@ -2,6 +2,9 @@
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
 .node--type-newsletter-content{
+  h1.title{
+    display: none;
+  }
   h2{
     font-size: 1.1rem;
     line-height: 22px;
@@ -11,7 +14,6 @@
   }
   .field--name-field-image-oshmail-media{
     float: left;
-    margin-right: 20px;
   }
   table{
     tr{
@@ -67,12 +69,6 @@
       font-weight: normal;
       font-size: 13px;
     }
-    h2{
-      padding-bottom: 10px;
-      a{
-        font-size: 18px;
-      }
-    }
     .field--name-body{
       color: $text-color-black;
       font-size: 13px;
@@ -80,14 +76,19 @@
     }
   }
 
-  #node-21174 > tbody > tr > td > div > div:nth-child(1)
   .block-twitter-block{
-    height: 457px;
+    height: 300px;
     margin-top: 20px;
   }
+
   figure {
     margin: 10px 0 0 0;
   }
+
+  table.newsletter-events{
+    margin: 0;
+  }
+
 }
 
 /* Block Newsletter Home page - Right sidebar */
@@ -139,3 +140,41 @@
     }
   }
 }
+
+/* Content node/9 /oshmail-newsletter */
+.wraper-blog-and-img{
+  display: flex;
+  .block-newsletter{
+    margin-right: 1rem;
+    .newsletter-block-wrapper{
+      margin-top: 0;
+    }
+    h2{
+      display: none;
+    }
+  }
+}
+
+.sidebar-second{
+  .view-newsletter-items{
+    border-top: 2px solid $bg-color-blue;
+    .view-content.row{
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .views-row{
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 2px solid $bg-color-blue;
+      .views-field-nothing{
+        a{
+          font-size: 1rem;
+          background: url(../images/arrow.png) no-repeat 98% 3px;
+          padding-left: 5px;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+

@@ -127,12 +127,16 @@ input[type="date" i]::-webkit-calendar-picker-indicator {
 }
 
 form{
-  .form-control, .custom-select{
+  .form-control, select{
     height: 37px;
     border: 1px solid $bg-color-blue;
     border-radius: 5px;
     color: $text-color-blue;
     font-size: 13px;
+  }
+  select {
+    padding-left: 10px;
+    padding-right: 35px;
   }
   .form-date{
     width: 135px;
@@ -166,7 +170,7 @@ form{
   position: relative;
 }
 
-.custom-select, .facets-dropdown{
+select, .facets-dropdown{
   background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -182,7 +186,7 @@ form{
   padding-left: 12px;
 }
 
-.chosen-container-multi.custom-select{
+.chosen-container-multi{
   padding-left: 0;
   height: auto;
 }
@@ -255,7 +259,7 @@ form{
     left: 89%;
   }
 
-  .chosen-container-multi.custom-select{
+  .chosen-container-multi{
     width: 100% !important;
   }
 

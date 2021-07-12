@@ -89,7 +89,7 @@ jQuery(document).ready(function($) {
     $(this).next('.fop-country-list').slideToggle();
   });
 
-  //View MSD glossary accordion #block-ncwtheme-content > div > div > div > div.view-content.row > div:nth-child(8)
+  //View MSD glossary accordion
   $(".view-view-glossary > div.view-content.row > h3:nth-child(7)").addClass('active');
   $(".view-view-glossary > div.view-content.row > div:nth-child(8)").css('display','block');
   $(".view-view-glossary h3").click(function(){
@@ -114,6 +114,9 @@ jQuery(document).ready(function($) {
     $(this).toggleClass("active");
     $(this).next('.view-seminar .view-grouping-content').slideToggle();
   });
+
+  //View Careers 3th accordion opened
+  $( "#block-quicktabscareersaccordion #ui-id-6" ).trigger( "click" );
 
   // Text resize
   $('#_biggify').on('click', function() {
@@ -144,7 +147,6 @@ jQuery(document).ready(function($) {
     $('#block-headerthesaurus-2').appendTo('.move-block-thesaurus');
   }
 
-
   //Move Search Blog
   if ($(".move-block-search-blog")[0]) {
     $('.block-views-exposed-filter-blocksearch-blog-page-1').appendTo('.move-block-search-blog');
@@ -158,6 +160,29 @@ jQuery(document).ready(function($) {
   //Move Newsletter subscribe home block
   if ($(".move-subscribe-button-by-jquery")[0]) {
     $('.newsletter-block-wrapper button').appendTo('.move-subscribe-button-by-jquery');
+  }
+
+  //Move Menu block Wiki block before
+  if ($("div").hasClass('field--name-field-related-oshwiki-articles') && $("div").hasClass('block-views-blocklanding-menu-block-1')) {
+    $('.block-views-blocklanding-menu-block-1').appendTo('article .field--name-body');
+    $('.block-views-blocklanding-menu-block-1').addClass('moved-by-jquery');
+  }
+
+  //Hide titles en Related resource item
+  $(".file-field:first").addClass('to-show-custom-js');
+  $(".youtube-field:first").addClass('to-show-custom-js');
+  $(".publication-field:first").addClass('to-show-custom-js');
+  $(".publication-field:first article").addClass('no-border-custom-js');
+  $(".slideshare-field:first").addClass('to-show-custom-js');
+  $(".infographic-field:first").addClass('to-show-custom-js');
+  $(".to-show-custom-js:first").addClass('first-child-custom-js');
+
+
+  //Fix display pages footer view if we haven't pagination
+  if ($(".pagerer-container")[0]) {
+    $('.pager-total').addClass('with-pager');
+  }else{
+    $('.pager-total').addClass('without-pager');
   }
 
   //Show input search when click in Search button responsive menu
