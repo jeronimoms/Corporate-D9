@@ -5,17 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.youtube.body
-    - field.field.node.youtube.field_image_for_oshmail
     - field.field.node.youtube.field_video_length
     - field.field.node.youtube.field_youtube
-    - field.field.node.youtube.simplenews_issue
-    - image.style.oshmail
     - node.type.youtube
   module:
-    - ds
-    - image
     - layout_builder
-    - smart_trim
+    - text
     - user
     - youtube
 third_party_settings:
@@ -30,45 +25,10 @@ content:
   body:
     weight: 1
     label: hidden
-    settings:
-      trim_length: 250
-      trim_type: chars
-      trim_suffix: ...
-      wrap_class: trimmed
-      more_text: More
-      more_class: more-link
-      summary_handler: full
-      trim_options:
-        text: true
-        trim_zero: false
-      wrap_output: false
-      more_link: false
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
-    type: smart_trim
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
-  field_image_for_oshmail:
-    type: image
-    weight: 2
-    region: content
-    label: above
-    settings:
-      image_style: oshmail
-      image_link: ''
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
   field_youtube:
     weight: 0
     label: hidden
@@ -87,9 +47,7 @@ content:
     region: content
 hidden:
   addtoany: true
-  breadcrumbs: true
   field_video_length: true
   langcode: true
   links: true
   search_api_excerpt: true
-  simplenews_issue: true

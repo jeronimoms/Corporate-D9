@@ -1,0 +1,28 @@
+uuid: 031c0ccd-0b67-4c6b-8b24-8421a7f90048
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.guideline_tags
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: guideline_topics
+theme: ncwtheme
+region: sidebar_first
+weight: -38
+provider: null
+plugin: 'facet_block:guideline_tags'
+settings:
+  id: 'facet_block:guideline_tags'
+  label: Topics
+  provider: facets
+  label_display: visible
+  block_id: guideline_topics
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/*'
+    negate: false

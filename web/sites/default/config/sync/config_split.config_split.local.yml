@@ -18,7 +18,7 @@ blacklist:
   - migrate_drupal.settings
   - 'migrate_plus*'
 graylist:
-  - search_api.server.solr
+  - 'search_api_solr*'
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

@@ -5,6 +5,7 @@ dependencies:
   module:
     - search_api_solr
     - node
+    - paragraphs
     - search_api
   config:
     - field.storage.node.field_advertising
@@ -23,6 +24,7 @@ dependencies:
     - field.storage.node.field_media_format
     - field.storage.node.field_hazard_health_effects
     - field.storage.node.field_hazard_physical_state
+    - field.storage.node.field_intellectual_property_righ
     - field.storage.node.field_languages_other
     - field.storage.node.field_measurement_method
     - field.storage.node.field_original_desc_lang_other
@@ -32,6 +34,8 @@ dependencies:
     - field.storage.node.field_prevention_measures_other
     - field.storage.node.field_priority_area
     - field.storage.node.field_fc_provider
+    - field.storage.paragraph.field_provider_name_original
+    - field.storage.paragraph.field_type_of_provider
     - field.storage.node.field_material_purpose_type
     - field.storage.node.field_rights_description
     - field.storage.node.field_sector_industry_covered
@@ -104,7 +108,7 @@ field_settings:
     label: Advertising
     datasource_id: 'entity:node'
     property_path: field_advertising
-    type: boolean
+    type: integer
     dependencies:
       config:
         - field.storage.node.field_advertising
@@ -112,7 +116,7 @@ field_settings:
     label: 'Available in languages'
     datasource_id: 'entity:node'
     property_path: field_available_in_languages
-    type: text
+    type: string
     dependencies:
       config:
         - field.storage.node.field_available_in_languages
@@ -196,14 +200,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_external_url
-  field_fc_provider:
-    label: Provider
-    datasource_id: 'entity:node'
-    property_path: field_fc_provider
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_fc_provider
   field_hazard_health_effects:
     label: 'Hazard - health effects'
     datasource_id: 'entity:node'
@@ -220,6 +216,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_hazard_physical_state
+  field_intellectual_property_righ:
+    label: 'Intellectual property rights'
+    datasource_id: 'entity:node'
+    property_path: field_intellectual_property_righ
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_intellectual_property_righ
   field_item_type:
     label: 'Type of item'
     datasource_id: 'entity:node'
@@ -316,6 +320,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_priority_area
+  field_provider_name_original:
+    label: 'Provider » Paragraph » Provider name (Original)'
+    datasource_id: 'entity:node'
+    property_path: 'field_fc_provider:entity:field_provider_name_original'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_fc_provider
+        - field.storage.paragraph.field_provider_name_original
+      module:
+        - paragraphs
   field_publication_year:
     label: 'Year of publication'
     datasource_id: 'entity:node'
@@ -344,7 +359,7 @@ field_settings:
     label: 'Selected for analysis'
     datasource_id: 'entity:node'
     property_path: field_selected_for_analysis
-    type: boolean
+    type: integer
     dependencies:
       config:
         - field.storage.node.field_selected_for_analysis
@@ -380,6 +395,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_title_original
+  field_type_of_provider:
+    label: 'Provider » Paragraph » Type of provider'
+    datasource_id: 'entity:node'
+    property_path: 'field_fc_provider:entity:field_type_of_provider'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_fc_provider
+        - field.storage.paragraph.field_type_of_provider
+      module:
+        - paragraphs
   field_visualisation_material_typ:
     label: 'Type of visualisation material'
     datasource_id: 'entity:node'

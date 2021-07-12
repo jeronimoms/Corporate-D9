@@ -1,0 +1,28 @@
+uuid: a9d9d22e-9190-469d-8c95-9934241da7d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.intellectual_property_rights_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: intellectualpropertyrightsdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'facet_block:intellectual_property_rights_dangerous_substances_'
+settings:
+  id: 'facet_block:intellectual_property_rights_dangerous_substances_'
+  label: 'Intellectual property rights'
+  provider: facets
+  label_display: visible
+  block_id: intellectualpropertyrightsdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false
