@@ -1018,6 +1018,17 @@ h2.related {
   border-bottom: 5px solid #003399;
 }
 
+/* Blog */
+.page-node-5445 .sidebar-second .block-simplenews h2, .node--type-blog .sidebar-second .block-simplenews h2 {
+  font-size: 1.35rem;
+  border-bottom: 0;
+}
+.page-node-5445 .sidebar-second .block-twitter-block, .node--type-blog .sidebar-second .block-twitter-block {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Home */
 .path-frontpage h2 {
   font-size: 1.6rem;
   font-weight: 700;
