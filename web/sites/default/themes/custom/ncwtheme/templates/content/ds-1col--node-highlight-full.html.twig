@@ -11,8 +11,11 @@
 #}
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
-  {{ title_suffix.contextual_links }}
+{{ title_suffix.contextual_links }}
+<div class="h1-back-wrapper">
   <h1>{{ 'Highlights' | trans }}</h1>
-  {{ ds_content }}
+  <a href="/highlights" class="pull-right-flex back-to-link">{{ 'Back to highlights' | trans }}</a>
+</div>
+{{ ds_content }}
 
 </{{ ds_content_wrapper }}>

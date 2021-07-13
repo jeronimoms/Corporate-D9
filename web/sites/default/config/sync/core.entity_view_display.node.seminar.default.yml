@@ -135,6 +135,11 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_location:
     type: smart_trim
     weight: 0

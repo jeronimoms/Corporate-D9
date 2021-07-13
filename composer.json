@@ -507,6 +507,9 @@
             },
             "drupal/search_autocomplete": {
                 "value.autocomplete is not a function": "https://www.drupal.org/files/issues/2021-06-24/value-autocomplete-not-function-3220334-3.patch"
+            },
+            "drupal/conditional_fields": {
+                "error dependency": "https://www.drupal.org/files/issues/2021-01-14/fix-notice-3192044-14.patch"
             }
         },
         "patchLevel": {

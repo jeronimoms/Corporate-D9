@@ -1,0 +1,28 @@
+uuid: 3a2c0724-3b3f-4cd2-89c9-6b715a34b1b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.advertising_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: advertisingdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -18
+provider: null
+plugin: 'facet_block:advertising_dangerous_substances_'
+settings:
+  id: 'facet_block:advertising_dangerous_substances_'
+  label: Advertising
+  provider: facets
+  label_display: visible
+  block_id: advertisingdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

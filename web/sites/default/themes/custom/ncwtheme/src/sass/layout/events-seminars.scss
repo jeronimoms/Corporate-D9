@@ -66,9 +66,6 @@
     margin-bottom: 1rem;
     padding-bottom: 0;
   }
-  #edit-search-api-fulltext{
-    margin-top: 23px;
-  }
   .view-content.row{
     margin-left: 0;
     margin-right: 0;
@@ -252,9 +249,13 @@
       font-family: "Open Sans Condensed",sans-serif;
       font-size: 1.45rem;
       background: url(../images/separator.jpg) repeat-x scroll 0 100% rgba(0,0,0,0);
-      margin-top: 1rem;
+      margin-top: 0;
       margin-bottom: 5px;
+      padding-top: 0;
       padding-bottom: 15px;
+    }
+    .group-events-event-details, .group-seminar-event-details{
+      padding-bottom: 0.5rem;
     }
     .field__label{
       font-weight: normal ;
@@ -269,7 +270,9 @@
       color: $text-color-blue;
       font-size: 0.9rem;
       padding-bottom: 10px;
-
+      p{
+        margin-bottom: 0;
+      }
     }
     .field--type-text-with-summary{
       color: $text-color-black;
@@ -324,9 +327,6 @@
   .view-events{
     .form-row{
       display: block;
-      #edit-search-api-fulltext {
-        margin-top: 7px;
-      }
     }
   }
   .oshevents {

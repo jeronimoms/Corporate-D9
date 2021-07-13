@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.newsletter_content.field_events_section_title
+    - field.field.node.newsletter_content.field_month_year
     - field.field.node.newsletter_content.field_nlc_events_content
     - field.field.node.newsletter_content.field_oshmail_title
     - field.field.node.newsletter_content.field_url_alias
@@ -72,7 +73,7 @@ third_party_settings:
       children:
         - group_highlights_content
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: fieldset
       region: content
       format_settings:
@@ -106,7 +107,7 @@ third_party_settings:
       children:
         - group_videos_content
       parent_name: ''
-      weight: 10
+      weight: 11
       format_type: fieldset
       region: content
       format_settings:
@@ -137,7 +138,7 @@ third_party_settings:
       children:
         - group_healthy_workplaces_content
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: fieldset
       region: content
       format_settings:
@@ -170,7 +171,7 @@ third_party_settings:
       children:
         - group_national_focal_points_cont
       parent_name: ''
-      weight: 5
+      weight: 6
       format_type: fieldset
       region: content
       format_settings:
@@ -203,7 +204,7 @@ third_party_settings:
       children:
         - group_oira_contents
       parent_name: ''
-      weight: 6
+      weight: 7
       format_type: fieldset
       region: content
       format_settings:
@@ -236,7 +237,7 @@ third_party_settings:
       children:
         - group_covid_19_contents
       parent_name: ''
-      weight: 7
+      weight: 8
       format_type: fieldset
       region: content
       format_settings:
@@ -269,7 +270,7 @@ third_party_settings:
       children:
         - group__eu_news_contents
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: fieldset
       region: content
       format_settings:
@@ -302,7 +303,7 @@ third_party_settings:
       children:
         - group_wiki_contents
       parent_name: ''
-      weight: 9
+      weight: 10
       format_type: fieldset
       region: content
       format_settings:
@@ -335,7 +336,7 @@ third_party_settings:
       children:
         - group_more_tweets_contents
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: fieldset
       region: content
       format_settings:
@@ -365,7 +366,7 @@ third_party_settings:
       children:
         - group_events_content
       parent_name: ''
-      weight: 12
+      weight: 13
       format_type: fieldset
       region: content
       format_settings:
@@ -398,12 +399,20 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
   field_events_section_title:
     weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_month_year:
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -429,7 +438,7 @@ content:
     type: string_textfield
     region: content
   field_url_alias:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -445,14 +454,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 16
+    weight: 17
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 15
+    weight: 16
     settings: {  }
     region: content
     third_party_settings: {  }
@@ -637,7 +646,7 @@ content:
     type: link_default
     region: content
   nlc_id_in_piwik:
-    weight: 13
+    weight: 14
     settings:
       size: 60
       placeholder: ''
@@ -761,7 +770,7 @@ content:
     type: string_textfield
     region: content
   nlc_publication_date:
-    weight: 14
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -849,7 +858,7 @@ content:
     region: content
   path:
     type: path
-    weight: 21
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -857,11 +866,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 19
+    weight: 20
     region: content
     third_party_settings: {  }
   simplenews_issue:
-    weight: 24
+    weight: 25
     settings: {  }
     third_party_settings: {  }
     type: simplenews_issue
@@ -870,14 +879,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 23
+    weight: 24
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 20
+    weight: 21
     region: content
     third_party_settings: {  }
   title:
@@ -895,7 +904,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 18
     settings:
       match_operator: CONTAINS
       size: 60
@@ -904,7 +913,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }

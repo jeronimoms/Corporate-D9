@@ -1,0 +1,28 @@
+uuid: 099d19dc-3d56-4f81-a2ef-a10c7b688d10
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.type_of_item_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: typeofitemdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -23
+provider: null
+plugin: 'facet_block:type_of_item_dangerous_substances_'
+settings:
+  id: 'facet_block:type_of_item_dangerous_substances_'
+  label: Type
+  provider: facets
+  label_display: visible
+  block_id: typeofitemdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false
