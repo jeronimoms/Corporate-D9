@@ -2442,6 +2442,31 @@ body.path-aggregator article.aggregator-item .item-description {
   max-width: 70%;
 }
 
+/* Press release */
+.node--type-press-release .field--name-field-image-media {
+  float: left;
+  margin-right: 1rem;
+}
+.node--type-press-release .field--name-field-pr-notes-to-editor article h2.node__title {
+  display: none;
+}
+.node--type-press-release .field--name-field-pr-notes-to-editor article .field--name-body {
+  padding-right: 5px;
+}
+
+.field--name-field-quote {
+  border-top: 5px solid #536e91;
+  border-bottom: 5px solid #536e91;
+  color: #536e91;
+  padding: 2em;
+  background-image: url(../images/quotefirst.png), url(../images/quotesecond.png);
+  background-position: left 10px, right 93%;
+  background-repeat: no-repeat;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
