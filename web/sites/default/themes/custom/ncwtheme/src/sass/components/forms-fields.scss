@@ -284,6 +284,19 @@ select, .facets-dropdown{
   .form-row>.form-item-sort-order{
     order: 4;
   }
+  .views-field-field-item-type{
+    .field-content{
+      display: inline-block;
+      background-color: $bg-color-tag-1;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 5px;
+      color: $bg-color-white;
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+  }
 }
 
 /* Rsponsive Filters */
