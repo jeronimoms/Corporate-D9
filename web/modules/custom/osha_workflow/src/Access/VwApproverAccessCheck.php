@@ -26,7 +26,12 @@ class VwApproverAccessCheck implements AccessInterface {
     $node = reset($node);
     //ksm($node);
     return AccessResult::allowed();
-    if ($node->bundle() == 'good_practice' || $node->bundle() == 'key_article') {
+    if ($node->bundle() == 'node_article_edit_form' || $node->bundle() == 'node_25th_anniversary_edit_form'||
+    $node->bundle() == 'node_calls_edit_form'|| $node->bundle() == 'node_directive_edit_form'|| $node->bundle() == 'node_guideline_edit_form'||
+    $node->bundle() == 'node_highlight_edit_form'|| $node->bundle() == 'node_infographic_edit_form'|| $node->bundle() == 'node_job_vacancies_edit_form'||
+    $node->bundle() == 'node_news_edit_form'|| $node->bundle() == 'node_press_release_edit_form'|| $node->bundle() == 'node_publication_edit_form'||
+    $node->bundle() == 'node_seminar_edit_form')
+    {
       $moderaiton_state = $node->get('moderation_state')->getValue();
       if ($moderaiton_state == 'to_be_approved') {
         // By default we have to deny the access to all users that they.

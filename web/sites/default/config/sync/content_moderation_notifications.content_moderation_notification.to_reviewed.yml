@@ -1,0 +1,18 @@
+uuid: d0a5d846-d117-4971-9b7b-a68a281d5d13
+langcode: en
+status: true
+dependencies: {  }
+id: to_reviewed
+workflow: editorial
+transitions:
+  send_to_be_reviewed: send_to_be_reviewed
+roles:
+  project_manager: project_manager
+author: false
+site_mail: false
+emails: ''
+subject: 'Corporate website - New content needs your review '
+body:
+  value: "<p>Dear Project Manager,</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>There is a new content to be reviewed by you: [node:title] ([node:edit-url]). You can access also to the list of items ([site:url]admin/content/review) that needs to be reviewed.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  format: full_html
+label: 'To Reviewed'

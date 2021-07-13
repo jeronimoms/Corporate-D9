@@ -1,0 +1,18 @@
+uuid: 08b651fb-a2cd-4a7c-a39f-28064367f162
+langcode: en
+status: true
+dependencies: {  }
+id: to_approved
+workflow: editorial
+transitions:
+  send_to_be_approved: send_to_be_approved
+roles:
+  approver: approver
+author: false
+site_mail: false
+emails: ''
+subject: 'Corporate website - New content needs your review '
+body:
+  value: "<p>Dear Approver,</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>There is a new content to be reviewed by you: [node:title] ([node:edit-url]). You can access also to the list of items ([site:url]admin/content/approve) that needs approval.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  format: full_html
+label: 'To Approved'
