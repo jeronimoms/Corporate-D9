@@ -1,0 +1,25 @@
+uuid: b6e7880e-ae29-44a5-a787-e2253154c159
+langcode: en
+status: true
+dependencies: {  }
+id: any_state_to_ready_to_publish
+workflow: editorial
+transitions:
+  send_to_ready_to_publish: send_to_ready_to_publish
+  send_to_ready_to_publish_from_draft_: send_to_ready_to_publish_from_draft_
+  send_to_ready_to_publish_from_published: send_to_ready_to_publish_from_published
+  send_to_ready_to_publish_from_final_draft: send_to_ready_to_publish_from_final_draft
+  approve_rejected_content: approve_rejected_content
+  content_approved_and_ready_to_publish: content_approved_and_ready_to_publish
+  send_to_ready_to_publish_from_to_be_reviewed: send_to_ready_to_publish_from_to_be_reviewed
+roles:
+  review_manager: review_manager
+  project_manager: project_manager
+author: false
+site_mail: false
+emails: ''
+subject: 'Corporate website - New content Ready to publish'
+body:
+  value: "<p>Dear reviewer,</p>\r\n\r\n<p>No action is required. This message is just to inform you that there a content has been set to ready to publish:&nbsp;[node:title] (type: [node:content-type], status: <strong>Ready to publish</strong>)\"</p>\r\n\r\n<p>Thank you</p>\r\n"
+  format: full_html
+label: 'Any state to Ready to publish'

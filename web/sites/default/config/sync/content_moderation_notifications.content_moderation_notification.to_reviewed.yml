@@ -6,6 +6,7 @@ id: to_reviewed
 workflow: editorial
 transitions:
   send_to_be_reviewed: send_to_be_reviewed
+  from_draft_to_to_be_reviewed: from_draft_to_to_be_reviewed
 roles:
   project_manager: project_manager
 author: false

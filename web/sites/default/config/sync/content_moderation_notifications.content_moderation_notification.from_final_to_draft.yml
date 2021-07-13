@@ -13,6 +13,6 @@ site_mail: false
 emails: ''
 subject: 'Corporate website - New content needs your review '
 body:
-  value: "<p>Dear Reviewer,</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>There is a new content to be reviewed by you: [node:title] ([node:edit-url]). You can access also to the list of items ([site:url]admin/content?state=editorial-draft) that needs to be reviewed.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  value: "<p>Dear&nbsp;[node:author]</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>A content created by you needs to be revised in order to be approved:&nbsp; &nbsp;(type:&nbsp;[node:content-type] , status: Draft)\".</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you,</p>\r\n"
   format: full_html
 label: 'From final to draft'
