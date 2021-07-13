@@ -3731,8 +3731,8 @@ body.user-logged-in.toolbar-tray-open #header {
   }
 
   /* Language */
-  .header select.custom-select {
-    background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
+  .header select {
+    background: url(../images/icoSelect-white.png) no-repeat scroll 94% center #003399;
     color: #FFF;
   }
   .header #edit-search-api-fulltext {
@@ -5279,7 +5279,7 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
     width: 100%;
     float: left;
     display: block;
-    background: #cfddee;
+    background: #e8ecf5;
     padding-bottom: 1rem;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) {

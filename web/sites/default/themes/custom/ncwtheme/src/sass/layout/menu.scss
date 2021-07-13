@@ -154,8 +154,8 @@
 
   /* Language */
   .header{
-    select.custom-select {
-      background: url(../images/icoSelect-white.png) no-repeat scroll 94% center transparent;
+    select {
+      background: url(../images/icoSelect-white.png) no-repeat scroll 94% center $bg-color-blue;
       color: $text-color-white;
     }
     #edit-search-api-fulltext {
