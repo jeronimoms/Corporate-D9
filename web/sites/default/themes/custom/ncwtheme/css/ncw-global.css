@@ -3413,11 +3413,6 @@ body.user-logged-in.toolbar-tray-open #header {
   border: 2px solid #003399;
   float: left;
 }
-.content-news-events .wrap-news-events .news-home .view-content time, .content-news-events .wrap-news-events .events-home .view-content time {
-  padding-left: 15px;
-  padding-top: 1em;
-  display: block;
-}
 .content-news-events .wrap-news-events .news-home .view-content .views-field-field-city, .content-news-events .wrap-news-events .news-home .view-content .views-field-field-country-code, .content-news-events .wrap-news-events .events-home .view-content .views-field-field-city, .content-news-events .wrap-news-events .events-home .view-content .views-field-field-country-code {
   float: left;
   font-size: 0.8rem;
@@ -3432,6 +3427,7 @@ body.user-logged-in.toolbar-tray-open #header {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 1em;
+  clear: both;
 }
 .content-news-events .wrap-news-events .news-home .view-content .see-more-arrow a, .content-news-events .wrap-news-events .events-home .view-content .see-more-arrow a {
   padding: 11px 40px 10px 10px;
@@ -3459,6 +3455,11 @@ body.user-logged-in.toolbar-tray-open #header {
   width: 47.5%;
   margin-right: 2.5%;
 }
+.content-news-events .wrap-news-events .news-home .views-row time {
+  display: block;
+  padding-top: 1em;
+  padding-left: 15px;
+}
 .content-news-events .wrap-news-events .events-home {
   width: 33%;
 }
@@ -3467,6 +3468,17 @@ body.user-logged-in.toolbar-tray-open #header {
 }
 .content-news-events .wrap-news-events .events-home .view-content .views-row {
   margin-right: 0;
+}
+.content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content {
+  display: flex;
+  padding-top: 1em;
+}
+.content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content time {
+  padding-left: 15px;
+  display: block;
+}
+.content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content time:nth-child(1) {
+  padding-right: 15px;
 }
 .content-news-events .content-links-news-events {
   clear: both;
