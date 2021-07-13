@@ -245,14 +245,13 @@
 }
 
 /* Responsive View List */
-@media only screen and (max-width : 991px) {
+@media only screen and (max-width : 768px) {
   .revamp-row{
-    .node{
-      .field--name-field-image-media{
-        display: none;
-      }
+    .field--name-field-image-media, .views-field-field-image-caption{
+      display: none;
     }
   }
+
 }
 @media only screen and (max-width :576px) {
   .view-highlight, .view-press-releases {

@@ -3,6 +3,11 @@
   body {
     padding-top: 220px !important;
   }
+
+  /* Body when responsive menu is opened */
+  body.custom-activate-menu{
+    padding-top: 0 !important;
+  }
 }
 
 @media only screen and (max-width : 1200px) {
@@ -93,130 +98,6 @@
   /* Breadcrumbs */
   .breadcrumb-fluid{
     display: none;
-  }
-
-  /* Menu responsive */
-  #navbar-main {
-    padding: 0;
-    background: $bg-color-blue;
-    .navbar-toggler {
-      padding: 1rem;
-      .icon-bar {
-        background-color: $bg-color-white;
-        display: block;
-        width: 22px;
-        height: 2px;
-        margin-top: 4px;
-        margin-bottom: 4px;
-        border-radius: 1px;
-      }
-    }
-
-    #block-ncwtheme-main-menu > ul > li:nth-child(4) > span{
-      /* Hide publications expand ico */
-      display: none;
-    }
-
-    #block-ncwtheme-main-menu{
-      ul.menu-level-0{
-        width: 100%;
-        float: left;
-        display: block;
-        background: $bg-color-blue-light-2;
-        padding-bottom: 1rem;
-        > li.menu-item:nth-child(1) {
-          width: 100%;
-          text-align: left;
-          .mean-expand {
-            display: none;
-          }
-          > a{
-            margin-left: -10px;
-          }
-          .field--type-entity-reference{
-            img{
-              margin: 0;
-            }
-          }
-        }
-        > li.menu-item:last-child{
-          ul {
-            margin-left: 0 ;
-            li{
-              ul{
-                margin-left: 0;
-              }
-            }
-          }
-        }
-        > li.menu-item{
-          float: none;
-          width: 100%;
-          clear: both;
-          text-align: left;
-          border-left: 0;
-          padding: 1rem 0 0 1rem;
-          background: transparent;
-          a{
-            display: block;
-            color: $text-color-grey;
-            font-size: 1.3rem;
-            font-weight: normal;
-          }
-          &:hover{
-            ul.menu-level-1{
-              position: relative;
-            }
-          }
-        }
-        li {
-          ul.menu-level-1 {
-            display: none;
-            width: 95%;
-            background: transparent;
-            border-top: 0;
-            border-bottom: 0;
-            li {
-              background: url(../images/li_arrow.png) no-repeat 1em 10px;
-              padding: 0 0 1em 2rem;
-              a{
-                width: 76%;
-                color: $text-color-blue;
-                font-size: 1.3rem;
-                font-family: 'Open Sans';
-                opacity: .75;
-                padding-top: 0;
-              }
-              ul.menu-level-2 {
-                display: none;
-                width: 80%;
-                background: transparent;
-                padding: 1rem 0 0 0;
-                border-top: 0;
-                border-bottom: 0;
-                li{
-                  background: url(../images/li_arrow.png) no-repeat 1em 9px;
-                  padding: 0 0 1em 2rem;
-                  .mean-expand {
-                    display: none;
-                  }
-                  a{
-                    color: $text-color-blue;
-                    font-size: 1.1rem;
-                    padding: 0;
-                    opacity: .75;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:hover ul.menu-level-1{
-    margin-left: 0;
   }
 
   /*Publication item*/

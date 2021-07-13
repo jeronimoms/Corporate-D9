@@ -174,6 +174,15 @@ jQuery(document).ready(function($) {
     $('.block-views-blocklanding-menu-block-1').addClass('moved-by-jquery');
   }
 
+  //Fix menu mobile Sticky
+  if ($("#navbar-main .navbar-toggler")[0]) {
+    $("#navbar-main > button").click(function(){
+      $('body').toggleClass('custom-activate-menu');
+      $('#header').toggleClass('custom-activate-menu-header');
+    });
+  }
+
+
   //Hide titles en Related resource item
   $(".file-field:first").addClass('to-show-custom-js');
   $(".youtube-field:first").addClass('to-show-custom-js');

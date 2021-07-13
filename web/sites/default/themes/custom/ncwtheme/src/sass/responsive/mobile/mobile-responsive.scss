@@ -2,8 +2,7 @@
 
   /* Home page */
   .home-intro {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    display: block;
     .view-osha-home-page-banners {
       .home-boxes {
         width: 374px;
@@ -61,6 +60,16 @@
     }
   }
 
+  /* News - Highlights - Blogs */
+  .node--type-news, .node--type-highlight{
+    .field--name-field-image-media,
+    .field-name-field-image.field-type-image{
+      float: none;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
   /* Events and Publications intro text */
   .page-view-events, .page-view-publications-index{
     .node-event-twig-custom, .node-publications-custom{
@@ -95,6 +104,19 @@
 }/* End Media 576px */
 
 @media only screen and (max-width : 480px) {
+  /* Home page */
+  .path-frontpage {
+    .more-link.revamp {
+      background: transparent;
+      a {
+        display: block;
+        margin-bottom: 2rem;
+      }
+      a:last-child {
+        margin-left: 0;
+      }
+    }
+  }
   /* Page - Highlight, News and Events content link */
   .news-events {
     #main {

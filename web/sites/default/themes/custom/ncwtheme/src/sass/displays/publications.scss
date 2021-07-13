@@ -262,6 +262,18 @@ body.node--type-publication{
     }
   }
 }
+
+@media only screen and (max-width : 990px) {
+  .node--type-publication{
+    .publications-left-column{
+      display: none;
+    }
+    .publications-detail-right-column{
+      padding-left: 0;
+    }
+  }
+}
+
 @media only screen and (max-width : 768px) {
   .tools-and-publications-publications {
     .view-filters {
@@ -270,6 +282,15 @@ body.node--type-publication{
       }
     }
   }
+  .node--type-publication{
+    .content-publication-info{
+      display: block;
+      .content-label{
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+
 }
 
 @media only screen and (max-width : 580px) {
