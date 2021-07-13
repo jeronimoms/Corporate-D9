@@ -46,8 +46,8 @@ third_party_settings:
       ds_content:
         - field_publication_date
         - node_title
-        - group_group_right
         - field_image_caption
+        - group_group_right
         - field_summary_html
         - body
     fields:
@@ -56,6 +56,18 @@ third_party_settings:
         weight: 1
         label: hidden
         formatter: default
+        settings:
+          'link class': ''
+          wrapper: h2
+          class: ''
+          exclude_node_title: '1'
+          link: false
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_group:
     group_group_right:
       children:
