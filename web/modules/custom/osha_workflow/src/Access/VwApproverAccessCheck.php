@@ -23,7 +23,8 @@ class VwApproverAccessCheck implements AccessInterface {
     // Get the helper object.
     $helper = $this->getoshaHelper();
     $node = $helper->getLastRevisionNode();
-    ksm($node);
+    $node = reset($node);
+    //ksm($node);
     return AccessResult::allowed();
     if ($node->bundle() == 'good_practice' || $node->bundle() == 'key_article') {
       $moderaiton_state = $node->get('moderation_state')->getValue();

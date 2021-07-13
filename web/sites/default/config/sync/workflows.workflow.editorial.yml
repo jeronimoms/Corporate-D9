@@ -7,16 +7,13 @@ dependencies:
     - node.type.article
     - node.type.calls
     - node.type.directive
-    - node.type.events
     - node.type.guideline
     - node.type.highlight
     - node.type.infographic
     - node.type.job_vacancies
     - node.type.news
-    - node.type.newsletter_content
     - node.type.press_release
     - node.type.publication
-    - node.type.register_records
     - node.type.seminar
   module:
     - content_moderation
@@ -270,15 +267,12 @@ type_settings:
       - article
       - calls
       - directive
-      - events
       - guideline
       - highlight
       - infographic
       - job_vacancies
       - news
-      - newsletter_content
       - press_release
       - publication
-      - register_records
       - seminar
   default_moderation_state: draft

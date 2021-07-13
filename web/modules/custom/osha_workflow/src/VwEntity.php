@@ -95,7 +95,7 @@ class VwEntity implements ContainerInjectionInterface {
   }
 
   /**
-   * Form alter for for good practices and key articles.
+   * Form alter for for Corporate content types.
    *
    * @see \hook_form_alter()
    */
@@ -113,7 +113,11 @@ class VwEntity implements ContainerInjectionInterface {
       $form['#validate'][] = [$this, 'formValidateAlter'];
     }
 
-    if ($form_id == 'node_good_practice_edit_form' || $form_id == 'node_key_article_edit_form') {
+    if ($form_id == 'node_article_edit_form' || $form_id == 'node_25th_anniversary_edit_form'||
+      $form_id == 'node_calls_edit_form'|| $form_id == 'node_directive_edit_form'|| $form_id == 'node_guideline_edit_form'||
+      $form_id == 'node_highlight_edit_form'|| $form_id == 'node_infographic_edit_form'|| $form_id == 'node_job_vacancies_edit_form'||
+      $form_id == 'node_news_edit_form'|| $form_id == 'node_press_release_edit_form'|| $form_id == 'node_publication_edit_form'||
+      $form_id == 'node_seminar_edit_form') {
       // Load the osha block.
       $plugin_block = $this->blockManager->createInstance('osha_workflow_block', []);
       $osha_block = $plugin_block->build();
