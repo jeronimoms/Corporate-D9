@@ -525,6 +525,12 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
           height: auto;
           align-items: flex-end;
         }
+        .introduction-image{
+          img{
+            width: 100%;
+            height: auto;
+          }
+        }
         .text_news_events {
           padding-top: 5px;
           min-height: 110px;
@@ -551,10 +557,15 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
   .content-headings-related{
     padding-top: 2rem;
     h2{
-      margin-bottom: 2rem;
+      margin-bottom: 0;
     }
     h3{
       margin-bottom: 1.5rem;
+    }
+  }
+  .custom-file-twig{
+    .field__label{
+      display: none;
     }
   }
   .field--name-field-aditional-resources{
@@ -564,6 +575,24 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
         padding-bottom: 0;
         font-size: 1rem;
       }
+    }
+    article{
+      clear: both;
+    }
+    .publication-field{
+      article{
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        background: url(../images/separator.jpg) repeat-x 100% 0;
+      }
+      article.no-border-custom-js{
+        background: transparent;
+        padding-top: 0;
+        border-top:0;
+      }
+    }
+    iframe{
+      margin-top: 0;
     }
   }
   .field--name-body{
@@ -849,4 +878,44 @@ body.path-aggregator{
       padding-top: 1rem;
     }
   }
+}
+
+.page-view-events, .page-view-publications-index{
+  .node-event-twig-custom, .node-publications-custom{
+    .node--type-article{
+      .field--name-body{
+        max-width: 70%;
+      }
+    }
+  }
+}
+
+/* Press release */
+.node--type-press-release{
+  .field--name-field-image-media{
+    float: left;
+    margin-right: 1rem;
+  }
+  .field--name-field-pr-notes-to-editor{
+    article{
+      h2.node__title{
+        display: none;
+      }
+      .field--name-body{
+        padding-right: 5px;
+      }
+    }
+  }
+}
+.field--name-field-quote{
+  border-top: 5px solid #536e91;
+  border-bottom: 5px solid #536e91;
+  color: #536e91;
+  padding: 2em;
+  background-image: url(../images/quotefirst.png),url(../images/quotesecond.png);
+  background-position: left 10px,right 93%;
+  background-repeat: no-repeat;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
 }

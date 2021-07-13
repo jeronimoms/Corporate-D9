@@ -1,0 +1,28 @@
+uuid: 3ff3abe4-adce-4f83-a535-d2efbb5cf447
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.purpose_of_the_material_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: purposeofthematerialdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -25
+provider: null
+plugin: 'facet_block:purpose_of_the_material_dangerous_substances_'
+settings:
+  id: 'facet_block:purpose_of_the_material_dangerous_substances_'
+  label: 'Purpose of the material'
+  provider: facets
+  label_display: visible
+  block_id: purposeofthematerialdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

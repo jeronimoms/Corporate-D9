@@ -186,11 +186,6 @@
           border: 2px solid $bg-color-blue;
           float: left;
         }
-        time {
-          padding-left: 15px;
-          padding-top: 1em;
-          display: block;
-        }
         .views-field-field-city, .views-field-field-country-code {
           float: left;
           font-size: 0.8rem;
@@ -206,7 +201,7 @@
             padding-left: 15px;
             padding-right: 15px;
             padding-top: 1em;
-
+            clear: both;
           }
         }
         .see-more-arrow {
@@ -237,6 +232,11 @@
       .views-row {
         width: 47.5%;
         margin-right: 2.5%;
+        time {
+          display: block;
+          padding-top: 1em;
+          padding-left: 15px;
+        }
       }
     }
     .events-home{
@@ -251,6 +251,19 @@
       .view-content {
         .views-row {
           margin-right: 0;
+          .views-field-field-date{
+            .field-content{
+              display: flex;
+              padding-top: 1em;
+              time {
+                padding-left: 15px;
+                display: block;
+              }
+              time:nth-child(1){
+                padding-right: 15px;
+              }
+            }
+          }
         }
       }
     }

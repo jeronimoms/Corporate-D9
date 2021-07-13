@@ -1,0 +1,23 @@
+lists:
+  list:
+    -
+      name: Reviewers
+      access_roles:
+        editor: editor
+        review_manager: review_manager
+      workflow: editorial
+      workflow_state: final_draft
+      workflow_state_previous: draft
+      workflow_state_next: to_be_reviewed
+      actions:
+        remove_list: 'Remove 0'
+    -
+      name: Approvers
+      access_roles:
+        approver: approver
+      workflow: editorial
+      workflow_state: to_be_approved
+      workflow_state_previous: to_be_reviewed
+      workflow_state_next: ready_to_publish
+      actions:
+        remove_list: 'Remove 1'

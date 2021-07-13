@@ -1,0 +1,29 @@
+uuid: 96289628-2afd-41c1-bf19-35515a3cf2f1
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+    - system
+  theme:
+    - ncwtheme
+id: simplenewssubscription_2
+theme: ncwtheme
+region: sidebar_second
+weight: -32
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  provider: simplenews
+  label_display: '0'
+  newsletters:
+    default: default
+  message: ''
+  unique_id: 70b268d3-7c53-4b64-9875-71d0bdf161d0
+visibility:
+  request_path:
+    id: request_path
+    pages: "/tools-and-resources/blog\r\n/tools-and-resources/blog/*\r\n/blog/*"
+    negate: false

@@ -1,0 +1,48 @@
+route_callbacks:
+  - '\Drupal\osha_workflow\Routing\VwOverview::routes'
+
+osha_workflow.settings:
+  path: '/osha_workflow/settings'
+  defaults:
+    _form: '\Drupal\osha_workflow\Form\VwSettingsForm'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE
+
+osha_workflow.build:
+  path: '/osha_workflow/build'
+  defaults:
+    _form: '\Drupal\osha_workflow\Form\VwBuildForm'
+    _title: 'Generate the lists'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE
+
+osha_workflow.approver_form:
+  path: '/osha_workflow/approver/add'
+  defaults:
+    _form: '\Drupal\osha_workflow\Form\VwApproverAddForm'
+  requirements:
+    _access: 'TRUE'
+
+osha_workflow.delete_form:
+  path: '/osha_workflow/delete/{node_id}/{user_id}/{back_url}'
+  defaults:
+    _form: '\Drupal\osha_workflow\Form\VwDeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE
+
+osha_workflow.set_weight:
+  path: '/osha_workflow/user_weight/{list}/{node}/{user}/{weight}'
+  defaults:
+    _controller: '\Drupal\osha_workflow\Controller\VwUserListController::setWeight'
+    _title: 'Set the weight of a user in a list'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: TRUE

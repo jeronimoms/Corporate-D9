@@ -18,52 +18,100 @@ dependencies:
     - field.field.node.press_release.field_summary_html
     - field.field.node.press_release.field_tags
     - field.field.node.press_release.field_thesaurus_2020
+    - image.style.home_news
     - node.type.press_release
   module:
     - datetime
+    - ds
+    - media
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_publication_date
+        - node_title
+        - field_image_media
+        - field_summary_html
+        - field_quote
+        - body
+        - field_pr_notes_to_editor
+        - field_aditional_resources
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
 id: node.press_release.default
 targetEntityType: node
 bundle: press_release
 mode: default
 content:
-  addtoany:
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   body:
-    weight: 4
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_aditional_resources:
-    weight: 6
+    weight: 7
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_image_media:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
+      image_style: home_news
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: media_thumbnail
+    region: ds_content
   field_pr_notes_to_editor:
-    weight: 5
-    label: hidden
+    type: entity_reference_entity_view
+    weight: 6
+    region: ds_content
+    label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: 'Notes to editor:'
+            lb-col: true
+            classes: {  }
   field_publication_date:
     weight: 0
     label: hidden
@@ -72,22 +120,25 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
-    region: content
+    region: ds_content
   field_quote:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-    region: content
+    region: ds_content
   field_summary_html:
-    weight: 8
-    label: above
+    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
 hidden:
+  addtoany: true
+  breadcrumbs: true
+  content_moderation_control: true
   field_activity: true
   field_archived: true
   field_expiration_date: true

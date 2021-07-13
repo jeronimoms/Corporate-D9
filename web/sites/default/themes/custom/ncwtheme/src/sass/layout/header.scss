@@ -12,6 +12,11 @@ body{
   background: white;
 }
 
+#header.custom-activate-menu-header{
+  /* When responsive menu is opened */
+  position: relative !important;
+}
+
 body.user-logged-in{
   padding-top: 230px !important;
   #header{

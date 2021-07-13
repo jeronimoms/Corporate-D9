@@ -113,6 +113,7 @@
   padding-bottom: 1rem;
   .btn-primary{
     margin-left: 5px;
+    line-height: 1.6;
   }
 }
 
@@ -127,12 +128,16 @@ input[type="date" i]::-webkit-calendar-picker-indicator {
 }
 
 form{
-  .form-control, .custom-select{
+  .form-control, select{
     height: 37px;
     border: 1px solid $bg-color-blue;
     border-radius: 5px;
     color: $text-color-blue;
     font-size: 13px;
+  }
+  select {
+    padding-left: 10px;
+    padding-right: 35px;
   }
   .form-date{
     width: 135px;
@@ -156,17 +161,11 @@ form{
   }
 }
 
-.tools-and-publications-publications{
-  #edit-search-api-fulltext{
-    margin-top: 24px;
-  }
-}
-
 .form-item-search-api-fulltext{
   position: relative;
 }
 
-.custom-select, .facets-dropdown{
+select, .facets-dropdown{
   background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -182,7 +181,7 @@ form{
   padding-left: 12px;
 }
 
-.chosen-container-multi.custom-select{
+.chosen-container-multi{
   padding-left: 0;
   height: auto;
 }
@@ -248,6 +247,58 @@ form{
   }
 }
 
+.page-view-events{
+  .views-exposed-form .btn-primary {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  .form-row>fieldset.form-item-field-country-code{
+    order: 6;
+  }
+  .form-row>fieldset.form-item-sort-by{
+    order: 7;
+  }
+}
+
+.tools-and-resources-eu-osha-thesaurus-hierarchical,
+.tools-and-resources-eu-osha-thesaurus-alphabetical,
+.page-view-thesaurus-front-indexed
+{
+  .views-exposed-form .btn-primary {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  .form-row>fieldset.form-item-sort-by{
+    order: 3;
+  }
+}
+
+.page-view-dangerous-substances-overview{
+  .views-exposed-form .btn-primary {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  .form-row>fieldset.form-item-sort-by{
+    order: 3;
+  }
+  .form-row>.form-item-sort-order{
+    order: 4;
+  }
+  .views-field-field-item-type{
+    .field-content{
+      display: inline-block;
+      background-color: $bg-color-tag-1;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 5px;
+      color: $bg-color-white;
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+  }
+}
+
 /* Rsponsive Filters */
 @media only screen and (max-width : 767px) {
 
@@ -255,7 +306,7 @@ form{
     left: 89%;
   }
 
-  .chosen-container-multi.custom-select{
+  .chosen-container-multi{
     width: 100% !important;
   }
 

@@ -1,0 +1,18 @@
+uuid: d7aefec6-3def-4467-be04-ea9962067d44
+langcode: en
+status: true
+dependencies: {  }
+id: draft_to_final_draft
+workflow: editorial
+transitions:
+  send_to_final_draft: send_to_final_draft
+roles:
+  review_manager: review_manager
+author: false
+site_mail: false
+emails: ''
+subject: 'Corporate website - New content needs your review '
+body:
+  value: "<p>Dear Reviewer,</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>There is a new content to be reviewed by you: [node:title] ([node:edit-url]). You can access also to the list of items ([site:url]admin/content?state=editorial-final_draft) that needs to be reviewed.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you</p>\r\n"
+  format: full_html
+label: 'Draft to Final draft'

@@ -18,27 +18,56 @@ targetEntityType: node
 bundle: banner
 mode: default
 content:
+  field_banner_link_title:
+    type: entity_reference_entity_view
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_copyright:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_image_media:
     type: entity_reference_entity_view
-    weight: 102
-    label: above
+    weight: 0
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
+  field_subtitle:
+    type: string
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_summary:
+    type: basic_string
+    weight: 2
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+  links:
+    weight: 3
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   addtoany: true
+  breadcrumbs: true
   comment_node_banner: true
   field_banner_link: true
-  field_banner_link_title: true
-  field_copyright: true
-  field_subtitle: true
-  field_summary: true
   langcode: true
   search_api_excerpt: true

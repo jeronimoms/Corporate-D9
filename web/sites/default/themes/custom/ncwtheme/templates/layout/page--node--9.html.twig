@@ -1,0 +1,28 @@
+{% extends "page.html.twig" %}
+
+
+{% block content %}
+<div class="breadcrumb-fluid">
+  <div class="container"> {{ page.breadcrumb }}</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="container node-event-twig-custom">
+      <h1>{{ 'OSHmail newsletter' | trans }}</h1>
+    </div>
+    <div id="main" class="col-12 col-lg-9 two-column mx-auto">
+      <div class="wraper-blog-and-img">
+        <div class="block-newsletter">
+          {{ drupal_entity('block', 'simplenewssubscription') }}
+        </div>
+        <div class="img-newsletter">
+          <img src="/{{ directory }}/images/join_65000_subscribers.png" alt="{{ 'Join OSHMail subscribers' |trans}}" />
+        </div>
+      </div>
+    </div>
+    <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
+      {{ drupal_view('newsletter_items', 'block_1') }}
+    </aside>
+  </div>
+</div>
+{% endblock %}
