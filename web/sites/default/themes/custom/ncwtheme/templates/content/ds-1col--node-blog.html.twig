@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+  <div class="h1-back-wrapper">
+    <h1>{{ 'EU-OSHA Blog' | trans }}</h1>
+    <a href="/oshevents" class="pull-right-flex back-to-link">{{ 'Back to latest posts' | trans }}</a>
+  </div>
+  {{ ds_content }}
+
+</{{ ds_content_wrapper }}>
