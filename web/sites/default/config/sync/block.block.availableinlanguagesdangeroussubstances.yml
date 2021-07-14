@@ -18,7 +18,6 @@ plugin: 'facet_block:available_in_languages_dangerous_substances_'
 settings:
   id: 'facet_block:available_in_languages_dangerous_substances_'
   label: Language
-
   provider: facets
   label_display: visible
   block_id: availableinlanguagesdangeroussubstances
