@@ -2624,10 +2624,10 @@ body.path-aggregator article.aggregator-item .item-description {
 .view-events h3 {
   width: 100%;
   float: left;
-  background: url(../images/blue-h2-line.png) 0 50% repeat-x;
+  background: url(../images/blue-h2-line.png) 0 100% repeat-x;
   color: #003399;
   margin: 1.5em 0 0 0;
-  padding: 0;
+  padding: 0 0 10px 0;
 }
 .view-events h3 time {
   background: #FFF;
