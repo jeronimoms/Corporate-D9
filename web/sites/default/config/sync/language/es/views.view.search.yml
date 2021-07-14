@@ -1,0 +1,29 @@
+label: Buscar
+display:
+  default:
+    display_options:
+      filters:
+        search_api_language:
+          expose:
+            description: ''
+        search_api_fulltext:
+          expose:
+            label: Buscar
+            placeholder: Buscar
+      title: Buscar
+      exposed_form:
+        options:
+          submit_button: Buscar
+          exposed_sorts_label: 'Ordenar por'
+          reset_button_label: 'Limpiar el filtro'
+      empty:
+        area_text_custom:
+          content: 'No existen resultados'
+    display_title: Buscar
+  site:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Buscar
+    display_title: Buscar

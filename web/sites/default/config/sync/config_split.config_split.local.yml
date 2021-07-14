@@ -19,6 +19,6 @@ blacklist:
   - 'migrate_plus*'
 graylist:
   - search_api.server.solr
-graylist_dependents: true
+graylist_dependents: false
 graylist_skip_equal: true
 weight: 0

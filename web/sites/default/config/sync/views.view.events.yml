@@ -56,51 +56,7 @@ display:
           sort_desc_label: Desc
           text_input_required: 'Select any filter and click on Apply to see results'
           text_input_required_format: basic_html
-          bef:
-            general:
-              autosubmit: false
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-            sort:
-              plugin_id: default
-              advanced:
-                combine: false
-                combine_rewrite: ''
-                reset: false
-                reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
-                is_secondary: false
-            filter:
-              field_date:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-              end_value:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-              search_api_fulltext:
-                plugin_id: default
-                advanced:
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-              field_country_code:
-                plugin_id: default
-                advanced:
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
+          bef: {  }
       pager:
         type: pagerer
         options:
@@ -124,7 +80,7 @@ display:
             -
               field: field_date_1
               rendered: true
-              rendered_strip: false
+              rendered_strip: true
           columns: 12
           automatic_width: false
           alignment: horizontal
@@ -140,79 +96,6 @@ display:
           separator: ''
           hide_empty: false
       fields:
-        field_date:
-          id: field_date
-          table: search_api_datasource_default_multilingual_node_index_entity_node
-          field: field_date
-          relationship: none
-          group_type: group
-          admin_label: 'Start date'
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: daterange_default
-          settings:
-            timezone_override: ''
-            format_type: only_day
-            separator: '-'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         field_date_2:
           id: field_date_2
           table: search_api_datasource_default_multilingual_node_index_entity_node
@@ -223,7 +106,7 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: true
+            alter_text: false
             text: '{{ field_date }} -  {{ field_date_2 }} '
             make_link: false
             path: ''
@@ -809,8 +692,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: '<h2><span>{{ field_date_1 }}</span></h2>'
+            alter_text: true
+            text: '<h2><span>{{ field_date_1 | split('' - '')[0] }}</span></h2>'
             make_link: false
             path: ''
             absolute: false
@@ -1134,7 +1017,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: ''
+            label: Search
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -1161,7 +1044,7 @@ display:
               osh_collaborator: '0'
               news_editor: '0'
               read_only: '0'
-            placeholder: 'Search in resources'
+            placeholder: ''
             expose_fields: false
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
