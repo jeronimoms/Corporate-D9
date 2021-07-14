@@ -743,7 +743,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: ''
+            label: Search
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -770,7 +770,7 @@ display:
               osh_collaborator: '0'
               news_editor: '0'
               read_only: '0'
-            placeholder: Search
+            placeholder: ''
             expose_fields: false
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
