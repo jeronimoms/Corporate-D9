@@ -1,0 +1,9 @@
+entity.translation_workflow.collection:
+  path: '/admin/translation_workflow/jobgroups'
+  defaults:
+    _entity_list: 'job_group'
+    _title: 'Job groups'
+  requirements:
+    _permission: 'administer tmgmt'
+  options:
+    _admin_route: TRUE

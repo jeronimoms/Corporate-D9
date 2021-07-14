@@ -1,0 +1,58 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\tmgmt\Entity\JobItem;
+use Drupal\translation_workflow\Entity\JobGroup;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function translation_workflow_form_tmgmt_cart_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $jobFieldDefinitions = \Drupal::service('entity_field.manager')->getFieldDefinitions('job_group', 'default');
+  if (isset($jobFieldDefinitions['priority'])) {
+    $priorityField = $jobFieldDefinitions['priority'];
+    $form['priority'] = [
+      '#type' => 'select',
+      '#options' => $priorityField->getSetting('allowed_values'),
+      '#title' => $priorityField->getLabel(),
+      '#weight' => -1
+    ];
+  }
+
+  if (isset($form['source_language'])) {
+    $form['source_language']['#size'] = 24;
+    if (isset($form['source_language']['#options']['nol'])) {
+      unset($form['source_language']['#options']['nol']);
+    }
+  }
+
+  if (isset($form['target_language'])) {
+    $form['target_language']['#size'] = 24;
+    if (isset($form['target_language']['#options']['nol'])) {
+      unset($form['target_language']['#options']['nol']);
+    }
+  }
+
+  // Select all languages.
+  $form['select_all_lng'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Select all languages'),
+  );
+  $form['empty_cart']['#weight'] = 7;
+  $form['remove_selected']['#weight'] = 6;
+  $form['request_translation']['#weight'] = 4;
+
+  $form['#attached']['library'][] = 'translation_workflow/select_all';
+  //array_unshift($form["request_translation"]["#submit"], '_translation_workflow_form_tmgmt_cart_form_submit');
+  $form["request_translation"]["#submit"][] = '_translation_workflow_form_tmgmt_cart_form_submit';
+}
+
+function _translation_workflow_form_tmgmt_cart_form_submit(&$form, FormStateInterface $form_state) {
+  $jobItems = JobItem::loadMultiple(array_filter($form_state->getValue('items')));
+  $jobGroup = JobGroup::create();
+  foreach ($jobItems as $jobItem) {
+    $jobGroup->get('items_id')->appendItem(['target_id' => $jobItem->id()]);
+  }
+  $jobGroup->save();
+  $cosa = '';
+}
