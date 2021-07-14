@@ -6010,6 +6010,18 @@ display:
         type: none
       defaults:
         cache: false
+        footer: false
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: '<div class="pager-total"><span>@start - @end / @total</span></div>'
+          plugin_id: result
     cache_metadata:
       max-age: -1
       contexts:
