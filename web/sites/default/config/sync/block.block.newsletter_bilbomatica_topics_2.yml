@@ -1,0 +1,28 @@
+uuid: 9aa037dd-8129-4109-b2d4-5c1a23e73fae
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.topics
+  module:
+    - facets
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_topics_2
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -21
+provider: null
+plugin: 'facet_block:topics'
+settings:
+  id: 'facet_block:topics'
+  label: Topics
+  provider: facets
+  label_display: visible
+  block_id: topics_2
+visibility:
+  request_path:
+    id: request_path
+    pages: /search/site
+    negate: false

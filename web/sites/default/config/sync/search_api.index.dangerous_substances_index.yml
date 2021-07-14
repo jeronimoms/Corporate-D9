@@ -1,0 +1,494 @@
+uuid: 7f1d6f80-cb9a-4e37-b084-3c47137398c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - node
+    - paragraphs
+    - search_api
+  config:
+    - field.storage.node.field_advertising
+    - field.storage.node.field_available_in_languages
+    - field.storage.node.field_biological_hazard
+    - field.storage.node.field_biological_hazard_other
+    - field.storage.node.field_cas_number
+    - field.storage.node.field_contact_address
+    - field.storage.node.body
+    - field.storage.node.field_material_country
+    - field.storage.node.field_country_other
+    - field.storage.node.field_disclaimer
+    - field.storage.node.field_ec_number
+    - field.storage.node.field_evaluation
+    - field.storage.node.field_exposure_route
+    - field.storage.node.field_media_format
+    - field.storage.node.field_hazard_health_effects
+    - field.storage.node.field_hazard_physical_state
+    - field.storage.node.field_intellectual_property_righ
+    - field.storage.node.field_languages_other
+    - field.storage.node.field_measurement_method
+    - field.storage.node.field_original_desc_lang_other
+    - field.storage.node.field_other_information
+    - field.storage.node.field_ownership_information
+    - field.storage.node.field_prevention_measure_type
+    - field.storage.node.field_prevention_measures_other
+    - field.storage.node.field_priority_area
+    - field.storage.node.field_fc_provider
+    - field.storage.paragraph.field_provider_name_original
+    - field.storage.paragraph.field_type_of_provider
+    - field.storage.node.field_material_purpose_type
+    - field.storage.node.field_rights_description
+    - field.storage.node.field_sector_industry_covered
+    - field.storage.node.field_selected_for_analysis
+    - field.storage.node.field_target_group
+    - field.storage.node.field_tasks_covered
+    - field.storage.node.field_tasks_other
+    - field.storage.node.field_title_original
+    - field.storage.node.field_item_type
+    - field.storage.node.field_visualisation_material_typ
+    - field.storage.node.field_external_url
+    - field.storage.node.field_worker_groups_type
+    - field.storage.node.field_publication_year
+    - search_api.server.solr
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: dangerous_substances_index
+name: 'Dangerous substances index'
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: 'Content (English)'
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_advertising:
+    label: Advertising
+    datasource_id: 'entity:node'
+    property_path: field_advertising
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_advertising
+  field_available_in_languages:
+    label: 'Available in languages'
+    datasource_id: 'entity:node'
+    property_path: field_available_in_languages
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_available_in_languages
+  field_biological_hazard:
+    label: 'Biological hazard'
+    datasource_id: 'entity:node'
+    property_path: field_biological_hazard
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_biological_hazard
+  field_biological_hazard_other:
+    label: 'Biological hazard other'
+    datasource_id: 'entity:node'
+    property_path: field_biological_hazard_other
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_biological_hazard_other
+  field_cas_number:
+    label: 'CAS Number'
+    datasource_id: 'entity:node'
+    property_path: field_cas_number
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_cas_number
+  field_contact_address:
+    label: 'Contact address'
+    datasource_id: 'entity:node'
+    property_path: field_contact_address
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_contact_address
+  field_country_other:
+    label: 'Country other'
+    datasource_id: 'entity:node'
+    property_path: field_country_other
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_country_other
+  field_disclaimer:
+    label: Disclaimer
+    datasource_id: 'entity:node'
+    property_path: field_disclaimer
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_disclaimer
+  field_ec_number:
+    label: 'EC number'
+    datasource_id: 'entity:node'
+    property_path: field_ec_number
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_ec_number
+  field_evaluation:
+    label: Evaluation
+    datasource_id: 'entity:node'
+    property_path: field_evaluation
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_evaluation
+  field_exposure_route:
+    label: 'Exposure route'
+    datasource_id: 'entity:node'
+    property_path: field_exposure_route
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_exposure_route
+  field_external_url:
+    label: URL
+    datasource_id: 'entity:node'
+    property_path: field_external_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_external_url
+  field_hazard_health_effects:
+    label: 'Hazard - health effects'
+    datasource_id: 'entity:node'
+    property_path: field_hazard_health_effects
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_hazard_health_effects
+  field_hazard_physical_state:
+    label: 'Hazard - physical state'
+    datasource_id: 'entity:node'
+    property_path: field_hazard_physical_state
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_hazard_physical_state
+  field_intellectual_property_righ:
+    label: 'Intellectual property rights'
+    datasource_id: 'entity:node'
+    property_path: field_intellectual_property_righ
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_intellectual_property_righ
+  field_item_type:
+    label: 'Type of item'
+    datasource_id: 'entity:node'
+    property_path: field_item_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_item_type
+  field_languages_other:
+    label: 'Languages other'
+    datasource_id: 'entity:node'
+    property_path: field_languages_other
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_languages_other
+  field_material_country:
+    label: Country
+    datasource_id: 'entity:node'
+    property_path: field_material_country
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_material_country
+  field_material_purpose_type:
+    label: 'Purpose of the material'
+    datasource_id: 'entity:node'
+    property_path: field_material_purpose_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_material_purpose_type
+  field_measurement_method:
+    label: 'Measurement method'
+    datasource_id: 'entity:node'
+    property_path: field_measurement_method
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_measurement_method
+  field_media_format:
+    label: 'Format, quality (audio track bit rate, video track bit rate)'
+    datasource_id: 'entity:node'
+    property_path: field_media_format
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_media_format
+  field_original_desc_lang_other:
+    label: 'Original description languages other'
+    datasource_id: 'entity:node'
+    property_path: field_original_desc_lang_other
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_original_desc_lang_other
+  field_other_information:
+    label: 'Other information'
+    datasource_id: 'entity:node'
+    property_path: field_other_information
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_other_information
+  field_ownership_information:
+    label: 'Ownership information'
+    datasource_id: 'entity:node'
+    property_path: field_ownership_information
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_ownership_information
+  field_prevention_measure_type:
+    label: 'Prevention measures'
+    datasource_id: 'entity:node'
+    property_path: field_prevention_measure_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_prevention_measure_type
+  field_prevention_measures_other:
+    label: 'Prevention measures other'
+    datasource_id: 'entity:node'
+    property_path: field_prevention_measures_other
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_prevention_measures_other
+  field_priority_area:
+    label: 'Priority area'
+    datasource_id: 'entity:node'
+    property_path: field_priority_area
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_priority_area
+  field_provider_name_original:
+    label: 'Provider » Paragraph » Provider name (Original)'
+    datasource_id: 'entity:node'
+    property_path: 'field_fc_provider:entity:field_provider_name_original'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_fc_provider
+        - field.storage.paragraph.field_provider_name_original
+      module:
+        - paragraphs
+  field_publication_year:
+    label: 'Year of publication'
+    datasource_id: 'entity:node'
+    property_path: field_publication_year
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_publication_year
+  field_rights_description:
+    label: 'Rights description'
+    datasource_id: 'entity:node'
+    property_path: field_rights_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_rights_description
+  field_sector_industry_covered:
+    label: 'Sector / Indrustry covered'
+    datasource_id: 'entity:node'
+    property_path: field_sector_industry_covered
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_sector_industry_covered
+  field_selected_for_analysis:
+    label: 'Selected for analysis'
+    datasource_id: 'entity:node'
+    property_path: field_selected_for_analysis
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_selected_for_analysis
+  field_target_group:
+    label: 'Target group'
+    datasource_id: 'entity:node'
+    property_path: field_target_group
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_target_group
+  field_tasks_covered:
+    label: 'Tasks covered'
+    datasource_id: 'entity:node'
+    property_path: field_tasks_covered
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_tasks_covered
+  field_tasks_other:
+    label: 'Tasks covered other'
+    datasource_id: 'entity:node'
+    property_path: field_tasks_other
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_tasks_other
+  field_title_original:
+    label: 'Title (Original)'
+    datasource_id: 'entity:node'
+    property_path: field_title_original
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_title_original
+  field_type_of_provider:
+    label: 'Provider » Paragraph » Type of provider'
+    datasource_id: 'entity:node'
+    property_path: 'field_fc_provider:entity:field_type_of_provider'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_fc_provider
+        - field.storage.paragraph.field_type_of_provider
+      module:
+        - paragraphs
+  field_visualisation_material_typ:
+    label: 'Type of visualisation material'
+    datasource_id: 'entity:node'
+    property_path: field_visualisation_material_typ
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_visualisation_material_typ
+  field_worker_groups_type:
+    label: 'Worker groups covered (vulnerable groups etc.)'
+    datasource_id: 'entity:node'
+    property_path: field_worker_groups_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_worker_groups_type
+  langcode:
+    label: Language
+    datasource_id: 'entity:node'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - node
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: 'Authored by'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - dangerous_substances
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: solr
