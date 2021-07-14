@@ -2648,6 +2648,9 @@ body.path-aggregator article.aggregator-item .item-description {
   width: 145px;
   margin-right: 2rem;
 }
+.box-events-summary .right-column {
+  width: 100%;
+}
 .box-events-summary .right-column .event-country {
   display: block;
   font-size: 0.9rem;
