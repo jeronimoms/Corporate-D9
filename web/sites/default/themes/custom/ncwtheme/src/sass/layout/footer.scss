@@ -75,7 +75,7 @@ footer.site-footer{
   width: 100%;
   color: $text-color-white;
   border-top: 1px solid $bg-color-white;
-  padding: 0.5rem 2rem 0.2rem 2rem;
+  padding: 0.5rem 2rem 0.2rem 10px;
   margin: 0;
   p{
     color: $text-color-white;
@@ -93,7 +93,7 @@ nav#block-footermenu-2{
   width: 100%;
   border: 0;
   margin: 0;
-  padding: 0 1.5rem 2rem 2rem;
+  padding: 0 0 2rem 10px;
   ul.menu-level-0{
     list-style: none;
     li.menu-item{
@@ -105,7 +105,8 @@ nav#block-footermenu-2{
         list-style: none;
         li{
           float: left;
-          padding-right: 10px;
+          padding-right: 8px;
+          margin-right: 0;
           a{
             display: inline-block;
             color: $text-color-white;
