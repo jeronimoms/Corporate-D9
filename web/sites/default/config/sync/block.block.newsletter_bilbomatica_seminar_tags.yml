@@ -1,0 +1,28 @@
+uuid: 6df1c49d-c7c2-4c7f-a552-8267779780ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.seminar_tags
+  module:
+    - facets
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_seminar_tags
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -27
+provider: null
+plugin: 'facet_block:seminar_tags'
+settings:
+  id: 'facet_block:seminar_tags'
+  label: Topics
+  provider: facets
+  label_display: visible
+  block_id: seminar_tags
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/*'
+    negate: false

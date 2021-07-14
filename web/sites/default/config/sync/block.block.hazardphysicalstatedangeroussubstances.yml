@@ -1,0 +1,28 @@
+uuid: 5dc5ee95-d983-4c21-8617-a1cbc638bd83
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.hazard_physical_state_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: hazardphysicalstatedangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -11
+provider: null
+plugin: 'facet_block:hazard_physical_state_dangerous_substances_'
+settings:
+  id: 'facet_block:hazard_physical_state_dangerous_substances_'
+  label: 'Hazard - physical state (Dangerous Substances)'
+  provider: facets
+  label_display: visible
+  block_id: hazardphysicalstatedangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

@@ -1,0 +1,28 @@
+uuid: 021a7338-cf5f-481b-9ebd-142f635bfa21
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.date_of_directive
+  module:
+    - facets
+    - system
+  theme:
+    - newsletter_bilbomatica
+id: newsletter_bilbomatica_dateofdirective
+theme: newsletter_bilbomatica
+region: sidebar_first
+weight: -29
+provider: null
+plugin: 'facet_block:date_of_directive'
+settings:
+  id: 'facet_block:date_of_directive'
+  label: 'Date of directive'
+  provider: facets
+  label_display: visible
+  block_id: dateofdirective
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search/directives\r\n/safety-and-health-legislation/european-directives"
+    negate: false
