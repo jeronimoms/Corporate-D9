@@ -1018,7 +1018,22 @@ h2 a:hover {
   border-bottom: 1px solid #003399;
 }
 
+.node--type-article .field--name-body h2 {
+  font-weight: 600;
+}
+.node--type-article .field--name-body h2 strong {
+  font-weight: 600;
+}
 .node--type-article .field--name-body h3 {
+  font-weight: 600;
+}
+.node--type-article .field--name-body h3 strong {
+  font-weight: 600;
+}
+.node--type-article .field--name-body h4 {
+  font-weight: 600;
+}
+.node--type-article .field--name-body h4 strong {
   font-weight: 600;
 }
 
@@ -1332,6 +1347,7 @@ h3.home a:hover {
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 5px solid #003399;
+  line-height: 24px;
 }
 .sidebar-second .block.block-twitter-block h2 {
   font-size: 1.35rem;
@@ -1762,14 +1778,14 @@ ul.menu .menu-item .field--type-image img {
 }
 
 /* Paragraps - List */
-body .field--name-body p, body .field--name-body ul, body .field--name-field-summary-html p, body .field--name-field-summary-html ul {
+body .field--name-body p, body .field--name-body ul, body .field--name-body ol, body .field--name-field-summary-html p, body .field--name-field-summary-html ul, body .field--name-field-summary-html ol {
   font-size: 0.9rem;
 }
-body .field--name-body p a, body .field--name-body ul a, body .field--name-field-summary-html p a, body .field--name-field-summary-html ul a {
+body .field--name-body p a, body .field--name-body ul a, body .field--name-body ol a, body .field--name-field-summary-html p a, body .field--name-field-summary-html ul a, body .field--name-field-summary-html ol a {
   text-decoration: none;
   border-bottom: 1px solid #c72272;
 }
-body .field--name-body p a:hover, body .field--name-body ul a:hover, body .field--name-field-summary-html p a:hover, body .field--name-field-summary-html ul a:hover {
+body .field--name-body p a:hover, body .field--name-body ul a:hover, body .field--name-body ol a:hover, body .field--name-field-summary-html p a:hover, body .field--name-field-summary-html ul a:hover, body .field--name-field-summary-html ol a:hover {
   text-decoration: none;
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
@@ -2489,6 +2505,11 @@ body.path-aggregator article.aggregator-item .item-description {
   clear: both;
 }
 
+/* Hide field reviwers */
+#main .form-item-node-id {
+  display: none;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
@@ -2604,10 +2625,10 @@ body.path-aggregator article.aggregator-item .item-description {
 .view-events h3 {
   width: 100%;
   float: left;
-  background: url(../images/blue-h2-line.png) 0 50% repeat-x;
+  background: url(../images/blue-h2-line.png) 0 100% repeat-x;
   color: #003399;
   margin: 1.5em 0 0 0;
-  padding: 0;
+  padding: 0 0 10px 0;
 }
 .view-events h3 time {
   background: #FFF;
@@ -2627,6 +2648,9 @@ body.path-aggregator article.aggregator-item .item-description {
 .box-events-summary .left-column {
   width: 145px;
   margin-right: 2rem;
+}
+.box-events-summary .right-column {
+  width: 100%;
 }
 .box-events-summary .right-column .event-country {
   display: block;
@@ -2962,7 +2986,7 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigat
   width: 100%;
   color: #FFF;
   border-top: 1px solid #FFF;
-  padding: 0.5rem 2rem 0.2rem 2rem;
+  padding: 0.5rem 2rem 0.2rem 10px;
   margin: 0;
 }
 #block-copyrigth p {
@@ -2980,7 +3004,7 @@ nav#block-footermenu-2 {
   width: 100%;
   border: 0;
   margin: 0;
-  padding: 0 1.5rem 2rem 2rem;
+  padding: 0 0 2rem 10px;
 }
 nav#block-footermenu-2 ul.menu-level-0 {
   list-style: none;
@@ -2994,7 +3018,8 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 {
 }
 nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 li {
   float: left;
-  padding-right: 10px;
+  padding-right: 8px;
+  margin-right: 0;
 }
 nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 li a {
   display: inline-block;
@@ -4620,6 +4645,9 @@ body.node--type-publication {
 .node--type-publication .content-publication-info .content-label .field {
   font-size: 0.9rem;
   line-height: 20px;
+}
+.node--type-publication .content-publication-info .content-label:nth-child(1) {
+  padding-right: 5px;
 }
 .node--type-publication .datetime {
   display: block;
