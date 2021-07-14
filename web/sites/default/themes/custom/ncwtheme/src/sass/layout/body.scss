@@ -64,7 +64,7 @@ ul.menu{
 /* Paragraps - List */
 body{
   .field--name-body, .field--name-field-summary-html{
-    p, ul {
+    p, ul, ol{
       font-size: 0.9rem;
 
       a {
@@ -919,3 +919,11 @@ body.path-aggregator{
   margin-bottom: 1em;
   clear: both;
 }
+
+/* Hide field reviwers */
+#main{
+  .form-item-node-id{
+    display: none;
+  }
+}
+

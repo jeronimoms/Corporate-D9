@@ -1018,7 +1018,22 @@ h2 a:hover {
   border-bottom: 1px solid #003399;
 }
 
+.node--type-article .field--name-body h2 {
+  font-weight: 600;
+}
+.node--type-article .field--name-body h2 strong {
+  font-weight: 600;
+}
 .node--type-article .field--name-body h3 {
+  font-weight: 600;
+}
+.node--type-article .field--name-body h3 strong {
+  font-weight: 600;
+}
+.node--type-article .field--name-body h4 {
+  font-weight: 600;
+}
+.node--type-article .field--name-body h4 strong {
   font-weight: 600;
 }
 
@@ -1762,14 +1777,14 @@ ul.menu .menu-item .field--type-image img {
 }
 
 /* Paragraps - List */
-body .field--name-body p, body .field--name-body ul, body .field--name-field-summary-html p, body .field--name-field-summary-html ul {
+body .field--name-body p, body .field--name-body ul, body .field--name-body ol, body .field--name-field-summary-html p, body .field--name-field-summary-html ul, body .field--name-field-summary-html ol {
   font-size: 0.9rem;
 }
-body .field--name-body p a, body .field--name-body ul a, body .field--name-field-summary-html p a, body .field--name-field-summary-html ul a {
+body .field--name-body p a, body .field--name-body ul a, body .field--name-body ol a, body .field--name-field-summary-html p a, body .field--name-field-summary-html ul a, body .field--name-field-summary-html ol a {
   text-decoration: none;
   border-bottom: 1px solid #c72272;
 }
-body .field--name-body p a:hover, body .field--name-body ul a:hover, body .field--name-field-summary-html p a:hover, body .field--name-field-summary-html ul a:hover {
+body .field--name-body p a:hover, body .field--name-body ul a:hover, body .field--name-body ol a:hover, body .field--name-field-summary-html p a:hover, body .field--name-field-summary-html ul a:hover, body .field--name-field-summary-html ol a:hover {
   text-decoration: none;
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
@@ -2487,6 +2502,11 @@ body.path-aggregator article.aggregator-item .item-description {
   margin-top: 1em;
   margin-bottom: 1em;
   clear: both;
+}
+
+/* Hide field reviwers */
+#main .form-item-node-id {
+  display: none;
 }
 
 /* Breadcrumbs */
@@ -4620,6 +4640,9 @@ body.node--type-publication {
 .node--type-publication .content-publication-info .content-label .field {
   font-size: 0.9rem;
   line-height: 20px;
+}
+.node--type-publication .content-publication-info .content-label:nth-child(1) {
+  padding-right: 5px;
 }
 .node--type-publication .datetime {
   display: block;
