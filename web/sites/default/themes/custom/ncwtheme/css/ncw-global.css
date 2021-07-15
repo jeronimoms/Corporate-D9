@@ -1347,6 +1347,7 @@ h3.home a:hover {
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 5px solid #003399;
+  line-height: 24px;
 }
 .sidebar-second .block.block-twitter-block h2 {
   font-size: 1.35rem;
@@ -2985,7 +2986,7 @@ footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigat
   width: 100%;
   color: #FFF;
   border-top: 1px solid #FFF;
-  padding: 0.5rem 2rem 0.2rem 2rem;
+  padding: 0.5rem 2rem 0.2rem 10px;
   margin: 0;
 }
 #block-copyrigth p {
@@ -3003,7 +3004,7 @@ nav#block-footermenu-2 {
   width: 100%;
   border: 0;
   margin: 0;
-  padding: 0 1.5rem 2rem 2rem;
+  padding: 0 0 2rem 10px;
 }
 nav#block-footermenu-2 ul.menu-level-0 {
   list-style: none;
@@ -3017,7 +3018,8 @@ nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 {
 }
 nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 li {
   float: left;
-  padding-right: 10px;
+  padding-right: 8px;
+  margin-right: 0;
 }
 nav#block-footermenu-2 ul.menu-level-0 li.menu-item ul.menu-level-1 li a {
   display: inline-block;
