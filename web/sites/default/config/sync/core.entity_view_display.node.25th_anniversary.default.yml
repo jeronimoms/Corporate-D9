@@ -10,8 +10,11 @@ dependencies:
     - field.field.node.25th_anniversary.field_section
     - field.field.node.25th_anniversary.field_summary_html
     - field.field.node.25th_anniversary.field_tags
+    - image.style.25th_anniversary
     - node.type.25th_anniversary
   module:
+    - ds
+    - media
     - text
     - user
 id: node.25th_anniversary.default
@@ -30,19 +33,29 @@ content:
     weight: 0
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      image_style: 25th_anniversary
+      image_link: content
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: media_thumbnail
     region: content
   field_summary_html:
-    weight: 3
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
+  content_moderation_control: true
   field_language: true
   field_publication_date: true
   field_section: true

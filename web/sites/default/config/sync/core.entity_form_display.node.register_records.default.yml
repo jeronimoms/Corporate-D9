@@ -24,7 +24,6 @@ dependencies:
     - field.field.node.register_records.field_websites_online_serv_media
     - field.field.node.register_records.field_wiki_categories
     - node.type.register_records
-    - workflows.workflow.editorial
   module:
     - content_moderation
     - languagefield
@@ -117,7 +116,7 @@ content:
     region: content
   field_missions_media:
     type: media_library_widget
-    weight: 11
+    weight: 12
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -131,20 +130,20 @@ content:
     region: content
   field_research_activities_media:
     type: media_library_widget
-    weight: 12
+    weight: 13
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_section:
-    weight: 16
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_staff_committee_media:
     type: media_library_widget
-    weight: 13
+    weight: 14
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -159,7 +158,7 @@ content:
     region: content
   field_surveys_media:
     type: media_library_widget
-    weight: 14
+    weight: 15
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -172,7 +171,7 @@ content:
     region: content
   field_websites_online_serv_media:
     type: media_library_widget
-    weight: 15
+    weight: 16
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -183,13 +182,6 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  langcode:
-    type: language_select
-    weight: 17
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 22
@@ -218,7 +210,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -238,5 +230,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  langcode: true
   promote: true
   sticky: true
