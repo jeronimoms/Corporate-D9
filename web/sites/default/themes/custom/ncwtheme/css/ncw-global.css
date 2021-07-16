@@ -5428,7 +5428,7 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
 
   /*Publication item*/
-  #block-ncwtheme-main-menu > ul > li.menu-item.menu-item--active-trail > span {
+  #block-ncwtheme-main-menu > ul > li:nth-child(4) > span {
     display: none;
   }
 
@@ -5452,6 +5452,10 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
   .mean-expand.active {
     background: url("../images/ico_minor.png") no-repeat 10px 11px;
+  }
+
+  .menu.menu-level-1 .mean-expand {
+    display: none;
   }
 
   /* Page - Highlight, News and Events content link */
