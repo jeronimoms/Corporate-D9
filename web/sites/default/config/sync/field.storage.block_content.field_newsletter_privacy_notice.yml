@@ -1,0 +1,19 @@
+uuid: 5f91805e-52c9-44b2-a882-2613f9e166c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.field_newsletter_privacy_notice
+field_name: field_newsletter_privacy_notice
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

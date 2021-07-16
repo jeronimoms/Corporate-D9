@@ -1,0 +1,25 @@
+uuid: 75b9ce67-49e6-4021-adcf-06b18351b205
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:newsletter_subscription_block:8f8de16e-fb39-4c18-80b3-e7290465be84'
+  module:
+    - block_content
+  theme:
+    - ncwtheme
+id: newslettersubscription
+theme: ncwtheme
+region: sidebar_second_others
+weight: -46
+provider: null
+plugin: 'block_content:8f8de16e-fb39-4c18-80b3-e7290465be84'
+settings:
+  id: 'block_content:8f8de16e-fb39-4c18-80b3-e7290465be84'
+  label: 'Newsletter subscription'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
