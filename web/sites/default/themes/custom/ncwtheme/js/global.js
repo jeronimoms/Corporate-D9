@@ -163,11 +163,6 @@ jQuery(document).ready(function($) {
     $('.views-row.moved-by-jquery').prependTo('.page-view-infographic .view-infographic.view-display-id-block_3 .view-content.row');
   }
 
-  //Move Newsletter subscribe home block
-  if ($(".move-subscribe-button-by-jquery")[0]) {
-    $('.newsletter-block-wrapper button').appendTo('.move-subscribe-button-by-jquery');
-  }
-
   //Move Menu block Wiki block before
   if ($("div").hasClass('field--name-field-related-oshwiki-articles') && $("div").hasClass('block-views-blocklanding-menu-block-1')) {
     $('.block-views-blocklanding-menu-block-1').appendTo('article .field--name-body');
