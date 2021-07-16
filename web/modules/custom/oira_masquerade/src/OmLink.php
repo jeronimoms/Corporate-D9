@@ -69,6 +69,11 @@ class OmLink implements ContainerInjectionInterface {
           $url->setRouteParameter('node', $partner_id);
         }
       }
+      if (array_key_exists('arg_0', $parameters)) {
+        if ($parameters['arg_0'] == '1158') {
+          $url->setRouteParameter('arg_0', $partner_id);
+        }
+      }
     }
   }
 

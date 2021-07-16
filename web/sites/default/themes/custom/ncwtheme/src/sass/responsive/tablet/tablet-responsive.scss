@@ -101,7 +101,7 @@
   }
 
   /*Publication item*/
-  #block-ncwtheme-main-menu > ul > li.menu-item.menu-item--active-trail > span{
+  #block-ncwtheme-main-menu > ul > li:nth-child(4) > span{
     display: none;
   }
 
@@ -126,6 +126,12 @@
     background: url(../images/ico-plus.png) no-repeat 9px 8px;
     &.active{
       background: url("../images/ico_minor.png") no-repeat 10px 11px;
+    }
+  }
+
+  .menu.menu-level-1{
+    .mean-expand{
+      display: none;
     }
   }
 
