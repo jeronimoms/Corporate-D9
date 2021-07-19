@@ -257,6 +257,9 @@
         }
     ],
     "require": {
+        "ext-simplexml": "*",
+        "ext-xmlreader": "*",
+        "ext-xmlwriter": "*",
         "bgrins/spectrum": "^1.8",
         "blazy/library": "^1.8",
         "chosen/library": "^1.8",
@@ -389,6 +392,7 @@
         "drupal/recaptcha": "^3.0",
         "drupal/recaptcha_v3": "^1.4",
         "drupal/redirect": "^1.6",
+        "drupal/redirect_after_login": "^2.7",
         "drupal/reroute_email": "^2.0",
         "drupal/responsive_menu": "^4.4",
         "drupal/rules": "3.x-dev@dev",
@@ -454,10 +458,7 @@
         "recurser/jquery-simple-color": "master",
         "resize/library": "^1.17",
         "slick/library": "^1.8",
-        "w8tcha/ckeditor-wordcount-plugin": "^1.17",
-        "ext-xmlwriter": "*",
-        "ext-simplexml": "*",
-        "ext-xmlreader": "*"
+        "w8tcha/ckeditor-wordcount-plugin": "^1.17"
     },
     "require-dev": {
         "kint-php/kint": "^3.3"
