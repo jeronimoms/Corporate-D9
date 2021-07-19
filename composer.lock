@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f7274f88a89c30a5bf2780b10bf890e",
+    "content-hash": "713e535287bf03d958b7cd6e8169bb1c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9168,6 +9168,54 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/linkit",
                 "issues": "http://drupal.org/project/linkit"
+            }
+        },
+        {
+            "name": "drupal/login_redirect_per_role",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/login_redirect_per_role.git",
+                "reference": "8.x-1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/login_redirect_per_role-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "a0b41d8d937b0b5a4c3964f75c71534379b74332"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.7",
+                    "datestamp": "1586425888",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Antonnavi",
+                    "homepage": "https://www.drupal.org/user/875410"
+                },
+                {
+                    "name": "pratik.mehta19",
+                    "homepage": "https://www.drupal.org/user/2876261"
+                }
+            ],
+            "description": "Provides ability to redirect user on Log in and Log out depending on user role.",
+            "homepage": "https://www.drupal.org/project/login_redirect_per_role",
+            "support": {
+                "source": "https://git.drupalcode.org/project/login_redirect_per_role"
             }
         },
         {
