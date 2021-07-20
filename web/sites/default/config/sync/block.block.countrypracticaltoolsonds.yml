@@ -1,0 +1,28 @@
+uuid: 12277a9a-e378-4d0e-a2e8-1b0155f99938
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.country_practical_tools_on_ds_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: countrypracticaltoolsonds
+theme: ncwtheme
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'facet_block:country_practical_tools_on_ds_'
+settings:
+  id: 'facet_block:country_practical_tools_on_ds_'
+  label: Country
+  provider: facets
+  label_display: visible
+  block_id: countrypracticaltoolsonds
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/practical-tools-dangerous-substances
+    negate: false
