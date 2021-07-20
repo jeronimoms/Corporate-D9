@@ -168,6 +168,8 @@ class NccDownloadCentreForm extends FormBase {
     $form['#attached']['library'][] = 'napo_content_cart/napo_content_cart.form';
     $form['#attached']['library'][] = 'core/jquery.form';
     $form['#attached']['library'][] = 'core/drupal.ajax';
+    // Disable cache for this page.
+    $form['#cache']['max-age'] = 0;
 
     return $form;
   }
