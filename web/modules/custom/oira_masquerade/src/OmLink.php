@@ -50,7 +50,7 @@ class OmLink implements ContainerInjectionInterface {
    */
   public function linkAlter(&$variables) {
     // End process if is not masqueraded.
-    if (!$this->masquerade->isMasquerading()) {
+    if (!$this->masquerade->isMasquerading() || !array_search('partner', \Drupal::currentUser()->getRoles()))   {
       return;
     }
 

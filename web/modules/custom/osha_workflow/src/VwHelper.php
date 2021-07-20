@@ -73,6 +73,7 @@ class VwHelper {
    */
   public function getLastRevisionNode() {
     $node = $this->routeMatch->getParameter('node');
+
     if ($node instanceof Node) {
       /** @var \Drupal\Core\Entity\Sql\SqlContentEntityStorage $storage */
       $storage = $this->entityTypeManager->getStorage('node');
@@ -316,6 +317,7 @@ class VwHelper {
    */
   public function getWorkflow() {
     $node = $this->getLastRevisionNode();
+
     if (!isset($node)) {
       return [];
     }
