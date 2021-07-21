@@ -65,13 +65,14 @@ class VwCmn implements ContainerInjectionInterface {
   /**
    * {@inheritdoc}
    */
-  public function __construct(BlockManager $block_manager, VwHelper $vasefe_helper, RouteMatchInterface $route_match, FormBuilder $form_builder, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(BlockManager $block_manager, VwHelper $osha_helper, RouteMatchInterface $route_match, FormBuilder $form_builder, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager) {
     $this->blockManager = $block_manager;
-    $this->helper = $vasefe_helper;
+    $this->helper = $osha_helper;
     $this->routeMatch = $route_match;
     $this->formBuilder = $form_builder;
     $this->configFactory = $config_factory;
     $this->entityTypeManager = $entity_type_manager;
+
   }
 
   /**
@@ -96,6 +97,9 @@ class VwCmn implements ContainerInjectionInterface {
   public function mailDataAlter(EntityInterface $entity, array &$data) {
     // Workflow settings of current node.
     $workflow = $this->helper->getWorkflow();
+    if (!$workflow){
+      $workflow = $entity;
+    }
 
     // Determine the list.
     $table = '';
