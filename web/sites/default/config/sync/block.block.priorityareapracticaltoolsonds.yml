@@ -1,0 +1,28 @@
+uuid: b63b481f-2b3a-42d6-813a-5fd32d547d8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.priority_area_practical_tools_on_ds_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: priorityareapracticaltoolsonds
+theme: ncwtheme
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'facet_block:priority_area_practical_tools_on_ds_'
+settings:
+  id: 'facet_block:priority_area_practical_tools_on_ds_'
+  label: 'Priority area'
+  provider: facets
+  label_display: visible
+  block_id: priorityareapracticaltoolsonds
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/practical-tools-dangerous-substances
+    negate: false

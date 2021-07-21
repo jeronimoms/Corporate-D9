@@ -1,0 +1,28 @@
+uuid: c92c5902-d196-41f7-9a89-9bbe793d69a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.health_effects_practical_tools_on_ds_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: healtheffectspracticaltoolsonds
+theme: ncwtheme
+region: sidebar_first
+weight: -10
+provider: null
+plugin: 'facet_block:health_effects_practical_tools_on_ds_'
+settings:
+  id: 'facet_block:health_effects_practical_tools_on_ds_'
+  label: 'Health effects'
+  provider: facets
+  label_display: visible
+  block_id: healtheffectspracticaltoolsonds
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/practical-tools-dangerous-substances
+    negate: false
