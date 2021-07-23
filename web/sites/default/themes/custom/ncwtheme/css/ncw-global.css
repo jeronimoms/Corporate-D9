@@ -2114,24 +2114,13 @@ body ul li .introduction-title a:hover {
   padding: 0;
 }
 
-/* Blog Detail */
-.node--type-blog .field--name-field-image-caption {
+/* Highlights - Blogs */
+.node--type-highlight .field--name-field-image-media {
   float: left;
   margin-right: 1rem;
   clear: both;
 }
-.node--type-blog .field--name-field-summary-html {
-  color: #003399;
-  display: table;
-}
-
-/* News - Highlights - Blogs */
-.node--type-news .field--name-field-image-media, .node--type-highlight .field--name-field-image-media {
-  float: left;
-  margin-right: 1rem;
-  clear: both;
-}
-.node--type-news .field--name-field-summary-html, .node--type-highlight .field--name-field-summary-html {
+.node--type-highlight .field--name-field-summary-html {
   color: #000;
 }
 
@@ -5336,6 +5325,50 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
 }
 /* End Media 576px */
+/* Blog Detail */
+.node--type-blog .field--name-field-image-caption {
+  float: left;
+  margin: 4px 1rem 1rem 0;
+  clear: both;
+}
+.node--type-blog .field--name-field-summary-html {
+  color: #003399;
+  display: table;
+}
+.node--type-blog .field--name-node-title h2 {
+  padding-bottom: 0;
+}
+.node--type-blog .field--name-node-author {
+  margin: 0 0 1rem;
+}
+
+.node--type-news .field--name-field-image-media {
+  float: left;
+  margin-right: 1rem;
+  clear: both;
+}
+.node--type-news .field--name-field-summary-html {
+  color: #000;
+}
+.node--type-news .field--name-field-aditional-resources > .field__label {
+  background: url(../images/separator_home.jpg) repeat-x scroll 0 100% rgba(0, 0, 0, 0);
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+.node--type-news .field--name-field-aditional-resources .field__items > .field__item {
+  background: url(../images/back-tit-blue.png) repeat-x 0 100% transparent;
+  padding: 1rem 0;
+  width: 100%;
+}
+.node--type-news .field--name-field-aditional-resources .field__items .field__item .file a {
+  font-size: 0.9rem;
+}
+
 @media only screen and (max-width: 1615px) {
   /* Menu in two lines */
   body {
