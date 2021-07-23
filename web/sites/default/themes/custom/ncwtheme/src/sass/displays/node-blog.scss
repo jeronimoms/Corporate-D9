@@ -1,0 +1,20 @@
+/* Blog Detail */
+.node--type-blog{
+  .field--name-field-image-caption{
+    float: left;
+    margin: 4px 1rem 1rem 0;
+    clear: both;
+  }
+  .field--name-field-summary-html{
+    color: $text-color-blue;
+    display: table;
+  }
+  .field--name-node-title {
+    h2 {
+      padding-bottom: 0;
+    }
+  }
+  .field--name-node-author {
+    margin: 0 0 1rem;
+  }
+}

@@ -2114,17 +2114,6 @@ body ul li .introduction-title a:hover {
   padding: 0;
 }
 
-/* Blog Detail */
-.node--type-blog .field--name-field-image-caption {
-  float: left;
-  margin-right: 1rem;
-  clear: both;
-}
-.node--type-blog .field--name-field-summary-html {
-  color: #003399;
-  display: table;
-}
-
 /* News - Highlights - Blogs */
 .node--type-news .field--name-field-image-media, .node--type-highlight .field--name-field-image-media {
   float: left;
@@ -5336,6 +5325,23 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
 }
 /* End Media 576px */
+/* Blog Detail */
+.node--type-blog .field--name-field-image-caption {
+  float: left;
+  margin: 4px 1rem 1rem 0;
+  clear: both;
+}
+.node--type-blog .field--name-field-summary-html {
+  color: #003399;
+  display: table;
+}
+.node--type-blog .field--name-node-title h2 {
+  padding-bottom: 0;
+}
+.node--type-blog .field--name-node-author {
+  margin: 0 0 1rem;
+}
+
 @media only screen and (max-width: 1615px) {
   /* Menu in two lines */
   body {
