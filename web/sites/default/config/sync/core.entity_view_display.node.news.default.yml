@@ -52,6 +52,7 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - content_moderation_control
         - field_publication_date
         - node_title
         - field_image_media
@@ -84,18 +85,26 @@ content:
     third_party_settings: {  }
   content_moderation_control:
     weight: -20
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_aditional_resources:
     type: entity_reference_entity_view
     weight: 5
     region: ds_content
     label: above
     settings:
-      view_mode: default
+      view_mode: teaser
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_flickr_date:
     type: datetime_plain
     weight: 6
