@@ -1,0 +1,37 @@
+uuid: 1d2713fb-7c2b-43da-b11c-c329ef89f3c0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:00162155-bbc7-4f1f-9754-79d5d44a41ee'
+  module:
+    - block_class
+    - block_content
+    - ctools
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-back-publications
+id: backtopublications
+theme: ncwtheme
+region: content
+weight: -46
+provider: null
+plugin: 'block_content:00162155-bbc7-4f1f-9754-79d5d44a41ee'
+settings:
+  id: 'block_content:00162155-bbc7-4f1f-9754-79d5d44a41ee'
+  label: 'Back to publications'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      publication: publication
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
