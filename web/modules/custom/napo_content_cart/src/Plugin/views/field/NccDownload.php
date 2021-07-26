@@ -85,7 +85,15 @@ class NccDownload extends FieldPluginBase implements ContainerFactoryPluginInter
     $nvalues = $values;
 
     /** @var \Drupal\node\Entity\Node  $node */
-    $node = $nvalues->_object->getValue();
+    $node ='';
+    if(!empty($nvalues->_object)){
+      $node = $nvalues->_object->getValue();
+      $nodeid = $node->id();
+    }
+    elseif (!empty($nvalues->_entity)) {
+      $node = $nvalues->_entity;
+      $nodeid = $nvalues->_entity->get('nid')->value;
+    }
     if (!$node) {
       return [];
     }
@@ -94,7 +102,7 @@ class NccDownload extends FieldPluginBase implements ContainerFactoryPluginInter
     $store = $this->privateTempStoreFactory->get('napo_content_cart.downloads');
     $ids = $store->get('video_downloads');
 
-    if (isset($ids) && array_key_exists($node->id(), $ids)) {
+    if (isset($ids) && array_key_exists( $nodeid , $ids)) {
       $link = $this->removeElement($node);
     }
     else {
