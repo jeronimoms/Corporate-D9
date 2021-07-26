@@ -282,6 +282,26 @@ jQuery(document).ready(function($) {
     }
   }
 
+  // Modifies the class of the pager for 'View all'
+  $(".about-eu-osha-eu-osha-2004-2019-our-story").ready(function () {
+    const PAGE_ITEM_CLASS = "pager__item"
+    const URL_PAGE = "/about-eu-osha/eu-osha-1994-2019/our-story"
+    var ulViewMoreTag = document.getElementsByClassName("pager-show-more").item(0)
+    var liViewMoreTag = document.getElementsByClassName(PAGE_ITEM_CLASS).item(0)
+    const divToAappend = document.createElement("div")
+    divToAappend.classList.add("see-more-arrow", "pull-right")
+    if(!liViewMoreTag.children.item(0)) {
+      const aTagToAppend = document.createElement("a")
+      aTagToAppend.setAttribute("href", URL_PAGE)
+      aTagToAppend.innerText = liViewMoreTag.innerHTML.trimStart()
+      divToAappend.appendChild(aTagToAppend)
+    } else {
+      divToAappend.appendChild(liViewMoreTag.children.item(0))
+    }
+    ulViewMoreTag.parentNode.appendChild(divToAappend)
+    ulViewMoreTag.remove()
+  });
+
   //Remove equal elements in MSD Glosaary filter
   if ($(".view-msd-glossary")[0]) {
     var seen = {};
