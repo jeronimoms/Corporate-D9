@@ -95,16 +95,24 @@ class NccDownloadCentreForm extends FormBase {
       $media_build = $this->entityTypeManager->getViewBuilder('media')->view($media);
 
       $default = $element->getTranslation('en');
-      $media_video_id = $element->get('field_video')->getValue();
-      if (empty($media_video_id)) {
-        $media_video_id = $default->get('field_video')->getString();
-      }
-      if (is_array($media_video_id) && count($media_video_id) > 0) {
-        $media_video_id = $media_video_id[0]['target_id'];
-      }
+      $media_videos = $element->get('field_video')->referencedEntities();
+      $video = 0;
 
-      /** @var \Drupal\media\Entity\Media  $video */
-      $video = $this->entityTypeManager->getStorage('media')->load($media_video_id);
+      if (empty($media_videos)) {
+        $media_videos = $default->get('field_video')->referencedEntities();
+      }
+      if (is_array($media_videos) && count($media_videos) > 0) {
+        foreach ($media_videos as $key => $media_videos) {
+          $media_video_ids = $media_videos->get('name')->getString();
+          $mp4 ='.mp4';
+          $pos = strpos($media_video_ids, $mp4);
+          if( $pos != false){
+            $video = $media_videos;
+          }
+
+        }
+
+      }
 
       $file = [];
       if ($video) {
