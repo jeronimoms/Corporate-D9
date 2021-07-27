@@ -89,6 +89,12 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.content').slideToggle();
   });
 
+  //Facet accordions Practical Tools Dangerous substances
+  $(".page-view-practical-tools-and-guidance-on-dangerous-substances .sidebar-first  .block-facet--links h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
   // Facet with view FOPS detail
   $(".sidebar-first .view-fop-flags h3").click(function(){
     $(this).toggleClass("active");
@@ -282,6 +288,26 @@ jQuery(document).ready(function($) {
     }
   }
 
+  // Modifies the class of the pager for 'View all'
+  $(".about-eu-osha-eu-osha-2004-2019-our-story").ready(function () {
+    const PAGE_ITEM_CLASS = "pager__item"
+    const URL_PAGE = "/about-eu-osha/eu-osha-1994-2019/our-story"
+    const ulViewMoreTag = document.getElementsByClassName("pager-show-more").item(0)
+    const liViewMoreTag = document.getElementsByClassName(PAGE_ITEM_CLASS).item(0)
+    const divToAappend = document.createElement("div")
+    divToAappend.classList.add("see-more-arrow", "pull-right")
+    if(!liViewMoreTag.children.item(0)) {
+      const aTagToAppend = document.createElement("a")
+      aTagToAppend.setAttribute("href", URL_PAGE)
+      aTagToAppend.innerText = liViewMoreTag.innerHTML.trimStart()
+      divToAappend.appendChild(aTagToAppend)
+    } else {
+      divToAappend.appendChild(liViewMoreTag.children.item(0))
+    }
+    ulViewMoreTag.parentNode.appendChild(divToAappend)
+    ulViewMoreTag.remove()
+  });
+
   //Remove equal elements in MSD Glosaary filter
   if ($(".view-msd-glossary")[0]) {
     var seen = {};
@@ -306,6 +332,10 @@ jQuery(document).ready(function($) {
   if (window.location.href.indexOf("alphabetical") > -1) {
     $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
   }
+
+  // Accesskey for custom elements
+  $('#edit-lang-dropdown-select').attr('accessKey','L');
+  $('#edit-search-api-fulltext').attr('accessKey','Q');
 });
 
 //Move Language Selector to the menu responsive
