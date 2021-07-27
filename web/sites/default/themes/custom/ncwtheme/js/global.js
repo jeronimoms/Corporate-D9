@@ -282,25 +282,33 @@ jQuery(document).ready(function($) {
     }
   }
 
-  // Modifies the class of the pager for 'View all'
+  // Our story show more or less anniversaries
   $(".about-eu-osha-eu-osha-2004-2019-our-story").ready(function () {
-    const PAGE_ITEM_CLASS = "pager__item"
-    const URL_PAGE = "/about-eu-osha/eu-osha-1994-2019/our-story"
-    const ulViewMoreTag = document.getElementsByClassName("pager-show-more").item(0)
-    const liViewMoreTag = document.getElementsByClassName(PAGE_ITEM_CLASS).item(0)
-    const divToAappend = document.createElement("div")
-    divToAappend.classList.add("see-more-arrow", "pull-right")
-    if(!liViewMoreTag.children.item(0)) {
-      const aTagToAppend = document.createElement("a")
-      aTagToAppend.setAttribute("href", URL_PAGE)
-      aTagToAppend.innerText = liViewMoreTag.innerHTML.trimStart()
-      divToAappend.appendChild(aTagToAppend)
-    } else {
-      divToAappend.appendChild(liViewMoreTag.children.item(0))
-    }
-    ulViewMoreTag.parentNode.appendChild(divToAappend)
-    ulViewMoreTag.remove()
+    // Hide items on start
+    let elements = document.getElementsByClassName("anniversary-elements");
+    let isHidingElements = true
+    showOrHideNumberOfElements(elements, isHidingElements)
+    //Get view all button from the page footer
+    const viewAllButton = document.getElementsByClassName("field-content see-more-arrow pull-right")[0]
+    const viewAllText = viewAllButton.children.item(0).innerHTML
+    viewAllButton.children.item(0).innerHTML = viewAllText.split("/")[0]
+
+    viewAllButton.addEventListener("click", function () {
+      isHidingElements = !isHidingElements
+      showOrHideNumberOfElements(elements, isHidingElements)
+      viewAllButton.children.item(0).innerHTML = isHidingElements
+          ? viewAllText.split("/")[0]
+          : viewAllText.split("/")[1]
+    })
   });
+
+  function showOrHideNumberOfElements(elements, toHide) {
+    // When it hides elements, only three should be displayed
+    const ELEMENTS_TO_SHOW = toHide ? 3 : 0;
+    for(let i = ELEMENTS_TO_SHOW; i < elements.length; ++i) {
+      elements[i].style.display = toHide ? "none" : "block"
+    }
+  }
 
   //Remove equal elements in MSD Glosaary filter
   if ($(".view-msd-glossary")[0]) {
