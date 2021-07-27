@@ -291,7 +291,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: true
+          reduce_duplicates: false
           plugin_id: list_field
         field_publication_date_value_1:
           id: field_publication_date_value_1
@@ -736,7 +736,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: true
+          reduce_duplicates: false
           plugin_id: list_field
         field_publication_date_value_1:
           id: field_publication_date_value_1

@@ -564,7 +564,8 @@ div#sliding-popup {
   margin-bottom: 1rem;
 }
 
-.page-view-dangerous-substances-overview .block-facet--links {
+.page-view-dangerous-substances-overview .block-facet--links,
+.page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links {
   border: 0;
   padding: 0;
   margin-top: 0;
@@ -572,7 +573,8 @@ div#sliding-popup {
   border-bottom: 10px solid #FFF;
   margin-bottom: 0;
 }
-.page-view-dangerous-substances-overview .block-facet--links h2 {
+.page-view-dangerous-substances-overview .block-facet--links h2,
+.page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links h2 {
   position: relative;
   background: #e8eef7;
   padding-top: 0.3rem;
@@ -580,7 +582,8 @@ div#sliding-popup {
   padding-left: 0.5rem;
   cursor: pointer;
 }
-.page-view-dangerous-substances-overview .block-facet--links h2::after {
+.page-view-dangerous-substances-overview .block-facet--links h2::after,
+.page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links h2::after {
   content: "";
   position: absolute;
   width: 20px;
@@ -589,25 +592,31 @@ div#sliding-popup {
   top: 12px;
   right: 20px;
 }
-.page-view-dangerous-substances-overview .block-facet--links h2.active::after {
+.page-view-dangerous-substances-overview .block-facet--links h2.active::after,
+.page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links h2.active::after {
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 18px;
 }
-.page-view-dangerous-substances-overview .block-facet--links .content {
+.page-view-dangerous-substances-overview .block-facet--links .content,
+.page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content {
   background: #FFF;
   display: none;
 }
-.page-view-dangerous-substances-overview .block-facet--links .content ul {
+.page-view-dangerous-substances-overview .block-facet--links .content ul,
+.page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content ul {
   list-style: none;
   padding-left: 0;
 }
-.page-view-dangerous-substances-overview .block-facet--links .content ul a {
+.page-view-dangerous-substances-overview .block-facet--links .content ul a,
+.page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content ul a {
   display: block;
   color: #57565b;
   font-size: 0.9rem;
   padding: 5px 0 5px 0.5rem;
 }
-.page-view-dangerous-substances-overview .block-facet--links .content select, .page-view-dangerous-substances-overview .block-facet--links .content input {
+.page-view-dangerous-substances-overview .block-facet--links .content select, .page-view-dangerous-substances-overview .block-facet--links .content input,
+.page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content select,
+.page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content input {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -939,6 +948,18 @@ select, .facets-dropdown {
   padding: 5px 10px;
   margin-right: 5px;
   color: #FFF;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.view-practical-tools-and-guidance-on-dangerous-substances .av-type span {
+  display: inline-block;
+  background-color: #4e6aa0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  color: white;
   font-size: 0.85rem;
   margin-bottom: 5px;
   margin-top: 5px;
