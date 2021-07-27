@@ -326,6 +326,10 @@ jQuery(document).ready(function($) {
   if (window.location.href.indexOf("alphabetical") > -1) {
     $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
   }
+
+  // Accesskey for custom elements
+  $('#edit-lang-dropdown-select').attr('accessKey','L');
+  $('#edit-search-api-fulltext').attr('accessKey','Q');
 });
 
 //Move Language Selector to the menu responsive
