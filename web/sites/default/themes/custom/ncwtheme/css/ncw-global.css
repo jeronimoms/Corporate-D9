@@ -2530,6 +2530,32 @@ body.path-aggregator article.aggregator-item .item-description {
   opacity: 0.85;
 }
 
+.block-oshwiki-static {
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 20px !important;
+  background: #ecf1fb;
+}
+.block-oshwiki-static .OSHWikiDivTit {
+  display: flex;
+  align-items: center;
+}
+.block-oshwiki-static .OSHWikiTitle {
+  font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+  font-size: 1.35rem;
+}
+.block-oshwiki-static .imgOSHWiki {
+  margin-right: 0.5rem;
+}
+.block-oshwiki-static .p2 {
+  font-size: 0.8rem;
+  padding: 1.3rem 0;
+}
+.block-oshwiki-static .p3 {
+  text-align: right;
+  margin-right: 10px;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
