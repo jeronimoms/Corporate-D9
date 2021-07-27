@@ -223,6 +223,7 @@ permissions:
   - 'use editorial transition approve_rejected_content'
   - 'use editorial transition content_approved_and_publishing'
   - 'use editorial transition content_approved_and_ready_to_publish'
+  - 'use editorial transition final_draft_to_final_draft'
   - 'use editorial transition project_manager_rejects_rejected_content'
   - 'use editorial transition review_manager_accepts_rejected_content'
   - 'use editorial transition review_manager_rejects_rejected_content'
