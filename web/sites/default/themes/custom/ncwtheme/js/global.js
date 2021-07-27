@@ -89,6 +89,12 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.content').slideToggle();
   });
 
+  //Facet accordions Practical Tools Dangerous substances
+  $(".page-view-practical-tools-and-guidance-on-dangerous-substances .sidebar-first  .block-facet--links h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
   // Facet with view FOPS detail
   $(".sidebar-first .view-fop-flags h3").click(function(){
     $(this).toggleClass("active");
