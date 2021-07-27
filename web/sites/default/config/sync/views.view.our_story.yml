@@ -12,7 +12,6 @@ dependencies:
     - node
     - text
     - user
-    - views_show_more
 id: our_story
 label: 'Our story'
 module: views
@@ -625,7 +624,7 @@ display:
           automatic_width: false
           alignment: vertical
           col_class_default: false
-          col_class_custom: anniversary-elements
+          col_class_custom: ''
           row_class_default: false
           row_class_custom: 'revamp-row no-flex'
       defaults:
@@ -637,7 +636,6 @@ display:
         use_more_always: false
         use_more_text: false
         fields: false
-        use_ajax: false
       row:
         type: fields
         options:
@@ -646,38 +644,11 @@ display:
           separator: ''
           hide_empty: false
       pager:
-        type: show_more
+        type: none
         options:
-          items_per_page: 8
           offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          result_display_method: append
-          show_more_text: 'View all'
-          show_more_empty_text: 'View less'
-          initial: '3'
-          effects:
-            type: none
-            speed_type: slow
-            speed_value: ''
-            scroll_offset: '50'
-            speed: slow
-          advance:
-            content_selector: ''
-            pager_selector: ''
       title: ''
-      use_more: false
+      use_more: true
       use_more_always: false
       use_more_text: 'View all'
       fields:
@@ -987,12 +958,10 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-      use_ajax: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1023,7 +992,6 @@ display:
       defaults:
         style: false
         row: false
-        pager: false
       row:
         type: fields
         options:
@@ -1031,11 +999,6 @@ display:
           inline: {  }
           separator: ''
           hide_empty: false
-      pager:
-        type: some
-        options:
-          items_per_page: 2
-          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
