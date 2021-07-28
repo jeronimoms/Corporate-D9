@@ -4285,6 +4285,10 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
   padding-bottom: 0;
 }
 
+select, input, textarea, button {
+  font-family: "Open Sans", sans-serif;
+}
+
 body.contact form.contact-form {
   width: 80%;
   background: #e8ecf5;
