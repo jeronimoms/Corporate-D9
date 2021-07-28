@@ -2577,6 +2577,10 @@ body.path-aggregator article.aggregator-item .item-description {
   margin-right: 10px;
 }
 
+.field--name-body ol {
+  padding-left: 40px;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
