@@ -25,7 +25,6 @@ dependencies:
     - field.field.node.musculoskeletal_disorders.field_original_desc_language
     - field.field.node.musculoskeletal_disorders.field_prevention_measures
     - field.field.node.musculoskeletal_disorders.field_prevention_measures_other
-    - field.field.node.musculoskeletal_disorders.field_publication_year
     - field.field.node.musculoskeletal_disorders.field_purpose_of_the_material
     - field.field.node.musculoskeletal_disorders.field_resource_type
     - field.field.node.musculoskeletal_disorders.field_resource_type_other
@@ -37,9 +36,9 @@ dependencies:
     - field.field.node.musculoskeletal_disorders.field_type_of_item
     - field.field.node.musculoskeletal_disorders.field_worker_groups_covered
     - field.field.node.musculoskeletal_disorders.field_worker_groups_other
+    - field.field.node.musculoskeletal_disorders.field_year
     - node.type.musculoskeletal_disorders
   module:
-    - datetime
     - entity_reference_revisions
     - languagefield
     - link
@@ -202,15 +201,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_publication_year:
-    weight: 9
-    label: inline
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_purpose_of_the_material:
     weight: 21
     label: inline
@@ -290,8 +280,16 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_year:
+    weight: 29
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_comments: true
   field_for_pictogram_guide: true
   field_msd_video_length: true
