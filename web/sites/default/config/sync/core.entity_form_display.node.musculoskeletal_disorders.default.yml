@@ -25,7 +25,6 @@ dependencies:
     - field.field.node.musculoskeletal_disorders.field_original_desc_language
     - field.field.node.musculoskeletal_disorders.field_prevention_measures
     - field.field.node.musculoskeletal_disorders.field_prevention_measures_other
-    - field.field.node.musculoskeletal_disorders.field_publication_year
     - field.field.node.musculoskeletal_disorders.field_purpose_of_the_material
     - field.field.node.musculoskeletal_disorders.field_resource_type
     - field.field.node.musculoskeletal_disorders.field_resource_type_other
@@ -37,15 +36,32 @@ dependencies:
     - field.field.node.musculoskeletal_disorders.field_type_of_item
     - field.field.node.musculoskeletal_disorders.field_worker_groups_covered
     - field.field.node.musculoskeletal_disorders.field_worker_groups_other
+    - field.field.node.musculoskeletal_disorders.field_year
     - node.type.musculoskeletal_disorders
   module:
     - chosen_field
-    - datetime
+    - content_moderation
+    - field_group
     - languagefield
     - link
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_date_of_publication_year:
+      children:
+        - field_year
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'DATE OF PUBLICATION / YEAR'
 id: node.musculoskeletal_disorders.default
 targetEntityType: node
 bundle: musculoskeletal_disorders
@@ -53,7 +69,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 23
+    weight: 25
     settings:
       rows: 9
       summary_rows: 3
@@ -63,12 +79,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 40
+    weight: 42
     region: content
     settings: {  }
     third_party_settings: {  }
   field_available_in_languages:
-    weight: 10
+    weight: 12
     settings:
       format:
         name: name
@@ -76,7 +92,7 @@ content:
     type: languagefield_select
     region: content
   field_body_original:
-    weight: 24
+    weight: 26
     settings:
       rows: 5
       placeholder: ''
@@ -84,7 +100,7 @@ content:
     type: text_textarea
     region: content
   field_comments:
-    weight: 34
+    weight: 36
     settings:
       rows: 5
       placeholder: ''
@@ -92,7 +108,7 @@ content:
     type: text_textarea
     region: content
   field_country_other:
-    weight: 9
+    weight: 11
     settings:
       size: 60
       placeholder: ''
@@ -108,13 +124,13 @@ content:
     type: link_default
     region: content
   field_for_pictogram_guide:
-    weight: 33
+    weight: 35
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_hazard_health_other:
-    weight: 16
+    weight: 18
     settings:
       size: 60
       placeholder: ''
@@ -122,13 +138,13 @@ content:
     type: string_textfield
     region: content
   field_hazards:
-    weight: 13
+    weight: 15
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_hazards_other:
-    weight: 14
+    weight: 16
     settings:
       size: 60
       placeholder: ''
@@ -136,13 +152,13 @@ content:
     type: string_textfield
     region: content
   field_health_effects:
-    weight: 15
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_languages_other:
-    weight: 11
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -150,13 +166,13 @@ content:
     type: string_textfield
     region: content
   field_material_country:
-    weight: 8
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_material_purpose_other:
-    weight: 22
+    weight: 24
     settings:
       size: 60
       placeholder: ''
@@ -167,7 +183,7 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: chosen_select
     region: content
   field_msd_provider:
     type: entity_reference_paragraphs
@@ -182,7 +198,7 @@ content:
     third_party_settings: {  }
     region: content
   field_msd_video_length:
-    weight: 31
+    weight: 33
     settings:
       size: 60
       placeholder: ''
@@ -190,14 +206,14 @@ content:
     type: string_textfield
     region: content
   field_nominated_by_fop:
-    weight: 32
+    weight: 34
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_original_desc_lang_other:
-    weight: 26
+    weight: 28
     settings:
       size: 60
       placeholder: ''
@@ -205,7 +221,7 @@ content:
     type: string_textfield
     region: content
   field_original_desc_language:
-    weight: 25
+    weight: 27
     settings:
       format:
         name: name
@@ -213,42 +229,33 @@ content:
     type: languagefield_select
     region: content
   field_prevention_measures:
-    weight: 19
+    weight: 21
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_prevention_measures_other:
-    weight: 20
+    weight: 22
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_publication_year:
-    weight: 7
-    settings:
-      date_order: YMD
-      time_type: none
-      increment: 15
-    third_party_settings: {  }
-    type: datetime_datelist
-    region: content
   field_purpose_of_the_material:
-    weight: 21
+    weight: 23
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_resource_type:
-    weight: 29
+    weight: 31
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_resource_type_other:
-    weight: 30
+    weight: 32
     settings:
       size: 60
       placeholder: ''
@@ -262,19 +269,19 @@ content:
     type: options_select
     region: content
   field_sector_industry_covered:
-    weight: 12
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_target_audience:
-    weight: 27
+    weight: 29
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_target_group_other:
-    weight: 28
+    weight: 30
     settings:
       size: 60
       placeholder: ''
@@ -296,36 +303,40 @@ content:
     type: options_select
     region: content
   field_worker_groups_covered:
-    weight: 17
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_worker_groups_other:
-    weight: 18
+    weight: 20
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
-  moderation_state:
-    type: string_textfield
-    weight: 35
+  field_year:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+  moderation_state:
+    type: moderation_state_default
+    weight: 37
+    region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 36
+    weight: 38
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 38
+    weight: 40
     region: content
     settings:
       display_label: true
@@ -340,7 +351,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 39
+    weight: 41
     region: content
     settings:
       match_operator: CONTAINS
@@ -349,7 +360,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 37
+    weight: 39
     region: content
     settings: {  }
     third_party_settings: {  }

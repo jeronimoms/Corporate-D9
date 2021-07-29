@@ -1,23 +1,23 @@
-uuid: 8e468228-cd6b-4ea9-9bf8-768f971efef7
+uuid: 3c35d7f4-8160-474b-8dd1-eb0a391593f9
 langcode: en
 status: true
 dependencies: {  }
-id: ncw_taxonomy_contact_type_of_sender
+id: ncw_taxonomy_health_effects
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: ncw_migrate
-label: 'Terms: contact_type of sender'
+label: 'Terms: health_effects'
 source:
   plugin: d7_taxonomy_term
-  bundle: contact_type_of_sender
+  bundle: health_effects
 process:
   tid: tid
   vid:
     -
       plugin: default_value
-      default_value: contact_type_of_sender
+      default_value: health_effects
   name: name
   description/value: description
   description/format: format
@@ -29,7 +29,7 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: ncw_taxonomy_contact_type
+      migration: ncw_taxonomy_health_effects
   parent:
     plugin: default_value
     default_value: 0

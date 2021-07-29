@@ -1,23 +1,23 @@
-uuid: 8e468228-cd6b-4ea9-9bf8-768f971efef7
+uuid: 17825e4d-0fb7-4a22-8e1a-77d926a6fe2e
 langcode: en
 status: true
 dependencies: {  }
-id: ncw_taxonomy_contact_type_of_sender
+id: ncw_taxonomy_target_audience
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: ncw_migrate
-label: 'Terms: contact_type of sender'
+label: 'Terms: target_audience'
 source:
   plugin: d7_taxonomy_term
-  bundle: contact_type_of_sender
+  bundle: target_audience
 process:
   tid: tid
   vid:
     -
       plugin: default_value
-      default_value: contact_type_of_sender
+      default_value: target_audience
   name: name
   description/value: description
   description/format: format
@@ -29,7 +29,7 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: ncw_taxonomy_contact_type
+      migration: ncw_taxonomy_target_audience
   parent:
     plugin: default_value
     default_value: 0
