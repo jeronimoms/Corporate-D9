@@ -9,6 +9,7 @@ module:
   better_social_sharing_buttons: 0
   big_pipe: 0
   block: 0
+  block_class: 0
   block_content: 0
   block_form_alter: 0
   blockgroup: 0
@@ -45,6 +46,7 @@ module:
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
   editor: 0
+  editor_advanced_link: 0
   entity: 0
   entity_browser: 0
   entity_browser_entity_form: 0
@@ -97,6 +99,7 @@ module:
   media_library_form_element: 0
   menu_block: 0
   menu_item_extras: 0
+  menu_link_attributes: 0
   menu_link_content: 0
   menu_trail_by_path: 0
   menu_ui: 0
@@ -171,6 +174,7 @@ module:
   video_embed_field: 0
   views_bulk_operations: 0
   views_data_export: 0
+  views_show_more: 0
   views_slideshow: 0
   views_templates: 0
   views_ui: 0
@@ -183,6 +187,7 @@ module:
   xmlsitemap: 1
   ds_extras: 2
   content_translation: 10
+  externalauth: 10
   views: 10
   paragraphs: 11
   linked_field: 100

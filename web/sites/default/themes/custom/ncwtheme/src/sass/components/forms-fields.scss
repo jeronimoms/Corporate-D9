@@ -273,7 +273,7 @@ select, .facets-dropdown{
   }
 }
 
-.page-view-dangerous-substances-overview{
+.page-view-dangerous-substances-overview {
   .views-exposed-form .btn-primary {
     margin-left: 0;
     margin-right: 5px;
@@ -292,6 +292,22 @@ select, .facets-dropdown{
       padding: 5px 10px;
       margin-right: 5px;
       color: $bg-color-white;
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.view-practical-tools-and-guidance-on-dangerous-substances {
+  .av-type {
+    span {
+      display: inline-block;
+      background-color: $bg-color-tag-1;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 5px;
+      color: white;
       font-size: 0.85rem;
       margin-bottom: 5px;
       margin-top: 5px;
