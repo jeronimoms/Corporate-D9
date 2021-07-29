@@ -98,6 +98,10 @@ class VwApproveForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    // Auto save the current node to run the email handle.
+    $node = $this->helper->getLastRevisionNode();
+    $node->save();
+
     // Update the status of current user.
     $this->helper->approveUser($form_state->get('vesafe_workflow_table'));
 
