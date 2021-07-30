@@ -112,7 +112,25 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        f0de4b2a-a479-4edf-ab7d-b0e55ca3f908:
+          dependee: field_material_country
+          settings:
+            state: visible
+            condition: value
+            grouping: OR
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3127'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: musculoskeletal_disorders
     type: string_textfield
     region: content
   field_external_url:
@@ -148,7 +166,25 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        74980c6f-d30a-4d01-b177-4876034c6e26:
+          dependee: field_hazards
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4417'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: musculoskeletal_disorders
     type: string_textfield
     region: content
   field_health_effects:

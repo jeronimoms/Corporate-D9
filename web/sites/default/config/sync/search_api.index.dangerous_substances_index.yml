@@ -4,29 +4,32 @@ status: true
 dependencies:
   module:
     - search_api_solr
-    - node
     - paragraphs
+    - node
     - search_api
   config:
+    - field.storage.node.body
     - field.storage.node.field_advertising
     - field.storage.node.field_available_in_languages
     - field.storage.node.field_biological_hazard
     - field.storage.node.field_biological_hazard_other
     - field.storage.node.field_cas_number
     - field.storage.node.field_contact_address
-    - field.storage.node.body
-    - field.storage.node.field_material_country
     - field.storage.node.field_country_other
     - field.storage.node.field_disclaimer
     - field.storage.node.field_ec_number
     - field.storage.node.field_evaluation
     - field.storage.node.field_exposure_route
-    - field.storage.node.field_media_format
+    - field.storage.node.field_external_url
     - field.storage.node.field_hazard_health_effects
     - field.storage.node.field_hazard_physical_state
     - field.storage.node.field_intellectual_property_righ
+    - field.storage.node.field_item_type
     - field.storage.node.field_languages_other
+    - field.storage.node.field_material_country
+    - field.storage.node.field_material_purpose_type
     - field.storage.node.field_measurement_method
+    - field.storage.node.field_media_format
     - field.storage.node.field_original_desc_lang_other
     - field.storage.node.field_other_information
     - field.storage.node.field_ownership_information
@@ -35,8 +38,6 @@ dependencies:
     - field.storage.node.field_priority_area
     - field.storage.node.field_fc_provider
     - field.storage.paragraph.field_provider_name_original
-    - field.storage.paragraph.field_type_of_provider
-    - field.storage.node.field_material_purpose_type
     - field.storage.node.field_rights_description
     - field.storage.node.field_sector_industry_covered
     - field.storage.node.field_selected_for_analysis
@@ -44,11 +45,9 @@ dependencies:
     - field.storage.node.field_tasks_covered
     - field.storage.node.field_tasks_other
     - field.storage.node.field_title_original
-    - field.storage.node.field_item_type
+    - field.storage.paragraph.field_type_of_provider
     - field.storage.node.field_visualisation_material_typ
-    - field.storage.node.field_external_url
     - field.storage.node.field_worker_groups_type
-    - field.storage.node.field_publication_year
     - search_api.server.solr
 third_party_settings:
   search_api_solr:
@@ -331,14 +330,6 @@ field_settings:
         - field.storage.paragraph.field_provider_name_original
       module:
         - paragraphs
-  field_publication_year:
-    label: 'Year of publication'
-    datasource_id: 'entity:node'
-    property_path: field_publication_year
-    type: date
-    dependencies:
-      config:
-        - field.storage.node.field_publication_year
   field_rights_description:
     label: 'Rights description'
     datasource_id: 'entity:node'
