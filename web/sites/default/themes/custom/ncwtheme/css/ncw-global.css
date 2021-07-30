@@ -3723,6 +3723,9 @@ body.user-logged-in.toolbar-tray-open #header {
   padding-left: 0;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 65px;
   border-left: 0;
   text-align: center;
@@ -3732,7 +3735,7 @@ body.user-logged-in.toolbar-tray-open #header {
   width: 42px;
   height: 22px;
   text-indent: -9999px;
-  background: url(../images/ico_home.png) no-repeat 10px 0px;
+  background: url(../images/ico_home.png) no-repeat center center;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) .field--type-entity-reference {
   margin: 0;
