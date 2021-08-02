@@ -26,7 +26,6 @@ process:
     -
       plugin: get
       source: nid
-  vid: vid
   type:
     - plugin: default_value
       default_value: musculoskeletal_disorders              # -----  CHANGE
@@ -67,11 +66,8 @@ process:
   revision_log: log
   revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
-  field_type_of_item:
-    - plugin: sub_process
-      source: field_type_of_item
-      process:
-        target_id: tid
+  field_type_of_item: field_type_of_item
+  field_title_original: field_title_original
   field_msd_priority_area:
     - plugin: sub_process
       source: field_msd_priority_area
@@ -82,18 +78,7 @@ process:
     source: field_external_url
 
   #field collection field_msd_provider:
-  field_publication_year :
-    -
-      plugin: sub_process
-      source: field_publication_year
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: 'Y-m-d\TH:i:s'
-          from_timezone: 'Europe/Madrid'
-          to_timezone: 'Europe/Madrid'
-          source: value
+  field_year: field_publication_year
   field_material_country:
     - plugin: sub_process
       source: field_material_country

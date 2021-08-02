@@ -2096,6 +2096,14 @@ body ul li .introduction-title a:hover {
   text-decoration: none;
 }
 
+a[href^="mailto:"] {
+  border-bottom: 1px solid #c72272;
+}
+a[href^="mailto:"]:hover {
+  border-bottom: 1px solid #003399;
+  text-decoration: none;
+}
+
 /* END Common elements */
 /* Twetter Block */
 .block-twitter-block {
@@ -2575,6 +2583,10 @@ body.path-aggregator article.aggregator-item .item-description {
 .block-oshwiki-static .p3 {
   text-align: right;
   margin-right: 10px;
+}
+
+.field--name-body ol {
+  padding-left: 40px;
 }
 
 /* Breadcrumbs */
@@ -3719,6 +3731,9 @@ body.user-logged-in.toolbar-tray-open #header {
   padding-left: 0;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 65px;
   border-left: 0;
   text-align: center;
@@ -3728,7 +3743,7 @@ body.user-logged-in.toolbar-tray-open #header {
   width: 42px;
   height: 22px;
   text-indent: -9999px;
-  background: url(../images/ico_home.png) no-repeat 10px 0px;
+  background: url(../images/ico_home.png) no-repeat center center;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) .field--type-entity-reference {
   margin: 0;
@@ -4701,22 +4716,33 @@ body.node--type-publication {
   width: 100%;
   padding-left: 2rem;
 }
+.node--type-publication .publications-detail-right-column h2 {
+  margin-bottom: 21px;
+  font-weight: normal;
+  padding: 0;
+  font-size: 1.3rem;
+}
 .node--type-publication .field--name-field-image-media img {
   float: left;
 }
 .node--type-publication .content-publication-info {
+  padding: 14px 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .node--type-publication .content-publication-info .content-label {
   display: flex;
+  align-items: flex-start;
+  color: #003399;
 }
 .node--type-publication .content-publication-info .content-label .label {
+  font-size: 0.9rem;
   padding-right: 5px;
 }
 .node--type-publication .content-publication-info .content-label .field {
+  padding: 0;
   font-size: 0.9rem;
-  line-height: 20px;
+  line-height: 24px;
 }
 .node--type-publication .content-publication-info .content-label:nth-child(1) {
   padding-right: 5px;
@@ -4760,6 +4786,71 @@ body.node--type-publication {
 .node--type-publication .related-resources-fluid .node--type-publication h2 {
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+.field--name-field-aditional-resources .publication-field {
+  width: 100%;
+  background: url(../images/back-tit-blue.png) repeat-x scroll 0 100% transparent;
+  margin-bottom: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+.field--name-field-aditional-resources .publication-field .layout__region--content {
+  display: flex;
+  gap: 24px;
+}
+.field--name-field-aditional-resources .publication-field .field {
+  color: #003399;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-image-media {
+  max-width: 155px;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-date {
+  padding-top: 14px;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type {
+  color: #003399;
+  font-size: 0.875rem;
+  display: flex;
+  padding: 0;
+  line-height: 24px;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type .field__label {
+  font-weight: bold;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type .field__label:after {
+  display: inline-block;
+  content: ":";
+  margin: 0 3px 0 0;
+}
+.field--name-field-aditional-resources .publication-field .field-name-field-pages-count {
+  padding-bottom: 14px;
+  display: flex;
+  font-size: 0.875rem;
+}
+.field--name-field-aditional-resources .publication-field .field-name-field-pages-count .field-label-inline {
+  margin: 0 0 0 3px;
+  order: 2;
+}
+.field--name-field-aditional-resources .publication-field h2 {
+  margin-bottom: 21px;
+  font-weight: normal;
+  padding: 0;
+  font-size: 1.125rem;
+}
+.field--name-field-aditional-resources .publication-field .field--name-node-link a {
+  transition: all 0.25s ease-in-out;
+  background: url(../images/flecha.png) no-repeat scroll 89% 53% transparent;
+  padding: 0.5em 3em 0.5em 1em !important;
+  text-decoration: none;
+  padding-left: 0em;
+  border-bottom: 0px !important;
+  font-weight: bold;
+  font-size: 0.785rem;
+}
+.field--name-field-aditional-resources .publication-field .field--name-node-link a:hover {
+  text-decoration: none;
+  background-color: #003399;
+  color: white;
 }
 
 /* Rsponsive */
