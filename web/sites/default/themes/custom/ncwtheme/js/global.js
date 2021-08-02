@@ -90,7 +90,7 @@ jQuery(document).ready(function($) {
   });
 
   //Facet accordions Practical Tools Dangerous substances
-  $(".page-view-practical-tools-and-guidance-on-dangerous-substances .sidebar-first  .block-facet--links h2").click(function(){
+  $(".page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links h2").click(function(){
     $(this).toggleClass("active");
     $(this).parent().find('.content').slideToggle();
   });
