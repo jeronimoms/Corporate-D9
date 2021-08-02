@@ -168,6 +168,9 @@ body.node--type-publication{
         line-height: 20px;
       }
     }
+    .content-label:nth-child(1){
+      padding-right: 5px;
+    }
   }
   .datetime{
     display: block;

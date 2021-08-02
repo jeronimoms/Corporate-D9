@@ -1,0 +1,28 @@
+uuid: a4f65df2-10fe-4c8e-8c69-7f10ffb22a28
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.tasks_covered_practical_tools_on_ds_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: taskscoveredpracticaltoolsonds
+theme: ncwtheme
+region: sidebar_first
+weight: -11
+provider: null
+plugin: 'facet_block:tasks_covered_practical_tools_on_ds_'
+settings:
+  id: 'facet_block:tasks_covered_practical_tools_on_ds_'
+  label: 'Work tasks'
+  provider: facets
+  label_display: visible
+  block_id: taskscoveredpracticaltoolsonds
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/practical-tools-dangerous-substances
+    negate: false

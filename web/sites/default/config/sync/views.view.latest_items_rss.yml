@@ -295,7 +295,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 30
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -436,7 +436,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 30
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -581,8 +581,9 @@ display:
             guid_field_is_permalink: true
       path: rss-feeds/latest/commission-vacancies.xml
       pager:
-        type: none
+        type: some
         options:
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -1645,7 +1646,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 30
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -1787,7 +1788,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 30
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -1928,7 +1929,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 30
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -2067,8 +2068,9 @@ display:
           view_mode: default
       path: rss-feeds/latest/calls.xml
       pager:
-        type: none
+        type: some
         options:
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -2298,8 +2300,9 @@ display:
           view_mode: default
       path: rss-feeds/latest/vacancies.xml
       pager:
-        type: none
+        type: some
         options:
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -2569,7 +2572,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 30
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -2710,7 +2713,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 30
+          items_per_page: 10
           offset: 0
       style:
         type: rss
@@ -2851,7 +2854,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 30
+          items_per_page: 10
           offset: 0
       style:
         type: rss

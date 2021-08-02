@@ -1,0 +1,34 @@
+.node--type-news {
+  .field--name-field-image-media{
+    float: left;
+    margin-right: 1rem;
+    clear: both;
+  }
+  .field--name-field-summary-html{
+    color: $text-color-black;
+  }
+  .field--name-field-aditional-resources {
+    > .field__label {
+      background: url(../images/separator_home.jpg) repeat-x scroll 0 100% rgba(0,0,0,0);
+      color: $text-color-black-label;
+      font-family: $font-family-sans;
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-bottom: 0;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
+    .field__items {
+      > .field__item {
+        background: url(../images/back-tit-blue.png) repeat-x 0 100% transparent;
+        padding: 1rem 0;
+        width: 100%;
+      }
+      .field__item {
+        .file a {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

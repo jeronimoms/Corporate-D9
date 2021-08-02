@@ -257,6 +257,9 @@
         }
     ],
     "require": {
+        "ext-simplexml": "*",
+        "ext-xmlreader": "*",
+        "ext-xmlwriter": "*",
         "bgrins/spectrum": "^1.8",
         "blazy/library": "^1.8",
         "chosen/library": "^1.8",
@@ -268,6 +271,7 @@
         "drupal/anchor_link": "^2.5",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/better_social_sharing_buttons": "^3.1",
+        "drupal/block_class": "^1.3",
         "drupal/blockgroup": "^1.5",
         "drupal/blog": "^3.0",
         "drupal/bootstrap_barrio": "^5.1",
@@ -356,6 +360,7 @@
         "drupal/like_and_dislike": "^1.0@beta",
         "drupal/linkchecker": "^1.0@alpha",
         "drupal/linkit": "^6.0@beta",
+        "drupal/login_redirect_per_role": "^1.7",
         "drupal/mailsystem": "^4.3",
         "drupal/masquerade": "^2.0@beta",
         "drupal/matomo": "^1.11",
@@ -365,6 +370,7 @@
         "drupal/menu_export": "^1.3",
         "drupal/menu_item_extras": "^2.13",
         "drupal/menu_item_fields": "^1.5",
+        "drupal/menu_link_attributes": "^1.2",
         "drupal/menu_position": "^1.0@beta",
         "drupal/menu_trail_by_path": "^1.3",
         "drupal/meta_position": "^1.1",
@@ -377,6 +383,7 @@
         "drupal/onomasticon": "^2.0",
         "drupal/pagerer": "^2.0",
         "drupal/paragraphs": "^1.12",
+        "drupal/path_redirect_import": "^1.0@beta",
         "drupal/pathauto": "^1.8",
         "drupal/pathologic": "^1.0@alpha",
         "drupal/pdfpreview": "^1.0",
@@ -389,6 +396,7 @@
         "drupal/recaptcha": "^3.0",
         "drupal/recaptcha_v3": "^1.4",
         "drupal/redirect": "^1.6",
+        "drupal/redirect_after_login": "^2.7",
         "drupal/reroute_email": "^2.0",
         "drupal/responsive_menu": "^4.4",
         "drupal/rules": "3.x-dev@dev",
@@ -433,6 +441,7 @@
         "drupal/views_data_export": "^1.0",
         "drupal/views_infinite_scroll": "^1.8",
         "drupal/views_json_source": "^1.0",
+        "drupal/views_show_more": "^1.0",
         "drupal/views_slideshow": "^4.8",
         "drupal/views_templates": "^1.1",
         "drupal/webform": "^6.0",
@@ -454,10 +463,7 @@
         "recurser/jquery-simple-color": "master",
         "resize/library": "^1.17",
         "slick/library": "^1.8",
-        "w8tcha/ckeditor-wordcount-plugin": "^1.17",
-        "ext-xmlwriter": "*",
-        "ext-simplexml": "*",
-        "ext-xmlreader": "*"
+        "w8tcha/ckeditor-wordcount-plugin": "^1.17"
     },
     "require-dev": {
         "kint-php/kint": "^3.3"

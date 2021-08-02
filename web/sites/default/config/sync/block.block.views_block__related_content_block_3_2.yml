@@ -6,6 +6,7 @@ dependencies:
     - views.view.related_content
   module:
     - ctools
+    - system
     - views
   theme:
     - ncwtheme
@@ -32,3 +33,7 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "/emerging-risks\r\n/themes/work-related-diseases/health-surveillance\r\n/themes/osh-management-context-ageing-workforce/ep-osh-project\r\n/tools-and-resources/glossaries"
+    negate: true

@@ -1,0 +1,28 @@
+uuid: 85ed9876-250e-4cdf-8e1f-6cf45a80daee
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.priority_area_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: priorityareadangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -22
+provider: null
+plugin: 'facet_block:priority_area_dangerous_substances_'
+settings:
+  id: 'facet_block:priority_area_dangerous_substances_'
+  label: 'Priority area'
+  provider: facets
+  label_display: visible
+  block_id: priorityareadangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false
