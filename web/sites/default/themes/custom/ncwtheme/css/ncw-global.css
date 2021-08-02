@@ -2096,6 +2096,14 @@ body ul li .introduction-title a:hover {
   text-decoration: none;
 }
 
+a[href^="mailto:"] {
+  border-bottom: 1px solid #c72272;
+}
+a[href^="mailto:"]:hover {
+  border-bottom: 1px solid #003399;
+  text-decoration: none;
+}
+
 /* END Common elements */
 /* Twetter Block */
 .block-twitter-block {
