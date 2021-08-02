@@ -1,0 +1,173 @@
+uuid: 9459ad07-6bf0-42c1-ba8e-90756814df70
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+id: ncw_node_musculoskeletal_disorders
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate_nodes
+label: 'Node: musculoskeletal_disorders'
+source:
+  plugin: ev_d7_node
+  node_type: musculoskeletal_disorders
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  type:
+    -
+      plugin: default_value
+      default_value: musculoskeletal_disorders
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: en
+  title:
+    -
+      plugin: get
+      source: title
+  body:
+    -
+      plugin: get
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_type_of_item: field_type_of_item
+  field_title_original: field_title_original
+  field_msd_priority_area:
+    -
+      plugin: sub_process
+      source: field_msd_priority_area
+      process:
+        target_id: tid
+  field_external_url:
+    plugin: field_link
+    source: field_external_url
+  field_year: field_publication_year
+  field_publication_year:
+    -
+      plugin: sub_process
+      source: field_publication_year
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          from_timezone: Europe/Madrid
+          to_timezone: Europe/Madrid
+          source: value
+  field_material_country:
+    -
+      plugin: sub_process
+      source: field_material_country
+      process:
+        target_id: tid
+  field_country_other: field_country_other
+  field_available_in_languages: field_available_in_languages
+  field_languages_other: field_languages_other
+  field_sector_industry_covered:
+    -
+      plugin: sub_process
+      source: field_sector_industry_covered
+      process:
+        target_id: tid
+  field_hazards:
+    -
+      plugin: sub_process
+      source: field_hazards
+      process:
+        target_id: tid
+  field_hazards_other: field_hazards_other
+  field_health_effects:
+    -
+      plugin: sub_process
+      source: field_health_effects
+      process:
+        target_id: tid
+  field_hazard_health_other: field_hazard_health_other
+  field_worker_groups_covered:
+    -
+      plugin: sub_process
+      source: field_worker_groups_covered
+      process:
+        target_id: tid
+  field_worker_groups_other: field_worker_groups_other
+  field_prevention_measures:
+    -
+      plugin: sub_process
+      source: field_prevention_measures
+      process:
+        target_id: tid
+  field_prevention_measures_other: field_prevention_measures_other
+  field_purpose_of_the_material:
+    -
+      plugin: sub_process
+      source: field_purpose_of_the_material
+      process:
+        target_id: tid
+  field_material_purpose_other: field_material_purpose_other
+  field_body_original:
+    -
+      plugin: get
+      source: field_body_original
+  field_body_original/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+  field_original_desc_language: field_original_desc_language
+  field_original_desc_lang_other: field_original_desc_lang_other
+  field_target_audience:
+    -
+      plugin: sub_process
+      source: field_target_audience
+      process:
+        target_id: tid
+  field_target_group_other: field_target_group_other
+  field_resource_type:
+    -
+      plugin: sub_process
+      source: field_resource_type
+      process:
+        target_id: tid
+  field_resource_type_other: field_resource_type_other
+  field_msd_video_length: field_msd_video_length
+  field_nominated_by_fop: field_nominated_by_fop
+  field_for_pictogram_guide: field_for_pictogram_guide
+  field_comments:
+    -
+      plugin: get
+      source: field_comments
+  field_comments/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

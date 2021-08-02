@@ -30,6 +30,9 @@
       padding-left: 0;
 
       > li.menu-item:nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 65px;
         border-left: 0;
         text-align: center;
@@ -38,7 +41,7 @@
           width: 42px;
           height: 22px;
           text-indent: -9999px;
-          background: url(../images/ico_home.png) no-repeat 10px 0px;
+          background: url(../images/ico_home.png) no-repeat center center;
         }
         .field--type-entity-reference{
           margin: 0;

@@ -43,11 +43,9 @@ dependencies:
     - field.field.node.dangerous_substances.field_prevention_measure_type
     - field.field.node.dangerous_substances.field_prevention_measures_other
     - field.field.node.dangerous_substances.field_priority_area
-    - field.field.node.dangerous_substances.field_publication_year
     - field.field.node.dangerous_substances.field_rights_description
     - field.field.node.dangerous_substances.field_section
     - field.field.node.dangerous_substances.field_sector_industry_covered
-    - field.field.node.dangerous_substances.field_sector_industry_other
     - field.field.node.dangerous_substances.field_selected_for_analysis
     - field.field.node.dangerous_substances.field_substance_description
     - field.field.node.dangerous_substances.field_target_group
@@ -59,6 +57,7 @@ dependencies:
     - field.field.node.dangerous_substances.field_visualisation_material_typ
     - field.field.node.dangerous_substances.field_worker_groups_other
     - field.field.node.dangerous_substances.field_worker_groups_type
+    - field.field.node.dangerous_substances.field_year
     - node.type.dangerous_substances
   module:
     - link
@@ -158,11 +157,9 @@ hidden:
   field_prevention_measure_type: true
   field_prevention_measures_other: true
   field_priority_area: true
-  field_publication_year: true
   field_rights_description: true
   field_section: true
   field_sector_industry_covered: true
-  field_sector_industry_other: true
   field_selected_for_analysis: true
   field_substance_description: true
   field_target_group: true
@@ -173,6 +170,7 @@ hidden:
   field_visualisation_material_typ: true
   field_worker_groups_other: true
   field_worker_groups_type: true
+  field_year: true
   langcode: true
   links: true
   search_api_excerpt: true
