@@ -26,7 +26,6 @@ process:
     -
       plugin: get
       source: nid
-  vid: vid
   type:
     - plugin: default_value
       default_value: musculoskeletal_disorders              # -----  CHANGE
@@ -80,18 +79,6 @@ process:
 
   #field collection field_msd_provider:
   field_year: field_publication_year
-  field_publication_year :
-    -
-      plugin: sub_process
-      source: field_publication_year
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: 'Y-m-d\TH:i:s'
-          from_timezone: 'Europe/Madrid'
-          to_timezone: 'Europe/Madrid'
-          source: value
   field_material_country:
     - plugin: sub_process
       source: field_material_country

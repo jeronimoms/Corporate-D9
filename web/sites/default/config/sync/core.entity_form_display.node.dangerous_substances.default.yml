@@ -42,11 +42,9 @@ dependencies:
     - field.field.node.dangerous_substances.field_prevention_measure_type
     - field.field.node.dangerous_substances.field_prevention_measures_other
     - field.field.node.dangerous_substances.field_priority_area
-    - field.field.node.dangerous_substances.field_publication_year
     - field.field.node.dangerous_substances.field_rights_description
     - field.field.node.dangerous_substances.field_section
     - field.field.node.dangerous_substances.field_sector_industry_covered
-    - field.field.node.dangerous_substances.field_sector_industry_other
     - field.field.node.dangerous_substances.field_selected_for_analysis
     - field.field.node.dangerous_substances.field_substance_description
     - field.field.node.dangerous_substances.field_target_group
@@ -58,11 +56,11 @@ dependencies:
     - field.field.node.dangerous_substances.field_visualisation_material_typ
     - field.field.node.dangerous_substances.field_worker_groups_other
     - field.field.node.dangerous_substances.field_worker_groups_type
+    - field.field.node.dangerous_substances.field_year
     - node.type.dangerous_substances
   module:
     - chosen_field
     - content_moderation
-    - datetime
     - field_group
     - languagefield
     - link
@@ -79,7 +77,7 @@ third_party_settings:
         - field_ownership_information
         - field_other_information
       parent_name: ''
-      weight: 47
+      weight: 48
       format_type: fieldset
       region: content
       format_settings:
@@ -88,6 +86,19 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Access condition'
+    group_year_of_publication:
+      children:
+        - field_year
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'YEAR OF PUBLICATION'
 id: node.dangerous_substances.default
 targetEntityType: node
 bundle: dangerous_substances
@@ -95,7 +106,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 36
+    weight: 37
     settings:
       rows: 9
       summary_rows: 3
@@ -105,19 +116,19 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 57
+    weight: 58
     region: content
     settings: {  }
     third_party_settings: {  }
   field_advertising:
-    weight: 48
+    weight: 49
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_available_in_languages:
-    weight: 11
+    weight: 12
     settings:
       format:
         name: name
@@ -125,13 +136,13 @@ content:
     type: languagefield_select
     region: content
   field_biological_hazard:
-    weight: 18
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_biological_hazard_other:
-    weight: 19
+    weight: 20
     settings:
       size: 60
       placeholder: ''
@@ -157,7 +168,7 @@ content:
     type: string_textfield
     region: content
   field_body_original:
-    weight: 37
+    weight: 38
     settings:
       rows: 5
       placeholder: ''
@@ -165,7 +176,7 @@ content:
     type: text_textarea
     region: content
   field_cas_number:
-    weight: 27
+    weight: 28
     settings:
       size: 60
       placeholder: ''
@@ -181,7 +192,7 @@ content:
     type: text_textarea
     region: content
   field_country_other:
-    weight: 10
+    weight: 11
     settings:
       size: 60
       placeholder: ''
@@ -215,7 +226,7 @@ content:
     type: text_textarea
     region: content
   field_ec_number:
-    weight: 28
+    weight: 29
     settings:
       size: 60
       placeholder: ''
@@ -223,13 +234,13 @@ content:
     type: string_textfield
     region: content
   field_evaluation:
-    weight: 40
+    weight: 41
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_evaluation_other:
-    weight: 41
+    weight: 42
     settings:
       size: 60
       placeholder: ''
@@ -255,13 +266,13 @@ content:
     type: string_textfield
     region: content
   field_exposure_route:
-    weight: 24
+    weight: 25
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_exposure_route_other:
-    weight: 25
+    weight: 26
     settings:
       size: 60
       placeholder: ''
@@ -307,13 +318,13 @@ content:
     third_party_settings: {  }
     region: content
   field_hazard_health_effects:
-    weight: 22
+    weight: 23
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_hazard_health_other:
-    weight: 23
+    weight: 24
     settings:
       size: 60
       placeholder: ''
@@ -339,7 +350,7 @@ content:
     type: string_textfield
     region: content
   field_hazard_physical_other:
-    weight: 21
+    weight: 22
     settings:
       size: 60
       placeholder: ''
@@ -365,20 +376,20 @@ content:
     type: string_textfield
     region: content
   field_hazard_physical_state:
-    weight: 20
+    weight: 21
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_image_media:
-    weight: 49
+    weight: 50
     settings:
       media_types: {  }
     third_party_settings: {  }
     type: media_library_widget
     region: content
   field_intellectual_property_righ:
-    weight: 45
+    weight: 46
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -390,7 +401,7 @@ content:
     type: options_select
     region: content
   field_languages_other:
-    weight: 12
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -423,13 +434,13 @@ content:
     type: string_textfield
     region: content
   field_material_country:
-    weight: 9
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_material_purpose_other:
-    weight: 35
+    weight: 36
     settings:
       size: 60
       placeholder: ''
@@ -455,13 +466,13 @@ content:
     type: string_textfield
     region: content
   field_material_purpose_type:
-    weight: 34
+    weight: 35
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_measurement_method:
-    weight: 29
+    weight: 30
     settings:
       size: 60
       placeholder: ''
@@ -469,7 +480,7 @@ content:
     type: string_textfield
     region: content
   field_media_format:
-    weight: 44
+    weight: 45
     settings:
       size: 60
       placeholder: ''
@@ -484,7 +495,7 @@ content:
       display_label: true
     third_party_settings: {  }
   field_notes:
-    weight: 51
+    weight: 52
     settings:
       rows: 5
       placeholder: ''
@@ -492,7 +503,7 @@ content:
     type: text_textarea
     region: content
   field_original_desc_language:
-    weight: 13
+    weight: 14
     settings:
       format:
         name: name
@@ -516,13 +527,13 @@ content:
     type: text_textarea
     region: content
   field_prevention_measure_type:
-    weight: 32
+    weight: 33
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_prevention_measures_other:
-    weight: 33
+    weight: 34
     settings:
       size: 60
       placeholder: ''
@@ -553,17 +564,8 @@ content:
     third_party_settings: {  }
     type: chosen_select
     region: content
-  field_publication_year:
-    weight: 8
-    settings:
-      increment: 15
-      date_order: YMD
-      time_type: '24'
-    third_party_settings: {  }
-    type: datetime_datelist
-    region: content
   field_rights_description:
-    weight: 46
+    weight: 47
     settings:
       size: 60
       placeholder: ''
@@ -577,29 +579,20 @@ content:
     type: options_select
     region: content
   field_sector_industry_covered:
-    weight: 14
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
-  field_sector_industry_other:
-    weight: 15
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings:
-      conditional_fields: {  }
-    type: string_textfield
-    region: content
   field_selected_for_analysis:
-    weight: 50
+    weight: 51
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_substance_description:
-    weight: 26
+    weight: 27
     settings:
       rows: 5
       placeholder: ''
@@ -615,13 +608,13 @@ content:
     type: string_textarea
     region: content
   field_target_group:
-    weight: 38
+    weight: 39
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_target_group_other:
-    weight: 39
+    weight: 40
     settings:
       size: 60
       placeholder: ''
@@ -647,13 +640,13 @@ content:
     type: string_textfield
     region: content
   field_tasks_covered:
-    weight: 16
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_tasks_other:
-    weight: 17
+    weight: 18
     settings:
       size: 60
       placeholder: ''
@@ -687,7 +680,7 @@ content:
     type: string_textfield
     region: content
   field_visualisation_mat_other:
-    weight: 43
+    weight: 44
     settings:
       size: 60
       placeholder: ''
@@ -713,13 +706,13 @@ content:
     type: string_textfield
     region: content
   field_visualisation_material_typ:
-    weight: 42
+    weight: 43
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_worker_groups_other:
-    weight: 31
+    weight: 32
     settings:
       size: 60
       placeholder: ''
@@ -745,26 +738,32 @@ content:
     type: string_textfield
     region: content
   field_worker_groups_type:
-    weight: 30
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_year:
+    weight: 59
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 52
+    weight: 53
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 53
+    weight: 54
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 55
+    weight: 56
     region: content
     settings:
       display_label: true
@@ -779,7 +778,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 56
+    weight: 57
     region: content
     settings:
       match_operator: CONTAINS
@@ -788,7 +787,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 54
+    weight: 55
     region: content
     settings: {  }
     third_party_settings: {  }
