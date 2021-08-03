@@ -1112,7 +1112,7 @@ h3.custom-border span {
 }
 
 h3.h3-files-resources {
-  font-weight: 600;
+  font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 1rem;
   display: none;
@@ -1486,6 +1486,7 @@ h3.home a:hover {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.25rem;
   color: #000;
+  letter-spacing: -0.02rem;
 }
 .view-related-icons .views-field-nothing a img {
   margin-top: 0.2rem;
@@ -2587,6 +2588,12 @@ body.path-aggregator article.aggregator-item .item-description {
 
 .field--name-body ol {
   padding-left: 40px;
+}
+
+/*** Banner Quiz ***/
+a.quiz-start-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
 }
 
 /* Breadcrumbs */
