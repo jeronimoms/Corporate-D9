@@ -1,0 +1,28 @@
+uuid: d7721326-60c5-473e-8460-c359616aacd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.worker_group_practical_tools_ds_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: workergroupspracticaltoolsds
+theme: ncwtheme
+region: sidebar_first
+weight: -11
+provider: null
+plugin: 'facet_block:worker_group_practical_tools_ds_'
+settings:
+  id: 'facet_block:worker_group_practical_tools_ds_'
+  label: 'Worker groups'
+  provider: facets
+  label_display: visible
+  block_id: workergroupspracticaltoolsds
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/practical-tools-dangerous-substances
+    negate: false

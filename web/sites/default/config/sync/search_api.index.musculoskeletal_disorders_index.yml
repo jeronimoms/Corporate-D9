@@ -1,0 +1,364 @@
+uuid: 04c4680e-0bc6-439c-a694-36f4221db299
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - node
+    - search_api
+  config:
+    - field.storage.node.field_material_country
+    - field.storage.node.field_body_original
+    - field.storage.node.field_hazards
+    - field.storage.node.field_hazards_other
+    - field.storage.node.field_health_effects
+    - field.storage.node.field_available_in_languages
+    - field.storage.node.field_languages_other
+    - field.storage.node.field_nominated_by_fop
+    - field.storage.node.field_original_desc_lang_other
+    - field.storage.node.field_prevention_measures
+    - field.storage.node.field_msd_priority_area
+    - field.storage.node.field_msd_provider
+    - field.storage.node.field_purpose_of_the_material
+    - field.storage.node.field_material_purpose_other
+    - field.storage.node.field_for_pictogram_guide
+    - field.storage.node.field_sector_industry_covered
+    - field.storage.node.field_target_audience
+    - field.storage.node.field_target_group_other
+    - field.storage.node.field_title_original
+    - field.storage.node.field_type_of_item
+    - field.storage.node.field_resource_type
+    - field.storage.node.field_resource_type_other
+    - field.storage.node.field_worker_groups_covered
+    - field.storage.node.field_year
+    - search_api.server.solr
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: musculoskeletal_disorders_index
+name: 'Musculoskeletal Disorders index'
+description: ''
+read_only: false
+field_settings:
+  field_available_in_languages:
+    label: Languages
+    datasource_id: 'entity:node'
+    property_path: field_available_in_languages
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_available_in_languages
+  field_body_original:
+    label: 'Description (original language)'
+    datasource_id: 'entity:node'
+    property_path: field_body_original
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body_original
+  field_for_pictogram_guide:
+    label: 'Recommended for EU-OSHA pictogram guide'
+    datasource_id: 'entity:node'
+    property_path: field_for_pictogram_guide
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_for_pictogram_guide
+  field_hazards:
+    label: Hazards
+    datasource_id: 'entity:node'
+    property_path: field_hazards
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_hazards
+  field_hazards_other:
+    label: 'Hazards other'
+    datasource_id: 'entity:node'
+    property_path: field_hazards_other
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_hazards_other
+  field_health_effects:
+    label: 'Health effects'
+    datasource_id: 'entity:node'
+    property_path: field_health_effects
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_health_effects
+  field_languages_other:
+    label: 'Languages other'
+    datasource_id: 'entity:node'
+    property_path: field_languages_other
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_languages_other
+  field_material_country:
+    label: Country
+    datasource_id: 'entity:node'
+    property_path: field_material_country
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_material_country
+  field_material_purpose_other:
+    label: 'Purpose of the material other'
+    datasource_id: 'entity:node'
+    property_path: field_material_purpose_other
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_material_purpose_other
+  field_msd_priority_area:
+    label: 'Priority area'
+    datasource_id: 'entity:node'
+    property_path: field_msd_priority_area
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_msd_priority_area
+  field_msd_provider:
+    label: Provider
+    datasource_id: 'entity:node'
+    property_path: field_msd_provider
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_msd_provider
+  field_nominated_by_fop:
+    label: 'Nominated by FOP'
+    datasource_id: 'entity:node'
+    property_path: field_nominated_by_fop
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_nominated_by_fop
+  field_original_desc_lang_other:
+    label: 'Original description languages other'
+    datasource_id: 'entity:node'
+    property_path: field_original_desc_lang_other
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_original_desc_lang_other
+  field_prevention_measures:
+    label: 'Prevention measures'
+    datasource_id: 'entity:node'
+    property_path: field_prevention_measures
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_prevention_measures
+  field_purpose_of_the_material:
+    label: 'Purpose of the material'
+    datasource_id: 'entity:node'
+    property_path: field_purpose_of_the_material
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_purpose_of_the_material
+  field_resource_type:
+    label: 'Type of visual resource'
+    datasource_id: 'entity:node'
+    property_path: field_resource_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_resource_type
+  field_resource_type_other:
+    label: 'Type of visual resource other'
+    datasource_id: 'entity:node'
+    property_path: field_resource_type_other
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_resource_type_other
+  field_sector_industry_covered:
+    label: 'Sector / Indrustry covered'
+    datasource_id: 'entity:node'
+    property_path: field_sector_industry_covered
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_sector_industry_covered
+  field_target_audience:
+    label: 'Target audience'
+    datasource_id: 'entity:node'
+    property_path: field_target_audience
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_target_audience
+  field_target_audience_1:
+    label: 'Target audience'
+    datasource_id: 'entity:node'
+    property_path: field_target_audience
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_target_audience
+  field_target_group_other:
+    label: 'Target audiences other'
+    datasource_id: 'entity:node'
+    property_path: field_target_group_other
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_target_group_other
+  field_title_original:
+    label: 'Title (Original)'
+    datasource_id: 'entity:node'
+    property_path: field_title_original
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_title_original
+  field_type_of_item:
+    label: 'Type of item'
+    datasource_id: 'entity:node'
+    property_path: field_type_of_item
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type_of_item
+  field_type_of_item_1:
+    label: 'Type of item'
+    datasource_id: 'entity:node'
+    property_path: field_type_of_item
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type_of_item
+  field_worker_groups_covered:
+    label: 'Worker groups covered (vulnerable groups etc.)'
+    datasource_id: 'entity:node'
+    property_path: field_worker_groups_covered
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_worker_groups_covered
+  field_year:
+    label: Year
+    datasource_id: 'entity:node'
+    property_path: field_year
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_year
+  langcode:
+    label: Language
+    datasource_id: 'entity:node'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - node
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: 'Authored by'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    dependencies:
+      module:
+        - node
+  url:
+    label: URI
+    property_path: search_api_url
+    type: string
+    configuration:
+      absolute: false
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - musculoskeletal_disorders
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: solr

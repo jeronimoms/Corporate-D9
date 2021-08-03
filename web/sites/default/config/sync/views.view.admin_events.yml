@@ -3676,11 +3676,15 @@ display:
             utf8_bom: '0'
             use_serializer_encode_only: false
       filename: events.csv
-      automatic_download: false
+      automatic_download: true
       store_in_public_file_directory: null
       redirect_to_display: none
       custom_redirect_path: false
       include_query_params: false
+      displays:
+        page_1: page_1
+        default: '0'
+        block_1: '0'
     cache_metadata:
       max-age: -1
       contexts:

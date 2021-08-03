@@ -10,7 +10,7 @@ dependencies:
 id: aggregatorfeed
 theme: ncwtheme
 region: sidebar_second_others
-weight: -47
+weight: -48
 provider: null
 plugin: aggregator_feed_block
 settings:
@@ -23,5 +23,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /about-eu-osha/press-room
+    pages: "/about-eu-osha/press-room\r\n/highlights\r\n/oshnews\r\n/themes/osh-e-tools"
     negate: false

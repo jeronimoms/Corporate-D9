@@ -10,7 +10,7 @@ dependencies:
 id: simplenewssubscription
 theme: ncwtheme
 region: sidebar_second_others
-weight: -43
+weight: -51
 provider: null
 plugin: simplenews_subscription_block
 settings:
@@ -25,5 +25,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "<front>\r\n/oshmail-newsletter"
+    pages: "<front>\r\n/oshmail-newsletter\r\n/themes/osh-e-tools\r\n/oshnews\r\n/highlights"
     negate: false

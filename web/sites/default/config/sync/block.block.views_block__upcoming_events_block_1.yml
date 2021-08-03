@@ -12,7 +12,7 @@ dependencies:
 id: views_block__upcoming_events_block_1
 theme: ncwtheme
 region: sidebar_second_others
-weight: -44
+weight: -49
 provider: null
 plugin: 'views_block:upcoming_events-block_1'
 settings:
@@ -25,5 +25,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/blog/*\r\n/highlights/*\r\n/oshnews\r\n/oshnews/*\r\n/tools-and-resources/seminars/*\r\n/tools-and-resources/blog\r\n/search/blog\r\n/node/5445"
+    pages: "/blog/*\r\n/highlights\r\n/highlights/*\r\n/oshnews\r\n/oshnews/*\r\n/tools-and-resources/seminars/*\r\n/tools-and-resources/blog\r\n/search/blog\r\n/node/5445\r\n/themes/osh-e-tools"
     negate: false

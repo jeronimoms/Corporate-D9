@@ -89,6 +89,12 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.content').slideToggle();
   });
 
+  //Facet accordions Practical Tools Dangerous substances
+  $(".page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
   // Facet with view FOPS detail
   $(".sidebar-first .view-fop-flags h3").click(function(){
     $(this).toggleClass("active");
@@ -282,6 +288,34 @@ jQuery(document).ready(function($) {
     }
   }
 
+  // Our story show more or less anniversaries
+  $(".about-eu-osha-eu-osha-2004-2019-our-story").ready(function () {
+    // Hide items on start
+    let elements = document.getElementsByClassName("anniversary-elements");
+    let isHidingElements = true
+    showOrHideNumberOfElements(elements, isHidingElements)
+    //Get view all button from the page footer
+    const viewAllButton = document.getElementsByClassName("field-content see-more-arrow pull-right")[0]
+    const viewAllText = viewAllButton.children.item(0).innerHTML
+    viewAllButton.children.item(0).innerHTML = viewAllText.split("/")[0]
+
+    viewAllButton.addEventListener("click", function () {
+      isHidingElements = !isHidingElements
+      showOrHideNumberOfElements(elements, isHidingElements)
+      viewAllButton.children.item(0).innerHTML = isHidingElements
+          ? viewAllText.split("/")[0]
+          : viewAllText.split("/")[1]
+    })
+  });
+
+  function showOrHideNumberOfElements(elements, toHide) {
+    // When it hides elements, only three should be displayed
+    const ELEMENTS_TO_SHOW = toHide ? 3 : 0;
+    for(let i = ELEMENTS_TO_SHOW; i < elements.length; ++i) {
+      elements[i].style.display = toHide ? "none" : "block"
+    }
+  }
+
   //Remove equal elements in MSD Glosaary filter
   if ($(".view-msd-glossary")[0]) {
     var seen = {};
@@ -306,6 +340,10 @@ jQuery(document).ready(function($) {
   if (window.location.href.indexOf("alphabetical") > -1) {
     $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
   }
+
+  // Accesskey for custom elements
+  $('#edit-lang-dropdown-select').attr('accessKey','L');
+  $('#edit-search-api-fulltext').attr('accessKey','Q');
 });
 
 //Move Language Selector to the menu responsive

@@ -624,7 +624,7 @@ display:
           automatic_width: false
           alignment: vertical
           col_class_default: false
-          col_class_custom: ''
+          col_class_custom: anniversary-elements
           row_class_default: false
           row_class_custom: 'revamp-row no-flex'
       defaults:
@@ -636,6 +636,8 @@ display:
         use_more_always: false
         use_more_text: false
         fields: false
+        use_ajax: false
+        footer: false
       row:
         type: fields
         options:
@@ -648,7 +650,7 @@ display:
         options:
           offset: 0
       title: ''
-      use_more: true
+      use_more: false
       use_more_always: false
       use_more_text: 'View all'
       fields:
@@ -958,6 +960,21 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      use_ajax: false
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<div id=\"view_all_button\" class=\"field-content see-more-arrow pull-right\">\r\n<a>View all/View less</a>\r\n</div>"
+            format: full_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
@@ -992,6 +1009,7 @@ display:
       defaults:
         style: false
         row: false
+        pager: false
       row:
         type: fields
         options:
@@ -999,6 +1017,11 @@ display:
           inline: {  }
           separator: ''
           hide_empty: false
+      pager:
+        type: some
+        options:
+          items_per_page: 2
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:

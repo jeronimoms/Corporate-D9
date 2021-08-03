@@ -80,6 +80,7 @@ class NfFilmDownloadController extends ControllerBase implements ContainerInject
       $media_file_id = $media->get('field_media_video_file')->getValue()['0']['target_id'];
       $file = $this->entityTypeManager->getStorage('file')->load($media_file_id);
 
+
       $headers = [
         'Content-Type' => 'text/' . $file->getMimeType(),
         'Content-Description' => 'File Download',

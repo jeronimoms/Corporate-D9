@@ -103,6 +103,20 @@ body{
         transition: background-color 800ms linear;
       }
     }
+    &.arrow-back {
+      a {
+        padding: 10px;
+        margin-right: 0;
+        background-image: none;
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 40px;
+          height: 10px;
+          background: url(../images/arrow-back.png) no-repeat;
+        }
+      }
+    }
   }
 }
 
@@ -393,6 +407,14 @@ body {
   }
 }
 
+a[href^="mailto:"] {
+  border-bottom: 1px solid $bg-color-pink;
+  &:hover{
+    border-bottom: 1px solid $bg-color-blue;
+    text-decoration: none;
+  }
+}
+
 /* END Common elements */
 
 /* Twetter Block */
@@ -445,21 +467,9 @@ body {
   }
 }
 
-/* Blog Detail */
-.node--type-blog{
-   .field--name-field-image-caption{
-    float: left;
-    margin-right: 1rem;
-    clear: both;
-  }
-  .field--name-field-summary-html{
-    color: $text-color-blue;
-    display: table;
-  }
-}
 
-/* News - Highlights - Blogs */
-.node--type-news, .node--type-highlight{
+/* Highlights - Blogs */
+.node--type-highlight{
   .field--name-field-image-media{
     float: left;
     margin-right: 1rem;
@@ -925,5 +935,64 @@ body.path-aggregator{
   .form-item-node-id{
     display: none;
   }
+}
+
+/*** External URL ***/
+.node--type-external-url {
+  .field--name-field-external-url a {
+    display: inline-block;
+    margin: 0 0 8px 0;
+    text-decoration: none;
+    border-bottom: 1px solid $text-color-pink;
+    &:after {
+      width: 8px;
+      height: 10px;
+      display: inline-block;
+      content: "";
+      margin: 0 0 0 3px;
+      background: url(../images/external_link.png) no-repeat scroll 0 42% rgba(0,0,0,0);
+      margin-left: 0.3em!important;
+      background-size: 8px 10px;
+      opacity: 0.85;
+    }
+  }
+}
+
+.block-oshwiki-static {
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 20px !important;
+  background: $bg-color-blue-block;
+  .OSHWikiDivTit {
+    display: flex;
+    align-items: center;
+  }
+  .OSHWikiTitle {
+    font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
+    font-size: 1.35rem;
+  }
+  .imgOSHWiki {
+    margin-right: 0.5rem;
+  }
+  .p2 {
+    font-size: 0.8rem;
+    padding: 1.3rem 0;
+  }
+  .p3 {
+    text-align: right;
+    margin-right: 10px;
+  }
+}
+
+.field--name-body {
+  ol {
+    padding-left: 40px;
+  }
+}
+
+/*** Banner Quiz ***/
+a.quiz-start-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
 }
 
