@@ -1291,6 +1291,42 @@ h3.home a:hover {
   margin-right: 5px;
 }
 
+.block-menu-sidebar-first .menu {
+  display: block;
+}
+.block-menu-sidebar-first .menu .menu-item {
+  background: url(../images/back-tit-blue.png) repeat-x scroll 0 100% transparent;
+}
+.block-menu-sidebar-first .menu .menu-item a {
+  color: #57575a;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.block-menu-sidebar-first .menu .menu-item a.active, .block-menu-sidebar-first .menu .menu-item a.active-trail {
+  color: #003399;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rrem;
+  font-weight: bold;
+  text-decoration: none;
+  background: url(../images/flecha.png) no-repeat scroll right center transparent;
+  padding-right: 2em;
+}
+
+.node--type-thesaurus .block-menu-sidebar-first .menu {
+  display: block;
+}
+.node--type-thesaurus .block-menu-sidebar-first .menu .menu-item:last-child a {
+  color: #003399;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: none;
+  background: url(../images/flecha.png) no-repeat scroll right center transparent;
+  padding-right: 2em;
+}
+
 .mean-expand-custom {
   display: flex;
   justify-content: center;
@@ -4467,6 +4503,8 @@ body.contact form.contact-form button.btn-primary {
 
 .node--type-infographic h1 {
   width: 70%;
+  font-size: 1.35rem;
+  font-weight: normal;
 }
 
 @media only screen and (max-width: 768px) {
