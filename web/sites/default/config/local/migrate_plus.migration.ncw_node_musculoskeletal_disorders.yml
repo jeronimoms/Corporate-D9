@@ -20,7 +20,6 @@ process:
     -
       plugin: get
       source: nid
-  vid: vid
   type:
     -
       plugin: default_value
