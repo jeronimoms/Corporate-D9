@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_directive_type
     - node.type.directive
-    - taxonomy.vocabulary.directive_type
+    - taxonomy.vocabulary.legislation_category
 id: node.directive.field_directive_type
 field_name: field_directive_type
 entity_type: node
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      directive_type: directive_type
+      legislation_category: legislation_category
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: directive_type
+    auto_create_bundle: ''
 field_type: entity_reference
