@@ -1,4 +1,4 @@
-uuid: ffe02905-0185-41eb-97ea-f39abd860348
+uuid: b8a16d94-6ed0-4f54-b19c-9691ab9b98cd
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ url_alias: year_of_publication_dangerous_substances_
 weight: 0
 min_count: 1
 show_only_one_result: false
-field_identifier: field_publication_year
+field_identifier: field_year
 facet_source_id: 'search_api:views_page__dangerous_substances_overview__page_1'
 widget:
   type: links
@@ -40,21 +40,19 @@ processor_configs:
     weights:
       sort: 20
     settings:
-      sort: ASC
+      sort: DESC
   count_widget_order:
     processor_id: count_widget_order
     weights:
       sort: 30
     settings:
       sort: DESC
-  date_item:
-    processor_id: date_item
+  display_value_widget_order:
+    processor_id: display_value_widget_order
     weights:
-      build: 35
+      sort: 40
     settings:
-      date_display: actual_date
-      granularity: 6
-      date_format: 'Y'
+      sort: DESC
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
