@@ -28,7 +28,6 @@ class OieRestStyle extends Serializer implements CacheableDependencyInterface{
     $rows = [];
 
     foreach ($this->view->result as $row_index => $row) {
-      ksm($row);
       $this->view->row_index = $row_index;
       $rows[] = ['item' => $this->view->rowPlugin->render($row)];
     }
@@ -46,7 +45,6 @@ class OieRestStyle extends Serializer implements CacheableDependencyInterface{
     $result = [
       'items' => $rows
     ];
-
 
     return $this->serializer->serialize($result, $content_type, ['views_style_plugin' => $this]);
   }
