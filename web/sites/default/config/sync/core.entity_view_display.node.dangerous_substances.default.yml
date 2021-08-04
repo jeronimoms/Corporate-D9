@@ -42,11 +42,9 @@ dependencies:
     - field.field.node.dangerous_substances.field_prevention_measure_type
     - field.field.node.dangerous_substances.field_prevention_measures_other
     - field.field.node.dangerous_substances.field_priority_area
-    - field.field.node.dangerous_substances.field_publication_year
     - field.field.node.dangerous_substances.field_rights_description
     - field.field.node.dangerous_substances.field_section
     - field.field.node.dangerous_substances.field_sector_industry_covered
-    - field.field.node.dangerous_substances.field_sector_industry_other
     - field.field.node.dangerous_substances.field_selected_for_analysis
     - field.field.node.dangerous_substances.field_substance_description
     - field.field.node.dangerous_substances.field_target_group
@@ -58,9 +56,9 @@ dependencies:
     - field.field.node.dangerous_substances.field_visualisation_material_typ
     - field.field.node.dangerous_substances.field_worker_groups_other
     - field.field.node.dangerous_substances.field_worker_groups_type
+    - field.field.node.dangerous_substances.field_year
     - node.type.dangerous_substances
   module:
-    - datetime
     - entity_reference_revisions
     - languagefield
     - link
@@ -388,15 +386,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_publication_year:
-    weight: 48
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: only_year
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_rights_description:
     weight: 39
     label: above
@@ -412,14 +401,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_sector_industry_other:
-    weight: 8
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_selected_for_analysis:
     weight: 47
@@ -516,6 +497,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_year:
+    weight: 55
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
 hidden:
   addtoany: true
