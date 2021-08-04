@@ -1,0 +1,28 @@
+uuid: 8b835a30-85fd-4693-86ec-7629d37a904d
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.worker_groups_covered_msd_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: workergroupscoveredmsd
+theme: ncwtheme
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'facet_block:worker_groups_covered_msd_'
+settings:
+  id: 'facet_block:worker_groups_covered_msd_'
+  label: 'Worker groups'
+  provider: facets
+  label_display: visible
+  block_id: workergroupscoveredmsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/search
+    negate: false

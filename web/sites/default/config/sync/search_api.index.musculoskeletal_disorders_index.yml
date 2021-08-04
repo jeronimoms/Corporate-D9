@@ -230,14 +230,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_target_audience
-  field_target_audience_1:
-    label: 'Target audience'
-    datasource_id: 'entity:node'
-    property_path: field_target_audience
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_target_audience
   field_target_group_other:
     label: 'Target audiences other'
     datasource_id: 'entity:node'
@@ -255,14 +247,6 @@ field_settings:
       config:
         - field.storage.node.field_title_original
   field_type_of_item:
-    label: 'Type of item'
-    datasource_id: 'entity:node'
-    property_path: field_type_of_item
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_type_of_item
-  field_type_of_item_1:
     label: 'Type of item'
     datasource_id: 'entity:node'
     property_path: field_type_of_item

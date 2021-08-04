@@ -1,0 +1,28 @@
+uuid: 18ea8b6d-75f5-4a3f-b25d-3f51d794cb30
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.type_of_item_msd_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: typemsd
+theme: ncwtheme
+region: sidebar_first
+weight: -10
+provider: null
+plugin: 'facet_block:type_of_item_msd_'
+settings:
+  id: 'facet_block:type_of_item_msd_'
+  label: Type
+  provider: facets
+  label_display: visible
+  block_id: typemsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/search
+    negate: false
