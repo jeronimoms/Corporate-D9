@@ -1,0 +1,28 @@
+uuid: 4d4a3e9b-dfee-4e69-bf13-9a84ecce16fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.year_of_publication_msd_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: yearofpublicationmsd
+theme: ncwtheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:year_of_publication_msd_'
+settings:
+  id: 'facet_block:year_of_publication_msd_'
+  label: 'Year of publication'
+  provider: facets
+  label_display: visible
+  block_id: yearofpublicationmsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/search
+    negate: false

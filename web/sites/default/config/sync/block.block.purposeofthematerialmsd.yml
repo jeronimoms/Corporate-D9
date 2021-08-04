@@ -1,0 +1,28 @@
+uuid: b27e439a-cd7e-436b-88c6-541890c92eb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.purpose_of_the_material_msd_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: purposeofthematerialmsd
+theme: ncwtheme
+region: sidebar_first
+weight: -1
+provider: null
+plugin: 'facet_block:purpose_of_the_material_msd_'
+settings:
+  id: 'facet_block:purpose_of_the_material_msd_'
+  label: 'Purpose of the material'
+  provider: facets
+  label_display: visible
+  block_id: purposeofthematerialmsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/search
+    negate: false

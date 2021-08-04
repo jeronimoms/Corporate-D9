@@ -282,16 +282,36 @@ display:
           group: 1
           exposed: true
           expose:
+            operator_id: search_api_fulltext_op
+            label: Search
+            description: ''
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: search_api_fulltext
-            label: 'Fulltext search'
-            description: null
+            required: false
             remember: false
             multiple: false
-            required: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
+            placeholder: ''
+            expose_fields: false
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -334,7 +354,7 @@ display:
           expose:
             label: Relevance
           plugin_id: search_api
-      title: 'Musculoskeletal disorders available '
+      title: 'Musculoskeletal disorders'
       header: {  }
       footer:
         result:
@@ -374,6 +394,10 @@ display:
       display_extenders:
         metatag_display_extender: {  }
       path: themes/musculoskeletal-disorders/search
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
