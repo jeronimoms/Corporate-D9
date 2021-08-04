@@ -154,6 +154,7 @@ process:
       process:
         target_id: tid
   field_thesaurus_2020: field_thesaurus_2020
+  moderation_state: moderation_state
   field_image_media:
     plugin: file_id_lookup
     source: field_image

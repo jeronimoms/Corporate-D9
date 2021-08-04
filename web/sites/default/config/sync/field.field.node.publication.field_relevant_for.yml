@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_relevant_for
     - node.type.publication
-    - taxonomy.vocabulary.publication_types
+    - taxonomy.vocabulary.relevant_for
 id: node.publication.field_relevant_for
 field_name: field_relevant_for
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      publication_types: publication_types
+      relevant_for: relevant_for
     sort:
       field: name
       direction: asc

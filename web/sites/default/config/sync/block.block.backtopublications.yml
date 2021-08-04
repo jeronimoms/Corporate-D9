@@ -2,8 +2,11 @@ uuid: 1d2713fb-7c2b-43da-b11c-c329ef89f3c0
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:00162155-bbc7-4f1f-9754-79d5d44a41ee'
   module:
     - block_class
+    - block_content
     - ctools
   theme:
     - ncwtheme
@@ -13,7 +16,7 @@ third_party_settings:
 id: backtopublications
 theme: ncwtheme
 region: content
-weight: -46
+weight: -47
 provider: null
 plugin: 'block_content:00162155-bbc7-4f1f-9754-79d5d44a41ee'
 settings:
