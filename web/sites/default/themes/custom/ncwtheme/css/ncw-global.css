@@ -2632,6 +2632,46 @@ a.quiz-start-link:hover {
   text-decoration: none;
 }
 
+/*** Page 25th anniversary ***/
+.page-node-15070 .view-landing-menu .view-content.row {
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+.page-node-15070 .view-landing-menu .list--item {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0 0.7rem 0;
+  max-width: 32%;
+  flex: 0 1 32%;
+}
+.page-node-15070 .view-landing-menu .list--item .menu-link-text {
+  border-bottom: 10px solid #d2dced;
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  min-height: 60px;
+}
+.page-node-15070 .view-landing-menu .list--item .menu-link-text a {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #003399;
+  font-size: 1.1875rem;
+  line-height: 1;
+}
+.page-node-15070 .view-landing-menu .list--item img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
