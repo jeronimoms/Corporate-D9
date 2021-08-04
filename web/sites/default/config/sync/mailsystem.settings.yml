@@ -1,6 +1,6 @@
 theme: newsletter_bilbomatica
 defaults:
-  sender: php_mail
+  sender: SMTPMailSystem
   formatter: php_mail
 _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
