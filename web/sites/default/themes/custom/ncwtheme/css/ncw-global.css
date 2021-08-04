@@ -1112,7 +1112,7 @@ h3.custom-border span {
 }
 
 h3.h3-files-resources {
-  font-weight: 600;
+  font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 1rem;
   display: none;
@@ -1289,6 +1289,42 @@ h3.home a:hover {
 .sidebar-first .views-exposed-form .btn-primary {
   margin-left: 0;
   margin-right: 5px;
+}
+
+.block-menu-sidebar-first .menu {
+  display: block;
+}
+.block-menu-sidebar-first .menu .menu-item {
+  background: url(../images/back-tit-blue.png) repeat-x scroll 0 100% transparent;
+}
+.block-menu-sidebar-first .menu .menu-item a {
+  color: #57575a;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.block-menu-sidebar-first .menu .menu-item a.active, .block-menu-sidebar-first .menu .menu-item a.active-trail {
+  color: #003399;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rrem;
+  font-weight: bold;
+  text-decoration: none;
+  background: url(../images/flecha.png) no-repeat scroll right center transparent;
+  padding-right: 2em;
+}
+
+.node--type-thesaurus .block-menu-sidebar-first .menu {
+  display: block;
+}
+.node--type-thesaurus .block-menu-sidebar-first .menu .menu-item:last-child a {
+  color: #003399;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: none;
+  background: url(../images/flecha.png) no-repeat scroll right center transparent;
+  padding-right: 2em;
 }
 
 .mean-expand-custom {
@@ -1486,6 +1522,7 @@ h3.home a:hover {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.25rem;
   color: #000;
+  letter-spacing: -0.02rem;
 }
 .view-related-icons .views-field-nothing a img {
   margin-top: 0.2rem;
@@ -2587,6 +2624,52 @@ body.path-aggregator article.aggregator-item .item-description {
 
 .field--name-body ol {
   padding-left: 40px;
+}
+
+/*** Banner Quiz ***/
+a.quiz-start-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/*** Page 25th anniversary ***/
+.page-node-15070 .view-landing-menu .view-content.row {
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+.page-node-15070 .view-landing-menu .list--item {
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0 1rem 0;
+  max-width: 32%;
+  flex: 0 1 32%;
+}
+.page-node-15070 .view-landing-menu .list--item .menu-link-text {
+  border-bottom: 10px solid #d2dced;
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  min-height: 60px;
+}
+.page-node-15070 .view-landing-menu .list--item .menu-link-text a {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #003399;
+  font-size: 1.1875rem;
+  line-height: 1.2;
+}
+.page-node-15070 .view-landing-menu .list--item img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Breadcrumbs */
@@ -4389,7 +4472,7 @@ body.contact form.contact-form button.btn-primary {
   padding-bottom: 5px;
 }
 .view-view-glossary .views-field-name strong {
-  font-weight: 600;
+  font-weight: bold;
 }
 .view-view-glossary p {
   margin-bottom: 0;
@@ -4460,6 +4543,8 @@ body.contact form.contact-form button.btn-primary {
 
 .node--type-infographic h1 {
   width: 70%;
+  font-size: 1.35rem;
+  font-weight: normal;
 }
 
 @media only screen and (max-width: 768px) {
