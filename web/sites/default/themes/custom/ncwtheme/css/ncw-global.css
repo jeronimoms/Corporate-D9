@@ -1112,7 +1112,7 @@ h3.custom-border span {
 }
 
 h3.h3-files-resources {
-  font-weight: 600;
+  font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 1rem;
   display: none;
@@ -1289,6 +1289,42 @@ h3.home a:hover {
 .sidebar-first .views-exposed-form .btn-primary {
   margin-left: 0;
   margin-right: 5px;
+}
+
+.block-menu-sidebar-first .menu {
+  display: block;
+}
+.block-menu-sidebar-first .menu .menu-item {
+  background: url(../images/back-tit-blue.png) repeat-x scroll 0 100% transparent;
+}
+.block-menu-sidebar-first .menu .menu-item a {
+  color: #57575a;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.block-menu-sidebar-first .menu .menu-item a.active, .block-menu-sidebar-first .menu .menu-item a.active-trail {
+  color: #003399;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rrem;
+  font-weight: bold;
+  text-decoration: none;
+  background: url(../images/flecha.png) no-repeat scroll right center transparent;
+  padding-right: 2em;
+}
+
+.node--type-thesaurus .block-menu-sidebar-first .menu {
+  display: block;
+}
+.node--type-thesaurus .block-menu-sidebar-first .menu .menu-item:last-child a {
+  color: #003399;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: none;
+  background: url(../images/flecha.png) no-repeat scroll right center transparent;
+  padding-right: 2em;
 }
 
 .mean-expand-custom {
@@ -1486,6 +1522,7 @@ h3.home a:hover {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.25rem;
   color: #000;
+  letter-spacing: -0.02rem;
 }
 .view-related-icons .views-field-nothing a img {
   margin-top: 0.2rem;
@@ -2096,6 +2133,14 @@ body ul li .introduction-title a:hover {
   text-decoration: none;
 }
 
+a[href^="mailto:"] {
+  border-bottom: 1px solid #c72272;
+}
+a[href^="mailto:"]:hover {
+  border-bottom: 1px solid #003399;
+  text-decoration: none;
+}
+
 /* END Common elements */
 /* Twetter Block */
 .block-twitter-block {
@@ -2575,6 +2620,56 @@ body.path-aggregator article.aggregator-item .item-description {
 .block-oshwiki-static .p3 {
   text-align: right;
   margin-right: 10px;
+}
+
+.field--name-body ol {
+  padding-left: 40px;
+}
+
+/*** Banner Quiz ***/
+a.quiz-start-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/*** Page 25th anniversary ***/
+.page-node-15070 .view-landing-menu .view-content.row {
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+.page-node-15070 .view-landing-menu .list--item {
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0 1rem 0;
+  max-width: 32%;
+  flex: 0 1 32%;
+}
+.page-node-15070 .view-landing-menu .list--item .menu-link-text {
+  border-bottom: 10px solid #d2dced;
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  min-height: 60px;
+}
+.page-node-15070 .view-landing-menu .list--item .menu-link-text a {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #003399;
+  font-size: 1.1875rem;
+  line-height: 1.2;
+}
+.page-node-15070 .view-landing-menu .list--item img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Breadcrumbs */
@@ -3719,6 +3814,9 @@ body.user-logged-in.toolbar-tray-open #header {
   padding-left: 0;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 65px;
   border-left: 0;
   text-align: center;
@@ -3728,7 +3826,7 @@ body.user-logged-in.toolbar-tray-open #header {
   width: 42px;
   height: 22px;
   text-indent: -9999px;
-  background: url(../images/ico_home.png) no-repeat 10px 0px;
+  background: url(../images/ico_home.png) no-repeat center center;
 }
 .navbar #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) .field--type-entity-reference {
   margin: 0;
@@ -4374,7 +4472,7 @@ body.contact form.contact-form button.btn-primary {
   padding-bottom: 5px;
 }
 .view-view-glossary .views-field-name strong {
-  font-weight: 600;
+  font-weight: bold;
 }
 .view-view-glossary p {
   margin-bottom: 0;
@@ -4445,6 +4543,8 @@ body.contact form.contact-form button.btn-primary {
 
 .node--type-infographic h1 {
   width: 70%;
+  font-size: 1.35rem;
+  font-weight: normal;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4701,22 +4801,33 @@ body.node--type-publication {
   width: 100%;
   padding-left: 2rem;
 }
+.node--type-publication .publications-detail-right-column h2 {
+  margin-bottom: 21px;
+  font-weight: normal;
+  padding: 0;
+  font-size: 1.3rem;
+}
 .node--type-publication .field--name-field-image-media img {
   float: left;
 }
 .node--type-publication .content-publication-info {
+  padding: 14px 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .node--type-publication .content-publication-info .content-label {
   display: flex;
+  align-items: flex-start;
+  color: #003399;
 }
 .node--type-publication .content-publication-info .content-label .label {
+  font-size: 0.9rem;
   padding-right: 5px;
 }
 .node--type-publication .content-publication-info .content-label .field {
+  padding: 0;
   font-size: 0.9rem;
-  line-height: 20px;
+  line-height: 24px;
 }
 .node--type-publication .content-publication-info .content-label:nth-child(1) {
   padding-right: 5px;
@@ -4760,6 +4871,71 @@ body.node--type-publication {
 .node--type-publication .related-resources-fluid .node--type-publication h2 {
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+.field--name-field-aditional-resources .publication-field {
+  width: 100%;
+  background: url(../images/back-tit-blue.png) repeat-x scroll 0 100% transparent;
+  margin-bottom: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+.field--name-field-aditional-resources .publication-field .layout__region--content {
+  display: flex;
+  gap: 24px;
+}
+.field--name-field-aditional-resources .publication-field .field {
+  color: #003399;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-image-media {
+  max-width: 155px;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-date {
+  padding-top: 14px;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type {
+  color: #003399;
+  font-size: 0.875rem;
+  display: flex;
+  padding: 0;
+  line-height: 24px;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type .field__label {
+  font-weight: bold;
+}
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type .field__label:after {
+  display: inline-block;
+  content: ":";
+  margin: 0 3px 0 0;
+}
+.field--name-field-aditional-resources .publication-field .field-name-field-pages-count {
+  padding-bottom: 14px;
+  display: flex;
+  font-size: 0.875rem;
+}
+.field--name-field-aditional-resources .publication-field .field-name-field-pages-count .field-label-inline {
+  margin: 0 0 0 3px;
+  order: 2;
+}
+.field--name-field-aditional-resources .publication-field h2 {
+  margin-bottom: 21px;
+  font-weight: normal;
+  padding: 0;
+  font-size: 1.125rem;
+}
+.field--name-field-aditional-resources .publication-field .field--name-node-link a {
+  transition: all 0.25s ease-in-out;
+  background: url(../images/flecha.png) no-repeat scroll 89% 53% transparent;
+  padding: 0.5em 3em 0.5em 1em !important;
+  text-decoration: none;
+  padding-left: 0em;
+  border-bottom: 0px !important;
+  font-weight: bold;
+  font-size: 0.785rem;
+}
+.field--name-field-aditional-resources .publication-field .field--name-node-link a:hover {
+  text-decoration: none;
+  background-color: #003399;
+  color: white;
 }
 
 /* Rsponsive */

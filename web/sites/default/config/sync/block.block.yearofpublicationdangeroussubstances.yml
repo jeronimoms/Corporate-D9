@@ -1,4 +1,4 @@
-uuid: a45e056c-9236-4882-b864-fc78dd48e26f
+uuid: f3931a4d-655c-4c74-b873-d8dd1e8eec06
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ dependencies:
 id: yearofpublicationdangeroussubstances
 theme: ncwtheme
 region: sidebar_first
-weight: -24
+weight: -33
 provider: null
 plugin: 'facet_block:year_of_publication_dangerous_substances_'
 settings:

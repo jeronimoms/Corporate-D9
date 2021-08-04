@@ -20,13 +20,13 @@ bundle: main
 mode: landing_menu
 content:
   children:
-    weight: 1
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_image_menu_main:
     type: media_thumbnail
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       image_style: ''
@@ -40,5 +40,6 @@ content:
         token: ''
     region: content
 hidden:
+  breadcrumbs: true
   langcode: true
   search_api_excerpt: true

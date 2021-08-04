@@ -48,7 +48,7 @@ dependencies:
     - field.storage.node.field_visualisation_material_typ
     - field.storage.node.field_external_url
     - field.storage.node.field_worker_groups_type
-    - field.storage.node.field_publication_year
+    - field.storage.node.field_year
     - search_api.server.solr
 third_party_settings:
   search_api_solr:
@@ -331,14 +331,6 @@ field_settings:
         - field.storage.paragraph.field_provider_name_original
       module:
         - paragraphs
-  field_publication_year:
-    label: 'Year of publication'
-    datasource_id: 'entity:node'
-    property_path: field_publication_year
-    type: date
-    dependencies:
-      config:
-        - field.storage.node.field_publication_year
   field_rights_description:
     label: 'Rights description'
     datasource_id: 'entity:node'
@@ -422,6 +414,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_worker_groups_type
+  field_year:
+    label: Year
+    datasource_id: 'entity:node'
+    property_path: field_year
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_year
   langcode:
     label: Language
     datasource_id: 'entity:node'

@@ -407,6 +407,14 @@ body {
   }
 }
 
+a[href^="mailto:"] {
+  border-bottom: 1px solid $bg-color-pink;
+  &:hover{
+    border-bottom: 1px solid $bg-color-blue;
+    text-decoration: none;
+  }
+}
+
 /* END Common elements */
 
 /* Twetter Block */
@@ -976,3 +984,58 @@ body.path-aggregator{
   }
 }
 
+.field--name-body {
+  ol {
+    padding-left: 40px;
+  }
+}
+
+/*** Banner Quiz ***/
+a.quiz-start-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/*** Page 25th anniversary ***/
+.page-node-15070 {
+  .view-landing-menu {
+    .view-content.row {
+      padding: 0 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2%;
+    }
+    .list--item {
+      height: 170px;
+      display: flex;
+      flex-direction: column;
+      margin: 0.5rem 0 1rem 0;
+      max-width: 32%;
+      flex: 0 1 32%;
+      .menu-link-text {
+        border-bottom: 10px solid #d2dced;
+        display: flex;
+        flex: 1;
+        align-items: flex-start;
+        min-height: 60px;
+        a {
+          display: flex;
+          align-items: flex-end;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          font-family: 'Open Sans Condensed',sans-serif;
+          font-weight: bold;
+          text-decoration: none;
+          color: $text-color-blue;
+          font-size: 1.1875rem;
+          line-height: 1.2;
+        }
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

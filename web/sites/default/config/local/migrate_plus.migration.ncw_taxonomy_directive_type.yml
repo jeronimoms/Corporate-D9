@@ -1,0 +1,44 @@
+uuid: 664af136-409c-4d14-a6da-e0087fe81593
+langcode: en
+status: true
+dependencies: {  }
+id: ncw_taxonomy_directive_type
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_migrate
+label: 'Terms: directive_type'
+source:
+  plugin: d7_taxonomy_term
+  bundle: directive_type
+process:
+  tid: tid
+  vid:
+    -
+      plugin: default_value
+      default_value: directive_type
+  name: name
+  description/value: description
+  description/format: format
+  weight: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: ncw_taxonomy_directive_type
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies:
+  optional:
+    - d7_field_instance
