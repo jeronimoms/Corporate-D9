@@ -2,10 +2,7 @@ uuid: 201a9ef5-4dfa-4fdf-b3cc-bde5702dc5dd
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:block_node_views:d1c9992d-0155-44c1-917e-b7dd23dc5ed1'
   module:
-    - block_content
     - system
   theme:
     - ncwtheme

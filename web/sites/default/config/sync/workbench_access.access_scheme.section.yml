@@ -3,7 +3,25 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.25th_anniversary.field_section
     - field.field.node.article.field_section
+    - field.field.node.blog.field_section
+    - field.field.node.calls.field_section
+    - field.field.node.dangerous_substances.field_section
+    - field.field.node.directive.field_section
+    - field.field.node.e_guide.field_section
+    - field.field.node.fop_page.field_section
+    - field.field.node.gallery.field_section
+    - field.field.node.guideline.field_section
+    - field.field.node.highlight.field_section
+    - field.field.node.infographic.field_section
+    - field.field.node.job_vacancies.field_section
+    - field.field.node.musculoskeletal_disorders.field_section
+    - field.field.node.news.field_section
+    - field.field.node.press_release.field_section
+    - field.field.node.publication.field_section
+    - field.field.node.register_records.field_section
+    - field.field.node.seminar.field_section
     - taxonomy.vocabulary.section
 id: section
 label: Section
@@ -16,4 +34,76 @@ scheme_settings:
     -
       entity_type: node
       bundle: article
+      field: field_section
+    -
+      entity_type: node
+      bundle: publication
+      field: field_section
+    -
+      entity_type: node
+      bundle: infographic
+      field: field_section
+    -
+      entity_type: node
+      bundle: calls
+      field: field_section
+    -
+      entity_type: node
+      bundle: blog
+      field: field_section
+    -
+      entity_type: node
+      bundle: e_guide
+      field: field_section
+    -
+      entity_type: node
+      bundle: directive
+      field: field_section
+    -
+      entity_type: node
+      bundle: dangerous_substances
+      field: field_section
+    -
+      entity_type: node
+      bundle: job_vacancies
+      field: field_section
+    -
+      entity_type: node
+      bundle: guideline
+      field: field_section
+    -
+      entity_type: node
+      bundle: fop_page
+      field: field_section
+    -
+      entity_type: node
+      bundle: seminar
+      field: field_section
+    -
+      entity_type: node
+      bundle: register_records
+      field: field_section
+    -
+      entity_type: node
+      bundle: press_release
+      field: field_section
+    -
+      entity_type: node
+      bundle: musculoskeletal_disorders
+      field: field_section
+    -
+      entity_type: node
+      bundle: news
+      field: field_section
+    -
+      entity_type: node
+      bundle: highlight
+      field: field_section
+    -
+      entity_type: node
+      bundle: 25th_anniversary
+      field: field_section
+    -
+      entity_type: node
+      bundle: gallery
       field: field_section

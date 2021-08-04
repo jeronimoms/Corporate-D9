@@ -2,8 +2,11 @@ uuid: 7b9a0301-ce8e-436b-b635-5a68a383e1dd
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:b75c999b-4f85-43cc-a24a-52e24c9be0e3'
   module:
     - block_class
+    - block_content
     - system
   theme:
     - ncwtheme
@@ -27,5 +30,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /tools-and-resources/oira
+    pages: "/tools-and-resources/oira\r\n/tools-and-resources/oshwiki"
     negate: false

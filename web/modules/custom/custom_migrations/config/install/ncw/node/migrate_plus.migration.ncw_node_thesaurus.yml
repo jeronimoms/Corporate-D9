@@ -137,11 +137,3 @@ dependencies:
   enforced:
     module:
       - custom_migrations
-
-# Declare optional dependencies on another migration for this migration.
-# This one has none.
-migration_dependencies:
-  required:
-    - d7_user
-
-######################## DEPENDENCIES #####################

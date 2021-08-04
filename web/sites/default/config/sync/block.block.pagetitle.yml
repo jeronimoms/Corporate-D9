@@ -1,0 +1,24 @@
+uuid: 5cb0e437-bdab-46eb-9ba0-6fa29e524128
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ncwtheme
+id: pagetitle
+theme: ncwtheme
+region: content
+weight: -48
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/publications/topic/*'
+    negate: false
