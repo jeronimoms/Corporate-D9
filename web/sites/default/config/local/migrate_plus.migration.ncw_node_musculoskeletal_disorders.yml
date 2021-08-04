@@ -71,18 +71,6 @@ process:
     plugin: field_link
     source: field_external_url
   field_year: field_publication_year
-  field_publication_year:
-    -
-      plugin: sub_process
-      source: field_publication_year
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: 'Y-m-d\TH:i:s'
-          from_timezone: Europe/Madrid
-          to_timezone: Europe/Madrid
-          source: value
   field_material_country:
     -
       plugin: sub_process

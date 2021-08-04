@@ -163,7 +163,13 @@ process:
   field_author: field_author
   field_banner_publications_office: field_banner_publications_office
 
-  field_related_oshwiki_articles: field_related_oshwiki_articles
+  field_related_oshwiki_articles:
+    -
+      plugin: sub_process
+      source: field_related_oshwiki_articles
+      process:
+        target_id: tid
+
   field_related_publications: field_related_publications
   field_oshwiki_categories:
     -
@@ -180,7 +186,7 @@ process:
         target_id: tid
   field_show_on: field_show_on
   field_booklet: field_booklet
-
+  moderation_state: moderation_state
   # Images.
 
   field_image_media:
