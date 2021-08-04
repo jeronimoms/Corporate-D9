@@ -7,7 +7,6 @@ dependencies:
     - field.field.menu_link_content.main.field_image_menu_main
     - system.menu.main
   module:
-    - field_group
     - layout_builder
     - linked_field
     - media
@@ -15,25 +14,6 @@ third_party_settings:
   layout_builder:
     allow_custom: false
     enabled: false
-  field_group:
-    group_link_wrapper:
-      children:
-        - children
-      parent_name: ''
-      weight: 5
-      format_type: html_element
-      region: hidden
-      format_settings:
-        id: ''
-        classes: ''
-        element: h3
-        show_label: false
-        label_element: h3
-        label_element_classes: ''
-        attributes: ''
-        effect: none
-        speed: fast
-      label: 'Link wrapper'
 id: menu_link_content.main.landing_menu
 targetEntityType: menu_link_content
 bundle: main

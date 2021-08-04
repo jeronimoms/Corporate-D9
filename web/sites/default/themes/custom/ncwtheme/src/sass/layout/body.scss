@@ -1006,10 +1006,10 @@ a.quiz-start-link:hover {
       gap: 2%;
     }
     .list--item {
-      height: 150px;
+      height: 170px;
       display: flex;
       flex-direction: column;
-      margin: 0.5rem 0 0.7rem 0;
+      margin: 0.5rem 0 1rem 0;
       max-width: 32%;
       flex: 0 1 32%;
       .menu-link-text {
@@ -1029,7 +1029,7 @@ a.quiz-start-link:hover {
           text-decoration: none;
           color: $text-color-blue;
           font-size: 1.1875rem;
-          line-height: 1;
+          line-height: 1.2;
         }
       }
       img {
