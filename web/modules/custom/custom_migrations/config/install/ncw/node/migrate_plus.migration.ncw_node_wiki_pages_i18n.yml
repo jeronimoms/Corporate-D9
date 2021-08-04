@@ -7,13 +7,13 @@
 
 ##################### BASIC INFORMATION ###################
 
-id: ncw_node_wiki_pages_i18n                         # -----  CHANGE
-label: 'Node: wiki_pages Translations'                # -----  CHANGE
+id: ncw_node_wiki_page_i18n                         # -----  CHANGE
+label: 'Node: wiki_page Translations'                # -----  CHANGE
 migration_group: ncw_migrate_nodes
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
   plugin: d7_node_entity_translation
-  node_type: wiki_pages                                # -----  CHANGE
+  node_type: wiki_page                                # -----  CHANGE
 destination:
   plugin: entity:node
   translations: true
@@ -24,12 +24,17 @@ dependencies:
       - custom_migrations
 migration_dependencies:
   required:
-    - ncw_node_wiki_pages                            # -----  CHANGE
+    - ncw_node_wiki_page                            # -----  CHANGE
 
 process:
   nid: entity_id
   type: type
-  langcode: language
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      'pt': 'pt-pt'
   title: title
   body: body
   uid: uid

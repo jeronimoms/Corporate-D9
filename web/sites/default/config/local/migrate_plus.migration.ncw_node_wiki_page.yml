@@ -15,60 +15,7 @@ label: 'Node: Wiki page'
 source:
   plugin: d7_node
   node_type: wiki_page
-process:
-  type:
-    -
-      plugin: default_value
-      default_value: wiki_page
-  langcode:
-    plugin: default_value
-    source: language
-    default_value: en
-  title: title
-  body: body
-  uid: node_uid
-  status: status
-  created: created
-  changed: changed
-  promote: promote
-  sticky: sticky
-  revision_uid: revision_uid
-  revision_log: log
-  revision_timestamp: timestamp
-  field_wiki_page_url:
-    plugin: field_link
-    source: field_wiki_page_url
-  field_nace_codes:
-    -
-      plugin: sub_process
-      source: field_nace_codes
-      process:
-        target_id: tid
-  field_wiki_categories:
-    -
-      plugin: sub_process
-      source: field_wiki_categories
-      process:
-        target_id: tid
-  field_updated:
-    -
-      plugin: sub_process
-      source: field_updated
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: 'Y-m-d\TH:i:s'
-          from_timezone: Europe/Madrid
-          to_timezone: Europe/Madrid
-          source: value
-  field_summary_html: field_summary
-  field_tags:
-    -
-      plugin: sub_process
-      source: field_tags
-      process:
-        target_id: tid
+process: 'no nid: tnid'
 destination:
   plugin: 'entity:node'
 migration_dependencies: null

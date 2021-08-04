@@ -1,7 +1,8 @@
-# File to Media Migration configuration for vesafe_good_practice_media_image migration
+# File to Media Migration configuration for NCW Files migration
 
-id: ncw_node_file_media_documents_1
-label: Files conten types document Media Step 1
+id: ncw_node_file_media_documents
+label: 'File CT Documents'
+migration_group: ncw_migrate_nodes
 
 source:
   key: migrate
@@ -36,22 +37,30 @@ process:
     plugin: check_duplicate
     source: target_id
 
-  # Map the field image
+  # Map the field document
   field_media_document/title: title
+  field_media_description: field_file_description
   field_media_document/target_id:
     plugin: media_file_copy
     move: FALSE
     reuse: TRUE
     path: 'public://'
     source: file_path
-
+  field_tags:
+    - plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_nace_codes:
+    - plugin: sub_process
+      source: field_nace_codes
+      process:
+        target_id: tid
   langcode: langcode
 
   uid:
     plugin: default_value
     default_value: 1
-
-
 
 dependencies:
   module:
