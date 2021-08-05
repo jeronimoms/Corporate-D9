@@ -123,6 +123,7 @@ field_country_code: field_country_code
           to_timezone: 'Europe/Madrid'
           source: value
   field_thesaurus_2020: field_thesaurus_2020
+  moderation_state: moderation_state
   # Documents.
   field_related_resources_media:
     plugin: file_id_lookup
