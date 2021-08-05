@@ -1,0 +1,26 @@
+.node--type-musculoskeletal-disorders {
+  .field--name-field-type-of-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    margin-right: 1rem;
+    padding-top: 0;
+    font-size: 0.9rem;
+    .field__label {
+      margin: 0 5px 0 0;
+      color: #003399;
+      min-width: auto;
+      font-weight: bold;
+    }
+    .field__items {
+      display: block;
+      background-color: $bg-color-blue-light-2;
+      border-radius: 5px;
+      padding: 4px 10px;
+      color: white;
+      color: $bg-color-blue;
+      font-size: 0.687rem;
+      margin-left: 2px;
+    }
+  }
+}

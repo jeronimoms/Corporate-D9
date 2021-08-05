@@ -5,10 +5,14 @@ dependencies:
   config:
     - facets.facet.health_effects_practical_tools_on_ds_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: healtheffectspracticaltoolsonds
 theme: ncwtheme
 region: sidebar_first

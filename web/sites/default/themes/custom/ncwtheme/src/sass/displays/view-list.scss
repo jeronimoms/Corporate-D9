@@ -120,6 +120,20 @@
     text-align: right;
     padding-top: 0.5rem;
   }
+  .field--label-inline {
+    display: flex;
+    margin: 0 0 5px;
+    font-size: 0.9rem;
+    .field__label {
+      margin: 0 5px 0 0;
+      font-weight: bold;
+      color: $text-color-blue;
+      font-family: "Open Sans Condensed";
+    }
+    .field__item {
+      font-family: "Open Sans Condensed";
+    }
+  }
 }
 
 .revamp-row.no-flex{
