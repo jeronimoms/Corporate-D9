@@ -28,17 +28,17 @@ type_settings:
       published: false
       default_revision: false
       label: Approved
-      weight: -2
+      weight: 1
     draft:
       label: Draft
       published: false
       default_revision: false
-      weight: -4
+      weight: -3
     final_draft:
       published: false
       default_revision: false
       label: 'Final Draft'
-      weight: -1
+      weight: -2
     published:
       label: Published
       published: true
@@ -53,24 +53,24 @@ type_settings:
       published: false
       default_revision: false
       label: Rejected
-      weight: -3
+      weight: -4
     to_be_approved:
       published: false
       default_revision: false
       label: 'To Be Approved'
-      weight: 1
+      weight: 0
     to_be_reviewed:
       published: false
       default_revision: false
       label: 'To Be Reviewed'
-      weight: 0
+      weight: -1
   transitions:
     approve_rejected_content:
       label: 'Approve rejected content'
       from:
         - rejected
       to: ready_to_publish
-      weight: 15
+      weight: 16
     content_approved_and_publishing:
       label: 'Content approved and publishing'
       from:
@@ -82,17 +82,17 @@ type_settings:
       from:
         - approved
       to: ready_to_publish
-      weight: 16
+      weight: 17
     content_rejected_by_the_project_manager:
       label: 'Content rejected by the Project Manager'
       from:
         - approved
       to: final_draft
-      weight: 1
+      weight: -1
     create_new_draft:
       label: 'Create New Draft'
       to: draft
-      weight: -26
+      weight: -27
       from:
         - draft
         - published
@@ -101,26 +101,26 @@ type_settings:
       from:
         - final_draft
       to: final_draft
-      weight: -25
+      weight: -26
     from_approved_to_approved:
       label: 'From Approved to Approved'
       from:
         - approved
         - published
       to: approved
-      weight: -22
+      weight: -24
     from_approved_to_draft:
       label: 'From Approved to Draft'
       from:
         - approved
       to: draft
-      weight: -16
+      weight: -18
     from_approved_to_rejected:
       label: 'From Approved to Rejected'
       from:
         - approved
       to: rejected
-      weight: -11
+      weight: -13
     from_approved_to_to_be_approved:
       label: 'From Approved to To be Approved'
       from:
@@ -132,61 +132,79 @@ type_settings:
       from:
         - approved
       to: to_be_reviewed
-      weight: 6
+      weight: 5
     from_draft_to_approved:
       label: 'From Draft to Approved'
       from:
         - draft
       to: approved
-      weight: -7
+      weight: -9
     from_draft_to_rejected:
       label: 'From Draft to Rejected'
       from:
         - draft
       to: rejected
-      weight: -13
+      weight: -15
     from_draft_to_to_be_reviewed:
       label: 'From draft to to be reviewed'
       from:
         - draft
       to: to_be_reviewed
-      weight: 3
+      weight: 2
     from_final_draft_to_approved:
       label: 'From Final Draft to Approved'
       from:
         - final_draft
       to: approved
-      weight: -6
+      weight: -8
     from_final_draft_to_rejected:
       label: 'From Final Draft to Rejected'
       from:
         - final_draft
       to: rejected
-      weight: -12
+      weight: -14
+    from_published_to_published:
+      label: 'From Published to Published'
+      from:
+        - published
+      to: published
+      weight: 26
+    from_published_to_ready_to_to_be_approved:
+      label: 'From Published to Ready to To Be Approved'
+      from:
+        - published
+      to: to_be_approved
+      weight: 13
+    from_published_to_to_be_reviewed:
+      label: 'From Published to To Be Reviewed'
+      from:
+        - published
+      to: to_be_reviewed
+      weight: 6
     from_ready_to_publish_to_approved:
       label: 'From Ready to Publish to Approved'
       from:
         - ready_to_publish
       to: approved
-      weight: -2
+      weight: -4
     from_ready_to_publish_to_draft:
       label: 'From Ready to Publish to Draft'
       from:
         - ready_to_publish
       to: draft
-      weight: -14
+      weight: -16
     from_ready_to_publish_to_ready_to_publish:
       label: 'From Ready to Publish to Ready to Publish'
       from:
         - ready_to_publish
       to: ready_to_publish
-      weight: -19
+      weight: -21
     from_ready_to_publish_to_rejected:
       label: 'From Ready to Publish to Rejected'
       from:
         - ready_to_publish
       to: rejected
-      weight: -8
+      weight: -10
     from_ready_to_publish_to_to_be_approved:
       label: 'From Ready to Publish to To Be Approved'
       from:
@@ -198,7 +216,7 @@ type_settings:
       from:
         - rejected
       to: approved
-      weight: -5
+      weight: -7
     from_rejected_to_published:
       label: 'From Rejected to Published'
       from:
@@ -211,49 +229,47 @@ type_settings:
         - published
         - rejected
       to: rejected
-      weight: -23
+      weight: -25
     from_rejected_to_to_be_reviewed:
       label: 'From Rejected to To be Reviewed'
       from:
         - rejected
       to: to_be_reviewed
-      weight: 5
+      weight: 4
     from_to_be_approved_to_to_be_approved:
       label: 'From To be Approved to To be Approved'
       from:
-        - published
         - to_be_approved
       to: to_be_approved
-      weight: -20
+      weight: -22
     from_to_be_reviewed_to_approved:
       label: 'From To Be Reviewed to Approved'
       from:
         - to_be_reviewed
       to: approved
-      weight: -4
+      weight: -6
     from_to_be_reviewed_to_rejected:
       label: 'From To Be Reviewed to Rejected'
       from:
         - to_be_reviewed
       to: rejected
-      weight: -10
+      weight: -12
     from_to_be_reviewed_to_to_be_reviewed:
       label: 'From To Be Reviewed to To be Reviewed'
       from:
-        - published
         - to_be_reviewed
       to: to_be_reviewed
-      weight: -21
+      weight: -23
     project_manager_rejects_rejected_content:
       label: 'Project Manager rejects Rejected content'
       from:
         - rejected
       to: final_draft
-      weight: 0
+      weight: -2
     publish:
       label: Publish
       to: published
-      weight: 19
+      weight: 20
       from:
         - draft
     publishing:
@@ -261,19 +277,19 @@ type_settings:
       from:
         - ready_to_publish
       to: published
-      weight: 24
+      weight: 25
     rejecting:
       label: Rejecting
       from:
         - to_be_approved
       to: rejected
-      weight: -9
+      weight: -11
     rejecting_final_draft:
       label: 'Rejecting Final Draft'
       from:
         - to_be_reviewed
       to: draft
-      weight: -15
+      weight: -17
     review_manager_accepts_rejected_content:
       label: 'Review manager accepts Rejected content'
       from:
@@ -285,19 +301,19 @@ type_settings:
       from:
         - rejected
       to: draft
-      weight: -17
+      weight: -19
     send_back_to_draft:
       label: 'Send back to draft - Rejecting Draft as Final'
       from:
         - final_draft
       to: draft
-      weight: -18
+      weight: -20
     send_back_to_final_draft:
       label: 'Content reviewed rejected by the Project Manager'
       from:
         - to_be_reviewed
       to: final_draft
-      weight: 2
+      weight: 0
     send_to_be_approved:
       label: 'Requesting Approval'
       from:
@@ -322,62 +338,62 @@ type_settings:
         - final_draft
         - ready_to_publish
       to: to_be_reviewed
-      weight: 4
+      weight: 3
     send_to_final_draft:
       label: 'Send to final draft'
       from:
         - draft
         - ready_to_publish
       to: final_draft
-      weight: -1
+      weight: -3
     send_to_final_draft_from_publish:
       label: 'Send to final draft from publish'
       from:
         - published
       to: final_draft
-      weight: -24
+      weight: 1
     send_to_publish_from_final_draft:
       label: 'Send to publish from final draft'
       from:
         - final_draft
       to: published
-      weight: 20
+      weight: 23
     send_to_publish_from_reviewed:
       label: 'Send to publish from reviewed'
       from:
         - to_be_reviewed
       to: published
-      weight: 23
+      weight: 24
     send_to_ready_to_publish_from_draft_:
       label: "Send to ready to publish from draft\t"
       from:
         - draft
       to: ready_to_publish
-      weight: 13
+      weight: 14
     send_to_ready_to_publish_from_final_draft:
       label: 'Send to ready to publish from final draft - Skip review and approval, ready to publish'
       from:
         - final_draft
       to: ready_to_publish
-      weight: 14
+      weight: 15
     send_to_ready_to_publish_from_published:
       label: 'Send to ready to publish from published'
       from:
         - published
       to: ready_to_publish
-      weight: 18
+      weight: 19
     send_to_ready_to_publish_from_to_be_reviewed:
       label: 'Finish review, skip approval'
       from:
         - to_be_reviewed
       to: ready_to_publish
-      weight: 17
+      weight: 18
     to_be_approved_to_approved:
       label: Approving
       from:
         - to_be_approved
       to: approved
-      weight: -3
+      weight: -5
   entity_types:
     node:
       - 25th_anniversary
