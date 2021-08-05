@@ -564,6 +564,7 @@ div#sliding-popup {
   margin-bottom: 1rem;
 }
 
+.block-facets-accordion,
 .page-view-dangerous-substances-overview .block-facet--links,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links {
   border: 0;
@@ -573,6 +574,7 @@ div#sliding-popup {
   border-bottom: 10px solid #FFF;
   margin-bottom: 0;
 }
+.block-facets-accordion h2,
 .page-view-dangerous-substances-overview .block-facet--links h2,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links h2 {
   position: relative;
@@ -582,6 +584,7 @@ div#sliding-popup {
   padding-left: 0.5rem;
   cursor: pointer;
 }
+.block-facets-accordion h2::after,
 .page-view-dangerous-substances-overview .block-facet--links h2::after,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links h2::after {
   content: "";
@@ -592,21 +595,25 @@ div#sliding-popup {
   top: 12px;
   right: 20px;
 }
+.block-facets-accordion h2.active::after,
 .page-view-dangerous-substances-overview .block-facet--links h2.active::after,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links h2.active::after {
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 18px;
 }
+.block-facets-accordion .content,
 .page-view-dangerous-substances-overview .block-facet--links .content,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content {
   background: #FFF;
   display: none;
 }
+.block-facets-accordion .content ul,
 .page-view-dangerous-substances-overview .block-facet--links .content ul,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content ul {
   list-style: none;
   padding-left: 0;
 }
+.block-facets-accordion .content ul a,
 .page-view-dangerous-substances-overview .block-facet--links .content ul a,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content ul a {
   display: block;
@@ -614,7 +621,9 @@ div#sliding-popup {
   font-size: 0.9rem;
   padding: 5px 0 5px 0.5rem;
 }
-.page-view-dangerous-substances-overview .block-facet--links .content select, .page-view-dangerous-substances-overview .block-facet--links .content input,
+.block-facets-accordion .content select, .block-facets-accordion .content input,
+.page-view-dangerous-substances-overview .block-facet--links .content select,
+.page-view-dangerous-substances-overview .block-facet--links .content input,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content select,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links .content input {
   margin-top: 1rem;
@@ -5457,6 +5466,28 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   text-align: right;
   padding-top: 0.5rem;
 }
+.revamp-row .field--label-inline {
+  display: flex;
+  margin: 0 0 5px;
+  font-size: 0.9rem;
+}
+.revamp-row .field--label-inline .field__label {
+  margin: 0 5px 0 0;
+  font-weight: bold;
+  color: #003399;
+  font-family: "Open Sans Condensed";
+}
+.revamp-row .field--label-inline .field__item {
+  font-family: "Open Sans Condensed";
+}
+.revamp-row .field--name-field-external-url {
+  margin-bottom: 5px;
+}
+.revamp-row .field--name-field-external-url a {
+  text-decoration: none;
+  color: #003399;
+  border-bottom: 1px solid #c72272;
+}
 
 .revamp-row.no-flex {
   display: block;
@@ -5625,6 +5656,73 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .node--type-news .field--name-field-aditional-resources .field__items .field__item .file a {
   font-size: 0.9rem;
+}
+
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item,
+.node--type-musculoskeletal-disorders .field--name-field-material-country,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem;
+  margin-right: 1rem;
+  padding-top: 0;
+  font-size: 0.9rem;
+}
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__label,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__label,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__label {
+  margin: 0 5px 0 0;
+  color: #003399;
+  min-width: auto;
+  font-weight: bold;
+}
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items {
+  display: flex;
+  align-items: center;
+}
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item {
+  display: block;
+  margin: 0 2px 0 0;
+  background-color: #e8ecf5;
+  border-radius: 5px;
+  padding: 4px 10px;
+  color: white;
+  color: #003399;
+  font-size: 0.687rem;
+}
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item a,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item a,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item a {
+  border: none;
+}
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item p,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item p,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item p {
+  margin: 0;
+}
+.node--type-musculoskeletal-disorders .field--type-entity-reference,
+.node--type-musculoskeletal-disorders .field--type-link {
+  margin-bottom: 0.2rem;
+  font-size: 0.875rem;
+}
+.node--type-musculoskeletal-disorders .field--type-entity-reference a,
+.node--type-musculoskeletal-disorders .field--type-link a {
+  text-decoration: none;
+  color: #003399;
+  border-bottom: 1px solid #c72272;
+}
+.node--type-musculoskeletal-disorders .field--type-entity-reference .field__label,
+.node--type-musculoskeletal-disorders .field--type-link .field__label {
+  font-weight: bold;
+}
+.node--type-musculoskeletal-disorders .field--name-field-year .field__item {
+  color: #003399;
+  font-size: 0.785rem;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 1615px) {

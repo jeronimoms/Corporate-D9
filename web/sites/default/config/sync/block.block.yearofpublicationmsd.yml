@@ -5,10 +5,14 @@ dependencies:
   config:
     - facets.facet.year_of_publication_msd_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: yearofpublicationmsd
 theme: ncwtheme
 region: sidebar_first
