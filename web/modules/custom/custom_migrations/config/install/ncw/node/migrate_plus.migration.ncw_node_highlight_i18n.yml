@@ -5,7 +5,6 @@
 id: ncw_node_highlight_i18n                    # -----  CHANGE
 label: 'Node: highlight translations'                   # -----  CHANGE
 
-
 migration_group: ncw_migrate_nodes
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
