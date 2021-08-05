@@ -5480,6 +5480,14 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .revamp-row .field--label-inline .field__item {
   font-family: "Open Sans Condensed";
 }
+.revamp-row .field--name-field-external-url {
+  margin-bottom: 5px;
+}
+.revamp-row .field--name-field-external-url a {
+  text-decoration: none;
+  color: #003399;
+  border-bottom: 1px solid #c72272;
+}
 
 .revamp-row.no-flex {
   display: block;
@@ -5650,7 +5658,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   font-size: 0.9rem;
 }
 
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item {
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item,
+.node--type-musculoskeletal-disorders .field--name-field-material-country,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages {
   display: flex;
   align-items: center;
   margin-bottom: 0.2rem;
@@ -5658,21 +5668,61 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   padding-top: 0;
   font-size: 0.9rem;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__label {
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__label,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__label,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__label {
   margin: 0 5px 0 0;
   color: #003399;
   min-width: auto;
   font-weight: bold;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items {
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items {
+  display: flex;
+  align-items: center;
+}
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item {
   display: block;
+  margin: 0 2px 0 0;
   background-color: #e8ecf5;
   border-radius: 5px;
   padding: 4px 10px;
   color: white;
   color: #003399;
   font-size: 0.687rem;
-  margin-left: 2px;
+}
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item a,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item a,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item a {
+  border: none;
+}
+.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item p,
+.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item p,
+.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item p {
+  margin: 0;
+}
+.node--type-musculoskeletal-disorders .field--type-entity-reference,
+.node--type-musculoskeletal-disorders .field--type-link {
+  margin-bottom: 0.2rem;
+  font-size: 0.875rem;
+}
+.node--type-musculoskeletal-disorders .field--type-entity-reference a,
+.node--type-musculoskeletal-disorders .field--type-link a {
+  text-decoration: none;
+  color: #003399;
+  border-bottom: 1px solid #c72272;
+}
+.node--type-musculoskeletal-disorders .field--type-entity-reference .field__label,
+.node--type-musculoskeletal-disorders .field--type-link .field__label {
+  font-weight: bold;
+}
+.node--type-musculoskeletal-disorders .field--name-field-year .field__item {
+  color: #003399;
+  font-size: 0.785rem;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 1615px) {

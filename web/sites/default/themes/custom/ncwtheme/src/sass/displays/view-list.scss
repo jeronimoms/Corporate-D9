@@ -134,6 +134,14 @@
       font-family: "Open Sans Condensed";
     }
   }
+  .field--name-field-external-url {
+    margin-bottom: 5px;
+    a {
+      text-decoration: none;
+      color: $bg-color-blue;
+      border-bottom: 1px solid $bg-color-pink;
+    }
+  }
 }
 
 .revamp-row.no-flex{
