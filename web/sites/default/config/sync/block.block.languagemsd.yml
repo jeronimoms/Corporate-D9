@@ -5,10 +5,14 @@ dependencies:
   config:
     - facets.facet.available_in_languages
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: languagemsd
 theme: ncwtheme
 region: sidebar_first

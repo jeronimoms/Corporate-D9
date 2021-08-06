@@ -12,7 +12,7 @@ bundle: events
 label: Comments
 description: 'Please add here any information, which could be useful for decision-making purposes.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
