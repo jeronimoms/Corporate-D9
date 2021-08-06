@@ -4376,6 +4376,28 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
 }
 
 /* Block Newsletter Home page - Right sidebar */
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link {
+  font-size: 1.5625rem;
+  font-weight: bold;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .wrapper {
+  background: #ecf1fb;
+  padding: 25px 20px;
+  margin-top: 10px;
+  margin-bottom: 2rem;
+  color: #003399;
+  font-size: 0.9rem;
+  border-radius: 3px;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .wrapper a {
+  display: block;
+  margin-top: 5px;
+  text-decoration: underline;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .wrapper a:hover {
+  text-decoration: none;
+}
+
 .newsletter-block-wrapper {
   background: #ecf1fb;
   padding: 25px 20px;
