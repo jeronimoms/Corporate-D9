@@ -1,0 +1,32 @@
+uuid: d591bc8b-d6ce-4f2c-838b-37dfc955662f
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.language_practical_tools_msd_
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: languagepracticaltoolsmsd
+theme: ncwtheme
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'facet_block:language_practical_tools_msd_'
+settings:
+  id: 'facet_block:language_practical_tools_msd_'
+  label: Language
+  provider: facets
+  label_display: visible
+  block_id: languagepracticaltoolsmsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders
+    negate: false

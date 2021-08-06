@@ -3,3 +3,5 @@ name: Ncw backend
 description: 'Backend modifications in Ncw website'
 package: Development
 core_version_requirement: ^8.8 || ^9
+dependencies:
+  - simplenews:simplenews

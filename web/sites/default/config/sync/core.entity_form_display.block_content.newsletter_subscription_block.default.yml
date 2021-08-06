@@ -1,0 +1,62 @@
+uuid: ea4de108-db86-4fa1-af9b-b744e08e0042
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.newsletter_subscription_block
+    - field.field.block_content.newsletter_subscription_block.body
+    - field.field.block_content.newsletter_subscription_block.field_newsletter_privacy_notice
+    - field.field.block_content.newsletter_subscription_block.field_newsletter_subtitle
+    - field.field.block_content.newsletter_subscription_block.field_newsletter_title_with_link
+  module:
+    - link
+    - text
+id: block_content.newsletter_subscription_block.default
+targetEntityType: block_content
+bundle: newsletter_subscription_block
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_newsletter_privacy_notice:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_newsletter_subtitle:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_newsletter_title_with_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

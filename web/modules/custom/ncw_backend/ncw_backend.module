@@ -1,4 +1,8 @@
 <?php
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\ncw_backend\Form\NewsletterSubscriptionForm;
 use Drupal\ncw_backend\ncwViewQA;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
@@ -25,5 +29,31 @@ function ncw_backend_page_attachments(array &$attachments) {
     return;
   }
 
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function ncw_backend_entity_extra_field_info() {
+  $extra = [];
+
+  // Creates a pseudo-field to show custom form for newsletter subscription.
+  $extra['block_content']['newsletter_subscription_block']['display']['subscription_form'] = [
+    'label' => t('Subscription form'),
+    'description' => t('Subscription form pseudo field'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function ncw_backend_block_content_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('subscription_form')) {
+    $build['subscription_form'] = Drupal::formBuilder()->getForm(NewsletterSubscriptionForm::class);
+  }
 }
 

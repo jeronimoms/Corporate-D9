@@ -1,0 +1,7 @@
+ncw_backend.newsletter_config:
+  path: '/admin/config/services/newsletter-config'
+  defaults:
+    _form: '\Drupal\ncw_backend\Form\NewsletterConfigForm'
+    _title: 'OSHA newsletter configuration'
+  requirements:
+    _permission: 'administer newsletters'
