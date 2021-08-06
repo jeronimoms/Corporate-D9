@@ -5,10 +5,14 @@ dependencies:
   config:
     - facets.facet.nominated_by_fop
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: nominatedbyfop
 theme: ncwtheme
 region: sidebar_first

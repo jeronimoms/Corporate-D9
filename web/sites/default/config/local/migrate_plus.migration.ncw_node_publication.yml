@@ -151,12 +151,7 @@ process:
   field_thesaurus_2020: field_thesaurus_2020
   field_author: field_author
   field_banner_publications_office: field_banner_publications_office
-  field_related_oshwiki_articles:
-    -
-      plugin: sub_process
-      source: field_related_oshwiki_articles
-      process:
-        target_id: tid
+  field_related_oshwiki_articles: field_related_oshwiki_articles
   field_related_publications: field_related_publications
   field_oshwiki_categories:
     -
