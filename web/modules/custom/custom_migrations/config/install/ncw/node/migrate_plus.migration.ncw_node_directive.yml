@@ -26,7 +26,6 @@ process:
     -
       plugin: get
       source: nid
-  vid: vid
   type:
     - plugin: default_value
       default_value: directive              # -----  CHANGE
@@ -156,5 +155,6 @@ process:
       process:
         target_id: tid
   field_thesaurus_2020: field_thesaurus_2020
+  moderation_state: moderation_state
 
 
