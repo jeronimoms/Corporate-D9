@@ -7,12 +7,14 @@ dependencies:
     - node
     - search_api
   config:
+    - field.storage.node.field_available_in_languages
     - field.storage.node.field_material_country
+    - field.storage.node.body
     - field.storage.node.field_body_original
     - field.storage.node.field_hazards
     - field.storage.node.field_hazards_other
     - field.storage.node.field_health_effects
-    - field.storage.node.field_available_in_languages
+    - field.storage.node.field_original_desc_language
     - field.storage.node.field_languages_other
     - field.storage.node.field_nominated_by_fop
     - field.storage.node.field_original_desc_lang_other
@@ -78,8 +80,16 @@ name: 'Musculoskeletal Disorders index'
 description: ''
 read_only: false
 field_settings:
+  body:
+    label: "Description (English)\t"
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
   field_available_in_languages:
-    label: Languages
+    label: 'Available in languages'
     datasource_id: 'entity:node'
     property_path: field_available_in_languages
     type: string
@@ -182,6 +192,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_original_desc_lang_other
+  field_original_desc_language:
+    label: 'Language of original language description'
+    datasource_id: 'entity:node'
+    property_path: field_original_desc_language
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_original_desc_language
   field_prevention_measures:
     label: 'Prevention measures'
     datasource_id: 'entity:node'
@@ -263,7 +281,7 @@ field_settings:
       config:
         - field.storage.node.field_worker_groups_covered
   field_year:
-    label: Year
+    label: 'Year of publication'
     datasource_id: 'entity:node'
     property_path: field_year
     type: integer
