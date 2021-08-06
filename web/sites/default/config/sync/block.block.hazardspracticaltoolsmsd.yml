@@ -1,0 +1,32 @@
+uuid: 6db4cc54-d1af-45f2-8379-f5a3658f2acb
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.hazards_practical_tools_msd_
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: hazardspracticaltoolsmsd
+theme: ncwtheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:hazards_practical_tools_msd_'
+settings:
+  id: 'facet_block:hazards_practical_tools_msd_'
+  label: Hazards
+  provider: facets
+  label_display: visible
+  block_id: hazardspracticaltoolsmsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders
+    negate: false
