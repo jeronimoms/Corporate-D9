@@ -92,6 +92,32 @@
 }
 
 /* Block Newsletter Home page - Right sidebar */
+.block-custom-newsletter.block-custom-newsletter--sidebar {
+  .field--name-field-newsletter-title-with-link {
+    font-size: 1.5625rem;
+    font-weight: bold;
+  }
+  .wrapper {
+    background: $bg-color-blue-block;
+    padding: 25px 20px;
+    margin-top: 10px;
+    margin-bottom: 2rem;
+    color: $text-color-blue;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    a{
+      display: block;
+      margin-top: 5px;
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+
 .newsletter-block-wrapper{
   background: $bg-color-blue-block;
   padding: 25px 20px;
