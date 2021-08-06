@@ -1,0 +1,32 @@
+uuid: 9c5eda3c-c357-470b-bb07-d900612e257d
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.health_effects_practical_tools_msd_
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: healtheffectspracticaltoolsmsd
+theme: ncwtheme
+region: sidebar_first
+weight: 1
+provider: null
+plugin: 'facet_block:health_effects_practical_tools_msd_'
+settings:
+  id: 'facet_block:health_effects_practical_tools_msd_'
+  label: 'Health effects'
+  provider: facets
+  label_display: visible
+  block_id: healtheffectspracticaltoolsmsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders
+    negate: false

@@ -2,11 +2,8 @@ uuid: 1d2713fb-7c2b-43da-b11c-c329ef89f3c0
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:00162155-bbc7-4f1f-9754-79d5d44a41ee'
   module:
     - block_class
-    - block_content
     - ctools
   theme:
     - ncwtheme

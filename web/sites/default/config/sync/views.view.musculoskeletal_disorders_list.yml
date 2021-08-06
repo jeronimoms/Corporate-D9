@@ -955,6 +955,10 @@ display:
       display_extenders:
         metatag_display_extender: {  }
       path: themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
