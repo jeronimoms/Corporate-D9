@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.health_effects_msd_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: healtheffectsmsd
 theme: ncwtheme
 region: sidebar_first
-weight: -6
+weight: -13
 provider: null
 plugin: 'facet_block:health_effects_msd_'
 settings:

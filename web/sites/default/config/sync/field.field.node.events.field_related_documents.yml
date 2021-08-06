@@ -14,7 +14,7 @@ bundle: events
 label: 'Related resources'
 description: 'Please attach here the agenda and any other relevant events related documentation (i.e.  presentations, call for abstracts, leaflets, brochures).'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

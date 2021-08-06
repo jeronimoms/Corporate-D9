@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.sector_indrustry_covered_practical_tools_on_ds_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: sectorindrustrycoveredpracticaltoolsonds
 theme: ncwtheme
 region: sidebar_first
-weight: -21
+weight: -28
 provider: null
 plugin: 'facet_block:sector_indrustry_covered_practical_tools_on_ds_'
 settings:

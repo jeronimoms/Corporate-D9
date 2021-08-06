@@ -1,0 +1,23 @@
+uuid: e21f889b-b703-443b-8e2b-e891f32fa367
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.newsletter_subscription_block
+    - field.storage.block_content.field_newsletter_title_with_link
+  module:
+    - link
+id: block_content.newsletter_subscription_block.field_newsletter_title_with_link
+field_name: field_newsletter_title_with_link
+entity_type: block_content
+bundle: newsletter_subscription_block
+label: 'Title with link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

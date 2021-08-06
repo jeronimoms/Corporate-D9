@@ -89,8 +89,8 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.content').slideToggle();
   });
 
-  //Facet accordions Practical Tools Dangerous substances
-  $(".page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links h2").click(function(){
+  //Facet accordions, this should be usefull for all blocks with .block-facets-accordion-class
+  $(".sidebar-first  .block-facets-accordion h2").click(function(){
     $(this).toggleClass("active");
     $(this).parent().find('.content').slideToggle();
   });

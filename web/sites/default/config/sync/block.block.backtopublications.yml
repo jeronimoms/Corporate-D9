@@ -1,9 +1,9 @@
-uuid: 1d2713fb-7c2b-43da-b11c-c329ef89f3c0
+uuid: c73004c7-7a80-44f7-8a8d-5a58d0161d69
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:00162155-bbc7-4f1f-9754-79d5d44a41ee'
+    - 'block_content:basic:046fb07b-350e-47f2-bd27-cf4fd8e233e8'
   module:
     - block_class
     - block_content
@@ -16,11 +16,11 @@ third_party_settings:
 id: backtopublications
 theme: ncwtheme
 region: content
-weight: -47
+weight: -61
 provider: null
-plugin: 'block_content:00162155-bbc7-4f1f-9754-79d5d44a41ee'
+plugin: 'block_content:046fb07b-350e-47f2-bd27-cf4fd8e233e8'
 settings:
-  id: 'block_content:00162155-bbc7-4f1f-9754-79d5d44a41ee'
+  id: 'block_content:046fb07b-350e-47f2-bd27-cf4fd8e233e8'
   label: 'Back to publications'
   provider: block_content
   label_display: '0'

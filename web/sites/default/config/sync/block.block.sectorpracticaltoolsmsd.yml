@@ -1,0 +1,32 @@
+uuid: 031a7c93-e682-424d-a343-124689a0dddb
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.sector_practical_tools_msd_
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: sectorpracticaltoolsmsd
+theme: ncwtheme
+region: sidebar_first
+weight: -1
+provider: null
+plugin: 'facet_block:sector_practical_tools_msd_'
+settings:
+  id: 'facet_block:sector_practical_tools_msd_'
+  label: Sector
+  provider: facets
+  label_display: visible
+  block_id: sectorpracticaltoolsmsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders
+    negate: false

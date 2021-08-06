@@ -85,6 +85,7 @@ process:
       plugin: get
       source: changed
   field_pages_count: field_pages_count
+  moderation_state: moderation_state
   field_image_media:
     plugin: file_id_lookup
     source: field_image
