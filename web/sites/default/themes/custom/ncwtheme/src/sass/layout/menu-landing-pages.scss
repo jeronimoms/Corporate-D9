@@ -94,6 +94,54 @@ body.facts-and-figures-data-visualisation{
   }
 }
 
+/*** View Facts and Figures ***/
+.block-views-facts-figures {
+  .view-content.row {
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 780px;
+  }
+  .list--item {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 30%;
+    min-width: 260px;
+    margin: 0.5rem 2% 0.7rem 0;
+    padding-right: 15px;
+    &:hover {
+      a {
+        border-bottom: 10px solid $text-color-pink !important;
+        background: url(../images/flecha.png) center right no-repeat;
+      }
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .menu-link-text {
+      margin-bottom: 0.2rem;
+      a{
+        margin: 0;
+        transition: none;
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        font-family: 'Open Sans Condensed',sans-serif!important;
+        font-size: 1.1875rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: $text-color-blue;
+        border-bottom: 10px solid #d2dced;
+
+      }
+    }
+  }
+}
+
 
 @media only screen and (max-width : 1024px) {
   .one-column{

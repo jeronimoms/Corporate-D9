@@ -4199,6 +4199,49 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
   height: auto;
 }
 
+/*** View Facts and Figures ***/
+.block-views-facts-figures .view-content.row {
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 780px;
+}
+.block-views-facts-figures .list--item {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 30%;
+  min-width: 260px;
+  margin: 0.5rem 2% 0.7rem 0;
+  padding-right: 15px;
+}
+.block-views-facts-figures .list--item:hover a {
+  border-bottom: 10px solid #c72272 !important;
+  background: url(../images/flecha.png) center right no-repeat;
+}
+.block-views-facts-figures .list--item img {
+  max-width: 100%;
+  height: auto;
+}
+.block-views-facts-figures .list--item .menu-link-text {
+  margin-bottom: 0.2rem;
+}
+.block-views-facts-figures .list--item .menu-link-text a {
+  margin: 0;
+  transition: none;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: "Open Sans Condensed", sans-serif !important;
+  font-size: 1.1875rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #003399;
+  border-bottom: 10px solid #d2dced;
+}
+
 @media only screen and (max-width: 1024px) {
   .one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col {
     width: 31%;
