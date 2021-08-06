@@ -39,24 +39,104 @@ dependencies:
     - field.field.node.musculoskeletal_disorders.field_year
     - node.type.musculoskeletal_disorders
   module:
+    - ds
     - entity_reference_revisions
+    - field_group
     - languagefield
     - link
     - options
     - text
     - user
+third_party_settings:
+  field_group:
+    group_tags_wrapper:
+      children:
+        - field_type_of_item
+        - field_material_country
+        - field_available_in_languages
+        - field_msd_provider
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: content
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: tags-wrapper
+      label: 'Tags Wrapper'
+    group_description_wrapper:
+      children:
+        - field_body_original
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: description-wrapper
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Description
+    group_access_tool:
+      children:
+        - field_external_url
+        - field_original_desc_language
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: access-tool-wrapper
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Access tool'
+    group_other_data:
+      children:
+        - field_sector_industry_covered
+        - field_hazards
+        - field_health_effects
+        - field_prevention_measures
+        - field_purpose_of_the_material
+        - field_target_audience
+        - field_msd_priority_area
+        - field_year
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: other-data-wrapper
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Other data'
 id: node.musculoskeletal_disorders.default
 targetEntityType: node
 bundle: musculoskeletal_disorders
 mode: default
 content:
-  body:
-    label: inline
-    type: text_default
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_available_in_languages:
     weight: 3
     label: inline
@@ -68,22 +148,14 @@ content:
     type: languagefield_default
     region: content
   field_body_original:
-    weight: 6
-    label: inline
+    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_country_other:
-    weight: 10
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_external_url:
-    weight: 8
+    weight: 3
     label: inline
     settings:
       trim_length: 80
@@ -94,46 +166,38 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_hazard_health_other:
-    weight: 16
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_hazards:
-    weight: 13
-    label: inline
+    weight: 8
+    label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
-  field_hazards_other:
-    weight: 14
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_health_effects:
-    weight: 15
-    label: inline
+    weight: 9
+    label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
     region: content
-  field_languages_other:
-    type: string
-    weight: 11
-    region: content
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_material_country:
     weight: 2
     label: inline
@@ -142,20 +206,20 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_material_purpose_other:
-    weight: 22
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_msd_priority_area:
-    weight: 7
-    label: inline
+    weight: 13
+    label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
     region: content
   field_msd_provider:
@@ -167,16 +231,8 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-  field_original_desc_lang_other:
-    weight: 28
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_original_desc_language:
-    weight: 23
+    weight: 4
     label: inline
     settings:
       link_to_entity: false
@@ -186,76 +242,68 @@ content:
     type: languagefield_default
     region: content
   field_prevention_measures:
-    weight: 19
-    label: inline
+    weight: 10
+    label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
-  field_prevention_measures_other:
-    weight: 20
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_purpose_of_the_material:
-    weight: 21
-    label: inline
+    weight: 11
+    label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
-  field_resource_type:
-    weight: 26
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_resource_type_other:
-    weight: 27
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_sector_industry_covered:
-    weight: 12
-    label: inline
+    weight: 7
+    label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: true
+            classes: {  }
     type: entity_reference_label
     region: content
   field_target_audience:
-    weight: 24
-    label: inline
+    weight: 12
+    label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
-  field_target_group_other:
-    weight: 25
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_title_original:
-    weight: 0
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_type_of_item:
     weight: 1
@@ -264,24 +312,8 @@ content:
     third_party_settings: {  }
     type: list_default
     region: content
-  field_worker_groups_covered:
-    weight: 17
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_worker_groups_other:
-    weight: 18
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_year:
-    weight: 29
+    weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -289,12 +321,26 @@ content:
     region: content
 hidden:
   addtoany: true
+  body: true
   breadcrumbs: true
   field_comments: true
+  field_country_other: true
   field_for_pictogram_guide: true
+  field_hazard_health_other: true
+  field_hazards_other: true
+  field_languages_other: true
+  field_material_purpose_other: true
   field_msd_video_length: true
   field_nominated_by_fop: true
+  field_original_desc_lang_other: true
+  field_prevention_measures_other: true
+  field_resource_type: true
+  field_resource_type_other: true
   field_section: true
+  field_target_group_other: true
+  field_title_original: true
+  field_worker_groups_covered: true
+  field_worker_groups_other: true
   langcode: true
   links: true
   search_api_excerpt: true
