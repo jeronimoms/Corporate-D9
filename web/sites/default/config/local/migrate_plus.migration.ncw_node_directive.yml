@@ -20,7 +20,6 @@ process:
     -
       plugin: get
       source: nid
-  vid: vid
   type:
     -
       plugin: default_value
@@ -151,6 +150,7 @@ process:
       process:
         target_id: tid
   field_thesaurus_2020: field_thesaurus_2020
+  moderation_state: moderation_state
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
