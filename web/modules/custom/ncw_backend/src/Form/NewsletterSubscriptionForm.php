@@ -87,7 +87,7 @@ class NewsletterSubscriptionForm extends FormBase {
     $apiSubscriptionUrl = 'https://jira.osha.europa.eu:8083/OshaService/OSHAService.svc/subscriber?email=' . $form_state->get('mail') . '&type=OSH';
     $response = $this->httpClient->get($apiSubscriptionUrl);
     if ($response->getStatusCode() == 200) {
-      $this->messenger()->addMessage('Correctly subscripted to newsletter');
+      $this->messenger()->addMessage($this->t('You should receive a confirmation email in your inbox in the coming minutes. Otherwise, please check your spam folder. Thanks a lot for subscribing.'));
     }
 
   }
