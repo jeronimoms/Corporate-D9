@@ -5,7 +5,6 @@
 id: ncw_node_highlight_i18n                    # -----  CHANGE
 label: 'Node: highlight translations'                   # -----  CHANGE
 
-
 migration_group: ncw_migrate_nodes
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
 source:
@@ -46,18 +45,9 @@ process:
     -
       plugin: get
       source: node_uid
+  content_translation_source: source
+  content_translation_outdated: translate
 
-  created:
-    -
-      plugin: get
-      source: created
-  changed:
-    -
-      plugin: get
-      source: changed
-  revision_uid: revision_uid
-  revision_log: log
-  revision_timestamp: timestamp
   ### ADD FIELDS CUSTOM OF ENTITY ###  # -----  CHANGE
   field_aditional_resources: field_aditional_resources    # necesito highlight y slideshare para comprobar
   field_archived: field_archived
@@ -69,11 +59,6 @@ process:
     -
       plugin: sub_process
       source: field_activity
-      process:
-        target_id: tid
-  field_section:
-    - plugin: sub_process
-      source: workbench_access
       process:
         target_id: tid
   field_character_count: field_character_count
@@ -119,41 +104,5 @@ process:
         target_id: tid
 
   field_thesaurus_2020: field_thesaurus_2020
-  # Images.
-  field_image_media:
-    plugin: file_id_lookup_translations
-    source: field_image
-    migration:
-      - ncw_node_highlight_field_image_media_caption_1_es
-      - ncw_node_highlight_field_image_media_caption_1_bg
-      - ncw_node_highlight_field_image_media_caption_1_cs
-      - ncw_node_highlight_field_image_media_caption_1_es
-      - ncw_node_highlight_field_image_media_caption_1_da
-      - ncw_node_highlight_field_image_media_caption_1_de
-      - ncw_node_highlight_field_image_media_caption_1_et
-      - ncw_node_highlight_field_image_media_caption_1_el
-      - ncw_node_highlight_field_image_media_caption_1_fr
-      - ncw_node_highlight_field_image_media_caption_1_hr
-      - ncw_node_highlight_field_image_media_caption_1_it
-      - ncw_node_highlight_field_image_media_caption_1_lv
-      - ncw_node_highlight_field_image_media_caption_1_lt
-      - ncw_node_highlight_field_image_media_caption_1_hu
-      - ncw_node_highlight_field_image_media_caption_1_mt
-      - ncw_node_highlight_field_image_media_caption_1_nl
-      - ncw_node_highlight_field_image_media_caption_1_pl
-      - ncw_node_highlight_field_image_media_caption_1_pt
-      - ncw_node_highlight_field_image_media_caption_1_ro
-      - ncw_node_highlight_field_image_media_caption_1_sk
-      - ncw_node_highlight_field_image_media_caption_1_sl
-      - ncw_node_highlight_field_image_media_caption_1_fi
-      - ncw_node_highlight_field_image_media_caption_1_sv
-      - ncw_node_highlight_field_image_media_caption_1_is
-      - ncw_node_highlight_field_image_media_caption_1_no
-      - ncw_node_highlight_field_image_media_caption_1_tr
-    no_stub: true
 
-  field_image_oshmail_media:
-    plugin: file_id_lookup
-    source: field_image
-    migration: ncw_node_highlight_field_image_media_1
-    no_stub: true
+

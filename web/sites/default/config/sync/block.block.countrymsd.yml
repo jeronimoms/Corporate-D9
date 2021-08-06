@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.country
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: countrymsd
 theme: ncwtheme
 region: sidebar_first
-weight: -12
+weight: -19
 provider: null
 plugin: 'facet_block:country'
 settings:

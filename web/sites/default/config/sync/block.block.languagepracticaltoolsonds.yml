@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.language_practical_tools_on_ds_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: languagepracticaltoolsonds
 theme: ncwtheme
 region: sidebar_first
-weight: -22
+weight: -29
 provider: null
 plugin: 'facet_block:language_practical_tools_on_ds_'
 settings:

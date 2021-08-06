@@ -44,13 +44,10 @@ content:
     third_party_settings: {  }
     region: content
   content_moderation_control:
-    weight: -20
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    region: content
 hidden:
   addtoany: true
   breadcrumbs: true
@@ -75,5 +72,6 @@ hidden:
   field_thesaurus_2020: true
   field_wiki_categories: true
   langcode: true
+  links: true
   search_api_excerpt: true
   simplenews_issue: true

@@ -16,6 +16,7 @@ dependencies:
   module:
     - datetime
     - ds
+    - entityreference_extensions
     - text
     - user
 third_party_settings:
@@ -37,6 +38,7 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - content_moderation_control
         - node_title
         - body
         - field_calls_deadline
@@ -59,6 +61,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: ds_content
+  content_moderation_control:
+    weight: -20
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
   field_calls_deadline:
     weight: 2
     label: above
@@ -72,9 +79,30 @@ content:
     weight: 3
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      view_mode: default
+      limit:
+        number: ''
+        offset: null
+        reverse: false
+        limit_before_sort: false
+      sort:
+        field: ''
+        asc: true
+      display:
+        number: 1
+        view_mode: default
+        enable: false
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view_delta
     region: ds_content
 hidden:
   addtoany: true

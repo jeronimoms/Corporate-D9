@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.sector_indrustry_covered_msd_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: sectorindrustrycoveredmsd
 theme: ncwtheme
 region: sidebar_first
-weight: -8
+weight: -15
 provider: null
 plugin: 'facet_block:sector_indrustry_covered_msd_'
 settings:

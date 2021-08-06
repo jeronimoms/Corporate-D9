@@ -1,0 +1,86 @@
+.node--type-musculoskeletal-disorders {
+  .field--name-field-type-of-item,
+  .field--name-field-material-country,
+  .field--name-field-available-in-languages {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    margin-right: 1rem;
+    padding-top: 0;
+    font-size: 0.9rem;
+    .field__label {
+      margin: 0 5px 0 0;
+      padding: 0;
+      color: #003399;
+      min-width: auto;
+      font-weight: bold;
+    }
+    .field__items {
+      display: flex;
+      align-items: center;
+      .field__item {
+        display: block;
+        margin: 0 4px 0 0;
+        background-color: $bg-color-blue-light-2;
+        border-radius: 5px;
+        padding: 4px 10px;
+        color: white;
+        color: $bg-color-blue;
+        font-size: 0.687rem;
+        a {
+          border: none;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+  .field--name-field-body-original {
+    font-size: 0.875rem;
+    p {
+      margin: 0;
+    }
+  }
+  .field--type-language-field,
+  .field--type-entity-reference,
+  .field--type-link {
+    margin-bottom: 0.4rem;
+    padding: 0;
+    font-size: 0.875rem;
+    p {
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: $bg-color-blue;
+      border-bottom: 1px solid $bg-color-pink;
+    }
+    .field__label {
+      font-weight: bold;
+    }
+  }
+  .field--name-field-year {
+    .field__item {
+      color: $bg-color-blue;
+      font-size: 0.785rem;
+      font-weight: bold;
+    }
+  }
+  .tags-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    margin: 0 0 20px 0;
+    .field {
+      margin: 0 1rem 0.2rem 0;
+    }
+  }
+  .node__content {
+    div > h2 {
+      margin: 0;
+      padding-bottom: 0;
+    }
+  }
+}

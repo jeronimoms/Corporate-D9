@@ -1163,6 +1163,18 @@ display:
             group_items: {  }
           plugin_id: boolean
       sorts:
+        field_contact_type_target_id:
+          id: field_contact_type_target_id
+          table: node__field_contact_type
+          field: field_contact_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
         weight:
           id: weight
           table: taxonomy_term_field_data
