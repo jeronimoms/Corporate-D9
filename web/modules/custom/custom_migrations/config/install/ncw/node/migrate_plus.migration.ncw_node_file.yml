@@ -1,53 +1,51 @@
-# Migration file for creating "publication" nodes from BBDD.
+# Migration file for creating "files" nodes from BBDD.
 #
 # This file contains much of the information which we
 # used to specify in the "Migration" class in Drupal 7.
-# But why write code if you can write YAML?
-# This is how we declare a Migration the Drupal 8 way.
 
 ##################### BASIC INFORMATION ###################
 
-id: ncw_node_file
-label: 'Node: file'
+id: ncw_node_file                    # -----  CHANGE
+label: 'Node: File'                   # -----  CHANGE
 audit: true
 migration_group: ncw_migrate_nodes
 deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
-
-##################### BASIC INFORMATION ###################
-
-
-
-########################## SOURCE #########################
-
 source:
-  plugin: d7_node
-  node_type: file
-
-########################## SOURCE #########################
-
-
-
-########################## PROCESS #########################
+  plugin: ev_d7_node
+  node_type: file                     # -----  CHANGE
+destination:
+  plugin: entity:node
+dependencies:
+  enforced:
+    module:
+      - custom_migrations
+migration_dependencies:
 
 process:
-  # If you are using this file to build a custom migration consider removing
-  # the nid field to allow incremental migrations.
   nid:
     -
       plugin: get
       source: nid
   type:
-    -
-      plugin: default_value
-      default_value: file
+    - plugin: default_value
+      default_value: file              # -----  CHANGE
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
   title:
     -
       plugin: get
       source: title
-  field_full_url:
+  body:
     -
       plugin: get
-      source: field_full_url
+      source: body
+  'body/0/format':
+    -
+      plugin: default_value
+      default_value: full_html
+
   uid:
     -
       plugin: get
@@ -64,34 +62,14 @@ process:
     -
       plugin: get
       source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
 
-########################## PROCESS #########################
-
-
-
-######################## DESTINATION ######################
-
-destination:
-  plugin: entity:node
-
-######################## DESTINATION ######################
-
-
-
-######################## DEPENDENCIES #####################
-
-# We specify that this migration depends on the unops_project_migrate module.
-# Based on this dependency, this migration will be removed when the
-# unops_project_migrate module is uninstalled.
-dependencies:
-  enforced:
-    module:
-      - custom_migrations
-
-# Declare optional dependencies on another migration for this migration.
-# This one has none.
-migration_dependencies:
-  required:
-    - d7_user
-
-######################## DEPENDENCIES #####################
+  # Documents.
+  field_file_media:
+    plugin: file_id_lookup
+    source: field_file
+    migration:
+      - ncw_node_file_media_documents
+    no_stub: true

@@ -120,6 +120,28 @@
     text-align: right;
     padding-top: 0.5rem;
   }
+  .field--label-inline {
+    display: flex;
+    margin: 0 0 5px;
+    font-size: 0.9rem;
+    .field__label {
+      margin: 0 5px 0 0;
+      font-weight: bold;
+      color: $text-color-blue;
+      font-family: "Open Sans Condensed";
+    }
+    .field__item {
+      font-family: "Open Sans Condensed";
+    }
+  }
+  .field--name-field-external-url {
+    margin-bottom: 5px;
+    a {
+      text-decoration: none;
+      color: $bg-color-blue;
+      border-bottom: 1px solid $bg-color-pink;
+    }
+  }
 }
 
 .revamp-row.no-flex{
@@ -245,14 +267,13 @@
 }
 
 /* Responsive View List */
-@media only screen and (max-width : 991px) {
+@media only screen and (max-width : 768px) {
   .revamp-row{
-    .node{
-      .field--name-field-image-media{
-        display: none;
-      }
+    .field--name-field-image-media, .views-field-field-image-caption{
+      display: none;
     }
   }
+
 }
 @media only screen and (max-width :576px) {
   .view-highlight, .view-press-releases {

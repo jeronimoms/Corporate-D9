@@ -1,0 +1,23 @@
+uuid: f38a4ea4-d293-4d98-8d37-51d3d0a8d66c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.newsletter_subscription_block
+    - field.storage.block_content.field_newsletter_privacy_notice
+  module:
+    - link
+id: block_content.newsletter_subscription_block.field_newsletter_privacy_notice
+field_name: field_newsletter_privacy_notice
+entity_type: block_content
+bundle: newsletter_subscription_block
+label: 'Privacy notice'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

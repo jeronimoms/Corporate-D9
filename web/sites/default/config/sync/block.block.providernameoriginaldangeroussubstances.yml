@@ -1,0 +1,28 @@
+uuid: 7e319649-fb94-47a4-a006-f47f242c81ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.provider_name_original_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: providernameoriginaldangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -24
+provider: null
+plugin: 'facet_block:provider_name_original_dangerous_substances_'
+settings:
+  id: 'facet_block:provider_name_original_dangerous_substances_'
+  label: 'Provider name'
+  provider: facets
+  label_display: visible
+  block_id: providernameoriginaldangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

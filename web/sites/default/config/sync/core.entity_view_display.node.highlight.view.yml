@@ -98,8 +98,15 @@ content:
     label: hidden
     settings:
       image_style: view_images
-      image_link: ''
-    third_party_settings: {  }
+      image_link: content
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: media_thumbnail
     region: ds_content
   field_publication_date:
@@ -115,6 +122,7 @@ hidden:
   addtoany: true
   breadcrumbs: true
   comment_node_highlight: true
+  content_moderation_control: true
   field_activity: true
   field_aditional_resources: true
   field_archived: true

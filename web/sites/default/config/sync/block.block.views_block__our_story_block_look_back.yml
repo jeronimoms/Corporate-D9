@@ -1,0 +1,29 @@
+uuid: e23b4e32-5bbd-4a84-9fa9-1cedba43ad2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.our_story
+  module:
+    - system
+    - views
+  theme:
+    - ncwtheme
+id: views_block__our_story_block_look_back
+theme: ncwtheme
+region: content
+weight: -35
+provider: null
+plugin: 'views_block:our_story-block_look_back'
+settings:
+  id: 'views_block:our_story-block_look_back'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/eu-osha-1994-2019/our-story
+    negate: false

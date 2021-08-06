@@ -1,0 +1,28 @@
+uuid: 7e32e87a-08b3-43bc-8946-b10c7540c193
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.health_effects_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: healtheffectsdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -42
+provider: null
+plugin: 'facet_block:health_effects_dangerous_substances_'
+settings:
+  id: 'facet_block:health_effects_dangerous_substances_'
+  label: 'Health effects'
+  provider: facets
+  label_display: visible
+  block_id: healtheffectsdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: '/themes/dangerous-substances/search*'
+    negate: false

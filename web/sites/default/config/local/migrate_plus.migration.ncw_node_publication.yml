@@ -168,6 +168,7 @@ process:
         target_id: tid
   field_show_on: field_show_on
   field_booklet: field_booklet
+  moderation_state: moderation_state
   field_image_media:
     plugin: file_id_lookup
     source: field_cover_image

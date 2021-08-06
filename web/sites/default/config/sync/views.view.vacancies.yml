@@ -112,7 +112,7 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
@@ -176,7 +176,7 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
@@ -241,7 +241,7 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           text: 'Show details'
@@ -546,10 +546,25 @@ display:
       defaults:
         filters: false
         filter_groups: false
+        empty: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<p>Currently, there are no vacancies available in this section.</p>'
+            format: full_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

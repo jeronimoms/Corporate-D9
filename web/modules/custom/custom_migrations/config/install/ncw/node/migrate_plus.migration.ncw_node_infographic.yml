@@ -101,6 +101,7 @@ process:
       plugin: get
       source: changed
   field_pages_count: field_pages_count
+  moderation_state: moderation_state
 ########################## PROCESS #########################
   # Images.
 
@@ -122,6 +123,7 @@ process:
    source: field_file
    migration:
      - ncw_node_infographics_media_documents_1
+
    no_stub: true
 
 ######################## DESTINATION ######################

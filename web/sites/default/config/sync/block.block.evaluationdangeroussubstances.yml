@@ -1,0 +1,28 @@
+uuid: fe5e0cfe-6c75-42b5-9df9-a62839653100
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.evaluation_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: evaluationdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -27
+provider: null
+plugin: 'facet_block:evaluation_dangerous_substances_'
+settings:
+  id: 'facet_block:evaluation_dangerous_substances_'
+  label: Evaluation
+  provider: facets
+  label_display: visible
+  block_id: evaluationdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

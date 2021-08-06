@@ -1,0 +1,32 @@
+uuid: 6d78cc82-b04b-4bf5-a251-dd05fbad980f
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.priority_area_msd_
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: priorityareamsd
+theme: ncwtheme
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'facet_block:priority_area_msd_'
+settings:
+  id: 'facet_block:priority_area_msd_'
+  label: 'Priority area'
+  provider: facets
+  label_display: visible
+  block_id: priorityareamsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/search
+    negate: false

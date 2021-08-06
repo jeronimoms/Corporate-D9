@@ -94,8 +94,25 @@ class NccDownloadCentreForm extends FormBase {
       $media = $this->entityTypeManager->getStorage('media')->load($element->get('field_image')->getString());
       $media_build = $this->entityTypeManager->getViewBuilder('media')->view($media);
 
-      /** @var \Drupal\media\Entity\Media  $video */
-      $video = $this->entityTypeManager->getStorage('media')->load($element->get('field_video')->getString());
+      $default = $element->getTranslation('en');
+      $media_videos = $element->get('field_video')->referencedEntities();
+      $video = 0;
+
+      if (empty($media_videos)) {
+        $media_videos = $default->get('field_video')->referencedEntities();
+      }
+      if (is_array($media_videos) && count($media_videos) > 0) {
+        foreach ($media_videos as $key => $media_videos) {
+          $media_video_ids = $media_videos->get('name')->getString();
+          $mp4 ='.mp4';
+          $pos = strpos($media_video_ids, $mp4);
+          if( $pos != false){
+            $video = $media_videos;
+          }
+
+        }
+
+      }
 
       $file = [];
       if ($video) {
@@ -110,7 +127,7 @@ class NccDownloadCentreForm extends FormBase {
         $file_mime = str_replace('video/', '', $file_mime);
         $file = [
           'filemime' => $file_mime,
-          'uri' => file_create_url($file->getFileUri()),
+          'uri' => "/napos-films/" . $element->id() . "/video/download",
         ];
       }
 
@@ -157,6 +174,10 @@ class NccDownloadCentreForm extends FormBase {
     $form['actions']['#weight'] = -1;
 
     $form['#attached']['library'][] = 'napo_content_cart/napo_content_cart.form';
+    $form['#attached']['library'][] = 'core/jquery.form';
+    $form['#attached']['library'][] = 'core/drupal.ajax';
+    // Disable cache for this page.
+    $form['#cache']['max-age'] = 0;
 
     return $form;
   }
@@ -248,7 +269,15 @@ class NccDownloadCentreForm extends FormBase {
     // Include the videos checked in the form.
     foreach ($values as $id => $value) {
       $node = $this->entityTypeManager->getStorage('node')->load($id);
-      $media = $this->entityTypeManager->getStorage('media')->load($node->get('field_video')->getString());
+      $default = $node->getTranslation('en');
+      $media_id = $node->get('field_video')->getValue();
+      if (empty($media_id)) {
+        $media_id = $default->get('field_video')->getString();
+      }
+      if (is_array($media_id) && count($media_id) > 0) {
+        $media_id = $media_id[0]['target_id'];
+      }
+      $media = $this->entityTypeManager->getStorage('media')->load($media_id);
       $video_fid = $media->get('field_media_video_file')->getValue()['0']['target_id'];
       $file = $this->entityTypeManager->getStorage('file')->load($video_fid);
       $file_uri = $this->fileSystem->realpath($file->getFileUri());

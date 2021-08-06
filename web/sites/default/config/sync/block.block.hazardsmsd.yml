@@ -1,0 +1,32 @@
+uuid: 796ef4a3-b0c6-4a36-ace9-150e116ef23c
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.hazards_msd_
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: hazardsmsd
+theme: ncwtheme
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'facet_block:hazards_msd_'
+settings:
+  id: 'facet_block:hazards_msd_'
+  label: Hazards
+  provider: facets
+  label_display: visible
+  block_id: hazardsmsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/search
+    negate: false

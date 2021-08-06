@@ -1,0 +1,28 @@
+uuid: f3931a4d-655c-4c74-b873-d8dd1e8eec06
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.year_of_publication_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: yearofpublicationdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -33
+provider: null
+plugin: 'facet_block:year_of_publication_dangerous_substances_'
+settings:
+  id: 'facet_block:year_of_publication_dangerous_substances_'
+  label: 'Year of publication'
+  provider: facets
+  label_display: visible
+  block_id: yearofpublicationdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

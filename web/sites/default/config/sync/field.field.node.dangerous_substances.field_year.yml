@@ -1,0 +1,21 @@
+uuid: ecdb00a8-b719-42e1-8c28-4effef7b886f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year
+    - node.type.dangerous_substances
+  module:
+    - options
+id: node.dangerous_substances.field_year
+field_name: field_year
+entity_type: node
+bundle: dangerous_substances
+label: Year
+description: 'Please select a year of publication, if it is not possible to identify leave it empty.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

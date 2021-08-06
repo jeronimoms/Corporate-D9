@@ -1,0 +1,28 @@
+uuid: f1dc1927-b055-4f23-b41c-3a0a2a527343
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.author_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: authordangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -36
+provider: null
+plugin: 'facet_block:author_dangerous_substances_'
+settings:
+  id: 'facet_block:author_dangerous_substances_'
+  label: Author
+  provider: facets
+  label_display: visible
+  block_id: authordangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

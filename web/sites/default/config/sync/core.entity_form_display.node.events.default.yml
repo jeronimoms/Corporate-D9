@@ -42,12 +42,12 @@ dependencies:
     - node.type.events
     - workflows.workflow.editorial
   module:
+    - chosen_field
     - content_moderation
     - datetime_range
     - file
     - link
     - path
-    - simplenews
     - text
 id: node.events.default
 targetEntityType: node
@@ -55,7 +55,7 @@ bundle: events
 mode: default
 content:
   body:
-    weight: 23
+    weight: 22
     type: text_textarea_with_summary
     settings:
       rows: 9
@@ -66,7 +66,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 34
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -84,16 +84,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-  field_agency_initial_contact:
-    weight: 18
-    type: string_textfield
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
   field_agency_rep_confirmed:
-    weight: 19
+    weight: 18
     type: string_textfield
     settings:
       size: 60
@@ -121,13 +113,13 @@ content:
     third_party_settings: {  }
     region: content
   field_color:
-    weight: 25
+    weight: 24
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_comments_summary_after_eve:
-    weight: 22
+    weight: 21
     type: string_textfield
     settings:
       size: 255
@@ -173,13 +165,13 @@ content:
     third_party_settings: {  }
     region: content
   field_media_promotion:
-    weight: 21
+    weight: 20
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_migrate_hwc:
-    weight: 27
+    weight: 26
     type: boolean_checkbox
     settings:
       display_label: true
@@ -194,28 +186,28 @@ content:
     third_party_settings: {  }
     region: content
   field_publications_exhibition_su:
-    weight: 20
+    weight: 19
     type: options_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_related_documents:
-    weight: 24
+    weight: 23
     type: file_generic
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     region: content
   field_show_eu_flag:
-    weight: 26
+    weight: 25
     type: boolean_checkbox
     settings:
       display_label: true
     third_party_settings: {  }
     region: content
   field_show_on:
-    weight: 28
-    type: options_select
+    weight: 27
+    type: chosen_select
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -248,27 +240,21 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 29
+    weight: 28
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }
-  simplenews_issue:
-    weight: 35
-    settings: {  }
-    third_party_settings: {  }
-    type: simplenews_issue
-    region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 32
+    weight: 31
     region: content
     third_party_settings: {  }
   title:
@@ -286,7 +272,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 33
+    weight: 32
     settings:
       match_operator: CONTAINS
       size: 60
@@ -295,13 +281,14 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 31
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   comment_node_events: true
   field_agency_contact_reply: true
+  field_agency_initial_contact: true
   field_event_in_amp: true
   field_migration_source: true
   field_number_of_attendees: true
@@ -310,4 +297,5 @@ hidden:
   field_show_in_ncw: true
   field_source_url: true
   promote: true
+  simplenews_issue: true
   sticky: true

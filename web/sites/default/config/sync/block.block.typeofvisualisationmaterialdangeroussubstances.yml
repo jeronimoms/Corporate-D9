@@ -1,0 +1,28 @@
+uuid: 675153b4-605a-4481-b747-c4f6388c75b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.type_of_visualisation_material
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: typeofvisualisationmaterialdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -38
+provider: null
+plugin: 'facet_block:type_of_visualisation_material'
+settings:
+  id: 'facet_block:type_of_visualisation_material'
+  label: 'Type of visualisation tool'
+  provider: facets
+  label_display: visible
+  block_id: typeofvisualisationmaterialdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

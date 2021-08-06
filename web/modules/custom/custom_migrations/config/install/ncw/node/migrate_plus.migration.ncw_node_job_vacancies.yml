@@ -24,7 +24,7 @@ process:
     -
       plugin: get
       source: nid
-  vid: vid
+
   type:
     - plugin: default_value
       default_value: job_vacancies              # -----  CHANGE
@@ -136,6 +136,7 @@ process:
   field_job_vacancies_shortlisted: field_job_vacancies_shortlisted
   field_reserve_list: field_reserve_list
   field_archived: field_archived
+  moderation_state: moderation_state
   #documents
   field_file_media:
     plugin: file_id_lookup

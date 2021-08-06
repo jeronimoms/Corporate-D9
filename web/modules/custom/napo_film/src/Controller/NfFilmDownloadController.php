@@ -67,12 +67,19 @@ class NfFilmDownloadController extends ControllerBase implements ContainerInject
    * {@inheritdoc}
    */
   public function filmDownload(Node $node) {
-
     if ($node->hasField('field_video')) {
-      $video_id = $node->get('field_video')->getString();
+      $default = $node->getTranslation('en');
+      $video_id = $node->get('field_video')->getValue();
+      if (empty($video_id)) {
+        $video_id = $default->get('field_video')->getString();
+      }
+      if (is_array($video_id) && count($video_id) > 0) {
+        $video_id = $video_id[0]['target_id'];
+      }
       $media = $this->entityTypeManager->getStorage('media')->load($video_id);
       $media_file_id = $media->get('field_media_video_file')->getValue()['0']['target_id'];
       $file = $this->entityTypeManager->getStorage('file')->load($media_file_id);
+
 
       $headers = [
         'Content-Type' => 'text/' . $file->getMimeType(),
@@ -84,7 +91,6 @@ class NfFilmDownloadController extends ControllerBase implements ContainerInject
 
       return new BinaryFileResponse($uri, 200, $headers, true);
     }
-
 
     return [];
   }

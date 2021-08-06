@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.seminar_tags
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-seminars-topics
 id: seminar_tags
 theme: ncwtheme
 region: sidebar_first
-weight: -27
+weight: -59
 provider: null
 plugin: 'facet_block:seminar_tags'
 settings:
@@ -24,5 +28,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/search/*'
+    pages: "/search/seminars\r\n/tools-and-resources/seminars"
     negate: false

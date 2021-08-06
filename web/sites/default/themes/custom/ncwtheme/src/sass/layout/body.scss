@@ -64,7 +64,7 @@ ul.menu{
 /* Paragraps - List */
 body{
   .field--name-body, .field--name-field-summary-html{
-    p, ul {
+    p, ul, ol{
       font-size: 0.9rem;
 
       a {
@@ -101,6 +101,20 @@ body{
         -o-transition: background-color 800ms linear;
         -ms-transition: background-color 800ms linear;
         transition: background-color 800ms linear;
+      }
+    }
+    &.arrow-back {
+      a {
+        padding: 10px;
+        margin-right: 0;
+        background-image: none;
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 40px;
+          height: 10px;
+          background: url(../images/arrow-back.png) no-repeat;
+        }
       }
     }
   }
@@ -393,6 +407,14 @@ body {
   }
 }
 
+a[href^="mailto:"] {
+  border-bottom: 1px solid $bg-color-pink;
+  &:hover{
+    border-bottom: 1px solid $bg-color-blue;
+    text-decoration: none;
+  }
+}
+
 /* END Common elements */
 
 /* Twetter Block */
@@ -445,21 +467,9 @@ body {
   }
 }
 
-/* Blog Detail */
-.node--type-blog{
-   .field--name-field-image-caption{
-    float: left;
-    margin-right: 1rem;
-    clear: both;
-  }
-  .field--name-field-summary-html{
-    color: $text-color-blue;
-    display: table;
-  }
-}
 
-/* News - Highlights - Blogs */
-.node--type-news, .node--type-highlight{
+/* Highlights - Blogs */
+.node--type-highlight{
   .field--name-field-image-media{
     float: left;
     margin-right: 1rem;
@@ -525,6 +535,12 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
           height: auto;
           align-items: flex-end;
         }
+        .introduction-image{
+          img{
+            width: 100%;
+            height: auto;
+          }
+        }
         .text_news_events {
           padding-top: 5px;
           min-height: 110px;
@@ -551,10 +567,15 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
   .content-headings-related{
     padding-top: 2rem;
     h2{
-      margin-bottom: 2rem;
+      margin-bottom: 0;
     }
     h3{
       margin-bottom: 1.5rem;
+    }
+  }
+  .custom-file-twig{
+    .field__label{
+      display: none;
     }
   }
   .field--name-field-aditional-resources{
@@ -564,6 +585,24 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
         padding-bottom: 0;
         font-size: 1rem;
       }
+    }
+    article{
+      clear: both;
+    }
+    .publication-field{
+      article{
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        background: url(../images/separator.jpg) repeat-x 100% 0;
+      }
+      article.no-border-custom-js{
+        background: transparent;
+        padding-top: 0;
+        border-top:0;
+      }
+    }
+    iframe{
+      margin-top: 0;
     }
   }
   .field--name-body{
@@ -847,6 +886,156 @@ body.path-aggregator{
     }
     .item-description{
       padding-top: 1rem;
+    }
+  }
+}
+
+.page-view-events, .page-view-publications-index{
+  .node-event-twig-custom, .node-publications-custom{
+    .node--type-article{
+      .field--name-body{
+        max-width: 70%;
+      }
+    }
+  }
+}
+
+/* Press release */
+.node--type-press-release{
+  .field--name-field-image-media{
+    float: left;
+    margin-right: 1rem;
+  }
+  .field--name-field-pr-notes-to-editor{
+    article{
+      h2.node__title{
+        display: none;
+      }
+      .field--name-body{
+        padding-right: 5px;
+      }
+    }
+  }
+}
+.field--name-field-quote{
+  border-top: 5px solid #536e91;
+  border-bottom: 5px solid #536e91;
+  color: #536e91;
+  padding: 2em;
+  background-image: url(../images/quotefirst.png),url(../images/quotesecond.png);
+  background-position: left 10px,right 93%;
+  background-repeat: no-repeat;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+/* Hide field reviwers */
+#main{
+  .form-item-node-id{
+    display: none;
+  }
+}
+
+/*** External URL ***/
+.node--type-external-url {
+  .field--name-field-external-url a {
+    display: inline-block;
+    margin: 0 0 8px 0;
+    text-decoration: none;
+    border-bottom: 1px solid $text-color-pink;
+    &:after {
+      width: 8px;
+      height: 10px;
+      display: inline-block;
+      content: "";
+      margin: 0 0 0 3px;
+      background: url(../images/external_link.png) no-repeat scroll 0 42% rgba(0,0,0,0);
+      margin-left: 0.3em!important;
+      background-size: 8px 10px;
+      opacity: 0.85;
+    }
+  }
+}
+
+.block-oshwiki-static {
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 20px !important;
+  background: $bg-color-blue-block;
+  .OSHWikiDivTit {
+    display: flex;
+    align-items: center;
+  }
+  .OSHWikiTitle {
+    font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
+    font-size: 1.35rem;
+  }
+  .imgOSHWiki {
+    margin-right: 0.5rem;
+  }
+  .p2 {
+    font-size: 0.8rem;
+    padding: 1.3rem 0;
+  }
+  .p3 {
+    text-align: right;
+    margin-right: 10px;
+  }
+}
+
+.field--name-body {
+  ol {
+    padding-left: 40px;
+  }
+}
+
+/*** Banner Quiz ***/
+a.quiz-start-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/*** Page 25th anniversary ***/
+.page-node-15070 {
+  .view-landing-menu {
+    .view-content.row {
+      padding: 0 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2%;
+    }
+    .list--item {
+      height: 170px;
+      display: flex;
+      flex-direction: column;
+      margin: 0.5rem 0 1rem 0;
+      max-width: 32%;
+      flex: 0 1 32%;
+      .menu-link-text {
+        border-bottom: 10px solid #d2dced;
+        display: flex;
+        flex: 1;
+        align-items: flex-start;
+        min-height: 60px;
+        a {
+          display: flex;
+          align-items: flex-end;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          font-family: 'Open Sans Condensed',sans-serif;
+          font-weight: bold;
+          text-decoration: none;
+          color: $text-color-blue;
+          font-size: 1.1875rem;
+          line-height: 1.2;
+        }
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     }
   }
 }

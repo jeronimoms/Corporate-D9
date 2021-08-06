@@ -22,7 +22,7 @@ dependencies:
 migration_dependencies:
 
 process:
-  #nid: tnid   #comentar si no es bbdd limpia
+  nid: tnid   #comentar si no es bbdd limpia
   #vid: vid  #comentar si no es bbdd limpia
   type:
     - plugin: default_value

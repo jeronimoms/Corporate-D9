@@ -1,0 +1,28 @@
+uuid: 8638c964-8907-4550-8592-dc7a18d2d210
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.selected_for_analysis_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: selectedforanalysisdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -34
+provider: null
+plugin: 'facet_block:selected_for_analysis_dangerous_substances_'
+settings:
+  id: 'facet_block:selected_for_analysis_dangerous_substances_'
+  label: 'Selected for analysis'
+  provider: facets
+  label_display: visible
+  block_id: selectedforanalysisdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

@@ -1,0 +1,28 @@
+uuid: 37f9cddc-d969-45eb-bc85-2799311799f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.prevention_measures_dangerous_substances_
+  module:
+    - facets
+    - system
+  theme:
+    - ncwtheme
+id: preventionmeasuresdangeroussubstances
+theme: ncwtheme
+region: sidebar_first
+weight: -29
+provider: null
+plugin: 'facet_block:prevention_measures_dangerous_substances_'
+settings:
+  id: 'facet_block:prevention_measures_dangerous_substances_'
+  label: 'Prevention measures'
+  provider: facets
+  label_display: visible
+  block_id: preventionmeasuresdangeroussubstances
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/search
+    negate: false

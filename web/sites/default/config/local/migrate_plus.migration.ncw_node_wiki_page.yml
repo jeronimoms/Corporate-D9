@@ -16,6 +16,7 @@ source:
   plugin: d7_node
   node_type: wiki_page
 process:
+  nid: tnid
   type:
     -
       plugin: default_value

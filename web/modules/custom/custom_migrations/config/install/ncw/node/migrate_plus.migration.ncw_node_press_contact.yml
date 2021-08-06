@@ -26,7 +26,7 @@ process:
     -
       plugin: get
       source: nid
-  vid: vid
+
   type:
     - plugin: default_value
       default_value: press_contact              # -----  CHANGE

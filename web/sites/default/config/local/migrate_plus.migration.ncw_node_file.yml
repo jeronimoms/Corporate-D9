@@ -11,9 +11,9 @@ field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: ncw_migrate_nodes
-label: 'Node: file'
+label: 'Node: File'
 source:
-  plugin: d7_node
+  plugin: ev_d7_node
   node_type: file
 process:
   nid:
@@ -24,14 +24,22 @@ process:
     -
       plugin: default_value
       default_value: file
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: en
   title:
     -
       plugin: get
       source: title
-  field_full_url:
+  body:
     -
       plugin: get
-      source: field_full_url
+      source: body
+  body/0/format:
+    -
+      plugin: default_value
+      default_value: full_html
   uid:
     -
       plugin: get
@@ -48,8 +56,15 @@ process:
     -
       plugin: get
       source: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_file_media:
+    plugin: file_id_lookup
+    source: field_file
+    migration:
+      - ncw_node_file_media_documents
+    no_stub: true
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - d7_user
+migration_dependencies: null

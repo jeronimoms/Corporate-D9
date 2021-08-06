@@ -117,6 +117,7 @@ process:
       source: field_sector
       process:
         target_id: tid
+  moderation_state: moderation_state
   field_related_resources_media:
     plugin: file_id_lookup
     source: field_related_resources

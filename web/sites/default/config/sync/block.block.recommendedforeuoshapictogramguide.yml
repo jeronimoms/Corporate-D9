@@ -1,0 +1,32 @@
+uuid: c0f8c0a0-84b6-4823-99b5-2671668ab089
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.recommended_for_eu_osha_pictogram_guide
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: recommendedforeuoshapictogramguide
+theme: ncwtheme
+region: sidebar_first
+weight: -13
+provider: null
+plugin: 'facet_block:recommended_for_eu_osha_pictogram_guide'
+settings:
+  id: 'facet_block:recommended_for_eu_osha_pictogram_guide'
+  label: 'Recommended for EU-OSHA pictogram guide'
+  provider: facets
+  label_display: visible
+  block_id: recommendedforeuoshapictogramguide
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/search
+    negate: false

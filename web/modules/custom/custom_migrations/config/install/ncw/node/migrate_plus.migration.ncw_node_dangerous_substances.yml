@@ -209,19 +209,7 @@ process:
       process:
         target_id: tid
   field_worker_groups_other: field_worker_groups_other
-  field_publication_year :
-    -
-      plugin: sub_process
-      source: field_publication_year
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: 'Y-m-d\TH:i:s'
-          from_timezone: 'Europe/Madrid'
-          to_timezone: 'Europe/Madrid'
-          source: value
-
+  field_year: field_publication_year
 
 
 

@@ -1,0 +1,32 @@
+uuid: 78221e30-d768-4d45-8c5a-9e27bceb986b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.sector_indrustry_covered_practical_tools_on_ds_
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: sectorindrustrycoveredpracticaltoolsonds
+theme: ncwtheme
+region: sidebar_first
+weight: -21
+provider: null
+plugin: 'facet_block:sector_indrustry_covered_practical_tools_on_ds_'
+settings:
+  id: 'facet_block:sector_indrustry_covered_practical_tools_on_ds_'
+  label: 'Sector / Indrustry'
+  provider: facets
+  label_display: visible
+  block_id: sectorindrustrycoveredpracticaltoolsonds
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/practical-tools-dangerous-substances
+    negate: false

@@ -1,0 +1,32 @@
+uuid: 9e166932-a55e-48b3-936a-edef1307263b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.target_group_practical_tools_on_ds_
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: targetgrouppracticaltoolsonds
+theme: ncwtheme
+region: sidebar_first
+weight: -17
+provider: null
+plugin: 'facet_block:target_group_practical_tools_on_ds_'
+settings:
+  id: 'facet_block:target_group_practical_tools_on_ds_'
+  label: 'Target group'
+  provider: facets
+  label_display: visible
+  block_id: targetgrouppracticaltoolsonds
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/dangerous-substances/practical-tools-dangerous-substances
+    negate: false

@@ -23,6 +23,7 @@ dependencies:
     - ds
     - field_group
     - media
+    - smart_trim
     - text
     - user
 third_party_settings:
@@ -46,24 +47,44 @@ third_party_settings:
       ds_content:
         - field_publication_date
         - node_title
-        - group_group_right
+        - node_author
         - field_image_caption
+        - group_group_right
+        - field_author
         - field_summary_html
         - body
     fields:
+      node_author:
+        plugin_id: node_author
+        weight: 2
+        label: hidden
+        formatter: author
       node_title:
         plugin_id: node_title
         weight: 1
         label: hidden
         formatter: default
+        settings:
+          'link class': ''
+          wrapper: h2
+          class: ''
+          exclude_node_title: '1'
+          link: false
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_group:
     group_group_right:
       children:
         - field_image_caption
+        - field_author
         - field_summary_html
         - body
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: html_element
       region: ds_content
       format_settings:
@@ -85,10 +106,27 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     region: ds_content
+  field_author:
+    type: smart_trim
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
+    third_party_settings: {  }
   field_image_caption:
     weight: 2
     label: hidden
@@ -108,7 +146,7 @@ content:
     type: datetime_default
     region: ds_content
   field_summary_html:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -119,7 +157,6 @@ hidden:
   breadcrumbs: true
   field_activity: true
   field_archived: true
-  field_author: true
   field_expiration_date: true
   field_nace_codes: true
   field_project_manager: true

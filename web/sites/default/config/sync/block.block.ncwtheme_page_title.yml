@@ -11,7 +11,7 @@ _core:
 id: ncwtheme_page_title
 theme: ncwtheme
 region: content
-weight: -30
+weight: -49
 provider: null
 plugin: page_title_block
 settings:
@@ -22,5 +22,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/publications/*\r\n/oshnews/*\r\n/highlights/*\r\n/oshevents/*\r\n/related-content/*/news/*\r\n/tools-and-resources/seminars/*\r\n/tools-and-resources/eu-osha-thesaurus/term/*\r\n/about-eu-osha/procurement/*\r\n/about-eu-osha/careers/*"
+    pages: "/publications/*\r\n/oshnews/*\r\n/highlights/*\r\n/oshevents/*\r\n/related-content/*/news/*\r\n/tools-and-resources/seminars/*\r\n/tools-and-resources/eu-osha-thesaurus/term/*\r\n/about-eu-osha/procurement/*\r\n/about-eu-osha/careers/*\r\n/tools-and-publications/infographics/*\r\n/about-eu-osha/press-room/*\r\n/blog/*"
     negate: true

@@ -83,13 +83,25 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.content').slideToggle();
   });
 
+  //Facet accordions Dangerous substances
+  $(".page-view-dangerous-substances-overview .sidebar-first  .block-facet--links h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
+  //Facet accordions, this should be usefull for all blocks with .block-facets-accordion-class
+  $(".sidebar-first  .block-facets-accordion h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
   // Facet with view FOPS detail
   $(".sidebar-first .view-fop-flags h3").click(function(){
     $(this).toggleClass("active");
     $(this).next('.fop-country-list').slideToggle();
   });
 
-  //View MSD glossary accordion #block-ncwtheme-content > div > div > div > div.view-content.row > div:nth-child(8)
+  //View MSD glossary accordion
   $(".view-view-glossary > div.view-content.row > h3:nth-child(7)").addClass('active');
   $(".view-view-glossary > div.view-content.row > div:nth-child(8)").css('display','block');
   $(".view-view-glossary h3").click(function(){
@@ -114,6 +126,9 @@ jQuery(document).ready(function($) {
     $(this).toggleClass("active");
     $(this).next('.view-seminar .view-grouping-content').slideToggle();
   });
+
+  //View Careers 3th accordion opened
+  $( "#block-quicktabscareersaccordion #ui-id-6" ).trigger( "click" );
 
   // Text resize
   $('#_biggify').on('click', function() {
@@ -144,7 +159,6 @@ jQuery(document).ready(function($) {
     $('#block-headerthesaurus-2').appendTo('.move-block-thesaurus');
   }
 
-
   //Move Search Blog
   if ($(".move-block-search-blog")[0]) {
     $('.block-views-exposed-filter-blocksearch-blog-page-1').appendTo('.move-block-search-blog');
@@ -155,10 +169,30 @@ jQuery(document).ready(function($) {
     $('.views-row.moved-by-jquery').prependTo('.page-view-infographic .view-infographic.view-display-id-block_3 .view-content.row');
   }
 
-  //Move Newsletter subscribe home block
-  if ($(".move-subscribe-button-by-jquery")[0]) {
-    $('.newsletter-block-wrapper button').appendTo('.move-subscribe-button-by-jquery');
+  //Move Menu block Wiki block before
+  if ($("div").hasClass('field--name-field-related-oshwiki-articles') && $("div").hasClass('block-views-blocklanding-menu-block-1')) {
+    $('.block-views-blocklanding-menu-block-1').appendTo('article .field--name-body');
+    $('.block-views-blocklanding-menu-block-1').addClass('moved-by-jquery');
   }
+
+  //Fix menu mobile Sticky
+  if ($("#navbar-main .navbar-toggler")[0]) {
+    $("#navbar-main > button").click(function(){
+      $('body').toggleClass('custom-activate-menu');
+      $('#header').toggleClass('custom-activate-menu-header');
+    });
+  }
+
+
+  //Hide titles en Related resource item
+  $(".file-field:first").addClass('to-show-custom-js');
+  $(".youtube-field:first").addClass('to-show-custom-js');
+  $(".publication-field:first").addClass('to-show-custom-js');
+  $(".publication-field:first article").addClass('no-border-custom-js');
+  $(".slideshare-field:first").addClass('to-show-custom-js');
+  $(".infographic-field:first").addClass('to-show-custom-js');
+  $(".to-show-custom-js:first").addClass('first-child-custom-js');
+
 
   //Fix display pages footer view if we haven't pagination
   if ($(".pagerer-container")[0]) {
@@ -254,6 +288,34 @@ jQuery(document).ready(function($) {
     }
   }
 
+  // Our story show more or less anniversaries
+  $(".about-eu-osha-eu-osha-2004-2019-our-story").ready(function () {
+    // Hide items on start
+    let elements = document.getElementsByClassName("anniversary-elements");
+    let isHidingElements = true
+    showOrHideNumberOfElements(elements, isHidingElements)
+    //Get view all button from the page footer
+    const viewAllButton = document.getElementsByClassName("field-content see-more-arrow pull-right")[0]
+    const viewAllText = viewAllButton.children.item(0).innerHTML
+    viewAllButton.children.item(0).innerHTML = viewAllText.split("/")[0]
+
+    viewAllButton.addEventListener("click", function () {
+      isHidingElements = !isHidingElements
+      showOrHideNumberOfElements(elements, isHidingElements)
+      viewAllButton.children.item(0).innerHTML = isHidingElements
+          ? viewAllText.split("/")[0]
+          : viewAllText.split("/")[1]
+    })
+  });
+
+  function showOrHideNumberOfElements(elements, toHide) {
+    // When it hides elements, only three should be displayed
+    const ELEMENTS_TO_SHOW = toHide ? 3 : 0;
+    for(let i = ELEMENTS_TO_SHOW; i < elements.length; ++i) {
+      elements[i].style.display = toHide ? "none" : "block"
+    }
+  }
+
   //Remove equal elements in MSD Glosaary filter
   if ($(".view-msd-glossary")[0]) {
     var seen = {};
@@ -278,6 +340,10 @@ jQuery(document).ready(function($) {
   if (window.location.href.indexOf("alphabetical") > -1) {
     $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
   }
+
+  // Accesskey for custom elements
+  $('#edit-lang-dropdown-select').attr('accessKey','L');
+  $('#edit-search-api-fulltext').attr('accessKey','Q');
 });
 
 //Move Language Selector to the menu responsive

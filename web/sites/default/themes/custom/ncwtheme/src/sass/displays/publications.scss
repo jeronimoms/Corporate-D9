@@ -1,3 +1,11 @@
+.page-view-publications-index{
+  .node-publications-custom{
+    h1{
+      padding-bottom: 0;
+    }
+  }
+}
+
 /* Node publications */
 .node-publications-custom{
   h1{
@@ -141,6 +149,12 @@ body.node--type-publication{
   .publications-detail-right-column{
     width: 100%;
     padding-left: 2rem;
+    h2 {
+      margin-bottom: 21px;
+      font-weight: normal;
+      padding: 0;
+      font-size: 1.3rem;
+    }
   }
   .field--name-field-image-media{
     img{
@@ -148,17 +162,25 @@ body.node--type-publication{
     }
   }
   .content-publication-info{
+    padding: 14px 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     .content-label{
       display: flex;
+      align-items: flex-start;
+      color: $text-color-blue;
       .label{
+        font-size: 0.9rem;
         padding-right: 5px;
       }
       .field{
+        padding: 0;
         font-size: 0.9rem;
-        line-height: 20px;
+        line-height: 24px;
       }
+    }
+    .content-label:nth-child(1){
+      padding-right: 5px;
     }
   }
   .datetime{
@@ -212,6 +234,73 @@ body.node--type-publication{
   }
 }
 
+.field--name-field-aditional-resources {
+  .publication-field {
+    width: 100%;
+    background: url(../images/back-tit-blue.png) repeat-x scroll 0 100% transparent;
+    margin-bottom: 1.3rem;
+    padding-bottom: 1.3rem;
+    .layout__region--content {
+      display: flex;
+      gap: 24px;
+    }
+    .field {
+      color:$text-color-blue;
+    }
+    .field--name-field-image-media {
+      max-width: 155px;
+    }
+    .field--name-field-publication-date {
+      padding-top: 14px;
+    }
+    .field--name-field-publication-type {
+      color:$text-color-blue;
+      font-size: 0.875rem;
+      display: flex;
+      padding: 0;
+      line-height: 24px;
+      .field__label {
+        font-weight: bold;
+        &:after {
+          display: inline-block;
+          content:":";
+          margin: 0 3px 0 0;
+        }
+      }
+    }
+    .field-name-field-pages-count {
+      padding-bottom: 14px;
+      display: flex;
+      font-size: 0.875rem;
+      .field-label-inline {
+        margin: 0 0 0 3px;
+        order: 2;
+      }
+    }
+    h2 {
+      margin-bottom: 21px;
+      font-weight: normal;
+      padding: 0;
+      font-size: 1.125rem;
+    }
+    .field--name-node-link a {
+      transition: all 0.25s ease-in-out;
+      background: url(../images/flecha.png) no-repeat scroll 89% 53% transparent;
+      padding: 0.5em 3em 0.5em 1em !important;
+      text-decoration: none;
+      padding-left: 0em;
+      border-bottom: 0px!important;
+      font-weight: bold;
+      font-size: 0.785rem;
+      &:hover {
+        text-decoration: none;
+        background-color: $text-color-blue;
+        color: white;
+      }
+    }
+  }
+}
+
 /* Rsponsive */
 @media only screen and (max-width : 1200px) {
   /* Publications Slide 3 items */
@@ -254,6 +343,18 @@ body.node--type-publication{
     }
   }
 }
+
+@media only screen and (max-width : 990px) {
+  .node--type-publication{
+    .publications-left-column{
+      display: none;
+    }
+    .publications-detail-right-column{
+      padding-left: 0;
+    }
+  }
+}
+
 @media only screen and (max-width : 768px) {
   .tools-and-publications-publications {
     .view-filters {
@@ -262,6 +363,15 @@ body.node--type-publication{
       }
     }
   }
+  .node--type-publication{
+    .content-publication-info{
+      display: block;
+      .content-label{
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+
 }
 
 @media only screen and (max-width : 580px) {

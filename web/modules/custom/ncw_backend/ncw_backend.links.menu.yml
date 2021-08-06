@@ -1,0 +1,5 @@
+newsletter.settings:
+  title: Osha newsletter config
+  description: 'Configure osha newsletter config'
+  parent: system.admin_config_services
+  route_name: ncw_backend.newsletter_config

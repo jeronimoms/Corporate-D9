@@ -1,0 +1,109 @@
+/* Font colours */
+.text-color-black {
+  color: #333;
+}
+
+.text-color-red {
+  color: #ea4a5e;
+}
+
+.text-color-white {
+  color: #FFF;
+}
+
+/* background colours */
+.bg-color-blue {
+  background: #323a93;
+}
+
+.bg-color-red {
+  background: #ea4a5e;
+}
+
+.bg-color-red-hover {
+  background: #a02b3a;
+}
+
+.bg-color-black {
+  background: #323232;
+}
+
+.bg-color-grey {
+  background: #f7f7f7;
+}
+
+.bg-color-grey-lines {
+  background: #dcdcdc;
+}
+
+.bg-color-grey-dark {
+  background: #9c9c9c;
+}
+
+.bg-color-white {
+  background: #FFF;
+}
+
+/*  WIDGET BACKEND TO WORKFLOW OF THE STATES OF GOOD PRACTICES  */
+.osha-workflow-list-widget {
+  background-color: transparent;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.osha-workflow-list-widget p {
+  display: inline-block;
+  background: #fff498;
+  margin-right: 25px;
+  position: relative;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  padding-left: 40px;
+  font-size: 16px;
+}
+.osha-workflow-list-widget p:before {
+  content: "";
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  border-left: 25px solid #FFF;
+}
+.osha-workflow-list-widget p:after {
+  content: "";
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 25px solid #fff498;
+  position: absolute;
+  right: -25px;
+  top: 0;
+}
+.osha-workflow-list-widget p.first {
+  padding-left: 10px;
+}
+.osha-workflow-list-widget p.first:before {
+  content: "";
+  border: none;
+}
+.osha-workflow-list-widget p.last {
+  padding-right: 10px;
+}
+.osha-workflow-list-widget p.last:after {
+  content: "";
+  border: none;
+}
+.osha-workflow-list-widget p.active {
+  background: #8d8c81;
+  color: #FFF;
+  font-weight: bolder;
+}
+.osha-workflow-list-widget p.active:before {
+  border-left: 25px solid #FFF;
+}
+.osha-workflow-list-widget p.active:after {
+  border-left: 25px solid #8d8c81;
+}
+
+/*# sourceMappingURL=osha-workflow-list-widget.css.map */

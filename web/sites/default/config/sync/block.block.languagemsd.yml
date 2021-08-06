@@ -1,0 +1,32 @@
+uuid: 5a486084-470c-4f1c-8d0b-75238a756c49
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.available_in_languages
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: languagemsd
+theme: ncwtheme
+region: sidebar_first
+weight: -11
+provider: null
+plugin: 'facet_block:available_in_languages'
+settings:
+  id: 'facet_block:available_in_languages'
+  label: Language
+  provider: facets
+  label_display: visible
+  block_id: languagemsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/search
+    negate: false
