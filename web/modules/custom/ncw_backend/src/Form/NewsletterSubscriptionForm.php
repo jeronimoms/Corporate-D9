@@ -5,6 +5,7 @@ namespace Drupal\ncw_backend\Form;
 use Drupal\Component\Utility\EmailValidatorInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Utility\Token;
 use GuzzleHttp\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -25,13 +26,19 @@ class NewsletterSubscriptionForm extends FormBase {
    */
   private $httpClient;
 
+  /**
+   * @inheritDoc
+   */
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('email.validator'),
-      $container->get('http_client')
+      $container->get('http_client'),
     );
   }
 
+  /**
+   * @inheritDoc
+   */
   public function __construct(EmailValidatorInterface $emailValidator, Client $httpClient) {
     $this->emailValidator = $emailValidator;
     $this->httpClient = $httpClient;
@@ -67,6 +74,9 @@ class NewsletterSubscriptionForm extends FormBase {
     return $form;
   }
 
+  /**
+   * @inheritDoc
+   */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $mail = $form_state->getValue('mail');
     if (!$mail || !$this->emailValidator->isValid($mail)) {
@@ -83,9 +93,18 @@ class NewsletterSubscriptionForm extends FormBase {
    * @inheritDoc
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // @todo Refactor this to get it from config.
-    $apiSubscriptionUrl = 'https://jira.osha.europa.eu:8083/OshaService/OSHAService.svc/subscriber?email=' . $form_state->get('mail') . '&type=OSH';
-    $response = $this->httpClient->get($apiSubscriptionUrl);
+    $config = $this->config('ncw_backend.settings');
+    $apiSubscriptionUrl = $config->get('newsletter_api');
+    $apiSubscriptionUrl = str_replace('{email}', $form_state->getValue('mail'),$apiSubscriptionUrl);
+    try {
+      $response = $this->httpClient->get($apiSubscriptionUrl);
+    }catch (\Exception $exception) {
+      $this->messenger()->addError($this->t('Error sending subscription. Please try again later.'));
+      $this->logger('ncw_backend')->error("Error sending newsletter subscription with error @error and stacktrace @trace", [
+        '@error' => $exception->getMessage(),
+        '@trace' => $exception->getTraceAsString(),
+      ]);
+    }
     if ($response->getStatusCode() == 200) {
       $this->messenger()->addMessage($this->t('You should receive a confirmation email in your inbox in the coming minutes. Otherwise, please check your spam folder. Thanks a lot for subscribing.'));
     }
