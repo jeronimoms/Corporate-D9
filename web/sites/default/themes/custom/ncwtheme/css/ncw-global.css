@@ -5576,6 +5576,36 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   color: #003399;
   border-bottom: 1px solid #c72272;
 }
+.revamp-row .field--name-field-type-of-item {
+  display: flex;
+  align-items: center;
+}
+.revamp-row .field--name-field-type-of-item .field__item {
+  display: inline-block;
+  background-color: #4e6aa0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  color: white;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.revamp-row .av-type {
+  display: flex;
+  align-items: center;
+}
+.revamp-row .av-type span {
+  display: inline-block;
+  background-color: #4e6aa0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  color: white;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
 
 .revamp-row.no-flex {
   display: block;
