@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\simplenews\Entity\Subscriber;
+
+/**
+ * Implements hook_update_N().
+ */
+function ncw_backend_update_9001(&$sandbox) {
+  // Create subscriber to send newsletter.
+  $subscriberMail = 'crm-oshmail@osha.europa.eu';
+  if (!Subscriber::loadByMail($subscriberMail)) {
+    $subscriberCreated = Subscriber::create([
+      'mail' => $subscriberMail,
+      'langcode' => Drupal::languageManager()->getDefaultLanguage()->getId(),
+      'status' => TRUE,
+    ]);
+    $subscriberCreated->subscribe('default');
+    $subscriberCreated->save();
+  }
+}
