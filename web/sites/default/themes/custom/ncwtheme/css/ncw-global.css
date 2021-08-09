@@ -4452,6 +4452,12 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
   font-weight: bold;
   background: #b2c7e5;
 }
+.block-custom-newsletter.block-custom-newsletter {
+  color: white;
+}
+.block-custom-newsletter.block-custom-newsletter a, .block-custom-newsletter.block-custom-newsletter label {
+  color: white;
+}
 
 .newsletter-block-wrapper {
   background: #ecf1fb;

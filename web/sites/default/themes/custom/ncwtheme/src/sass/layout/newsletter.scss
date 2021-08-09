@@ -169,6 +169,12 @@
       background: $bg-color-blue-button;
     }
   }
+  &.block-custom-newsletter {
+    color: white;
+    a, label {
+      color: white;
+    }
+  }
 }
 
 
