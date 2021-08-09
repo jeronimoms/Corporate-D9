@@ -4375,7 +4375,7 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
   margin: 0;
 }
 
-/* Block Newsletter Home page - Right sidebar */
+/* Block Newsletter Custom */
 .block-custom-newsletter.block-custom-newsletter--sidebar {
   color: #003399;
   font-size: 0.9rem;
@@ -4452,13 +4452,41 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
   font-weight: bold;
   background: #b2c7e5;
 }
-.block-custom-newsletter.block-custom-newsletter {
+.block-custom-newsletter.block-custom-newsletter--footer {
   color: white;
 }
-.block-custom-newsletter.block-custom-newsletter a, .block-custom-newsletter.block-custom-newsletter label {
+.block-custom-newsletter.block-custom-newsletter--footer a, .block-custom-newsletter.block-custom-newsletter--footer label.form-check-label {
   color: white;
+  border-bottom: none;
+}
+.block-custom-newsletter.block-custom-newsletter--footer a {
+  text-decoration: underline;
+}
+.block-custom-newsletter.block-custom-newsletter--footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .btn.btn-primary {
+  margin: 0 0 20px;
+  background-color: #b2c7e5;
+  color: #003399;
+  font-weight: bold;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .form-check {
+  margin: 0 0 20px;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .field--name-field-newsletter-title-with-link {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .field--name-field-newsletter-title-with-link a {
+  text-decoration: none;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .field--name-field-newsletter-title-with-link a:hover {
+  text-decoration: none;
 }
 
+/**** OLD, Remove when the new one is ready ***/
 .newsletter-block-wrapper {
   background: #ecf1fb;
   padding: 25px 20px;

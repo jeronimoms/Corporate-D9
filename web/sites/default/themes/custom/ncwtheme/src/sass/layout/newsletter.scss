@@ -91,7 +91,7 @@
 
 }
 
-/* Block Newsletter Home page - Right sidebar */
+/* Block Newsletter Custom */
 .block-custom-newsletter {
   &.block-custom-newsletter--sidebar {
     color: $text-color-blue;
@@ -169,15 +169,42 @@
       background: $bg-color-blue-button;
     }
   }
-  &.block-custom-newsletter {
+  &.block-custom-newsletter--footer {
     color: white;
-    a, label {
+    a, label.form-check-label {
       color: white;
+      border-bottom: none;
+    }
+    a {
+      text-decoration: underline;
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    .btn.btn-primary {
+      margin: 0 0 20px;
+      background-color: $bg-color-blue-button;
+      color: $text-color-blue;
+      font-weight: bold;
+    }
+    .form-check {
+      margin: 0 0 20px;
+    }
+    .field--name-field-newsletter-title-with-link {
+      font-weight: bold;
+      font-size: 1rem;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
 }
 
-
+/**** OLD, Remove when the new one is ready ***/
 
 .newsletter-block-wrapper{
   background: $bg-color-blue-block;

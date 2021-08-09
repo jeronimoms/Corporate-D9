@@ -11,10 +11,10 @@ dependencies:
     - ncwtheme
 third_party_settings:
   block_class:
-    classes: 'block-custom-newsletter block-custom-newsletter--foter'
+    classes: 'block-custom-newsletter block-custom-newsletter--footer'
 id: oshmailnewsletterfooter
 theme: ncwtheme
-region: footer_end
+region: footer_first
 weight: -68
 provider: null
 plugin: 'block_content:af5a6c12-5730-4b84-8f66-98b457536356'
