@@ -4375,29 +4375,118 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
   margin: 0;
 }
 
-/* Block Newsletter Home page - Right sidebar */
+/* Block Newsletter Custom */
+.block-custom-newsletter.block-custom-newsletter--sidebar {
+  color: #003399;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
 .block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link {
+  margin-bottom: 10px;
   font-size: 1.5625rem;
   font-weight: bold;
 }
-.block-custom-newsletter.block-custom-newsletter--sidebar .wrapper {
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link a {
+  color: #003399;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link a:hover {
+  text-decoration: none;
+  color: #003399;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .newsletter-wrapper {
   background: #ecf1fb;
   padding: 25px 20px;
   margin-top: 10px;
   margin-bottom: 2rem;
   color: #003399;
-  font-size: 0.9rem;
   border-radius: 3px;
 }
-.block-custom-newsletter.block-custom-newsletter--sidebar .wrapper a {
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-body {
+  background: #ecf1fb;
+  padding: 25px 20px;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-body p {
+  margin: 0;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-body a {
   display: block;
-  margin-top: 5px;
+  margin: 0;
+  text-decoration: underline;
+  border: none;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-body a:hover {
+  text-decoration: none;
+  color: #003399;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .newsletter-subscription-form {
+  background: #ecf1fb;
+  padding: 0 20px 15px;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .newsletter-subscription-form .form-type-email {
+  margin-bottom: 15px;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .newsletter-subscription-form .form-check {
+  margin-bottom: 1rem;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .newsletter-subscription-form .form-check .form-check-label {
+  font-weight: normal;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-privacy-notice {
+  background: #ecf1fb;
+  padding: 0 20px 25px;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-privacy-notice a {
+  display: block;
   text-decoration: underline;
 }
-.block-custom-newsletter.block-custom-newsletter--sidebar .wrapper a:hover {
+.block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-privacy-notice a:hover {
+  text-decoration: none;
+  color: #003399;
+}
+.block-custom-newsletter.block-custom-newsletter--sidebar .btn.btn-primary {
+  margin: 10px 0 0;
+  width: 100%;
+  opacity: 0.8;
+  font-size: 1rem;
+  color: #003399;
+  font-weight: bold;
+  background: #b2c7e5;
+}
+.block-custom-newsletter.block-custom-newsletter--footer {
+  color: white;
+}
+.block-custom-newsletter.block-custom-newsletter--footer a, .block-custom-newsletter.block-custom-newsletter--footer label.form-check-label {
+  color: white;
+  border-bottom: none;
+}
+.block-custom-newsletter.block-custom-newsletter--footer a {
+  text-decoration: underline;
+}
+.block-custom-newsletter.block-custom-newsletter--footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .btn.btn-primary {
+  margin: 0 0 20px;
+  background-color: #b2c7e5;
+  color: #003399;
+  font-weight: bold;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .form-check {
+  margin: 0 0 20px;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .field--name-field-newsletter-title-with-link {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .field--name-field-newsletter-title-with-link a {
+  text-decoration: none;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .field--name-field-newsletter-title-with-link a:hover {
   text-decoration: none;
 }
 
+/**** OLD, Remove when the new one is ready ***/
 .newsletter-block-wrapper {
   background: #ecf1fb;
   padding: 25px 20px;
