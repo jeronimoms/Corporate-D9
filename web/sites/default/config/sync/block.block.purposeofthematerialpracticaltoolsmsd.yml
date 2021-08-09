@@ -1,0 +1,32 @@
+uuid: 37cfd262-88e8-4646-a178-da3213ba614f
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.purpose_of_the_material_practical_tools_msd_
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
+id: purposeofthematerialpracticaltoolsmsd
+theme: ncwtheme
+region: sidebar_first
+weight: 6
+provider: null
+plugin: 'facet_block:purpose_of_the_material_practical_tools_msd_'
+settings:
+  id: 'facet_block:purpose_of_the_material_practical_tools_msd_'
+  label: 'Purpose of the material'
+  provider: facets
+  label_display: visible
+  block_id: purposeofthematerialpracticaltoolsmsd
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders
+    negate: false
