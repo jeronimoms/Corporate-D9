@@ -1,9 +1,9 @@
-uuid: a880147e-0f26-4496-a021-5a6736725b7c
+uuid: 45c8c7b7-e7c2-4304-a261-d828d59127b8
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:newsletter_subscription_block:af5a6c12-5730-4b84-8f66-98b457536356'
+    - 'block_content:newsletter_subscription_block:515d10d1-3404-422d-8dfe-fa0fbdc1291d'
   module:
     - block_class
     - block_content
@@ -15,11 +15,11 @@ third_party_settings:
 id: oshmailnewsletterfooter
 theme: ncwtheme
 region: footer_first
-weight: -68
+weight: 0
 provider: null
-plugin: 'block_content:af5a6c12-5730-4b84-8f66-98b457536356'
+plugin: 'block_content:515d10d1-3404-422d-8dfe-fa0fbdc1291d'
 settings:
-  id: 'block_content:af5a6c12-5730-4b84-8f66-98b457536356'
+  id: 'block_content:515d10d1-3404-422d-8dfe-fa0fbdc1291d'
   label: 'OSHmail newsletter (Footer)'
   provider: block_content
   label_display: '0'
