@@ -4135,95 +4135,28 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   color: #003399;
 }
 
-.one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col {
-  width: 23.2%;
-  float: left;
-  margin-right: 1rem;
-  margin-bottom: 2rem;
-}
-
-.two-column .view-landing-menu .view-col, .two-column .view-landing-menu-dv .view-col {
-  width: 31%;
-  float: left;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* MNCW-245 */
-body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-col, body.facts-and-figures-data-visualisation .two-column .view-landing-menu-dv .view-col {
-  width: 32%;
-}
-
-.three-column .view-landing-menu .view-col, .three-column .view-landing-menu-dv .view-col {
-  width: 47%;
-  float: left;
-  margin-right: 1rem;
-  margin-bottom: 2rem;
-}
-
-.view-landing-menu, .view-landing-menu-dv {
-  padding-top: 1rem;
-}
-.view-landing-menu .views-view-grid > div, .view-landing-menu-dv .views-view-grid > div {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-}
-.view-landing-menu .view-col, .view-landing-menu-dv .view-col {
-  display: flex;
-  flex-direction: column;
-}
-.view-landing-menu .view-col > div, .view-landing-menu-dv .view-col > div {
-  flex: 1;
-}
-.view-landing-menu .view-col > div > a:first-child, .view-landing-menu-dv .view-col > div > a:first-child {
-  font-family: "Open Sans Condensed", sans-serif;
-  width: 100%;
-  display: block;
-  font-size: 1.2rem;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  border-bottom: 10px solid #cfddee;
-  padding-right: 25px;
-  padding-bottom: 5px;
-  background-position: calc(100% - 5px) 9px;
-}
-.view-landing-menu .view-col > div > a:first-child:hover, .view-landing-menu-dv .view-col > div > a:first-child:hover {
-  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
-  border-bottom: 10px solid #dc2f82;
-  transition: all 1s;
-}
-.view-landing-menu .view-col img, .view-landing-menu-dv .view-col img {
-  width: 100%;
-  height: auto;
-}
-
-/*** View Facts and Figures ***/
-.block-views-facts-figures .view-content.row {
+.block-views-landing-page .view-content.row {
   padding: 0 15px;
   display: flex;
   flex-wrap: wrap;
-  max-width: 780px;
 }
-.block-views-facts-figures .list--item {
+.block-views-landing-page .list--item {
   display: flex;
   flex-direction: column;
   height: auto;
-  width: 30%;
-  min-width: 260px;
-  margin: 0.5rem 2% 0.7rem 0;
+  max-width: 255px;
+  margin: 0.5rem 2% 1.5rem 0;
   padding-right: 15px;
 }
-.block-views-facts-figures .list--item:hover a {
+.block-views-landing-page .list--item:hover a {
   border-bottom: 10px solid #c72272 !important;
   background: url(../images/flecha.png) center right no-repeat;
 }
-.block-views-facts-figures .list--item img {
-  max-width: 100%;
-  height: auto;
+.block-views-landing-page .list--item img {
+  max-width: 240px;
+  height: 140px;
 }
-.block-views-facts-figures .list--item .menu-link-text {
+.block-views-landing-page .list--item .menu-link-text {
   height: auto;
   line-height: 1.2em;
   padding: 0;
@@ -4233,7 +4166,7 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
   align-items: flex-start;
   margin-bottom: 0.2rem;
 }
-.block-views-facts-figures .list--item .menu-link-text a {
+.block-views-landing-page .list--item .menu-link-text a {
   margin: 0;
   transition: none;
   display: flex;
@@ -4246,58 +4179,15 @@ body.facts-and-figures-data-visualisation .two-column .view-landing-menu .view-c
   font-weight: bold;
   text-decoration: none;
   color: #003399;
-  border-bottom: 10px solid #d2dced;
+  border-bottom: 10px solid #e8ecf5;
+  padding-right: 20px;
 }
 
-.page-node-15 .block-views-facts-figures .view-content.row {
-  padding: 0 15px;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-}
-.page-node-15 .block-views-facts-figures .list--item {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  width: 30%;
-  min-width: 240px;
-  margin: 0.5rem 2.2% 0.7rem 0;
-  padding-right: 0;
+/* Facts and Figures */
+.page-node-5 .block-views-landing-page .list--item {
+  margin: 0.5rem 3% 0.7rem 0;
 }
 
-@media only screen and (max-width: 1024px) {
-  .one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col {
-    width: 31%;
-    float: left;
-    margin-right: 1rem;
-    margin-bottom: 3rem;
-  }
-
-  .two-column .view-landing-menu .view-col, .two-column .view-landing-menu-dv .view-col, .three-column .view-landing-menu .view-col, .three-column .view-landing-menu-dv .view-col {
-    width: 46%;
-    float: left;
-    margin-right: 1rem;
-    margin-bottom: 3rem;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col {
-    width: 46%;
-    float: left;
-    margin-right: 1rem;
-    margin-bottom: 3rem;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .one-column .view-landing-menu .view-col, .one-column .view-landing-menu-dv .view-col, .two-column .view-landing-menu .view-col, .two-column .view-landing-menu-dv .view-col, .three-column .view-landing-menu .view-col, .three-column .view-landing-menu-dv .view-col {
-    width: 98%;
-  }
-
-  .view-landing-menu .view-col > div, .view-landing-menu-dv .view-col > div {
-    max-width: 240px;
-    margin: 0 auto;
-  }
-}
 /* This SASS only apply in the Web, not in the email - outlook
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
