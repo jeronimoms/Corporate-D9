@@ -407,11 +407,13 @@ body {
   }
 }
 
-a[href^="mailto:"] {
-  border-bottom: 1px solid $bg-color-pink;
-  &:hover{
-    border-bottom: 1px solid $bg-color-blue;
-    text-decoration: none;
+#main{
+  a[href^="mailto:"] {
+    border-bottom: 1px solid $bg-color-pink;
+    &:hover{
+      border-bottom: 1px solid $bg-color-blue;
+      text-decoration: none;
+    }
   }
 }
 
