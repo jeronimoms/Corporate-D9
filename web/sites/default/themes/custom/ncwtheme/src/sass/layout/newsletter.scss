@@ -2,6 +2,9 @@
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
 .node--type-newsletter-content{
+  .layout-main-wrapper{
+    padding-bottom: 2rem;
+  }
   h1.title{
     display: none;
   }

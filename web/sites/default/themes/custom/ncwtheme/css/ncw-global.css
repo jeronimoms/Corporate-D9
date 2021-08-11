@@ -4205,6 +4205,9 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
 /* This SASS only apply in the Web, not in the email - outlook
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
+.node--type-newsletter-content .layout-main-wrapper {
+  padding-bottom: 2rem;
+}
 .node--type-newsletter-content h1.title {
   display: none;
 }
