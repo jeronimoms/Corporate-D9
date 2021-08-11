@@ -518,6 +518,9 @@
             },
             "drupal/conditional_fields": {
                 "error dependency": "https://www.drupal.org/files/issues/2021-01-14/fix-notice-3192044-14.patch"
+            },
+            "drupal/layoutcomponents" : {
+                "Drupal breaks when using php version lower than 8": "patches/layoutcomponents-change_str_contains_for_php7.patch"
             }
         },
         "patchLevel": {
