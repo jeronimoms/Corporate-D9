@@ -961,32 +961,6 @@ body.path-aggregator{
   }
 }
 
-.block-oshwiki-static {
-  width: 100%;
-  padding: 10px;
-  margin: 0 0 20px !important;
-  background: $bg-color-blue-block;
-  .OSHWikiDivTit {
-    display: flex;
-    align-items: center;
-  }
-  .OSHWikiTitle {
-    font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
-    font-size: 1.35rem;
-  }
-  .imgOSHWiki {
-    margin-right: 0.5rem;
-  }
-  .p2 {
-    font-size: 0.8rem;
-    padding: 1.3rem 0;
-  }
-  .p3 {
-    text-align: right;
-    margin-right: 10px;
-  }
-}
-
 .field--name-body {
   ol {
     padding-left: 40px;
