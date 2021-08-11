@@ -57,7 +57,6 @@ dependencies:
     - field.field.node.newsletter_content.nlc_wiki_title
     - field.field.node.newsletter_content.simplenews_issue
     - node.type.newsletter_content
-    - workflows.workflow.editorial
   module:
     - color_field
     - content_moderation
@@ -85,7 +84,6 @@ third_party_settings:
       label: 'Highlights Block'
     group_highlights_content:
       children:
-        - nlc_hlight_layout
         - nlc_hlight_title
         - nlc_hlight_content
         - nlc_hlight_no_titles
@@ -150,7 +148,6 @@ third_party_settings:
       label: 'Healthy Workplaces Block'
     group_healthy_workplaces_content:
       children:
-        - nlc_healt_layout
         - nlc_healthy_title
         - nlc_healthy_contents
         - nlc_healthy_bg
@@ -183,7 +180,6 @@ third_party_settings:
       label: 'National Focal Points Block'
     group_national_focal_points_cont:
       children:
-        - nlc_nat_layout
         - nlc_national_title
         - nlc_national_contents
         - nlc_national_img
@@ -216,7 +212,6 @@ third_party_settings:
       label: 'Oira Block'
     group_oira_contents:
       children:
-        - nlc_oira_layout
         - nlc_oira_title
         - nlc_oira_contents
         - nlc_oira_img
@@ -249,7 +244,6 @@ third_party_settings:
       label: 'Covid 19 Block'
     group_covid_19_contents:
       children:
-        - nlc_covid_layout
         - nlc_covid_title
         - nlc_covid_contents
         - nlc_covid_img
@@ -282,7 +276,6 @@ third_party_settings:
       label: ' EU news bites Block'
     group__eu_news_contents:
       children:
-        - nlc_eunews_layout
         - nlc_eunews_title
         - nlc_eunews_contents
         - nlc_eunews_img
@@ -315,7 +308,6 @@ third_party_settings:
       label: 'Wiki Block'
     group_wiki_contents:
       children:
-        - nlc_wiki_layout
         - nlc_wiki_title
         - nlc_wiki_img
         - nlc_wiki_contents
@@ -494,12 +486,6 @@ content:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  nlc_covid_layout:
-    weight: 23
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   nlc_covid_title:
     weight: 24
     settings:
@@ -537,12 +523,6 @@ content:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  nlc_eunews_layout:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   nlc_eunews_title:
     weight: 12
     settings:
@@ -550,12 +530,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  nlc_healt_layout:
-    weight: 19
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   nlc_healthy_bg:
     weight: 22
@@ -615,12 +589,6 @@ content:
       placeholder: 'Hightligh content'
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  nlc_hlight_layout:
-    weight: 7
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   nlc_hlight_no_titles:
     weight: 10
@@ -682,12 +650,6 @@ content:
       show_palette_only: '0'
     third_party_settings: {  }
     type: color_field_widget_spectrum
-    region: content
-  nlc_nat_layout:
-    weight: 20
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   nlc_national_bg_color:
     weight: 24
@@ -754,12 +716,6 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
-    region: content
-  nlc_oira_layout:
-    weight: 31
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   nlc_oira_title:
     weight: 32
@@ -842,12 +798,6 @@ content:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  nlc_wiki_layout:
-    weight: 36
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   nlc_wiki_title:
     weight: 37
     settings:
@@ -918,4 +868,11 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  nlc_covid_layout: true
+  nlc_eunews_layout: true
+  nlc_healt_layout: true
+  nlc_hlight_layout: true
   nlc_motweets_layout: true
+  nlc_nat_layout: true
+  nlc_oira_layout: true
+  nlc_wiki_layout: true
