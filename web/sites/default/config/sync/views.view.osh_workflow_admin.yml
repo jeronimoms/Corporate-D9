@@ -145,7 +145,7 @@ display:
           id: title
           table: node_field_revision
           field: title
-          relationship: none
+          relationship: nid
           group_type: group
           admin_label: ''
           label: Title
@@ -466,7 +466,7 @@ display:
           id: operations
           table: node_revision
           field: operations
-          relationship: none
+          relationship: nid
           group_type: group
           admin_label: ''
           label: Operations
@@ -514,6 +514,45 @@ display:
           entity_type: node
           plugin_id: entity_operations
       filters:
+        latest_revision:
+          id: latest_revision
+          table: node_revision
+          field: latest_revision
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          plugin_id: latest_revision
         latest_translation_affected_revision:
           id: latest_translation_affected_revision
           table: node_revision
@@ -599,10 +638,10 @@ display:
           id: title
           table: node_field_revision
           field: title
-          relationship: none
+          relationship: nid
           group_type: group
           admin_label: ''
-          operator: contains
+          operator: '='
           value: ''
           group: 1
           exposed: true
@@ -767,45 +806,6 @@ display:
           hierarchy: true
           error_message: true
           plugin_id: taxonomy_index_tid
-        latest_revision:
-          id: latest_revision
-          table: node_revision
-          field: latest_revision
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: ''
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          plugin_id: latest_revision
         moderation_state:
           id: moderation_state
           table: node_field_revision
@@ -888,6 +888,10 @@ display:
       arguments: {  }
       display_extenders: {  }
       title: Content
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -905,12 +909,38 @@ display:
     display_plugin: page
     id: content
     display_title: Content
-    position: 1
+    position: 2
     display_options:
       display_extenders:
         metatag_display_extender: {  }
       display_description: ''
       path: admin/workbench/osha-content
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_section'
+        - 'config:workflow_list'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: 'My Content'
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      display_description: ''
+      path: admin/workbench/my-content
+      title: 'My Workbench'
+      defaults:
+        title: false
     cache_metadata:
       max-age: -1
       contexts:
