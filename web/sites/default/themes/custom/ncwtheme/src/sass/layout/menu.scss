@@ -240,6 +240,7 @@
     background: $bg-color-blue;
     .navbar-toggler {
       padding: 1rem;
+
       .icon-bar {
         background-color: $bg-color-white;
         display: block;
@@ -270,7 +271,9 @@
             display: none;
           }
           > a{
-            margin-left: -10px;
+            display: block;
+            width: 100%;
+            background: url(../images/ico_home.png) no-repeat left center;
           }
           .field--type-entity-reference{
             img{

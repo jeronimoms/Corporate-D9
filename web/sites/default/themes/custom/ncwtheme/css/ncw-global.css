@@ -4060,7 +4060,9 @@ body.user-logged-in.toolbar-tray-open #header {
     display: none;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) > a {
-    margin-left: -10px;
+    display: block;
+    width: 100%;
+    background: url(../images/ico_home.png) no-repeat left center;
   }
   #navbar-main #block-ncwtheme-main-menu ul.menu-level-0 > li.menu-item:nth-child(1) .field--type-entity-reference img {
     margin: 0;
