@@ -171,6 +171,9 @@
   }
   &.block-custom-newsletter--footer {
     color: white;
+    border: 0;
+    margin-top: 2rem;
+    padding: 0;
     a, label.form-check-label {
       color: white;
       border-bottom: none;
@@ -190,6 +193,9 @@
     }
     .form-check {
       margin: 0 0 20px;
+      .form-check-label{
+        font-weight: normal;
+      }
     }
     .field--name-field-newsletter-title-with-link {
       font-weight: bold;

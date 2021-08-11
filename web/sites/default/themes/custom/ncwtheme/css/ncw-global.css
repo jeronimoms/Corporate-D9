@@ -2073,6 +2073,7 @@ body ul li .introduction-title a:hover {
 #share-this-on {
   float: left;
   padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 #share-this-on .text-share {
   float: left;
@@ -3104,7 +3105,7 @@ footer.site-footer .site-footer__bottom .region-footer-end {
   /* Main menu */
 }
 footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigation {
-  padding-top: 2rem;
+  padding-top: 0;
   padding-bottom: 1rem;
 }
 footer.site-footer .site-footer__bottom .region-footer-end nav#block-mainnavigation ul.menu-level-0 {
@@ -4357,6 +4358,9 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
 }
 .block-custom-newsletter.block-custom-newsletter--footer {
   color: white;
+  border: 0;
+  margin-top: 2rem;
+  padding: 0;
 }
 .block-custom-newsletter.block-custom-newsletter--footer a, .block-custom-newsletter.block-custom-newsletter--footer label.form-check-label {
   color: white;
@@ -4377,6 +4381,9 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
 }
 .block-custom-newsletter.block-custom-newsletter--footer .form-check {
   margin: 0 0 20px;
+}
+.block-custom-newsletter.block-custom-newsletter--footer .form-check .form-check-label {
+  font-weight: normal;
 }
 .block-custom-newsletter.block-custom-newsletter--footer .field--name-field-newsletter-title-with-link {
   font-weight: bold;
