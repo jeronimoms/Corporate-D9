@@ -10,105 +10,18 @@ body.tools-and-resources{
   }
 }
 
-.one-column{
-  .view-landing-menu, .view-landing-menu-dv{
-    .view-col{
-      width: 23.2%;
-      float: left;
-      margin-right: 1rem;
-      margin-bottom: 2rem;
-
-    }
-  }
-}
-
-.two-column{
-  .view-landing-menu, .view-landing-menu-dv{
-    .view-col{
-      width: 31%;
-      float: left;
-      margin-right: 2rem;
-      margin-bottom: 2rem;
-    }
-  }
-}
-
-/* MNCW-245 */
-body.facts-and-figures-data-visualisation{
-  .two-column{
-    .view-landing-menu, .view-landing-menu-dv{
-      .view-col{
-        width: 32%;
-      }
-    }
-  }
-}
-
-.three-column{
-  .view-landing-menu, .view-landing-menu-dv{
-    .view-col{
-      width: 47%;
-      float: left;
-      margin-right: 1rem;
-      margin-bottom: 2rem;
-
-    }
-  }
-}
-
-.view-landing-menu, .view-landing-menu-dv {
-  padding-top: 1rem;
-  .views-view-grid > div {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-  }
-  .view-col {
-    display: flex;
-    flex-direction: column;
-    > div {
-      flex: 1;
-      > a:first-child{
-        font-family: "Open Sans Condensed", sans-serif;
-        width: 100%;
-        display: block;
-        font-size: 1.2rem;
-        text-decoration: none;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-        border-bottom: 10px solid #cfddee;
-        padding-right: 25px;
-        padding-bottom: 5px;
-        background-position: calc(100% - 5px) 9px;
-        &:hover{
-          background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
-          border-bottom: 10px solid #dc2f82;
-          transition: all 1s;
-        }
-      }
-    }
-    img{
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-
-/*** View Facts and Figures ***/
-.block-views-facts-figures {
+.block-views-landing-page {
   .view-content.row {
     padding: 0 15px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 780px;
   }
   .list--item {
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 30%;
-    min-width: 260px;
-    margin: 0.5rem 2% 0.7rem 0;
+    max-width: 255px;
+    margin: 0.5rem 2% 1.5rem 0;
     padding-right: 15px;
     &:hover {
       a {
@@ -117,8 +30,8 @@ body.facts-and-figures-data-visualisation{
       }
     }
     img {
-      max-width: 100%;
-      height: auto;
+      max-width: 240px;
+      height: 140px;
     }
     .menu-link-text {
       height: auto;
@@ -142,84 +55,18 @@ body.facts-and-figures-data-visualisation{
         font-weight: bold;
         text-decoration: none;
         color: $text-color-blue;
-        border-bottom: 10px solid #d2dced;
-
+        border-bottom: 10px solid $bg-color-blue-light-2;
+        padding-right: 20px;
       }
     }
   }
 }
 
-.page-node-15 {
-  .block-views-facts-figures {
-    .view-content.row {
-      padding: 0 15px;
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 100%;
-    }
+/* Facts and Figures */
+.page-node-5{
+  .block-views-landing-page {
     .list--item {
-      display: flex;
-      flex-direction: column;
-      height: auto;
-      width: 30%;
-      min-width: 240px;
-      margin: 0.5rem 2.2% 0.7rem 0;
-      padding-right: 0;
-    }
-  }
-}
-
-
-@media only screen and (max-width : 1024px) {
-  .one-column{
-    .view-landing-menu, .view-landing-menu-dv{
-      .view-col{
-        width: 31%;
-        float: left;
-        margin-right: 1rem;
-        margin-bottom: 3rem;
-      }
-    }
-  }
-  .two-column, .three-column{
-    .view-landing-menu, .view-landing-menu-dv{
-      .view-col{
-        width: 46%;
-        float: left;
-        margin-right: 1rem;
-        margin-bottom: 3rem;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width : 768px) {
-  .one-column{
-    .view-landing-menu, .view-landing-menu-dv{
-      .view-col{
-        width: 46%;
-        float: left;
-        margin-right: 1rem;
-        margin-bottom: 3rem;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width : 480px) {
-  .one-column, .two-column, .three-column{
-    .view-landing-menu, .view-landing-menu-dv{
-      .view-col{
-        width: 98%;
-      }
-    }
-  }
-  .view-landing-menu, .view-landing-menu-dv{
-    .view-col{
-      > div {
-        max-width: 240px;
-        margin: 0 auto;
-      }
+      margin: 0.5rem 3% 0.7rem 0;
     }
   }
 }

@@ -186,7 +186,7 @@
     margin-top: -5px;
   }
 
-  .nav-link--en-news-events{
+  #block-headermenu > ul > li:nth-child(1) > a{
     text-indent: -9999px;
     background: url(../images/ico-news-events-menu.png)1px 9px no-repeat;
     width: 25px;
@@ -240,6 +240,7 @@
     background: $bg-color-blue;
     .navbar-toggler {
       padding: 1rem;
+
       .icon-bar {
         background-color: $bg-color-white;
         display: block;
@@ -270,7 +271,9 @@
             display: none;
           }
           > a{
-            margin-left: -10px;
+            display: block;
+            width: 100%;
+            background: url(../images/ico_home.png) no-repeat left center;
           }
           .field--type-entity-reference{
             img{
