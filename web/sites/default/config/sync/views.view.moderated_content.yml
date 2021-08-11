@@ -1443,7 +1443,7 @@ display:
           id: title
           table: node_field_revision
           field: title
-          relationship: none
+          relationship: nid
           group_type: group
           admin_label: ''
           label: Title
@@ -1898,7 +1898,7 @@ display:
           id: operations
           table: node_revision
           field: operations
-          relationship: none
+          relationship: nid
           group_type: group
           admin_label: ''
           label: Operations
