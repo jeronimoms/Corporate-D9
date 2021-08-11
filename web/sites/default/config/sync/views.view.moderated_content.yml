@@ -970,26 +970,26 @@ display:
             group_items: {  }
           entity_type: node
           plugin_id: latest_translation_affected_revision
-        title:
-          id: title
-          table: node_field_revision
-          field: title
+        combine:
+          id: combine
+          table: views
+          field: combine
           relationship: none
           group_type: group
           admin_label: ''
-          operator: contains
+          operator: '='
           value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: title_op
+            operator_id: combine_op
             label: Title
             description: ''
             use_operator: false
-            operator: title_op
+            operator: combine_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: title
+            identifier: combine
             required: false
             remember: false
             multiple: false
@@ -1023,9 +1023,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: title
-          plugin_id: string
+          fields:
+            title: title
+          plugin_id: combine
         type:
           id: type
           table: node_field_data
@@ -1039,7 +1039,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: 'Content type'
+            label: Type
             description: ''
             use_operator: false
             operator: type_op
@@ -1099,7 +1099,7 @@ display:
           exposed: true
           expose:
             operator_id: field_publication_date_value_op
-            label: 'Publication date '
+            label: 'Publication date'
             description: ''
             use_operator: false
             operator: field_publication_date_value_op
@@ -1443,7 +1443,7 @@ display:
           id: title
           table: node_field_revision
           field: title
-          relationship: none
+          relationship: nid
           group_type: group
           admin_label: ''
           label: Title
@@ -1574,7 +1574,7 @@ display:
           relationship: nid
           group_type: group
           admin_label: ''
-          label: 'Content type'
+          label: Type
           exclude: false
           alter:
             alter_text: false
@@ -1898,7 +1898,7 @@ display:
           id: operations
           table: node_revision
           field: operations
-          relationship: none
+          relationship: nid
           group_type: group
           admin_label: ''
           label: Operations

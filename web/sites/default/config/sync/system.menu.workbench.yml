@@ -1,7 +1,12 @@
 uuid: d8bceff8-0c26-4183-b8f3-d86d25157731
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_trail_by_path
+third_party_settings:
+  menu_trail_by_path:
+    trail_source: ''
 _core:
   default_config_hash: Uk5hyWhkNv7DHmWKBBnOc-W05llRdbXe19rUxCsSt8Y
 id: workbench
