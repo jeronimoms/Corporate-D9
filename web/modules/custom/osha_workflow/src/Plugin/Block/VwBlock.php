@@ -55,7 +55,7 @@ class VwBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $output = [
       '#type' => 'container',
       'content' => [],
-      '#attributes' => ['class' => 'osha-workflow-list-widget'],
+      '#attributes' => ['class' => ['osha-workflow-list-widget']],
     ];
 
     // Get the current node object.

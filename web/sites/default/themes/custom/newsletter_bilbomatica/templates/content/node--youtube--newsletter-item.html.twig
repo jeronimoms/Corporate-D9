@@ -78,7 +78,9 @@
     {{ content.field_image_for_oshmail }}
   </td>
   <td style="text-align: left; padding-left: 20px; vertical-align: top;padding-bottom: 5px; color: #003399; font-weight: normal; font-size: 13px;">
-      {{ date }}
+    <span style="color:#003399; font-weight: normal; font-size: 13px;">
+      {{ content.body['#object'].created.0.value|date('d/m/Y') }}
+    </span>
     <h2 style="padding-top: 10px; padding-bottom: 5px;">
       <a href="{{ url }}" style="color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 18px; font-weight: bold;">
           {{ label }}
