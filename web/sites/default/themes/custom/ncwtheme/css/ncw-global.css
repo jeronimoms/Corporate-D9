@@ -5997,6 +5997,10 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
     display: none;
   }
 
+  #block-ncwtheme-main-menu .menu.menu-level-1 .mean-expand {
+    display: block;
+  }
+
   /* Page - Highlight, News and Events content link */
   .news-events #main ul li {
     width: 45%;
