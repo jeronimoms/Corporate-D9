@@ -2184,6 +2184,15 @@ body ul li .introduction-title a:hover {
   text-decoration: none;
 }
 
+.node--type-slideshare #main .node--view-mode-full a[target=_blank], .node--type-slideshare #main .view a[target=_blank] {
+  background: url(../images/external_link-v2.png) no-repeat scroll right 97% rgba(0, 0, 0, 0);
+  float: left;
+}
+.node--type-slideshare #main .node--view-mode-full a[target=_blank]:hover, .node--type-slideshare #main .view a[target=_blank]:hover {
+  background: url(../images/external_link-v2-hover.png) no-repeat scroll right 97% rgba(0, 0, 0, 0);
+  text-decoration: none;
+}
+
 #main a[href^="mailto:"] {
   border-bottom: 1px solid #c72272;
 }
