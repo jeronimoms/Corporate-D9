@@ -1306,6 +1306,10 @@ h3.home a:hover {
   border-bottom: 0;
   padding-bottom: 0;
 }
+.sidebar-first .form-row .form-actions {
+  clear: both;
+  width: 100%;
+}
 .sidebar-first .views-exposed-form .btn-primary {
   margin-left: 0;
   margin-right: 5px;
