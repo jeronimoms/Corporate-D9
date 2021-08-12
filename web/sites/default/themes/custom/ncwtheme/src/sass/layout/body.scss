@@ -1016,3 +1016,16 @@ a.quiz-start-link:hover {
     }
   }
 }
+
+.block-workbench-access{
+  background: $bg-color-workbench;
+  border: 1px solid $bg-color-workbench-border;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  .list-group-item{
+    border: 0;
+    background: transparent;
+    color: $text-color-grey-dark;
+    font-size: 0.9rem;
+  }
+}

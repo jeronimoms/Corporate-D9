@@ -2697,6 +2697,19 @@ a.quiz-start-link:hover {
   height: auto;
 }
 
+.block-workbench-access {
+  background: #FFFBD9;
+  border: 1px solid #FFEBC5;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.block-workbench-access .list-group-item {
+  border: 0;
+  background: transparent;
+  color: #666666;
+  font-size: 0.9rem;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
