@@ -393,6 +393,7 @@ body {
 }
 
 #main{
+  padding-bottom: 2rem;
   .node--view-mode-full, .view{
     a[target=_blank] {
       background: url(../images/external_link-v2.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
@@ -1085,4 +1086,35 @@ a.quiz-start-link:hover {
     }
   }
 
+}
+
+.node--type-wiki-page{
+  .field__label{
+    font-size: 0.9rem;
+    &:after{
+      display: inline-block;
+      content: ':'
+    }
+  }
+  .field__item{
+    font-size: 0.9rem;
+    a{
+      font-size: 0.9rem;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  .field--name-field-summary-html{
+    .field__label{
+      color: #212529;
+      font-size: 0.9rem;
+    }
+  }
+  .field--name-field-wiki-page-url{
+    padding-bottom: 0.9rem;
+  }
+  .field--name-field-tags .field__label, .field--name-field-tags ul.links{
+    font-size: 0.9rem;
+  }
 }

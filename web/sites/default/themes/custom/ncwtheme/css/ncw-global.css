@@ -1434,6 +1434,10 @@ h3.home a:hover {
   font-size: 1.35rem;
   border-bottom: 0;
 }
+.sidebar-second .view-fop-page-links .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
 
 .region-sidebar-second-others.row {
   margin-left: 0;
@@ -2172,6 +2176,9 @@ body ul li .introduction-title a:hover {
   background: url(../images/external_link-v2-hover.png) no-repeat scroll right 4px rgba(0, 0, 0, 0);
 }
 
+#main {
+  padding-bottom: 2rem;
+}
 #main .node--view-mode-full a[target=_blank], #main .view a[target=_blank] {
   background: url(../images/external_link-v2.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
   padding-right: 16px;
@@ -2748,6 +2755,33 @@ a.quiz-start-link:hover {
 }
 .dangerous-wrapper .field--name-field-substance-description .field__item, .dangerous-wrapper .field--name-field-year .field__item {
   color: #003399;
+}
+
+.node--type-wiki-page .field__label {
+  font-size: 0.9rem;
+}
+.node--type-wiki-page .field__label:after {
+  display: inline-block;
+  content: ":";
+}
+.node--type-wiki-page .field__item {
+  font-size: 0.9rem;
+}
+.node--type-wiki-page .field__item a {
+  font-size: 0.9rem;
+}
+.node--type-wiki-page .field__item p {
+  margin-bottom: 0;
+}
+.node--type-wiki-page .field--name-field-summary-html .field__label {
+  color: #212529;
+  font-size: 0.9rem;
+}
+.node--type-wiki-page .field--name-field-wiki-page-url {
+  padding-bottom: 0.9rem;
+}
+.node--type-wiki-page .field--name-field-tags .field__label, .node--type-wiki-page .field--name-field-tags ul.links {
+  font-size: 0.9rem;
 }
 
 /* Breadcrumbs */
