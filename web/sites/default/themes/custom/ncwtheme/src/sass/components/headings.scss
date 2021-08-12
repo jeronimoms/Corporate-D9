@@ -146,6 +146,15 @@ h3.custom-border{
   }
 }
 
+.related-resources-fluid {
+  /* Related resources in Publications */
+  h3.custom-border {
+    span {
+      background: $bg-color-blue-light;;
+    }
+  }
+}
+
 h3.h3-files-resources {
   font-weight: bold;
   margin-top: 2rem;

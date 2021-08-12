@@ -143,7 +143,7 @@ jQuery(document).ready(function($) {
   }
 
 
-  //Hide titles en Related resource item
+  //Show titles en Related resource items
   $(".file-field:first").addClass('to-show-custom-js');
   $(".youtube-field:first").addClass('to-show-custom-js');
   $(".publication-field:first").addClass('to-show-custom-js');

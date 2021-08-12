@@ -1131,6 +1131,13 @@ h3.custom-border span {
   padding-right: 1em;
 }
 
+.related-resources-fluid {
+  /* Related resources in Publications */
+}
+.related-resources-fluid h3.custom-border span {
+  background: #cfddee;
+}
+
 h3.h3-files-resources {
   font-weight: bold;
   margin-top: 2rem;
