@@ -2719,6 +2719,37 @@ a.quiz-start-link:hover {
   font-size: 0.9rem;
 }
 
+.dangerous-wrapper .field__label {
+  font-size: 0.9rem;
+}
+.dangerous-wrapper .field__label:after {
+  display: inline-block;
+  content: ":";
+}
+.dangerous-wrapper .field__item a {
+  font-size: 0.9rem;
+}
+.dangerous-wrapper .field__item p {
+  margin-bottom: 0;
+}
+.dangerous-wrapper .field--name-field-item-type .field__label, .dangerous-wrapper .field--name-field-material-country .field__label, .dangerous-wrapper .field--name-field-available-in-languages .field__label, .dangerous-wrapper .field--name-field-intellectual-property-righ .field__label {
+  color: #003399;
+}
+.dangerous-wrapper .field--name-field-item-type .field__item, .dangerous-wrapper .field--name-field-material-country .field__item, .dangerous-wrapper .field--name-field-available-in-languages .field__item, .dangerous-wrapper .field--name-field-intellectual-property-righ .field__item {
+  display: inline-block;
+  background-color: #e8eef7;
+  border-radius: 5px;
+  padding: 1px 10px;
+  margin-right: 5px;
+  font-size: 11px;
+  margin-bottom: 5px;
+  color: #003399;
+  margin-left: 2px;
+}
+.dangerous-wrapper .field--name-field-substance-description .field__item, .dangerous-wrapper .field--name-field-year .field__item {
+  color: #003399;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
@@ -5741,6 +5772,10 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .field--name-node-changed-date .field__label:after {
   content: ":";
   display: inline-block;
+}
+
+.view-related-content.view-display-id-page_3 .see-more-arrow {
+  text-align: right;
 }
 
 /* Responsive View List */

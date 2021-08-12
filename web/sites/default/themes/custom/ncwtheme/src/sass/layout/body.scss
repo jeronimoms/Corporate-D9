@@ -1044,3 +1044,45 @@ a.quiz-start-link:hover {
     font-size: 0.9rem;
   }
 }
+
+.dangerous-wrapper{
+  .field__label{
+    font-size: 0.9rem;
+    &:after{
+      display: inline-block;
+      content: ':'
+    }
+  }
+  .field__item{
+    a{
+      font-size: 0.9rem;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  .field--name-field-item-type, .field--name-field-material-country, .field--name-field-available-in-languages, .field--name-field-intellectual-property-righ{
+    .field__label{
+      color: $text-color-blue;
+    }
+  }
+  .field--name-field-item-type, .field--name-field-material-country, .field--name-field-available-in-languages, .field--name-field-intellectual-property-righ{
+    .field__item{
+      display: inline-block;
+      background-color: $bg-color-blue-accordion;
+      border-radius: 5px;
+      padding: 1px 10px;
+      margin-right: 5px;
+      font-size: 11px;
+      margin-bottom: 5px;
+      color: #003399;
+      margin-left: 2px;
+    }
+  }
+  .field--name-field-substance-description, .field--name-field-year{
+    .field__item{
+      color: $text-color-blue;
+    }
+  }
+
+}
