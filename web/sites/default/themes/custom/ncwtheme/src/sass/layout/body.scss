@@ -409,6 +409,10 @@ body {
   }
 }
 
+#main.custom-no-padding{
+  padding-bottom: 0;
+}
+
 .node--type-slideshare{
   #main{
     .node--view-mode-full, .view{
@@ -592,7 +596,7 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
       margin-bottom: 1.5rem;
     }
   }
-  .custom-file-twig{
+  .node--type-file{
     .field__label{
       display: none;
     }
@@ -1085,7 +1089,6 @@ a.quiz-start-link:hover {
       color: $text-color-blue;
     }
   }
-
 }
 
 .node--type-wiki-page{

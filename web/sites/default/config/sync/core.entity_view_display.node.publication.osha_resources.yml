@@ -46,7 +46,7 @@ third_party_settings:
     group_summary_resources:
       children: {  }
       parent_name: ''
-      weight: 39
+      weight: 40
       format_type: html_element
       region: hidden
       format_settings:
@@ -62,18 +62,14 @@ third_party_settings:
       label: 'Summary & Resources'
     group_content:
       children:
-        - field_publication_date
-        - field_publication_type
-        - field_pages_count
+        - group_rr_wrapper_fields
         - node_title
         - node_link
-      parent_name: ''
-      weight: 1
+      parent_name: group_related_resources_content
+      weight: 2
       format_type: html_element
-      region: content
+      region: ds_content
       format_settings:
-        id: ''
-        classes: ''
         element: div
         show_label: false
         label_element: h3
@@ -81,22 +77,92 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: Content
+        id: ''
+        classes: rr-right-column
+      label: 'Right column'
+    group_left_column:
+      children:
+        - field_image_media
+      parent_name: group_related_resources_content
+      weight: 1
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: rr-left-column
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Left column'
+    group_rr_wrapper_fields:
+      children:
+        - field_publication_date
+        - field_publication_type
+        - field_pages_count
+      parent_name: group_content
+      weight: 20
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: rr-wrapper-fields
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content fields'
+    group_related_resources_content:
+      children:
+        - group_left_column
+        - group_content
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: rr-wrapper-related-resources
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Related resources content'
   layout_builder:
     allow_custom: false
     enabled: false
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
-      content:
-        - field_image_media
+      ds_content:
+        - group_related_resources_content
+        - group_left_column
         - group_content
+        - field_image_media
+        - group_rr_wrapper_fields
         - field_publication_date
         - field_publication_type
         - field_pages_count
@@ -105,14 +171,14 @@ third_party_settings:
     fields:
       node_link:
         plugin_id: node_link
-        weight: 7
+        weight: 25
         label: hidden
         formatter: default
         settings:
           'link text': 'Read more'
           'link class': ''
           wrapper: ''
-          class: ''
+          class: see-more-arrow
         ft:
           id: default
           settings:
@@ -121,7 +187,7 @@ third_party_settings:
             classes: {  }
       node_title:
         plugin_id: node_title
-        weight: 6
+        weight: 24
         label: hidden
         formatter: default
         settings:
@@ -142,18 +208,18 @@ bundle: publication
 mode: osha_resources
 content:
   field_image_media:
-    weight: 0
+    weight: 3
     label: hidden
     settings:
       image_style: cover_images
       image_link: ''
     third_party_settings: {  }
     type: media_thumbnail
-    region: content
+    region: ds_content
   field_pages_count:
     type: number_unformatted
-    weight: 4
-    region: content
+    weight: 23
+    region: ds_content
     label: inline
     settings: {  }
     third_party_settings:
@@ -165,18 +231,18 @@ content:
             lb-col: false
             classes: {  }
   field_publication_date:
-    weight: 2
+    weight: 21
     label: hidden
     settings:
       timezone_override: ''
       format_type: only_day
     third_party_settings: {  }
     type: datetime_default
-    region: content
+    region: ds_content
   field_publication_type:
     type: entity_reference_label
-    weight: 3
-    region: content
+    weight: 22
+    region: ds_content
     label: above
     settings:
       link: false
@@ -185,7 +251,7 @@ content:
         ft:
           id: default
           settings:
-            lb: ''
+            lb: Type
             lb-col: true
             classes: {  }
 hidden:

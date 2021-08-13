@@ -142,16 +142,21 @@ jQuery(document).ready(function($) {
     });
   }
 
+  //Add #mail no padding in pubblications
+  if ($(".related-resources-fluid")[0]) {
+    $('#main').addClass('custom-no-padding');
+  }
 
-  //Show titles en Related resource items
-  $(".file-field:first").addClass('to-show-custom-js');
-  $(".youtube-field:first").addClass('to-show-custom-js');
-  $(".publication-field:first").addClass('to-show-custom-js');
-  $(".publication-field:first article").addClass('no-border-custom-js');
-  $(".slideshare-field:first").addClass('to-show-custom-js');
-  $(".infographic-field:first").addClass('to-show-custom-js');
-  $(".to-show-custom-js:first").addClass('first-child-custom-js');
+  //Add class to add margin in content publications
+  if ($(".related-resources-fluid")[0]) {
+    $('.publications-row').addClass('custom-add-margin');
+  }
 
+  //Hide Related publications if Twin publications exist
+  if ($(".related-resources-fluid .twin-publications")[0]) {
+    $('.related-resources-fluid  .related-resources-publications').hide();
+    $('.related-resources-fluid  .content-headings-related').hide();
+  }
 
   //Fix display pages footer view if we haven't pagination
   if ($(".pagerer-container")[0]) {
