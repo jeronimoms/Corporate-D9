@@ -1,0 +1,33 @@
+uuid: 1cb32c04-d74f-4e76-9367-92281bd4cfed
+langcode: en
+status: true
+dependencies: {  }
+id: osha
+label: Osha
+description: null
+provider: ldap_provider
+consumer: authorization_drupal_roles
+provider_config:
+  status:
+    server: osha
+    only_ldap_authenticated: true
+  filter_and_mappings:
+    use_first_attr_as_groupid: false
+provider_mappings:
+  -
+    query: ''
+    is_regex: false
+  -
+    query: ''
+    is_regex: false
+consumer_config: {  }
+consumer_mappings:
+  -
+    role: none
+  -
+    role: none
+synchronization_modes:
+  user_logon: user_logon
+synchronization_actions:
+  revoke_provider_provisioned: revoke_provider_provisioned
+  create_consumers: create_consumers
