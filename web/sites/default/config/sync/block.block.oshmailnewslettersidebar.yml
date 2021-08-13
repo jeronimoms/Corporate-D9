@@ -1,0 +1,31 @@
+uuid: f753d442-1118-4e38-b42e-eea6bc4b0d8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - ncwtheme
+third_party_settings:
+  block_class:
+    classes: 'block-custom-newsletter block-custom-newsletter--sidebar'
+id: oshmailnewslettersidebar
+theme: ncwtheme
+region: sidebar_second_others
+weight: -67
+provider: null
+plugin: 'block_content:5716b291-5d32-4cb8-bedd-63d3be325bda'
+settings:
+  id: 'block_content:5716b291-5d32-4cb8-bedd-63d3be325bda'
+  label: 'OSHmail newsletter (Sidebar)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/oshmail-newsletter\r\n/themes/osh-e-tools\r\n/oshnews\r\n/highlights"
+    negate: false

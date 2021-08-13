@@ -1,0 +1,17 @@
+uuid: 19b59748-692e-4777-9be2-b0c73c0bbfde
+langcode: en
+status: true
+dependencies:
+  module:
+    - job_scheduler
+title: 'Default cron handler'
+id: job_scheduler_cron
+weight: 0
+module: job_scheduler
+callback: job_scheduler_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

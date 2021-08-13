@@ -2,6 +2,9 @@
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
 .node--type-newsletter-content{
+  .layout-main-wrapper{
+    padding-bottom: 2rem;
+  }
   h1.title{
     display: none;
   }
@@ -91,32 +94,126 @@
 
 }
 
-/* Block Newsletter Home page - Right sidebar */
-.block-custom-newsletter.block-custom-newsletter--sidebar {
-  .field--name-field-newsletter-title-with-link {
-    font-size: 1.5625rem;
-    font-weight: bold;
-  }
-  .wrapper {
-    background: $bg-color-blue-block;
-    padding: 25px 20px;
-    margin-top: 10px;
-    margin-bottom: 2rem;
+/* Block Newsletter Custom */
+.block-custom-newsletter {
+  &.block-custom-newsletter--sidebar {
     color: $text-color-blue;
     font-size: 0.9rem;
-    border-radius: 3px;
-    a{
-      display: block;
-      margin-top: 5px;
+    margin-bottom: 2rem;
+    .field--name-field-newsletter-title-with-link {
+      margin-bottom: 10px;
+      font-size: 1.5625rem;
+      font-weight: bold;
+      a {
+        color: $text-color-blue;
+        &:hover {
+          text-decoration: none;
+          color: $text-color-blue;
+        }
+      }
+    }
+    .newsletter-wrapper {
+      background: $bg-color-blue-block;
+      padding: 25px 20px;
+      margin-top: 10px;
+      margin-bottom: 2rem;
+      color: $text-color-blue;
+      border-radius: 3px;
+    }
+    .field--name-body {
+      background: $bg-color-blue-block;
+      padding: 25px 20px;
+      p {
+        margin: 0;
+      }
+      a{
+        display: block;
+        margin: 0;
+        text-decoration: underline;
+        border: none;
+        &:hover{
+          text-decoration: none;
+          color: $text-color-blue;
+        }
+      }
+    }
+    .newsletter-subscription-form {
+      background: $bg-color-blue-block;
+      padding: 0 20px 15px;
+      .form-type-email {
+        margin-bottom: 15px;
+      }
+      .form-check {
+        margin-bottom: 1rem;
+        .form-check-label {
+          font-weight: normal;
+        }
+      }
+    }
+    .field--name-field-newsletter-privacy-notice {
+      background: $bg-color-blue-block;
+      padding: 0 20px 25px;
+      a {
+        display: block;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+          color: $text-color-blue;
+        }
+      }
+    }
+    .btn.btn-primary {
+      margin: 10px 0 0;
+      width: 100%;
+      opacity: 0.8;
+      font-size: 1rem;
+      color: $bg-color-blue;
+      font-weight: bold;
+      background: $bg-color-blue-button;
+    }
+  }
+  &.block-custom-newsletter--footer {
+    color: white;
+    border: 0;
+    margin-top: 2rem;
+    padding: 0;
+    a, label.form-check-label {
+      color: white;
+      border-bottom: none;
+    }
+    a {
       text-decoration: underline;
-      &:hover{
+      &:hover {
+        color: white;
         text-decoration: none;
+      }
+    }
+    .btn.btn-primary {
+      margin: 0 0 20px;
+      background-color: $bg-color-blue-button;
+      color: $text-color-blue;
+      font-weight: bold;
+    }
+    .form-check {
+      margin: 0 0 20px;
+      .form-check-label{
+        font-weight: normal;
+      }
+    }
+    .field--name-field-newsletter-title-with-link {
+      font-weight: bold;
+      font-size: 1rem;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }
 }
 
-
+/**** OLD, Remove when the new one is ready ***/
 
 .newsletter-block-wrapper{
   background: $bg-color-blue-block;

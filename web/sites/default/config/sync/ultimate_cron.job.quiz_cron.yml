@@ -1,0 +1,17 @@
+uuid: 92304315-646b-4179-b7de-2825bdf28331
+langcode: en
+status: true
+dependencies:
+  module:
+    - quiz
+title: 'Default cron handler'
+id: quiz_cron
+weight: 0
+module: quiz
+callback: quiz_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database
