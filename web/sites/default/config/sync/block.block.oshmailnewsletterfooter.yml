@@ -2,11 +2,8 @@ uuid: 45c8c7b7-e7c2-4304-a261-d828d59127b8
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:newsletter_subscription_block:515d10d1-3404-422d-8dfe-fa0fbdc1291d'
   module:
     - block_class
-    - block_content
   theme:
     - ncwtheme
 third_party_settings:

@@ -61,7 +61,11 @@
             <table class="newsletter-events" style="width: 355px;">
               <tr>
                 <td style="padding-top: 20px; padding-left: 20px; padding-right: 10px; vertical-align: top;">
-                  <img style="border: 0px; width:40px; height:40px;" typeof="foaf:Image" src="http://ddev.ddev.site/sites/default/files/inline-images/img-calendar.png" width="40" height="40" alt="calendar">
+                  {% set date_event = column.content['#options'].entity.field_date.0.value|date('d/m/Y')|split('/') %}
+                  <img style="border: 0px; width:40px; height:40px;" typeof="foaf:Image" src="https://testd9.osha.europa.eu/sites/default/files/styles/thumbnail/public/2021-08/img-calendar.png" width="40" height="40" alt="calendar">
+                  <span style="font-size:14px; color:white;margin-top: 13px;position: absolute;margin-left: -29px;">
+                    {{ date_event[0] }}
+                  </span>
                 </td>
                 <td style="padding: 20px 10px 0 10px; vertical-align: top; text-align: left;">
                   <span style="color:#FFFFFF; font-weight: normal; font-size: 13px;">

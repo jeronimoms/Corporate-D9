@@ -15,16 +15,20 @@
 
 })(jQuery, Drupal);
 
+jQuery(document).ready(function($) {
 
-jQuery(document).ready(function($){
+  //Facet accordions, this should be usefull for all blocks with .block-facets-accordion-class
+  $(".sidebar-first .block-facets-accordion h2").click(function(){
+    $(this).toggleClass("active");
+    $(this).parent().find('.content').slideToggle();
+  });
+
   $("#block-ncwtheme-main-menu .menu-item a").after("<span class='mean-expand'>&nbsp;</span>");
   $('.mean-expand').click(function(){
     $(this).parent().children('div').children('ul').slideToggle();
     $(this).toggleClass('active');
   });
-})
 
-jQuery(document).ready(function($) {
   // Accordions
   if (!$('body').hasClass("node--type-thesaurus")) {
     $(".wysiwyg_accordion h3:nth-child(1)").addClass('active');
@@ -45,54 +49,6 @@ jQuery(document).ready(function($) {
   $(".sidebar-second .view-grouping .view-grouping-header").click(function(){
     $(this).toggleClass("active");
     $(this).next('.view-grouping-content').slideToggle();
-  });
-
-  //Facets Accordions
-  $(".sidebar-first #block-contenttypesearchsite-2 h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
-  });
-
-  $(".sidebar-first #block-topics-2 h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
-  });
-
-  $(".sidebar-first #block-topicsblog h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
-  });
-
-  $(".sidebar-first #block-dateofdirective h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
-  });
-
-  $(".sidebar-first #block-topicsdirectives h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
-  });
-
-  $(".sidebar-first #block-guideline-topics h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
-  });
-
-  $(".sidebar-first #block-seminar-tags h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
-  });
-
-  //Facet accordions Dangerous substances
-  $(".page-view-dangerous-substances-overview .sidebar-first  .block-facet--links h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
-  });
-
-  //Facet accordions, this should be usefull for all blocks with .block-facets-accordion-class
-  $(".sidebar-first  .block-facets-accordion h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
   });
 
   // Facet with view FOPS detail
