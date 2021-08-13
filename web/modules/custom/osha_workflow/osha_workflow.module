@@ -11,10 +11,19 @@ use Drupal\node\Entity\Node;
 /**
  * Implements hook_toolbar().
  */
-function osha_workflow_toolbar() {
-  return \Drupal::service('class_resolver')
-    ->getInstanceFromDefinition(VwToolBar::class)
-    ->toolBar();
+//function osha_workflow_toolbar() {
+//  return \Drupal::service('class_resolver')
+//    ->getInstanceFromDefinition(VwToolBar::class)
+//    ->toolBar();
+//}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function osha_workflow_toolbar_alter(&$items) {
+  toolbar_toolbar();
+  $items['workbench']['tab']['#title'] = "My Workbench";
+  return $items;
 }
 
 /**
