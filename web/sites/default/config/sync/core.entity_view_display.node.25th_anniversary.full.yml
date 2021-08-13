@@ -1,6 +1,6 @@
 uuid: 356be119-8ed7-43b8-b8f2-092d16243e28
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
@@ -32,8 +32,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_image_media: true
   field_language: true
   field_publication_date: true

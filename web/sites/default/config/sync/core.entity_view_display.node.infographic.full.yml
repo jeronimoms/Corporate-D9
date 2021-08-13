@@ -1,8 +1,9 @@
-uuid: cbbf9070-871f-4c95-adf2-5f599fa54153
+uuid: 0092a9ce-934d-476c-8f72-161127aec50a
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.infographic.body
     - field.field.node.infographic.field_activity
     - field.field.node.infographic.field_archived
@@ -18,13 +19,18 @@ dependencies:
     - image.style.infographic_thumbnail
     - node.type.infographic
   module:
+    - layout_builder
     - media
     - text
     - user
-id: node.infographic.default
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.infographic.full
 targetEntityType: node
 bundle: infographic
-mode: default
+mode: full
 content:
   body:
     weight: 1

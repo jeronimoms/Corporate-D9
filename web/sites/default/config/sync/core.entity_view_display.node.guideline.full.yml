@@ -1,8 +1,9 @@
-uuid: d7917f7e-a5d3-4787-8a3a-17c1341c4e63
+uuid: 467afca2-95a1-43c6-b9fc-1cf0237cab20
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.guideline.body
     - field.field.node.guideline.field_activity
     - field.field.node.guideline.field_additional_html
@@ -20,13 +21,18 @@ dependencies:
     - node.type.guideline
   module:
     - languagefield
+    - layout_builder
     - link
     - text
     - user
-id: node.guideline.default
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.guideline.full
 targetEntityType: node
 bundle: guideline
-mode: default
+mode: full
 content:
   body:
     label: hidden
