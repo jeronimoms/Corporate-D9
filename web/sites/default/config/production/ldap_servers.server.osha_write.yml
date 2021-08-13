@@ -1,18 +1,18 @@
-uuid: fc7bcb94-cd9d-4171-b5a7-fabfe5b38552
+uuid: 3d389ac7-6e56-40d4-9ed7-371e563e71d2
 langcode: en
 status: true
 dependencies: {  }
-id: osha
-label: Osha
+id: osha_write
+label: 'Osha write'
 type: openldap
 account_name_attr: ''
-address: 194.30.35.128
+address: 194.30.34.30
 basedn:
   - 'ou=people,dc=osha,dc=europa,dc=eu'
   - 'ou=MainSite,ou=Sites,dc=osha,dc=europa,dc=eu'
 bind_method: service_account
-binddn: 'cn=ReaderD9,dc=osha,dc=europa,dc=eu'
-bindpw: 2w8bRkshjG4e
+binddn: 'cn=PwdWriter,dc=osha,dc=europa,dc=eu'
+bindpw: ''
 encryption: none
 grp_derive_from_dn_attr: ''
 grp_derive_from_dn: false
@@ -29,8 +29,8 @@ mail_attr: mail
 mail_template: ''
 picture_attr: ''
 port: 389
-testing_drupal_user_dn: 'cn=ReaderD9,dc=osha,dc=europa,dc=eu'
-testing_drupal_username: moreno@osha.europa.eu
+testing_drupal_user_dn: ''
+testing_drupal_username: ''
 timeout: 10
 unique_persistent_attr_binary: false
 unique_persistent_attr: dn

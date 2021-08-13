@@ -5,21 +5,21 @@ authenticationMode: mixed
 loginUIUsernameTxt: ''
 loginUIPasswordTxt: ''
 ldapUserHelpLinkUrl: ''
-ldapUserHelpLinkText: ''
+ldapUserHelpLinkText: 'Logon Help'
 emailOption: allow
 emailUpdate: update_notify
-emailTemplateHandling: none
-emailTemplate: '@username@fake-domain.com'
+emailTemplateHandling: if_empty
+emailTemplate: '@username@example.com'
 emailTemplateUsageResolveConflict: false
 emailTemplateUsageNeverUpdate: false
 emailTemplateUsagePromptUser: false
 emailTemplateUsageRedirectOnLogin: false
-emailTemplateUsagePromptRegex: '.*@fake-domain\.com'
+emailTemplateUsagePromptRegex: '.*@example\\.com'
 passwordOption: allow
 allowOnlyIfTextInDn: {  }
 excludeIfTextInDn: {  }
 excludeIfNoAuthorizations: false
-skipAdministrators: false
+skipAdministrators: true
 langcode: en
 _core:
   default_config_hash: 9DgabkLztscclWQDjei_mAOpxP6xdbp_Iu5L5z6Nsbg
