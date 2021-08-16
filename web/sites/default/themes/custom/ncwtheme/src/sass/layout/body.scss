@@ -154,6 +154,11 @@ body {
   padding: 0;
 }
 
+.slideshow-title.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* Labels */
 span.label, span.pages{
   font-family: 'Open Sans',sans-serif;
@@ -594,6 +599,12 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
     }
     h3{
       margin-bottom: 1.5rem;
+    }
+  }
+  .h2-related-articles{
+    h2{
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
   .node--type-file{
