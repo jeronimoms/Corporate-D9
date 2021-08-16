@@ -1,8 +1,9 @@
-uuid: b88a8b69-18e9-413d-a082-3fe6a7aa46ac
+uuid: 6290e51c-31fc-4860-912a-65ee0b17e421
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.osha_resources
     - field.field.node.slideshare.field_slideshare_id
     - field.field.node.slideshare.field_slideshare_url
     - field.field.node.slideshare.field_thumbnail
@@ -10,12 +11,16 @@ dependencies:
   module:
     - ds
     - image
-    - linked_field
+    - layout_builder
     - user
-id: node.slideshare.default
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.slideshare.osha_resources
 targetEntityType: node
 bundle: slideshare
-mode: default
+mode: osha_resources
 content:
   field_thumbnail:
     weight: 1
@@ -31,13 +36,6 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-      linked_field:
-        linked: '1'
-        type: field
-        destination: field_slideshare_url
-        advanced:
-          target: _blank
-        token: ''
     type: image
     region: content
   links:

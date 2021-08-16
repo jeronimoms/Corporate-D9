@@ -86,6 +86,9 @@ jQuery(document).ready(function($) {
   //View Careers 3th accordion opened
   $( "#block-quicktabscareersaccordion #ui-id-6" ).trigger( "click" );
 
+  //View Seminar Reports 1st accordion opened
+  $( "body.tools-and-resources-seminars #block-ncwtheme-content > div > article > div.view-content > div > div > div > div:nth-child(1) > div.view-grouping-header" ).trigger( "click" );
+
   // Text resize
   $('#_biggify').on('click', function() {
     var fontSize = $('html').css('font-size');
@@ -139,16 +142,21 @@ jQuery(document).ready(function($) {
     });
   }
 
+  //Add #mail no padding in pubblications
+  if ($(".related-resources-fluid")[0]) {
+    $('#main').addClass('custom-no-padding');
+  }
 
-  //Hide titles en Related resource item
-  $(".file-field:first").addClass('to-show-custom-js');
-  $(".youtube-field:first").addClass('to-show-custom-js');
-  $(".publication-field:first").addClass('to-show-custom-js');
-  $(".publication-field:first article").addClass('no-border-custom-js');
-  $(".slideshare-field:first").addClass('to-show-custom-js');
-  $(".infographic-field:first").addClass('to-show-custom-js');
-  $(".to-show-custom-js:first").addClass('first-child-custom-js');
+  //Add class to add margin in content publications
+  if ($(".related-resources-fluid")[0]) {
+    $('.publications-row').addClass('custom-add-margin');
+  }
 
+  //Hide Related publications if Twin publications exist
+  if ($(".related-resources-fluid .twin-publications")[0]) {
+    $('.related-resources-fluid  .related-resources-publications').hide();
+    $('.related-resources-fluid  .content-headings-related').hide();
+  }
 
   //Fix display pages footer view if we haven't pagination
   if ($(".pagerer-container")[0]) {

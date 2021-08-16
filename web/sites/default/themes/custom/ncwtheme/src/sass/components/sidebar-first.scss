@@ -126,6 +126,12 @@
       }
     }
   }
+  .form-row{
+    .form-actions{
+      clear: both;
+      width: 100%;
+    }
+  }
   .views-exposed-form .btn-primary {
     margin-left: 0;
     margin-right: 5px;

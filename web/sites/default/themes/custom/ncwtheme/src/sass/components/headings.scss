@@ -146,25 +146,19 @@ h3.custom-border{
   }
 }
 
-h3.h3-files-resources {
-  font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  display: none;
-}
-
-.first-child-custom-js{
-  h3.h3-files-resources {
-    margin-top: 0;
-  }
-}
-
-.field--name-field-aditional-resources{
-  .to-show-custom-js{
-    h3.h3-files-resources{
-      display: block;
+.related-resources-fluid {
+  /* Related resources in Publications */
+  h3.custom-border {
+    span {
+      background: $bg-color-blue-light;;
     }
   }
+}
+
+h3.h3-files-resources {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .content-related{
@@ -177,6 +171,7 @@ h3.h3-files-resources {
     float: none;
     background: url(../images/grey-h3-line.png) 0 60% repeat-x;
     color: $text-color-grey-h3;
+    margin-bottom: 0;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
     font-weight: bold;
