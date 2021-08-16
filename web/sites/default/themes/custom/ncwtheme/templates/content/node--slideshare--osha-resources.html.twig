@@ -72,9 +72,21 @@
     'clearfix',
   ]
 %}
-<h3 class="custom-border h3-files-resources"><span>{{ 'Slideshare' | trans }}</span></h3>
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('node__content custom-file-twig', 'clearfix') }}>
-    {{ content }}
+    <div class="rr-item-wrapper">
+      <div class="rr-item-content">
+        {{ content }}
+      </div>
+      <h2 class="rr-item-title">
+        {{ label }}
+      </h2>
+      <span class="see-more-arrow">
+        <a href="{{ url }}">{{ 'View' | trans }}</a>
+      </span>
+      <span class="see-more-arrow">
+         <a href="{{ url }}">{{ 'Download' | trans }}</a>
+      </span>
+    </div>
   </div>
 </article>
