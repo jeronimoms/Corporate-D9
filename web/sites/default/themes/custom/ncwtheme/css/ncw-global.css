@@ -2814,6 +2814,33 @@ a.quiz-start-link:hover {
   font-size: 0.9rem;
 }
 
+.node--type-press-contact .field__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.node--type-press-contact .field__label:after {
+  display: inline-block;
+  content: ":";
+}
+.node--type-press-contact .field__item {
+  font-size: 0.9rem;
+}
+.node--type-press-contact .field__item a {
+  font-size: 0.9rem;
+}
+.node--type-press-contact .field__item p {
+  margin-bottom: 0;
+}
+.node--type-press-contact .field--name-field-press-contact-organization, .node--type-press-contact .field--name-field-location {
+  padding-bottom: 1rem;
+}
+.node--type-press-contact .field--name-field-wg-role-1, .node--type-press-contact .field--name-field-wg-role-2 {
+  padding-bottom: 0;
+}
+.node--type-press-contact .field--name-field-wg-role-2, .node--type-press-contact .field--name-field-is-advisory {
+  padding-top: 1rem;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
