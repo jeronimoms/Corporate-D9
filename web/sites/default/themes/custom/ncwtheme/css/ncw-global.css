@@ -1153,6 +1153,7 @@ h3.h3-files-resources {
   float: none;
   background: url(../images/grey-h3-line.png) 0 60% repeat-x;
   color: #5a5a5b;
+  margin-bottom: 0;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   font-weight: bold;
@@ -5050,6 +5051,14 @@ body.node--type-publication {
 .node--type-publication .field--type-entity-reference {
   padding-bottom: 0;
 }
+.node--type-publication .field--type-entity-reference .field-item.publication-field {
+  clear: both;
+  margin-top: 1rem;
+}
+.node--type-publication .field--type-entity-reference > .field-item.publication-field:nth-child(1) {
+  margin-top: 0;
+  border: 1px solid red;
+}
 .node--type-publication .related-resources-fluid {
   float: left;
   clear: both;
@@ -5145,6 +5154,12 @@ body.node--type-publication {
 }
 
 /* Related publications and Twing publicattions */
+.node--type-publication .related-resources-fluid .field--name-field-related-publications .field__item {
+  margin-top: 1rem;
+}
+.node--type-publication .related-resources-fluid .field--name-field-related-publications > div:nth-child(1) {
+  margin-top: 0;
+}
 .node--type-publication .related-resources-fluid .rr-wrapper-related-resources {
   display: flex;
   clear: both;
@@ -5182,34 +5197,40 @@ body.node--type-publication {
   padding-top: 1rem;
 }
 
+/* Related publications - Files */
+.field-item.file-field {
+  clear: both;
+  margin-top: 1rem;
+}
+
 /* Related publications - Slideshare/Presentations */
 .field-item.slideshare-field {
   float: left;
   margin-right: 2em;
 }
 
-.content-related .rr-slideshare-wrapper {
+.content-related .rr-item-wrapper {
   position: relative;
   width: 300px;
   float: left;
   margin-top: 0;
   margin-bottom: 0;
 }
-.content-related .rr-slideshare-content {
+.content-related .rr-item-content {
   width: 300px;
   height: 200px;
 }
-.content-related .rr-slideshare-content .field--type-image {
-  width: 300px;
-  height: 200px;
-  margin: 0;
-}
-.content-related .rr-slideshare-content .field--type-image img {
+.content-related .rr-item-content .field--type-image {
   width: 300px;
   height: 200px;
   margin: 0;
 }
-.content-related h2.rr-slideshare-title {
+.content-related .rr-item-content img {
+  width: 300px;
+  height: 200px;
+  margin: 0;
+}
+.content-related h2.rr-item-title {
   font-weight: normal;
   font-size: 1.1rem;
   padding: 0 0 0.5rem 0;

@@ -214,6 +214,14 @@ body.node--type-publication{
   }
   .field--type-entity-reference{
     padding-bottom: 0;
+    .field-item.publication-field{
+      clear: both;
+      margin-top: 1rem;
+    }
+    > .field-item.publication-field:nth-child(1){
+      margin-top: 0;
+      border:1px solid red;
+    }
   }
   .related-resources-fluid{
     float: left;
@@ -322,6 +330,14 @@ body.node--type-publication{
 /* Related publications and Twing publicattions */
 .node--type-publication{
   .related-resources-fluid{
+    .field--name-field-related-publications{
+      .field__item{
+        margin-top: 1rem;
+      }
+      > div:nth-child(1){
+        margin-top: 0;
+      }
+    }
     .rr-wrapper-related-resources{
       display: flex;
       clear: both;
@@ -364,34 +380,40 @@ body.node--type-publication{
   }
 }
 
+/* Related publications - Files */
+.field-item.file-field{
+  clear: both;
+  margin-top: 1rem;
+}
+
 /* Related publications - Slideshare/Presentations */
 .field-item.slideshare-field{
   float: left;
   margin-right: 2em;
 }
 .content-related{
-  .rr-slideshare-wrapper{
+  .rr-item-wrapper{
     position: relative;
     width: 300px;
     float: left;
     margin-top: 0;
     margin-bottom: 0;
   }
-  .rr-slideshare-content{
+  .rr-item-content{
     width: 300px;
     height: 200px;
     .field--type-image{
       width: 300px;
       height: 200px;
       margin: 0;
-      img{
-        width: 300px;
-        height: 200px;
-        margin: 0;
-      }
+    }
+    img{
+      width: 300px;
+      height: 200px;
+      margin: 0;
     }
   }
-  h2.rr-slideshare-title{
+  h2.rr-item-title{
     font-weight: normal;
     font-size: 1.1rem;
     padding: 0 0 0.5rem 0;
