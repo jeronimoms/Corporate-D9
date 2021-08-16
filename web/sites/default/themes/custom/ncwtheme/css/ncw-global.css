@@ -784,7 +784,7 @@ div#sliding-popup {
   background-image: url(../images/file-icons/x-office-spreadsheet.png);
 }
 #main .file--x-office-document {
-  background-image: url(../../images/file-icons/x-office-document.png);
+  background-image: url(../images/file-icons/x-office-document.png);
 }
 #main .file--x-office-presentation {
   background-image: url(../images/file-icons/x-office-presentation.png);
@@ -2831,13 +2831,13 @@ a.quiz-start-link:hover {
 .node--type-press-contact .field__item p {
   margin-bottom: 0;
 }
-.node--type-press-contact .field--name-field-press-contact-organization, .node--type-press-contact .field--name-field-location {
-  padding-bottom: 1rem;
-}
 .node--type-press-contact .field--name-field-wg-role-1, .node--type-press-contact .field--name-field-wg-role-2 {
   padding-bottom: 0;
 }
-.node--type-press-contact .field--name-field-wg-role-2, .node--type-press-contact .field--name-field-is-advisory {
+.node--type-press-contact .field--name-field-country {
+  padding-bottom: 1rem;
+}
+.node--type-press-contact .field--name-field-wg-role-2 {
   padding-top: 1rem;
 }
 
