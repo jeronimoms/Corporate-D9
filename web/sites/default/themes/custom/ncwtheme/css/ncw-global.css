@@ -4318,7 +4318,7 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   max-width: 240px;
   height: 140px;
 }
-.block-views-landing-page .list--item .menu-link-text {
+.block-views-landing-page .menu-link-text {
   height: auto;
   line-height: 1.2em;
   padding: 0;
@@ -4328,7 +4328,50 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   align-items: flex-start;
   margin-bottom: 0.2rem;
 }
-.block-views-landing-page .list--item .menu-link-text a {
+.block-views-landing-page .menu-link-text:hover a {
+  border-bottom: 10px solid #c72272 !important;
+  background: url(../images/flecha.png) center right no-repeat;
+}
+.block-views-landing-page .menu-link-text a {
+  margin: 0;
+  transition: none;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: "Open Sans Condensed", sans-serif !important;
+  font-size: 1.1875rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #003399;
+  border-bottom: 10px solid #e8ecf5;
+  padding-right: 20px;
+}
+
+.block-views-blocklanding-menu-dv-block-1 {
+  margin-top: 2rem;
+}
+.block-views-blocklanding-menu-dv-block-1 .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.block-views-blocklanding-menu-dv-block-1 .view-content.row > div {
+  max-width: 240px;
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  line-height: 1.2em;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+.block-views-blocklanding-menu-dv-block-1 .view-content.row > div:hover .menu-link-contentmain a {
+  border-bottom: 10px solid #c72272 !important;
+  background: url(../images/flecha.png) center right no-repeat;
+}
+.block-views-blocklanding-menu-dv-block-1 .view-content.row > div .menu-link-contentmain > a {
   margin: 0;
   transition: none;
   display: flex;
@@ -4348,6 +4391,18 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
 /* Facts and Figures */
 .page-node-5 .block-views-landing-page .list--item {
   margin: 0.5rem 3% 0.7rem 0;
+}
+
+/* Data visualitation */
+.page-node-13822 .block-views-blocklanding-menu-dv-block-1 {
+  margin-top: 2rem;
+}
+.page-node-13822 .block-views-blocklanding-menu-dv-block-1 .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.page-node-13822 .block-views-blocklanding-menu-dv-block-1 .view-content.row > div {
+  margin-right: 3rem;
 }
 
 /* This SASS only apply in the Web, not in the email - outlook
