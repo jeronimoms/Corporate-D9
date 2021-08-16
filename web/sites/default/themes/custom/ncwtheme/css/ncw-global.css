@@ -5129,7 +5129,7 @@ body.node--type-publication {
   margin: 0 3px 0 0;
 }
 .field--name-field-aditional-resources .publication-field .field-name-field-pages-count {
-  padding-bottom: 14px;
+  padding-bottom: 0;
   display: flex;
   font-size: 0.875rem;
 }
@@ -5138,7 +5138,7 @@ body.node--type-publication {
   order: 2;
 }
 .field--name-field-aditional-resources .publication-field h2 {
-  margin-bottom: 21px;
+  margin-bottom: 0;
   font-weight: normal;
   padding: 0;
   font-size: 1.125rem;
@@ -5252,7 +5252,23 @@ body.node--type-publication {
   margin-right: 2em;
 }
 
-/* Rsponsive */
+/* Related publications in articles */
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column {
+  padding: 0.5rem 0 0 1rem;
+}
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .rr-wrapper-fields {
+  flex-direction: column;
+}
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a {
+  font-size: 0.75rem;
+  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
+  padding: 5px 30px 5px 5px;
+}
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a:hover {
+  background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
+}
+
+/* Responsive */
 @media only screen and (max-width: 1200px) {
   /* Publications Slide 3 items */
   .view-publications .views-col {
