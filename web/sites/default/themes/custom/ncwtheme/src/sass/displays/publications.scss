@@ -458,7 +458,6 @@ body.node--type-publication{
       padding: 10px;
       border-bottom: 15px solid $bg-color-blue-light;
     }
-
     .views-field-field-image-media {
       display: none;
     }
@@ -504,6 +503,18 @@ body.node--type-publication{
 }
 
 @media only screen and (max-width : 768px) {
+  .rr-left-column{
+    display: none;
+  }
+  .related-publications-in-articles {
+    .node--type-publication {
+      .rr-wrapper-related-resources {
+        .rr-right-column {
+          padding: 0;
+        }
+      }
+    }
+  }
   .tools-and-publications-publications {
     .view-filters {
       fieldset:nth-child(3) {
