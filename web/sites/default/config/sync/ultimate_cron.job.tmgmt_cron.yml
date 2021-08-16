@@ -1,0 +1,17 @@
+uuid: 86474656-9bce-4a1f-a0ce-818e5baf175e
+langcode: en
+status: true
+dependencies:
+  module:
+    - tmgmt
+title: 'Default cron handler'
+id: tmgmt_cron
+weight: 0
+module: tmgmt
+callback: tmgmt_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

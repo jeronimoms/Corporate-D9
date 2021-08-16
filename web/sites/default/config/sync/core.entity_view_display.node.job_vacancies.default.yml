@@ -49,6 +49,7 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - content_moderation_control
         - node_title
         - body
         - field_job_vacancies_deadline
@@ -71,6 +72,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: ds_content
+  content_moderation_control:
+    weight: -20
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
   field_file_media:
     weight: 3
     label: above

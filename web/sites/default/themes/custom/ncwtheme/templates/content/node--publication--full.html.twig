@@ -111,45 +111,26 @@
       </div>
     </div>
 
-    {% if content.field_related_publications|render and  content.field_aditional_resources|render %}
+    {% if content.field_related_publications|render %}
       <div class="related-resources-fluid">
         <div class="content-related container">
           <h2>{{ 'Related resources' | trans }}</h2>
-          <h3 class="custom-border-related ">
+          <h3 class="custom-border-related twin-publications">
             <span>{{ 'Twin publications' | trans }}</span>
           </h3>
           {{ content.field_related_publications }}
         </div>
-        <div class="content-related container">
-          <h3 class="custom-border-related ">
-            <span>{{ 'Related publications' | trans }}</span>
-          </h3>
-          {{ content.field_aditional_resources }}
-        </div>
       </div>
-    {% else %}
-      {% if content.field_related_publications|render %}
-        <div class="related-resources-fluid">
-          <div class="content-related container">
-            <h2>{{ 'Related resources' | trans }}</h2>
-            <h3 class="custom-border-related ">
-              <span>{{ 'Twin publications' | trans }}</span>
-            </h3>
-            {{ content.field_related_publications }}
-          </div>
-        </div>
-      {% endif %}
-      {% if content.field_aditional_resources|render %}
-      <div class="related-resources-fluid">
-        <div class="content-related container">
+    {% endif %}
+    {% if content.field_aditional_resources|render %}
+    <div class="related-resources-fluid">
+      <div class="content-related container">
+        <div class="related-resources-publications">
           <h2>{{ 'Related resources' | trans }}</h2>
-          <h3 class="custom-border-related ">
-            <span>{{ 'Related publications' | trans }}</span>
-          </h3>
-          {{ content.field_aditional_resources }}
         </div>
+        {{ content.field_aditional_resources }}
       </div>
-      {% endif %}
+    </div>
     {% endif %}
   </div>
 </article>

@@ -516,7 +516,7 @@ div#sliding-popup {
 }
 
 /* Facets Accordions */
-#block-topics-2, #block-contenttypesearchsite-2, #block-topicsblog, #block-dateofdirective, #block-topicsdirectives, #block-guideline-topics, #block-seminar-tags {
+#block-topics-2, #block-contenttypesearchsite-2, #block-topicsblog, #block-topicsdirectives, #block-guideline-topics, #block-seminar-tags {
   border: 0;
   padding: 0;
   margin-top: 0;
@@ -524,7 +524,7 @@ div#sliding-popup {
   border-bottom: 10px solid #FFF;
   margin-bottom: 0;
 }
-#block-topics-2 h2, #block-contenttypesearchsite-2 h2, #block-topicsblog h2, #block-dateofdirective h2, #block-topicsdirectives h2, #block-guideline-topics h2, #block-seminar-tags h2 {
+#block-topics-2 h2, #block-contenttypesearchsite-2 h2, #block-topicsblog h2, #block-topicsdirectives h2, #block-guideline-topics h2, #block-seminar-tags h2 {
   position: relative;
   background: #e8eef7;
   padding-top: 0.3rem;
@@ -532,7 +532,7 @@ div#sliding-popup {
   padding-left: 0.5rem;
   cursor: pointer;
 }
-#block-topics-2 h2::after, #block-contenttypesearchsite-2 h2::after, #block-topicsblog h2::after, #block-dateofdirective h2::after, #block-topicsdirectives h2::after, #block-guideline-topics h2::after, #block-seminar-tags h2::after {
+#block-topics-2 h2::after, #block-contenttypesearchsite-2 h2::after, #block-topicsblog h2::after, #block-topicsdirectives h2::after, #block-guideline-topics h2::after, #block-seminar-tags h2::after {
   content: "";
   position: absolute;
   width: 20px;
@@ -541,25 +541,25 @@ div#sliding-popup {
   top: 12px;
   right: 20px;
 }
-#block-topics-2 h2.active::after, #block-contenttypesearchsite-2 h2.active::after, #block-topicsblog h2.active::after, #block-dateofdirective h2.active::after, #block-topicsdirectives h2.active::after, #block-guideline-topics h2.active::after, #block-seminar-tags h2.active::after {
+#block-topics-2 h2.active::after, #block-contenttypesearchsite-2 h2.active::after, #block-topicsblog h2.active::after, #block-topicsdirectives h2.active::after, #block-guideline-topics h2.active::after, #block-seminar-tags h2.active::after {
   background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
   right: 18px;
 }
-#block-topics-2 .content, #block-contenttypesearchsite-2 .content, #block-topicsblog .content, #block-dateofdirective .content, #block-topicsdirectives .content, #block-guideline-topics .content, #block-seminar-tags .content {
+#block-topics-2 .content, #block-contenttypesearchsite-2 .content, #block-topicsblog .content, #block-topicsdirectives .content, #block-guideline-topics .content, #block-seminar-tags .content {
   background: #FFF;
   display: none;
 }
-#block-topics-2 .content ul, #block-contenttypesearchsite-2 .content ul, #block-topicsblog .content ul, #block-dateofdirective .content ul, #block-topicsdirectives .content ul, #block-guideline-topics .content ul, #block-seminar-tags .content ul {
+#block-topics-2 .content ul, #block-contenttypesearchsite-2 .content ul, #block-topicsblog .content ul, #block-topicsdirectives .content ul, #block-guideline-topics .content ul, #block-seminar-tags .content ul {
   list-style: none;
   padding-left: 0;
 }
-#block-topics-2 .content ul a, #block-contenttypesearchsite-2 .content ul a, #block-topicsblog .content ul a, #block-dateofdirective .content ul a, #block-topicsdirectives .content ul a, #block-guideline-topics .content ul a, #block-seminar-tags .content ul a {
+#block-topics-2 .content ul a, #block-contenttypesearchsite-2 .content ul a, #block-topicsblog .content ul a, #block-topicsdirectives .content ul a, #block-guideline-topics .content ul a, #block-seminar-tags .content ul a {
   display: block;
   color: #57565b;
   font-size: 0.9rem;
   padding: 5px 0 5px 0.5rem;
 }
-#block-topics-2 .content select, #block-topics-2 .content input, #block-contenttypesearchsite-2 .content select, #block-contenttypesearchsite-2 .content input, #block-topicsblog .content select, #block-topicsblog .content input, #block-dateofdirective .content select, #block-dateofdirective .content input, #block-topicsdirectives .content select, #block-topicsdirectives .content input, #block-guideline-topics .content select, #block-guideline-topics .content input, #block-seminar-tags .content select, #block-seminar-tags .content input {
+#block-topics-2 .content select, #block-topics-2 .content input, #block-contenttypesearchsite-2 .content select, #block-contenttypesearchsite-2 .content input, #block-topicsblog .content select, #block-topicsblog .content input, #block-topicsdirectives .content select, #block-topicsdirectives .content input, #block-guideline-topics .content select, #block-guideline-topics .content input, #block-seminar-tags .content select, #block-seminar-tags .content input {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -690,6 +690,19 @@ div#sliding-popup {
   color: #57565b;
   font-size: 0.9rem;
   padding: 5px 0 5px 0.5rem;
+}
+
+/* Facets without Facet styles */
+#block-dateofdirective {
+  border: 0;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#block-dateofdirective h2 {
+  font-size: 0.9rem;
+  padding-bottom: 0;
+  font-weight: normal;
 }
 
 /* Header Fields - Language selector - Search */
@@ -1131,19 +1144,17 @@ h3.custom-border span {
   padding-right: 1em;
 }
 
+.related-resources-fluid {
+  /* Related resources in Publications */
+}
+.related-resources-fluid h3.custom-border span {
+  background: #cfddee;
+}
+
 h3.h3-files-resources {
   font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  display: none;
-}
-
-.first-child-custom-js h3.h3-files-resources {
-  margin-top: 0;
-}
-
-.field--name-field-aditional-resources .to-show-custom-js h3.h3-files-resources {
-  display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .content-related h2 {
@@ -1155,6 +1166,7 @@ h3.h3-files-resources {
   float: none;
   background: url(../images/grey-h3-line.png) 0 60% repeat-x;
   color: #5a5a5b;
+  margin-bottom: 0;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   font-weight: bold;
@@ -1306,6 +1318,10 @@ h3.home a:hover {
   border-bottom: 0;
   padding-bottom: 0;
 }
+.sidebar-first .form-row .form-actions {
+  clear: both;
+  width: 100%;
+}
 .sidebar-first .views-exposed-form .btn-primary {
   margin-left: 0;
   margin-right: 5px;
@@ -1429,6 +1445,10 @@ h3.home a:hover {
 .sidebar-second .block.block-twitter-block h2 {
   font-size: 1.35rem;
   border-bottom: 0;
+}
+.sidebar-second .view-fop-page-links .view-content.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .region-sidebar-second-others.row {
@@ -1896,7 +1916,7 @@ body .field--name-body p a:hover, body .field--name-body ul a:hover, body .field
 }
 
 /* Links - arrows */
-body .see-more-arrow a, body .link_news_events a {
+body .see-more-arrow a, body .node--type-publication .rr-right-column .field--name-node-link a, .node--type-publication .rr-right-column body .field--name-node-link a, body .link_news_events a {
   width: auto;
   color: #003399;
   display: inline-block;
@@ -1907,7 +1927,7 @@ body .see-more-arrow a, body .link_news_events a {
   text-decoration: none;
   border-bottom: 0;
 }
-body .see-more-arrow a:hover, body .link_news_events a:hover {
+body .see-more-arrow a:hover, body .node--type-publication .rr-right-column .field--name-node-link a:hover, .node--type-publication .rr-right-column body .field--name-node-link a:hover, body .link_news_events a:hover {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 10px) 15px;
   color: #FFF !important;
   -webkit-transition: background-color 800ms linear;
@@ -1916,12 +1936,12 @@ body .see-more-arrow a:hover, body .link_news_events a:hover {
   -ms-transition: background-color 800ms linear;
   transition: background-color 800ms linear;
 }
-body .see-more-arrow.arrow-back a, body .link_news_events.arrow-back a {
+body .see-more-arrow.arrow-back a, body .node--type-publication .rr-right-column .arrow-back.field--name-node-link a, .node--type-publication .rr-right-column body .arrow-back.field--name-node-link a, body .link_news_events.arrow-back a {
   padding: 10px;
   margin-right: 0;
   background-image: none;
 }
-body .see-more-arrow.arrow-back a:before, body .link_news_events.arrow-back a:before {
+body .see-more-arrow.arrow-back a:before, body .node--type-publication .rr-right-column .arrow-back.field--name-node-link a:before, .node--type-publication .rr-right-column body .arrow-back.field--name-node-link a:before, body .link_news_events.arrow-back a:before {
   content: "";
   display: inline-block;
   width: 40px;
@@ -1936,21 +1956,26 @@ body .news_and_events.block-menu-block ul li .link_news_events a {
   border-bottom: 0;
 }
 
-.see-more-arrow.minor-size a {
+.see-more-arrow.minor-size a, .node--type-publication .rr-right-column .minor-size.field--name-node-link a {
   font-size: 0.75rem;
   background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
   padding: 5px 30px 5px 5px;
 }
-.see-more-arrow.minor-size a:hover {
+.see-more-arrow.minor-size a:hover, .node--type-publication .rr-right-column .minor-size.field--name-node-link a:hover {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
 }
 
-.see-more-arrow.pull-right {
+.see-more-arrow.pull-right, .node--type-publication .rr-right-column .pull-right.field--name-node-link {
   float: right;
 }
 
 .node-readmore {
   padding: 0;
+}
+
+.slideshow-title.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Labels */
@@ -2168,6 +2193,9 @@ body ul li .introduction-title a:hover {
   background: url(../images/external_link-v2-hover.png) no-repeat scroll right 4px rgba(0, 0, 0, 0);
 }
 
+#main {
+  padding-bottom: 2rem;
+}
 #main .node--view-mode-full a[target=_blank], #main .view a[target=_blank] {
   background: url(../images/external_link-v2.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
   padding-right: 16px;
@@ -2177,6 +2205,19 @@ body ul li .introduction-title a:hover {
 #main .node--view-mode-full a[target=_blank]:hover, #main .view a[target=_blank]:hover {
   background: url(../images/external_link-v2-hover.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
   border-bottom: 1px solid #003399;
+  text-decoration: none;
+}
+
+#main.custom-no-padding {
+  padding-bottom: 0;
+}
+
+.node--type-slideshare #main .node--view-mode-full a[target=_blank], .node--type-slideshare #main .view a[target=_blank] {
+  background: url(../images/external_link-v2.png) no-repeat scroll right 97% rgba(0, 0, 0, 0);
+  float: left;
+}
+.node--type-slideshare #main .node--view-mode-full a[target=_blank]:hover, .node--type-slideshare #main .view a[target=_blank]:hover {
+  background: url(../images/external_link-v2-hover.png) no-repeat scroll right 97% rgba(0, 0, 0, 0);
   text-decoration: none;
 }
 
@@ -2313,7 +2354,11 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 .node--type-article .content-headings-related h3 {
   margin-bottom: 1.5rem;
 }
-.node--type-article .custom-file-twig .field__label {
+.node--type-article .h2-related-articles h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.node--type-article .node--type-file .field__label {
   display: none;
 }
 .node--type-article .field--name-field-aditional-resources {
@@ -2693,6 +2738,77 @@ a.quiz-start-link:hover {
   height: auto;
 }
 
+.block-workbench-access {
+  background: #FFFBD9;
+  border: 1px solid #FFEBC5;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.block-workbench-access .list-group-item {
+  border: 0;
+  background: transparent;
+  color: #666666;
+  font-size: 0.9rem;
+}
+
+.dangerous-wrapper .field__label {
+  font-size: 0.9rem;
+}
+.dangerous-wrapper .field__label:after {
+  display: inline-block;
+  content: ":";
+}
+.dangerous-wrapper .field__item a {
+  font-size: 0.9rem;
+}
+.dangerous-wrapper .field__item p {
+  margin-bottom: 0;
+}
+.dangerous-wrapper .field--name-field-item-type .field__label, .dangerous-wrapper .field--name-field-material-country .field__label, .dangerous-wrapper .field--name-field-available-in-languages .field__label, .dangerous-wrapper .field--name-field-intellectual-property-righ .field__label {
+  color: #003399;
+}
+.dangerous-wrapper .field--name-field-item-type .field__item, .dangerous-wrapper .field--name-field-material-country .field__item, .dangerous-wrapper .field--name-field-available-in-languages .field__item, .dangerous-wrapper .field--name-field-intellectual-property-righ .field__item {
+  display: inline-block;
+  background-color: #e8eef7;
+  border-radius: 5px;
+  padding: 1px 10px;
+  margin-right: 5px;
+  font-size: 11px;
+  margin-bottom: 5px;
+  color: #003399;
+  margin-left: 2px;
+}
+.dangerous-wrapper .field--name-field-substance-description .field__item, .dangerous-wrapper .field--name-field-year .field__item {
+  color: #003399;
+}
+
+.node--type-wiki-page .field__label {
+  font-size: 0.9rem;
+}
+.node--type-wiki-page .field__label:after {
+  display: inline-block;
+  content: ":";
+}
+.node--type-wiki-page .field__item {
+  font-size: 0.9rem;
+}
+.node--type-wiki-page .field__item a {
+  font-size: 0.9rem;
+}
+.node--type-wiki-page .field__item p {
+  margin-bottom: 0;
+}
+.node--type-wiki-page .field--name-field-summary-html .field__label {
+  color: #212529;
+  font-size: 0.9rem;
+}
+.node--type-wiki-page .field--name-field-wiki-page-url {
+  padding-bottom: 0.9rem;
+}
+.node--type-wiki-page .field--name-field-tags .field__label, .node--type-wiki-page .field--name-field-tags ul.links {
+  font-size: 0.9rem;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
@@ -2761,7 +2877,7 @@ a.quiz-start-link:hover {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.view-eu-osha-event-summaries .events-summary-col .field-content div.see-more-arrow {
+.view-eu-osha-event-summaries .events-summary-col .field-content div.see-more-arrow, .view-eu-osha-event-summaries .events-summary-col .field-content .node--type-publication .rr-right-column div.field--name-node-link, .node--type-publication .rr-right-column .view-eu-osha-event-summaries .events-summary-col .field-content div.field--name-node-link {
   position: absolute;
   bottom: 16px;
   right: 16px;
@@ -3689,7 +3805,7 @@ body.user-logged-in.toolbar-tray-open #header {
   padding-top: 1em;
   clear: both;
 }
-.content-news-events .wrap-news-events .news-home .view-content .see-more-arrow a, .content-news-events .wrap-news-events .events-home .view-content .see-more-arrow a {
+.content-news-events .wrap-news-events .news-home .view-content .see-more-arrow a, .content-news-events .wrap-news-events .news-home .view-content .node--type-publication .rr-right-column .field--name-node-link a, .node--type-publication .rr-right-column .content-news-events .wrap-news-events .news-home .view-content .field--name-node-link a, .content-news-events .wrap-news-events .events-home .view-content .see-more-arrow a, .content-news-events .wrap-news-events .events-home .view-content .node--type-publication .rr-right-column .field--name-node-link a, .node--type-publication .rr-right-column .content-news-events .wrap-news-events .events-home .view-content .field--name-node-link a {
   padding: 11px 40px 10px 10px;
   position: absolute;
   left: 0;
@@ -4830,7 +4946,7 @@ body.contact form.contact-form button.btn-primary {
 .view-publications .views-field-field-pages-count .views-label-field-pages-count {
   padding-right: 3px;
 }
-.view-publications .see-more-arrow {
+.view-publications .see-more-arrow, .view-publications .node--type-publication .rr-right-column .field--name-node-link, .node--type-publication .rr-right-column .view-publications .field--name-node-link {
   display: block;
   position: absolute;
   right: 0;
@@ -4896,6 +5012,9 @@ body.node--type-publication {
 .node--type-publication .publications-row {
   display: flex;
 }
+.node--type-publication .publications-row.custom-add-margin {
+  padding-bottom: 2rem;
+}
 .node--type-publication .publications-detail-right-column {
   width: 100%;
   padding-left: 2rem;
@@ -4905,6 +5024,12 @@ body.node--type-publication {
   font-weight: normal;
   padding: 0;
   font-size: 1.3rem;
+}
+.node--type-publication .publications-detail-right-column .content-publication-info {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .node--type-publication .field--name-field-image-media img {
   float: left;
@@ -4946,30 +5071,43 @@ body.node--type-publication {
   content: none;
 }
 .node--type-publication .field--type-entity-reference {
-  padding-bottom: 1rem;
+  padding-bottom: 0;
+}
+.node--type-publication .field--type-entity-reference .field-item.publication-field {
+  clear: both;
+  margin-top: 1rem;
+}
+.node--type-publication .field--type-entity-reference > .field-item.publication-field:nth-child(1) {
+  margin-top: 0;
+  border: 1px solid red;
 }
 .node--type-publication .related-resources-fluid {
+  float: left;
   clear: both;
   background: #cfddee;
   padding: 0;
   width: 100vw;
   position: relative;
-  margin-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0;
 }
 .node--type-publication .related-resources-fluid .publications-detail-right-column {
   padding-top: 1rem;
   padding-right: 6rem;
 }
-.node--type-publication .related-resources-fluid .field__items .field__item {
-  margin-bottom: 1.5rem;
-}
-.node--type-publication .related-resources-fluid .node--type-publication {
-  background: #FFF;
-}
 .node--type-publication .related-resources-fluid .node--type-publication h2 {
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+.related-resources-fluid .node--view-mode-osha-resources {
+  clear: both;
+  margin-bottom: 0;
+}
+.related-resources-fluid .field--name-field-aditional-resources .publication-field {
+  width: 100%;
+  background: transparent;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .field--name-field-aditional-resources .publication-field {
@@ -4988,9 +5126,6 @@ body.node--type-publication {
 .field--name-field-aditional-resources .publication-field .field--name-field-image-media {
   max-width: 155px;
 }
-.field--name-field-aditional-resources .publication-field .field--name-field-publication-date {
-  padding-top: 14px;
-}
 .field--name-field-aditional-resources .publication-field .field--name-field-publication-type {
   color: #003399;
   font-size: 0.875rem;
@@ -5007,7 +5142,7 @@ body.node--type-publication {
   margin: 0 3px 0 0;
 }
 .field--name-field-aditional-resources .publication-field .field-name-field-pages-count {
-  padding-bottom: 14px;
+  padding-bottom: 0;
   display: flex;
   font-size: 0.875rem;
 }
@@ -5016,7 +5151,7 @@ body.node--type-publication {
   order: 2;
 }
 .field--name-field-aditional-resources .publication-field h2 {
-  margin-bottom: 21px;
+  margin-bottom: 0;
   font-weight: normal;
   padding: 0;
   font-size: 1.125rem;
@@ -5037,7 +5172,116 @@ body.node--type-publication {
   color: white;
 }
 
-/* Rsponsive */
+/* Related publications and Twing publicattions */
+.node--type-publication .field--name-field-related-publications .field__item {
+  margin-top: 1rem;
+}
+.node--type-publication .field--name-field-related-publications > div:nth-child(1) {
+  margin-top: 0;
+}
+.node--type-publication .rr-wrapper-related-resources {
+  display: flex;
+  clear: both;
+  background: #FFF;
+  margin-bottom: 0;
+}
+.node--type-publication .rr-right-column {
+  width: 100%;
+  padding: 1rem;
+}
+.node--type-publication .rr-right-column .rr-wrapper-fields {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.node--type-publication .rr-right-column .field__item {
+  margin-top: 0;
+}
+.node--type-publication .rr-right-column .field-name-node-title h2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.node--type-publication .rr-right-column .field__label, .node--type-publication .rr-right-column .field__item, .node--type-publication .rr-right-column .field-name-field-pages-count {
+  float: left;
+  color: #003399;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+.node--type-publication .rr-right-column .field-name-field-pages-count {
+  text-transform: capitalize;
+}
+.node--type-publication .rr-right-column .field-name-field-pages-count .field-label-inline {
+  float: left;
+  padding-right: 3px;
+}
+.node--type-publication .rr-right-column .field--name-node-link {
+  padding-top: 1rem;
+}
+
+/* Related publications - Files */
+.field-item.file-field {
+  clear: both;
+  margin-top: 1rem;
+}
+
+/* Related publications - Slideshare/Presentations */
+.field-item.slideshare-field {
+  float: left;
+  margin-right: 2em;
+}
+
+.content-related .rr-item-wrapper {
+  position: relative;
+  width: 300px;
+  float: left;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.content-related .rr-item-content {
+  width: 300px;
+  height: 200px;
+}
+.content-related .rr-item-content .field--type-image {
+  width: 300px;
+  height: 200px;
+  margin: 0;
+}
+.content-related .rr-item-content img {
+  width: 300px;
+  height: 200px;
+  margin: 0;
+}
+.content-related h2.rr-item-title {
+  font-weight: normal;
+  font-size: 1.1rem;
+  padding: 0 0 0.5rem 0;
+  margin: 0;
+}
+
+/* Related publications - Videos/Youtube */
+.field-item.youtube-field {
+  float: left;
+  margin-right: 2em;
+}
+
+/* Related publications in articles */
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column {
+  padding: 0.5rem 0 0 1rem;
+}
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .rr-wrapper-fields {
+  flex-direction: column;
+}
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a {
+  font-size: 0.75rem;
+  background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
+  padding: 5px 30px 5px 5px;
+}
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a:hover {
+  background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
+}
+
+/* Responsive */
 @media only screen and (max-width: 1200px) {
   /* Publications Slide 3 items */
   .view-publications .views-col {
@@ -5082,6 +5326,14 @@ body.node--type-publication {
   }
 }
 @media only screen and (max-width: 768px) {
+  .rr-left-column {
+    display: none;
+  }
+
+  .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column {
+    padding: 0;
+  }
+
   .tools-and-publications-publications .view-filters fieldset:nth-child(3) {
     width: 100%;
   }
@@ -5479,7 +5731,7 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .view-highlight .views-row h3 a:hover, .view-press-releases .views-row h3 a:hover {
   text-decoration: underline;
 }
-.view-highlight .views-row .see-more-arrow, .view-press-releases .views-row .see-more-arrow {
+.view-highlight .views-row .see-more-arrow, .view-highlight .views-row .node--type-publication .rr-right-column .field--name-node-link, .node--type-publication .rr-right-column .view-highlight .views-row .field--name-node-link, .view-press-releases .views-row .see-more-arrow, .view-press-releases .views-row .node--type-publication .rr-right-column .field--name-node-link, .node--type-publication .rr-right-column .view-press-releases .views-row .field--name-node-link {
   margin-top: 2.5rem;
   float: right;
 }
@@ -5489,7 +5741,7 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   margin-left: 1em;
   margin-right: 0;
 }
-.view-highlight .views-row:nth-child(even) .see-more-arrow, .view-press-releases .views-row:nth-child(even) .see-more-arrow {
+.view-highlight .views-row:nth-child(even) .see-more-arrow, .view-highlight .views-row:nth-child(even) .node--type-publication .rr-right-column .field--name-node-link, .node--type-publication .rr-right-column .view-highlight .views-row:nth-child(even) .field--name-node-link, .view-press-releases .views-row:nth-child(even) .see-more-arrow, .view-press-releases .views-row:nth-child(even) .node--type-publication .rr-right-column .field--name-node-link, .node--type-publication .rr-right-column .view-press-releases .views-row:nth-child(even) .field--name-node-link {
   float: left;
 }
 .view-highlight .views-row:nth-child(3), .view-press-releases .views-row:nth-child(3) {
@@ -5508,7 +5760,7 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   font-weight: 600;
   margin-left: -15px;
 }
-.view-press-releases .views-row .see-more-arrow {
+.view-press-releases .views-row .see-more-arrow, .view-press-releases .views-row .node--type-publication .rr-right-column .field--name-node-link, .node--type-publication .rr-right-column .view-press-releases .views-row .field--name-node-link {
   margin-top: 0.8rem;
 }
 .view-press-releases .views-row:nth-child(3) {
@@ -5551,7 +5803,7 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   float: left;
   margin-right: 1.5rem;
 }
-.revamp-row div.see-more-arrow {
+.revamp-row div.see-more-arrow, .revamp-row .node--type-publication .rr-right-column div.field--name-node-link, .node--type-publication .rr-right-column .revamp-row div.field--name-node-link {
   width: 100%;
   text-align: right;
   padding-top: 0.5rem;
@@ -5715,6 +5967,10 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .field--name-node-changed-date .field__label:after {
   content: ":";
   display: inline-block;
+}
+
+.view-related-content.view-display-id-page_3 .see-more-arrow, .view-related-content.view-display-id-page_3 .node--type-publication .rr-right-column .field--name-node-link, .node--type-publication .rr-right-column .view-related-content.view-display-id-page_3 .field--name-node-link {
+  text-align: right;
 }
 
 /* Responsive View List */
@@ -5995,6 +6251,10 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 
   .menu.menu-level-1 .mean-expand {
     display: none;
+  }
+
+  #block-ncwtheme-main-menu .menu.menu-level-1 .mean-expand {
+    display: block;
   }
 
   /* Page - Highlight, News and Events content link */

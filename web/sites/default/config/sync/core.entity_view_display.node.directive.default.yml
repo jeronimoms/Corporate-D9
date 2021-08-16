@@ -32,6 +32,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_summary:
     weight: 0
     label: hidden
@@ -41,6 +46,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_date_of_directive: true
