@@ -1,8 +1,9 @@
-uuid: 1bc993cf-8338-43f8-9d94-7a402cc19450
+uuid: 4f4e3fb7-1b36-4b3b-b735-bacfa8ee6407
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.directive.body
     - field.field.node.directive.field_activity
     - field.field.node.directive.field_archived
@@ -18,12 +19,17 @@ dependencies:
     - field.field.node.directive.field_thesaurus_2020
     - node.type.directive
   module:
+    - layout_builder
     - text
     - user
-id: node.directive.default
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.directive.full
 targetEntityType: node
 bundle: directive
-mode: default
+mode: full
 content:
   body:
     label: hidden

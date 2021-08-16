@@ -1,0 +1,123 @@
+uuid: 7be2a94b-71ca-4ea7-898c-482278692d2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.calls.body
+    - field.field.node.calls.field_activity
+    - field.field.node.calls.field_archived
+    - field.field.node.calls.field_author
+    - field.field.node.calls.field_calls_deadline
+    - field.field.node.calls.field_expiration_date
+    - field.field.node.calls.field_publication_date
+    - field.field.node.calls.field_related_resources_media
+    - field.field.node.calls.field_section
+    - node.type.calls
+  module:
+    - datetime
+    - ds
+    - entityreference_extensions
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - content_moderation_control
+        - node_title
+        - body
+        - field_calls_deadline
+        - field_related_resources_media
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.calls.full
+targetEntityType: node
+bundle: calls
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  content_moderation_control:
+    weight: -20
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+  field_calls_deadline:
+    weight: 2
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+    type: datetime_default
+    region: ds_content
+  field_related_resources_media:
+    weight: 3
+    label: above
+    settings:
+      view_mode: default
+      limit:
+        number: ''
+        offset: null
+        reverse: false
+        limit_before_sort: false
+      sort:
+        field: ''
+        asc: true
+      display:
+        number: 1
+        view_mode: default
+        enable: false
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view_delta
+    region: ds_content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  field_activity: true
+  field_archived: true
+  field_author: true
+  field_expiration_date: true
+  field_publication_date: true
+  field_section: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

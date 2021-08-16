@@ -1,8 +1,9 @@
-uuid: ee384bef-6209-4e3b-ba11-418894962ff5
+uuid: 7aeecff4-3a92-4d42-a2b7-1abc262c87c4
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.seminar.body
     - field.field.node.seminar.field_activity
     - field.field.node.seminar.field_archived
@@ -24,6 +25,7 @@ dependencies:
     - datetime
     - ds
     - field_group
+    - layout_builder
     - smart_trim
     - text
     - user
@@ -124,10 +126,13 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-id: node.seminar.default
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.seminar.full
 targetEntityType: node
 bundle: seminar
-mode: default
+mode: full
 content:
   body:
     type: text_default

@@ -1,8 +1,9 @@
-uuid: fac04344-9c39-4170-b490-aec9e2cbdaf6
+uuid: 7bdf2c14-576f-4a0f-afeb-57e8ad1ff0e3
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.job_vacancies.body
     - field.field.node.job_vacancies.field_activity
     - field.field.node.job_vacancies.field_archived
@@ -28,6 +29,7 @@ dependencies:
   module:
     - datetime
     - ds
+    - layout_builder
     - text
     - user
 third_party_settings:
@@ -60,10 +62,13 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-id: node.job_vacancies.default
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.job_vacancies.full
 targetEntityType: node
 bundle: job_vacancies
-mode: default
+mode: full
 content:
   body:
     label: hidden
