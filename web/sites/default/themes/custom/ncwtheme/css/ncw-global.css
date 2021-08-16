@@ -1960,6 +1960,11 @@ body .news_and_events.block-menu-block ul li .link_news_events a {
   padding: 0;
 }
 
+.slideshow-title.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* Labels */
 span.label, span.pages {
   font-family: "Open Sans", sans-serif;
@@ -5175,6 +5180,9 @@ body.node--type-publication {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.node--type-publication .related-resources-fluid .rr-right-column .field__item {
+  margin-top: 0;
 }
 .node--type-publication .related-resources-fluid .rr-right-column .field-name-node-title h2 {
   padding-top: 1rem;
