@@ -601,6 +601,12 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
       margin-bottom: 1.5rem;
     }
   }
+  .h2-related-articles{
+    h2{
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
   .node--type-file{
     .field__label{
       display: none;
