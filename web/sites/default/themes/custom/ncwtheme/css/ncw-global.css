@@ -694,15 +694,20 @@ div#sliding-popup {
 
 /* Facets without Facet styles */
 #block-dateofdirective {
+  width: 100%;
   border: 0;
-  padding: 0;
+  padding: 0 5px 0 5px;
   margin-top: 0;
   margin-bottom: 0;
 }
 #block-dateofdirective h2 {
   font-size: 0.9rem;
-  padding-bottom: 0;
+  color: #003399;
+  background: transparent;
+  margin: 0;
+  padding: 0;
   font-weight: normal;
+  border-top: 0;
 }
 
 /* Header Fields - Language selector - Search */
@@ -1409,7 +1414,7 @@ h3.home a:hover {
   background: #FFF;
   color: #003399;
   border: 1px solid #003399;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 0.9rem;
   font-weight: 700;
 }
