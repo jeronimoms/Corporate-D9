@@ -1,0 +1,121 @@
+@media print {
+  * {
+    color: #000000 !important;
+    background: none !important;
+  }
+  input,
+  textarea,
+  select {
+    color: #000;
+    background: none;
+  }
+
+  h1, h2, h3, h4, h5, h6, a {
+    color: #000000;
+  }
+
+  h1 {
+    font-size: 36pt;
+  }
+  h2 {
+    font-size: 30t;
+  }
+
+  h3 {
+    font-size: 24pt;
+  }
+
+  p,
+  .field-content {
+    font-size: 16pt;
+    line-height: 20pt;
+  }
+
+  header nav,
+  .breadcrumb-fluid,
+  footer,
+  .push-right,
+  .tabs,
+  .sidebar-first,
+  .sidebars_second,
+  .sidebar-second,
+  .views-field-field-image-media,
+  .home-recommended-resources,
+  .content-links-news-events,
+  .youtube-field,
+  .field--name-field-image-caption,
+  .home-intro,
+  .views-field-field-image-media,
+  .more-link,
+  p img {
+    display: none;
+  }
+
+  .top-header-content,
+  .top-header-content .region-top-header-logos{
+    display: block !important;
+  }
+
+  #page-wrapper #header {
+    position: relative !important;
+    width: 100%;
+    transition: none;
+    top: 0;
+    left: 0;
+    height: 200px;
+    background: none;
+  }
+
+  .top-header-content .region-top-header-logos {
+    float: none;
+  }
+
+  .left_column,
+  .see-more-arrow {
+    width: 100%;
+  }
+
+  .see-more-arrow {
+    margin: 0;
+  }
+
+  body .field--name-body p a,
+  #main .node--view-mode-full a[target=_blank] {
+    border: none;
+    color: #000000;
+  }
+
+  .content-news-events {
+    .wrap-news-events {
+      .views-row {
+        border: none;
+        .see-more-arrow a,
+        .tag-news-events {
+          position: relative;
+        }
+        * {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .content-news-events .wrap-news-events .news-home .view-content .views-row,
+  .content-news-events .wrap-news-events .events-home .view-content .views-row {
+    border: none;
+    display: block;
+    width: 100% !important;
+    float: none !important;
+    height: auto;
+  }
+  .content-news-events .wrap-news-events .events-home {
+    width: 100%;
+    float: none;
+  }
+  .content-news-events .wrap-news-events .news-home .view-content .see-more-arrow a,
+  .content-news-events .wrap-news-events .news-home .view-content .tag-news-events,
+  .content-news-events .wrap-news-events .events-home .view-content .tag-news-events{
+    position: relative;
+    padding: 0;
+  }
+}
