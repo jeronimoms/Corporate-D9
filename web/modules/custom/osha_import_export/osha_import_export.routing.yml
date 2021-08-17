@@ -1,0 +1,10 @@
+osha_import_export.controller:
+  path: '/export/node/{node}'
+  defaults:
+    _controller: '\Drupal\osha_import_export\Controller\OieNodeExportController::export'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node

@@ -1132,3 +1132,32 @@ a.quiz-start-link:hover {
     font-size: 0.9rem;
   }
 }
+
+.node--type-press-contact{
+  .field__label{
+    font-size: 0.9rem;
+    font-weight: 600;
+    &:after{
+      display: inline-block;
+      content: ':'
+    }
+  }
+  .field__item{
+    font-size: 0.9rem;
+    a{
+      font-size: 0.9rem;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  .field--name-field-press-contact-organization, .field--name-field-location{
+    padding-bottom: 1rem;
+  }
+  .field--name-field-wg-role-1, .field--name-field-wg-role-2{
+    padding-bottom: 0;
+  }
+  .field--name-field-wg-role-2, .field--name-field-is-advisory{
+    padding-top: 1rem;
+  }
+}
