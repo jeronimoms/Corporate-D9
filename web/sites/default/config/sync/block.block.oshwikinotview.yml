@@ -1,4 +1,4 @@
-uuid: 7b9a0301-ce8e-436b-b635-5a68a383e1dd
+uuid: b90bec2e-2c81-44ab-92f9-aed0ccb0dd6d
 langcode: en
 status: true
 dependencies:
@@ -13,11 +13,11 @@ third_party_settings:
 id: oshwikinotview
 theme: ncwtheme
 region: sidebar_second_others
-weight: -52
+weight: -68
 provider: null
-plugin: 'block_content:b75c999b-4f85-43cc-a24a-52e24c9be0e3'
+plugin: 'block_content:c2a2cb21-42a2-4f50-91a6-81d58187e5ba'
 settings:
-  id: 'block_content:b75c999b-4f85-43cc-a24a-52e24c9be0e3'
+  id: 'block_content:c2a2cb21-42a2-4f50-91a6-81d58187e5ba'
   label: 'OSHWiki (Not view)'
   provider: block_content
   label_display: '0'

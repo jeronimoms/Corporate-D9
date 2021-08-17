@@ -27,19 +27,20 @@ widget:
     reset_text: 'Show all'
     hide_reset_when_no_selection: false
 query_operator: or
-use_hierarchy: false
+use_hierarchy: true
+keep_hierarchy_parents_active: true
 expand_hierarchy: false
-enable_parent_when_child_gets_disabled: true
+enable_parent_when_child_gets_disabled: false
 hard_limit: 50
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  count_widget_order:
-    processor_id: count_widget_order
+  active_widget_order:
+    processor_id: active_widget_order
     weights:
-      sort: 30
+      sort: 20
     settings:
-      sort: DESC
+      sort: ASC
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:

@@ -126,6 +126,12 @@
       }
     }
   }
+  .form-row{
+    .form-actions{
+      clear: both;
+      width: 100%;
+    }
+  }
   .views-exposed-form .btn-primary {
     margin-left: 0;
     margin-right: 5px;
@@ -229,7 +235,7 @@
         background: $bg-color-white;
         color: $text-color-blue;
         border: 1px solid $bg-color-blue;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         font-size: 0.9rem;
         font-weight: 700;
         &:hover{
