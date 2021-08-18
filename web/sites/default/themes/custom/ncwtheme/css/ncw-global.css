@@ -5132,6 +5132,7 @@ body.node--type-publication {
   display: flex;
 }
 .node--type-publication .publications-row.custom-add-margin {
+  padding-top: 1rem;
   padding-bottom: 2rem;
 }
 .node--type-publication .publications-detail-right-column {
