@@ -50,16 +50,11 @@ display:
           items_per_page: 0
           offset: 0
       style:
-        type: grid
+        type: default
         options:
+          row_class: ''
+          default_row_class: false
           uses_fields: false
-          columns: 12
-          automatic_width: false
-          alignment: horizontal
-          col_class_default: false
-          col_class_custom: view-col
-          row_class_default: false
-          row_class_custom: ''
       row:
         type: 'entity:menu_link_content'
         options:

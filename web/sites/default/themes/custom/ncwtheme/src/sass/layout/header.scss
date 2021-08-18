@@ -12,6 +12,17 @@ body{
   background: white;
 }
 
+body.scrollup{
+  #header{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    transition: top 0.6s linear;
+    top: 0px !important;
+    background: white;
+  }
+}
+
 #header.custom-activate-menu-header{
   /* When responsive menu is opened */
   position: relative !important;
