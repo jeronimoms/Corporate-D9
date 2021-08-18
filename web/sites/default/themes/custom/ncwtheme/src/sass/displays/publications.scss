@@ -147,6 +147,7 @@ body.node--type-publication{
     display: flex;
   }
   .publications-row.custom-add-margin{
+    padding-top: 1rem;
     padding-bottom: 2rem;
   }
   .publications-detail-right-column{
@@ -228,10 +229,9 @@ body.node--type-publication{
     clear: both;
     @extend .full-width;
     background: $bg-color-blue-light;
-    padding: 0;
+    padding: 2rem 0 2rem 0;
     width: 100vw;
     position: relative;
-    padding-bottom: 0;
     .publications-detail-right-column{
       padding-top: 1rem;
       padding-right: 6rem;
@@ -241,6 +241,9 @@ body.node--type-publication{
         font-size: 1.2rem;
         font-weight: 400;
       }
+    }
+    figure{
+      margin: 0;
     }
   }
 }

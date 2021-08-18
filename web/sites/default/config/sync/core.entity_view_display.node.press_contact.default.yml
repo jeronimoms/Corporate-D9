@@ -102,7 +102,7 @@ content:
     region: content
   field_location:
     weight: 2
-    label: inline
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -136,7 +136,7 @@ content:
     region: content
   field_press_contact_email:
     weight: 3
-    label: inline
+    label: above
     settings:
       spamspan_at: ' [at] '
       spamspan_use_graphic: 0
@@ -151,7 +151,7 @@ content:
     region: content
   field_press_contact_job_title:
     weight: 0
-    label: inline
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -159,7 +159,7 @@ content:
     region: content
   field_press_contact_organization:
     weight: 1
-    label: inline
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -167,7 +167,7 @@ content:
     region: content
   field_press_contact_phone:
     weight: 4
-    label: inline
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }

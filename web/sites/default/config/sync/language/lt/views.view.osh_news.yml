@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'DSS naujienos'
+      fields:
+        view_node:
+          text: 'Žr. daugiau'
   oshnews_latest:
     display_options:
       block_description: 'DSS naujienos'

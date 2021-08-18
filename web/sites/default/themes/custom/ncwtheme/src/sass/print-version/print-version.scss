@@ -15,6 +15,7 @@
   }
 
   h1 {
+
     font-size: 32pt !important;
   }
   h2 {
@@ -23,6 +24,7 @@
 
   h3 {
     font-size: 22pt !important;
+
   }
 
   p,
@@ -47,6 +49,7 @@
   .home-intro,
   .views-field-field-image-media,
   .more-link,
+
   .osha-workflow-list-widget,
   .block-workbench-access,
   .block-addtoany,
@@ -63,12 +66,14 @@
     display: block !important;
   }
 
+
   body.user-logged-in #header,
   body.user-logged-in.toolbar-tray-open #header {
     padding: 0;
   }
 
   #header,
+
   #page-wrapper #header {
     position: relative !important;
     width: 100%;
@@ -90,9 +95,11 @@
 
   .see-more-arrow {
     margin: 0;
+
     a {
       padding: 0;
     }
+
   }
 
   body .field--name-body p a,
@@ -117,10 +124,12 @@
     }
   }
   .content-news-events .wrap-news-events .news-home .view-content .views-row,
+
   .content-news-events .wrap-news-events .events-home .view-content .views-row,
   .content-news-events .wrap-news-events .news-home,
   .content-news-events .wrap-news-events .events-home .view-content .views-field-field-country-code,
   .content-news-events .wrap-news-events .events-home {
+
     border: none;
     display: block;
     width: 100% !important;
@@ -133,6 +142,7 @@
   .content-news-events .wrap-news-events .events-home .view-content .tag-news-events{
     position: relative;
     padding: 0;
+
     font-size: 15pt;
   }
 
@@ -173,5 +183,6 @@
       padding: 0;
     }
   }
+
 
 }
