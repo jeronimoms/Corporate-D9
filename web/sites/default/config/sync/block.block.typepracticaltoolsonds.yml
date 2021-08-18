@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.type_practical_tools_on_ds_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: typepracticaltoolsonds
 theme: ncwtheme
 region: sidebar_first
-weight: -16
+weight: -23
 provider: null
 plugin: 'facet_block:type_practical_tools_on_ds_'
 settings:

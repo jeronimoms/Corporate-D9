@@ -74,8 +74,7 @@
       </div>
     </div>
     <aside class="sidebars_second sidebars_second_home">
-      {{ drupal_entity('block', 'simplenewssubscription') }}
-      {{ drupal_entity('block', 'twitterblock') }}
+      {{ page.sidebar_second_others }}
     </aside>
   </div>
   <div class="home-recommended-resources">
@@ -89,6 +88,11 @@
 
 {% block footer %}
   <div class="{{ container }}" >
+    {% if page.footer_first %}
+      <div class="site-footer__first">
+        {{ page.footer_first }}
+      </div>
+    {% endif %}
     {% if page.footer_end %}
       <div class="site-footer__bottom">
         {{ page.footer_end }}

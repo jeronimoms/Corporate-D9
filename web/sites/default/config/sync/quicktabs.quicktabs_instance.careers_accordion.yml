@@ -22,11 +22,9 @@ configuration_data:
     weight: 0
     type: node_content
     content:
-      view_content:
+      qtabs_content:
         options:
-          vid: 25th_anniversary_articles
-          display: default
-          args: ''
+          machine_name: calls_quicktab
       block_content:
         options:
           bid: addtoany_block
@@ -37,111 +35,111 @@ configuration_data:
           nid: '5330'
           view_mode: teaser
           hide_title: true
-      qtabs_content:
-        options:
-          machine_name: calls_quicktab
-  -
-    title: 'Reserve lists'
-    weight: 0
-    type: view_content
-    content:
-      view_content:
-        options:
-          vid: vacancies
-          display: page_5
-          args: ''
-      block_content:
-        options:
-          bid: addtoany_block
-          block_title: ''
-          display_title: false
-      node_content:
-        options:
-          nid: ''
-          view_mode: full
-          hide_title: true
-      qtabs_content:
-        options:
-          machine_name: calls_quicktab
-  -
-    title: 'Vacancies - Open'
-    weight: 0
-    type: view_content
-    content:
-      view_content:
-        options:
-          vid: vacancies
-          display: page_1
-          args: ''
-      block_content:
-        options:
-          bid: addtoany_block
-          block_title: ''
-          display_title: false
-      node_content:
-        options:
-          nid: ''
-          view_mode: full
-          hide_title: true
-      qtabs_content:
-        options:
-          machine_name: calls_quicktab
-  -
-    title: 'Vacancies - Evaluation underway'
-    weight: 0
-    type: view_content
-    content:
-      view_content:
-        options:
-          vid: vacancies
-          display: page_3
-          args: ''
-      block_content:
-        options:
-          bid: addtoany_block
-          block_title: ''
-          display_title: false
-      node_content:
-        options:
-          nid: ''
-          view_mode: full
-          hide_title: true
-      qtabs_content:
-        options:
-          machine_name: calls_quicktab
-  -
-    title: 'Vacancies - Completed'
-    weight: 0
-    type: view_content
-    content:
-      view_content:
-        options:
-          vid: vacancies
-          display: page_2
-          args: ''
-      block_content:
-        options:
-          bid: addtoany_block
-          block_title: ''
-          display_title: false
-      node_content:
-        options:
-          nid: ''
-          view_mode: full
-          hide_title: true
-      qtabs_content:
-        options:
-          machine_name: calls_quicktab
-  -
-    title: Spontaneous
-    weight: 0
-    type: node_content
-    content:
       view_content:
         options:
           vid: 25th_anniversary_articles
           display: default
           args: ''
+  -
+    title: 'Reserve lists'
+    weight: 0
+    type: view_content
+    content:
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: vacancies
+          display: page_5
+          args: ''
+  -
+    title: 'Vacancies - Open'
+    weight: 0
+    type: view_content
+    content:
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: vacancies
+          display: page_1
+          args: ''
+  -
+    title: 'Vacancies - Evaluation underway'
+    weight: 0
+    type: view_content
+    content:
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: vacancies
+          display: page_3
+          args: ''
+  -
+    title: 'Vacancies - Completed'
+    weight: 0
+    type: view_content
+    content:
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
+      block_content:
+        options:
+          bid: addtoany_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: vacancies
+          display: page_2
+          args: ''
+  -
+    title: 'Spontaneous applications'
+    weight: 0
+    type: node_content
+    content:
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
       block_content:
         options:
           bid: addtoany_block
@@ -152,19 +150,19 @@ configuration_data:
           nid: '5332'
           view_mode: teaser
           hide_title: true
-      qtabs_content:
-        options:
-          machine_name: calls_quicktab
-  -
-    title: Enquiries
-    weight: 0
-    type: node_content
-    content:
       view_content:
         options:
           vid: 25th_anniversary_articles
           display: default
           args: ''
+  -
+    title: Enquiries
+    weight: 0
+    type: node_content
+    content:
+      qtabs_content:
+        options:
+          machine_name: calls_quicktab
       block_content:
         options:
           bid: addtoany_block
@@ -175,6 +173,8 @@ configuration_data:
           nid: '5333'
           view_mode: teaser
           hide_title: true
-      qtabs_content:
+      view_content:
         options:
-          machine_name: calls_quicktab
+          vid: 25th_anniversary_articles
+          display: default
+          args: ''

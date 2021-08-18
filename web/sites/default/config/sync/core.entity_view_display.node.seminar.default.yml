@@ -106,12 +106,13 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - content_moderation_control
         - node_title
         - field_location
-        - body
         - field_seminar_start_date
-        - group_event_details
+        - body
         - field_seminar_end_date
+        - group_event_details
         - group_resport_
         - field_report_media
         - field_pages_count
@@ -137,9 +138,9 @@ content:
     third_party_settings: {  }
   content_moderation_control:
     weight: -20
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_location:
     type: smart_trim
     weight: 0
@@ -187,7 +188,7 @@ content:
   field_seminar_end_date:
     type: datetime_default
     weight: 2
-    region: content
+    region: ds_content
     label: inline
     settings:
       timezone_override: ''
@@ -196,7 +197,7 @@ content:
   field_seminar_start_date:
     type: datetime_default
     weight: 1
-    region: content
+    region: ds_content
     label: inline
     settings:
       timezone_override: ''

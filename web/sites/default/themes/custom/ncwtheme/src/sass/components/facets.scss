@@ -14,6 +14,11 @@
   ul{
     list-style: none;
     padding: 0;
+    li{
+      ul{
+        display: none;
+      }
+    }
   }
 
   input[type=checkbox] + label:before {
@@ -73,7 +78,7 @@
 }
 
 /* Facets Accordions */
-#block-topics-2 , #block-contenttypesearchsite-2, #block-topicsblog, #block-dateofdirective, #block-topicsdirectives, #block-guideline-topics, #block-seminar-tags{
+#block-topics-2 , #block-contenttypesearchsite-2, #block-topicsblog, #block-topicsdirectives, #block-guideline-topics, #block-seminar-tags{
   border:0;
   padding: 0;
   margin-top: 0;
@@ -123,6 +128,20 @@
   }
 }
 
+#block-seminar-tags{
+  float: left;
+  width: 100%;
+  clear: both;
+  margin-top: 2rem;
+}
+
+.page-node-2427{
+  .sidebar-first .views-exposed-form .form-row {
+    padding-top: 0;
+  }
+}
+
+.block-facets-accordion,
 .page-view-dangerous-substances-overview .block-facet--links,
 .page-view-practical-tools-and-guidance-on-dangerous-substances .block-facet--links {
   border:0;
@@ -228,5 +247,23 @@
         padding: 5px 0 5px 0.5rem;
       }
     }
+  }
+}
+
+/* Facets without Facet styles */
+#block-dateofdirective{
+  width: 100%;
+  border: 0;
+  padding: 0 5px 0 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  h2 {
+    font-size: 0.9rem;
+    color: $text-color-blue;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    border-top: 0;
   }
 }

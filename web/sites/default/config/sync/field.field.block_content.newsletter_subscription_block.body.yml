@@ -1,0 +1,23 @@
+uuid: ec0fff5d-6b7c-4a80-9d41-c3ae79aaa3b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.newsletter_subscription_block
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.newsletter_subscription_block.body
+field_name: body
+entity_type: block_content
+bundle: newsletter_subscription_block
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

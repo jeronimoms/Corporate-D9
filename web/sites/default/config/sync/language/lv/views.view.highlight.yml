@@ -1,0 +1,16 @@
+label: Akcenti
+display:
+  default:
+    display_options:
+      title: Akcenti
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/lv/highlights\">Skatīt visas aktualitātes</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Skatīt visas aktualitātes'
+      fields:
+        view_node:
+          text: 'Skatīt vairāk'

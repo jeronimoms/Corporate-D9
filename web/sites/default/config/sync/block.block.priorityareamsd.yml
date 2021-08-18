@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.priority_area_msd_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: priorityareamsd
 theme: ncwtheme
 region: sidebar_first
-weight: -9
+weight: -16
 provider: null
 plugin: 'facet_block:priority_area_msd_'
 settings:

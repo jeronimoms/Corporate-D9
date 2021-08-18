@@ -1,0 +1,157 @@
+uuid: cdda6f9a-b3fa-4343-a2df-587b4716a748
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.press_release.body
+    - field.field.node.press_release.field_activity
+    - field.field.node.press_release.field_aditional_resources
+    - field.field.node.press_release.field_archived
+    - field.field.node.press_release.field_expiration_date
+    - field.field.node.press_release.field_image_media
+    - field.field.node.press_release.field_nace_codes
+    - field.field.node.press_release.field_pr_embargo_date
+    - field.field.node.press_release.field_pr_notes_to_editor
+    - field.field.node.press_release.field_publication_date
+    - field.field.node.press_release.field_quote
+    - field.field.node.press_release.field_section
+    - field.field.node.press_release.field_summary_html
+    - field.field.node.press_release.field_tags
+    - field.field.node.press_release.field_thesaurus_2020
+    - image.style.home_news
+    - node.type.press_release
+  module:
+    - datetime
+    - ds
+    - layout_builder
+    - media
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_publication_date
+        - node_title
+        - field_image_media
+        - field_summary_html
+        - field_quote
+        - body
+        - field_pr_notes_to_editor
+        - field_aditional_resources
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.press_release.full
+targetEntityType: node
+bundle: press_release
+mode: full
+content:
+  body:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_aditional_resources:
+    weight: 7
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_image_media:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: home_news
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: media_thumbnail
+    region: ds_content
+  field_pr_notes_to_editor:
+    type: entity_reference_entity_view
+    weight: 6
+    region: ds_content
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: 'Notes to editor:'
+            lb-col: true
+            classes: {  }
+  field_publication_date:
+    weight: 0
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: ds_content
+  field_quote:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: ds_content
+  field_summary_html:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  content_moderation_control: true
+  field_activity: true
+  field_archived: true
+  field_expiration_date: true
+  field_nace_codes: true
+  field_pr_embargo_date: true
+  field_section: true
+  field_tags: true
+  field_thesaurus_2020: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

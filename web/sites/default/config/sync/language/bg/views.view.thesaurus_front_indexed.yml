@@ -1,0 +1,14 @@
+display:
+  default:
+    display_options:
+      title: 'Речник на EU-OSHA'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Търсене
+      exposed_form:
+        options:
+          submit_button: Търсене
+          exposed_sorts_label: 'Сортиране по'
+  thesaurus_search:
+    display_title: Търсене

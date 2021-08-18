@@ -12,11 +12,11 @@ dependencies:
     - ncwtheme
 third_party_settings:
   block_class:
-    classes: block-seminars-topics
+    classes: block-facets-accordion
 id: seminar_tags
 theme: ncwtheme
 region: sidebar_first
-weight: -59
+weight: -66
 provider: null
 plugin: 'facet_block:seminar_tags'
 settings:

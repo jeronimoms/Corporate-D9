@@ -56,7 +56,8 @@
       page.sidebar_first.guideline_topics is not empty or
       page.sidebar_first.sectorindustrycovereddangeroussubstances is not empty or
       page.sidebar_first.countrypracticaltoolsonds is not empty or
-      page.sidebar_first.nominatedbyfop is not empty
+      page.sidebar_first.nominatedbyfop is not empty or
+      page.sidebar_first.countrypracticaltoolsmsd is not empty
     %}
     {% set has_sidebar_second_related = page.sidebar_second_related|render|striptags|trim is not empty %}
     {% set has_sidebar_second_others = page.sidebar_second_others|render|striptags|trim is not empty %}
@@ -112,6 +113,11 @@
 
 {% block footer %}
   <div class="{{ container }}" >
+    {% if page.footer_first %}
+      <div class="site-footer__first">
+        {{ page.footer_first }}
+      </div>
+    {% endif %}
     {% if page.footer_end %}
       <div class="site-footer__bottom">
         {{ page.footer_end }}

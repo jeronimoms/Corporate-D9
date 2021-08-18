@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+  <div class="h1-back-wrapper">
+    <h2>{{ 'Dangerous substances' | trans }}</h2>
+    <a href="/themes/dangerous-substances/search" class="pull-right-flex back-to-link">{{ 'Back to dangerous substances and filter' | trans }}</a>
+  </div>
+  <div class="dangerous-wrapper">
+    {{ ds_content }}
+  </div>
+
+</{{ ds_content_wrapper }}>

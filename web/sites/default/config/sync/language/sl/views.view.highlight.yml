@@ -1,0 +1,16 @@
+label: 'Osrednje teme'
+display:
+  default:
+    display_options:
+      title: 'Osrednje teme'
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/sl/highlights\">Prikaži vse povzetke</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Prikaži vse povzetke'
+      fields:
+        view_node:
+          text: 'Več informacij'

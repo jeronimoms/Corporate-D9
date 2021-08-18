@@ -12,7 +12,7 @@ dependencies:
 id: mainnavigation_2
 theme: ncwtheme
 region: sidebar_first
-weight: -60
+weight: -67
 provider: null
 plugin: 'menu_block:main'
 settings:
@@ -32,5 +32,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/node/5445\r\n/themes/dangerous-substances/practical-tools-dangerous-substances\r\n/photo-gallery\r\n/photo-gallery/*\r\n/tools-and-publications\r\n/themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders\r\n/tools-and-resources\r\n/tools-and-resources/blog\r\n/tools-and-resources/blog/*\r\n/blog/*\r\n/news-events\r\n/oshevents\r\n/highlights\r\n/highlights/*"
+    pages: "/node/5445\r\n/themes/dangerous-substances/practical-tools-dangerous-substances\r\n/photo-gallery\r\n/photo-gallery/*\r\n/tools-and-publications\r\n/themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders\r\n/tools-and-resources\r\n/tools-and-resources/blog\r\n/tools-and-resources/blog/*\r\n/blog/*\r\n/news-events\r\n/oshevents\r\n/highlights\r\n/highlights/*\r\n"
     negate: true

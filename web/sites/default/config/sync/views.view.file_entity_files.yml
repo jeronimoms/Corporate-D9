@@ -2,6 +2,10 @@ uuid: ec1a24cc-e274-4771-a7c5-870f006d85f9
 langcode: en
 status: true
 dependencies:
+  config:
+    - user.role.administrator
+    - user.role.project_manager
+    - user.role.review_manager
   module:
     - file
     - file_entity
@@ -24,9 +28,12 @@ display:
     display_options:
       rendering_language: '***LANGUAGE_entity_default***'
       access:
-        type: perm
+        type: role
         options:
-          perm: 'administer files'
+          role:
+            administrator: administrator
+            review_manager: review_manager
+            project_manager: project_manager
       cache:
         type: none
         options: {  }
@@ -931,8 +938,10 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user.permissions
+        - user.roles
       cacheable: false
+      max-age: 0
+      tags: {  }
   overview:
     display_plugin: page
     id: overview
@@ -961,14 +970,17 @@ display:
           group_type: group
           admin_label: 'File usage'
           required: false
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
     cache_metadata:
       contexts:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user.permissions
+        - user.roles
       cacheable: false
+      max-age: 0
+      tags: {  }
   usage:
     display_plugin: page
     id: usage
@@ -1353,5 +1365,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user.permissions
+        - user.roles
       cacheable: false
+      max-age: -1
+      tags: {  }

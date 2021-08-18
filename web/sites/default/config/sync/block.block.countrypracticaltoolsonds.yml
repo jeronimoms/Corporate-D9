@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.country_practical_tools_on_ds_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: countrypracticaltoolsonds
 theme: ncwtheme
 region: sidebar_first
-weight: -23
+weight: -30
 provider: null
 plugin: 'facet_block:country_practical_tools_on_ds_'
 settings:

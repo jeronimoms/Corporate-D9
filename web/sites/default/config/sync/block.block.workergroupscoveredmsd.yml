@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.worker_groups_covered_msd_
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: workergroupscoveredmsd
 theme: ncwtheme
 region: sidebar_first
-weight: -4
+weight: -11
 provider: null
 plugin: 'facet_block:worker_groups_covered_msd_'
 settings:
