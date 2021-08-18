@@ -86,6 +86,9 @@ jQuery(document).ready(function($) {
   //View Careers 3th accordion opened
   $( "#block-quicktabscareersaccordion #ui-id-6" ).trigger( "click" );
 
+  //View Seminar Reports 1st accordion opened
+  $( "body.tools-and-resources-seminars #block-ncwtheme-content > div > article > div.view-content > div > div > div > div:nth-child(1) > div.view-grouping-header" ).trigger( "click" );
+
   // Text resize
   $('#_biggify').on('click', function() {
     var fontSize = $('html').css('font-size');
@@ -139,16 +142,21 @@ jQuery(document).ready(function($) {
     });
   }
 
+  //Add #mail no padding in pubblications
+  if ($(".related-resources-fluid")[0]) {
+    $('#main').addClass('custom-no-padding');
+  }
 
-  //Hide titles en Related resource item
-  $(".file-field:first").addClass('to-show-custom-js');
-  $(".youtube-field:first").addClass('to-show-custom-js');
-  $(".publication-field:first").addClass('to-show-custom-js');
-  $(".publication-field:first article").addClass('no-border-custom-js');
-  $(".slideshare-field:first").addClass('to-show-custom-js');
-  $(".infographic-field:first").addClass('to-show-custom-js');
-  $(".to-show-custom-js:first").addClass('first-child-custom-js');
+  //Add class to add margin in content publications
+  if ($(".related-resources-fluid")[0]) {
+    $('.publications-row').addClass('custom-add-margin');
+  }
 
+  //Hide Related publications if Twin publications exist
+  if ($(".related-resources-fluid .twin-publications")[0]) {
+    $('.related-resources-fluid  .related-resources-publications').hide();
+    $('.related-resources-fluid  .content-headings-related').hide();
+  }
 
   //Fix display pages footer view if we haven't pagination
   if ($(".pagerer-container")[0]) {
@@ -245,30 +253,32 @@ jQuery(document).ready(function($) {
   }
 
   // Our story show more or less anniversaries
-  $(".about-eu-osha-eu-osha-2004-2019-our-story").ready(function () {
-    // Hide items on start
-    let elements = document.getElementsByClassName("anniversary-elements");
-    let isHidingElements = true
-    showOrHideNumberOfElements(elements, isHidingElements)
-    //Get view all button from the page footer
-    const viewAllButton = document.getElementsByClassName("field-content see-more-arrow pull-right")[0]
-    const viewAllText = viewAllButton.children.item(0).innerHTML
-    viewAllButton.children.item(0).innerHTML = viewAllText.split("/")[0]
-
-    viewAllButton.addEventListener("click", function () {
-      isHidingElements = !isHidingElements
+  if ($(".about-eu-osha-eu-osha-2004-2019-our-story")[0]) {
+    $(".about-eu-osha-eu-osha-2004-2019-our-story").ready(function () {
+      // Hide items on start
+      let elements = document.getElementsByClassName("anniversary-elements");
+      let isHidingElements = true
       showOrHideNumberOfElements(elements, isHidingElements)
-      viewAllButton.children.item(0).innerHTML = isHidingElements
-          ? viewAllText.split("/")[0]
-          : viewAllText.split("/")[1]
-    })
-  });
+      //Get view all button from the page footer
+      const viewAllButton = document.getElementsByClassName("field-content see-more-arrow pull-right")[0]
+      const viewAllText = viewAllButton.children.item(0).innerHTML
+      viewAllButton.children.item(0).innerHTML = viewAllText.split("/")[0]
 
-  function showOrHideNumberOfElements(elements, toHide) {
-    // When it hides elements, only three should be displayed
-    const ELEMENTS_TO_SHOW = toHide ? 3 : 0;
-    for(let i = ELEMENTS_TO_SHOW; i < elements.length; ++i) {
-      elements[i].style.display = toHide ? "none" : "block"
+      viewAllButton.addEventListener("click", function () {
+        isHidingElements = !isHidingElements
+        showOrHideNumberOfElements(elements, isHidingElements)
+        viewAllButton.children.item(0).innerHTML = isHidingElements
+            ? viewAllText.split("/")[0]
+            : viewAllText.split("/")[1]
+      })
+    });
+
+    function showOrHideNumberOfElements(elements, toHide) {
+      // When it hides elements, only three should be displayed
+      const ELEMENTS_TO_SHOW = toHide ? 3 : 0;
+      for(let i = ELEMENTS_TO_SHOW; i < elements.length; ++i) {
+        elements[i].style.display = toHide ? "none" : "block"
+      }
     }
   }
 
@@ -302,9 +312,15 @@ jQuery(document).ready(function($) {
   $('#edit-search-api-fulltext').attr('accessKey','Q');
 });
 
-//Move Language Selector to the menu responsive
+//Load function
 (function($) {
   $(window).on('load', function() {
+    //Move dateofdirective filter (Legislation - EU Directives)
+    if ($("#block-dateofdirective")[0]) {
+      $('#block-dateofdirective').insertBefore('#views-exposed-form-search-directives-search-directory-page .form-actions');
+    }
+
+    //Move Language Selector to the menu responsive
     if ($(window).width() < 992) {
       $('#block-languagedropdownswitchercontent').appendTo('#navbar-main');
       $('#block-languagedropdownswitchercontent').show();

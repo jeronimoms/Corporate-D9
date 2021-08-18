@@ -1,1 +1,11 @@
 label: Publicaciones
+display:
+  default:
+    display_options:
+      fields:
+        view_node:
+          text: 'Ver más'
+        field_pages_count:
+          label: páginas
+        field_publication_type:
+          label: Tipo

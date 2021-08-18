@@ -1,6 +1,6 @@
 uuid: bc98041e-74a5-47bb-bb53-ea728b6e896c
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - ctools
@@ -11,7 +11,7 @@ dependencies:
 id: oshaworkflow
 theme: ncwtheme
 region: content
-weight: -66
+weight: -48
 provider: null
 plugin: osha_workflow_block
 settings:

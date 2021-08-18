@@ -1,0 +1,16 @@
+label: 'Hlavní zprávy'
+display:
+  default:
+    display_options:
+      title: 'Hlavní zprávy'
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/cs/highlights\">Zobrazit všechny hlavní zprávy</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Zobrazit všechny hlavní zprávy'
+      fields:
+        view_node:
+          text: 'Zobrazit více informací'

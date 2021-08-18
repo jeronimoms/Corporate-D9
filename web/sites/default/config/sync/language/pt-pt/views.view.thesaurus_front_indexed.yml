@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'Tesauro da EU-OSHA'
+      exposed_form:
+        options:
+          submit_button: Pesquisar
+          exposed_sorts_label: 'Ordenar por'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Pesquisar
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Pesquisar
+  thesaurus_search:
+    display_title: Pesquisar

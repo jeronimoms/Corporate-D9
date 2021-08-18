@@ -1,0 +1,16 @@
+label: Destaques
+display:
+  default:
+    display_options:
+      title: Destaques
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/pt-pt/highlights\">Ver todos os destaques</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Ver todos os destaques'
+      fields:
+        view_node:
+          text: 'Ver mais'

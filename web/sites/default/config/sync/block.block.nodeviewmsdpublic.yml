@@ -2,7 +2,10 @@ uuid: c47604cc-29af-4662-b24d-95e176250260
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:block_node_views:59631c6e-346f-4641-9aec-51310a342237'
   module:
+    - block_content
     - system
   theme:
     - ncwtheme

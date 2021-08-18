@@ -1,0 +1,16 @@
+label: 'Noticias destacadas'
+display:
+  default:
+    display_options:
+      title: 'Noticias destacadas'
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/es/highlights\">Ver todas las noticias destacadas</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Ver todas las noticias destacadas'
+      fields:
+        view_node:
+          text: 'Ver más'
