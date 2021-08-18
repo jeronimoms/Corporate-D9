@@ -1164,7 +1164,8 @@ h3.h3-files-resources {
 
 .content-related h2 {
   font-size: 1.4rem;
-  padding-top: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .content-related h3.custom-border-related {
   width: 100%;
@@ -2046,6 +2047,7 @@ span.pages {
   border-bottom: 1px solid #FFF;
   padding-left: 0;
   padding-right: 0;
+  text-transform: uppercase;
 }
 #main .node--view-mode-full a[target=_blank].link-download:hover {
   background: transparent;
@@ -2058,6 +2060,15 @@ span.pages {
   height: 20px;
   padding-right: 1px;
   vertical-align: text-bottom;
+}
+#main .node--view-mode-full .download-pdf .link-download:hover {
+  background: transparent;
+  border-bottom: 0;
+  text-decoration: underline;
+}
+
+.download-pdf .separator-download:last-child {
+  display: none;
 }
 
 /* Links introduction title Highlight, News and Events */
@@ -2119,6 +2130,15 @@ body ul li .introduction-title a:hover {
 .ico-pdf {
   display: inline-block;
   background: url(../images/file-icons/application-pdf.png) no-repeat 1px 4px;
+  width: 20px;
+  height: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.ico-pptx {
+  display: inline-block;
+  background: url(../images/file-icons/x-office-presentation.png) no-repeat 1px 4px;
   width: 20px;
   height: 24px;
   margin-left: 5px;
@@ -5184,10 +5204,9 @@ body.node--type-publication {
   float: left;
   clear: both;
   background: #cfddee;
-  padding: 0;
+  padding: 2rem 0 2rem 0;
   width: 100vw;
   position: relative;
-  padding-bottom: 0;
 }
 .node--type-publication .related-resources-fluid .publications-detail-right-column {
   padding-top: 1rem;
@@ -5196,6 +5215,9 @@ body.node--type-publication {
 .node--type-publication .related-resources-fluid .node--type-publication h2 {
   font-size: 1.2rem;
   font-weight: 400;
+}
+.node--type-publication .related-resources-fluid figure {
+  margin: 0;
 }
 
 .related-resources-fluid .node--view-mode-osha-resources {

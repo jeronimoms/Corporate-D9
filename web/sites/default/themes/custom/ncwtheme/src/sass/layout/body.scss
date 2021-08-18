@@ -230,6 +230,7 @@ span.pages{
       border-bottom: 1px solid $bg-color-white;
       padding-left: 0;
       padding-right: 0;
+      text-transform: uppercase;
       &:hover{
         background: transparent;
       }
@@ -243,9 +244,23 @@ span.pages{
         vertical-align: text-bottom;
       }
     }
+    .download-pdf{
+      .link-download{
+        &:hover{
+          background: transparent;
+          border-bottom: 0;
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
 
+.download-pdf{
+  .separator-download:last-child{
+    display: none;
+  }
+}
 
 /* Links introduction title Highlight, News and Events */
 body {
@@ -314,6 +329,15 @@ body {
 .ico-pdf{
   display: inline-block;
   background: url(../images/file-icons/application-pdf.png) no-repeat 1px 4px;
+  width: 20px;
+  height: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.ico-pptx{
+  display: inline-block;
+  background: url(../images/file-icons/x-office-presentation.png) no-repeat 1px 4px;
   width: 20px;
   height: 24px;
   margin-left: 5px;
