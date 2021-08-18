@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'Samheitaorðabók EU-OSHA'
+      exposed_form:
+        options:
+          submit_button: Leita
+          exposed_sorts_label: 'Flokka eftir'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Leita
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Leita
+  thesaurus_search:
+    display_title: Leita

@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Søg
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Fritekstsøgning
+        field_seminar_start_date:
+          expose:
+            label: Startdato
+        field_seminar_end_date:
+          expose:
+            label: Udløbsdato

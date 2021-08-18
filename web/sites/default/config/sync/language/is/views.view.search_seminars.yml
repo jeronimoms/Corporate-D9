@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Leita
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Frjáls textaleit'
+        field_seminar_start_date:
+          expose:
+            label: Upphafsdagur
+        field_seminar_end_date:
+          expose:
+            label: Lokadagur

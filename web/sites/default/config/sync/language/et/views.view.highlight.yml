@@ -1,0 +1,16 @@
+label: Põhipunktid
+display:
+  default:
+    display_options:
+      title: Põhipunktid
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/et/highlights\">Kõik põhipunktid</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Kõik põhipunktid'
+      fields:
+        view_node:
+          text: Lisateave

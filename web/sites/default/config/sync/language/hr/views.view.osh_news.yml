@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'Novosti o sigurnosti i zdravlju na radu'
+      fields:
+        view_node:
+          text: 'Vidi više'
   oshnews_latest:
     display_options:
       block_description: 'Novosti o sigurnosti i zdravlju na radu'

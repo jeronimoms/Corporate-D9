@@ -8,10 +8,12 @@ dependencies:
     - field.field.node.youtube.field_video_length
     - field.field.node.youtube.field_youtube
     - field.field.node.youtube.simplenews_issue
+    - image.style.thumbnail
     - node.type.youtube
   module:
     - content_moderation
     - datetime
+    - image
     - path
     - text
     - youtube
@@ -32,12 +34,20 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_image_for_oshmail:
+    type: image_image
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_video_length:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -51,19 +61,19 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 5
+    weight: 6
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -77,13 +87,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -92,12 +102,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_image_for_oshmail: true
   langcode: true
   promote: true
   simplenews_issue: true

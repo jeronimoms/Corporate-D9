@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Căutare
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Căutare text liber'
+        field_seminar_start_date:
+          expose:
+            label: 'Data de începere'
+        field_seminar_end_date:
+          expose:
+            label: 'Dată finalizare'

@@ -1,0 +1,16 @@
+label: 'Punti ewlenin'
+display:
+  default:
+    display_options:
+      title: 'Punti ewlenin'
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/mt/highlights\">Ara l-punti ewlenin kollha</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Ara l-punti ewlenin kollha'
+      fields:
+        view_node:
+          text: 'Ara aktar'

@@ -1,0 +1,16 @@
+label: 'Notizie in primo piano'
+display:
+  default:
+    display_options:
+      title: 'Notizie in primo piano'
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/it/highlights\">Visualizza tutti i punti principali</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Visualizza tutti i punti principali'
+      fields:
+        view_node:
+          text: 'Vedi altro'
