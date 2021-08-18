@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'Správy o BOZP'
+      fields:
+        view_node:
+          text: 'Pozri viac'
   oshnews_latest:
     display_options:
       block_description: 'Správy o BOZP'

@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'EU-OSHA tesaurus'
+      exposed_form:
+        options:
+          submit_button: Otsing
+          exposed_sorts_label: Sordi
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Otsing
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Otsing
+  thesaurus_search:
+    display_title: Otsing

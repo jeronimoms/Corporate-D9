@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'Thesaurus de l’EU-OSHA'
+      exposed_form:
+        options:
+          submit_button: Rechercher
+          exposed_sorts_label: 'Trier par'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Rechercher
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Rechercher
+  thesaurus_search:
+    display_title: Rechercher

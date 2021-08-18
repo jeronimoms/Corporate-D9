@@ -1,0 +1,22 @@
+uuid: b6c0d0d7-8f72-4bb9-9709-9d7f5cadfc1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.newsletter_subscription_block
+id: block_content.newsletter_subscription_block.status
+field_name: status
+entity_type: block_content
+bundle: newsletter_subscription_block
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

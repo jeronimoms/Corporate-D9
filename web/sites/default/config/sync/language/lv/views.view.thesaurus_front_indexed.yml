@@ -1,0 +1,29 @@
+display:
+  default:
+    display_options:
+      fields:
+        nid:
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
+      title: 'EU-OSHA tēzaurs'
+      exposed_form:
+        options:
+          submit_button: Meklēšana
+          exposed_sorts_label: 'Šķirot pēc'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Meklēšana
+  thesaurus_search:
+    display_options:
+      fields:
+        nid:
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
+    display_title: Meklēšana
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Meklēšana

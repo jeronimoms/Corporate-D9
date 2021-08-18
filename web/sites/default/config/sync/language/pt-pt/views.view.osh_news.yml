@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'Notícias SST'
+      fields:
+        view_node:
+          text: 'Ver mais'
   oshnews_latest:
     display_options:
       block_description: 'Notícias SST'

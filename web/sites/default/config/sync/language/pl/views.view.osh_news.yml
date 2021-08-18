@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'Aktualności BHP'
+      fields:
+        view_node:
+          text: 'Zobacz więcej'
   oshnews_latest:
     display_options:
       block_description: 'Aktualności BHP'

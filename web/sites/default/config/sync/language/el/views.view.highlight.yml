@@ -1,0 +1,16 @@
+label: 'Κύρια σημεία'
+display:
+  default:
+    display_options:
+      title: 'Κύρια σημεία'
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/el/highlights\">Δείτε τις σημαντικότερες στιγμές</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Δείτε τις σημαντικότερες στιγμές'
+      fields:
+        view_node:
+          text: 'Εμφάνιση περισσότερων'
