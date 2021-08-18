@@ -2776,6 +2776,19 @@ a.quiz-start-link:hover {
   font-size: 0.9rem;
 }
 
+.osha-workflow-list-widget {
+  background: #FFFBD9;
+  border: 1px solid #FFEBC5;
+  padding: 2rem 1rem 1rem 1rem;
+  margin-bottom: 2rem;
+}
+.osha-workflow-list-widget p:before {
+  border-left: 25px solid #FFFBD9;
+}
+.osha-workflow-list-widget p.active:before {
+  border-left: 25px solid #FFFBD9;
+}
+
 .dangerous-wrapper .field__label {
   font-size: 0.9rem;
 }
