@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: OSH-uutiset
+      fields:
+        view_node:
+          text: 'Katso lisää'
   oshnews_latest:
     display_options:
       block_description: OSH-uutiset

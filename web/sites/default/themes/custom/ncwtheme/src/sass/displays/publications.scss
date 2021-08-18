@@ -146,6 +146,10 @@ body.node--type-publication{
   .publications-row{
     display: flex;
   }
+  .publications-row.custom-add-margin{
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
   .publications-detail-right-column{
     width: 100%;
     padding-left: 2rem;
@@ -154,6 +158,12 @@ body.node--type-publication{
       font-weight: normal;
       padding: 0;
       font-size: 1.3rem;
+    }
+    .content-publication-info {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
   .field--name-field-image-media{
@@ -204,32 +214,51 @@ body.node--type-publication{
     }
   }
   .field--type-entity-reference{
-    padding-bottom: 1rem;
+    padding-bottom: 0;
+    .field-item.publication-field{
+      clear: both;
+      margin-top: 1rem;
+    }
+    > .field-item.publication-field:nth-child(1){
+      margin-top: 0;
+      border:1px solid red;
+    }
   }
   .related-resources-fluid{
+    float: left;
     clear: both;
     @extend .full-width;
     background: $bg-color-blue-light;
-    padding: 0;
+    padding: 2rem 0 2rem 0;
     width: 100vw;
     position: relative;
-    margin-top: 2rem;
-    padding-bottom: 2rem;
     .publications-detail-right-column{
       padding-top: 1rem;
       padding-right: 6rem;
     }
-    .field__items{
-      .field__item{
-        margin-bottom: 1.5rem;
-      }
-    }
     .node--type-publication{
-      background: $bg-color-white;
       h2{
         font-size: 1.2rem;
         font-weight: 400;
       }
+    }
+    figure{
+      margin: 0;
+    }
+  }
+}
+
+.related-resources-fluid{
+  .node--view-mode-osha-resources{
+    clear: both;
+    margin-bottom: 0;
+  }
+  .field--name-field-aditional-resources {
+    .publication-field {
+      width: 100%;
+      background: transparent;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
 }
@@ -250,9 +279,6 @@ body.node--type-publication{
     .field--name-field-image-media {
       max-width: 155px;
     }
-    .field--name-field-publication-date {
-      padding-top: 14px;
-    }
     .field--name-field-publication-type {
       color:$text-color-blue;
       font-size: 0.875rem;
@@ -269,7 +295,7 @@ body.node--type-publication{
       }
     }
     .field-name-field-pages-count {
-      padding-bottom: 14px;
+      padding-bottom: 0;
       display: flex;
       font-size: 0.875rem;
       .field-label-inline {
@@ -278,7 +304,7 @@ body.node--type-publication{
       }
     }
     h2 {
-      margin-bottom: 21px;
+      margin-bottom: 0;
       font-weight: normal;
       padding: 0;
       font-size: 1.125rem;
@@ -301,7 +327,132 @@ body.node--type-publication{
   }
 }
 
-/* Rsponsive */
+/* Related publications and Twing publicattions */
+.node--type-publication{
+  .field--name-field-related-publications{
+    .field__item{
+      margin-top: 1rem;
+    }
+    > div:nth-child(1){
+      margin-top: 0;
+    }
+  }
+  .rr-wrapper-related-resources{
+    display: flex;
+    clear: both;
+    background: $bg-color-white;
+    margin-bottom: 0;
+  }
+  .rr-right-column{
+    width: 100%;
+    padding: 1rem;
+    .rr-wrapper-fields{
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .field__item {
+      margin-top: 0;
+    }
+    .field-name-node-title{
+      h2{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
+    .field__label, .field__item, .field-name-field-pages-count{
+      float: left;
+      color: $text-color-blue;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+    .field-name-field-pages-count{
+      .field-label-inline{
+        float: left;
+        padding-right: 3px;
+      }
+      text-transform: capitalize;
+    }
+    .field--name-node-link{
+      @extend .see-more-arrow;
+      padding-top: 1rem;
+    }
+  }
+}
+
+/* Related publications - Files */
+.field-item.file-field{
+  clear: both;
+  margin-top: 1rem;
+}
+
+/* Related publications - Slideshare/Presentations */
+.field-item.slideshare-field{
+  float: left;
+  margin-right: 2em;
+}
+.content-related{
+  .rr-item-wrapper{
+    position: relative;
+    width: 300px;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .rr-item-content{
+    width: 300px;
+    height: 200px;
+    .field--type-image{
+      width: 300px;
+      height: 200px;
+      margin: 0;
+    }
+    img{
+      width: 300px;
+      height: 200px;
+      margin: 0;
+    }
+  }
+  h2.rr-item-title{
+    font-weight: normal;
+    font-size: 1.1rem;
+    padding: 0 0 0.5rem 0;
+    margin: 0;
+  }
+}
+
+/* Related publications - Videos/Youtube */
+.field-item.youtube-field{
+  float: left;
+  margin-right: 2em;
+}
+
+/* Related publications in articles */
+.related-publications-in-articles{
+  .node--type-publication{
+    .rr-wrapper-related-resources{
+      .rr-right-column{
+        padding: 0.5rem 0 0 1rem;
+        .rr-wrapper-fields{
+          flex-direction: column;
+        }
+        .field--name-node-link{
+          a{
+            font-size: 0.75rem;
+            background: url(../images/arrow.png) no-repeat calc(100% - 5px) 9px;
+            padding: 5px 30px 5px 5px;
+            &:hover {
+              background: url(../images/arrow.png) no-repeat $bg-color-blue calc(100% - 5px) 9px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
 @media only screen and (max-width : 1200px) {
   /* Publications Slide 3 items */
   .view-publications {
@@ -310,7 +461,6 @@ body.node--type-publication{
       padding: 10px;
       border-bottom: 15px solid $bg-color-blue-light;
     }
-
     .views-field-field-image-media {
       display: none;
     }
@@ -356,6 +506,18 @@ body.node--type-publication{
 }
 
 @media only screen and (max-width : 768px) {
+  .rr-left-column{
+    display: none;
+  }
+  .related-publications-in-articles {
+    .node--type-publication {
+      .rr-wrapper-related-resources {
+        .rr-right-column {
+          padding: 0;
+        }
+      }
+    }
+  }
   .tools-and-publications-publications {
     .view-filters {
       fieldset:nth-child(3) {

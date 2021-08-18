@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'DDVA jaunumi'
+      fields:
+        view_node:
+          text: 'Skatīt vairāk'
   oshnews_latest:
     display_options:
       block_description: 'DDVA jaunumi'

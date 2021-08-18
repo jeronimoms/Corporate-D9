@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Hae
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Vapaa tekstihaku'
+        field_seminar_start_date:
+          expose:
+            label: Aloituspäivämäärä
+        field_seminar_end_date:
+          expose:
+            label: Päättymispäivämäärä

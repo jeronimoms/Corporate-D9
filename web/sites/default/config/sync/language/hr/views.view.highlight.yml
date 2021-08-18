@@ -1,0 +1,16 @@
+label: 'Izdvojene novosti'
+display:
+  default:
+    display_options:
+      title: 'Izdvojene novosti'
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/hr/highlights\">Pregled svih izdvojenih novosti</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Pregled svih izdvojenih novosti'
+      fields:
+        view_node:
+          text: 'Vidi više'

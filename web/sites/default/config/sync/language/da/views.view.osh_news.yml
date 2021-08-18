@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: OSH-nyheder
+      fields:
+        view_node:
+          text: 'Se mere'
   oshnews_list:
     display_options:
       title: OSH-nyheder

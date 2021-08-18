@@ -47,4 +47,36 @@ function ncwtheme_preprocess_html(&$variables){
   }
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ncwtheme_preprocess_node(&$variables)
+{
+  $node = $variables['node'];
+  $pdf = [];
+  if ($node->bundle() == 'publication'){
+    foreach ( $node->getTranslationLanguages() as $language ){
+      $nodeTranslation = $node->getTranslation($language->getId());
+      if($nodeTranslation->hasField('field_file_media') ) {
+        $fileMediaField = $nodeTranslation->get('field_file_media');
+        if($fileMediaField->count() > 0){
+          $fileMedia = $fileMediaField->entity;
+          if($fileMedia->hasField('field_media_document')) {
+            $fileField = $fileMedia->get('field_media_document');
+            if($fileField->count() > 0){
+              $file = $fileMedia->get('field_media_document')->entity;
+              $pdf[$language->getId()] = file_create_url($file->getFileUri());
+              if (!isset($variables['fileDownloadType'])){
+                $variables['fileDownloadType'] = pathinfo($file->getFileUri() , PATHINFO_EXTENSION );
+              }
+            }
+          }
+        }
+      }
+    }
+    $variables['relatedPdf'] = $pdf;
+  }
+
+}
+
 

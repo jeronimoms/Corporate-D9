@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'Nachrichten zum Thema Sicherheit und Gesundheitsschutz bei der Arbeit'
+      fields:
+        view_node:
+          text: 'Mehr anzeigen'
   oshnews_latest:
     display_options:
       block_description: 'Nachrichten zum Thema Sicherheit und Gesundheitsschutz bei der Arbeit'

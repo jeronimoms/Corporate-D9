@@ -1,0 +1,16 @@
+label: Hoogtepunten
+display:
+  default:
+    display_options:
+      title: Hoogtepunten
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/nl/highlights\">Bekijk alle hoogtepunten</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Bekijk alle hoogtepunten'
+      fields:
+        view_node:
+          text: 'Meer weergeven'

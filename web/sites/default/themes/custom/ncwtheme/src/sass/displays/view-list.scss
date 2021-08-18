@@ -296,6 +296,33 @@
   }
 }
 
+.view-related-content.view-display-id-page_3{
+  .see-more-arrow{
+    text-align: right;
+  }
+}
+
+.page-view-practical-tools-and-guidance-on-dangerous-substances{
+  #share-this-on{
+    display: none;
+  }
+}
+
+.view-practical-tools-and-guidance-on-dangerous-substances{
+  .view-filters{
+    .form-item-sort-by{
+      order: 3
+    }
+    .form-item-sort-order{
+      order: 4
+    }
+    .btn-primary {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  }
+}
+
 
 /* Responsive View List */
 @media only screen and (max-width : 768px) {

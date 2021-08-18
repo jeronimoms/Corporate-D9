@@ -59,26 +59,99 @@ dependencies:
     - field.field.node.dangerous_substances.field_year
     - node.type.dangerous_substances
   module:
+    - ds
     - entity_reference_revisions
     - languagefield
     - link
     - options
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_item_type
+        - field_title_original
+        - field_external_url
+        - field_material_country
+        - field_country_other
+        - field_available_in_languages
+        - field_languages_other
+        - field_sector_industry_covered
+        - field_tasks_covered
+        - field_tasks_other
+        - field_biological_hazard
+        - field_biological_hazard_other
+        - field_hazard_physical_state
+        - field_hazard_physical_other
+        - field_hazard_health_effects
+        - field_hazard_health_other
+        - field_exposure_route
+        - field_exposure_route_other
+        - field_substance_description
+        - field_cas_number
+        - field_ec_number
+        - field_measurement_method
+        - field_worker_groups_type
+        - field_worker_groups_other
+        - field_prevention_measure_type
+        - field_prevention_measures_other
+        - field_material_purpose_type
+        - field_material_purpose_other
+        - body
+        - field_body_original
+        - field_target_group
+        - field_target_group_other
+        - field_evaluation
+        - field_evaluation_other
+        - field_visualisation_material_typ
+        - field_visualisation_mat_other
+        - field_media_format
+        - field_intellectual_property_righ
+        - field_rights_description
+        - field_advertising
+        - field_contact_address
+        - field_disclaimer
+        - field_ownership_information
+        - field_other_information
+        - field_image_media
+        - field_priority_area
+        - field_selected_for_analysis
+        - field_year
+        - field_fc_provider
+        - field_notes
+        - field_original_desc_language
+        - field_original_desc_lang_other
+        - field_non_applicable_url
 id: node.dangerous_substances.default
 targetEntityType: node
 bundle: dangerous_substances
 mode: default
 content:
   body:
-    label: hidden
+    label: above
     type: text_default
-    weight: 29
+    weight: 28
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_advertising:
-    weight: 40
+    weight: 39
     label: above
     settings:
       format: default
@@ -86,7 +159,7 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-    region: content
+    region: ds_content
   field_available_in_languages:
     weight: 5
     label: above
@@ -96,45 +169,53 @@ content:
         name: name
     third_party_settings: {  }
     type: languagefield_default
-    region: content
+    region: ds_content
   field_biological_hazard:
+    weight: 10
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_biological_hazard_other:
     weight: 11
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_biological_hazard_other:
-    weight: 12
-    label: above
-    settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_body_original:
-    weight: 30
+    weight: 29
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_cas_number:
-    weight: 20
+    weight: 19
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_contact_address:
-    weight: 41
+    weight: 40
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_country_other:
     weight: 4
     label: above
@@ -142,129 +223,176 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_disclaimer:
-    weight: 42
+    weight: 41
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_ec_number:
-    weight: 21
+    weight: 20
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_evaluation:
+    weight: 32
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_evaluation_other:
     weight: 33
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_evaluation_other:
-    weight: 34
-    label: above
-    settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_exposure_route:
+    weight: 16
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_exposure_route_other:
     weight: 17
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_exposure_route_other:
-    weight: 18
-    label: above
-    settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_external_url:
     weight: 2
     label: above
     settings:
       trim_length: 80
+      target: _blank
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
+      rel: '0'
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: link
-    region: content
+    region: ds_content
   field_fc_provider:
     type: entity_reference_revisions_entity_view
-    weight: 53
+    weight: 48
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_hazard_health_effects:
-    weight: 15
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_hazard_health_other:
-    weight: 16
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_hazard_physical_other:
     weight: 14
     label: above
     settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_hazard_health_other:
+    weight: 15
+    label: above
+    settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_hazard_physical_state:
+    region: ds_content
+  field_hazard_physical_other:
     weight: 13
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_image_media:
-    weight: 45
+    type: string
+    region: ds_content
+  field_hazard_physical_state:
+    weight: 12
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
+  field_image_media:
+    weight: 44
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
   field_intellectual_property_righ:
-    weight: 38
+    weight: 37
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
-    region: content
+    region: ds_content
   field_item_type:
     weight: 0
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
-    region: content
+    region: ds_content
   field_languages_other:
     weight: 6
     label: above
@@ -272,64 +400,80 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_material_country:
     weight: 3
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_material_purpose_other:
-    weight: 28
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_material_purpose_type:
     weight: 27
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_material_purpose_type:
+    weight: 26
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_measurement_method:
-    weight: 22
+    weight: 21
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_media_format:
-    weight: 37
+    weight: 36
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_non_applicable_url:
+    type: boolean
     weight: 52
+    region: ds_content
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
-    region: content
   field_notes:
     weight: 49
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_original_desc_lang_other:
     weight: 51
     label: above
@@ -337,7 +481,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_original_desc_language:
     weight: 50
     label: above
@@ -347,63 +491,87 @@ content:
         name: name
     third_party_settings: {  }
     type: languagefield_default
-    region: content
+    region: ds_content
   field_other_information:
-    weight: 44
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_ownership_information:
     weight: 43
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
+  field_ownership_information:
+    weight: 42
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
   field_prevention_measure_type:
+    weight: 24
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_prevention_measures_other:
     weight: 25
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_prevention_measures_other:
-    weight: 26
-    label: above
-    settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_priority_area:
-    weight: 46
+    weight: 45
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_rights_description:
-    weight: 39
+    weight: 38
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_sector_industry_covered:
     weight: 7
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_selected_for_analysis:
-    weight: 47
+    weight: 46
     label: above
     settings:
       format: default
@@ -411,14 +579,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-    region: content
+    region: ds_content
   field_substance_description:
-    weight: 54
+    weight: 18
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_summary:
     weight: 19
     label: above
@@ -427,37 +595,53 @@ content:
     type: basic_string
     region: content
   field_target_group:
+    weight: 30
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_target_group_other:
     weight: 31
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_target_group_other:
-    weight: 32
-    label: above
-    settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_tasks_covered:
+    weight: 8
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_tasks_other:
     weight: 9
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_tasks_other:
-    weight: 10
-    label: above
-    settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_title_original:
     weight: 1
     label: above
@@ -465,46 +649,69 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_visualisation_mat_other:
-    weight: 36
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_visualisation_material_typ:
     weight: 35
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_visualisation_material_typ:
+    weight: 34
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_worker_groups_other:
-    weight: 24
+    weight: 23
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_worker_groups_type:
-    weight: 23
+    weight: 22
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_year:
-    weight: 55
+    weight: 47
     label: above
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: 'Year of publication'
+            lb-col: false
+            classes: {  }
     type: list_default
-    region: content
+    region: ds_content
 hidden:
   addtoany: true
   breadcrumbs: true

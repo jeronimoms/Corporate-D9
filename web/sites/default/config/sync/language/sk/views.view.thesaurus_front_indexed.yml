@@ -1,0 +1,29 @@
+display:
+  default:
+    display_options:
+      fields:
+        nid:
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
+      title: 'Tezaurus agentúry EU-OSHA'
+      exposed_form:
+        options:
+          submit_button: Vyhľadávanie
+          exposed_sorts_label: 'Roztriediť podľa'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Vyhľadávanie
+  thesaurus_search:
+    display_options:
+      fields:
+        nid:
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
+    display_title: Vyhľadávanie
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Vyhľadávanie

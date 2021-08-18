@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: Vinnuverndarfréttir
+      fields:
+        view_node:
+          text: 'Sjá meira'
   oshnews_latest:
     display_options:
       block_description: Vinnuverndarfréttir
