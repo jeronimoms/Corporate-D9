@@ -1929,7 +1929,7 @@ body .see-more-arrow a, body .node--type-publication .rr-right-column .field--na
   padding: 10px 40px 10px 10px;
   background: url(../images/arrow.png) no-repeat calc(100% - 10px) 15px;
   font-size: 0.9rem;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
   border-bottom: 0;
 }
@@ -6093,6 +6093,21 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 
 .view-related-content.view-display-id-page_3 .see-more-arrow, .view-related-content.view-display-id-page_3 .node--type-publication .rr-right-column .field--name-node-link, .node--type-publication .rr-right-column .view-related-content.view-display-id-page_3 .field--name-node-link {
   text-align: right;
+}
+
+.page-view-practical-tools-and-guidance-on-dangerous-substances #share-this-on {
+  display: none;
+}
+
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-by {
+  order: 3;
+}
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-order {
+  order: 4;
+}
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .btn-primary {
+  margin-left: 0;
+  margin-right: 10px;
 }
 
 /* Responsive View List */
