@@ -14,6 +14,11 @@
   ul{
     list-style: none;
     padding: 0;
+    li{
+      ul{
+        display: none;
+      }
+    }
   }
 
   input[type=checkbox] + label:before {

@@ -467,6 +467,9 @@ div#sliding-popup {
   list-style: none;
   padding: 0;
 }
+.facets-widget-checkbox ul li ul {
+  display: none;
+}
 .facets-widget-checkbox input[type=checkbox] + label:before {
   content: "✔";
   float: left;
