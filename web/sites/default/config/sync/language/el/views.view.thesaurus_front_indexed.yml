@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'Θησαυρός EU-OSHA'
+      exposed_form:
+        options:
+          submit_button: Αναζήτηση
+          exposed_sorts_label: 'Επιλογή τρόπου αναζήτησης'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Αναζήτηση
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Αναζήτηση
+  thesaurus_search:
+    display_title: Αναζήτηση

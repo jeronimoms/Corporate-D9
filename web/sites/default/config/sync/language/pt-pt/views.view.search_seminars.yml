@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Pesquisar
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Pesquisa de texto gratuita'
+        field_seminar_start_date:
+          expose:
+            label: 'Data de início'
+        field_seminar_end_date:
+          expose:
+            label: 'Data final'

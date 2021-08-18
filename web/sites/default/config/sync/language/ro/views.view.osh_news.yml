@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'Știri despre SSM'
+      fields:
+        view_node:
+          text: 'Vedeți mai mult'
   oshnews_latest:
     display_options:
       block_description: 'Știri despre SSM'

@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'Novinky z oblasti BOZP'
+      fields:
+        view_node:
+          text: 'Zobrazit více informací'
   oshnews_list:
     display_options:
       title: 'Novinky z oblasti BOZP'
