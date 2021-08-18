@@ -694,15 +694,20 @@ div#sliding-popup {
 
 /* Facets without Facet styles */
 #block-dateofdirective {
+  width: 100%;
   border: 0;
-  padding: 0;
+  padding: 0 5px 0 5px;
   margin-top: 0;
   margin-bottom: 0;
 }
 #block-dateofdirective h2 {
   font-size: 0.9rem;
-  padding-bottom: 0;
+  color: #003399;
+  background: transparent;
+  margin: 0;
+  padding: 0;
   font-weight: normal;
+  border-top: 0;
 }
 
 /* Header Fields - Language selector - Search */
@@ -1409,7 +1414,7 @@ h3.home a:hover {
   background: #FFF;
   color: #003399;
   border: 1px solid #003399;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -2807,6 +2812,33 @@ a.quiz-start-link:hover {
 }
 .node--type-wiki-page .field--name-field-tags .field__label, .node--type-wiki-page .field--name-field-tags ul.links {
   font-size: 0.9rem;
+}
+
+.node--type-press-contact .field__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.node--type-press-contact .field__label:after {
+  display: inline-block;
+  content: ":";
+}
+.node--type-press-contact .field__item {
+  font-size: 0.9rem;
+}
+.node--type-press-contact .field__item a {
+  font-size: 0.9rem;
+}
+.node--type-press-contact .field__item p {
+  margin-bottom: 0;
+}
+.node--type-press-contact .field--name-field-press-contact-organization, .node--type-press-contact .field--name-field-location {
+  padding-bottom: 1rem;
+}
+.node--type-press-contact .field--name-field-wg-role-1, .node--type-press-contact .field--name-field-wg-role-2 {
+  padding-bottom: 0;
+}
+.node--type-press-contact .field--name-field-wg-role-2, .node--type-press-contact .field--name-field-is-advisory {
+  padding-top: 1rem;
 }
 
 /* Breadcrumbs */
