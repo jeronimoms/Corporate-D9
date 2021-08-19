@@ -145,9 +145,9 @@ body.node--type-publication{
   }
   .publications-row{
     display: flex;
+    padding-top: 1rem;
   }
   .publications-row.custom-add-margin{
-    padding-top: 1rem;
     padding-bottom: 2rem;
   }
   .publications-row.add-border{
@@ -342,7 +342,7 @@ body.node--type-publication{
 .node--type-publication{
   .field--name-field-related-publications{
     .field__item{
-      margin-top: 1rem;
+      margin-top: 0;
     }
     > div:nth-child(1){
       margin-top: 0;
