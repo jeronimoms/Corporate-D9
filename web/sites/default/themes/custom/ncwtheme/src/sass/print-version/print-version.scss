@@ -1,8 +1,31 @@
+@page {
+  margin: 1cm 2cm;
+}
+
 @media print {
   * {
     color: #000000 !important;
     background: none !important;
   }
+
+ body {
+   padding: 0 !important;
+   font-family: "Open Sans", sans-serif !important;
+ }
+
+  p a {
+    word-wrap: break-word;
+  }
+
+  a {
+    text-decoration: underline !important;
+    border-bottom: none !important;
+    &:before,
+    &:after {
+      display: none !important;
+    }
+  }
+
   input,
   textarea,
   select {
@@ -12,25 +35,54 @@
 
   h1, h2, h3, h4, h5, h6, a {
     color: #000000;
+    font-weight: bold !important;
+  }
+
+  h1, h2 {
+    margin: 0 0 16pt;
+    line-height: 32pt;
+  }
+
+  h3, h4, h5 {
+    margin: 0 0 12pt;
   }
 
   h1 {
-
     font-size: 32pt !important;
   }
+
   h2 {
     font-size: 28pt !important;
   }
 
   h3 {
-    font-size: 22pt !important;
-
+    font-size: 24pt !important;
   }
 
   p,
-  .field-content {
-    font-size: 16pt;
-    line-height: 20pt;
+  .field--name-field-summary-html,
+  .node--type-article .field--name-body p,
+  .field--name-body ul,
+  .field--name-body ol,
+  .node--type-article .field--name-body,
+  .field--name-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 24pt;
+    font-size: 16pt !important;
+    line-height: 24pt !important;
+  }
+
+  table tr td {
+    font-size: 16pt !important;
+  }
+
+  .datetime,
+  .views-field-field-date {
+    padding: 0;
+    margin: 0 0 12pt;
+    font-size: 13pt !important;
+    line-height: 24pt !important;
   }
 
   header nav,
@@ -49,15 +101,18 @@
   .home-intro,
   .views-field-field-image-media,
   .more-link,
-
   .osha-workflow-list-widget,
   .block-workbench-access,
   .block-addtoany,
+  video, audio, object, iframe,
   p img,
   p iframe,
   aside.section,
   .view-filters,
-  .publications-left-column {
+  .publications-left-column,
+  .menu-link-image,
+  .field--name-field-image-media,
+  .field--name-field-image-menu-main{
     display: none;
   }
 
@@ -66,19 +121,17 @@
     display: block !important;
   }
 
-
   body.user-logged-in #header,
   body.user-logged-in.toolbar-tray-open #header {
     padding: 0;
   }
 
   #header,
-
   #page-wrapper #header {
     position: relative !important;
     width: 100%;
     transition: none;
-    top: 0;
+    top: 0 !important;
     left: 0;
     height: 200px;
     background: none;
@@ -94,18 +147,16 @@
   }
 
   .see-more-arrow {
-    margin: 0;
-
+    padding: 0 !important;
+    margin: 0 !important;
     a {
-      padding: 0;
+      padding: 0 !important;
     }
-
   }
 
-  body .field--name-body p a,
-  #main .node--view-mode-full a[target=_blank] {
-    border: none;
-    color: #000000;
+  .views-row {
+    border-bottom: 1px dotted #000000;
+    margin-bottom: 16pt !important;
   }
 
   .content-news-events {
@@ -123,13 +174,12 @@
       }
     }
   }
-  .content-news-events .wrap-news-events .news-home .view-content .views-row,
 
+  .content-news-events .wrap-news-events .news-home .view-content .views-row,
   .content-news-events .wrap-news-events .events-home .view-content .views-row,
   .content-news-events .wrap-news-events .news-home,
   .content-news-events .wrap-news-events .events-home .view-content .views-field-field-country-code,
   .content-news-events .wrap-news-events .events-home {
-
     border: none;
     display: block;
     width: 100% !important;
@@ -139,13 +189,10 @@
 
   .content-news-events .wrap-news-events .news-home .view-content .see-more-arrow a,
   .content-news-events .wrap-news-events .news-home .view-content .tag-news-events,
-  .content-news-events .wrap-news-events .events-home .view-content .tag-news-events{
+  .content-news-events .wrap-news-events .events-home .view-content .tag-news-events {
     position: relative;
     padding: 0;
-
-    font-size: 15pt;
   }
-
 
   .content-news-events .wrap-news-events .news-home .views-row time,
   .content-news-events .wrap-news-events .news-home .views-row *,
@@ -155,33 +202,109 @@
     margin: 0 0 1rem !important;
     padding-top: 0 !important;
     padding-left: 0 !important;
-    font-size: 16pt;
     position: relative;
-  }
-
-  .content-news-events .wrap-news-events .news-home .view-content .see-more-arrow a {
-    text-decoration: underline;
-    font-size: 14pt;
-  }
-
-  .content-news-events .wrap-news-events .events-home h3 {
-    font-size: 24pt !important;
   }
 
   .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
     display: block;
   }
+
   .tools-and-publications-publications .revamp-row .publications-right-column h2 {
     line-height: 1.5;
     padding: 0;
     margin: 0 0 1rem;
     font-size: 22pt !important;
   }
+
   .tools-and-publications-publications .revamp-row .publications-right-column {
     padding-left: 0;
     .see-more-arrow a {
       padding: 0;
     }
+  }
+
+  .content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content,
+  .views-field-field-date .field-content,
+  .content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content time,
+  .content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content time:nth-child(1) {
+    margin: 0 !important;
+    display: inline-block !important;
+    width: auto !important;
+    time {
+      display: inline-block !important;
+      width: auto !important;
+    }
+  }
+
+  .view-content.row {
+    padding: 0;
+    display: block !important;
+    .list--item {
+      margin: 0 0 24pt !important;
+      padding: 0 !important;
+      width: 100% !important;
+      max-width: 100%;
+    }
+  }
+
+  .view-landing-menu {
+    display: block !important;
+    .view-content.row {
+      display: block !important;
+    }
+    .list--item {
+      margin: 0 0 24pt !important;
+      padding: 0 !important;
+      width: 100% !important;
+      max-width: 100%;
+    }
+    .menu-link-image {
+      display: none !important;
+    }
+  }
+
+  .wysiwyg_accordion h3 {
+    padding: 0 !important;
+    font-family: "Open Sans", sans-serif !important;
+    &:after {
+      display: none !important;
+    }
+  }
+  .wysiwyg_accordion_panel {
+    margin: 0 0 24pt !important;
+    display: block !important;
+  }
+
+  .block-views-landing-page .menu-link-text a {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 16pt !important;
+  }
+
+  .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a,
+  .node--type-publication,
+  .field--name-field-aditional-resources .publication-field .field--name-field-publication-type {
+    padding: 0 !important;
+    font-size: 16pt !important;
+    * {font-size: 16pt !important;}
+    .rr-right-column,
+    .field--name-node-link {
+      padding: 0 !important;
+    }
+  }
+
+  .block-views-blocklanding-menu-dv-block-1 .view-content.row > div {
+    margin-right: 0;
+    max-width: 100% !important;
+    a {
+      font-family: "Open Sans", sans-serif !important;
+      font-size: 16pt !important;
+    }
+  }
+
+  .node--type-article #main .field--name-field-related-oshwiki-articles > .field__label,
+  .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title,
+  .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-summary-html {
+    padding: 0 !important;
   }
 
 
