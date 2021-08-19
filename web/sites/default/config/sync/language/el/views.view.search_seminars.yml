@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Αναζήτηση
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Αναζήτηση ελεύθερου κειμένου'
+        field_seminar_start_date:
+          expose:
+            label: 'Ημερομηνία έναρξης'
+        field_seminar_end_date:
+          expose:
+            label: 'Λήξη προθεσμίας'
