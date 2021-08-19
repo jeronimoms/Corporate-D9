@@ -2042,7 +2042,7 @@ span.pages {
 }
 
 /* Links download */
-#main .node--view-mode-full a[target=_blank].link-download {
+#main a[target=_blank].link-download {
   display: inline-block;
   font-size: 0.9rem;
   font-weight: 700;
@@ -2052,10 +2052,10 @@ span.pages {
   padding-right: 0;
   text-transform: uppercase;
 }
-#main .node--view-mode-full a[target=_blank].link-download:hover {
+#main a[target=_blank].link-download:hover {
   background: transparent;
 }
-#main .node--view-mode-full a[target=_blank].link-download:before {
+#main a[target=_blank].link-download:before {
   content: " ";
   display: inline-block;
   background: url(../images/download-thesaurus.png) no-repeat 1px 3px;
@@ -2064,10 +2064,24 @@ span.pages {
   padding-right: 1px;
   vertical-align: text-bottom;
 }
-#main .node--view-mode-full .download-pdf .link-download:hover {
+#main .download-pdf .link-download:hover {
   background: transparent;
   border-bottom: 0;
   text-decoration: underline;
+}
+
+.node--type-infographic #main a[target=_blank].link-download:before {
+  content: none;
+}
+.node--type-infographic #main a[target=_blank].link-download:after {
+  content: " ";
+  display: inline-block;
+  background: url(../images/external_link-v2.png) no-repeat 1px 4px;
+  width: 15px;
+  height: 20px;
+  padding-right: 0px;
+  vertical-align: text-bottom;
+  margin-left: 5px;
 }
 
 .download-pdf .separator-download:last-child {
@@ -4891,6 +4905,9 @@ body.contact form.contact-form button.btn-primary {
   height: auto;
 }
 
+.node--type-infographic .h1-back-wrapper h1 {
+  font-size: 2rem;
+}
 .node--type-infographic h1 {
   width: 70%;
   font-size: 1.35rem;
