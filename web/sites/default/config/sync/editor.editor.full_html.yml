@@ -19,41 +19,52 @@ settings:
           items:
             - Bold
             - Italic
-            - Strike
             - Underline
-            - Superscript
-            - Subscript
-            - '-'
-            - RemoveFormat
+            - Strike
             - JustifyLeft
             - JustifyCenter
             - JustifyRight
+            - JustifyBlock
+            - '-'
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+            - Undo
+            - Redo
         -
           name: Linking
           items:
             - DrupalLink
             - DrupalUnlink
         -
-          name: Lists
+          name: 'Block Formatting'
           items:
-            - BulletedList
-            - NumberedList
+            - Styles
+            - Format
+            - Blockquote
+            - Copy
+            - Cut
+            - Paste
+            - PasteText
+            - PasteFromWord
+            - RemoveFormat
         -
           name: Media
           items:
-            - Blockquote
-            - DrupalImage
             - Table
             - HorizontalRule
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
+            - ImceImage
+            - DrupalImage
+            - DrupalMediaLibrary
+            - ImceLink
         -
           name: Tools
           items:
             - ShowBlocks
             - Source
+            - Maximize
   plugins:
     stylescombo:
       styles: ''
@@ -63,7 +74,7 @@ settings:
       linkit_enabled: false
       linkit_profile: ''
 image_upload:
-  status: true
+  status: false
   scheme: public
   directory: inline-images
   max_size: ''
