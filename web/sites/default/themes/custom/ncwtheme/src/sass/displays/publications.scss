@@ -470,6 +470,11 @@ body.node--type-publication{
   padding-bottom: 2rem;
   .revamp-row{
     .node--type-publication {
+      .rr-left-column{
+        .field--name-field-image-media{
+          margin-right: 0;
+        }
+      }
       .rr-right-column {
         div.field--name-node-link {
           text-align: left;
