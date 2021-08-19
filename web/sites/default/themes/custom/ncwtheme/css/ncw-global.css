@@ -5181,6 +5181,10 @@ body.node--type-publication {
   padding-top: 1rem;
   padding-bottom: 2rem;
 }
+.node--type-publication .publications-row.add-border {
+  border-bottom: 1px solid #003399;
+  padding-bottom: 1.5rem;
+}
 .node--type-publication .publications-detail-right-column {
   width: 100%;
   padding-left: 2rem;
@@ -5260,6 +5264,7 @@ body.node--type-publication {
   padding: 2rem 0 2rem 0;
   width: 100vw;
   position: relative;
+  margin-top: -1px;
 }
 .node--type-publication .related-resources-fluid .publications-detail-right-column {
   padding-top: 1rem;
@@ -5453,6 +5458,16 @@ body.node--type-publication {
 }
 .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a:hover {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
+}
+
+.wrapper-view-aditional-publications {
+  width: 100%;
+  float: left;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.wrapper-view-aditional-publications .revamp-row .node--type-publication .rr-right-column div.field--name-node-link {
+  text-align: left;
 }
 
 /* Responsive */

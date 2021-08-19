@@ -152,6 +152,11 @@ jQuery(document).ready(function($) {
     $('.publications-row').addClass('custom-add-margin');
   }
 
+  //Add class to add border in content publications if Additional publications on this topic exist
+  if ($(".wrapper-view-aditional-publications")[0]) {
+    $('.publications-row').addClass('add-border');
+  }
+
   //Hide Related publications if Twin publications exist
   if ($(".related-resources-fluid .twin-publications")[0]) {
     $('.related-resources-fluid  .related-resources-publications').hide();

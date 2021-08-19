@@ -139,4 +139,11 @@
     </div>
     {% endif %}
   </div>
+  {% set view_aditionalPublications = drupal_view('related_content', 'block_4')|render  %}
+  {% if view_aditionalPublications|striptags|trim %}
+    <div class="wrapper-view-aditional-publications">
+      <h2>{{ 'Additional publications on this topic' | trans }}</h2>
+      {{ view_aditionalPublications }}
+    </div>
+  {% endif %}
 </article>
