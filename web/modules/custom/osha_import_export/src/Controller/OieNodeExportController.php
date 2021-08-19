@@ -36,6 +36,8 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       return new JsonResponse([]);
     }
 
+    $rdf = $this->entityTypeManager->getStorage('rdf_mapping')->load('node.'. $node->bundle());
+
     // Get each translation.
     $langs = [];
     foreach ($node->getTranslationLanguages() as $lang => $value) {
@@ -65,7 +67,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       }
 
       if (!$definition->isTranslatable()) {
-        $data[$field_name][$node->language()->getId()]['value'] = $this->getFieldValue($node, $definition, $field_name);
+        $data += $this->getFieldValue($node, $definition, $field_name);
       }
       else {
         /**
@@ -73,7 +75,6 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
          */
         foreach ($langs as $lang => $node_lang) {
           $trans_value = $this->getFieldValue($node_lang, $definition, $field_name);
-          //$data[$field_name][$lang]['value'] = $trans_value;
           if (isset($trans_value) && !empty($trans_value)) {
             $data[$field_name][$lang]['value'] = $trans_value;
           }
@@ -101,6 +102,12 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       ];
     }
 
+    /** @var \Drupal\user\Entity\User  $owner */
+    $owner = $node->getOwner();
+    $data['name'] = $owner->getAccountName();
+    $data['picture'] = $owner->get('user_picture');
+
+
     return new JsonResponse($data);
   }
 
@@ -120,14 +127,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
             $referers[] = $this->getTaxonomyValues($value['target_id'], $settings);
           }
         }
-
-        return $referers;
-
-
-        /*kint($values);
-        kint($definition);
-        kint($definition->getSettings());
-        kint($referers);*/
+        return [$field_name => $referers];
       }
     }
 
@@ -138,15 +138,29 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         $value = strtotime($value);
         $value = \date('Y-m-d h:i:s', $value);
         return [
-          'value' => $value,
-          "timezone" => "Europe\/Madrid",
-          "timezone_db" => "Europe\/Madrid",
-          "date_type" => "datetime",
+          $field_name => [
+            'value' => $value,
+            "timezone" => "Europe\/Madrid",
+            "timezone_db" => "Europe\/Madrid",
+            "date_type" => "datetime",
+          ]
         ];
       }
     }
 
-    return $node->get($field_name)->getString();
+    // Comment process.
+    if ($definition->getType() == 'comment') {
+      $values = $node->get($field_name)->getValue();
+      return [
+        'cid' => $values['cid'],
+        'last_comment_timestamp' => $values[0]['last_comment_timestamp'],
+        'last_comment_name' => $values[0]['last_comment_name'],
+        'last_comment_uid' => $values[0]['last_comment_uid'],
+        'comment_count' => $values[0]['comment_count'],
+      ];
+    }
+
+    return [$field_name => $node->get($field_name)->getString()];
   }
 
   public function getTaxonomyValues($id, array $settings) {
