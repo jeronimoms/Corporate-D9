@@ -2042,7 +2042,7 @@ span.pages {
 }
 
 /* Links download */
-#main a[target=_blank].link-download {
+#main .node--view-mode-full a[target=_blank].link-download {
   display: inline-block;
   font-size: 0.9rem;
   font-weight: 700;
@@ -2052,10 +2052,10 @@ span.pages {
   padding-right: 0;
   text-transform: uppercase;
 }
-#main a[target=_blank].link-download:hover {
+#main .node--view-mode-full a[target=_blank].link-download:hover {
   background: transparent;
 }
-#main a[target=_blank].link-download:before {
+#main .node--view-mode-full a[target=_blank].link-download:before {
   content: " ";
   display: inline-block;
   background: url(../images/download-thesaurus.png) no-repeat 1px 3px;
@@ -2064,24 +2064,37 @@ span.pages {
   padding-right: 1px;
   vertical-align: text-bottom;
 }
-#main .download-pdf .link-download:hover {
+#main .node--view-mode-full .download-pdf .link-download:hover {
   background: transparent;
   border-bottom: 0;
   text-decoration: underline;
 }
 
-.node--type-infographic #main a[target=_blank].link-download:before {
+.node--type-infographic #main .link-download {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: transparent;
+  border-bottom: 1px solid #FFF;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: uppercase;
+}
+.node--type-infographic #main .link-download:hover {
+  background: transparent;
+}
+.node--type-infographic #main .link-download:before {
   content: none;
 }
-.node--type-infographic #main a[target=_blank].link-download:after {
+.node--type-infographic #main .link-download:after {
   content: " ";
   display: inline-block;
   background: url(../images/external_link-v2.png) no-repeat 1px 4px;
   width: 15px;
   height: 20px;
-  padding-right: 0px;
-  vertical-align: text-bottom;
   margin-left: 5px;
+  padding-right: 1px;
+  vertical-align: text-bottom;
 }
 
 .download-pdf .separator-download:last-child {
@@ -5172,6 +5185,9 @@ body.node--type-publication {
   width: 100%;
   padding-left: 2rem;
 }
+.node--type-publication .publications-detail-right-column h1 {
+  padding-bottom: 0;
+}
 .node--type-publication .publications-detail-right-column h2 {
   margin-bottom: 21px;
   font-weight: normal;
@@ -5183,6 +5199,9 @@ body.node--type-publication {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.node--type-publication .publications-detail-right-column .publication-detail-tags {
+  padding-bottom: 1rem;
 }
 .node--type-publication .field--name-field-image-media img {
   float: left;

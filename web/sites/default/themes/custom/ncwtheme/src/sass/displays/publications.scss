@@ -153,6 +153,9 @@ body.node--type-publication{
   .publications-detail-right-column{
     width: 100%;
     padding-left: 2rem;
+    h1{
+      padding-bottom: 0;
+    }
     h2 {
       margin-bottom: 21px;
       font-weight: normal;
@@ -164,6 +167,9 @@ body.node--type-publication{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+    .publication-detail-tags{
+      padding-bottom: 1rem;
     }
   }
   .field--name-field-image-media{
