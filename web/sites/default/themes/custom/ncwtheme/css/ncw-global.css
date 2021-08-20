@@ -6172,13 +6172,13 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   display: none;
 }
 
-.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-by {
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-by, .view-musculoskeletal-disorders-list .view-filters .form-item-sort-by {
   order: 3;
 }
-.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-order {
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-order, .view-musculoskeletal-disorders-list .view-filters .form-item-sort-order {
   order: 4;
 }
-.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .btn-primary {
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .btn-primary, .view-musculoskeletal-disorders-list .view-filters .btn-primary {
   margin-left: 0;
   margin-right: 10px;
 }
