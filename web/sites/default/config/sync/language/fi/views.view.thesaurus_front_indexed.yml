@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'EU-OSHAn tesaurus'
+      exposed_form:
+        options:
+          submit_button: Hae
+          exposed_sorts_label: Lajiteltu
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Hae
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Hae
+  thesaurus_search:
+    display_title: Hae

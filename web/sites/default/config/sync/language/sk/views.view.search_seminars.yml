@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Vyhľadávanie
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Voľné vyhľadávanie v texte'
+        field_seminar_start_date:
+          expose:
+            label: 'Dátum začatia'
+        field_seminar_end_date:
+          expose:
+            label: 'Dátum ukončenia'

@@ -1,0 +1,16 @@
+label: Акценти
+display:
+  default:
+    display_options:
+      title: Акценти
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/bg/highlights\">Вижте всички акценти</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Вижте всички акценти'
+      fields:
+        view_node:
+          text: 'Вижте още'

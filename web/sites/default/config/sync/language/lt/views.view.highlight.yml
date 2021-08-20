@@ -1,0 +1,16 @@
+label: Naujienos
+display:
+  default:
+    display_options:
+      title: Naujienos
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/lt/highlights\">Žiūrėti visas svarbiausias naujienas</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Žiūrėti visas svarbiausias naujienas'
+      fields:
+        view_node:
+          text: 'Žr. daugiau'
