@@ -1,14 +1,12 @@
-uuid: bc59a6bc-876e-4507-b9f5-5e96a97483dc
+uuid: 2ccc2c0b-bd8c-49bc-b8b1-62c2923744f1
 langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.basic_html
+    - filter.format.restricted_html
   module:
     - ckeditor
-_core:
-  default_config_hash: AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
-format: basic_html
+format: restricted_html
 editor: ckeditor
 settings:
   toolbar:
@@ -20,47 +18,28 @@ settings:
             - Bold
             - Italic
             - Underline
-            - Strike
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-            - JustifyBlock
         -
           name: Lists
           items:
             - BulletedList
             - NumberedList
-            - Undo
-            - Redo
         -
-          name: Linking
+          name: Links
           items:
             - DrupalLink
             - DrupalUnlink
-            - Anchor
         -
-          name: 'Block Formatting'
+          name: Actions
           items:
-            - Format
-            - Font
-            - FontSize
-            - Cut
-            - Copy
-            - Paste
-            - PasteText
             - PasteFromWord
-            - RemoveFormat
         -
           name: Media
           items:
             - Blockquote
             - DrupalImage
-            - Accordion
         -
           name: Tools
           items:
-            - ShowBlocks
-            - Maximize
             - Source
       -
         -
