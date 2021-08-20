@@ -84,9 +84,20 @@
 
 <div class="download-img">
   <span class="label_multilang_file">{{ 'Open' | trans }}</span><span class="ico-img"></span><span class="label_multilang_file">{{ 'in:' | trans }}</span>
-  <a class="target-blank-v2" target="_blank" href="{{ node.field_image_media|file_url }}">EN</a>
+  {% for lang, imguri in relatedImg %}
+    <a class="link-download" target="_blank" href="{{ imguri }}">{{ lang }}</a>
+    {% if relatedImg|length > 1  %}
+      <span class="separator-download">|</span>
+    {% endif %}
+  {% endfor %}
+
 </div>
 <div class="download-pdf">
-  <span class="label_multilang_file">{{ 'Download' | trans }}</span><span class="ico-pdf"></span><span class="label_multilang_file">{{ 'in:' | trans }}</span>
-  <a class="target-blank-v2" target="_blank" href="{{ node.field_file_media|file_url }}">EN</a>
+  <span class="label_multilang_file">{{ 'Download' | trans }}</span><span class="ico-{{ fileDownloadType }}"></span><span class="label_multilang_file">{{ 'in:' | trans }}</span>
+  {% for lang, pdfuri in relatedPdf %}
+    <a class="link-download" target="_blank" href="{{ pdfuri }}">{{ lang }}</a>
+    {% if relatedPdf|length > 1  %}
+      <span class="separator-download">|</span>
+    {% endif %}
+  {% endfor %}
 </div>

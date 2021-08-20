@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'Aħbarijiet dwar l-OSH'
+      fields:
+        view_node:
+          text: 'Ara aktar'
   oshnews_latest:
     display_options:
       block_description: 'Aħbarijiet dwar l-OSH'

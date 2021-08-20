@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Търсене
+      filters:
+        field_seminar_start_date:
+          expose:
+            label: 'Начална дата'
+        field_seminar_end_date:
+          expose:
+            label: 'Крайна дата'
+        search_api_fulltext:
+          expose:
+            label: 'Свободно търсене на текст'
