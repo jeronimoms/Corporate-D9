@@ -105,6 +105,7 @@
   .block-workbench-access,
   .block-addtoany,
   video, audio, object, iframe,
+  .field--name-body img,
   p img,
   p iframe,
   aside.section,
@@ -112,7 +113,11 @@
   .publications-left-column,
   .menu-link-image,
   .field--name-field-image-media,
-  .field--name-field-image-menu-main{
+  .field--name-field-image-menu-main,
+  #share-this-on,
+  .block-views-blockinfographic-block-3,
+  table td img,
+  .field--name-field-album-pictures {
     display: none;
   }
 
@@ -247,18 +252,36 @@
     }
   }
 
-  .view-landing-menu {
+  .view-landing-menu,
+  .view-infographic,
+  .view-photo-gallery-album {
     display: block !important;
     .view-content.row {
       display: block !important;
     }
-    .list--item {
+    .list--item,
+    .infographic-item-view {
       margin: 0 0 24pt !important;
       padding: 0 !important;
       width: 100% !important;
       max-width: 100%;
     }
-    .menu-link-image {
+    .menu-link-image,
+    .views-field-field-image {
+      display: none !important;
+    }
+    h2.field-content {
+      margin: 0 !important;
+      padding: 0 !important;
+      a {
+        font-family: "Open Sans", sans-serif !important;
+      }
+    }
+    .row {
+      display: block !important;
+      width: 100% !important;
+    }
+    .views-field-field-thumbnail-media {
       display: none !important;
     }
   }
@@ -275,9 +298,12 @@
     display: block !important;
   }
 
+  .related_wiki_head
   .block-views-landing-page .menu-link-text a {
     font-family: "Open Sans", sans-serif !important;
     font-size: 16pt !important;
+    height: auto !important;
+    background: none !important;
   }
 
   .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a,
@@ -306,6 +332,5 @@
   .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-summary-html {
     padding: 0 !important;
   }
-
 
 }
