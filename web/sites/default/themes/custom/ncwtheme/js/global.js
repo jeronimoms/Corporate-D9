@@ -342,13 +342,12 @@ jQuery(document).ready(function($) {
       var thesaurusTermId = getUrlParameter('term');
       var thesaurusClass = '.thesaurus-term-' + thesaurusTermId;
 
+      // Add the class to highlight the term
       $(thesaurusClass).addClass('term-selected');
+
       // Open the accordion for the current term
       $(thesaurusClass).parent().siblings("span.expand_menu").click();
-      // Add the class to highlight the term
-      $(thesaurusClass).addClass("highlight");
-      // Open the accordion for the children elements - Not required ofr now
-      // $("span.thesaurus-term-"+term).parent().siblings("div.item-list").find("span.expand_menu").click();
+
       // Open the accordion for the parent elements
       var elem = $(thesaurusClass).closest("div.item-list");
       while(elem.length > 0)
