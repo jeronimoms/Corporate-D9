@@ -5721,6 +5721,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   border-bottom: none;
   font-weight: 600;
 }
+.field--name-body .hierarchical-tree li span.term-selected {
+  background-color: yellow;
+}
 .field--name-body .hierarchical-tree ul {
   margin-left: 30px;
 }
