@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_location
     - field.storage.node.field_seminar_start_date
     - search_api.index.default_multilingual_node_index
+    - system.menu.main
   module:
     - better_exposed_filters
     - datetime
@@ -835,6 +836,16 @@ display:
       defaults:
         cache: false
       exposed_block: true
+      menu:
+        type: normal
+        title: 'search seminars'
+        description: ''
+        expanded: false
+        parent: 'menu_link_content:c0a23e19-f924-43d5-a53e-7065d04543d6'
+        weight: -45
+        context: '0'
+        menu_name: main
+        enabled: false
     cache_metadata:
       max-age: -1
       contexts:
