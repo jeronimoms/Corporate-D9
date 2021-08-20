@@ -170,7 +170,7 @@ span.label, span.pages{
 .node--view-mode-full{
   .field--label-above{
     padding-bottom: 1rem;
-    .field__label{
+    .field__label, .field_label{
       font-weight: 600;
     }
   }
@@ -1145,11 +1145,6 @@ a.quiz-start-link:hover {
       margin-bottom: 0;
     }
   }
-  .field--name-body{
-    p{
-      margin-bottom: 1rem;
-    }
-  }
   .field--name-field-item-type, .field--name-field-material-country, .field--name-field-available-in-languages, .field--name-field-intellectual-property-righ{
     .field__label{
       color: $text-color-blue;
@@ -1172,6 +1167,10 @@ a.quiz-start-link:hover {
     .field__item{
       color: $text-color-blue;
     }
+  }
+  /* Providers */
+  .field--name-field-provider-name-english, .field--name-field-provider-name-original, .provider-url{
+    padding-left: 1rem;
   }
 }
 
