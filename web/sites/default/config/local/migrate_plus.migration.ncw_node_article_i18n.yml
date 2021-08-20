@@ -57,7 +57,7 @@ process:
       process:
         value:
           plugin: format_date
-          from_format: Y-m-d
+          from_format: 'Y-m-d H:i:s'
           to_format: 'Y-m-d\TH:i:s'
           from_timezone: Europe/Madrid
           to_timezone: Europe/Madrid
