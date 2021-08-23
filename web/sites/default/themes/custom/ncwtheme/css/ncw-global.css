@@ -2875,6 +2875,14 @@ a.quiz-start-link:hover {
 }
 
 /* Anonymous Dangerous content type */
+.node--type-dangerous-substances #block-ncwtheme-page-title h1 {
+  clear: both;
+}
+.node--type-dangerous-substances .back-before-title {
+  float: right;
+  padding-bottom: 0.5rem;
+}
+
 .wrapper-tags {
   display: flex;
 }

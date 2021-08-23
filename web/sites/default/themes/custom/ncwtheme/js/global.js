@@ -134,6 +134,11 @@ jQuery(document).ready(function($) {
     $('.block-views-blocklanding-menu-block-1').addClass('moved-by-jquery');
   }
 
+  //Move back button MSD
+  if ($(".back-before-title")[0]) {
+    $('.back-before-title').prependTo('#block-ncwtheme-page-title');
+  }
+
   //Fix menu mobile Sticky
   if ($("#navbar-main .navbar-toggler")[0]) {
     $("#navbar-main > button").click(function(){
