@@ -145,14 +145,21 @@ body.node--type-publication{
   }
   .publications-row{
     display: flex;
+    padding-top: 1rem;
   }
   .publications-row.custom-add-margin{
-    padding-top: 1rem;
     padding-bottom: 2rem;
+  }
+  .publications-row.add-border{
+    border-bottom: 1px solid $bg-color-blue;
+    padding-bottom: 1.5rem;
   }
   .publications-detail-right-column{
     width: 100%;
     padding-left: 2rem;
+    h1{
+      padding-bottom: 0;
+    }
     h2 {
       margin-bottom: 21px;
       font-weight: normal;
@@ -164,6 +171,9 @@ body.node--type-publication{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+    .publication-detail-tags{
+      padding-bottom: 1rem;
     }
   }
   .field--name-field-image-media{
@@ -232,6 +242,7 @@ body.node--type-publication{
     padding: 2rem 0 2rem 0;
     width: 100vw;
     position: relative;
+    margin-top: -1px;
     .publications-detail-right-column{
       padding-top: 1rem;
       padding-right: 6rem;
@@ -331,7 +342,7 @@ body.node--type-publication{
 .node--type-publication{
   .field--name-field-related-publications{
     .field__item{
-      margin-top: 1rem;
+      margin-top: 0;
     }
     > div:nth-child(1){
       margin-top: 0;
@@ -446,6 +457,27 @@ body.node--type-publication{
               background: url(../images/arrow.png) no-repeat $bg-color-blue calc(100% - 5px) 9px;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+.wrapper-view-aditional-publications{
+  width: 100%;
+  float: left;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  .revamp-row{
+    .node--type-publication {
+      .rr-left-column{
+        .field--name-field-image-media{
+          margin-right: 0;
+        }
+      }
+      .rr-right-column {
+        div.field--name-node-link {
+          text-align: left;
         }
       }
     }

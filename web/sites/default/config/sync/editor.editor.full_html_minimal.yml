@@ -1,0 +1,85 @@
+uuid: adfa0255-9328-47df-a250-29ceed609abf
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html_minimal
+  module:
+    - ckeditor
+format: full_html_minimal
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Underline
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+            - Undo
+            - Redo
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Actions
+          items:
+            - Copy
+            - Paste
+            - PasteText
+            - PasteFromWord
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+      -
+        -
+          name: Count
+          items:
+            - Resize
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    drupallink:
+      linkit_enabled: false
+      linkit_profile: ''
+    font:
+      font_names: ''
+      font_sizes: ''
+    wordcount:
+      enable: true
+      show_remaining: true
+      show_paragraphs: false
+      show_word_count: true
+      show_char_count: true
+      count_bytes: false
+      count_spaces: false
+      count_html: 0
+      count_line_breaks: false
+      max_words: -1
+      max_chars: -1
+      hard_limit: 1
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null
