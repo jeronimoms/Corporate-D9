@@ -76,7 +76,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         foreach ($langs as $lang => $node_lang) {
           $trans_value = $this->getFieldValue($node_lang, $definition, $field_name);
           if (isset($trans_value) && !empty($trans_value)) {
-            $data[$field_name][$lang]['value'] = $trans_value;
+            $data[$field_name][$lang] = $trans_value;
           }
         }
       }
@@ -127,6 +127,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
             $referers[] = $this->getTaxonomyValues($value['target_id'], $settings);
           }
         }
+
         return [$field_name => $referers];
       }
     }
@@ -166,6 +167,9 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
   public function getTaxonomyValues($id, array $settings) {
     /** @var \Drupal\taxonomy\Entity\Term $term */
     $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($id);
+    if (!isset($term)) {
+      return [];
+    }
     $term_data = [
       'tid' => $term->id(),
       'vid' => $term->get('vid')->getString(),
@@ -249,34 +253,42 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
   public function getMediaValues($id, array $settings) {
     /** @var \Drupal\media\Entity\Media $ref */
     $media = $this->entityTypeManager->getStorage('media')->load($id);
-
+    $res = [];
     $field_ref = NULL;
-    if ($media->bundle() == 'image_and_link') {
-      $field_ref = 'field_media_image_1';
+
+    if ($media->bundle() == 'image' ||
+      $media->bundle() == 'image_caption' ||
+      $media->bundle() == 'image_and_link'
+    ) {
+      if ($media->bundle() == 'image_and_link') {
+        $field_ref = 'field_media_image_1';
+      }
+      else {
+        $field_ref = 'field_media_image';
+      }
+
     }
-    else {
-      $field_ref = 'field_media_image';
+    elseif ($media->bundle() == 'document') {
+      $field_ref = 'field_media_document';
     }
 
     $media_file_values = $media->get($field_ref)->getValue()[0];
 
     /** @var \Drupal\file_entity\Entity\FileEntity $file */
     $file = $this->entityTypeManager->getStorage('file')->load($media_file_values['target_id']);
+    $res = $this->getNormalicedMediaValues($file);
 
-    $res = [];
     if (strpos($media->bundle(), 'image') > -1) {
-      $res = $this->getNormalicedMediaImageValues($file);
       $res['type'] = $media->bundle();
       $res['field_file_image_alt_text'] = $media_file_values['alt'];
       $res['field_file_image_title_text'] = $media_file_values['title'];
       $res['field_file_description'] = $media->get('field_description')->getValue();
-      return $res;
     }
 
     return $res;
   }
 
-  public function getNormalicedMediaImageValues(FileEntity $file) {
+  public function getNormalicedMediaValues(FileEntity $file) {
     return [
       'fid' => $file->id(),
       'filename' => $file->getFilename(),
