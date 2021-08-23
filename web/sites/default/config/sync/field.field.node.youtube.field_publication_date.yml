@@ -1,0 +1,24 @@
+uuid: 81d5fa1f-af98-4506-897c-21426d4baa7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.youtube
+  module:
+    - datetime
+id: node.youtube.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: youtube
+label: 'Youtube date'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

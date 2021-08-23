@@ -1,0 +1,80 @@
+uuid: 2ccc2c0b-bd8c-49bc-b8b1-62c2923744f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - ckeditor
+format: restricted_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Underline
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Actions
+          items:
+            - PasteFromWord
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+      -
+        -
+          name: Count
+          items:
+            - Resize
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    drupallink:
+      linkit_enabled: false
+      linkit_profile: ''
+    font:
+      font_names: ''
+      font_sizes: ''
+    wordcount:
+      enable: true
+      show_remaining: true
+      show_paragraphs: false
+      show_word_count: true
+      show_char_count: true
+      count_bytes: false
+      count_spaces: false
+      count_html: 0
+      count_line_breaks: false
+      max_words: -1
+      max_chars: -1
+      hard_limit: 1
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

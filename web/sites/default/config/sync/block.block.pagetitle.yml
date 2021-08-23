@@ -20,5 +20,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/publications/topic/*'
+    pages: "/publications/topic/*\r\n/publications/type/*"
     negate: false

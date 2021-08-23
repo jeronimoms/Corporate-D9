@@ -187,6 +187,7 @@ footer,
 .block-workbench-access,
 .block-addtoany,
 video, audio, object, iframe,
+.field--name-body img,
 p img,
 p iframe,
 aside.section,
@@ -194,7 +195,11 @@ aside.section,
 .publications-left-column,
 .menu-link-image,
 .field--name-field-image-media,
-.field--name-field-image-menu-main {
+.field--name-field-image-menu-main,
+#share-this-on,
+.block-views-blockinfographic-block-3,
+table td img,
+.field--name-field-album-pictures {
     display: none;
   }
 
@@ -328,19 +333,55 @@ body.user-logged-in.toolbar-tray-open #header {
     max-width: 100%;
   }
 
-  .view-landing-menu {
+  .view-landing-menu,
+.view-infographic,
+.view-photo-gallery-album {
     display: block !important;
   }
-  .view-landing-menu .view-content.row {
+  .view-landing-menu .view-content.row,
+.view-infographic .view-content.row,
+.view-photo-gallery-album .view-content.row {
     display: block !important;
   }
-  .view-landing-menu .list--item {
+  .view-landing-menu .list--item,
+.view-landing-menu .infographic-item-view,
+.view-infographic .list--item,
+.view-infographic .infographic-item-view,
+.view-photo-gallery-album .list--item,
+.view-photo-gallery-album .infographic-item-view {
     margin: 0 0 24pt !important;
     padding: 0 !important;
     width: 100% !important;
     max-width: 100%;
   }
-  .view-landing-menu .menu-link-image {
+  .view-landing-menu .menu-link-image,
+.view-landing-menu .views-field-field-image,
+.view-infographic .menu-link-image,
+.view-infographic .views-field-field-image,
+.view-photo-gallery-album .menu-link-image,
+.view-photo-gallery-album .views-field-field-image {
+    display: none !important;
+  }
+  .view-landing-menu h2.field-content,
+.view-infographic h2.field-content,
+.view-photo-gallery-album h2.field-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .view-landing-menu h2.field-content a,
+.view-infographic h2.field-content a,
+.view-photo-gallery-album h2.field-content a {
+    font-family: "Open Sans", sans-serif !important;
+  }
+  .view-landing-menu .row,
+.view-infographic .row,
+.view-photo-gallery-album .row {
+    display: block !important;
+    width: 100% !important;
+  }
+  .view-landing-menu .views-field-field-thumbnail-media,
+.view-infographic .views-field-field-thumbnail-media,
+.view-photo-gallery-album .views-field-field-thumbnail-media {
     display: none !important;
   }
 
@@ -357,9 +398,11 @@ body.user-logged-in.toolbar-tray-open #header {
     display: block !important;
   }
 
-  .block-views-landing-page .menu-link-text a {
+  .related_wiki_head .block-views-landing-page .menu-link-text a {
     font-family: "Open Sans", sans-serif !important;
     font-size: 16pt !important;
+    height: auto !important;
+    background: none !important;
   }
 
   .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a,
