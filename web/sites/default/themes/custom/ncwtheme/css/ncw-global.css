@@ -1034,6 +1034,15 @@ h1, .page-title-h1 {
   font-weight: 600;
 }
 
+h1.clear-h1 {
+  clear: both;
+  padding-top: 1rem;
+}
+
+h1.dangerous-h1 {
+  margin-bottom: 0;
+}
+
 h2 {
   font-size: 1.35rem;
   margin-bottom: 0;
@@ -1998,7 +2007,7 @@ span.label, span.pages {
 .node--view-mode-full .field--label-above {
   padding-bottom: 1rem;
 }
-.node--view-mode-full .field--label-above .field__label {
+.node--view-mode-full .field--label-above .field__label, .node--view-mode-full .field--label-above .field_label {
   font-weight: 600;
 }
 
@@ -2042,7 +2051,7 @@ span.pages {
 }
 
 /* Links download */
-#main a[target=_blank].link-download {
+#main .node--view-mode-full a[target=_blank].link-download {
   display: inline-block;
   font-size: 0.9rem;
   font-weight: 700;
@@ -2052,10 +2061,10 @@ span.pages {
   padding-right: 0;
   text-transform: uppercase;
 }
-#main a[target=_blank].link-download:hover {
+#main .node--view-mode-full a[target=_blank].link-download:hover {
   background: transparent;
 }
-#main a[target=_blank].link-download:before {
+#main .node--view-mode-full a[target=_blank].link-download:before {
   content: " ";
   display: inline-block;
   background: url(../images/download-thesaurus.png) no-repeat 1px 3px;
@@ -2064,24 +2073,37 @@ span.pages {
   padding-right: 1px;
   vertical-align: text-bottom;
 }
-#main .download-pdf .link-download:hover {
+#main .node--view-mode-full .download-pdf .link-download:hover {
   background: transparent;
   border-bottom: 0;
   text-decoration: underline;
 }
 
-.node--type-infographic #main a[target=_blank].link-download:before {
+.node--type-infographic #main .link-download {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: transparent;
+  border-bottom: 1px solid #FFF;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: uppercase;
+}
+.node--type-infographic #main .link-download:hover {
+  background: transparent;
+}
+.node--type-infographic #main .link-download:before {
   content: none;
 }
-.node--type-infographic #main a[target=_blank].link-download:after {
+.node--type-infographic #main .link-download:after {
   content: " ";
   display: inline-block;
   background: url(../images/external_link-v2.png) no-repeat 1px 4px;
   width: 15px;
   height: 20px;
-  padding-right: 0px;
-  vertical-align: text-bottom;
   margin-left: 5px;
+  padding-right: 1px;
+  vertical-align: text-bottom;
 }
 
 .download-pdf .separator-download:last-child {
@@ -2163,6 +2185,14 @@ body ul li .introduction-title a:hover {
 }
 
 /* Share this on articles icons */
+#block-addtoanybuttons {
+  padding-left: 1rem;
+}
+
+#main #block-addtoanybuttons {
+  padding-left: 0;
+}
+
 #share-this-on {
   float: left;
   padding-top: 1rem;
@@ -2806,6 +2836,10 @@ a.quiz-start-link:hover {
   border-left: 25px solid #FFFBD9;
 }
 
+/* Dangerous content type */
+.dangerous-wrapper {
+  /* Providers */
+}
 .dangerous-wrapper .field__label {
   font-size: 0.9rem;
 }
@@ -2818,9 +2852,6 @@ a.quiz-start-link:hover {
 }
 .dangerous-wrapper .field__item p {
   margin-bottom: 0;
-}
-.dangerous-wrapper .field--name-body p {
-  margin-bottom: 1rem;
 }
 .dangerous-wrapper .field--name-field-item-type .field__label, .dangerous-wrapper .field--name-field-material-country .field__label, .dangerous-wrapper .field--name-field-available-in-languages .field__label, .dangerous-wrapper .field--name-field-intellectual-property-righ .field__label {
   color: #003399;
@@ -2839,7 +2870,38 @@ a.quiz-start-link:hover {
 .dangerous-wrapper .field--name-field-substance-description .field__item, .dangerous-wrapper .field--name-field-year .field__item {
   color: #003399;
 }
+.dangerous-wrapper .field--name-field-provider-name-english, .dangerous-wrapper .field--name-field-provider-name-original, .dangerous-wrapper .provider-url {
+  padding-left: 1rem;
+}
 
+/* Anonymous Dangerous content type */
+.wrapper-tags {
+  display: flex;
+}
+.wrapper-tags .tag {
+  margin-right: 5px;
+}
+.wrapper-tags .tag .field__label {
+  display: none;
+}
+
+.wrapper-dangerous-wrapper {
+  padding-top: 1rem;
+  /* Providers */
+}
+.wrapper-dangerous-wrapper .field__label {
+  font-weight: 600;
+  padding-top: 1rem;
+}
+.wrapper-dangerous-wrapper .field--name-field-provider-name-english, .wrapper-dangerous-wrapper .field--name-field-provider-name-original, .wrapper-dangerous-wrapper .provider-url {
+  padding-left: 0;
+}
+
+.wrapper-ds-content-description .field__label {
+  display: none;
+}
+
+/* Wiki articles */
 .node--type-wiki-page .field__label {
   font-size: 0.9rem;
 }
@@ -5163,14 +5225,21 @@ body.node--type-publication {
 }
 .node--type-publication .publications-row {
   display: flex;
+  padding-top: 1rem;
 }
 .node--type-publication .publications-row.custom-add-margin {
-  padding-top: 1rem;
   padding-bottom: 2rem;
+}
+.node--type-publication .publications-row.add-border {
+  border-bottom: 1px solid #003399;
+  padding-bottom: 1.5rem;
 }
 .node--type-publication .publications-detail-right-column {
   width: 100%;
   padding-left: 2rem;
+}
+.node--type-publication .publications-detail-right-column h1 {
+  padding-bottom: 0;
 }
 .node--type-publication .publications-detail-right-column h2 {
   margin-bottom: 21px;
@@ -5183,6 +5252,9 @@ body.node--type-publication {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.node--type-publication .publications-detail-right-column .publication-detail-tags {
+  padding-bottom: 1rem;
 }
 .node--type-publication .field--name-field-image-media img {
   float: left;
@@ -5241,6 +5313,7 @@ body.node--type-publication {
   padding: 2rem 0 2rem 0;
   width: 100vw;
   position: relative;
+  margin-top: -1px;
 }
 .node--type-publication .related-resources-fluid .publications-detail-right-column {
   padding-top: 1rem;
@@ -5329,7 +5402,7 @@ body.node--type-publication {
 
 /* Related publications and Twing publicattions */
 .node--type-publication .field--name-field-related-publications .field__item {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 .node--type-publication .field--name-field-related-publications > div:nth-child(1) {
   margin-top: 0;
@@ -5434,6 +5507,19 @@ body.node--type-publication {
 }
 .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a:hover {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
+}
+
+.wrapper-view-aditional-publications {
+  width: 100%;
+  float: left;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.wrapper-view-aditional-publications .revamp-row .node--type-publication .rr-left-column .field--name-field-image-media {
+  margin-right: 0;
+}
+.wrapper-view-aditional-publications .revamp-row .node--type-publication .rr-right-column div.field--name-node-link {
+  text-align: left;
 }
 
 /* Responsive */
@@ -5683,6 +5769,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .field--name-body .hierarchical-tree li a {
   border-bottom: none;
   font-weight: 600;
+}
+.field--name-body .hierarchical-tree li span.term-selected {
+  background-color: yellow;
 }
 .field--name-body .hierarchical-tree ul {
   margin-left: 30px;
@@ -6132,13 +6221,13 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   display: none;
 }
 
-.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-by {
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-by, .view-musculoskeletal-disorders-list .view-filters .form-item-sort-by {
   order: 3;
 }
-.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-order {
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-order, .view-musculoskeletal-disorders-list .view-filters .form-item-sort-order {
   order: 4;
 }
-.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .btn-primary {
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .btn-primary, .view-musculoskeletal-disorders-list .view-filters .btn-primary {
   margin-left: 0;
   margin-right: 10px;
 }
@@ -6204,9 +6293,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   font-size: 0.9rem;
 }
 
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item,
-.node--type-musculoskeletal-disorders .field--name-field-material-country,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages {
   display: flex;
   align-items: center;
   margin-bottom: 0.2rem;
@@ -6214,24 +6303,24 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   padding-top: 0;
   font-size: 0.9rem;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__label,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__label,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__label {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__label,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__label,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__label {
   margin: 0 5px 0 0;
   padding: 0;
   color: #003399;
   min-width: auto;
   font-weight: bold;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items {
   display: flex;
   align-items: center;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items .field__item,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items .field__item,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item {
   display: block;
   margin: 0 4px 0 0;
   background-color: #e8ecf5;
@@ -6241,62 +6330,62 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   color: #003399;
   font-size: 0.687rem;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item a,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item a,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item a {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items .field__item a,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items .field__item a,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item a {
   border: none;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item p,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item p,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item p {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items .field__item p,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items .field__item p,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item p {
   margin: 0;
 }
-.node--type-musculoskeletal-disorders .field--name-field-body-original {
+.node--type-musculoskeletal-disorders #main .field--name-field-body-original {
   font-size: 0.875rem;
 }
-.node--type-musculoskeletal-disorders .field--name-field-body-original p {
+.node--type-musculoskeletal-disorders #main .field--name-field-body-original p {
   margin: 0;
 }
-.node--type-musculoskeletal-disorders .field--type-language-field,
-.node--type-musculoskeletal-disorders .field--type-entity-reference,
-.node--type-musculoskeletal-disorders .field--type-link {
+.node--type-musculoskeletal-disorders #main .field--type-language-field,
+.node--type-musculoskeletal-disorders #main .field--type-entity-reference,
+.node--type-musculoskeletal-disorders #main .field--type-link {
   margin-bottom: 0.4rem;
   padding: 0;
   font-size: 0.875rem;
 }
-.node--type-musculoskeletal-disorders .field--type-language-field p,
-.node--type-musculoskeletal-disorders .field--type-entity-reference p,
-.node--type-musculoskeletal-disorders .field--type-link p {
+.node--type-musculoskeletal-disorders #main .field--type-language-field p,
+.node--type-musculoskeletal-disorders #main .field--type-entity-reference p,
+.node--type-musculoskeletal-disorders #main .field--type-link p {
   margin: 0;
 }
-.node--type-musculoskeletal-disorders .field--type-language-field a,
-.node--type-musculoskeletal-disorders .field--type-entity-reference a,
-.node--type-musculoskeletal-disorders .field--type-link a {
+.node--type-musculoskeletal-disorders #main .field--type-language-field a,
+.node--type-musculoskeletal-disorders #main .field--type-entity-reference a,
+.node--type-musculoskeletal-disorders #main .field--type-link a {
   text-decoration: none;
   color: #003399;
   border-bottom: 1px solid #c72272;
 }
-.node--type-musculoskeletal-disorders .field--type-language-field .field__label,
-.node--type-musculoskeletal-disorders .field--type-entity-reference .field__label,
-.node--type-musculoskeletal-disorders .field--type-link .field__label {
+.node--type-musculoskeletal-disorders #main .field--type-language-field .field__label,
+.node--type-musculoskeletal-disorders #main .field--type-entity-reference .field__label,
+.node--type-musculoskeletal-disorders #main .field--type-link .field__label {
   font-weight: bold;
 }
-.node--type-musculoskeletal-disorders .field--name-field-year .field__item {
+.node--type-musculoskeletal-disorders #main .field--name-field-year .field__item {
   color: #003399;
   font-size: 0.785rem;
   font-weight: bold;
 }
-.node--type-musculoskeletal-disorders .tags-wrapper {
+.node--type-musculoskeletal-disorders #main .tags-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-start;
   margin: 0 0 20px 0;
 }
-.node--type-musculoskeletal-disorders .tags-wrapper .field {
+.node--type-musculoskeletal-disorders #main .tags-wrapper .field {
   margin: 0 1rem 0.2rem 0;
 }
-.node--type-musculoskeletal-disorders .node__content div > h2 {
+.node--type-musculoskeletal-disorders #main .node__content div > h2 {
   margin: 0;
   padding-bottom: 0;
 }

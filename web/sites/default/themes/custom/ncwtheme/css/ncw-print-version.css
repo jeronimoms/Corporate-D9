@@ -208,6 +208,7 @@ table td img,
     display: block !important;
   }
 
+
   body.user-logged-in #header,
 body.user-logged-in.toolbar-tray-open #header {
     padding: 0;
@@ -215,6 +216,7 @@ body.user-logged-in.toolbar-tray-open #header {
 
   #header,
 #page-wrapper #header {
+
     position: relative !important;
     width: 100%;
     transition: none;

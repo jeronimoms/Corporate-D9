@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.osha_resources
     - core.entity_view_mode.node.teaser
     - core.entity_view_mode.node.view
     - field.storage.node.field_publication_date
@@ -1711,7 +1712,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: osha_resources
       relationships: {  }
       arguments:
         nid:

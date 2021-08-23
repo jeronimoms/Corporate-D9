@@ -170,7 +170,7 @@ span.label, span.pages{
 .node--view-mode-full{
   .field--label-above{
     padding-bottom: 1rem;
-    .field__label{
+    .field__label, .field_label{
       font-weight: 600;
     }
   }
@@ -221,53 +221,67 @@ span.pages{
 
 /* Links download */
 #main{
-  a[target=_blank].link-download{
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    background: transparent;
-    border-bottom: 1px solid $bg-color-white;
-    padding-left: 0;
-    padding-right: 0;
-    text-transform: uppercase;
-    &:hover{
-      background: transparent;
-    }
-    &:before{
-      content: ' ';
+  .node--view-mode-full{
+    a[target=_blank].link-download{
       display: inline-block;
-      background: url(../images/download-thesaurus.png) no-repeat 1px 3px;
-      width: 22px;
-      height: 20px;
-      padding-right: 1px;
-      vertical-align: text-bottom;
-    }
-  }
-  .download-pdf{
-    .link-download{
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: transparent;
+      border-bottom: 1px solid $bg-color-white;
+      padding-left: 0;
+      padding-right: 0;
+      text-transform: uppercase;
       &:hover{
         background: transparent;
-        border-bottom: 0;
-        text-decoration: underline;
+      }
+      &:before{
+        content: ' ';
+        display: inline-block;
+        background: url(../images/download-thesaurus.png) no-repeat 1px 3px;
+        width: 22px;
+        height: 20px;
+        padding-right: 1px;
+        vertical-align: text-bottom;
+      }
+    }
+    .download-pdf{
+      .link-download{
+        &:hover{
+          background: transparent;
+          border-bottom: 0;
+          text-decoration: underline;
+        }
       }
     }
   }
 }
-.node--type-infographic{
-  #main{
-    a[target=_blank].link-download{
+
+.node--type-infographic {
+  #main {
+    .link-download{
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: transparent;
+      border-bottom: 1px solid $bg-color-white;
+      padding-left: 0;
+      padding-right: 0;
+      text-transform: uppercase;
+      &:hover{
+        background: transparent;
+      }
       &:before{
         content: none;
       }
       &:after{
-        content: " ";
+        content: ' ';
         display: inline-block;
         background: url(../images/external_link-v2.png) no-repeat 1px 4px;
         width: 15px;
         height: 20px;
-        padding-right: 0px;
-        vertical-align: text-bottom;
         margin-left: 5px;
+        padding-right: 1px;
+        vertical-align: text-bottom;
       }
     }
   }
@@ -362,6 +376,15 @@ body {
 }
 
 /* Share this on articles icons */
+#block-addtoanybuttons{
+  padding-left: 1rem;
+}
+#main{
+  #block-addtoanybuttons{
+    padding-left: 0;
+  }
+}
+
 #share-this-on{
   float: left;
   padding-top: 1rem;
@@ -1115,6 +1138,7 @@ a.quiz-start-link:hover {
   }
 }
 
+/* Dangerous content type */
 .dangerous-wrapper{
   .field__label{
     font-size: 0.9rem;
@@ -1129,11 +1153,6 @@ a.quiz-start-link:hover {
     }
     p{
       margin-bottom: 0;
-    }
-  }
-  .field--name-body{
-    p{
-      margin-bottom: 1rem;
     }
   }
   .field--name-field-item-type, .field--name-field-material-country, .field--name-field-available-in-languages, .field--name-field-intellectual-property-righ{
@@ -1159,8 +1178,40 @@ a.quiz-start-link:hover {
       color: $text-color-blue;
     }
   }
+  /* Providers */
+  .field--name-field-provider-name-english, .field--name-field-provider-name-original, .provider-url{
+    padding-left: 1rem;
+  }
 }
 
+/* Anonymous Dangerous content type */
+.wrapper-tags{
+  display: flex;
+  .tag{
+    margin-right: 5px;
+    .field__label{
+      display: none;
+    }
+  }
+}
+.wrapper-dangerous-wrapper{
+  padding-top: 1rem;
+  .field__label{
+    font-weight: 600;
+    padding-top: 1rem;
+  }
+  /* Providers */
+  .field--name-field-provider-name-english, .field--name-field-provider-name-original, .provider-url{
+    padding-left: 0;
+  }
+}
+.wrapper-ds-content-description{
+  .field__label{
+    display: none;
+  }
+}
+
+/* Wiki articles */
 .node--type-wiki-page{
   .field__label{
     font-size: 0.9rem;

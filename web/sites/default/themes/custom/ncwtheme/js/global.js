@@ -152,6 +152,11 @@ jQuery(document).ready(function($) {
     $('.publications-row').addClass('custom-add-margin');
   }
 
+  //Add class to add border in content publications if Additional publications on this topic exist
+  if ($(".wrapper-view-aditional-publications")[0]) {
+    $('.publications-row').addClass('add-border');
+  }
+
   //Hide Related publications if Twin publications exist
   if ($(".related-resources-fluid .twin-publications")[0]) {
     $('.related-resources-fluid  .related-resources-publications').hide();
@@ -232,6 +237,7 @@ jQuery(document).ready(function($) {
     $(this).toggleClass('expanded');
     $(this).parent('.has-child').find('> .item-list > ul').slideToggle('slow');
   });
+
 
   //Tooltip Thesaurus
   if ($(".content-tooltip img")[0]) {
@@ -315,6 +321,42 @@ jQuery(document).ready(function($) {
 //Load function
 (function($) {
   $(window).on('load', function() {
+
+    //Selected term Hierarchical View
+    if ($(".hierarchical-tree")[0]) {
+      var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+
+          if (sParameterName[0] === sParam) {
+            return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+          }
+        }
+        return false;
+      };
+      var thesaurusTermId = getUrlParameter('term');
+      var thesaurusClass = '.thesaurus-term-' + thesaurusTermId;
+
+      // Add the class to highlight the term
+      $(thesaurusClass).addClass('term-selected');
+
+      // Open the accordion for the current term
+      $(thesaurusClass).parent().siblings("span.expand_menu").click();
+
+      // Open the accordion for the parent elements
+      var elem = $(thesaurusClass).closest("div.item-list");
+      while(elem.length > 0)
+      {
+        elem.siblings("span.expand_menu").click();
+        elem = elem.parent().closest("div.item-list");
+      }
+    }
+
     //Move dateofdirective filter (Legislation - EU Directives)
     if ($("#block-dateofdirective")[0]) {
       $('#block-dateofdirective').insertBefore('#views-exposed-form-search-directives-search-directory-page .form-actions');
