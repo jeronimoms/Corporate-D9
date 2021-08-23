@@ -2,15 +2,6 @@ display:
   default:
     display_options:
       use_more_text: 'Вижте всички'
-  block_5:
-    display_options:
-      filters:
-        field_publication_date_value:
-          expose:
-            description: ''
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
   block_2:
     display_options:
       use_more_text: 'Вижте всички'
