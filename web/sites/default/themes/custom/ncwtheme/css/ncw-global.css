@@ -1034,6 +1034,15 @@ h1, .page-title-h1 {
   font-weight: 600;
 }
 
+h1.clear-h1 {
+  clear: both;
+  padding-top: 1rem;
+}
+
+h1.dangerous-h1 {
+  margin-bottom: 0;
+}
+
 h2 {
   font-size: 1.35rem;
   margin-bottom: 0;
@@ -2176,6 +2185,14 @@ body ul li .introduction-title a:hover {
 }
 
 /* Share this on articles icons */
+#block-addtoanybuttons {
+  padding-left: 1rem;
+}
+
+#main #block-addtoanybuttons {
+  padding-left: 0;
+}
+
 #share-this-on {
   float: left;
   padding-top: 1rem;
@@ -2819,6 +2836,7 @@ a.quiz-start-link:hover {
   border-left: 25px solid #FFFBD9;
 }
 
+/* Dangerous content type */
 .dangerous-wrapper {
   /* Providers */
 }
@@ -2856,6 +2874,34 @@ a.quiz-start-link:hover {
   padding-left: 1rem;
 }
 
+/* Anonymous Dangerous content type */
+.wrapper-tags {
+  display: flex;
+}
+.wrapper-tags .tag {
+  margin-right: 5px;
+}
+.wrapper-tags .tag .field__label {
+  display: none;
+}
+
+.wrapper-dangerous-wrapper {
+  padding-top: 1rem;
+  /* Providers */
+}
+.wrapper-dangerous-wrapper .field__label {
+  font-weight: 600;
+  padding-top: 1rem;
+}
+.wrapper-dangerous-wrapper .field--name-field-provider-name-english, .wrapper-dangerous-wrapper .field--name-field-provider-name-original, .wrapper-dangerous-wrapper .provider-url {
+  padding-left: 0;
+}
+
+.wrapper-ds-content-description .field__label {
+  display: none;
+}
+
+/* Wiki articles */
 .node--type-wiki-page .field__label {
   font-size: 0.9rem;
 }

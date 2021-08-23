@@ -376,6 +376,15 @@ body {
 }
 
 /* Share this on articles icons */
+#block-addtoanybuttons{
+  padding-left: 1rem;
+}
+#main{
+  #block-addtoanybuttons{
+    padding-left: 0;
+  }
+}
+
 #share-this-on{
   float: left;
   padding-top: 1rem;
@@ -1129,6 +1138,7 @@ a.quiz-start-link:hover {
   }
 }
 
+/* Dangerous content type */
 .dangerous-wrapper{
   .field__label{
     font-size: 0.9rem;
@@ -1174,6 +1184,34 @@ a.quiz-start-link:hover {
   }
 }
 
+/* Anonymous Dangerous content type */
+.wrapper-tags{
+  display: flex;
+  .tag{
+    margin-right: 5px;
+    .field__label{
+      display: none;
+    }
+  }
+}
+.wrapper-dangerous-wrapper{
+  padding-top: 1rem;
+  .field__label{
+    font-weight: 600;
+    padding-top: 1rem;
+  }
+  /* Providers */
+  .field--name-field-provider-name-english, .field--name-field-provider-name-original, .provider-url{
+    padding-left: 0;
+  }
+}
+.wrapper-ds-content-description{
+  .field__label{
+    display: none;
+  }
+}
+
+/* Wiki articles */
 .node--type-wiki-page{
   .field__label{
     font-size: 0.9rem;
