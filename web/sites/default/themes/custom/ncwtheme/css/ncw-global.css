@@ -4280,7 +4280,7 @@ body.user-logged-in.toolbar-tray-open #header {
     cursor: pointer;
     text-indent: -9999px;
     position: relative;
-    top: 5px;
+    top: -16px;
     right: -27px;
   }
   #block-searchsite #edit-actions .btn-primary.activate, #block-searchsite #edit-actions--2 .btn-primary.activate {
@@ -6528,6 +6528,17 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
   .news-events #main ul li:nth-child(3) {
     float: none;
+  }
+
+  .safety-and-health-legislation-european-directives .sidebar-first .views-exposed-form h2 {
+    background: #cfddee;
+    color: #003399;
+    margin: 0;
+    padding: 0 1rem 0.3rem;
+    font-weight: 600;
+  }
+  .safety-and-health-legislation-european-directives .sidebar-first .form-row > fieldset {
+    width: 100%;
   }
 }
 /* End Media 990px */
