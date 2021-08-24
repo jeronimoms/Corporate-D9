@@ -113,6 +113,11 @@ jQuery(document).ready(function($) {
     $('.node--type-article #main .field--name-field-image-caption img').addClass('custom-reset-margin');
   }
 
+  //Move AddToAny to the bottom page
+  if ($(".move-add-to-any")[0]) {
+    $('.addtoany_list').appendTo('.move-add-to-any');
+  }
+
   //Move block theasaurus in Thesaurus Detail
   if ($(".move-block-thesaurus")[0]) {
     $('#block-headerthesaurus-2').appendTo('.move-block-thesaurus');
