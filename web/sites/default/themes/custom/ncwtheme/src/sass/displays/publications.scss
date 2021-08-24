@@ -436,7 +436,20 @@ body.node--type-publication{
 /* Related publications - Videos/Youtube */
 .field-item.youtube-field{
   float: left;
-  margin-right: 2em;
+  width: 265px;
+  margin-right: 10px;
+  h2{
+    font-size: 1.1rem;
+    line-height: initial;
+  }
+  iframe{
+    width: 265px;
+    height: auto;
+  }
+}
+
+.field-item.youtube-field.field-2, .field-item.youtube-field.field-4{
+  margin-right: 0;
 }
 
 /* Related publications - Infographics */
@@ -457,8 +470,6 @@ body.node--type-publication{
 .field-item.infographic-field.field-3, .field-item.infographic-field.field-6{
   margin-right: 0;
 }
-
-
 
 /* Related publications in articles */
 .related-publications-in-articles{
@@ -518,7 +529,7 @@ body.node--type-publication{
       display: none;
     }
   }
-  /* Publications view*/
+  /* Publications view */
   .tools-and-publications-publications{
     .revamp-row{
       .publications-left-column{
