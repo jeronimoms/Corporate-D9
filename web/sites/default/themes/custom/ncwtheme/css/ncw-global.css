@@ -2501,6 +2501,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   font-size: 0.9rem;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles {
+  clear: both;
   margin-top: 0.8rem;
   margin-bottom: 10px;
   background: #e8ecf5;
