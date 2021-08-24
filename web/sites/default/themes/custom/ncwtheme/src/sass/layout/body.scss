@@ -159,6 +159,16 @@ body {
   margin-right: 0;
 }
 
+a.quiz-start-link {
+  display: block;
+  text-align: center;
+  border-bottom: 0!important;
+  font-weight: bold;
+  background: url(../images/intro.png) no-repeat 50% 10%;
+  padding-top: 255px;
+  position: relative;
+}
+
 /* Labels */
 span.label, span.pages{
   font-family: 'Open Sans',sans-serif;

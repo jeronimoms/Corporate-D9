@@ -1997,6 +1997,16 @@ body .news_and_events.block-menu-block ul li .link_news_events a {
   margin-right: 0;
 }
 
+a.quiz-start-link {
+  display: block;
+  text-align: center;
+  border-bottom: 0 !important;
+  font-weight: bold;
+  background: url(../images/intro.png) no-repeat 50% 10%;
+  padding-top: 255px;
+  position: relative;
+}
+
 /* Labels */
 span.label, span.pages {
   font-family: "Open Sans", sans-serif;
@@ -5539,7 +5549,20 @@ body.node--type-publication {
 /* Related publications - Videos/Youtube */
 .field-item.youtube-field {
   float: left;
-  margin-right: 2em;
+  width: 265px;
+  margin-right: 10px;
+}
+.field-item.youtube-field h2 {
+  font-size: 1.1rem;
+  line-height: initial;
+}
+.field-item.youtube-field iframe {
+  width: 265px;
+  height: auto;
+}
+
+.field-item.youtube-field.field-2, .field-item.youtube-field.field-4 {
+  margin-right: 0;
 }
 
 /* Related publications - Infographics */
@@ -5602,7 +5625,7 @@ body.node--type-publication {
     display: none;
   }
 
-  /* Publications view*/
+  /* Publications view */
   .tools-and-publications-publications .revamp-row .publications-left-column {
     display: none;
   }
