@@ -324,6 +324,7 @@ body {
 /*Copyrights*/
 .field--name-field-caption-copyrigth-{
   font-size: 0.65rem;
+  padding-bottom: 1rem;
   p{
     margin: 0;
   }
@@ -653,6 +654,9 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
         width: 100%;
         height: auto;
         margin-bottom: 1rem;
+      }
+      img.custom-reset-margin{
+        margin-bottom: 2px;
       }
     }
   }

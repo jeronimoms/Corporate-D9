@@ -2134,6 +2134,7 @@ body ul li .introduction-title a:hover {
 /*Copyrights*/
 .field--name-field-caption-copyrigth- {
   font-size: 0.65rem;
+  padding-bottom: 1rem;
 }
 .field--name-field-caption-copyrigth- p {
   margin: 0;
@@ -2417,6 +2418,9 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
+}
+.node--type-article #main .field--name-field-image-caption img.custom-reset-margin {
+  margin-bottom: 2px;
 }
 .node--type-article .content-headings-related {
   padding-top: 2rem;
