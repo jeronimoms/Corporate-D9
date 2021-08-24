@@ -117,7 +117,12 @@
   #share-this-on,
   .block-views-blockinfographic-block-3,
   table td img,
-  .field--name-field-album-pictures {
+  .field--name-field-album-pictures,
+  .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url,
+  .see-more-arrow,
+  .view-publications .see-more-arrow,
+  .healthy-workplaces-campaigns .field--name-body p a,
+  .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a{
     display: none;
   }
 
@@ -172,7 +177,7 @@
         .tag-news-events {
           position: relative;
         }
-        * {
+        *:not(.see-more-arrow) {
           display: block;
           width: 100%;
         }
@@ -333,4 +338,11 @@
     padding: 0 !important;
   }
 
+  .view-publications{
+    .views-col{
+      border:none;
+    }
+  }
+
 }
+
