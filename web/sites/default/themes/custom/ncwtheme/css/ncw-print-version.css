@@ -1,6 +1,4 @@
 /* Font Family */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
 @font-face {
   font-family: "Open Sans", sans-serif;
 }
@@ -199,7 +197,12 @@ aside.section,
 #share-this-on,
 .block-views-blockinfographic-block-3,
 table td img,
-.field--name-field-album-pictures {
+.field--name-field-album-pictures,
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url,
+.see-more-arrow,
+.view-publications .see-more-arrow,
+.healthy-workplaces-campaigns .field--name-body p a,
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a {
     display: none;
   }
 
@@ -208,7 +211,6 @@ table td img,
     display: block !important;
   }
 
-
   body.user-logged-in #header,
 body.user-logged-in.toolbar-tray-open #header {
     padding: 0;
@@ -216,7 +218,6 @@ body.user-logged-in.toolbar-tray-open #header {
 
   #header,
 #page-wrapper #header {
-
     position: relative !important;
     width: 100%;
     transition: none;
@@ -255,7 +256,7 @@ body.user-logged-in.toolbar-tray-open #header {
 .content-news-events .wrap-news-events .views-row .tag-news-events {
     position: relative;
   }
-  .content-news-events .wrap-news-events .views-row * {
+  .content-news-events .wrap-news-events .views-row *:not(.see-more-arrow) {
     display: block;
     width: 100%;
   }
@@ -440,6 +441,10 @@ body.user-logged-in.toolbar-tray-open #header {
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title,
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-summary-html {
     padding: 0 !important;
+  }
+
+  .view-publications .views-col {
+    border: none;
   }
 }
 
