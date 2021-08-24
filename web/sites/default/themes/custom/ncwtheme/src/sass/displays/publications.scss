@@ -439,6 +439,27 @@ body.node--type-publication{
   margin-right: 2em;
 }
 
+/* Related publications - Infographics */
+.field-item.infographic-field{
+  float: left;
+  width: 264px;
+  margin-right: 1rem;
+  h2{
+    font-size: 1.1rem;
+    line-height: initial;
+  }
+  img{
+    width: 264px;
+    height: auto;
+  }
+}
+
+.field-item.infographic-field.field-3, .field-item.infographic-field.field-6{
+  margin-right: 0;
+}
+
+
+
 /* Related publications in articles */
 .related-publications-in-articles{
   .node--type-publication{
@@ -523,6 +544,9 @@ body.node--type-publication{
         }
       }
     }
+  }
+  .field-item.infographic-field.field-3, .field-item.infographic-field.field-6{
+    margin-right: 1rem;
   }
 }
 

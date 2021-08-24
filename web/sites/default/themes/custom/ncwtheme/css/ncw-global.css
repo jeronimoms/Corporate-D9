@@ -743,6 +743,9 @@ div#sliding-popup {
   float: right;
   margin-right: 50px;
 }
+#block-searchsite br {
+  display: none;
+}
 #block-searchsite #edit-search-api-fulltext, #block-searchsite #edit-keys--2 {
   width: 140px;
   height: 21px;
@@ -5499,6 +5502,25 @@ body.node--type-publication {
   margin-right: 2em;
 }
 
+/* Related publications - Infographics */
+.field-item.infographic-field {
+  float: left;
+  width: 264px;
+  margin-right: 1rem;
+}
+.field-item.infographic-field h2 {
+  font-size: 1.1rem;
+  line-height: initial;
+}
+.field-item.infographic-field img {
+  width: 264px;
+  height: auto;
+}
+
+.field-item.infographic-field.field-3, .field-item.infographic-field.field-6 {
+  margin-right: 0;
+}
+
 /* Related publications in articles */
 .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column {
   padding: 0.5rem 0 0 1rem;
@@ -5562,6 +5584,10 @@ body.node--type-publication {
     width: 15%;
     text-align: right;
     padding-right: 15px;
+  }
+
+  .field-item.infographic-field.field-3, .field-item.infographic-field.field-6 {
+    margin-right: 1rem;
   }
 }
 @media only screen and (max-width: 990px) {
