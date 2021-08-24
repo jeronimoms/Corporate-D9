@@ -4539,6 +4539,40 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   margin-right: 3rem;
 }
 
+/* Themes - Dangerous substances - 3 items per row*/
+.page-node-1409 .block-views-landing-page {
+  margin-top: 1rem;
+}
+.page-node-1409 .block-views-landing-page .list--item {
+  max-width: 172px;
+}
+.page-node-1409 .block-views-landing-page .list--item img {
+  width: 100%;
+  height: auto;
+}
+.page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+  padding-right: 0;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+    margin: 0.5rem 2% 1.5rem 0;
+    padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+    padding-right: 0;
+    margin: 0.5rem 0 1.5rem 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+    margin: 0.5rem 2% 1.5rem 0;
+    padding-right: 15px;
+  }
+}
 /* This SASS only apply in the Web, not in the email - outlook
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
