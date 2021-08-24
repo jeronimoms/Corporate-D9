@@ -743,6 +743,9 @@ div#sliding-popup {
   float: right;
   margin-right: 50px;
 }
+#block-searchsite br {
+  display: none;
+}
 #block-searchsite #edit-search-api-fulltext, #block-searchsite #edit-keys--2 {
   width: 140px;
   height: 21px;
@@ -2498,6 +2501,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   font-size: 0.9rem;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles {
+  clear: both;
   margin-top: 0.8rem;
   margin-bottom: 10px;
   background: #e8ecf5;
@@ -4280,7 +4284,7 @@ body.user-logged-in.toolbar-tray-open #header {
     cursor: pointer;
     text-indent: -9999px;
     position: relative;
-    top: 5px;
+    top: -16px;
     right: -27px;
   }
   #block-searchsite #edit-actions .btn-primary.activate, #block-searchsite #edit-actions--2 .btn-primary.activate {
@@ -4535,6 +4539,40 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   margin-right: 3rem;
 }
 
+/* Themes - Dangerous substances - 3 items per row*/
+.page-node-1409 .block-views-landing-page {
+  margin-top: 1rem;
+}
+.page-node-1409 .block-views-landing-page .list--item {
+  max-width: 172px;
+}
+.page-node-1409 .block-views-landing-page .list--item img {
+  width: 100%;
+  height: auto;
+}
+.page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+  padding-right: 0;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+    margin: 0.5rem 2% 1.5rem 0;
+    padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+    padding-right: 0;
+    margin: 0.5rem 0 1.5rem 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+    margin: 0.5rem 2% 1.5rem 0;
+    padding-right: 15px;
+  }
+}
 /* This SASS only apply in the Web, not in the email - outlook
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
@@ -5499,6 +5537,25 @@ body.node--type-publication {
   margin-right: 2em;
 }
 
+/* Related publications - Infographics */
+.field-item.infographic-field {
+  float: left;
+  width: 264px;
+  margin-right: 1rem;
+}
+.field-item.infographic-field h2 {
+  font-size: 1.1rem;
+  line-height: initial;
+}
+.field-item.infographic-field img {
+  width: 264px;
+  height: auto;
+}
+
+.field-item.infographic-field.field-3, .field-item.infographic-field.field-6 {
+  margin-right: 0;
+}
+
 /* Related publications in articles */
 .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column {
   padding: 0.5rem 0 0 1rem;
@@ -5562,6 +5619,10 @@ body.node--type-publication {
     width: 15%;
     text-align: right;
     padding-right: 15px;
+  }
+
+  .field-item.infographic-field.field-3, .field-item.infographic-field.field-6 {
+    margin-right: 1rem;
   }
 }
 @media only screen and (max-width: 990px) {
@@ -6528,6 +6589,17 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
   .news-events #main ul li:nth-child(3) {
     float: none;
+  }
+
+  .safety-and-health-legislation-european-directives .sidebar-first .views-exposed-form h2 {
+    background: #cfddee;
+    color: #003399;
+    margin: 0;
+    padding: 0 1rem 0.3rem;
+    font-weight: 600;
+  }
+  .safety-and-health-legislation-european-directives .sidebar-first .form-row > fieldset {
+    width: 100%;
   }
 }
 /* End Media 990px */

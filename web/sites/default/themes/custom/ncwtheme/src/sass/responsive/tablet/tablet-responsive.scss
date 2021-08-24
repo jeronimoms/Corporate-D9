@@ -157,4 +157,21 @@
     }
   }
 
+  .safety-and-health-legislation-european-directives{
+    .sidebar-first{
+      .views-exposed-form{
+        h2{
+          background: $bg-color-blue-light;
+          color: $text-color-blue;
+          margin: 0;
+          padding: 0 1rem 0.3rem;
+          font-weight: 600;
+        }
+      }
+      .form-row>fieldset{
+        width: 100%;
+      }
+    }
+  }
+
 }/* End Media 990px */

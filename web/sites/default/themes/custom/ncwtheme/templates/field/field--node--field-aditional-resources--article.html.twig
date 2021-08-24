@@ -98,7 +98,7 @@
           {% if count_infographic == 1 %}
             <h3 class="custom-border h3-files-resources h3-related-articles"><span>{{ 'Infographics' | trans }}</span></h3>
           {% endif %}
-          <div class="field-item infographic-field">{{ item.content }}</div>
+          <div class="field-item infographic-field field-{{ count_infographic }}">{{ item.content }}</div>
         {% endif %}
       {% endfor %}
     </div>

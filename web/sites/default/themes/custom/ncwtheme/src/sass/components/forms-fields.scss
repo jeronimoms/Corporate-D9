@@ -33,6 +33,9 @@
   clear: both;
   float: right;
   margin-right: 50px;
+  br{
+    display: none;
+  }
   #edit-search-api-fulltext, #edit-keys--2{
     width: 140px;
     height: 21px;
