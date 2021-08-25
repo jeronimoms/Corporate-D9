@@ -1997,6 +1997,16 @@ body .news_and_events.block-menu-block ul li .link_news_events a {
   margin-right: 0;
 }
 
+a.quiz-start-link {
+  display: block;
+  text-align: center;
+  border-bottom: 0 !important;
+  font-weight: bold;
+  background: url(../images/intro.png) no-repeat 50% 10%;
+  padding-top: 255px;
+  position: relative;
+}
+
 /* Labels */
 span.label, span.pages {
   font-family: "Open Sans", sans-serif;
@@ -2134,6 +2144,7 @@ body ul li .introduction-title a:hover {
 /*Copyrights*/
 .field--name-field-caption-copyrigth- {
   font-size: 0.65rem;
+  padding-bottom: 1rem;
 }
 .field--name-field-caption-copyrigth- p {
   margin: 0;
@@ -2417,6 +2428,9 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
+}
+.node--type-article #main .field--name-field-image-caption img.custom-reset-margin {
+  margin-bottom: 2px;
 }
 .node--type-article .content-headings-related {
   padding-top: 2rem;
@@ -2828,7 +2842,7 @@ a.quiz-start-link:hover {
 .osha-workflow-list-widget {
   background: #FFFBD9;
   border: 1px solid #FFEBC5;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 0.5rem 1rem 0.5rem;
   margin-bottom: 2rem;
 }
 .osha-workflow-list-widget p:before {
@@ -4539,36 +4553,37 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   margin-right: 3rem;
 }
 
-/* Themes - Dangerous substances - 3 items per row*/
-.page-node-1409 .block-views-landing-page {
+/* Themes - Dangerous substances - 3 items per row */
+/* Work-related diseases - 3 items per row */
+.page-node-1409 .block-views-landing-page, .page-node-13530 .block-views-landing-page {
   margin-top: 1rem;
 }
-.page-node-1409 .block-views-landing-page .list--item {
+.page-node-1409 .block-views-landing-page .list--item, .page-node-13530 .block-views-landing-page .list--item {
   max-width: 172px;
 }
-.page-node-1409 .block-views-landing-page .list--item img {
+.page-node-1409 .block-views-landing-page .list--item img, .page-node-13530 .block-views-landing-page .list--item img {
   width: 100%;
   height: auto;
 }
-.page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+.page-node-1409 .block-views-landing-page .list--item:nth-child(3), .page-node-13530 .block-views-landing-page .list--item:nth-child(3) {
   padding-right: 0;
   margin: 0.5rem 0 1.5rem 0;
 }
 
 @media only screen and (max-width: 1200px) {
-  .page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3), .page-node-13530 .block-views-landing-page .list--item:nth-child(3) {
     margin: 0.5rem 2% 1.5rem 0;
     padding-right: 15px;
   }
 }
 @media only screen and (max-width: 990px) {
-  .page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3), .page-node-13530 .block-views-landing-page .list--item:nth-child(3) {
     padding-right: 0;
     margin: 0.5rem 0 1.5rem 0;
   }
 }
 @media only screen and (max-width: 768px) {
-  .page-node-1409 .block-views-landing-page .list--item:nth-child(3) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3), .page-node-13530 .block-views-landing-page .list--item:nth-child(3) {
     margin: 0.5rem 2% 1.5rem 0;
     padding-right: 15px;
   }
@@ -5534,7 +5549,20 @@ body.node--type-publication {
 /* Related publications - Videos/Youtube */
 .field-item.youtube-field {
   float: left;
-  margin-right: 2em;
+  width: 265px;
+  margin-right: 10px;
+}
+.field-item.youtube-field h2 {
+  font-size: 1.1rem;
+  line-height: initial;
+}
+.field-item.youtube-field iframe {
+  width: 265px;
+  height: auto;
+}
+
+.field-item.youtube-field.field-2, .field-item.youtube-field.field-4 {
+  margin-right: 0;
 }
 
 /* Related publications - Infographics */
@@ -5597,7 +5625,7 @@ body.node--type-publication {
     display: none;
   }
 
-  /* Publications view*/
+  /* Publications view */
   .tools-and-publications-publications .revamp-row .publications-left-column {
     display: none;
   }

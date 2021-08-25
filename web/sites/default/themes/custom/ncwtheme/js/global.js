@@ -108,6 +108,11 @@ jQuery(document).ready(function($) {
     $('html').css('font-size', '16px')
   })
 
+  //Reset margin if copyright exist
+  if ($(".node--type-article #main .field--name-field-caption-copyrigth-")[0]) {
+    $('.node--type-article #main .field--name-field-image-caption img').addClass('custom-reset-margin');
+  }
+
   //Move AddToAny to the bottom page
   if ($(".move-add-to-any")[0]) {
     $('.addtoany_list').appendTo('.move-add-to-any');
