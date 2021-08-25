@@ -122,7 +122,11 @@
   .see-more-arrow,
   .view-publications .see-more-arrow,
   .healthy-workplaces-campaigns .field--name-body p a,
-  .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a{
+  .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a,
+  .back-to-link,
+  body .node--type-publication .rr-right-column .field--name-node-link a,
+  .highlighted,
+  #navbar-main{
     display: none;
   }
 
@@ -215,18 +219,28 @@
     position: relative;
   }
 
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
+  .content-news-events .wrap-news-events .news-home .views-row *,
+  .content-news-events .wrap-news-events .events-home *,
+  .content-news-events .wrap-news-events .events-home .view-content .see-more-arrow a {
+    width: 100% !important;
+    margin: 0 0 1rem !important;
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    position: relative;
+  }
+
+  .publications .revamp-row .publications-right-column .content-publication-info {
     display: block;
   }
 
-  .tools-and-publications-publications .revamp-row .publications-right-column h2 {
+  .publications .revamp-row .publications-right-column h2 {
     line-height: 1.5;
     padding: 0;
     margin: 0 0 1rem;
     font-size: 22pt !important;
   }
 
-  .tools-and-publications-publications .revamp-row .publications-right-column {
+  .publications .revamp-row .publications-right-column {
     padding-left: 0;
     .see-more-arrow a {
       padding: 0;
@@ -344,5 +358,8 @@
     }
   }
 
+  body.user-logged-in.toolbar-tray-open{
+    padding-top:0!important;
+  }
 }
 
