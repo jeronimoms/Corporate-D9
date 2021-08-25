@@ -1,0 +1,10 @@
+uuid: 718925a9-b253-46a0-aa83-bb062125b9fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.image_articles
+label: 'Image Articles'
+targetEntityType: media
+cache: true

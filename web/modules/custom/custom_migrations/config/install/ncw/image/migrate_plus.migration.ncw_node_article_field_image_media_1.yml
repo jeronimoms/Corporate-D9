@@ -19,7 +19,7 @@ destination:
 process:
   bundle:
     plugin: default_value
-    default_value: image
+    default_value: image_caption
 
   # Using the alt tag if available, else the file name.
   name:

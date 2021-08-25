@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.menu_link_content.main.field_copyrigth
     - field.field.menu_link_content.main.field_image_menu_main
     - system.menu.main
   module:
@@ -14,6 +15,14 @@ targetEntityType: menu_link_content
 bundle: main
 mode: default
 content:
+  field_copyrigth:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_image_menu_main:
     type: media_library_widget
     weight: 1
@@ -23,7 +32,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 3
+    weight: 4
     region: content
     settings:
       include_locked: true
@@ -36,9 +45,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   view_mode:
     type: menu_item_extras_view_mode_selector_select
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }

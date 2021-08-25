@@ -80,4 +80,13 @@ th.views-field-field-color, td.views-field-field-color {
   background: grey;
 }
 
+.csv-feed .feed-icon {
+  background-image: url(../images/xls.png) !important;
+}
+
+.view-additional-resources .form--inline .form-actions {
+  clear: initial;
+  padding-top: 29px;
+}
+
 /*# sourceMappingURL=ncw_backend-d9.css.map */

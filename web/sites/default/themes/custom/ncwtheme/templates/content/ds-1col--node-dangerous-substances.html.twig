@@ -9,7 +9,10 @@
  * - ds_content: content region
  */
 #}
-<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+
+{% if logged_in %}
+  <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
   {{ title_suffix.contextual_links }}
   <div class="h1-back-wrapper">
@@ -19,5 +22,51 @@
   <div class="dangerous-wrapper">
     {{ ds_content }}
   </div>
+  </{{ ds_content_wrapper }}>
+{% else %}
+  <div class="back-before-title">
+    <a href="/themes/dangerous-substances/search" class="pull-right-flex back-to-link not-logged-MSD">{{ 'Back to Practical tools and guidance on dangerous substances' | trans }}</a>
+  </div>
+  <div class="dangerous-wrapper">
+      <div class="wrapper-tags">
+        <div class="tag">
+          {{ ds_content.field_item_type }}
+        </div>
+        <div class="tag">
+          {{ ds_content.field_material_country}}
+        </div>
+        <div class="tag">
+          {{ ds_content.field_available_in_languages }}
+        </div>
+        <div class="tag">
+          {{ ds_content.field_year }}
+        </div>
+      </div>
+      <div class="wrapper-dangerous-wrapper wrapper-ds-content-description">
+        <h2>{{ 'Description' | trans }}</h2>
+        {{ ds_content.body }}
+      </div>
+      <div class="wrapper-dangerous-wrapper wrapper-ds-content-other">
+        <h2>{{ 'Other data' | trans }}</h2>
+        {{ ds_content.field_sector_industry_covered }}
+        {{ ds_content.field_fc_provider }}
+        {{ ds_content.field_tasks_covered }}
+        {{ ds_content.field_biological_hazard }}
+        {{ ds_content.field_hazard_physical_state }}
+        {{ ds_content.field_hazard_health_effects }}
+        {{ ds_content.field_exposure_route }}
+        {{ ds_content.field_substance_description }}
+        {{ ds_content.field_cas_number }}
+        {{ ds_content.field_ec_number }}
+        {{ ds_content.field_prevention_measure_type }}
+        {{ ds_content.field_material_purpose_type }}
+        {{ ds_content.field_target_group }}
+      </div>
+    <div class="wrapper-dangerous-wrapper wrapper-ds-content-access">
+      <h2>{{ 'Access tool' | trans }}</h2>
+      {{ ds_content.field_external_url }}
+    </div>
 
-</{{ ds_content_wrapper }}>
+  </div>
+  </{{ ds_content_wrapper }}>
+{% endif %}
