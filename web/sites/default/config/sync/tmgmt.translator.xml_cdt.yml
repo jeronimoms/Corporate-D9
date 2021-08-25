@@ -3,20 +3,20 @@ langcode: en
 status: true
 dependencies:
   module:
-    - tmgmt_file
+    - translation_workflow
 name: xml_cdt
 label: 'XML CDT'
 description: ''
 auto_accept: false
 weight: null
-plugin: file
+plugin: multiple_target_language_file
 settings:
   export_format: xml
   format_configuration:
     target: ''
-  xliff_cdata: false
-  xliff_processing: false
-  allow_override: false
+  xliff_cdata: 0
+  xliff_processing: 0
+  allow_override: 0
   scheme: public
 remote_languages_mappings:
   bg: bg

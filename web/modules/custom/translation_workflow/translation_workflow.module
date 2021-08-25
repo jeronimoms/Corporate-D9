@@ -1,21 +1,25 @@
 <?php
 
+use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\tmgmt\Entity\JobItem;
-use Drupal\translation_workflow\Entity\JobGroup;
+use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
+use Drupal\translation_workflow\MultipleTargetLanguageConfigSourcePluginUi;
+use Drupal\translation_workflow\MultipleTargetLanguageLocaleSourcePluginUi;
+use Drupal\translation_workflow\MutipleTargetLanguageContentEntitySourcePluginUi;
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function translation_workflow_form_tmgmt_cart_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $jobFieldDefinitions = \Drupal::service('entity_field.manager')->getFieldDefinitions('job_group', 'default');
+  $jobFieldDefinitions = \Drupal::service('entity_field.manager')
+    ->getFieldDefinitions('job_group', 'default');
   if (isset($jobFieldDefinitions['priority'])) {
     $priorityField = $jobFieldDefinitions['priority'];
     $form['priority'] = [
       '#type' => 'select',
       '#options' => $priorityField->getSetting('allowed_values'),
       '#title' => $priorityField->getLabel(),
-      '#weight' => -1
+      '#weight' => -1,
     ];
   }
 
@@ -34,10 +38,10 @@ function translation_workflow_form_tmgmt_cart_form_alter(&$form, FormStateInterf
   }
 
   // Select all languages.
-  $form['select_all_lng'] = array(
+  $form['select_all_lng'] = [
     '#type' => 'checkbox',
     '#title' => t('Select all languages'),
-  );
+  ];
   $form['empty_cart']['#weight'] = 7;
   $form['remove_selected']['#weight'] = 6;
   $form['request_translation']['#weight'] = 4;
@@ -48,11 +52,77 @@ function translation_workflow_form_tmgmt_cart_form_alter(&$form, FormStateInterf
 }
 
 function _translation_workflow_form_tmgmt_cart_form_submit(&$form, FormStateInterface $form_state) {
-  $jobItems = JobItem::loadMultiple(array_filter($form_state->getValue('items')));
+  /*$jobItems = JobItem::loadMultiple(array_filter($form_state->getValue('items')));
   $jobGroup = JobGroup::create();
   foreach ($jobItems as $jobItem) {
     $jobGroup->get('items_id')->appendItem(['target_id' => $jobItem->id()]);
   }
-  $jobGroup->save();
-  $cosa = '';
+  $jobGroup->save();*/
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function translation_workflow_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'tmgmt_job_item') {
+    $fields["tjid"]->setSetting('target_type', 'tmgmt_job_multiple_target');
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function translation_workflow_entity_type_alter(array &$entity_types) {
+  /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
+  if (isset($entity_types['tmgmt_job_item'])) {
+    //$entity_types['tmgmt_job_item']->setHandlerClass('access', MultipleTargetLanguageJobItemAccessControlHandler::class);
+    //$entity_types['tmgmt_job_item']->setHandlerClass('list_builder', MultipleTargetLanguageJobItemListBuilder::class);
+    /*$entity_types['tmgmt_job_item']->setHandlerClass('form', [
+      'edit' => MultipleTargetLanguageJobItemForm::class,
+    ]);*/
+  }
+}
+
+/**
+ * Implements hook_tmgmt_file_format_plugin_info_alter().
+ */
+function translation_workflow_tmgmt_file_format_plugin_info_alter(&$file_formats) {
+}
+
+/**
+ * Implements hook_tmgmt_translator_plugin_info_alter().
+ */
+function translation_workflow_tmgmt_translator_plugin_info_alter(&$info) {
+}
+
+/**
+ * Implements hook_tmgmt_source_plugin_info_alter().
+ */
+function translation_workflow_tmgmt_source_plugin_info_alter(&$info) {
+  foreach ($info as $pluginName => &$pluginInfo) {
+    $uiClass = $pluginInfo['ui'];
+    $class = $pluginInfo['class'];
+    switch ($pluginName) {
+      case 'content':
+        $uiClass = MutipleTargetLanguageContentEntitySourcePluginUi::class;
+        //$class = MultipleTargetLanguageContentEntitySource::class;
+        break;
+      case 'locale':
+        $uiClass = MultipleTargetLanguageLocaleSourcePluginUi::class;
+        break;
+      case 'config':
+        $uiClass = MultipleTargetLanguageConfigSourcePluginUi::class;
+    }
+    $info[$pluginName]['ui'] = $uiClass;
+    $info[$pluginName]['class'] = $class;
+  }
+}
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function translation_workflow_entity_type_build(array &$entity_types) {
+  if (isset($entity_types['tmgmt_job_item'])) {
+    $entity_types['tmgmt_job_item']->setClass(MultipleTargetLanguageJobItem::class);
+  }
 }

@@ -1,26 +1,26 @@
-uuid: 2bbcee39-5d90-4ce4-be40-6dce3c80990d
 langcode: en
 status: true
 dependencies:
+  config:
+    - system.menu.admin
   module:
+    - options
     - tmgmt
-_core:
-  default_config_hash: vZFV4gb5A2TPJtl6SIsCJNP16rioI9hr7nRFRMU9CXw
-id: tmgmt_job_overview
-label: 'Job overview'
+    - translation_workflow
+id: translation_workflow_jobs_overview
+label: 'Translation workflow jobs overview'
 module: views
-description: 'Gives a bulk operation overview of translation jobs in the system.'
+description: ''
 tag: ''
-base_table: tmgmt_job
-base_field: tjid
+base_table: tmgmt_multiple_target_job
+base_field: id
 display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
-    position: 1
+    display_title: Default
+    position: 0
     display_options:
-      rendering_language: '***LANGUAGE_entity_default***'
       access:
         type: tmgmt_job
         options: {  }
@@ -32,6 +32,8 @@ display:
         options:
           disable_sql_rewrite: false
           distinct: false
+          disable_automatic_base_fields: false
+          replica: false
           query_comment: ''
           query_tags: {  }
       exposed_form:
@@ -51,118 +53,33 @@ display:
           offset: 0
           id: 0
           total_pages: null
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 20, 40, 60'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
           tags:
             previous: '‹ previous'
             next: 'next ›'
             first: '« first'
             last: 'last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
           quantity: 9
       style:
         type: table
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          override: true
-          sticky: false
-          caption: ''
-          summary: ''
-          description: ''
-          columns:
-            label: label
-            source_language_1: source_language_1
-            state: state
-            target_language: target_language
-            translator: translator
-            progress: progress
-            word_count: word_count
-            changed: changed
-            operations: operations
-          info:
-            label:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            source_language_1:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            state:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            target_language:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            translator:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            progress:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            word_count:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            changed:
-              sortable: true
-              default_sort_order: desc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            operations:
-              sortable: false
-              default_sort_order: desc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          default: changed
-          empty_table: false
       row:
         type: fields
       fields:
         state:
           id: state
-          table: tmgmt_job
+          table: tmgmt_multiple_target_job
           field: state
           relationship: none
           group_type: group
           admin_label: ''
-          label: State
+          label: 'Job state'
           exclude: false
           alter:
             alter_text: false
@@ -204,10 +121,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
+          type: list_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -218,13 +133,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: tmgmt_job
+          entity_type: tmgmt_job_multiple_target
           entity_field: state
           plugin_id: field
         label:
-          id: label
-          table: tmgmt_job
+          table: tmgmt_multiple_target_job
           field: label
+          id: label
+          entity_type: null
+          entity_field: label
+          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
@@ -269,11 +187,22 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          entity_type: tmgmt_job
-          plugin_id: tmgmt_entity_label
-        source_language_1:
-          id: source_language_1
-          table: tmgmt_job
+          click_sort_column: value
+          type: string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        source_language:
+          id: source_language
+          table: tmgmt_multiple_target_job
           field: source_language
           relationship: none
           group_type: group
@@ -334,13 +263,13 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: tmgmt_job
+          entity_type: tmgmt_job_multiple_target
           entity_field: source_language
           plugin_id: field
-        target_language:
-          id: target_language
-          table: tmgmt_job
-          field: target_language
+        target_languages_value:
+          id: target_languages_value
+          table: tmgmt_job_multiple_target__target_languages
+          field: target_languages_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -400,12 +329,12 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: tmgmt_job
-          entity_field: target_language
+          entity_type: tmgmt_job_multiple_target
+          entity_field: target_languages
           plugin_id: field
         translator:
           id: translator
-          table: tmgmt_job
+          table: tmgmt_multiple_target_job
           field: translator
           relationship: none
           group_type: group
@@ -451,162 +380,26 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          entity_type: tmgmt_job
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: tmgmt_job_multiple_target
           entity_field: translator
-          plugin_id: tmgmt_translator
-        progress:
-          id: progress
-          table: tmgmt_job
-          field: progress
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Progress
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          entity_type: tmgmt_job
-          plugin_id: tmgmt_progress
-        word_count:
-          id: word_count
-          table: tmgmt_job
-          field: word_count
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Words
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          entity_type: tmgmt_job
-          plugin_id: tmgmt_wordcount
-        tags_count:
-          id: tags_count
-          table: tmgmt_job
-          field: tags_count
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Tags
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          entity_type: tmgmt_job
-          plugin_id: tmgmt_tagscount
+          plugin_id: field
         changed:
           id: changed
-          table: tmgmt_job
+          table: tmgmt_multiple_target_job
           field: changed
           relationship: none
           group_type: group
@@ -652,15 +445,28 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: fallback
-          custom_date_format: ''
-          timezone: ''
-          entity_type: tmgmt_job
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: medium
+            custom_date_format: ''
+            timezone: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: tmgmt_job_multiple_target
           entity_field: changed
-          plugin_id: date
+          plugin_id: field
         operations:
           id: operations
-          table: tmgmt_job
+          table: tmgmt_multiple_target_job
           field: operations
           relationship: none
           group_type: group
@@ -707,54 +513,12 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: true
-          entity_type: tmgmt_job
+          entity_type: tmgmt_job_multiple_target
           plugin_id: entity_operations
       filters:
-        state:
-          id: state
-          table: tmgmt_job
-          field: state
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: job_state
-          value:
-            value: open_jobs
-          group: 1
-          exposed: true
-          expose:
-            operator_id: state_op
-            label: State
-            description: ''
-            use_operator: false
-            operator: state_op
-            identifier: state
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: tmgmt_job
-          plugin_id: numeric
         source_language:
           id: source_language
-          table: tmgmt_job
+          table: tmgmt_multiple_target_job
           field: source_language
           relationship: none
           group_type: group
@@ -769,6 +533,8 @@ display:
             description: ''
             use_operator: false
             operator: source_language_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: source_language
             required: false
             remember: false
@@ -777,9 +543,20 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -792,13 +569,13 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: tmgmt_job
+          entity_type: tmgmt_job_multiple_target
           entity_field: source_language
           plugin_id: language
-        target_language:
-          id: target_language
-          table: tmgmt_job
-          field: target_language
+        target_languages_value:
+          id: target_languages_value
+          table: tmgmt_job_multiple_target__target_languages
+          field: target_languages_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -807,12 +584,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: target_language_op
+            operator_id: target_languages_value_op
             label: 'Target language'
             description: ''
             use_operator: false
-            operator: target_language_op
-            identifier: target_language
+            operator: target_languages_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: target_languages_value
             required: false
             remember: false
             multiple: false
@@ -820,9 +599,20 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -835,66 +625,27 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: tmgmt_job
-          entity_field: target_language
+          entity_type: tmgmt_job_multiple_target
+          entity_field: target_languages
           plugin_id: language
-        translator:
-          id: translator
-          table: tmgmt_job
-          field: translator
+      sorts:
+        id:
+          id: id
+          table: tmgmt_multiple_target_job
+          field: id
           relationship: none
           group_type: group
           admin_label: ''
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
+          order: DESC
+          exposed: false
           expose:
-            operator_id: translator_op
-            label: Provider
-            description: ''
-            use_operator: false
-            operator: translator_op
-            identifier: translator
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
             label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: tmgmt_job
-          entity_field: translator
-          plugin_id: in_operator
-      sorts: {  }
-      title: 'Job overview'
+          entity_type: tmgmt_job_multiple_target
+          entity_field: id
+          plugin_id: standard
+      title: 'Translation workflow jobs overview'
       header: {  }
-      footer:
-        footer:
-          id: footer
-          table: tmgmt_job
-          field: footer
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          entity_type: tmgmt_job
-          plugin_id: tmgmt_job_legend
+      footer: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -909,18 +660,14 @@ display:
           plugin_id: text_custom
       relationships: {  }
       arguments: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       display_extenders: {  }
     cache_metadata:
+      max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
-      cacheable: false
-      max-age: -1
       tags: {  }
   page_1:
     display_plugin: page
@@ -928,29 +675,23 @@ display:
     display_title: Page
     position: 1
     display_options:
-      path: admin/tmgmt/jobs
-      rendering_language: '***LANGUAGE_entity_default***'
+      display_extenders:
+        metatag_display_extender: {  }
+      path: admin/translation_workflow/jobs
       menu:
-        type: none
-        title: Jobs
-        description: 'Manage and review existing translation jobs.'
+        type: normal
+        title: 'Translation workflow Jobs'
+        description: 'Manage and review existing translation workflow jobs.'
         expanded: false
         parent: tmgmt.admin_tmgmt
         weight: 10
         context: '0'
         menu_name: admin
-      tab_options:
-        type: normal
-        title: Jobs
-        description: ''
-        weight: 0
-      display_extenders:
-        metatag_display_extender: {  }
     cache_metadata:
+      max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
-      cacheable: false
-      max-age: -1
       tags: {  }

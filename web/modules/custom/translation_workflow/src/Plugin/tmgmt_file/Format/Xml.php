@@ -2,14 +2,12 @@
 
 namespace Drupal\translation_workflow\Plugin\tmgmt_file\Format;
 
-use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\tmgmt\Data;
-use Drupal\tmgmt\Entity\Job;
 use Drupal\tmgmt\JobInterface;
 use Drupal\tmgmt\JobItemInterface;
 use Drupal\tmgmt_file\Format\FormatInterface;
+use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
 
 /**
  * Export into XML translation format.
@@ -137,7 +135,7 @@ class Xml extends \XMLWriter implements FormatInterface {
     }
     // Check if the job can be loaded.
     $tjid = (string) $phase;
-    $job = Job::load($tjid);
+    $job = MultipleTargetLanguageJob::load($tjid);
     if (empty($job)) {
       $this->messenger()
         ->addError($this->t('Cannot find inside the system a matching job for ID: %s', ['%s' => $tjid]));
@@ -181,7 +179,7 @@ class Xml extends \XMLWriter implements FormatInterface {
     $this->getImportedXML($imported_file);
     $tjid = $this->importedXML->xpath("//TransactionIdentifier");
     $tjid = reset($tjid);
-    $job = Job::load((string) $tjid);
+    $job = MultipleTargetLanguageJob::load((string) $tjid);
 
     $flat_data = $this->getImportedTargets($job);
     return $this->dataService->unflatten($flat_data);
@@ -276,7 +274,14 @@ class Xml extends \XMLWriter implements FormatInterface {
   public function getMappedItemIds(JobInterface $job) {
     $items = $job->getItems();
     foreach ($items as $item_id => $item) {
-      $this->mappedItemsIDs[$job->getRemoteTargetLanguage()][$item->getItemType()][$item->id()] = $item_id;
+      if ($job instanceof MultipleTargetLanguageJob) {
+        foreach ($job->getTargetLanguages() as $language) {
+          $this->mappedItemsIDs[$language->getId()][$item->getItemType()][$item->id()] = $item_id;
+        }
+      }
+      else {
+        $this->mappedItemsIDs[$job->getRemoteTargetLanguage()][$item->getItemType()][$item->id()] = $item_id;
+      }
     }
   }
 
@@ -350,7 +355,14 @@ class Xml extends \XMLWriter implements FormatInterface {
     // <Translation>
     $this->startElement('Translation');
     $this->writeElement('TranslationSourceLanguage', $item->getSourceLangCode());
-    $this->writeElement('TranslationTargetLanguage', $job->getRemoteTargetLanguage());
+    if ($job instanceof MultipleTargetLanguageJob) {
+      foreach ($job->getTargetLanguages() as $targetLanguage) {
+        $this->writeElement('TranslationTargetLanguage', $targetLanguage->getId());
+      }
+    }
+    else {
+      $this->writeElement('TranslationTargetLanguage', $job->getRemoteTargetLanguage());
+    }
 
     // <ContentIdentifier>
     $this->startElement('ContentIdentifier');
@@ -360,7 +372,13 @@ class Xml extends \XMLWriter implements FormatInterface {
     $this->endElement();
 
     // @todo implement priority levels
-    $this->writeElement('Priority', 'normal');
+    if ($job instanceof MultipleTargetLanguageJob) {
+      $this->writeElement('Priority', $job->getPriority());
+    }
+    else {
+      // Default jobs does not have priority so put normal for all.
+      $this->writeElement('Priority', 'normal');
+    }
     $this->writeElement('CharacterLength', $item->getWordCount());
     $this->writeElement('PreviewLink', 'NO PREVIEW LINK');
     $this->writeElement('ContentTitle', 'NO TITLE');

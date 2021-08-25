@@ -1,9 +1,13 @@
-entity.translation_workflow.collection:
-  path: '/admin/translation_workflow/jobgroups'
+entity.tmgmt_job_multiple_target.canonical:
+  path: '/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}'
   defaults:
-    _entity_list: 'job_group'
-    _title: 'Job groups'
+    _entity_form: tmgmt_job_multiple_target.edit
   requirements:
-    _permission: 'administer tmgmt'
-  options:
-    _admin_route: TRUE
+    _entity_access: tmgmt_job_multiple_target.update
+
+entity.tmgmt_job_multiple_target.delete_form:
+  path: '/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/delete'
+  defaults:
+    _entity_form: tmgmt_job_multiple_target.delete
+  requirements:
+    _entity_access: tmgmt_job_multiple_target.delete
