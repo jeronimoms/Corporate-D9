@@ -392,9 +392,5 @@ jQuery(document).ready(function($) {
       $('#block-headermenu').show();
     }
 
-    if ($('#field > div.field-item:contains("someText")').length > 0) {
-      $("#somediv").addClass("thisClass");
-    }
-
   });
 })(jQuery);
