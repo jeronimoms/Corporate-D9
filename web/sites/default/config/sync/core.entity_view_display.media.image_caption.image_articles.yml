@@ -1,0 +1,62 @@
+uuid: 2f48d9d1-dbb1-494c-a6aa-c5298911a55b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.image_articles
+    - field.field.media.image_caption.field_caption_copyrigth_
+    - field.field.media.image_caption.field_description
+    - field.field.media.image_caption.field_media_image
+    - field.field.media.image_caption.field_nace
+    - field.field.media.image_caption.field_tags
+    - image.style.1000x1000
+    - media.type.image_caption
+  module:
+    - ds
+    - image
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: media.image_caption.image_articles
+targetEntityType: media
+bundle: image_caption
+mode: image_articles
+content:
+  field_caption_copyrigth_:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_media_image:
+    label: hidden
+    weight: 0
+    settings:
+      image_style: 1000x1000
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  created: true
+  field_description: true
+  field_nace: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

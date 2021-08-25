@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - search_api.index.default_multilingual_node_index
+    - system.menu.main
   module:
     - better_exposed_filters
     - pagerer
@@ -539,6 +540,16 @@ display:
         type: none
       defaults:
         cache: false
+      menu:
+        type: normal
+        title: 'search directives'
+        description: ''
+        expanded: false
+        parent: 'menu_link_content:8e1a6b50-f742-466e-af78-623f42201c47'
+        weight: 0
+        context: '0'
+        menu_name: main
+        enabled: false
     cache_metadata:
       max-age: -1
       contexts:

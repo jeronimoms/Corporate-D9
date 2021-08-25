@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.body
     - search_api.index.default_multilingual_node_index
+    - system.menu.main
   module:
     - better_exposed_filters
     - pagerer
@@ -476,6 +477,16 @@ display:
         type: none
       defaults:
         cache: false
+      menu:
+        type: normal
+        title: 'Guidelines search'
+        description: ''
+        expanded: false
+        parent: 'menu_link_content:ce406db8-d3ad-469e-8f21-82399281c0fc'
+        weight: 0
+        context: '0'
+        menu_name: main
+        enabled: false
     cache_metadata:
       max-age: -1
       contexts:

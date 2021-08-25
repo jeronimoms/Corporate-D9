@@ -19,41 +19,62 @@ settings:
           items:
             - Bold
             - Italic
-            - Strike
             - Underline
-            - Superscript
-            - Subscript
-            - '-'
-            - RemoveFormat
+            - Strike
             - JustifyLeft
             - JustifyCenter
             - JustifyRight
+            - JustifyBlock
+            - '-'
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+            - Undo
+            - Redo
+            - Anchor
         -
           name: Linking
           items:
             - DrupalLink
             - DrupalUnlink
         -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - Blockquote
-            - DrupalImage
-            - Table
-            - HorizontalRule
-        -
           name: 'Block Formatting'
           items:
             - Format
+            - Font
+            - FontSize
+            - Blockquote
+            - Copy
+            - Cut
+            - Paste
+            - PasteText
+            - PasteFromWord
+            - RemoveFormat
+        -
+          name: Media
+          items:
+            - Table
+            - HorizontalRule
+            - DrupalImage
+            - DrupalMediaLibrary
+            - ImceLink
         -
           name: Tools
           items:
             - ShowBlocks
+            - Maximize
+            - Accordion
+        -
+          name: Source
+          items:
             - Source
+      -
+        -
+          name: Count
+          items:
+            - Resize
   plugins:
     stylescombo:
       styles: ''
@@ -62,8 +83,24 @@ settings:
     drupallink:
       linkit_enabled: false
       linkit_profile: ''
+    font:
+      font_names: ''
+      font_sizes: ''
+    wordcount:
+      enable: true
+      show_remaining: false
+      show_paragraphs: false
+      show_word_count: true
+      show_char_count: true
+      count_bytes: false
+      count_spaces: false
+      count_html: 0
+      count_line_breaks: false
+      max_words: -1
+      max_chars: -1
+      hard_limit: 1
 image_upload:
-  status: true
+  status: false
   scheme: public
   directory: inline-images
   max_size: ''

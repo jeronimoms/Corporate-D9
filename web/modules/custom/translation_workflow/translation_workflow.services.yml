@@ -1,0 +1,22 @@
+services:
+  translation_workflow.tmgmt.queue:
+    class: Drupal\translation_workflow\MultipleTargetLanguageJobQueue
+    decorates: tmgmt.queue
+    public: false
+    arguments: ['@translation_workflow.tmgmt.queue.inner']
+
+  translation_workflow.tmgmt.job_checkout_manager:
+    class: Drupal\translation_workflow\MultipleTargetLanguageJobCheckoutManager
+    decorates: tmgmt.job_checkout_manager
+    public: false
+    arguments: ['@translation_workflow.tmgmt.job_checkout_manager.inner', '@request_stack', '@tmgmt.queue', '@module_handler', '@config.factory', '@entity_type.manager']
+
+#  translation_workflow.tmgmt.tmgmt_job_item.breadcrumb:
+#    class: Drupal\translation_workflow\Menu\MultipleTargetLanguageJobItemBreadcrumbBuilder
+#    decorates: tmgmt.tmgmt_job_item.breadcrumb
+#    public: false
+#    arguments: ['@translation_workflow.tmgmt.tmgmt_job_item.breadcrumb.inner']
+  translation_workflow.route_subscriber:
+    class: Drupal\translation_workflow\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

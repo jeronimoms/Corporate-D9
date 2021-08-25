@@ -9,6 +9,7 @@
  * - ds_content: content region
  */
 #}
+{% set thesaurus_id = ds_content.field_term_id.0['#text'] %}
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
   {{ title_suffix.contextual_links }}
@@ -24,7 +25,7 @@
     {{ ds_content.node_title }}
   </div>
   <div class="link-thesaurus-detail">
-    <a href="/tools-and-resources/eu-osha-thesaurus/hierarchical">{{ 'Hierarchical View' | trans }}</a>
+    <a href="/tools-and-resources/eu-osha-thesaurus/hierarchical?term={{ thesaurus_id }}">{{ 'Hierarchical View' | trans }}</a>
   </div>
   {{ ds_content.field_definition }}
   <div>
