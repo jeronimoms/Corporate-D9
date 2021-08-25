@@ -1,7 +1,5 @@
 @charset "UTF-8";
 /* Font Family */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
 @font-face {
   font-family: "Open Sans", sans-serif;
 }
@@ -177,6 +175,10 @@ input[type=search] {
 }
 #main .wysiwyg_accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .quicktabs-accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .view-view-glossary .wysiwyg_accordion_panel p.wysiwyg_accordion_panel {
   display: block;
+}
+#main .wysiwyg_accordion .wysiwyg_accordion_panel img, #main .quicktabs-accordion .wysiwyg_accordion_panel img, #main .view-view-glossary .wysiwyg_accordion_panel img {
+  width: 100%;
+  height: auto;
 }
 #main .wysiwyg_accordion .wysiwyg_accordion_panel.views, #main .quicktabs-accordion .wysiwyg_accordion_panel.views, #main .view-view-glossary .wysiwyg_accordion_panel.views {
   padding-left: 15px;
@@ -364,6 +366,23 @@ input[type=search] {
 .block-views-blockblog-block-2 .view-blog .view-content.row {
   margin-left: 0;
   margin-right: 0;
+}
+
+/* Special link img target: _blank - Good OSH is good for business */
+.themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 > a[target=_blank]:after {
+  content: " ";
+  display: inline-block;
+  width: 96%;
+  height: 20px;
+  margin-left: 5px;
+  padding-right: 1px;
+  vertical-align: text-bottom;
+}
+.themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 > a[target=_blank]:after:hover {
+  text-decoration: none;
+}
+.themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 > a[target=_blank]:after:hover:before {
+  background: url(../images/external_link-v2-hover.png) center right no-repeat;
 }
 
 .btn-primary {
@@ -745,6 +764,9 @@ div#sliding-popup {
   float: right;
   margin-right: 50px;
 }
+#block-searchsite br {
+  display: none;
+}
 #block-searchsite #edit-search-api-fulltext, #block-searchsite #edit-keys--2 {
   width: 140px;
   height: 21px;
@@ -935,16 +957,16 @@ select, .facets-dropdown {
 
 /* Custom styles in Pages */
 /*Publications*/
-.tools-and-publications-publications .view-filters fieldset {
+.publications .view-filters fieldset {
   width: 33%;
 }
-.tools-and-publications-publications .view-filters fieldset:nth-child(3) {
+.publications .view-filters fieldset:nth-child(3) {
   width: 23%;
 }
-.tools-and-publications-publications .view-filters fieldset:nth-child(2) {
+.publications .view-filters fieldset:nth-child(2) {
   order: 3;
 }
-.tools-and-publications-publications .view-filters .views-exposed-form .btn-primary {
+.publications .view-filters .views-exposed-form .btn-primary {
   margin-left: 0;
   margin-right: 10px;
 }
@@ -1018,7 +1040,7 @@ select, .facets-dropdown {
 
   /* Custom styles in Pages */
   /*Publications*/
-  .tools-and-publications-publications .view-filters fieldset {
+  .publications .view-filters fieldset {
     width: 100%;
   }
 }
@@ -1032,6 +1054,15 @@ h1, .page-title-h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
+}
+
+h1.clear-h1 {
+  clear: both;
+  padding-top: 1rem;
+}
+
+h1.dangerous-h1 {
+  margin-bottom: 0;
 }
 
 h2 {
@@ -1987,6 +2018,16 @@ body .news_and_events.block-menu-block ul li .link_news_events a {
   margin-right: 0;
 }
 
+a.quiz-start-link {
+  display: block;
+  text-align: center;
+  border-bottom: 0 !important;
+  font-weight: bold;
+  background: url(../images/intro.png) no-repeat 50% 10%;
+  padding-top: 255px;
+  position: relative;
+}
+
 /* Labels */
 span.label, span.pages {
   font-family: "Open Sans", sans-serif;
@@ -1998,7 +2039,7 @@ span.label, span.pages {
 .node--view-mode-full .field--label-above {
   padding-bottom: 1rem;
 }
-.node--view-mode-full .field--label-above .field__label {
+.node--view-mode-full .field--label-above .field__label, .node--view-mode-full .field--label-above .field_label {
   font-weight: 600;
 }
 
@@ -2042,7 +2083,7 @@ span.pages {
 }
 
 /* Links download */
-#main a[target=_blank].link-download {
+#main .node--view-mode-full a[target=_blank].link-download {
   display: inline-block;
   font-size: 0.9rem;
   font-weight: 700;
@@ -2052,10 +2093,10 @@ span.pages {
   padding-right: 0;
   text-transform: uppercase;
 }
-#main a[target=_blank].link-download:hover {
+#main .node--view-mode-full a[target=_blank].link-download:hover {
   background: transparent;
 }
-#main a[target=_blank].link-download:before {
+#main .node--view-mode-full a[target=_blank].link-download:before {
   content: " ";
   display: inline-block;
   background: url(../images/download-thesaurus.png) no-repeat 1px 3px;
@@ -2064,24 +2105,37 @@ span.pages {
   padding-right: 1px;
   vertical-align: text-bottom;
 }
-#main .download-pdf .link-download:hover {
+#main .node--view-mode-full .download-pdf .link-download:hover {
   background: transparent;
   border-bottom: 0;
   text-decoration: underline;
 }
 
-.node--type-infographic #main a[target=_blank].link-download:before {
+.node--type-infographic #main .link-download {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: transparent;
+  border-bottom: 1px solid #FFF;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: uppercase;
+}
+.node--type-infographic #main .link-download:hover {
+  background: transparent;
+}
+.node--type-infographic #main .link-download:before {
   content: none;
 }
-.node--type-infographic #main a[target=_blank].link-download:after {
+.node--type-infographic #main .link-download:after {
   content: " ";
   display: inline-block;
   background: url(../images/external_link-v2.png) no-repeat 1px 4px;
   width: 15px;
   height: 20px;
-  padding-right: 0px;
-  vertical-align: text-bottom;
   margin-left: 5px;
+  padding-right: 1px;
+  vertical-align: text-bottom;
 }
 
 .download-pdf .separator-download:last-child {
@@ -2111,6 +2165,7 @@ body ul li .introduction-title a:hover {
 /*Copyrights*/
 .field--name-field-caption-copyrigth- {
   font-size: 0.65rem;
+  padding-bottom: 1rem;
 }
 .field--name-field-caption-copyrigth- p {
   margin: 0;
@@ -2163,6 +2218,14 @@ body ul li .introduction-title a:hover {
 }
 
 /* Share this on articles icons */
+#block-addtoanybuttons {
+  padding-left: 1rem;
+}
+
+#main #block-addtoanybuttons {
+  padding-left: 0;
+}
+
 #share-this-on {
   float: left;
   padding-top: 1rem;
@@ -2387,6 +2450,9 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   height: auto;
   margin-bottom: 1rem;
 }
+.node--type-article #main .field--name-field-image-caption img.custom-reset-margin {
+  margin-bottom: 2px;
+}
 .node--type-article .content-headings-related {
   padding-top: 2rem;
 }
@@ -2470,6 +2536,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   font-size: 0.9rem;
 }
 .node--type-article #main .field--name-field-related-oshwiki-articles {
+  clear: both;
   margin-top: 0.8rem;
   margin-bottom: 10px;
   background: #e8ecf5;
@@ -2796,7 +2863,7 @@ a.quiz-start-link:hover {
 .osha-workflow-list-widget {
   background: #FFFBD9;
   border: 1px solid #FFEBC5;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 0.5rem 1rem 0.5rem;
   margin-bottom: 2rem;
 }
 .osha-workflow-list-widget p:before {
@@ -2806,6 +2873,10 @@ a.quiz-start-link:hover {
   border-left: 25px solid #FFFBD9;
 }
 
+/* Dangerous content type */
+.dangerous-wrapper {
+  /* Providers */
+}
 .dangerous-wrapper .field__label {
   font-size: 0.9rem;
 }
@@ -2818,9 +2889,6 @@ a.quiz-start-link:hover {
 }
 .dangerous-wrapper .field__item p {
   margin-bottom: 0;
-}
-.dangerous-wrapper .field--name-body p {
-  margin-bottom: 1rem;
 }
 .dangerous-wrapper .field--name-field-item-type .field__label, .dangerous-wrapper .field--name-field-material-country .field__label, .dangerous-wrapper .field--name-field-available-in-languages .field__label, .dangerous-wrapper .field--name-field-intellectual-property-righ .field__label {
   color: #003399;
@@ -2839,7 +2907,46 @@ a.quiz-start-link:hover {
 .dangerous-wrapper .field--name-field-substance-description .field__item, .dangerous-wrapper .field--name-field-year .field__item {
   color: #003399;
 }
+.dangerous-wrapper .field--name-field-provider-name-english, .dangerous-wrapper .field--name-field-provider-name-original, .dangerous-wrapper .provider-url {
+  padding-left: 1rem;
+}
 
+/* Anonymous Dangerous content type */
+.node--type-dangerous-substances #block-ncwtheme-page-title h1 {
+  clear: both;
+}
+.node--type-dangerous-substances .back-before-title {
+  float: right;
+  padding-bottom: 0.5rem;
+}
+
+.wrapper-tags {
+  display: flex;
+}
+.wrapper-tags .tag {
+  margin-right: 5px;
+}
+.wrapper-tags .tag .field__label {
+  display: none;
+}
+
+.wrapper-dangerous-wrapper {
+  padding-top: 1rem;
+  /* Providers */
+}
+.wrapper-dangerous-wrapper .field__label {
+  font-weight: 600;
+  padding-top: 1rem;
+}
+.wrapper-dangerous-wrapper .field--name-field-provider-name-english, .wrapper-dangerous-wrapper .field--name-field-provider-name-original, .wrapper-dangerous-wrapper .provider-url {
+  padding-left: 0;
+}
+
+.wrapper-ds-content-description .field__label {
+  display: none;
+}
+
+/* Wiki articles */
 .node--type-wiki-page .field__label {
   font-size: 0.9rem;
 }
@@ -2902,6 +3009,7 @@ a.quiz-start-link:hover {
   background-color: #FFF;
 }
 .breadcrumb-fluid .breadcrumb {
+  visibility: hidden;
   font-size: 0.8rem;
   font-weight: lighter;
   border: 0px;
@@ -2918,6 +3026,9 @@ a.quiz-start-link:hover {
 .breadcrumb-fluid .breadcrumb a:hover {
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
+}
+.breadcrumb-fluid .breadcrumb.custom-visible {
+  visibility: visible;
 }
 .breadcrumb-fluid .breadcrumb-item.active {
   color: #003399;
@@ -4212,7 +4323,7 @@ body.user-logged-in.toolbar-tray-open #header {
     cursor: pointer;
     text-indent: -9999px;
     position: relative;
-    top: 5px;
+    top: -16px;
     right: -27px;
   }
   #block-searchsite #edit-actions .btn-primary.activate, #block-searchsite #edit-actions--2 .btn-primary.activate {
@@ -4467,6 +4578,41 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   margin-right: 3rem;
 }
 
+/* Themes - Dangerous substances - 3 items per row */
+/* Work-related diseases - 3 items per row */
+.page-node-1409 .block-views-landing-page, .page-node-13530 .block-views-landing-page {
+  margin-top: 1rem;
+}
+.page-node-1409 .block-views-landing-page .list--item, .page-node-13530 .block-views-landing-page .list--item {
+  max-width: 172px;
+}
+.page-node-1409 .block-views-landing-page .list--item img, .page-node-13530 .block-views-landing-page .list--item img {
+  width: 100%;
+  height: auto;
+}
+.page-node-1409 .block-views-landing-page .list--item:nth-child(3), .page-node-13530 .block-views-landing-page .list--item:nth-child(3) {
+  padding-right: 0;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3), .page-node-13530 .block-views-landing-page .list--item:nth-child(3) {
+    margin: 0.5rem 2% 1.5rem 0;
+    padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3), .page-node-13530 .block-views-landing-page .list--item:nth-child(3) {
+    padding-right: 0;
+    margin: 0.5rem 0 1.5rem 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .page-node-1409 .block-views-landing-page .list--item:nth-child(3), .page-node-13530 .block-views-landing-page .list--item:nth-child(3) {
+    margin: 0.5rem 2% 1.5rem 0;
+    padding-right: 15px;
+  }
+}
 /* This SASS only apply in the Web, not in the email - outlook
    View /themes/custom/newsletter_bilbomatica/templates/simplenews-newsletter-body.html.twig to apply styles to Outlook - Gmail
 */
@@ -4555,8 +4701,10 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
 }
 .block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link {
   margin-bottom: 10px;
-  font-size: 1.5625rem;
+  font-size: 1.5em;
   font-weight: bold;
+  border-bottom: 0;
+  margin-top: 0;
 }
 .block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link a {
   color: #003399;
@@ -5106,29 +5254,29 @@ body.contact form.contact-form button.btn-primary {
 }
 
 /* Publications view */
-.tools-and-publications-publications .two-column h1 {
+.publications .two-column h1 {
   display: none;
 }
-.tools-and-publications-publications .revamp-row .publications-right-column {
+.publications .revamp-row .publications-right-column {
   width: 100%;
   padding-left: 2rem;
 }
-.tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
+.publications .revamp-row .publications-right-column .content-publication-info {
   display: flex;
 }
-.tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
+.publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
   width: 40%;
 }
-.tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
+.publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
   width: 55%;
   font-weight: normal;
 }
-.tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
+.publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
   width: 15%;
   text-align: right;
   padding-right: 15px;
 }
-.tools-and-publications-publications .revamp-row .publications-right-column h2 {
+.publications .revamp-row .publications-right-column h2 {
   font-weight: 400;
   font-size: 1.35rem;
   padding-top: 2rem;
@@ -5163,14 +5311,21 @@ body.node--type-publication {
 }
 .node--type-publication .publications-row {
   display: flex;
+  padding-top: 1rem;
 }
 .node--type-publication .publications-row.custom-add-margin {
-  padding-top: 1rem;
   padding-bottom: 2rem;
+}
+.node--type-publication .publications-row.add-border {
+  border-bottom: 1px solid #003399;
+  padding-bottom: 1.5rem;
 }
 .node--type-publication .publications-detail-right-column {
   width: 100%;
   padding-left: 2rem;
+}
+.node--type-publication .publications-detail-right-column h1 {
+  padding-bottom: 0;
 }
 .node--type-publication .publications-detail-right-column h2 {
   margin-bottom: 21px;
@@ -5183,6 +5338,9 @@ body.node--type-publication {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.node--type-publication .publications-detail-right-column .publication-detail-tags {
+  padding-bottom: 1rem;
 }
 .node--type-publication .field--name-field-image-media img {
   float: left;
@@ -5232,7 +5390,6 @@ body.node--type-publication {
 }
 .node--type-publication .field--type-entity-reference > .field-item.publication-field:nth-child(1) {
   margin-top: 0;
-  border: 1px solid red;
 }
 .node--type-publication .related-resources-fluid {
   float: left;
@@ -5241,6 +5398,7 @@ body.node--type-publication {
   padding: 2rem 0 2rem 0;
   width: 100vw;
   position: relative;
+  margin-top: -1px;
 }
 .node--type-publication .related-resources-fluid .publications-detail-right-column {
   padding-top: 1rem;
@@ -5329,7 +5487,7 @@ body.node--type-publication {
 
 /* Related publications and Twing publicattions */
 .node--type-publication .field--name-field-related-publications .field__item {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 .node--type-publication .field--name-field-related-publications > div:nth-child(1) {
   margin-top: 0;
@@ -5417,7 +5575,54 @@ body.node--type-publication {
 /* Related publications - Videos/Youtube */
 .field-item.youtube-field {
   float: left;
-  margin-right: 2em;
+  width: 265px;
+  margin-right: 10px;
+}
+.field-item.youtube-field h2 {
+  font-size: 1.1rem;
+  line-height: initial;
+}
+.field-item.youtube-field iframe {
+  width: 265px;
+  height: auto;
+}
+
+.node--type-article .field--name-field-aditional-resources .node--type-youtube .custom-video-twig h2.rr-item-title {
+  padding-bottom: 1rem;
+}
+
+.custom-video-twig h2.rr-item-title {
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+.custom-video-twig .rr-item-content {
+  height: auto;
+}
+.custom-video-twig figure {
+  margin: 0;
+}
+
+.field-item.youtube-field.field-2, .field-item.youtube-field.field-4 {
+  margin-right: 0;
+}
+
+/* Related publications - Infographics */
+.field-item.infographic-field {
+  float: left;
+  width: 264px;
+  margin-right: 1rem;
+}
+.field-item.infographic-field h2 {
+  font-size: 1.1rem;
+  line-height: initial;
+}
+.field-item.infographic-field img {
+  width: 264px;
+  height: auto;
+}
+
+.field-item.infographic-field.field-3, .field-item.infographic-field.field-6 {
+  margin-right: 0;
 }
 
 /* Related publications in articles */
@@ -5436,6 +5641,19 @@ body.node--type-publication {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 5px) 9px;
 }
 
+.wrapper-view-aditional-publications {
+  width: 100%;
+  float: left;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.wrapper-view-aditional-publications .revamp-row .node--type-publication .rr-left-column .field--name-field-image-media {
+  margin-right: 0;
+}
+.wrapper-view-aditional-publications .revamp-row .node--type-publication .rr-right-column div.field--name-node-link {
+  text-align: left;
+}
+
 /* Responsive */
 @media only screen and (max-width: 1200px) {
   /* Publications Slide 3 items */
@@ -5448,28 +5666,32 @@ body.node--type-publication {
     display: none;
   }
 
-  /* Publications view*/
-  .tools-and-publications-publications .revamp-row .publications-left-column {
+  /* Publications view */
+  .publications .revamp-row .publications-left-column {
     display: none;
   }
-  .tools-and-publications-publications .revamp-row .publications-right-column {
+  .publications .revamp-row .publications-right-column {
     padding-left: 0;
   }
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
+  .publications .revamp-row .publications-right-column .content-publication-info {
     display: flex;
   }
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
+  .publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
     width: 20%;
     display: flex;
   }
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
+  .publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
     width: 65%;
     font-weight: normal;
   }
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
+  .publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
     width: 15%;
     text-align: right;
     padding-right: 15px;
+  }
+
+  .field-item.infographic-field.field-3, .field-item.infographic-field.field-6 {
+    margin-right: 1rem;
   }
 }
 @media only screen and (max-width: 990px) {
@@ -5489,7 +5711,7 @@ body.node--type-publication {
     padding: 0;
   }
 
-  .tools-and-publications-publications .view-filters fieldset:nth-child(3) {
+  .publications .view-filters fieldset:nth-child(3) {
     width: 100%;
   }
 
@@ -5502,17 +5724,17 @@ body.node--type-publication {
 }
 @media only screen and (max-width: 580px) {
   /* Publications view*/
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
+  .publications .revamp-row .publications-right-column .content-publication-info {
     display: block;
   }
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
+  .publications .revamp-row .publications-right-column .content-publication-info span:nth-child(1) {
     width: 100%;
   }
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
+  .publications .revamp-row .publications-right-column .content-publication-info span:nth-child(2) {
     width: 78%;
     display: inline-block;
   }
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
+  .publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
     width: 100%;
   }
 }
@@ -5683,6 +5905,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .field--name-body .hierarchical-tree li a {
   border-bottom: none;
   font-weight: 600;
+}
+.field--name-body .hierarchical-tree li span.term-selected {
+  background-color: yellow;
 }
 .field--name-body .hierarchical-tree ul {
   margin-left: 30px;
@@ -6132,13 +6357,13 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   display: none;
 }
 
-.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-by {
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-by, .view-musculoskeletal-disorders-list .view-filters .form-item-sort-by {
   order: 3;
 }
-.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-order {
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .form-item-sort-order, .view-musculoskeletal-disorders-list .view-filters .form-item-sort-order {
   order: 4;
 }
-.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .btn-primary {
+.view-practical-tools-and-guidance-on-dangerous-substances .view-filters .btn-primary, .view-musculoskeletal-disorders-list .view-filters .btn-primary {
   margin-left: 0;
   margin-right: 10px;
 }
@@ -6204,9 +6429,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   font-size: 0.9rem;
 }
 
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item,
-.node--type-musculoskeletal-disorders .field--name-field-material-country,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages {
   display: flex;
   align-items: center;
   margin-bottom: 0.2rem;
@@ -6214,24 +6439,24 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   padding-top: 0;
   font-size: 0.9rem;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__label,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__label,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__label {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__label,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__label,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__label {
   margin: 0 5px 0 0;
   padding: 0;
   color: #003399;
   min-width: auto;
   font-weight: bold;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items {
   display: flex;
   align-items: center;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items .field__item,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items .field__item,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item {
   display: block;
   margin: 0 4px 0 0;
   background-color: #e8ecf5;
@@ -6241,62 +6466,62 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   color: #003399;
   font-size: 0.687rem;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item a,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item a,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item a {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items .field__item a,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items .field__item a,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item a {
   border: none;
 }
-.node--type-musculoskeletal-disorders .field--name-field-type-of-item .field__items .field__item p,
-.node--type-musculoskeletal-disorders .field--name-field-material-country .field__items .field__item p,
-.node--type-musculoskeletal-disorders .field--name-field-available-in-languages .field__items .field__item p {
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items .field__item p,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items .field__item p,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item p {
   margin: 0;
 }
-.node--type-musculoskeletal-disorders .field--name-field-body-original {
+.node--type-musculoskeletal-disorders #main .field--name-field-body-original {
   font-size: 0.875rem;
 }
-.node--type-musculoskeletal-disorders .field--name-field-body-original p {
+.node--type-musculoskeletal-disorders #main .field--name-field-body-original p {
   margin: 0;
 }
-.node--type-musculoskeletal-disorders .field--type-language-field,
-.node--type-musculoskeletal-disorders .field--type-entity-reference,
-.node--type-musculoskeletal-disorders .field--type-link {
+.node--type-musculoskeletal-disorders #main .field--type-language-field,
+.node--type-musculoskeletal-disorders #main .field--type-entity-reference,
+.node--type-musculoskeletal-disorders #main .field--type-link {
   margin-bottom: 0.4rem;
   padding: 0;
   font-size: 0.875rem;
 }
-.node--type-musculoskeletal-disorders .field--type-language-field p,
-.node--type-musculoskeletal-disorders .field--type-entity-reference p,
-.node--type-musculoskeletal-disorders .field--type-link p {
+.node--type-musculoskeletal-disorders #main .field--type-language-field p,
+.node--type-musculoskeletal-disorders #main .field--type-entity-reference p,
+.node--type-musculoskeletal-disorders #main .field--type-link p {
   margin: 0;
 }
-.node--type-musculoskeletal-disorders .field--type-language-field a,
-.node--type-musculoskeletal-disorders .field--type-entity-reference a,
-.node--type-musculoskeletal-disorders .field--type-link a {
+.node--type-musculoskeletal-disorders #main .field--type-language-field a,
+.node--type-musculoskeletal-disorders #main .field--type-entity-reference a,
+.node--type-musculoskeletal-disorders #main .field--type-link a {
   text-decoration: none;
   color: #003399;
   border-bottom: 1px solid #c72272;
 }
-.node--type-musculoskeletal-disorders .field--type-language-field .field__label,
-.node--type-musculoskeletal-disorders .field--type-entity-reference .field__label,
-.node--type-musculoskeletal-disorders .field--type-link .field__label {
+.node--type-musculoskeletal-disorders #main .field--type-language-field .field__label,
+.node--type-musculoskeletal-disorders #main .field--type-entity-reference .field__label,
+.node--type-musculoskeletal-disorders #main .field--type-link .field__label {
   font-weight: bold;
 }
-.node--type-musculoskeletal-disorders .field--name-field-year .field__item {
+.node--type-musculoskeletal-disorders #main .field--name-field-year .field__item {
   color: #003399;
   font-size: 0.785rem;
   font-weight: bold;
 }
-.node--type-musculoskeletal-disorders .tags-wrapper {
+.node--type-musculoskeletal-disorders #main .tags-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-start;
   margin: 0 0 20px 0;
 }
-.node--type-musculoskeletal-disorders .tags-wrapper .field {
+.node--type-musculoskeletal-disorders #main .tags-wrapper .field {
   margin: 0 1rem 0.2rem 0;
 }
-.node--type-musculoskeletal-disorders .node__content div > h2 {
+.node--type-musculoskeletal-disorders #main .node__content div > h2 {
   margin: 0;
   padding-bottom: 0;
 }
@@ -6433,6 +6658,17 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
   .news-events #main ul li:nth-child(3) {
     float: none;
+  }
+
+  .safety-and-health-legislation-european-directives .sidebar-first .views-exposed-form h2 {
+    background: #cfddee;
+    color: #003399;
+    margin: 0;
+    padding: 0 1rem 0.3rem;
+    font-weight: 600;
+  }
+  .safety-and-health-legislation-european-directives .sidebar-first .form-row > fieldset {
+    width: 100%;
   }
 }
 /* End Media 990px */

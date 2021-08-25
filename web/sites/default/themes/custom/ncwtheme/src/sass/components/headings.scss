@@ -10,6 +10,15 @@ h1, .page-title-h1 {
   font-weight: 600;
 }
 
+h1.clear-h1{
+  clear: both;
+  padding-top: 1rem;
+}
+
+h1.dangerous-h1{
+  margin-bottom: 0;
+}
+
 h2{
   font-size: 1.35rem;
   margin-bottom: 0;

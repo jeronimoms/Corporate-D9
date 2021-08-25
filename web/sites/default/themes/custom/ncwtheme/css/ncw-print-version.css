@@ -1,6 +1,4 @@
 /* Font Family */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
 @font-face {
   font-family: "Open Sans", sans-serif;
 }
@@ -187,6 +185,7 @@ footer,
 .block-workbench-access,
 .block-addtoany,
 video, audio, object, iframe,
+.field--name-body img,
 p img,
 p iframe,
 aside.section,
@@ -194,7 +193,20 @@ aside.section,
 .publications-left-column,
 .menu-link-image,
 .field--name-field-image-media,
-.field--name-field-image-menu-main {
+.field--name-field-image-menu-main,
+#share-this-on,
+.block-views-blockinfographic-block-3,
+table td img,
+.field--name-field-album-pictures,
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url,
+.see-more-arrow,
+.view-publications .see-more-arrow,
+.healthy-workplaces-campaigns .field--name-body p a,
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a,
+.back-to-link,
+body .node--type-publication .rr-right-column .field--name-node-link a,
+.highlighted,
+#navbar-main {
     display: none;
   }
 
@@ -248,7 +260,7 @@ body.user-logged-in.toolbar-tray-open #header {
 .content-news-events .wrap-news-events .views-row .tag-news-events {
     position: relative;
   }
-  .content-news-events .wrap-news-events .views-row * {
+  .content-news-events .wrap-news-events .views-row *:not(.see-more-arrow) {
     display: block;
     width: 100%;
   }
@@ -283,21 +295,31 @@ body.user-logged-in.toolbar-tray-open #header {
     position: relative;
   }
 
-  .tools-and-publications-publications .revamp-row .publications-right-column .content-publication-info {
+  .content-news-events .wrap-news-events .news-home .views-row *,
+.content-news-events .wrap-news-events .events-home *,
+.content-news-events .wrap-news-events .events-home .view-content .see-more-arrow a {
+    width: 100% !important;
+    margin: 0 0 1rem !important;
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    position: relative;
+  }
+
+  .publications .revamp-row .publications-right-column .content-publication-info {
     display: block;
   }
 
-  .tools-and-publications-publications .revamp-row .publications-right-column h2 {
+  .publications .revamp-row .publications-right-column h2 {
     line-height: 1.5;
     padding: 0;
     margin: 0 0 1rem;
     font-size: 22pt !important;
   }
 
-  .tools-and-publications-publications .revamp-row .publications-right-column {
+  .publications .revamp-row .publications-right-column {
     padding-left: 0;
   }
-  .tools-and-publications-publications .revamp-row .publications-right-column .see-more-arrow a {
+  .publications .revamp-row .publications-right-column .see-more-arrow a {
     padding: 0;
   }
 
@@ -328,19 +350,55 @@ body.user-logged-in.toolbar-tray-open #header {
     max-width: 100%;
   }
 
-  .view-landing-menu {
+  .view-landing-menu,
+.view-infographic,
+.view-photo-gallery-album {
     display: block !important;
   }
-  .view-landing-menu .view-content.row {
+  .view-landing-menu .view-content.row,
+.view-infographic .view-content.row,
+.view-photo-gallery-album .view-content.row {
     display: block !important;
   }
-  .view-landing-menu .list--item {
+  .view-landing-menu .list--item,
+.view-landing-menu .infographic-item-view,
+.view-infographic .list--item,
+.view-infographic .infographic-item-view,
+.view-photo-gallery-album .list--item,
+.view-photo-gallery-album .infographic-item-view {
     margin: 0 0 24pt !important;
     padding: 0 !important;
     width: 100% !important;
     max-width: 100%;
   }
-  .view-landing-menu .menu-link-image {
+  .view-landing-menu .menu-link-image,
+.view-landing-menu .views-field-field-image,
+.view-infographic .menu-link-image,
+.view-infographic .views-field-field-image,
+.view-photo-gallery-album .menu-link-image,
+.view-photo-gallery-album .views-field-field-image {
+    display: none !important;
+  }
+  .view-landing-menu h2.field-content,
+.view-infographic h2.field-content,
+.view-photo-gallery-album h2.field-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .view-landing-menu h2.field-content a,
+.view-infographic h2.field-content a,
+.view-photo-gallery-album h2.field-content a {
+    font-family: "Open Sans", sans-serif !important;
+  }
+  .view-landing-menu .row,
+.view-infographic .row,
+.view-photo-gallery-album .row {
+    display: block !important;
+    width: 100% !important;
+  }
+  .view-landing-menu .views-field-field-thumbnail-media,
+.view-infographic .views-field-field-thumbnail-media,
+.view-photo-gallery-album .views-field-field-thumbnail-media {
     display: none !important;
   }
 
@@ -357,9 +415,11 @@ body.user-logged-in.toolbar-tray-open #header {
     display: block !important;
   }
 
-  .block-views-landing-page .menu-link-text a {
+  .related_wiki_head .block-views-landing-page .menu-link-text a {
     font-family: "Open Sans", sans-serif !important;
     font-size: 16pt !important;
+    height: auto !important;
+    background: none !important;
   }
 
   .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a,
@@ -395,6 +455,14 @@ body.user-logged-in.toolbar-tray-open #header {
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title,
 .node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-summary-html {
     padding: 0 !important;
+  }
+
+  .view-publications .views-col {
+    border: none;
+  }
+
+  body.user-logged-in.toolbar-tray-open {
+    padding-top: 0 !important;
   }
 }
 
