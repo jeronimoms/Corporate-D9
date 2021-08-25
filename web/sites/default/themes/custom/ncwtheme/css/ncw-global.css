@@ -3009,6 +3009,7 @@ a.quiz-start-link:hover {
   background-color: #FFF;
 }
 .breadcrumb-fluid .breadcrumb {
+  visibility: hidden;
   font-size: 0.8rem;
   font-weight: lighter;
   border: 0px;
@@ -3025,6 +3026,9 @@ a.quiz-start-link:hover {
 .breadcrumb-fluid .breadcrumb a:hover {
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
+}
+.breadcrumb-fluid .breadcrumb.custom-visible {
+  visibility: visible;
 }
 .breadcrumb-fluid .breadcrumb-item.active {
   color: #003399;

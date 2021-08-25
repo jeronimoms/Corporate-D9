@@ -227,6 +227,16 @@ jQuery(document).ready(function($) {
     $(this).text(text.replace('&amp;', '&'));
   });
 
+  // Breadcrumbs - Hide duplicate items
+  var text_breadcrumb_item_2 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(2) > a").text();
+  var text_breadcrumb_item_3 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3) > a").text();
+
+  if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
+    $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
+    $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
+  }
+
+
   //Archivied calls - Add class custom-active in year
   if ($(".view-id-calls.view-display-id-page_1")[0]) {
     let url = $(location).attr('href');
@@ -381,5 +391,10 @@ jQuery(document).ready(function($) {
       $('#block-headermenu').appendTo('#navbar-main');
       $('#block-headermenu').show();
     }
+
+    if ($('#field > div.field-item:contains("someText")').length > 0) {
+      $("#somediv").addClass("thisClass");
+    }
+
   });
 })(jQuery);
