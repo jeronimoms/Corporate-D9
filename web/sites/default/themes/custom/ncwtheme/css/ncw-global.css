@@ -5568,6 +5568,9 @@ body.node--type-publication {
   padding-top: 0;
   padding-bottom: 1rem;
 }
+.custom-video-twig .rr-item-content {
+  height: auto;
+}
 .custom-video-twig figure {
   margin: 0;
 }
