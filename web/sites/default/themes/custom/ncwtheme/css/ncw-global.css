@@ -4701,8 +4701,10 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
 }
 .block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link {
   margin-bottom: 10px;
-  font-size: 1.5625rem;
+  font-size: 1.5em;
   font-weight: bold;
+  border-bottom: 0;
+  margin-top: 0;
 }
 .block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link a {
   color: #003399;
