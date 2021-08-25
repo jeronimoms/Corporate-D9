@@ -5560,6 +5560,18 @@ body.node--type-publication {
   height: auto;
 }
 
+.node--type-article .field--name-field-aditional-resources .node--type-youtube .custom-video-twig h2.rr-item-title {
+  padding-bottom: 1rem;
+}
+
+.custom-video-twig h2.rr-item-title {
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+.custom-video-twig figure {
+  margin: 0;
+}
+
 .field-item.youtube-field.field-2, .field-item.youtube-field.field-4 {
   margin-right: 0;
 }
