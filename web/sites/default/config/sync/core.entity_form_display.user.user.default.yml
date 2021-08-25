@@ -4,14 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_metatag
-    - field.field.user.user.tmgmt_translation_skills
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
     - metatag
     - path
-    - tmgmt_language_combination
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -23,9 +21,13 @@ content:
   account:
     weight: -10
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_metatag:
     weight: 31
     settings:
@@ -36,26 +38,24 @@ content:
   language:
     weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  matomo:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
     weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
-  simplenews:
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   timezone:
     weight: 6
     region: content
-  tmgmt_translation_skills:
-    type: tmgmt_language_combination_default
-    weight: 32
     settings: {  }
     third_party_settings: {  }
-    region: content
   user_picture:
     type: image_image
     settings:
@@ -66,3 +66,4 @@ content:
     region: content
 hidden:
   langcode: true
+  simplenews: true

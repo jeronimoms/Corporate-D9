@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'EU-OSHA tesaurus'
+      exposed_form:
+        options:
+          submit_button: Søk
+          exposed_sorts_label: 'Sorter etter'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Søk
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Søk
+  thesaurus_search:
+    display_title: Søk

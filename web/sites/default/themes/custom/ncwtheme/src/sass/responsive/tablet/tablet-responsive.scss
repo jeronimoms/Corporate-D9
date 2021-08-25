@@ -135,6 +135,14 @@
     }
   }
 
+  #block-ncwtheme-main-menu{
+    .menu.menu-level-1{
+      .mean-expand{
+        display: block;
+      }
+    }
+  }
+
   /* Page - Highlight, News and Events content link */
   .news-events{
     #main{
@@ -145,6 +153,23 @@
         li:nth-child(3){
           float: none;
         }
+      }
+    }
+  }
+
+  .safety-and-health-legislation-european-directives{
+    .sidebar-first{
+      .views-exposed-form{
+        h2{
+          background: $bg-color-blue-light;
+          color: $text-color-blue;
+          margin: 0;
+          padding: 0 1rem 0.3rem;
+          font-weight: 600;
+        }
+      }
+      .form-row>fieldset{
+        width: 100%;
       }
     }
   }

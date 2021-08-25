@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Keresés
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Szabadszöveges keresés'
+        field_seminar_start_date:
+          expose:
+            label: 'Kezdő dátum'
+        field_seminar_end_date:
+          expose:
+            label: 'Záró dátum'

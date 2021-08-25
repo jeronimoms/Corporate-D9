@@ -90,7 +90,7 @@ body{
       padding: 10px 40px 10px 10px;
       background: url(../images/arrow.png) no-repeat calc(100% - 10px) 15px;
       font-size: 0.9rem;
-      font-weight: bold;
+      font-weight: 700;
       text-decoration: none;
       border-bottom: 0;
       &:hover {
@@ -154,6 +154,21 @@ body {
   padding: 0;
 }
 
+.slideshow-title.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+a.quiz-start-link {
+  display: block;
+  text-align: center;
+  border-bottom: 0!important;
+  font-weight: bold;
+  background: url(../images/intro.png) no-repeat 50% 10%;
+  padding-top: 255px;
+  position: relative;
+}
+
 /* Labels */
 span.label, span.pages{
   font-family: 'Open Sans',sans-serif;
@@ -165,7 +180,7 @@ span.label, span.pages{
 .node--view-mode-full{
   .field--label-above{
     padding-bottom: 1rem;
-    .field__label{
+    .field__label, .field_label{
       font-weight: 600;
     }
   }
@@ -225,6 +240,7 @@ span.pages{
       border-bottom: 1px solid $bg-color-white;
       padding-left: 0;
       padding-right: 0;
+      text-transform: uppercase;
       &:hover{
         background: transparent;
       }
@@ -238,9 +254,54 @@ span.pages{
         vertical-align: text-bottom;
       }
     }
+    .download-pdf{
+      .link-download{
+        &:hover{
+          background: transparent;
+          border-bottom: 0;
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
 
+.node--type-infographic {
+  #main {
+    .link-download{
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: transparent;
+      border-bottom: 1px solid $bg-color-white;
+      padding-left: 0;
+      padding-right: 0;
+      text-transform: uppercase;
+      &:hover{
+        background: transparent;
+      }
+      &:before{
+        content: none;
+      }
+      &:after{
+        content: ' ';
+        display: inline-block;
+        background: url(../images/external_link-v2.png) no-repeat 1px 4px;
+        width: 15px;
+        height: 20px;
+        margin-left: 5px;
+        padding-right: 1px;
+        vertical-align: text-bottom;
+      }
+    }
+  }
+}
+
+.download-pdf{
+  .separator-download:last-child{
+    display: none;
+  }
+}
 
 /* Links introduction title Highlight, News and Events */
 body {
@@ -273,6 +334,7 @@ body {
 /*Copyrights*/
 .field--name-field-caption-copyrigth-{
   font-size: 0.65rem;
+  padding-bottom: 1rem;
   p{
     margin: 0;
   }
@@ -315,7 +377,25 @@ body {
   margin-right: 5px;
 }
 
+.ico-pptx{
+  display: inline-block;
+  background: url(../images/file-icons/x-office-presentation.png) no-repeat 1px 4px;
+  width: 20px;
+  height: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 /* Share this on articles icons */
+#block-addtoanybuttons{
+  padding-left: 1rem;
+}
+#main{
+  #block-addtoanybuttons{
+    padding-left: 0;
+  }
+}
+
 #share-this-on{
   float: left;
   padding-top: 1rem;
@@ -393,6 +473,7 @@ body {
 }
 
 #main{
+  padding-bottom: 2rem;
   .node--view-mode-full, .view{
     a[target=_blank] {
       background: url(../images/external_link-v2.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
@@ -403,6 +484,25 @@ body {
         background: url(../images/external_link-v2-hover.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
         border-bottom: 1px solid $bg-color-blue;
         text-decoration: none;
+      }
+    }
+  }
+}
+
+#main.custom-no-padding{
+  padding-bottom: 0;
+}
+
+.node--type-slideshare{
+  #main{
+    .node--view-mode-full, .view{
+      a[target=_blank] {
+        background: url(../images/external_link-v2.png) no-repeat scroll right 97% rgba(0, 0, 0, 0);
+        float: left;
+        &:hover{
+          background: url(../images/external_link-v2-hover.png) no-repeat scroll right 97% rgba(0, 0, 0, 0);
+          text-decoration: none;
+        }
       }
     }
   }
@@ -565,6 +665,9 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
         height: auto;
         margin-bottom: 1rem;
       }
+      img.custom-reset-margin{
+        margin-bottom: 2px;
+      }
     }
   }
   .content-headings-related{
@@ -576,7 +679,13 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
       margin-bottom: 1.5rem;
     }
   }
-  .custom-file-twig{
+  .h2-related-articles{
+    h2{
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+  .node--type-file{
     .field__label{
       display: none;
     }
@@ -659,6 +768,7 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
       }
     }
     .field--name-field-related-oshwiki-articles {
+      clear: both;
       margin-top: 0.8rem;
       margin-bottom: 10px;
       background: $bg-color-blue-light-2;
@@ -1016,3 +1126,175 @@ a.quiz-start-link:hover {
     }
   }
 }
+
+.block-workbench-access{
+  background: $bg-color-workbench;
+  border: 1px solid $bg-color-workbench-border;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  .list-group-item{
+    border: 0;
+    background: transparent;
+    color: $text-color-grey-dark;
+    font-size: 0.9rem;
+  }
+}
+
+.osha-workflow-list-widget{
+  background: $bg-color-workbench;
+  border: 1px solid $bg-color-workbench-border;
+  padding: 2rem 0.5rem 1rem 0.5rem;
+  margin-bottom: 2rem;
+  p:before{
+    border-left: 25px solid $bg-color-workbench;
+  }
+  p.active:before {
+    border-left: 25px solid $bg-color-workbench;
+  }
+}
+
+/* Dangerous content type */
+.dangerous-wrapper{
+  .field__label{
+    font-size: 0.9rem;
+    &:after{
+      display: inline-block;
+      content: ':'
+    }
+  }
+  .field__item{
+    a{
+      font-size: 0.9rem;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  .field--name-field-item-type, .field--name-field-material-country, .field--name-field-available-in-languages, .field--name-field-intellectual-property-righ{
+    .field__label{
+      color: $text-color-blue;
+    }
+  }
+  .field--name-field-item-type, .field--name-field-material-country, .field--name-field-available-in-languages, .field--name-field-intellectual-property-righ{
+    .field__item{
+      display: inline-block;
+      background-color: $bg-color-blue-accordion;
+      border-radius: 5px;
+      padding: 1px 10px;
+      margin-right: 5px;
+      font-size: 11px;
+      margin-bottom: 5px;
+      color: #003399;
+      margin-left: 2px;
+    }
+  }
+  .field--name-field-substance-description, .field--name-field-year{
+    .field__item{
+      color: $text-color-blue;
+    }
+  }
+  /* Providers */
+  .field--name-field-provider-name-english, .field--name-field-provider-name-original, .provider-url{
+    padding-left: 1rem;
+  }
+}
+
+/* Anonymous Dangerous content type */
+.node--type-dangerous-substances{
+  #block-ncwtheme-page-title{
+    h1{
+      clear: both;
+    }
+  }
+  .back-before-title{
+    float: right;
+    padding-bottom: 0.5rem;
+  }
+}
+.wrapper-tags{
+  display: flex;
+  .tag{
+    margin-right: 5px;
+    .field__label{
+      display: none;
+    }
+  }
+}
+.wrapper-dangerous-wrapper{
+  padding-top: 1rem;
+  .field__label{
+    font-weight: 600;
+    padding-top: 1rem;
+  }
+  /* Providers */
+  .field--name-field-provider-name-english, .field--name-field-provider-name-original, .provider-url{
+    padding-left: 0;
+  }
+}
+.wrapper-ds-content-description{
+  .field__label{
+    display: none;
+  }
+}
+
+/* Wiki articles */
+.node--type-wiki-page{
+  .field__label{
+    font-size: 0.9rem;
+    &:after{
+      display: inline-block;
+      content: ':'
+    }
+  }
+  .field__item{
+    font-size: 0.9rem;
+    a{
+      font-size: 0.9rem;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  .field--name-field-summary-html{
+    .field__label{
+      color: #212529;
+      font-size: 0.9rem;
+    }
+  }
+  .field--name-field-wiki-page-url{
+    padding-bottom: 0.9rem;
+  }
+  .field--name-field-tags .field__label, .field--name-field-tags ul.links{
+    font-size: 0.9rem;
+  }
+}
+
+.node--type-press-contact{
+  .field__label{
+    font-size: 0.9rem;
+    font-weight: 600;
+    &:after{
+      display: inline-block;
+      content: ':'
+    }
+  }
+  .field__item{
+    font-size: 0.9rem;
+    a{
+      font-size: 0.9rem;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  .field--name-field-wg-role-1, .field--name-field-wg-role-2{
+    padding-bottom: 0;
+  }
+  .field--name-field-country{
+    padding-bottom: 1rem;
+  }
+  .field--name-field-wg-role-2{
+    padding-top: 1rem;
+  }
+}
+

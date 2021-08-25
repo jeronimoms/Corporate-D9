@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.osha_resources
     - core.entity_view_mode.node.teaser
     - core.entity_view_mode.node.view
     - field.storage.node.field_publication_date
@@ -12,6 +13,7 @@ dependencies:
     - node.type.publication
     - node.type.seminar
     - node.type.wiki_page
+    - taxonomy.vocabulary.publication_types
     - taxonomy.vocabulary.tags
     - workflows.workflow.editorial
   module:
@@ -1573,6 +1575,7 @@ display:
         row: false
         relationships: false
         arguments: false
+        access: false
       filters:
         status:
           value: '1'
@@ -1598,7 +1601,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '+0 minutes'
+            value: now
             type: offset
           group: 1
           exposed: false
@@ -1647,47 +1650,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: datetime
-        moderation_state:
-          id: moderation_state
-          table: node_field_data
-          field: moderation_state
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            editorial-published: editorial-published
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          plugin_id: moderation_state_filter
         type:
           id: type
           table: node_field_data
@@ -1734,46 +1696,25 @@ display:
         operator: AND
         groups:
           1: AND
-      title: 'Related publications'
+      title: 'Additional publications on this topic'
       display_description: ''
       style:
-        type: default
-        options: {  }
+        type: grid
+        options:
+          uses_fields: false
+          columns: 12
+          automatic_width: false
+          alignment: vertical
+          col_class_default: false
+          col_class_custom: ''
+          row_class_default: false
+          row_class_custom: 'revamp-row no-flex'
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
-      relationships:
-        field_tags:
-          id: field_tags
-          table: node__field_tags
-          field: field_tags
           relationship: none
-          group_type: group
-          admin_label: 'term from field_tags'
-          required: true
-          plugin_id: standard
-        reverse__node__field_tags:
-          id: reverse__node__field_tags
-          table: taxonomy_term_field_data
-          field: reverse__node__field_tags
-          relationship: field_tags
-          group_type: group
-          admin_label: field_tags
-          required: true
-          entity_type: taxonomy_term
-          plugin_id: entity_reverse
-        vid:
-          id: vid
-          table: node_field_revision
-          field: vid
-          relationship: none
-          group_type: group
-          admin_label: 'Get the actual content from a content revision.'
-          required: false
-          entity_type: node
-          entity_field: vid
-          plugin_id: standard
+          view_mode: osha_resources
+      relationships: {  }
       arguments:
         nid:
           id: nid
@@ -1896,15 +1837,16 @@ display:
           plugin_id: taxonomy_index_tid
       rendering_language: '***LANGUAGE_language_interface***'
       block_hide_empty: true
+      access:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:workflow_list'
+      tags: {  }
   block_5:
     display_plugin: block
     id: block_5
@@ -3352,8 +3294,8 @@ display:
             value: all
             title_enable: false
             title: All
-          title_enable: false
-          title: ''
+          title_enable: true
+          title: '{{ arguments.type }} tagged with "{{ arguments.tid }}"'
           default_argument_type: taxonomy_tid
           default_argument_options:
             node: true
@@ -3528,14 +3470,14 @@ display:
           value:
             min: ''
             max: ''
-            value: '+0 minutes'
+            value: now
             type: offset
           group: 1
           exposed: false
           expose:
             operator_id: field_publication_date_value_op
             label: 'Publication date (field_publication_date)'
-            description: ''
+            description: null
             use_operator: false
             operator: field_publication_date_value_op
             operator_limit_selection: false
@@ -3546,24 +3488,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              review_manager: '0'
-              project_manager: '0'
-              approver: '0'
-              translation_manager: '0'
-              translation_liaison: '0'
-              layout_validator: '0'
-              content_validator: '0'
-              events_coordinator: '0'
-              events_editor: '0'
-              osh_collaborator: '0'
-              news_editor: '0'
-              read_only: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
+            placeholder: null
+            min_placeholder: null
+            max_placeholder: null
           is_grouped: false
           group_info:
             label: ''
@@ -3692,7 +3619,7 @@ display:
             title_enable: false
             title: All
           title_enable: true
-          title: '%2 tagged with "%3"'
+          title: '{{ arguments.type }} tagged with "{{ arguments.tid }}"'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
@@ -4150,8 +4077,8 @@ display:
             value: all
             title_enable: false
             title: All
-          title_enable: false
-          title: ''
+          title_enable: true
+          title: 'News/Highlight tagged with "{{ arguments.tid }}"'
           default_argument_type: taxonomy_tid
           default_argument_options:
             node: true
@@ -4377,16 +4304,21 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          default_action: ignore
+          default_action: default
           exception:
             value: all
             title_enable: false
             title: All
           title_enable: true
-          title: 'Publication type ""'
-          default_argument_type: fixed
+          title: 'Publications with type "{{ arguments.field_publication_type_target_id }}"'
+          default_argument_type: taxonomy_tid
           default_argument_options:
-            argument: ''
+            node: true
+            limit: true
+            vids:
+              publication_types: publication_types
+            anyall: ','
+            term_page: '0'
           default_argument_skip_url: false
           summary_options:
             base_path: ''

@@ -8,13 +8,15 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\Entity\Node;
 
 
+
+
 /**
- * Implements hook_toolbar().
+ * Implements hook_toolbar_alter().
  */
-function osha_workflow_toolbar() {
-  return \Drupal::service('class_resolver')
+function osha_workflow_toolbar_alter(&$items) {
+   \Drupal::service('class_resolver')
     ->getInstanceFromDefinition(VwToolBar::class)
-    ->toolBar();
+    ->toolBar($items);
 }
 
 /**

@@ -1,17 +1,14 @@
 /* Font Family */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
-
 @font-face {
   font-family: 'Open Sans', sans-serif;
 }
-
 /* Font colours */
 $text-color-blue: #003399;
 $text-color-pink: #c72272;
 $text-color-black: #000;
 $text-color-black-label: #333;
 $text-color-grey: #57575a;
+$text-color-grey-dark: #666666;
 $text-color-grey-h3: #5a5a5b;
 $text-color-grey-light: #7c7d81;
 $text-color-white: #FFF;
@@ -57,6 +54,8 @@ $bg-color-white: #FFF;
 $bg-color-tag-1: #4e6aa0;
 $bg-color-tag-2: #e8eef7;
 $bg-color-view-tags: #9ABBDB;
+$bg-color-workbench: #FFFBD9;
+$bg-color-workbench-border: #FFEBC5;
 
 .bg-color-blue{
   background: $bg-color-blue;

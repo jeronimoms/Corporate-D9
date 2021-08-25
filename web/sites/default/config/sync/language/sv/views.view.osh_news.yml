@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: Arbetsmiljönyheter
+      fields:
+        view_node:
+          text: 'Se mer'
   oshnews_latest:
     display_options:
       block_description: Arbetsmiljönyheter

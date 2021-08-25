@@ -33,6 +33,11 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_thumbnail_media:
     type: media_thumbnail
     weight: 0
@@ -44,6 +49,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_external_url: true

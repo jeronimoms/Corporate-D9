@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Meklēšana
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Brīva teksta meklēšana'
+        field_seminar_start_date:
+          expose:
+            label: 'Sākuma datums'
+        field_seminar_end_date:
+          expose:
+            label: 'Beigu datums'

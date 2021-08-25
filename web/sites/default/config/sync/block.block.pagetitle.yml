@@ -9,7 +9,7 @@ dependencies:
 id: pagetitle
 theme: ncwtheme
 region: content
-weight: -62
+weight: -63
 provider: null
 plugin: page_title_block
 settings:
@@ -20,5 +20,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/publications/topic/*'
+    pages: "/publications/topic/*\r\n/publications/type/*"
     negate: false

@@ -1,0 +1,16 @@
+label: Hovedpunkter
+display:
+  default:
+    display_options:
+      title: Hovedpunkter
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/no/highlights\">Vis alle høydepunkter</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Vis alle høydepunkter'
+      fields:
+        view_node:
+          text: 'Vis mer'

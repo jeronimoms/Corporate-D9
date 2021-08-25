@@ -1,0 +1,16 @@
+label: Hápunktar
+display:
+  default:
+    display_options:
+      title: Hápunktar
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/is/highlights\">Skoða alla hápunkta</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Skoða alla hápunkta'
+      fields:
+        view_node:
+          text: 'Sjá meira'

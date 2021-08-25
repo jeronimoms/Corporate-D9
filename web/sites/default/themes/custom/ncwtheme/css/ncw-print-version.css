@@ -1,0 +1,469 @@
+/* Font Family */
+@font-face {
+  font-family: "Open Sans", sans-serif;
+}
+/* Font colours */
+.text-color-blue {
+  color: #003399;
+}
+
+.text-color-pink {
+  color: #c72272;
+}
+
+.text-color-black {
+  color: #000;
+}
+
+.text-color-black-label {
+  color: #333;
+}
+
+.text-color-grey-light {
+  color: #7c7d81;
+}
+
+.text-color-grey {
+  color: #57575a;
+}
+
+.text-color-white {
+  color: #FFF;
+}
+
+.text-color-facets {
+  color: #57565b;
+}
+
+/* background colours */
+.bg-color-blue {
+  background: #003399;
+}
+
+.bg-color-blue-light {
+  background: #cfddee;
+}
+
+.bg-color-blue-block {
+  background: #ecf1fb;
+}
+
+.bg-color-blue-wiki {
+  background: #325bad;
+}
+
+.bg-color-blue-accordion {
+  background: #e8eef7;
+}
+
+.bg-color-blue-button {
+  background: #b2c7e5;
+}
+
+.bg-color-pink {
+  background: #c72272;
+}
+
+.bg-color-grey {
+  background: #57575a;
+}
+
+.bg-color-white {
+  background: #FFF;
+}
+
+.bg-color-tag-1 {
+  background: #4e6aa0;
+}
+
+.bg-color-tag-2 {
+  background: #e8eef7;
+}
+
+@page {
+  margin: 1cm 2cm;
+}
+@media print {
+  * {
+    color: #000000 !important;
+    background: none !important;
+  }
+
+  body {
+    padding: 0 !important;
+    font-family: "Open Sans", sans-serif !important;
+  }
+
+  p a {
+    word-wrap: break-word;
+  }
+
+  a {
+    text-decoration: underline !important;
+    border-bottom: none !important;
+  }
+  a:before, a:after {
+    display: none !important;
+  }
+
+  input,
+textarea,
+select {
+    color: #000;
+    background: none;
+  }
+
+  h1, h2, h3, h4, h5, h6, a {
+    color: #000000;
+    font-weight: bold !important;
+  }
+
+  h1, h2 {
+    margin: 0 0 16pt;
+    line-height: 32pt;
+  }
+
+  h3, h4, h5 {
+    margin: 0 0 12pt;
+  }
+
+  h1 {
+    font-size: 32pt !important;
+  }
+
+  h2 {
+    font-size: 28pt !important;
+  }
+
+  h3 {
+    font-size: 24pt !important;
+  }
+
+  p,
+.field--name-field-summary-html,
+.node--type-article .field--name-body p,
+.field--name-body ul,
+.field--name-body ol,
+.node--type-article .field--name-body,
+.field--name-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 24pt;
+    font-size: 16pt !important;
+    line-height: 24pt !important;
+  }
+
+  table tr td {
+    font-size: 16pt !important;
+  }
+
+  .datetime,
+.views-field-field-date {
+    padding: 0;
+    margin: 0 0 12pt;
+    font-size: 13pt !important;
+    line-height: 24pt !important;
+  }
+
+  header nav,
+.breadcrumb-fluid,
+footer,
+.push-right,
+.tabs,
+.sidebar-first,
+.sidebars_second,
+.sidebar-second,
+.views-field-field-image-media,
+.home-recommended-resources,
+.content-links-news-events,
+.youtube-field,
+.field--name-field-image-caption,
+.home-intro,
+.views-field-field-image-media,
+.more-link,
+.osha-workflow-list-widget,
+.block-workbench-access,
+.block-addtoany,
+video, audio, object, iframe,
+.field--name-body img,
+p img,
+p iframe,
+aside.section,
+.view-filters,
+.publications-left-column,
+.menu-link-image,
+.field--name-field-image-media,
+.field--name-field-image-menu-main,
+#share-this-on,
+.block-views-blockinfographic-block-3,
+table td img,
+.field--name-field-album-pictures,
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url,
+.see-more-arrow,
+.view-publications .see-more-arrow,
+.healthy-workplaces-campaigns .field--name-body p a,
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a,
+.back-to-link,
+body .node--type-publication .rr-right-column .field--name-node-link a,
+.highlighted,
+#navbar-main {
+    display: none;
+  }
+
+  .top-header-content,
+.top-header-content .region-top-header-logos {
+    display: block !important;
+  }
+
+  body.user-logged-in #header,
+body.user-logged-in.toolbar-tray-open #header {
+    padding: 0;
+  }
+
+  #header,
+#page-wrapper #header {
+    position: relative !important;
+    width: 100%;
+    transition: none;
+    top: 0 !important;
+    left: 0;
+    height: 200px;
+    background: none;
+  }
+
+  .top-header-content .region-top-header-logos {
+    float: none;
+  }
+
+  .left_column,
+.see-more-arrow {
+    width: 100%;
+  }
+
+  .see-more-arrow {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .see-more-arrow a {
+    padding: 0 !important;
+  }
+
+  .views-row {
+    border-bottom: 1px dotted #000000;
+    margin-bottom: 16pt !important;
+  }
+
+  .content-news-events .wrap-news-events .views-row {
+    border: none;
+  }
+  .content-news-events .wrap-news-events .views-row .see-more-arrow a,
+.content-news-events .wrap-news-events .views-row .tag-news-events {
+    position: relative;
+  }
+  .content-news-events .wrap-news-events .views-row *:not(.see-more-arrow) {
+    display: block;
+    width: 100%;
+  }
+
+  .content-news-events .wrap-news-events .news-home .view-content .views-row,
+.content-news-events .wrap-news-events .events-home .view-content .views-row,
+.content-news-events .wrap-news-events .news-home,
+.content-news-events .wrap-news-events .events-home .view-content .views-field-field-country-code,
+.content-news-events .wrap-news-events .events-home {
+    border: none;
+    display: block;
+    width: 100% !important;
+    float: none !important;
+    height: auto;
+  }
+
+  .content-news-events .wrap-news-events .news-home .view-content .see-more-arrow a,
+.content-news-events .wrap-news-events .news-home .view-content .tag-news-events,
+.content-news-events .wrap-news-events .events-home .view-content .tag-news-events {
+    position: relative;
+    padding: 0;
+  }
+
+  .content-news-events .wrap-news-events .news-home .views-row time,
+.content-news-events .wrap-news-events .news-home .views-row *,
+.content-news-events .wrap-news-events .events-home *,
+.content-news-events .wrap-news-events .events-home .view-content .see-more-arrow a {
+    width: 100% !important;
+    margin: 0 0 1rem !important;
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    position: relative;
+  }
+
+  .content-news-events .wrap-news-events .news-home .views-row *,
+.content-news-events .wrap-news-events .events-home *,
+.content-news-events .wrap-news-events .events-home .view-content .see-more-arrow a {
+    width: 100% !important;
+    margin: 0 0 1rem !important;
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    position: relative;
+  }
+
+  .publications .revamp-row .publications-right-column .content-publication-info {
+    display: block;
+  }
+
+  .publications .revamp-row .publications-right-column h2 {
+    line-height: 1.5;
+    padding: 0;
+    margin: 0 0 1rem;
+    font-size: 22pt !important;
+  }
+
+  .publications .revamp-row .publications-right-column {
+    padding-left: 0;
+  }
+  .publications .revamp-row .publications-right-column .see-more-arrow a {
+    padding: 0;
+  }
+
+  .content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content,
+.views-field-field-date .field-content,
+.content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content time,
+.content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content time:nth-child(1) {
+    margin: 0 !important;
+    display: inline-block !important;
+    width: auto !important;
+  }
+  .content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content time,
+.views-field-field-date .field-content time,
+.content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content time time,
+.content-news-events .wrap-news-events .events-home .view-content .views-row .views-field-field-date .field-content time:nth-child(1) time {
+    display: inline-block !important;
+    width: auto !important;
+  }
+
+  .view-content.row {
+    padding: 0;
+    display: block !important;
+  }
+  .view-content.row .list--item {
+    margin: 0 0 24pt !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .view-landing-menu,
+.view-infographic,
+.view-photo-gallery-album {
+    display: block !important;
+  }
+  .view-landing-menu .view-content.row,
+.view-infographic .view-content.row,
+.view-photo-gallery-album .view-content.row {
+    display: block !important;
+  }
+  .view-landing-menu .list--item,
+.view-landing-menu .infographic-item-view,
+.view-infographic .list--item,
+.view-infographic .infographic-item-view,
+.view-photo-gallery-album .list--item,
+.view-photo-gallery-album .infographic-item-view {
+    margin: 0 0 24pt !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .view-landing-menu .menu-link-image,
+.view-landing-menu .views-field-field-image,
+.view-infographic .menu-link-image,
+.view-infographic .views-field-field-image,
+.view-photo-gallery-album .menu-link-image,
+.view-photo-gallery-album .views-field-field-image {
+    display: none !important;
+  }
+  .view-landing-menu h2.field-content,
+.view-infographic h2.field-content,
+.view-photo-gallery-album h2.field-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .view-landing-menu h2.field-content a,
+.view-infographic h2.field-content a,
+.view-photo-gallery-album h2.field-content a {
+    font-family: "Open Sans", sans-serif !important;
+  }
+  .view-landing-menu .row,
+.view-infographic .row,
+.view-photo-gallery-album .row {
+    display: block !important;
+    width: 100% !important;
+  }
+  .view-landing-menu .views-field-field-thumbnail-media,
+.view-infographic .views-field-field-thumbnail-media,
+.view-photo-gallery-album .views-field-field-thumbnail-media {
+    display: none !important;
+  }
+
+  .wysiwyg_accordion h3 {
+    padding: 0 !important;
+    font-family: "Open Sans", sans-serif !important;
+  }
+  .wysiwyg_accordion h3:after {
+    display: none !important;
+  }
+
+  .wysiwyg_accordion_panel {
+    margin: 0 0 24pt !important;
+    display: block !important;
+  }
+
+  .related_wiki_head .block-views-landing-page .menu-link-text a {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 16pt !important;
+    height: auto !important;
+    background: none !important;
+  }
+
+  .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a,
+.node--type-publication,
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type {
+    padding: 0 !important;
+    font-size: 16pt !important;
+  }
+  .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a *,
+.node--type-publication *,
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type * {
+    font-size: 16pt !important;
+  }
+  .related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a .rr-right-column,
+.related-publications-in-articles .node--type-publication .rr-wrapper-related-resources .rr-right-column .field--name-node-link a .field--name-node-link,
+.node--type-publication .rr-right-column,
+.node--type-publication .field--name-node-link,
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type .rr-right-column,
+.field--name-field-aditional-resources .publication-field .field--name-field-publication-type .field--name-node-link {
+    padding: 0 !important;
+  }
+
+  .block-views-blocklanding-menu-dv-block-1 .view-content.row > div {
+    margin-right: 0;
+    max-width: 100% !important;
+  }
+  .block-views-blocklanding-menu-dv-block-1 .view-content.row > div a {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 16pt !important;
+  }
+
+  .node--type-article #main .field--name-field-related-oshwiki-articles > .field__label,
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title,
+.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-summary-html {
+    padding: 0 !important;
+  }
+
+  .view-publications .views-col {
+    border: none;
+  }
+
+  body.user-logged-in.toolbar-tray-open {
+    padding-top: 0 !important;
+  }
+}
+
+/*# sourceMappingURL=ncw-print-version.css.map */

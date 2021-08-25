@@ -35,6 +35,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_additional_html:
     type: text_default
     weight: 4
@@ -73,6 +78,7 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_expiration_date: true

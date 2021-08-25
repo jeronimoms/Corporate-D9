@@ -1,0 +1,16 @@
+label: Informacje
+display:
+  default:
+    display_options:
+      title: Informacje
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/pl/highlights\">Zobacz wszystkie najważniejsze</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Zobacz wszystkie najważniejsze'
+      fields:
+        view_node:
+          text: 'Zobacz więcej'

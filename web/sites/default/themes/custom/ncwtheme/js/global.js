@@ -86,6 +86,9 @@ jQuery(document).ready(function($) {
   //View Careers 3th accordion opened
   $( "#block-quicktabscareersaccordion #ui-id-6" ).trigger( "click" );
 
+  //View Seminar Reports 1st accordion opened
+  $( "body.tools-and-resources-seminars #block-ncwtheme-content > div > article > div.view-content > div > div > div > div:nth-child(1) > div.view-grouping-header" ).trigger( "click" );
+
   // Text resize
   $('#_biggify').on('click', function() {
     var fontSize = $('html').css('font-size');
@@ -104,6 +107,11 @@ jQuery(document).ready(function($) {
   $('#_reset').on('click', function() {
     $('html').css('font-size', '16px')
   })
+
+  //Reset margin if copyright exist
+  if ($(".node--type-article #main .field--name-field-caption-copyrigth-")[0]) {
+    $('.node--type-article #main .field--name-field-image-caption img').addClass('custom-reset-margin');
+  }
 
   //Move AddToAny to the bottom page
   if ($(".move-add-to-any")[0]) {
@@ -131,6 +139,11 @@ jQuery(document).ready(function($) {
     $('.block-views-blocklanding-menu-block-1').addClass('moved-by-jquery');
   }
 
+  //Move back button MSD
+  if ($(".back-before-title")[0]) {
+    $('.back-before-title').prependTo('#block-ncwtheme-page-title');
+  }
+
   //Fix menu mobile Sticky
   if ($("#navbar-main .navbar-toggler")[0]) {
     $("#navbar-main > button").click(function(){
@@ -139,16 +152,26 @@ jQuery(document).ready(function($) {
     });
   }
 
+  //Add #mail no padding in pubblications
+  if ($(".related-resources-fluid")[0]) {
+    $('#main').addClass('custom-no-padding');
+  }
 
-  //Hide titles en Related resource item
-  $(".file-field:first").addClass('to-show-custom-js');
-  $(".youtube-field:first").addClass('to-show-custom-js');
-  $(".publication-field:first").addClass('to-show-custom-js');
-  $(".publication-field:first article").addClass('no-border-custom-js');
-  $(".slideshare-field:first").addClass('to-show-custom-js');
-  $(".infographic-field:first").addClass('to-show-custom-js');
-  $(".to-show-custom-js:first").addClass('first-child-custom-js');
+  //Add class to add margin in content publications
+  if ($(".related-resources-fluid")[0]) {
+    $('.publications-row').addClass('custom-add-margin');
+  }
 
+  //Add class to add border in content publications if Additional publications on this topic exist
+  if ($(".wrapper-view-aditional-publications")[0]) {
+    $('.publications-row').addClass('add-border');
+  }
+
+  //Hide Related publications if Twin publications exist
+  if ($(".related-resources-fluid .twin-publications")[0]) {
+    $('.related-resources-fluid  .related-resources-publications').hide();
+    $('.related-resources-fluid  .content-headings-related').hide();
+  }
 
   //Fix display pages footer view if we haven't pagination
   if ($(".pagerer-container")[0]) {
@@ -204,6 +227,16 @@ jQuery(document).ready(function($) {
     $(this).text(text.replace('&amp;', '&'));
   });
 
+  // Breadcrumbs - Hide duplicate items
+  var text_breadcrumb_item_2 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(2) > a").text();
+  var text_breadcrumb_item_3 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3) > a").text();
+
+  if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
+    $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
+    $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
+  }
+
+
   //Archivied calls - Add class custom-active in year
   if ($(".view-id-calls.view-display-id-page_1")[0]) {
     let url = $(location).attr('href');
@@ -225,6 +258,7 @@ jQuery(document).ready(function($) {
     $(this).parent('.has-child').find('> .item-list > ul').slideToggle('slow');
   });
 
+
   //Tooltip Thesaurus
   if ($(".content-tooltip img")[0]) {
     $('.content-tooltip img').click(function() {
@@ -245,30 +279,32 @@ jQuery(document).ready(function($) {
   }
 
   // Our story show more or less anniversaries
-  $(".about-eu-osha-eu-osha-2004-2019-our-story").ready(function () {
-    // Hide items on start
-    let elements = document.getElementsByClassName("anniversary-elements");
-    let isHidingElements = true
-    showOrHideNumberOfElements(elements, isHidingElements)
-    //Get view all button from the page footer
-    const viewAllButton = document.getElementsByClassName("field-content see-more-arrow pull-right")[0]
-    const viewAllText = viewAllButton.children.item(0).innerHTML
-    viewAllButton.children.item(0).innerHTML = viewAllText.split("/")[0]
-
-    viewAllButton.addEventListener("click", function () {
-      isHidingElements = !isHidingElements
+  if ($(".about-eu-osha-eu-osha-2004-2019-our-story")[0]) {
+    $(".about-eu-osha-eu-osha-2004-2019-our-story").ready(function () {
+      // Hide items on start
+      let elements = document.getElementsByClassName("anniversary-elements");
+      let isHidingElements = true
       showOrHideNumberOfElements(elements, isHidingElements)
-      viewAllButton.children.item(0).innerHTML = isHidingElements
-          ? viewAllText.split("/")[0]
-          : viewAllText.split("/")[1]
-    })
-  });
+      //Get view all button from the page footer
+      const viewAllButton = document.getElementsByClassName("field-content see-more-arrow pull-right")[0]
+      const viewAllText = viewAllButton.children.item(0).innerHTML
+      viewAllButton.children.item(0).innerHTML = viewAllText.split("/")[0]
 
-  function showOrHideNumberOfElements(elements, toHide) {
-    // When it hides elements, only three should be displayed
-    const ELEMENTS_TO_SHOW = toHide ? 3 : 0;
-    for(let i = ELEMENTS_TO_SHOW; i < elements.length; ++i) {
-      elements[i].style.display = toHide ? "none" : "block"
+      viewAllButton.addEventListener("click", function () {
+        isHidingElements = !isHidingElements
+        showOrHideNumberOfElements(elements, isHidingElements)
+        viewAllButton.children.item(0).innerHTML = isHidingElements
+            ? viewAllText.split("/")[0]
+            : viewAllText.split("/")[1]
+      })
+    });
+
+    function showOrHideNumberOfElements(elements, toHide) {
+      // When it hides elements, only three should be displayed
+      const ELEMENTS_TO_SHOW = toHide ? 3 : 0;
+      for(let i = ELEMENTS_TO_SHOW; i < elements.length; ++i) {
+        elements[i].style.display = toHide ? "none" : "block"
+      }
     }
   }
 
@@ -302,9 +338,51 @@ jQuery(document).ready(function($) {
   $('#edit-search-api-fulltext').attr('accessKey','Q');
 });
 
-//Move Language Selector to the menu responsive
+//Load function
 (function($) {
   $(window).on('load', function() {
+
+    //Selected term Hierarchical View
+    if ($(".hierarchical-tree")[0]) {
+      var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+
+          if (sParameterName[0] === sParam) {
+            return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+          }
+        }
+        return false;
+      };
+      var thesaurusTermId = getUrlParameter('term');
+      var thesaurusClass = '.thesaurus-term-' + thesaurusTermId;
+
+      // Add the class to highlight the term
+      $(thesaurusClass).addClass('term-selected');
+
+      // Open the accordion for the current term
+      $(thesaurusClass).parent().siblings("span.expand_menu").click();
+
+      // Open the accordion for the parent elements
+      var elem = $(thesaurusClass).closest("div.item-list");
+      while(elem.length > 0)
+      {
+        elem.siblings("span.expand_menu").click();
+        elem = elem.parent().closest("div.item-list");
+      }
+    }
+
+    //Move dateofdirective filter (Legislation - EU Directives)
+    if ($("#block-dateofdirective")[0]) {
+      $('#block-dateofdirective').insertBefore('#views-exposed-form-search-directives-search-directory-page .form-actions');
+    }
+
+    //Move Language Selector to the menu responsive
     if ($(window).width() < 992) {
       $('#block-languagedropdownswitchercontent').appendTo('#navbar-main');
       $('#block-languagedropdownswitchercontent').show();
@@ -313,5 +391,6 @@ jQuery(document).ready(function($) {
       $('#block-headermenu').appendTo('#navbar-main');
       $('#block-headermenu').show();
     }
+
   });
 })(jQuery);

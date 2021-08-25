@@ -15,22 +15,13 @@ class VwToolBar {
   /**
    * Hook bridge.
    *
-   * @return array
-   *   The my workbench toolbar items render array.
+   * @param $items
+   *   All toolbar items.
    *
-   * @see hook_toolbar()
+   * @see hook_toolbar_alter()
    */
-  public function toolBar() {
-    $items['osha_workflow'] = [
-      '#type' => 'toolbar_item',
-      'tab' => [
-        '#type' => 'link',
-        '#title' => $this->t('My workbench'),
-        '#url' => Url::fromRoute('content_moderation.admin_moderated_content'),
-      ],
-      '#weight' => -15,
-    ];
-    return $items;
+  public function toolBar(&$items) {
+    $items['workbench']['tab']['#title'] = "My Workbench";
   }
 
 }

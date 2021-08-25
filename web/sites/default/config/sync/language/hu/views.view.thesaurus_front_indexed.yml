@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'EU-OSHA lexikai gyűjtemény'
+      exposed_form:
+        options:
+          submit_button: Keresés
+          exposed_sorts_label: 'Rendezés módja:'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Keresés
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Keresés
+  thesaurus_search:
+    display_title: Keresés

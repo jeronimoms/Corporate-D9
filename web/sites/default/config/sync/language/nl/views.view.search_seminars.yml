@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Zoeken
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Vrij zoeken op tekst'
+        field_seminar_start_date:
+          expose:
+            label: Aanvangsdatum
+        field_seminar_end_date:
+          expose:
+            label: Einddatum

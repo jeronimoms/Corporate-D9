@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'Teżawru tal-EU-OSHA'
+      exposed_form:
+        options:
+          submit_button: Fittex
+          exposed_sorts_label: 'Agħżel skont'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Fittex
+  data_export_1:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Fittex
+  thesaurus_search:
+    display_title: Fittex
