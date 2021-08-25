@@ -2,8 +2,6 @@ uuid: 2bbcee39-5d90-4ce4-be40-6dce3c80990d
 langcode: en
 status: true
 dependencies:
-  config:
-    - system.menu.admin
   module:
     - tmgmt
 _core:
@@ -922,7 +920,7 @@ display:
         - url
         - url.query_args
       cacheable: false
-      max-age: 0
+      max-age: -1
       tags: {  }
   page_1:
     display_plugin: page
@@ -933,9 +931,10 @@ display:
       path: admin/tmgmt/jobs
       rendering_language: '***LANGUAGE_entity_default***'
       menu:
-        type: normal
+        type: none
         title: Jobs
         description: 'Manage and review existing translation jobs.'
+        expanded: false
         parent: tmgmt.admin_tmgmt
         weight: 10
         context: '0'
@@ -945,12 +944,13 @@ display:
         title: Jobs
         description: ''
         weight: 0
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
     cache_metadata:
       contexts:
         - 'languages:language_interface'
         - url
         - url.query_args
       cacheable: false
-      max-age: 0
+      max-age: -1
       tags: {  }

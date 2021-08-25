@@ -159,6 +159,16 @@ body {
   margin-right: 0;
 }
 
+a.quiz-start-link {
+  display: block;
+  text-align: center;
+  border-bottom: 0!important;
+  font-weight: bold;
+  background: url(../images/intro.png) no-repeat 50% 10%;
+  padding-top: 255px;
+  position: relative;
+}
+
 /* Labels */
 span.label, span.pages{
   font-family: 'Open Sans',sans-serif;
@@ -170,7 +180,7 @@ span.label, span.pages{
 .node--view-mode-full{
   .field--label-above{
     padding-bottom: 1rem;
-    .field__label{
+    .field__label, .field_label{
       font-weight: 600;
     }
   }
@@ -256,6 +266,37 @@ span.pages{
   }
 }
 
+.node--type-infographic {
+  #main {
+    .link-download{
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: transparent;
+      border-bottom: 1px solid $bg-color-white;
+      padding-left: 0;
+      padding-right: 0;
+      text-transform: uppercase;
+      &:hover{
+        background: transparent;
+      }
+      &:before{
+        content: none;
+      }
+      &:after{
+        content: ' ';
+        display: inline-block;
+        background: url(../images/external_link-v2.png) no-repeat 1px 4px;
+        width: 15px;
+        height: 20px;
+        margin-left: 5px;
+        padding-right: 1px;
+        vertical-align: text-bottom;
+      }
+    }
+  }
+}
+
 .download-pdf{
   .separator-download:last-child{
     display: none;
@@ -293,6 +334,7 @@ body {
 /*Copyrights*/
 .field--name-field-caption-copyrigth-{
   font-size: 0.65rem;
+  padding-bottom: 1rem;
   p{
     margin: 0;
   }
@@ -345,6 +387,15 @@ body {
 }
 
 /* Share this on articles icons */
+#block-addtoanybuttons{
+  padding-left: 1rem;
+}
+#main{
+  #block-addtoanybuttons{
+    padding-left: 0;
+  }
+}
+
 #share-this-on{
   float: left;
   padding-top: 1rem;
@@ -614,6 +665,9 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
         height: auto;
         margin-bottom: 1rem;
       }
+      img.custom-reset-margin{
+        margin-bottom: 2px;
+      }
     }
   }
   .content-headings-related{
@@ -714,6 +768,7 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
       }
     }
     .field--name-field-related-oshwiki-articles {
+      clear: both;
       margin-top: 0.8rem;
       margin-bottom: 10px;
       background: $bg-color-blue-light-2;
@@ -1088,7 +1143,7 @@ a.quiz-start-link:hover {
 .osha-workflow-list-widget{
   background: $bg-color-workbench;
   border: 1px solid $bg-color-workbench-border;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 0.5rem 1rem 0.5rem;
   margin-bottom: 2rem;
   p:before{
     border-left: 25px solid $bg-color-workbench;
@@ -1098,6 +1153,7 @@ a.quiz-start-link:hover {
   }
 }
 
+/* Dangerous content type */
 .dangerous-wrapper{
   .field__label{
     font-size: 0.9rem;
@@ -1112,11 +1168,6 @@ a.quiz-start-link:hover {
     }
     p{
       margin-bottom: 0;
-    }
-  }
-  .field--name-body{
-    p{
-      margin-bottom: 1rem;
     }
   }
   .field--name-field-item-type, .field--name-field-material-country, .field--name-field-available-in-languages, .field--name-field-intellectual-property-righ{
@@ -1142,8 +1193,51 @@ a.quiz-start-link:hover {
       color: $text-color-blue;
     }
   }
+  /* Providers */
+  .field--name-field-provider-name-english, .field--name-field-provider-name-original, .provider-url{
+    padding-left: 1rem;
+  }
 }
 
+/* Anonymous Dangerous content type */
+.node--type-dangerous-substances{
+  #block-ncwtheme-page-title{
+    h1{
+      clear: both;
+    }
+  }
+  .back-before-title{
+    float: right;
+    padding-bottom: 0.5rem;
+  }
+}
+.wrapper-tags{
+  display: flex;
+  .tag{
+    margin-right: 5px;
+    .field__label{
+      display: none;
+    }
+  }
+}
+.wrapper-dangerous-wrapper{
+  padding-top: 1rem;
+  .field__label{
+    font-weight: 600;
+    padding-top: 1rem;
+  }
+  /* Providers */
+  .field--name-field-provider-name-english, .field--name-field-provider-name-original, .provider-url{
+    padding-left: 0;
+  }
+}
+.wrapper-ds-content-description{
+  .field__label{
+    display: none;
+  }
+}
+
+/* Wiki articles */
 .node--type-wiki-page{
   .field__label{
     font-size: 0.9rem;
@@ -1203,3 +1297,4 @@ a.quiz-start-link:hover {
     padding-top: 1rem;
   }
 }
+

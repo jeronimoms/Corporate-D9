@@ -181,6 +181,9 @@ html[lang=de], html[lang=el], html[lang=fr], html[lang=hr], html[lang=lv], html[
         border-bottom: none;
         font-weight: 600;
       }
+      span.term-selected{
+        background-color: yellow;
+      }
     }
     ul {
       margin-left: 30px;

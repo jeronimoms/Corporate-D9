@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.menu_link_content.main.field_copyrigth
     - field.field.menu_link_content.main.field_image_menu_main
     - system.menu.main
 id: menu_link_content.main.default
@@ -16,6 +17,8 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  breadcrumbs: true
+  field_copyrigth: true
   field_image_menu_main: true
   langcode: true
   search_api_excerpt: true

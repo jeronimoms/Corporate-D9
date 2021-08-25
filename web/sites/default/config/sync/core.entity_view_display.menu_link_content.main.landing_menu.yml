@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.menu_link_content.landing_menu
+    - field.field.menu_link_content.main.field_copyrigth
     - field.field.menu_link_content.main.field_image_menu_main
     - system.menu.main
   module:
@@ -41,5 +42,6 @@ content:
     region: content
 hidden:
   breadcrumbs: true
+  field_copyrigth: true
   langcode: true
   search_api_excerpt: true

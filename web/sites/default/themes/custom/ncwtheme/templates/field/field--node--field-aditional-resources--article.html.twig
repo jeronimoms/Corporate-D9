@@ -77,7 +77,7 @@
           {% if count_youtube == 1 %}
             <h3 class="custom-border h3-files-resources h3-related-articles"><span>{{ 'Videos' | trans }}</span></h3>
           {% endif %}
-          <div class="field-item youtube-field">{{ item.content }}</div>
+          <div class="field-item youtube-field field-{{ count_youtube }}">{{ item.content }}</div>
         {% endif %}
         {% if  item.content['#node'].type.0.target_id ==  'publication' %}
           {% set count_publication = count_publication + 1 %}
@@ -98,7 +98,7 @@
           {% if count_infographic == 1 %}
             <h3 class="custom-border h3-files-resources h3-related-articles"><span>{{ 'Infographics' | trans }}</span></h3>
           {% endif %}
-          <div class="field-item infographic-field">{{ item.content }}</div>
+          <div class="field-item infographic-field field-{{ count_infographic }}">{{ item.content }}</div>
         {% endif %}
       {% endfor %}
     </div>

@@ -74,6 +74,13 @@
 %}
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('node__content custom-video-twig', 'clearfix') }}>
-    {{ content }}
+    <div class="rr-item-wrapper">
+      <div class="rr-item-content">
+        {{ content }}
+      </div>
+      <h2 class="rr-item-title">
+        {{ label }}
+      </h2>
+    </div>
   </div>
 </article>

@@ -1,0 +1,12 @@
+id: osha_import_export
+label: 'OSHA Import/Export'
+description: 'Migration of partners from CRM'
+source_type: 'XML'
+shared_configuration:
+  source:
+    key:
+      migrate
+dependencies:
+  enforced:
+    module:
+      - osha_import_export

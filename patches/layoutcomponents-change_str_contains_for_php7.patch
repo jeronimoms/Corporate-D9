@@ -1,0 +1,13 @@
+diff --git a/src/LcTheme.php b/src/LcTheme.php
+index e4befe9..fbbb70e 100755
+--- a/src/LcTheme.php
++++ b/src/LcTheme.php
+@@ -172,7 +172,7 @@ class LcTheme implements ContainerInjectionInterface{
+ 
+     foreach ($theme_registry as $theme_hook => $info) {
+       if ((in_array($theme_hook, $layout_theme_hooks) || (!empty($info['base hook']) && in_array($info['base hook'], $layout_theme_hooks))) ||
+-        str_contains($theme_registry[$theme_hook]['template'], 'layout--layoutcomponents-base--')
++        (strpos($theme_registry[$theme_hook]['template'], 'layout--layoutcomponents-base--') !== FALSE)
+       ) {
+         // Include file.
+         $theme_registry[$theme_hook]['includes'][] = drupal_get_path('module', 'layoutcomponents') . '/layoutcomponents.theme.inc';

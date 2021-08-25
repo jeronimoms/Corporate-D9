@@ -108,6 +108,11 @@ jQuery(document).ready(function($) {
     $('html').css('font-size', '16px')
   })
 
+  //Reset margin if copyright exist
+  if ($(".node--type-article #main .field--name-field-caption-copyrigth-")[0]) {
+    $('.node--type-article #main .field--name-field-image-caption img').addClass('custom-reset-margin');
+  }
+
   //Move AddToAny to the bottom page
   if ($(".move-add-to-any")[0]) {
     $('.addtoany_list').appendTo('.move-add-to-any');
@@ -134,6 +139,11 @@ jQuery(document).ready(function($) {
     $('.block-views-blocklanding-menu-block-1').addClass('moved-by-jquery');
   }
 
+  //Move back button MSD
+  if ($(".back-before-title")[0]) {
+    $('.back-before-title').prependTo('#block-ncwtheme-page-title');
+  }
+
   //Fix menu mobile Sticky
   if ($("#navbar-main .navbar-toggler")[0]) {
     $("#navbar-main > button").click(function(){
@@ -150,6 +160,11 @@ jQuery(document).ready(function($) {
   //Add class to add margin in content publications
   if ($(".related-resources-fluid")[0]) {
     $('.publications-row').addClass('custom-add-margin');
+  }
+
+  //Add class to add border in content publications if Additional publications on this topic exist
+  if ($(".wrapper-view-aditional-publications")[0]) {
+    $('.publications-row').addClass('add-border');
   }
 
   //Hide Related publications if Twin publications exist
@@ -212,6 +227,16 @@ jQuery(document).ready(function($) {
     $(this).text(text.replace('&amp;', '&'));
   });
 
+  // Breadcrumbs - Hide duplicate items
+  var text_breadcrumb_item_2 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(2) > a").text();
+  var text_breadcrumb_item_3 = $("#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3) > a").text();
+
+  if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
+    $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
+    $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
+  }
+
+
   //Archivied calls - Add class custom-active in year
   if ($(".view-id-calls.view-display-id-page_1")[0]) {
     let url = $(location).attr('href');
@@ -232,6 +257,7 @@ jQuery(document).ready(function($) {
     $(this).toggleClass('expanded');
     $(this).parent('.has-child').find('> .item-list > ul').slideToggle('slow');
   });
+
 
   //Tooltip Thesaurus
   if ($(".content-tooltip img")[0]) {
@@ -315,6 +341,42 @@ jQuery(document).ready(function($) {
 //Load function
 (function($) {
   $(window).on('load', function() {
+
+    //Selected term Hierarchical View
+    if ($(".hierarchical-tree")[0]) {
+      var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+
+          if (sParameterName[0] === sParam) {
+            return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+          }
+        }
+        return false;
+      };
+      var thesaurusTermId = getUrlParameter('term');
+      var thesaurusClass = '.thesaurus-term-' + thesaurusTermId;
+
+      // Add the class to highlight the term
+      $(thesaurusClass).addClass('term-selected');
+
+      // Open the accordion for the current term
+      $(thesaurusClass).parent().siblings("span.expand_menu").click();
+
+      // Open the accordion for the parent elements
+      var elem = $(thesaurusClass).closest("div.item-list");
+      while(elem.length > 0)
+      {
+        elem.siblings("span.expand_menu").click();
+        elem = elem.parent().closest("div.item-list");
+      }
+    }
+
     //Move dateofdirective filter (Legislation - EU Directives)
     if ($("#block-dateofdirective")[0]) {
       $('#block-dateofdirective').insertBefore('#views-exposed-form-search-directives-search-directory-page .form-actions');
@@ -329,5 +391,6 @@ jQuery(document).ready(function($) {
       $('#block-headermenu').appendTo('#navbar-main');
       $('#block-headermenu').show();
     }
+
   });
 })(jQuery);
