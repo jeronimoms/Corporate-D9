@@ -39,6 +39,7 @@ graylist:
   - matomo.settings
   - ultimate_cron.job.ldap_user_cron
   - ultimate_cron.job.matomo_cron
+  - search_api.server.solr
 graylist_dependents: false
 graylist_skip_equal: true
 weight: 0
