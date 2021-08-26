@@ -7,16 +7,16 @@ label: Production
 description: ''
 folder: sites/default/config/production
 module:
+  smtp: 0
   authorization: 0
   authorization_drupal_roles: 0
+  externalauth: 0
   ldap_authentication: 0
   ldap_authorization: 0
   ldap_query: 0
   ldap_servers: 0
   ldap_user: 0
   matomo: 0
-  smtp: 0
-  externalauth: 10
 theme: {  }
 blacklist: {  }
 graylist:
@@ -30,6 +30,7 @@ graylist:
   - matomo.settings
   - ultimate_cron.job.ldap_user_cron
   - ultimate_cron.job.matomo_cron
+  - search_api.server.solr
 graylist_dependents: false
 graylist_skip_equal: true
 weight: 0
