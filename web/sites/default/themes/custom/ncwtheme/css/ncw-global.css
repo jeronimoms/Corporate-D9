@@ -380,6 +380,10 @@ input[type=search] {
 .themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 > a[target=_blank]:after:hover:before {
   background: url(../images/external_link-v2-hover.png) center right no-repeat;
 }
+.themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 img {
+  width: 100%;
+  height: auto;
+}
 
 .btn-primary {
   background: #003399;
