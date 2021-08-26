@@ -176,10 +176,6 @@ input[type=search] {
 #main .wysiwyg_accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .quicktabs-accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .view-view-glossary .wysiwyg_accordion_panel p.wysiwyg_accordion_panel {
   display: block;
 }
-#main .wysiwyg_accordion .wysiwyg_accordion_panel img, #main .quicktabs-accordion .wysiwyg_accordion_panel img, #main .view-view-glossary .wysiwyg_accordion_panel img {
-  width: 100%;
-  height: auto;
-}
 #main .wysiwyg_accordion .wysiwyg_accordion_panel.views, #main .quicktabs-accordion .wysiwyg_accordion_panel.views, #main .view-view-glossary .wysiwyg_accordion_panel.views {
   padding-left: 15px;
   padding-right: 15px;
