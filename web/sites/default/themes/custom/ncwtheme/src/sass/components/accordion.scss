@@ -55,10 +55,6 @@
       p.wysiwyg_accordion_panel{
         display: block;
       }
-      img{
-        width: 100%;
-        height: auto;
-      }
     }
 
     .wysiwyg_accordion_panel.views {
@@ -294,6 +290,12 @@
             background: url(../images/external_link-v2-hover.png) center right no-repeat;
           }
         }
+      }
+    }
+    #tmgmt-43{
+      img{
+        width: 100%;
+        height: auto;
       }
     }
   }
