@@ -1,0 +1,17 @@
+uuid: c2837e27-2810-4be3-8e46-0093ee9c1344
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - osha_import_export
+_core:
+  default_config_hash: ltqj_jOGQFsTCPS_-buqIkj7XN2pmHpRey7CWp7b088
+id: osha_import_export
+label: 'OSHA Import/Export'
+description: 'Migration of partners from CRM'
+source_type: XML
+module: null
+shared_configuration:
+  source:
+    key: migrate
