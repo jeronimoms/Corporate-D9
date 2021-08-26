@@ -11,17 +11,6 @@ use Drupal\translation_workflow\MutipleTargetLanguageContentEntitySourcePluginUi
  * Implements hook_form_FORM_ID_alter().
  */
 function translation_workflow_form_tmgmt_cart_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $jobFieldDefinitions = \Drupal::service('entity_field.manager')
-    ->getFieldDefinitions('job_group', 'default');
-  if (isset($jobFieldDefinitions['priority'])) {
-    $priorityField = $jobFieldDefinitions['priority'];
-    $form['priority'] = [
-      '#type' => 'select',
-      '#options' => $priorityField->getSetting('allowed_values'),
-      '#title' => $priorityField->getLabel(),
-      '#weight' => -1,
-    ];
-  }
 
   if (isset($form['source_language'])) {
     $form['source_language']['#size'] = 24;
