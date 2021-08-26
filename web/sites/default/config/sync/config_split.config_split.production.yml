@@ -7,18 +7,27 @@ label: Production
 description: ''
 folder: sites/default/config/production
 module:
-  smtp: 0
   authorization: 0
   authorization_drupal_roles: 0
-  externalauth: 0
   ldap_authentication: 0
   ldap_authorization: 0
   ldap_query: 0
   ldap_servers: 0
   ldap_user: 0
   matomo: 0
+  migrate: 0
+  migrate_plus: 0
+  migrate_tools: 0
+  osha_import_export: 0
+  smtp: 0
+  externalauth: 10
 theme: {  }
-blacklist: {  }
+blacklist:
+  - migrate_plus.migration.import_crm_advisorygroups
+  - migrate_plus.migration.import_crm_board
+  - migrate_plus.migration.import_crm_bureauforweb
+  - migrate_plus.migration.import_crm_focalpoints
+  - migrate_plus.migration_group.osha_import_export
 graylist:
   - authorization.authorization_profile.osha
   - authorization.settings

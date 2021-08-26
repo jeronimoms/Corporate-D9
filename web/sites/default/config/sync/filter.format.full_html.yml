@@ -42,7 +42,7 @@ filters:
     id: filter_html
     provider: filter
     status: false
-    weight: -42
+    weight: -45
     settings:
       allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre> <u>'
       filter_html_help: true
@@ -79,20 +79,20 @@ filters:
     id: filter_html_escape
     provider: filter
     status: false
-    weight: -41
+    weight: -44
     settings: {  }
   linkit:
     id: linkit
     provider: linkit
     status: false
-    weight: -40
+    weight: -41
     settings:
       title: true
   filter_pathologic:
     id: filter_pathologic
     provider: pathologic
     status: true
-    weight: -44
+    weight: -38
     settings:
       settings_source: global
       local_settings:
@@ -102,7 +102,7 @@ filters:
     id: filter_spamspan
     provider: spamspan
     status: false
-    weight: -39
+    weight: -40
     settings:
       spamspan_at: ' [at] '
       spamspan_use_graphic: '0'
