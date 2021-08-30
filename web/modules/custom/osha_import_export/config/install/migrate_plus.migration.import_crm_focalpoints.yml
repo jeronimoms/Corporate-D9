@@ -19,7 +19,7 @@ dependencies:
 source:
   plugin: url
   data_parser_plugin: xml
-  urls: /expert/osha/SYNC_CRM/FocalPoints.xml
+  urls: /expert/SYNC_CRM/FocalPoints.xml
   #urls: /var/www/html/web/sites/default/files/xmlMigracion/FocalPoints.xml
   content_type: press_contact
   ids:

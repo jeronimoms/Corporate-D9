@@ -18,7 +18,7 @@ dependencies:
 source:
   plugin: url
   data_parser_plugin: xml
-  urls: /expert/osha/SYNC_CRM/BureauForWeb.xml
+  urls: /expert/SYNC_CRM/BureauForWeb.xml
   #urls: /var/www/html/web/sites/default/files/xmlMigracion/BureauForWeb.xml
   content_type: press_contact
   ids:
