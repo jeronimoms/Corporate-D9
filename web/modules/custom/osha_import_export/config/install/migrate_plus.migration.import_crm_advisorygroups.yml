@@ -18,7 +18,7 @@ dependencies:
 source:
   plugin: url
   data_parser_plugin: xml
-  urls: /expert/osha/SYNC_CRM/AdvisoryGroupsPRAG.xml
+  urls: /expert/SYNC_CRM/AdvisoryGroupsPRAG.xml
   #urls: /var/www/html/web/sites/default/files/xmlMigracion/AdvisoryGroupsPRAG.xml
   content_type: press_contact
   ids:
