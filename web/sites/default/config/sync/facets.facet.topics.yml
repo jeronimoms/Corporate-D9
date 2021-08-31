@@ -28,6 +28,7 @@ widget:
     hide_reset_when_no_selection: true
 query_operator: or
 use_hierarchy: false
+keep_hierarchy_parents_active: false
 expand_hierarchy: false
 enable_parent_when_child_gets_disabled: true
 hard_limit: 0
@@ -57,6 +58,12 @@ processor_configs:
     weights:
       build: 5
     settings: {  }
+  term_weight_widget_order:
+    processor_id: term_weight_widget_order
+    weights:
+      sort: 60
+    settings:
+      sort: ASC
   translate_entity:
     processor_id: translate_entity
     weights:

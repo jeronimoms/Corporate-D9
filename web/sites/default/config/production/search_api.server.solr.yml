@@ -63,7 +63,7 @@ backend_config:
   connector: standard
   connector_config:
     scheme: http
-    host: osha-d9-stg-solr.mainstrat.com
+    host: osha-d9-prod-solr.mainstrat.com
     port: 8080
     path: /
     core: Ncw

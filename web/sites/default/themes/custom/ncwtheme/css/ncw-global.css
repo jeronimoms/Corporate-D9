@@ -364,6 +364,27 @@ input[type=search] {
   margin-right: 0;
 }
 
+/* Special link img target: _blank - Good OSH is good for business */
+.themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 > a[target=_blank]:after {
+  content: " ";
+  display: inline-block;
+  width: 96%;
+  height: 20px;
+  margin-left: 5px;
+  padding-right: 1px;
+  vertical-align: text-bottom;
+}
+.themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 > a[target=_blank]:after:hover {
+  text-decoration: none;
+}
+.themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 > a[target=_blank]:after:hover:before {
+  background: url(../images/external_link-v2-hover.png) center right no-repeat;
+}
+.themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 img {
+  width: 100%;
+  height: auto;
+}
+
 .btn-primary {
   background: #003399;
   border: 0;
@@ -2988,6 +3009,7 @@ a.quiz-start-link:hover {
   background-color: #FFF;
 }
 .breadcrumb-fluid .breadcrumb {
+  visibility: hidden;
   font-size: 0.8rem;
   font-weight: lighter;
   border: 0px;
@@ -3004,6 +3026,9 @@ a.quiz-start-link:hover {
 .breadcrumb-fluid .breadcrumb a:hover {
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
+}
+.breadcrumb-fluid .breadcrumb.custom-visible {
+  visibility: visible;
 }
 .breadcrumb-fluid .breadcrumb-item.active {
   color: #003399;
@@ -4676,8 +4701,10 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
 }
 .block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link {
   margin-bottom: 10px;
-  font-size: 1.5625rem;
+  font-size: 1.5em;
   font-weight: bold;
+  border-bottom: 0;
+  margin-top: 0;
 }
 .block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link a {
   color: #003399;
@@ -5558,6 +5585,21 @@ body.node--type-publication {
 .field-item.youtube-field iframe {
   width: 265px;
   height: auto;
+}
+
+.node--type-article .field--name-field-aditional-resources .node--type-youtube .custom-video-twig h2.rr-item-title {
+  padding-bottom: 1rem;
+}
+
+.custom-video-twig h2.rr-item-title {
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+.custom-video-twig .rr-item-content {
+  height: auto;
+}
+.custom-video-twig figure {
+  margin: 0;
 }
 
 .field-item.youtube-field.field-2, .field-item.youtube-field.field-4 {
