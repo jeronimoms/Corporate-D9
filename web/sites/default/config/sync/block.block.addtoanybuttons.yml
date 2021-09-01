@@ -34,6 +34,7 @@ visibility:
       highlight: highlight
       news: news
       press_contact: press_contact
+      press_release: press_release
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
@@ -46,6 +47,7 @@ visibility:
       highlight: highlight
       news: news
       press_contact: press_contact
+      press_release: press_release
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
