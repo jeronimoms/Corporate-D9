@@ -89,6 +89,9 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         foreach ($langs as $lang => $node_lang) {
           $trans_value = $this->getFieldValue($node_lang, $definition, $field_name);
           if (isset($trans_value) && !empty($trans_value)) {
+            if ($field_name == 'field_image_media') {
+              $field_name = 'field_image';
+            }
             $data[$field_name] = $trans_value;
           }
         }
@@ -148,7 +151,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
           foreach ($values as $value) {
             $value = $this->getMediaValues($value['target_id'], $settings);
             if (isset($value) && !empty($value)) {
-              $referers[] = $value;
+              $referers[$node->language()->getId()] = $value;
             }
           }
 
@@ -195,11 +198,11 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     if ($definition->getType() == 'comment') {
       $values = $node->get($field_name)->getValue();
       return [
-        'cid' => $values['cid'],
-        'last_comment_timestamp' => $values[0]['last_comment_timestamp'],
-        'last_comment_name' => $values[0]['last_comment_name'],
-        'last_comment_uid' => $values[0]['last_comment_uid'],
-        'comment_count' => $values[0]['comment_count'],
+        'cid' => ($values['cid'] ?? []),
+        'last_comment_timestamp' => ($values[0]['last_comment_timestamp'] ?? []),
+        'last_comment_name' => ($values[0]['last_comment_name'] ?? []),
+        'last_comment_uid' => ($values[0]['last_comment_uid'] ?? []),
+        'comment_count' => ($values[0]['comment_count'] ?? []),
       ];
     }
 
