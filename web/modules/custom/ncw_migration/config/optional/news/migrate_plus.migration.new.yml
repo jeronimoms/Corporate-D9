@@ -38,7 +38,7 @@ source:
   item_selector: 'items/'
   constants:
     lang: en
-    file_source: https://osha.europa.eu/sites/default/files/news
+    file_source: https://osha.europa.eu/sites/default/files
     file_dest: public://ncw/images/news
   fields:
     -
@@ -64,7 +64,7 @@ source:
     -
       name: source_image
       label: 'Field Image'
-      selector: item/field_image/en/0
+      selector: item/field_image/en
     -
       name: field_tags
       label: "Field Tags"

@@ -15,10 +15,19 @@ module:
   ldap_servers: 0
   ldap_user: 0
   matomo: 0
+  migrate: 0
+  migrate_plus: 0
+  migrate_tools: 0
+  osha_import_export: 0
   smtp: 0
   externalauth: 10
 theme: {  }
-blacklist: {  }
+blacklist:
+  - migrate_plus.migration.import_crm_advisorygroups
+  - migrate_plus.migration.import_crm_board
+  - migrate_plus.migration.import_crm_bureauforweb
+  - migrate_plus.migration.import_crm_focalpoints
+  - migrate_plus.migration_group.osha_import_export
 graylist:
   - authorization.authorization_profile.osha
   - authorization.settings
@@ -30,6 +39,7 @@ graylist:
   - matomo.settings
   - ultimate_cron.job.ldap_user_cron
   - ultimate_cron.job.matomo_cron
+  - search_api.server.solr
 graylist_dependents: false
 graylist_skip_equal: true
 weight: 0

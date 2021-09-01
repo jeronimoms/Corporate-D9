@@ -5,13 +5,15 @@ namespace Drupal\osha_import_export\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Render\Element\Date;
 use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\file_entity\Entity\FileEntity;
 
+/**
+ * OieNodeExportController class.
+ */
 class OieNodeExportController extends ControllerBase implements ContainerInjectionInterface{
 
   /**
@@ -21,22 +23,33 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
    */
   protected $entityTypeManager;
 
+  /**
+   * {@inheritdoc}
+   */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
     $this->entityTypeManager = $entity_type_manager;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity_type.manager'),
     );
   }
 
+  /**
+   * Export the node content.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *
+   * @return \Symfony\Component\HttpFoundation\JsonResponse
+   */
   public function export(Node $node) {
     if (!isset($node) || empty($node)) {
       return new JsonResponse([]);
     }
-
-    $rdf = $this->entityTypeManager->getStorage('rdf_mapping')->load('node.'. $node->bundle());
 
     // Get each translation.
     $langs = [];
@@ -76,7 +89,10 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         foreach ($langs as $lang => $node_lang) {
           $trans_value = $this->getFieldValue($node_lang, $definition, $field_name);
           if (isset($trans_value) && !empty($trans_value)) {
-            $data[$field_name][$lang] = $trans_value;
+            if ($field_name == 'field_image_media') {
+              $field_name = 'field_image';
+            }
+            $data[$field_name] = $trans_value;
           }
         }
       }
@@ -111,24 +127,53 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     return new JsonResponse($data);
   }
 
-  public function getFieldValue($node, FieldConfig $definition, $field_name) {
+  /**
+   * Get the field value.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   * @param \Drupal\field\Entity\FieldConfig $definition
+   * @param $field_name
+   *
+   * @return array|array[]|\array[][]
+   */
+  public function getFieldValue(Node $node, FieldConfig $definition, $field_name) {
+    $value = $node->get($field_name)->getString();
+
     // Ref entity process.
     if ($definition->getType() == 'entity_reference') {
       $values = $node->get($field_name)->getValue();
       if (!empty($values)) {
         $settings = $definition->getSettings();
         $referers = [];
-        foreach ($values as $value) {
-          if ($settings['target_type'] == 'media') {
-            $referers[] = $this->getMediaValues($value['target_id'], $settings);
+
+        // Media.
+        if ($settings['target_type'] == 'media') {
+          foreach ($values as $value) {
+            $value = $this->getMediaValues($value['target_id'], $settings);
+            if (isset($value) && !empty($value)) {
+              $referers[$node->language()->getId()] = $value;
+            }
           }
 
-          if ($settings['target_type'] == 'taxonomy_term') {
-            $referers[] = $this->getTaxonomyValues($value['target_id'], $settings);
-          }
+          return $referers;
         }
 
-        return [$field_name => $referers];
+        // Taxonomy Terms.
+        if ($settings['target_type'] == 'taxonomy_term') {
+          foreach ($values as $value) {
+            $referers[] = $this->getTaxonomyValues($value['target_id'], $settings);
+          }
+          return [$field_name => $referers];
+        }
+
+        // Node.
+        if ($settings['target_type'] == 'node') {
+          foreach ($values as $value) {
+            $referers[$node->language()->getId()][] = $value;
+          }
+
+          return [$field_name => $referers];
+        }
       }
     }
 
@@ -153,17 +198,36 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     if ($definition->getType() == 'comment') {
       $values = $node->get($field_name)->getValue();
       return [
-        'cid' => $values['cid'],
-        'last_comment_timestamp' => $values[0]['last_comment_timestamp'],
-        'last_comment_name' => $values[0]['last_comment_name'],
-        'last_comment_uid' => $values[0]['last_comment_uid'],
-        'comment_count' => $values[0]['comment_count'],
+        'cid' => ($values['cid'] ?? []),
+        'last_comment_timestamp' => ($values[0]['last_comment_timestamp'] ?? []),
+        'last_comment_name' => ($values[0]['last_comment_name'] ?? []),
+        'last_comment_uid' => ($values[0]['last_comment_uid'] ?? []),
+        'comment_count' => ($values[0]['comment_count'] ?? []),
       ];
     }
 
-    return [$field_name => $node->get($field_name)->getString()];
+    // Interger or decimal.
+    if ($definition->getType() == 'integer' || $definition->getType() == 'decimal' || $definition->getType() == 'string') {
+      return [
+        $field_name => [
+          $node->language()->getId() => ['value' => $value],
+        ],
+      ];
+    }
+
+    return (empty($value) ? [] : [$node->language()->getId() => ['value' => $value]]);
   }
 
+  /**
+   * Get the taxonomy term values.
+   *
+   * @param $id
+   * @param array $settings
+   *
+   * @return array
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function getTaxonomyValues($id, array $settings) {
     /** @var \Drupal\taxonomy\Entity\Term $term */
     $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($id);
@@ -246,10 +310,19 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
 
     $term_data['name_original'] = $term->getName();
 
-
     return $term_data;
   }
 
+  /**
+   * Get the media values.
+   *
+   * @param $id
+   * @param array $settings
+   *
+   * @return array
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function getMediaValues($id, array $settings) {
     /** @var \Drupal\media\Entity\Media $ref */
     $media = $this->entityTypeManager->getStorage('media')->load($id);
@@ -288,6 +361,13 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     return $res;
   }
 
+  /**
+   * Get the normaliced data.
+   *
+   * @param \Drupal\file_entity\Entity\FileEntity $file
+   *
+   * @return array
+   */
   public function getNormalicedMediaValues(FileEntity $file) {
     return [
       'fid' => $file->id(),
@@ -297,23 +377,6 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       'status' => $file->get('status')->getString(),
       'timestamp' => $file->getCreatedTime(),
       'uuid' => $file->uuid(),
-    ];
-  }
-
-  public function getRdfMapping() {
-    return [
-      'rdftype' => [
-        "sioc:Item",
-        "foaf:Document",
-      ],
-      'title' => [
-        'predicates' => ["dc:title"],
-      ],
-      'created' => [
-        'predicates' => ["dc:date", "dc:created"],
-        'datatype' => "xsd:dateTime",
-        "callback" => "date_iso8601",
-      ],
     ];
   }
 

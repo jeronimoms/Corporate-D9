@@ -176,10 +176,6 @@ input[type=search] {
 #main .wysiwyg_accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .quicktabs-accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .view-view-glossary .wysiwyg_accordion_panel p.wysiwyg_accordion_panel {
   display: block;
 }
-#main .wysiwyg_accordion .wysiwyg_accordion_panel img, #main .quicktabs-accordion .wysiwyg_accordion_panel img, #main .view-view-glossary .wysiwyg_accordion_panel img {
-  width: 100%;
-  height: auto;
-}
 #main .wysiwyg_accordion .wysiwyg_accordion_panel.views, #main .quicktabs-accordion .wysiwyg_accordion_panel.views, #main .view-view-glossary .wysiwyg_accordion_panel.views {
   padding-left: 15px;
   padding-right: 15px;
@@ -383,6 +379,10 @@ input[type=search] {
 }
 .themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 > a[target=_blank]:after:hover:before {
   background: url(../images/external_link-v2-hover.png) center right no-repeat;
+}
+.themes-good-osh-is-good-for-business #main .node--view-mode-full #tmgmt-43 img {
+  width: 100%;
+  height: auto;
 }
 
 .btn-primary {
@@ -3370,6 +3370,9 @@ a.quiz-start-link:hover {
   border-bottom: 0px;
 }
 
+.node--type-seminar #main .field--name-field-pages-count {
+  padding-bottom: 0.5rem;
+}
 .node--type-seminar #main .field--name-field-pages-count .field__label {
   text-transform: initial;
   padding-bottom: 10px;
@@ -3377,6 +3380,22 @@ a.quiz-start-link:hover {
 .node--type-seminar #main .field--name-field-pages-count .field__label:after {
   content: ":";
   display: inline-block;
+}
+.node--type-seminar #main .field--name-field-pages-count .field__label,
+.node--type-seminar #main .field--name-field-pages-count .field__item {
+  font-weight: bold;
+  color: #000;
+}
+.node--type-seminar #main .group-seminar-event-details .field--name-field-report-media .file--mime-application-pdf {
+  background-position: 0 0;
+  border-bottom: 1px solid #c72272;
+}
+.node--type-seminar #main .group-seminar-event-details .field--name-field-report-media .file--mime-application-pdf a {
+  padding-bottom: 3px;
+  display: inline-block;
+}
+.node--type-seminar #main .group-seminar-event-details .field--name-field-report-media .field__item {
+  padding-bottom: 0;
 }
 
 /* Responsive */
@@ -6366,6 +6385,22 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .view-practical-tools-and-guidance-on-dangerous-substances .view-filters .btn-primary, .view-musculoskeletal-disorders-list .view-filters .btn-primary {
   margin-left: 0;
   margin-right: 10px;
+}
+
+.block-views-blockbureau-members-block-1 .view-bureau-members .view-content {
+  flex-direction: column;
+  margin: 0;
+}
+.block-views-blockbureau-members-block-1 .view-bureau-members .view-content h3 {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
+  font-weight: bold;
+}
+.block-views-blockbureau-members-block-1 .view-bureau-members .view-content .views-row {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
 }
 
 /* Responsive View List */

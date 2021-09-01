@@ -50,7 +50,7 @@ class VwBlock extends BlockBase implements ContainerFactoryPluginInterface {
    */
   public function build() {
     if (!\Drupal::currentUser()->hasPermission('view any unpublished content')) {
-      return;
+      return [];
     }
     $output = [
       '#type' => 'container',

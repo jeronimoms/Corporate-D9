@@ -9,7 +9,7 @@ field_name: title
 entity_type: node
 bundle: directive
 label: Title
-description: ''
+description: '255 characters remaining'
 required: true
 translatable: false
 default_value: {  }
