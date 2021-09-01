@@ -206,7 +206,15 @@ table td img,
 .back-to-link,
 body .node--type-publication .rr-right-column .field--name-node-link a,
 .highlighted,
-#navbar-main {
+#navbar-main,
+.view-eu-osha-event-summaries .events-summary-col .left-column,
+.box-events-summary .left-column,
+.oshevents .more-link.revamp,
+.img-newsletter,
+#block-views-block-landing-menu-block-1 .menu-link-image,
+#block-views-block-landing-menu-block-1 .menu-link-image + div,
+.download-content-theasaurus,
+.page-view-thesaurus-front-indexed .views-exposed-form .btn-primary {
     display: none;
   }
 
@@ -463,6 +471,87 @@ body.user-logged-in.toolbar-tray-open #header {
 
   body.user-logged-in.toolbar-tray-open {
     padding-top: 0 !important;
+  }
+
+  #header,
+#page-wrapper #header,
+.top-header-content {
+    height: auto !important;
+  }
+
+  #header {
+    margin-bottom: 1rem;
+  }
+
+  .page-view-events .node-event-twig-custom .node--type-article .field--name-body {
+    width: 100% !important;
+  }
+
+  .view-eu-osha-event-summaries .events-summary-col:nth-child(1), .view-eu-osha-event-summaries .events-summary-col:nth-child(2) {
+    border: none;
+    width: 100% !important;
+  }
+
+  .box-events-summary .right-column {
+    width: 100% !important;
+    margin-top: 1rem;
+  }
+
+  .view-events .view-content.row,
+.box-events-summary {
+    display: block !important;
+  }
+
+  .view-events h3 {
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+  }
+
+  .content-fluid {
+    margin: 0;
+    transform: none;
+    padding: 0;
+  }
+
+  .page-node-15070 .view-landing-menu .list--item .menu-link-text,
+.block-views-landing-page .menu-link-text a,
+.block-views-landing-page .menu-link-text:hover a {
+    border: none !important;
+    text-decoration: none !important;
+  }
+
+  .page-node-15070 .view-landing-menu .list--item,
+.page-node-15070 .view-landing-menu .list--item .menu-link-text {
+    height: auto;
+    min-height: 0px;
+  }
+
+  .page-node-15070 .view-landing-menu .list--item blockquote {
+    margin: 0;
+  }
+
+  #main .quicktabs-accordion .ui-accordion-content {
+    display: block !important;
+    height: auto !important;
+    border: none;
+    border-bottom: 1px dotted black;
+    overflow: initial;
+  }
+
+  .contact-us-0 #main .node--type-article table tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-us-0 #main .node--type-article table tr td {
+    width: 100%;
+  }
+  .contact-us-0 #main .node--type-article table tr td:nth-child(1) {
+    display: none;
+  }
+
+  #block-headerthesaurus-2 .header__wrapper .header__col:first-child {
+    width: 100%;
   }
 }
 

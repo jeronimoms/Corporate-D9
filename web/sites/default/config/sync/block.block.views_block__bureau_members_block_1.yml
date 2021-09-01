@@ -1,28 +1,29 @@
-uuid: aeb8dace-bb88-4bbe-95cf-d1bd55700873
+uuid: be55c61e-c8c6-4aaa-9e77-60c6309840a3
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.search_blog
+    - views.view.bureau_members
   module:
     - system
     - views
   theme:
     - ncwtheme
-id: exposedformsearch_blogpage_1
+id: views_block__bureau_members_block_1
 theme: ncwtheme
 region: content
-weight: -58
+weight: -50
 provider: null
-plugin: 'views_exposed_filter_block:search_blog-page_1'
+plugin: 'views_block:bureau_members-block_1'
 settings:
-  id: 'views_exposed_filter_block:search_blog-page_1'
+  id: 'views_block:bureau_members-block_1'
   label: ''
   provider: views
   label_display: visible
   views_label: ''
+  items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: "/tools-and-resources/blog\r\n/search/blog"
+    pages: /about-eu-osha/governance-eu-osha/composition-bureau
     negate: false
