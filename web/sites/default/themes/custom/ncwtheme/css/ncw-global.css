@@ -6387,6 +6387,22 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   margin-right: 10px;
 }
 
+.block-views-blockbureau-members-block-1 .view-bureau-members .view-content {
+  flex-direction: column;
+  margin: 0;
+}
+.block-views-blockbureau-members-block-1 .view-bureau-members .view-content h3 {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
+  font-weight: bold;
+}
+.block-views-blockbureau-members-block-1 .view-bureau-members .view-content .views-row {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
 /* Responsive View List */
 @media only screen and (max-width: 768px) {
   .revamp-row .field--name-field-image-media, .revamp-row .views-field-field-image-caption {
