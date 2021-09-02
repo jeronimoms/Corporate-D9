@@ -572,34 +572,47 @@ display:
           error_message: true
           plugin_id: taxonomy_index_tid
       sorts:
-        field_wg_role_1_target_id:
-          id: field_wg_role_1_target_id
-          table: node__field_wg_role_1
-          field: field_wg_role_1_target_id
-          plugin_id: standard
-        field_wg_role_2_target_id:
-          id: field_wg_role_2_target_id
-          table: node__field_wg_role_2
-          field: field_wg_role_2_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: standard
-        field_wg_category_target_id:
-          id: field_wg_category_target_id
-          table: node__field_wg_category
-          field: field_wg_category_target_id
-          relationship: none
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: field_wg_role_1
           group_type: group
           admin_label: ''
           order: ASC
           exposed: false
           expose:
             label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+        weight_1:
+          id: weight_1
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: field_wg_role_2
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+        weight_2:
+          id: weight_2
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: field_wg_category
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
           plugin_id: standard
         title_1:
           id: title_1
@@ -629,15 +642,6 @@ display:
           admin_label: 'field_wg_role_1: Taxonomy term'
           required: true
           plugin_id: standard
-        field_wg_role_2:
-          id: field_wg_role_2
-          table: node__field_wg_role_2
-          field: field_wg_role_2
-          relationship: none
-          group_type: group
-          admin_label: 'field_wg_role_2: Taxonomy term'
-          required: false
-          plugin_id: standard
         field_wg_category:
           id: field_wg_category
           table: node__field_wg_category
@@ -646,6 +650,15 @@ display:
           group_type: group
           admin_label: 'field_wg_category: Taxonomy term'
           required: true
+          plugin_id: standard
+        field_wg_role_2:
+          id: field_wg_role_2
+          table: node__field_wg_role_2
+          field: field_wg_role_2
+          relationship: none
+          group_type: group
+          admin_label: 'field_wg_role_2: Taxonomy term'
+          required: false
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
