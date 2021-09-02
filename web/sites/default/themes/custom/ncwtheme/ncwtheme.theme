@@ -96,6 +96,17 @@ function ncwtheme_preprocess_node(&$variables)
     }
     $variables['relatedImg'] = $img;
   }
+  if ($node->bundle() == 'article' and $node->id() == '14885' ){
+    $request = \Drupal::request();
+    if ($request->query->has('lan')){
+      $variables['lan'] = $request->query->get('lan') ;
+    }
+  }
 }
+
+/**
+ * Get parameter in URL to External Inforgrphic en/tools-and-publications/infographics/how-to-manage-dangerous-substances/how-to-manage-dangerous-substances-infographic
+ */
+
 
 
