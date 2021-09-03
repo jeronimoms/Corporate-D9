@@ -1,23 +1,21 @@
-uuid: 7822a454-78a5-4063-974d-9660b932c397
+uuid: 8a9af506-bc4a-4974-afd1-fbd7321d2316
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_contact_type
-    - field.storage.node.field_personal_title
-    - field.storage.node.field_wg_category
-    - field.storage.node.field_wg_role_1
-    - field.storage.node.field_wg_role_2
-    - node.type.press_contact
-    - taxonomy.vocabulary.contact_type
-  content:
-    - 'taxonomy_term:contact_type:bfdf6c68-c4ce-4056-97ae-1a7e223b07f5'
+    - core.entity_view_mode.node.teaser
+    - field.storage.node.body
+    - field.storage.node.field_directive_type
+    - field.storage.node.field_summary
+    - node.type.directive
   module:
+    - datetime
     - node
     - taxonomy
+    - text
     - user
-id: bureau_members
-label: 'Bureau Members'
+id: legislation_directives
+label: 'Legislation Directives'
 module: views
 description: ''
 tag: ''
@@ -61,270 +59,69 @@ display:
         options:
           offset: 0
       style:
-        type: default
+        type: table
         options:
           grouping:
             -
-              field: field_wg_role_1
+              field: field_directive_type
               rendered: true
               rendered_strip: false
           row_class: ''
           default_row_class: true
+          override: true
+          sticky: false
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            title: title
+            view_node: view_node
+            body: body
+            field_summary: field_summary
+            field_directive_type: field_directive_type
+          info:
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            view_node:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            body:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_summary:
+              sortable: false
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_directive_type:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: '-1'
+          empty_table: false
       row:
-        type: fields
+        type: 'entity:node'
+        options:
+          view_mode: teaser
       fields:
-        field_wg_role_1:
-          id: field_wg_role_1
-          table: node__field_wg_role_1
-          field: field_wg_role_1
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_wg_category:
-          id: field_wg_category
-          table: node__field_wg_category
-          field: field_wg_category
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_personal_title:
-          id: field_personal_title
-          table: node__field_personal_title
-          field: field_personal_title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_wg_role_2:
-          id: field_wg_role_2
-          table: node__field_wg_role_2
-          field: field_wg_role_2
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         title:
           id: title
           table: node_field_data
@@ -333,10 +130,128 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: ''
+          output_url_as_text: false
+          absolute: false
+          entity_type: node
+          plugin_id: entity_link
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
           alter:
             alter_text: true
-            text: '<strong>{{ field_personal_title }} {{ title }}</strong> ({{ field_wg_category }}){{ field_wg_role_2 }}'
+            text: "{{ title_field }}\r\n{{ body }}"
             make_link: false
             path: ''
             absolute: false
@@ -374,9 +289,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: text_trimmed
           settings:
-            link_to_entity: false
+            trim_length: 200
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -388,14 +303,76 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_contact_type:
-          id: field_contact_type
-          table: node__field_contact_type
-          field: field_contact_type
+        field_summary:
+          id: field_summary
+          table: node__field_summary
+          field: field_summary
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Bureau members group field'
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: "{{ title_field }}\r\n{{ field_summary }}"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: "{{ title_field }}\r\n{{ body }}"
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_directive_type:
+          id: field_directive_type
+          table: node__field_directive_type
+          field: field_directive_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
           exclude: true
           alter:
             alter_text: false
@@ -439,7 +416,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: false
+            link: true
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -451,6 +428,55 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"content-directive\">\r\n  <div class=\"directive-title\">\r\n     {{ title }}\r\n  </div>\r\n  <div class=\"directive-summary\">\r\n     {{ field_summary }}\r\n  </div>\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
       filters:
         status:
           value: '1'
@@ -465,6 +491,51 @@ display:
             operator_limit_selection: false
             operator_list: {  }
           group: 1
+        field_publication_date_value:
+          id: field_publication_date_value
+          table: node__field_publication_date
+          field: field_publication_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: date
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
         type:
           id: type
           table: node_field_data
@@ -474,7 +545,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            press_contact: press_contact
+            directive: directive
           group: 1
           exposed: false
           expose:
@@ -507,76 +578,54 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        field_contact_type_target_id:
-          id: field_contact_type_target_id
-          table: node__field_contact_type
-          field: field_contact_type_target_id
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
+          operator: in
           value:
-            - 3024
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
           group: 1
           exposed: false
           expose:
-            operator_id: field_contact_type_target_id_op
-            label: 'Type (field_contact_type)'
+            operator_id: ''
+            label: ''
             description: ''
             use_operator: false
-            operator: field_contact_type_target_id_op
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_contact_type_target_id
+            identifier: ''
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              review_manager: '0'
-              project_manager: '0'
-              approver: '0'
-              translation_manager: '0'
-              translation_liaison: '0'
-              layout_validator: '0'
-              content_validator: '0'
-              events_coordinator: '0'
-              events_editor: '0'
-              osh_collaborator: '0'
-              news_editor: '0'
-              read_only: '0'
             reduce: false
           is_grouped: false
           group_info:
-            label: 'Type (field_contact_type)'
-            description: null
-            identifier: field_contact_type_target_id
+            label: ''
+            description: ''
+            identifier: ''
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items:
-              1: {  }
-              2: {  }
-              3: {  }
-          reduce_duplicates: false
-          type: textfield
-          limit: true
-          vid: contact_type
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
+            group_items: {  }
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
       sorts:
         weight:
           id: weight
           table: taxonomy_term_field_data
           field: weight
-          relationship: field_wg_role_1
+          relationship: field_directive_type
           group_type: group
           admin_label: ''
           order: ASC
@@ -590,111 +639,134 @@ display:
           id: weight_1
           table: taxonomy_term_field_data
           field: weight
-          relationship: field_wg_role_2
+          relationship: field_legislation_category
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+        field_date_of_directive_value:
+          id: field_date_of_directive_value
+          table: node__field_date_of_directive
+          field: field_date_of_directive_value
+          relationship: none
           group_type: group
           admin_label: ''
           order: DESC
           exposed: false
           expose:
             label: ''
-          entity_type: taxonomy_term
-          entity_field: weight
-          plugin_id: standard
-        weight_2:
-          id: weight_2
-          table: taxonomy_term_field_data
-          field: weight
-          relationship: field_wg_category
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          entity_type: taxonomy_term
-          entity_field: weight
-          plugin_id: standard
-        title_1:
-          id: title_1
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-      title: ''
+          granularity: second
+          plugin_id: datetime
+      title: Legislation
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: 'No results'
+          plugin_id: text_custom
       relationships:
-        field_wg_role_1:
-          id: field_wg_role_1
-          table: node__field_wg_role_1
-          field: field_wg_role_1
+        field_legislation_category:
+          id: field_legislation_category
+          table: node__field_legislation_category
+          field: field_legislation_category
           relationship: none
           group_type: group
-          admin_label: 'field_wg_role_1: Taxonomy term'
-          required: true
-          plugin_id: standard
-        field_wg_category:
-          id: field_wg_category
-          table: node__field_wg_category
-          field: field_wg_category
-          relationship: none
-          group_type: group
-          admin_label: 'field_wg_category: Taxonomy term'
-          required: true
-          plugin_id: standard
-        field_wg_role_2:
-          id: field_wg_role_2
-          table: node__field_wg_role_2
-          field: field_wg_role_2
-          relationship: none
-          group_type: group
-          admin_label: 'field_wg_role_2: Taxonomy term'
+          admin_label: 'field_legislation_category: Taxonomy term'
           required: false
           plugin_id: standard
-      arguments: {  }
+        field_directive_type:
+          id: field_directive_type
+          table: node__field_directive_type
+          field: field_directive_type
+          relationship: none
+          group_type: group
+          admin_label: 'field_directive_type: Taxonomy term'
+          required: false
+          plugin_id: standard
+      arguments:
+        field_directive_category_code_value:
+          id: field_directive_category_code_value
+          table: taxonomy_term__field_directive_category_code
+          field: field_directive_category_code_value
+          relationship: field_legislation_category
+          group_type: group
+          admin_label: ''
+          default_action: ignore
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          glossary: false
+          limit: 0
+          case: none
+          path_case: none
+          transform_dash: false
+          break_phrase: false
+          plugin_id: string
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_contact_type'
-        - 'config:field.storage.node.field_personal_title'
-        - 'config:field.storage.node.field_wg_category'
-        - 'config:field.storage.node.field_wg_role_1'
-        - 'config:field.storage.node.field_wg_role_2'
-  block_1:
-    display_plugin: block
-    id: block_1
-    display_title: Block
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_directive_type'
+        - 'config:field.storage.node.field_summary'
+  page:
+    display_plugin: page
+    id: page
+    display_title: Page
     position: 1
     display_options:
       display_extenders:
         metatag_display_extender: {  }
+      path: legislation/directives/%
+      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
-        - user
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_contact_type'
-        - 'config:field.storage.node.field_personal_title'
-        - 'config:field.storage.node.field_wg_category'
-        - 'config:field.storage.node.field_wg_role_1'
-        - 'config:field.storage.node.field_wg_role_2'
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_directive_type'
+        - 'config:field.storage.node.field_summary'
