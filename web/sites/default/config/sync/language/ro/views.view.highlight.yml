@@ -1,0 +1,15 @@
+display:
+  default:
+    display_options:
+      title: 'Teme de interes'
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/ro/highlights\">Vizualizați toate temele de interes</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Vizualizați toate temele de interes'
+      fields:
+        view_node:
+          text: 'Vedeți mai mult'

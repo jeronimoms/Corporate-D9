@@ -1,0 +1,13 @@
+label: Highlights
+display:
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/de/highlights\">Alle Highlights anzeigen</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Alle Highlights anzeigen'
+      fields:
+        view_node:
+          text: 'Mehr anzeigen'

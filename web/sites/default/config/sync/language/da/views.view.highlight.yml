@@ -1,0 +1,16 @@
+label: Højdepunkter
+display:
+  default:
+    display_options:
+      title: Højdepunkter
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/da/highlights\">Vis alle højdepunkter</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Vis alle højdepunkter'
+      fields:
+        view_node:
+          text: 'Se mere'

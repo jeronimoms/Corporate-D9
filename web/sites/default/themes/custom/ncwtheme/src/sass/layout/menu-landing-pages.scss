@@ -10,13 +10,13 @@ body.tools-and-resources{
   }
 }
 
-.block-views-landing-page {
+.block-views-landing-page{
   .view-content.row {
     padding: 0 15px;
     display: flex;
     flex-wrap: wrap;
   }
-  .list--item {
+  .list--item{
     display: flex;
     flex-direction: column;
     height: auto;
@@ -33,30 +33,79 @@ body.tools-and-resources{
       max-width: 240px;
       height: 140px;
     }
-    .menu-link-text {
-      height: auto;
-      line-height: 1.2em;
-      padding: 0;
+  }
+  .menu-link-text{
+    height: auto;
+    line-height: 1.2em;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    margin-bottom: 0.2rem;
+    &:hover {
+      a {
+        border-bottom: 10px solid $text-color-pink !important;
+        background: url(../images/flecha.png) center right no-repeat;
+      }
+    }
+    a{
+      margin: 0;
+      transition: none;
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      font-family: 'Open Sans Condensed',sans-serif!important;
+      font-size: 1.1875rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: $text-color-blue;
+      border-bottom: 10px solid $bg-color-blue-light-2;
+      padding-right: 20px;
+    }
+  }
+}
+
+.block-views-blocklanding-menu-dv-block-1{
+  margin-top: 2rem;
+  .view-content.row {
+    margin-left: 0;
+    margin-right: 0;
+    > div{
+      max-width: 240px;
       position: relative;
       display: flex;
       flex: 1;
-      align-items: flex-start;
-      margin-bottom: 0.2rem;
-      a{
-        margin: 0;
-        transition: none;
-        display: flex;
-        align-items: flex-end;
-        width: 100%;
-        height: 100%;
-        position: relative;
-        font-family: 'Open Sans Condensed',sans-serif!important;
-        font-size: 1.1875rem;
-        font-weight: bold;
-        text-decoration: none;
-        color: $text-color-blue;
-        border-bottom: 10px solid $bg-color-blue-light-2;
-        padding-right: 20px;
+      align-items: flex-end;
+      line-height: 1.2em;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+      padding: 0;
+      &:hover {
+      .menu-link-contentmain a {
+          border-bottom: 10px solid $text-color-pink !important;
+          background: url(../images/flecha.png) center right no-repeat;
+        }
+      }
+      .menu-link-contentmain{
+        > a {
+          margin: 0;
+          transition: none;
+          display: flex;
+          align-items: flex-end;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          font-family: 'Open Sans Condensed', sans-serif !important;
+          font-size: 1.1875rem;
+          font-weight: bold;
+          text-decoration: none;
+          color: $text-color-blue;
+          border-bottom: 10px solid $bg-color-blue-light-2;
+          padding-right: 20px;
+        }
       }
     }
   }
@@ -67,6 +116,96 @@ body.tools-and-resources{
   .block-views-landing-page {
     .list--item {
       margin: 0.5rem 3% 0.7rem 0;
+    }
+  }
+}
+
+/* Data visualitation */
+.page-node-13822{
+  .block-views-blocklanding-menu-dv-block-1{
+    margin-top: 2rem;
+    .view-content.row {
+      margin-left: 0;
+      margin-right: 0;
+      > div {
+        margin-right: 3rem;
+      }
+    }
+  }
+}
+
+/* Themes - Dangerous substances - 3 items per row */
+/* Work-related diseases - 3 items per row */
+.page-node-1409, .page-node-13530{
+  .block-views-landing-page{
+    margin-top: 1rem;
+    .list--item{
+      max-width: 172px;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .list--item:nth-child(3){
+      padding-right: 0;
+      margin: 0.5rem 0 1.5rem 0;
+    }
+  }
+}
+
+/* Themes landing page */
+.block-views-landing-page{
+  .view-landing-menu{
+    .list--item{
+      margin-bottom:0;
+    }
+    .menu-link-text{
+      flex:initial;
+      min-height: 52px;
+    }
+    blockquote{
+      font-size: 0.625rem;
+      color: $text-color-black;
+      background-color: transparent;
+      position: relative;
+      font-family: "Open Sans";
+      display: inline-block;
+      line-height: 5px;
+      margin: 0;
+      min-height: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width : 1200px) {
+  .page-node-1409, .page-node-13530{
+    .block-views-landing-page{
+      .list--item:nth-child(3){
+        margin: 0.5rem 2% 1.5rem 0;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 990px) {
+  .page-node-1409, .page-node-13530{
+    .block-views-landing-page{
+      .list--item:nth-child(3){
+        padding-right: 0;
+        margin: 0.5rem 0 1.5rem 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .page-node-1409, .page-node-13530{
+    .block-views-landing-page{
+      .list--item:nth-child(3){
+        margin: 0.5rem 2% 1.5rem 0;
+        padding-right: 15px;
+      }
     }
   }
 }

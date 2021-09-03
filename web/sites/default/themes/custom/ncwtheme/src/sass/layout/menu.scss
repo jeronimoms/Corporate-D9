@@ -209,8 +209,7 @@
         cursor: pointer;
         text-indent: -9999px;
         position: relative;
-        top: 5px;
-        right: -27px;
+        z-index:200;
       }
       .btn-primary.activate {
         pointer-events: auto;

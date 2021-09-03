@@ -83,7 +83,7 @@
 }
 
 /* Publications view */
-.tools-and-publications-publications{
+.publications{
   .two-column{
     h1{
       display: none;
@@ -145,13 +145,21 @@ body.node--type-publication{
   }
   .publications-row{
     display: flex;
+    padding-top: 1rem;
   }
   .publications-row.custom-add-margin{
     padding-bottom: 2rem;
   }
+  .publications-row.add-border{
+    border-bottom: 1px solid $bg-color-blue;
+    padding-bottom: 1.5rem;
+  }
   .publications-detail-right-column{
     width: 100%;
     padding-left: 2rem;
+    h1{
+      padding-bottom: 0;
+    }
     h2 {
       margin-bottom: 21px;
       font-weight: normal;
@@ -163,6 +171,9 @@ body.node--type-publication{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+    .publication-detail-tags{
+      padding-bottom: 1rem;
     }
   }
   .field--name-field-image-media{
@@ -220,7 +231,6 @@ body.node--type-publication{
     }
     > .field-item.publication-field:nth-child(1){
       margin-top: 0;
-      border:1px solid red;
     }
   }
   .related-resources-fluid{
@@ -228,10 +238,10 @@ body.node--type-publication{
     clear: both;
     @extend .full-width;
     background: $bg-color-blue-light;
-    padding: 0;
+    padding: 2rem 0 2rem 0;
     width: 100vw;
     position: relative;
-    padding-bottom: 0;
+    margin-top: -1px;
     .publications-detail-right-column{
       padding-top: 1rem;
       padding-right: 6rem;
@@ -241,6 +251,9 @@ body.node--type-publication{
         font-size: 1.2rem;
         font-weight: 400;
       }
+    }
+    figure{
+      margin: 0;
     }
   }
 }
@@ -328,7 +341,7 @@ body.node--type-publication{
 .node--type-publication{
   .field--name-field-related-publications{
     .field__item{
-      margin-top: 1rem;
+      margin-top: 0;
     }
     > div:nth-child(1){
       margin-top: 0;
@@ -422,7 +435,64 @@ body.node--type-publication{
 /* Related publications - Videos/Youtube */
 .field-item.youtube-field{
   float: left;
-  margin-right: 2em;
+  width: 265px;
+  margin-right: 10px;
+  h2{
+    font-size: 1.1rem;
+    line-height: initial;
+  }
+  iframe{
+    width: 265px;
+    height: auto;
+  }
+}
+
+.node--type-article {
+  .field--name-field-aditional-resources {
+    .node--type-youtube {
+      .custom-video-twig {
+        h2.rr-item-title {
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.custom-video-twig{
+  h2.rr-item-title{
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+  .rr-item-content{
+    height: auto;
+  }
+  figure{
+    margin: 0;
+  }
+}
+
+.field-item.youtube-field.field-2, .field-item.youtube-field.field-4{
+  margin-right: 0;
+}
+
+/* Related publications - Infographics */
+.field-item.infographic-field{
+  float: left;
+  width: 264px;
+  margin-right: 1rem;
+  h2{
+    font-size: 1.1rem;
+    line-height: initial;
+  }
+  img{
+    width: 264px;
+    height: auto;
+  }
+}
+
+.field-item.infographic-field.field-3, .field-item.infographic-field.field-6{
+  margin-right: 0;
 }
 
 /* Related publications in articles */
@@ -449,6 +519,27 @@ body.node--type-publication{
   }
 }
 
+.wrapper-view-aditional-publications{
+  width: 100%;
+  float: left;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  .revamp-row{
+    .node--type-publication {
+      .rr-left-column{
+        .field--name-field-image-media{
+          margin-right: 0;
+        }
+      }
+      .rr-right-column {
+        div.field--name-node-link {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
 /* Responsive */
 @media only screen and (max-width : 1200px) {
   /* Publications Slide 3 items */
@@ -462,8 +553,8 @@ body.node--type-publication{
       display: none;
     }
   }
-  /* Publications view*/
-  .tools-and-publications-publications{
+  /* Publications view */
+  .publications{
     .revamp-row{
       .publications-left-column{
         display: none;
@@ -488,6 +579,9 @@ body.node--type-publication{
         }
       }
     }
+  }
+  .field-item.infographic-field.field-3, .field-item.infographic-field.field-6{
+    margin-right: 1rem;
   }
 }
 
@@ -515,7 +609,7 @@ body.node--type-publication{
       }
     }
   }
-  .tools-and-publications-publications {
+  .publications {
     .view-filters {
       fieldset:nth-child(3) {
         width: 100%;
@@ -535,7 +629,7 @@ body.node--type-publication{
 
 @media only screen and (max-width : 580px) {
   /* Publications view*/
-  .tools-and-publications-publications{
+  .publications{
     .revamp-row{
       .publications-right-column{
         .content-publication-info {

@@ -5,13 +5,14 @@ dependencies:
   config:
     - field.field.node.youtube.body
     - field.field.node.youtube.field_image_for_oshmail
-    - field.field.node.youtube.field_video_length
+    - field.field.node.youtube.field_publication_date
     - field.field.node.youtube.field_youtube
     - field.field.node.youtube.simplenews_issue
+    - image.style.thumbnail
     - node.type.youtube
   module:
-    - content_moderation
     - datetime
+    - image
     - path
     - text
     - youtube
@@ -36,8 +37,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_video_length:
+  field_image_for_oshmail:
+    type: image_image
     weight: 4
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_publication_date:
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -49,12 +58,6 @@ content:
     third_party_settings: {  }
     type: youtube
     region: content
-  moderation_state:
-    type: moderation_state_default
-    weight: 5
-    settings: {  }
-    region: content
-    third_party_settings: {  }
   path:
     type: path
     weight: 6
@@ -74,10 +77,10 @@ content:
     region: content
     settings:
       size: 255
-      placeholder: ''
+      placeholder: 'Title. Max 255 characters.'
     third_party_settings: {  }
   translation:
-    weight: 3
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -97,8 +100,8 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_image_for_oshmail: true
   langcode: true
+  moderation_state: true
   promote: true
   simplenews_issue: true
   sticky: true

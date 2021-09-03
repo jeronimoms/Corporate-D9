@@ -1,0 +1,16 @@
+label: 'I fokus'
+display:
+  default:
+    display_options:
+      title: 'I fokus'
+  block_2:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"more-link revamp events\"><a href=\"/sv/highlights\">Visa alla höjdpunkter</a></div>\r\n"
+            format: full_html
+      use_more_text: 'Visa alla höjdpunkter'
+      fields:
+        view_node:
+          text: 'Se mer'

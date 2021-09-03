@@ -5,6 +5,9 @@ display:
   front:
     display_options:
       block_description: 'Новини за БЗР'
+      fields:
+        view_node:
+          text: 'Вижте още'
   oshnews_list:
     display_options:
       title: 'Новини за БЗР'

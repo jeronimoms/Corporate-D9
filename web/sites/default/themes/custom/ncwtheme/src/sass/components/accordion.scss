@@ -272,3 +272,32 @@
   }
 }
 
+/* Special link img target: _blank - Good OSH is good for business */
+.themes-good-osh-is-good-for-business{
+  #main .node--view-mode-full {
+    #tmgmt-43 > a[target=_blank] {
+      &:after{
+        content: ' ';
+        display: inline-block;
+        width: 96%;
+        height: 20px;
+        margin-left: 5px;
+        padding-right: 1px;
+        vertical-align: text-bottom;
+        &:hover {
+          text-decoration: none;
+          &:before {
+            background: url(../images/external_link-v2-hover.png) center right no-repeat;
+          }
+        }
+      }
+    }
+    #tmgmt-43{
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+

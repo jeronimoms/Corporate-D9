@@ -546,7 +546,7 @@ display:
             format_plural: false
             format_plural_string: !!binary MQNAY291bnQ=
             prefix: ''
-            suffix: pages
+            suffix: ' pages'
             link_to_item: false
             use_highlighting: false
             multi_type: separator
@@ -1097,7 +1097,7 @@ display:
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      path: tools-and-publications/publications
+      path: publications
       exposed_block: false
       cache:
         type: none

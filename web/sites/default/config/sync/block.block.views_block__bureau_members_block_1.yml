@@ -1,0 +1,29 @@
+uuid: be55c61e-c8c6-4aaa-9e77-60c6309840a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.bureau_members
+  module:
+    - system
+    - views
+  theme:
+    - ncwtheme
+id: views_block__bureau_members_block_1
+theme: ncwtheme
+region: content
+weight: -50
+provider: null
+plugin: 'views_block:bureau_members-block_1'
+settings:
+  id: 'views_block:bureau_members-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-eu-osha/governance-eu-osha/composition-bureau
+    negate: false
