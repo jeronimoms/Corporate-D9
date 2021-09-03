@@ -48,14 +48,14 @@ function ncwtheme_preprocess_html(&$variables){
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Download PDF and Images in Publications detail and Infographics detail
  */
 function ncwtheme_preprocess_node(&$variables)
 {
   $node = $variables['node'];
   $pdf = [];
   $img = [];
-  if ($node->bundle() == 'publication' or $node->bundle() == 'infographic') {
+  if ( $node->bundle() == 'publication' or $node->bundle() == 'infographic' ){
     foreach ($node->getTranslationLanguages() as $language) {
       $nodeTranslation = $node->getTranslation($language->getId());
       if ($nodeTranslation->hasField('field_file_media')) {
@@ -96,6 +96,9 @@ function ncwtheme_preprocess_node(&$variables)
     }
     $variables['relatedImg'] = $img;
   }
+  /**
+   * Get parameter in URL to External Inforgrphic en/tools-and-publications/infographics/how-to-manage-dangerous-substances/how-to-manage-dangerous-substances-infographic
+   */
   if ($node->bundle() == 'article' and $node->id() == '14885' ){
     $request = \Drupal::request();
     if ($request->query->has('lan')){
@@ -105,8 +108,37 @@ function ncwtheme_preprocess_node(&$variables)
 }
 
 /**
- * Get parameter in URL to External Inforgrphic en/tools-and-publications/infographics/how-to-manage-dangerous-substances/how-to-manage-dangerous-substances-infographic
+ * Download PDF and Images in Publications related views : /publications/topic/4526%2B2968
  */
+function ncwtheme_preprocess_ds_1col(&$variables)
+{
+  $node = $variables['content']['#node'];
+  $pdf = [];
+  if ( $node->bundle() == 'publication' ){
+    foreach ($node->getTranslationLanguages() as $language) {
+      $nodeTranslation = $node->getTranslation($language->getId());
+      if ($nodeTranslation->hasField('field_file_media')) {
+        $fileMediaField = $nodeTranslation->get('field_file_media');
+        if ($fileMediaField->count() > 0) {
+          $fileMedia = $fileMediaField->entity;
+          if ($fileMedia->hasField('field_media_document')) {
+            $fileField = $fileMedia->get('field_media_document');
+            if ($fileField->count() > 0) {
+              $file = $fileMedia->get('field_media_document')->entity;
+              $pdf[$language->getId()] = file_create_url($file->getFileUri());
+              if (!isset($variables['fileDownloadType'])) {
+                $variables['fileDownloadType'] = pathinfo($file->getFileUri(), PATHINFO_EXTENSION);
+              }
+            }
+          }
+        }
+      }
+    }
+    $variables['relatedPdf'] = $pdf;
+  }
+}
+
+
 
 
 

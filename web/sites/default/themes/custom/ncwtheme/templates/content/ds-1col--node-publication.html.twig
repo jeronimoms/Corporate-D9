@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+  {{ title_suffix.contextual_links }}
+    {{ ds_content.field_publication_date }}
+    {{ ds_content.node_title }}
+    <div class="download-pdf no-bg">
+      <span class="label_multilang_file">{{ 'Download' | trans }}</span><span class="ico-{{ fileDownloadType }}"></span><span class="label_multilang_file">{{ 'in:' | trans }}</span>
+      {% for lang, pdfuri in relatedPdf %}
+        <a class="link-download view-preprocess-ds1-col" target="_blank" href="{{ pdfuri }}">{{ lang }}</a>
+        {% if relatedPdf|length > 1  %}
+          <span class="separator-download">|</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {{ ds_content.node_link }}
+</{{ ds_content_wrapper }}>
