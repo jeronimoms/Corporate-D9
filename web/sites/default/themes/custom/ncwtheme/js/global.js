@@ -18,9 +18,10 @@
 jQuery(document).ready(function($) {
 
   //Facet accordions, this should be usefull for all blocks with .block-facets-accordion-class
-  $(".sidebar-first .block-facets-accordion h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
+  $(".sidebar-first").on("click", ".block-facets-accordion h2", function(e){
+    e.preventDefault();
+    $(this).stop().toggleClass("active");
+    $(this).closest(".block-facets-accordion").find('.content').stop().slideToggle();
   });
 
   $("#block-ncwtheme-main-menu .menu-item a").after("<span class='mean-expand'>&nbsp;</span>");
