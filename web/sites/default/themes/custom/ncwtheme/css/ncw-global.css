@@ -2137,6 +2137,9 @@ span.pages {
   padding-right: 1px;
   vertical-align: text-bottom;
 }
+.node--type-infographic #main .link-download.external-infographic-link:after {
+  display: none;
+}
 
 .download-pdf .separator-download:last-child {
   display: none;
@@ -2315,7 +2318,7 @@ body ul li .introduction-title a:hover {
 #main .node--view-mode-full a[target=_blank].view-preprocess-ds1-col, #main .view a[target=_blank].view-preprocess-ds1-col {
   border: none;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 }
 
 #main.custom-no-padding {

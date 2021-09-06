@@ -337,6 +337,17 @@ jQuery(document).ready(function($) {
   // Accesskey for custom elements
   $('#edit-lang-dropdown-select').attr('accessKey','L');
   $('#edit-search-api-fulltext').attr('accessKey','Q');
+
+
+  // Move block-facet-blockdate-of-directive over the searh button
+
+  $(".sidebar-first").each(function(){
+    if($(this).find(".block-facet-blockdate-of-directive").length>0){
+      let $dateDirective=$(this).find(".block-facet-blockdate-of-directive").html();
+      $(this).find("#views-exposed-form-search-directives-search-directory-page").find(".form-actions js-form-wrapper mb-3").before($dateDirective);
+    };
+
+  })
 });
 
 //Load function
