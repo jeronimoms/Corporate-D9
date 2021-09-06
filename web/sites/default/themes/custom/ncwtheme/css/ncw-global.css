@@ -2312,6 +2312,11 @@ body ul li .introduction-title a:hover {
   border-bottom: 1px solid #003399;
   text-decoration: none;
 }
+#main .node--view-mode-full a[target=_blank].view-preprocess-ds1-col, #main .view a[target=_blank].view-preprocess-ds1-col {
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
 
 #main.custom-no-padding {
   padding-bottom: 0;
