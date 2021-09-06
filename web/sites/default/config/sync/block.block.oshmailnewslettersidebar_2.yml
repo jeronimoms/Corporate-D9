@@ -1,4 +1,4 @@
-uuid: f753d442-1118-4e38-b42e-eea6bc4b0d8c
+uuid: 69d7c788-8d23-4d8a-acde-2203395f0ec2
 langcode: en
 status: true
 dependencies:
@@ -13,10 +13,10 @@ dependencies:
 third_party_settings:
   block_class:
     classes: 'block-custom-newsletter block-custom-newsletter--sidebar'
-id: oshmailnewslettersidebar
+id: oshmailnewslettersidebar_2
 theme: ncwtheme
-region: sidebar_second
-weight: -63
+region: sidebar_second_others
+weight: -69
 provider: null
 plugin: 'block_content:5716b291-5d32-4cb8-bedd-63d3be325bda'
 settings:
@@ -30,5 +30,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "<front>\r\n/oshmail-newsletter\r\n/oshnews\r\n/highlights\r\n/tools-and-resources/seminars\r\n/tools-and-resources/seminars/*\r\n/tools-and-resources/osh-campaign-toolkit\r\n/themes/safety-and-health-micro-and-small-enterprises\r\n/about-eu-osha/what-we-do\r\n/about-eu-osha/governance-eu-osha\r\n/about-eu-osha/national-focal-points\r\n/careers\r\n/about-eu-osha/procurement\r\n/about-eu-osha/data-protection\r\n/facts-and-figures/european-opinion-polls-safety-and-health-work"
+    pages: '<front>'
     negate: false

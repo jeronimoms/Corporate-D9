@@ -3370,6 +3370,9 @@ a.quiz-start-link:hover {
   border-bottom: 0px;
 }
 
+.node--type-seminar #main .field--name-field-pages-count {
+  padding-bottom: 0.5rem;
+}
 .node--type-seminar #main .field--name-field-pages-count .field__label {
   text-transform: initial;
   padding-bottom: 10px;
@@ -3377,6 +3380,22 @@ a.quiz-start-link:hover {
 .node--type-seminar #main .field--name-field-pages-count .field__label:after {
   content: ":";
   display: inline-block;
+}
+.node--type-seminar #main .field--name-field-pages-count .field__label,
+.node--type-seminar #main .field--name-field-pages-count .field__item {
+  font-weight: bold;
+  color: #000;
+}
+.node--type-seminar #main .group-seminar-event-details .field--name-field-report-media .file--mime-application-pdf {
+  background-position: 0 0;
+  border-bottom: 1px solid #c72272;
+}
+.node--type-seminar #main .group-seminar-event-details .field--name-field-report-media .file--mime-application-pdf a {
+  padding-bottom: 3px;
+  display: inline-block;
+}
+.node--type-seminar #main .group-seminar-event-details .field--name-field-report-media .field__item {
+  padding-bottom: 0;
 }
 
 /* Responsive */
@@ -4323,8 +4342,7 @@ body.user-logged-in.toolbar-tray-open #header {
     cursor: pointer;
     text-indent: -9999px;
     position: relative;
-    top: -16px;
-    right: -27px;
+    z-index: 200;
   }
   #block-searchsite #edit-actions .btn-primary.activate, #block-searchsite #edit-actions--2 .btn-primary.activate {
     pointer-events: auto;
@@ -4595,6 +4613,26 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   margin: 0.5rem 0 1.5rem 0;
 }
 
+/* Themes landing page */
+.block-views-landing-page .view-landing-menu .list--item {
+  margin-bottom: 0;
+}
+.block-views-landing-page .view-landing-menu .menu-link-text {
+  flex: initial;
+  min-height: 52px;
+}
+.block-views-landing-page .view-landing-menu blockquote {
+  font-size: 0.625rem;
+  color: #000;
+  background-color: transparent;
+  position: relative;
+  font-family: "Open Sans";
+  display: inline-block;
+  line-height: 5px;
+  margin: 0;
+  min-height: 24px;
+}
+
 @media only screen and (max-width: 1200px) {
   .page-node-1409 .block-views-landing-page .list--item:nth-child(3), .page-node-13530 .block-views-landing-page .list--item:nth-child(3) {
     margin: 0.5rem 2% 1.5rem 0;
@@ -4698,6 +4736,7 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   color: #003399;
   font-size: 0.9rem;
   margin-bottom: 2rem;
+  margin-top: 0;
 }
 .block-custom-newsletter.block-custom-newsletter--sidebar .field--name-field-newsletter-title-with-link {
   margin-bottom: 10px;
@@ -6366,6 +6405,22 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .view-practical-tools-and-guidance-on-dangerous-substances .view-filters .btn-primary, .view-musculoskeletal-disorders-list .view-filters .btn-primary {
   margin-left: 0;
   margin-right: 10px;
+}
+
+.block-views-blockbureau-members-block-1 .view-bureau-members .view-content {
+  flex-direction: column;
+  margin: 0;
+}
+.block-views-blockbureau-members-block-1 .view-bureau-members .view-content h3 {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
+  font-weight: bold;
+}
+.block-views-blockbureau-members-block-1 .view-bureau-members .view-content .views-row {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
 }
 
 /* Responsive View List */

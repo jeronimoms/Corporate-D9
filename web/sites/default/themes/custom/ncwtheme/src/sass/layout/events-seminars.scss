@@ -294,12 +294,33 @@
 .node--type-seminar{
   #main{
     .field--name-field-pages-count{
+      padding-bottom: 0.5rem;
       .field__label{
         text-transform: initial;
         padding-bottom: 10px;
         &:after{
           content: ':';
           display: inline-block;
+        }
+      }
+      .field__label,
+      .field__item{
+        font-weight:bold;
+        color:$text-color-black;
+      }
+    }
+    .group-seminar-event-details{
+      .field--name-field-report-media{
+        .file--mime-application-pdf {
+          background-position:0 0;
+          border-bottom: 1px solid $text-color-pink;
+          a{
+            padding-bottom: 3px;
+            display: inline-block;
+          }
+        }
+        .field__item{
+          padding-bottom:0;
         }
       }
     }
