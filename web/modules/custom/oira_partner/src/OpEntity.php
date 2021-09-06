@@ -127,7 +127,7 @@ class OpEntity implements ContainerInjectionInterface {
           }
 
           // If the user is a partner, hidde the fields too.
-          if (in_array('partner', $this->account->getRoles()) && !in_array('adminsitrator', $this->account->getRoles())) {
+          if (in_array('partner', $this->account->getRoles()) && !in_array('administrator', $this->account->getRoles())) {
             // Hidde the field.
             $form['field_workbench_access']['#attributes']['class'][] = 'hidden';
             $form['actions']['submit']['#value'] = $this->t(' Save and preview this new item');

@@ -59,7 +59,9 @@ class OieCron implements ContainerInjectionInterface{
       'import_crm_board',
       'import_crm_bureauforweb',
       'import_crm_focalpoints',
-      'import_crm_advisorygroups',
+      'import_crm_advisorygroups_prag',
+      'import_crm_advisorygroups_agcp',
+      'import_crm_advisorygroups_wesag'
     ];
 
     // Start every migration.
