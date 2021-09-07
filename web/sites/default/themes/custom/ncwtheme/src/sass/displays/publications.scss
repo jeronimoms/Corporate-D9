@@ -454,9 +454,6 @@ body.node--type-publication{
         h2.rr-item-title {
           padding-bottom: 1rem;
         }
-        .field--name-body{
-          display:none;
-        }
       }
     }
   }
@@ -472,6 +469,11 @@ body.node--type-publication{
   }
   figure{
     margin: 0;
+  }
+  &.hide-description{
+    .field--name-body{
+      display:none;
+    }
   }
 }
 
