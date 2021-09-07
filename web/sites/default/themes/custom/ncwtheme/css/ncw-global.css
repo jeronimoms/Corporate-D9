@@ -5644,11 +5644,11 @@ body.node--type-publication {
 .custom-video-twig .rr-item-content {
   height: auto;
 }
+.custom-video-twig .rr-item-content.hide-description .field--name-body {
+  display: none;
+}
 .custom-video-twig figure {
   margin: 0;
-}
-.custom-video-twig.hide-description .field--name-body {
-  display: none;
 }
 
 .field-item.youtube-field.field-2, .field-item.youtube-field.field-4 {
