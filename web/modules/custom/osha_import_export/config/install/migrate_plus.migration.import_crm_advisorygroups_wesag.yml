@@ -1,6 +1,6 @@
 # This migration demonstrates a simple import from a JSON file.
-id: import_crm_advisorygroups
-label: 'Node: Advisory groups'
+id: import_crm_advisorygroups_wesag
+label: 'Node: Advisory groups WESAG'
 migration_group: osha_import_export
 migration_tags:
   - press_contact
@@ -18,11 +18,16 @@ dependencies:
 source:
   plugin: url
   data_parser_plugin: xml
-  urls: /expert/SYNC_CRM/AdvisoryGroupsPRAG.xml
-  #urls: /var/www/html/web/sites/default/files/xmlMigracion/AdvisoryGroupsPRAG.xml
+  urls:
+    - /expert/SYNC_CRM/AdvisoryGroupsWESAG.xml
+#    - /var/www/html/web/sites/default/files/xmlMigracion/AdvisoryGroupsWESAG.xml
   content_type: press_contact
+  constants:
+    is_advisory: '1'
   ids:
     field_contact_uuid:
+      type: string
+    field_contact_type:
       type: string
   item_selector: /Report/Table0/Table0_Group0_Collection/Table0_Group0_Header0/Detail_Collection/Detail
   fields:
@@ -83,11 +88,10 @@ source:
       name: field_press_contact_organization
       label: 'field_press_contact_organization'
       selector: '@Table0_Details6'
-    #Does not seem to be present in the XML
-    #-
-    #  name: field_personal_title
-    #  label: 'field_personal_title'
-    #  selector: '@Table0_Details3'
+    -
+      name: field_personal_title
+      label: 'field_personal_title'
+      selector: '@Table0_Details3'
     -
       name: field_press_contact_phone
       label: 'field_press_contact_phone'
@@ -101,11 +105,10 @@ source:
     #  name: field_website
     #  label: 'field_website'
     #  selector: '@Table0_Details8'
-    #Does not seem to be present in the XML
-    #-
-    #  name: field_wg_role_1
-    #  label: 'field_wg_role_1'
-    #  selector: '@Table0_Details2'
+    -
+      name: field_wg_role_1
+      label: 'field_wg_role_1'
+      selector: '@Table0_Details2'
     #Does not seem to be present in the XML
     #-
     #  name: field_wg_role_2
@@ -115,6 +118,9 @@ source:
       name: field_zip_code
       label: 'field_zip_code'
       selector: '@Textbox1'
+    - name: field_contact_type
+      label: 'field_contact_type'
+      selector: '../../Table0_Group0_Header0'
 process:
   field_contact_uuid: field_contact_uuid
   title: title
@@ -144,7 +150,7 @@ process:
   #field_press_contact_job_title: field_press_contact_job_title
   field_location: field_location
   field_press_contact_organization: field_press_contact_organization
-  #field_personal_title: field_personal_title
+  field_personal_title: field_personal_title
   field_press_contact_phone: field_press_contact_phone
   #field_contact_type:
   #  -
@@ -152,14 +158,20 @@ process:
   #    source: field_country
   #    vocabulary: contact_type
   #field_website: field_website
-  #field_wg_role_1:
-  #  -
-  #    plugin: hcm_taxonomy_term_name
-  #    source: field_wg_role_1
-  #    vocabulary: wg_role_1
+  field_wg_role_1:
+    -
+      plugin: hcm_taxonomy_term_name
+      source: field_wg_role_1
+      vocabulary: wg_role_1
   #field_wg_role_2:
   #  -
   #    plugin: hcm_taxonomy_term_name
   #    source: field_wg_role_2
   #    vocabulary: wg_role_2
   field_zip_code: field_zip_code
+  field_contact_type:
+    - plugin: oie_taxonomy_term_name
+      source: field_contact_type
+      vocabulary: contact_type
+      create: true
+  field_is_advisory: constants/is_advisory
