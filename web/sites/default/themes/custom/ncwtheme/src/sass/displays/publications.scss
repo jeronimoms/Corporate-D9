@@ -470,6 +470,11 @@ body.node--type-publication{
   figure{
     margin: 0;
   }
+  &.hide-description{
+    .field--name-body{
+      display:none;
+    }
+  }
 }
 
 .field-item.youtube-field.field-2, .field-item.youtube-field.field-4{
