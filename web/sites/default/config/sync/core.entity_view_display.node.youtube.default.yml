@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.youtube.simplenews_issue
     - node.type.youtube
   module:
+    - datetime
+    - ds
     - text
     - user
     - youtube
@@ -19,12 +21,28 @@ bundle: youtube
 mode: default
 content:
   body:
-    weight: 1
+    type: text_default
+    weight: 2
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+  field_publication_date:
+    type: datetime_default
+    weight: 1
     region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: only_day
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_youtube:
     weight: 0
     label: hidden
@@ -45,7 +63,6 @@ hidden:
   addtoany: true
   breadcrumbs: true
   field_image_for_oshmail: true
-  field_publication_date: true
   langcode: true
   links: true
   search_api_excerpt: true
