@@ -5647,6 +5647,9 @@ body.node--type-publication {
 .custom-video-twig figure {
   margin: 0;
 }
+.custom-video-twig.hide-description .field--name-body {
+  display: none;
+}
 
 .field-item.youtube-field.field-2, .field-item.youtube-field.field-4 {
   margin-right: 0;
@@ -6504,7 +6507,6 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .node--type-blog .field--name-field-summary-html {
   color: #003399;
-  display: table;
 }
 .node--type-blog .field--name-node-title h2 {
   padding-bottom: 0;
