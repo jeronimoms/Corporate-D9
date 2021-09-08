@@ -1,15 +1,12 @@
-transport: sendmail
-smtp_host: 127.0.0.1
+transport: smtp
+smtp_host: relay.sarenet.es
 smtp_port: 25
-smtp_encryption: ''
+smtp_encryption: tls
 smtp_credential_provider: swiftmailer
 smtp_credentials:
   swiftmailer:
     username: ''
-    password: ''
-  key:
-    username: ''
-    password: ''
+    password: null
 sendmail_path: /usr/sbin/sendmail
 sendmail_mode: bs
 spool_directory: ''
