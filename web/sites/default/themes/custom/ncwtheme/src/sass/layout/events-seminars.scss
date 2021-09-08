@@ -274,6 +274,11 @@
       p{
         margin-bottom: 0;
       }
+      &.field--name-body{
+        p{
+          margin-bottom: 1rem;
+        }
+      }
     }
     .field--type-text-with-summary{
       color: $text-color-black;

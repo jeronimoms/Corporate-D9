@@ -3366,6 +3366,9 @@ a.quiz-start-link:hover {
 .node--type-events #main .field__item p, .node--type-seminar #main .field__item p {
   margin-bottom: 0;
 }
+.node--type-events #main .field__item.field--name-body p, .node--type-seminar #main .field__item.field--name-body p {
+  margin-bottom: 1rem;
+}
 .node--type-events #main .field--type-text-with-summary, .node--type-seminar #main .field--type-text-with-summary {
   color: #000;
 }
