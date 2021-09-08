@@ -5187,7 +5187,6 @@ body.contact form.contact-form button.btn-primary {
   margin-right: 0;
 }
 .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item {
-  width: 33%;
   margin-right: 30px;
 }
 .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item img {
@@ -6377,6 +6376,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .view-search .views-field-url a:hover {
   text-decoration: underline;
+}
+.view-search strong {
+  background-color: yellow;
 }
 
 .views-field-type {
