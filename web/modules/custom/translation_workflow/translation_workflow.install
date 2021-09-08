@@ -1,0 +1,28 @@
+<?php
+
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\tmgmt\Entity\Message;
+use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
+
+/**
+ * Implements hook_update_N().
+ */
+function translation_workflow_update_9001(&$sandbox) {
+  // Alter all tmgmt messages to change http by https.
+  $messages = Message::loadMultiple();
+  foreach ($messages as $message) {
+    if ($message->hasField('variables')) {
+      $messageValues = $message->get('variables')->getValue();
+      foreach ($messageValues as $key => $messageValue) {
+        if (isset($messageValue['@link'])) {
+          if (parse_url($messageValue['@link'], PHP_URL_SCHEME) == 'http') {
+            $messageValues[$key]['@link'] = str_replace('http', 'https', $messageValue['@link']);
+          }
+        }
+      }
+      $message->set('variables', $messageValues);
+      $message->save();
+    }
+  }
+}
+
