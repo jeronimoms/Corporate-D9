@@ -121,9 +121,16 @@ content:
     weight: 0
     label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
-    third_party_settings: {  }
+      format_type: only_day
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: datetime_default
     region: ds_content
   field_quote:
