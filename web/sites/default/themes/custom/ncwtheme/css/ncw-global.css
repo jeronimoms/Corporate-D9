@@ -1876,14 +1876,16 @@ div.pagerer-right-pane {
   height: auto;
 }
 
-.contact-us-0 #main .node--type-article table {
+/* Contact us */
+.page-node-5468 #main .node--type-article table {
   border-collapse: initial;
 }
-.contact-us-0 #main .node--type-article table tr th {
+.page-node-5468 #main .node--type-article table tr th {
   border: 0;
 }
-.contact-us-0 #main .node--type-article table tr td {
+.page-node-5468 #main .node--type-article table tr td {
   border: 0;
+  padding: 0;
 }
 
 /* Common elements */
