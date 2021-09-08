@@ -1876,14 +1876,16 @@ div.pagerer-right-pane {
   height: auto;
 }
 
-.contact-us-0 #main .node--type-article table {
+/* Contact us */
+.page-node-5468 #main .node--type-article table {
   border-collapse: initial;
 }
-.contact-us-0 #main .node--type-article table tr th {
+.page-node-5468 #main .node--type-article table tr th {
   border: 0;
 }
-.contact-us-0 #main .node--type-article table tr td {
+.page-node-5468 #main .node--type-article table tr td {
   border: 0;
+  padding: 0;
 }
 
 /* Common elements */
@@ -2137,6 +2139,9 @@ span.pages {
   padding-right: 1px;
   vertical-align: text-bottom;
 }
+.node--type-infographic #main .link-download.external-infographic-link:after {
+  display: none;
+}
 
 .download-pdf .separator-download:last-child {
   display: none;
@@ -2311,6 +2316,11 @@ body ul li .introduction-title a:hover {
   background: url(../images/external_link-v2-hover.png) no-repeat scroll right 50% rgba(0, 0, 0, 0);
   border-bottom: 1px solid #003399;
   text-decoration: none;
+}
+#main .node--view-mode-full a[target=_blank].view-preprocess-ds1-col, #main .view a[target=_blank].view-preprocess-ds1-col {
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
 #main.custom-no-padding {
@@ -3358,6 +3368,9 @@ a.quiz-start-link:hover {
 .node--type-events #main .field__item p, .node--type-seminar #main .field__item p {
   margin-bottom: 0;
 }
+.node--type-events #main .field__item.field--name-body p, .node--type-seminar #main .field__item.field--name-body p {
+  margin-bottom: 1rem;
+}
 .node--type-events #main .field--type-text-with-summary, .node--type-seminar #main .field--type-text-with-summary {
   color: #000;
 }
@@ -3388,7 +3401,6 @@ a.quiz-start-link:hover {
 }
 .node--type-seminar #main .group-seminar-event-details .field--name-field-report-media .file--mime-application-pdf {
   background-position: 0 0;
-  border-bottom: 1px solid #c72272;
 }
 .node--type-seminar #main .group-seminar-event-details .field--name-field-report-media .file--mime-application-pdf a {
   padding-bottom: 3px;
@@ -3598,18 +3610,13 @@ body {
   background: white;
 }
 
-body.scrollup #header {
-  position: fixed;
+body.scrollup.scrolled #header {
+  position: fixed !important;
   width: 100%;
-  z-index: 10;
+  z-index: 9999999;
   transition: top 0.6s linear;
   top: 0px !important;
   background: white;
-}
-
-#header.custom-activate-menu-header {
-  /* When responsive menu is opened */
-  position: relative !important;
 }
 
 body.user-logged-in {
@@ -3618,12 +3625,18 @@ body.user-logged-in {
 body.user-logged-in #header {
   padding-top: 40px;
 }
+body.user-logged-in.scrolled #header {
+  padding-top: 0px;
+}
 
 body.user-logged-in.toolbar-tray-open {
   padding-top: 270px !important;
 }
 body.user-logged-in.toolbar-tray-open #header {
   padding-top: 75px;
+}
+body.user-logged-in.toolbar-tray-open.scrolled #header {
+  padding-top: 0px;
 }
 
 .scrolldown #header {
@@ -5179,7 +5192,6 @@ body.contact form.contact-form button.btn-primary {
   margin-right: 0;
 }
 .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item {
-  width: 33%;
   margin-right: 30px;
 }
 .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item img {
@@ -5636,6 +5648,9 @@ body.node--type-publication {
 }
 .custom-video-twig .rr-item-content {
   height: auto;
+}
+.custom-video-twig .rr-item-content.hide-description .field--name-body {
+  display: none;
 }
 .custom-video-twig figure {
   margin: 0;
@@ -6367,6 +6382,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .view-search .views-field-url a:hover {
   text-decoration: underline;
 }
+.view-search strong {
+  background-color: yellow;
+}
 
 .views-field-type {
   /* View tags */
@@ -6423,6 +6441,55 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   line-height: 1.5rem;
 }
 
+.view-legislation-directives .table-responsive {
+  flex-basis: initial;
+}
+.view-legislation-directives .table-responsive .table-striped tbody tr {
+  background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  border: none;
+}
+.view-legislation-directives .table-responsive .table-striped tbody tr:nth-of-type(odd), .view-legislation-directives .table-responsive .table-striped tbody tr:nth-of-type(even) {
+  background-color: transparent;
+}
+.view-legislation-directives .table-responsive .table-striped tbody tr td {
+  padding: 0.875rem;
+  border-top: none;
+  padding-bottom: 2rem;
+}
+.view-legislation-directives .table-responsive .table-striped tbody tr td a {
+  color: #003399;
+  border-bottom: 0px;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.75px;
+  padding-bottom: 0.625rem;
+}
+.view-legislation-directives .table-responsive .table-striped tbody tr td .directive-title {
+  margin-bottom: 0.5rem;
+}
+.view-legislation-directives .table-responsive .table-striped tbody tr td .directive-summary {
+  font-size: 0.9rem;
+}
+.view-legislation-directives .table-responsive .table-striped caption {
+  caption-side: top;
+  color: #003399;
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #e9edf6;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.625rem;
+  margin: 0rem;
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+.view-legislation-directives .table-responsive .table-striped caption a:hover {
+  text-decoration: none;
+  cursor: default;
+  poiner-events: none;
+  color: #003399;
+}
+
 /* Responsive View List */
 @media only screen and (max-width: 768px) {
   .revamp-row .field--name-field-image-media, .revamp-row .views-field-field-image-caption {
@@ -6448,7 +6515,6 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .node--type-blog .field--name-field-summary-html {
   color: #003399;
-  display: table;
 }
 .node--type-blog .field--name-node-title h2 {
   padding-bottom: 0;
@@ -6655,6 +6721,20 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 /* End Media 1024px */
 @media only screen and (max-width: 991px) {
+  body, body.user-logged-in {
+    padding-top: 0 !important;
+  }
+
+  /* Header*/
+  #header.custom-activate-menu-header {
+    /* When responsive menu is opened */
+    position: relative !important;
+  }
+
+  #header {
+    position: relative;
+  }
+
   /* Left menu */
   .sidebar-first {
     margin-bottom: 0;
@@ -6682,6 +6762,14 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
     width: 100%;
     padding: 0;
     margin: 0;
+  }
+  .navbar-collapse.show {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999999;
+    width: 100%;
+    height: auto !important;
   }
 
   .mean-expand {

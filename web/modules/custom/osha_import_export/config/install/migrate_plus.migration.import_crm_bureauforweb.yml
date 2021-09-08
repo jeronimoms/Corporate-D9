@@ -24,6 +24,8 @@ source:
   ids:
     field_contact_uuid:
       type: string
+    field_contact_type:
+      type: string
   item_selector: /Report/Table0/Table0_Group0_Collection/Table0_Group0_Header0/Detail_Collection/Detail
   fields:
     -
@@ -118,9 +120,12 @@ source:
     #  selector: '@Textbox17'
     #Does not seem to be present in the XML
     #-
-    #  name: field_zip_code
+    #  name: field_zip_code:
     #  label: 'field_zip_code'
     #  selector: '@Textbox1'
+    - name: field_contact_type
+      label: 'field_contact_type'
+      selector: '../../Table0_Group0_Header0'
 process:
   field_contact_uuid: field_contact_uuid
   title: title
@@ -164,6 +169,12 @@ process:
       source: field_wg_role_1
       vocabulary: wg_role_1
       create: true
+  field_contact_type:
+    - plugin: oie_taxonomy_term_name
+      source: field_contact_type
+      vocabulary: contact_type
+      create: true
+
   #field_wg_role_2:
   #  -
   #    plugin: hcm_taxonomy_term_name

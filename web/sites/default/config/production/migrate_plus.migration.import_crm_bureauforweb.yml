@@ -1,12 +1,10 @@
-uuid: 1d41fc4b-9964-48c6-b311-0db272a9dccf
+uuid: d2a36e25-44c2-4bc2-bf31-c4d79e1773ee
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - osha_import_export
-_core:
-  default_config_hash: lMQp8AbzfcHZzjXg7QB8uochS5LuyC07NSq4SxvvmfY
 id: import_crm_bureauforweb
 class: null
 field_plugin_method: null
@@ -18,10 +16,12 @@ label: 'Node: Bureau for Web'
 source:
   plugin: url
   data_parser_plugin: xml
-  urls: /expert/osha/SYNC_CRM/BureauForWeb.xml
+  urls: /expert/SYNC_CRM/BureauForWeb.xml
   content_type: press_contact
   ids:
     field_contact_uuid:
+      type: string
+    field_contact_type:
       type: string
   item_selector: /Report/Table0/Table0_Group0_Collection/Table0_Group0_Header0/Detail_Collection/Detail
   fields:
@@ -45,6 +45,10 @@ source:
       name: field_wg_role_1
       label: field_wg_role_1
       selector: '@Table0_Details3'
+    -
+      name: field_contact_type
+      label: field_contact_type
+      selector: ../../Table0_Group0_Header0
 process:
   field_contact_uuid: field_contact_uuid
   title: title
@@ -60,6 +64,12 @@ process:
       plugin: oie_taxonomy_term_name
       source: field_wg_role_1
       vocabulary: wg_role_1
+      create: true
+  field_contact_type:
+    -
+      plugin: oie_taxonomy_term_name
+      source: field_contact_type
+      vocabulary: contact_type
       create: true
 destination:
   default_bundle: press_contact

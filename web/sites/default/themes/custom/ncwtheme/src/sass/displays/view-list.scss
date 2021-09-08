@@ -274,6 +274,9 @@
       }
     }
   }
+  strong{
+    background-color:yellow;
+  }
 }
 
 .views-field-type{
@@ -338,6 +341,64 @@
       .views-row{
         font-size:0.9rem;
         line-height:1.5rem;
+      }
+    }
+  }
+}
+
+.view-legislation-directives{
+  .table-responsive{
+    flex-basis:initial;
+    .table-striped{
+      tbody{
+        tr{
+          background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0,0,0,0);
+          border:none;
+          &:nth-of-type(odd),
+          &:nth-of-type(even){
+            background-color: transparent;
+          }
+          td{
+            padding:0.875rem;
+            border-top:none;
+            padding-bottom:2rem;
+            a{
+              color: $text-color-blue;
+              border-bottom: 0px;
+              font-size: 1.35rem;
+              font-weight: 400;
+              letter-spacing: -0.75px;
+              padding-bottom: 0.625rem;
+            }
+            .directive-title{
+              margin-bottom:0.5rem;
+            }
+            .directive-summary{
+              font-size:0.9rem;
+            }
+          }
+        }
+      }
+      caption{
+        caption-side: top;
+        color: $text-color-blue;
+        font-size: 1.25rem;
+        font-weight: bold;
+        background-color: $bg-color-grey-legislation;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        padding-left: 0.625rem;
+        margin: 0rem;
+        text-align: left;
+        margin-bottom: 1.25rem;
+        a{
+          &:hover{
+            text-decoration: none;
+            cursor:default;
+            poiner-events:none;
+            color: $text-color-blue;
+          }
+        }
       }
     }
   }

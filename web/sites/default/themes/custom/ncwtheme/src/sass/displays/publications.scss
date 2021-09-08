@@ -466,6 +466,11 @@ body.node--type-publication{
   }
   .rr-item-content{
     height: auto;
+    &.hide-description{
+      .field--name-body{
+        display:none;
+      }
+    }
   }
   figure{
     margin: 0;
