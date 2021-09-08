@@ -3366,6 +3366,9 @@ a.quiz-start-link:hover {
 .node--type-events #main .field__item p, .node--type-seminar #main .field__item p {
   margin-bottom: 0;
 }
+.node--type-events #main .field__item.field--name-body p, .node--type-seminar #main .field__item.field--name-body p {
+  margin-bottom: 1rem;
+}
 .node--type-events #main .field--type-text-with-summary, .node--type-seminar #main .field--type-text-with-summary {
   color: #000;
 }
@@ -5187,7 +5190,6 @@ body.contact form.contact-form button.btn-primary {
   margin-right: 0;
 }
 .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item {
-  width: 33%;
   margin-right: 30px;
 }
 .node--type-gallery .field--name-field-album-pictures.field--type-image .field__item img {
@@ -6377,6 +6379,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .view-search .views-field-url a:hover {
   text-decoration: underline;
+}
+.view-search strong {
+  background-color: yellow;
 }
 
 .views-field-type {
