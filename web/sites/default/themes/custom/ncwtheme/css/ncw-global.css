@@ -2883,6 +2883,14 @@ a.quiz-start-link:hover {
   border-left: 25px solid #FFFBD9;
 }
 
+.entity-moderation-form {
+  padding: 1rem;
+}
+.entity-moderation-form .entity-moderation-form__item:last-child {
+  align-self: center;
+  padding-top: 6px;
+}
+
 /* Dangerous content type */
 .dangerous-wrapper {
   /* Providers */
