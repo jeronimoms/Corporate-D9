@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.newsletter_content.field_events_section_title
+    - field.field.node.newsletter_content.field_healthy_contents_hideintro
     - field.field.node.newsletter_content.field_month_year
     - field.field.node.newsletter_content.field_nlc_events_content
     - field.field.node.newsletter_content.field_oshmail_title
@@ -83,6 +84,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_healthy_contents_hideintro:
+    weight: 53
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_month_year:
     weight: 52
@@ -235,7 +246,8 @@ content:
     weight: 10
     label: hidden
     settings:
-      link: true
+      view_mode: highlights_item
+      link: false
     third_party_settings:
       ds:
         ds_limit: ''
@@ -245,7 +257,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   nlc_healthy_img:
     type: entity_reference_entity_view
