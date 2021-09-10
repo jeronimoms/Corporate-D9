@@ -89,10 +89,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         foreach ($langs as $lang => $node_lang) {
           $trans_value = $this->getFieldValue($node_lang, $definition, $field_name);
           if (isset($trans_value) && !empty($trans_value)) {
-            if ($field_name == 'field_image_media') {
-              $field_name = 'field_image';
-            }
-            $data[$field_name] = $trans_value;
+            $data += $trans_value;
           }
         }
       }
@@ -122,7 +119,6 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     $owner = $node->getOwner();
     $data['name'] = $owner->getAccountName();
     $data['picture'] = $owner->get('user_picture');
-
 
     return new JsonResponse($data);
   }
@@ -155,7 +151,11 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
             }
           }
 
-          return $referers;
+          if ($field_name == 'field_image_media') {
+            $field_name = 'field_image';
+          }
+
+          return [$field_name => $referers];
         }
 
         // Taxonomy Terms.
@@ -215,7 +215,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       ];
     }
 
-    return (empty($value) ? [] : [$node->language()->getId() => ['value' => $value]]);
+    return (empty($value) ? [] : [$field_name => [$node->language()->getId() => ['value' => $value]]]);
   }
 
   /**
