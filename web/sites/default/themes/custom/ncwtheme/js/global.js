@@ -348,6 +348,7 @@ jQuery(document).ready(function($) {
     };
 
   })
+
 });
 
 //Load function
