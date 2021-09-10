@@ -234,8 +234,8 @@ jQuery(document).ready(function($) {
 
   if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
     $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
-    $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
   }
+  $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
 
 
   //Archivied calls - Add class custom-active in year
