@@ -1163,6 +1163,14 @@ a.quiz-start-link:hover {
   }
 }
 
+.entity-moderation-form{
+  padding: 1rem;
+  .entity-moderation-form__item:last-child{
+    align-self: center;
+    padding-top: 6px;
+  }
+}
+
 /* Dangerous content type */
 .dangerous-wrapper{
   .field__label{
