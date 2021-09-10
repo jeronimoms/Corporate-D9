@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.newsletter_content.field_events_section_title
+    - field.field.node.newsletter_content.field_healthy_contents_hideintro
     - field.field.node.newsletter_content.field_month_year
     - field.field.node.newsletter_content.field_nlc_events_content
     - field.field.node.newsletter_content.field_oshmail_title
@@ -150,6 +151,7 @@ third_party_settings:
       children:
         - nlc_healthy_title
         - nlc_healthy_contents
+        - field_healthy_contents_hideintro
         - nlc_healthy_bg
         - nlc_healthy_img
       parent_name: group_healthy_workplaces_block
@@ -403,6 +405,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_healthy_contents_hideintro:
+    weight: 22
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_month_year:
     weight: 2
     settings:
@@ -532,7 +541,7 @@ content:
     type: string_textfield
     region: content
   nlc_healthy_bg:
-    weight: 22
+    weight: 23
     settings:
       show_input: '1'
       palette: ''
@@ -555,7 +564,7 @@ content:
     region: content
   nlc_healthy_img:
     type: media_library_widget
-    weight: 23
+    weight: 24
     settings:
       media_types: {  }
     third_party_settings: {  }

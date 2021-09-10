@@ -1,0 +1,10 @@
+uuid: 35241fc8-fa67-4b3d-a78b-cde88e6ace3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.newsletter_items_blocks
+label: 'Newsletter items blocks'
+targetEntityType: node
+cache: true

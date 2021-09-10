@@ -39,6 +39,23 @@
  */
 #}
 
+<style>
+  .newsletter-full-width-list-item a{
+    display: block !important;
+    color: #003399 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    padding-top: 3px !important;
+  }
+  .newsletter-full-width-list-item a:hover{
+    text-decoration: underline !important;
+  }
+  .newsletter-full-width-list-item p{
+    margin-top: 5px !important;
+    margin-bottom: 0 !important;
+  }
+</style>
+
 <table class="newsletter-container" border="0" cellpadding="0" width="800"
        style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; background-color: #ffffff; table-layout: fixed; max-width: 800px;">
   <tbody>
@@ -339,12 +356,26 @@
                                    class="newsletter-item news"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                               <tbody>
-                              <tr style="border: 0;">
-                                <td colspan="2"
-                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                  {{ build.nlc_healthy_contents }}
-                                </td>
-                              </tr>
+                                {% set hide_intro_text = build.field_healthy_contents_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text %}
+                                  {% for key, item in build.nlc_healthy_contents if key|first != '#' %}
+                                    <tr style="border: 0;">
+                                      <td colspan="2"
+                                          style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 20px;">
+                                        {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                      </td>
+                                    </tr>
+                                  {% endfor %}
+                                {% else %}
+                                  {% for key, item in build.nlc_healthy_contents if key|first != '#' %}
+                                    <tr style="border: 0;">
+                                      <td colspan="2"
+                                          style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 20px;">
+                                        {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                      </td>
+                                    </tr>
+                                  {% endfor %}
+                                {% endif %}
                               </tbody>
                             </table>
                           </th>
