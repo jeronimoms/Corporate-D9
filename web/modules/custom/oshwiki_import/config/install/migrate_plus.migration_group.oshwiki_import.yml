@@ -1,0 +1,12 @@
+id: oshwiki_import
+label: 'OSHWiki Import'
+description: 'Migration of data from OSHWiki'
+source_type: 'JSON'
+shared_configuration:
+  source:
+    key:
+      migrate
+dependencies:
+  enforced:
+    module:
+      - oshwiki_import

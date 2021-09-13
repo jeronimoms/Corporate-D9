@@ -1,0 +1,17 @@
+uuid: 7133edeb-0bd2-4f03-a9e8-731b6263432b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - oshwiki_import
+_core:
+  default_config_hash: StI-8hjK-JlIRSt6FOwH6xEdROIR4j4OpgsVez9hm4s
+id: oshwiki_import
+label: 'OSHWiki Import'
+description: 'Migration of data from OSHWiki'
+source_type: JSON
+module: null
+shared_configuration:
+  source:
+    key: migrate
