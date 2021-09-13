@@ -3,6 +3,7 @@
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
+use Drupal\translation_workflow\Form\MultipleTargetLanguageJobItemForm;
 use Drupal\translation_workflow\MultipleTargetLanguageConfigSourcePluginUi;
 use Drupal\translation_workflow\MultipleTargetLanguageLocaleSourcePluginUi;
 use Drupal\translation_workflow\MutipleTargetLanguageContentEntitySourcePluginUi;
@@ -66,9 +67,9 @@ function translation_workflow_entity_type_alter(array &$entity_types) {
   if (isset($entity_types['tmgmt_job_item'])) {
     //$entity_types['tmgmt_job_item']->setHandlerClass('access', MultipleTargetLanguageJobItemAccessControlHandler::class);
     //$entity_types['tmgmt_job_item']->setHandlerClass('list_builder', MultipleTargetLanguageJobItemListBuilder::class);
-    /*$entity_types['tmgmt_job_item']->setHandlerClass('form', [
+    $entity_types['tmgmt_job_item']->setHandlerClass('form', [
       'edit' => MultipleTargetLanguageJobItemForm::class,
-    ]);*/
+    ]);
   }
 }
 
