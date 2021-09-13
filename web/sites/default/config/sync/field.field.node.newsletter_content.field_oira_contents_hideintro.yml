@@ -1,0 +1,28 @@
+uuid: f171c841-288b-45fc-9134-2ab28ced0cdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oira_contents_hideintro
+    - node.type.newsletter_content
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.newsletter_content.field_oira_contents_hideintro
+field_name: field_oira_contents_hideintro
+entity_type: node
+bundle: newsletter_content
+label: 'OiRA contents hide intro text'
+description: 'Hide intro text for all items in this Block'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
