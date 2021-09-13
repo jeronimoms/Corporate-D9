@@ -6,13 +6,16 @@ id: from_final_to_draft
 workflow: editorial
 transitions:
   send_back_to_draft: send_back_to_draft
+  from_approved_to_draft: from_approved_to_draft
+  from_ready_to_publish_to_draft: from_ready_to_publish_to_draft
 roles:
+  editor: editor
   review_manager: review_manager
-author: true
+author: false
 site_mail: false
 emails: ''
-subject: 'Corporate website - New content needs your review '
+subject: '[OSHA Website-ddev] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear&nbsp;[node:author]</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>A content created by you needs to be revised in order to be approved:&nbsp; &nbsp;(type:&nbsp;[node:content-type] , status: Draft)\".</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  value: "<p>Dear&nbsp;user,</p>\r\n\r\n<p>A content created by you needs to be revised in order to be approved:<strong>&nbsp;[node:title] </strong>([node:url]) (type:&nbsp;[node:content-type], status: Draft).</p>\r\n\r\n<p>Thank you,</p>\r\n"
   format: full_html
-label: 'From final to draft'
+label: 'From any status to draft'

@@ -5,7 +5,8 @@ dependencies: {  }
 id: to_approved_to_be_reviewed
 workflow: editorial
 transitions:
-  send_back_to_be_reviewed: send_back_to_be_reviewed
+  from_draft_to_to_be_reviewed: from_draft_to_to_be_reviewed
+  send_to_be_reviewed: send_to_be_reviewed
 roles:
   project_manager: project_manager
 author: false
@@ -15,4 +16,4 @@ subject: 'Corporate website - New content needs your review '
 body:
   value: "<p>Dear Project manager,</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>There is a new content to be reviewed by you: [node:title] ([node:edit-url]). You can access also to the list of items ([site:url]admin/content/review) that needs to be reviewed.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you,</p>\r\n"
   format: full_html
-label: 'To Approved to be Reviewed'
+label: 'From Draft/Final Draft to To be reviewed'
