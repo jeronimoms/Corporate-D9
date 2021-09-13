@@ -75,6 +75,7 @@ function ncwtheme_preprocess_node(&$variables)
         }
       }
     }
+    ksort($pdf);
     $variables['relatedPdf'] = $pdf;
   }
   if ($node->bundle() == 'infographic') {
@@ -94,6 +95,7 @@ function ncwtheme_preprocess_node(&$variables)
         }
       }
     }
+    ksort($img);
     $variables['relatedImg'] = $img;
   }
   /**
