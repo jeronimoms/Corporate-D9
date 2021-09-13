@@ -1,0 +1,7 @@
+type: module
+name: OSHWiki Import
+description: 'OSHWiki import'
+package: Osha
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - migrate_plus

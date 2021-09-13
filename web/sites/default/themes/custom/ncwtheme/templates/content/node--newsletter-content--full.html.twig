@@ -374,24 +374,14 @@
                                    class="newsletter-item news"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                               <tbody>
-                                {% set hide_intro_text = content.field_healthy_contents_hideintro.0['#markup'] == 'On' %}
-                                {% if hide_intro_text %}
+                                {% set hide_intro_text_healthy = content.field_healthy_contents_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text_healthy %}
                                   {% for key, item in content.nlc_healthy_contents if key|first != '#' %}
-                                    <tr style="border: 0;">
-                                      <td colspan="2"
-                                          style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 20px;">
-                                        {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
-                                      </td>
-                                    </tr>
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in content.nlc_healthy_contents if key|first != '#' %}
-                                    <tr style="border: 0;">
-                                      <td colspan="2"
-                                          style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 20px;">
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
-                                      </td>
-                                    </tr>
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
                                   {% endfor %}
                                 {% endif %}
                               </tbody>
@@ -467,12 +457,26 @@
                                    class="newsletter-item events"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                               <tbody>
-                              <tr style="border: 0;">
-                                <td colspan="2"
-                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                  {{ content.nlc_national_contents }}
-                                </td>
-                              </tr>
+                              {% set hide_intro_text_national = content.field_national_content_hideintro.0['#markup'] == 'On' %}
+                              {% if hide_intro_text_national %}
+                                {% for key, item in content.nlc_national_contents if key|first != '#' %}
+                                  {% if ( item['#node'].type.0.target_id  == 'events' ) %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items') }}
+                                  {% endif %}
+                                  {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                  {% endif %}
+                                {% endfor %}
+                              {% else %}
+                                {% for key, item in content.nlc_national_contents if key|first != '#' %}
+                                  {% if ( item['#node'].type.0.target_id  == 'events' ) %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items') }}
+                                  {% endif %}
+                                  {% if ( item['#node'].type.0.target_id  == 'highlight' )  %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                  {% endif %}
+                                {% endfor %}
+                              {% endif %}
                               </tbody>
                             </table>
                           </th>
@@ -545,11 +549,16 @@
                                      class="newsletter-item news"
                                      style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                 <tbody>
-                                <tr style="border: 0;">
-                                  <td colspan="2">
-                                  {{ content.nlc_oira_contents }}
-                                  </td>
-                                </tr>
+                                {% set hide_intro_text_oira = content.field_oira_contents_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text_oira %}
+                                  {% for key, item in content.nlc_oira_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                  {% endfor %}
+                                {% else %}
+                                  {% for key, item in content.nlc_oira_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                  {% endfor %}
+                                {% endif %}
                                 </tbody>
                               </table>
                             </th>
@@ -617,12 +626,16 @@
                                      class="newsletter-item news"
                                      style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                 <tbody>
-                                <tr style="border: 0;">
-                                  <td colspan="2"
-                                      style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                    {{ content.nlc_covid_contents }}
-                                  </td>
-                                </tr>
+                                {% set hide_intro_text_covid = content.field_covid_contents_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text_covid %}
+                                  {% for key, item in content.nlc_covid_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                  {% endfor %}
+                                {% else %}
+                                  {% for key, item in content.nlc_covid_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                  {% endfor %}
+                                {% endif %}
                                 </tbody>
                               </table>
                             </th>
@@ -690,12 +703,16 @@
                                      class="newsletter-item news"
                                      style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                 <tbody>
-                                <tr style="border: 0;">
-                                  <td colspan="2"
-                                      style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                    {{ content.nlc_eunews_contents }}
-                                  </td>
-                                </tr>
+                                  {% set hide_intro_text_eunews = content.field_newbite_contents_hideintro.0['#markup'] == 'On' %}
+                                  {% if hide_intro_text_eunews %}
+                                    {% for key, item in content.nlc_eunews_contents if key|first != '#' %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endfor %}
+                                  {% else %}
+                                    {% for key, item in content.nlc_eunews_contents if key|first != '#' %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endfor %}
+                                  {% endif %}
                                 </tbody>
                               </table>
                             </th>
@@ -759,12 +776,16 @@
                                      class="newsletter-item news"
                                      style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                 <tbody>
-                                <tr style="border: 0;">
-                                  <td colspan="2"
-                                      style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                    {{ content.nlc_wiki_contents }}
-                                  </td>
-                                </tr>
+                                  {% set hide_intro_text_wiki = content.field_wiki_contents_hideintro.0['#markup'] == 'On' %}
+                                  {% if hide_intro_text_wiki %}
+                                    {% for key, item in content.nlc_wiki_contents if key|first != '#' %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endfor %}
+                                  {% else %}
+                                    {% for key, item in content.nlc_wiki_contents if key|first != '#' %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endfor %}
+                                  {% endif %}
                                 </tbody>
                               </table>
                             </th>
@@ -877,11 +898,7 @@
                                            class="newsletter-item news"
                                            style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                       <tbody>
-                                      <tr style="border: 0;">
-                                        <td style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                          {{ content.nlc_monews_contents }}
-                                        </td>
-                                      </tr>
+                                        {{ content.nlc_monews_contents }}
                                       </tbody>
                                     </table>
                                   </th>

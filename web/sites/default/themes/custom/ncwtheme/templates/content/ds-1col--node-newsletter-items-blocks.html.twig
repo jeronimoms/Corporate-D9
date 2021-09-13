@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<tr>
+  <td>
+    {{ ds_content.node_title }}
+  </td>
+</tr>
+<tr>
+  <td style='color: #003399;font-size: 14px;'>
+    {{ ds_content.body.0['#text'] }}
+    <!-- EU news bites used summary field for News -->
+    {{ ds_content.field_summary_html.0['#text'] }}
+  </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+</tr>
+
+
