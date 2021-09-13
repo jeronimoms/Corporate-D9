@@ -716,8 +716,13 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    * {@inheritdoc}
    */
   public function addTranslatedData(array $data, $key = NULL, $status = NULL) {
+    $itemsSearch = [];
+    if (isset($data['target_language'])) {
+      $itemsSearch = ['target_language' => $data['target_language']];
+      unset($data['target_language']);
+    }
     $key = \Drupal::service('tmgmt.data')->ensureArrayKey($key);
-    $items = $this->getItems();
+    $items = $this->getItems($itemsSearch);
     // If there is a key, get the specific item and forward the call.
     if (!empty($key)) {
       $item_id = array_shift($key);
@@ -968,6 +973,16 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    */
   public function getPriorityValues() {
     return $this->get('priority')->getFieldDefinition()->getSetting('allowed_values');
+  }
+
+  public function label() {
+    $label = parent::label();
+    if (empty($label)) {
+      $label = $this->t('Translation job #@id', [
+        '@id' => $this->id(),
+      ]);
+    }
+    return $label;
   }
 
 }
