@@ -1,0 +1,23 @@
+uuid: 69bd86de-4868-4635-bba8-2dca5ff508aa
+langcode: en
+status: true
+dependencies: {  }
+id: any_state_to_published
+workflow: editorial
+transitions:
+  publish: publish
+  from_rejected_to_published: from_rejected_to_published
+  content_approved_and_publishing: content_approved_and_publishing
+  send_to_publish_from_final_draft: send_to_publish_from_final_draft
+  send_to_publish_from_reviewed: send_to_publish_from_reviewed
+  publishing: publishing
+roles:
+  review_manager: review_manager
+author: false
+site_mail: false
+emails: ''
+subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
+body:
+  value: "<p>Dear <strong>user</strong>,</p>\r\n\r\n<p>No action is required. This message is just to inform you that there has been a status change&nbsp;to <strong>P</strong><b>ublished</b>) on page<strong> [node:title] </strong>([node:url]).</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  format: full_html
+label: 'Any state to Published'

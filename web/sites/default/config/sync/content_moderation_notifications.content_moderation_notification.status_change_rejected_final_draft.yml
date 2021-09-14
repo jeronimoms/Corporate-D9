@@ -1,0 +1,18 @@
+uuid: 7031419c-3a3a-48a8-9cbf-dcb4df48c30b
+langcode: en
+status: true
+dependencies: {  }
+id: status_change_rejected_final_draft
+workflow: editorial
+transitions:
+  project_manager_rejects_rejected_content: project_manager_rejects_rejected_content
+roles:
+  review_manager: review_manager
+author: false
+site_mail: false
+emails: ''
+subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
+body:
+  value: "<p>Dear <b>user,</b></p>\r\n\r\n<p>No action is required. This message is just to inform you that there has been a status change (from&nbsp;<b>rejected</b>&nbsp;to&nbsp;<b>final_draft</b>) on page [node:title] ([node:url]).</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  format: full_html
+label: 'Status change:  rejected - final draft'
