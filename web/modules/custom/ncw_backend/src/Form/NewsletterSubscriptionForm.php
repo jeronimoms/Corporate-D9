@@ -107,9 +107,16 @@ class NewsletterSubscriptionForm extends FormBase {
       ]);
     }
     if ($response) {
-      if ($response->getStatusCode() == 200) {
+      $statusCode = $response->getStatusCode();
+      if ($statusCode == 200) {
         $this->messenger()
           ->addMessage($this->t('You should receive a confirmation email in your inbox in the coming minutes. Otherwise, please check your spam folder. Thanks a lot for subscribing.'));
+      }
+      else {
+        $this->messenger()->addError($this->t('Error sending subscription. Please try again later.'));
+        $this->logger('ncw_backend')->error('Error sending subscription with code %code', [
+          '%code' => $statusCode,
+        ]);
       }
     }
     else {
