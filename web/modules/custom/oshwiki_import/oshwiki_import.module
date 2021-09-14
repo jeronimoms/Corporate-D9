@@ -1,13 +1,13 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\osha_import_export\OieCron;
+use Drupal\oshwiki_import\OwiCron;
 
 /**
  * Implements hook_cron().
  */
-function osha_import_export_cron() {
+function oshwiki_import_cron() {
   Drupal::classResolver()
-    ->getInstanceFromDefinition(OieCron::class)
+    ->getInstanceFromDefinition(OwiCron::class)
     ->cron();
 }
