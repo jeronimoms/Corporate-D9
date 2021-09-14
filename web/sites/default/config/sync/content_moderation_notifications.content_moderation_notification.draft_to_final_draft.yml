@@ -11,8 +11,8 @@ roles:
 author: false
 site_mail: false
 emails: ''
-subject: 'Corporate website - New content needs your review '
+subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear Reviewer,</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>There is a new content to be reviewed by you: [node:title] ([node:edit-url]). You can access also to the list of items ([site:url]admin/content?state=editorial-final_draft) that needs to be reviewed.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you</p>\r\n"
+  value: "<p>Dear Reviewer,</p>\r\n\r\n<p>There is new content to be reviewed by you: <strong>[node:title]</strong> ([node:url]). You can access also to the list of items (<a href=\"/admin/content?combine=&amp;field_publication_date_value%5Bmin%5D=&amp;field_publication_date_value%5Bmax%5D=&amp;uid=&amp;status_1=All&amp;moderation_state%5B%5D=editorial-final_draft\">here</a>) that needs to be reviewed.</p>\r\n\r\n<p>Thank you</p>\r\n"
   format: full_html
 label: 'Draft to Final draft'
