@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae715a54a77b7d0c90dd8cf9d595c004",
+    "content-hash": "3a990c6ee2e1799483edb8e945ef62fc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2203,7 +2203,7 @@
             "extra": {
                 "drupal": {
                     "version": "3.0.1",
-                    "datestamp": "1622644077",
+                    "datestamp": "1629907124",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4868,7 +4868,7 @@
                     "datestamp": "1609168673",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -6228,7 +6228,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1614965953",
+                    "datestamp": "1615218163",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6282,7 +6282,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1624457459",
+                    "datestamp": "1624457496",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9276,6 +9276,10 @@
                     "homepage": "https://stjerneman.com",
                     "email": "emil@stjerneman.com",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "johnwebdev",
+                    "homepage": "https://www.drupal.org/user/3331569"
                 }
             ],
             "description": "Linkit - Enriched linking experience",
@@ -9520,6 +9524,10 @@
                 {
                     "name": "See other contributors",
                     "homepage": "https://www.drupal.org/node/247808/committers"
+                },
+                {
+                    "name": "shelane",
+                    "homepage": "https://www.drupal.org/user/2674989"
                 }
             ],
             "description": "Adds Matomo javascript tracking code to all your site's pages",
@@ -9573,6 +9581,10 @@
                     "homepage": "https://www.ausy.be",
                     "email": "info@ausy.be",
                     "role": "Sponsor"
+                },
+                {
+                    "name": "mark_fullmer",
+                    "homepage": "https://www.drupal.org/user/2612816"
                 },
                 {
                     "name": "nightlife2008",
@@ -14882,7 +14894,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-4.8",
-                    "datestamp": "1601309225",
+                    "datestamp": "1601309285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15239,7 +15251,7 @@
             "extra": {
                 "drupal": {
                     "version": "6.0.4",
-                    "datestamp": "1624461046",
+                    "datestamp": "1629907247",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
