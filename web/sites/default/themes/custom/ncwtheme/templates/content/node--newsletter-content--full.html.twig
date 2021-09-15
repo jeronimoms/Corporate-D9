@@ -75,7 +75,7 @@
 
 <article {{ attributes }}>
   <table class="newsletter-container" border="0" cellpadding="0" width="800"
-         style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; background-color: #ffffff; table-layout: fixed; max-width: 800px;">
+         style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; background-color: #ffffff; max-width: 800px;">
     <tbody>
     <tr class="header-container" style="border: 0; background: #FFFFFF;">
       <td style="vertical-align: top; padding: 0; border: 0;">
@@ -369,7 +369,7 @@
                         </tr>
                         <tr class="row newsletter-full-width-list-row" style="border: 0;">
                           <th class="item newsletter-full-width-list-item"
-                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 15px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                              style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                             <table id="node-21129" border="0" cellpadding="0" cellspacing="0" width="100%"
                                    class="newsletter-item news"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
@@ -452,7 +452,7 @@
                         </tr>
                         <tr class="row newsletter-full-width-list-row" style="border: 0;">
                           <th class="item newsletter-full-width-list-item"
-                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 15px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                              style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                             <table id="node-20970" border="0" cellpadding="0" cellspacing="0" width="100%"
                                    class="newsletter-item events"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
@@ -544,7 +544,7 @@
                           </tr>
                           <tr class="row newsletter-full-width-list-row" style="border: 0;">
                             <th class="item newsletter-full-width-list-item"
-                                style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 15px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                                style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                               <table id="node-21398" border="0" cellpadding="0" cellspacing="0" width="100%"
                                      class="newsletter-item news"
                                      style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
@@ -621,7 +621,7 @@
                           </tr>
                           <tr class="row newsletter-full-width-list-row" style="border: 0;">
                             <th class="item newsletter-full-width-list-item"
-                                style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 15px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                                style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                               <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
                                      class="newsletter-item news"
                                      style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
@@ -698,7 +698,7 @@
                           </tr>
                           <tr class="row newsletter-full-width-list-row" style="border: 0;">
                             <th class="item newsletter-full-width-list-item"
-                                style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 15px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                                style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                               <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
                                      class="newsletter-item news"
                                      style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
@@ -771,7 +771,7 @@
                           </tr>
                           <tr class="row newsletter-full-width-list-row" style="border: 0;">
                             <th class="item newsletter-full-width-list-item"
-                                style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 15px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                                style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                               <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
                                      class="newsletter-item news"
                                      style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
@@ -898,7 +898,16 @@
                                            class="newsletter-item news"
                                            style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                       <tbody>
-                                        {{ content.nlc_monews_contents }}
+                                      {% set hide_intro_text_morenews = content.field_hide_more_news_intro_text.0['#markup'] == 'On' %}
+                                      {% if hide_intro_text_morenews %}
+                                        {% for key, item in content.nlc_monews_contents if key|first != '#' %}
+                                          {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                        {% endfor %}
+                                      {% else %}
+                                        {% for key, item in content.nlc_monews_contents if key|first != '#' %}
+                                          {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                        {% endfor %}
+                                      {% endif %}
                                       </tbody>
                                     </table>
                                   </th>
@@ -919,7 +928,7 @@
                         <!-- END News Section SECTION -->
                         {% endif %}
                       </td>
-                      <td>
+                      <td style="vertical-align: top;">
                         <!-- Twitter block -->
                         <table
                           class="newsletter-half-image-left newsletter-section template-container section-covid-19-outbreak-and-workplace-safety-and-health"
@@ -985,11 +994,16 @@
                                              class="newsletter-item news"
                                              style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                         <tbody>
-                                        <tr style="border: 0;">
-                                          <td style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                            {{ content.nlc_monews_contents }}
-                                          </td>
-                                        </tr>
+                                          {% set hide_intro_text_morenews = content.field_hide_more_news_intro_text.0['#markup'] == 'On' %}
+                                          {% if hide_intro_text_morenews %}
+                                            {% for key, item in content.nlc_monews_contents if key|first != '#' %}
+                                              {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                            {% endfor %}
+                                          {% else %}
+                                            {% for key, item in content.nlc_monews_contents if key|first != '#' %}
+                                              {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                            {% endfor %}
+                                          {% endif %}
                                         </tbody>
                                       </table>
                                     </th>
