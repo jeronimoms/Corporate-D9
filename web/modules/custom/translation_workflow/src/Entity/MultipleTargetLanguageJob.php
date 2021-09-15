@@ -710,8 +710,46 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
     return tmgmt_job_statistic($this, 'word_count');
   }
 
+  /**
+   * Returns characters count for items.
+   *
+   * @return int
+   *   Characters count.
+   */
+  public function getCharactersCount() {
+    $items = $this->getItems();
+    $countedItems = [];
+    $count = 0;
+    $dataService = \Drupal::service('tmgmt.data');
+    foreach ($items as $item) {
+      $itemId = $item->getItemId();
+      if (!isset($countedItems[$itemId])) {
+        $countedItems[$itemId] = TRUE;
+        $data = array_filter($dataService->flatten($item->getData()), function ($value) {
+          return !(empty($value['#text']) || (isset($value['#translate']) && $value['#translate'] === FALSE));
+        });
+        foreach ($data as $key => $field) {
+          if (isset($field['#text'])) {
+            $text = $field['#text'];
+            $text = strip_tags(html_entity_decode($text));
+            // C2A0 is unicode nbsp.
+            $text = preg_replace("/\x{00A0}|&nbsp;|\s/", '', $text);
+            $count += mb_strlen($text, 'utf-8');
+          }
+        }
+      }
+    }
+    return $count;
+  }
+
+  /**
+   * Get page count for items.
+   *
+   * @return string
+   *   Page count.
+   */
   public function getPageCount() {
-    return number_format($this->getWordCount() / self::CHARACTERS_PER_PAGE, 2, ',','');
+    return number_format($this->getWordCount() / self::CHARACTERS_PER_PAGE, 2, ',', '');
   }
 
   /**
@@ -984,6 +1022,9 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
     return $this->get('priority')->getFieldDefinition()->getSetting('allowed_values');
   }
 
+  /**
+   *
+   */
   public function label() {
     $label = parent::label();
     if (empty($label)) {

@@ -1,0 +1,28 @@
+<?php
+
+namespace Drupal\translation_workflow\Plugin\views\field;
+
+use Drupal\tmgmt\Plugin\views\field\StatisticsBase;
+use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
+use Drupal\views\ResultRow;
+
+/**
+ * Handler to show characters count for a multiple target language job or job item.
+ *
+ * @ViewsField("translation_workflow_characters_count")
+ */
+class CharactersCount extends StatisticsBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function render(ResultRow $values) {
+    $entity = $this->getEntity($values);
+    $ret = '--';
+    if ($entity instanceof MultipleTargetLanguageJob) {
+      $ret = $entity->getCharactersCount();
+    }
+    return $ret;
+  }
+
+}

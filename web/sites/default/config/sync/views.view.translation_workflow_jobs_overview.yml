@@ -315,14 +315,14 @@ display:
           hide_alter_empty: true
           entity_type: tmgmt_job_multiple_target
           plugin_id: translation_workflow_pagecount
-        word_count:
-          id: word_count
+        characters_count:
+          id: characters_count
           table: tmgmt_multiple_target_job
-          field: word_count
+          field: characters_count
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Word count'
+          label: 'Characters count'
           exclude: false
           alter:
             alter_text: false
@@ -364,7 +364,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           entity_type: tmgmt_job_multiple_target
-          plugin_id: tmgmt_wordcount
+          plugin_id: translation_workflow_characters_count
         progress:
           id: progress
           table: tmgmt_multiple_target_job

@@ -34,6 +34,16 @@ class MultipleTargetLanguageJobViewsData extends EntityViewsData {
       'sort' => [],
     ];
 
+    $data['tmgmt_multiple_target_job']['characters_count'] = [
+      'title' => 'Characters count',
+      'help' => 'Displays the characters count of a job.',
+      'real field' => 'id',
+      'field' => [
+        'id' => 'translation_workflow_characters_count',
+      ],
+      'sort' => [],
+    ];
+
     $data['tmgmt_multiple_target_job']['page_count'] = [
       'title' => 'Page count',
       'help' => 'Displays the page count of a job.',
