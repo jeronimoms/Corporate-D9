@@ -6,13 +6,18 @@ dependencies:
     - field.storage.node.nlc_covid_contents
     - node.type.article
     - node.type.newsletter_content
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 _core:
   default_config_hash: t9RPNC_MPnf9hpoJUfjTcw2BIbJWaRnLE5hn4YYIEG4
 id: node.newsletter_content.nlc_covid_contents
 field_name: nlc_covid_contents
 entity_type: node
 bundle: newsletter_content
-label: Contents
+label: 'Covid contents'
 description: ''
 required: false
 translatable: false

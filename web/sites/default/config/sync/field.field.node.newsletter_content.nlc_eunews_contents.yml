@@ -4,8 +4,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.nlc_eunews_contents
-    - node.type.highlight
+    - node.type.news
     - node.type.newsletter_content
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 _core:
   default_config_hash: WdTHy0ghEq2ds_colFbgY5oSmokHKhmFlT6SBxQ2dKE
 id: node.newsletter_content.nlc_eunews_contents
@@ -22,10 +27,10 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      highlight: highlight
+      news: news
     sort:
       field: title
       direction: ASC
     auto_create: true
-    auto_create_bundle: ''
+    auto_create_bundle: highlight
 field_type: entity_reference

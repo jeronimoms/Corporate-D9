@@ -50,17 +50,19 @@ class NmTaxonomyTerm extends ProcessPluginBase implements ContainerFactoryPlugin
 
     $field_wiki_categories = $row->getSourceProperty('field_wiki_categories');
 
-    $term = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties([
-      'name' => $field_wiki_categories['name'],
-      'vid' => $field_wiki_categories['vocabulary_machine_name'],
-    ]);
+    foreach ($field_wiki_categories as $category) {
+      $term = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties([
+        'name' => $category['name'],
+        'vid' => $category['vocabulary_machine_name'],
+      ]);
 
-    /** @var \Drupal\taxonomy\Entity\Term $term */
-    $term = reset($term);
-    if (!empty($term)) {
-      $value = [
-        'target_id' => $term->id(),
-      ];
+      /** @var \Drupal\taxonomy\Entity\Term $term */
+      $term = reset($term);
+      if (!empty($term)) {
+        $value[$category['tid']] = [
+          'target_id' => $term->id(),
+        ];
+      }
     }
 
     return $value;

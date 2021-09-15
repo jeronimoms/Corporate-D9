@@ -1,4 +1,4 @@
-uuid: 17e85ee8-7da7-4219-8beb-52d66c43e69d
+uuid: b3a7160f-aa16-46a7-a5e3-b52e6d90f8cf
 langcode: en
 status: true
 dependencies: {  }
@@ -6,13 +6,18 @@ id: from_final_to_draft
 workflow: editorial
 transitions:
   send_back_to_draft: send_back_to_draft
+  review_manager_rejects_rejected_content: review_manager_rejects_rejected_content
+  from_approved_to_draft: from_approved_to_draft
+  rejecting_final_draft: rejecting_final_draft
+  from_ready_to_publish_to_draft: from_ready_to_publish_to_draft
 roles:
+  editor: editor
   review_manager: review_manager
-author: true
+author: false
 site_mail: false
 emails: ''
-subject: 'Corporate website - New content needs your review '
+subject: '[OSHA Website-ddev] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear&nbsp;[node:author]</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>A content created by you needs to be revised in order to be approved:&nbsp; &nbsp;(type:&nbsp;[node:content-type] , status: Draft)\".</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  value: "<p>Dear&nbsp;<strong>user</strong>,</p>\r\n\r\n<p>A content created by you needs to be revised in order to be approved:<strong>&nbsp;[node:title] </strong>([node:url]) (type:&nbsp;[node:content-type], status: Draft).</p>\r\n\r\n<p>Thank you,</p>\r\n"
   format: full_html
-label: 'From final to draft'
+label: 'From any status to draft'

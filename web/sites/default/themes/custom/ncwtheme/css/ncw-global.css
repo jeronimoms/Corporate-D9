@@ -2883,6 +2883,14 @@ a.quiz-start-link:hover {
   border-left: 25px solid #FFFBD9;
 }
 
+.entity-moderation-form {
+  padding: 1rem;
+}
+.entity-moderation-form .entity-moderation-form__item:last-child {
+  align-self: center;
+  padding-top: 6px;
+}
+
 /* Dangerous content type */
 .dangerous-wrapper {
   /* Providers */
@@ -6439,6 +6447,16 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 .block-views-blockbureau-members-block-1 .view-bureau-members .view-content .views-row {
   font-size: 0.9rem;
   line-height: 1.5rem;
+}
+
+.tools-and-resources-multilingualism .block-views-blocklanding-menu-dv-block-1 .view-content.row > div {
+  width: 49%;
+  flex: 0 0 49%;
+  max-width: 49%;
+  margin: 0.5rem 2% 0.7rem 0;
+}
+.tools-and-resources-multilingualism .block-views-blocklanding-menu-dv-block-1 .view-content.row > div:nth-child(2) {
+  margin-right: 0;
 }
 
 .view-legislation-directives .table-responsive {

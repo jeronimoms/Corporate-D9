@@ -39,6 +39,28 @@
  */
 #}
 
+<style>
+  .newsletter-full-width-list-item a{
+    display: block !important;
+    color: #003399 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    padding-top: 3px !important;
+  }
+  .newsletter-full-width-list-item a:hover{
+    text-decoration: underline !important;
+  }
+  .newsletter-full-width-list-item p{
+    margin-top: 5px !important;
+    margin-bottom: 0 !important;
+  }
+  .newsletter-section-block a{
+    font-size: 14px;
+    padding-bottom: 5px;
+    padding-top: 0 !important;
+  }
+</style>
+
 <table class="newsletter-container" border="0" cellpadding="0" width="800"
        style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; background-color: #ffffff; table-layout: fixed; max-width: 800px;">
   <tbody>
@@ -295,7 +317,7 @@
             {% if build.nlc_healthy_contents.0 %}
               <!-- Healthy Workplaces Campaign SECTION  -->
               <table
-                class="newsletter-half-image-left newsletter-section template-container section-healthy-workplaces-campaign"
+                class="newsletter-half-image-left newsletter-section newsletter-section-block  template-container section-healthy-workplaces-campaign"
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
@@ -334,17 +356,21 @@
                         </tr>
                         <tr class="row newsletter-full-width-list-row" style="border: 0;">
                           <th class="item newsletter-full-width-list-item"
-                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                              style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                             <table id="node-21129" border="0" cellpadding="0" cellspacing="0" width="100%"
                                    class="newsletter-item news"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                               <tbody>
-                              <tr style="border: 0;">
-                                <td colspan="2"
-                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                  {{ build.nlc_healthy_contents }}
-                                </td>
-                              </tr>
+                                {% set hide_intro_text = build.field_healthy_contents_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text %}
+                                  {% for key, item in build.nlc_healthy_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                  {% endfor %}
+                                {% else %}
+                                  {% for key, item in build.nlc_healthy_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                  {% endfor %}
+                                {% endif %}
                               </tbody>
                             </table>
                           </th>
@@ -373,7 +399,7 @@
             {% if build.nlc_national_contents.0 %}
               <!-- National Focal Points in action SECTION  -->
               <table
-                class="newsletter-half-image-left newsletter-section template-container section-national-focal-points-in-action"
+                class="newsletter-half-image-left newsletter-section newsletter-section-block  template-container section-national-focal-points-in-action"
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
@@ -413,17 +439,31 @@
                         </tr>
                         <tr class="row newsletter-full-width-list-row" style="border: 0;">
                           <th class="item newsletter-full-width-list-item"
-                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                              style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                             <table id="node-20970" border="0" cellpadding="0" cellspacing="0" width="100%"
                                    class="newsletter-item events"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                               <tbody>
-                              <tr style="border: 0;">
-                                <td colspan="2"
-                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                  {{ build.nlc_national_contents }}
-                                </td>
-                              </tr>
+                                {% set hide_intro_text_national = build.field_national_content_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text_national %}
+                                  {% for key, item in build.nlc_national_contents if key|first != '#' %}
+                                    {% if ( item['#node'].type.0.target_id  == 'events' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
+                                  {% endfor %}
+                                {% else %}
+                                  {% for key, item in build.nlc_national_contents if key|first != '#' %}
+                                    {% if ( item['#node'].type.0.target_id  == 'events' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' )  %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
+                                  {% endfor %}
+                                {% endif %}
                               </tbody>
                             </table>
                           </th>
@@ -452,7 +492,7 @@
             {% if build.nlc_oira_contents.0 %}
               <!-- OiRA - Online interactive Risk Assessment SECTION  -->
               <table
-                class="newsletter-oira-half-image-left newsletter-section template-container section-oira---online-interactive-risk-assessment"
+                class="newsletter-oira-half-image-left newsletter-section newsletter-section-block template-container section-oira---online-interactive-risk-assessment"
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
@@ -491,16 +531,21 @@
                         </tr>
                         <tr class="row newsletter-full-width-list-row" style="border: 0;">
                           <th class="item newsletter-full-width-list-item"
-                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                              style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                             <table id="node-21398" border="0" cellpadding="0" cellspacing="0" width="100%"
                                    class="newsletter-item news"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                               <tbody>
-                              <tr style="border: 0;">
-                                <td colspan="2">
-                                  {{ build.nlc_oira_contents }}
-                                </td>
-                              </tr>
+                                {% set hide_intro_text_oira = build.field_oira_contents_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text_oira %}
+                                  {% for key, item in build.nlc_oira_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                  {% endfor %}
+                                {% else %}
+                                  {% for key, item in build.nlc_oira_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                  {% endfor %}
+                                {% endif %}
                               </tbody>
                             </table>
                           </th>
@@ -523,7 +568,7 @@
             {% if build.nlc_covid_contents.0 %}
               <!-- COVID-19 outbreak and workplace safety and health SECTION -->
               <table
-                class="newsletter-half-image-left newsletter-section template-container section-covid-19-outbreak-and-workplace-safety-and-health"
+                class="newsletter-half-image-left newsletter-section newsletter-section-block template-container section-covid-19-outbreak-and-workplace-safety-and-health"
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
@@ -563,17 +608,21 @@
                         </tr>
                         <tr class="row newsletter-full-width-list-row" style="border: 0;">
                           <th class="item newsletter-full-width-list-item"
-                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                              style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                             <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
                                    class="newsletter-item news"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                               <tbody>
-                              <tr style="border: 0;">
-                                <td colspan="2"
-                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                  {{ build.nlc_covid_contents }}
-                                </td>
-                              </tr>
+                                {% set hide_intro_text_covid = build.field_covid_contents_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text_covid %}
+                                  {% for key, item in build.nlc_covid_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                  {% endfor %}
+                                {% else %}
+                                  {% for key, item in build.nlc_covid_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                  {% endfor %}
+                                {% endif %}
                               </tbody>
                             </table>
                           </th>
@@ -596,7 +645,7 @@
             {% if build.nlc_eunews_contents.0 %}
               <!-- EU news bites SECTION -->
               <table
-                class="newsletter-half-image-left newsletter-section template-container section-eu-news-bites"
+                class="newsletter-half-image-left newsletter-section newsletter-section-block template-container section-eu-news-bites"
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
@@ -636,17 +685,21 @@
                         </tr>
                         <tr class="row newsletter-full-width-list-row" style="border: 0;">
                           <th class="item newsletter-full-width-list-item"
-                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                              style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                             <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
                                    class="newsletter-item news"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                               <tbody>
-                              <tr style="border: 0;">
-                                <td colspan="2"
-                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                  {{ build.nlc_eunews_contents }}
-                                </td>
-                              </tr>
+                                {% set hide_intro_text_eunews = build.field_newbite_contents_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text_eunews %}
+                                  {% for key, item in build.nlc_eunews_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                  {% endfor %}
+                                {% else %}
+                                  {% for key, item in build.nlc_eunews_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                  {% endfor %}
+                                {% endif %}
                               </tbody>
                             </table>
                           </th>
@@ -669,7 +722,7 @@
             {% if build.nlc_wiki_contents.0 %}
               <!-- Wiki -->
               <table
-                class="newsletter-half-image-left newsletter-section template-container section-wiki"
+                class="newsletter-half-image-left newsletter-section newsletter-section-block template-container section-wiki"
                 width="100%" cellpadding="0" cellspacing="0"
                 style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                 <thead>
@@ -705,17 +758,21 @@
                         </tr>
                         <tr class="row newsletter-full-width-list-row" style="border: 0;">
                           <th class="item newsletter-full-width-list-item"
-                              style="vertical-align: top; background-color: transparent; padding: 10px 10px 5px 10px; padding-top: 5px; padding-bottom: 5px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
+                              style="vertical-align: top; background-color: transparent; padding: 5px 25px 5px 10px; border: 0; font-weight: normal; text-align: left; text-transform: none;">
                             <table id="node-21419" border="0" cellpadding="0" cellspacing="0" width="100%"
                                    class="newsletter-item news"
                                    style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                               <tbody>
-                              <tr style="border: 0;">
-                                <td colspan="2"
-                                    style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                  {{ build.nlc_wiki_contents }}
-                                </td>
-                              </tr>
+                                {% set hide_intro_text_wiki = build.field_wiki_contents_hideintro.0['#markup'] == 'On' %}
+                                {% if hide_intro_text_wiki %}
+                                  {% for key, item in build.nlc_wiki_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                  {% endfor %}
+                                {% else %}
+                                  {% for key, item in build.nlc_wiki_contents if key|first != '#' %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                  {% endfor %}
+                                {% endif %}
                               </tbody>
                             </table>
                           </th>
@@ -799,7 +856,7 @@
                     <td style="vertical-align: top; width: 500px;">
                       {% if build.nlc_monews_contents.0 %}
                         <!-- More News Section SECTION -->
-                        <table class="newsletter-half-image-left newsletter-section template-container section-covid-19-outbreak-and-workplace-safety-and-health"
+                        <table class="newsletter-half-image-left newsletter-section newsletter-section-block template-container section-covid-19-outbreak-and-workplace-safety-and-health"
                                width="90%" cellpadding="0" cellspacing="0"
                                style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
                           <thead>
@@ -828,11 +885,16 @@
                                            class="newsletter-item news"
                                            style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                       <tbody>
-                                      <tr style="border: 0;">
-                                        <td style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                          {{ build.nlc_monews_contents }}
-                                        </td>
-                                      </tr>
+                                        {% set hide_intro_text_morenews = content.field_hide_more_news_intro_text.0['#markup'] == 'On' %}
+                                        {% if hide_intro_text_morenews %}
+                                          {% for key, item in build.nlc_monews_contents if key|first != '#' %}
+                                            {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                          {% endfor %}
+                                        {% else %}
+                                          {% for key, item in build.nlc_monews_contents if key|first != '#' %}
+                                            {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                          {% endfor %}
+                                        {% endif %}
                                       </tbody>
                                     </table>
                                   </th>
@@ -892,7 +954,7 @@
                     <td style="vertical-align: top;">
                       {% if build.nlc_monews_contents.0 %}
                         <!-- More News Section SECTION -->
-                        <table class="newsletter-half-image-left newsletter-section template-container section-covid-19-outbreak-and-workplace-safety-and-health"
+                        <table class="newsletter-half-image-left newsletter-section newsletter-section-block template-container section-covid-19-outbreak-and-workplace-safety-and-health"
                                width="100%" cellpadding="0" cellspacing="0"
                                style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 760px;">
                           <thead>
@@ -921,11 +983,16 @@
                                            class="newsletter-item news"
                                            style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                       <tbody>
-                                      <tr style="border: 0;">
-                                        <td style="vertical-align: top; padding: 0; border: 0; color: #003399; font-family: Arial, sans-serif; font-size: 14px; padding-bottom: 0;">
-                                          {{ build.nlc_monews_contents }}
-                                        </td>
-                                      </tr>
+                                      {% set hide_intro_text_morenews = content.field_hide_more_news_intro_text.0['#markup'] == 'On' %}
+                                      {% if hide_intro_text_morenews %}
+                                        {% for key, item in build.nlc_monews_contents if key|first != '#' %}
+                                          {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                        {% endfor %}
+                                      {% else %}
+                                        {% for key, item in build.nlc_monews_contents if key|first != '#' %}
+                                          {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                        {% endfor %}
+                                      {% endif %}
                                       </tbody>
                                     </table>
                                   </th>

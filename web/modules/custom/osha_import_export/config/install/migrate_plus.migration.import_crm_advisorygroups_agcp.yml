@@ -160,9 +160,10 @@ process:
   #field_website: field_website
   field_wg_role_1:
     -
-      plugin: hcm_taxonomy_term_name
+      plugin: oie_taxonomy_term_name
       source: field_wg_role_1
       vocabulary: wg_role_1
+      create: true
   #field_wg_role_2:
   #  -
   #    plugin: hcm_taxonomy_term_name

@@ -1,0 +1,25 @@
+uuid: ad2dcec3-7a7f-484e-9880-6b1144d33d90
+langcode: en
+status: true
+dependencies: {  }
+id: any_state_to_rejected
+workflow: editorial
+transitions:
+  from_draft_to_rejected: from_draft_to_rejected
+  from_final_draft_to_rejected: from_final_draft_to_rejected
+  from_approved_to_rejected: from_approved_to_rejected
+  from_to_be_reviewed_to_rejected: from_to_be_reviewed_to_rejected
+  rejecting: rejecting
+  from_ready_to_publish_to_rejected: from_ready_to_publish_to_rejected
+  from_published_to_rejected: from_published_to_rejected
+roles:
+  review_manager: review_manager
+  project_manager: project_manager
+author: false
+site_mail: false
+emails: ''
+subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
+body:
+  value: "<p>Dear <strong>user</strong>,</p>\r\n\r\n<p>A new content has been rejected: <strong>[node:title]</strong> ([node:url]) (type: article, status:&nbsp;<b>Rejected</b>).</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  format: full_html
+label: 'Any state to Rejected'

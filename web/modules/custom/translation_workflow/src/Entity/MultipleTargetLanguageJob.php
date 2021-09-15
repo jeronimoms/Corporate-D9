@@ -32,7 +32,7 @@ use Drupal\user\UserInterface;
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "list_builder" = "Drupal\translation_workflow\Entity\ListBuilder\MultipleTargetLanguageJobListBuilder",
- *   "views_data" = "Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobViewsData"
+ *     "views_data" = "Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobViewsData"
  *   },
  *   base_table = "tmgmt_multiple_target_job",
  *   entity_keys = {
@@ -49,6 +49,11 @@ use Drupal\user\UserInterface;
  * @ingroup tmgmt_job
  */
 class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwnerInterface, PriorityJobInterface {
+
+  /**
+   * Character allowed per page to calculate pages number.
+   */
+  const CHARACTERS_PER_PAGE = 1500;
 
   use StringTranslationTrait;
 
@@ -705,6 +710,10 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
     return tmgmt_job_statistic($this, 'word_count');
   }
 
+  public function getPageCount() {
+    return number_format($this->getWordCount() / self::CHARACTERS_PER_PAGE, 2, ',','');
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -716,8 +725,13 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    * {@inheritdoc}
    */
   public function addTranslatedData(array $data, $key = NULL, $status = NULL) {
+    $itemsSearch = [];
+    if (isset($data['target_language'])) {
+      $itemsSearch = ['target_language' => $data['target_language']];
+      unset($data['target_language']);
+    }
     $key = \Drupal::service('tmgmt.data')->ensureArrayKey($key);
-    $items = $this->getItems();
+    $items = $this->getItems($itemsSearch);
     // If there is a key, get the specific item and forward the call.
     if (!empty($key)) {
       $item_id = array_shift($key);
@@ -968,6 +982,16 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    */
   public function getPriorityValues() {
     return $this->get('priority')->getFieldDefinition()->getSetting('allowed_values');
+  }
+
+  public function label() {
+    $label = parent::label();
+    if (empty($label)) {
+      $label = $this->t('Translation job #@id', [
+        '@id' => $this->id(),
+      ]);
+    }
+    return $label;
   }
 
 }
