@@ -4,7 +4,8 @@ namespace Drupal\osha_import_export;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\migrate_drupal\MigrationPluginManager;
+#use Drupal\migrate_drupal\MigrationPluginManager;
+use Drupal\migrate\Plugin\MigrationPluginManager;
 use Drupal\migrate\MigrateExecutable;
 use Drupal\migrate\MigrateMessage;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -13,14 +14,15 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 /**
  * General class for Cron hooks.
  */
-class OieCron implements ContainerInjectionInterface{
+class OieCron implements ContainerInjectionInterface
+{
 
   use StringTranslationTrait;
 
   /**
    * The migration plugin manager.
    *
-   * @var \Drupal\migrate_drupal\MigrationPluginManager
+   * @var \Drupal\migrate\Plugin\MigrationPluginManager
    */
   protected $migrationManager;
 
@@ -31,9 +33,6 @@ class OieCron implements ContainerInjectionInterface{
    */
   protected $entityTypeManager;
 
-  /**
-   * Implements hook_cron().
-   */
   public function __construct(MigrationPluginManager $migration_manager, EntityTypeManagerInterface $entity_type_manager) {
     $this->migrationManager = $migration_manager;
     $this->entityTypeManager = $entity_type_manager;
@@ -53,7 +52,8 @@ class OieCron implements ContainerInjectionInterface{
   /**
    * Implements hook_cron().
    */
-  public function cron() {
+  public function cron()
+  {
     $migrations = [
 //      'hwc_crm_partner',
       'import_crm_board',
@@ -71,18 +71,17 @@ class OieCron implements ContainerInjectionInterface{
       $migration->getIdMap()->prepareUpdate();
       $executable = new MigrateExecutable($migration, new MigrateMessage());
       $executable->import();
-    }
 
-    // Check the nodes that thay have been deleted from source.
-    $dels = $migration->getIdMap()->getRowsNeedingUpdate(1000);
-    foreach ($dels as $key => $del) {
-      $del = (array) $del;
-      // Remove it from migration table.
-      $migration->getIdMap()->deleteDestination(['nid' => $del['destid1']]);
-      // Remove the node.
-      $node = $this->entityTypeManager->getStorage('node')->load($del['destid1']);
-      $node->delete();
+      // Check the nodes that thay have been deleted from source.
+      $dels = $migration->getIdMap()->getRowsNeedingUpdate(1000);
+      foreach ($dels as $key => $del) {
+        $del = (array) $del;
+        // Remove it from migration table.
+        $migration->getIdMap()->deleteDestination(['nid' => $del['destid1']]);
+        // Remove the node.
+        $node = $this->entityTypeManager->getStorage('node')->load($del['destid1']);
+        $node->delete();
+      }
     }
   }
-
 }
