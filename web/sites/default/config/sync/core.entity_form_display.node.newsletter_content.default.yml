@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.newsletter_content.field_covid_contents_hideintro
     - field.field.node.newsletter_content.field_events_section_title
     - field.field.node.newsletter_content.field_healthy_contents_hideintro
+    - field.field.node.newsletter_content.field_hide_more_news_intro_text
     - field.field.node.newsletter_content.field_month_year
     - field.field.node.newsletter_content.field_national_content_hideintro
     - field.field.node.newsletter_content.field_newbite_contents_hideintro
@@ -352,6 +353,7 @@ third_party_settings:
         - nlc_tweets_title
         - nlc_monews_title
         - nlc_monews_contents
+        - field_hide_more_news_intro_text
         - nlc_motweets_bgcolor
         - field_view_twetter_block
       parent_name: group_more_new_tweets
@@ -428,6 +430,13 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_hide_more_news_intro_text:
+    weight: 29
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_month_year:
     weight: 2
     settings:
@@ -484,7 +493,7 @@ content:
     type: string_textfield
     region: content
   field_view_twetter_block:
-    weight: 30
+    weight: 31
     settings:
       display_label: true
     third_party_settings: {  }
@@ -686,7 +695,7 @@ content:
     type: string_textfield
     region: content
   nlc_motweets_bgcolor:
-    weight: 29
+    weight: 30
     settings:
       show_input: '1'
       palette: ''
