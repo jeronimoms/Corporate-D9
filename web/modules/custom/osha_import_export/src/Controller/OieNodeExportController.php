@@ -181,14 +181,16 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     if ($definition->getType() == 'datetime') {
       $value = $node->get($field_name)->getString();
       if (!empty($value)) {
-        $value = strtotime($value);
-        $value = \date('Y-m-d h:i:s', $value);
+        /*$value = strtotime($value);
+        $value = \date('Y-m-d h:i:s', $value);*/
         return [
           $field_name => [
-            'value' => $value,
-            "timezone" => "Europe\/Madrid",
-            "timezone_db" => "Europe\/Madrid",
-            "date_type" => "datetime",
+            'und' => [
+              'value' => $value,
+              "timezone" => "Europe\/Madrid",
+              "timezone_db" => "Europe\/Madrid",
+              "date_type" => "datetime",
+            ],
           ]
         ];
       }
@@ -214,6 +216,26 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         ],
       ];
     }
+
+    // Text long.
+    if ($definition->getType() == 'text_long') {
+      $values = $node->get($field_name)->getValue()[0];
+      if ($field_name == 'field_summary_html') {
+        $field_name = 'field_summary';
+      }
+
+      return [
+        $field_name => [
+          $node->language()->getId() => [
+            '0' => [
+              'value' => $values['value'],
+              'format' => $values['format'],
+            ]
+          ],
+        ],
+      ];
+    }
+
 
     return (empty($value) ? [] : [$field_name => [$node->language()->getId() => ['value' => $value]]]);
   }

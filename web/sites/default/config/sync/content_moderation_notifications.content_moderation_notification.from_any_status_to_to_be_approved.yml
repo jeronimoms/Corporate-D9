@@ -1,4 +1,4 @@
-uuid: 61feb3c3-bb5b-4a4c-bfe0-4ba0e54944c3
+uuid: 5d201f87-b055-4a5d-a581-fd84b00251bb
 langcode: en
 status: true
 dependencies: {  }
@@ -19,6 +19,6 @@ site_mail: false
 emails: ''
 subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear <strong>approver</strong>,</p>\r\n\r\n<p>There is new content to be approved by you: <strong>[node:title]&nbsp;</strong> ([node:url]) (type: [node:type], status: <b>To be approved</b>). There are more&nbsp;items that you can review from <a _blank=\"\" href=\"/admin/content?combine=&amp;field_publication_date_value%5Bmin%5D=&amp;field_publication_date_value%5Bmax%5D=&amp;uid=&amp;status_1=All&amp;moderation_state%5B%5D=editorial-to_be_approved target=\"blank\">here.</a></p>\r\n\r\n<p>Thank you,</p>\r\n"
+  value: "<p>Dear <strong>Approver</strong>,</p>\r\n\r\n<p>There is new content to be approved by you: <strong>[node:title]&nbsp;</strong> ([node:url]) (type: [node:type], status: <b>To be approved</b>). There are more&nbsp;items that you can review from <a href=\"/admin/workbench/approve\" target=\"_blank\">here.</a></p>\r\n\r\n<p>Thank you,</p>\r\n"
   format: full_html
 label: 'From Any status to To be Approved'

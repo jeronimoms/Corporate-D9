@@ -37,6 +37,7 @@ graylist:
   - ldap_servers.settings
   - ldap_user.settings
   - matomo.settings
+  - ncw_backend.settings.yml
   - ultimate_cron.job.ldap_user_cron
   - ultimate_cron.job.matomo_cron
   - search_api.server.solr

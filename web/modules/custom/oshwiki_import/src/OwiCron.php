@@ -4,7 +4,7 @@ namespace Drupal\oshwiki_import;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\migrate_drupal\MigrationPluginManager;
+use Drupal\migrate\Plugin\MigrationPluginManager;
 use Drupal\migrate\MigrateExecutable;
 use Drupal\migrate\MigrateMessage;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -20,7 +20,7 @@ class OwiCron implements ContainerInjectionInterface{
   /**
    * The migration plugin manager.
    *
-   * @var \Drupal\migrate_drupal\MigrationPluginManager
+   * @var \Drupal\migrate\Plugin\MigrationPluginManager
    */
   protected $migrationManager;
 
@@ -65,18 +65,17 @@ class OwiCron implements ContainerInjectionInterface{
       $migration->getIdMap()->prepareUpdate();
       $executable = new MigrateExecutable($migration, new MigrateMessage());
       $executable->import();
-    }
 
-    // Check the nodes that thay have been deleted from source.
-    $dels = $migration->getIdMap()->getRowsNeedingUpdate(1000);
-    foreach ($dels as $key => $del) {
-      $del = (array) $del;
-      // Remove it from migration table.
-      $migration->getIdMap()->deleteDestination(['nid' => $del['destid1']]);
-      // Remove the node.
-      $node = $this->entityTypeManager->getStorage('node')->load($del['destid1']);
-      $node->delete();
+      // Check the nodes that thay have been deleted from source.
+      $dels = $migration->getIdMap()->getRowsNeedingUpdate(1000);
+      foreach ($dels as $key => $del) {
+        $del = (array) $del;
+        // Remove it from migration table.
+        $migration->getIdMap()->deleteDestination(['nid' => $del['destid1']]);
+        // Remove the node.
+        $node = $this->entityTypeManager->getStorage('node')->load($del['destid1']);
+        $node->delete();
+      }
     }
   }
-
 }

@@ -10,25 +10,25 @@
  */
 #}
 {% set city = ds_content.group_events_event_details.field_city.0['#context'].value %}
-{% set countryCode = ds_content.group_events_event_details.field_country_code.0['#markup'] %}
+{% set countryCode = ds_content.group_events_event_details.field_country_code['#object'].field_country_code.0.value %}
 {% set date = ds_content.group_events_event_details.field_date.0['#text'] %}
 {% set event_title = ds_content.node_title.0.0.0['#context'] %}
 {% set event_url = ds_content.node_title.0.0.0['#context'].entity_url.routeParameters.node %}
-
 <tr class="twig-template-for-events">
-  <td style="padding-top: 0">
-    {{ countryCode }}, {{ city }}, {{ date }}
+  <td colspan="2" style="padding-top: 0">
+    {{ countryCode }} {{ city }}, {{ date }}
   </td>
 </tr>
 <tr class="twig-template-for-events">
+  <td style="font-size: 14px; color: #003399;vertical-align: top">
+    >&nbsp;
+  </td>
   <td style="padding-top: 0">
-    <a href="/node/{{ event_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">
-      {{ event_title.output }}
-    </a>
+    <a href="/node/{{ event_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">{{ event_title.output }}</a>
   </td>
 </tr>
 <tr>
-  <td>&nbsp;</td>
+  <td colspan="2" style="height: 25px;">&nbsp;</td>
 </tr>
 
 

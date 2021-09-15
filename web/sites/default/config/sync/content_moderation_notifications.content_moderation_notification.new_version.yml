@@ -1,0 +1,18 @@
+uuid: f3abac49-4e20-4aa5-810a-0aa8a1d9fc32
+langcode: en
+status: true
+dependencies: {  }
+id: new_version
+workflow: editorial
+transitions:
+  from_published_to_draft_new_version_: from_published_to_draft_new_version_
+roles:
+  editor: editor
+author: false
+site_mail: false
+emails: ''
+subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
+body:
+  value: "<p>Dear&nbsp;<strong>editor,</strong></p>\r\n\r\n<p>No action is required. This message is just to inform you that there has been a status change (from <b>published</b> to <b>draft</b>) on page<strong> [node:title] </strong>([node:url]).</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  format: full_html
+label: 'New version'

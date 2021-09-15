@@ -1,3 +1,7 @@
 display:
   default:
     display_title: Master
+    display_options:
+      fields:
+        message:
+          label: Message

@@ -92,12 +92,7 @@ process:
   langcode: constants/lang
   title: title
   body/0/value: body/en/0/value
-  body/0/format:
-    plugin: static_map
-    bypass: true
-    source: body/en/0/format
-    map:
-      full_html_minimal: basic_html
+  body/0/format: body/en/0/format
   file_source:
     -
       plugin: nm_url_transform
@@ -152,14 +147,11 @@ process:
       default_value: '@media'
 
   field_publication_date:
-    - plugin: sub_process
-      source: field_publication_date/und
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: 'Y-m-d\TH:i:s'
-          source: value
+    -
+      plugin: format_date
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
+      source: field_publication_date/und/value
   field_tags:
     -
       plugin: nm_taxonomy_term_news
