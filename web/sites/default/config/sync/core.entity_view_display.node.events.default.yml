@@ -201,9 +201,16 @@ content:
     label: inline
     settings:
       timezone_override: ''
-      format_type: only_day
+      format_type: eu_short_date
       separator: to
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: daterange_default
     region: ds_content
   field_location:
