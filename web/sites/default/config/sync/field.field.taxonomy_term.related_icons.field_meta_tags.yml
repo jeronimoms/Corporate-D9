@@ -1,0 +1,21 @@
+uuid: f934c896-ce72-4b5c-90ad-2dfaaf50b40b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_meta_tags
+    - taxonomy.vocabulary.related_icons
+  module:
+    - metatag
+id: taxonomy_term.related_icons.field_meta_tags
+field_name: field_meta_tags
+entity_type: taxonomy_term
+bundle: related_icons
+label: 'Meta tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

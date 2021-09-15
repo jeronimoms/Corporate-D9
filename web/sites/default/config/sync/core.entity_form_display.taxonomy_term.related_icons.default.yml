@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.taxonomy_term.related_icons.field_icon
     - field.field.taxonomy_term.related_icons.field_link
+    - field.field.taxonomy_term.related_icons.field_meta_tags
     - image.style.thumbnail
     - taxonomy.vocabulary.related_icons
   module:
     - image
     - link
+    - metatag
     - path
     - text
 id: taxonomy_term.related_icons.default
@@ -41,6 +43,13 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  field_meta_tags:
+    weight: 5
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   name:
     type: string_textfield
     weight: 0

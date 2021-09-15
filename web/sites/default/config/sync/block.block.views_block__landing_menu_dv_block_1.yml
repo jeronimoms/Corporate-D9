@@ -33,5 +33,5 @@ visibility:
       node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: "/facts-and-figures/data-visualisation\r\n/node/*revisions/*"
+    pages: "/facts-and-figures/data-visualisation\r\n/node/*/revisions/*"
     negate: false
