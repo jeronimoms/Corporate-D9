@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.newsletter_content.field_covid_contents_hideintro
     - field.field.node.newsletter_content.field_events_section_title
     - field.field.node.newsletter_content.field_healthy_contents_hideintro
+    - field.field.node.newsletter_content.field_hide_more_news_intro_text
     - field.field.node.newsletter_content.field_month_year
     - field.field.node.newsletter_content.field_national_content_hideintro
     - field.field.node.newsletter_content.field_newbite_contents_hideintro
@@ -102,6 +103,16 @@ content:
     region: content
   field_healthy_contents_hideintro:
     weight: 53
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_hide_more_news_intro_text:
+    weight: 59
     label: above
     settings:
       format: default
@@ -424,9 +435,18 @@ content:
     weight: 44
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      view_mode: newsletter_items_blocks
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
     region: content
   nlc_monews_title:
     weight: 42
