@@ -3,6 +3,7 @@
 namespace Drupal\translation_workflow\Form;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\tmgmt\Form\TmgmtFormBase;
 use Drupal\tmgmt\JobInterface;
 use Drupal\views\Views;
@@ -140,6 +141,36 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
 
     $form['#attached']['library'][] = 'tmgmt/admin';
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function actionsElement(array $form, FormStateInterface $form_state) {
+    $parentActions = parent::actionsElement($form, $form_state);
+    // Add sent to cdt submit button.
+    $parentActions['sent_to_cdt'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('File sent to CDT'),
+      '#weight' => 14,
+      '#submit' => [$this, '::submitSentToCdt'],
+    ];
+    $parentActions['cancel'] = [
+      '#type' => 'link',
+      '#title' => $this->t('Cancel'),
+      '#url' => Url::fromRoute('view.translation_workflow_jobs_overview.page_1'),
+      '#weight' => 15,
+    ];
+
+    return $parentActions;
+  }
+
+  /**
+   * Set job as file sent to CDT.
+   */
+  public function submitSentToCdt() {
+    $job = $this->getEntity();
+    $job->set('file_sent', TRUE)->save();
   }
 
   /**

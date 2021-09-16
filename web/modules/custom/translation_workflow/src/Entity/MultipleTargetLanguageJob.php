@@ -134,6 +134,11 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
       ->setDescription(t('A boolean indicating if job has a file uploaded or not.'))
       ->setDefaultValue(FALSE);
 
+    $fields['file_sent'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('File Sent to CDT'))
+      ->setDescription(t('A boolean indicating if the translation file was sent to CDT.'))
+      ->setDefaultValue(FALSE);
+
     return $fields;
   }
 
