@@ -148,13 +148,16 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
    */
   protected function actionsElement(array $form, FormStateInterface $form_state) {
     $parentActions = parent::actionsElement($form, $form_state);
-    // Add sent to cdt submit button.
-    $parentActions['sent_to_cdt'] = [
-      '#type' => 'submit',
-      '#value' => $this->t('File sent to CDT'),
-      '#weight' => 14,
-      '#submit' => [$this, '::submitSentToCdt'],
-    ];
+
+    if (!$this->getEntity()->isSentToCdt()) {
+      // Add sent to cdt submit button.
+      $parentActions['sent_to_cdt'] = [
+        '#type' => 'submit',
+        '#value' => $this->t('File sent to CDT'),
+        '#weight' => 14,
+        '#submit' => ['::submitSentToCdt'],
+      ];
+    }
     $parentActions['cancel'] = [
       '#type' => 'link',
       '#title' => $this->t('Cancel'),

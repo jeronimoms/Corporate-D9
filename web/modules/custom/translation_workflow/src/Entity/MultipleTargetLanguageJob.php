@@ -3,6 +3,7 @@
 namespace Drupal\translation_workflow\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -143,6 +144,16 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
   }
 
   /**
+   * {@inheritdoc}
+   */
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    if ($this->get('label')->count() == 0) {
+      $this->set('label', (string) $this->label())->save();
+    }
+    parent::postSave($storage, $update);
+  }
+
+  /**
    * Return priorities values.
    *
    * @return array
@@ -154,6 +165,16 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
       static::PRIORITY_NORMAL => t('Normal'),
       static::PRIORITY_HIGH => t('High'),
     ];
+  }
+
+  /**
+   * Get if job is sent to CDT.
+   *
+   * @return bool
+   *   Return if job is sent to CDT.
+   */
+  public function isSentToCdt() {
+    return $this->get('file_sent')->getString() == 1;
   }
 
   /**

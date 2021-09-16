@@ -178,3 +178,13 @@ function translation_workflow_update_9009(&$sandbox) {
     $job->set('file_sent', FALSE)->save();
   }
 }
+
+/**
+ * Implements hook_update_N().
+ */
+function translation_workflow_update_9010(&$sandbox) {
+  $jobs = MultipleTargetLanguageJob::loadMultiple();
+  foreach ($jobs as $job) {
+    $job->set('label', 'Translation job #' . $job->id())->save();
+  }
+}
