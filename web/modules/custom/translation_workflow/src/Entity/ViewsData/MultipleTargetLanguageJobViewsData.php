@@ -20,7 +20,7 @@ class MultipleTargetLanguageJobViewsData extends EntityViewsData {
       'help' => 'Displays the progress of a job.',
       'real field' => 'id',
       'field' => [
-        'id' => 'tmgmt_progress',
+        'id' => 'translation_workflow_progress',
       ],
     ];
 

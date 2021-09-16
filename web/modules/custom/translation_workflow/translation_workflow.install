@@ -115,3 +115,39 @@ function translation_workflow_update_9004(&$sandbox) {
 function translation_workflow_update_9005(&$sandbox) {
   translation_workflow_update_9004($sandbox);
 }
+
+/**
+ * Implements hook_update_N().
+ */
+function translation_workflow_update_9006(&$sandbox) {
+  // Add taget_language field to JobItems.
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+  $updateManager->installFieldStorageDefinition(
+    'file_uploaded',
+    'tmgmt_job_multiple_target',
+    'translation_workflow',
+    BaseFieldDefinition::create('boolean')
+      ->setLabel(t('File uploaded'))
+      ->setDescription(t('A boolean indicating if job has a file uploaded or not.'))
+      ->setDefaultValue(FALSE)
+  );
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function translation_workflow_update_9007(&$sandbox) {
+  $jobs = MultipleTargetLanguageJob::loadMultiple();
+  foreach ($jobs as $job) {
+    $messages = $job->getMessages([
+      'message' => 'Successfully imported file.',
+    ]);
+    if (!empty($messages)) {
+      $job->set('file_uploaded', TRUE);
+    }
+    else {
+      $job->set('file_uploaded', FALSE);
+    }
+    $job->save();
+  }
+}

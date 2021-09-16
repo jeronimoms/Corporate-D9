@@ -79,6 +79,34 @@ function _translation_workflow_form_tmgmt_cart_form_validate(array &$form, FormS
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function translation_workflow_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $storage = $form_state->getStorage();
+  if (isset($storage['view'])) {
+    $view = $storage['view'];
+    if ($view->id() == 'translation_workflow_jobs_overview') {
+      if (isset($form['state'])) {
+        $states = ['' => t('- Any -')] + MultipleTargetLanguageJob::getStates();
+        $form['state'] = [
+          '#type' => 'select',
+          '#options' => $states,
+          '#default_value' => reset($states),
+        ];
+      }
+      if (isset($form['priority'])) {
+        $priorities = ['' => t('- Any -')] + MultipleTargetLanguageJob::getPriorities();
+        $form['priority'] = [
+          '#type' => 'select',
+          '#options' => $priorities,
+          '#default_value' => reset($priorities),
+        ];
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_ENTITY_TYPE_create().
  */
 function translation_workflow_tmgmt_job_multiple_target_create(EntityInterface $entity) {

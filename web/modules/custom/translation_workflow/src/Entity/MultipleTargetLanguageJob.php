@@ -126,14 +126,29 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
       ->setDisplayOptions('form', [
         'region' => 'hidden',
       ])
-      ->setSetting('allowed_values', [
-        static::PRIORITY_LOW => t('Low'),
-        static::PRIORITY_NORMAL => t('Normal'),
-        static::PRIORITY_HIGH => t('High'),
-      ])
+      ->setSetting('allowed_values', self::getPriorities())
       ->setDescription('Set job priority.');
 
+    $fields['file_uploaded'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('File uploaded'))
+      ->setDescription(t('A boolean indicating if job has a file uploaded or not.'))
+      ->setDefaultValue(FALSE);
+
     return $fields;
+  }
+
+  /**
+   * Return priorities values.
+   *
+   * @return array
+   *   Priorities values.
+   */
+  public static function getPriorities() {
+    return [
+      static::PRIORITY_LOW => t('Low'),
+      static::PRIORITY_NORMAL => t('Normal'),
+      static::PRIORITY_HIGH => t('High'),
+    ];
   }
 
   /**
@@ -814,7 +829,10 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    * {@inheritdoc}
    */
   public function getSuggestions(array $conditions = []) {
-    $suggestions = \Drupal::moduleHandler()->invokeAll('tmgmt_source_suggestions', [$this->getItems($conditions), $this]);
+    $suggestions = \Drupal::moduleHandler()->invokeAll('tmgmt_source_suggestions', [
+      $this->getItems($conditions),
+      $this,
+    ]);
 
     // EachJob needs a job id to be able to count the words, because the
     // source-language is stored in the job and not the item.
@@ -1019,11 +1037,11 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    * {@inheritdoc}
    */
   public function getPriorityValues() {
-    return $this->get('priority')->getFieldDefinition()->getSetting('allowed_values');
+    return static::getPriorities();
   }
 
   /**
-   *
+   * {@inheritdoc}
    */
   public function label() {
     $label = parent::label();
