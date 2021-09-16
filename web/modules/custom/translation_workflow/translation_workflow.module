@@ -85,23 +85,37 @@ function translation_workflow_form_views_exposed_form_alter(&$form, FormStateInt
   $storage = $form_state->getStorage();
   if (isset($storage['view'])) {
     $view = $storage['view'];
-    if ($view->id() == 'translation_workflow_jobs_overview') {
-      if (isset($form['state'])) {
-        $states = ['' => t('- Any -')] + MultipleTargetLanguageJob::getStates();
-        $form['state'] = [
-          '#type' => 'select',
-          '#options' => $states,
-          '#default_value' => reset($states),
-        ];
-      }
-      if (isset($form['priority'])) {
-        $priorities = ['' => t('- Any -')] + MultipleTargetLanguageJob::getPriorities();
-        $form['priority'] = [
-          '#type' => 'select',
-          '#options' => $priorities,
-          '#default_value' => reset($priorities),
-        ];
-      }
+    switch ($view->id()) {
+      case 'translation_workflow_jobs_overview':
+        if (isset($form['state'])) {
+          $states = ['' => t('- Any -')] + MultipleTargetLanguageJob::getStates();
+          $form['state'] = [
+            '#type' => 'select',
+            '#options' => $states,
+            '#default_value' => reset($states),
+          ];
+        }
+        if (isset($form['priority'])) {
+          $priorities = ['' => t('- Any -')] + MultipleTargetLanguageJob::getPriorities();
+          $form['priority'] = [
+            '#type' => 'select',
+            '#options' => $priorities,
+            '#default_value' => reset($priorities),
+          ];
+        }
+        break;
+
+      case 'tmgmt_job_items':
+        if ($view->current_display == 'submitted' && isset($form['translator_state'])) {
+          $states = ['' => t('- Any -')] + MultipleTargetLanguageJobItem::getStates();
+          $form['translator_state'] = [
+            '#type' => 'select',
+            '#options' => $states,
+            '#default_value' => reset($states),
+          ];
+        }
+        $cosa = 0;
+        break;
     }
   }
 }
