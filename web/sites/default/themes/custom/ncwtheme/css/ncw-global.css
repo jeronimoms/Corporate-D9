@@ -4504,6 +4504,59 @@ body.user-logged-in.toolbar-tray-open.scrolled #header {
     height: auto;
   }
 }
+/*  Menu for inforgraphics - rendered in Infographic twig  */
+.node--type-infographic .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
+  display: block;
+}
+.node--type-infographic #block-mainnavigation-2--2 > ul > li:nth-child(8) > div > ul > li > a {
+  display: none;
+}
+.node--type-infographic #block-mainnavigation-2--2 > ul > li,
+.node--type-infographic #block-mainnavigation-2--2 > ul > li:nth-child(8) > div > ul > li > span {
+  display: none;
+}
+.node--type-infographic #block-mainnavigation-2--2 > ul > li:nth-child(8) {
+  display: block;
+}
+.node--type-infographic .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a {
+  padding-left: 0;
+}
+.node--type-infographic #block-mainnavigation-2--2 > ul > li:nth-child(8) > a {
+  padding-bottom: 0;
+}
+.node--type-infographic #block-mainnavigation-2--2 > ul > li:nth-child(8) > div > ul {
+  padding-top: 0;
+}
+
+/*  Menu for inforgraphics - rendered in Infographic twig  */
+.node--type-fop-page .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
+  display: block;
+}
+.node--type-fop-page #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > a {
+  display: none;
+}
+.node--type-fop-page #block-mainnavigation-2--2 > ul > li,
+.node--type-fop-page #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > span {
+  display: none;
+}
+.node--type-fop-page #block-mainnavigation-2--2 > ul > li:nth-child(9) {
+  display: block;
+}
+.node--type-fop-page .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a {
+  padding-left: 0;
+}
+.node--type-fop-page #block-mainnavigation-2--2 > ul > li:nth-child(9) > a {
+  padding-bottom: 0;
+}
+.node--type-fop-page #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul {
+  padding-top: 0;
+}
+.node--type-fop-page .block-views-blockfop-flags-block-2 {
+  float: left;
+  clear: both;
+  margin-top: 2rem;
+}
+
 /* .view-landing-menu-dv, special view to "Data visualisation" Facts & Figures - Data visualisation */
 body.tools-and-resources article.node--type-article.node--promoted .field--name-body p {
   color: #003399;
@@ -5113,13 +5166,12 @@ body.contact form.contact-form button.btn-primary {
   height: auto;
 }
 
-.node--type-infographic .h1-back-wrapper h1 {
-  font-size: 2rem;
-}
 .node--type-infographic h1 {
-  width: 70%;
-  font-size: 1.35rem;
+  width: 100%;
+  clear: both;
+  font-size: 2rem;
   font-weight: normal;
+  padding-top: 1rem;
 }
 
 @media only screen and (max-width: 768px) {

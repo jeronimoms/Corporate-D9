@@ -181,8 +181,8 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     if ($definition->getType() == 'datetime') {
       $value = $node->get($field_name)->getString();
       if (!empty($value)) {
-        /*$value = strtotime($value);
-        $value = \date('Y-m-d h:i:s', $value);*/
+        $value = strtotime($value);
+        $value = \date('Y-m-d h:i:s', $value);
         return [
           $field_name => [
             'und' => [
