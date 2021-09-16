@@ -252,6 +252,11 @@ jQuery(document).ready(function($) {
 
   }
 
+  //Add the active class to the left menu 'Infographics'
+  if ($(".node--type-infographic")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(8) > div > ul > li > div > ul > li:nth-child(8)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(8) > div > ul > li > div > ul > li:nth-child(8) > a').addClass('is-active');
+  }
   //Hierarchical view
   $('#tree ul').css('display', 'none');
   $("#tree .has-child > .expand_menu").click(function(){
