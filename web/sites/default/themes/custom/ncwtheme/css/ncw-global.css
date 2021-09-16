@@ -6355,6 +6355,26 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   margin-top: 5px;
 }
 
+.view-musculoskeletal-disorders-list .revamp-row .av-type span {
+  background-color: #e8ecf5;
+  color: #003399;
+  font-size: 11px;
+}
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- {
+  padding-bottom: 0;
+  margin: 0 !important;
+}
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__label {
+  display: none;
+}
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-original- {
+  display: none;
+}
+
 .revamp-row.no-flex {
   display: block;
 }
@@ -6622,7 +6642,8 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 
 .node--type-musculoskeletal-disorders #main .field--name-field-type-of-item,
 .node--type-musculoskeletal-disorders #main .field--name-field-material-country,
-.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages {
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages,
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider {
   display: flex;
   align-items: center;
   margin-bottom: 0.2rem;
@@ -6632,22 +6653,32 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__label,
 .node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__label,
-.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__label {
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__label,
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field__label {
   margin: 0 5px 0 0;
   padding: 0;
   color: #003399;
   min-width: auto;
   font-weight: bold;
 }
+.node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__label:after,
+.node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__label:after,
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__label:after,
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field__label:after {
+  content: ":";
+  display: inline-block;
+}
 .node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items,
 .node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items,
-.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items {
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items,
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field__items {
   display: flex;
   align-items: center;
 }
 .node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items .field__item,
 .node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items .field__item,
-.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item {
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item,
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field__items .field__item {
   display: block;
   margin: 0 4px 0 0;
   background-color: #e8ecf5;
@@ -6659,13 +6690,29 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items .field__item a,
 .node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items .field__item a,
-.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item a {
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item a,
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field__items .field__item a {
   border: none;
 }
 .node--type-musculoskeletal-disorders #main .field--name-field-type-of-item .field__items .field__item p,
 .node--type-musculoskeletal-disorders #main .field--name-field-material-country .field__items .field__item p,
-.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item p {
+.node--type-musculoskeletal-disorders #main .field--name-field-available-in-languages .field__items .field__item p,
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field__items .field__item p {
   margin: 0;
+}
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field--name-field-provider-english- {
+  padding-bottom: 0;
+  margin: 0 !important;
+}
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field--name-field-provider-english- .field__label {
+  display: none;
+}
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field--name-field-provider-english- .field__item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.node--type-musculoskeletal-disorders #main .field--name-field-msd-provider .field--name-field-provider-original- {
+  display: none;
 }
 .node--type-musculoskeletal-disorders #main .field--name-field-body-original {
   font-size: 0.875rem;
