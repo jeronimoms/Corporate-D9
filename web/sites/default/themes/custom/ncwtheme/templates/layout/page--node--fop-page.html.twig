@@ -1,6 +1,5 @@
 {% extends "page.html.twig" %}
 
-
 {% block content %}
 <div class="breadcrumb-fluid">
   <div class="container"> {{ page.breadcrumb }}</div>
@@ -11,6 +10,7 @@
       <nav role="navigation" aria-labelledby="block-mainnavigation-2--2-menu" id="block-mainnavigation-2--2" class="contextual-region block block-menu navigation menu--main">
         {{ drupal_menu('main') }}
       </nav>
+      {{ page.sidebar_first }}
     </aside>
     <div id="main" class="col-12 col-lg-6 three-column mx-auto">
       <section class="section">
@@ -21,7 +21,7 @@
     <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
       <h2 class="related">{{ 'Related' | trans }}</h2>
       <div class="related-views">
-        {{ page.sidebar_second_related }}
+        {{ page.sidebar_second}}
       </div>
     </aside>
   </div>
