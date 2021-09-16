@@ -32,7 +32,7 @@ use Drupal\user\UserInterface;
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "list_builder" = "Drupal\translation_workflow\Entity\ListBuilder\MultipleTargetLanguageJobListBuilder",
- *   "views_data" = "Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobViewsData"
+ *     "views_data" = "Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobViewsData"
  *   },
  *   base_table = "tmgmt_multiple_target_job",
  *   entity_keys = {
@@ -49,6 +49,11 @@ use Drupal\user\UserInterface;
  * @ingroup tmgmt_job
  */
 class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwnerInterface, PriorityJobInterface {
+
+  /**
+   * Character allowed per page to calculate pages number.
+   */
+  const CHARACTERS_PER_PAGE = 1500;
 
   use StringTranslationTrait;
 
@@ -703,6 +708,10 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    */
   public function getWordCount() {
     return tmgmt_job_statistic($this, 'word_count');
+  }
+
+  public function getPageCount() {
+    return number_format($this->getWordCount() / self::CHARACTERS_PER_PAGE, 2, ',','');
   }
 
   /**

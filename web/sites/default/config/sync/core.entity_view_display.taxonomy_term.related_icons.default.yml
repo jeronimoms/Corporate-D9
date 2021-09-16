@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.related_icons.field_icon
     - field.field.taxonomy_term.related_icons.field_link
+    - field.field.taxonomy_term.related_icons.field_meta_tags
     - taxonomy.vocabulary.related_icons
   module:
     - image
@@ -54,4 +55,5 @@ content:
     third_party_settings: {  }
 hidden:
   breadcrumbs: true
+  field_meta_tags: true
   search_api_excerpt: true

@@ -90,7 +90,7 @@ function translation_workflow_update_9004(&$sandbox) {
               $export = \Drupal::service('plugin.manager.tmgmt_file.format')
                 ->createInstance($job->getSetting('export_format'), $job->getSetting('format_configuration'));
 
-              $path = $job->getSetting('scheme') . '://tmgmt_file/' . $name . '.' . $job->getSetting('export_format');
+              $path = 'public://tmgmt_file/' . $name . '.' . $job->getSetting('export_format');
               $dirname = dirname($path);
               if (\Drupal::service('file_system')
                 ->prepareDirectory($dirname, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS)) {
@@ -107,4 +107,11 @@ function translation_workflow_update_9004(&$sandbox) {
       $message->save();
     }
   }
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function translation_workflow_update_9005(&$sandbox) {
+  translation_workflow_update_9004($sandbox);
 }
