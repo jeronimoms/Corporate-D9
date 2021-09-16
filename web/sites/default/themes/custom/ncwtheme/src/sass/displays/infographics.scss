@@ -81,15 +81,12 @@
 }
 
 .node--type-infographic{
-  .h1-back-wrapper{
-    h1{
-      font-size: 2rem;
-    }
-  }
   h1{
-    width: 70%;
-    font-size: 1.35rem;
+    width: 100%;
+    clear: both;
+    font-size: 2rem;
     font-weight: normal;
+    padding-top: 1rem;
   }
 }
 
