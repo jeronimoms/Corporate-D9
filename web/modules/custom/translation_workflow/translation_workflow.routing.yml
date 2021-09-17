@@ -11,3 +11,10 @@ entity.tmgmt_job_multiple_target.delete_form:
     _entity_form: tmgmt_job_multiple_target.delete
   requirements:
     _entity_access: tmgmt_job_multiple_target.delete
+
+entity.tmgmt_job_multiple_target.abort_form:
+  path: '/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/abort'
+  defaults:
+    _entity_form: tmgmt_job_multiple_target.abort
+  requirements:
+    _entity_access: tmgmt_job_multiple_target.update
