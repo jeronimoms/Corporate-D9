@@ -6538,8 +6538,15 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   max-width: 49%;
   margin: 0.5rem 2% 0.7rem 0;
 }
+.tools-and-resources-multilingualism .block-views-blocklanding-menu-dv-block-1 .view-content.row > div img {
+  width: 100%;
+}
 .tools-and-resources-multilingualism .block-views-blocklanding-menu-dv-block-1 .view-content.row > div:nth-child(2) {
   margin-right: 0;
+  justify-content: flex-end;
+}
+.tools-and-resources-multilingualism .block-views-blocklanding-menu-dv-block-1 .view-content .menu-link-contentmain {
+  width: 100%;
 }
 
 .view-legislation-directives .table-responsive {
