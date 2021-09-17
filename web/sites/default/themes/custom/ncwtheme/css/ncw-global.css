@@ -3019,6 +3019,18 @@ a.quiz-start-link:hover {
   padding-top: 1rem;
 }
 
+/* Filter results Block */
+.filter-results-block {
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: lighter;
+  background: none repeat scroll 0 0 #FFFFFF;
+  background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0, 0, 0, 0);
+  padding-bottom: 10px;
+  margin-bottom: 1rem;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
