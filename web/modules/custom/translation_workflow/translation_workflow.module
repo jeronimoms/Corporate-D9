@@ -114,7 +114,6 @@ function translation_workflow_form_views_exposed_form_alter(&$form, FormStateInt
             '#default_value' => reset($states),
           ];
         }
-        $cosa = 0;
         break;
     }
   }

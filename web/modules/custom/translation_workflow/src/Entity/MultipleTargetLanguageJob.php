@@ -30,7 +30,8 @@ use Drupal\user\UserInterface;
  *     "access" = "Drupal\tmgmt\Entity\Controller\JobAccessControlHandler",
  *   "form" = {
  *       "edit" = "Drupal\translation_workflow\Form\MultipleTargetLanguageJobForm",
- *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
+ *       "abort" = "Drupal\tmgmt\Form\JobAbortForm"
  *     },
  *     "list_builder" = "Drupal\translation_workflow\Entity\ListBuilder\MultipleTargetLanguageJobListBuilder",
  *     "views_data" = "Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobViewsData"
@@ -43,7 +44,8 @@ use Drupal\user\UserInterface;
  *   },
  *   links = {
  *     "canonical" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}",
- *     "delete-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/delete"
+ *     "delete-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/delete",
+ *     "abort-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/abort"
  *   }
  * )
  *

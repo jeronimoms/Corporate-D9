@@ -158,8 +158,9 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
    */
   protected function actionsElement(array $form, FormStateInterface $form_state) {
     $parentActions = parent::actionsElement($form, $form_state);
+    $job = $this->getEntity();
 
-    if (!$this->getEntity()->isSentToCdt()) {
+    if (!$job->isSentToCdt()) {
       // Add sent to cdt submit button.
       $parentActions['sent_to_cdt'] = [
         '#type' => 'submit',
@@ -173,6 +174,15 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
       '#title' => $this->t('Cancel'),
       '#url' => Url::fromRoute('view.translation_workflow_jobs_overview.page_1'),
       '#weight' => 15,
+    ];
+
+    $form['abort_job'] = [
+      '#type' => 'link',
+      '#value' => t('Abort job'),
+      '#url' => Url::fromRoute('entity.tmgmt_job_multiple_target.abort_form', [
+        'tmgmt_job_multiple_target' => $job,
+      ]),
+      '#access' => $job->isAbortable(),
     ];
 
     return $parentActions;
