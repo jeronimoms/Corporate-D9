@@ -33,8 +33,8 @@ source:
   include_raw_data: true
 #  urls: https://oshwiki.eu/api.php?action=query&generator=recentchanges&grclimit=3&grcend=2021-03-19T08:02:30Z&grcdir=older&prop=revisions&rvprop=timestamp|content|comment|tags&format=json
 #  urls: 'C:/Users/mcacheiro/manu/del/fullList.json'
-  urls: '/var/www/html/web/sites/default/files/oshwikiMigration/fullList.json'
-#  urls: '/tmp/fullList.json'
+#  urls: '/var/www/html/web/sites/default/files/oshwikiMigration/fullList.json'
+  urls: '/tmp/fullList.json'
   content_type: wiki_page
   ids:
     nid:
