@@ -89,4 +89,9 @@ th.views-field-field-color, td.views-field-field-color {
   padding-top: 29px;
 }
 
+/* MNCW-329 - Backend - Article: Replacement patterns and issue fields */
+body.user-logged-in .layout-container .layout-node-form fieldset#edit-simplenews-token-help {
+  display: none;
+}
+
 /*# sourceMappingURL=ncw_backend-d9.css.map */
