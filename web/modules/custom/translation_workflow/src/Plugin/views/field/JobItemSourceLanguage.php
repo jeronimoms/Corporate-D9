@@ -3,16 +3,15 @@
 namespace Drupal\translation_workflow\Plugin\views\field;
 
 use Drupal\tmgmt\Plugin\views\field\StatisticsBase;
-use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 use Drupal\views\ResultRow;
 
 /**
- * Handler to show word count for a multiple target language job or job item.
+ * Handler to show source language for multiple target language job item.
  *
- * @ViewsField("translation_workflow_pagecount")
+ * @ViewsField("translation_workflow_source_language")
  */
-class PageCount extends StatisticsBase {
+class JobItemSourceLanguage extends StatisticsBase {
 
   /**
    * {@inheritdoc}
@@ -20,8 +19,8 @@ class PageCount extends StatisticsBase {
   public function render(ResultRow $values) {
     $entity = $this->getEntity($values);
     $ret = '--';
-    if ($entity instanceof MultipleTargetLanguageJob || $entity instanceof MultipleTargetLanguageJobItem) {
-      $ret = $entity->getPageCount();
+    if ($entity instanceof MultipleTargetLanguageJobItem) {
+      $ret = $entity->getJob()->getSourceLanguage()->getName();
     }
     return $ret;
   }

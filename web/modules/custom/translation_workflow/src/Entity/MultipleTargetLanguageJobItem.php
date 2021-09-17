@@ -50,6 +50,46 @@ class MultipleTargetLanguageJobItem extends JobItem {
   }
 
   /**
+   * Get page count for items.
+   *
+   * @return string
+   *   Page count.
+   */
+  public function getPageCount() {
+    return number_format($this->getCharactersCount() / MultipleTargetLanguageJob::CHARACTERS_PER_PAGE, 2, ',', '');
+  }
+
+  /**
+   * Returns characters count for items.
+   *
+   * @return int
+   *   Characters count.
+   */
+  public function getCharactersCount() {
+    $countedItems = [];
+    $count = 0;
+    $dataService = \Drupal::service('tmgmt.data');
+    $itemId = $this->getItemId();
+    if (!isset($countedItems[$itemId])) {
+      $countedItems[$itemId] = TRUE;
+      $data = array_filter($dataService->flatten($this->getData()), function ($value) {
+        return !(empty($value['#text']) || (isset($value['#translate']) && $value['#translate'] === FALSE));
+      });
+      foreach ($data as $key => $field) {
+        if (isset($field['#text'])) {
+          $text = $field['#text'];
+          $text = strip_tags(html_entity_decode($text));
+          // C2A0 is unicode nbsp.
+          $text = preg_replace("/\x{00A0}|&nbsp;|\s/", '', $text);
+          $count += mb_strlen($text, 'utf-8');
+        }
+      }
+    }
+
+    return $count;
+  }
+
+  /**
    * Returns the target language.
    *
    * @return \Drupal\Core\Language\LanguageInterface

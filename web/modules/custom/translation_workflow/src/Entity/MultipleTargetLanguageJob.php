@@ -792,7 +792,7 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    *   Page count.
    */
   public function getPageCount() {
-    return number_format($this->getWordCount() / self::CHARACTERS_PER_PAGE, 2, ',', '');
+    return number_format($this->getCharactersCount() / self::CHARACTERS_PER_PAGE, 2, ',', '');
   }
 
   /**
