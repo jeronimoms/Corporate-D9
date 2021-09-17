@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - image.style.media_library
+    - taxonomy.vocabulary.nace_codes
+    - taxonomy.vocabulary.tags
   enforced:
     module:
       - media_library
@@ -12,6 +14,7 @@ dependencies:
     - image
     - media
     - media_library
+    - taxonomy
     - user
 _core:
   default_config_hash: dHOSWSHbMJNke0ZBGh1O5KrnwynSOCOpQycITW-pwfs
@@ -57,10 +60,13 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 24
+          items_per_page: 25
           offset: 0
           id: 0
           total_pages: null
+          tags:
+            previous: ‹‹
+            next: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -69,9 +75,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
       style:
         type: default
         options:
@@ -475,20 +478,37 @@ display:
     cache_metadata:
       max-age: 0
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.document.default'
+        - 'config:core.entity_view_display.media.document.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image_and_link.default'
+        - 'config:core.entity_view_display.media.image_and_link.media_library'
+        - 'config:core.entity_view_display.media.image_caption.default'
+        - 'config:core.entity_view_display.media.image_caption.image_articles'
+        - 'config:core.entity_view_display.media.image_caption.media_library'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
   page:
     display_plugin: page
     id: page
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       path: admin/content/media-grid
       fields:
         media_bulk_form:
@@ -768,6 +788,316 @@ display:
           plugin_id: rendered_entity
       defaults:
         fields: false
+        filters: false
+        filter_groups: false
+      filters:
+        name:
+          id: name
+          table: media_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: name_op
+            label: Name
+            description: ''
+            use_operator: false
+            operator: name_op
+            identifier: name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: media
+          entity_field: name
+          plugin_id: string
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: bundle_op
+            label: Type
+            description: ''
+            use_operator: false
+            operator: bundle_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: 'Media type'
+            description: null
+            identifier: bundle
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+          entity_type: media
+          entity_field: bundle
+          plugin_id: bundle
+        field_nace_target_id:
+          id: field_nace_target_id
+          table: media__field_nace
+          field: field_nace_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_nace_target_id_op
+            label: 'Nace (field_nace)'
+            description: ''
+            use_operator: false
+            operator: field_nace_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_nace_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          type: shs
+          limit: true
+          vid: nace_codes
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: media__field_tags
+          field: field_tags_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_tags_target_id_op
+            label: 'Tags (field_tags)'
+            description: ''
+            use_operator: false
+            operator: field_tags_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_tags_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: shs
+          limit: true
+          vid: tags
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        status_extra:
+          id: status_extra
+          table: media_field_data
+          field: status_extra
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: media
+          plugin_id: media_status
+        langcode:
+          id: langcode
+          table: media_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: langcode_op
+            label: Language
+            description: ''
+            use_operator: false
+            operator: langcode_op
+            identifier: langcode
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: media
+          entity_field: langcode
+          plugin_id: language
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: 0
       contexts:
@@ -778,7 +1108,22 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.document.default'
+        - 'config:core.entity_view_display.media.document.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image_and_link.default'
+        - 'config:core.entity_view_display.media.image_and_link.media_library'
+        - 'config:core.entity_view_display.media.image_caption.default'
+        - 'config:core.entity_view_display.media.image_caption.image_articles'
+        - 'config:core.entity_view_display.media.image_caption.media_library'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
   widget:
     display_plugin: page
     id: widget
@@ -1098,7 +1443,22 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.document.default'
+        - 'config:core.entity_view_display.media.document.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image_and_link.default'
+        - 'config:core.entity_view_display.media.image_and_link.media_library'
+        - 'config:core.entity_view_display.media.image_caption.default'
+        - 'config:core.entity_view_display.media.image_caption.image_articles'
+        - 'config:core.entity_view_display.media.image_caption.media_library'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
   widget_table:
     display_plugin: page
     id: widget_table
