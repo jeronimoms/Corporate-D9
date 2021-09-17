@@ -2545,14 +2545,21 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 .node--type-article #main .view-fop-flags ul li .views-field-title a {
   font-size: 0.9rem;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles {
+
+/* OSHwiki featured articles */
+.content-related-oshwiki {
+  clear: both;
+  padding-bottom: 1rem;
+}
+
+.field--name-field-related-oshwiki-articles {
   clear: both;
   margin-top: 0.8rem;
   margin-bottom: 10px;
   background: #e8ecf5;
   padding-bottom: 0;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles > .field__label {
+.field--name-field-related-oshwiki-articles > .field__label {
   margin-bottom: 0.5rem;
   padding: 12px 2.6rem;
   background: #003399 url(../images/related_wiki_head_big.jpg) left center no-repeat;
@@ -2560,30 +2567,30 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.75rem;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item {
+.field--name-field-related-oshwiki-articles .field__items > .field__item {
   border-bottom: 8px solid #FFF;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title {
   background-color: #325bad;
   color: #FFF;
   padding-left: 2.6rem;
   margin-left: 0;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title h3 {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title h3 {
   padding: 0.5rem 0;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title h3 {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-node-title h3 {
   color: #FFF;
   font-size: 1.3125rem;
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 400;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-summary-html {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-summary-html {
   margin: 1.8rem 0;
   padding: 0 2.6rem;
   color: #000;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -2593,7 +2600,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.125rem;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -2601,7 +2608,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   background: transparent;
   border-bottom: 0;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:before {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:before {
   content: "";
   display: inline-block;
   width: 16px;
@@ -2610,7 +2617,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   margin: 0 2px 0 5px;
   background: url(../images/external_link-v2.png) center right no-repeat;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:after {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:after {
   order: 3;
   content: "";
   display: inline-block;
@@ -2619,13 +2626,13 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   width: 19px;
   height: 11px;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:hover {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:hover {
   text-decoration: none;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:hover:before {
+.field--name-field-related-oshwiki-articles .field__items > .field__item .field--name-field-wiki-page-url a:hover:before {
   background: url(../images/external_link-v2-hover.png) center right no-repeat;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item:after {
+.field--name-field-related-oshwiki-articles .field__items > .field__item:after {
   padding-top: 0.5rem;
   display: block;
   content: "";
@@ -2634,8 +2641,13 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   border-bottom: 1px dashed #cfddee;
   background: #FFF;
 }
-.node--type-article #main .field--name-field-related-oshwiki-articles .field__items > .field__item:last-child:after {
+.field--name-field-related-oshwiki-articles .field__items > .field__item:last-child:after {
   display: none;
+}
+.field--name-field-related-oshwiki-articles a[target=_blank], .field--name-field-related-oshwiki-articles .view a[target=_blank] {
+  background: none !important;
+  padding-right: 0 !important;
+  border-bottom: 0 !important;
 }
 
 .about-eu-osha-national-focal-points-focal-points-index .node__content img {
