@@ -185,6 +185,7 @@ class Xml extends \XMLWriter implements FormatInterface {
     $tjid = $this->importedXML->xpath("//TransactionIdentifier");
     $tjid = reset($tjid);
     $job = MultipleTargetLanguageJob::load((string) $tjid);
+    $job->set('file_uploaded', TRUE)->save();
 
     $flat_data = $this->getImportedTargets($job);
     $flat_data['target_language'] = $this->extractTargetLanguage();

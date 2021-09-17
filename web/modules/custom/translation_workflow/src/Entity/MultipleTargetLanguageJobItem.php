@@ -13,6 +13,16 @@ use Drupal\tmgmt\JobItemInterface;
 class MultipleTargetLanguageJobItem extends JobItem {
 
   /**
+   *
+   */
+  const STATE_TRANSLATION_VALIDATION_REQUIRED = 5;
+
+  /**
+   *
+   */
+  const STATE_TRANSLATION_VALIDATED = 6;
+
+  /**
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
@@ -22,6 +32,61 @@ class MultipleTargetLanguageJobItem extends JobItem {
       ->setCardinality(1)
       ->setDescription(t('The target language.'));
     return $fieldsDefinitions;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getStates() {
+    return [
+      static::STATE_ACTIVE => t('On Translation'),
+      static::STATE_REVIEW => t('Translated'),
+      static::STATE_ACCEPTED => t('Ready to Publish'),
+      static::STATE_ABORTED => t('Translation Rejected'),
+      static::STATE_INACTIVE => t('Inactive'),
+      static::STATE_TRANSLATION_VALIDATION_REQUIRED => t('Content Validation Required'),
+      static:: STATE_TRANSLATION_VALIDATED => t('Translation Validated'),
+    ];
+  }
+
+  /**
+   * Get page count for items.
+   *
+   * @return string
+   *   Page count.
+   */
+  public function getPageCount() {
+    return number_format($this->getCharactersCount() / MultipleTargetLanguageJob::CHARACTERS_PER_PAGE, 2, ',', '');
+  }
+
+  /**
+   * Returns characters count for items.
+   *
+   * @return int
+   *   Characters count.
+   */
+  public function getCharactersCount() {
+    $countedItems = [];
+    $count = 0;
+    $dataService = \Drupal::service('tmgmt.data');
+    $itemId = $this->getItemId();
+    if (!isset($countedItems[$itemId])) {
+      $countedItems[$itemId] = TRUE;
+      $data = array_filter($dataService->flatten($this->getData()), function ($value) {
+        return !(empty($value['#text']) || (isset($value['#translate']) && $value['#translate'] === FALSE));
+      });
+      foreach ($data as $key => $field) {
+        if (isset($field['#text'])) {
+          $text = $field['#text'];
+          $text = strip_tags(html_entity_decode($text));
+          // C2A0 is unicode nbsp.
+          $text = preg_replace("/\x{00A0}|&nbsp;|\s/", '', $text);
+          $count += mb_strlen($text, 'utf-8');
+        }
+      }
+    }
+
+    return $count;
   }
 
   /**
@@ -54,7 +119,7 @@ class MultipleTargetLanguageJobItem extends JobItem {
   /**
    * {@inheritdoc}
    */
-  public function addTranslatedData(array $translation, $key = array(), $status = NULL) {
+  public function addTranslatedData(array $translation, $key = [], $status = NULL) {
     $job = $this->getJob();
 
     if ($this->isInactive()) {
@@ -86,11 +151,11 @@ class MultipleTargetLanguageJobItem extends JobItem {
           // Otherwise, create a message that contains source label, target
           // language and links to the review form.
           $job_url = $job->toUrl()->toString();
-          $variables = array(
+          $variables = [
             '@source' => $this->getSourceLabel(),
             '@language' => $job->getTargetLanguage()->getName(),
-            ':review_url' => $this->toUrl('canonical', array('query' => array('destination' => $job_url)))->toString(),
-          );
+            ':review_url' => $this->toUrl('canonical', ['query' => ['destination' => $job_url]])->toString(),
+          ];
           (!$this->getSourceUrl()) ? $variables[':source_url'] = (string) $job_url : $variables[':source_url'] = $this->getSourceUrl()->toString();
           $this->needsReview('The translation of <a href=":source_url">@source</a> to @language is finished and can now be <a href=":review_url">reviewed</a>.', $variables);
         }

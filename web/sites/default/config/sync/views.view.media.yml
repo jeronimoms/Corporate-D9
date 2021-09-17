@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - image.style.thumbnail
+    - taxonomy.vocabulary.nace_codes
+    - taxonomy.vocabulary.tags
   module:
     - image
     - media
+    - taxonomy
     - user
 _core:
   default_config_hash: UZP23LgBdE1XbvscbLCdd9uTk5t4qqA1Z56koqbvYP0
@@ -43,7 +46,7 @@ display:
         type: basic
         options:
           submit_button: Filter
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -52,10 +55,15 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 50
+          items_per_page: 25
           offset: 0
           id: 0
           total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -64,11 +72,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
           quantity: 9
       style:
         type: table
@@ -703,54 +706,126 @@ display:
           entity_type: media
           entity_field: bundle
           plugin_id: bundle
-        status:
-          id: status
-          table: media_field_data
-          field: status
+        field_nace_target_id:
+          id: field_nace_target_id
+          table: media__field_nace
+          field: field_nace_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
-          value: '1'
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: ''
-            label: 'True'
-            description: null
+            operator_id: field_nace_target_id_op
+            label: Nace
+            description: ''
             use_operator: false
-            operator: status_op
-            identifier: status
-            required: true
+            operator: field_nace_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_nace_target_id
+            required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: true
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
+            reduce: false
+          is_grouped: false
           group_info:
-            label: 'Published status'
+            label: ''
             description: ''
-            identifier: status
+            identifier: ''
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items:
-              1:
-                title: Published
-                operator: '='
-                value: '1'
-              2:
-                title: Unpublished
-                operator: '='
-                value: '0'
-          plugin_id: boolean
-          entity_type: media
-          entity_field: status
+            group_items: {  }
+          reduce_duplicates: false
+          type: shs
+          limit: true
+          vid: nace_codes
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: media__field_tags
+          field: field_tags_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_tags_target_id_op
+            label: Tags
+            description: ''
+            use_operator: false
+            operator: field_tags_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_tags_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: shs
+          limit: true
+          vid: tags
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
         status_extra:
           id: status_extra
           table: media_field_data
@@ -849,6 +924,21 @@ display:
           expose:
             label: ''
           granularity: second
+        changed:
+          id: changed
+          table: media_field_data
+          field: changed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'Upload Date'
+          granularity: second
+          entity_type: media
+          entity_field: changed
+          plugin_id: date
       title: Media
       header: {  }
       footer: {  }
@@ -867,6 +957,10 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: 0
       contexts:
@@ -874,6 +968,8 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user
         - user.permissions
       tags: {  }
@@ -883,7 +979,8 @@ display:
     display_title: Media
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       path: admin/content/media
       menu:
         type: tab
@@ -902,6 +999,8 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user
         - user.permissions
       tags: {  }

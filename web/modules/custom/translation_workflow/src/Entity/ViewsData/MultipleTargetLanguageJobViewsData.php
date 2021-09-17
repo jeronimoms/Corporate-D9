@@ -20,7 +20,7 @@ class MultipleTargetLanguageJobViewsData extends EntityViewsData {
       'help' => 'Displays the progress of a job.',
       'real field' => 'id',
       'field' => [
-        'id' => 'tmgmt_progress',
+        'id' => 'translation_workflow_progress',
       ],
     ];
 
@@ -30,6 +30,16 @@ class MultipleTargetLanguageJobViewsData extends EntityViewsData {
       'real field' => 'id',
       'field' => [
         'id' => 'tmgmt_wordcount',
+      ],
+      'sort' => [],
+    ];
+
+    $data['tmgmt_multiple_target_job']['characters_count'] = [
+      'title' => 'Characters count',
+      'help' => 'Displays the characters count of a job.',
+      'real field' => 'id',
+      'field' => [
+        'id' => 'translation_workflow_characters_count',
       ],
       'sort' => [],
     ];
