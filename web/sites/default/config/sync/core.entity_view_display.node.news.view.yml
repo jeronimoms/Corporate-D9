@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.news.field_avoid_archived
     - field.field.node.news.field_character_count
     - field.field.node.news.field_expiration_date
-    - field.field.node.news.field_flickr_date
     - field.field.node.news.field_image_media
     - field.field.node.news.field_migrate_hwc
     - field.field.node.news.field_migration_source
@@ -138,7 +137,6 @@ hidden:
   field_avoid_archived: true
   field_character_count: true
   field_expiration_date: true
-  field_flickr_date: true
   field_migrate_hwc: true
   field_migration_source: true
   field_page_count: true

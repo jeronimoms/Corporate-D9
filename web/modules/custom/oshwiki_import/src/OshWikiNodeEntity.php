@@ -8,6 +8,7 @@ class OshWikiNodeEntity
   public $content;
   public $summary;
   public $modificationDate;
+  public $oshwikiURL;
   public $category = [];
   public $language = [];
   public $np = [];

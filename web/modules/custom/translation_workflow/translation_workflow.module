@@ -11,6 +11,7 @@ use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
+use Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobItemViewsData;
 use Drupal\translation_workflow\Form\MultipleTargetLanguageJobItemForm;
 use Drupal\translation_workflow\MultipleTargetLanguageConfigSourcePluginUi;
 use Drupal\translation_workflow\MultipleTargetLanguageLocaleSourcePluginUi;
@@ -79,6 +80,47 @@ function _translation_workflow_form_tmgmt_cart_form_validate(array &$form, FormS
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function translation_workflow_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $storage = $form_state->getStorage();
+  if (isset($storage['view'])) {
+    $view = $storage['view'];
+    switch ($view->id()) {
+      case 'translation_workflow_jobs_overview':
+        if (isset($form['state'])) {
+          $states = ['' => t('- Any -')] + MultipleTargetLanguageJob::getStates();
+          $form['state'] = [
+            '#type' => 'select',
+            '#options' => $states,
+            '#default_value' => reset($states),
+          ];
+        }
+        if (isset($form['priority'])) {
+          $priorities = ['' => t('- Any -')] + MultipleTargetLanguageJob::getPriorities();
+          $form['priority'] = [
+            '#type' => 'select',
+            '#options' => $priorities,
+            '#default_value' => reset($priorities),
+          ];
+        }
+        break;
+
+      case 'tmgmt_job_items':
+        if ($view->current_display == 'submitted' && isset($form['translator_state'])) {
+          $states = ['' => t('- Any -')] + MultipleTargetLanguageJobItem::getStates();
+          $form['translator_state'] = [
+            '#type' => 'select',
+            '#options' => $states,
+            '#default_value' => reset($states),
+          ];
+        }
+        break;
+    }
+  }
+}
+
+/**
  * Implements hook_ENTITY_TYPE_create().
  */
 function translation_workflow_tmgmt_job_multiple_target_create(EntityInterface $entity) {
@@ -108,6 +150,7 @@ function translation_workflow_entity_type_alter(array &$entity_types) {
   if (isset($entity_types['tmgmt_job_item'])) {
     // $entity_types['tmgmt_job_item']->setHandlerClass('access', MultipleTargetLanguageJobItemAccessControlHandler::class);
     // $entity_types['tmgmt_job_item']->setHandlerClass('list_builder', MultipleTargetLanguageJobItemListBuilder::class);
+    $entity_types['tmgmt_job_item']->setHandlerClass('views_data', MultipleTargetLanguageJobItemViewsData::class);
     $entity_types['tmgmt_job_item']->setHandlerClass('form', [
       'edit' => MultipleTargetLanguageJobItemForm::class,
     ]);

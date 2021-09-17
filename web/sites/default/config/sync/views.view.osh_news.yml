@@ -760,6 +760,7 @@ display:
         pager: false
         title: false
         footer: false
+        sorts: false
       title: 'OSH news'
       footer:
         result:
@@ -772,6 +773,35 @@ display:
           empty: false
           content: '<div class="pager-total"><span>@start - @end / @total</span></div>'
           plugin_id: result
+      sorts:
+        field_publication_date_value:
+          id: field_publication_date_value
+          table: node__field_publication_date
+          field: field_publication_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: datetime
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
     cache_metadata:
       max-age: -1
       contexts:

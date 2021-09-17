@@ -1,0 +1,7 @@
+oshwiki_import.oshwiki_import_config:
+  path: '/admin/config/services/oshwikiimport-config'
+  defaults:
+    _form: '\Drupal\oshwiki_import\Form\OshWikiConfigForm'
+    _title: 'OshWiki host configuration'
+  requirements:
+    _permission: 'access content'

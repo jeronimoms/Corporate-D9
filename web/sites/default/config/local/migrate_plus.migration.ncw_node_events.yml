@@ -113,12 +113,6 @@ process:
       source: field_events_type
       process:
         target_id: tid
-  field_related_resources_media:
-    plugin: file_id_lookup
-    source: field_related_documents
-    migration:
-      - ncw_node_events_media_documents
-    no_stub: true
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
