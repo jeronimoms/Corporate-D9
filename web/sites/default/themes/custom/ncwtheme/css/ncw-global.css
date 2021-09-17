@@ -3042,6 +3042,11 @@ a.quiz-start-link:hover {
   margin-bottom: 1rem;
 }
 
+/* Infographic detail */
+body.node--type-infographic .field--name-body {
+  padding-top: 1rem;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
