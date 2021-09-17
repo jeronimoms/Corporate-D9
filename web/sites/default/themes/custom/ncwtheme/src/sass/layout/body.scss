@@ -777,100 +777,111 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
         }
       }
     }
-    .field--name-field-related-oshwiki-articles {
-      clear: both;
-      margin-top: 0.8rem;
-      margin-bottom: 10px;
-      background: $bg-color-blue-light-2;
-      padding-bottom: 0;
-      > .field__label {
-        margin-bottom: 0.5rem;
-        padding: 12px 2.6rem;
-        background: $bg-color-blue url(../images/related_wiki_head_big.jpg) left center no-repeat;
-        color: white;
-        font-family: $font-family-sans-condensed;
-        font-size: 1.75rem;
+  }
+}
+
+/* OSHwiki featured articles */
+.content-related-oshwiki{
+  clear: both;
+  padding-bottom: 1rem;
+}
+.field--name-field-related-oshwiki-articles {
+  clear: both;
+  margin-top: 0.8rem;
+  margin-bottom: 10px;
+  background: $bg-color-blue-light-2;
+  padding-bottom: 0;
+  > .field__label {
+    margin-bottom: 0.5rem;
+    padding: 12px 2.6rem;
+    background: $bg-color-blue url(../images/related_wiki_head_big.jpg) left center no-repeat;
+    color: white;
+    font-family: $font-family-sans-condensed;
+    font-size: 1.75rem;
+  }
+  .field__items {
+    > .field__item {
+      border-bottom: 8px solid $bg-color-white;
+      .field--name-node-title {
+        background-color: $bg-color-blue-wiki;
+        color: $text-color-white;
+        padding-left: 2.6rem;
+        margin-left: 0;
+        h3 {
+          padding: 0.5rem 0;
+        }
+        h3 {
+          color: $text-color-white;
+          font-size: 1.3125rem;
+          font-family: $font-family-sans-condensed;
+          font-weight: 400;
+        }
       }
-      .field__items {
-        > .field__item {
-          border-bottom: 8px solid $bg-color-white;
-          .field--name-node-title {
-            background-color: $bg-color-blue-wiki;
-            color: $text-color-white;
-            padding-left: 2.6rem;
-            margin-left: 0;
-            h3 {
-              padding: 0.5rem 0;
-            }
-            h3 {
-              color: $text-color-white;
-              font-size: 1.3125rem;
-              font-family: $font-family-sans-condensed;
-              font-weight: 400;
-            }
-          }
-          .field--name-field-summary-html {
-            margin: 1.8rem 0;
-            padding: 0 2.6rem;
-            color: $text-color-black;
-          }
-          .field--name-field-wiki-page-url {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding-right: 1.8rem;
-            padding-bottom: 1rem;
-            font-weight: bold;
-            font-family: $font-family-sans-condensed;
-            font-size: 1.125rem;
-            a {
-              display: flex;
-              justify-content: flex-end;
-              align-items: center;
-              font-size: 1rem;
-              background: transparent;
-              border-bottom: 0;
-              &:before {
-                content: "";
-                display: inline-block;
-                width: 16px;
-                height: 16px;
-                order: 2;
-                margin: 0 2px 0 5px;
-                background: url(../images/external_link-v2.png) center right no-repeat;
-              }
-              &:after {
-                order: 3;
-                content: "";
-                display: inline-block;
-                margin-left: 15px;
-                background: url(../images/flecha.png) center center no-repeat;
-                width: 19px;
-                height: 11px;
-              }
-              &:hover {
-                text-decoration: none;
-                &:before {
-                  background: url(../images/external_link-v2-hover.png) center right no-repeat;
-                }
-              }
-            }
+      .field--name-field-summary-html {
+        margin: 1.8rem 0;
+        padding: 0 2.6rem;
+        color: $text-color-black;
+      }
+      .field--name-field-wiki-page-url {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 1.8rem;
+        padding-bottom: 1rem;
+        font-weight: bold;
+        font-family: $font-family-sans-condensed;
+        font-size: 1.125rem;
+        a {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          font-size: 1rem;
+          background: transparent;
+          border-bottom: 0;
+          &:before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            order: 2;
+            margin: 0 2px 0 5px;
+            background: url(../images/external_link-v2.png) center right no-repeat;
           }
           &:after {
-            padding-top: 0.5rem;
-            display: block;
-            content:"";
-            height: 1px;
-            width: 100%;
-            border-bottom: 1px dashed $bg-color-blue-light;
-            background: $bg-color-white;
+            order: 3;
+            content: "";
+            display: inline-block;
+            margin-left: 15px;
+            background: url(../images/flecha.png) center center no-repeat;
+            width: 19px;
+            height: 11px;
           }
-          &:last-child:after {
-            display: none;
+          &:hover {
+            text-decoration: none;
+            &:before {
+              background: url(../images/external_link-v2-hover.png) center right no-repeat;
+            }
           }
         }
       }
+      &:after {
+        padding-top: 0.5rem;
+        display: block;
+        content:"";
+        height: 1px;
+        width: 100%;
+        border-bottom: 1px dashed $bg-color-blue-light;
+        background: $bg-color-white;
+      }
+      &:last-child:after {
+        display: none;
+      }
     }
+  }
+  a[target=_blank], .view a[target=_blank]{
+    background: none !important;
+    padding-right: 0 !important;
+    border-bottom: 0 !important;
   }
 }
 

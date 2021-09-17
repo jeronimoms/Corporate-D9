@@ -146,4 +146,9 @@
       {{ view_aditionalPublications }}
     </div>
   {% endif %}
+  {% if content.field_related_oshwiki_articles|render %}
+    <div class="content-related-oshwiki ">
+      {{ content.field_related_oshwiki_articles }}
+    </div>
+  {% endif %}
 </article>
