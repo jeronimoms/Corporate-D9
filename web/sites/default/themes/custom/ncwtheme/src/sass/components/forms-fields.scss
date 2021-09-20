@@ -237,11 +237,22 @@ select, .facets-dropdown{
     fieldset{
       width: 33%;
     }
-    fieldset:nth-child(3){
-      width: 23%;
-    }
     fieldset:nth-child(2){
+      order: 4;
+      width: 18.5%;
+      select{
+        width: 100%;
+      }
+    }
+    fieldset:nth-child(3){
       order: 3;
+      width: 18.5%;
+      select{
+        width: 100%;
+      }
+    }
+    #edit-actions{
+      order: 2;
     }
     .views-exposed-form .btn-primary {
       margin-left: 0;
