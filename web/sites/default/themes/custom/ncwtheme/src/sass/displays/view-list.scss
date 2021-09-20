@@ -174,9 +174,13 @@
   }
 }
 
-.view-musculoskeletal-disorders-list {
+.view-musculoskeletal-disorders-list, .view-practical-tools-and-guidance-on-dangerous-substances{
   .revamp-row {
+    h2{
+      margin-bottom: 0;
+    }
     .av-type {
+      padding-bottom: 0.3rem;
       span {
         background-color: $bg-color-blue-light-2;
         color: $text-color-blue;
@@ -198,7 +202,6 @@
       display: none;
     }
   }
-
 }
 
 .revamp-row.no-flex{

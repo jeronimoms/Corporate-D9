@@ -5452,6 +5452,10 @@ body.node--type-publication {
   display: flex;
   padding-top: 1rem;
 }
+.node--type-publication .aditional-publications {
+  display: flex;
+  padding-top: 1rem;
+}
 .node--type-publication .publications-row.custom-add-margin {
   padding-bottom: 2rem;
 }
@@ -5497,6 +5501,7 @@ body.node--type-publication {
 .node--type-publication .content-publication-info .content-label .label {
   font-size: 0.9rem;
   padding-right: 5px;
+  font-weight: 700;
 }
 .node--type-publication .content-publication-info .content-label .field {
   padding: 0;
@@ -5509,6 +5514,7 @@ body.node--type-publication {
 .node--type-publication .datetime {
   display: block;
   font-size: 0.9rem;
+  font-weight: 700;
 }
 .node--type-publication .field.field--name-field-tags > ul > li {
   padding-right: 0;
@@ -6383,23 +6389,29 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   margin-top: 5px;
 }
 
-.view-musculoskeletal-disorders-list .revamp-row .av-type span {
+.view-musculoskeletal-disorders-list .revamp-row h2, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row h2 {
+  margin-bottom: 0;
+}
+.view-musculoskeletal-disorders-list .revamp-row .av-type, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .av-type {
+  padding-bottom: 0.3rem;
+}
+.view-musculoskeletal-disorders-list .revamp-row .av-type span, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .av-type span {
   background-color: #e8ecf5;
   color: #003399;
   font-size: 11px;
 }
-.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- {
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english-, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .field--name-field-provider-english- {
   padding-bottom: 0;
   margin: 0 !important;
 }
-.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__label {
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__label, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .field--name-field-provider-english- .field__label {
   display: none;
 }
-.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__item {
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__item, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .field--name-field-provider-english- .field__item {
   margin: 0 !important;
   padding: 0 !important;
 }
-.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-original- {
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-original-, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .field--name-field-provider-original- {
   display: none;
 }
 

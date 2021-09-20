@@ -78,7 +78,7 @@ function ncwtheme_preprocess_node(&$variables)
     ksort($pdf);
     $variables['relatedPdf'] = $pdf;
   }
-  if ($node->bundle() == 'infographic') {
+  if ($node->bundle() == 'infographic' or $node->bundle() == 'publication') {
     foreach ($node->getTranslationLanguages() as $language) {
       $nodeTranslation = $node->getTranslation($language->getId());
       if ($nodeTranslation->hasField('field_image_media')) {
@@ -97,6 +97,7 @@ function ncwtheme_preprocess_node(&$variables)
     }
     ksort($img);
     $variables['relatedImg'] = $img;
+    $variables['coverImg'] = $fileFieldImg;
   }
   /**
    * Get parameter in URL to External Inforgrphic en/tools-and-publications/infographics/how-to-manage-dangerous-substances/how-to-manage-dangerous-substances-infographic
