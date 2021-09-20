@@ -164,4 +164,17 @@ class MultipleTargetLanguageJobItem extends JobItem {
     $this->save();
   }
 
+  /**
+   * Check if item referenced by job exists.
+   *
+   * @return bool
+   *   If refered entity exists.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function itemExists() {
+    return !is_null(\Drupal::entityTypeManager()->getStorage($this->getItemType())->load($this->getItemId()));
+  }
+
 }

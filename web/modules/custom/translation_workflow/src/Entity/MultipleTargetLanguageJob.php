@@ -148,11 +148,11 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
   /**
    * {@inheritdoc}
    */
-  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+  public function preSave(EntityStorageInterface $storage) {
     if ($this->get('label')->count() == 0) {
-      $this->set('label', (string) $this->label())->save();
+      $this->set('label', (string) $this->label());
     }
-    parent::postSave($storage, $update);
+    parent::preSave($storage);
   }
 
   /**

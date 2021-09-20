@@ -102,7 +102,7 @@ class Xml extends \XMLWriter implements FormatInterface {
     foreach ($job_items as $item_type => $item_ids) {
       foreach ($item_ids as $item_id => $item_list) {
         foreach ($item_list as $item) {
-          if (!in_array($item->getItemId(), $addedItems)) {
+          if (!in_array($item->getItemId(), $addedItems) && ($item->itemExists())) {
             $this->addItem($item, $job);
             $addedItems[] = $item->getItemId();
           }
