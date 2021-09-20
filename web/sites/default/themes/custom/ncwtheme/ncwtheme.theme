@@ -153,6 +153,7 @@ function ncwtheme_preprocess_ds_1col(&$variables)
         }
       }
       $variables['relatedPdf'] = $pdf;
+      $variables['relatedImg'] = $img;
       $variables['coverImg'] = $fileFieldImg;
     }
   }
