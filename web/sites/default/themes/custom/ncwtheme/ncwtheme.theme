@@ -117,6 +117,7 @@ function ncwtheme_preprocess_ds_1col(&$variables)
 {
   if(isset($variables['content']['#node'])) {
     $node = $variables['content']['#node'];
+    $img = [];
     $pdf = [];
     if ($node->bundle() == 'publication') {
       foreach ($node->getTranslationLanguages() as $language) {
@@ -137,8 +138,23 @@ function ncwtheme_preprocess_ds_1col(&$variables)
             }
           }
         }
+        if ($nodeTranslation->hasField('field_image_media')) {
+          $fileImageField = $nodeTranslation->get('field_image_media');
+          if ($fileImageField->count() > 0) {
+            $fileMediaImg = $fileImageField->entity;
+            if ($fileMediaImg->hasField('field_media_image')) {
+              $fileFieldImg = $fileMediaImg->get('field_media_image');
+              if ($fileFieldImg->count() > 0) {
+                $fileImg = $fileMediaImg->get('field_media_image')->entity;
+                $img[$language->getId()] = file_create_url($fileImg->getFileUri());
+              }
+            }
+          }
+        }
       }
       $variables['relatedPdf'] = $pdf;
+      $variables['relatedImg'] = $img;
+      $variables['coverImg'] = $fileFieldImg;
     }
   }
 }
