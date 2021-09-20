@@ -622,7 +622,12 @@ body.node--type-publication{
   }
   .publications {
     .view-filters {
-      fieldset:nth-child(3) {
+      .views-exposed-form{
+        .btn-primary {
+          margin-left: 5px;
+        }
+      }
+      fieldset:nth-child(3), fieldset:nth-child(2) {
         width: 100%;
       }
     }

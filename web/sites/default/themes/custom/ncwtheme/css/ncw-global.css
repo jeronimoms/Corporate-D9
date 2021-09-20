@@ -960,11 +960,22 @@ select, .facets-dropdown {
 .publications .view-filters fieldset {
   width: 33%;
 }
-.publications .view-filters fieldset:nth-child(3) {
-  width: 23%;
-}
 .publications .view-filters fieldset:nth-child(2) {
+  order: 4;
+  width: 18.5%;
+}
+.publications .view-filters fieldset:nth-child(2) select {
+  width: 100%;
+}
+.publications .view-filters fieldset:nth-child(3) {
   order: 3;
+  width: 18.5%;
+}
+.publications .view-filters fieldset:nth-child(3) select {
+  width: 100%;
+}
+.publications .view-filters #edit-actions {
+  order: 2;
 }
 .publications .view-filters .views-exposed-form .btn-primary {
   margin-left: 0;
@@ -5859,7 +5870,10 @@ body.node--type-publication {
     padding: 0;
   }
 
-  .publications .view-filters fieldset:nth-child(3) {
+  .publications .view-filters .views-exposed-form .btn-primary {
+    margin-left: 5px;
+  }
+  .publications .view-filters fieldset:nth-child(3), .publications .view-filters fieldset:nth-child(2) {
     width: 100%;
   }
 
