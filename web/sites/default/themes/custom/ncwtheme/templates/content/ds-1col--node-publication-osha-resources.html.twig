@@ -21,7 +21,7 @@
           <img src="{{ relatedImg.en }}" alt="{{ coverImg.0.alt }}" width="155" height="220" loading="lazy" typeof="foaf:Image" class="image-style-cover-images">
         {% endif %}
       </div>
-      <div class="publications-detail-right-column">
+      <div class="publications-detail-right-column rr-right-column">
         <div class="content-publication-info">
           <time class="datetime">
             {{ ds_content.group_related_resources_content.group_content.group_rr_wrapper_fields.field_publication_date.0['#text'] }}
@@ -35,6 +35,8 @@
             <span class="custom-number">{{ pages }} {{ 'pages' | trans }}</span>
           </div>
         </div>
+        {{ ds_content.group_related_resources_content.group_content.node_title }}
+        {{ ds_content.group_related_resources_content.group_content.node_link }}
     </div>
   </div>
 </article>
