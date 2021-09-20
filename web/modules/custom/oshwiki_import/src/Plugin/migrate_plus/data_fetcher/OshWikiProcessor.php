@@ -46,8 +46,8 @@ class OshWikiProcessor extends FileFetcher
       //$osha_wiki_hostname = \Drupal::state()->get('osha_wiki_hostname', 'https://oshwiki.eu');
 
       $osha_wiki_hostname = \Drupal::configFactory()->getEditable('oshwiki_import.settings')->get('oshwiki_import_api');
-      $oshwikiPrintoutsUrl = "$osha_wiki_hostname/index.php?title=Special%3AAsk&limit=$resultsLimit&offset=$resultsOffset&q=%5B%5B%3A%2B%5D%5D&po=%3FModification+date%0D%0A%3FCategory%0D%0A%3FMaster+page%0D%0A%3FModification+date%0D%0A%3FLanguage+code%0D%0A%3FNP%0D%0A%3FOP%0D%0A&eq=yes&p%5Bformat%5D=json&p%5Blink%5D=subject&p%5Bsort%5D=Modification+date&p%5Border%5D%5Bdesc%5D=1&p%5Bheaders%5D=show&p%5Bmainlabel%5D=&p%5Bintro%5D=&p%5Boutro%5D=&p%5Bsearchlabel%5D=&p%5Bdefault%5D=&p%5Bsyntax%5D=standard&eq=yes";
-// $oshwikiPrintoutsUrl = "$osha_wiki_hostname/index.php?title=Special%3AAsk&limit=$resultsLimit&offset=$resultsOffset&q=%5B%5BOP%3A%3AProperty%3AOSHA+54841D%5D%5D&po=%3FModification+date%0D%0A%3FCategory%0D%0A%3FMaster+page%0D%0A%3FModification+date%0D%0A%3FLanguage+code%0D%0A%3FNP%0D%0A%3FOP%0D%0A&eq=yes&p%5Bformat%5D=json&p%5Blink%5D=subject&p%5Bsort%5D=Modification+date&p%5Border%5D%5Bdesc%5D=1&p%5Bheaders%5D=show&p%5Bmainlabel%5D=&p%5Bintro%5D=&p%5Boutro%5D=&p%5Bsearchlabel%5D=&p%5Bdefault%5D=&p%5Bsyntax%5D=standard&eq=yes";
+//       $oshwikiPrintoutsUrl = "$osha_wiki_hostname/index.php?title=Special%3AAsk&limit=$resultsLimit&offset=$resultsOffset&q=%5B%5B%3A%2B%5D%5D&po=%3FModification+date%0D%0A%3FCategory%0D%0A%3FMaster+page%0D%0A%3FModification+date%0D%0A%3FLanguage+code%0D%0A%3FNP%0D%0A%3FOP%0D%0A&eq=yes&p%5Bformat%5D=json&p%5Blink%5D=subject&p%5Bsort%5D=Modification+date&p%5Border%5D%5Bdesc%5D=1&p%5Bheaders%5D=show&p%5Bmainlabel%5D=&p%5Bintro%5D=&p%5Boutro%5D=&p%5Bsearchlabel%5D=&p%5Bdefault%5D=&p%5Bsyntax%5D=standard&eq=yes";
+$oshwikiPrintoutsUrl = "$osha_wiki_hostname/index.php?title=Special%3AAsk&limit=$resultsLimit&offset=$resultsOffset&q=%5B%5BOP%3A%3AProperty%3AOSHA+54841D%5D%5D&po=%3FModification+date%0D%0A%3FCategory%0D%0A%3FMaster+page%0D%0A%3FModification+date%0D%0A%3FLanguage+code%0D%0A%3FNP%0D%0A%3FOP%0D%0A&eq=yes&p%5Bformat%5D=json&p%5Blink%5D=subject&p%5Bsort%5D=Modification+date&p%5Border%5D%5Bdesc%5D=1&p%5Bheaders%5D=show&p%5Bmainlabel%5D=&p%5Bintro%5D=&p%5Boutro%5D=&p%5Bsearchlabel%5D=&p%5Bdefault%5D=&p%5Bsyntax%5D=standard&eq=yes";
 // file_put_contents($logsPath, $oshwikiPrintoutsUrl.PHP_EOL, FILE_APPEND);
       $fullResponse =  file_get_contents($oshwikiPrintoutsUrl, false, null);
 // file_put_contents($logsPath, print_r("res".$nodeCounter.PHP_EOL, true), FILE_APPEND);
@@ -132,9 +132,9 @@ class OshWikiProcessor extends FileFetcher
     $oshwikiNodesContent = json_decode($fullResponseContent);
     $newWikiPagePar->content = $oshwikiNodesContent->parse->wikitext;
     $newWikiPagePar->summary = $this->getWikiSummaryFromBody($newWikiPagePar->content);
-    $newWikiPagePar->summary =
-      $this->getWikiSummaryFromBody($newWikiPagePar->content).
-      PHP_EOL.$this->osha_wiki_block_content_template($newWikiPagePar->oshwikiURL);
+//     $newWikiPagePar->summary =
+//       $this->getWikiSummaryFromBody($newWikiPagePar->content).
+//       PHP_EOL.$this->osha_wiki_block_content_template($newWikiPagePar->oshwikiURL);
     $newWikiPagePar->content = $this->cleanString($newWikiPagePar->content);
   }
 
@@ -266,23 +266,23 @@ class OshWikiProcessor extends FileFetcher
     return $stringToReturn;
   }
 
-  private function osha_wiki_block_content_template($wiki_page_url) {
-    $wiki_name = t('OSHwiki');
-    $goto_wiki = t('Go to OSHwiki');
-    $find_more = t('Find more');
-
-    $content = '<div class="OSHWiki"><div class="separatorOsHWiki">&nbsp;</div><div id="OSHWikiDivTit"><div class="imgOSHWiki"><img src="/sites/all/themes/osha_frontend/images/OSHwiki.png" alt="OSHwiki" width="26" height="26" /></div><div class="OSHWikiTitle">'
-      .$wiki_name
-      .'</div></div><div class="p2">'
-      .$find_more
-      .'<span><br /></span></div><div class="p3"><a href="'
-      .$wiki_page_url
-      .'" target="_blank">'
-      .$goto_wiki
-      .' <img src="/sites/all/themes/osha_frontend/images/flecha.png" alt="'
-      .$goto_wiki
-      .'" width="19" height="11" /></a></div></div>';
-    return $content;
-  }
+//   private function osha_wiki_block_content_template($wiki_page_url) {
+//     $wiki_name = t('OSHwiki');
+//     $goto_wiki = t('Go to OSHwiki');
+//     $find_more = t('Find more');
+//
+//     $content = '<div class="OSHWiki"><div class="separatorOsHWiki">&nbsp;</div><div id="OSHWikiDivTit"><div class="imgOSHWiki"><img src="/sites/all/themes/osha_frontend/images/OSHwiki.png" alt="OSHwiki" width="26" height="26" /></div><div class="OSHWikiTitle">'
+//       .$wiki_name
+//       .'</div></div><div class="p2">'
+//       .$find_more
+//       .'<span><br /></span></div><div class="p3"><a href="'
+//       .$wiki_page_url
+//       .'" target="_blank">'
+//       .$goto_wiki
+//       .' <img src="/sites/all/themes/osha_frontend/images/flecha.png" alt="'
+//       .$goto_wiki
+//       .'" width="19" height="11" /></a></div></div>';
+//     return $content;
+//   }
 
 }
