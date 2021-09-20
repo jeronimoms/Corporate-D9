@@ -174,6 +174,36 @@
   }
 }
 
+.view-musculoskeletal-disorders-list, .view-practical-tools-and-guidance-on-dangerous-substances{
+  .revamp-row {
+    h2{
+      margin-bottom: 0;
+    }
+    .av-type {
+      padding-bottom: 0.3rem;
+      span {
+        background-color: $bg-color-blue-light-2;
+        color: $text-color-blue;
+        font-size: 11px;
+      }
+    }
+    .field--name-field-provider-english-{
+      padding-bottom: 0;
+      margin: 0!important;
+      .field__label{
+        display: none;
+      }
+      .field__item{
+        margin: 0!important;
+        padding: 0!important;
+      }
+    }
+    .field--name-field-provider-original-{
+      display: none;
+    }
+  }
+}
+
 .revamp-row.no-flex{
   display: block;
 }
@@ -356,10 +386,17 @@
           flex: 0 0 49%;
           max-width: 49%;
           margin: 0.5rem 2% 0.7rem 0;
+          img{
+            width: 100%;
+          }
           &:nth-child(2){
             margin-right: 0;
+            justify-content: flex-end;
           }
         }
+      }
+      .menu-link-contentmain{
+        width: 100%;
       }
     }
   }

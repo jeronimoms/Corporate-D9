@@ -4,8 +4,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_image_media
-    - media.type.image
+    - media.type.image_caption
     - node.type.news
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.news.field_image_media
 field_name: field_image_media
 entity_type: node
@@ -20,10 +25,10 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image: image
+      image_caption: image_caption
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: image
 field_type: entity_reference

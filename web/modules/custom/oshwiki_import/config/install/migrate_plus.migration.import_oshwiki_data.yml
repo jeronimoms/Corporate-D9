@@ -1,4 +1,3 @@
-# This migration demonstrates a simple import from a JSON file.
 id: import_oshwiki_data
 label: 'OSHWiki data import'
 migration_group: oshwiki_import
@@ -8,6 +7,17 @@ migration_tags:
 destination:
   default_bundle: wiki_page
   plugin: 'entity:node'
+  overwrite_properties:
+    - title
+    - body
+    - comment_node_wiki_page
+    - field_summary_html
+    - field_tags
+    - field_thesaurus
+    - field_thesaurus_2020
+    - field_nace_codes
+    - field_wiki_categories
+#    - field_updated
 
 migration_dependencies: {  }
 
@@ -17,23 +27,24 @@ dependencies:
       - oshwiki_import
 source:
   plugin: url
-  #data_fetcher_plugin: http
-#  data_fetcher_plugin: file
   data_fetcher_plugin: oie_file_fetcher
-#  data_parser_plugin: xml
-  data_parser_plugin: json
+  data_parser_plugin: oshwiki_json
+#  data_parser_plugin: json
   include_raw_data: true
 #  urls: https://oshwiki.eu/api.php?action=query&generator=recentchanges&grclimit=3&grcend=2021-03-19T08:02:30Z&grcdir=older&prop=revisions&rvprop=timestamp|content|comment|tags&format=json
 #  urls: 'C:/Users/mcacheiro/manu/del/fullList.json'
 #  urls: '/var/www/html/web/sites/default/files/oshwikiMigration/fullList.json'
   urls: '/tmp/fullList.json'
-#  urls: 'http://api.tvmaze.com/search/shows?q=family'
   content_type: wiki_page
   ids:
-    title:
-      type: string
+    nid:
+      type: integer
   item_selector: '/'
   fields:
+    -
+      name: nid
+      label: 'Nid'
+      selector: 'nid'
     -
       name: title
       label: 'title'
@@ -46,14 +57,17 @@ source:
 #      name: comment_node_wiki_page
 #      label: 'comment_node_wiki_page'
 #      selector: 'revisions/rev[@comment]'
+    - name: field_summary_html
+      label: 'summary'
+      selector: 'summary'
     -
       name: field_tags
       label: 'field_tags'
       selector: 'tag'
-    -
-      name: field_updated
-      label: 'field_updated'
-      selector: 'modificationDate'
+#    -
+#      name: field_updated
+#      label: 'field_updated'
+#      selector: 'modificationDate'
     -
       name: field_thesaurus
       label: 'field_thesaurus'
@@ -71,7 +85,9 @@ source:
       label: 'field_wiki_categories'
       selector: 'category'
 process:
+  nid: nid
   title: title
+  field_summary_html: field_summary_html
   body: body
   comment_node_wiki_page: comment_node_wiki_page
   field_tags:
@@ -104,8 +120,8 @@ process:
       source: field_wiki_categories
       vocabulary: wiki_categories
       create: true
-  field_updated:
-    -
-      plugin: format_date
-      from_format: 'Y-m-d\TH:i:sZ'
-      to_format: 'Y-m-d\TH:i:s'
+#  field_updated:
+#    -
+#      plugin: format_date
+#      from_format: 'Y-m-d\TH:i:sZ'
+#      to_format: 'Y-m-d\TH:i:s'

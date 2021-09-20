@@ -80,7 +80,11 @@
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     <div class="publications-row">
       <div class="publications-left-column">
-        {{ content.field_image_media }}
+        {% if (content.field_image_media.0) %}
+          {{ content.field_image_media }}
+        {% else %}
+         <img src="{{ relatedImg.en }}" alt="{{ coverImg.0.alt }}" width="155" height="220" loading="lazy" typeof="foaf:Image" class="image-style-cover-images">
+        {% endif %}
       </div>
       <div class="publications-detail-right-column">
           <div class="content-publication-info">
@@ -144,6 +148,11 @@
     <div class="wrapper-view-aditional-publications">
       <h2>{{ 'Additional publications on this topic' | trans }}</h2>
       {{ view_aditionalPublications }}
+    </div>
+  {% endif %}
+  {% if content.field_related_oshwiki_articles|render %}
+    <div class="content-related-oshwiki ">
+      {{ content.field_related_oshwiki_articles }}
     </div>
   {% endif %}
 </article>
