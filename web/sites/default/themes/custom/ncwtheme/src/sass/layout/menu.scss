@@ -438,8 +438,8 @@
   }
 }
 
-/*  Menu for Procuremnt (Calls) - rendered in Calls twig  */
-.node--type-calls{
+/*  Menu for Procuremnt (Calls) - rendered in Calls twig // Job vacancies */
+.node--type-calls, .node--type-job-vacancies{
   .sidebar-first .menu--main ul li ul li ul.menu-level-2{
     display: block;
   }
