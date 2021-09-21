@@ -7,6 +7,10 @@ dependencies:
     - node.type.press_release
   module:
     - datetime
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.press_release.field_pr_embargo_date
 field_name: field_pr_embargo_date
 entity_type: node
