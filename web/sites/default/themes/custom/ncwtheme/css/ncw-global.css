@@ -4567,7 +4567,7 @@ body.user-logged-in.toolbar-tray-open.scrolled #header {
   padding-top: 0;
 }
 
-/*  Menu for inforgraphics - rendered in Infographic twig  */
+/*  Menu for FOPs - rendered in FOP twig  */
 .node--type-fop-page .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
   display: block;
 }
@@ -4591,6 +4591,35 @@ body.user-logged-in.toolbar-tray-open.scrolled #header {
   padding-top: 0;
 }
 .node--type-fop-page .block-views-blockfop-flags-block-2 {
+  float: left;
+  clear: both;
+  margin-top: 2rem;
+}
+
+/*  Menu for Procuremnt (Calls) - rendered in Calls twig  */
+.node--type-calls .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
+  display: block;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > a {
+  display: none;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li,
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > span {
+  display: none;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9) {
+  display: block;
+}
+.node--type-calls .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a {
+  padding-left: 0;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9) > a {
+  padding-bottom: 0;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul {
+  padding-top: 0;
+}
+.node--type-calls .block-views-blockfop-flags-block-2 {
   float: left;
   clear: both;
   margin-top: 2rem;
