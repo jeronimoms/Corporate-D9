@@ -100,6 +100,16 @@ class MultipleTargetLanguageJobItem extends JobItem {
   }
 
   /**
+   * Assign a target language.
+   *
+   * @param string $langcode
+   *   Target language to assign.
+   */
+  public function setTargetLanguage(string $langcode) {
+    $this->set('target_language', $langcode);
+  }
+
+  /**
    * Returns the target language code.
    *
    * @return string
@@ -132,7 +142,8 @@ class MultipleTargetLanguageJobItem extends JobItem {
     // Only attempt to change the status to needs review if it is currently
     // active.
     if ($this->isActive()) {
-      $data = \Drupal::service('tmgmt.data')->filterTranslatable($this->getData());
+      $data = \Drupal::service('tmgmt.data')
+        ->filterTranslatable($this->getData());
       $finished = TRUE;
       foreach ($data as $item) {
         if (empty($item['#status']) || $item['#status'] == TMGMT_DATA_ITEM_STATE_PENDING || $item['#status'] == TMGMT_DATA_ITEM_STATE_PRELIMINARY) {
@@ -154,14 +165,77 @@ class MultipleTargetLanguageJobItem extends JobItem {
           $variables = [
             '@source' => $this->getSourceLabel(),
             '@language' => $job->getTargetLanguage()->getName(),
-            ':review_url' => $this->toUrl('canonical', ['query' => ['destination' => $job_url]])->toString(),
+            ':review_url' => $this->toUrl('canonical', ['query' => ['destination' => $job_url]])
+              ->toString(),
           ];
-          (!$this->getSourceUrl()) ? $variables[':source_url'] = (string) $job_url : $variables[':source_url'] = $this->getSourceUrl()->toString();
+          (!$this->getSourceUrl()) ? $variables[':source_url'] = (string) $job_url : $variables[':source_url'] = $this->getSourceUrl()
+            ->toString();
           $this->needsReview('The translation of <a href=":source_url">@source</a> to @language is finished and can now be <a href=":review_url">reviewed</a>.', $variables);
         }
       }
     }
     $this->save();
+  }
+
+  /**
+   * Check if item referenced by job exists.
+   *
+   * @return bool
+   *   If referred entity exists.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function currentItemExists() {
+    return self::itemExists($this->getItemType(), $this->getItemId());
+  }
+
+  /**
+   * Check if item referenced by job exists.
+   *
+   * @param string $entityType
+   *   Entity type name to check.
+   * @param string $itemId
+   *   Entity id to load.
+   *
+   * @return bool
+   *   If referred entity exists.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public static function itemExists(string $entityType, string $itemId) {
+    return !is_null(\Drupal::entityTypeManager()
+      ->getStorage($entityType)
+      ->load($itemId));
+  }
+
+  /**
+   * Check if there are job items created for those conditions.
+   *
+   * @param array $conditions
+   *   Conditions array.
+   *
+   * @return bool
+   *   If there are job items created with those conditions.
+   */
+  public static function jobItemExists(array $conditions = []) {
+    $query = \Drupal::entityQuery('tmgmt_job_item');
+    foreach ($conditions as $field => $values) {
+      if (is_array($values)) {
+        $query->condition($field, $values, 'IN');
+      }
+      else {
+        $query->condition($field, $values);
+      }
+    }
+    $query->condition('state', [
+      static::STATE_ACTIVE,
+      static::STATE_ACCEPTED,
+      static::STATE_REVIEW,
+    ], 'IN');
+    $existingJobItems = $query->execute();
+    return !empty($existingJobItems);
   }
 
 }

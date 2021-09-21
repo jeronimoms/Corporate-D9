@@ -35,10 +35,16 @@ hard_limit: 50
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  active_widget_order:
-    processor_id: active_widget_order
+  count_widget_order:
+    processor_id: count_widget_order
     weights:
-      sort: 20
+      sort: -8
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: -10
     settings:
       sort: ASC
   exclude_specified_items:
@@ -46,15 +52,9 @@ processor_configs:
     weights:
       build: 50
     settings:
-      exclude: '4526, 53, 145, 46, 78, 3119, 37, 70, 106, 119, 3109, 3112, 3079, 3884, 3115, 3110, 123, 3114, 142'
+      exclude: '43, 4526, 53, 145, 46, 78, 3119, 37, 70, 106, 119, 3109, 3112, 3079, 3884, 3115, 3110, 123, 3114, 142'
       regex: false
       invert: false
-  term_weight_widget_order:
-    processor_id: term_weight_widget_order
-    weights:
-      sort: 60
-    settings:
-      sort: ASC
   translate_entity:
     processor_id: translate_entity
     weights:

@@ -6,7 +6,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Config form to save OshWiki ULR configs.
+ * Config form to save OshWiki URL configs.
  */
 class OshWikiConfigForm extends ConfigFormBase {
 
