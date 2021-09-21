@@ -31,6 +31,14 @@ body{
   font-weight: bold;
 }
 
+.date-status{
+  padding-bottom: 1rem;
+  span{
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
 ul.menu{
   .menu-item{
     float: left;

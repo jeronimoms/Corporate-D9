@@ -1931,6 +1931,14 @@ body .field--name-body {
   font-weight: bold;
 }
 
+.date-status {
+  padding-bottom: 1rem;
+}
+.date-status span {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 ul.menu .menu-item {
   float: left;
   margin-right: 7px;
