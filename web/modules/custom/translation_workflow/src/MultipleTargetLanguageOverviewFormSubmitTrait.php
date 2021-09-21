@@ -83,6 +83,7 @@ trait MultipleTargetLanguageOverviewFormSubmitTrait {
 
     try {
       $job->save();
+      $job->set('label', (string) $job->label())->save();
       foreach ($jobItems as $jobItem) {
         $jobItem->set('tjid', $job->id())->save();
       }
