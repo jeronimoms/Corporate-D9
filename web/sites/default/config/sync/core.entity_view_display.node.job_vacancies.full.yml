@@ -87,6 +87,7 @@ content:
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings:
       ds:
         ft:
@@ -95,7 +96,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: ds_content
   field_job_vacancies_deadline:
     weight: 2

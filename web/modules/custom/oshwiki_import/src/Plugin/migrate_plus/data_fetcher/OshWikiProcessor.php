@@ -132,9 +132,9 @@ class OshWikiProcessor extends FileFetcher
     $oshwikiNodesContent = json_decode($fullResponseContent);
     $newWikiPagePar->content = $oshwikiNodesContent->parse->wikitext;
     $newWikiPagePar->summary = $this->getWikiSummaryFromBody($newWikiPagePar->content);
-    $newWikiPagePar->summary =
-      $this->getWikiSummaryFromBody($newWikiPagePar->content).
-      PHP_EOL.$this->osha_wiki_block_content_template($newWikiPagePar->oshwikiURL);
+//     $newWikiPagePar->summary =
+//       $this->getWikiSummaryFromBody($newWikiPagePar->content).
+//       PHP_EOL.$this->osha_wiki_block_content_template($newWikiPagePar->oshwikiURL);
     $newWikiPagePar->content = $this->cleanString($newWikiPagePar->content);
   }
 
@@ -266,23 +266,23 @@ class OshWikiProcessor extends FileFetcher
     return $stringToReturn;
   }
 
-  private function osha_wiki_block_content_template($wiki_page_url) {
-    $wiki_name = t('OSHwiki');
-    $goto_wiki = t('Go to OSHwiki');
-    $find_more = t('Find more');
-
-    $content = '<div class="OSHWiki"><div class="separatorOsHWiki">&nbsp;</div><div id="OSHWikiDivTit"><div class="imgOSHWiki"><img src="/sites/all/themes/osha_frontend/images/OSHwiki.png" alt="OSHwiki" width="26" height="26" /></div><div class="OSHWikiTitle">'
-      .$wiki_name
-      .'</div></div><div class="p2">'
-      .$find_more
-      .'<span><br /></span></div><div class="p3"><a href="'
-      .$wiki_page_url
-      .'" target="_blank">'
-      .$goto_wiki
-      .' <img src="/sites/all/themes/osha_frontend/images/flecha.png" alt="'
-      .$goto_wiki
-      .'" width="19" height="11" /></a></div></div>';
-    return $content;
-  }
+//   private function osha_wiki_block_content_template($wiki_page_url) {
+//     $wiki_name = t('OSHwiki');
+//     $goto_wiki = t('Go to OSHwiki');
+//     $find_more = t('Find more');
+//
+//     $content = '<div class="OSHWiki"><div class="separatorOsHWiki">&nbsp;</div><div id="OSHWikiDivTit"><div class="imgOSHWiki"><img src="/sites/all/themes/osha_frontend/images/OSHwiki.png" alt="OSHwiki" width="26" height="26" /></div><div class="OSHWikiTitle">'
+//       .$wiki_name
+//       .'</div></div><div class="p2">'
+//       .$find_more
+//       .'<span><br /></span></div><div class="p3"><a href="'
+//       .$wiki_page_url
+//       .'" target="_blank">'
+//       .$goto_wiki
+//       .' <img src="/sites/all/themes/osha_frontend/images/flecha.png" alt="'
+//       .$goto_wiki
+//       .'" width="19" height="11" /></a></div></div>';
+//     return $content;
+//   }
 
 }

@@ -89,7 +89,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         foreach ($langs as $lang => $node_lang) {
           $trans_value = $this->getFieldValue($node_lang, $definition, $field_name);
           if (isset($trans_value) && !empty($trans_value)) {
-            $data += $trans_value;
+            $data = array_merge_recursive($data, $trans_value);
           }
         }
       }
@@ -97,9 +97,11 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
 
     foreach ($langs as $lang => $node_lang) {
       $data['title_field'][$lang] = [
-        'value' => $node_lang->getTitle(),
-        'format' => "",
-        'safe_value' => $node_lang->getTitle(),
+        [
+          'value' => $node_lang->getTitle(),
+          'format' => "",
+          'safe_value' => $node_lang->getTitle(),
+        ]
       ];
 
       $data['translations']['original'] = 'en';
@@ -147,12 +149,16 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
           foreach ($values as $value) {
             $value = $this->getMediaValues($value['target_id'], $settings);
             if (isset($value) && !empty($value)) {
-              $referers[$node->language()->getId()] = $value;
+              $referers[$node->language()->getId()] = [$value];
             }
           }
 
           if ($field_name == 'field_image_media') {
             $field_name = 'field_image';
+          }
+
+          if ($field_name == 'field_file_media') {
+            $field_name = 'field_file';
           }
 
           return [$field_name => $referers];
@@ -175,6 +181,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
           return [$field_name => $referers];
         }
       }
+      return [$field_name => []];
     }
 
     // Datetime process.
@@ -187,8 +194,8 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
           $field_name => [
             'und' => [
               'value' => $value,
-              "timezone" => "Europe\/Madrid",
-              "timezone_db" => "Europe\/Madrid",
+              "timezone" => "Europe/Madrid",
+              "timezone_db" => "Europe/Madrid",
               "date_type" => "datetime",
             ],
           ]
@@ -212,7 +219,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     if ($definition->getType() == 'integer' || $definition->getType() == 'decimal' || $definition->getType() == 'string') {
       return [
         $field_name => [
-          $node->language()->getId() => ['value' => $value],
+          $node->language()->getId() => [['value' => $value]],
         ],
       ];
     }
@@ -236,8 +243,31 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       ];
     }
 
+    // Image.
+    if ($definition->getType() == 'image') {
+      $values = $node->get($field_name)->getValue();
+      if (!empty($values)) {
+        $settings = $definition->getSettings();
+        $referers = [];
+        if ($settings['target_type'] == 'file') {
+          foreach ($values as $value) {
+            $value = $this->getFileValues($value['target_id']);
+            if (isset($value) && !empty($value)) {
+              $referers[$field_name][] = $value;
+            }
+          }
+        }
+        return $referers;
+      }
+    }
 
-    return (empty($value) ? [] : [$field_name => [$node->language()->getId() => ['value' => $value]]]);
+    if ($definition->getType() == 'text_with_summary') {
+      $values = $node->get($field_name)->getValue()[0];
+      return [$field_name => [$node->language()->getId() => [['value' => $values['value'], 'format' => $values['format']]]]];
+    }
+
+
+    return (empty($value) ? [] : [$field_name => [$node->language()->getId() => [['value' => $value]]]]);
   }
 
   /**
@@ -269,8 +299,10 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       'vocabulary_machine_name' => $term->get('vid')->getString(),
       'description_field' => [
         'en' => [
-          'value' => $term->getDescription(),
-          'format' => $term->getFormat(),
+          [
+            'value' => $term->getDescription(),
+            'format' => $term->getFormat(),
+          ]
         ],
       ],
     ];
@@ -299,7 +331,26 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
           continue;
         }
 
-        $term_data[$field_name][$term->language()->getId()]['value'] = $term_value;
+        // Image.
+        if ($definition->getType() == 'image') {
+          $values = $term->get($field_name)->getValue();
+          if (!empty($values)) {
+            $settings = $definition->getSettings();
+            $referers = [];
+            if ($settings['target_type'] == 'file') {
+              foreach ($values as $value) {
+                $value = $this->getFileValues($value['target_id']);
+                if (isset($value) && !empty($value)) {
+                  $term_data[$field_name][][$term->language()
+                    ->getId()][] = $value;
+                }
+              }
+            }
+          }
+          continue;
+        }
+
+        $term_data[$field_name][][$term->language()->getId()]['value'] = $term_value;
       }
     }
 
@@ -368,10 +419,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     }
 
     $media_file_values = $media->get($field_ref)->getValue()[0];
-
-    /** @var \Drupal\file_entity\Entity\FileEntity $file */
-    $file = $this->entityTypeManager->getStorage('file')->load($media_file_values['target_id']);
-    $res = $this->getNormalicedMediaValues($file);
+    $res = $this->getFileValues($media_file_values['target_id']);
 
     if (strpos($media->bundle(), 'image') > -1) {
       $res['type'] = $media->bundle();
@@ -381,6 +429,12 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     }
 
     return $res;
+  }
+
+  public function getFileValues($fid) {
+    /** @var \Drupal\file_entity\Entity\FileEntity $file */
+    $file = $this->entityTypeManager->getStorage('file')->load($fid);
+    return $this->getNormalicedMediaValues($file);
   }
 
   /**
@@ -396,6 +450,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       'filename' => $file->getFilename(),
       'uri' => $file->getFileUri(),
       'filesize' => $file->getSize(),
+      'filemime' => $file->getMimeType(),
       'status' => $file->get('status')->getString(),
       'timestamp' => $file->getCreatedTime(),
       'uuid' => $file->uuid(),
