@@ -20,14 +20,14 @@
   <h1>{{'Press releases' | trans}}</h1>
   <a href="/about-eu-osha/press-room" class="pull-right-flex back-to-link">{{ 'Back to press releases' | trans }}</a>
 </div>
-<div class="date-status"><b>
+<div class="date-status">
     {% if(embargo_date != null and date(embargo_date) >= date(publication_date))%}
       <span>{{ "Hold on for press release until" | trans }} {{ embargo_date | date("d/m/Y - H:i")}}</span>
     {% endif %}
     {% if(embargo_date is empty or embargo_date is null or date(embargo_date) <= date(publication_date))%}
       <span>   {{ "For immediate release" | trans}} - {{ publication_date | date("d/m/Y - H:i") }}</span>
     {% endif %}
-  </b></div>
+  </div>
 {{ ds_content }}
 
 </{{ ds_content_wrapper }}>
