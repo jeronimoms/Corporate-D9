@@ -18,3 +18,13 @@ entity.tmgmt_job_multiple_target.abort_form:
     _entity_form: tmgmt_job_multiple_target.abort
   requirements:
     _entity_access: tmgmt_job_multiple_target.update
+
+entity.node.retranslate:
+  path: '/node/{node}/retranslate'
+  defaults:
+    _entity_form: 'node.retranslate'
+    _title: 'Retranslate'
+  requirements:
+    _permission: 'translate interface'
+    _entity_access: 'node.view'
+    node: \d+

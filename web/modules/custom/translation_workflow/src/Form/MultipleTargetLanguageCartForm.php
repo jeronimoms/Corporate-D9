@@ -8,6 +8,7 @@ use Drupal\tmgmt\Entity\JobItem;
 use Drupal\tmgmt\Entity\Translator;
 use Drupal\tmgmt\Form\CartForm;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
+use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 
 /**
  *
@@ -17,9 +18,42 @@ class MultipleTargetLanguageCartForm extends CartForm {
   /**
    * {@inheritdoc}
    */
+  public function buildForm(array $form, FormStateInterface $form_state, $plugin = NULL, $item_type = NULL) {
+    $parentForm = parent::buildForm($form, $form_state, $plugin, $item_type);
+    if (isset($parentForm['request_translation'])) {
+      $parentForm['request_translation']['#validate'][] = '::validateNewItems';
+    }
+    return $parentForm;
+  }
 
   /**
-   * Custom form submit callback for tmgmt_cart_cart_form().
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   */
+  public function validateNewItems(array &$form, FormStateInterface $form_state) {
+    $target_languages = array_filter($form_state->getValue('target_language'));
+    $jobItems = array_filter($form_state->getValue('items'));
+    $itemIds = array_map(function ($jobItemId) {
+      $ret = NULL;
+      $jobItem = MultipleTargetLanguageJobItem::load($jobItemId);
+      if ($jobItem) {
+        $ret = $jobItem->getItemId();
+      }
+      return $ret;
+
+    }, $jobItems);
+
+    $existingJobItems = MultipleTargetLanguageJobItem::jobItemExists([
+      'item_id' => $itemIds,
+      'target_language' => $target_languages,
+    ]);
+    if ($existingJobItems) {
+      $form_state->setErrorByName('', $this->t('There are active translation jobs with this items.'));
+    }
+  }
+
+  /**
+   * {@inheritdoc}
    */
   public function submitRequestTranslation(array $form, FormStateInterface $form_state) {
     $target_languages = array_filter($form_state->getValue('target_language'));
@@ -74,31 +108,36 @@ class MultipleTargetLanguageCartForm extends CartForm {
         $jobItem->set('tjid', $job->id())->save();
       }
       tmgmt_cart_get()->removeJobItems(array_keys($jobItems));
-    }
-    catch (EntityStorageException $e) {
-      $this->messenger()->addError($this->t('Error creating Multiple target language job'));
-      $this->getLogger('translation_workflow')->error('Error creating entity: %message', [
-        '%message' => $e->getMessage(),
-      ]);
+    } catch (EntityStorageException $e) {
+      $this->messenger()
+        ->addError($this->t('Error creating Multiple target language job'));
+      $this->getLogger('translation_workflow')
+        ->error('Error creating entity: %message', [
+          '%message' => $e->getMessage(),
+        ]);
     }
 
     // Start the checkout process if any jobs were created.
     if ($job) {
       if ($enforced_source_language) {
 
-        $this->messenger()->addWarning(t('You have enforced the job source language which most likely resulted in having a translation of your original content as the job source text. You should review the job translation received from the translator carefully to prevent the content quality loss.'));
+        $this->messenger()
+          ->addWarning(t('You have enforced the job source language which most likely resulted in having a translation of your original content as the job source text. You should review the job translation received from the translator carefully to prevent the content quality loss.'));
 
         if ($skipped_count) {
           $languages = \Drupal::languageManager()->getLanguages();
-          $this->messenger()->addStatus(\Drupal::translation()->formatPlural($skipped_count, 'One item skipped as for the language @language it was not possible to retrieve a translation.',
-            '@count items skipped as for the language @language it was not possible to retrieve a translations.', ['@language' => $languages[$enforced_source_language]->getName()]));
+          $this->messenger()->addStatus(\Drupal::translation()
+            ->formatPlural($skipped_count, 'One item skipped as for the language @language it was not possible to retrieve a translation.',
+              '@count items skipped as for the language @language it was not possible to retrieve a translations.', ['@language' => $languages[$enforced_source_language]->getName()]));
         }
       }
 
-      \Drupal::service('tmgmt.job_checkout_manager')->checkoutAndRedirect($form_state, [$job]);
+      \Drupal::service('tmgmt.job_checkout_manager')
+        ->checkoutAndRedirect($form_state, [$job]);
     }
     else {
-      $this->messenger()->addError(t('From the selection you made it was not possible to create any translation job.'));
+      $this->messenger()
+        ->addError(t('From the selection you made it was not possible to create any translation job.'));
     }
   }
 
