@@ -470,3 +470,35 @@
   }
 }
 
+/*  Menu for Directives */
+.node--type-directive{
+  .sidebar-first .menu--main ul li ul li ul.menu-level-2{
+    display: block;
+  }
+  #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > a{
+    display: none;
+  }
+  #block-mainnavigation-2--2 > ul > li,
+  #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > span{
+    display: none;
+  }
+  #block-mainnavigation-2--2 > ul > li:nth-child(6){
+    display: block;
+  }
+  .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a{
+    padding-left: 0;
+  }
+  #block-mainnavigation-2--2 > ul > li:nth-child(6) > a{
+    padding-bottom: 0;
+  }
+  #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul{
+    padding-top: 0;
+  }
+
+  .block-views-blockfop-flags-block-2{
+    float: left;
+    clear: both;
+    margin-top: 2rem;
+  }
+}
+
