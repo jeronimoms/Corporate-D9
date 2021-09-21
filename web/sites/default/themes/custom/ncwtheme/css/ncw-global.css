@@ -6374,6 +6374,11 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   clear: both;
 }
 
+/* View Directives filtered*/
+.view-search-directives .revamp-row .field--label-inline .field__label {
+  font-weight: 600;
+}
+
 /* View node header - Node related with the View - Placed before the View */
 .custom-view-node-header {
   padding-bottom: 2rem;
@@ -6416,12 +6421,6 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .revamp-row .field--label-inline .field__label {
   margin: 0 5px 0 0;
-  font-weight: bold;
-  color: #003399;
-  font-family: "Open Sans Condensed";
-}
-.revamp-row .field--label-inline .field__item {
-  font-family: "Open Sans Condensed";
 }
 .revamp-row .field--name-field-external-url {
   margin-bottom: 5px;
