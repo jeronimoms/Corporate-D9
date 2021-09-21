@@ -1344,3 +1344,15 @@ body.node--type-infographic{
     padding-top: 1rem;
   }
 }
+
+/* Guideline Detail */
+.node--type-guideline{
+  .field--name-field-available-in-languages{
+    .field__item{
+      p{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
