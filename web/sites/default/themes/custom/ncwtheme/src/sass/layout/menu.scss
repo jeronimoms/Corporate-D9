@@ -470,8 +470,8 @@
   }
 }
 
-/*  Menu for Directives */
-.node--type-directive{
+/*  Menu for Directives and Guidelines */
+.node--type-directive, .node--type-guideline{
   .sidebar-first .menu--main ul li ul li ul.menu-level-2{
     display: block;
   }

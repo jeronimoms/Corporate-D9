@@ -1931,6 +1931,14 @@ body .field--name-body {
   font-weight: bold;
 }
 
+.date-status {
+  padding-bottom: 1rem;
+}
+.date-status span {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 ul.menu .menu-item {
   float: left;
   margin-right: 7px;
@@ -3056,6 +3064,11 @@ a.quiz-start-link:hover {
 /* Infographic detail */
 body.node--type-infographic .field--name-body {
   padding-top: 1rem;
+}
+
+/* Guideline Detail */
+.node--type-guideline .field--name-field-available-in-languages .field__item p {
+  margin-bottom: 0;
 }
 
 /* Breadcrumbs */
@@ -4626,30 +4639,31 @@ body.user-logged-in.toolbar-tray-open.scrolled #header {
   margin-top: 2rem;
 }
 
-/*  Menu for Directives */
-.node--type-directive .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
+/*  Menu for Directives and Guidelines */
+.node--type-directive .sidebar-first .menu--main ul li ul li ul.menu-level-2, .node--type-guideline .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
   display: block;
 }
-.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > a {
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > a, .node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > a {
   display: none;
 }
 .node--type-directive #block-mainnavigation-2--2 > ul > li,
-.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > span {
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > span, .node--type-guideline #block-mainnavigation-2--2 > ul > li,
+.node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > span {
   display: none;
 }
-.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) {
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6), .node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) {
   display: block;
 }
-.node--type-directive .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a {
+.node--type-directive .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a, .node--type-guideline .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a {
   padding-left: 0;
 }
-.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > a {
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > a, .node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) > a {
   padding-bottom: 0;
 }
-.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul {
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul, .node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul {
   padding-top: 0;
 }
-.node--type-directive .block-views-blockfop-flags-block-2 {
+.node--type-directive .block-views-blockfop-flags-block-2, .node--type-guideline .block-views-blockfop-flags-block-2 {
   float: left;
   clear: both;
   margin-top: 2rem;
@@ -6374,6 +6388,11 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   clear: both;
 }
 
+/* View Directives filtered*/
+.view-search-directives .revamp-row .field--label-inline .field__label {
+  font-weight: 600;
+}
+
 /* View node header - Node related with the View - Placed before the View */
 .custom-view-node-header {
   padding-bottom: 2rem;
@@ -6416,12 +6435,6 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .revamp-row .field--label-inline .field__label {
   margin: 0 5px 0 0;
-  font-weight: bold;
-  color: #003399;
-  font-family: "Open Sans Condensed";
-}
-.revamp-row .field--label-inline .field__item {
-  font-family: "Open Sans Condensed";
 }
 .revamp-row .field--name-field-external-url {
   margin-bottom: 5px;
