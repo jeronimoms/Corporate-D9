@@ -32,9 +32,20 @@ class MultipleTargetLanguageCartForm extends CartForm {
     $jobItems = [];
     // Group the selected items by source language.
     foreach (JobItem::loadMultiple(array_filter($form_state->getValue('items'))) as $job_item) {
+      $targetLanguagesTemp = $target_languages;
+      $firstLanguage = array_shift($targetLanguagesTemp);
+      $job_item->setTargetLanguage($firstLanguage);
+      $job_item->save();
       $source_language = $enforced_source_language ? $enforced_source_language : $job_item->getSourceLangCode();
       if (in_array($source_language, $job_item->getExistingLangCodes())) {
         $jobItems[$job_item->id()] = $job_item;
+        foreach ($targetLanguagesTemp as $langCode) {
+          if ($langCode !== $source_language) {
+            $newJobItem = tmgmt_job_item_create($job_item->getPlugin(), $job_item->getItemType(), $job_item->getItemId(), ['target_language' => $langCode]);
+            $newJobItem->save();
+            $jobItems[$newJobItem->id()] = $newJobItem;
+          }
+        }
       }
       else {
         $skipped_count++;
@@ -58,6 +69,7 @@ class MultipleTargetLanguageCartForm extends CartForm {
 
     try {
       $job->save();
+      $job->set('label', (string) $job->label())->save();
       foreach ($jobItems as $jobItem) {
         $jobItem->set('tjid', $job->id())->save();
       }

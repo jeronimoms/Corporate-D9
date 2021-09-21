@@ -100,6 +100,16 @@ class MultipleTargetLanguageJobItem extends JobItem {
   }
 
   /**
+   * Assign a target language.
+   *
+   * @param string $langcode
+   *   Target language to assign.
+   */
+  public function setTargetLanguage(string $langcode) {
+    $this->set('target_language', $langcode);
+  }
+
+  /**
    * Returns the target language code.
    *
    * @return string
