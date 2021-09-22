@@ -1,4 +1,5 @@
 module:
+  webform_clientside_validation: -1
   action: 0
   addtoany: 0
   admin_toolbar: 0
@@ -25,6 +26,8 @@ module:
   ckeditor_font: 0
   ckeditor_resize: 0
   ckwordcount: 0
+  clientside_validation: 0
+  clientside_validation_jquery: 0
   color: 0
   color_field: 0
   comment: 0
@@ -70,6 +73,8 @@ module:
   file_entity: 0
   file_mdm: 0
   filter: 0
+  gnode: 0
+  group: 0
   help: 0
   history: 0
   hreflang: 0
@@ -185,6 +190,7 @@ module:
   ultimate_cron: 0
   update: 0
   user: 0
+  variationcache: 0
   video_embed_field: 0
   views_bulk_operations: 0
   views_data_export: 0
@@ -193,6 +199,11 @@ module:
   views_taxonomy_term_name_depth: 0
   views_templates: 0
   views_ui: 0
+  webform: 0
+  webform_icheck: 0
+  webform_jqueryui_buttons: 0
+  webform_node: 0
+  webform_ui: 0
   workbench: 0
   workbench_access: 0
   workflows: 0
