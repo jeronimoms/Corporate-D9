@@ -8,10 +8,10 @@ dependencies:
     - field.field.media.image.field_media_image
     - field.field.media.image.field_nace
     - field.field.media.image.field_tags
-    - image.style.thumbnail
+    - image.style.original_image
     - media.type.image
   module:
-    - image
+    - image_widget_crop
     - imce
     - path
 _core:
@@ -36,12 +36,21 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_media_image:
-    type: image_image
+    type: image_widget_crop
     weight: 0
     region: content
     settings:
-      preview_image_style: thumbnail
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: original_image
+      crop_preview_image_style: original_image
       progress_indicator: throbber
+      crop_list:
+        - infhograpic
+        - original
+        - osh_mail
+      crop_types_required: {  }
+      show_crop_area: false
     third_party_settings:
       imce:
         enabled: false

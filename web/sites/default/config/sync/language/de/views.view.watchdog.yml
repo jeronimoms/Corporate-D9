@@ -3,5 +3,11 @@ display:
     display_title: Master
     display_options:
       fields:
+        type:
+          label: Type
         message:
           label: Message
+      filters:
+        type:
+          expose:
+            label: Type

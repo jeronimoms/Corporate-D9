@@ -960,11 +960,22 @@ select, .facets-dropdown {
 .publications .view-filters fieldset {
   width: 33%;
 }
-.publications .view-filters fieldset:nth-child(3) {
-  width: 23%;
-}
 .publications .view-filters fieldset:nth-child(2) {
+  order: 4;
+  width: 18.5%;
+}
+.publications .view-filters fieldset:nth-child(2) select {
+  width: 100%;
+}
+.publications .view-filters fieldset:nth-child(3) {
   order: 3;
+  width: 18.5%;
+}
+.publications .view-filters fieldset:nth-child(3) select {
+  width: 100%;
+}
+.publications .view-filters #edit-actions {
+  order: 2;
 }
 .publications .view-filters .views-exposed-form .btn-primary {
   margin-left: 0;
@@ -1918,6 +1929,14 @@ body .field--name-body {
   font-size: 0.8rem;
   color: #003399;
   font-weight: bold;
+}
+
+.date-status {
+  padding-bottom: 1rem;
+}
+.date-status span {
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 ul.menu .menu-item {
@@ -3045,6 +3064,11 @@ a.quiz-start-link:hover {
 /* Infographic detail */
 body.node--type-infographic .field--name-body {
   padding-top: 1rem;
+}
+
+/* Guideline Detail */
+.node--type-guideline .field--name-field-available-in-languages .field__item p {
+  margin-bottom: 0;
 }
 
 /* Breadcrumbs */
@@ -4556,7 +4580,7 @@ body.user-logged-in.toolbar-tray-open.scrolled #header {
   padding-top: 0;
 }
 
-/*  Menu for inforgraphics - rendered in Infographic twig  */
+/*  Menu for FOPs - rendered in FOP twig  */
 .node--type-fop-page .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
   display: block;
 }
@@ -4580,6 +4604,66 @@ body.user-logged-in.toolbar-tray-open.scrolled #header {
   padding-top: 0;
 }
 .node--type-fop-page .block-views-blockfop-flags-block-2 {
+  float: left;
+  clear: both;
+  margin-top: 2rem;
+}
+
+/*  Menu for Procuremnt (Calls) - rendered in Calls twig // Job vacancies */
+.node--type-calls .sidebar-first .menu--main ul li ul li ul.menu-level-2, .node--type-job-vacancies .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
+  display: block;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > a, .node--type-job-vacancies #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > a {
+  display: none;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li,
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > span, .node--type-job-vacancies #block-mainnavigation-2--2 > ul > li,
+.node--type-job-vacancies #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > span {
+  display: none;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9), .node--type-job-vacancies #block-mainnavigation-2--2 > ul > li:nth-child(9) {
+  display: block;
+}
+.node--type-calls .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a, .node--type-job-vacancies .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a {
+  padding-left: 0;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9) > a, .node--type-job-vacancies #block-mainnavigation-2--2 > ul > li:nth-child(9) > a {
+  padding-bottom: 0;
+}
+.node--type-calls #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul, .node--type-job-vacancies #block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul {
+  padding-top: 0;
+}
+.node--type-calls .block-views-blockfop-flags-block-2, .node--type-job-vacancies .block-views-blockfop-flags-block-2 {
+  float: left;
+  clear: both;
+  margin-top: 2rem;
+}
+
+/*  Menu for Directives and Guidelines */
+.node--type-directive .sidebar-first .menu--main ul li ul li ul.menu-level-2, .node--type-guideline .sidebar-first .menu--main ul li ul li ul.menu-level-2 {
+  display: block;
+}
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > a, .node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > a {
+  display: none;
+}
+.node--type-directive #block-mainnavigation-2--2 > ul > li,
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > span, .node--type-guideline #block-mainnavigation-2--2 > ul > li,
+.node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > span {
+  display: none;
+}
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6), .node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) {
+  display: block;
+}
+.node--type-directive .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a, .node--type-guideline .sidebar-first .menu--main ul li ul li ul.menu-level-2 li a {
+  padding-left: 0;
+}
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > a, .node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) > a {
+  padding-bottom: 0;
+}
+.node--type-directive #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul, .node--type-guideline #block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul {
+  padding-top: 0;
+}
+.node--type-directive .block-views-blockfop-flags-block-2, .node--type-guideline .block-views-blockfop-flags-block-2 {
   float: left;
   clear: both;
   margin-top: 2rem;
@@ -5452,6 +5536,10 @@ body.node--type-publication {
   display: flex;
   padding-top: 1rem;
 }
+.node--type-publication .aditional-publications {
+  display: flex;
+  padding-top: 1rem;
+}
 .node--type-publication .publications-row.custom-add-margin {
   padding-bottom: 2rem;
 }
@@ -5497,6 +5585,7 @@ body.node--type-publication {
 .node--type-publication .content-publication-info .content-label .label {
   font-size: 0.9rem;
   padding-right: 5px;
+  font-weight: 700;
 }
 .node--type-publication .content-publication-info .content-label .field {
   padding: 0;
@@ -5509,6 +5598,7 @@ body.node--type-publication {
 .node--type-publication .datetime {
   display: block;
   font-size: 0.9rem;
+  font-weight: 700;
 }
 .node--type-publication .field.field--name-field-tags > ul > li {
   padding-right: 0;
@@ -5853,7 +5943,10 @@ body.node--type-publication {
     padding: 0;
   }
 
-  .publications .view-filters fieldset:nth-child(3) {
+  .publications .view-filters .views-exposed-form .btn-primary {
+    margin-left: 5px;
+  }
+  .publications .view-filters fieldset:nth-child(3), .publications .view-filters fieldset:nth-child(2) {
     width: 100%;
   }
 
@@ -6295,6 +6388,11 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   clear: both;
 }
 
+/* View Directives filtered*/
+.view-search-directives .revamp-row .field--label-inline .field__label {
+  font-weight: 600;
+}
+
 /* View node header - Node related with the View - Placed before the View */
 .custom-view-node-header {
   padding-bottom: 2rem;
@@ -6337,12 +6435,6 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 }
 .revamp-row .field--label-inline .field__label {
   margin: 0 5px 0 0;
-  font-weight: bold;
-  color: #003399;
-  font-family: "Open Sans Condensed";
-}
-.revamp-row .field--label-inline .field__item {
-  font-family: "Open Sans Condensed";
 }
 .revamp-row .field--name-field-external-url {
   margin-bottom: 5px;
@@ -6383,23 +6475,29 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   margin-top: 5px;
 }
 
-.view-musculoskeletal-disorders-list .revamp-row .av-type span {
+.view-musculoskeletal-disorders-list .revamp-row h2, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row h2 {
+  margin-bottom: 0;
+}
+.view-musculoskeletal-disorders-list .revamp-row .av-type, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .av-type {
+  padding-bottom: 0.3rem;
+}
+.view-musculoskeletal-disorders-list .revamp-row .av-type span, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .av-type span {
   background-color: #e8ecf5;
   color: #003399;
   font-size: 11px;
 }
-.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- {
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english-, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .field--name-field-provider-english- {
   padding-bottom: 0;
   margin: 0 !important;
 }
-.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__label {
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__label, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .field--name-field-provider-english- .field__label {
   display: none;
 }
-.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__item {
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-english- .field__item, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .field--name-field-provider-english- .field__item {
   margin: 0 !important;
   padding: 0 !important;
 }
-.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-original- {
+.view-musculoskeletal-disorders-list .revamp-row .field--name-field-provider-original-, .view-practical-tools-and-guidance-on-dangerous-substances .revamp-row .field--name-field-provider-original- {
   display: none;
 }
 

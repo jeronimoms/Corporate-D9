@@ -265,6 +265,31 @@ jQuery(document).ready(function($) {
     $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(4) > div > ul > li > a').addClass('is-active');
   }
 
+  //Add the active class to the left menu Procurement / 'Calls'
+  if ($(".node--type-calls")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(7)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(7) > a').addClass('is-active');
+  }
+
+  //Add the active class to the left menu Job vacancies
+  if ($(".node--type-job-vacancies")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(6)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(6) > a').addClass('is-active');
+  }
+
+  //Add the active class to the left menu Directives
+  if ($(".node--type-directive")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(2)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(2) > a').addClass('is-active');
+  }
+
+  //Add the active class to the left menu Directives
+  if ($(".node--type-guideline")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(3)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(3) > a').addClass('is-active');
+  }
+
+
   //Hierarchical view
   $('#tree ul').css('display', 'none');
   $("#tree .has-child > .expand_menu").click(function(){
