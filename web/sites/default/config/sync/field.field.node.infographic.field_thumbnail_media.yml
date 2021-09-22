@@ -6,12 +6,17 @@ dependencies:
     - field.storage.node.field_thumbnail_media
     - media.type.image_caption
     - node.type.infographic
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.infographic.field_thumbnail_media
 field_name: field_thumbnail_media
 entity_type: node
 bundle: infographic
 label: Thumbnail
-description: 'Please adapt the thumbnail width to  350px and height to 260px (a ratio of 1.35).'
+description: "The Thumbail Image for Infographic. Use \"Infographic\" crop.\r\nThis image is shown in infographic detail."
 required: false
 translatable: true
 default_value: {  }
