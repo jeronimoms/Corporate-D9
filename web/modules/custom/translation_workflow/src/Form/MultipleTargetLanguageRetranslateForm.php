@@ -120,7 +120,7 @@ class MultipleTargetLanguageRetranslateForm extends FormBase {
         'item_id' => $node->id(),
       ]);
       if ($existingJobItems) {
-        // $form_state->setErrorByName('', $this->t('Content is already added for translation.'));
+        $form_state->setErrorByName('', $this->t('Content is already added for translation.'));
       }
       if (empty($this->getSelectedValues($form, $form_state))) {
         $form_state->setErrorByName('', $this->t('Almost one field must to be selected for retranslation.'));

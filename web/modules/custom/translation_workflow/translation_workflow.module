@@ -12,10 +12,25 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 use Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobItemViewsData;
+use Drupal\translation_workflow\Event\TranslationEvent;
 use Drupal\translation_workflow\Form\MultipleTargetLanguageJobItemForm;
 use Drupal\translation_workflow\MultipleTargetLanguageConfigSourcePluginUi;
 use Drupal\translation_workflow\MultipleTargetLanguageLocaleSourcePluginUi;
 use Drupal\translation_workflow\MutipleTargetLanguageContentEntitySourcePluginUi;
+
+/**
+ * Implements hook_entity_update().
+ */
+function translation_workflow_entity_update(EntityInterface $entity) {
+  $contentModerationService = \Drupal::service('content_moderation_notifications.notification_information');
+  if ($contentModerationService->isModeratedEntity($entity)) {
+    $transition = $contentModerationService->getTransition($entity);
+    if ($transition->to()->id()) {
+      \Drupal::service('event_dispatcher')
+        ->dispatch(new TranslationEvent(NULL, $entity), TranslationEvent::TRANSLATION_CONTENT_READY_TO_PUBLISH);
+    }
+  }
+}
 
 /**
  * Implements hook_form_alter().
@@ -27,7 +42,7 @@ function translation_workflow_form_alter(&$form, FormStateInterface $form_state,
 }
 
 /**
- *
+ * Validate that items inside a job exists.
  */
 function translation_workflow_form_alter_validate(&$form, FormStateInterface $form_state) {
   if ($form_state->has('tmgmt_cart')) {
@@ -122,7 +137,7 @@ function _translation_workflow_form_tmgmt_cart_form_validate(array &$form, FormS
       ->condition('target_language', $targetLanguages, 'IN')
       ->execute();
     if (!empty($queryResults)) {
-      // $form_state->setErrorByName('', t('Cannot add items already in translation.'));
+      $form_state->setErrorByName('', t('Cannot add items already in translation.'));
     }
   }
 }
