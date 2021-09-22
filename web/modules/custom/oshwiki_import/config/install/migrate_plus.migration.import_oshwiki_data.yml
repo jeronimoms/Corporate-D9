@@ -88,6 +88,18 @@ process:
   nid: nid
   title: title
   field_summary_html: field_summary_html
+  'field_summary_html/format':
+    plugin: default_value
+    default_value: full_html
+  'field_summary_html/value': field_summary_html
+#  field_summary_html:
+#    plugin: sub_process
+#    source: field_summary_html
+#    process:
+#      value: value
+#      format:
+#        plugin: default_value
+#        default_value: full_html
   body: body
   comment_node_wiki_page: comment_node_wiki_page
   field_tags:

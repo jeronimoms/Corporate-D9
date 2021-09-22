@@ -283,6 +283,12 @@ jQuery(document).ready(function($) {
     $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(2) > a').addClass('is-active');
   }
 
+  //Add the active class to the left menu Directives
+  if ($(".node--type-guideline")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(3)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(3) > a').addClass('is-active');
+  }
+
 
   //Hierarchical view
   $('#tree ul').css('display', 'none');

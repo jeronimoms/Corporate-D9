@@ -31,7 +31,8 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
     $form['info']['created'] = [
       '#type' => 'item',
       '#title' => $this->t('Created'),
-      '#markup' => \Drupal::service('date.formatter')->format($job->getCreatedTime(), 'short'),
+      '#markup' => \Drupal::service('date.formatter')
+        ->format($job->getCreatedTime(), 'short'),
       '#prefix' => '<div class="tmgmt-ui-created tmgmt-ui-info-item">',
       '#suffix' => '</div>',
     ];
@@ -99,33 +100,36 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
       '#value' => $job->getPriority(),
     ];
 
-    $jobItemView = Views::getView('tmgmt_job_items');
-    if ($jobItemView) {
-      $form['job_items_wrapper'] = [
-        '#type' => 'container',
-        '#weight' => 10,
-        '#prefix' => '<div id="tmgmt-ui-job-checkout-details">',
-        '#suffix' => '</div>',
-      ];
-      $form['footer'] = tmgmt_color_job_item_legend();
-      $form['footer']['#weight'] = 100;
-      // Translation jobs.
-      $output = $jobItemView->preview($job->isSubmittable() ? 'checkout' : 'submitted', [$job->id()]);
-      $form['job_items_wrapper']['items'] = [
-        '#type' => 'details',
-        '#title' => t('Job items'),
-        '#open' => in_array($job->getState(), [JobInterface::STATE_ACTIVE]),
-        '#prefix' => '<div class="' . 'tmgmt-ui-job-items ' . ($job->isSubmittable() ? 'tmgmt-ui-job-submit' : 'tmgmt-ui-job-manage') . '">',
-        'view' => $output,
-        '#attributes' => [
-          'class' => [
-            'tmgmt-ui-job-items',
-            $job->isSubmittable() ? 'tmgmt-ui-job-submit' : 'tmgmt-ui-job-manage',
-          ],
+    $form['job_items_wrapper'] = [
+      '#type' => 'container',
+      '#weight' => 10,
+      '#prefix' => '<div id="tmgmt-ui-job-checkout-details">',
+      '#suffix' => '</div>',
+    ];
+    $form['footer'] = tmgmt_color_job_item_legend();
+    $form['footer']['#weight'] = 100;
+
+    // Translation jobs.
+    $form['job_items_wrapper']['items'] = [
+      '#type' => 'details',
+      '#title' => t('Job items'),
+      '#open' => in_array($job->getState(), [JobInterface::STATE_ACTIVE]),
+      '#prefix' => '<div class="' . 'tmgmt-ui-job-items ' . ($job->isSubmittable() ? 'tmgmt-ui-job-submit' : 'tmgmt-ui-job-manage') . '">',
+      'view' => [
+        '#type' => 'view',
+        '#name' => 'tmgmt_job_items',
+        '#display_id' => $job->isSubmittable() ? 'checkout' : 'submitted',
+        '#arguments' => [$job->id()],
+        '#weight' => 30,
+      ],
+      '#attributes' => [
+        'class' => [
+          'tmgmt-ui-job-items',
+          $job->isSubmittable() ? 'tmgmt-ui-job-submit' : 'tmgmt-ui-job-manage',
         ],
-        '#suffix' => '</div>',
-      ];
-    }
+      ],
+      '#suffix' => '</div>',
+    ];
 
     $form['translator_wrapper'] = [
       '#type' => 'details',

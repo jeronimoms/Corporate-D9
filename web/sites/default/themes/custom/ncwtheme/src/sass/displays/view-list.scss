@@ -84,6 +84,17 @@
   }
 }
 
+/* View Directives filtered*/
+.view-search-directives{
+  .revamp-row{
+    .field--label-inline {
+      .field__label {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 /* View node header - Node related with the View - Placed before the View */
 .custom-view-node-header{
   padding-bottom: 2rem;
@@ -126,12 +137,6 @@
     font-size: 0.9rem;
     .field__label {
       margin: 0 5px 0 0;
-      font-weight: bold;
-      color: $text-color-blue;
-      font-family: "Open Sans Condensed";
-    }
-    .field__item {
-      font-family: "Open Sans Condensed";
     }
   }
   .field--name-field-external-url {
