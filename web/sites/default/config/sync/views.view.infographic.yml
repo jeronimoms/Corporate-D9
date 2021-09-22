@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_image_media
     - field.storage.node.field_tags
     - field.storage.node.field_thumbnail_media
+    - image.style.infographic_thumbail_view
     - image.style.infographic_thumbnail
     - image.style.medium
     - node.type.infographic
@@ -878,7 +879,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: infographic_thumbnail
+            image_style: infographic_thumbail_view
             image_link: content
           group_column: target_id
           group_columns: {  }
