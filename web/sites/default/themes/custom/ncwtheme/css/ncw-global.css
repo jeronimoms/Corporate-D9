@@ -5037,6 +5037,35 @@ body.tools-and-resources article.node--type-article.node--promoted .field--name-
   text-decoration: none;
 }
 
+/* Block Newsletter page - Node 9 */
+.block-newsletter-node-9 {
+  position: relative;
+  background: #ecf1fb;
+  margin-right: 1rem;
+  padding: 25px 20px;
+  margin-bottom: 2rem;
+  border-radius: 3px;
+}
+.block-newsletter-node-9 form label {
+  font-weight: normal;
+}
+.block-newsletter-node-9 .field--name-field-newsletter-privacy-notice {
+  padding-top: 10px;
+}
+.block-newsletter-node-9 .field--name-field-newsletter-privacy-notice a {
+  font-size: 0.9rem;
+  padding-top: 10px;
+  font-weight: 600;
+  border-bottom: 1px solid #c72272;
+}
+.block-newsletter-node-9 .field--name-field-newsletter-privacy-notice a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #003399;
+}
+.block-newsletter-node-9 .form-check {
+  padding-bottom: 10px;
+}
+
 /**** OLD, Remove when the new one is ready ***/
 .newsletter-block-wrapper {
   background: #ecf1fb;
