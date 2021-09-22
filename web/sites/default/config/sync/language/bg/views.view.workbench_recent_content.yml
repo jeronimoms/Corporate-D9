@@ -1,13 +1,15 @@
 display:
   default:
-    display_title: Master
     display_options:
       fields:
         type:
           label: Type
-        message:
-          label: Message
       filters:
         type:
           expose:
             label: Type
+  block_1:
+    display_options:
+      fields:
+        type:
+          label: Type

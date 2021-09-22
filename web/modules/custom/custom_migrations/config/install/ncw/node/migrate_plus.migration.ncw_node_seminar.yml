@@ -158,15 +158,15 @@ process:
   field_thesaurus_2020: field_thesaurus_2020
   moderation_state: moderation_state
   # Documents.
-  field_related_resources_media:
-    plugin: file_id_lookup
-    source: field_related_resources
-    migration:
-      - ncw_node_seminar_media_documents_1
-    no_stub: true
-  field_report_media:
-    plugin: file_id_lookup
-    source: field_report
-    migration:
-      - ncw_node_seminar_media_documents_1
-    no_stub: true
+#  field_related_resources_media:
+#    plugin: file_id_lookup
+#    source: field_related_resources
+#    migration:
+#      - ncw_node_seminar_media_documents_1
+#    no_stub: true
+#  field_report_media:
+#    plugin: file_id_lookup
+#    source: field_report
+#    migration:
+#      - ncw_node_seminar_media_documents_1
+#    no_stub: true

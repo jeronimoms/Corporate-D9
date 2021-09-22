@@ -138,9 +138,9 @@ process:
   field_archived: field_archived
   moderation_state: moderation_state
   #documents
-  field_file_media:
-    plugin: file_id_lookup
-    source: field_related_resources
-    migration:
-      - ncw_node_job_vacancies_media_documents
-    no_stub: true
+#  field_file_media:
+#    plugin: file_id_lookup
+#    source: field_related_resources
+#    migration:
+#      - ncw_node_job_vacancies_media_documents
+#    no_stub: true
