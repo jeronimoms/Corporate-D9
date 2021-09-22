@@ -156,7 +156,7 @@ function translation_workflow_update_9007(&$sandbox) {
  * Implements hook_update_N().
  */
 function translation_workflow_update_9008(&$sandbox) {
-  // Add taget_language field to JobItems.
+  // Add taget_language field to Translation workflow jobs.
   $updateManager = Drupal::entityDefinitionUpdateManager();
   $updateManager->installFieldStorageDefinition(
     'file_sent',
@@ -187,4 +187,20 @@ function translation_workflow_update_9010(&$sandbox) {
   foreach ($jobs as $job) {
     $job->set('label', 'Translation job #' . $job->id())->save();
   }
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function translation_workflow_update_9011(&$sandbox) {
+  // Add retranslation_data field to JobItems.
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+  $updateManager->installFieldStorageDefinition(
+    'retranslation_data',
+    'tmgmt_job_item',
+    'translation_workflow',
+    BaseFieldDefinition::create('string_long')
+      ->setLabel(t('Retranslation data'))
+      ->setDescription(t('The source retranslation data'))
+  );
 }

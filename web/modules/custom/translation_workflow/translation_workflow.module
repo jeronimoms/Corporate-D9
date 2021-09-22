@@ -13,7 +13,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 use Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobItemViewsData;
 use Drupal\translation_workflow\Form\MultipleTargetLanguageJobItemForm;
-use Drupal\translation_workflow\Form\RetranslateForm;
 use Drupal\translation_workflow\MultipleTargetLanguageConfigSourcePluginUi;
 use Drupal\translation_workflow\MultipleTargetLanguageLocaleSourcePluginUi;
 use Drupal\translation_workflow\MutipleTargetLanguageContentEntitySourcePluginUi;
@@ -48,7 +47,8 @@ function translation_workflow_form_alter_validate(&$form, FormStateInterface $fo
     }
     $existingJobItems = MultipleTargetLanguageJobItem::jobItemExists(['item_id' => $source_items]);
     if (!empty($existingJobItems)) {
-      \Drupal::messenger()->addWarning(t('Some of the added elements are already in the cart.'));
+      \Drupal::messenger()
+        ->addWarning(t('Some of the added elements are already in the cart.'));
     }
   }
 }
@@ -122,7 +122,7 @@ function _translation_workflow_form_tmgmt_cart_form_validate(array &$form, FormS
       ->condition('target_language', $targetLanguages, 'IN')
       ->execute();
     if (!empty($queryResults)) {
-      $form_state->setErrorByName('', t('Cannot add items already in translation'));
+      // $form_state->setErrorByName('', t('Cannot add items already in translation.'));
     }
   }
 }
@@ -169,30 +169,6 @@ function translation_workflow_form_views_exposed_form_alter(&$form, FormStateInt
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- */
-function translation_workflow_form_node_article_retranslate_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Delete not needed elements.
-  if (isset($form['url_redirects'])) {
-    unset($form['url_redirects']);
-  }
-  if (isset($form['menu'])) {
-    unset($form['menu']);
-  }
-  if (isset($form['simplenews_token_help'])) {
-    unset($form['simplenews_token_help']);
-  }
-  if (isset($form['form_token'])) {
-    unset($form['form_token']);
-  }
-
-  $form['#process'] = array_filter($form['#process'], function ($elem) {
-    return (!is_string($elem) || ($elem != 'meta_position_form_node_form_process'));
-  });
-
-}
-
-/**
  * Implements hook_ENTITY_TYPE_create().
  */
 function translation_workflow_tmgmt_job_multiple_target_create(EntityInterface $entity) {
@@ -226,11 +202,6 @@ function translation_workflow_entity_type_alter(array &$entity_types) {
     $entity_types['tmgmt_job_item']->setHandlerClass('form', [
       'edit' => MultipleTargetLanguageJobItemForm::class,
     ]);
-  }
-  if (isset($entity_types['node'])) {
-    $entity_types['node']->setFormClass('retranslate', RetranslateForm::class)
-      ->setLinkTemplate('retranslate-form', '/node/{node}/retranslate');
-
   }
 }
 
