@@ -8,7 +8,7 @@ dependencies:
     - field.field.media.image_caption.field_media_image
     - field.field.media.image_caption.field_nace
     - field.field.media.image_caption.field_tags
-    - image.style.thumbnail
+    - image.style.original_image
     - media.type.image_caption
   module:
     - image_widget_crop
@@ -47,8 +47,8 @@ content:
     settings:
       show_default_crop: true
       warn_multiple_usages: true
-      preview_image_style: thumbnail
-      crop_preview_image_style: home_news
+      preview_image_style: original_image
+      crop_preview_image_style: original_image
       progress_indicator: throbber
       crop_list:
         - articles_crop

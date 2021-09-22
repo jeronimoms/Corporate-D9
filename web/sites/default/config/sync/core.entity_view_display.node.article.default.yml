@@ -24,7 +24,7 @@ dependencies:
     - field.field.node.article.field_thesaurus_2020
     - field.field.node.article.field_wiki_categories
     - field.field.node.article.simplenews_issue
-    - image.style.1000x1000
+    - image.style.articles_images
     - node.type.article
   module:
     - ds
@@ -73,7 +73,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: 1000x1000
+      image_style: articles_images
       image_link: ''
     third_party_settings:
       ds:

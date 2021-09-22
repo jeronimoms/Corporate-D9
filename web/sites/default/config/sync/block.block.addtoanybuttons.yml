@@ -25,8 +25,8 @@ visibility:
     id: request_path
     pages: "/publications/*\r\n/tools-and-resources/seminars/*\r\n/newsletter/*\r\n/oshwiki/*"
     negate: true
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
+  node_type:
+    id: node_type
     bundles:
       25th_anniversary: 25th_anniversary
       article: article
@@ -38,8 +38,8 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  node_type:
-    id: node_type
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     bundles:
       25th_anniversary: 25th_anniversary
       article: article

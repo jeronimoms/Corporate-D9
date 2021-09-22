@@ -2,6 +2,7 @@
 
 namespace Drupal\translation_workflow\Entity;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\tmgmt\Entity\JobItem;
@@ -31,6 +32,10 @@ class MultipleTargetLanguageJobItem extends JobItem {
       ->setLabel(t('Target language code'))
       ->setCardinality(1)
       ->setDescription(t('The target language.'));
+
+    $fieldsDefinitions['retranslation_data'] = BaseFieldDefinition::create('string_long')
+      ->setLabel(t('Retranslation data'))
+      ->setDescription(t('The source retranslation data'));
     return $fieldsDefinitions;
   }
 
@@ -236,6 +241,40 @@ class MultipleTargetLanguageJobItem extends JobItem {
     ], 'IN');
     $existingJobItems = $query->execute();
     return !empty($existingJobItems);
+  }
+
+  /**
+   * Set retranslation data.
+   *
+   * @param array $retranslationData
+   *   Retranslation data to add.
+   */
+  public function setRetranslationData(array $retranslationData = []) {
+    $this->set('retranslation_data', Json::encode($retranslationData));
+  }
+
+  /**
+   * Get retranslation dataadded to job.
+   *
+   * @return array|null
+   *   Retranslation data.
+   */
+  public function getRetranlationData() {
+    return Json::decode($this->get('retranslation_data')->value);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getSourceData() {
+    $retranslationData = $this->getRetranlationData();
+    $ret = parent::getSourceData();
+    if (!empty($retranslationData)) {
+      $ret = array_filter($ret, function ($key) use ($retranslationData) {
+        return in_array($key, array_keys($retranslationData));
+      }, ARRAY_FILTER_USE_KEY);
+    }
+    return $ret;
   }
 
 }

@@ -169,24 +169,6 @@ process:
   field_show_on: field_show_on
   field_booklet: field_booklet
   moderation_state: moderation_state
-  field_image_media:
-    plugin: file_id_lookup
-    source: field_cover_image
-    migration:
-      - ncw_node_publication_field_image_media_1
-    no_stub: true
-  field_file_media:
-    plugin: file_id_lookup
-    source: field_file
-    migration:
-      - ncw_node_publication_media_documents_1
-    no_stub: true
-  field_publication_res_files:
-    plugin: file_id_lookup
-    source: field_publication_related_res
-    migration:
-      - ncw_node_publication_media_documents_1
-    no_stub: true
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
