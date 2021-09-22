@@ -22,8 +22,6 @@ dependencies:
     - 'taxonomy_term:contact_type:319587bf-4df6-418b-9526-7b38371b458c'
     - 'taxonomy_term:country_status:65716bcf-0823-4b2a-aa1d-fc33f21aab41'
     - 'taxonomy_term:country_status:7240dc31-08d8-4f4f-9d6a-f15f79e3b276'
-    - 'taxonomy_term:wg_category:25552fad-e958-47c6-aa3f-69a5de6345f5'
-    - 'taxonomy_term:wg_category:2c8ab965-3be1-4dce-bde2-9b8832c85a3c'
   module:
     - node
     - taxonomy
@@ -1418,53 +1416,6 @@ display:
           hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
-        field_wg_category_target_id:
-          id: field_wg_category_target_id
-          table: node__field_wg_category
-          field: field_wg_category_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: not
-          value:
-            3027: 3027
-            4881: 4881
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: shs
-          limit: true
-          vid: wg_category
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
         field_country_status_target_id:
           id: field_country_status_target_id
           table: taxonomy_term__field_country_status
@@ -1558,11 +1509,11 @@ display:
         groups:
           1: AND
       sorts:
-        field_country_target_id:
-          id: field_country_target_id
-          table: node__field_country
-          field: field_country_target_id
-          relationship: none
+        field_iso2_value:
+          id: field_iso2_value
+          table: taxonomy_term__field_iso2
+          field: field_iso2_value
+          relationship: field_country
           group_type: group
           admin_label: ''
           order: ASC

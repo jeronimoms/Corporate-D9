@@ -6,12 +6,17 @@ dependencies:
     - field.storage.node.field_image_media
     - media.type.image
     - node.type.infographic
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.infographic.field_image_media
 field_name: field_image_media
 entity_type: node
 bundle: infographic
 label: Image
-description: 'The header image that will be displayed on page.'
+description: 'The original Image for Infographic. Use "Original" crop'
 required: false
 translatable: true
 default_value: {  }

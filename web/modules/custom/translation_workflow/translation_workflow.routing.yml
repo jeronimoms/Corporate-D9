@@ -19,11 +19,10 @@ entity.tmgmt_job_multiple_target.abort_form:
   requirements:
     _entity_access: tmgmt_job_multiple_target.update
 
-entity.node.retranslate:
+translation_workflow.retranslate:
   path: '/node/{node}/retranslate'
   defaults:
-    _entity_form: 'node.retranslate'
-    _title: 'Retranslate'
+    _form: '\Drupal\translation_workflow\Form\MultipleTargetLanguageRetranslateForm'
   requirements:
     _permission: 'translate interface'
     _entity_access: 'node.view'
