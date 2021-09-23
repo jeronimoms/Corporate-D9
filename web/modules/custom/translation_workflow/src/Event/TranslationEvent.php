@@ -3,8 +3,6 @@
 namespace Drupal\translation_workflow\Event;
 
 use Drupal\Component\EventDispatcher\Event;
-use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\translation_workflow\Entity\PriorityJobInterface;
 
 /**
  * Event class for translation notifications.
