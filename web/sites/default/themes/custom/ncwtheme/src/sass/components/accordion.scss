@@ -44,7 +44,7 @@
       outline: none;
     }
 
-    .wysiwyg_accordion_panel {
+    .wysiwyg_accordion_panel{
       display: none;
       padding: 10px 0;
       h4{
@@ -55,6 +55,10 @@
       p.wysiwyg_accordion_panel{
         display: block;
       }
+    }
+    ol {
+      display: none;
+      padding-left: 40px;
     }
 
     .wysiwyg_accordion_panel.views {

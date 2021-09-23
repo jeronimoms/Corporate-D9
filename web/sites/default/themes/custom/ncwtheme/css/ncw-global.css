@@ -176,6 +176,10 @@ input[type=search] {
 #main .wysiwyg_accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .quicktabs-accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .view-view-glossary .wysiwyg_accordion_panel p.wysiwyg_accordion_panel {
   display: block;
 }
+#main .wysiwyg_accordion ol, #main .quicktabs-accordion ol, #main .view-view-glossary ol {
+  display: none;
+  padding-left: 40px;
+}
 #main .wysiwyg_accordion .wysiwyg_accordion_panel.views, #main .quicktabs-accordion .wysiwyg_accordion_panel.views, #main .view-view-glossary .wysiwyg_accordion_panel.views {
   padding-left: 15px;
   padding-right: 15px;
