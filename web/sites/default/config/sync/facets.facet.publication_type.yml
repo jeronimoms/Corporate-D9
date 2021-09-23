@@ -40,7 +40,7 @@ processor_configs:
     weights:
       build: 50
     settings:
-      exclude: '3022, 2, 1, 7, 6, 5, 5192, 4'
+      exclude: '3022, 2, 1, 7, 6, 5, 4'
       regex: false
       invert: false
   term_weight_widget_order:
