@@ -11,12 +11,13 @@ services:
     public: false
     arguments: ['@translation_workflow.tmgmt.job_checkout_manager.inner', '@request_stack', '@tmgmt.queue', '@module_handler', '@config.factory', '@entity_type.manager']
 
-#  translation_workflow.tmgmt.tmgmt_job_item.breadcrumb:
-#    class: Drupal\translation_workflow\Menu\MultipleTargetLanguageJobItemBreadcrumbBuilder
-#    decorates: tmgmt.tmgmt_job_item.breadcrumb
-#    public: false
-#    arguments: ['@translation_workflow.tmgmt.tmgmt_job_item.breadcrumb.inner']
   translation_workflow.route_subscriber:
     class: Drupal\translation_workflow\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  translation_workflow.notifications:
+    class: Drupal\translation_workflow\EventSubscriber\TranslationEventSubscriber
+    arguments: ['@plugin.manager.mail']
     tags:
       - { name: event_subscriber }

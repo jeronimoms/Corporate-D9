@@ -118,12 +118,6 @@ process:
       process:
         target_id: tid
   moderation_state: moderation_state
-  field_related_resources_media:
-    plugin: file_id_lookup
-    source: field_related_resources
-    migration:
-      - ncw_node_calls_media_documents_1
-    no_stub: true
 destination:
   plugin: 'entity:node'
 migration_dependencies: null

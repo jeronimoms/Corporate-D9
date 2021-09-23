@@ -5,8 +5,8 @@ dependencies: {  }
 id: articles_crop
 label: Articles
 description: 'Crop for images in the articles'
-aspect_ratio: ''
-soft_limit_width: 500
-soft_limit_height: 150
-hard_limit_width: 500
-hard_limit_height: 150
+aspect_ratio: '540:170'
+soft_limit_width: 540
+soft_limit_height: 170
+hard_limit_width: 540
+hard_limit_height: 170

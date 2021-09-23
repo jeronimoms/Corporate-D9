@@ -16,6 +16,7 @@ use Drupal\tmgmt\Entity\RemoteMapping;
 use Drupal\tmgmt\JobItemInterface;
 use Drupal\tmgmt\TMGMTException;
 use Drupal\tmgmt\Translator\TranslatableResult;
+use Drupal\translation_workflow\Event\TranslationEvent;
 use Drupal\user\EntityOwnerInterface;
 use Drupal\user\UserInterface;
 
@@ -464,6 +465,7 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
         $this->addMessage($message, $variables, $type);
       }
     }
+    \Drupal::service('event_dispatcher')->dispatch(new TranslationEvent($this), TranslationEvent::TRANSLATION_JOB_STATE_CHANGED);
     return $this->getState();
   }
 
