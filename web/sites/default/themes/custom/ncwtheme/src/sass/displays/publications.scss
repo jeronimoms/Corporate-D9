@@ -285,6 +285,12 @@ body.node--type-publication{
     background: url(../images/back-tit-blue.png) repeat-x scroll 0 100% transparent;
     margin-bottom: 1.3rem;
     padding-bottom: 1.3rem;
+    article{
+      background: none !important;
+      margin-bottom: 0;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
     .layout__region--content {
       display: flex;
       gap: 24px;

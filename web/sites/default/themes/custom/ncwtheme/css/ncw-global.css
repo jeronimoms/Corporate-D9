@@ -5690,6 +5690,12 @@ body.node--type-publication {
   margin-bottom: 1.3rem;
   padding-bottom: 1.3rem;
 }
+.field--name-field-aditional-resources .publication-field article {
+  background: none !important;
+  margin-bottom: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
 .field--name-field-aditional-resources .publication-field .layout__region--content {
   display: flex;
   gap: 24px;
