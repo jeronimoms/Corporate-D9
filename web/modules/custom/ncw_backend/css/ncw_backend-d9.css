@@ -2,25 +2,29 @@
 .node-events-form .layout-region-node-main .field--name-field-organization label,
 .node-events-form .layout-region-node-main .field--name-field-country-code label,
 .node-events-form .layout-region-node-main .field--name-field-city label,
-.node-events-form .layout-region-node-main .field--name-body label {
+.node-events-form .layout-region-node-main .field--name-body label, .node-events-edit-form .layout-region-node-main .field--name-title label,
+.node-events-edit-form .layout-region-node-main .field--name-field-organization label,
+.node-events-edit-form .layout-region-node-main .field--name-field-country-code label,
+.node-events-edit-form .layout-region-node-main .field--name-field-city label,
+.node-events-edit-form .layout-region-node-main .field--name-body label {
   background: url(../images/eye-backend.png) no-repeat 1px -3px;
   padding-left: 30px;
 }
-.node-events-form .layout-region-node-main .field--name-field-date fieldset {
+.node-events-form .layout-region-node-main .field--name-field-date fieldset, .node-events-edit-form .layout-region-node-main .field--name-field-date fieldset {
   background: url(../images/eye-backend.png) no-repeat 3px 7px;
   padding-left: 30px;
 }
-.node-events-form .layout-region-node-main .field--name-field-website-of-event h4 {
+.node-events-form .layout-region-node-main .field--name-field-website-of-event h4, .node-events-edit-form .layout-region-node-main .field--name-field-website-of-event h4 {
   background: url(../images/eye-backend.png) no-repeat 1px -4px;
   padding-left: 30px;
   height: 18px;
   display: block;
 }
-.node-events-form .layout-region-node-main .field--name-field-related-documents .seven-details__summary span:first-child {
+.node-events-form .layout-region-node-main .field--name-field-related-documents .seven-details__summary span:first-child, .node-events-edit-form .layout-region-node-main .field--name-field-related-documents .seven-details__summary span:first-child {
   background: url(../images/eye-backend.png) no-repeat 1px -5px;
   padding-left: 30px;
 }
-.node-events-form .layout-region-node-main .field--name-body .form-type-select label {
+.node-events-form .layout-region-node-main .field--name-body .form-type-select label, .node-events-edit-form .layout-region-node-main .field--name-body .form-type-select label {
   background: transparent;
   padding-left: 0;
 }
