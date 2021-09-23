@@ -3086,6 +3086,10 @@ body.node--type-infographic .field--name-body {
   text-decoration: underline;
 }
 
+.node--type-news .field--type-image img, .node--type-news .field--name-field-user-picture img {
+  margin: 0 0 0.3em;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;

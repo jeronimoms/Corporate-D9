@@ -1375,3 +1375,9 @@ body.node--type-infographic{
     text-decoration: underline;
   }
 }
+
+.node--type-news{
+  .field--type-image img, .field--name-field-user-picture img{
+    margin: 0 0 0.3em;
+  }
+}
