@@ -166,7 +166,7 @@ input[type=search] {
 }
 #main .wysiwyg_accordion .wysiwyg_accordion_panel, #main .quicktabs-accordion .wysiwyg_accordion_panel, #main .view-view-glossary .wysiwyg_accordion_panel {
   display: none;
-  padding: 10px 0;
+  margin: 0.2em 0 0.5em;
 }
 #main .wysiwyg_accordion .wysiwyg_accordion_panel h4, #main .quicktabs-accordion .wysiwyg_accordion_panel h4, #main .view-view-glossary .wysiwyg_accordion_panel h4 {
   font-size: 1rem;
@@ -175,6 +175,10 @@ input[type=search] {
 }
 #main .wysiwyg_accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .quicktabs-accordion .wysiwyg_accordion_panel p.wysiwyg_accordion_panel, #main .view-view-glossary .wysiwyg_accordion_panel p.wysiwyg_accordion_panel {
   display: block;
+}
+#main .wysiwyg_accordion ol, #main .quicktabs-accordion ol, #main .view-view-glossary ol {
+  display: none;
+  padding-left: 40px;
 }
 #main .wysiwyg_accordion .wysiwyg_accordion_panel.views, #main .quicktabs-accordion .wysiwyg_accordion_panel.views, #main .view-view-glossary .wysiwyg_accordion_panel.views {
   padding-left: 15px;
@@ -1126,6 +1130,7 @@ h2 a:hover {
   font-weight: 600;
 }
 .node--type-article .field--name-body h2 strong {
+  color: #003399;
   font-weight: 600;
 }
 .node--type-article .field--name-body h3 {
@@ -1135,9 +1140,11 @@ h2 a:hover {
   font-weight: 600;
 }
 .node--type-article .field--name-body h4 {
+  font-size: 0.9rem;
   font-weight: 600;
 }
 .node--type-article .field--name-body h4 strong {
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
@@ -1886,6 +1893,37 @@ div.pagerer-right-pane {
   width: auto;
   height: auto;
 }
+#main .wysiwyg_accordion_panel table {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-color: transparent;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+}
+#main .wysiwyg_accordion_panel table tr {
+  background: #FFF;
+}
+#main .wysiwyg_accordion_panel table tr th {
+  color: #000;
+  font-size: 0.9rem;
+  background: #FFF;
+  font-weight: bold;
+  border: 0;
+}
+#main .wysiwyg_accordion_panel table tr td {
+  font-size: 1rem;
+  padding: 0.9rem;
+  border: 0;
+}
+#main .wysiwyg_accordion_panel table tr td p {
+  font-size: 0.9rem;
+}
+#main .wysiwyg_accordion_panel table tr td img {
+  width: auto;
+  height: auto;
+}
 
 /* Contact us */
 .page-node-5468 #main .node--type-article table {
@@ -1963,14 +2001,14 @@ ul.menu .menu-item .field--type-image img {
 }
 
 /* Paragraps - List */
-body .field--name-body p, body .field--name-body ul, body .field--name-body ol, body .field--name-field-summary-html p, body .field--name-field-summary-html ul, body .field--name-field-summary-html ol {
+body .field--name-body p, body .field--name-body ul, body .field--name-body ol, body .field--name-body div, body .field--name-field-summary-html p, body .field--name-field-summary-html ul, body .field--name-field-summary-html ol, body .field--name-field-summary-html div {
   font-size: 0.9rem;
 }
-body .field--name-body p a, body .field--name-body ul a, body .field--name-body ol a, body .field--name-field-summary-html p a, body .field--name-field-summary-html ul a, body .field--name-field-summary-html ol a {
+body .field--name-body p a, body .field--name-body ul a, body .field--name-body ol a, body .field--name-body div a, body .field--name-field-summary-html p a, body .field--name-field-summary-html ul a, body .field--name-field-summary-html ol a, body .field--name-field-summary-html div a {
   text-decoration: none;
   border-bottom: 1px solid #c72272;
 }
-body .field--name-body p a:hover, body .field--name-body ul a:hover, body .field--name-body ol a:hover, body .field--name-field-summary-html p a:hover, body .field--name-field-summary-html ul a:hover, body .field--name-field-summary-html ol a:hover {
+body .field--name-body p a:hover, body .field--name-body ul a:hover, body .field--name-body ol a:hover, body .field--name-body div a:hover, body .field--name-field-summary-html p a:hover, body .field--name-field-summary-html ul a:hover, body .field--name-field-summary-html ol a:hover, body .field--name-field-summary-html div a:hover {
   text-decoration: none;
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
@@ -2576,7 +2614,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   margin-top: 0.8rem;
   margin-bottom: 10px;
   background: #e8ecf5;
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
 }
 .field--name-field-related-oshwiki-articles > .field__label {
   margin-bottom: 0.5rem;
@@ -2663,7 +2701,10 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 .field--name-field-related-oshwiki-articles .field__items > .field__item:last-child:after {
   display: none;
 }
-.field--name-field-related-oshwiki-articles a[target=_blank], .field--name-field-related-oshwiki-articles .view a[target=_blank] {
+.field--name-field-related-oshwiki-articles .field__items > .field__item:nth-child(2) {
+  border-bottom: 0;
+}
+.field--name-field-related-oshwiki-articles div.field--name-field-wiki-page-url a[target=_blank], .field--name-field-related-oshwiki-articles div.field--name-field-wiki-page-url .view a[target=_blank] {
   background: none !important;
   padding-right: 0 !important;
   border-bottom: 0 !important;
@@ -3069,6 +3110,17 @@ body.node--type-infographic .field--name-body {
 /* Guideline Detail */
 .node--type-guideline .field--name-field-available-in-languages .field__item p {
   margin-bottom: 0;
+}
+
+#block-copyrigth > div.content > div > div > p > a {
+  text-decoration: none;
+}
+#block-copyrigth > div.content > div > div > p > a:hover {
+  text-decoration: underline;
+}
+
+.node--type-news .field--type-image img, .node--type-news .field--name-field-user-picture img {
+  margin: 0 0 0.3em;
 }
 
 /* Breadcrumbs */
@@ -5686,6 +5738,12 @@ body.node--type-publication {
   background: url(../images/back-tit-blue.png) repeat-x scroll 0 100% transparent;
   margin-bottom: 1.3rem;
   padding-bottom: 1.3rem;
+}
+.field--name-field-aditional-resources .publication-field article {
+  background: none !important;
+  margin-bottom: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 .field--name-field-aditional-resources .publication-field .layout__region--content {
   display: flex;

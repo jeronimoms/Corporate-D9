@@ -72,7 +72,7 @@ ul.menu{
 /* Paragraps - List */
 body{
   .field--name-body, .field--name-field-summary-html{
-    p, ul, ol{
+    p, ul, ol, div{
       font-size: 0.9rem;
 
       a {
@@ -798,7 +798,7 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
   margin-top: 0.8rem;
   margin-bottom: 10px;
   background: $bg-color-blue-light-2;
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
   > .field__label {
     margin-bottom: 0.5rem;
     padding: 12px 2.6rem;
@@ -885,11 +885,16 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
         display: none;
       }
     }
+    > .field__item:nth-child(2) {
+      border-bottom: 0;
+    }
   }
-  a[target=_blank], .view a[target=_blank]{
-    background: none !important;
-    padding-right: 0 !important;
-    border-bottom: 0 !important;
+  div.field--name-field-wiki-page-url{
+    a[target=_blank], .view a[target=_blank]{
+      background: none !important;
+      padding-right: 0 !important;
+      border-bottom: 0 !important;
+    }
   }
 }
 
@@ -1364,3 +1369,15 @@ body.node--type-infographic{
   }
 }
 
+#block-copyrigth > div.content > div > div > p > a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.node--type-news{
+  .field--type-image img, .field--name-field-user-picture img{
+    margin: 0 0 0.3em;
+  }
+}

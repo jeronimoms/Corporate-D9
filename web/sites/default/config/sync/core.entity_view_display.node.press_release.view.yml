@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.press_release.field_pr_embargo_date
     - field.field.node.press_release.field_pr_notes_to_editor
     - field.field.node.press_release.field_publication_date
+    - field.field.node.press_release.field_published
     - field.field.node.press_release.field_quote
     - field.field.node.press_release.field_section
     - field.field.node.press_release.field_summary_html
@@ -70,6 +71,11 @@ targetEntityType: node
 bundle: press_release
 mode: view
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_image_media:
     weight: 2
     label: hidden
@@ -110,6 +116,7 @@ content:
 hidden:
   addtoany: true
   body: true
+  breadcrumbs: true
   field_activity: true
   field_aditional_resources: true
   field_archived: true
@@ -117,6 +124,7 @@ hidden:
   field_nace_codes: true
   field_pr_embargo_date: true
   field_pr_notes_to_editor: true
+  field_published: true
   field_quote: true
   field_section: true
   field_tags: true

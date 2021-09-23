@@ -14,12 +14,14 @@ dependencies:
     - field.field.node.press_release.field_pr_embargo_date
     - field.field.node.press_release.field_pr_notes_to_editor
     - field.field.node.press_release.field_publication_date
+    - field.field.node.press_release.field_published
     - field.field.node.press_release.field_quote
     - field.field.node.press_release.field_section
     - field.field.node.press_release.field_summary_html
     - field.field.node.press_release.field_tags
     - field.field.node.press_release.field_thesaurus_2020
     - node.type.press_release
+    - workflows.workflow.editorial
   module:
     - chosen_field
     - content_moderation
@@ -122,6 +124,13 @@ content:
       time_type: '24'
     third_party_settings: {  }
     type: datetime_datelist
+    region: content
+  field_published:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_quote:
     weight: 7

@@ -5,6 +5,8 @@
  * Translation workflow module hooks.
  */
 
+use Drupal\tmgmt\Entity\Translator;
+use Drupal\tmgmt\TMGMTException;
 use Drupal\translation_workflow\Entity\PriorityJobInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
@@ -17,6 +19,54 @@ use Drupal\translation_workflow\Form\MultipleTargetLanguageJobItemForm;
 use Drupal\translation_workflow\MultipleTargetLanguageConfigSourcePluginUi;
 use Drupal\translation_workflow\MultipleTargetLanguageLocaleSourcePluginUi;
 use Drupal\translation_workflow\MutipleTargetLanguageContentEntitySourcePluginUi;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function translation_workflow_form_tmgmt_content_translate_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['actions']['request'])) {
+    $form['actions']['request']['#submit'] = ['tmgmt_content_translate_form_submit'];
+  }
+}
+
+/**
+ * {@inheritdoc}
+ */
+function tmgmt_content_translate_form_submit(array &$form, FormStateInterface $form_state) {
+  /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+  $entity = $form_state->get('entity');
+  $values = $form_state->getValues();
+  $jobs = [];
+  foreach (array_keys(array_filter($values['languages'])) as $langcode) {
+    // Create the job object.
+    $translators = Translator::loadMultiple();
+
+    $job = MultipleTargetLanguageJob::create([
+      'source_language' => $entity->language(),
+      'target_languages' => [$langcode],
+      'uid' => \Drupal::currentUser()->id(),
+      'job_items' => [],
+      'translator' => reset($translators),
+    ]);
+    try {
+      // Add the job item.
+      $item = $job->addItem('content', $entity->getEntityTypeId(), $entity->id());
+      $item->set('target_language', $langcode);
+      $item->save();
+      // Append this job to the array of created jobs so we can redirect the user
+      // to a multistep checkout form if necessary.
+      $jobs[$job->id()] = $job;
+    } catch (TMGMTException $e) {
+      watchdog_exception('tmgmt', $e);
+      $languages = \Drupal::languageManager()->getLanguages();
+      $target_lang_name = $languages[$langcode]->language;
+      \Drupal::messenger()
+        ->addError(t('Unable to add job item for target language %name. Make sure the source content is not empty.', ['%name' => $target_lang_name]));
+    }
+  }
+  \Drupal::service('tmgmt.job_checkout_manager')
+    ->checkoutAndRedirect($form_state, $jobs);
+}
 
 /**
  * Implements hook_entity_update().
