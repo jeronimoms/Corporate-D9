@@ -52,7 +52,7 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
 
     $targetLanguagesCodes = $job->getTargetLangcodes();
 
-    $form['language_info']['target_languages'] = [
+    $form['language_info']['show_target_languages'] = [
       '#title' => t('Target languages') . ' (' . count($targetLanguagesCodes) . ')',
       '#type' => 'checkboxes',
       '#default_value' => $targetLanguagesCodes,
@@ -66,7 +66,7 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
       return $language->getId();
     }, \Drupal::languageManager()->getLanguages());
 
-    $form['language_info']['target_languages_not'] = [
+    $form['language_info']['show_target_languages_not'] = [
       '#title' => '',
       '#type' => 'checkboxes',
       '#options' => array_combine($untranslated, $untranslated),
@@ -190,6 +190,11 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
     ];
 
     return $parentActions;
+  }
+
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    parent::submitForm($form, $form_state);
+    $this->messenger()->addStatus($this->t('Translation job saved.'));
   }
 
   /**
