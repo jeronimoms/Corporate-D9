@@ -19,7 +19,7 @@ widget:
   type: checkbox
   config:
     show_numbers: false
-    soft_limit: 40
+    soft_limit: 0
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
@@ -28,19 +28,13 @@ widget:
     hide_reset_when_no_selection: false
 query_operator: or
 use_hierarchy: true
-keep_hierarchy_parents_active: true
+keep_hierarchy_parents_active: false
 expand_hierarchy: false
 enable_parent_when_child_gets_disabled: false
-hard_limit: 50
+hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  count_widget_order:
-    processor_id: count_widget_order
-    weights:
-      sort: -8
-    settings:
-      sort: DESC
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:
@@ -50,21 +44,27 @@ processor_configs:
   exclude_specified_items:
     processor_id: exclude_specified_items
     weights:
-      build: 50
+      build: -9
     settings:
-      exclude: '43, 4526, 53, 145, 46, 78, 3119, 37, 70, 106, 119, 3109, 3112, 3079, 3884, 3115, 3110, 123, 3114, 142'
+      exclude: '43, 4526, 53, 145, 46, 78, 3119, 37, 70, 106, 3109, 3112, 3079, 3884, 3115, 3110, 123, 3114, 142, 3111,5022'
       regex: false
       invert: false
+  term_weight_widget_order:
+    processor_id: term_weight_widget_order
+    weights:
+      sort: 60
+    settings:
+      sort: ASC
   translate_entity:
     processor_id: translate_entity
     weights:
-      build: 5
+      build: -7
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
       pre_query: 50
-      build: 15
+      build: -8
     settings: {  }
 empty_behavior:
   behavior: none
