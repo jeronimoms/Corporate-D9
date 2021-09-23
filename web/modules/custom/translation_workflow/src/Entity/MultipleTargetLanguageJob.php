@@ -465,7 +465,7 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
         $this->addMessage($message, $variables, $type);
       }
     }
-    \Drupal::service('event_dispatcher')->dispatch(new TranslationEvent($this), TranslationEvent::TRANSLATION_JOB_STATE_CHANGED);
+    \Drupal::service('event_dispatcher')->dispatch(new TranslationEvent($this, NULL), TranslationEvent::TRANSLATION_JOB_STATE_CHANGED);
     return $this->getState();
   }
 
