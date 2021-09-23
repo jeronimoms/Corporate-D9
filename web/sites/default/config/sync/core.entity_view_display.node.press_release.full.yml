@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.press_release.field_pr_embargo_date
     - field.field.node.press_release.field_pr_notes_to_editor
     - field.field.node.press_release.field_publication_date
+    - field.field.node.press_release.field_published
     - field.field.node.press_release.field_quote
     - field.field.node.press_release.field_section
     - field.field.node.press_release.field_summary_html
@@ -144,6 +145,7 @@ hidden:
   field_nace_codes: true
   field_pr_embargo_date: true
   field_publication_date: true
+  field_published: true
   field_section: true
   field_tags: true
   field_thesaurus_2020: true
