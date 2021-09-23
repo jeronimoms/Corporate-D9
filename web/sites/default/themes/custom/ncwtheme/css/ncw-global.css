@@ -3074,6 +3074,13 @@ body.node--type-infographic .field--name-body {
   margin-bottom: 0;
 }
 
+#block-copyrigth > div.content > div > div > p > a {
+  text-decoration: none;
+}
+#block-copyrigth > div.content > div > div > p > a:hover {
+  text-decoration: underline;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;

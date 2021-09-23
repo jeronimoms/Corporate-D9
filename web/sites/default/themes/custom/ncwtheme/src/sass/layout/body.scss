@@ -1369,3 +1369,9 @@ body.node--type-infographic{
   }
 }
 
+#block-copyrigth > div.content > div > div > p > a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
