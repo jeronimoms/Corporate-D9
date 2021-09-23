@@ -1891,6 +1891,37 @@ div.pagerer-right-pane {
   width: auto;
   height: auto;
 }
+#main .wysiwyg_accordion_panel table {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-color: transparent;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+}
+#main .wysiwyg_accordion_panel table tr {
+  background: #FFF;
+}
+#main .wysiwyg_accordion_panel table tr th {
+  color: #000;
+  font-size: 0.9rem;
+  background: #FFF;
+  font-weight: bold;
+  border: 0;
+}
+#main .wysiwyg_accordion_panel table tr td {
+  font-size: 1rem;
+  padding: 0.9rem;
+  border: 0;
+}
+#main .wysiwyg_accordion_panel table tr td p {
+  font-size: 0.9rem;
+}
+#main .wysiwyg_accordion_panel table tr td img {
+  width: auto;
+  height: auto;
+}
 
 /* Contact us */
 .page-node-5468 #main .node--type-article table {
