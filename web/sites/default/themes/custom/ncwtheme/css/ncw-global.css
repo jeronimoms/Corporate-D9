@@ -2666,7 +2666,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 .field--name-field-related-oshwiki-articles .field__items > .field__item:nth-child(2) {
   border-bottom: 0;
 }
-.field--name-field-related-oshwiki-articles a[target=_blank], .field--name-field-related-oshwiki-articles .view a[target=_blank] {
+.field--name-field-related-oshwiki-articles div.field--name-field-wiki-page-url a[target=_blank], .field--name-field-related-oshwiki-articles div.field--name-field-wiki-page-url .view a[target=_blank] {
   background: none !important;
   padding-right: 0 !important;
   border-bottom: 0 !important;

@@ -889,10 +889,12 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
       border-bottom: 0;
     }
   }
-  a[target=_blank], .view a[target=_blank]{
-    background: none !important;
-    padding-right: 0 !important;
-    border-bottom: 0 !important;
+  div.field--name-field-wiki-page-url{
+    a[target=_blank], .view a[target=_blank]{
+      background: none !important;
+      padding-right: 0 !important;
+      border-bottom: 0 !important;
+    }
   }
 }
 
