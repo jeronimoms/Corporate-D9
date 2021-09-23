@@ -31,6 +31,39 @@
       }
     }
   }
+  .wysiwyg_accordion_panel{
+    table{
+      margin-top: 0;
+      margin-bottom: 1rem;
+      border-color: transparent;
+      border-top-width: 0;
+      border-right-width: 0;
+      border-bottom-width: 0;
+      border-left-width: 0;
+      tr{
+        background: $bg-color-white;
+        th{
+          color: $text-color-black;
+          font-size: 0.9rem;
+          background: $bg-color-white;
+          font-weight: bold;
+          border: 0;
+        }
+        td{
+          font-size: 1rem;
+          padding: 0.9rem;
+          border: 0;
+          p{
+            font-size: 0.9rem;;
+          }
+          img{
+            width: auto;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Contact us */
