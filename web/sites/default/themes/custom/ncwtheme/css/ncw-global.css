@@ -2576,7 +2576,7 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
   margin-top: 0.8rem;
   margin-bottom: 10px;
   background: #e8ecf5;
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
 }
 .field--name-field-related-oshwiki-articles > .field__label {
   margin-bottom: 0.5rem;
@@ -2662,6 +2662,9 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 }
 .field--name-field-related-oshwiki-articles .field__items > .field__item:last-child:after {
   display: none;
+}
+.field--name-field-related-oshwiki-articles .field__items > .field__item:nth-child(2) {
+  border-bottom: 0;
 }
 .field--name-field-related-oshwiki-articles a[target=_blank], .field--name-field-related-oshwiki-articles .view a[target=_blank] {
   background: none !important;
