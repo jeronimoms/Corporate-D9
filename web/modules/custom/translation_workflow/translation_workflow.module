@@ -36,18 +36,17 @@ function tmgmt_content_translate_form_submit(array &$form, FormStateInterface $f
   /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
   $entity = $form_state->get('entity');
   $values = $form_state->getValues();
-  $jobs = [];
-  foreach (array_keys(array_filter($values['languages'])) as $langcode) {
-    // Create the job object.
-    $translators = Translator::loadMultiple();
+  // Create the job object.
+  $translators = Translator::loadMultiple();
+  $job = MultipleTargetLanguageJob::create([
+    'source_language' => $entity->language(),
+    'target_languages' => [$values['languages']],
+    'uid' => \Drupal::currentUser()->id(),
+    'job_items' => [],
+    'translator' => reset($translators),
+  ]);
 
-    $job = MultipleTargetLanguageJob::create([
-      'source_language' => $entity->language(),
-      'target_languages' => [$langcode],
-      'uid' => \Drupal::currentUser()->id(),
-      'job_items' => [],
-      'translator' => reset($translators),
-    ]);
+  foreach (array_keys(array_filter($values['languages'])) as $langcode) {
     try {
       // Add the job item.
       $item = $job->addItem('content', $entity->getEntityTypeId(), $entity->id());
@@ -55,8 +54,8 @@ function tmgmt_content_translate_form_submit(array &$form, FormStateInterface $f
       $item->save();
       // Append this job to the array of created jobs so we can redirect the user
       // to a multistep checkout form if necessary.
-      $jobs[$job->id()] = $job;
-    } catch (TMGMTException $e) {
+    }
+    catch (TMGMTException $e) {
       watchdog_exception('tmgmt', $e);
       $languages = \Drupal::languageManager()->getLanguages();
       $target_lang_name = $languages[$langcode]->language;
@@ -65,7 +64,7 @@ function tmgmt_content_translate_form_submit(array &$form, FormStateInterface $f
     }
   }
   \Drupal::service('tmgmt.job_checkout_manager')
-    ->checkoutAndRedirect($form_state, $jobs);
+    ->checkoutAndRedirect($form_state, [$job]);
 }
 
 /**
@@ -132,8 +131,12 @@ function translation_workflow_form_tmgmt_cart_form_alter(&$form, FormStateInterf
 
   if (isset($form['target_language'])) {
     $form['target_language']['#size'] = 24;
+    $default = Drupal::languageManager()->getDefaultLanguage()->getId();
     if (isset($form['target_language']['#options']['nol'])) {
       unset($form['target_language']['#options']['nol']);
+    }
+    if (isset($form['target_language']['#options'][$default])) {
+      unset($form['target_language']['#options'][$default]);
     }
   }
 
