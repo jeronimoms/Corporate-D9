@@ -180,18 +180,51 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
       '#weight' => 15,
     ];
 
-    $form['abort_job'] = [
+    $parentActions['abort_job'] = [
       '#type' => 'link',
-      '#value' => t('Abort job'),
+      '#title' => t('Abort job'),
       '#url' => Url::fromRoute('entity.tmgmt_job_multiple_target.abort_form', [
-        'tmgmt_job_multiple_target' => $job,
+        'tmgmt_job_multiple_target' => $job->id(),
       ]),
+      '#attributes' => [
+        'class' => ['button'],
+      ],
       '#access' => $job->isAbortable(),
+      '#weight' => 7,
     ];
 
+    $parentActions['resubmit_job'] = [
+      '#type' => 'link',
+      '#title' => t('Resubmit'),
+      '#url' => Url::fromRoute('entity.tmgmt_job_multiple_target.resubmit_form', [
+        'tmgmt_job_multiple_target' => $job->id(),
+      ]),
+      '#attributes' => [
+        'class' => ['button'],
+      ],
+      '#access' => $job->isAborted(),
+      '#weight' => 7,
+    ];
+
+    $parentActions['checkout'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Submit to translator'),
+      '#access' => $job->isSubmittable(),
+      '#submit' => ['::submitCheckout'],
+      '#weight' => 7,
+    ];
+
+    if (isset($parentActions['delete'])) {
+      $parentActions['delete']['#attributes'] = [
+        'class' => ['button'],
+      ];
+    }
     return $parentActions;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
     $this->messenger()->addStatus($this->t('Translation job saved.'));
@@ -203,6 +236,14 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
   public function submitSentToCdt() {
     $job = $this->getEntity();
     $job->set('file_sent', TRUE)->save();
+  }
+
+  /**
+   * Request translation for job.
+   */
+  public function submitCheckout() {
+    $job = $this->getEntity();
+    $job->requestTranslation();
   }
 
   /**

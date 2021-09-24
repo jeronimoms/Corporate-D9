@@ -72,7 +72,7 @@ ul.menu{
 /* Paragraps - List */
 body{
   .field--name-body, .field--name-field-summary-html{
-    p, ul, ol, div{
+    p, ul, ol, div, dl{
       font-size: 0.9rem;
 
       a {
@@ -100,7 +100,7 @@ body{
       font-size: 0.9rem;
       font-weight: 700;
       text-decoration: none;
-      border-bottom: 0;
+      border-bottom: 0 !important;
       &:hover {
         background: url(../images/arrow.png) no-repeat $bg-color-blue calc(100% - 10px) 15px;
         color: $text-color-white !important;
@@ -109,6 +109,7 @@ body{
         -o-transition: background-color 800ms linear;
         -ms-transition: background-color 800ms linear;
         transition: background-color 800ms linear;
+        border-bottom: 0 !important;
       }
     }
     &.arrow-back {
@@ -116,12 +117,14 @@ body{
         padding: 10px;
         margin-right: 0;
         background-image: none;
+        border-bottom: 0 !important;
         &:before {
           content: "";
           display: inline-block;
           width: 40px;
           height: 10px;
           background: url(../images/arrow-back.png) no-repeat;
+          border-bottom: 0 !important;
         }
       }
     }
@@ -1381,3 +1384,11 @@ body.node--type-infographic{
     margin: 0 0 0.3em;
   }
 }
+
+/* Hide musculoskeletal disorders titles */
+.node--type-musculoskeletal-disorders{
+  #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field{
+    display: none;
+  }
+}
+

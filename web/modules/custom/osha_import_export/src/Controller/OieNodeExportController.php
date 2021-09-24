@@ -62,7 +62,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       'uid' => $node->get('uid')->getString(),
       'title' => $node->get('title')->getString(),
       'status' => $node->get('status')->getString(),
-      'promote' => $node->get('promote')->getString(),
+      'promote' => 0,
       'sticky' => $node->get('sticky')->getString(),
       'nid' => $node->get('nid')->getString(),
       'type' => $node->get('type')->getString(),
