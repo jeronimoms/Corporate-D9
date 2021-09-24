@@ -1,4 +1,4 @@
-.node-events-form{
+.node-events-form, .node-events-edit-form{
   .layout-region-node-main{
     .field--name-title,
     .field--name-field-organization,
@@ -43,7 +43,7 @@
     }
   }
 }
-.field--name-field-publication-date, .field--name-field-expiration-date{
+.field--name-field-publication-date, .field--name-field-expiration-date, .js-form-type-select{
   .chosen-container{
     width: 100% !important;
     min-width: 140px !important;

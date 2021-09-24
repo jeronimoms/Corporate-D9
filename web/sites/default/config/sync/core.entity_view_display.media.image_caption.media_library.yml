@@ -13,11 +13,19 @@ dependencies:
     - media.type.image_caption
   module:
     - image
+    - text
 id: media.image_caption.media_library
 targetEntityType: media
 bundle: image_caption
 mode: media_library
 content:
+  field_caption_copyrigth_:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   thumbnail:
     type: image
     label: hidden
@@ -29,8 +37,8 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   created: true
-  field_caption_copyrigth_: true
   field_description: true
   field_media_image: true
   field_nace: true
