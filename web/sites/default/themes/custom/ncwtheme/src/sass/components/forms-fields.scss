@@ -239,9 +239,26 @@ select, .facets-dropdown{
     }
     fieldset:nth-child(2){
       order: 4;
-      width: 18.5%;
+      width: 30%;
       select{
         width: 100%;
+      }
+      .chosen-container{
+        .chosen-choices{
+          color: #003399;
+          min-height: 37px;
+          font-size: 13px;
+          border: 1px solid $bg-color-blue;
+          margin-top: 0px;
+          border-radius: 5px;
+          background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
+          .search-field{
+            padding-top: 4px;
+          }
+          .search-choice{
+            padding-top: 6px;
+          }
+        }
       }
     }
     fieldset:nth-child(3){

@@ -1384,3 +1384,11 @@ body.node--type-infographic{
     margin: 0 0 0.3em;
   }
 }
+
+/* Hide musculoskeletal disorders titles */
+.node--type-musculoskeletal-disorders{
+  #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field{
+    display: none;
+  }
+}
+
