@@ -1,8 +1,9 @@
-uuid: ede5c38b-7560-4cb0-8dfc-f57737e29516
+uuid: 23d2f3a5-1427-4f86-a9f5-5ddd42415ee2
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.musculoskeletal_disorders.body
     - field.field.node.musculoskeletal_disorders.field_available_in_languages
     - field.field.node.musculoskeletal_disorders.field_body_original
@@ -43,6 +44,7 @@ dependencies:
     - entity_reference_revisions
     - field_group
     - languagefield
+    - layout_builder
     - link
     - options
     - smart_trim
@@ -173,10 +175,13 @@ third_party_settings:
         - field_material_country
         - field_available_in_languages
         - field_msd_provider
-id: node.musculoskeletal_disorders.default
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.musculoskeletal_disorders.full
 targetEntityType: node
 bundle: musculoskeletal_disorders
-mode: default
+mode: full
 content:
   field_available_in_languages:
     weight: 34
