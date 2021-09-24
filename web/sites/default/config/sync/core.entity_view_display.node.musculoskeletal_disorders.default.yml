@@ -39,6 +39,7 @@ dependencies:
     - field.field.node.musculoskeletal_disorders.field_year
     - node.type.musculoskeletal_disorders
   module:
+    - ds
     - entity_reference_revisions
     - field_group
     - languagefield
@@ -318,8 +319,16 @@ content:
     region: content
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_year:
     weight: 15
     label: above
