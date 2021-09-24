@@ -2036,7 +2036,7 @@ body .see-more-arrow a, body .node--type-publication .rr-right-column .field--na
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
-  border-bottom: 0;
+  border-bottom: 0 !important;
 }
 body .see-more-arrow a:hover, body .node--type-publication .rr-right-column .field--name-node-link a:hover, .node--type-publication .rr-right-column body .field--name-node-link a:hover, body .link_news_events a:hover {
   background: url(../images/arrow.png) no-repeat #003399 calc(100% - 10px) 15px;
@@ -2046,11 +2046,13 @@ body .see-more-arrow a:hover, body .node--type-publication .rr-right-column .fie
   -o-transition: background-color 800ms linear;
   -ms-transition: background-color 800ms linear;
   transition: background-color 800ms linear;
+  border-bottom: 0 !important;
 }
 body .see-more-arrow.arrow-back a, body .node--type-publication .rr-right-column .arrow-back.field--name-node-link a, .node--type-publication .rr-right-column body .arrow-back.field--name-node-link a, body .link_news_events.arrow-back a {
   padding: 10px;
   margin-right: 0;
   background-image: none;
+  border-bottom: 0 !important;
 }
 body .see-more-arrow.arrow-back a:before, body .node--type-publication .rr-right-column .arrow-back.field--name-node-link a:before, .node--type-publication .rr-right-column body .arrow-back.field--name-node-link a:before, body .link_news_events.arrow-back a:before {
   content: "";
@@ -2058,6 +2060,7 @@ body .see-more-arrow.arrow-back a:before, body .node--type-publication .rr-right
   width: 40px;
   height: 10px;
   background: url(../images/arrow-back.png) no-repeat;
+  border-bottom: 0 !important;
 }
 
 body .news_and_events.block-menu-block ul li {
