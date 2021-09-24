@@ -20,8 +20,11 @@ dependencies:
     - taxonomy.vocabulary.wg_category
   content:
     - 'taxonomy_term:contact_type:319587bf-4df6-418b-9526-7b38371b458c'
+    - 'taxonomy_term:contact_type:cd4edaa9-78e2-46fd-bc8e-fde26ff2461b'
     - 'taxonomy_term:country_status:65716bcf-0823-4b2a-aa1d-fc33f21aab41'
     - 'taxonomy_term:country_status:7240dc31-08d8-4f4f-9d6a-f15f79e3b276'
+    - 'taxonomy_term:wg_category:25552fad-e958-47c6-aa3f-69a5de6345f5'
+    - 'taxonomy_term:wg_category:2c8ab965-3be1-4dce-bde2-9b8832c85a3c'
   module:
     - node
     - taxonomy
@@ -1379,7 +1382,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            2971: 2971
+            6753: 6753
           group: 1
           exposed: false
           expose:
@@ -1612,7 +1615,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            - 2971
+            6753: 6753
           group: 1
           exposed: false
           expose:
@@ -1851,7 +1854,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            - 2971
+            6753: 6753
           group: 1
           exposed: false
           expose:
@@ -2074,7 +2077,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            - 2971
+            6753: 6753
           group: 1
           exposed: false
           expose:
