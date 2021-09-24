@@ -3,7 +3,6 @@
 namespace Drupal\translation_workflow\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
-use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -32,7 +31,8 @@ use Drupal\user\UserInterface;
  *   "form" = {
  *       "edit" = "Drupal\translation_workflow\Form\MultipleTargetLanguageJobForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
- *       "abort" = "Drupal\tmgmt\Form\JobAbortForm"
+ *       "abort" = "Drupal\tmgmt\Form\JobAbortForm",
+ *       "resubmit_form" = "Drupal\tmgmt\Form\JobResubmitForm"
  *     },
  *     "list_builder" = "Drupal\translation_workflow\Entity\ListBuilder\MultipleTargetLanguageJobListBuilder",
  *     "views_data" = "Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobViewsData"
@@ -46,7 +46,8 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "canonical" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}",
  *     "delete-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/delete",
- *     "abort-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/abort"
+ *     "abort-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/abort",
+ *     "resubmit-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/resubmit"
  *   }
  * )
  *

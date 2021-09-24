@@ -19,6 +19,13 @@ entity.tmgmt_job_multiple_target.abort_form:
   requirements:
     _entity_access: tmgmt_job_multiple_target.update
 
+entity.tmgmt_job_multiple_target.resubmit_form:
+  path: '/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/resubmit'
+  defaults:
+    _entity_form: tmgmt_job_multiple_target.resubmit_form
+  requirements:
+    _entity_access: tmgmt_job_multiple_target.update
+
 translation_workflow.retranslate:
   path: '/node/{node}/retranslate'
   defaults:
