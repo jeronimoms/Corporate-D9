@@ -2001,14 +2001,14 @@ ul.menu .menu-item .field--type-image img {
 }
 
 /* Paragraps - List */
-body .field--name-body p, body .field--name-body ul, body .field--name-body ol, body .field--name-body div, body .field--name-field-summary-html p, body .field--name-field-summary-html ul, body .field--name-field-summary-html ol, body .field--name-field-summary-html div {
+body .field--name-body p, body .field--name-body ul, body .field--name-body ol, body .field--name-body div, body .field--name-body dl, body .field--name-field-summary-html p, body .field--name-field-summary-html ul, body .field--name-field-summary-html ol, body .field--name-field-summary-html div, body .field--name-field-summary-html dl {
   font-size: 0.9rem;
 }
-body .field--name-body p a, body .field--name-body ul a, body .field--name-body ol a, body .field--name-body div a, body .field--name-field-summary-html p a, body .field--name-field-summary-html ul a, body .field--name-field-summary-html ol a, body .field--name-field-summary-html div a {
+body .field--name-body p a, body .field--name-body ul a, body .field--name-body ol a, body .field--name-body div a, body .field--name-body dl a, body .field--name-field-summary-html p a, body .field--name-field-summary-html ul a, body .field--name-field-summary-html ol a, body .field--name-field-summary-html div a, body .field--name-field-summary-html dl a {
   text-decoration: none;
   border-bottom: 1px solid #c72272;
 }
-body .field--name-body p a:hover, body .field--name-body ul a:hover, body .field--name-body ol a:hover, body .field--name-body div a:hover, body .field--name-field-summary-html p a:hover, body .field--name-field-summary-html ul a:hover, body .field--name-field-summary-html ol a:hover, body .field--name-field-summary-html div a:hover {
+body .field--name-body p a:hover, body .field--name-body ul a:hover, body .field--name-body ol a:hover, body .field--name-body div a:hover, body .field--name-body dl a:hover, body .field--name-field-summary-html p a:hover, body .field--name-field-summary-html ul a:hover, body .field--name-field-summary-html ol a:hover, body .field--name-field-summary-html div a:hover, body .field--name-field-summary-html dl a:hover {
   text-decoration: none;
   transition: border-bottom 1s;
   border-bottom: 1px solid #003399;
