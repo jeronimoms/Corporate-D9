@@ -1779,6 +1779,17 @@ h3.home a:hover {
   padding-left: 15px;
 }
 
+/* Reset border in links */
+body .sidebar-second .field--name-body p, body .sidebar-second .field--name-body ul, body .sidebar-second .field--name-body ol, body .sidebar-second .field--name-body div, body .sidebar-second .field--name-body dl, body .sidebar-second .field--name-field-summary-html p, body .sidebar-second .field--name-field-summary-html ul, body .sidebar-second .field--name-field-summary-html ol, body .sidebar-second .field--name-field-summary-html div, body .sidebar-second .field--name-field-summary-html dl {
+  font-size: 0.9rem;
+}
+body .sidebar-second .field--name-body p a, body .sidebar-second .field--name-body ul a, body .sidebar-second .field--name-body ol a, body .sidebar-second .field--name-body div a, body .sidebar-second .field--name-body dl a, body .sidebar-second .field--name-field-summary-html p a, body .sidebar-second .field--name-field-summary-html ul a, body .sidebar-second .field--name-field-summary-html ol a, body .sidebar-second .field--name-field-summary-html div a, body .sidebar-second .field--name-field-summary-html dl a {
+  border-bottom: 0;
+}
+body .sidebar-second .field--name-body p a:hover, body .sidebar-second .field--name-body ul a:hover, body .sidebar-second .field--name-body ol a:hover, body .sidebar-second .field--name-body div a:hover, body .sidebar-second .field--name-body dl a:hover, body .sidebar-second .field--name-field-summary-html p a:hover, body .sidebar-second .field--name-field-summary-html ul a:hover, body .sidebar-second .field--name-field-summary-html ol a:hover, body .sidebar-second .field--name-field-summary-html div a:hover, body .sidebar-second .field--name-field-summary-html dl a:hover {
+  border-bottom: 0;
+}
+
 nav.pager {
   display: flex;
   justify-content: center;

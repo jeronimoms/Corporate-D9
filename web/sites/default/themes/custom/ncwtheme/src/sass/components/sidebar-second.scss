@@ -336,3 +336,20 @@
     }
   }
 }
+
+/* Reset border in links */
+body {
+  .sidebar-second {
+    .field--name-body, .field--name-field-summary-html {
+      p, ul, ol, div, dl {
+        font-size: 0.9rem;
+        a {
+          border-bottom: 0;
+          &:hover {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
