@@ -966,10 +966,25 @@ select, .facets-dropdown {
 }
 .publications .view-filters fieldset:nth-child(2) {
   order: 4;
-  width: 18.5%;
+  width: 30%;
 }
 .publications .view-filters fieldset:nth-child(2) select {
   width: 100%;
+}
+.publications .view-filters fieldset:nth-child(2) .chosen-container .chosen-choices {
+  color: #003399;
+  min-height: 37px;
+  font-size: 13px;
+  border: 1px solid #003399;
+  margin-top: 0px;
+  border-radius: 5px;
+  background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
+}
+.publications .view-filters fieldset:nth-child(2) .chosen-container .chosen-choices .search-field {
+  padding-top: 4px;
+}
+.publications .view-filters fieldset:nth-child(2) .chosen-container .chosen-choices .search-choice {
+  padding-top: 6px;
 }
 .publications .view-filters fieldset:nth-child(3) {
   order: 3;
