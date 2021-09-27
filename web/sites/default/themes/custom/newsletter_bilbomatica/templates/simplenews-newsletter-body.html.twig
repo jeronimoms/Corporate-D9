@@ -453,6 +453,9 @@
                                     {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
                                       {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
                                     {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in build.nlc_national_contents if key|first != '#' %}
@@ -460,6 +463,9 @@
                                       {{ drupal_entity('node', item['#node'].id , 'newsletter_items') }}
                                     {% endif %}
                                     {% if ( item['#node'].type.0.target_id  == 'highlight' )  %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
                                       {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
                                     {% endif %}
                                   {% endfor %}
@@ -539,11 +545,21 @@
                                 {% set hide_intro_text_oira = build.field_oira_contents_hideintro.0['#markup'] == 'On' %}
                                 {% if hide_intro_text_oira %}
                                   {% for key, item in build.nlc_oira_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in build.nlc_oira_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% endif %}
                               </tbody>
@@ -616,11 +632,21 @@
                                 {% set hide_intro_text_covid = build.field_covid_contents_hideintro.0['#markup'] == 'On' %}
                                 {% if hide_intro_text_covid %}
                                   {% for key, item in build.nlc_covid_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'article' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in build.nlc_covid_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'article' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% endif %}
                               </tbody>
@@ -766,11 +792,21 @@
                                 {% set hide_intro_text_wiki = build.field_wiki_contents_hideintro.0['#markup'] == 'On' %}
                                 {% if hide_intro_text_wiki %}
                                   {% for key, item in build.nlc_wiki_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in build.nlc_wiki_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% endif %}
                               </tbody>
@@ -885,14 +921,24 @@
                                            class="newsletter-item news"
                                            style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                       <tbody>
-                                        {% set hide_intro_text_morenews = content.field_hide_more_news_intro_text.0['#markup'] == 'On' %}
+                                        {% set hide_intro_text_morenews = build.field_hide_more_news_intro_text.0['#markup'] == 'On' %}
                                         {% if hide_intro_text_morenews %}
                                           {% for key, item in build.nlc_monews_contents if key|first != '#' %}
-                                            {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                            {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                              {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                            {% endif %}
+                                            {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                              {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                            {% endif %}
                                           {% endfor %}
                                         {% else %}
                                           {% for key, item in build.nlc_monews_contents if key|first != '#' %}
-                                            {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                            {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                              {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                            {% endif %}
+                                            {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                              {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                            {% endif %}
                                           {% endfor %}
                                         {% endif %}
                                       </tbody>
@@ -983,14 +1029,24 @@
                                            class="newsletter-item news"
                                            style="font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-family: Arial, sans-serif;">
                                       <tbody>
-                                      {% set hide_intro_text_morenews = content.field_hide_more_news_intro_text.0['#markup'] == 'On' %}
+                                      {% set hide_intro_text_morenews = build.field_hide_more_news_intro_text.0['#markup'] == 'On' %}
                                       {% if hide_intro_text_morenews %}
                                         {% for key, item in build.nlc_monews_contents if key|first != '#' %}
-                                          {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                          {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                            {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                          {% endif %}
+                                          {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                            {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                          {% endif %}
                                         {% endfor %}
                                       {% else %}
                                         {% for key, item in build.nlc_monews_contents if key|first != '#' %}
-                                          {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                          {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                            {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                          {% endif %}
+                                          {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                            {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                          {% endif %}
                                         {% endfor %}
                                       {% endif %}
                                       </tbody>
