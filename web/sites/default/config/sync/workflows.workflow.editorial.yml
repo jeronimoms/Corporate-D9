@@ -51,7 +51,7 @@ type_settings:
       weight: 2
     rejected:
       published: false
-      default_revision: false
+      default_revision: true
       label: Rejected
       weight: -4
     to_be_approved:
