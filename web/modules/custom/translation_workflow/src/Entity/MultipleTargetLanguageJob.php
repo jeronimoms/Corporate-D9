@@ -162,6 +162,16 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
   }
 
   /**
+   * Get if file has been uploaded to job.
+   *
+   * @return bool
+   *   Return if file has been uploaded to job.
+   */
+  public function isFileUploaded() {
+    return $this->get('file_uploaded')->getString() == 1;
+  }
+
+  /**
    * Get if job is sent to CDT.
    *
    * @return bool
