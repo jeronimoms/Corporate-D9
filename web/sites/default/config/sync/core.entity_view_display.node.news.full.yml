@@ -25,11 +25,13 @@ dependencies:
     - field.field.node.news.field_tags
     - field.field.node.news.field_thesaurus_2020
     - field.field.node.news.simplenews_issue
+    - image.style.news
     - node.type.news
   module:
     - datetime
     - ds
     - layout_builder
+    - media
     - text
     - user
 third_party_settings:
@@ -110,8 +112,8 @@ content:
     weight: 2
     label: hidden
     settings:
-      view_mode: full
-      link: false
+      image_style: news
+      image_link: ''
     third_party_settings:
       ds:
         ft:
@@ -120,7 +122,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: entity_reference_entity_view
+    type: media_thumbnail
     region: ds_content
   field_publication_date:
     label: hidden
