@@ -466,6 +466,9 @@
                                   {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
                                     {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
                                   {% endif %}
+                                  {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                  {% endif %}
                                 {% endfor %}
                               {% else %}
                                 {% for key, item in content.nlc_national_contents if key|first != '#' %}
@@ -473,6 +476,9 @@
                                     {{ drupal_entity('node', item['#node'].id , 'newsletter_items') }}
                                   {% endif %}
                                   {% if ( item['#node'].type.0.target_id  == 'highlight' )  %}
+                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                  {% endif %}
+                                  {% if ( item['#node'].type.0.target_id  == 'news' ) %}
                                     {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
                                   {% endif %}
                                 {% endfor %}
@@ -552,11 +558,21 @@
                                 {% set hide_intro_text_oira = content.field_oira_contents_hideintro.0['#markup'] == 'On' %}
                                 {% if hide_intro_text_oira %}
                                   {% for key, item in content.nlc_oira_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in content.nlc_oira_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% endif %}
                                 </tbody>
@@ -629,11 +645,21 @@
                                 {% set hide_intro_text_covid = content.field_covid_contents_hideintro.0['#markup'] == 'On' %}
                                 {% if hide_intro_text_covid %}
                                   {% for key, item in content.nlc_covid_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'article' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in content.nlc_covid_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'article' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% endif %}
                                 </tbody>
@@ -779,11 +805,21 @@
                                   {% set hide_intro_text_wiki = content.field_wiki_contents_hideintro.0['#markup'] == 'On' %}
                                   {% if hide_intro_text_wiki %}
                                     {% for key, item in content.nlc_wiki_contents if key|first != '#' %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                      {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                        {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                      {% endif %}
+                                      {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                        {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                      {% endif %}
                                     {% endfor %}
                                   {% else %}
                                     {% for key, item in content.nlc_wiki_contents if key|first != '#' %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                      {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                        {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                      {% endif %}
+                                      {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                        {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                      {% endif %}
                                     {% endfor %}
                                   {% endif %}
                                 </tbody>
