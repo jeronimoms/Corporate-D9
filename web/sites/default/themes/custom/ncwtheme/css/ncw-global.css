@@ -7259,6 +7259,17 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   .h1-back-wrapper h1 {
     margin-top: 1rem;
   }
+
+  .wraper-blog-and-img {
+    display: block;
+  }
+  .wraper-blog-and-img .block-newsletter-node-9 {
+    margin-right: 0;
+  }
+  .wraper-blog-and-img .img-newsletter img {
+    width: 100%;
+    height: auto;
+  }
 }
 /* End Media 768px */
 @media only screen and (max-width: 576px) {
