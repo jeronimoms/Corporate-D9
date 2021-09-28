@@ -364,11 +364,21 @@
                                 {% set hide_intro_text = build.field_healthy_contents_hideintro.0['#markup'] == 'On' %}
                                 {% if hide_intro_text %}
                                   {% for key, item in build.nlc_healthy_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in build.nlc_healthy_contents if key|first != '#' %}
-                                    {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
+                                    {% if ( item['#node'].type.0.target_id  == 'news' ) %}
+                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                    {% endif %}
                                   {% endfor %}
                                 {% endif %}
                               </tbody>
