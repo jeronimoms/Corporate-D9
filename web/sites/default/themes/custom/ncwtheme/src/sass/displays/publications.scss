@@ -264,6 +264,21 @@ body.node--type-publication{
   }
 }
 
+/* Change style Related Publications 3 columns */
+#main.three-column{
+  .node--type-publication{
+    .aditional-publications{
+      .publications-detail-right-column{
+        padding-top: 10px;
+        .content-publication-info{
+          display: block;
+        }
+      }
+    }
+  }
+}
+/* END Change style Related Publications 3 columns */
+
 .related-resources-fluid{
   .node--view-mode-osha-resources{
     clear: both;

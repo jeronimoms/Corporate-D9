@@ -5762,6 +5762,15 @@ body.node--type-publication {
   margin: 0;
 }
 
+/* Change style Related Publications 3 columns */
+#main.three-column .node--type-publication .aditional-publications .publications-detail-right-column {
+  padding-top: 10px;
+}
+#main.three-column .node--type-publication .aditional-publications .publications-detail-right-column .content-publication-info {
+  display: block;
+}
+
+/* END Change style Related Publications 3 columns */
 .related-resources-fluid .node--view-mode-osha-resources {
   clear: both;
   margin-bottom: 0;
