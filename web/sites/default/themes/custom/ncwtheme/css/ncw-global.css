@@ -2485,8 +2485,10 @@ body ul li .introduction-title a:hover {
 /* Highlights - Blogs */
 .node--type-highlight .field--name-field-image-media {
   float: left;
-  margin-right: 1rem;
   clear: both;
+}
+.node--type-highlight .field--name-field-image-media img {
+  margin-bottom: 2px;
 }
 .node--type-highlight .field--name-field-summary-html {
   color: #000;
@@ -2542,6 +2544,9 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 }
 
 /* Articles */
+.node--type-article #main .field--name-field-media-image {
+  margin-right: 0;
+}
 .node--type-article #main .field--name-field-image-caption img {
   width: 100%;
   height: auto;
@@ -3150,12 +3155,37 @@ body.node--type-infographic .field--name-body {
 }
 
 .node--type-news .field--type-image img, .node--type-news .field--name-field-user-picture img {
-  margin: 0 0 0.3em;
+  margin: 0 0 2px;
 }
 
 /* Hide musculoskeletal disorders titles */
 .node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field {
   display: none;
+}
+
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .js-form-wrapper {
+  border: 1px solid #CCC;
+  margin-bottom: 2rem !important;
+  padding: 1rem;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .js-form-wrapper#edit-actions {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .legend {
+  background: #FFF;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: -30px;
+  display: table;
+  width: auto;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form fieldset p {
+  margin-bottom: 0 !important;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .blue {
+  color: #003399;
 }
 
 /* Breadcrumbs */
@@ -3323,44 +3353,88 @@ body.node--type-infographic .field--name-body {
   background: url(../images/ico-events/big/England-180x180.png) no-repeat center;
 }
 
+.code_EN.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_At {
   background: url(../images/ico-events/big/Austria-180x180.png) no-repeat center;
+}
+
+.code_AT.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_CH {
   background: url(../images/ico-events/big/Switzerland-180x180.png) no-repeat center;
 }
 
+.code_CH.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_BG {
   background: url(../images/ico-events/big/Bulgaria-180x180.png) no-repeat center;
+}
+
+.code_BG.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_BE {
   background: url(../images/ico-events/big/Belgium-180x180.png) no-repeat center;
 }
 
+.code_BE.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_CZ {
   background: url(../images/ico-events/big/Czech-Republic-180x180.png) no-repeat center;
+}
+
+.code_CZ.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_CS {
   background: url(../images/ico-events/big/Czech-Republic-180x180.png) no-repeat center;
 }
 
+.code_CS.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_DK {
   background: url(../images/ico-events/big/Denmark-180x180.png) no-repeat center;
+}
+
+.code_DK.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_DE {
   background: url(../images/ico-events/big/Germany-180x180.png) no-repeat center;
 }
 
+.code_DE.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_EL {
   background: url(../images/ico-events/big/Greece-180x180.png) no-repeat center;
 }
 
+.code_EL.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_ES {
   background: url(../images/ico-events/big/Spain-180x180.png) no-repeat center;
+}
+
+.code_ES.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_EU {
@@ -3371,104 +3445,208 @@ body.node--type-infographic .field--name-body {
   background: url(../images/ico-events/big/Estonia-180x180.png) no-repeat center;
 }
 
+.code_EE.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_FI {
   background: url(../images/ico-events/big/Finland-180x180.png) no-repeat center;
+}
+
+.code_FI.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_HR {
   background: url(../images/ico-events/big/Croatia-180x180.png) no-repeat center;
 }
 
+.code_HR.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_FR {
   background: url(../images/ico-events/big/France-180x180.png) no-repeat center;
+}
+
+.code_FR.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_HU {
   background: url(../images/ico-events/big/Hungary-180x180.png) no-repeat center;
 }
 
+.code_HU.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_IS {
   background: url(../images/ico-events/big/Iceland-180x180.png) no-repeat center;
+}
+
+.code_IS.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_IT {
   background: url(../images/ico-events/big/Italy-180x180.png) no-repeat center;
 }
 
+.code_ITcode_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_LV {
   background: url(../images/ico-events/big/Latvia-180x180.png) no-repeat center;
+}
+
+.code_LV.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_LT {
   background: url(../images/ico-events/big/Lithuania-180x180.png) no-repeat center;
 }
 
+.code_LT.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_LU {
   background: url(../images/ico-events/big/Luxembourg-180x180.png) no-repeat center;
+}
+
+.code_LUcode_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_LI {
   background: url(../images/ico-events/big/Liechtenstein-180x180.png) no-repeat center;
 }
 
+.code_LI.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_NL {
   background: url(../images/ico-events/big/Netherlands-180x180.png) no-repeat center;
+}
+
+.code_NL.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_MT {
   background: url(../images/ico-events/big/Malta-180x180.png) no-repeat center;
 }
 
+.code_MT.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_NO {
   background: url(../images/ico-events/big/Norway-180x180.png) no-repeat center;
+}
+
+.code_NO.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_PL {
   background: url(../images/ico-events/big/Poland-180x180.png) no-repeat center;
 }
 
+.code_PL.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_PT {
   background: url(../images/ico-events/big/Portugal-180x180.png) no-repeat center;
+}
+
+.code_PT.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_RO {
   background: url(../images/ico-events/big/Romania-180x180.png) no-repeat center;
 }
 
+.code_RO.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_SK {
   background: url(../images/ico-events/big/Slovakia-180x180.png) no-repeat center;
+}
+
+.code_SK.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_SI {
   background: url(../images/ico-events/big/Slovenia-180x180.png) no-repeat center;
 }
 
+.code_SI.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_SE {
   background: url(../images/ico-events/big/Sweden-180x180.png) no-repeat center;
+}
+
+.code_SE.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_IE {
   background: url(../images/ico-events/big/Ireland-180x180.png) no-repeat center;
 }
 
+.code_IE.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_UK {
   background: url(../images/ico-events/big/United-Kingdom-180x180.png) no-repeat center;
+}
+
+.code_UK.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_CN {
   background: url(../images/ico-events/big/China-180x180.png) no-repeat center;
 }
 
+.code_CN.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_CY {
   background: url(../images/ico-events/big/Republic-of-Cyprus-180x180.png) no-repeat center;
+}
+
+.code_CY.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 .code_US {
   background: url(../images/ico-events/big/eeuu-180x180.png) no-repeat center;
 }
 
+.code_US.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
+}
+
 .code_CA {
   background: url(../images/ico-events/big/Canada-180x180.png) no-repeat;
+}
+
+.code_CA.code_1 {
+  background: url(../images/ico-events/big/European-Union-180x180.png) no-repeat center;
 }
 
 /* Node events */
@@ -5757,6 +5935,15 @@ body.node--type-publication {
   margin: 0;
 }
 
+/* Change style Related Publications 3 columns */
+#main.three-column .node--type-publication .aditional-publications .publications-detail-right-column {
+  padding-top: 10px;
+}
+#main.three-column .node--type-publication .aditional-publications .publications-detail-right-column .content-publication-info {
+  display: block;
+}
+
+/* END Change style Related Publications 3 columns */
 .related-resources-fluid .node--view-mode-osha-resources {
   clear: both;
   margin-bottom: 0;
@@ -6870,7 +7057,6 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 
 .node--type-news .field--name-field-image-media {
   float: left;
-  margin-right: 1rem;
   clear: both;
 }
 .node--type-news .field--name-field-summary-html {
@@ -7258,6 +7444,17 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   }
   .h1-back-wrapper h1 {
     margin-top: 1rem;
+  }
+
+  .wraper-blog-and-img {
+    display: block;
+  }
+  .wraper-blog-and-img .block-newsletter-node-9 {
+    margin-right: 0;
+  }
+  .wraper-blog-and-img .img-newsletter img {
+    width: 100%;
+    height: auto;
   }
 }
 /* End Media 768px */

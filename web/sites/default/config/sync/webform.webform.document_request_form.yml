@@ -18,7 +18,7 @@ elements: |-
     originator_of_the_request:
       '#type': processed_text
       '#text': |
-        <p><span style="color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, verdana, sans-serif; font-size: 14.4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Originator of the request</span></p>
+        <div class="legend">Originator of the request</div>
       '#format': full_html
     name:
       '#title': 'First Name'
@@ -68,7 +68,7 @@ elements: |-
     document_requested:
       '#type': processed_text
       '#text': |
-        <p><span style="color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, verdana, sans-serif; font-size: 14.4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Document requested</span></p>
+        <div class="legend">Document requested</div>
       '#format': full_html
     date_of_the_document:
       '#type': datelist
@@ -98,14 +98,12 @@ elements: |-
     preferred_means_of_access:
       '#type': processed_text
       '#text': |
-        <p><span style="color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, verdana, sans-serif; font-size: 14.4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Preferred means of access</span></p>
+        <div class="legend">Preferred means of access</div>
       '#format': full_html
     please_send_me_a_copy_of_the_document:
       '#type': processed_text
       '#text': |
-        <p>&nbsp;</p>
-
-        <p><label for="edit-submitted-preferred-means-of-access-please-send-me-a-copy-of-the-document" style="display: block; font-weight: bold; color: rgb(0, 51, 153); font-family: &quot;Open Sans&quot;, verdana, sans-serif; font-size: 14.4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Please send me a copy of the document</label></p>
+        <p class="blue">Please send me a copy of the document</p>
       '#format': full_html
     by_post:
       '#type': checkbox

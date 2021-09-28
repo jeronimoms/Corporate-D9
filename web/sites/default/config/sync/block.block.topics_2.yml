@@ -5,10 +5,14 @@ dependencies:
   config:
     - facets.facet.topics
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: topics_2
 theme: ncwtheme
 region: sidebar_first
