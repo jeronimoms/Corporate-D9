@@ -20,10 +20,11 @@ source:
   plugin: url
   data_parser_plugin: xml
   urls: /expert/SYNC_CRM/FocalPoints.xml
-  #urls: /var/www/html/web/sites/default/files/xmlMigracion/FocalPoints.xml
+#  urls: /var/www/html/web/sites/default/files/xmlMigracion/FocalPoints.xml
   content_type: press_contact
   ids:
-    field_contact_uuid:
+#    field_contact_uuid:
+    field_country:
       type: string
     field_contact_type:
       type: string

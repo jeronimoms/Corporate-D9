@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.article.simplenews_issue
     - node.type.article
   module:
+    - datetime
     - ds
     - layout_builder
     - smart_trim
@@ -44,7 +45,7 @@ mode: newsletter_items_blocks
 content:
   body:
     label: hidden
-    weight: 0
+    weight: 1
     type: smart_trim
     settings:
       trim_length: 90
@@ -77,6 +78,22 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
+  field_publication_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: only_day
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 hidden:
   addtoany: true
   breadcrumbs: true
@@ -92,7 +109,6 @@ hidden:
   field_metatag: true
   field_nace_codes: true
   field_page_count: true
-  field_publication_date: true
   field_related_oshwiki_articles: true
   field_resources: true
   field_section: true

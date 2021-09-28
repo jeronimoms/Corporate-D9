@@ -23,13 +23,11 @@ dependencies:
     - field.field.node.highlight.field_tags
     - field.field.node.highlight.field_thesaurus_2020
     - field.field.node.highlight.simplenews_issue
-    - image.style.medium
     - node.type.highlight
   module:
     - datetime
     - ds
     - layout_builder
-    - media
     - text
     - user
 third_party_settings:
@@ -96,10 +94,17 @@ content:
     weight: 2
     label: hidden
     settings:
-      image_style: medium
-      image_link: ''
-    third_party_settings: {  }
-    type: media_thumbnail
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
     region: ds_content
   field_publication_date:
     label: hidden

@@ -9,11 +9,11 @@ dependencies:
     - field.field.media.image_caption.field_media_image
     - field.field.media.image_caption.field_nace
     - field.field.media.image_caption.field_tags
-    - image.style.1000x1000
+    - image.style.articles_images
     - media.type.image_caption
   module:
     - ds
-    - image
+    - image_field_caption
     - layout_builder
     - text
 third_party_settings:
@@ -36,7 +36,7 @@ content:
     label: hidden
     weight: 0
     settings:
-      image_style: 1000x1000
+      image_style: articles_images
       image_link: ''
     third_party_settings:
       ds:
@@ -46,7 +46,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: image
+    type: image_caption
     region: content
 hidden:
   addtoany: true

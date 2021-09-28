@@ -5,6 +5,16 @@ dependencies:
   enforced:
     module:
       - webform_node
+  module:
+    - menu_ui
+    - node_title_help_text
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  node_title_help_text:
+    title_help: ''
 _core:
   default_config_hash: BuY_3PjmYtRTSuvyFORJZUe0-TQiNXEE6yYQ_dkjxW8
 name: Webform
@@ -13,4 +23,4 @@ description: 'A basic page with a webform attached.'
 help: ''
 new_revision: false
 preview_mode: 1
-display_submitted: true
+display_submitted: false
