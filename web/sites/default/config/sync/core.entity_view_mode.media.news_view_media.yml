@@ -1,10 +1,10 @@
-uuid: 718925a9-b253-46a0-aa83-bb062125b9fd
+uuid: 1a7765db-765a-48ae-801e-fc999dbb14de
 langcode: en
 status: true
 dependencies:
   module:
     - media
-id: media.image_articles
-label: 'Articles view media'
+id: media.news_view_media
+label: 'News view media'
 targetEntityType: media
 cache: true

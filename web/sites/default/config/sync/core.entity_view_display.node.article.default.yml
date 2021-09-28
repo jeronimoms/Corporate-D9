@@ -24,12 +24,10 @@ dependencies:
     - field.field.node.article.field_thesaurus_2020
     - field.field.node.article.field_wiki_categories
     - field.field.node.article.simplenews_issue
-    - image.style.articles_images
     - node.type.article
   module:
     - ds
     - entityreference_extensions
-    - media
     - text
     - user
 _core:
@@ -73,8 +71,8 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: articles_images
-      image_link: ''
+      view_mode: image_articles
+      link: false
     third_party_settings:
       ds:
         ft:
@@ -83,7 +81,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: media_thumbnail
+    type: entity_reference_entity_view
     region: content
   field_related_oshwiki_articles:
     type: entity_reference_entity_view_delta

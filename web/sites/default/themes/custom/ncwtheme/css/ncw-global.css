@@ -2485,8 +2485,10 @@ body ul li .introduction-title a:hover {
 /* Highlights - Blogs */
 .node--type-highlight .field--name-field-image-media {
   float: left;
-  margin-right: 1rem;
   clear: both;
+}
+.node--type-highlight .field--name-field-image-media img {
+  margin-bottom: 2px;
 }
 .node--type-highlight .field--name-field-summary-html {
   color: #000;
@@ -2542,6 +2544,9 @@ html[lang=da] .news-events #main ul li .text_news_events, html[lang=el] .news-ev
 }
 
 /* Articles */
+.node--type-article #main .field--name-field-media-image {
+  margin-right: 0;
+}
 .node--type-article #main .field--name-field-image-caption img {
   width: 100%;
   height: auto;
@@ -3150,7 +3155,7 @@ body.node--type-infographic .field--name-body {
 }
 
 .node--type-news .field--type-image img, .node--type-news .field--name-field-user-picture img {
-  margin: 0 0 0.3em;
+  margin: 0 0 2px;
 }
 
 /* Hide musculoskeletal disorders titles */
@@ -6870,7 +6875,6 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
 
 .node--type-news .field--name-field-image-media {
   float: left;
-  margin-right: 1rem;
   clear: both;
 }
 .node--type-news .field--name-field-summary-html {

@@ -1,15 +1,15 @@
-uuid: 2f48d9d1-dbb1-494c-a6aa-c5298911a55b
+uuid: b3724557-6314-429d-bf97-8cc7517eebca
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.image_articles
+    - core.entity_view_mode.media.news_view_media
     - field.field.media.image_caption.field_caption_copyrigth_
     - field.field.media.image_caption.field_description
     - field.field.media.image_caption.field_media_image
     - field.field.media.image_caption.field_nace
     - field.field.media.image_caption.field_tags
-    - image.style.articles_images
+    - image.style.news
     - media.type.image_caption
   module:
     - ds
@@ -20,10 +20,10 @@ third_party_settings:
   layout_builder:
     allow_custom: false
     enabled: false
-id: media.image_caption.image_articles
+id: media.image_caption.news_view_media
 targetEntityType: media
 bundle: image_caption
-mode: image_articles
+mode: news_view_media
 content:
   field_caption_copyrigth_:
     weight: 1
@@ -33,10 +33,10 @@ content:
     type: text_default
     region: content
   field_media_image:
-    label: hidden
+    label: visually_hidden
     weight: 0
     settings:
-      image_style: articles_images
+      image_style: news
       image_link: ''
     third_party_settings:
       ds:

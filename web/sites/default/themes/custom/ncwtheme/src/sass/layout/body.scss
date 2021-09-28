@@ -596,8 +596,10 @@ body {
 .node--type-highlight{
   .field--name-field-image-media{
     float: left;
-    margin-right: 1rem;
     clear: both;
+    img{
+      margin-bottom: 2px;
+    }
   }
   .field--name-field-summary-html{
     color: $text-color-black;
@@ -680,6 +682,9 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
 /* Articles */
 .node--type-article{
   #main{
+    .field--name-field-media-image{
+      margin-right: 0;
+    }
     .field--name-field-image-caption{
       img{
         width: 100%;
@@ -1381,7 +1386,7 @@ body.node--type-infographic{
 
 .node--type-news{
   .field--type-image img, .field--name-field-user-picture img{
-    margin: 0 0 0.3em;
+    margin: 0 0 2px;
   }
 }
 
