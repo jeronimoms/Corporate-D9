@@ -535,7 +535,7 @@ display:
             alter_text: false
             text: ''
             make_link: true
-            path: '{{ view_node }} '
+            path: '{{ view_node }}'
             absolute: false
             external: false
             replace_spaces: false

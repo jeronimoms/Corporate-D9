@@ -5,6 +5,7 @@ namespace Drupal\translation_workflow\Entity;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\tmgmt\Entity\JobItem;
 use Drupal\tmgmt\JobItemInterface;
 
@@ -12,6 +13,8 @@ use Drupal\tmgmt\JobItemInterface;
  *
  */
 class MultipleTargetLanguageJobItem extends JobItem {
+
+  use MessengerTrait;
 
   /**
    *
@@ -40,17 +43,25 @@ class MultipleTargetLanguageJobItem extends JobItem {
   }
 
   /**
+   * Get State label.
+   */
+  public static function getStateLabel($state = NULL) {
+    $states = static::getStates();
+    return $state[$state] ?? NULL;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public static function getStates() {
     return [
       static::STATE_ACTIVE => t('On Translation'),
       static::STATE_REVIEW => t('Translated'),
-      static::STATE_ACCEPTED => t('Ready to Publish'),
-      static::STATE_ABORTED => t('Translation Rejected'),
-      static::STATE_INACTIVE => t('Inactive'),
       static::STATE_TRANSLATION_VALIDATION_REQUIRED => t('Content Validation Required'),
+      static::STATE_ABORTED => t('Translation Rejected'),
       static:: STATE_TRANSLATION_VALIDATED => t('Translation Validated'),
+      static::STATE_ACCEPTED => t('Ready to Publish'),
+      static::STATE_INACTIVE => t('Inactive'),
     ];
   }
 
@@ -275,6 +286,142 @@ class MultipleTargetLanguageJobItem extends JobItem {
       }, ARRAY_FILTER_USE_KEY);
     }
     return $ret;
+  }
+
+  /**
+   * Move the Job Item to On Translation state.
+   *
+   * When re-enabled the translation by t manager.
+   */
+  public function toOnTranslation($message = '') {
+    // @todo Reset validators.
+    /*$validators = osha_tmgmt_load_validators_by_job_item($this);
+    if (!empty($validators)) {
+    $index = 0;
+    foreach ($validators as $validator) {
+    $validator->message = '';
+    $validator->approved = NULL;
+    $validator->next = 0;
+    if ($index == 0) {
+    $validator->next = 1;
+    }
+    entity_save('translation_validator', $validator);
+    $index++;
+    }
+    }
+    OshaWorkflowNotifications::notifyTranslationLayoutApprovers($this);*/
+    $this->setState(static::STATE_ACTIVE, '@name re-enabled the translation' .
+      ' for job item @tjiid, item @item_id (@bundle), language @lang. ' .
+      'Status is now "@state". Message: @message', [
+        '@name' => \Drupal::currentUser()->getAccountName(),
+        '@state' => static::getStateLabel(static::STATE_ACTIVE),
+        '@message' => $message,
+        '@tjiid' => $this->getJobId(),
+        '@item_id' => $this->getItemId(),
+        '@bundle' => $this->getItemType(),
+        '@lang' => strtoupper($this->getTargetLangcode()),
+      ]);
+    $this->messenger()->addMessage(t('You have Enabled the Translation'));
+  }
+
+  /**
+   * Move the Job Item to Translated state.
+   */
+  public function toTranslated($message = '') {
+    $this->setState(static::STATE_REVIEW, '@name approved the layout' .
+      ' for job item @tjiid, item @item_id (@bundle), language @lang. ' .
+      'Status is now "@state". Message: @message', [
+        '@name' => \Drupal::currentUser()->getAccountName(),
+        '@state' => static::getStateLabel(static::STATE_REVIEW),
+        '@message' => $message,
+        '@tjiid' => $this->getJobId(),
+        '@item_id' => $this->getItemId(),
+        '@bundle' => $this->getItemType(),
+        '@lang' => strtoupper($this->getTargetLangcode()),
+      ]);
+    // @todo Validators
+    // OshaWorkflowNotifications::notifyTranslationLayoutApproved($this);
+    $this->messenger()->addMessage(t('You have approved the layout'));
+  }
+
+  /**
+   * Move the Job Item to Translation Validated state.
+   */
+  public function toTranslationValidated($message = '') {
+    $this->setState(static::STATE_TRANSLATION_VALIDATED, '@name validated translation content' .
+      ' for job item @tjiid, item @item_id (@bundle), language @lang. ' .
+      'Status is now "@state". Message: @message', [
+        '@name' => \Drupal::currentUser()->getAccountName(),
+        '@state' => static::getStateLabel(static::STATE_TRANSLATION_VALIDATED),
+        '@message' => $message,
+        '@tjiid' => $this->getJobId(),
+        '@item_id' => $this->getItemId(),
+        '@bundle' => $this->getItemType(),
+        '@lang' => strtoupper($this->getTargetLangcode()),
+      ]);
+    // @todo Validators
+    // OshaWorkflowNotifications::notifyTranslationValidated($this);
+    $this->messenger()->addMessage(t('All content validators have validated the translation!'));
+  }
+
+  /**
+   * Move the Job Item to Translation Validation Required state.
+   */
+  public function toTranslationValidationRequired($message = '') {
+    $this->setState(static::STATE_TRANSLATION_VALIDATION_REQUIRED, '@name: Content validation required' .
+      ' for job item @tjiid, item @item_id (@bundle), language @lang. ' .
+      'Status is now "@state". Message: @message', [
+        '@name' => \Drupal::currentUser()->getAccountName(),
+        '@state' => static::getStateLabel(static::STATE_TRANSLATION_VALIDATION_REQUIRED),
+        '@tjiid' => $this->getJobId(),
+        '@item_id' => $this->getItemId(),
+        '@bundle' => $this->getItemType(),
+        '@lang' => strtoupper($this->getTargetLangcode()),
+      ]);
+    // @todo Validators
+    // OshaWorkflowNotifications::notifyTranslationValidators($this);
+    $this->messenger()
+      ->addMessage(t('You have Required Translation Validation for this translation'));
+  }
+
+  /**
+   * Move the Job Item to Translation Validation Required state.
+   */
+  public function toTranslationRejected($message = '') {
+    $this->setState(static::STATE_ABORTED, '@name: Translation rejected' .
+      ' for job item @tjiid, item @item_id (@bundle), language @lang. ' .
+      'Status is now "@state". Message: @message', [
+        '@name' => \Drupal::currentUser()->getAccountName(),
+        '@state' => static::getStateLabel(static::STATE_ABORTED),
+        '@message' => $message,
+        '@tjiid' => $this->getJobId(),
+        '@item_id' => $this->getItemId(),
+        '@bundle' => $this->getItemType(),
+        '@lang' => strtoupper($this->getTargetLangcode()),
+      ]);
+    // @todo Validators
+    // OshaWorkflowNotifications::notifyTranslationRejected($this);
+    $this->messenger()->addMessage(t('You have Rejected this translation'));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function acceptTranslation(string $message = '') {
+    $this->addMessage('@name accepted the translation' .
+      ' for job item @tjiid, item @item_id (@bundle), language @lang. ' .
+      'Status is now <strong>@state</strong>. @message', [
+        '@name' => \Drupal::currentUser()->getAccountName(),
+        '@state' => static::getStateLabel(static::STATE_ACCEPTED),
+        '@message' => 'Message: ' . $message,
+        '@tjiid' => $this->getJobId(),
+        '@item_id' => $this->getItemId(),
+        '@bundle' => $this->getItemType(),
+        '@lang' => strtoupper($this->getTargetLangcode()),
+      ]);
+    // @todo Validators
+    //OshaWorkflowNotifications::notifyTranslationAccepted($this);
+    return parent::acceptTranslation();
   }
 
 }

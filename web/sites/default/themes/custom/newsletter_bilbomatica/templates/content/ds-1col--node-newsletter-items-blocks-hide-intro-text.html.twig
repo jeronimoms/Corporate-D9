@@ -9,6 +9,12 @@
  * - ds_content: content region
  */
 #}
+{% set publication_date = ds_content.field_publication_date.0['#text'] %}
+<tr>
+  <td colspan="2" style="font-size: 14px; color: #003399;vertical-align: top; padding-bottom: 5px;">
+    {{ publication_date }}
+  </td>
+</tr>
 <tr>
   <td style="font-size: 14px; color: #003399;vertical-align: top">
     >&nbsp;
