@@ -19,7 +19,9 @@ source:
   urls: /expert/SYNC_CRM/FocalPoints.xml
   content_type: press_contact
   ids:
-    field_contact_uuid:
+    field_country:
+      type: string
+    field_contact_type:
       type: string
     field_contact_type:
       type: string

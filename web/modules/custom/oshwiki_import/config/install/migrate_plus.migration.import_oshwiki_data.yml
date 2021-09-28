@@ -28,8 +28,8 @@ dependencies:
 source:
   plugin: url
   data_fetcher_plugin: oie_file_fetcher
-  data_parser_plugin: oshwiki_json
-#  data_parser_plugin: json
+#  data_parser_plugin: oshwiki_json
+  data_parser_plugin: json
   include_raw_data: true
 #  urls: https://oshwiki.eu/api.php?action=query&generator=recentchanges&grclimit=3&grcend=2021-03-19T08:02:30Z&grcdir=older&prop=revisions&rvprop=timestamp|content|comment|tags&format=json
 #  urls: 'C:/Users/mcacheiro/manu/del/fullList.json'
@@ -37,14 +37,16 @@ source:
   urls: '/tmp/fullList.json'
   content_type: wiki_page
   ids:
-    nid:
-      type: integer
+    title:
+      type: string
+#    nid:
+#      type: integer
   item_selector: '/'
   fields:
-    -
-      name: nid
-      label: 'Nid'
-      selector: 'nid'
+#    -
+#      name: nid
+#      label: 'Nid'
+#      selector: 'nid'
     -
       name: title
       label: 'title'
@@ -85,7 +87,7 @@ source:
       label: 'field_wiki_categories'
       selector: 'category'
 process:
-  nid: nid
+  #nid: nid
   title: title
   field_summary_html: field_summary_html
   'field_summary_html/format':

@@ -1,4 +1,4 @@
-uuid: d118c3bd-379d-4ba1-ab91-686d200f5e78
+uuid: df6aed4c-783e-4e2c-ad85-5274921d9364
 langcode: en
 status: true
 dependencies:
@@ -16,19 +16,15 @@ label: 'OSHWiki data import'
 source:
   plugin: url
   data_fetcher_plugin: oie_file_fetcher
-  data_parser_plugin: oshwiki_json
+  data_parser_plugin: json
   include_raw_data: true
   urls: /tmp/fullList.json
   content_type: wiki_page
   ids:
-    nid:
-      type: integer
+    title:
+      type: string
   item_selector: /
   fields:
-    -
-      name: nid
-      label: Nid
-      selector: nid
     -
       name: title
       label: title
@@ -62,7 +58,6 @@ source:
       label: field_wiki_categories
       selector: category
 process:
-  nid: nid
   title: title
   field_summary_html: field_summary_html
   field_summary_html/format:
