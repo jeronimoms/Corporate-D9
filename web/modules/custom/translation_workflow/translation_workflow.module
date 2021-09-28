@@ -7,7 +7,6 @@
 
 use Drupal\tmgmt\Entity\Translator;
 use Drupal\tmgmt\TMGMTException;
-use Drupal\translation_workflow\Entity\PriorityJobInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -113,84 +112,6 @@ function translation_workflow_form_alter_validate(&$form, FormStateInterface $fo
     if (!empty($existingJobItems)) {
       \Drupal::messenger()
         ->addWarning(t('Some of the added elements are already in the cart.'));
-    }
-  }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function translation_workflow_form_tmgmt_cart_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-
-  if (isset($form['source_language'])) {
-    $form['source_language']['#size'] = 24;
-    if (isset($form['source_language']['#options']['nol'])) {
-      unset($form['source_language']['#options']['nol']);
-    }
-  }
-
-  if (isset($form['target_language'])) {
-    $form['target_language']['#size'] = 24;
-    $default = Drupal::languageManager()->getDefaultLanguage()->getId();
-    if (isset($form['target_language']['#options']['nol'])) {
-      unset($form['target_language']['#options']['nol']);
-    }
-    if (isset($form['target_language']['#options'][$default])) {
-      unset($form['target_language']['#options'][$default]);
-    }
-  }
-
-  $jobFieldDefinitions = \Drupal::service('entity_field.manager')
-    ->getFieldDefinitions('tmgmt_job_multiple_target', 'default');
-  if (isset($jobFieldDefinitions['priority'])) {
-    $priorityField = $jobFieldDefinitions['priority'];
-    $form['priority'] = [
-      '#type' => 'select',
-      '#options' => $priorityField->getSetting('allowed_values'),
-      '#title' => $priorityField->getLabel(),
-      '#default_value' => PriorityJobInterface::PRIORITY_NORMAL,
-      '#weight' => -1,
-    ];
-  }
-
-  // Select all languages.
-  $form['select_all_lng'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Select all languages'),
-  ];
-  $form['empty_cart']['#weight'] = 7;
-  $form['remove_selected']['#weight'] = 6;
-  $form['request_translation']['#weight'] = 4;
-
-  $form['#attached']['library'][] = 'translation_workflow/select_all';
-  $form["request_translation"]["#validate"][] = '_translation_workflow_form_tmgmt_cart_form_validate';
-}
-
-/**
- * Validation for cart form.
- *
- * @param array $form
- *   Form variables.
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- *   Form State values.
- */
-function _translation_workflow_form_tmgmt_cart_form_validate(array &$form, FormStateInterface $form_state) {
-  if ($form_state->hasValue('target_language')) {
-    $targetLanguages = $form_state->getValue('target_language');
-    if (empty($targetLanguages)) {
-      $form_state->setErrorByName('target_language', t("You didn't select any target language."));
-    }
-    $selectedItems = $form_state->getValue('items');
-    $jobItems = MultipleTargetLanguageJobItem::loadMultiple($selectedItems);
-    $items = array_map(function ($item) {
-      return $item->getItemId();
-    }, $jobItems);
-    $queryResults = Drupal::entityQuery('tmgmt_job_item')
-      ->condition('item_id', $items, 'IN')
-      ->condition('target_language', $targetLanguages, 'IN')
-      ->execute();
-    if (!empty($queryResults)) {
-      $form_state->setErrorByName('', t('Cannot add items already in translation.'));
     }
   }
 }
