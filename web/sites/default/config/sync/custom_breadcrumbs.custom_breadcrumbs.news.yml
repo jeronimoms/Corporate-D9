@@ -1,0 +1,15 @@
+uuid: ebb0f82a-e2f1-4770-a061-d6d5d56ac8d9
+langcode: en
+status: true
+dependencies: {  }
+id: news
+label: News
+description: ''
+entityType: node
+entityBundle: news
+language: und
+breadcrumbPaths: '/oshnews/*'
+breadcrumbTitles: 'OSH news'
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''
