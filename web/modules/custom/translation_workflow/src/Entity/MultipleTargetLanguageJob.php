@@ -15,6 +15,7 @@ use Drupal\tmgmt\Entity\RemoteMapping;
 use Drupal\tmgmt\JobItemInterface;
 use Drupal\tmgmt\TMGMTException;
 use Drupal\tmgmt\Translator\TranslatableResult;
+use Drupal\translation_workflow\Event\TranslationEvent;
 use Drupal\user\EntityOwnerInterface;
 use Drupal\user\UserInterface;
 
@@ -29,10 +30,12 @@ use Drupal\user\UserInterface;
  *     "access" = "Drupal\tmgmt\Entity\Controller\JobAccessControlHandler",
  *   "form" = {
  *       "edit" = "Drupal\translation_workflow\Form\MultipleTargetLanguageJobForm",
- *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
+ *       "abort" = "Drupal\tmgmt\Form\JobAbortForm",
+ *       "resubmit_form" = "Drupal\tmgmt\Form\JobResubmitForm"
  *     },
  *     "list_builder" = "Drupal\translation_workflow\Entity\ListBuilder\MultipleTargetLanguageJobListBuilder",
- *   "views_data" = "Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobViewsData"
+ *     "views_data" = "Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobViewsData"
  *   },
  *   base_table = "tmgmt_multiple_target_job",
  *   entity_keys = {
@@ -42,13 +45,20 @@ use Drupal\user\UserInterface;
  *   },
  *   links = {
  *     "canonical" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}",
- *     "delete-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/delete"
+ *     "delete-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/delete",
+ *     "abort-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/abort",
+ *     "resubmit-form" = "/admin/translation_workflow/jobs/{tmgmt_job_multiple_target}/resubmit"
  *   }
  * )
  *
  * @ingroup tmgmt_job
  */
 class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwnerInterface, PriorityJobInterface {
+
+  /**
+   * Character allowed per page to calculate pages number.
+   */
+  const CHARACTERS_PER_PAGE = 1500;
 
   use StringTranslationTrait;
 
@@ -121,14 +131,44 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
       ->setDisplayOptions('form', [
         'region' => 'hidden',
       ])
-      ->setSetting('allowed_values', [
-        static::PRIORITY_LOW => t('Low'),
-        static::PRIORITY_NORMAL => t('Normal'),
-        static::PRIORITY_HIGH => t('High'),
-      ])
+      ->setSetting('allowed_values', self::getPriorities())
       ->setDescription('Set job priority.');
 
+    $fields['file_uploaded'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('File uploaded'))
+      ->setDescription(t('A boolean indicating if job has a file uploaded or not.'))
+      ->setDefaultValue(FALSE);
+
+    $fields['file_sent'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('File Sent to CDT'))
+      ->setDescription(t('A boolean indicating if the translation file was sent to CDT.'))
+      ->setDefaultValue(FALSE);
+
     return $fields;
+  }
+
+  /**
+   * Return priorities values.
+   *
+   * @return array
+   *   Priorities values.
+   */
+  public static function getPriorities() {
+    return [
+      static::PRIORITY_LOW => t('Low'),
+      static::PRIORITY_NORMAL => t('Normal'),
+      static::PRIORITY_HIGH => t('High'),
+    ];
+  }
+
+  /**
+   * Get if job is sent to CDT.
+   *
+   * @return bool
+   *   Return if job is sent to CDT.
+   */
+  public function isSentToCdt() {
+    return $this->get('file_sent')->getString() == 1;
   }
 
   /**
@@ -426,6 +466,7 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
         $this->addMessage($message, $variables, $type);
       }
     }
+    \Drupal::service('event_dispatcher')->dispatch(new TranslationEvent($this, NULL), TranslationEvent::TRANSLATION_JOB_STATE_CHANGED);
     return $this->getState();
   }
 
@@ -706,6 +747,48 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
   }
 
   /**
+   * Returns characters count for items.
+   *
+   * @return int
+   *   Characters count.
+   */
+  public function getCharactersCount() {
+    $items = $this->getItems();
+    $countedItems = [];
+    $count = 0;
+    $dataService = \Drupal::service('tmgmt.data');
+    foreach ($items as $item) {
+      $itemId = $item->getItemId();
+      if (!isset($countedItems[$itemId])) {
+        $countedItems[$itemId] = TRUE;
+        $data = array_filter($dataService->flatten($item->getData()), function ($value) {
+          return !(empty($value['#text']) || (isset($value['#translate']) && $value['#translate'] === FALSE));
+        });
+        foreach ($data as $key => $field) {
+          if (isset($field['#text'])) {
+            $text = $field['#text'];
+            $text = strip_tags(html_entity_decode($text));
+            // C2A0 is unicode nbsp.
+            $text = preg_replace("/\x{00A0}|&nbsp;|\s/", '', $text);
+            $count += mb_strlen($text, 'utf-8');
+          }
+        }
+      }
+    }
+    return $count;
+  }
+
+  /**
+   * Get page count for items.
+   *
+   * @return string
+   *   Page count.
+   */
+  public function getPageCount() {
+    return number_format($this->getCharactersCount() / self::CHARACTERS_PER_PAGE, 2, ',', '');
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function getTagsCount() {
@@ -716,8 +799,13 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    * {@inheritdoc}
    */
   public function addTranslatedData(array $data, $key = NULL, $status = NULL) {
+    $itemsSearch = [];
+    if (isset($data['target_language'])) {
+      $itemsSearch = ['target_language' => $data['target_language']];
+      unset($data['target_language']);
+    }
     $key = \Drupal::service('tmgmt.data')->ensureArrayKey($key);
-    $items = $this->getItems();
+    $items = $this->getItems($itemsSearch);
     // If there is a key, get the specific item and forward the call.
     if (!empty($key)) {
       $item_id = array_shift($key);
@@ -762,7 +850,10 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    * {@inheritdoc}
    */
   public function getSuggestions(array $conditions = []) {
-    $suggestions = \Drupal::moduleHandler()->invokeAll('tmgmt_source_suggestions', [$this->getItems($conditions), $this]);
+    $suggestions = \Drupal::moduleHandler()->invokeAll('tmgmt_source_suggestions', [
+      $this->getItems($conditions),
+      $this,
+    ]);
 
     // EachJob needs a job id to be able to count the words, because the
     // source-language is stored in the job and not the item.
@@ -967,7 +1058,20 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    * {@inheritdoc}
    */
   public function getPriorityValues() {
-    return $this->get('priority')->getFieldDefinition()->getSetting('allowed_values');
+    return static::getPriorities();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function label() {
+    $label = parent::label();
+    if (empty($label)) {
+      $label = $this->t('Translation job #@id', [
+        '@id' => $this->id(),
+      ]);
+    }
+    return $label;
   }
 
 }

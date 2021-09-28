@@ -1,0 +1,15 @@
+display:
+  default:
+    display_options:
+      fields:
+        type:
+          label: Type
+      filters:
+        type:
+          expose:
+            label: Type
+  block_1:
+    display_options:
+      fields:
+        type:
+          label: Type

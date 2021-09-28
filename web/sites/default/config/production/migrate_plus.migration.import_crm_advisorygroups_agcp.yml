@@ -97,7 +97,7 @@ process:
   field_press_contact_phone: field_press_contact_phone
   field_wg_role_1:
     -
-      plugin: hcm_taxonomy_term_name
+      plugin: oie_taxonomy_term_name
       source: field_wg_role_1
       vocabulary: wg_role_1
   field_zip_code: field_zip_code

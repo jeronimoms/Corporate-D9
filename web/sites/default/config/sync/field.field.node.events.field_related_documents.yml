@@ -7,6 +7,10 @@ dependencies:
     - node.type.events
   module:
     - file
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.events.field_related_documents
 field_name: field_related_documents
 entity_type: node
@@ -18,10 +22,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  description_field: true
   file_directory: ''
-  file_extensions: 'pdf doc docx odt rtf txt csv xls ods xlsx ppt pptx epub'
+  file_extensions: 'pdf doc docx odt rtf txt csv xls ods xlsx ppt pptx epub png jpg jpeg gif'
   max_filesize: '50 MB'
+  description_field: true
   handler: 'default:file'
   handler_settings: {  }
 field_type: file

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.press_release.field_pr_embargo_date
     - field.field.node.press_release.field_pr_notes_to_editor
     - field.field.node.press_release.field_publication_date
+    - field.field.node.press_release.field_published
     - field.field.node.press_release.field_quote
     - field.field.node.press_release.field_section
     - field.field.node.press_release.field_summary_html
@@ -45,6 +46,7 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - content_moderation_control
         - field_publication_date
         - node_title
         - field_image_media
@@ -56,7 +58,7 @@ third_party_settings:
     fields:
       node_title:
         plugin_id: node_title
-        weight: 1
+        weight: 2
         label: hidden
         formatter: default
 id: node.press_release.default
@@ -65,14 +67,19 @@ bundle: press_release
 mode: default
 content:
   body:
-    weight: 5
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: ds_content
+  content_moderation_control:
+    weight: 0
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
   field_aditional_resources:
-    weight: 7
+    weight: 8
     label: hidden
     settings:
       link: true
@@ -80,7 +87,7 @@ content:
     type: entity_reference_label
     region: ds_content
   field_image_media:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       image_style: home_news
@@ -97,7 +104,7 @@ content:
     region: ds_content
   field_pr_notes_to_editor:
     type: entity_reference_entity_view
-    weight: 6
+    weight: 7
     region: ds_content
     label: above
     settings:
@@ -113,7 +120,7 @@ content:
             lb-col: true
             classes: {  }
   field_publication_date:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       format_type: medium
@@ -121,15 +128,25 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: ds_content
+  field_published:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_quote:
-    weight: 4
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: ds_content
   field_summary_html:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -138,7 +155,6 @@ content:
 hidden:
   addtoany: true
   breadcrumbs: true
-  content_moderation_control: true
   field_activity: true
   field_archived: true
   field_expiration_date: true

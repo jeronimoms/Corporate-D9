@@ -159,95 +159,95 @@ process:
   field_booklet: field_booklet
   # Images.
 
-  field_image_media:
-    plugin: file_id_lookup_translations
-    source: field_cover_image
-    migration:
-      - ncw_node_publication_field_image_media_1_es
-      - ncw_node_publication_field_image_media_1_bg
-      - ncw_node_publication_field_image_media_1_cs
-      - ncw_node_publication_field_image_media_1_da
-      - ncw_node_publication_field_image_media_1_de
-      - ncw_node_publication_field_image_media_1_et
-      - ncw_node_publication_field_image_media_1_el
-      - ncw_node_publication_field_image_media_1_fr
-      - ncw_node_publication_field_image_media_1_hr
-      - ncw_node_publication_field_image_media_1_it
-      - ncw_node_publication_field_image_media_1_lv
-      - ncw_node_publication_field_image_media_1_lt
-      - ncw_node_publication_field_image_media_1_hu
-      - ncw_node_publication_field_image_media_1_mt
-      - ncw_node_publication_field_image_media_1_nl
-      - ncw_node_publication_field_image_media_1_pl
-      - ncw_node_publication_field_image_media_1_pt
-      - ncw_node_publication_field_image_media_1_ro
-      - ncw_node_publication_field_image_media_1_sk
-      - ncw_node_publication_field_image_media_1_sl
-      - ncw_node_publication_field_image_media_1_fi
-      - ncw_node_publication_field_image_media_1_sv
-      - ncw_node_publication_field_image_media_1_is
-      - ncw_node_publication_field_image_media_1_no
-      - ncw_node_publication_field_image_media_1_tr
-    no_stub: true
-
-  # Documents.
-  field_file_media:
-    plugin: file_id_lookup_translations
-    source: field_file
-    migration:
-      - ncw_node_publication_media_documents_1_es
-      - ncw_node_publication_media_documents_1_bg
-      - ncw_node_publication_media_documents_1_cs
-      - ncw_node_publication_media_documents_1_da
-      - ncw_node_publication_media_documents_1_de
-      - ncw_node_publication_media_documents_1_et
-      - ncw_node_publication_media_documents_1_el
-      - ncw_node_publication_media_documents_1_fr
-      - ncw_node_publication_media_documents_1_hr
-      - ncw_node_publication_media_documents_1_it
-      - ncw_node_publication_media_documents_1_lv
-      - ncw_node_publication_media_documents_1_lt
-      - ncw_node_publication_media_documents_1_hu
-      - ncw_node_publication_media_documents_1_mt
-      - ncw_node_publication_media_documents_1_nl
-      - ncw_node_publication_media_documents_1_pl
-      - ncw_node_publication_media_documents_1_pt
-      - ncw_node_publication_media_documents_1_ro
-      - ncw_node_publication_media_documents_1_sk
-      - ncw_node_publication_media_documents_1_sl
-      - ncw_node_publication_media_documents_1_fi
-      - ncw_node_publication_media_documents_1_sv
-      - ncw_node_publication_media_documents_1_is
-      - ncw_node_publication_media_documents_1_no
-      - ncw_node_publication_media_documents_1_tr
-    no_stub: true
-  field_publication_res_files:
-    plugin: file_id_lookup_translations
-    source: field_publication_related_res
-    migration:
-      - ncw_node_publication_media_documents_1_es
-      - ncw_node_publication_media_documents_1_bg
-      - ncw_node_publication_media_documents_1_cs
-      - ncw_node_publication_media_documents_1_da
-      - ncw_node_publication_media_documents_1_de
-      - ncw_node_publication_media_documents_1_et
-      - ncw_node_publication_media_documents_1_el
-      - ncw_node_publication_media_documents_1_fr
-      - ncw_node_publication_media_documents_1_hr
-      - ncw_node_publication_media_documents_1_it
-      - ncw_node_publication_media_documents_1_lv
-      - ncw_node_publication_media_documents_1_lt
-      - ncw_node_publication_media_documents_1_hu
-      - ncw_node_publication_media_documents_1_mt
-      - ncw_node_publication_media_documents_1_nl
-      - ncw_node_publication_media_documents_1_pl
-      - ncw_node_publication_media_documents_1_pt
-      - ncw_node_publication_media_documents_1_ro
-      - ncw_node_publication_media_documents_1_sk
-      - ncw_node_publication_media_documents_1_sl
-      - ncw_node_publication_media_documents_1_fi
-      - ncw_node_publication_media_documents_1_sv
-      - ncw_node_publication_media_documents_1_is
-      - ncw_node_publication_media_documents_1_no
-      - ncw_node_publication_media_documents_1_tr
-    no_stub: true
+#  field_image_media:
+#    plugin: file_id_lookup_translations
+#    source: field_cover_image
+#    migration:
+#      - ncw_node_publication_field_image_media_1_es
+#      - ncw_node_publication_field_image_media_1_bg
+#      - ncw_node_publication_field_image_media_1_cs
+#      - ncw_node_publication_field_image_media_1_da
+#      - ncw_node_publication_field_image_media_1_de
+#      - ncw_node_publication_field_image_media_1_et
+#      - ncw_node_publication_field_image_media_1_el
+#      - ncw_node_publication_field_image_media_1_fr
+#      - ncw_node_publication_field_image_media_1_hr
+#      - ncw_node_publication_field_image_media_1_it
+#      - ncw_node_publication_field_image_media_1_lv
+#      - ncw_node_publication_field_image_media_1_lt
+#      - ncw_node_publication_field_image_media_1_hu
+#      - ncw_node_publication_field_image_media_1_mt
+#      - ncw_node_publication_field_image_media_1_nl
+#      - ncw_node_publication_field_image_media_1_pl
+#      - ncw_node_publication_field_image_media_1_pt
+#      - ncw_node_publication_field_image_media_1_ro
+#      - ncw_node_publication_field_image_media_1_sk
+#      - ncw_node_publication_field_image_media_1_sl
+#      - ncw_node_publication_field_image_media_1_fi
+#      - ncw_node_publication_field_image_media_1_sv
+#      - ncw_node_publication_field_image_media_1_is
+#      - ncw_node_publication_field_image_media_1_no
+#      - ncw_node_publication_field_image_media_1_tr
+#    no_stub: true
+#
+#  # Documents.
+#  field_file_media:
+#    plugin: file_id_lookup_translations
+#    source: field_file
+#    migration:
+#      - ncw_node_publication_media_documents_1_es
+#      - ncw_node_publication_media_documents_1_bg
+#      - ncw_node_publication_media_documents_1_cs
+#      - ncw_node_publication_media_documents_1_da
+#      - ncw_node_publication_media_documents_1_de
+#      - ncw_node_publication_media_documents_1_et
+#      - ncw_node_publication_media_documents_1_el
+#      - ncw_node_publication_media_documents_1_fr
+#      - ncw_node_publication_media_documents_1_hr
+#      - ncw_node_publication_media_documents_1_it
+#      - ncw_node_publication_media_documents_1_lv
+#      - ncw_node_publication_media_documents_1_lt
+#      - ncw_node_publication_media_documents_1_hu
+#      - ncw_node_publication_media_documents_1_mt
+#      - ncw_node_publication_media_documents_1_nl
+#      - ncw_node_publication_media_documents_1_pl
+#      - ncw_node_publication_media_documents_1_pt
+#      - ncw_node_publication_media_documents_1_ro
+#      - ncw_node_publication_media_documents_1_sk
+#      - ncw_node_publication_media_documents_1_sl
+#      - ncw_node_publication_media_documents_1_fi
+#      - ncw_node_publication_media_documents_1_sv
+#      - ncw_node_publication_media_documents_1_is
+#      - ncw_node_publication_media_documents_1_no
+#      - ncw_node_publication_media_documents_1_tr
+#    no_stub: true
+#  field_publication_res_files:
+#    plugin: file_id_lookup_translations
+#    source: field_publication_related_res
+#    migration:
+#      - ncw_node_publication_media_documents_1_es
+#      - ncw_node_publication_media_documents_1_bg
+#      - ncw_node_publication_media_documents_1_cs
+#      - ncw_node_publication_media_documents_1_da
+#      - ncw_node_publication_media_documents_1_de
+#      - ncw_node_publication_media_documents_1_et
+#      - ncw_node_publication_media_documents_1_el
+#      - ncw_node_publication_media_documents_1_fr
+#      - ncw_node_publication_media_documents_1_hr
+#      - ncw_node_publication_media_documents_1_it
+#      - ncw_node_publication_media_documents_1_lv
+#      - ncw_node_publication_media_documents_1_lt
+#      - ncw_node_publication_media_documents_1_hu
+#      - ncw_node_publication_media_documents_1_mt
+#      - ncw_node_publication_media_documents_1_nl
+#      - ncw_node_publication_media_documents_1_pl
+#      - ncw_node_publication_media_documents_1_pt
+#      - ncw_node_publication_media_documents_1_ro
+#      - ncw_node_publication_media_documents_1_sk
+#      - ncw_node_publication_media_documents_1_sl
+#      - ncw_node_publication_media_documents_1_fi
+#      - ncw_node_publication_media_documents_1_sv
+#      - ncw_node_publication_media_documents_1_is
+#      - ncw_node_publication_media_documents_1_no
+#      - ncw_node_publication_media_documents_1_tr
+#    no_stub: true

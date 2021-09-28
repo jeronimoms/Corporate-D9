@@ -8,6 +8,7 @@ use Drupal\tmgmt\JobInterface;
 use Drupal\tmgmt\JobItemInterface;
 use Drupal\tmgmt_file\Format\FormatInterface;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
+use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 
 /**
  * Export into XML translation format.
@@ -96,11 +97,15 @@ class Xml extends \XMLWriter implements FormatInterface {
     $this->startElement('TranslationDetails');
     $this->writeElement('TotalCharacterLength', $job->getWordCount());
 
+    $addedItems = [];
     $job_items = self::getUniqueItems($job);
     foreach ($job_items as $item_type => $item_ids) {
       foreach ($item_ids as $item_id => $item_list) {
         foreach ($item_list as $item) {
-          $this->addItem($item, $job);
+          if (!in_array($item->getItemId(), $addedItems) && ($item->currentItemExists())) {
+            $this->addItem($item, $job);
+            $addedItems[] = $item->getItemId();
+          }
         }
       }
     }
@@ -180,9 +185,27 @@ class Xml extends \XMLWriter implements FormatInterface {
     $tjid = $this->importedXML->xpath("//TransactionIdentifier");
     $tjid = reset($tjid);
     $job = MultipleTargetLanguageJob::load((string) $tjid);
+    $job->set('file_uploaded', TRUE)->save();
 
     $flat_data = $this->getImportedTargets($job);
+    $flat_data['target_language'] = $this->extractTargetLanguage();
     return $this->dataService->unflatten($flat_data);
+  }
+
+  /**
+   * Extract translation language.
+   *
+   * @return string
+   *   Translation language of xml.
+   */
+  protected function extractTargetLanguage() {
+    $targetLanguage = NULL;
+    $translationTargetLanguage = $this->importedXML->xpath('//TranslationTargetLanguage');
+    if ($translationTargetLanguage) {
+      $translationTargetLanguage = reset($translationTargetLanguage);
+      $targetLanguage = (string) $translationTargetLanguage;
+    }
+    return $targetLanguage;
   }
 
   /**
@@ -274,13 +297,11 @@ class Xml extends \XMLWriter implements FormatInterface {
   public function getMappedItemIds(JobInterface $job) {
     $items = $job->getItems();
     foreach ($items as $item_id => $item) {
-      if ($job instanceof MultipleTargetLanguageJob) {
-        foreach ($job->getTargetLanguages() as $language) {
-          $this->mappedItemsIDs[$language->getId()][$item->getItemType()][$item->id()] = $item_id;
-        }
+      if ($job instanceof MultipleTargetLanguageJob && $item instanceof MultipleTargetLanguageJobItem) {
+        $this->mappedItemsIDs[$item->getTargetLangcode()][$item->getItemType()][$item->getItemId()] = $item_id;
       }
       else {
-        $this->mappedItemsIDs[$job->getRemoteTargetLanguage()][$item->getItemType()][$item->id()] = $item_id;
+        $this->mappedItemsIDs[$job->getRemoteTargetLanguage()][$item->getItemType()][$item->getItemId()] = $item_id;
       }
     }
   }
@@ -392,7 +413,7 @@ class Xml extends \XMLWriter implements FormatInterface {
       $this->startElement('DynamicElement');
       $this->writeAttribute('dynamicElementKind', 'TextArea');
       $this->writeAttribute('indexType', $item->getItemType());
-      $this->writeAttribute('instanceId', $item->id());
+      $this->writeAttribute('instanceId', $item->getItemId());
       $this->writeAttribute('name', '][' . $key);
       $this->writeAttribute('repeatable', 'false');
       $this->startElement('DynamicContent');

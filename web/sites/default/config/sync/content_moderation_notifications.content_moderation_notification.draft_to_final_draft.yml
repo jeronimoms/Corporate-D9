@@ -1,4 +1,4 @@
-uuid: d7aefec6-3def-4467-be04-ea9962067d44
+uuid: f59c2627-fdcd-4b3a-96aa-6c32afae2d54
 langcode: en
 status: true
 dependencies: {  }
@@ -11,8 +11,8 @@ roles:
 author: false
 site_mail: false
 emails: ''
-subject: 'Corporate website - New content needs your review '
+subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear Reviewer,</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>There is a new content to be reviewed by you: [node:title] ([node:edit-url]). You can access also to the list of items ([site:url]admin/content?state=editorial-final_draft) that needs to be reviewed.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you</p>\r\n"
+  value: "<p>Dear <strong>Reviewer</strong>,</p>\r\n\r\n<p>There is new content to be reviewed by you: <strong>[node:title]</strong> ([node:url]) (type: [node:type], status: <strong>Final draft</strong>). There are more items you can review from&nbsp;&nbsp;<a href=\"/admin/workbench/review-manager\" target=\"blank\">here</a>.</p>\r\n\r\n<p>Thank you,</p>\r\n"
   format: full_html
 label: 'Draft to Final draft'

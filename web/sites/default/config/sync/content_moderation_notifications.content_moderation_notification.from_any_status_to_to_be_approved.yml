@@ -1,0 +1,24 @@
+uuid: 5d201f87-b055-4a5d-a581-fd84b00251bb
+langcode: en
+status: true
+dependencies: {  }
+id: from_any_status_to_to_be_approved
+workflow: editorial
+transitions:
+  send_to_be_approved_from_draft: send_to_be_approved_from_draft
+  send_to_be_approved_from_final_draft: send_to_be_approved_from_final_draft
+  review_manager_accepts_rejected_content: review_manager_accepts_rejected_content
+  from_approved_to_to_be_approved: from_approved_to_to_be_approved
+  send_to_be_approved: send_to_be_approved
+  from_ready_to_publish_to_to_be_approved: from_ready_to_publish_to_to_be_approved
+  from_published_to_ready_to_to_be_approved: from_published_to_ready_to_to_be_approved
+roles:
+  approver: approver
+author: false
+site_mail: false
+emails: ''
+subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
+body:
+  value: "<p>Dear <strong>Approver</strong>,</p>\r\n\r\n<p>There is new content to be approved by you: <strong>[node:title]&nbsp;</strong> ([node:url]) (type: [node:type], status: <b>To be approved</b>). There are more&nbsp;items that you can review from <a href=\"/admin/workbench/approve\" target=\"_blank\">here.</a></p>\r\n\r\n<p>Thank you,</p>\r\n"
+  format: full_html
+label: 'From Any status to To be Approved'

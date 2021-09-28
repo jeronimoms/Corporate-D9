@@ -48,14 +48,14 @@ function ncwtheme_preprocess_html(&$variables){
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Download PDF and Images in Publications detail and Infographics detail
  */
 function ncwtheme_preprocess_node(&$variables)
 {
   $node = $variables['node'];
   $pdf = [];
   $img = [];
-  if ($node->bundle() == 'publication' or $node->bundle() == 'infographic') {
+  if ( $node->bundle() == 'publication' or $node->bundle() == 'infographic' ){
     foreach ($node->getTranslationLanguages() as $language) {
       $nodeTranslation = $node->getTranslation($language->getId());
       if ($nodeTranslation->hasField('field_file_media')) {
@@ -75,9 +75,10 @@ function ncwtheme_preprocess_node(&$variables)
         }
       }
     }
+    ksort($pdf);
     $variables['relatedPdf'] = $pdf;
   }
-  if ($node->bundle() == 'infographic') {
+  if ($node->bundle() == 'infographic' or $node->bundle() == 'publication') {
     foreach ($node->getTranslationLanguages() as $language) {
       $nodeTranslation = $node->getTranslation($language->getId());
       if ($nodeTranslation->hasField('field_image_media')) {
@@ -94,8 +95,71 @@ function ncwtheme_preprocess_node(&$variables)
         }
       }
     }
+    ksort($img);
     $variables['relatedImg'] = $img;
+    $variables['coverImg'] = $fileFieldImg;
+  }
+  /**
+   * Get parameter in URL to External Inforgrphic en/tools-and-publications/infographics/how-to-manage-dangerous-substances/how-to-manage-dangerous-substances-infographic
+   */
+  if ($node->bundle() == 'article' and $node->id() == '14885' ){
+    $request = \Drupal::request();
+    if ($request->query->has('lan')){
+      $variables['lan'] = $request->query->get('lan') ;
+    }
   }
 }
+
+/**
+ * Download PDF and Images in Publications related views : /publications/topic/4526%2B2968
+ */
+function ncwtheme_preprocess_ds_1col(&$variables)
+{
+  if(isset($variables['content']['#node'])) {
+    $node = $variables['content']['#node'];
+    $img = [];
+    $pdf = [];
+    if ($node->bundle() == 'publication') {
+      foreach ($node->getTranslationLanguages() as $language) {
+        $nodeTranslation = $node->getTranslation($language->getId());
+        if ($nodeTranslation->hasField('field_file_media')) {
+          $fileMediaField = $nodeTranslation->get('field_file_media');
+          if ($fileMediaField->count() > 0) {
+            $fileMedia = $fileMediaField->entity;
+            if ($fileMedia->hasField('field_media_document')) {
+              $fileField = $fileMedia->get('field_media_document');
+              if ($fileField->count() > 0) {
+                $file = $fileMedia->get('field_media_document')->entity;
+                $pdf[$language->getId()] = file_create_url($file->getFileUri());
+                if (!isset($variables['fileDownloadType'])) {
+                  $variables['fileDownloadType'] = pathinfo($file->getFileUri(), PATHINFO_EXTENSION);
+                }
+              }
+            }
+          }
+        }
+        if ($nodeTranslation->hasField('field_image_media')) {
+          $fileImageField = $nodeTranslation->get('field_image_media');
+          if ($fileImageField->count() > 0) {
+            $fileMediaImg = $fileImageField->entity;
+            if ($fileMediaImg->hasField('field_media_image')) {
+              $fileFieldImg = $fileMediaImg->get('field_media_image');
+              if ($fileFieldImg->count() > 0) {
+                $fileImg = $fileMediaImg->get('field_media_image')->entity;
+                $img[$language->getId()] = file_create_url($fileImg->getFileUri());
+              }
+            }
+          }
+        }
+      }
+      $variables['relatedPdf'] = $pdf;
+      $variables['relatedImg'] = $img;
+      $variables['coverImg'] = $fileFieldImg;
+    }
+  }
+}
+
+
+
 
 

@@ -274,6 +274,11 @@
       p{
         margin-bottom: 0;
       }
+      &.field--name-body{
+        p{
+          margin-bottom: 1rem;
+        }
+      }
     }
     .field--type-text-with-summary{
       color: $text-color-black;
@@ -313,7 +318,6 @@
       .field--name-field-report-media{
         .file--mime-application-pdf {
           background-position:0 0;
-          border-bottom: 1px solid $text-color-pink;
           a{
             padding-bottom: 3px;
             display: inline-block;
