@@ -3163,6 +3163,31 @@ body.node--type-infographic .field--name-body {
   display: none;
 }
 
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .js-form-wrapper {
+  border: 1px solid #CCC;
+  margin-bottom: 2rem !important;
+  padding: 1rem;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .js-form-wrapper#edit-actions {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .legend {
+  background: #FFF;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: -30px;
+  display: table;
+  width: auto;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form fieldset p {
+  margin-bottom: 0 !important;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .blue {
+  color: #003399;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
