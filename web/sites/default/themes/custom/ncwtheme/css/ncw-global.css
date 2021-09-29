@@ -4454,6 +4454,31 @@ body.user-logged-in.toolbar-tray-open.scrolled #header {
   margin-top: 0;
 }
 
+/* Block follow us on */
+#block-homefollowuson {
+  width: 100%;
+}
+
+.follow-us {
+  width: 100%;
+  text-align: center;
+  color: #003399;
+  font-size: 1rem !important;
+  padding-bottom: 0.5em;
+  margin-top: 20px;
+}
+
+.follow-us-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.follow-us-icons a {
+  border-bottom: 0 !important;
+}
+
 .navbar {
   padding: 0;
 }
@@ -7288,6 +7313,9 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   .path-frontpage .sidebars_second_home {
     width: 100%;
     margin-left: 0;
+  }
+  .path-frontpage .block-custom-newsletter.block-custom-newsletter--sidebar {
+    margin-right: 1rem;
   }
 }
 /* End Media 1024px */
