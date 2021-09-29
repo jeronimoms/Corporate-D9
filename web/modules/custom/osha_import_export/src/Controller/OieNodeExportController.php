@@ -293,7 +293,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     }
     $term_data = [
       'tid' => $term->id(),
-      'vid' => 10,
+      'vid' => $term->vid(),
       'name' => $term->getName(),
       'description' => $term->getDescription(),
       'format' => $term->getFormat(),
