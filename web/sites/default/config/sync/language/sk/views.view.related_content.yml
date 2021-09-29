@@ -2,3 +2,31 @@ display:
   block_2:
     display_options:
       use_more_text: 'Zobraziť všetky'
+  default:
+    display_options:
+      use_more_text: 'Zobraziť všetky'
+  block_3:
+    display_options:
+      use_more_text: 'Zobraziť všetky'
+  block_5:
+    display_options:
+      filters:
+        field_publication_date_value:
+          expose:
+            description: ''
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+      use_more_text: 'Zobraziť všetky'
+  block_7:
+    display_options:
+      use_more_text: 'Zobraziť všetky'
+  page_2:
+    display_options:
+      filters:
+        field_publication_date_value:
+          expose:
+            description: ''
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
