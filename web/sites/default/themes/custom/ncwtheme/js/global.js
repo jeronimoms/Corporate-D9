@@ -86,8 +86,10 @@ jQuery(document).ready(function($) {
   });
 
   //View Careers 3th accordion opened
-  $( "#block-quicktabscareersaccordion #ui-id-6" ).trigger( "click" );
-
+  if ($("body.careers")[0]) {
+    $("body.user-logged-in #block-quicktabscareersaccordion #ui-id-6").trigger("click");
+    $("body #block-quicktabscareersaccordion #ui-id-5").trigger("click");
+  }
   //View Seminar Reports 1st accordion opened
   $( "body.tools-and-resources-seminars #block-ncwtheme-content > div > article > div.view-content > div > div > div > div:nth-child(1) > div.view-grouping-header" ).trigger( "click" );
 
