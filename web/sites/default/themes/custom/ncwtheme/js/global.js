@@ -375,6 +375,11 @@ jQuery(document).ready(function($) {
     $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
   }
 
+  // Add class in letter A when load the page Glossary
+  if (!$(".page-view-glossary .view-glossary .views-summary a.is-active")[0]) {
+    $('.page-view-glossary .view-glossary .views-summary:nth-child(4) a').addClass('is-active');
+  }
+
   // Accesskey for custom elements
   $('#edit-lang-dropdown-select').attr('accessKey','L');
   $('#edit-search-api-fulltext').attr('accessKey','Q');

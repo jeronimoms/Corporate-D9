@@ -6351,6 +6351,7 @@ body.node--type-publication {
 .download-content-theasaurus-action a {
   background: url(../images/download-thesaurus.png) no-repeat 99% 2px;
   padding-right: 1.5rem;
+  border-bottom: 0 !important;
 }
 
 .content-tooltip {
@@ -6603,7 +6604,7 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   width: auto;
   float: left;
   padding-left: 10px;
-  border-bottom: 0;
+  border-bottom: 0 !important;
 }
 .node--type-thesaurus .field__label {
   font-weight: 600;
