@@ -5,7 +5,7 @@ _core:
   default_config_hash: GLswejPT_b3G9TtpI4NKwR1mhIB_-FnysNn9QKc-01w
 general:
   varnish_purger: true
-  varnish_server: varnish
+  varnish_server: osha-d9-stg-proxy-corp.mainstrat.com
   purger_maintenance_mode: false
   logging: '0'
   debug: '0'

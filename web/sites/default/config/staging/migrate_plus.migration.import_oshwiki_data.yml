@@ -1,4 +1,4 @@
-uuid: df6aed4c-783e-4e2c-ad85-5274921d9364
+uuid: 948a3c88-6be0-4a2e-ad8b-187713da76a5
 langcode: en
 status: true
 dependencies:
@@ -57,6 +57,10 @@ source:
       name: field_wiki_categories
       label: field_wiki_categories
       selector: category
+    -
+      name: field_wiki_page_url
+      label: field_wiki_page_url
+      selector: oshwikiURL
 process:
   title: title
   field_summary_html: field_summary_html
@@ -66,6 +70,7 @@ process:
   field_summary_html/value: field_summary_html
   body: body
   comment_node_wiki_page: comment_node_wiki_page
+  field_wiki_page_url: field_wiki_page_url
   field_tags:
     -
       plugin: oie_taxonomy_term_name
@@ -109,4 +114,5 @@ destination:
     - field_thesaurus_2020
     - field_nace_codes
     - field_wiki_categories
+    - field_wiki_page_url
 migration_dependencies: {  }

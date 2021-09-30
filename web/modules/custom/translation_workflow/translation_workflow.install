@@ -204,3 +204,19 @@ function translation_workflow_update_9011(&$sandbox) {
       ->setDescription(t('The source retranslation data'))
   );
 }
+
+/**
+ * Implements hook_update_N().
+ */
+function translation_workflow_update_9012(&$sandbox) {
+  // Add taget_language field to JobItems.
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+  $updateManager->installFieldStorageDefinition(
+    'target_language',
+    'tmgmt_job_item',
+    'translation_workflow',
+    BaseFieldDefinition::create('language')
+      ->setLabel(t('Target language code'))
+      ->setDescription(t('The target language.'))
+  );
+}
