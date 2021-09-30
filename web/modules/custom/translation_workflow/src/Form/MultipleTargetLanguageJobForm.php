@@ -3,6 +3,7 @@
 namespace Drupal\translation_workflow\Form;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\tmgmt\Form\TmgmtFormBase;
 use Drupal\tmgmt\JobInterface;
 use Drupal\views\Views;
@@ -26,57 +27,68 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
       '#attributes' => ['class' => ['tmgmt-ui-job-info', 'clearfix']],
       '#weight' => 0,
     ];
-    $form['info']['source_language'] = [
-      '#title' => $this->t('Source language'),
-      '#type' => 'item',
-      '#markup' => $job->getSourceLanguage()->getName(),
-      '#prefix' => '<div id="tmgmt-ui-source-language" class="tmgmt-ui-source-language tmgmt-ui-info-item">',
-      '#suffix' => '</div>',
-      '#value' => $job->getSourceLangcode(),
-    ];
-    $form['info']['target_language'] = [
-      '#title' => $this->t('Target languages'),
-      '#type' => 'item',
-      '#markup' => implode(',', array_map(function ($language) {
-        return $language->getName();
-      }, $job->getTargetLanguages())),
-      '#prefix' => '<div id="tmgmt-ui-target-language" class="tmgmt-ui-target-language tmgmt-ui-info-item">',
-      '#suffix' => '</div>',
-      '#value' => $job->getTargetLangcodes(),
-    ];
-
-    $form['info']['translator'] = [
-      '#type' => 'item',
-      '#title' => $this->t('Provider'),
-      '#markup' => $job->getTranslatorLabel(),
-      '#prefix' => '<div class="tmgmt-ui-translator tmgmt-ui-info-item">',
-      '#suffix' => '</div>',
-      '#value' => $job->getTranslatorId(),
-    ];
-
-    $form['info']['word_count'] = [
-      '#type' => 'item',
-      '#title' => $this->t('Total words'),
-      '#markup' => number_format($job->getWordCount()),
-      '#prefix' => '<div class="tmgmt-ui-word-count tmgmt-ui-info-item">',
-      '#suffix' => '</div>',
-    ];
-
-    $form['info']['tags_count'] = [
-      '#type' => 'item',
-      '#title' => $this->t('Total HTML tags'),
-      '#markup' => number_format($job->getTagsCount()),
-      '#prefix' => '<div class="tmgmt-ui-tags-count tmgmt-ui-info-item">',
-      '#suffix' => '</div>',
-    ];
 
     $form['info']['created'] = [
       '#type' => 'item',
       '#title' => $this->t('Created'),
-      '#markup' => $this->dateFormatter->format($job->getCreatedTime()),
+      '#markup' => \Drupal::service('date.formatter')
+        ->format($job->getCreatedTime(), 'short'),
       '#prefix' => '<div class="tmgmt-ui-created tmgmt-ui-info-item">',
       '#suffix' => '</div>',
-      '#value' => $job->getCreatedTime(),
+    ];
+    $form['info']['file_sent'] = [
+      '#type' => 'item',
+      '#title' => t('File sent'),
+      '#markup' => $job->isSentToCdt() ? t('Yes') : t('No'),
+      '#prefix' => '<div class="tmgmt-file-sent tmgmt-ui-info-item">',
+      '#suffix' => '</div>',
+    ];
+
+    $form['language_info'] = [
+      '#type' => 'container',
+      '#attributes' => ['class' => ['tmgmt-ui-job-info', 'clearfix']],
+      '#weight' => 1,
+    ];
+
+    $targetLanguagesCodes = $job->getTargetLangcodes();
+
+    $form['language_info']['show_target_languages'] = [
+      '#title' => t('Target languages') . ' (' . count($targetLanguagesCodes) . ')',
+      '#type' => 'checkboxes',
+      '#default_value' => $targetLanguagesCodes,
+      '#options' => array_combine($targetLanguagesCodes, $targetLanguagesCodes),
+      '#disabled' => TRUE,
+      '#weight' => 1,
+      '#attributes' => ['class' => ['container-inline']],
+    ];
+
+    $untranslated = array_map(function ($language) {
+      return $language->getId();
+    }, \Drupal::languageManager()->getLanguages());
+
+    $form['language_info']['show_target_languages_not'] = [
+      '#title' => '',
+      '#type' => 'checkboxes',
+      '#options' => array_combine($untranslated, $untranslated),
+      '#disabled' => TRUE,
+      '#weight' => 2,
+      '#attributes' => ['class' => ['container-inline']],
+    ];
+
+    $form['info']['character_count'] = [
+      '#type' => 'item',
+      '#title' => $this->t('Total character count'),
+      '#markup' => number_format($job->getCharactersCount()),
+      '#prefix' => '<div class="tmgmt-ui-characters-count tmgmt-ui-info-item">',
+      '#suffix' => '</div>',
+    ];
+
+    $form['info']['page_count'] = [
+      '#type' => 'item',
+      '#title' => $this->t('Page count'),
+      '#markup' => $job->getPageCount(),
+      '#prefix' => '<div class="tmgmt-ui-page-count tmgmt-ui-info-item">',
+      '#suffix' => '</div>',
     ];
 
     $form['info']['priority'] = [
@@ -88,37 +100,40 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
       '#value' => $job->getPriority(),
     ];
 
-    $jobItemView = Views::getView('tmgmt_job_items');
-    if ($jobItemView) {
-      $form['job_items_wrapper'] = [
-        '#type' => 'container',
-        '#weight' => 10,
-        '#prefix' => '<div id="tmgmt-ui-job-checkout-details">',
-        '#suffix' => '</div>',
-      ];
-      $form['footer'] = tmgmt_color_job_item_legend();
-      $form['footer']['#weight'] = 100;
-      // Translation jobs.
-      $output = $jobItemView->preview($job->isSubmittable() ? 'checkout' : 'submitted', [$job->id()]);
-      $form['job_items_wrapper']['items'] = [
-        '#type' => 'details',
-        '#title' => t('Job items'),
-        '#open' => in_array($job->getState(), [JobInterface::STATE_ACTIVE]),
-        '#prefix' => '<div class="' . 'tmgmt-ui-job-items ' . ($job->isSubmittable() ? 'tmgmt-ui-job-submit' : 'tmgmt-ui-job-manage') . '">',
-        'view' => $output,
-        '#attributes' => [
-          'class' => [
-            'tmgmt-ui-job-items',
-            $job->isSubmittable() ? 'tmgmt-ui-job-submit' : 'tmgmt-ui-job-manage',
-          ],
+    $form['job_items_wrapper'] = [
+      '#type' => 'container',
+      '#weight' => 10,
+      '#prefix' => '<div id="tmgmt-ui-job-checkout-details">',
+      '#suffix' => '</div>',
+    ];
+    $form['footer'] = tmgmt_color_job_item_legend();
+    $form['footer']['#weight'] = 100;
+
+    // Translation jobs.
+    $form['job_items_wrapper']['items'] = [
+      '#type' => 'details',
+      '#title' => t('Job items'),
+      '#open' => in_array($job->getState(), [JobInterface::STATE_ACTIVE]),
+      '#prefix' => '<div class="' . 'tmgmt-ui-job-items ' . ($job->isSubmittable() ? 'tmgmt-ui-job-submit' : 'tmgmt-ui-job-manage') . '">',
+      'view' => [
+        '#type' => 'view',
+        '#name' => 'tmgmt_job_items',
+        '#display_id' => $job->isSubmittable() ? 'checkout' : 'submitted',
+        '#arguments' => [$job->id()],
+        '#weight' => 30,
+      ],
+      '#attributes' => [
+        'class' => [
+          'tmgmt-ui-job-items',
+          $job->isSubmittable() ? 'tmgmt-ui-job-submit' : 'tmgmt-ui-job-manage',
         ],
-        '#suffix' => '</div>',
-      ];
-    }
+      ],
+      '#suffix' => '</div>',
+    ];
 
     $form['translator_wrapper'] = [
       '#type' => 'details',
-      '#title' => t('Provider information'),
+      '#title' => t('Translator information'),
       '#open' => TRUE,
       '#weight' => 20,
     ];
@@ -140,6 +155,95 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
 
     $form['#attached']['library'][] = 'tmgmt/admin';
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function actionsElement(array $form, FormStateInterface $form_state) {
+    $parentActions = parent::actionsElement($form, $form_state);
+    $job = $this->getEntity();
+
+    if (!$job->isSentToCdt()) {
+      // Add sent to cdt submit button.
+      $parentActions['sent_to_cdt'] = [
+        '#type' => 'submit',
+        '#value' => $this->t('File sent to CDT'),
+        '#weight' => 14,
+        '#submit' => ['::submitSentToCdt'],
+      ];
+    }
+    $parentActions['cancel'] = [
+      '#type' => 'link',
+      '#title' => $this->t('Cancel'),
+      '#url' => Url::fromRoute('view.translation_workflow_jobs_overview.page_1'),
+      '#weight' => 15,
+    ];
+
+    $parentActions['abort_job'] = [
+      '#type' => 'link',
+      '#title' => t('Abort job'),
+      '#url' => Url::fromRoute('entity.tmgmt_job_multiple_target.abort_form', [
+        'tmgmt_job_multiple_target' => $job->id(),
+      ]),
+      '#attributes' => [
+        'class' => ['button'],
+      ],
+      '#access' => $job->isAbortable(),
+      '#weight' => 7,
+    ];
+
+    $parentActions['resubmit_job'] = [
+      '#type' => 'link',
+      '#title' => t('Resubmit'),
+      '#url' => Url::fromRoute('entity.tmgmt_job_multiple_target.resubmit_form', [
+        'tmgmt_job_multiple_target' => $job->id(),
+      ]),
+      '#attributes' => [
+        'class' => ['button'],
+      ],
+      '#access' => $job->isAborted(),
+      '#weight' => 7,
+    ];
+
+    $parentActions['checkout'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Submit to translator'),
+      '#access' => $job->isSubmittable(),
+      '#submit' => ['::submitCheckout'],
+      '#weight' => 7,
+    ];
+
+    if (isset($parentActions['delete'])) {
+      $parentActions['delete']['#attributes'] = [
+        'class' => ['button'],
+      ];
+    }
+    return $parentActions;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    parent::submitForm($form, $form_state);
+    $this->messenger()->addStatus($this->t('Translation job saved.'));
+  }
+
+  /**
+   * Set job as file sent to CDT.
+   */
+  public function submitSentToCdt() {
+    $job = $this->getEntity();
+    $job->set('file_sent', TRUE)->save();
+  }
+
+  /**
+   * Request translation for job.
+   */
+  public function submitCheckout() {
+    $job = $this->getEntity();
+    $job->requestTranslation();
   }
 
   /**

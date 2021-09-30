@@ -84,6 +84,17 @@
   }
 }
 
+/* View Directives filtered*/
+.view-search-directives{
+  .revamp-row{
+    .field--label-inline {
+      .field__label {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 /* View node header - Node related with the View - Placed before the View */
 .custom-view-node-header{
   padding-bottom: 2rem;
@@ -126,12 +137,6 @@
     font-size: 0.9rem;
     .field__label {
       margin: 0 5px 0 0;
-      font-weight: bold;
-      color: $text-color-blue;
-      font-family: "Open Sans Condensed";
-    }
-    .field__item {
-      font-family: "Open Sans Condensed";
     }
   }
   .field--name-field-external-url {
@@ -170,6 +175,36 @@
       font-size: 0.85rem;
       margin-bottom: 5px;
       margin-top: 5px;
+    }
+  }
+}
+
+.view-musculoskeletal-disorders-list, .view-practical-tools-and-guidance-on-dangerous-substances{
+  .revamp-row {
+    h2{
+      margin-bottom: 0;
+    }
+    .av-type {
+      padding-bottom: 0.3rem;
+      span {
+        background-color: $bg-color-blue-light-2;
+        color: $text-color-blue;
+        font-size: 11px;
+      }
+    }
+    .field--name-field-provider-english-{
+      padding-bottom: 0;
+      margin: 0!important;
+      .field__label{
+        display: none;
+      }
+      .field__item{
+        margin: 0!important;
+        padding: 0!important;
+      }
+    }
+    .field--name-field-provider-original-{
+      display: none;
     }
   }
 }
@@ -274,6 +309,9 @@
       }
     }
   }
+  strong{
+    background-color:yellow;
+  }
 }
 
 .views-field-type{
@@ -338,6 +376,90 @@
       .views-row{
         font-size:0.9rem;
         line-height:1.5rem;
+      }
+    }
+  }
+}
+
+
+.tools-and-resources-multilingualism {
+  .block-views-blocklanding-menu-dv-block-1{
+    .view-content{
+      &.row{
+        &>div{
+          width: 49%;
+          flex: 0 0 49%;
+          max-width: 49%;
+          margin: 0.5rem 2% 0.7rem 0;
+          img{
+            width: 100%;
+          }
+          &:nth-child(2){
+            margin-right: 0;
+            justify-content: flex-end;
+          }
+        }
+      }
+      .menu-link-contentmain{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.view-legislation-directives{
+  .table-responsive{
+    flex-basis:initial;
+    .table-striped{
+      tbody{
+        tr{
+          background: url("../images/separator_home.jpg") repeat-x scroll 0% 100% rgba(0,0,0,0);
+          border:none;
+          &:nth-of-type(odd),
+          &:nth-of-type(even){
+            background-color: transparent;
+          }
+          td{
+            padding:0.875rem;
+            border-top:none;
+            padding-bottom:2rem;
+            a{
+              color: $text-color-blue;
+              border-bottom: 0px;
+              font-size: 1.35rem;
+              font-weight: 400;
+              letter-spacing: -0.75px;
+              padding-bottom: 0.625rem;
+            }
+            .directive-title{
+              margin-bottom:0.5rem;
+            }
+            .directive-summary{
+              font-size:0.9rem;
+            }
+          }
+        }
+      }
+      caption{
+        caption-side: top;
+        color: $text-color-blue;
+        font-size: 1.25rem;
+        font-weight: bold;
+        background-color: $bg-color-grey-legislation;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        padding-left: 0.625rem;
+        margin: 0rem;
+        text-align: left;
+        margin-bottom: 1.25rem;
+        a{
+          &:hover{
+            text-decoration: none;
+            cursor:default;
+            poiner-events:none;
+            color: $text-color-blue;
+          }
+        }
       }
     }
   }

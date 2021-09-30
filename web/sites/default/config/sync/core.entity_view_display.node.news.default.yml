@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.news.field_avoid_archived
     - field.field.node.news.field_character_count
     - field.field.node.news.field_expiration_date
-    - field.field.node.news.field_flickr_date
     - field.field.node.news.field_image_media
     - field.field.node.news.field_migrate_hwc
     - field.field.node.news.field_migration_source
@@ -25,12 +24,10 @@ dependencies:
     - field.field.node.news.field_tags
     - field.field.node.news.field_thesaurus_2020
     - field.field.node.news.simplenews_issue
-    - image.style.medium
     - node.type.news
   module:
     - datetime
     - ds
-    - media
     - text
     - user
 third_party_settings:
@@ -59,7 +56,6 @@ third_party_settings:
         - field_summary_html
         - body
         - field_aditional_resources
-        - field_flickr_date
     fields:
       node_title:
         plugin_id: node_title
@@ -105,22 +101,14 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-  field_flickr_date:
-    type: datetime_plain
-    weight: 6
-    region: ds_content
-    label: above
-    settings:
-      timezone_override: ''
-    third_party_settings: {  }
   field_image_media:
     weight: 2
     label: hidden
     settings:
-      image_style: medium
-      image_link: ''
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: media_thumbnail
+    type: entity_reference_entity_view
     region: ds_content
   field_publication_date:
     label: hidden

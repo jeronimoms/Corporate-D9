@@ -147,6 +147,10 @@ body.node--type-publication{
     display: flex;
     padding-top: 1rem;
   }
+  .aditional-publications{
+    display: flex;
+    padding-top: 1rem;
+  }
   .publications-row.custom-add-margin{
     padding-bottom: 2rem;
   }
@@ -192,6 +196,7 @@ body.node--type-publication{
       .label{
         font-size: 0.9rem;
         padding-right: 5px;
+        font-weight: 700;
       }
       .field{
         padding: 0;
@@ -206,6 +211,7 @@ body.node--type-publication{
   .datetime{
     display: block;
     font-size: 0.9rem;
+    font-weight: 700;
   }
   .field.field--name-field-tags{
     > ul{
@@ -279,6 +285,12 @@ body.node--type-publication{
     background: url(../images/back-tit-blue.png) repeat-x scroll 0 100% transparent;
     margin-bottom: 1.3rem;
     padding-bottom: 1.3rem;
+    article{
+      background: none !important;
+      margin-bottom: 0;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
     .layout__region--content {
       display: flex;
       gap: 24px;
@@ -466,6 +478,11 @@ body.node--type-publication{
   }
   .rr-item-content{
     height: auto;
+    &.hide-description{
+      .field--name-body{
+        display:none;
+      }
+    }
   }
   figure{
     margin: 0;
@@ -611,7 +628,12 @@ body.node--type-publication{
   }
   .publications {
     .view-filters {
-      fieldset:nth-child(3) {
+      .views-exposed-form{
+        .btn-primary {
+          margin-left: 5px;
+        }
+      }
+      fieldset:nth-child(3), fieldset:nth-child(2) {
         width: 100%;
       }
     }

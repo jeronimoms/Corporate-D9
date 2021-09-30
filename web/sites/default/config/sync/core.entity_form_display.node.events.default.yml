@@ -40,7 +40,6 @@ dependencies:
     - field.field.node.events.field_website_of_event
     - field.field.node.events.simplenews_issue
     - node.type.events
-    - workflows.workflow.editorial
   module:
     - chosen_field
     - content_moderation
@@ -263,7 +262,7 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: ''
+      placeholder: 'Event title. Max 255 characters.'
     third_party_settings: {  }
   translation:
     weight: 11

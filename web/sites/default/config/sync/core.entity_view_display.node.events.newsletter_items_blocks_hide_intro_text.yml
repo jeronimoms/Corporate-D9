@@ -1,0 +1,282 @@
+uuid: 48aea152-1016-43d2-8761-873fc8d7f92d
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter_items_blocks_hide_intro_text
+    - field.field.node.events.body
+    - field.field.node.events.comment_node_events
+    - field.field.node.events.field_activity
+    - field.field.node.events.field_adonis
+    - field.field.node.events.field_agency_contact_reply
+    - field.field.node.events.field_agency_initial_contact
+    - field.field.node.events.field_agency_rep_confirmed
+    - field.field.node.events.field_agency_role
+    - field.field.node.events.field_agenda
+    - field.field.node.events.field_city
+    - field.field.node.events.field_color
+    - field.field.node.events.field_comments_summary_after_eve
+    - field.field.node.events.field_country_code
+    - field.field.node.events.field_date
+    - field.field.node.events.field_event_in_amp
+    - field.field.node.events.field_event_type
+    - field.field.node.events.field_for_the_web
+    - field.field.node.events.field_key_performance
+    - field.field.node.events.field_location
+    - field.field.node.events.field_media_promotion
+    - field.field.node.events.field_migrate_hwc
+    - field.field.node.events.field_migration_source
+    - field.field.node.events.field_number_of_attendees
+    - field.field.node.events.field_organization
+    - field.field.node.events.field_organized_by_eu_osha
+    - field.field.node.events.field_publications_exhibition_su
+    - field.field.node.events.field_related_documents
+    - field.field.node.events.field_satisfaction_rate
+    - field.field.node.events.field_show_eu_flag
+    - field.field.node.events.field_show_in_ncw
+    - field.field.node.events.field_show_on
+    - field.field.node.events.field_source_url
+    - field.field.node.events.field_tags
+    - field.field.node.events.field_unit_ref
+    - field.field.node.events.field_website_of_event
+    - field.field.node.events.simplenews_issue
+    - node.type.events
+  module:
+    - datetime_range
+    - ds
+    - field_group
+    - file
+    - layout_builder
+    - link
+    - options
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_events_event_details:
+      children:
+        - field_location
+        - field_organization
+      parent_name: group_events_related_documents
+      weight: 5
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: events-title
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'group-events-event-details field-group-div'
+      label: 'Event Details'
+    group_events_description:
+      children:
+        - body
+      parent_name: group_events_link
+      weight: 4
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: events-title
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'group-events-description field-group-div'
+      label: Description
+    group_events_link:
+      children:
+        - group_events_related_documents
+        - group_events_description
+        - field_website_of_event
+      parent_name: ''
+      weight: 5
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: events-title
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'group-events-links field-group-div'
+      label: Link
+    group_events_related_documents:
+      children:
+        - group_events_event_details
+        - field_related_documents
+      parent_name: group_events_link
+      weight: 3
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: events-title
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'group-events-related-documents field-group-div'
+      label: 'Related resources'
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_city
+        - body
+        - field_date
+        - field_location
+        - field_country_code
+        - group_events_related_documents
+        - group_events_description
+        - field_website_of_event
+        - field_organization
+        - group_events_event_details
+        - group_events_link
+        - field_related_documents
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.events.newsletter_items_blocks_hide_intro_text
+targetEntityType: node
+bundle: events
+mode: newsletter_items_blocks_hide_intro_text
+content:
+  body:
+    label: hidden
+    weight: 1
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_city:
+    label: inline
+    weight: 1
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: ds_content
+  field_country_code:
+    label: hidden
+    weight: 3
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_date:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: only_day
+      separator: to
+    third_party_settings: {  }
+    type: daterange_default
+    region: ds_content
+  field_location:
+    label: inline
+    weight: 2
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: ds_content
+  field_organization:
+    label: inline
+    weight: 5
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_related_documents:
+    label: hidden
+    weight: 6
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: ds_content
+  field_website_of_event:
+    type: link
+    weight: 5
+    region: ds_content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  comment_node_events: true
+  field_activity: true
+  field_adonis: true
+  field_agency_contact_reply: true
+  field_agency_initial_contact: true
+  field_agency_rep_confirmed: true
+  field_agency_role: true
+  field_agenda: true
+  field_color: true
+  field_comments_summary_after_eve: true
+  field_event_in_amp: true
+  field_event_type: true
+  field_for_the_web: true
+  field_key_performance: true
+  field_media_promotion: true
+  field_migrate_hwc: true
+  field_migration_source: true
+  field_number_of_attendees: true
+  field_organized_by_eu_osha: true
+  field_publications_exhibition_su: true
+  field_satisfaction_rate: true
+  field_show_eu_flag: true
+  field_show_in_ncw: true
+  field_show_on: true
+  field_source_url: true
+  field_tags: true
+  field_unit_ref: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  simplenews_issue: true

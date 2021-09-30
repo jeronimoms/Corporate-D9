@@ -1,0 +1,112 @@
+uuid: 366b5afd-0089-4863-b30f-41598c9bf3d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter_items_blocks_hide_intro_text
+    - field.field.node.highlight.body
+    - field.field.node.highlight.comment_node_highlight
+    - field.field.node.highlight.field_activity
+    - field.field.node.highlight.field_aditional_resources
+    - field.field.node.highlight.field_archived
+    - field.field.node.highlight.field_avoid_archived
+    - field.field.node.highlight.field_character_count
+    - field.field.node.highlight.field_expiration_date
+    - field.field.node.highlight.field_flickr_date
+    - field.field.node.highlight.field_image_media
+    - field.field.node.highlight.field_image_oshmail_media
+    - field.field.node.highlight.field_migrate_hwc
+    - field.field.node.highlight.field_page_count
+    - field.field.node.highlight.field_publication_date
+    - field.field.node.highlight.field_section
+    - field.field.node.highlight.field_show_on
+    - field.field.node.highlight.field_tags
+    - field.field.node.highlight.field_thesaurus_2020
+    - field.field.node.highlight.simplenews_issue
+    - node.type.highlight
+  module:
+    - datetime
+    - ds
+    - layout_builder
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_publication_date
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          'link class': ''
+          wrapper: ''
+          class: ''
+          exclude_node_title: '1'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.highlight.newsletter_items_blocks_hide_intro_text
+targetEntityType: node
+bundle: highlight
+mode: newsletter_items_blocks_hide_intro_text
+content:
+  field_publication_date:
+    label: hidden
+    weight: 0
+    type: datetime_default
+    settings:
+      timezone_override: ''
+      format_type: only_day
+    third_party_settings: {  }
+    region: ds_content
+hidden:
+  addtoany: true
+  body: true
+  breadcrumbs: true
+  comment_node_highlight: true
+  content_moderation_control: true
+  field_activity: true
+  field_aditional_resources: true
+  field_archived: true
+  field_avoid_archived: true
+  field_character_count: true
+  field_expiration_date: true
+  field_flickr_date: true
+  field_image_media: true
+  field_image_oshmail_media: true
+  field_migrate_hwc: true
+  field_page_count: true
+  field_section: true
+  field_show_on: true
+  field_tags: true
+  field_thesaurus_2020: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  simplenews_issue: true

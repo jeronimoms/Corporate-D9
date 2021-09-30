@@ -51,7 +51,7 @@ type_settings:
       weight: 2
     rejected:
       published: false
-      default_revision: false
+      default_revision: true
       label: Rejected
       weight: -4
     to_be_approved:
@@ -95,7 +95,6 @@ type_settings:
       weight: -30
       from:
         - draft
-        - published
     final_draft_to_final_draft:
       label: 'Final Draft to Final Draft'
       from:
@@ -162,6 +161,12 @@ type_settings:
         - final_draft
       to: rejected
       weight: -17
+    from_published_to_draft_new_version_:
+      label: 'From Published to Draft (new version)'
+      from:
+        - published
+      to: draft
+      weight: 29
     from_published_to_published:
       label: 'From Published to Published'
       from:

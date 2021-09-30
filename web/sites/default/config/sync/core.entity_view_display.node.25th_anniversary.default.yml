@@ -25,12 +25,17 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_image_media:
+  content_moderation_control:
     weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_media:
+    weight: 1
     label: hidden
     settings:
       image_style: 25th_anniversary
@@ -46,7 +51,7 @@ content:
     type: media_thumbnail
     region: content
   field_summary_html:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -55,7 +60,6 @@ content:
 hidden:
   addtoany: true
   breadcrumbs: true
-  content_moderation_control: true
   field_language: true
   field_publication_date: true
   field_section: true

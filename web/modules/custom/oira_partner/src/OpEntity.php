@@ -83,7 +83,9 @@ class OpEntity implements ContainerInjectionInterface {
     // Store the fields if the user is parner.
     if (in_array('partner', $this->account->getRoles())) {
       if ($entity->hasField('field_workbench_access')) {
-        $entity->set('field_workbench_access', $this->opEntityManager->getTermParent());
+        if ($term_id = $this->opEntityManager->getTermParent()) {
+          $entity->set('field_workbench_access', $term_id);
+        }
       }
       foreach ($this->fields as $key => $field_name) {
         if ($entity->hasField($field_name)) {

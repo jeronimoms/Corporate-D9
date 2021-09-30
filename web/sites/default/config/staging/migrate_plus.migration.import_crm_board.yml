@@ -1,12 +1,10 @@
-uuid: d074ebfd-f161-4595-aa6b-7018d2b7688d
+uuid: 8729243f-00f7-44a7-9478-f9cf8b7a3de8
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - osha_import_export
-_core:
-  default_config_hash: YjSiySCdjRT2PsNAj5nZhBngovvkDLFuilbL419T_Jk
 id: import_crm_board
 class: null
 field_plugin_method: null
@@ -18,10 +16,12 @@ label: 'Node: Board'
 source:
   plugin: url
   data_parser_plugin: xml
-  urls: /expert/osha/SYNC_CRM/Board.xml
+  urls: /expert/SYNC_CRM/Board.xml
   content_type: press_contact
   ids:
     field_contact_uuid:
+      type: string
+    field_contact_type:
       type: string
   item_selector: /Report/Table0/Table0_Group0_Collection/Table0_Group0_Header0/Detail_Collection/Detail
   fields:
@@ -65,6 +65,10 @@ source:
       name: field_zip_code
       label: field_zip_code
       selector: '@Textbox1'
+    -
+      name: field_contact_type
+      label: field_contact_type
+      selector: ../../Table0_Group0_Header0
 process:
   field_contact_uuid: field_contact_uuid
   title: title
@@ -90,6 +94,12 @@ process:
       vocabulary: wg_role_1
       create: true
   field_zip_code: field_zip_code
+  field_contact_type:
+    -
+      plugin: oie_taxonomy_term_name
+      source: field_contact_type
+      vocabulary: contact_type
+      create: true
 destination:
   default_bundle: press_contact
   plugin: 'entity:node'

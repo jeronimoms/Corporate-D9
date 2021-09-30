@@ -18,7 +18,9 @@ theme: {  }
 blacklist:
   - 'migrate_plus*'
 graylist:
+  - mailsystem.settings
   - search_api.server.solr
+  - swiftmailer.transport
   - system.performance
 graylist_dependents: false
 graylist_skip_equal: true

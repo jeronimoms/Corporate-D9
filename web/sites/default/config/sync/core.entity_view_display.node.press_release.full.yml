@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.press_release.field_pr_embargo_date
     - field.field.node.press_release.field_pr_notes_to_editor
     - field.field.node.press_release.field_publication_date
+    - field.field.node.press_release.field_published
     - field.field.node.press_release.field_quote
     - field.field.node.press_release.field_section
     - field.field.node.press_release.field_summary_html
@@ -22,7 +23,6 @@ dependencies:
     - image.style.home_news
     - node.type.press_release
   module:
-    - datetime
     - ds
     - layout_builder
     - media
@@ -47,7 +47,7 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_publication_date
+        - content_moderation_control
         - node_title
         - field_image_media
         - field_summary_html
@@ -76,6 +76,11 @@ content:
     third_party_settings: {  }
     type: text_default
     region: ds_content
+  content_moderation_control:
+    weight: 0
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
   field_aditional_resources:
     weight: 7
     label: hidden
@@ -117,15 +122,6 @@ content:
             lb: 'Notes to editor:'
             lb-col: true
             classes: {  }
-  field_publication_date:
-    weight: 0
-    label: hidden
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: ds_content
   field_quote:
     weight: 4
     label: hidden
@@ -143,12 +139,13 @@ content:
 hidden:
   addtoany: true
   breadcrumbs: true
-  content_moderation_control: true
   field_activity: true
   field_archived: true
   field_expiration_date: true
   field_nace_codes: true
   field_pr_embargo_date: true
+  field_publication_date: true
+  field_published: true
   field_section: true
   field_tags: true
   field_thesaurus_2020: true

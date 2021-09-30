@@ -1,0 +1,29 @@
+uuid: 96d435a8-cb6e-4dd3-87e7-bfa812dccb30
+langcode: en
+status: true
+dependencies:
+  module:
+    - osha_import_export
+title: 'Default cron handler'
+id: osha_import_export_cron
+weight: 0
+module: osha_import_export
+callback: osha_import_export_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ 0 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

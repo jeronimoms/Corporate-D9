@@ -1,18 +1,19 @@
-uuid: e00f3aa6-c94d-4627-b013-499ea1fac1ca
+uuid: 0318c90b-191b-4261-9b64-5ba5146faa6a
 langcode: en
 status: true
 dependencies: {  }
 id: to_approved_to_be_reviewed
 workflow: editorial
 transitions:
-  send_back_to_be_reviewed: send_back_to_be_reviewed
+  from_draft_to_to_be_reviewed: from_draft_to_to_be_reviewed
+  send_to_be_reviewed: send_to_be_reviewed
 roles:
   project_manager: project_manager
 author: false
 site_mail: false
 emails: ''
-subject: 'Corporate website - New content needs your review '
+subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear Project manager,</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>There is a new content to be reviewed by you: [node:title] ([node:edit-url]). You can access also to the list of items ([site:url]admin/content/review) that needs to be reviewed.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  value: "<p>Dear <strong>Project Manager</strong>,</p>\r\n\r\n<p>There is a new content to be reviewed by you: <strong>[node:title] </strong>([node:url]) (type: [node:type], status: <strong>To be reviewed</strong>).</p>\r\n\r\n<p>Thank you,</p>\r\n"
   format: full_html
-label: 'To Approved to be Reviewed'
+label: 'From Draft/Final Draft to To be reviewed'

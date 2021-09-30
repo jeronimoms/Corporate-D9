@@ -53,13 +53,17 @@ trait MultipleTargetLanguageOverviewFormSubmitTrait {
     $jobItems = [];
     // Group the selected items by source language.
     foreach (array_filter($form_state->getValue('items')) as $item_id) {
-      $job_item = tmgmt_job_item_create($this->pluginId, $type, $item_id);
-      $source_language = $enforced_source_language ? $enforced_source_language : $job_item->getSourceLangCode();
-      if (in_array($source_language, $job_item->getExistingLangCodes())) {
-        $jobItems[$item_id] = $job_item;
-      }
-      else {
-        $skipped_count++;
+      foreach ($target_languages as $target_language) {
+        $job_item = tmgmt_job_item_create($this->pluginId, $type, $item_id);
+        $job_item->set('target_language', $target_language);
+        $job_item->save();
+        $source_language = $enforced_source_language ? $enforced_source_language : $job_item->getSourceLangCode();
+        if (in_array($source_language, $job_item->getExistingLangCodes())) {
+          $jobItems[] = $job_item;
+        }
+        else {
+          $skipped_count++;
+        }
       }
     }
     $languageManager = \Drupal::languageManager();
@@ -79,6 +83,7 @@ trait MultipleTargetLanguageOverviewFormSubmitTrait {
 
     try {
       $job->save();
+      $job->set('label', (string) $job->label())->save();
       foreach ($jobItems as $jobItem) {
         $jobItem->set('tjid', $job->id())->save();
       }
