@@ -32,6 +32,7 @@ class MultipleTargetLanguageCartForm extends CartForm {
     }
 
     if (isset($form['target_language'])) {
+      $allowedLanguages = osha_enabled_language_list();
       $form['target_language']['#size'] = 24;
       $default = \Drupal::languageManager()->getDefaultLanguage()->getId();
       if (isset($form['target_language']['#options']['nol'])) {
@@ -40,6 +41,9 @@ class MultipleTargetLanguageCartForm extends CartForm {
       if (isset($form['target_language']['#options'][$default])) {
         unset($form['target_language']['#options'][$default]);
       }
+      $form['target_language']['#options'] = array_filter($form['target_language']['#options'], function ($key) use ($allowedLanguages) {
+        return in_array($key, $allowedLanguages);
+      }, ARRAY_FILTER_USE_KEY);
     }
 
     $jobFieldDefinitions = \Drupal::service('entity_field.manager')

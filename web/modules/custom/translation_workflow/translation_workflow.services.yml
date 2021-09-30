@@ -18,6 +18,9 @@ services:
 
   translation_workflow.notifications:
     class: Drupal\translation_workflow\EventSubscriber\TranslationEventSubscriber
-    arguments: ['@plugin.manager.mail']
+    arguments: ['@plugin.manager.mail', '@translation_workflow.users_to_notify']
     tags:
       - { name: event_subscriber }
+
+  translation_workflow.users_to_notify:
+    class: Drupal\translation_workflow\UsersToNotify
