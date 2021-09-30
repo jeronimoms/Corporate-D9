@@ -17,6 +17,7 @@ destination:
     - field_thesaurus_2020
     - field_nace_codes
     - field_wiki_categories
+    - field_wiki_page_url
 #    - field_updated
 
 migration_dependencies: {  }
@@ -86,6 +87,10 @@ source:
       name: field_wiki_categories
       label: 'field_wiki_categories'
       selector: 'category'
+    -
+      name: field_wiki_page_url
+      label: 'field_wiki_page_url'
+      selector: 'oshwikiURL'
 process:
   #nid: nid
   title: title
@@ -104,6 +109,7 @@ process:
 #        default_value: full_html
   body: body
   comment_node_wiki_page: comment_node_wiki_page
+  field_wiki_page_url: field_wiki_page_url
   field_tags:
     -
       plugin: oie_taxonomy_term_name
