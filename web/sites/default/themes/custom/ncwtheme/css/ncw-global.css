@@ -5514,6 +5514,61 @@ body.contact form.contact-form button.btn-primary {
   display: inline-block;
 }
 
+/* Form Alert Service */
+.webform-submission-alertservice-temporary-form .alert-warning {
+  display: flex;
+  margin-bottom: 0;
+}
+.webform-submission-alertservice-temporary-form .alert-warning div {
+  color: #d8872a;
+  padding-top: 6px;
+  padding-left: 10px;
+}
+.webform-submission-alertservice-temporary-form .alert-warning::before {
+  height: 1.95rem;
+}
+.webform-submission-alertservice-temporary-form .form-select {
+  min-width: 100%;
+}
+.webform-submission-alertservice-temporary-form #edit-item-type, .webform-submission-alertservice-temporary-form #edit-additional-languages {
+  width: 100%;
+  height: 200px;
+}
+.webform-submission-alertservice-temporary-form #edit-receive-oshmail--wrapper .fieldset-legend, .webform-submission-alertservice-temporary-form #edit-agree-processing-personal-data--wrapper .fieldset-legend {
+  display: none;
+}
+.webform-submission-alertservice-temporary-form #edit-receive-oshmail--wrapper .form-check-label, .webform-submission-alertservice-temporary-form #edit-agree-processing-personal-data--wrapper .form-check-label {
+  font-weight: normal;
+}
+.webform-submission-alertservice-temporary-form .form-submit {
+  background: #cfddee;
+  color: #003399;
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+.webform-submission-alertservice-temporary-form select {
+  background: url(../images/pink-select.png) no-repeat scroll calc(100% - 30px) center #FFF;
+}
+.webform-submission-alertservice-temporary-form .chosen-container .chosen-choices {
+  background: url(../images/pink-select.png) no-repeat scroll calc(100% - 30px) center #FFF;
+}
+
+.chosen-container .chosen-choices {
+  color: #003399;
+  min-height: 37px;
+  font-size: 13px;
+  border: 1px solid #003399;
+  margin-top: 0px;
+  border-radius: 5px;
+  background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
+}
+.chosen-container .chosen-choices .search-field {
+  padding-top: 4px !important;
+}
+.chosen-container .chosen-choices .search-choice {
+  padding-top: 6px !important;
+}
+
 @media only screen and (max-width: 768px) {
   body.contact form.contact-form {
     width: 100%;

@@ -75,6 +75,69 @@ body.contact{
   }
 }
 
+/* Form Alert Service */
+.webform-submission-alertservice-temporary-form{
+  .alert-warning{
+    display: flex;
+    margin-bottom: 0;
+    div{
+      color: #d8872a;
+      padding-top: 6px;
+      padding-left: 10px;
+    }
+  }
+  .alert-warning::before{
+    height: 1.95rem;
+  }
+  .form-select{
+    min-width: 100%;
+  }
+  #edit-item-type, #edit-additional-languages{
+    width: 100%;
+    height: 200px;
+  }
+  #edit-receive-oshmail--wrapper, #edit-agree-processing-personal-data--wrapper{
+    .fieldset-legend{
+      display: none;
+    }
+    .form-check-label{
+      font-weight: normal;
+    }
+  }
+  .form-submit{
+    background: #cfddee;
+    color: $text-color-blue;
+    opacity: 0.5;
+    cursor: not-allowed !important;
+  }
+  select{
+    background: url(../images/pink-select.png) no-repeat scroll calc(100% - 30px) center #FFF;
+  }
+  .chosen-container {
+    .chosen-choices {
+      background: url(../images/pink-select.png) no-repeat scroll calc(100% - 30px) center #FFF;
+    }
+  }
+}
+
+.chosen-container{
+  .chosen-choices{
+    color: $text-color-blue;
+    min-height: 37px;
+    font-size: 13px;
+    border: 1px solid $bg-color-blue;
+    margin-top: 0px;
+    border-radius: 5px;
+    background: url(../images/pink-select.png) no-repeat scroll calc(100% - 10px) center #FFF;
+    .search-field{
+      padding-top: 4px !important;
+    }
+    .search-choice{
+      padding-top: 6px !important;
+    }
+  }
+}
+
 
 @media only screen and (max-width : 768px) {
   body.contact{
