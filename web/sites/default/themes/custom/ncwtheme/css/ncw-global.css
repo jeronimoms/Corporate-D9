@@ -5929,6 +5929,11 @@ body.contact form.contact-form button.btn-primary {
   padding-right: 5px;
   font-size: 0.9rem;
   color: #003399;
+  min-width: 85px;
+}
+
+.custom-number.empty {
+  min-width: 85px;
 }
 
 /* Publications Detail */
@@ -6050,7 +6055,7 @@ body.node--type-publication {
 }
 .node--type-publication .related-resources-fluid .publications-detail-right-column {
   padding-top: 1rem;
-  padding-right: 6rem;
+  padding-right: 1rem;
 }
 .node--type-publication .related-resources-fluid .node--type-publication h2 {
   font-size: 1.2rem;

@@ -122,6 +122,11 @@
   padding-right: 5px;
   font-size: 0.9rem;
   color: $text-color-blue;
+  min-width: 85px;
+}
+
+.custom-number.empty{
+  min-width: 85px;
 }
 
 /* Publications Detail */
@@ -250,7 +255,7 @@ body.node--type-publication{
     margin-top: -1px;
     .publications-detail-right-column{
       padding-top: 1rem;
-      padding-right: 6rem;
+      padding-right: 1rem;
     }
     .node--type-publication{
       h2{

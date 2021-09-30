@@ -95,10 +95,14 @@
               <span class="label">{{ 'Type:' | trans }}</span>
               {{ content.field_publication_type }}
             </div>
-            <div class="content-label">
-              {% set pages = content.field_pages_count.0 %}
-              <span class="custom-number">{{ pages['#markup'] }} {{ 'pages' | trans }}</span>
-            </div>
+            {% set pages = content.field_pages_count.0 %}
+              <div class="content-label">
+                {% if  pages['#markup'] > 0 %}
+                  <span class="custom-number">{{ pages['#markup'] }} {{ 'pages' | trans }}</span>
+                {% else %}
+                  <span class="custom-number empty"></span>
+                {% endif %}
+              </div>
           </div>
           {% if label %}
             {% if page %}
