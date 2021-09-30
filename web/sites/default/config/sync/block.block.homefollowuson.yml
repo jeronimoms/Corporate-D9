@@ -1,0 +1,30 @@
+uuid: ce5aad85-aa78-475a-a717-28e5e16d64d5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:87d3318c-3892-41e7-aeba-9e7abc7501b0'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: homefollowuson
+theme: ncwtheme
+region: sidebar_second_others
+weight: 0
+provider: null
+plugin: 'block_content:87d3318c-3892-41e7-aeba-9e7abc7501b0'
+settings:
+  id: 'block_content:87d3318c-3892-41e7-aeba-9e7abc7501b0'
+  label: 'Home Follow us on'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
