@@ -30,10 +30,14 @@
             <span class="label">{{ 'Type:' | trans }}</span>
             <span class="field">{{ ds_content.group_related_resources_content.group_content.group_rr_wrapper_fields.field_publication_type.0['#plain_text'] }}</span>
           </div>
-          <div class="content-label">
-            {% set pages = ds_content.group_related_resources_content.group_content.group_rr_wrapper_fields.field_pages_count.0['#markup'] %}
-            <span class="custom-number">{{ pages }} {{ 'pages' | trans }}</span>
-          </div>
+          {% set pages = ds_content.group_related_resources_content.group_content.group_rr_wrapper_fields.field_pages_count.0['#markup'] %}
+            <div class="content-label">
+              {% if pages > 0 %}
+                <span class="custom-number">{{ pages }} {{ 'pages' | trans }}</span>
+              {% else %}
+                <span class="custom-number empty"></span>
+              {% endif %}
+            </div>
         </div>
         {{ ds_content.group_related_resources_content.group_content.node_title }}
         {{ ds_content.group_related_resources_content.group_content.node_link }}

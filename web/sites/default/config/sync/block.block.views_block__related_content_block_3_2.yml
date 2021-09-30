@@ -24,12 +24,17 @@ settings:
   views_label: ''
   items_per_page: none
   context_mapping: {  }
+  cache:
+    esi: 0
+    ttl: '0'
+    cachemode: '2'
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
       25th_anniversary: 25th_anniversary
       article: article
+      highlight: highlight
       infographic: infographic
       news: news
     negate: false
