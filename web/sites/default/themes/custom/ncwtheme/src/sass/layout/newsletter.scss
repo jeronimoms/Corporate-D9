@@ -196,6 +196,9 @@
       background-color: $bg-color-blue-button;
       color: $text-color-blue;
       font-weight: bold;
+      &:hover{
+        opacity: 0.8;
+      }
     }
     .form-check {
       margin: 0 0 20px;
