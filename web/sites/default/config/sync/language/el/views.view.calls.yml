@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Δεν υπάρχουν εν εξελίξει προσκλήσεις υποβολής προσφορών στην παρούσα ενότητα.</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Εμφάνιση λεπτομερειών'
