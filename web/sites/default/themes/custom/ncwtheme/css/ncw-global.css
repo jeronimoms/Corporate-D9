@@ -5545,6 +5545,7 @@ body.contact form.contact-form button.btn-primary {
   color: #003399;
   opacity: 0.5;
   cursor: not-allowed !important;
+  pointer-events: none !important;
 }
 .webform-submission-alertservice-temporary-form select {
   background: url(../images/pink-select.png) no-repeat scroll calc(100% - 30px) center #FFF;
