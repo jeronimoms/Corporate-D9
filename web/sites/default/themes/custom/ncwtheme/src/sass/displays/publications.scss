@@ -292,6 +292,12 @@ body.node--type-publication{
       padding-bottom: 0;
     }
   }
+  .field--type-entity-reference{
+    background: #FFFFFF;
+    .aditional-publications{
+      padding-top: 0;
+    }
+  }
 }
 
 .field--name-field-aditional-resources {
@@ -626,6 +632,13 @@ body.node--type-publication{
       padding-left: 0;
     }
   }
+
+  .node--type-publication .related-resources-fluid .publications-detail-right-column {
+    padding-top: 1rem;
+    padding-right: 0rem;
+    padding-left: 1rem;
+  }
+
 }
 
 @media only screen and (max-width : 768px) {
@@ -655,8 +668,11 @@ body.node--type-publication{
   }
   .node--type-publication{
     .content-publication-info{
-      display: block;
+      display: block !important;
       .content-label{
+        padding-bottom: 0.5rem;
+      }
+      .datetime{
         padding-bottom: 0.5rem;
       }
     }

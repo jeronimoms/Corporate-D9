@@ -6078,6 +6078,12 @@ body.node--type-publication {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+.related-resources-fluid .field--type-entity-reference {
+  background: #FFFFFF;
+}
+.related-resources-fluid .field--type-entity-reference .aditional-publications {
+  padding-top: 0;
+}
 
 .field--name-field-aditional-resources .publication-field {
   width: 100%;
@@ -6366,6 +6372,12 @@ body.node--type-publication {
   .node--type-publication .publications-detail-right-column {
     padding-left: 0;
   }
+
+  .node--type-publication .related-resources-fluid .publications-detail-right-column {
+    padding-top: 1rem;
+    padding-right: 0rem;
+    padding-left: 1rem;
+  }
 }
 @media only screen and (max-width: 768px) {
   .rr-left-column {
@@ -6384,9 +6396,12 @@ body.node--type-publication {
   }
 
   .node--type-publication .content-publication-info {
-    display: block;
+    display: block !important;
   }
   .node--type-publication .content-publication-info .content-label {
+    padding-bottom: 0.5rem;
+  }
+  .node--type-publication .content-publication-info .datetime {
     padding-bottom: 0.5rem;
   }
 }
