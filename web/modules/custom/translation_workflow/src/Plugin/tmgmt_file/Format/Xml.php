@@ -162,6 +162,10 @@ class Xml extends \XMLWriter implements FormatInterface {
     $languages = $xml->xpath("//TranslationTargetLanguage");
     foreach ($languages as $language) {
       $lang = (string) $language;
+      // @todo Do it in a better way.
+      if ($lang == 'pt') {
+        $lang = 'pt-pt';
+      }
       if ($lang != $job->getSourceLangcode() && !isset($this->mappedItemsIDs[$lang])) {
         $this->messenger()
           ->addError($this->t('Invalid target language. This job does not accept translations in: %s', ['%s' => $lang]));
@@ -204,6 +208,10 @@ class Xml extends \XMLWriter implements FormatInterface {
     if ($translationTargetLanguage) {
       $translationTargetLanguage = reset($translationTargetLanguage);
       $targetLanguage = (string) $translationTargetLanguage;
+      // @todo Do this in a better way.
+      if ($targetLanguage == 'pt') {
+        $targetLanguage = 'pt-pt';
+      }
     }
     return $targetLanguage;
   }
@@ -227,6 +235,9 @@ class Xml extends \XMLWriter implements FormatInterface {
       $reader = new \XMLReader();
       foreach ($this->importedXML->xpath('//Translation') as $translation) {
         $target_language = (string) $translation->TranslationTargetLanguage;
+        if ($target_language == 'pt') {
+          $target_language = 'pt-pt';
+        }
         if ($job->getSourceLangcode() != $target_language) {
           foreach ($translation->xpath('DynamicElement') as $unit) {
             // Get the Job Item ID that handles the language translation
@@ -378,7 +389,13 @@ class Xml extends \XMLWriter implements FormatInterface {
     $this->writeElement('TranslationSourceLanguage', $item->getSourceLangCode());
     if ($job instanceof MultipleTargetLanguageJob) {
       foreach ($job->getTargetLanguages() as $targetLanguage) {
-        $this->writeElement('TranslationTargetLanguage', $targetLanguage->getId());
+
+        // @todo Make this in a better way.
+        $langCode = $targetLanguage->getId();
+        if ($langCode == 'pt-pt') {
+          $langCode = 'pt';
+        }
+        $this->writeElement('TranslationTargetLanguage', $langCode);
       }
     }
     else {

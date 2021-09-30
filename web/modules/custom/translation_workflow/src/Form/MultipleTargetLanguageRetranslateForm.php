@@ -10,7 +10,7 @@ use Drupal\node\NodeInterface;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 
 /**
- *
+ * Class to implement retranslate functionality.
  */
 class MultipleTargetLanguageRetranslateForm extends FormBase {
 

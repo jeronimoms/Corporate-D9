@@ -5,7 +5,7 @@ namespace Drupal\translation_workflow\Entity\ViewsData;
 use Drupal\tmgmt\Entity\ViewsData\JobItemViewsData;
 
 /**
- *
+ * Class used to display information about job items.
  */
 class MultipleTargetLanguageJobItemViewsData extends JobItemViewsData {
 
