@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Deocamdată nu există cereri de oferte disponibile în această secțiune.</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Afișare detalii'
