@@ -30,7 +30,7 @@ class MultipleTargetLanguageJobQueue extends JobQueue {
    */
   public function getNextJob() {
     while ($id = reset($this->queue)) {
-      //done
+      // Done.
       if ($job = MultipleTargetLanguageJob::load($id)) {
         return $job;
       }
