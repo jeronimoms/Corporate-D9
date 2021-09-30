@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Derzeit sind in diesem Abschnitt keine Ausschreibungen verfügbar.</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Details anzeigen'

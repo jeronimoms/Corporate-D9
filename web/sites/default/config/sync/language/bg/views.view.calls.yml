@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>В момента няма налични процедури в този раздел.</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Показване на подробности'

@@ -8,6 +8,7 @@ use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\tmgmt\Form\TmgmtFormBase;
 use Drupal\tmgmt\JobInterface;
+use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 use Drupal\views\Views;
 
@@ -310,7 +311,7 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
      */
     foreach ($items as $jobItem) {
       $id = $jobItem->getItemType() . '-' . $jobItem->getItemId();
-      if (in_array($id, $publish) && $jobItem->getState() != $new_state) {
+      if (in_array($id, $publish)) { //&& $jobItem->getState() != $new_state) {
         // Change the state.
         if ($jobItem->getState() == MultipleTargetLanguageJobItem::STATE_TRANSLATION_VALIDATION_REQUIRED) {
           // @todo Validators and notifications.

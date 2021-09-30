@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Eins og er, eru engar auglýsingar eftir tillögum í þessum hluta.</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Sýna upplýsingar'

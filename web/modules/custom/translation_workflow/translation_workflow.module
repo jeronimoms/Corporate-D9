@@ -5,6 +5,8 @@
  * Translation workflow module hooks.
  */
 
+use Drupal\node\Entity\Node;
+use Drupal\Core\Render\Markup;
 use Drupal\tmgmt\Entity\Translator;
 use Drupal\tmgmt\TMGMTException;
 use Drupal\Core\Entity\EntityInterface;
@@ -13,11 +15,143 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 use Drupal\translation_workflow\Entity\ViewsData\MultipleTargetLanguageJobItemViewsData;
-use Drupal\translation_workflow\Event\TranslationEvent;
 use Drupal\translation_workflow\Form\MultipleTargetLanguageJobItemForm;
+use Drupal\translation_workflow\MailType;
 use Drupal\translation_workflow\MultipleTargetLanguageConfigSourcePluginUi;
 use Drupal\translation_workflow\MultipleTargetLanguageLocaleSourcePluginUi;
 use Drupal\translation_workflow\MutipleTargetLanguageContentEntitySourcePluginUi;
+
+/**
+ * Gets a list of allowed languages for translation.
+ *
+ * @return string[]
+ *   Allowed languages.
+ *
+ * @todo it should be done with config form in a future version.
+ */
+function osha_enabled_language_list() {
+  return [
+    'en',
+    'bg',
+    'cs',
+    'da',
+    'de',
+    'el',
+    'es',
+    'et',
+    'fi',
+    'hr',
+    'fr',
+    'hu',
+    'is',
+    'it',
+    'lv',
+    'lt',
+    'nl',
+    'mt',
+    'no',
+    'pl',
+    'pt',
+    'ro',
+    'sk',
+    'sl',
+    'sv',
+  ];
+}
+
+/**
+ * Implements hook_mail().
+ */
+function translation_workflow_mail($key, &$message, $params) {
+  $message['headers']['Content-Type'] = SWIFTMAILER_FORMAT_HTML;
+  /**
+   * @var \Drupal\translation_workflow\Entity\MultipleTargetLanguageJob $job
+   */
+  $job = $params['job'] ?? NULL;
+  /**
+   * @var \Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem $jobItem
+   */
+  $jobItem = $params['jobItem'];
+  $node = NULL;
+  if (is_null($job) && isset($params['jobItem'])) {
+    $job = $params['jobItem']->getJob();
+    $node = Node::load($jobItem->getItemId());
+  }
+  $subject = '';
+  $body = '';
+  $tokenParams = [
+    'tmgmt_job_multiple_target' => $job,
+    'user' => Drupal::currentUser(),
+    'tmgmt_job_item' => $jobItem,
+    'node' => $node,
+  ];
+  switch ($key) {
+    case MailType::JOB_ON_TRANSLATION:
+      $subject = t('[OSHA Website] CMW: Translation job #[tmgmt_job_multiple_target:id]');
+      $body = [
+        'Dear "[user:name]",',
+        'A new translation job (Translation job <a href="[tmgmt_job_multiple_target:url]">#[tmgmt_job_multiple_target:id]</a>)
+           in osha.europa.eu has been created.',
+        'Thank you',
+      ];
+      break;
+
+    case MailType::JOB_ITEM_REVIEW:
+      $subject = t('[OSHA Website] CMW: Translation job #[tmgmt_job_multiple_target:id]');
+      $body = [
+        'Dear "[user:name]",',
+        'Note that "[node:title]" (type [node:type]) Translation job <a href="[tmgmt_job_multiple_target:url]">
+            #[tmgmt_job_multiple_target:id]</a> in osha.europa.eu has been TRANSLATED in [tmgmt_job_item:target_language].',
+        'Thank you',
+      ];
+      break;
+
+    case MailType::JOB_ITEM_VALIDATION_REQUIRED:
+      $subject = t('[OSHA Website] CMW: Translation job #[tmgmt_job_multiple_target:id]');
+      $body = [
+        'Dear "[user:name]",',
+        'There is new content translated that requires your VALIDATION. Please check "[node:title]"
+            (type [node:type]) from Translation job <a href="[tmgmt_job_multiple_target:url]">#[tmgmt_job_multiple_target:id]</a>
+            [tmgmt_job_item:target_language] in osha.europa.eu.',
+        'Thank you',
+      ];
+      break;
+
+    case MailType::JOB_ITEM_VALIDATED:
+      $subject = t('[OSHA Website] CMW: Translation job #[tmgmt_job_multiple_target:id]');
+      $body = [
+        'Dear "[user:name]",',
+        'Note that "[node:title]" (type [node:type]) from Translation job <a href="[tmgmt_job_multiple_target:url]">#[tmgmt_job_multiple_target:id]</a>
+            in osha.europa.eu has been VALIDATED in [tmgmt_job_item:target_language].',
+        'Thank you',
+      ];
+      break;
+
+    case MailType::JOB_ITEM_ABORTED:
+      $subject = t('[OSHA Website] CMW: Translation job #[tmgmt_job_multiple_target:id]');
+      $body = [
+        'Dear "[user:name]",',
+        'Note that "[node:title]" (type [node:type]) from Translation job <a href="[tmgmt_job_multiple_target:url]">#[tmgmt_job_multiple_target:id]</a>
+            in osha.europa.eu has been REJECTED in [tmgmt_job_item:target_language].',
+        'Thank you',
+      ];
+      break;
+
+    case MailType::JOB_ITEM_ACCEPTED:
+      $subject = t('[OSHA Website] CMW: Translation job #[tmgmt_job_multiple_target:id]');
+      $body = [
+        'Dear "[user:name]",',
+        'A new translation job <a href="[tmgmt_job_multiple_target:url]">#[tmgmt_job_multiple_target:id]</a> in osha.europa.eu has been created.',
+        'Thank you',
+      ];
+      break;
+  }
+  $tokenService = Drupal::token();
+  $message['subject'] = $tokenService->replace($subject, $tokenParams);
+  $message['body'] = array_map(function ($text) use ($tokenService, $tokenParams) {
+    return Markup::create($tokenService->replace($text, $tokenParams) . '<br>');
+  }, $body);
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -70,14 +204,14 @@ function tmgmt_content_translate_form_submit(array &$form, FormStateInterface $f
  * Implements hook_entity_update().
  */
 function translation_workflow_entity_update(EntityInterface $entity) {
-  $contentModerationService = \Drupal::service('content_moderation_notifications.notification_information');
+  /*$contentModerationService = \Drupal::service('content_moderation_notifications.notification_information');
   if ($contentModerationService->isModeratedEntity($entity)) {
-    $transition = $contentModerationService->getTransition($entity);
-    if ($transition->to()->id()) {
-      \Drupal::service('event_dispatcher')
-        ->dispatch(new TranslationEvent(NULL, $entity), TranslationEvent::TRANSLATION_CONTENT_READY_TO_PUBLISH);
-    }
+  $transition = $contentModerationService->getTransition($entity);
+  if ($transition->to()->id()) {
+  \Drupal::service('event_dispatcher')
+  ->dispatch(new TranslationEvent(NULL, $entity), TranslationEvent::TRANSLATION_CONTENT_READY_TO_PUBLISH);
   }
+  }*/
 }
 
 /**

@@ -31,6 +31,50 @@ body.contact{
   }
 }
 
+/* Form Governance */
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form{
+  .js-form-wrapper{
+    border: 1px solid #CCC;
+    margin-bottom: 2rem !important;
+    padding: 1rem;
+  }
+  .js-form-wrapper#edit-actions{
+    border: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .legend{
+    background: #FFF;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: -30px;
+    display: table;
+    width: auto;
+  }
+  fieldset{
+    p{
+      margin-bottom: 0 !important;
+    }
+  }
+  .blue{
+    color: $text-color-blue;
+  }
+  #edit-submit{
+    display: none;
+  }
+}
+
+/* Page preview form Governance*/
+.page-node-29110{
+  #edit-preview{
+    border: 0;
+    padding: 0;
+  }
+  #edit-submit{
+    display: inline-block;
+  }
+}
+
 
 @media only screen and (max-width : 768px) {
   body.contact{

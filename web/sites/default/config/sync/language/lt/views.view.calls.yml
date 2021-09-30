@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Šiuo metu šioje skiltyje nėra jokių paskelbtų kvietimų rangovams</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Rodyti išsamią informaciją'

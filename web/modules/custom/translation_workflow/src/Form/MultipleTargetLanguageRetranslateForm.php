@@ -52,10 +52,10 @@ class MultipleTargetLanguageRetranslateForm extends FormBase {
       ->getFieldDefinitions($node->getEntityTypeId(), $node->bundle());
     foreach ($fieldsDefinitions as $fieldName => $fieldsDefinition) {
       if ($fieldsDefinition->isTranslatable() && in_array($fieldsDefinition->getType(), [
-          'string',
-          'text_with_summary',
-          'text_long',
-        ])) {
+        'string',
+        'text_with_summary',
+        'text_long',
+      ])) {
         $value = $node->get($fieldName)->value;
         switch ($fieldsDefinition->getType()) {
           case 'string':
