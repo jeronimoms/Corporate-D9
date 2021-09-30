@@ -7,12 +7,12 @@ use Drupal\Core\Entity\EntityListBuilder;
 use Drupal\Core\Url;
 
 /**
- *
+ * Class to define default opdations for the jobs page.
  */
 class MultipleTargetLanguageJobListBuilder extends EntityListBuilder {
 
   /**
-   *
+   * {@inheritdoc}
    */
   protected function getDefaultOperations(EntityInterface $entity) {
     $operations = parent::getDefaultOperations($entity);

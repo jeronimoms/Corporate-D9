@@ -12,7 +12,7 @@ use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 use Drupal\translation_workflow\Entity\PriorityJobInterface;
 
 /**
- *
+ * Class to override cart form.
  */
 class MultipleTargetLanguageCartForm extends CartForm {
 
@@ -73,8 +73,7 @@ class MultipleTargetLanguageCartForm extends CartForm {
   }
 
   /**
-   * @param array $form
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   * Validate new added items to the cart.
    */
   public function validateNewItems(array &$form, FormStateInterface $form_state) {
     $targetLanguages = array_filter($form_state->getValue('target_language'));
