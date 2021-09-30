@@ -5545,6 +5545,7 @@ body.contact form.contact-form button.btn-primary {
   color: #003399;
   opacity: 0.5;
   cursor: not-allowed !important;
+  pointer-events: none !important;
 }
 .webform-submission-alertservice-temporary-form select {
   background: url(../images/pink-select.png) no-repeat scroll calc(100% - 30px) center #FFF;
@@ -5928,6 +5929,11 @@ body.contact form.contact-form button.btn-primary {
   padding-right: 5px;
   font-size: 0.9rem;
   color: #003399;
+  min-width: 85px;
+}
+
+.custom-number.empty {
+  min-width: 85px;
 }
 
 /* Publications Detail */
@@ -6049,7 +6055,7 @@ body.node--type-publication {
 }
 .node--type-publication .related-resources-fluid .publications-detail-right-column {
   padding-top: 1rem;
-  padding-right: 6rem;
+  padding-right: 1rem;
 }
 .node--type-publication .related-resources-fluid .node--type-publication h2 {
   font-size: 1.2rem;
@@ -6077,6 +6083,12 @@ body.node--type-publication {
   background: transparent;
   margin-bottom: 0;
   padding-bottom: 0;
+}
+.related-resources-fluid .field--type-entity-reference {
+  background: #FFFFFF;
+}
+.related-resources-fluid .field--type-entity-reference .aditional-publications {
+  padding-top: 0;
 }
 
 .field--name-field-aditional-resources .publication-field {
@@ -6366,6 +6378,12 @@ body.node--type-publication {
   .node--type-publication .publications-detail-right-column {
     padding-left: 0;
   }
+
+  .node--type-publication .related-resources-fluid .publications-detail-right-column {
+    padding-top: 1rem;
+    padding-right: 0rem;
+    padding-left: 1rem;
+  }
 }
 @media only screen and (max-width: 768px) {
   .rr-left-column {
@@ -6384,9 +6402,12 @@ body.node--type-publication {
   }
 
   .node--type-publication .content-publication-info {
-    display: block;
+    display: block !important;
   }
   .node--type-publication .content-publication-info .content-label {
+    padding-bottom: 0.5rem;
+  }
+  .node--type-publication .content-publication-info .datetime {
     padding-bottom: 0.5rem;
   }
 }
