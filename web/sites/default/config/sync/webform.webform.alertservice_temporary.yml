@@ -16,7 +16,9 @@ elements: |-
   service_unavailable:
     '#type': processed_text
     '#text': |
-      <p>Due to technical maintenance this service will be available soon. Sorry for the disturbances</p>
+      <div class="alert alert-warning" role="alert">
+      <div>Due to technical maintenance this service will be available soon. Sorry for the disturbances</div>
+      </div>
     '#format': full_html
   alertservice_text:
     '#type': processed_text
