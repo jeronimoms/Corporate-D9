@@ -2194,10 +2194,10 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: string
-        field_date_value:
-          id: field_date_value
+        field_date_end_value:
+          id: field_date_end_value
           table: node__field_date
-          field: field_date_value
+          field: field_date_end_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -2210,14 +2210,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_date_value_op
+            operator_id: field_date_end_value_op
             label: 'Start date'
             description: ''
             use_operator: false
-            operator: field_date_value_op
+            operator: field_date_end_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_date_value
+            identifier: field_date_end_value
             required: false
             remember: false
             multiple: false
@@ -2254,10 +2254,10 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: datetime
-        field_seminar_end_date_value:
-          id: field_seminar_end_date_value
-          table: node__field_seminar_end_date
-          field: field_seminar_end_date_value
+        field_date_end_value_1:
+          id: field_date_end_value_1
+          table: node__field_date
+          field: field_date_end_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -2270,14 +2270,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_seminar_end_date_value_op
+            operator_id: field_date_end_value_1_op
             label: 'End date'
             description: ''
             use_operator: false
-            operator: field_seminar_end_date_value_op
+            operator: field_date_end_value_1_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_seminar_end_date_value
+            identifier: field_date_end_value_1
             required: false
             remember: false
             multiple: false
@@ -3055,6 +3055,10 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
