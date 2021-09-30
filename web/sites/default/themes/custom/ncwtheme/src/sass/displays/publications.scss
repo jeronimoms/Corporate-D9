@@ -122,6 +122,11 @@
   padding-right: 5px;
   font-size: 0.9rem;
   color: $text-color-blue;
+  min-width: 85px;
+}
+
+.custom-number.empty{
+  min-width: 85px;
 }
 
 /* Publications Detail */
@@ -250,7 +255,7 @@ body.node--type-publication{
     margin-top: -1px;
     .publications-detail-right-column{
       padding-top: 1rem;
-      padding-right: 6rem;
+      padding-right: 1rem;
     }
     .node--type-publication{
       h2{
@@ -290,6 +295,12 @@ body.node--type-publication{
       background: transparent;
       margin-bottom: 0;
       padding-bottom: 0;
+    }
+  }
+  .field--type-entity-reference{
+    background: #FFFFFF;
+    .aditional-publications{
+      padding-top: 0;
     }
   }
 }
@@ -626,6 +637,13 @@ body.node--type-publication{
       padding-left: 0;
     }
   }
+
+  .node--type-publication .related-resources-fluid .publications-detail-right-column {
+    padding-top: 1rem;
+    padding-right: 0rem;
+    padding-left: 1rem;
+  }
+
 }
 
 @media only screen and (max-width : 768px) {
@@ -655,8 +673,11 @@ body.node--type-publication{
   }
   .node--type-publication{
     .content-publication-info{
-      display: block;
+      display: block !important;
       .content-label{
+        padding-bottom: 0.5rem;
+      }
+      .datetime{
         padding-bottom: 0.5rem;
       }
     }

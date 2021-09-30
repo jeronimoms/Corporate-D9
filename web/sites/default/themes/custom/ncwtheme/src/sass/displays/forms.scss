@@ -109,6 +109,7 @@ body.contact{
     color: $text-color-blue;
     opacity: 0.5;
     cursor: not-allowed !important;
+    pointer-events: none! important;
   }
   select{
     background: url(../images/pink-select.png) no-repeat scroll calc(100% - 30px) center #FFF;
