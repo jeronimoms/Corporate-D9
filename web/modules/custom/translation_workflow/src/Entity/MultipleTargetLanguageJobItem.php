@@ -8,21 +8,22 @@ use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\tmgmt\Entity\JobItem;
 use Drupal\tmgmt\JobItemInterface;
+use Drupal\translation_workflow\Event\TranslationEvent;
 
 /**
- *
+ * Class to extends functionalities of job items.
  */
 class MultipleTargetLanguageJobItem extends JobItem {
 
   use MessengerTrait;
 
   /**
-   *
+   * Define state validation required.
    */
   const STATE_TRANSLATION_VALIDATION_REQUIRED = 5;
 
   /**
-   *
+   * Define state translation validated.
    */
   const STATE_TRANSLATION_VALIDATED = 6;
 
@@ -33,7 +34,6 @@ class MultipleTargetLanguageJobItem extends JobItem {
     $fieldsDefinitions = parent::baseFieldDefinitions($entity_type);
     $fieldsDefinitions['target_language'] = BaseFieldDefinition::create('language')
       ->setLabel(t('Target language code'))
-      ->setCardinality(1)
       ->setDescription(t('The target language.'));
 
     $fieldsDefinitions['retranslation_data'] = BaseFieldDefinition::create('string_long')
@@ -59,7 +59,7 @@ class MultipleTargetLanguageJobItem extends JobItem {
       static::STATE_REVIEW => t('Translated'),
       static::STATE_TRANSLATION_VALIDATION_REQUIRED => t('Content Validation Required'),
       static::STATE_ABORTED => t('Translation Rejected'),
-      static:: STATE_TRANSLATION_VALIDATED => t('Translation Validated'),
+      static::STATE_TRANSLATION_VALIDATED => t('Translation Validated'),
       static::STATE_ACCEPTED => t('Ready to Publish'),
       static::STATE_INACTIVE => t('Inactive'),
     ];
@@ -180,7 +180,7 @@ class MultipleTargetLanguageJobItem extends JobItem {
           $job_url = $job->toUrl()->toString();
           $variables = [
             '@source' => $this->getSourceLabel(),
-            '@language' => $job->getTargetLanguage()->getName(),
+            '@language' => $this->getTargetLanguage()->getName(),
             ':review_url' => $this->toUrl('canonical', ['query' => ['destination' => $job_url]])
               ->toString(),
           ];
@@ -285,6 +285,26 @@ class MultipleTargetLanguageJobItem extends JobItem {
         return in_array($key, array_keys($retranslationData));
       }, ARRAY_FILTER_USE_KEY);
     }
+    return $ret;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setState($state, $message = NULL, $variables = [], $type = 'debug') {
+    // Return TRUE if the state could be set. Return FALSE otherwise.
+    if (array_key_exists($state, static::getStates()) && $this->get('state')->value != $state) {
+      $this->set('state', $state);
+      // Changing the state resets the translator state.
+      $this->setTranslatorState(NULL);
+      $this->save();
+      // If a message is attached to this state change add it now.
+      if (!empty($message)) {
+        $this->addMessage($message, $variables, $type);
+      }
+    }
+    $ret = $this->get('state')->value;
+    \Drupal::service('event_dispatcher')->dispatch(new TranslationEvent(NULL, NULL, $this), TranslationEvent::TRANSLATION_JOB_ITEM_STATE_CHANGED);
     return $ret;
   }
 
@@ -420,7 +440,7 @@ class MultipleTargetLanguageJobItem extends JobItem {
         '@lang' => strtoupper($this->getTargetLangcode()),
       ]);
     // @todo Validators
-    //OshaWorkflowNotifications::notifyTranslationAccepted($this);
+    // OshaWorkflowNotifications::notifyTranslationAccepted($this);
     return parent::acceptTranslation();
   }
 

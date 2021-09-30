@@ -13,7 +13,7 @@ use Drupal\tmgmt\JobQueue;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
- *
+ * Class to decorate tmgmt service.
  */
 class MultipleTargetLanguageJobCheckoutManager extends JobCheckoutManager {
 

@@ -12,7 +12,7 @@ use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 use Drupal\translation_workflow\Entity\PriorityJobInterface;
 
 /**
- *
+ * Class to override cart form.
  */
 class MultipleTargetLanguageCartForm extends CartForm {
 
@@ -32,6 +32,7 @@ class MultipleTargetLanguageCartForm extends CartForm {
     }
 
     if (isset($form['target_language'])) {
+      $allowedLanguages = osha_enabled_language_list();
       $form['target_language']['#size'] = 24;
       $default = \Drupal::languageManager()->getDefaultLanguage()->getId();
       if (isset($form['target_language']['#options']['nol'])) {
@@ -40,6 +41,9 @@ class MultipleTargetLanguageCartForm extends CartForm {
       if (isset($form['target_language']['#options'][$default])) {
         unset($form['target_language']['#options'][$default]);
       }
+      $form['target_language']['#options'] = array_filter($form['target_language']['#options'], function ($key) use ($allowedLanguages) {
+        return in_array($key, $allowedLanguages);
+      }, ARRAY_FILTER_USE_KEY);
     }
 
     $jobFieldDefinitions = \Drupal::service('entity_field.manager')
@@ -69,8 +73,7 @@ class MultipleTargetLanguageCartForm extends CartForm {
   }
 
   /**
-   * @param array $form
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   * Validate new added items to the cart.
    */
   public function validateNewItems(array &$form, FormStateInterface $form_state) {
     $targetLanguages = array_filter($form_state->getValue('target_language'));

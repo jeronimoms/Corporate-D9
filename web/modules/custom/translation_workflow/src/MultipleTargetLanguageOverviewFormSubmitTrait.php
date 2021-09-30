@@ -12,7 +12,7 @@ use Drupal\tmgmt\Form\SourceOverviewForm;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
 
 /**
- *
+ * Override method on some clases using this trait to load correct entity.
  */
 trait MultipleTargetLanguageOverviewFormSubmitTrait {
   use MessengerTrait, StringTranslationTrait, LoggerChannelTrait;

@@ -9,8 +9,9 @@ use Drupal\Component\EventDispatcher\Event;
  */
 class TranslationEvent extends Event {
 
-  const TRANSLATION_CONTENT_READY_TO_PUBLISH = 'translation_workflow.content_ready_to_publish';
   const TRANSLATION_JOB_STATE_CHANGED = 'translation_workflow.job_state_changed';
+
+  const TRANSLATION_JOB_ITEM_STATE_CHANGED = 'translation_workflow.job_item_state_changed';
 
   // @todo implement content validators.
   const TRANSLATION_CONTENT_VALIDATOR_REMOVED = 'translation_workflow.validator_removed';
@@ -30,11 +31,19 @@ class TranslationEvent extends Event {
   private $entity;
 
   /**
+   * Job item updated.
+   *
+   * @var mixed|null
+   */
+  private $jobItem;
+
+  /**
    * Event constructor.
    */
-  public function __construct($job, $entity) {
+  public function __construct($job, $entity, $jobItem = NULL) {
     $this->job = $job;
     $this->entity = $entity;
+    $this->jobItem = $jobItem;
   }
 
   /**
@@ -55,6 +64,16 @@ class TranslationEvent extends Event {
    */
   public function getEntity() {
     return $this->entity;
+  }
+
+  /**
+   * Gets Job item updated.
+   *
+   * @return \Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem
+   *   JobItem Updated.
+   */
+  public function getJobItem() {
+    return $this->jobItem;
   }
 
 }
