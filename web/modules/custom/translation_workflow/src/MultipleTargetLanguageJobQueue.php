@@ -6,7 +6,7 @@ use Drupal\tmgmt\JobQueue;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
 
 /**
- *
+ * Class to decorate tmgmt service.
  */
 class MultipleTargetLanguageJobQueue extends JobQueue {
 

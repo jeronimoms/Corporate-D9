@@ -8,17 +8,16 @@ use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\tmgmt\Form\TmgmtFormBase;
 use Drupal\tmgmt\JobInterface;
-use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 use Drupal\views\Views;
 
 /**
- *
+ * Class to implement job form.
  */
 class MultipleTargetLanguageJobForm extends TmgmtFormBase {
 
   /**
-   *
+   * {@inheritdoc}
    */
   public function form(array $form, FormStateInterface $form_state) {
     $form = parent::form($form, $form_state);
@@ -26,6 +25,7 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
      * @var \Drupal\translation_workflow\Entity\MultipleTargetLanguageJob $job
      */
     $job = $this->entity;
+    $currentUser = $this->currentUser();
     $form['info'] = [
       '#type' => 'container',
       '#attributes' => ['class' => ['tmgmt-ui-job-info', 'clearfix']],
@@ -200,7 +200,6 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
 
       $all_options = MultipleTargetLanguageJobItem::getStates();
       $options = ['' => t('-- Please select --')];
-      $currentUser = $this->currentUser();
       if ($currentUser->hasPermission('edit translation content validators')) {
         $options = $all_options;
       }
@@ -311,7 +310,8 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
      */
     foreach ($items as $jobItem) {
       $id = $jobItem->getItemType() . '-' . $jobItem->getItemId();
-      if (in_array($id, $publish)) { //&& $jobItem->getState() != $new_state) {
+      // && $jobItem->getState() != $new_state) {
+      if (in_array($id, $publish)) {
         // Change the state.
         if ($jobItem->getState() == MultipleTargetLanguageJobItem::STATE_TRANSLATION_VALIDATION_REQUIRED) {
           // @todo Validators and notifications.

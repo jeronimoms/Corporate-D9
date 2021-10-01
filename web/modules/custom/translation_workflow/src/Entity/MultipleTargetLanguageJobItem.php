@@ -11,19 +11,19 @@ use Drupal\tmgmt\JobItemInterface;
 use Drupal\translation_workflow\Event\TranslationEvent;
 
 /**
- *
+ * Class to extends functionalities of job items.
  */
 class MultipleTargetLanguageJobItem extends JobItem {
 
   use MessengerTrait;
 
   /**
-   *
+   * Define state validation required.
    */
   const STATE_TRANSLATION_VALIDATION_REQUIRED = 5;
 
   /**
-   *
+   * Define state translation validated.
    */
   const STATE_TRANSLATION_VALIDATED = 6;
 
@@ -34,7 +34,6 @@ class MultipleTargetLanguageJobItem extends JobItem {
     $fieldsDefinitions = parent::baseFieldDefinitions($entity_type);
     $fieldsDefinitions['target_language'] = BaseFieldDefinition::create('language')
       ->setLabel(t('Target language code'))
-      ->setCardinality(1)
       ->setDescription(t('The target language.'));
 
     $fieldsDefinitions['retranslation_data'] = BaseFieldDefinition::create('string_long')
@@ -181,7 +180,7 @@ class MultipleTargetLanguageJobItem extends JobItem {
           $job_url = $job->toUrl()->toString();
           $variables = [
             '@source' => $this->getSourceLabel(),
-            '@language' => $job->getTargetLanguage()->getName(),
+            '@language' => $this->getTargetLanguage()->getName(),
             ':review_url' => $this->toUrl('canonical', ['query' => ['destination' => $job_url]])
               ->toString(),
           ];

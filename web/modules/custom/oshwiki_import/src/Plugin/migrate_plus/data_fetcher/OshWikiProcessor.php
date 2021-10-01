@@ -32,19 +32,12 @@ class OshWikiProcessor extends FileFetcher
     $resultsOffset = 0;
     $resultsLimit = 200;
     $hasResults = true;
-//     $resultsFilePath = "C:/proj/Corporate-D9/web/sites/default/files/oshwikiMigration/fullList.json";
 // $logsPath = "/var/www/html/web/sites/default/files/oshwikiMigration/log.txt";
 
     file_put_contents($resultsFilePath, '[');
 // file_put_contents($logsPath, "");
     while($hasResults)
     {
-      //$oshwikiPages = [];
-      /*
-       * TO EXTRACT METADATA
-       */
-      //$osha_wiki_hostname = \Drupal::state()->get('osha_wiki_hostname', 'https://oshwiki.eu');
-
       $osha_wiki_hostname = \Drupal::configFactory()->getEditable('oshwiki_import.settings')->get('oshwiki_import_api');
       $oshwikiPrintoutsUrl = "$osha_wiki_hostname/index.php?title=Special%3AAsk&limit=$resultsLimit&offset=$resultsOffset&q=%5B%5B%3A%2B%5D%5D&po=%3FModification+date%0D%0A%3FCategory%0D%0A%3FMaster+page%0D%0A%3FModification+date%0D%0A%3FLanguage+code%0D%0A%3FNP%0D%0A%3FOP%0D%0A&eq=yes&p%5Bformat%5D=json&p%5Blink%5D=subject&p%5Bsort%5D=Modification+date&p%5Border%5D%5Bdesc%5D=1&p%5Bheaders%5D=show&p%5Bmainlabel%5D=&p%5Bintro%5D=&p%5Boutro%5D=&p%5Bsearchlabel%5D=&p%5Bdefault%5D=&p%5Bsyntax%5D=standard&eq=yes";
 // $oshwikiPrintoutsUrl = "$osha_wiki_hostname/index.php?title=Special%3AAsk&limit=$resultsLimit&offset=$resultsOffset&q=%5B%5BOP%3A%3AProperty%3AOSHA+54841D%5D%5D&po=%3FModification+date%0D%0A%3FCategory%0D%0A%3FMaster+page%0D%0A%3FModification+date%0D%0A%3FLanguage+code%0D%0A%3FNP%0D%0A%3FOP%0D%0A&eq=yes&p%5Bformat%5D=json&p%5Blink%5D=subject&p%5Bsort%5D=Modification+date&p%5Border%5D%5Bdesc%5D=1&p%5Bheaders%5D=show&p%5Bmainlabel%5D=&p%5Bintro%5D=&p%5Boutro%5D=&p%5Bsearchlabel%5D=&p%5Bdefault%5D=&p%5Bsyntax%5D=standard&eq=yes";
@@ -64,7 +57,7 @@ class OshWikiProcessor extends FileFetcher
         $newWikiPage = new OshWikiNodeEntity;
         $pagePrintouts = $oldWikiPage->printouts;
         $newWikiPage->title = $oldWikiPage->fulltext;
-        $newWikiPage->oshwikiURL = $oldWikiPage->fullurl;
+        $newWikiPage->oshwikiURL = 'https:'.$oldWikiPage->fullurl;
 
         foreach($pagePrintouts->{'Modification date'} as $modDate)
         {
