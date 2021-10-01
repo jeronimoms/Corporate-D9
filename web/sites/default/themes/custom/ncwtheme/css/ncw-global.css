@@ -3991,7 +3991,7 @@ body.user-logged-in.toolbar-tray-open.scrolled #header {
 .top-header-content .region-top-header-logos .field--name-field-image {
   display: flex;
   margin: 0;
-  align-items: center;
+  align-items: flex-end;
 }
 .top-header-content .region-top-header-logos .field--name-field-image .field__item {
   float: left;
