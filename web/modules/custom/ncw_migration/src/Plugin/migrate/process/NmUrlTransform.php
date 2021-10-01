@@ -55,7 +55,7 @@ class NmUrlTransform extends ProcessPluginBase implements ContainerFactoryPlugin
     }
 
     if ($this->configFactory->get('config_split.config_split.production')->get('status')) {
-      $base = 'https://prodd9.osha.europa.eu';
+      $base = 'https://osha.europa.eu';
     }
 
     $osha_patch = $base. '/sites/default/files/' . $nn;
