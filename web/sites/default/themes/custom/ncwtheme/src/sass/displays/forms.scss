@@ -59,8 +59,20 @@ body.contact{
   .blue{
     color: $text-color-blue;
   }
-  #edit-submit{
-    display: none;
+  .form-item-date-of-the-document{
+    position: relative;
+    max-width: 220px;
+    .ui-datepicker-trigger{
+      position: absolute;
+      top: 3px;
+      right: 30px;
+    }
+  }
+  #edit-date-of-the-document{
+    max-width: 220px;
+  }
+  select{
+    min-width: 220px;
   }
 }
 
@@ -69,9 +81,6 @@ body.contact{
   #edit-preview{
     border: 0;
     padding: 0;
-  }
-  #edit-submit{
-    display: inline-block;
   }
 }
 
