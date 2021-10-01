@@ -119,6 +119,7 @@ third_party_settings:
         - field_prevention_measures
         - field_purpose_of_the_material
         - field_target_audience
+        - field_resource_type
         - field_msd_priority_area
         - field_year
       parent_name: ''
@@ -167,11 +168,12 @@ third_party_settings:
         - field_prevention_measures
         - field_purpose_of_the_material
         - field_target_audience
+        - field_resource_type
         - field_msd_priority_area
         - field_year
         - field_external_url
-        - field_type_of_item
         - field_original_desc_language
+        - field_type_of_item
         - field_material_country
         - field_available_in_languages
         - field_msd_provider
@@ -262,7 +264,7 @@ content:
     region: ds_content
   field_msd_priority_area:
     type: entity_reference_label
-    weight: 23
+    weight: 24
     region: ds_content
     label: above
     settings:
@@ -327,6 +329,22 @@ content:
             classes: {  }
     type: entity_reference_label
     region: ds_content
+  field_resource_type:
+    type: entity_reference_label
+    weight: 23
+    region: ds_content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_sector_industry_covered:
     type: entity_reference_label
     weight: 16
@@ -408,7 +426,7 @@ content:
             classes: {  }
   field_year:
     type: list_default
-    weight: 24
+    weight: 25
     region: ds_content
     label: above
     settings: {  }
@@ -428,7 +446,6 @@ hidden:
   field_nominated_by_fop: true
   field_original_desc_lang_other: true
   field_prevention_measures_other: true
-  field_resource_type: true
   field_resource_type_other: true
   field_section: true
   field_target_group_other: true

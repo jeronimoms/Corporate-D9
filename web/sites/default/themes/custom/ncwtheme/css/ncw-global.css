@@ -3991,7 +3991,7 @@ body.user-logged-in.toolbar-tray-open.scrolled #header {
 .top-header-content .region-top-header-logos .field--name-field-image {
   display: flex;
   margin: 0;
-  align-items: center;
+  align-items: flex-end;
 }
 .top-header-content .region-top-header-logos .field--name-field-image .field__item {
   float: left;
@@ -5501,17 +5501,26 @@ body.contact form.contact-form button.btn-primary {
 .about-eu-osha-governance-eu-osha-internal-documents-document-request-form .blue {
   color: #003399;
 }
-.about-eu-osha-governance-eu-osha-internal-documents-document-request-form #edit-submit {
-  display: none;
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .form-item-date-of-the-document {
+  position: relative;
+  max-width: 220px;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form .form-item-date-of-the-document .ui-datepicker-trigger {
+  position: absolute;
+  top: 3px;
+  right: 30px;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form #edit-date-of-the-document {
+  width: 220px;
+}
+.about-eu-osha-governance-eu-osha-internal-documents-document-request-form select {
+  width: 220px;
 }
 
 /* Page preview form Governance*/
 .page-node-29110 #edit-preview {
   border: 0;
   padding: 0;
-}
-.page-node-29110 #edit-submit {
-  display: inline-block;
 }
 
 /* Form Alert Service */

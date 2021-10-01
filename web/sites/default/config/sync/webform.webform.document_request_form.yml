@@ -71,13 +71,12 @@ elements: |-
         <div class="legend">Document requested</div>
       '#format': full_html
     date_of_the_document:
-      '#type': datelist
+      '#type': date
       '#title': 'Date of the document'
-      '#date_part_order':
-        - day
-        - month
-        - year
-      '#date_year_range': '2019:2023'
+      '#date_date_min': 01-01-2019
+      '#date_date_max': 31-12-2023
+      '#datepicker': true
+      '#datepicker_button': true
     title_of_the_document:
       '#type': textfield
       '#title': 'Title of the document'
@@ -337,3 +336,4 @@ handlers:
       theme_name: ''
       parameters: {  }
 variants: {  }
+
