@@ -4,7 +4,7 @@
   </div>
   <ul>
     {% if video %}
-      <li><a href="/{{ lang }}/nma/{{ video.fid }}/download">{{ 'Video'|t }} <span class="related_size">({{ video.size }} MB)</span></a></li>
+      <li><a href="/{{ lang }}/nma/{{ video.fid }}/download">{{ 'Video'|t }} <span class="related_size">({{ (video.size / 1024) | round(2, 'ceil')}} MB)</span></a></li>
     {% endif %}
     {% if activity %}
       <li><a href="/{{ lang }}/nma/{{ activity.fid }}/download">{{ 'Activity'|t }} <span class="related_size">({{ activity.size }} KB)</span></a></li>

@@ -72,7 +72,7 @@ body.user-logged-in.toolbar-tray-open{
     .field--name-field-image{
       display: flex;
       margin: 0;
-      align-items: center;
+      align-items: flex-end;
       .field__item {
         float: left;
         margin-right: 20px;
