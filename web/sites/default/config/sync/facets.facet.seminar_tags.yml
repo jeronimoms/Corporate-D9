@@ -52,7 +52,15 @@ processor_configs:
     weights:
       sort: 40
     settings:
-      sort: DESC
+      sort: ASC
+  exclude_specified_items:
+    processor_id: exclude_specified_items
+    weights:
+      build: 50
+    settings:
+      exclude: '51,32,61,4644,3109,4641,43,62,115,173,44,126,166,181,54,57,78,97,105,123,2968,4526,4645,5022'
+      regex: false
+      invert: true
   translate_entity:
     processor_id: translate_entity
     weights:
