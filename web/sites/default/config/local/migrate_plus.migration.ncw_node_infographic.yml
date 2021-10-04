@@ -86,24 +86,6 @@ process:
       source: changed
   field_pages_count: field_pages_count
   moderation_state: moderation_state
-  field_image_media:
-    plugin: file_id_lookup
-    source: field_image
-    migration:
-      - ncw_node_infographic_field_image_media_1
-    no_stub: true
-  field_thumbnail_media:
-    plugin: file_id_lookup
-    source: field_thumbnail
-    migration:
-      - ncw_node_infographic_field_image_media_caption_1
-    no_stub: true
-  field_file_media:
-    plugin: file_id_lookup
-    source: field_file
-    migration:
-      - ncw_node_infographics_media_documents_1
-    no_stub: true
 destination:
   plugin: 'entity:node'
 migration_dependencies: null

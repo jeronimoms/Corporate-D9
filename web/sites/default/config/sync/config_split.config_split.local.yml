@@ -13,12 +13,14 @@ module:
   migrate_file_to_media: 0
   migrate_plus: 0
   migrate_tools: 0
+  osha_import_export: 0
 theme: {  }
 blacklist:
-  - migrate_drupal.settings
   - 'migrate_plus*'
 graylist:
+  - mailsystem.settings
   - search_api.server.solr
+  - swiftmailer.transport
   - system.performance
 graylist_dependents: false
 graylist_skip_equal: true

@@ -19,11 +19,14 @@ dependencies:
 source:
   plugin: url
   data_parser_plugin: xml
-  urls: /expert/osha/SYNC_CRM/FocalPoints.xml
-  #urls: /var/www/html/web/sites/default/files/xmlMigracion/FocalPoints.xml
+  urls: /expert/SYNC_CRM/FocalPoints.xml
+#  urls: /var/www/html/web/sites/default/files/xmlMigracion/FocalPoints.xml
   content_type: press_contact
   ids:
-    field_contact_uuid:
+#    field_contact_uuid:
+    field_country:
+      type: string
+    field_contact_type:
       type: string
   item_selector: /Report/Table0/Table0_Group0_Collection/Table0_Group0_Header0/Detail_Collection/Detail
   fields:
@@ -121,6 +124,9 @@ source:
       name: field_zip_code
       label: 'field_zip_code'
       selector: '@a_osh_phcp'
+    - name: field_contact_type
+      label: 'field_contact_type'
+      selector: '../../Table0_Group0_Header0'
 process:
   field_contact_uuid: field_contact_uuid
   title: title
@@ -175,3 +181,8 @@ process:
   #    source: field_wg_role_2
   #    vocabulary: wg_role_2
   field_zip_code: field_zip_code
+  field_contact_type:
+    - plugin: oie_taxonomy_term_name
+      source: field_contact_type
+      vocabulary: contact_type
+      create: true

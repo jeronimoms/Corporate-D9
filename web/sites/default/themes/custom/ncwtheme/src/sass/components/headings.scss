@@ -74,6 +74,7 @@ h2{
     h2{
       font-weight: 600;
       strong{
+        color: $text-color-blue;
         font-weight: 600;
       }
     }
@@ -84,8 +85,10 @@ h2{
       }
     }
     h4{
+      font-size: 0.9rem;
       font-weight: 600;
       strong{
+        font-size: 0.9rem;
         font-weight: 600;
       }
     }

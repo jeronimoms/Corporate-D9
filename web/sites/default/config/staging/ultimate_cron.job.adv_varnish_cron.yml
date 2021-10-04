@@ -1,0 +1,17 @@
+uuid: 5b4a74ec-c4d3-4c56-bb1d-b64e13d09602
+langcode: en
+status: true
+dependencies:
+  module:
+    - adv_varnish
+title: 'Default cron handler'
+id: adv_varnish_cron
+weight: 0
+module: adv_varnish
+callback: adv_varnish_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

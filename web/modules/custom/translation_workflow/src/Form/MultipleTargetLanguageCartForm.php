@@ -8,21 +8,103 @@ use Drupal\tmgmt\Entity\JobItem;
 use Drupal\tmgmt\Entity\Translator;
 use Drupal\tmgmt\Form\CartForm;
 use Drupal\translation_workflow\Entity\MultipleTargetLanguageJob;
+use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
+use Drupal\translation_workflow\Entity\PriorityJobInterface;
 
 /**
- *
+ * Class to override cart form.
  */
 class MultipleTargetLanguageCartForm extends CartForm {
 
   /**
    * {@inheritdoc}
    */
+  public function buildForm(array $form, FormStateInterface $form_state, $plugin = NULL, $item_type = NULL) {
+    $form = parent::buildForm($form, $form_state, $plugin, $item_type);
+    if (isset($form['request_translation'])) {
+      $form['request_translation']['#validate'][] = '::validateNewItems';
+    }
+    if (isset($form['source_language'])) {
+      $form['source_language']['#size'] = 24;
+      if (isset($form['source_language']['#options']['nol'])) {
+        unset($form['source_language']['#options']['nol']);
+      }
+    }
+
+    if (isset($form['target_language'])) {
+      $allowedLanguages = osha_enabled_language_list();
+      $form['target_language']['#size'] = 24;
+      $default = \Drupal::languageManager()->getDefaultLanguage()->getId();
+      if (isset($form['target_language']['#options']['nol'])) {
+        unset($form['target_language']['#options']['nol']);
+      }
+      if (isset($form['target_language']['#options'][$default])) {
+        unset($form['target_language']['#options'][$default]);
+      }
+      $form['target_language']['#options'] = array_filter($form['target_language']['#options'], function ($key) use ($allowedLanguages) {
+        return in_array($key, $allowedLanguages);
+      }, ARRAY_FILTER_USE_KEY);
+    }
+
+    $jobFieldDefinitions = \Drupal::service('entity_field.manager')
+      ->getFieldDefinitions('tmgmt_job_multiple_target', 'default');
+    if (isset($jobFieldDefinitions['priority'])) {
+      $priorityField = $jobFieldDefinitions['priority'];
+      $form['priority'] = [
+        '#type' => 'select',
+        '#options' => $priorityField->getSetting('allowed_values'),
+        '#title' => $priorityField->getLabel(),
+        '#default_value' => PriorityJobInterface::PRIORITY_NORMAL,
+        '#weight' => -1,
+      ];
+    }
+
+    // Select all languages.
+    $form['select_all_lng'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Select all languages'),
+    ];
+    $form['empty_cart']['#weight'] = 7;
+    $form['remove_selected']['#weight'] = 6;
+    $form['request_translation']['#weight'] = 4;
+
+    $form['#attached']['library'][] = 'translation_workflow/select_all';
+    return $form;
+  }
 
   /**
-   * Custom form submit callback for tmgmt_cart_cart_form().
+   * Validate new added items to the cart.
+   */
+  public function validateNewItems(array &$form, FormStateInterface $form_state) {
+    $targetLanguages = array_filter($form_state->getValue('target_language'));
+    if (empty($targetLanguages)) {
+      $form_state->setErrorByName('target_language', t("You didn't select any target language."));
+    }
+    $jobItems = array_filter($form_state->getValue('items'));
+    $itemIds = array_map(function ($jobItemId) {
+      $ret = NULL;
+      $jobItem = MultipleTargetLanguageJobItem::load($jobItemId);
+      if ($jobItem) {
+        $ret = $jobItem->getItemId();
+      }
+      return $ret;
+
+    }, $jobItems);
+
+    $existingJobItems = MultipleTargetLanguageJobItem::jobItemExists([
+      'item_id' => $itemIds,
+      'target_language' => $targetLanguages,
+    ]);
+    if ($existingJobItems) {
+      $form_state->setErrorByName('', $this->t('There are active translation jobs with this items.'));
+    }
+  }
+
+  /**
+   * {@inheritdoc}
    */
   public function submitRequestTranslation(array $form, FormStateInterface $form_state) {
-    $target_languages = array_filter($form_state->getValue('target_language'));
+    $targetLanguages = array_filter($form_state->getValue('target_language'));
     $enforced_source_language = NULL;
     if ($form_state->getValue('enforced_source_language')) {
       $enforced_source_language = $form_state->getValue('source_language');
@@ -32,9 +114,20 @@ class MultipleTargetLanguageCartForm extends CartForm {
     $jobItems = [];
     // Group the selected items by source language.
     foreach (JobItem::loadMultiple(array_filter($form_state->getValue('items'))) as $job_item) {
+      $targetLanguagesTemp = $targetLanguages;
+      $firstLanguage = array_shift($targetLanguagesTemp);
+      $job_item->setTargetLanguage($firstLanguage);
+      $job_item->save();
       $source_language = $enforced_source_language ? $enforced_source_language : $job_item->getSourceLangCode();
       if (in_array($source_language, $job_item->getExistingLangCodes())) {
         $jobItems[$job_item->id()] = $job_item;
+        foreach ($targetLanguagesTemp as $langCode) {
+          if ($langCode !== $source_language) {
+            $newJobItem = tmgmt_job_item_create($job_item->getPlugin(), $job_item->getItemType(), $job_item->getItemId(), ['target_language' => $langCode]);
+            $newJobItem->save();
+            $jobItems[$newJobItem->id()] = $newJobItem;
+          }
+        }
       }
       else {
         $skipped_count++;
@@ -43,7 +136,7 @@ class MultipleTargetLanguageCartForm extends CartForm {
 
     $languageManager = \Drupal::languageManager();
     $targetLanguageObjects = [];
-    foreach ($target_languages as $language) {
+    foreach ($targetLanguages as $language) {
       $targetLanguageObjects[] = $languageManager->getLanguage($language);
     }
     $translators = Translator::loadMultiple();
@@ -58,35 +151,42 @@ class MultipleTargetLanguageCartForm extends CartForm {
 
     try {
       $job->save();
+      $job->set('label', (string) $job->label())->save();
       foreach ($jobItems as $jobItem) {
         $jobItem->set('tjid', $job->id())->save();
       }
       tmgmt_cart_get()->removeJobItems(array_keys($jobItems));
     }
     catch (EntityStorageException $e) {
-      $this->messenger()->addError($this->t('Error creating Multiple target language job'));
-      $this->getLogger('translation_workflow')->error('Error creating entity: %message', [
-        '%message' => $e->getMessage(),
-      ]);
+      $this->messenger()
+        ->addError($this->t('Error creating Multiple target language job'));
+      $this->getLogger('translation_workflow')
+        ->error('Error creating entity: %message', [
+          '%message' => $e->getMessage(),
+        ]);
     }
 
     // Start the checkout process if any jobs were created.
     if ($job) {
       if ($enforced_source_language) {
 
-        $this->messenger()->addWarning(t('You have enforced the job source language which most likely resulted in having a translation of your original content as the job source text. You should review the job translation received from the translator carefully to prevent the content quality loss.'));
+        $this->messenger()
+          ->addWarning(t('You have enforced the job source language which most likely resulted in having a translation of your original content as the job source text. You should review the job translation received from the translator carefully to prevent the content quality loss.'));
 
         if ($skipped_count) {
           $languages = \Drupal::languageManager()->getLanguages();
-          $this->messenger()->addStatus(\Drupal::translation()->formatPlural($skipped_count, 'One item skipped as for the language @language it was not possible to retrieve a translation.',
-            '@count items skipped as for the language @language it was not possible to retrieve a translations.', ['@language' => $languages[$enforced_source_language]->getName()]));
+          $this->messenger()->addStatus(\Drupal::translation()
+            ->formatPlural($skipped_count, 'One item skipped as for the language @language it was not possible to retrieve a translation.',
+              '@count items skipped as for the language @language it was not possible to retrieve a translations.', ['@language' => $languages[$enforced_source_language]->getName()]));
         }
       }
 
-      \Drupal::service('tmgmt.job_checkout_manager')->checkoutAndRedirect($form_state, [$job]);
+      \Drupal::service('tmgmt.job_checkout_manager')
+        ->checkoutAndRedirect($form_state, [$job]);
     }
     else {
-      $this->messenger()->addError(t('From the selection you made it was not possible to create any translation job.'));
+      $this->messenger()
+        ->addError(t('From the selection you made it was not possible to create any translation job.'));
     }
   }
 

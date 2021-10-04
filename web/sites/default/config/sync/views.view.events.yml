@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.field_country_code
     - field.storage.node.field_date
     - field.storage.node.field_organization
+    - field.storage.node.field_show_eu_flag
     - search_api.index.default_multilingual_node_index
   module:
     - better_exposed_filters
@@ -801,6 +802,83 @@ display:
             multi_separator: ', '
           entity_type: node
           plugin_id: search_api_field
+        field_show_eu_flag:
+          id: field_show_eu_flag
+          table: search_api_datasource_default_multilingual_node_index_entity_node
+          field: field_show_eu_flag
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: default
+            format_custom_true: ''
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_boolean
+          fallback_options:
+            type: yes-no
+            type_custom_true: ''
+            type_custom_false: ''
+            not: false
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          entity_type: node
+          plugin_id: search_api_field
         nothing:
           id: nothing
           table: views
@@ -812,7 +890,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"box-events-summary\">\r\n  <div class=\"left-column\">\r\n    <div class=\"event_country code_{{ field_country_code_1 }}\"> </div>\r\n  </div>\r\n  <div class=\"right-column\">\r\n    <span class=\"publication-date\">{{ field_date_2 }}</span></br>\r\n    <span class=\"event-country\">{{ field_city }}</span>\r\n    <h2>{{ title }}</h2>\r\n    <p>{{ body }}</p>\r\n    \r\n    </div>\r\n</div>"
+            text: "<div class=\"box-events-summary\">\r\n  <div class=\"left-column\">\r\n    <div class=\"event_country code_{{ field_country_code_1 }} code_{{ field_show_eu_flag }}\"> </div>\r\n  </div>\r\n  <div class=\"right-column\">\r\n    <span class=\"publication-date\">{{ field_date_2 }}</span></br>\r\n    <span class=\"event-country\">{{ field_city }}</span>\r\n    <h2>{{ title }}</h2>\r\n    <p>{{ body }}</p>\r\n    \r\n    </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -851,85 +929,6 @@ display:
           hide_alter_empty: false
           plugin_id: custom
       filters:
-        type:
-          id: type
-          table: search_api_index_default_multilingual_node_index
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            events: events
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: search_api_options
-        status:
-          id: status
-          table: search_api_index_default_multilingual_node_index
-          field: status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_boolean
         field_date:
           id: field_date
           table: search_api_index_default_multilingual_node_index
@@ -941,8 +940,8 @@ display:
           value:
             min: ''
             max: ''
-            value: ''
-            type: date
+            value: now
+            type: offset
           group: 1
           exposed: true
           expose:
@@ -990,6 +989,51 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_date
+        end_value_1:
+          id: end_value_1
+          table: search_api_index_default_multilingual_node_index
+          field: end_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_date
         end_value:
           id: end_value
           table: search_api_index_default_multilingual_node_index
@@ -1003,7 +1047,7 @@ display:
             max: ''
             value: ''
             type: date
-          group: 1
+          group: 2
           exposed: true
           expose:
             operator_id: end_value_op
@@ -1050,6 +1094,85 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_date
+        type:
+          id: type
+          table: search_api_index_default_multilingual_node_index
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            events: events
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_options
+        status:
+          id: status
+          table: search_api_index_default_multilingual_node_index
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_boolean
         search_api_fulltext:
           id: search_api_fulltext
           table: search_api_index_default_multilingual_node_index
@@ -1059,7 +1182,7 @@ display:
           admin_label: ''
           operator: and
           value: ''
-          group: 1
+          group: 2
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
@@ -1120,7 +1243,7 @@ display:
           admin_label: ''
           operator: or
           value: {  }
-          group: 1
+          group: 2
           exposed: true
           expose:
             operator_id: field_country_code_op
@@ -1166,196 +1289,6 @@ display:
             group_items: {  }
           reduce_duplicates: false
           plugin_id: search_api_options
-        field_publication_date:
-          id: field_publication_date
-          table: search_api_index_default_multilingual_node_index
-          field: field_publication_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: empty
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
-          group: 2
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_date
-        field_publication_date_1:
-          id: field_publication_date_1
-          table: search_api_index_default_multilingual_node_index
-          field: field_publication_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '<='
-          value:
-            min: ''
-            max: ''
-            value: now
-            type: offset
-          group: 2
-          exposed: false
-          expose:
-            operator_id: field_publication_date_1_op
-            label: 'Publication date'
-            description: ''
-            use_operator: false
-            operator: field_publication_date_1_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_publication_date_1
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              review_manager: '0'
-              project_manager: '0'
-              approver: '0'
-              translation_manager: '0'
-              translation_liaison: '0'
-              layout_validator: '0'
-              content_validator: '0'
-              events_coordinator: '0'
-              events_editor: '0'
-              osh_collaborator: '0'
-              news_editor: '0'
-              read_only: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_date
-        field_date_1:
-          id: field_date_1
-          table: search_api_index_default_multilingual_node_index
-          field: field_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: 'not empty'
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_date
-        search_api_language:
-          id: search_api_language
-          table: search_api_index_default_multilingual_node_index
-          field: search_api_language
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            en: en
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_language
       sorts:
         field_date:
           id: field_date
@@ -1414,8 +1347,8 @@ display:
       filter_groups:
         operator: AND
         groups:
-          1: AND
-          2: OR
+          1: OR
+          2: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -1432,6 +1365,7 @@ display:
         - 'config:field.storage.node.field_country_code'
         - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_organization'
+        - 'config:field.storage.node.field_show_eu_flag'
         - 'config:search_api.index.default_multilingual_node_index'
   page_1:
     display_plugin: page
@@ -1458,4 +1392,5 @@ display:
         - 'config:field.storage.node.field_country_code'
         - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_organization'
+        - 'config:field.storage.node.field_show_eu_flag'
         - 'config:search_api.index.default_multilingual_node_index'

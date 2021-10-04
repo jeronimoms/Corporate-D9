@@ -1,0 +1,147 @@
+id: import_oshwiki_data
+label: 'OSHWiki data import'
+migration_group: oshwiki_import
+migration_tags:
+  - wiki_page
+
+destination:
+  default_bundle: wiki_page
+  plugin: 'entity:node'
+  overwrite_properties:
+    - title
+    - body
+    - comment_node_wiki_page
+    - field_summary_html
+    - field_tags
+    - field_thesaurus
+    - field_thesaurus_2020
+    - field_nace_codes
+    - field_wiki_categories
+    - field_wiki_page_url
+#    - field_updated
+
+migration_dependencies: {  }
+
+dependencies:
+  enforced:
+    module:
+      - oshwiki_import
+source:
+  plugin: url
+  data_fetcher_plugin: oie_file_fetcher
+#  data_parser_plugin: oshwiki_json
+  data_parser_plugin: json
+  include_raw_data: true
+#  urls: https://oshwiki.eu/api.php?action=query&generator=recentchanges&grclimit=3&grcend=2021-03-19T08:02:30Z&grcdir=older&prop=revisions&rvprop=timestamp|content|comment|tags&format=json
+#  urls: 'C:/Users/mcacheiro/manu/del/fullList.json'
+#  urls: '/var/www/html/web/sites/default/files/oshwikiMigration/fullList.json'
+  urls: '/tmp/fullList.json'
+  content_type: wiki_page
+  ids:
+    title:
+      type: string
+#    nid:
+#      type: integer
+  item_selector: '/'
+  fields:
+#    -
+#      name: nid
+#      label: 'Nid'
+#      selector: 'nid'
+    -
+      name: title
+      label: 'title'
+      selector: 'title'
+    -
+      name: body
+      label: 'body'
+      selector: 'content'
+#    -
+#      name: comment_node_wiki_page
+#      label: 'comment_node_wiki_page'
+#      selector: 'revisions/rev[@comment]'
+    - name: field_summary_html
+      label: 'summary'
+      selector: 'summary'
+    -
+      name: field_tags
+      label: 'field_tags'
+      selector: 'tag'
+#    -
+#      name: field_updated
+#      label: 'field_updated'
+#      selector: 'modificationDate'
+    -
+      name: field_thesaurus
+      label: 'field_thesaurus'
+      selector: 'op'
+    -
+      name: field_thesaurus_2020
+      label: 'field_thesaurus_2020'
+      selector: 'op'
+    -
+      name: field_nace_codes
+      label: 'field_nace_codes'
+      selector: 'np'
+    -
+      name: field_wiki_categories
+      label: 'field_wiki_categories'
+      selector: 'category'
+    -
+      name: field_wiki_page_url
+      label: 'field_wiki_page_url'
+      selector: 'oshwikiURL'
+process:
+  #nid: nid
+  title: title
+  field_summary_html: field_summary_html
+  'field_summary_html/format':
+    plugin: default_value
+    default_value: full_html
+  'field_summary_html/value': field_summary_html
+#  field_summary_html:
+#    plugin: sub_process
+#    source: field_summary_html
+#    process:
+#      value: value
+#      format:
+#        plugin: default_value
+#        default_value: full_html
+  body: body
+  comment_node_wiki_page: comment_node_wiki_page
+  field_wiki_page_url: field_wiki_page_url
+  field_tags:
+    -
+      plugin: oie_taxonomy_term_name
+      source: field_tags
+      vocabulary: tags
+      create: true
+  field_thesaurus:
+    -
+      plugin: owi_taxonomy_term_type
+      source: field_thesaurus
+      vocabulary: thesaurus
+      create: true
+  field_thesaurus_2020:
+    -
+      plugin: owi_taxonomy_term_type
+      source: field_thesaurus_2020
+      vocabulary: thesaurus
+      create: true
+  field_nace_codes:
+    -
+      plugin: owi_taxonomy_term_type
+      source: field_nace_codes
+      vocabulary: nace_codes
+      create: true
+  field_wiki_categories:
+    -
+      plugin: oie_taxonomy_term_name
+      source: field_wiki_categories
+      vocabulary: wiki_categories
+      create: true
+#  field_updated:
+#    -
+#      plugin: format_date
+#      from_format: 'Y-m-d\TH:i:sZ'
+#      to_format: 'Y-m-d\TH:i:s'

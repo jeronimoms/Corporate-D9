@@ -18,9 +18,10 @@
 jQuery(document).ready(function($) {
 
   //Facet accordions, this should be usefull for all blocks with .block-facets-accordion-class
-  $(".sidebar-first .block-facets-accordion h2").click(function(){
-    $(this).toggleClass("active");
-    $(this).parent().find('.content').slideToggle();
+  $(".sidebar-first").on("click", ".block-facets-accordion h2", function(e){
+    e.preventDefault();
+    $(this).stop().toggleClass("active");
+    $(this).closest(".block-facets-accordion").find('.content').stop().slideToggle();
   });
 
   $("#block-ncwtheme-main-menu .menu-item a").after("<span class='mean-expand'>&nbsp;</span>");
@@ -36,6 +37,7 @@ jQuery(document).ready(function($) {
     $(".wysiwyg_accordion h3").click(function () {
       $(this).toggleClass("active");
       $(this).next('.wysiwyg_accordion_panel').slideToggle();
+      $(this).next('ol').slideToggle();
     });
   }
 
@@ -84,8 +86,10 @@ jQuery(document).ready(function($) {
   });
 
   //View Careers 3th accordion opened
-  $( "#block-quicktabscareersaccordion #ui-id-6" ).trigger( "click" );
-
+  if ($("body.careers")[0]) {
+    $("body.user-logged-in #block-quicktabscareersaccordion #ui-id-6").trigger("click");
+    $("body #block-quicktabscareersaccordion #ui-id-5").trigger("click");
+  }
   //View Seminar Reports 1st accordion opened
   $( "body.tools-and-resources-seminars #block-ncwtheme-content > div > article > div.view-content > div > div > div > div:nth-child(1) > div.view-grouping-header" ).trigger( "click" );
 
@@ -233,8 +237,8 @@ jQuery(document).ready(function($) {
 
   if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
     $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
-    $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
   }
+  $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
 
 
   //Archivied calls - Add class custom-active in year
@@ -250,6 +254,44 @@ jQuery(document).ready(function($) {
     $('.menu-level-1 > li:nth-child(6) a').addClass('is-active');
 
   }
+
+  //Add the active class to the left menu 'Infographics'
+  if ($(".node--type-infographic")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(8) > div > ul > li > div > ul > li:nth-child(8)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(8) > div > ul > li > div > ul > li:nth-child(8) > a').addClass('is-active');
+  }
+
+  //Add the active class to the left menu 'Focal points'
+  if ($(".node--type-fop-page")[0]) {
+    $( "#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(4) > span" ).trigger( "click" );
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(4) > div > ul > li').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(4) > div > ul > li > a').addClass('is-active');
+  }
+
+  //Add the active class to the left menu Procurement / 'Calls'
+  if ($(".node--type-calls")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(7)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(7) > a').addClass('is-active');
+  }
+
+  //Add the active class to the left menu Job vacancies
+  if ($(".node--type-job-vacancies")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(6)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(9) > div > ul > li > div > ul > li:nth-child(6) > a').addClass('is-active');
+  }
+
+  //Add the active class to the left menu Directives
+  if ($(".node--type-directive")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(2)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(2) > a').addClass('is-active');
+  }
+
+  //Add the active class to the left menu Directives
+  if ($(".node--type-guideline")[0]) {
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(3)').addClass('menu-item--active-trail');
+    $('#block-mainnavigation-2--2 > ul > li:nth-child(6) > div > ul > li > div > ul > li:nth-child(3) > a').addClass('is-active');
+  }
+
 
   //Hierarchical view
   $('#tree ul').css('display', 'none');
@@ -333,9 +375,26 @@ jQuery(document).ready(function($) {
     $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
   }
 
+  // Add class in letter A when load the page Glossary
+  if (!$(".page-view-glossary .view-glossary .views-summary a.is-active")[0]) {
+    $('.page-view-glossary .view-glossary .views-summary:nth-child(4) a').addClass('is-active');
+  }
+
   // Accesskey for custom elements
   $('#edit-lang-dropdown-select').attr('accessKey','L');
   $('#edit-search-api-fulltext').attr('accessKey','Q');
+
+
+  // Move block-facet-blockdate-of-directive over the searh button
+
+  $(".sidebar-first").each(function(){
+    if($(this).find(".block-facet-blockdate-of-directive").length>0){
+      let $dateDirective=$(this).find(".block-facet-blockdate-of-directive").html();
+      $(this).find("#views-exposed-form-search-directives-search-directory-page").find(".form-actions js-form-wrapper mb-3").before($dateDirective);
+    };
+
+  })
+
 });
 
 //Load function

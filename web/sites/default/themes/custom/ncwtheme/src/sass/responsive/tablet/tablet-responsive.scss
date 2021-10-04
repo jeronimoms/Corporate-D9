@@ -77,12 +77,30 @@
       width: 100%;
       margin-left: 0;
     }
+    .block-custom-newsletter.block-custom-newsletter--sidebar{
+      margin-right: 1rem;
+    }
   }
 }/* End Media 1024px */
 
 
 
 @media only screen and (max-width : 991px) {
+  body{
+    &,
+    &.user-logged-in{
+      padding-top:0!important;
+    }
+  }
+  /* Header*/
+  #header.custom-activate-menu-header{
+    /* When responsive menu is opened */
+    position: relative !important;
+  }
+  #header{
+    position:relative;
+  }
+
   /* Left menu */
   .sidebar-first{
     margin-bottom: 0;
@@ -111,6 +129,14 @@
       width: 100%;
       padding: 0;
       margin: 0;
+    }
+    &.show{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 999999;
+      width: 100%;
+      height:auto!important;
     }
   }
 

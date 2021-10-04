@@ -1,0 +1,6 @@
+services:
+  napo_film.twig_extensions:
+    class: Drupal\napo_film\NfTwigExtension
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: twig.extension }

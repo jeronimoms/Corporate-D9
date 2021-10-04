@@ -2,7 +2,8 @@
   #main{
     .field--name-field-type-of-item,
     .field--name-field-material-country,
-    .field--name-field-available-in-languages {
+    .field--name-field-available-in-languages,
+    .field--name-field-msd-provider{
       display: flex;
       align-items: center;
       margin-bottom: 0.2rem;
@@ -15,6 +16,10 @@
         color: #003399;
         min-width: auto;
         font-weight: bold;
+        &:after{
+          content: ':';
+          display: inline-block;
+        }
       }
       .field__items {
         display: flex;
@@ -35,6 +40,22 @@
             margin: 0;
           }
         }
+      }
+    }
+    .field--name-field-msd-provider{
+      .field--name-field-provider-english-{
+        padding-bottom: 0;
+        margin: 0!important;
+        .field__label{
+          display: none;
+        }
+        .field__item{
+          margin: 0!important;
+          padding: 0!important;
+        }
+      }
+      .field--name-field-provider-original-{
+        display: none;
       }
     }
     .field--name-field-body-original {

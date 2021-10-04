@@ -12,7 +12,7 @@ dependencies:
 id: dateofdirective
 theme: ncwtheme
 region: sidebar_first
-weight: -62
+weight: -65
 provider: null
 plugin: 'facet_block:date_of_directive'
 settings:
@@ -24,5 +24,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/search/directives\r\n/safety-and-health-legislation/european-directives"
+    pages: "/search/directives\r\n/safety-and-health-legislation/european-directives\r\n/legislation/directives/*\r\n/legislation/guidelines/*"
     negate: false

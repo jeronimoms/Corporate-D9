@@ -45,6 +45,7 @@ dependencies:
     - languagefield
     - link
     - options
+    - smart_trim
     - text
     - user
 third_party_settings:
@@ -56,9 +57,9 @@ third_party_settings:
         - field_available_in_languages
         - field_msd_provider
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: html_element
-      region: content
+      region: ds_content
       format_settings:
         element: div
         show_label: false
@@ -74,9 +75,9 @@ third_party_settings:
       children:
         - field_body_original
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: html_element
-      region: content
+      region: ds_content
       format_settings:
         id: ''
         classes: description-wrapper
@@ -93,9 +94,9 @@ third_party_settings:
         - field_external_url
         - field_original_desc_language
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: html_element
-      region: content
+      region: ds_content
       format_settings:
         id: ''
         classes: access-tool-wrapper
@@ -112,15 +113,16 @@ third_party_settings:
         - field_sector_industry_covered
         - field_hazards
         - field_health_effects
+        - field_worker_groups_covered
         - field_prevention_measures
         - field_purpose_of_the_material
         - field_target_audience
         - field_msd_priority_area
         - field_year
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: html_element
-      region: content
+      region: ds_content
       format_settings:
         id: ''
         classes: other-data-wrapper
@@ -132,13 +134,52 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Other data'
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_title_original
+        - group_tags_wrapper
+        - group_description_wrapper
+        - group_access_tool
+        - group_other_data
+        - field_body_original
+        - field_sector_industry_covered
+        - field_hazards
+        - field_health_effects
+        - field_worker_groups_covered
+        - field_prevention_measures
+        - field_purpose_of_the_material
+        - field_target_audience
+        - field_msd_priority_area
+        - field_year
+        - field_external_url
+        - field_type_of_item
+        - field_original_desc_language
+        - field_material_country
+        - field_available_in_languages
+        - field_msd_provider
 id: node.musculoskeletal_disorders.default
 targetEntityType: node
 bundle: musculoskeletal_disorders
 mode: default
 content:
   field_available_in_languages:
-    weight: 3
+    weight: 34
     label: inline
     settings:
       link_to_entity: false
@@ -146,16 +187,18 @@ content:
         name: name
     third_party_settings: {  }
     type: languagefield_default
-    region: content
+    region: ds_content
   field_body_original:
-    weight: 3
+    type: text_default
+    weight: 4
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   field_external_url:
-    weight: 3
+    type: link
+    weight: 30
+    region: ds_content
     label: inline
     settings:
       trim_length: 80
@@ -164,10 +207,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
-    region: content
   field_hazards:
-    weight: 8
+    type: entity_reference_label
+    weight: 17
+    region: ds_content
     label: above
     settings:
       link: false
@@ -180,10 +223,8 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: entity_reference_label
-    region: content
   field_health_effects:
-    weight: 9
+    weight: 18
     label: above
     settings:
       link: false
@@ -197,17 +238,27 @@ content:
             lb-col: false
             classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_material_country:
-    weight: 2
+    weight: 33
     label: inline
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_msd_priority_area:
-    weight: 13
+    type: entity_reference_label
+    weight: 23
+    region: ds_content
     label: above
     settings:
       link: false
@@ -220,29 +271,27 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: entity_reference_label
-    region: content
   field_msd_provider:
     type: entity_reference_revisions_entity_view
-    weight: 4
+    weight: 35
     label: inline
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_original_desc_language:
-    weight: 4
+    type: languagefield_default
+    weight: 32
+    region: ds_content
     label: inline
     settings:
       link_to_entity: false
       format:
         name: name
     third_party_settings: {  }
-    type: languagefield_default
-    region: content
   field_prevention_measures:
-    weight: 10
+    weight: 20
     label: above
     settings:
       link: false
@@ -256,9 +305,9 @@ content:
             lb-col: false
             classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_purpose_of_the_material:
-    weight: 11
+    weight: 21
     label: above
     settings:
       link: false
@@ -272,25 +321,11 @@ content:
             lb-col: false
             classes: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_sector_industry_covered:
-    weight: 7
-    label: above
-    settings:
-      link: false
-    third_party_settings:
-      ds:
-        ds_limit: ''
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: true
-            classes: {  }
     type: entity_reference_label
-    region: content
-  field_target_audience:
-    weight: 12
+    weight: 16
+    region: ds_content
     label: above
     settings:
       link: false
@@ -303,22 +338,76 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
+  field_target_audience:
     type: entity_reference_label
-    region: content
+    weight: 22
+    region: ds_content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_title_original:
+    type: smart_trim
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_type_of_item:
-    weight: 1
+    weight: 32
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
-    region: content
+    region: ds_content
+  field_worker_groups_covered:
+    type: entity_reference_label
+    weight: 19
+    region: ds_content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_year:
-    weight: 14
+    type: list_default
+    weight: 24
+    region: ds_content
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
-    region: content
 hidden:
   addtoany: true
   body: true
@@ -338,8 +427,6 @@ hidden:
   field_resource_type_other: true
   field_section: true
   field_target_group_other: true
-  field_title_original: true
-  field_worker_groups_covered: true
   field_worker_groups_other: true
   langcode: true
   links: true

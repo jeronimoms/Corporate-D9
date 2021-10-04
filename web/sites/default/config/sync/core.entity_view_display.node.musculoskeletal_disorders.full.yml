@@ -1,0 +1,455 @@
+uuid: 23d2f3a5-1427-4f86-a9f5-5ddd42415ee2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.musculoskeletal_disorders.body
+    - field.field.node.musculoskeletal_disorders.field_available_in_languages
+    - field.field.node.musculoskeletal_disorders.field_body_original
+    - field.field.node.musculoskeletal_disorders.field_comments
+    - field.field.node.musculoskeletal_disorders.field_country_other
+    - field.field.node.musculoskeletal_disorders.field_external_url
+    - field.field.node.musculoskeletal_disorders.field_for_pictogram_guide
+    - field.field.node.musculoskeletal_disorders.field_hazard_health_other
+    - field.field.node.musculoskeletal_disorders.field_hazards
+    - field.field.node.musculoskeletal_disorders.field_hazards_other
+    - field.field.node.musculoskeletal_disorders.field_health_effects
+    - field.field.node.musculoskeletal_disorders.field_languages_other
+    - field.field.node.musculoskeletal_disorders.field_material_country
+    - field.field.node.musculoskeletal_disorders.field_material_purpose_other
+    - field.field.node.musculoskeletal_disorders.field_msd_priority_area
+    - field.field.node.musculoskeletal_disorders.field_msd_provider
+    - field.field.node.musculoskeletal_disorders.field_msd_video_length
+    - field.field.node.musculoskeletal_disorders.field_nominated_by_fop
+    - field.field.node.musculoskeletal_disorders.field_original_desc_lang_other
+    - field.field.node.musculoskeletal_disorders.field_original_desc_language
+    - field.field.node.musculoskeletal_disorders.field_prevention_measures
+    - field.field.node.musculoskeletal_disorders.field_prevention_measures_other
+    - field.field.node.musculoskeletal_disorders.field_purpose_of_the_material
+    - field.field.node.musculoskeletal_disorders.field_resource_type
+    - field.field.node.musculoskeletal_disorders.field_resource_type_other
+    - field.field.node.musculoskeletal_disorders.field_section
+    - field.field.node.musculoskeletal_disorders.field_sector_industry_covered
+    - field.field.node.musculoskeletal_disorders.field_target_audience
+    - field.field.node.musculoskeletal_disorders.field_target_group_other
+    - field.field.node.musculoskeletal_disorders.field_title_original
+    - field.field.node.musculoskeletal_disorders.field_type_of_item
+    - field.field.node.musculoskeletal_disorders.field_worker_groups_covered
+    - field.field.node.musculoskeletal_disorders.field_worker_groups_other
+    - field.field.node.musculoskeletal_disorders.field_year
+    - node.type.musculoskeletal_disorders
+  module:
+    - ds
+    - entity_reference_revisions
+    - field_group
+    - languagefield
+    - layout_builder
+    - link
+    - options
+    - smart_trim
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_tags_wrapper:
+      children:
+        - field_type_of_item
+        - field_material_country
+        - field_available_in_languages
+        - field_msd_provider
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: tags-wrapper
+      label: 'Tags Wrapper'
+    group_description_wrapper:
+      children:
+        - field_body_original
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: description-wrapper
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Description
+    group_access_tool:
+      children:
+        - field_external_url
+        - field_original_desc_language
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: access-tool-wrapper
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Access tool'
+    group_other_data:
+      children:
+        - field_sector_industry_covered
+        - field_hazards
+        - field_health_effects
+        - field_worker_groups_covered
+        - field_prevention_measures
+        - field_purpose_of_the_material
+        - field_target_audience
+        - field_resource_type
+        - field_msd_priority_area
+        - field_year
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: other-data-wrapper
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Other data'
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_title_original
+        - group_tags_wrapper
+        - group_description_wrapper
+        - group_access_tool
+        - group_other_data
+        - field_body_original
+        - field_sector_industry_covered
+        - field_hazards
+        - field_health_effects
+        - field_worker_groups_covered
+        - field_prevention_measures
+        - field_purpose_of_the_material
+        - field_target_audience
+        - field_resource_type
+        - field_msd_priority_area
+        - field_year
+        - field_external_url
+        - field_original_desc_language
+        - field_type_of_item
+        - field_material_country
+        - field_available_in_languages
+        - field_msd_provider
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.musculoskeletal_disorders.full
+targetEntityType: node
+bundle: musculoskeletal_disorders
+mode: full
+content:
+  field_available_in_languages:
+    weight: 34
+    label: inline
+    settings:
+      link_to_entity: false
+      format:
+        name: name
+    third_party_settings: {  }
+    type: languagefield_default
+    region: ds_content
+  field_body_original:
+    type: text_default
+    weight: 4
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_external_url:
+    type: link
+    weight: 30
+    region: ds_content
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_hazards:
+    type: entity_reference_label
+    weight: 17
+    region: ds_content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_health_effects:
+    weight: 18
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_material_country:
+    weight: 33
+    label: inline
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_msd_priority_area:
+    type: entity_reference_label
+    weight: 24
+    region: ds_content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_msd_provider:
+    type: entity_reference_revisions_entity_view
+    weight: 35
+    label: inline
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: ds_content
+  field_original_desc_language:
+    type: languagefield_default
+    weight: 32
+    region: ds_content
+    label: inline
+    settings:
+      link_to_entity: false
+      format:
+        name: name
+    third_party_settings: {  }
+  field_prevention_measures:
+    weight: 20
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_purpose_of_the_material:
+    weight: 21
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_resource_type:
+    type: entity_reference_label
+    weight: 23
+    region: ds_content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_sector_industry_covered:
+    type: entity_reference_label
+    weight: 16
+    region: ds_content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_target_audience:
+    type: entity_reference_label
+    weight: 22
+    region: ds_content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_title_original:
+    type: smart_trim
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_type_of_item:
+    weight: 32
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
+  field_worker_groups_covered:
+    type: entity_reference_label
+    weight: 19
+    region: ds_content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_year:
+    type: list_default
+    weight: 25
+    region: ds_content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  breadcrumbs: true
+  field_comments: true
+  field_country_other: true
+  field_for_pictogram_guide: true
+  field_hazard_health_other: true
+  field_hazards_other: true
+  field_languages_other: true
+  field_material_purpose_other: true
+  field_msd_video_length: true
+  field_nominated_by_fop: true
+  field_original_desc_lang_other: true
+  field_prevention_measures_other: true
+  field_resource_type_other: true
+  field_section: true
+  field_target_group_other: true
+  field_worker_groups_other: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

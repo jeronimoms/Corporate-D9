@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Bħalissa, m’hemmx sejħiet disponibbli f’din it-taqsima.</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Uri d-dettalji'

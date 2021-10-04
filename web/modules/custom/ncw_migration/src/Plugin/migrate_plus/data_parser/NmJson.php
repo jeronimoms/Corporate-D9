@@ -87,7 +87,7 @@ class NmJson extends MigrateJson implements ContainerFactoryPluginInterface {
 
       // Prevent error unserialize in Field Link processor.
       if (array_key_exists('field_wiki_page_url', $decoded_data)) {
-        $decoded_data['field_wiki_page_url']['en'][0]['attributes'] = serialize($decoded_data['field_wiki_page_url']['en'][0]['attributes']);
+        //$decoded_data['field_wiki_page_url']['en'][0]['attributes'] = serialize($decoded_data['field_wiki_page_url']['en'][0]['attributes']);
       }
 
       // Set the new item.

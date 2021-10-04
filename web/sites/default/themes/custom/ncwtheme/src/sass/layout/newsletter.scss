@@ -100,6 +100,7 @@
     color: $text-color-blue;
     font-size: 0.9rem;
     margin-bottom: 2rem;
+    margin-top: 0;
     .field--name-field-newsletter-title-with-link {
       margin-bottom: 10px;
       font-size: 1.5em;
@@ -195,6 +196,9 @@
       background-color: $bg-color-blue-button;
       color: $text-color-blue;
       font-weight: bold;
+      &:hover{
+        opacity: 0.8;
+      }
     }
     .form-check {
       margin: 0 0 20px;
@@ -212,6 +216,37 @@
         }
       }
     }
+  }
+}
+
+/* Block Newsletter page - Node 9 */
+.block-newsletter-node-9{
+  position: relative;
+  background: $bg-color-blue-block;
+  margin-right: 1rem;
+  padding: 25px 20px;
+  margin-bottom: 2rem;
+  border-radius: 3px;
+  form{
+    label{
+      font-weight: normal;
+    }
+  }
+  .field--name-field-newsletter-privacy-notice{
+    padding-top: 10px;
+    a{
+      font-size: 0.9rem;
+      padding-top: 10px;
+      font-weight: 600;
+      border-bottom: 1px solid $bg-color-pink;
+      &:hover{
+        text-decoration: none;
+        border-bottom: 1px solid $bg-color-blue;
+      }
+    }
+  }
+  .form-check{
+    padding-bottom: 10px;
   }
 }
 
@@ -293,7 +328,7 @@
       border-bottom: 2px solid $bg-color-blue;
       .views-field-nothing{
         a{
-          font-size: 1rem;
+          font-size: 0.95rem;
           background: url(../images/arrow.png) no-repeat 98% 3px;
           padding-left: 5px;
           padding-bottom: 0;

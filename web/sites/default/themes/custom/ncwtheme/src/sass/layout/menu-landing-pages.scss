@@ -147,8 +147,31 @@ body.tools-and-resources{
       }
     }
     .list--item:nth-child(3){
-      padding-right: 0;
-      margin: 0.5rem 0 1.5rem 0;
+      margin: 0.5rem 0 0 0;
+    }
+  }
+}
+
+/* Themes landing page */
+.block-views-landing-page{
+  .view-landing-menu{
+    .list--item{
+      margin-bottom:0;
+    }
+    .menu-link-text{
+      flex:initial;
+      min-height: 52px;
+    }
+    blockquote{
+      font-size: 0.625rem;
+      color: $text-color-black;
+      background-color: transparent;
+      position: relative;
+      font-family: "Open Sans";
+      display: inline-block;
+      line-height: 5px;
+      margin: 0;
+      min-height: 24px;
     }
   }
 }

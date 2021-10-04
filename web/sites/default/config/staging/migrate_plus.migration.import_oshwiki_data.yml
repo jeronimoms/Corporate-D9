@@ -1,0 +1,118 @@
+uuid: 948a3c88-6be0-4a2e-ad8b-187713da76a5
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - oshwiki_import
+id: import_oshwiki_data
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - wiki_page
+migration_group: oshwiki_import
+label: 'OSHWiki data import'
+source:
+  plugin: url
+  data_fetcher_plugin: oie_file_fetcher
+  data_parser_plugin: json
+  include_raw_data: true
+  urls: /tmp/fullList.json
+  content_type: wiki_page
+  ids:
+    title:
+      type: string
+  item_selector: /
+  fields:
+    -
+      name: title
+      label: title
+      selector: title
+    -
+      name: body
+      label: body
+      selector: content
+    -
+      name: field_summary_html
+      label: summary
+      selector: summary
+    -
+      name: field_tags
+      label: field_tags
+      selector: tag
+    -
+      name: field_thesaurus
+      label: field_thesaurus
+      selector: op
+    -
+      name: field_thesaurus_2020
+      label: field_thesaurus_2020
+      selector: op
+    -
+      name: field_nace_codes
+      label: field_nace_codes
+      selector: np
+    -
+      name: field_wiki_categories
+      label: field_wiki_categories
+      selector: category
+    -
+      name: field_wiki_page_url
+      label: field_wiki_page_url
+      selector: oshwikiURL
+process:
+  title: title
+  field_summary_html: field_summary_html
+  field_summary_html/format:
+    plugin: default_value
+    default_value: full_html
+  field_summary_html/value: field_summary_html
+  body: body
+  comment_node_wiki_page: comment_node_wiki_page
+  field_wiki_page_url: field_wiki_page_url
+  field_tags:
+    -
+      plugin: oie_taxonomy_term_name
+      source: field_tags
+      vocabulary: tags
+      create: true
+  field_thesaurus:
+    -
+      plugin: owi_taxonomy_term_type
+      source: field_thesaurus
+      vocabulary: thesaurus
+      create: true
+  field_thesaurus_2020:
+    -
+      plugin: owi_taxonomy_term_type
+      source: field_thesaurus_2020
+      vocabulary: thesaurus
+      create: true
+  field_nace_codes:
+    -
+      plugin: owi_taxonomy_term_type
+      source: field_nace_codes
+      vocabulary: nace_codes
+      create: true
+  field_wiki_categories:
+    -
+      plugin: oie_taxonomy_term_name
+      source: field_wiki_categories
+      vocabulary: wiki_categories
+      create: true
+destination:
+  default_bundle: wiki_page
+  plugin: 'entity:node'
+  overwrite_properties:
+    - title
+    - body
+    - comment_node_wiki_page
+    - field_summary_html
+    - field_tags
+    - field_thesaurus
+    - field_thesaurus_2020
+    - field_nace_codes
+    - field_wiki_categories
+    - field_wiki_page_url
+migration_dependencies: {  }

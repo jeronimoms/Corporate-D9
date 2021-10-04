@@ -268,6 +268,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/addtoany": "^1.14",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/adv_varnish": "^4.0",
         "drupal/anchor_link": "^2.5",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/better_social_sharing_buttons": "^3.1",
@@ -380,6 +381,7 @@
         "drupal/multiple_selects": "^1.0",
         "drupal/node_export": "^1.0@alpha",
         "drupal/node_revision_delete": "^1.0@RC",
+        "drupal/node_title_help_text": "^1.2",
         "drupal/onomasticon": "^2.0",
         "drupal/pagerer": "^2.0",
         "drupal/paragraphs": "^1.12",
@@ -522,6 +524,9 @@
             },
             "drupal/layoutcomponents" : {
                 "Drupal breaks when using php version lower than 8": "patches/layoutcomponents-change_str_contains_for_php7.patch"
+            },
+            "drupal/tmgmt": {
+                "Use of deprecated theme function": "https://git.drupalcode.org/project/tmgmt/-/merge_requests/6.diff"
             }
         },
         "patchLevel": {

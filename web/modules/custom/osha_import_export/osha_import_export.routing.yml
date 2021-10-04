@@ -1,4 +1,4 @@
-osha_import_export.controller:
+osha_import_export.node:
   path: '/export/node/{node}'
   defaults:
     _controller: '\Drupal\osha_import_export\Controller\OieNodeExportController::export'
@@ -8,3 +8,24 @@ osha_import_export.controller:
     parameters:
       node:
         type: entity:node
+
+osha_import_export.taxonomy:
+  path: '/export/taxonomy_term/{term}'
+  defaults:
+    _controller: '\Drupal\osha_import_export\Controller\OieTaxonomyExportController::export'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      term:
+        type: entity:taxonomy_term
+
+osha_import_export.config:
+  path: '/admin/config/system/osha-sites-migration'
+  defaults:
+    _form: '\Drupal\osha_import_export\Form\OieConfigurationForm'
+    _title: 'OSHA sites migration configuration'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: TRUE

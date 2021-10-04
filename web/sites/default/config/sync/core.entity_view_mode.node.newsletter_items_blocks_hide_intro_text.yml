@@ -1,0 +1,10 @@
+uuid: b60cf0bf-f694-4ca0-ab18-fddb89f3e905
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.newsletter_items_blocks_hide_intro_text
+label: 'Newsletter items blocks hide intro text'
+targetEntityType: node
+cache: true

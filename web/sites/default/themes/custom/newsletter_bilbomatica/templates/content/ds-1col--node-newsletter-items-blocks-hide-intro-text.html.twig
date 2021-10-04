@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+{% set publication_date = ds_content.field_publication_date.0['#text'] %}
+<tr>
+  <td colspan="2" style="font-size: 14px; color: #003399;vertical-align: top; padding-bottom: 5px;">
+    {{ publication_date }}
+  </td>
+</tr>
+<tr>
+  <td style="font-size: 14px; color: #003399;vertical-align: top">
+    >&nbsp;
+  </td>
+  <td>
+    {{ ds_content.node_title }}
+  </td>
+</tr>
+<tr>
+  <td colspan="2" style="height: 25px;">&nbsp;</td>
+</tr>
+
+

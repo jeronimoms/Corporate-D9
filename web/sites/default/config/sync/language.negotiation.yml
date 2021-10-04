@@ -3,77 +3,77 @@ session:
 url:
   source: path_prefix
   prefixes:
-    es: es
-    en: en
-    nol: nol
     bg: bg
-    bs: bs
     cs: cs
     da: da
     de: de
-    el: el
     et: et
-    fi: fi
+    el: el
+    en: en
+    es: es
     fr: fr
-    ga: ga
     hr: hr
-    hu: hu
-    is: is
     it: it
-    lt: lt
     lv: lv
-    mk: mk
+    lt: lt
+    hu: hu
     mt: mt
     nl: nl
     'no': 'no'
-    other: other
     pl: pl
+    pt-pt: pt
     ro: ro
-    ru: ru
-    sh: sh
     sk: sk
     sl: sl
-    sq: sq
-    sr: sr
+    fi: fi
     sv: sv
+    is: is
+    ga: ga
+    sq: sq
+    bs: bs
+    mk: mk
+    ru: ru
+    sr: sr
+    sh: sh
     tr: tr
-    pt-pt: pt-pt
+    nol: nol
+    other: other
   domains:
-    es: ''
-    en: ''
-    nol: ''
     bg: ''
-    bs: ''
     cs: ''
     da: ''
     de: ''
-    el: ''
     et: ''
-    fi: ''
+    el: ''
+    en: ''
+    es: ''
     fr: ''
-    ga: ''
     hr: ''
-    hu: ''
-    is: ''
     it: ''
-    lt: ''
     lv: ''
-    mk: ''
+    lt: ''
+    hu: ''
     mt: ''
     nl: ''
     'no': ''
-    other: ''
     pl: ''
+    pt-pt: ''
     ro: ''
-    ru: ''
-    sh: ''
     sk: ''
     sl: ''
-    sq: ''
-    sr: ''
+    fi: ''
     sv: ''
+    is: ''
+    ga: ''
+    sq: ''
+    bs: ''
+    mk: ''
+    ru: ''
+    sr: ''
+    sh: ''
     tr: ''
-    pt-pt: ''
+    nol: ''
+    other: ''
 selected_langcode: site_default
 _core:
   default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM

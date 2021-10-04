@@ -1,0 +1,18 @@
+{% extends "page.html.twig" %}
+
+
+{% block content %}
+<div class="breadcrumb-fluid">
+  <div class="container"> {{ page.breadcrumb }}</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div id="main" class="col-12 col-lg-12 one-column mx-auto">
+      <section class="section">
+        <a id="main-content" tabindex="-1"></a>
+        {{ page.content }}
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -3,7 +3,7 @@ scheme_whitelist:
   - https
   - files
   - internal
-protocol_style: full
-local_paths: ''
+protocol_style: path
+local_paths: "https://testd9.osha.europa.eu/\r\nhttps://prodd9.osha.europa.eu/\r\nhttps://ddev.ddev.site/"
 _core:
   default_config_hash: EKYCulG-Y3pcObfUpVbl-D9T5DDX6d4hpQ-BVlSBAmw

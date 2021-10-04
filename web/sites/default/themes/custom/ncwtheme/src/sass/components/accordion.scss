@@ -44,9 +44,9 @@
       outline: none;
     }
 
-    .wysiwyg_accordion_panel {
+    .wysiwyg_accordion_panel{
       display: none;
-      padding: 10px 0;
+      margin: 0.2em 0 0.5em;
       h4{
         font-size: 1rem;
         font-weight: 600;
@@ -55,10 +55,10 @@
       p.wysiwyg_accordion_panel{
         display: block;
       }
-      img{
-        width: 100%;
-        height: auto;
-      }
+    }
+    ol {
+      display: none;
+      padding-left: 40px;
     }
 
     .wysiwyg_accordion_panel.views {
@@ -294,6 +294,12 @@
             background: url(../images/external_link-v2-hover.png) center right no-repeat;
           }
         }
+      }
+    }
+    #tmgmt-43{
+      img{
+        width: 100%;
+        height: auto;
       }
     }
   }

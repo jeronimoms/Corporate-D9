@@ -5,14 +5,20 @@ dependencies:
   config:
     - field.storage.node.nlc_oira_contents
     - node.type.highlight
+    - node.type.news
     - node.type.newsletter_content
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 _core:
   default_config_hash: _Rk-j3TlsUCJUm181frzBxHP6TV3OV9fA1nbhug_NRs
 id: node.newsletter_content.nlc_oira_contents
 field_name: nlc_oira_contents
 entity_type: node
 bundle: newsletter_content
-label: 'Oira content'
+label: 'OiRA content'
 description: 'It allows adding the contents of the section'
 required: false
 translatable: false
@@ -23,9 +29,10 @@ settings:
   handler_settings:
     target_bundles:
       highlight: highlight
+      news: news
     sort:
       field: title
       direction: ASC
     auto_create: true
-    auto_create_bundle: article
+    auto_create_bundle: highlight
 field_type: entity_reference

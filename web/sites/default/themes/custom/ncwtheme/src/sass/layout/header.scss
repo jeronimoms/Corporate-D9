@@ -13,19 +13,16 @@ body{
 }
 
 body.scrollup{
-  #header{
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    transition: top 0.6s linear;
-    top: 0px !important;
-    background: white;
+  &.scrolled{
+    #header{
+      position: fixed!important;
+      width: 100%;
+      z-index: 9999999;
+      transition: top 0.6s linear;
+      top: 0px !important;
+      background: white;
+    }
   }
-}
-
-#header.custom-activate-menu-header{
-  /* When responsive menu is opened */
-  position: relative !important;
 }
 
 body.user-logged-in{
@@ -33,12 +30,22 @@ body.user-logged-in{
   #header{
     padding-top: 40px;
   }
+  &.scrolled{
+    #header{
+      padding-top: 0px;
+    }
+  }
 }
 
 body.user-logged-in.toolbar-tray-open{
   padding-top: 270px !important;
   #header{
     padding-top: 75px;
+  }
+  &.scrolled{
+    #header{
+      padding-top: 0px;
+    }
   }
 }
 
@@ -65,7 +72,7 @@ body.user-logged-in.toolbar-tray-open{
     .field--name-field-image{
       display: flex;
       margin: 0;
-      align-items: center;
+      align-items: flex-end;
       .field__item {
         float: left;
         margin-right: 20px;

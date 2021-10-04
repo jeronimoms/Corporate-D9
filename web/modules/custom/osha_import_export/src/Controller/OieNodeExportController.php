@@ -5,13 +5,15 @@ namespace Drupal\osha_import_export\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Render\Element\Date;
 use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\file_entity\Entity\FileEntity;
 
+/**
+ * OieNodeExportController class.
+ */
 class OieNodeExportController extends ControllerBase implements ContainerInjectionInterface{
 
   /**
@@ -21,22 +23,33 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
    */
   protected $entityTypeManager;
 
+  /**
+   * {@inheritdoc}
+   */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
     $this->entityTypeManager = $entity_type_manager;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity_type.manager'),
     );
   }
 
+  /**
+   * Export the node content.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *
+   * @return \Symfony\Component\HttpFoundation\JsonResponse
+   */
   public function export(Node $node) {
     if (!isset($node) || empty($node)) {
       return new JsonResponse([]);
     }
-
-    $rdf = $this->entityTypeManager->getStorage('rdf_mapping')->load('node.'. $node->bundle());
 
     // Get each translation.
     $langs = [];
@@ -49,7 +62,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       'uid' => $node->get('uid')->getString(),
       'title' => $node->get('title')->getString(),
       'status' => $node->get('status')->getString(),
-      'promote' => $node->get('promote')->getString(),
+      'promote' => 0,
       'sticky' => $node->get('sticky')->getString(),
       'nid' => $node->get('nid')->getString(),
       'type' => $node->get('type')->getString(),
@@ -76,7 +89,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         foreach ($langs as $lang => $node_lang) {
           $trans_value = $this->getFieldValue($node_lang, $definition, $field_name);
           if (isset($trans_value) && !empty($trans_value)) {
-            $data[$field_name][$lang] = $trans_value;
+            $data = array_merge_recursive($data, $trans_value);
           }
         }
       }
@@ -84,9 +97,11 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
 
     foreach ($langs as $lang => $node_lang) {
       $data['title_field'][$lang] = [
-        'value' => $node_lang->getTitle(),
-        'format' => "",
-        'safe_value' => $node_lang->getTitle(),
+        [
+          'value' => $node_lang->getTitle(),
+          'format' => "",
+          'safe_value' => $node_lang->getTitle(),
+        ]
       ];
 
       $data['translations']['original'] = 'en';
@@ -107,29 +122,71 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     $data['name'] = $owner->getAccountName();
     $data['picture'] = $owner->get('user_picture');
 
-
     return new JsonResponse($data);
   }
 
-  public function getFieldValue($node, FieldConfig $definition, $field_name) {
+  /**
+   * Get the field value.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   * @param \Drupal\field\Entity\FieldConfig $definition
+   * @param $field_name
+   *
+   * @return array|array[]|\array[][]
+   */
+  public function getFieldValue(Node $node, FieldConfig $definition, $field_name) {
+    $value = $node->get($field_name)->getString();
+
     // Ref entity process.
     if ($definition->getType() == 'entity_reference') {
       $values = $node->get($field_name)->getValue();
       if (!empty($values)) {
         $settings = $definition->getSettings();
         $referers = [];
-        foreach ($values as $value) {
-          if ($settings['target_type'] == 'media') {
-            $referers[] = $this->getMediaValues($value['target_id'], $settings);
+
+        // Media.
+        if ($settings['target_type'] == 'media') {
+          foreach ($values as $value) {
+            $value = $this->getMediaValues($value['target_id'], $settings);
+            if (isset($value) && !empty($value)) {
+              $referers[$node->language()->getId()] = [$value];
+            }
           }
 
-          if ($settings['target_type'] == 'taxonomy_term') {
-            $referers[] = $this->getTaxonomyValues($value['target_id'], $settings);
+          if ($field_name == 'field_image_media') {
+            $field_name = 'field_image';
           }
+
+          if ($field_name == 'field_file_media') {
+            $field_name = 'field_file';
+          }
+
+          return [$field_name => $referers];
         }
 
-        return [$field_name => $referers];
+        // Taxonomy Terms.
+        if ($settings['target_type'] == 'taxonomy_term') {
+          foreach ($values as $value) {
+            if ($field_name == 'field_publication_type') {
+              $referers += $this->getTaxonomyValues($value['target_id'], $settings);
+            }
+            else {
+              $referers[] = $this->getTaxonomyValues($value['target_id'], $settings);
+            }
+          }
+          return [$field_name => $referers];
+        }
+
+        // Node.
+        if ($settings['target_type'] == 'node') {
+          foreach ($values as $value) {
+            $referers[$node->language()->getId()][] = $value;
+          }
+
+          return [$field_name => $referers];
+        }
       }
+      return [$field_name => []];
     }
 
     // Datetime process.
@@ -140,10 +197,12 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         $value = \date('Y-m-d h:i:s', $value);
         return [
           $field_name => [
-            'value' => $value,
-            "timezone" => "Europe\/Madrid",
-            "timezone_db" => "Europe\/Madrid",
-            "date_type" => "datetime",
+            'und' => [
+              'value' => $value,
+              "timezone" => "Europe/Madrid",
+              "timezone_db" => "Europe/Madrid",
+              "date_type" => "datetime",
+            ],
           ]
         ];
       }
@@ -153,17 +212,79 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     if ($definition->getType() == 'comment') {
       $values = $node->get($field_name)->getValue();
       return [
-        'cid' => $values['cid'],
-        'last_comment_timestamp' => $values[0]['last_comment_timestamp'],
-        'last_comment_name' => $values[0]['last_comment_name'],
-        'last_comment_uid' => $values[0]['last_comment_uid'],
-        'comment_count' => $values[0]['comment_count'],
+        'cid' => ($values['cid'] ?? []),
+        'last_comment_timestamp' => ($values[0]['last_comment_timestamp'] ?? []),
+        'last_comment_name' => ($values[0]['last_comment_name'] ?? []),
+        'last_comment_uid' => ($values[0]['last_comment_uid'] ?? []),
+        'comment_count' => ($values[0]['comment_count'] ?? []),
       ];
     }
 
-    return [$field_name => $node->get($field_name)->getString()];
+    // Interger or decimal.
+    if ($definition->getType() == 'integer' || $definition->getType() == 'decimal' || $definition->getType() == 'string') {
+      return [
+        $field_name => [
+          $node->language()->getId() => [['value' => $value]],
+        ],
+      ];
+    }
+
+    // Text long.
+    if ($definition->getType() == 'text_long') {
+      $values = $node->get($field_name)->getValue()[0];
+      if ($field_name == 'field_summary_html') {
+        $field_name = 'field_summary';
+      }
+
+      return [
+        $field_name => [
+          $node->language()->getId() => [
+            '0' => [
+              'value' => $values['value'],
+              'format' => $values['format'],
+            ]
+          ],
+        ],
+      ];
+    }
+
+    // Image.
+    if ($definition->getType() == 'image') {
+      $values = $node->get($field_name)->getValue();
+      if (!empty($values)) {
+        $settings = $definition->getSettings();
+        $referers = [];
+        if ($settings['target_type'] == 'file') {
+          foreach ($values as $value) {
+            $value = $this->getFileValues($value['target_id']);
+            if (isset($value) && !empty($value)) {
+              $referers[$field_name][] = $value;
+            }
+          }
+        }
+        return $referers;
+      }
+    }
+
+    if ($definition->getType() == 'text_with_summary') {
+      $values = $node->get($field_name)->getValue()[0];
+      return [$field_name => [$node->language()->getId() => [['value' => $values['value'], 'format' => $values['format']]]]];
+    }
+
+
+    return (empty($value) ? [] : [$field_name => [$node->language()->getId() => [['value' => $value]]]]);
   }
 
+  /**
+   * Get the taxonomy term values.
+   *
+   * @param $id
+   * @param array $settings
+   *
+   * @return array
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function getTaxonomyValues($id, array $settings) {
     /** @var \Drupal\taxonomy\Entity\Term $term */
     $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($id);
@@ -183,8 +304,10 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       'vocabulary_machine_name' => $term->get('vid')->getString(),
       'description_field' => [
         'en' => [
-          'value' => $term->getDescription(),
-          'format' => $term->getFormat(),
+          [
+            'value' => $term->getDescription(),
+            'format' => $term->getFormat(),
+          ]
         ],
       ],
     ];
@@ -205,15 +328,34 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
           continue;
         }
 
-        if ($field_name == 'field_tags_code') {
-          $term_data[$field_name][$term->language()->getId()]['und'] = [
+        if ($field_name == 'field_tags_code' || $field_name == 'field_publication_type_code') {
+          $term_data[$field_name]['und'] = [
             'value' => $term_value,
             'safe_value' => $term_value,
           ];
           continue;
         }
 
-        $term_data[$field_name][$term->language()->getId()]['value'] = $term_value;
+        // Image.
+        if ($definition->getType() == 'image') {
+          $values = $term->get($field_name)->getValue();
+          if (!empty($values)) {
+            $settings = $definition->getSettings();
+            $referers = [];
+            if ($settings['target_type'] == 'file') {
+              foreach ($values as $value) {
+                $value = $this->getFileValues($value['target_id']);
+                if (isset($value) && !empty($value)) {
+                  $term_data[$field_name][][$term->language()
+                    ->getId()][] = $value;
+                }
+              }
+            }
+          }
+          continue;
+        }
+
+        $term_data[$field_name][][$term->language()->getId()]['value'] = $term_value;
       }
     }
 
@@ -246,10 +388,19 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
 
     $term_data['name_original'] = $term->getName();
 
-
     return $term_data;
   }
 
+  /**
+   * Get the media values.
+   *
+   * @param $id
+   * @param array $settings
+   *
+   * @return array
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function getMediaValues($id, array $settings) {
     /** @var \Drupal\media\Entity\Media $ref */
     $media = $this->entityTypeManager->getStorage('media')->load($id);
@@ -273,10 +424,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     }
 
     $media_file_values = $media->get($field_ref)->getValue()[0];
-
-    /** @var \Drupal\file_entity\Entity\FileEntity $file */
-    $file = $this->entityTypeManager->getStorage('file')->load($media_file_values['target_id']);
-    $res = $this->getNormalicedMediaValues($file);
+    $res = $this->getFileValues($media_file_values['target_id']);
 
     if (strpos($media->bundle(), 'image') > -1) {
       $res['type'] = $media->bundle();
@@ -288,32 +436,29 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     return $res;
   }
 
+  public function getFileValues($fid) {
+    /** @var \Drupal\file_entity\Entity\FileEntity $file */
+    $file = $this->entityTypeManager->getStorage('file')->load($fid);
+    return $this->getNormalicedMediaValues($file);
+  }
+
+  /**
+   * Get the normaliced data.
+   *
+   * @param \Drupal\file_entity\Entity\FileEntity $file
+   *
+   * @return array
+   */
   public function getNormalicedMediaValues(FileEntity $file) {
     return [
       'fid' => $file->id(),
       'filename' => $file->getFilename(),
       'uri' => $file->getFileUri(),
       'filesize' => $file->getSize(),
+      'filemime' => $file->getMimeType(),
       'status' => $file->get('status')->getString(),
       'timestamp' => $file->getCreatedTime(),
       'uuid' => $file->uuid(),
-    ];
-  }
-
-  public function getRdfMapping() {
-    return [
-      'rdftype' => [
-        "sioc:Item",
-        "foaf:Document",
-      ],
-      'title' => [
-        'predicates' => ["dc:title"],
-      ],
-      'created' => [
-        'predicates' => ["dc:date", "dc:created"],
-        'datatype' => "xsd:dateTime",
-        "callback" => "date_iso8601",
-      ],
     ];
   }
 

@@ -1,0 +1,38 @@
+{% extends "page.html.twig" %}
+
+{% block content %}
+
+{% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
+
+<div class="breadcrumb-fluid">
+  <div class="container"> {{ page.breadcrumb }}</div>
+</div>
+<div class="container">
+  <div class="row">
+    <aside class="section col-12 col-lg-3 sidebar-first" role="complementary">
+      <nav role="navigation" aria-labelledby="block-mainnavigation-2--2-menu" id="block-mainnavigation-2--2" class="contextual-region block block-menu navigation menu--main">
+        {{ drupal_menu('main') }}
+      </nav>
+      {{ page.sidebar_first }}
+    </aside>
+    {% if has_sidebar_second %}
+      <div id="main" class="col-12 col-lg-6 two-column mx-auto">
+    {% else %}
+      <div id="main" class="col-12 col-lg-9 three-column mx-auto">
+    {% endif %}
+      <section class="section">
+        <a id="main-content" tabindex="-1"></a>
+        {{ page.content }}
+      </section>
+    </div>
+    {% if has_sidebar_second %}
+      <aside class="section col-12 col-lg-3 sidebar-second" role="complementary">
+        <h2 class="related">{{ 'Related' | trans }}</h2>
+        <div class="related-views">
+          {{ page.sidebar_second }}
+        </div>
+      </aside>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

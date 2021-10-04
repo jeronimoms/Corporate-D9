@@ -9,7 +9,7 @@ dependencies:
     - field.field.media.image_caption.field_media_image
     - field.field.media.image_caption.field_nace
     - field.field.media.image_caption.field_tags
-    - image.style.1000x1000
+    - image.style.original_image
     - media.type.image_caption
   module:
     - image_widget_crop
@@ -48,12 +48,14 @@ content:
       show_crop_area: true
       show_default_crop: true
       warn_multiple_usages: true
-      preview_image_style: 1000x1000
-      crop_preview_image_style: 1000x1000
+      preview_image_style: original_image
+      crop_preview_image_style: original_image
       progress_indicator: throbber
       crop_list:
-        - articles_crop
+        - news
         - custom_crop_
+        - infhograpic
+        - original
         - osh_mail
       crop_types_required: {  }
     third_party_settings:

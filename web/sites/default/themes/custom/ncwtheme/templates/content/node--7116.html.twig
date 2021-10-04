@@ -73,12 +73,6 @@
 ]
 %}
 <article{{ attributes.addClass(classes) }}>
-
-
-  <div class="view-content">
-    {{ drupal_view('fop_flags', 'block_1') }}
-  </div>
-
   <header>
     {{ title_prefix }}
     {% if label and not page %}
@@ -99,9 +93,11 @@
       </div>
     {% endif %}
   </header>
-
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {{ content }}
+  </div>
+  <div class="view-content">
+    {{ drupal_view('fop_flags', 'block_1') }}
   </div>
 </article>
 

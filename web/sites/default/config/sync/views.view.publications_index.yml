@@ -77,7 +77,15 @@ display:
               search_api_fulltext:
                 plugin_id: default
                 advanced:
-                  placeholder_text: ''
+                  placeholder_text: Search
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              search_api_language_1:
+                plugin_id: default
+                advanced:
+                  sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
@@ -86,7 +94,7 @@ display:
         type: pagerer
         options:
           preset: pagination
-          items_per_page: 10
+          items_per_page: 5
           offset: 0
           id: '0'
           total_pages: ''
@@ -546,7 +554,7 @@ display:
             format_plural: false
             format_plural_string: !!binary MQNAY291bnQ=
             prefix: ''
-            suffix: pages
+            suffix: ' pages'
             link_to_item: false
             use_highlighting: false
             multi_type: separator
@@ -998,6 +1006,85 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_date
+        search_api_language_1:
+          id: search_api_language_1
+          table: search_api_index_default_multilingual_node_index
+          field: search_api_language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            bg: bg
+            cs: cs
+            da: da
+            de: de
+            et: et
+            el: el
+            en: en
+            es: es
+            fr: fr
+            hr: hr
+            it: it
+            is: is
+            lv: lv
+            lt: lt
+            hu: hu
+            mt: mt
+            nl: nl
+            'no': 'no'
+            pl: pl
+            pt-pt: pt-pt
+            ro: ro
+            sk: sk
+            sl: sl
+            fi: fi
+            sv: sv
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_language_1_op
+            label: 'Available in languages'
+            description: ''
+            use_operator: false
+            operator: search_api_language_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_api_language_1
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              review_manager: '0'
+              project_manager: '0'
+              approver: '0'
+              translation_manager: '0'
+              translation_liaison: '0'
+              layout_validator: '0'
+              content_validator: '0'
+              events_coordinator: '0'
+              events_editor: '0'
+              osh_collaborator: '0'
+              news_editor: '0'
+              read_only: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_language
       sorts:
         field_publication_date:
           id: field_publication_date

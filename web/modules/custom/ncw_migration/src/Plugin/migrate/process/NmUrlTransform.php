@@ -15,8 +15,29 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "nm_url_transform",
  * )
  */
-class NmUrlTransform extends ProcessPluginBase {
+class NmUrlTransform extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
+  /**
+   * The Config Factory manager.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    $instance = new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition
+    );
+
+    $instance->configFactory = $container->get('config.factory');
+
+    return $instance;
+  }
 
   /**
    * {@inheritdoc}
@@ -25,7 +46,19 @@ class NmUrlTransform extends ProcessPluginBase {
 
     $nn = str_replace('public://', '', $value);
 
-    $osha_patch = 'https://osha.europa.eu/sites/default/files/' . $nn;
+    if ($this->configFactory->get('config_split.config_split.local')->get('status')) {
+      $base = 'http://ncw.ddev.site';
+    }
+
+    if ($this->configFactory->get('config_split.config_split.staging')->get('status')) {
+      $base = 'https://testd9.osha.europa.eu';
+    }
+
+    if ($this->configFactory->get('config_split.config_split.production')->get('status')) {
+      $base = 'https://osha.europa.eu';
+    }
+
+    $osha_patch = $base. '/sites/default/files/' . $nn;
 
     return $osha_patch;
   }

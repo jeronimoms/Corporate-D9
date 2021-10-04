@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - user.role.administrator
+    - user.role.events_coordinator
     - user.role.project_manager
     - user.role.review_manager
   module:
@@ -34,6 +35,7 @@ display:
             administrator: administrator
             review_manager: review_manager
             project_manager: project_manager
+            events_coordinator: events_coordinator
       cache:
         type: none
         options: {  }
