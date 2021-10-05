@@ -941,18 +941,6 @@ display:
             group_items: {  }
           plugin_id: search_api_language
       sorts:
-        field_year:
-          id: field_year
-          table: search_api_index_dangerous_substances_index
-          field: field_year
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: true
-          expose:
-            label: 'Year of publication'
-          plugin_id: search_api
         search_api_relevance:
           id: search_api_relevance
           table: search_api_index_dangerous_substances_index
@@ -964,6 +952,18 @@ display:
           exposed: true
           expose:
             label: Relevance
+          plugin_id: search_api
+        field_year:
+          id: field_year
+          table: search_api_index_dangerous_substances_index
+          field: field_year
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'Year of publication'
           plugin_id: search_api
       title: ''
       header: {  }
