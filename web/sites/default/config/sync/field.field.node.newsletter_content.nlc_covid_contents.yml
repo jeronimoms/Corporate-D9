@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.nlc_covid_contents
     - node.type.article
+    - node.type.news
     - node.type.newsletter_content
   module:
     - tmgmt_content
@@ -28,9 +29,10 @@ settings:
   handler_settings:
     target_bundles:
       article: article
+      news: news
     sort:
       field: _none
       direction: ASC
     auto_create: true
-    auto_create_bundle: ''
+    auto_create_bundle: article
 field_type: entity_reference

@@ -86,8 +86,10 @@ jQuery(document).ready(function($) {
   });
 
   //View Careers 3th accordion opened
-  $( "#block-quicktabscareersaccordion #ui-id-6" ).trigger( "click" );
-
+  if ($("body.careers")[0]) {
+    $("body.user-logged-in #block-quicktabscareersaccordion #ui-id-6").trigger("click");
+    $("body #block-quicktabscareersaccordion #ui-id-5").trigger("click");
+  }
   //View Seminar Reports 1st accordion opened
   $( "body.tools-and-resources-seminars #block-ncwtheme-content > div > article > div.view-content > div > div > div > div:nth-child(1) > div.view-grouping-header" ).trigger( "click" );
 
@@ -371,6 +373,11 @@ jQuery(document).ready(function($) {
   // Add class active in menu Glossary when filtered by letter
   if (window.location.href.indexOf("alphabetical") > -1) {
     $('#block-thesaurus > ul > li:nth-child(2)').addClass("menu-item--active-trail");
+  }
+
+  // Add class in letter A when load the page Glossary
+  if (!$(".page-view-glossary .view-glossary .views-summary a.is-active")[0]) {
+    $('.page-view-glossary .view-glossary .views-summary:nth-child(4) a').addClass('is-active');
   }
 
   // Accesskey for custom elements

@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Actualmente, no hay disponible ninguna licitación en esta sección.</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Mostrar detalles'
+  open_calls:
+    display_options:
+      title: 'Open Calls'
+  block_open_calls:
+    display_options:
+      title: 'Open calls for contractors '

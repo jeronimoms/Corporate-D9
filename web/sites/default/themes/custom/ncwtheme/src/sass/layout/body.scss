@@ -596,8 +596,10 @@ body {
 .node--type-highlight{
   .field--name-field-image-media{
     float: left;
-    margin-right: 1rem;
     clear: both;
+    img{
+      margin-bottom: 2px;
+    }
   }
   .field--name-field-summary-html{
     color: $text-color-black;
@@ -680,6 +682,9 @@ html[lang=da], html[lang=el], html[lang=hu], html[lang=fr], html[lang=hr]{
 /* Articles */
 .node--type-article{
   #main{
+    .field--name-field-media-image{
+      margin-right: 0;
+    }
     .field--name-field-image-caption{
       img{
         width: 100%;
@@ -1347,11 +1352,11 @@ a.quiz-start-link:hover {
 .filter-results-block{
   color: $text-color-black;
   font-family: 'Open Sans',sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.1rem !important;
   font-weight: lighter;
   background: url(../images/separator_home.jpg) repeat-x scroll 0% 100% rgba(0,0,0,0);
-  padding-bottom: 10px;
-  margin-bottom: 1rem;
+  padding-bottom: 15px;
+  margin-bottom: 0.7rem;
 }
 
 /* Infographic detail */
@@ -1381,7 +1386,7 @@ body.node--type-infographic{
 
 .node--type-news{
   .field--type-image img, .field--name-field-user-picture img{
-    margin: 0 0 0.3em;
+    margin: 0 0 2px;
   }
 }
 
@@ -1391,4 +1396,3 @@ body.node--type-infographic{
     display: none;
   }
 }
-

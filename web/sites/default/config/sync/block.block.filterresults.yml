@@ -1,0 +1,30 @@
+uuid: 796a7ac6-2056-4d44-966f-ac4aae7fab1f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:fd4405e9-a14c-4699-a25a-aed075dc517e'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: filterresults
+theme: ncwtheme
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'block_content:fd4405e9-a14c-4699-a25a-aed075dc517e'
+settings:
+  id: 'block_content:fd4405e9-a14c-4699-a25a-aed075dc517e'
+  label: 'Filter results'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders
+    negate: false

@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Trenutačno nema natječaja dostupnih u ovom odjeljku.</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Prikaži pojedinosti'

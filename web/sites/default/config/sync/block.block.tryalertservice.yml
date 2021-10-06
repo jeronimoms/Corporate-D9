@@ -1,0 +1,30 @@
+uuid: f1675782-e019-424c-870d-fa02c368f04f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:011c9c34-827f-43fa-984d-3791bde18e77'
+  module:
+    - block_content
+    - system
+  theme:
+    - ncwtheme
+id: tryalertservice
+theme: ncwtheme
+region: footer_first
+weight: -71
+provider: null
+plugin: 'block_content:011c9c34-827f-43fa-984d-3791bde18e77'
+settings:
+  id: 'block_content:011c9c34-827f-43fa-984d-3791bde18e77'
+  label: 'Try alert service'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

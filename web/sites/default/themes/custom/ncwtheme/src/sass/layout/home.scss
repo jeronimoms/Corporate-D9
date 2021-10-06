@@ -332,3 +332,28 @@
     }
   }
 }
+
+/* Block follow us on */
+#block-homefollowuson{
+  width: 100%;
+}
+
+.follow-us{
+  width: 100%;
+  text-align: center;
+  color: $text-color-blue;
+  font-size: 1rem !important;
+  padding-bottom: 0.5em;
+  margin-top: 20px;
+}
+
+.follow-us-icons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 320px;
+  margin: 0 auto;
+  a{
+    border-bottom: 0 !important;
+  }
+}

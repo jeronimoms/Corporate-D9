@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Tässä osiossa ei ole tällä hetkellä avoimia tarjouskilpailuja.</p>\r\n"
+            format: basic_html
+      fields:
+        view_node:
+          text: 'Näytä tiedot'
