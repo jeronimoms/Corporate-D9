@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Suchen
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Freitextsuche
+        search_api_fulltext_1:
+          expose:
+            label: 'Nummer der Richtlinie'

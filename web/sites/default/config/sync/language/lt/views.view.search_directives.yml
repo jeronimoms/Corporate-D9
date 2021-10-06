@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ieškoti
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Laisva teksto paieška'
+        search_api_fulltext_1:
+          expose:
+            label: 'Direktyvos numeris'

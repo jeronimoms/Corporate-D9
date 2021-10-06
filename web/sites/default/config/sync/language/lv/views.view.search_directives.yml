@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Meklēšana
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Brīva teksta meklēšana'
+        search_api_fulltext_1:
+          expose:
+            label: 'Direktīvas numurs'
