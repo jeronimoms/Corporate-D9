@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Vyhľadávanie
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Voľné vyhľadávanie v texte'
+        search_api_fulltext_1:
+          expose:
+            label: 'Číslo smernice'

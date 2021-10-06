@@ -1,10 +1,12 @@
-uuid: 948a3c88-6be0-4a2e-ad8b-187713da76a5
+uuid: 91305c02-9ed4-4ce1-bc71-6481a47abfe0
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - oshwiki_import
+_core:
+  default_config_hash: o-p_80JQZ4cGgv5PMDf9m_ifxN1pYoi6n91CYl0TCNg
 id: import_oshwiki_data
 class: null
 field_plugin_method: null

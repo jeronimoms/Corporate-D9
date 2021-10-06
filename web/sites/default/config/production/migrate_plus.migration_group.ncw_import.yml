@@ -1,0 +1,15 @@
+uuid: b80462db-d763-4da6-8662-e2b497767052
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - osha_import_export
+id: ncw_import
+label: 'NCW Import'
+description: 'Migration of content from HWC and Oira'
+source_type: JSON
+module: null
+shared_configuration:
+  source:
+    key: migrate
