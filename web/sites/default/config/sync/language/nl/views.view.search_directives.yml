@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Zoeken
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Vrij zoeken op tekst'
+        search_api_fulltext_1:
+          expose:
+            label: Richtlijnnummer

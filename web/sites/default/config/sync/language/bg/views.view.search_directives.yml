@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Свободно търсене на текст'
+        search_api_fulltext_1:
+          expose:
+            label: 'Номер на директива'
+      exposed_form:
+        options:
+          submit_button: Търсене

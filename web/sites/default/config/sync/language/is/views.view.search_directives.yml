@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Leita
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Frjáls textaleit'
+        search_api_fulltext_1:
+          expose:
+            label: 'Númer tilskipunar'
