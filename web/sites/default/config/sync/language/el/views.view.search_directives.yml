@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Αναζήτηση
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Αναζήτηση ελεύθερου κειμένου'
+        search_api_fulltext_1:
+          expose:
+            label: 'Αριθμός οδηγίας'

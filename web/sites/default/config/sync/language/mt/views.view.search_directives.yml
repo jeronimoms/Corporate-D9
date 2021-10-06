@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Fittex
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Tfittxija għal test liberu'
+        search_api_fulltext_1:
+          expose:
+            label: 'Numru tad-Direttiva'

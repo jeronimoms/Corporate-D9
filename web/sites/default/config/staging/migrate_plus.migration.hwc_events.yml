@@ -1,0 +1,239 @@
+uuid: 6e8facde-6eb1-4b80-b6e4-5a7216803e33
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ncw_migration
+id: hwc_events
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ncw_import
+label: Events
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: oie_json
+  include_raw_data: true
+  urls: hwc
+  content_type: events
+  ids:
+    nid:
+      type: integer
+  item_selector: items/
+  constants:
+    lang: en
+    file_source: 'https://healthy-workplaces.eu//sites/default/files'
+    file_dest: 'public://hwc/events/images'
+  fields:
+    -
+      name: nid
+      label: Nid
+      selector: item/nid
+    -
+      name: title
+      label: Title
+      selector: item/title_field/en
+    -
+      name: type
+      label: Type
+      selector: item/field_type_event/und
+    -
+      name: organisation
+      label: Organisation
+      selector: item/field_organizer/und/0
+    -
+      name: country
+      label: Country
+      selector: item/field_country_code/und/0
+    -
+      name: city
+      label: City
+      selector: item/field_city/und/0
+    -
+      name: date
+      label: Date
+      selector: item/field_start_date/und
+    -
+      name: web
+      label: 'For the web'
+      selector: item/field_for_the_web/und/0
+    -
+      name: performance
+      label: Performance
+      selector: item/field_key_performance/und/0
+    -
+      name: website
+      label: Website
+      selector: item/field_website_of_event/und
+    -
+      name: agenda
+      label: Agenda
+      selector: item/field_agenda/und/0
+    -
+      name: adonis
+      label: Adonis
+      selector: item/field_adonis/und/0
+    -
+      name: unit_ref
+      label: 'Unit Ref'
+      selector: item/field_unit_ref/und/0
+    -
+      name: activity
+      label: Activity
+      selector: item/field_activity
+    -
+      name: tags
+      label: Tags
+      selector: item/field_tags
+    -
+      name: agency_roles
+      label: 'Agency Roles'
+      selector: item/field_agency_role/und/0
+    -
+      name: agency_rep
+      label: 'Agency Rep'
+      selector: item/field_agency_rep_confirmed/und/0
+    -
+      name: publications_support
+      label: 'Publications support'
+      selector: item/field_publications_exhibition_su/und/0
+    -
+      name: media_promotion
+      label: 'Media Promotion'
+      selector: item/field_media_promotion/und/0
+    -
+      name: agency_contact
+      label: 'Agency Contact'
+      selector: item/field_agency_contact_reply/und/0
+    -
+      name: body
+      label: Description
+      selector: item/body/en/0
+    -
+      name: documents
+      label: 'Related documents'
+      selector: item/field_related_documents/en/0
+    -
+      name: location
+      label: Location
+      selector: item/field_location/und/0
+    -
+      name: status
+      label: Status
+      selector: item/translations/data/en/status
+    -
+      name: created
+      label: Created
+      selector: item/translations/data/en/created
+    -
+      name: changed
+      label: Changed
+      selector: item/translations/data/en/changed
+    -
+      name: sticky
+      label: Sticky
+      selector: item/sticky
+process:
+  nid: nid
+  langcode: constants/lang
+  title: title
+  status: status
+  created: created
+  changed: changed
+  sticky: sticky
+  field_event_type: type
+  field_organization/value: organisation/value
+  field_country_code/value: country/value
+  field_city/value: city/value
+  field_location/value: location/value
+  field_date:
+    plugin: sub_process
+    source: date
+    process:
+      value:
+        plugin: format_date
+        source: value
+        from_format: 'Y-m-d H:i:s'
+        to_format: Y-m-d
+      end_value:
+        plugin: format_date
+        source: value2
+        from_format: 'Y-m-d H:i:s'
+        to_format: Y-m-d
+  field_for_the_web/value: web/value
+  field_key_performance/value: performance/value
+  field_website_of_event:
+    plugin: sub_process
+    source: website
+    process:
+      uri: url
+      title: title
+      options: attributes
+  field_agenda/value: agenda/value
+  field_adonis/value: adonis/value
+  field_unit_ref/value: unit_ref/value
+  field_activity:
+    -
+      plugin: oie_taxonomy_term
+      source: activity
+  field_tags:
+    -
+      plugin: oie_taxonomy_term
+      source: tags
+  field_agency_role/value: agency_roles/value
+  field_agency_rep_confirmed/value: agency_rep/value
+  field_publications_exhibition_su/value: publications_support/value
+  field_media_promotion/value: media_promotion/value
+  field_comments_summary_after_eve/value: agency_contact/value
+  body/0/value: body/value
+  body/0/format: full_html
+  file_source:
+    -
+      plugin: skip_on_empty
+      source: documents/uri
+      method: process
+    -
+      plugin: oie_url_transform
+      source: documents/uri
+    -
+      plugin: urlencode
+  file_dest:
+    -
+      plugin: skip_on_empty
+      source: documents/filename
+      method: process
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_dest
+        - documents/filename
+  file:
+    -
+      plugin: skip_on_empty
+      source: '@file_source'
+      method: process
+    -
+      plugin: file_copy
+      source:
+        - '@file_source'
+        - '@file_dest'
+    -
+      plugin: entity_generate
+      value_key: uri
+      entity_type: file
+  field_related_documents/target_id:
+    -
+      plugin: skip_on_empty
+      source: '@file'
+      method: process
+    -
+      plugin: default_value
+      default_value: '@file'
+destination:
+  default_bundle: events
+  plugin: 'entity:node'
+migration_dependencies: {  }

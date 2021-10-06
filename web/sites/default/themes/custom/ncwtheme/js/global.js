@@ -238,8 +238,12 @@ jQuery(document).ready(function($) {
   if ( text_breadcrumb_item_2 == text_breadcrumb_item_3){
     $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(3)').hide();
   }
-  $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
+  // Breadcrumbs - Hide "Links" crumb in elements from footer
+  if(text_breadcrumb_item_2 == "Links"){
+    $('#block-ncwtheme-breadcrumbs > div.content > nav > ol > li:nth-child(2)').hide();
+  }
 
+  $('.breadcrumb-fluid ol.breadcrumb').addClass('custom-visible');
 
   //Archivied calls - Add class custom-active in year
   if ($(".view-id-calls.view-display-id-page_1")[0]) {

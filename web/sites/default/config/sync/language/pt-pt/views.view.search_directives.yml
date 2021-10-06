@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Pesquisar
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Pesquisa de texto gratuita'
+        search_api_fulltext_1:
+          expose:
+            label: 'Número da diretiva'

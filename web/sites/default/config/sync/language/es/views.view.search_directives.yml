@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Búsqueda de texto libre'
+        search_api_fulltext_1:
+          expose:
+            label: 'Número de Directiva'
+      exposed_form:
+        options:
+          submit_button: Buscar
