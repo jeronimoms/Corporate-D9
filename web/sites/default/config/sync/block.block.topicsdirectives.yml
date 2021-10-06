@@ -5,14 +5,18 @@ dependencies:
   config:
     - facets.facet.directive_topics
   module:
+    - block_class
     - facets
     - system
   theme:
     - ncwtheme
+third_party_settings:
+  block_class:
+    classes: block-facets-accordion
 id: topicsdirectives
 theme: ncwtheme
 region: sidebar_first
-weight: -58
+weight: -61
 provider: null
 plugin: 'facet_block:directive_topics'
 settings:

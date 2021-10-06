@@ -1,3 +1,13 @@
+.site-footer{
+  .block{
+    border: 0;
+  }
+}
+
+.region-footer-first{
+  padding-bottom: 2rem;
+}
+
 footer.site-footer{
   padding: 0;
   font-family: 'Open Sans';
@@ -66,6 +76,27 @@ footer.site-footer{
           }
         }
       }
+    }
+  }
+}
+
+/* Try alert button */
+#block-tryalertservice{
+  padding: 0;
+}
+
+.try-alert-wrapper{
+  margin-top: 20px;
+  margin-right: 9rem;
+  #try-alert{
+    font-size: 0.9rem;
+    min-width: 220px;
+    background-color: $bg-color-blue-button;
+    color: $text-color-blue;
+    font-weight: bold;
+    border-bottom: 0;
+    &:hover{
+      opacity: 0.8;
     }
   }
 }

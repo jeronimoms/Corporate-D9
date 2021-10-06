@@ -3,18 +3,21 @@
 namespace Drupal\translation_workflow\Form;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 use Drupal\tmgmt\Form\TmgmtFormBase;
 use Drupal\tmgmt\JobInterface;
+use Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem;
 use Drupal\views\Views;
 
 /**
- *
+ * Class to implement job form.
  */
 class MultipleTargetLanguageJobForm extends TmgmtFormBase {
 
   /**
-   *
+   * {@inheritdoc}
    */
   public function form(array $form, FormStateInterface $form_state) {
     $form = parent::form($form, $form_state);
@@ -22,6 +25,7 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
      * @var \Drupal\translation_workflow\Entity\MultipleTargetLanguageJob $job
      */
     $job = $this->entity;
+    $currentUser = $this->currentUser();
     $form['info'] = [
       '#type' => 'container',
       '#attributes' => ['class' => ['tmgmt-ui-job-info', 'clearfix']],
@@ -131,6 +135,98 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
       '#suffix' => '</div>',
     ];
 
+    if ($job->isFileUploaded()) {
+      $form['nodes'] = [
+        '#description' => $this->t('Manage multiple nodes at a time. All job items from this translation job - associated to a node - will be set ready to publish.'),
+        '#type' => 'details',
+        '#title' => $this->t('Content'),
+        '#open' => TRUE,
+        '#weight' => 12,
+      ];
+
+      foreach ($job->getItems() as $jobItem) {
+        if (!$jobItem->isAccepted()) {
+          if ($jobItem->getItemType() == 'node') {
+            $node = Node::load($jobItem->getItemId());
+            $nid = $node->id();
+            $statistics = !empty($rows[$nid][1]) ? $rows[$nid][1] : [];
+            foreach (MultipleTargetLanguageJobItem::getStates() as $jobState => $label) {
+              if ($jobItem->isState($jobState)) {
+                if (isset($statistics[(string) $label])) {
+                  $statistics[(string) $label] += 1;
+                }
+                else {
+                  $statistics[(string) $label] = 1;
+                }
+              }
+            }
+            $rows[$jobItem->getItemType() . '-' . $jobItem->getItemId()] = [
+              $node->toLink(),
+              $jobItem->getSourceType(),
+              $statistics,
+            ];
+          }
+          else {
+            if ($jobItem->getItemType() == 'default') {
+              $type = 'String literal';
+            }
+            else {
+              $type = ucfirst(str_replace('_', ' ', $jobItem->getItemType()));
+            }
+            $rows[$jobItem->getItemType() . '-' . $jobItem->getItemId()] = [
+              $jobItem->label(),
+              $type,
+              '-',
+            ];
+          }
+        }
+      }
+
+      foreach ($rows as &$row) {
+        if (is_array($row[2])) {
+          $title = [];
+          foreach ($row[2] as $k => $v) {
+            $title[] = sprintf('%s:%s', $k, $v);
+          }
+          $row[2] = Markup::create(sprintf('<span title="%s">%s</span>', implode(', ', $title), implode('/', $row[2])));
+        }
+      }
+
+      $form['nodes']['table'] = [
+        '#type' => 'tableselect',
+        '#header' => ['Title', 'Type', 'Progress'],
+        '#options' => $rows,
+      ];
+
+      $all_options = MultipleTargetLanguageJobItem::getStates();
+      $options = ['' => t('-- Please select --')];
+      if ($currentUser->hasPermission('edit translation content validators')) {
+        $options = $all_options;
+      }
+      else {
+        if ($currentUser->hasPermission('set job item to translated state')) {
+          $options[MultipleTargetLanguageJobItem::STATE_REVIEW] = $all_options[MultipleTargetLanguageJobItem::STATE_REVIEW];
+        }
+      }
+      if (isset($options[MultipleTargetLanguageJobItem::STATE_INACTIVE])) {
+        unset($options[MultipleTargetLanguageJobItem::STATE_INACTIVE]);
+      }
+      if (count($options) > 1) {
+        $form['nodes']['new_state'] = [
+          '#type' => 'select',
+          '#options' => $options,
+          '#title' => t('Select new state'),
+        ];
+
+        $form['nodes']['new_state_apply'] = [
+          '#type' => 'submit',
+          '#value' => t('Apply'),
+          '#validate' => ['::jobItemsMassChangeValidate'],
+          '#submit' => ['::jobItemsMassChangeSubmit'],
+        ];
+      }
+    }
+
     $form['translator_wrapper'] = [
       '#type' => 'details',
       '#title' => t('Translator information'),
@@ -155,6 +251,101 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
 
     $form['#attached']['library'][] = 'tmgmt/admin';
     return $form;
+  }
+
+  /**
+   * Validate mass job item update.
+   */
+  public function jobItemsMassChangeValidate(array &$form, FormStateInterface $form_state) {
+    $currentUser = $this->currentUser();
+    $values = $form_state->getValues();
+    // Only translation manager or layout validator can access this screen.
+    if (!$currentUser->hasPermission('set job item to translated state') && !$currentUser->hasPermission('edit translation content validators')) {
+      $form_state->setErrorByName('nodes][table', $this->t('Insufficient privileges'));
+    }
+
+    $states = MultipleTargetLanguageJobItem::getStates();
+    if (!array_key_exists($values['new_state'], $states)) {
+      $form_state->setErrorByName('new_state', $this->t('Please select valid new state'));
+    }
+    else {
+      $new_state = $values['new_state'];
+      if ($new_state != MultipleTargetLanguageJobItem::STATE_REVIEW && !$currentUser->hasPermission('edit translation content validators')) {
+        $form_state->setErrorByName('new_state', $this->t('You are not allowed to assign this state'));
+      }
+      if ($new_state == MultipleTargetLanguageJobItem::STATE_REVIEW
+        && (!$currentUser->hasPermission('set job item to translated state') && !$currentUser->hasPermission('edit translation content validators'))) {
+        $form_state->setErrorByName('new_state', $this->t('You are not allowed to assign this state'));
+      }
+    }
+
+    if (!empty($values['table'])) {
+      $values = array_filter(array_values($values['table']));
+      if (empty($values)) {
+        $form_state->setErrorByName('nodes][table', $this->t('Please select at least one row to mark it ready for publish'));
+      }
+    }
+  }
+
+  /**
+   * Submit handler for publish multiple job items at once form.
+   */
+  public function jobItemsMassChangeSubmit(array &$form, FormStateInterface $form_state) {
+    $user = $this->currentUser();
+    $values = $form_state->getValues();
+    /**
+     * @var \Drupal\translation_workflow\Entity\MultipleTargetLanguageJob $job
+     */
+    $job = $this->getEntity();
+    $publish = [];
+    foreach ($values['table'] as $nid) {
+      if (!empty($nid)) {
+        $publish[] = $nid;
+      }
+    }
+    $items = $job->getItems();
+    $new_state = $values['new_state'];
+    /**
+     * @var \Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem $jobItem
+     */
+    foreach ($items as $jobItem) {
+      $id = $jobItem->getItemType() . '-' . $jobItem->getItemId();
+      // && $jobItem->getState() != $new_state) {
+      if (in_array($id, $publish)) {
+        // Change the state.
+        if ($jobItem->getState() == MultipleTargetLanguageJobItem::STATE_TRANSLATION_VALIDATION_REQUIRED) {
+          // @todo Validators and notifications.
+          /*$removed_validators = osha_tmgmt_load_validators_by_job_item($jobItem);
+          $old_current_validator = osha_tmgmt_load_validators_next($removed_validators);
+          OshaWorkflowNotifications::notifyTranslationValidatorsRemoved($old_current_validator, $jobItem);*/
+        }
+        switch ($new_state) {
+          case MultipleTargetLanguageJobItem::STATE_ACTIVE:
+            $jobItem->toOnTranslation('Mass updated by ' . $user->getAccountName());
+            break;
+
+          case MultipleTargetLanguageJobItem::STATE_REVIEW:
+            $jobItem->toTranslated('Mass updated by ' . $user->getAccountName());
+            break;
+
+          case MultipleTargetLanguageJobItem::STATE_TRANSLATION_VALIDATION_REQUIRED:
+            $jobItem->toTranslationValidationRequired('Mass updated by ' . $user->getAccountName());
+            break;
+
+          case MultipleTargetLanguageJobItem::STATE_ABORTED:
+            $jobItem->toTranslationRejected('Mass updated by ' . $user->getAccountName());
+            break;
+
+          case MultipleTargetLanguageJobItem::STATE_TRANSLATION_VALIDATED:
+            $jobItem->toTranslationValidated('Mass updated by ' . $user->getAccountName());
+            break;
+
+          case MultipleTargetLanguageJobItem::STATE_ACCEPTED:
+            $jobItem->acceptTranslation('Mass updated by ' . $user->getAccountName());
+            break;
+        }
+      }
+    }
   }
 
   /**

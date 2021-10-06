@@ -1,0 +1,10 @@
+uuid: 7aa2143f-86f4-4f27-93d7-46e997f749c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.highlight_view_media
+label: 'Highlight view media'
+targetEntityType: media
+cache: true

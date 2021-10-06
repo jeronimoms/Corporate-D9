@@ -7,6 +7,7 @@ label: Staging
 description: ''
 folder: sites/default/config/staging
 module:
+  adv_varnish: 0
   authorization: 0
   authorization_drupal_roles: 0
   ldap_authentication: 0
@@ -24,11 +25,11 @@ module:
   externalauth: 10
 theme: {  }
 blacklist:
-  - migrate_plus.migration.import_crm_advisorygroups
   - migrate_plus.migration.import_crm_board
   - migrate_plus.migration.import_crm_bureauforweb
   - migrate_plus.migration.import_crm_focalpoints
   - migrate_plus.migration_group.osha_import_export
+  - migrate_plus.migration.import_crm_advisorygroups
 graylist:
   - search_api.server.solr
 graylist_dependents: false

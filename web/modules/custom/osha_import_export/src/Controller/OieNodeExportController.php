@@ -167,7 +167,12 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
         // Taxonomy Terms.
         if ($settings['target_type'] == 'taxonomy_term') {
           foreach ($values as $value) {
-            $referers[] = $this->getTaxonomyValues($value['target_id'], $settings);
+            if ($field_name == 'field_publication_type') {
+              $referers += $this->getTaxonomyValues($value['target_id'], $settings);
+            }
+            else {
+              $referers[] = $this->getTaxonomyValues($value['target_id'], $settings);
+            }
           }
           return [$field_name => $referers];
         }
@@ -323,8 +328,8 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
           continue;
         }
 
-        if ($field_name == 'field_tags_code') {
-          $term_data[$field_name][$term->language()->getId()]['und'] = [
+        if ($field_name == 'field_tags_code' || $field_name == 'field_publication_type_code') {
+          $term_data[$field_name]['und'] = [
             'value' => $term_value,
             'safe_value' => $term_value,
           ];

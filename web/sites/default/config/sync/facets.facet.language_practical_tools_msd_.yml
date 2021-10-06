@@ -53,11 +53,16 @@ processor_configs:
       sort: 40
     settings:
       sort: DESC
+  list_item:
+    processor_id: list_item
+    weights:
+      build: -7
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
       pre_query: 50
-      build: 15
+      build: -8
     settings: {  }
 empty_behavior:
   behavior: none
