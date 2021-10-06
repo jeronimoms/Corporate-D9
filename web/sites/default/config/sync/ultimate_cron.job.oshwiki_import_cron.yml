@@ -1,0 +1,17 @@
+uuid: 83bd07e2-b62e-4d9a-9319-dfb1d7c27dcf
+langcode: en
+status: true
+dependencies:
+  module:
+    - oshwiki_import
+title: 'Default cron handler'
+id: oshwiki_import_cron
+weight: 0
+module: oshwiki_import
+callback: oshwiki_import_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database
