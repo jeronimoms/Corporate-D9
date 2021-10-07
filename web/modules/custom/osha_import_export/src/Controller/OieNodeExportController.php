@@ -272,6 +272,17 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       return [$field_name => [$node->language()->getId() => [['value' => $values['value'], 'format' => $values['format']]]]];
     }
 
+    if ($definition->getType() == 'list_string') {
+      $values = $node->get($field_name)->getValue();
+      $referers = [];
+      foreach ($values as $value) {
+        if ($field_name == 'field_type_of_item') {
+          $referers[] = $value;
+        }
+      }
+      return [$field_name => [$node->language()->getId() => $referers]];
+    }
+
 
     return (empty($value) ? [] : [$field_name => [$node->language()->getId() => [['value' => $value]]]]);
   }
