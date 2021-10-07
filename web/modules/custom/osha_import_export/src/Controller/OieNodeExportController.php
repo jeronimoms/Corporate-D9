@@ -64,6 +64,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       'status' => $node->get('status')->getString(),
       'promote' => 0,
       'sticky' => $node->get('sticky')->getString(),
+      'language' => $node->language()->getId(),
       'nid' => $node->get('nid')->getString(),
       'type' => $node->get('type')->getString(),
       'created' => $node->get('created')->getString(),
@@ -269,6 +270,17 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
     if ($definition->getType() == 'text_with_summary') {
       $values = $node->get($field_name)->getValue()[0];
       return [$field_name => [$node->language()->getId() => [['value' => $values['value'], 'format' => $values['format']]]]];
+    }
+
+    if ($definition->getType() == 'list_string') {
+      $values = $node->get($field_name)->getValue();
+      $referers = [];
+      foreach ($values as $value) {
+        if ($field_name == 'field_type_of_item') {
+          $referers[] = $value;
+        }
+      }
+      return [$field_name => [$node->language()->getId() => $referers]];
     }
 
 

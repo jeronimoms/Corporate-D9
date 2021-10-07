@@ -40,19 +40,27 @@ processor_configs:
     weights:
       sort: 20
     settings:
-      sort: ASC
+      sort: DESC
   count_widget_order:
     processor_id: count_widget_order
     weights:
       sort: 30
     settings:
       sort: DESC
-  display_value_widget_order:
-    processor_id: display_value_widget_order
+  exclude_specified_items:
+    processor_id: exclude_specified_items
     weights:
-      sort: 40
+      build: 50
     settings:
-      sort: DESC
+      exclude: '51,32,61,4644,3109,4641,43,126,62,166,115,181,173,54,44,57,78,97,105,123,4526,2968,4645,5022'
+      regex: false
+      invert: true
+  raw_value_widget_order:
+    processor_id: raw_value_widget_order
+    weights:
+      sort: 50
+    settings:
+      sort: ASC
   translate_entity:
     processor_id: translate_entity
     weights:

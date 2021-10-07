@@ -117,7 +117,7 @@ class VwCmn implements ContainerInjectionInterface {
     $notification = $data['notification'];
 
     // Alter the notification to send the email only to the first user.
-    if ($notification->getOriginalId() == 'to_fnal_draft') {
+    if ($notification->getOriginalId() == 'draft_to_final_draft') {
       $users = $this->helper->getModerationList($table);
       $users = (array) $users;
       /** @var \Drupal\user\Entity\User $user */
@@ -130,7 +130,7 @@ class VwCmn implements ContainerInjectionInterface {
 
     // Alter the notification to send the email to the next user of.
     // list if exists.
-    if ($notification->getOriginalId() == 'final_draft_to') {
+    if ($notification->getOriginalId() == 'draft_to_final_draft') {
       $next_user = $this->helper->getNextUser($table);
       if (!empty($next_user)) {
         $data['to'] = [
@@ -140,7 +140,7 @@ class VwCmn implements ContainerInjectionInterface {
     }
 
     // Alter the notification to send the email only to the first user.
-    if ($notification->getOriginalId() == 'to_approved') {
+    if ($notification->getOriginalId() == 'from_any_status_to_to_be_approved') {
       $users = $this->helper->getModerationList($table);
       $users = (array) $users;
       /** @var \Drupal\user\Entity\User $user */
@@ -154,7 +154,7 @@ class VwCmn implements ContainerInjectionInterface {
 
     // Alter the notification to send the email to the next user of.
     // list if exists.
-    if ($notification->getOriginalId() == 'to_be_approved_to_approved') {
+    if ($notification->getOriginalId() == 'from_any_status_to_to_be_approved') {
       $next_user = $this->helper->getNextUser($table);
       if (!empty($next_user)) {
         $data['to'] = [

@@ -52,16 +52,16 @@ class OieCron implements ContainerInjectionInterface
   /**
    * Implements hook_cron().
    */
-  public function cron()
-  {
+  public function cron() {
     $migrations = [
-//      'hwc_crm_partner',
       'import_crm_board',
       'import_crm_bureauforweb',
       'import_crm_focalpoints',
       'import_crm_advisorygroups_prag',
       'import_crm_advisorygroups_agcp',
-      'import_crm_advisorygroups_wesag'
+      'import_crm_advisorygroups_wesag',
+      'hwc_news',
+      'hwc_events',
     ];
 
     // Start every migration.
