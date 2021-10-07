@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Căutare
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Căutare text liber'
+        search_api_fulltext_1:
+          expose:
+            label: 'Directiva numărul'

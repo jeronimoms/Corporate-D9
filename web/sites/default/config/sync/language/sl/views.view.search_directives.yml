@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Išči
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Prosto iskanje po besedilu'
+        search_api_fulltext_1:
+          expose:
+            label: 'Številka direktive'
