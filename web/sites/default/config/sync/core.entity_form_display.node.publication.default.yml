@@ -33,7 +33,6 @@ dependencies:
     - field.field.node.publication.field_thesaurus_2020
     - field.field.node.publication.field_wiki_categories
     - node.type.publication
-    - workflows.workflow.editorial
   module:
     - chosen_field
     - content_moderation
