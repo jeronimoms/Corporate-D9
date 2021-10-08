@@ -138,6 +138,10 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
   public function getFieldValue(Node $node, FieldConfig $definition, $field_name) {
     $value = $node->get($field_name)->getString();
 
+    if ($field_name == 'field_available_in_languages') {
+      kint($definition);
+    }
+
     // Ref entity process.
     if ($definition->getType() == 'entity_reference') {
       $values = $node->get($field_name)->getValue();
@@ -272,13 +276,11 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       return [$field_name => [$node->language()->getId() => [['value' => $values['value'], 'format' => $values['format']]]]];
     }
 
-    if ($definition->getType() == 'list_string') {
+    if ($definition->getType() == 'list_string' || $definition->getType() == 'language_field') {
       $values = $node->get($field_name)->getValue();
       $referers = [];
       foreach ($values as $value) {
-        if ($field_name == 'field_type_of_item') {
-          $referers[] = $value;
-        }
+        $referers[] = $value;
       }
       return [$field_name => [$node->language()->getId() => $referers]];
     }
