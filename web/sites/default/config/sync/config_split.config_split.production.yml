@@ -7,6 +7,7 @@ label: Production
 description: ''
 folder: sites/default/config/production
 module:
+  adv_varnish: 0
   authorization: 0
   authorization_drupal_roles: 0
   ldap_authentication: 0
@@ -25,10 +26,10 @@ module:
   externalauth: 10
 theme: {  }
 blacklist:
-  - migrate_plus.migration.import_crm_board
-  - migrate_plus.migration.import_crm_bureauforweb
   - migrate_plus.migration.import_crm_focalpoints
   - migrate_plus.migration_group.osha_import_export
+  - migrate_plus.migration.import_crm_board
+  - migrate_plus.migration.import_crm_bureauforweb
   - migrate_plus.migration.import_crm_advisorygroups
 graylist:
   - authorization.authorization_profile.osha
@@ -39,10 +40,10 @@ graylist:
   - ldap_servers.settings
   - ldap_user.settings
   - matomo.settings
+  - ncw_backend.settings
   - search_api.server.solr
   - ultimate_cron.job.ldap_user_cron
   - ultimate_cron.job.matomo_cron
-  - ncw_backend.settings
 graylist_dependents: false
 graylist_skip_equal: true
 weight: 0
