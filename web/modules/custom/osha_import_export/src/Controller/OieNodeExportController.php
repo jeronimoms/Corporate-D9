@@ -138,10 +138,6 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
   public function getFieldValue(Node $node, FieldConfig $definition, $field_name) {
     $value = $node->get($field_name)->getString();
 
-    if ($field_name == 'field_available_in_languages') {
-      kint($definition);
-    }
-
     // Ref entity process.
     if ($definition->getType() == 'entity_reference') {
       $values = $node->get($field_name)->getValue();
