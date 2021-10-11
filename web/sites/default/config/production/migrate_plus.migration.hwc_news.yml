@@ -94,7 +94,8 @@ process:
   title: title
   status: status
   moderation_state:
-    - plugin: oie_status
+    -
+      plugin: oie_status
       source: status
   created: created
   changed: changed
