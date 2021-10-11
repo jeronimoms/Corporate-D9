@@ -1,0 +1,40 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          exposed_sorts_label: 'Ordenar por'
+          submit_button: Buscar
+          reset_button_label: 'Limpiar el filtro'
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"revamp-row\">\r\n<div class=\"publications-left-column\">\r\n{{ field_image_media }}\r\n</div>\r\n<div class=\"publications-right-column\">\r\n<div class=\"content-publication-info\">\r\n<span class=\"date-display-single\">{{ field_publication_date }}</span>\r\n<span class=\"label\"><strong>Type: </strong>{{ field_publication_type }}</span>\r\n<span class=\"pages\">{{ field_pages_count }}</span>\r\n</div>\r\n<h2>{{ title }}</h2>\r\n<p class=\"see-more-arrow\"><a href=\"/node/{{ nid }}\">Ver más</a></p>\r\n</div>\r\n</div>"
+        field_publication_type:
+          label: Tipo
+        nid:
+          alter:
+            text: '<a href="/node/{{ nid__value }}">Ver más</a>'
+      filters:
+        search_api_language:
+          expose:
+            label: 'Disponibles en los idiomas'
+        search_api_language_1:
+          expose:
+            label: 'Disponibles en los idiomas'
+        search_api_fulltext:
+          expose:
+            label: Buscar
+      sorts:
+        field_publication_date:
+          expose:
+            label: 'Fecha de publicación'
+        title:
+          expose:
+            label: 'Por orden alfabético'
+        search_api_relevance:
+          expose:
+            label: Importancia
+      header:
+        result:
+          content: '<h2>Publicaciones disponibles (@total)</h2>'

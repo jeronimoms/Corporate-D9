@@ -1,0 +1,48 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Išči
+          reset_button_label: 'Počisti filter'
+          exposed_sorts_label: 'Razvrsti po'
+      fields:
+        field_pages_count:
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQDAw==
+        nid:
+          alter:
+            text: '<a href="/node/{{ nid__value }}">Več informacij</a>'
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQDAw==
+        nothing:
+          alter:
+            text: "<div class=\"revamp-row\">\r\n<div class=\"publications-left-column\">\r\n{{ field_image_media }}\r\n</div>\r\n<div class=\"publications-right-column\">\r\n<div class=\"content-publication-info\">\r\n<span class=\"date-display-single\">{{ field_publication_date }}</span>\r\n<span class=\"label\"><strong>Type: </strong>{{ field_publication_type }}</span>\r\n<span class=\"pages\">{{ field_pages_count }}</span>\r\n</div>\r\n<h2>{{ title }}</h2>\r\n<p class=\"see-more-arrow\"><a href=\"/node/{{ nid }}\">Več informacij</a></p>\r\n</div>\r\n</div>"
+        field_publication_type:
+          label: Vpišite
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Išči
+        search_api_language:
+          expose:
+            label: 'Razpoložljivi jeziki '
+        search_api_language_1:
+          expose:
+            label: 'Razpoložljivi jeziki '
+      sorts:
+        field_publication_date:
+          expose:
+            label: 'Datum objave'
+        title:
+          expose:
+            label: 'Abecedni vrstni red'
+        search_api_relevance:
+          expose:
+            label: Pomembnost
+      header:
+        result:
+          content: '<h2>Razpoložljive publikacije (@total)</h2>'
+      empty:
+        area_text_custom:
+          content: 'Ni zadetkov'
