@@ -14,7 +14,7 @@ class OtView {
    * Implements hook_views_pre_render().
    */
   public function viewsPreRender(ViewExecutable $view) {
-    if (($view->id() == 'country_partner_content' && $view->current_display == 'block_3') || $view->id() == 'oira_ws' || ($view->id() == 'tools') ||$view->id() == 'search') {
+    if (($view->id() == 'country_partner_content' && $view->current_display == 'block_3') || $view->id() == 'oira_ws' || ($view->id() == 'tools')) {
 
       $current_lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
