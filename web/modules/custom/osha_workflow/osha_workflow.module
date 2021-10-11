@@ -64,13 +64,18 @@ function osha_workflow_content_moderation_notification_mail_data_alter(EntityInt
 
   // Compare users from data['to']  with  users that belong to the section of the node.
   $sectionBelongingUsers = array_diff($sectionUserTargetIds,$data_ids);
+  $allowedRoles = ['project_manager'];
 
   // Set data['to'] to the section Belonging users
   unset($data['to']);
   $data['to'] = [];
   foreach ($sectionBelongingUsers as $item) {
     $theUser = \Drupal::entityTypeManager()->getStorage('user')->load($item);
-    array_push($data['to'], $theUser->mail->value);
+    if($theUser->isActive()){
+      if(count(array_intersect(($theUser->getRoles()), $allowedRoles)) > 0){
+        array_push($data['to'], $theUser->mail->value);
+      }
+    }
   }
 
   return \Drupal::service('class_resolver')
