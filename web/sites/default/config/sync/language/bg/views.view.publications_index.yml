@@ -1,0 +1,39 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Търсене
+          reset_button_label: 'Изчистване на филтъра'
+      fields:
+        field_publication_type:
+          label: 'Тип: '
+        nid:
+          alter:
+            text: '<a href="/node/{{ nid__value }}">Вижте още</a>'
+        nothing:
+          alter:
+            text: "<div class=\"revamp-row\">\r\n<div class=\"publications-left-column\">\r\n{{ field_image_media }}\r\n</div>\r\n<div class=\"publications-right-column\">\r\n<div class=\"content-publication-info\">\r\n<span class=\"date-display-single\">{{ field_publication_date }}</span>\r\n<span class=\"label\"><strong>Type: </strong>{{ field_publication_type }}</span>\r\n<span class=\"pages\">{{ field_pages_count }}</span>\r\n</div>\r\n<h2>{{ title }}</h2>\r\n<p class=\"see-more-arrow\"><a href=\"/node/{{ nid }}\">Вижте още</a></p>\r\n</div>\r\n</div>"
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Търсене
+        search_api_language:
+          expose:
+            label: 'Налични езици'
+      sorts:
+        field_publication_date:
+          expose:
+            label: 'Дата на публикуване'
+        title:
+          expose:
+            label: 'По азбучен ред'
+        search_api_relevance:
+          expose:
+            label: Приложимост
+      header:
+        result:
+          content: '<h2>Налични публикации (@total)</h2>'
+      empty:
+        area_text_custom:
+          content: 'Няма резултати'
