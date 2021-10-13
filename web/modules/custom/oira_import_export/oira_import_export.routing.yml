@@ -1,0 +1,21 @@
+oira_import_export.node:
+  path: '/export/node/{node}'
+  defaults:
+    _controller: '\Drupal\oira_import_export\Controller\OieNodeExportController::export'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+oira_import_export.taxonomy:
+  path: '/export/taxonomy_term/{term}'
+  defaults:
+    _controller: '\Drupal\oira_import_export\Controller\OieTaxonomyExportController::export'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      term:
+        type: entity:taxonomy_term

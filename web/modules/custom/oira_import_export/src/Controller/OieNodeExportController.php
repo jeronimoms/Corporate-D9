@@ -1,10 +1,11 @@
 <?php
 
-namespace Drupal\osha_import_export\Controller;
+namespace Drupal\oira_import_export\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -405,7 +406,6 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
    * Get the media values.
    *
    * @param $id
-   * @param array $settings
    *
    * @return array
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
@@ -440,7 +440,6 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       $res['type'] = $media->bundle();
       $res['field_file_image_alt_text'] = $media_file_values['alt'];
       $res['field_file_image_title_text'] = $media_file_values['title'];
-      $res['field_file_description'] = $media->get('field_description')->getValue();
     }
 
     return $res;
@@ -459,7 +458,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
    *
    * @return array
    */
-  public function getNormalicedMediaValues(FileEntity $file) {
+  public function getNormalicedMediaValues(File $file) {
     return [
       'fid' => $file->id(),
       'filename' => $file->getFilename(),

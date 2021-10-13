@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\osha_import_export\Plugin\migrate\process;
+namespace Drupal\oira_import_export\Plugin\migrate\process;
 
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -44,11 +44,9 @@ class OieUrlTransform extends ProcessPluginBase implements ContainerFactoryPlugi
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $nn = str_replace('public://', '', $value);
-    $config = $this->configFactory->get('osha_import_export.config');
-    $urls_site = (isset($row->getSource()['urls'])) ? $row->getSource()['urls'][0] : 'default';
-    $base = $config->get($urls_site . '_endpoint');
-
-    return $base . "/sites/$urls_site/files/" . $nn;
+    $config = $this->configFactory->get('oira_import_export.config');
+    $base = $config->get('hwc' . '_endpoint');
+    return $base . '/sites/default/files/' . $nn;
   }
 
 }

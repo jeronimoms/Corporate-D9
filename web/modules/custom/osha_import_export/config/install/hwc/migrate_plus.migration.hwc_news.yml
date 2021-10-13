@@ -93,9 +93,9 @@ process:
   nid: nid
   langcode: constants/lang
   title: title
-  status:
-    -
-      plugin: oie_status
+  status: status
+  moderation_state:
+    - plugin: oie_status
       source: status
   created: created
   changed: changed
