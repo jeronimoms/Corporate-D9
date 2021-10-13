@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Căutare
+          reset_button_label: 'Ștergeți criteriile din filtrul de căutare'
+          exposed_sorts_label: 'Sortare după'
+          sort_asc_label: Ascendent
+          sort_desc_label: Descendent
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Căutare
+      sorts:
+        field_year:
+          expose:
+            label: 'Anul publicării'
+        search_api_relevance:
+          expose:
+            label: Relevanță
+      empty:
+        area_text_custom:
+          content: 'Niciun rezultat'

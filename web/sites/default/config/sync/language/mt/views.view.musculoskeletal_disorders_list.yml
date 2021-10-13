@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Fittex
+          reset_button_label: 'Ikklerja l-filtru'
+          exposed_sorts_label: 'Agħżel skont'
+          sort_desc_label: Deskrizzjoni
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Fittex
+      sorts:
+        field_year:
+          expose:
+            label: 'Sena tal-pubblikazzjoni'
+        search_api_relevance:
+          expose:
+            label: Rilevanza
+      empty:
+        area_text_custom:
+          content: 'L-ebda riżultati'
