@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Suchen
+          reset_button_label: 'Filter entfernen'
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Suchen
+      sorts:
+        field_year:
+          expose:
+            label: 'Jahr der Veröffentlichung'
+        search_api_relevance:
+          expose:
+            label: Relevanz
+      empty:
+        area_text_custom:
+          content: "Keine Ergebnisse\r\n"

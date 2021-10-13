@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Meklēšana
+          reset_button_label: 'Notīrīt filtru'
+          exposed_sorts_label: 'Šķirot pēc'
+          sort_asc_label: Aug.
+          sort_desc_label: Dilst
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Meklēšana
+      sorts:
+        field_year:
+          expose:
+            label: 'Publicēšanas gads'
+        search_api_relevance:
+          expose:
+            label: Nozīmīgums
+      empty:
+        area_text_custom:
+          content: 'Nav rezultātu'

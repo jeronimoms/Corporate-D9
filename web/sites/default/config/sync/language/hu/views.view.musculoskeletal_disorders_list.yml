@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Keresés
+          reset_button_label: 'Szűrő törlése'
+          exposed_sorts_label: 'Rendezés módja:'
+          sort_asc_label: Növ.
+          sort_desc_label: Csökk.
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Keresés
+      sorts:
+        field_year:
+          expose:
+            label: 'Közzététel éve'
+        search_api_relevance:
+          expose:
+            label: Relevancia
+      empty:
+        area_text_custom:
+          content: 'Nincs eredmény'
