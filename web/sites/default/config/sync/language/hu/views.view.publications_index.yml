@@ -1,0 +1,43 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Keresés
+          reset_button_label: 'Szűrő törlése'
+          exposed_sorts_label: 'Rendezés módja:'
+      fields:
+        field_publication_type:
+          label: Típus
+        nid:
+          alter:
+            text: '<a href="/node/{{ nid__value }}">További tudnivalók</a>'
+        nothing:
+          alter:
+            text: "<div class=\"revamp-row\">\r\n<div class=\"publications-left-column\">\r\n{{ field_image_media }}\r\n</div>\r\n<div class=\"publications-right-column\">\r\n<div class=\"content-publication-info\">\r\n<span class=\"date-display-single\">{{ field_publication_date }}</span>\r\n<span class=\"label\"><strong>Type: </strong>{{ field_publication_type }}</span>\r\n<span class=\"pages\">{{ field_pages_count }}</span>\r\n</div>\r\n<h2>{{ title }}</h2>\r\n<p class=\"see-more-arrow\"><a href=\"/node/{{ nid }}\">További tudnivalók</a></p>\r\n</div>\r\n</div>"
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Keresés
+        search_api_language:
+          expose:
+            label: 'A következő nyelveken áll rendelkezésre:'
+        search_api_language_1:
+          expose:
+            label: 'A következő nyelveken áll rendelkezésre: '
+      sorts:
+        field_publication_date:
+          expose:
+            label: 'A közzététel dátuma'
+        title:
+          expose:
+            label: Ábécésorrendben
+        search_api_relevance:
+          expose:
+            label: Relevancia
+      header:
+        result:
+          content: '<h2>Elérhető kiadványok (@total)</h2>'
+      empty:
+        area_text_custom:
+          content: 'Nincs eredmény'

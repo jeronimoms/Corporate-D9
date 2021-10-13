@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Hae
+          reset_button_label: 'Tyhjennä suodatin'
+          exposed_sorts_label: Lajiteltu
+          sort_asc_label: Varmistettu
+          sort_desc_label: Kuvaus
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Hae
+      sorts:
+        field_year:
+          expose:
+            label: Julkaisuvuosi
+        search_api_relevance:
+          expose:
+            label: Merkityksellisyys
+      empty:
+        area_text_custom:
+          content: 'Ei tuloksia'

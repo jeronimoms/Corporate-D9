@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ricerca
+          reset_button_label: 'Rimuovere filtro'
+          exposed_sorts_label: 'Ordina per'
+          sort_desc_label: Disc
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Ricerca
+      sorts:
+        field_year:
+          expose:
+            label: 'Anno di pubblicazione'
+        search_api_relevance:
+          expose:
+            label: Pertinenza
+      empty:
+        area_text_custom:
+          content: 'Nessun risultato'

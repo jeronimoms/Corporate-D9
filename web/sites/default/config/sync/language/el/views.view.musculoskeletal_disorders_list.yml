@@ -1,0 +1,21 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Αναζήτηση
+          reset_button_label: 'Φίλτρο καθαρισμού'
+          exposed_sorts_label: 'Επιλογή τρόπου αναζήτησης'
+          sort_asc_label: Αύξ.
+          sort_desc_label: Φθίν.
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Αναζήτηση
+      sorts:
+        field_year:
+          expose:
+            label: 'Έτος δημοσίευσης'
+        search_api_relevance:
+          expose:
+            label: Συνάφεια

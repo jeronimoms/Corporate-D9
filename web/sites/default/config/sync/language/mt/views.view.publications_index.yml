@@ -1,0 +1,43 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Fittex
+          reset_button_label: 'Ikklerja l-filtru'
+          exposed_sorts_label: 'Agħżel skont'
+      fields:
+        field_publication_type:
+          label: Tip
+        nid:
+          alter:
+            text: '<a href="/node/{{ nid__value }}">Ara aktar</a>'
+        nothing:
+          alter:
+            text: "<div class=\"revamp-row\">\r\n<div class=\"publications-left-column\">\r\n{{ field_image_media }}\r\n</div>\r\n<div class=\"publications-right-column\">\r\n<div class=\"content-publication-info\">\r\n<span class=\"date-display-single\">{{ field_publication_date }}</span>\r\n<span class=\"label\"><strong>Type: </strong>{{ field_publication_type }}</span>\r\n<span class=\"pages\">{{ field_pages_count }}</span>\r\n</div>\r\n<h2>{{ title }}</h2>\r\n<p class=\"see-more-arrow\"><a href=\"/node/{{ nid }}\">Ara aktar</a></p>\r\n</div>\r\n</div>"
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Fittex
+        search_api_language:
+          expose:
+            label: 'Disponibbli f’lingwi '
+        search_api_language_1:
+          expose:
+            label: 'Disponibbli f’lingwi '
+      sorts:
+        field_publication_date:
+          expose:
+            label: 'Data tal-pubblikazzjoni'
+        title:
+          expose:
+            label: Alfabetikament
+        search_api_relevance:
+          expose:
+            label: Rilevanza
+      header:
+        result:
+          content: '<h2>Pubblikazzjonijiet disponibbli (@total)</h2>'
+      empty:
+        area_text_custom:
+          content: 'L-ebda riżultati'

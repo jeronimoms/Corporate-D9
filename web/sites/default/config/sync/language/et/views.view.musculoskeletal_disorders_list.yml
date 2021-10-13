@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Otsing
+          reset_button_label: 'Puhasta filter'
+          exposed_sorts_label: Sordi
+          sort_asc_label: 'Kasvavas järjestuses'
+          sort_desc_label: 'Laskuvas järjestuses'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Otsing
+      sorts:
+        field_year:
+          expose:
+            label: Avaldamisaasta
+        search_api_relevance:
+          expose:
+            label: Asjakohasus
+      empty:
+        area_text_custom:
+          content: 'Tulemusi ei ole'

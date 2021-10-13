@@ -1,0 +1,21 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Vyhledávání
+          reset_button_label: 'Vymazat filtr'
+          exposed_sorts_label: 'Seřadit podle'
+          sort_asc_label: Vzest.
+          sort_desc_label: Sest.
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Vyhledávání
+      sorts:
+        field_year:
+          expose:
+            label: 'Rok zveřejnění'
+      empty:
+        area_text_custom:
+          content: 'Žádné výsledky'

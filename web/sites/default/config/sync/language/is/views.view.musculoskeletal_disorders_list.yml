@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Leita
+          reset_button_label: 'Hreinsa síu'
+          exposed_sorts_label: 'Flokka eftir'
+          sort_desc_label: Lækkandi
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Leita
+      sorts:
+        field_year:
+          expose:
+            label: Útgáfuár
+        search_api_relevance:
+          expose:
+            label: Þýðing
+      empty:
+        area_text_custom:
+          content: 'Engar niðurstöður'

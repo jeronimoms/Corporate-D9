@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Търсене
+          exposed_sorts_label: 'Сортиране по'
+          sort_asc_label: Възходящ
+          sort_desc_label: Низходящ
+          reset_button_label: 'Изчистване на филтъра'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Търсене
+      sorts:
+        field_year:
+          expose:
+            label: 'Година на публикуване'
+        search_api_relevance:
+          expose:
+            label: Приложимост
+      empty:
+        area_text_custom:
+          content: 'Няма резултати'
