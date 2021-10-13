@@ -1,0 +1,43 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ricerca
+          reset_button_label: 'Rimuovere filtro'
+          exposed_sorts_label: 'Ordina per'
+      fields:
+        field_publication_type:
+          label: 'Digita:'
+        nid:
+          alter:
+            text: '<a href="/node/{{ nid__value }}">Vedi altro</a>'
+        nothing:
+          alter:
+            text: "<div class=\"revamp-row\">\r\n<div class=\"publications-left-column\">\r\n{{ field_image_media }}\r\n</div>\r\n<div class=\"publications-right-column\">\r\n<div class=\"content-publication-info\">\r\n<span class=\"date-display-single\">{{ field_publication_date }}</span>\r\n<span class=\"label\"><strong>Type: </strong>{{ field_publication_type }}</span>\r\n<span class=\"pages\">{{ field_pages_count }}</span>\r\n</div>\r\n<h2>{{ title }}</h2>\r\n<p class=\"see-more-arrow\"><a href=\"/node/{{ nid }}\">Vedi altro</a></p>\r\n</div>\r\n</div>"
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Ricerca
+        search_api_language:
+          expose:
+            label: 'Disponibile nelle seguenti lingue '
+        search_api_language_1:
+          expose:
+            label: 'Disponibile nelle seguenti lingue '
+      sorts:
+        field_publication_date:
+          expose:
+            label: 'Data di pubblicazione'
+        title:
+          expose:
+            label: 'In ordine alfabetico'
+        search_api_relevance:
+          expose:
+            label: Pertinenza
+      header:
+        result:
+          content: '<h2>Pubblicazioni disponibili (@total)</h2>'
+      empty:
+        area_text_custom:
+          content: 'Nessun risultato'
