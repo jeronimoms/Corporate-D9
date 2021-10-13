@@ -93,7 +93,10 @@ source:
       name: field_migration_source
       label: 'Migration Source'
       selector: item/field_migration_source/en/0
-
+    -
+      name: tags
+      label: 'Tags'
+      selector: item/field_tags
 process:
   uid:
     plugin: default_value
@@ -133,6 +136,9 @@ process:
   field_page_count: field_page_count
   field_character_count: field_character_count
   field_migration_source: field_migration_source
+  field_tags:
+    - plugin: oie_taxonomy_term
+      source: tags
   file_source:
     -
       plugin: skip_on_empty
@@ -197,4 +203,5 @@ process:
     -
       plugin: default_value
       default_value: '@media'
+
 
