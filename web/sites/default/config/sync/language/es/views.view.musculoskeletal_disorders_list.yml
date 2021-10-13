@@ -1,0 +1,22 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Buscar
+          reset_button_label: 'Limpiar el filtro'
+          exposed_sorts_label: 'Ordenar por'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Buscar
+      sorts:
+        field_year:
+          expose:
+            label: 'Año de publicación'
+        search_api_relevance:
+          expose:
+            label: Importancia
+      empty:
+        area_text_custom:
+          content: 'No existen resultados'

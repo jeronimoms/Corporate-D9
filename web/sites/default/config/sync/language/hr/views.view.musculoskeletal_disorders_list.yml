@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Pretraživanje
+          reset_button_label: 'Očisti filtar'
+          exposed_sorts_label: 'Razvrstaj po'
+          sort_desc_label: Opis
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Pretraživanje
+      sorts:
+        field_year:
+          expose:
+            label: 'Godina objave'
+        search_api_relevance:
+          expose:
+            label: Važnost
+      empty:
+        area_text_custom:
+          content: 'Nema rezultata'
