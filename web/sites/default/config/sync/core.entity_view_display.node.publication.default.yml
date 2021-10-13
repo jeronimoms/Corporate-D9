@@ -87,6 +87,16 @@ content:
       view_mode: osha_resources
       link: false
     third_party_settings: {  }
+  field_banner_publications_office:
+    type: boolean
+    weight: 10
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
   field_file_media:
     weight: 10
     label: hidden
@@ -170,7 +180,6 @@ hidden:
   field_activity: true
   field_archived: true
   field_author: true
-  field_banner_publications_office: true
   field_booklet: true
   field_expiration_date: true
   field_msd_priority_area: true
