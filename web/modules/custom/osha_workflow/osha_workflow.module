@@ -46,7 +46,7 @@ function osha_workflow_content_moderation_notification_mail_data_alter(EntityInt
   $queryUserSectionResult = \Drupal::database()
     ->query('SELECT sa.user_id_target_id
         FROM section_association__user_id sa
-        WHERE sa.entity_id = :entity_id OR sa.entity_id=13', array(
+        WHERE sa.entity_id = :entity_id', array(
       ":entity_id" => $entityId,
     ));
   $sectionUserTargetIds = [];
