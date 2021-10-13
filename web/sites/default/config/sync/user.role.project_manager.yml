@@ -156,6 +156,7 @@ permissions:
   - 'use editorial transition send_to_final_draft'
   - 'use editorial transition send_to_final_draft_from_publish'
   - 'use editorial transition send_to_ready_to_publish'
+  - 'use editorial transition send_to_ready_to_publish_from_draft_'
   - 'use editorial transition send_to_ready_to_publish_from_final_draft'
   - 'use editorial transition send_to_ready_to_publish_from_to_be_reviewed'
   - 'use linguatools autocomplete'
