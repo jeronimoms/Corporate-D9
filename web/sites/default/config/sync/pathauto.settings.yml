@@ -5,7 +5,7 @@ punctuation:
   quotes: 0
   backtick: 0
   comma: 0
-  period: 0
+  period: 1
   hyphen: 1
   underscore: 0
   colon: 0
@@ -36,12 +36,12 @@ punctuation:
 verbose: false
 separator: '-'
 max_length: 100
-max_component_length: 100
+max_component_length: 255
 transliterate: true
 reduce_ascii: false
 case: true
 ignore_words: 'a, an, as, at, before, but, by, for, from, is, in, into, like, of, off, on, onto, per, since, than, the, this, that, to, up, via, with'
-update_action: 0
+update_action: 1
 safe_tokens:
   - alias
   - path
