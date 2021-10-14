@@ -15,6 +15,9 @@ display:
         nid:
           alter:
             text: '<a href="/node/{{ nid__value }}">Ver más</a>'
+        field_pages_count:
+          fallback_options:
+            suffix: ' páginas'
       filters:
         search_api_language:
           expose:
