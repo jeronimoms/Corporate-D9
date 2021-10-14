@@ -1587,6 +1587,10 @@ h3.home a:hover {
   content: none;
 }
 
+.node--type-fop-page .sidebar-second .related-views .views-element-container.block.block-views {
+  background: transparent;
+}
+
 /*Blocks right column*/
 .block-oshwiki-static {
   width: 100%;
@@ -6065,6 +6069,7 @@ body.node--type-publication {
 .node--type-publication .related-resources-fluid .publications-detail-right-column {
   padding-top: 1rem;
   padding-right: 1rem;
+  background: #FFF;
 }
 .node--type-publication .related-resources-fluid .node--type-publication h2 {
   font-size: 1.2rem;
@@ -6092,9 +6097,6 @@ body.node--type-publication {
   background: transparent;
   margin-bottom: 0;
   padding-bottom: 0;
-}
-.related-resources-fluid .field--type-entity-reference {
-  background: #FFFFFF;
 }
 .related-resources-fluid .field--type-entity-reference .aditional-publications {
   padding-top: 0;
