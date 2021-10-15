@@ -4,7 +4,8 @@ display:
       exposed_form:
         options:
           submit_button: Rechercher
-          reset_button_label: 'Trier par'
+          reset_button_label: 'Supprimer le filtre'
+          exposed_sorts_label: 'Trier par'
       fields:
         field_publication_type:
           label: 'Saisissez:'
