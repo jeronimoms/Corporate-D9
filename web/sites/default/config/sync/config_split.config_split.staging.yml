@@ -25,6 +25,9 @@ module:
   externalauth: 10
 theme: {  }
 blacklist:
+  - migrate_plus.migration.import_crm_advisorygroups_agcp
+  - migrate_plus.migration.import_crm_advisorygroups_prag
+  - migrate_plus.migration.import_crm_advisorygroups_wesag
   - migrate_plus.migration.import_crm_board
   - migrate_plus.migration.import_crm_bureauforweb
   - migrate_plus.migration.import_crm_focalpoints
