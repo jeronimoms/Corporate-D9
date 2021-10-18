@@ -26,10 +26,21 @@ function osha_workflow_content_moderation_notification_mail_data_alter(EntityInt
 
   // Get the section of the node.
   $nodeSection = $entity->get('field_section')->get(0)->getValue();
+
+  if(!$nodeSection || empty($nodeSection)){
+    $data['to'] = [];
+    return \Drupal::service('class_resolver')
+      ->getInstanceFromDefinition(VwCmn::class)
+      ->mailDataAlter($entity, $data);
+  }
+
   $nodeSectionId = $nodeSection['target_id'];
-
-  if(!$nodeSectionId){return;}
-
+  if(!$nodeSectionId || empty($nodeSectionId)){
+    $data['to'] = [];
+    return \Drupal::service('class_resolver')
+      ->getInstanceFromDefinition(VwCmn::class)
+      ->mailDataAlter($entity, $data);
+  }
   // Get the section ids with the corresponding section of the node.
   $querySaResult = \Drupal::database()
     ->query('SELECT e.id
@@ -78,9 +89,7 @@ function osha_workflow_content_moderation_notification_mail_data_alter(EntityInt
     }
   }
 
-  return \Drupal::service('class_resolver')
-    ->getInstanceFromDefinition(VwCmn::class)
-    ->mailDataAlter($entity, $data);
+
 }
 
 /**
