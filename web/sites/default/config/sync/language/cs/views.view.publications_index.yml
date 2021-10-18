@@ -1,0 +1,43 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Vyhledávání
+          reset_button_label: 'Vymazat filtr'
+          exposed_sorts_label: 'Seřadit podle '
+      fields:
+        field_publication_type:
+          label: 'Typ:'
+        field_pages_count:
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
+            suffix: ' strany'
+        nid:
+          alter:
+            text: '<a href="/node/{{ nid__value }}">Zobrazit více informací</a>'
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
+        nothing:
+          alter:
+            text: "<div class=\"revamp-row\">\r\n<div class=\"publications-left-column\">\r\n{{ field_image_media }}\r\n</div>\r\n<div class=\"publications-right-column\">\r\n<div class=\"content-publication-info\">\r\n<span class=\"date-display-single\">{{ field_publication_date }}</span>\r\n<span class=\"label\"><strong>Type: </strong>{{ field_publication_type }}</span>\r\n<span class=\"pages\">{{ field_pages_count }}</span>\r\n</div>\r\n<h2>{{ title }}</h2>\r\n<p class=\"see-more-arrow\"><a href=\"/node/{{ nid }}\">Zobrazit více informací</a></p>\r\n</div>\r\n</div>"
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Vyhledávání
+        search_api_language:
+          expose:
+            label: 'Dostupné v jazycích'
+        search_api_language_1:
+          expose:
+            label: 'Dostupné v jazycích'
+      sorts:
+        field_publication_date:
+          expose:
+            label: 'Datum zveřejnění'
+        title:
+          expose:
+            label: 'Podle abecedy'
+      empty:
+        area_text_custom:
+          content: 'Žádné výsledky'

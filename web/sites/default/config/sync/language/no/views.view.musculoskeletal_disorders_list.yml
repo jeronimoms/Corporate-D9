@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Søk
+          reset_button_label: 'Tøm filteret'
+          exposed_sorts_label: 'Sorter etter'
+          sort_asc_label: Stigende
+          sort_desc_label: Synkende
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Søk
+      sorts:
+        field_year:
+          expose:
+            label: Publiseringsår
+        search_api_relevance:
+          expose:
+            label: Relevans
+      empty:
+        area_text_custom:
+          content: 'Ingen resultater'

@@ -346,7 +346,63 @@ select, .facets-dropdown{
   }
 }
 
+html[lang=el]{
+  .publications{
+    .view-filters fieldset {
+      width: 26%;
+    }
+    .view-filters fieldset:nth-child(3) {
+      width: 26%;
+    }
+    .view-filters fieldset:nth-child(2) {
+      width: 33%;
+    }
+    .form-item-search-api-fulltext{
+      margin-top: 21px;
+    }
+  }
+}
+
+html[lang=fr]{
+  .publications{
+    .view-filters fieldset {
+      width: 27%;
+    }
+    .view-filters fieldset:nth-child(3) {
+      width: 24.5%;
+      margin-top: 21px;
+    }
+    .view-filters fieldset:nth-child(2) {
+      width: 33%;
+    }
+    .form-item-search-api-fulltext{
+      margin-top: 21px;
+    }
+  }
+}
+
 /* Rsponsive Filters */
+
+@media only screen and (max-width : 1200px) {
+  html[lang=fr] .publications .view-filters fieldset:nth-child(2) {
+    width: 31%;
+  }
+  html[lang=fr]{
+    .publications{
+      .view-filters fieldset:nth-child(2) {
+        width: 31%;
+      }
+    }
+  }
+  html[lang=el]{
+    .publications{
+      .view-filters fieldset:nth-child(2) {
+        width: 30%;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width : 767px) {
 
   #edit-submit-publications-index {
@@ -362,7 +418,8 @@ select, .facets-dropdown{
   .publications {
     .view-filters {
       fieldset {
-        width: 100%;
+        width: 100% !important;
+        margin-top: 0 !important;
       }
     }
   }

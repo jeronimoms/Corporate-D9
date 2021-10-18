@@ -22,15 +22,17 @@ module:
   migrate_plus: 0
   migrate_tools: 0
   osha_import_export: 0
-  smtp: 0
   externalauth: 10
+  smtp: 0
 theme: {  }
 blacklist:
-  - migrate_plus.migration.import_crm_focalpoints
-  - migrate_plus.migration_group.osha_import_export
+  - migrate_plus.migration.import_crm_advisorygroups_agcp
+  - migrate_plus.migration.import_crm_advisorygroups_prag
+  - migrate_plus.migration.import_crm_advisorygroups_wesag
   - migrate_plus.migration.import_crm_board
   - migrate_plus.migration.import_crm_bureauforweb
-  - migrate_plus.migration.import_crm_advisorygroups
+  - migrate_plus.migration.import_crm_focalpoints
+  - migrate_plus.migration_group.osha_import_export
 graylist:
   - authorization.authorization_profile.osha
   - authorization.settings
