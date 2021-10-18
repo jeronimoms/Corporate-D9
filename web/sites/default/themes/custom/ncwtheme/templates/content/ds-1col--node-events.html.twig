@@ -9,13 +9,75 @@
  * - ds_content: content region
  */
 #}
+
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
-  {{ title_suffix.contextual_links }}
-  <div class="h1-back-wrapper">
-    <h1>{{ 'OSH events' | trans }}</h1>
-    <a href="/oshevents" class="pull-right-flex back-to-link">{{ 'Back to events' | trans }}</a>
+{{ title_suffix.contextual_links }}
+
+<div class="h1-back-wrapper">
+  <h1>{{ 'OSH events' | trans }}</h1>
+  <a href="/oshevents" class="pull-right-flex back-to-link">{{ 'Back to events' | trans }}</a>
+</div>
+<div class="group-events-event-details field-group-div">
+  <h3 class="events-title">{{ 'Event Details' | trans }}</h3>
+  {% if ds_content.group_events_event_details.field_location.0 %}
+  <div class="field--label-inline">
+    <div class="field__label">{{ 'Location' }}</div>
+    <div class="field__item">{{ ds_content.group_events_event_details.field_location.0['#context'].value }}</div>
   </div>
-  {{ ds_content }}
+  {% endif %}
+  {% if ds_content.group_events_event_details.field_city.0 %}
+  <div class="field--label-inline">
+    <div class="field__label">{{ 'City' }}</div>
+    <div class="field__item">{{ ds_content.group_events_event_details.field_city.0['#context'].value }}</div>
+  </div>
+  {% endif %}
+  {% if ds_content.group_events_event_details.field_country_code.0 %}
+    <div class="field--label-inline">
+      <div class="field__label">{{ 'Country' }}</div>
+      <div class="field__item">{{ ds_content.group_events_event_details.field_country_code.0['#markup'] }}</div>
+    </div>
+  {% endif %}
+  {% if ds_content.group_events_event_details.field_organization.0 %}
+    <div class="field--label-inline">
+      <div class="field__label">{{ 'Organisation' }}</div>
+      <div class="field__item">{{ ds_content.group_events_event_details.field_organization.0['#context'].value }}</div>
+    </div>
+  {% endif %}
+  {% if ds_content.group_events_event_details.field_date.0['#text'] %}
+    <div class="field--label-inline">
+      <div class="field__label">{{ 'Date' }}</div>
+      <time class="datetime">{{ ds_content.group_events_event_details.field_date.0['#text'] }}</time>
+    </div>
+  {% endif %}
+  {% if ds_content.group_events_event_details.field_date.0.start_date %}
+    <div class="field--label-inline">
+      <div class="field__label">{{ 'Date' }}</div>
+      <time class="datetime">{{ ds_content.group_events_event_details.field_date.0.start_date['#text'] }}</time>
+      <time class="datetime">- {{ ds_content.group_events_event_details.field_date.0.end_date['#text'] }}</time>
+    </div>
+  {% endif %}
+</div>
+
+{% if ds_content.group_events_description.body.0 %}
+  <div class="group-events-event-details field-group-div">
+    <h3 class="events-title">{{ 'Description' | trans }}</h3>
+    {{ ds_content.group_events_description.body.0 }}
+  </div>
+{% endif %}
+
+{% if ds_content.group_events_link.field_website_of_event %}
+  <div class="group-events-event-details field-group-div">
+    <h3 class="events-title">{{ 'Link' | trans }}</h3>
+    {{ ds_content.group_events_link.field_website_of_event }}
+  </div>
+{% endif %}
+
+{% if ds_content.group_events_related_documents.field_related_documents %}
+<div class="group-events-event-details field-group-div">
+  <h3 class="events-title">{{ 'Related resources' | trans }}</h3>
+  {{ ds_content.group_events_related_documents.field_related_documents }}
+</div>
+{% endif %}
 
 </{{ ds_content_wrapper }}>

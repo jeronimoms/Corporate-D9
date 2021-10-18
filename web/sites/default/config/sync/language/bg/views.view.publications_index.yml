@@ -14,6 +14,9 @@ display:
         nothing:
           alter:
             text: "<div class=\"revamp-row\">\r\n<div class=\"publications-left-column\">\r\n{{ field_image_media }}\r\n</div>\r\n<div class=\"publications-right-column\">\r\n<div class=\"content-publication-info\">\r\n<span class=\"date-display-single\">{{ field_publication_date }}</span>\r\n<span class=\"label\"><strong>Type: </strong>{{ field_publication_type }}</span>\r\n<span class=\"pages\">{{ field_pages_count }}</span>\r\n</div>\r\n<h2>{{ title }}</h2>\r\n<p class=\"see-more-arrow\"><a href=\"/node/{{ nid }}\">Вижте още</a></p>\r\n</div>\r\n</div>"
+        field_pages_count:
+          fallback_options:
+            suffix: ' страници'
       filters:
         search_api_fulltext:
           expose:

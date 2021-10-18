@@ -12,6 +12,7 @@ display:
         field_pages_count:
           fallback_options:
             format_plural_string: !!binary MQNAY291bnQD
+            suffix: ' strany'
         nid:
           alter:
             text: '<a href="/node/{{ nid__value }}">Zobrazit více informací</a>'
