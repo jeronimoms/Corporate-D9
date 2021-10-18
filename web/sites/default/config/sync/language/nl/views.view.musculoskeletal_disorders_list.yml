@@ -1,0 +1,22 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Zoeken
+          reset_button_label: 'Filter wissen'
+          exposed_sorts_label: 'Sorteren op'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Zoeken
+      sorts:
+        field_year:
+          expose:
+            label: 'Jaar van publicatie'
+        search_api_relevance:
+          expose:
+            label: Relevantie
+      empty:
+        area_text_custom:
+          content: 'Geen resultaten'

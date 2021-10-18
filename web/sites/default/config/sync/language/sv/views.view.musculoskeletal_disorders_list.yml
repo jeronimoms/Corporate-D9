@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Sök
+          reset_button_label: 'Rensa filter'
+          exposed_sorts_label: 'Sortera efter'
+          sort_asc_label: Stigande
+          sort_desc_label: Fallande
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Sök
+      sorts:
+        field_year:
+          expose:
+            label: Utgivningsår
+        search_api_relevance:
+          expose:
+            label: Relevans
+      empty:
+        area_text_custom:
+          content: 'Inga resultat'

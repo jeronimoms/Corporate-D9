@@ -62,6 +62,7 @@ class OieCron implements ContainerInjectionInterface
       'import_crm_advisorygroups_wesag',
       'hwc_news',
       'hwc_events',
+      'oira_news',
     ];
 
     // Start every migration.
