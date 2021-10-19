@@ -6,6 +6,11 @@ dependencies:
     - field.storage.node.field_image_media
     - media.type.image_caption
     - node.type.publication
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.publication.field_image_media
 field_name: field_image_media
 entity_type: node

@@ -33,12 +33,14 @@ dependencies:
     - field.field.node.publication.field_thesaurus_2020
     - field.field.node.publication.field_wiki_categories
     - node.type.publication
+    - workflows.workflow.editorial
   module:
     - chosen_field
     - content_moderation
     - datetime
     - entity_browser
     - field_group
+    - inline_entity_form
     - media_library
     - multiple_selects
     - path
@@ -148,9 +150,15 @@ content:
   field_image_media:
     weight: 3
     settings:
-      media_types: {  }
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
     third_party_settings: {  }
-    type: media_library_widget
+    type: inline_entity_form_simple
     region: content
   field_msd_priority_area:
     weight: 9
