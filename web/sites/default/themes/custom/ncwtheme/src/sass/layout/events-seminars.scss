@@ -6,7 +6,7 @@
   .events-summary-col{
     height: 100%;
     background: $bg-color-white;
-    padding-bottom: 1.5rem;
+    padding-bottom: 2.5rem;
     .left-column , .right-column{
       padding: 1rem;
     }
@@ -21,8 +21,31 @@
       }
       div.see-more-arrow{
         position: absolute;
-        bottom: 16px;
+        bottom: 15px;
+        left: 146px;
+      }
+      span.file--mime-application-pdf{
+        position: absolute;
+        bottom: -47px;
         right: 16px;
+        width: 130px;
+        a{
+          display: inline-block;
+          background: url("../images/ico-report-available.png") 1px 1px no-repeat;
+          font-size: 0.9rem;
+          text-decoration: underline;
+          padding-left: 31px;
+          line-height: 17px;
+          padding-bottom: 5px;
+
+          &:hover{
+            text-decoration: none;
+            color: $text-color-blue;
+          }
+        }
+        .file-size{
+          display: none;
+        }
       }
     }
   }
