@@ -588,34 +588,19 @@ display:
             group_items: {  }
           plugin_id: datetime
       sorts:
-        entityqueue_relationship:
-          id: entityqueue_relationship
-          table: node_field_data
-          field: entityqueue_relationship
+        field_date_value:
+          id: field_date_value
+          table: node__field_date
+          field: field_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          entity_type: node
-          plugin_id: entity_queue_position
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          relationship: none
-          group_type: group
-          admin_label: ''
+          order: ASC
           exposed: false
           expose:
             label: ''
           granularity: second
+          plugin_id: datetime
       title: homepage_events
       header: {  }
       footer: {  }
