@@ -235,6 +235,10 @@ class Xml extends \XMLWriter implements FormatInterface {
       $reader = new \XMLReader();
       foreach ($this->importedXML->xpath('//Translation') as $translation) {
         $target_language = (string) $translation->TranslationTargetLanguage;
+        if (!$target_language) {
+          $this->messenger()->addWarning($this->t('Invalid translation detected on imported file.'));
+          continue;
+        }
         if ($target_language == 'pt') {
           $target_language = 'pt-pt';
         }
