@@ -7,14 +7,13 @@ label: local
 description: ''
 folder: sites/default/config/local
 module:
-  devel: 0
+  custom_migrations: 0
   migrate: 0
+  migrate_drupal: 0
+  migrate_file_to_media: 0
   migrate_plus: 0
   migrate_tools: 0
   osha_import_export: 0
-  custom_migrations: 0
-  migrate_drupal: 0
-  migrate_file_to_media: 0
 theme: {  }
 blacklist:
   - 'migrate_plus*'
