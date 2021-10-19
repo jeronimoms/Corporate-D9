@@ -114,6 +114,11 @@ targetEntityType: node
 bundle: publication
 mode: view
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_file_media:
     type: entity_reference_label
     weight: 2
@@ -134,6 +139,7 @@ content:
 hidden:
   addtoany: true
   body: true
+  breadcrumbs: true
   field_activity: true
   field_aditional_resources: true
   field_archived: true
