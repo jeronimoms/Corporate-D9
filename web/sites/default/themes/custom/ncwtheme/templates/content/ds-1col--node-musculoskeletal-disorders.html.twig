@@ -14,7 +14,11 @@
 {{ title_suffix.contextual_links }}
 
 <div class="h1-back-wrapper">
-  <h1>{{ ds_content.field_title_original }}</h1>
+  {% if language == ds_content.group_tags_wrapper.field_available_in_languages.0['#context'].value %}
+    <h1 class="view-description-original-language">{{ ds_content.field_title_original }}</h1>
+  {% else %}
+    <h1>{{ ds_content.node_title }}</h1>
+  {% endif %}
   <a href="/themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders/" class="pull-right-flex back-to-link">{{ 'Back to MSDs and filter' | trans }}</a>
 </div>
 {{ ds_content }}

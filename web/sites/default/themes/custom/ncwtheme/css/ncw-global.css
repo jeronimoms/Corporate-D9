@@ -3203,11 +3203,6 @@ body.node--type-infographic .field--name-body {
   margin: 0 0 2px;
 }
 
-/* Hide musculoskeletal disorders titles */
-.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field {
-  display: none;
-}
-
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
@@ -7460,6 +7455,21 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   padding-bottom: 0;
 }
 
+/* Hide musculoskeletal disorders titles */
+.node--type-musculoskeletal-disorders {
+  /* Hide original language description */
+}
+.node--type-musculoskeletal-disorders .h1-back-wrapper h1 {
+  max-width: 80%;
+}
+.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-node-title.field--type-ds.field--label-hidden.field__item,
+.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field {
+  display: none;
+}
+.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.description-wrapper > .field--name-field-body-original {
+  display: none;
+}
+
 @media only screen and (max-width: 1615px) {
   /* Menu in two lines */
   body {
@@ -7713,6 +7723,16 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   .wraper-blog-and-img .img-newsletter img {
     width: 100%;
     height: auto;
+  }
+
+  .node--type-musculoskeletal-disorders .h1-back-wrapper h1 {
+    max-width: 100%;
+  }
+  .node--type-musculoskeletal-disorders #main .tags-wrapper {
+    display: block;
+  }
+  .node--type-musculoskeletal-disorders #main .tags-wrapper .field {
+    margin: 0 1rem 1rem 0;
   }
 }
 /* End Media 768px */
