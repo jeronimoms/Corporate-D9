@@ -39,28 +39,6 @@
  */
 #}
 
-<style>
-  .newsletter-full-width-list-item a{
-    display: block !important;
-    color: #003399 !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    padding-top: 3px !important;
-  }
-  .newsletter-full-width-list-item a:hover{
-    text-decoration: underline !important;
-  }
-  .newsletter-full-width-list-item p{
-    margin-top: 5px !important;
-    margin-bottom: 0 !important;
-  }
-  .newsletter-section-block a{
-    font-size: 14px;
-    padding-bottom: 5px;
-    padding-top: 0 !important;
-  }
-</style>
-
 <table class="newsletter-container" border="0" cellpadding="0" width="800"
        style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; background-color: #ffffff; table-layout: fixed; max-width: 800px;">
   <tbody>
@@ -985,13 +963,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                          <td>
-                            <a href="https://twitter.com/EU_OSHA" style="display: block; color: #003399; padding-top: 25px;">
-                              {{ 'Go to EU-OSHA Twitter' | trans }}
-                            </a>
-                          </td>
-                        </tr>
+                          <tr>
+                            <td style="padding-top: 25px;">
+                              {{ build.field_twetter_image_for_outlook }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a href="https://twitter.com/EU_OSHA" style="display: block; color: #003399; padding-top: 15px; font-size: 13px; font-weight: 600; text-decoration: none">
+                                {{ 'Go to EU-OSHA Twitter' | trans }} <img src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/flecha.png" alt="Go to EU-OSHA Twitter">
+                              </a>
+                            </td>
+                          </tr>
                         </tbody>
                       </table>
                       <!-- END Twitter block -->
@@ -1109,9 +1092,14 @@
                         width="100%" cellpadding="0" cellspacing="0"
                         style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 350px;">
                         <tr>
-                          <td style="padding-bottom: 20px;">
-                            <a href="https://twitter.com/EU_OSHA" style="display: block; color: #003399; padding-top: 20px;">
-                              {{ 'Go to EU-OSHA Twitter' | trans }}
+                          <td style="padding-top: 25px;">
+                            {{ build.field_twetter_image_for_outlook }}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="https://twitter.com/EU_OSHA" style="display: block; color: #003399; padding-top: 15px; font-size: 13px; font-weight: 600; text-decoration: none">
+                              {{ 'Go to EU-OSHA Twitter' | trans }} <img src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/flecha.png" alt="Go to EU-OSHA Twitter">
                             </a>
                           </td>
                         </tr>
