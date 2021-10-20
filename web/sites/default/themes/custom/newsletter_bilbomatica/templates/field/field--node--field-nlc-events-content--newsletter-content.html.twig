@@ -62,10 +62,10 @@
               <tr>
                 <td style="width:25px; padding-top: 20px; padding-left: 20px; padding-right: 10px; vertical-align: top;">
                   {% set date_event = column.content['#options'].entity.field_date.0.value|date('d/m/Y')|split('/') %}
-                  <img style="border: 0px; width:40px; height:40px;" typeof="foaf:Image" src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/img-calendar.png" width="40" height="40" alt="calendar">
-                  <span style="margin-top: 13px; position: absolute; margin-left: -29px; font-size:14px; color: #FFFFFF;">
+                  <span class="event-number-box" style="margin-top: 14px; position: absolute; margin-left: 11px; font-size:14px; color: #FFFFFF;">
                     {{ date_event[0] }}
                   </span>
+                  <img style="border: 0px; width:40px; height:40px;" typeof="foaf:Image" src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/img-calendar.png" width="40" height="40" alt="calendar">
                 </td>
                 <td style="padding: 20px 10px 0 10px; vertical-align: top; text-align: left;">
                   <span style="color:#FFFFFF; font-weight: normal; font-size: 13px;">
