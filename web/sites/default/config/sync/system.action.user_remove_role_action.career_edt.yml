@@ -1,0 +1,14 @@
+uuid: f67dbd64-d2a6-4477-ba24-a113b2d1fec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.career_edt
+  module:
+    - user
+id: user_remove_role_action.career_edt
+label: 'Remove the CAREER_EDT role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: career_edt

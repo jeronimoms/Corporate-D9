@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: layout_validator
 label: 'Layout Validator'
-weight: 9
+weight: -2
 is_admin: null
 permissions:
   - 'abort job item'

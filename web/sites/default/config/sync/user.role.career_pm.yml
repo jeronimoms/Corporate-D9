@@ -1,0 +1,15 @@
+uuid: f13fd47f-b5e0-4ae2-83f8-7ddd236adcbc
+langcode: en
+status: true
+dependencies: {  }
+id: career_pm
+label: 'CAREER PM'
+weight: 8
+is_admin: null
+permissions:
+  - 'create calls content'
+  - 'delete own calls content'
+  - 'edit any calls content'
+  - 'edit own calls content'
+  - 'use editorial transition from_ready_to_publish_to_ready_to_publish'
+  - 'use editorial transition from_to_be_approved_to_to_be_approved'

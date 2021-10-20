@@ -107,3 +107,20 @@
     }
   }
 }
+
+/* Hide musculoskeletal disorders titles */
+.node--type-musculoskeletal-disorders{
+  .h1-back-wrapper{
+    h1{
+      max-width: 80%;
+    }
+  }
+  #block-ncwtheme-content > div > div > div.field.field--name-node-title.field--type-ds.field--label-hidden.field__item,
+  #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field{
+    display: none;
+  }
+  /* Hide original language description */
+  #block-ncwtheme-content > div > div > div.description-wrapper > .field--name-field-body-original{
+    display: none;
+  }
+}

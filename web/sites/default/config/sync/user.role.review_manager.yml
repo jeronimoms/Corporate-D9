@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: review_manager
 label: 'Review Manager'
-weight: 4
+weight: -7
 is_admin: null
 permissions:
   - 'accept translation jobs'

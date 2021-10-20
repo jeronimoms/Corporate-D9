@@ -25,10 +25,27 @@ function osha_workflow_toolbar_alter(&$items) {
 function osha_workflow_content_moderation_notification_mail_data_alter(EntityInterface $entity, array &$data) {
 
   // Get the section of the node.
-  $nodeSection = $entity->get('field_section')->get(0)->getValue();
-  $nodeSectionId = $nodeSection['target_id'];
+  if($entity->hasField('field_section') && $entity->get('field_section')->get(0) != null){
+    $nodeSection = $entity->get('field_section')->get(0)->getValue();
+  }
+  else{
+    $nodeSection = null;
+  }
 
-  if(!$nodeSectionId){return;}
+  if( !$nodeSection || is_null($nodeSection) || empty($nodeSection) ){
+    $data['to'] = [];
+    return \Drupal::service('class_resolver')
+      ->getInstanceFromDefinition(VwCmn::class)
+      ->mailDataAlter($entity, $data);
+  }
+
+  $nodeSectionId = $nodeSection['target_id'];
+  if(!$nodeSectionId || empty($nodeSectionId)){
+    $data['to'] = [];
+    return \Drupal::service('class_resolver')
+      ->getInstanceFromDefinition(VwCmn::class)
+      ->mailDataAlter($entity, $data);
+  }
 
   // Get the section ids with the corresponding section of the node.
   $querySaResult = \Drupal::database()

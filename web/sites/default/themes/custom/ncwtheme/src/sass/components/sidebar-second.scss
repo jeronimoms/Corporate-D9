@@ -110,6 +110,17 @@
   }
 }
 
+.node--type-fop-page{
+  .sidebar-second {
+    .related-views {
+      .views-element-container.block.block-views {
+        background:transparent;
+      }
+    }
+  }
+}
+
+
 /*Blocks right column*/
 .block-oshwiki-static {
   width: 100%;
