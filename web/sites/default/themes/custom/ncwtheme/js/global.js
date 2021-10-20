@@ -390,6 +390,11 @@ jQuery(document).ready(function($) {
     $('#block-ncwtheme-content > div > div > div.description-wrapper > .field--name-body').hide();
   }
 
+  // Hide aprobe form
+  if ($("#approve-form")[0]) {
+    $('#content-moderation-entity-moderation-form').hide();
+  }
+
   // Accesskey for custom elements
   $('#edit-lang-dropdown-select').attr('accessKey','L');
   $('#edit-search-api-fulltext').attr('accessKey','Q');
