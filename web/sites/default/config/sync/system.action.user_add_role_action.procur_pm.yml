@@ -1,0 +1,14 @@
+uuid: ea661dfc-63d1-42ff-950e-4d0c558ddc09
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.procur_pm
+  module:
+    - user
+id: user_add_role_action.procur_pm
+label: 'Add the PROCUR_PM role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: procur_pm

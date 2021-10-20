@@ -1,0 +1,14 @@
+uuid: e8647301-b0fc-44f7-a275-c25b5e5839f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.procur_pm
+  module:
+    - user
+id: user_remove_role_action.procur_pm
+label: 'Remove the PROCUR_PM role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: procur_pm
