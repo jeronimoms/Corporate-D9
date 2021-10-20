@@ -1,0 +1,14 @@
+uuid: 5bbbf081-e69c-4912-810c-b06c56f8f234
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.career_edt
+  module:
+    - user
+id: user_add_role_action.career_edt
+label: 'Add the CAREER_EDT role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: career_edt

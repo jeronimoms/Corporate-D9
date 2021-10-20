@@ -1,0 +1,13 @@
+uuid: f83a0eef-2b82-4e1f-8001-6983b74b0cfb
+langcode: en
+status: true
+dependencies: {  }
+id: procur_pm
+label: 'PROCUR PM'
+weight: 5
+is_admin: null
+permissions:
+  - 'create job_vacancies content'
+  - 'delete own job_vacancies content'
+  - 'edit any job_vacancies content'
+  - 'edit own job_vacancies content'

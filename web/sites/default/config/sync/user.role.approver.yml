@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: approver
 label: Approver
-weight: 6
+weight: -5
 is_admin: null
 permissions:
   - 'access administration pages'

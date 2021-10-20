@@ -1,0 +1,14 @@
+uuid: a536a937-34fa-46ac-974e-01ecae6d89fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.career_pm
+  module:
+    - user
+id: user_remove_role_action.career_pm
+label: 'Remove the CAREER_PM role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: career_pm
