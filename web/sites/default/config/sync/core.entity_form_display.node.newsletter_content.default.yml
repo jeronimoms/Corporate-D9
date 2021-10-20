@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.newsletter_content.field_covid_contents_hideintro
+    - field.field.node.newsletter_content.field_date_to_publish
     - field.field.node.newsletter_content.field_events_section_title
     - field.field.node.newsletter_content.field_healthy_contents_hideintro
     - field.field.node.newsletter_content.field_hide_more_news_intro_text
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.newsletter_content.field_nlc_events_content
     - field.field.node.newsletter_content.field_oira_contents_hideintro
     - field.field.node.newsletter_content.field_oshmail_title
+    - field.field.node.newsletter_content.field_twetter_image_for_outlook
     - field.field.node.newsletter_content.field_url_alias
     - field.field.node.newsletter_content.field_view_twetter_block
     - field.field.node.newsletter_content.field_wiki_contents_hideintro
@@ -63,12 +65,14 @@ dependencies:
     - field.field.node.newsletter_content.nlc_wiki_layout
     - field.field.node.newsletter_content.nlc_wiki_title
     - field.field.node.newsletter_content.simplenews_issue
+    - image.style.thumbnail
     - node.type.newsletter_content
   module:
     - color_field
     - content_moderation
     - datetime
     - field_group
+    - image
     - link
     - media_library
     - path
@@ -356,6 +360,7 @@ third_party_settings:
         - field_hide_more_news_intro_text
         - nlc_motweets_bgcolor
         - field_view_twetter_block
+        - field_twetter_image_for_outlook
       parent_name: group_more_new_tweets
       weight: 27
       format_type: details
@@ -404,7 +409,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 19
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -414,6 +419,12 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_date_to_publish:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_events_section_title:
     weight: 42
@@ -484,6 +495,14 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_twetter_image_for_outlook:
+    weight: 32
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   field_url_alias:
     weight: 3
     settings:
@@ -508,14 +527,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 17
+    weight: 16
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 16
+    weight: 15
     settings: {  }
     region: content
     third_party_settings: {  }
@@ -781,11 +800,11 @@ content:
     type: string_textfield
     region: content
   nlc_publication_date:
-    weight: 15
+    type: datetime_default
+    weight: 24
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: datetime_default
-    region: content
   nlc_tweets_title:
     weight: 26
     settings:
@@ -863,7 +882,7 @@ content:
     region: content
   path:
     type: path
-    weight: 22
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -871,11 +890,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 20
+    weight: 19
     region: content
     third_party_settings: {  }
   simplenews_issue:
-    weight: 25
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: simplenews_issue
@@ -884,14 +903,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 24
+    weight: 23
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 21
+    weight: 20
     region: content
     third_party_settings: {  }
   title:
@@ -909,7 +928,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 18
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60
@@ -918,7 +937,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 23
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }

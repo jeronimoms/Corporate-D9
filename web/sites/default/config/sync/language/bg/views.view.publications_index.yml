@@ -5,6 +5,7 @@ display:
         options:
           submit_button: Търсене
           reset_button_label: 'Изчистване на филтъра'
+          exposed_sorts_label: 'Сортиране по'
       fields:
         field_publication_type:
           label: 'Тип: '

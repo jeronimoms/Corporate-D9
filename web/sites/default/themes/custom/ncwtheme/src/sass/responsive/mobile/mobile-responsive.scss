@@ -102,6 +102,22 @@
     }
   }
 
+  .node--type-musculoskeletal-disorders {
+    .h1-back-wrapper {
+      h1 {
+        max-width: 100%;
+      }
+    }
+    #main{
+      .tags-wrapper{
+        display: block;
+        .field{
+          margin: 0 1rem 1rem 0;
+        }
+      }
+    }
+  }
+
 }/* End Media 768px */
 
 @media only screen and (max-width : 576px) {

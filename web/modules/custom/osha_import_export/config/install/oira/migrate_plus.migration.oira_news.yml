@@ -88,7 +88,7 @@ source:
     -
       name: summary
       label: 'Summary'
-      selector: item/field_summary/en/0
+      selector: item/field_summary_html/en/0
     -
       name: field_migration_source
       label: 'Migration Source'
@@ -111,27 +111,23 @@ process:
   created: created
   changed: changed
   sticky: sticky
-  field_summary_html/0/value: summary/value
-  field_summary_html/0/format: 'full_html'
-#  field_publication_date:
-#    -
-#      plugin: sub_process
-#      source: publication_date
-#      process:
-#        value:
-#          plugin: format_date
-#          from_format: 'Y-m-d H:i:s'
-#          to_format: 'Y-m-d\TH:i:s'
-#          from_timezone: 'Europe/Madrid'
-#          to_timezone: 'Europe/Madrid'
-#          source: value
+  field_summary_html:
+    - plugin: get
+      source: field_summary_html
+  'field_summary_html/0/format':
+    - plugin: default_value
+      default_value: full_html
   field_publication_date:
   -
     plugin: oie_date_format_alter
     source: publication_date
 
-  body/0/value: body/value
-  body/0/format: 'full_html'
+  body:
+    - plugin: get
+      source: body
+  'body/0/format':
+    - plugin: default_value
+      default_value: full_html
   field_aditional_resources: field_aditional_resources
   field_page_count: field_page_count
   field_character_count: field_character_count

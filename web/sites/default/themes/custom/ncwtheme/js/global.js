@@ -384,6 +384,17 @@ jQuery(document).ready(function($) {
     $('.page-view-glossary .view-glossary .views-summary:nth-child(4) a').addClass('is-active');
   }
 
+  // Show original language description on musculoskeletal disorders
+  if ($(".view-description-original-language")[0]) {
+    $('#block-ncwtheme-content > div > div > div.description-wrapper > .field--name-field-body-original').show();
+    $('#block-ncwtheme-content > div > div > div.description-wrapper > .field--name-body').hide();
+  }
+
+  // Hide aprobe form
+  if ($("#approve-form")[0]) {
+    $('#content-moderation-entity-moderation-form').hide();
+  }
+
   // Accesskey for custom elements
   $('#edit-lang-dropdown-select').attr('accessKey','L');
   $('#edit-search-api-fulltext').attr('accessKey','Q');

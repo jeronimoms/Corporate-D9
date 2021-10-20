@@ -1,0 +1,14 @@
+uuid: 5821e8bd-48ee-449d-8d25-d5a9430582aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.career_pm
+  module:
+    - user
+id: user_add_role_action.career_pm
+label: 'Add the CAREER_PM role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: career_pm

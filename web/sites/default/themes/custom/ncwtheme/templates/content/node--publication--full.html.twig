@@ -73,6 +73,7 @@
   ]
 %}
 {{ drupal_block("osha_workflow_block") }}
+{% if content.1 %} {{ content.1 }}{% endif %}
 {{ content.content_moderation_control }}
 <div class="h1-back-wrapper">
   <a href="/publications" class="pull-right-flex back-to-link">{{ 'Back to publications and filter' | trans }}</a>
