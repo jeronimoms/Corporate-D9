@@ -1,0 +1,25 @@
+uuid: fd928e41-6d90-4251-8dc3-26e4b89fe13b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_to_publish
+    - node.type.newsletter_content
+  module:
+    - datetime
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.newsletter_content.field_date_to_publish
+field_name: field_date_to_publish
+entity_type: node
+bundle: newsletter_content
+label: 'Date to publish'
+description: 'Date to publish the Newsletter in the Web'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

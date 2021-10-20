@@ -269,6 +269,7 @@
         "drupal/addtoany": "^1.14",
         "drupal/admin_toolbar": "^3.0",
         "drupal/adv_varnish": "^4.0",
+        "drupal/advagg": "^4.1",
         "drupal/anchor_link": "^2.5",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/better_social_sharing_buttons": "^3.1",
@@ -365,6 +366,7 @@
         "drupal/mailsystem": "^4.3",
         "drupal/masquerade": "^2.0@beta",
         "drupal/matomo": "^1.11",
+        "drupal/media_pdf_thumbnail": "^3.7",
         "drupal/media_thumbnails_pdf": "^1.0@alpha",
         "drupal/memcache": "^2.2",
         "drupal/menu_block": "^1.6",
@@ -507,6 +509,9 @@
             },
             "drupal/entity_browser": {
                 "Can't remove attached image": "https://www.drupal.org/files/issues/2019-09-27/entity_browser-remove-attached-image-2811747-12.patch"
+            },
+            "drupal/path_redirect_import": {
+                "Make module full compatible with D9": "https://www.drupal.org/files/issues/2020-06-22/path_redirect_import-d9-3153871-4.patch"
             },
             "drupal/views_bulk_operations": {
                 "VBO does not preserve query metadata added by other modules": "https://www.drupal.org/files/issues/2020-10-23/views_bulk_operations-preserve-query-metadata-8.x-2.x-branch.patch"

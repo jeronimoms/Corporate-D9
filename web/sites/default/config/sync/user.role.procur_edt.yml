@@ -1,0 +1,13 @@
+uuid: 8435aca3-0252-438a-8d2e-ec2f306171ee
+langcode: en
+status: true
+dependencies: {  }
+id: procur_edt
+label: 'PROCUR EDT'
+weight: 6
+is_admin: null
+permissions:
+  - 'create job_vacancies content'
+  - 'delete own job_vacancies content'
+  - 'edit any job_vacancies content'
+  - 'edit own job_vacancies content'

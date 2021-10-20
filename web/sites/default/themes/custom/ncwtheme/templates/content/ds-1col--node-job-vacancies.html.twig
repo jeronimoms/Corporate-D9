@@ -13,6 +13,7 @@
 
 {{ title_suffix.contextual_links }}
 {{ drupal_block("osha_workflow_block") }}
+{% if content.1 %} {{ content.1 }}{% endif %}
 <div class="h1-back-wrapper">
   <h1>{{ 'Job Vacancies' | trans }}</h1>
   <a href="/careers" class="pull-right-flex back-to-link">{{ 'Back to vacancies' | trans }}</a>

@@ -1,0 +1,14 @@
+uuid: 29e1acc5-25b7-4e6f-9ea2-6a3b8f4bc1c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.procur_edt
+  module:
+    - user
+id: user_add_role_action.procur_edt
+label: 'Add the PROCUR_EDT role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: procur_edt

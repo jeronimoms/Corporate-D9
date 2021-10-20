@@ -71,7 +71,7 @@ function translation_workflow_mail($key, &$message, $params) {
   /**
    * @var \Drupal\translation_workflow\Entity\MultipleTargetLanguageJobItem $jobItem
    */
-  $jobItem = $params['jobItem'];
+  $jobItem = $params['jobItem'] ?? NULL;
   $node = NULL;
   if (is_null($job) && isset($params['jobItem'])) {
     $job = $params['jobItem']->getJob();
