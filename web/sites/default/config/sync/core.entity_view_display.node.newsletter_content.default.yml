@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.newsletter_content.field_covid_contents_hideintro
+    - field.field.node.newsletter_content.field_date_to_publish
     - field.field.node.newsletter_content.field_events_section_title
     - field.field.node.newsletter_content.field_healthy_contents_hideintro
     - field.field.node.newsletter_content.field_hide_more_news_intro_text
@@ -94,6 +95,15 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_date_to_publish:
+    weight: 61
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_events_section_title:
     weight: 49
