@@ -9,13 +9,14 @@ label: 'Admin profile'
 description: 'Configuration for site administrators'
 conf:
   extensions: '*'
-  maxsize: 0
-  quota: 0
-  maxwidth: 0
-  maxheight: 0
-  replace: 0
+  maxsize: !!float 0
+  quota: !!float 0
+  maxwidth: 1200
+  maxheight: 1200
+  replace: 1
   thumbnail_style: ''
   thumbnail_grid_style: false
+  ignore_usage: false
   folders:
     -
       path: .

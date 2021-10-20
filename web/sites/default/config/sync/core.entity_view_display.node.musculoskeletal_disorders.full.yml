@@ -59,7 +59,7 @@ third_party_settings:
         - field_available_in_languages
         - field_msd_provider
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: html_element
       region: ds_content
       format_settings:
@@ -75,9 +75,10 @@ third_party_settings:
       label: 'Tags Wrapper'
     group_description_wrapper:
       children:
+        - body
         - field_body_original
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: html_element
       region: ds_content
       format_settings:
@@ -96,7 +97,7 @@ third_party_settings:
         - field_external_url
         - field_original_desc_language
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: html_element
       region: ds_content
       format_settings:
@@ -123,7 +124,7 @@ third_party_settings:
         - field_msd_priority_area
         - field_year
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: html_element
       region: ds_content
       format_settings:
@@ -155,11 +156,13 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - node_title
         - field_title_original
         - group_tags_wrapper
         - group_description_wrapper
         - group_access_tool
         - group_other_data
+        - body
         - field_body_original
         - field_sector_industry_covered
         - field_hazards
@@ -177,6 +180,24 @@ third_party_settings:
         - field_material_country
         - field_available_in_languages
         - field_msd_provider
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          exclude_node_title: '1'
+          link: false
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   layout_builder:
     allow_custom: false
     enabled: false
@@ -185,6 +206,13 @@ targetEntityType: node
 bundle: musculoskeletal_disorders
 mode: full
 content:
+  body:
+    type: text_default
+    weight: 6
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_available_in_languages:
     weight: 34
     label: inline
@@ -197,7 +225,7 @@ content:
     region: ds_content
   field_body_original:
     type: text_default
-    weight: 4
+    weight: 7
     region: ds_content
     label: hidden
     settings: {  }
@@ -379,7 +407,7 @@ content:
             classes: {  }
   field_title_original:
     type: smart_trim
-    weight: 0
+    weight: 1
     region: ds_content
     label: hidden
     settings:
@@ -433,7 +461,6 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
-  body: true
   breadcrumbs: true
   field_comments: true
   field_country_other: true

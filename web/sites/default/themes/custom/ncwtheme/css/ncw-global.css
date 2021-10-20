@@ -3203,9 +3203,8 @@ body.node--type-infographic .field--name-body {
   margin: 0 0 2px;
 }
 
-/* Hide musculoskeletal disorders titles */
-.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field {
-  display: none;
+#approve-form {
+  padding-bottom: 1rem;
 }
 
 /* Breadcrumbs */
@@ -3265,7 +3264,7 @@ body.node--type-infographic .field--name-body {
 .view-eu-osha-event-summaries .events-summary-col {
   height: 100%;
   background: #FFF;
-  padding-bottom: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 .view-eu-osha-event-summaries .events-summary-col .left-column, .view-eu-osha-event-summaries .events-summary-col .right-column {
   padding: 1rem;
@@ -3282,8 +3281,30 @@ body.node--type-infographic .field--name-body {
 }
 .view-eu-osha-event-summaries .events-summary-col .field-content div.see-more-arrow, .view-eu-osha-event-summaries .events-summary-col .field-content .node--type-publication .rr-right-column div.field--name-node-link, .node--type-publication .rr-right-column .view-eu-osha-event-summaries .events-summary-col .field-content div.field--name-node-link {
   position: absolute;
-  bottom: 16px;
+  bottom: 15px;
+  left: 146px;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf {
+  position: absolute;
+  bottom: -47px;
   right: 16px;
+  width: 130px;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf a {
+  display: inline-block;
+  background: url("../images/ico-report-available.png") 1px 1px no-repeat;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  padding-left: 31px;
+  line-height: 17px;
+  padding-bottom: 5px;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf a:hover {
+  text-decoration: none;
+  color: #003399;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf .file-size {
+  display: none;
 }
 .view-eu-osha-event-summaries .events-summary-col:nth-child(1) {
   border-right: 10px solid #cfddee;
@@ -7438,6 +7459,21 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   padding-bottom: 0;
 }
 
+/* Hide musculoskeletal disorders titles */
+.node--type-musculoskeletal-disorders {
+  /* Hide original language description */
+}
+.node--type-musculoskeletal-disorders .h1-back-wrapper h1 {
+  max-width: 80%;
+}
+.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-node-title.field--type-ds.field--label-hidden.field__item,
+.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field {
+  display: none;
+}
+.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.description-wrapper > .field--name-field-body-original {
+  display: none;
+}
+
 @media only screen and (max-width: 1615px) {
   /* Menu in two lines */
   body {
@@ -7691,6 +7727,16 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   .wraper-blog-and-img .img-newsletter img {
     width: 100%;
     height: auto;
+  }
+
+  .node--type-musculoskeletal-disorders .h1-back-wrapper h1 {
+    max-width: 100%;
+  }
+  .node--type-musculoskeletal-disorders #main .tags-wrapper {
+    display: block;
+  }
+  .node--type-musculoskeletal-disorders #main .tags-wrapper .field {
+    margin: 0 1rem 1rem 0;
   }
 }
 /* End Media 768px */

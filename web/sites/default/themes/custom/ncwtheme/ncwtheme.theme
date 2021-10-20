@@ -113,8 +113,10 @@ function ncwtheme_preprocess_node(&$variables)
 /**
  * Download PDF and Images in Publications related views : /publications/topic/4526%2B2968
  */
-function ncwtheme_preprocess_ds_1col(&$variables)
-{
+function ncwtheme_preprocess_ds_1col(&$variables){
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['language'] = $language;
+
   if(isset($variables['content']['#node'])) {
     $node = $variables['content']['#node'];
     $img = [];
