@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.newsletter_content.field_nlc_events_content
     - field.field.node.newsletter_content.field_oira_contents_hideintro
     - field.field.node.newsletter_content.field_oshmail_title
+    - field.field.node.newsletter_content.field_twetter_image_for_outlook
     - field.field.node.newsletter_content.field_url_alias
     - field.field.node.newsletter_content.field_view_twetter_block
     - field.field.node.newsletter_content.field_wiki_contents_hideintro
@@ -63,12 +64,14 @@ dependencies:
     - field.field.node.newsletter_content.nlc_wiki_layout
     - field.field.node.newsletter_content.nlc_wiki_title
     - field.field.node.newsletter_content.simplenews_issue
+    - image.style.thumbnail
     - node.type.newsletter_content
   module:
     - color_field
     - content_moderation
     - datetime
     - field_group
+    - image
     - link
     - media_library
     - path
@@ -356,6 +359,7 @@ third_party_settings:
         - field_hide_more_news_intro_text
         - nlc_motweets_bgcolor
         - field_view_twetter_block
+        - field_twetter_image_for_outlook
       parent_name: group_more_new_tweets
       weight: 27
       format_type: details
@@ -483,6 +487,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_twetter_image_for_outlook:
+    weight: 32
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   field_url_alias:
     weight: 3

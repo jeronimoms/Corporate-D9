@@ -60,10 +60,10 @@
           <td style="background: #003399; padding-bottom: 20px; border-right: 10px solid #FFFFFF; border-bottom: 10px solid #FFF">
             <table class="newsletter-events" style="width: 355px;">
               <tr>
-                <td style="padding-top: 20px; padding-left: 20px; padding-right: 10px; vertical-align: top;">
+                <td style="width:25px; padding-top: 20px; padding-left: 20px; padding-right: 10px; vertical-align: top;">
                   {% set date_event = column.content['#options'].entity.field_date.0.value|date('d/m/Y')|split('/') %}
                   <img style="border: 0px; width:40px; height:40px;" typeof="foaf:Image" src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/img-calendar.png" width="40" height="40" alt="calendar">
-                  <span style="font-size:14px; color:white;margin-top: 13px;position: absolute;margin-left: -29px;">
+                  <span style="margin-top: 13px; position: absolute; margin-left: -29px; font-size:14px; color: #FFFFFF;">
                     {{ date_event[0] }}
                   </span>
                 </td>
@@ -78,8 +78,9 @@
                     {{ column.content['#options'].entity.field_date.0.value|date('d/m/Y') }}
                   </span>
                   <br>
-                  <a href="{{ column.content['#url'] }}" style="display: block; height: 70px; color: #FFFFFF; padding-top: 5px; padding-bottom: 10px; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold;">
-                    {{ column.content['#title'] }}
+                  <a href="{{ column.content['#url'] }}" style="display: block; height: 70px; color: #FFFFFF; padding-top: 5px; padding-bottom: 10px; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold; line-height: 16px;">
+                    {% set text = column.content['#title']|render|striptags %}
+                    {{ text|length > 90 ? text|slice(0, 90) ~ '...' : text }}
                   </a>
                 </td>
               </tr>

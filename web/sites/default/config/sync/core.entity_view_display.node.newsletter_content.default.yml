@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.newsletter_content.field_nlc_events_content
     - field.field.node.newsletter_content.field_oira_contents_hideintro
     - field.field.node.newsletter_content.field_oshmail_title
+    - field.field.node.newsletter_content.field_twetter_image_for_outlook
     - field.field.node.newsletter_content.field_url_alias
     - field.field.node.newsletter_content.field_view_twetter_block
     - field.field.node.newsletter_content.field_wiki_contents_hideintro
@@ -68,6 +69,7 @@ dependencies:
     - color_field
     - datetime
     - ds
+    - image
     - link
     - options
     - user
@@ -174,6 +176,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_twetter_image_for_outlook:
+    weight: 60
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   field_url_alias:
     weight: 47
