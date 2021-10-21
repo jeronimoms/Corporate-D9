@@ -2123,6 +2123,10 @@ body .see-more-arrow.arrow-back a:before, body .node--type-publication .rr-right
   border-bottom: 0 !important;
 }
 
+html[lang=el] body.publications .view-display-id-slideshow .see-more-arrow a, html[lang=el] body.publications .view-display-id-slideshow .node--type-publication .rr-right-column .field--name-node-link a, .node--type-publication .rr-right-column html[lang=el] body.publications .view-display-id-slideshow .field--name-node-link a, html[lang=el] body.publications .view-display-id-slideshow .link_news_events a {
+  font-size: 0.65rem;
+}
+
 body .news_and_events.block-menu-block ul li {
   position: relative;
 }
