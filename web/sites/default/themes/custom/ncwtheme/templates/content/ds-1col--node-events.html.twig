@@ -23,37 +23,37 @@
   <h3 class="events-title">{{ 'Event Details' | trans }}</h3>
   {% if ds_content.group_events_event_details.field_location.0 %}
   <div class="field--label-inline">
-    <div class="field__label">{{ 'Location' }}</div>
+    <div class="field__label">{{ 'Location' | trans  }}</div>
     <div class="field__item">{{ ds_content.group_events_event_details.field_location.0['#context'].value }}</div>
   </div>
   {% endif %}
   {% if ds_content.group_events_event_details.field_city.0 %}
   <div class="field--label-inline">
-    <div class="field__label">{{ 'City' }}</div>
+    <div class="field__label">{{ 'City' | trans  }}</div>
     <div class="field__item">{{ ds_content.group_events_event_details.field_city.0['#context'].value }}</div>
   </div>
   {% endif %}
   {% if ds_content.group_events_event_details.field_country_code.0 %}
     <div class="field--label-inline">
-      <div class="field__label">{{ 'Country' }}</div>
+      <div class="field__label">{{ 'Country' | trans }}</div>
       <div class="field__item">{{ ds_content.group_events_event_details.field_country_code.0['#markup'] }}</div>
     </div>
   {% endif %}
   {% if ds_content.group_events_event_details.field_organization.0 %}
     <div class="field--label-inline">
-      <div class="field__label">{{ 'Organisation' }}</div>
+      <div class="field__label">{{ 'Organisation' | trans }}</div>
       <div class="field__item">{{ ds_content.group_events_event_details.field_organization.0['#context'].value }}</div>
     </div>
   {% endif %}
   {% if ds_content.group_events_event_details.field_date.0['#text'] %}
     <div class="field--label-inline">
-      <div class="field__label">{{ 'Date' }}</div>
+      <div class="field__label">{{ 'Date' | trans }}</div>
       <time class="datetime">{{ ds_content.group_events_event_details.field_date.0['#text'] }}</time>
     </div>
   {% endif %}
   {% if ds_content.group_events_event_details.field_date.0.start_date %}
     <div class="field--label-inline">
-      <div class="field__label">{{ 'Date' }}</div>
+      <div class="field__label">{{ 'Date' | trans }}</div>
       <time class="datetime">{{ ds_content.group_events_event_details.field_date.0.start_date['#text'] }}</time>
       <time class="datetime">- {{ ds_content.group_events_event_details.field_date.0.end_date['#text'] }}</time>
     </div>
