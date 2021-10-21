@@ -131,6 +131,18 @@ body{
   }
 }
 
+html[lang=el]{
+  body.publications{
+    .view-display-id-slideshow{
+      .see-more-arrow, .link_news_events {
+        a {
+          font-size: 0.65rem;
+        }
+      }
+    }
+  }
+}
+
 body {
   .news_and_events.block-menu-block{
     ul {
