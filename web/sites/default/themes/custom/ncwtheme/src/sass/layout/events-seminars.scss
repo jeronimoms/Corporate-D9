@@ -24,6 +24,9 @@
         bottom: 15px;
         left: 146px;
       }
+      .report-media-document-file-link-only{
+        position: relative;
+      }
       span.file--mime-application-pdf{
         position: absolute;
         bottom: -47px;
@@ -37,7 +40,6 @@
           padding-left: 31px;
           line-height: 17px;
           padding-bottom: 5px;
-
           &:hover{
             text-decoration: none;
             color: $text-color-blue;
