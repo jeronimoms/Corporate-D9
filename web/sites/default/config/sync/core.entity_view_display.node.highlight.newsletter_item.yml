@@ -28,7 +28,6 @@ dependencies:
   module:
     - datetime
     - ds
-    - layout_builder
     - media
     - smart_trim
     - user
@@ -72,9 +71,6 @@ third_party_settings:
             lb: ''
             lb-col: false
             classes: {  }
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.highlight.newsletter_item
 targetEntityType: node
 bundle: highlight

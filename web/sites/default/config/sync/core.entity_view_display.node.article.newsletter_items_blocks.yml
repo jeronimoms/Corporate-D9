@@ -29,13 +29,8 @@ dependencies:
   module:
     - datetime
     - ds
-    - layout_builder
     - smart_trim
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 _core:
   default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
 id: node.article.newsletter_items_blocks

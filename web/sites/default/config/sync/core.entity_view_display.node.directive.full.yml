@@ -19,13 +19,8 @@ dependencies:
     - field.field.node.directive.field_thesaurus_2020
     - node.type.directive
   module:
-    - layout_builder
     - text
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.directive.full
 targetEntityType: node
 bundle: directive

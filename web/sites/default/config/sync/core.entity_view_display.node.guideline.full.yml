@@ -21,14 +21,9 @@ dependencies:
     - node.type.guideline
   module:
     - languagefield
-    - layout_builder
     - link
     - text
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.guideline.full
 targetEntityType: node
 bundle: guideline

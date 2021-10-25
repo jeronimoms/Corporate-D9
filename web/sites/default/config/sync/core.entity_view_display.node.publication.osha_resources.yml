@@ -38,7 +38,6 @@ dependencies:
     - datetime
     - ds
     - field_group
-    - layout_builder
     - media
     - user
 third_party_settings:
@@ -137,9 +136,6 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Related resources content'
-  layout_builder:
-    allow_custom: false
-    enabled: false
   ds:
     layout:
       id: ds_1col

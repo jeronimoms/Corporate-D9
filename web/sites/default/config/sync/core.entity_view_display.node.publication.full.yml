@@ -39,7 +39,6 @@ dependencies:
     - ds
     - entityreference_extensions
     - field_group
-    - layout_builder
     - media
     - text
     - user
@@ -64,9 +63,6 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Summary & Resources'
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.publication.full
 targetEntityType: node
 bundle: publication

@@ -25,14 +25,10 @@ dependencies:
   module:
     - datetime
     - ds
-    - layout_builder
     - media
     - smart_trim
     - user
 third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
   ds:
     layout:
       id: ds_1col
