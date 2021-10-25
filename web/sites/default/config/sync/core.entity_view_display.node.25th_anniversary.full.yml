@@ -13,13 +13,8 @@ dependencies:
     - field.field.node.25th_anniversary.field_tags
     - node.type.25th_anniversary
   module:
-    - layout_builder
     - text
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.25th_anniversary.full
 targetEntityType: node
 bundle: 25th_anniversary

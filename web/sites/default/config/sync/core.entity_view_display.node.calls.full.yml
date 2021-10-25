@@ -18,7 +18,6 @@ dependencies:
     - datetime
     - ds
     - entityreference_extensions
-    - layout_builder
     - text
     - user
 third_party_settings:
@@ -51,9 +50,6 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.calls.full
 targetEntityType: node
 bundle: calls
