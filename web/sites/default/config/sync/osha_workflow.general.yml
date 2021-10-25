@@ -18,6 +18,6 @@ lists:
       workflow: editorial
       workflow_state: to_be_approved
       workflow_state_previous: to_be_reviewed
-      workflow_state_next: ready_to_publish
+      workflow_state_next: approved
       actions:
         remove_list: 'Remove 1'
