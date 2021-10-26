@@ -850,6 +850,10 @@ div#sliding-popup {
   line-height: 1.6;
 }
 
+.view-musculoskeletal-disorders-list .views-exposed-form, .view-practical-tools-and-guidance-on-dangerous-substances .views-exposed-form {
+  padding-bottom: 0;
+}
+
 .views-exposed-form.custom-active-filter {
   padding-bottom: 2.5rem;
 }
@@ -957,6 +961,19 @@ select, .facets-dropdown {
 }
 #edit-reset.custom-active {
   display: block;
+}
+
+a.clear-filter-view {
+  display: none;
+  font-size: 0.9rem;
+  color: #003399;
+  border-bottom: 2px solid #c72272;
+  padding: 0;
+  text-decoration: none;
+}
+a.clear-filter-view:hover {
+  border-bottom: 2px solid #003399;
+  text-decoration: none;
 }
 
 /* Custom styles in Pages */
