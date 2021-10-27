@@ -44,7 +44,6 @@ dependencies:
     - entity_reference_revisions
     - field_group
     - languagefield
-    - layout_builder
     - link
     - options
     - smart_trim
@@ -198,9 +197,6 @@ third_party_settings:
             lb: ''
             lb-col: false
             classes: {  }
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.musculoskeletal_disorders.full
 targetEntityType: node
 bundle: musculoskeletal_disorders

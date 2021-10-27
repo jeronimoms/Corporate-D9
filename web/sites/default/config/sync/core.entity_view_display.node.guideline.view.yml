@@ -20,13 +20,8 @@ dependencies:
     - field.field.node.guideline.field_thesaurus_2020
     - node.type.guideline
   module:
-    - layout_builder
     - smart_trim
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.guideline.view
 targetEntityType: node
 bundle: guideline
@@ -51,8 +46,14 @@ content:
       wrap_output: false
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_activity: true
   field_additional_html: true
   field_archived: true

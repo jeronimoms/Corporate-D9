@@ -7,11 +7,10 @@ use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\oira_partner\OpEntityUpdateManager;
 
 /**
  * General class for entity hooks.
@@ -23,7 +22,7 @@ class OpEntity implements ContainerInjectionInterface {
 
 
   /**
-   * The Oria entity update manager
+   * The Oria entity update manager.
    *
    * @var \Drupal\oira_partner\OpEntityUpdateManager
    */
@@ -80,6 +79,12 @@ class OpEntity implements ContainerInjectionInterface {
    * Implements hook_entity_presave().
    */
   public function entityPreSave(EntityInterface $entity) {
+    if ($entity instanceof User) {
+      $userRoles = $entity->getRoles();
+      if (in_array('administrator', $userRoles) && in_array('partner', $userRoles)) {
+        $entity->removeRole('partner');
+      }
+    }
     // Store the fields if the user is parner.
     if (in_array('partner', $this->account->getRoles())) {
       if ($entity->hasField('field_workbench_access')) {
@@ -120,10 +125,10 @@ class OpEntity implements ContainerInjectionInterface {
               continue;
             }
 
-            // Get the country by partner
+            // Get the country by partner.
             $country_label = $this->opEntityManager->getCountryFromPartner($term_id);
             if (isset($country_label)) {
-              // Set the new label
+              // Set the new label.
               $options[$term_id] = $country_label . ' - ' . $options[$term_id];
             }
           }
@@ -150,7 +155,7 @@ class OpEntity implements ContainerInjectionInterface {
    * @param array $form
    *   The form array.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The form state object
+   *   The form state object.
    */
   public function omSubmit(array &$form, FormStateInterface $form_state) {
     /** @var \Drupal\node\Entity\Node $entity */

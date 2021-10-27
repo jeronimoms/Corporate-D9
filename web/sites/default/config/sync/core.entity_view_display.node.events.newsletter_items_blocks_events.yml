@@ -45,7 +45,6 @@ dependencies:
     - datetime_range
     - ds
     - field_group
-    - layout_builder
     - options
     - user
 third_party_settings:
@@ -151,9 +150,6 @@ third_party_settings:
         - field_location
         - field_date
         - field_country_code
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.events.newsletter_items_blocks_events
 targetEntityType: node
 bundle: events

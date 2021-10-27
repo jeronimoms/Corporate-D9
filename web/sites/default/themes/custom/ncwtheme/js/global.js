@@ -256,7 +256,16 @@ jQuery(document).ready(function($) {
     //Add the active class to the left menu 'Procurement'
     $('.menu-level-1 > li:nth-child(6)').addClass('menu-item--active-trail');
     $('.menu-level-1 > li:nth-child(6) a').addClass('is-active');
+  }
 
+  //View clear filter MSD DB - MDR-4617
+  if ($(".clear-filter-view")[0]) {
+    let url = window.location.href;
+    if(url.includes('?')){
+      $('.clear-filter-view').show();
+    }else{
+      $('.clear-filter-view').hide();
+    }
   }
 
   //Add the active class to the left menu 'Infographics'
