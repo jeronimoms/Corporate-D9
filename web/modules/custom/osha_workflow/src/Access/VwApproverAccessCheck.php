@@ -24,7 +24,7 @@ class VwApproverAccessCheck implements AccessInterface {
     $helper = $this->getoshaHelper();
     $node = $helper->getLastRevisionNode();
     $node = reset($node);
-    //ksm($node);
+
     return AccessResult::allowed();
     if ($node->bundle() == 'node_article_edit_form' || $node->bundle() == 'node_25th_anniversary_edit_form'||
     $node->bundle() == 'node_calls_edit_form'|| $node->bundle() == 'node_directive_edit_form'|| $node->bundle() == 'node_guideline_edit_form'||

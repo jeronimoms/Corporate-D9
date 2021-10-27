@@ -1,0 +1,14 @@
+short_message.popup:
+  js:
+    js/popup.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+short_message.copytoclipboard:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js: {type: external, minified: true}
+    js/copytoclipboard.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

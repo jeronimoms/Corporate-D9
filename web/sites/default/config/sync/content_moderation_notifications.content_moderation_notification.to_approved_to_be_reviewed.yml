@@ -7,6 +7,10 @@ workflow: editorial
 transitions:
   from_draft_to_to_be_reviewed: from_draft_to_to_be_reviewed
   send_to_be_reviewed: send_to_be_reviewed
+  from_rejected_to_to_be_reviewed: from_rejected_to_to_be_reviewed
+  from_approved_to_to_be_reviewed: from_approved_to_to_be_reviewed
+  from_ready_to_publish_to_to_be_reviewed: from_ready_to_publish_to_to_be_reviewed
+  from_published_to_to_be_reviewed: from_published_to_to_be_reviewed
 roles:
   project_manager: project_manager
 author: false

@@ -23,6 +23,9 @@ class VwRouteSubscriber extends RouteSubscriberBase {
     if ($route = $collection->get('osha_workflow.reviewers.list')) {
       $route->setRequirement('_custom_access', 'osha_workflow.access_checker.list::access');
     }
+    if ($route = $collection->get('osha_workflow.project_managers.list')) {
+      $route->setRequirement('_custom_access', 'osha_workflow.access_checker.list::access');
+    }
   }
 
 }

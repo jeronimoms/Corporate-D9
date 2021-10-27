@@ -1,0 +1,11 @@
+entity.node.short_message_form:
+  path: '/node/{node}/short_message'
+  defaults:
+    _entity_form: 'node.short_message'
+    _title: 'Shot Message'
+  requirements:
+    _permission: 'access administration pages'
+    _entity_access: 'node.view'
+    node: \d+
+  options:
+    _node_operation_route: TRUE
