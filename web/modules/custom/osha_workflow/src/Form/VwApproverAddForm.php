@@ -303,7 +303,9 @@ class VwApproverAddForm extends FormBase {
       // Assign the access if the rol exists in the list configuration.
       foreach ($roles as $rol) {
         if ($user->hasRole($rol)) {
-          $output[$user->id()] = $user->getDisplayName();
+          if($user->isActive()) {
+            $output[$user->id()] = $user->getDisplayName();
+          }
         }
       }
 

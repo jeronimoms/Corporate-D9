@@ -29,7 +29,6 @@ dependencies:
   module:
     - datetime
     - ds
-    - layout_builder
     - user
 third_party_settings:
   ds:
@@ -70,9 +69,6 @@ third_party_settings:
             lb: ''
             lb-col: false
             classes: {  }
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.news.newsletter_items_blocks_hide_intro_text
 targetEntityType: node
 bundle: news

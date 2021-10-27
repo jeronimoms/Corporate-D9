@@ -14,13 +14,8 @@ dependencies:
   module:
     - ds
     - image
-    - layout_builder
     - smart_trim
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.youtube.newsletter_item
 targetEntityType: node
 bundle: youtube

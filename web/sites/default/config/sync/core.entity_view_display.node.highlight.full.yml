@@ -27,7 +27,6 @@ dependencies:
   module:
     - datetime
     - ds
-    - layout_builder
     - text
     - user
 third_party_settings:
@@ -61,9 +60,6 @@ third_party_settings:
         weight: 1
         label: hidden
         formatter: default
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.highlight.full
 targetEntityType: node
 bundle: highlight
