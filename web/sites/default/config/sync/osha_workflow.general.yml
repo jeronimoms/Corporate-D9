@@ -12,6 +12,16 @@ lists:
       actions:
         remove_list: 'Remove 0'
     -
+      name: Project_managers
+      access_roles:
+        project_manager: project_manager
+      workflow: editorial
+      workflow_state: to_be_reviewed
+      workflow_state_previous: draft
+      workflow_state_next: to_be_approved
+      actions:
+        remove_list: 'Remove 1'
+    -
       name: Approvers
       access_roles:
         approver: approver
@@ -20,4 +30,4 @@ lists:
       workflow_state_previous: to_be_reviewed
       workflow_state_next: approved
       actions:
-        remove_list: 'Remove 1'
+        remove_list: 'Remove 2'
