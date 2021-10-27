@@ -63,7 +63,6 @@ dependencies:
     - ds
     - entity_reference_revisions
     - languagefield
-    - layout_builder
     - link
     - options
     - text
@@ -140,9 +139,6 @@ third_party_settings:
         - field_original_desc_language
         - field_original_desc_lang_other
         - field_non_applicable_url
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.dangerous_substances.full
 targetEntityType: node
 bundle: dangerous_substances

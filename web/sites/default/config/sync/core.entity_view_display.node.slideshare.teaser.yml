@@ -10,12 +10,7 @@ dependencies:
     - node.type.slideshare
   module:
     - image
-    - layout_builder
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.slideshare.teaser
 targetEntityType: node
 bundle: slideshare
@@ -32,6 +27,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_slideshare_id: true
   field_slideshare_url: true
   langcode: true

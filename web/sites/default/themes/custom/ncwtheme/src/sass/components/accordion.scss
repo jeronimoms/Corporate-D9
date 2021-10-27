@@ -105,6 +105,71 @@
   }
 }
 
+/* Ck editor Accordions */
+.ckeditor-accordion-container{
+  > dl{
+    border: 0;
+    margin-bottom: 0;
+    dt{
+      > a{
+        background-color: transparent;
+        padding: 0;
+        color: $text-color-blue;
+        font-family: 'Open Sans Condensed';
+        font-size: 1.3rem;
+        padding-top: 0.1rem;
+        padding-bottom: 0.2rem;
+        border-bottom: 0 !important;
+        &:hover{
+          border-bottom: 0 !important;
+          background-color: transparent;
+        }
+        > .ckeditor-accordion-toggle{
+           display: none;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 17px;
+          background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+          top: 30%;
+          right: 20px;
+        }
+      }
+    }
+    dt.active > a {
+      background-color: transparent;
+      &::after {
+        width: 17px;
+        background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+        right: 17px;
+      }
+    }
+    dd{
+      padding: 0;
+    }
+  }
+  dt{
+    position: relative;
+    width: 100%;
+    font-family: 'Open Sans Condensed';
+    color: $text-color-blue;
+    background: $bg-color-blue-accordion;
+    height: auto;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 0.5rem;
+    padding-right: 2.5rem;
+    border: 0;
+    margin-top: 0; /*no margin - to fix text effect - add border*/
+    border-top: 5px solid #FFF;
+    border-bottom: 5px solid #FFF;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+}
+
 /* view board members / view advisory groups */
 .view-board-members, .view-advisory-groups, .view-seminar{
   .view-grouping{

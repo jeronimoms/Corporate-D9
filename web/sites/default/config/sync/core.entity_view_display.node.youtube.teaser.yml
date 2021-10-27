@@ -14,14 +14,9 @@ dependencies:
   module:
     - ds
     - image
-    - layout_builder
     - smart_trim
     - user
     - youtube
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.youtube.teaser
 targetEntityType: node
 bundle: youtube

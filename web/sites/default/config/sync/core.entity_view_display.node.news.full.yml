@@ -29,7 +29,6 @@ dependencies:
   module:
     - datetime
     - ds
-    - layout_builder
     - text
     - user
 third_party_settings:
@@ -69,9 +68,6 @@ third_party_settings:
           class: ''
           exclude_node_title: '1'
           link: false
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.news.full
 targetEntityType: node
 bundle: news

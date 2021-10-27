@@ -23,7 +23,6 @@ dependencies:
     - node.type.seminar
   module:
     - field_group
-    - layout_builder
     - user
 third_party_settings:
   field_group:
@@ -47,17 +46,20 @@ third_party_settings:
         id: ''
         classes: 'group-seminar-event-details field-group-div'
       label: 'Event Details'
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.seminar.highlights_item
 targetEntityType: node
 bundle: seminar
 mode: highlights_item
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   addtoany: true
   body: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_country_code: true
