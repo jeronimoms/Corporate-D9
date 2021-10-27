@@ -2,6 +2,7 @@
 
 namespace Drupal\osha_workflow;
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -154,6 +155,215 @@ class VwHelper {
     }
   }
 
+  public function defaultApprovers(){
+    $entity = $this->getLastRevisionNode();
+    // Get the section of the node.
+    if($entity->hasField('field_section') && $entity->get('field_section')->get(0) != null){
+      $nodeSection = $entity->get('field_section')->get(0)->getValue();
+    }
+    else{
+      $nodeSection = null;
+    }
+
+    if( !$nodeSection || is_null($nodeSection) || empty($nodeSection) ){
+      $data['to'] = [];
+      return \Drupal::service('class_resolver')
+        ->getInstanceFromDefinition(VwCmn::class)
+        ->mailDataAlter($entity, $data);
+    }
+
+    $nodeSectionId = $nodeSection['target_id'];
+    if(!$nodeSectionId || empty($nodeSectionId)){
+      $data['to'] = [];
+      return \Drupal::service('class_resolver')
+        ->getInstanceFromDefinition(VwCmn::class)
+        ->mailDataAlter($entity, $data);
+    }
+
+    // Get the section ids with the corresponding section of the node.
+    $querySaResult = \Drupal::database()
+      ->query('SELECT e.id
+            FROM section_association e
+            WHERE e.section_id = :section_id', array(
+        ':section_id' => $nodeSectionId,
+      ));
+    $entityId = "";
+    foreach ($querySaResult as $item) {
+      $entityId= $item->id;
+    }
+
+    // Get the user ids from the section_association__user_id with the corresponding section id.
+    $queryUserSectionResult = \Drupal::database()
+      ->query('SELECT sa.user_id_target_id
+            FROM section_association__user_id sa
+            WHERE sa.entity_id = :entity_id OR sa.entity_id=13', array(
+        ":entity_id" => $entityId,
+      ));
+    $sectionUserTargetIds = [];
+    $weight = 0;
+    foreach ($queryUserSectionResult as $item) {
+      $approver = $this->entityTypeManager->getStorage('user')->load($item->user_id_target_id);
+      if(in_array('approver', $approver->getRoles()) && $approver->isActive()){
+        array_push($sectionUserTargetIds, [
+          'node_id' => $entity->id(),
+          'user_id' => $item->user_id_target_id,
+          'status' => $this->t('Waiting to approve'),
+          'weight' => $weight
+        ]);
+        $weight++;
+      }
+    }
+    try {
+      $query = $this->database->insert('osha_workflow_approvers')
+        ->fields(['node_id', 'user_id', 'status', 'weight']);
+      foreach ($sectionUserTargetIds as $record){
+        $query->values($record);
+      }
+      $query->execute();
+    }catch (\Exception $e){
+
+    }
+  }
+
+  public function defaultReviewers(){
+    $entity = $this->getLastRevisionNode();
+    // Get the section of the node.
+    if($entity->hasField('field_section') && $entity->get('field_section')->get(0) != null){
+      $nodeSection = $entity->get('field_section')->get(0)->getValue();
+    }
+    else{
+      $nodeSection = null;
+    }
+
+    if( !$nodeSection || is_null($nodeSection) || empty($nodeSection) ){
+      $data['to'] = [];
+      return \Drupal::service('class_resolver')
+        ->getInstanceFromDefinition(VwCmn::class)
+        ->mailDataAlter($entity, $data);
+    }
+
+    $nodeSectionId = $nodeSection['target_id'];
+    if(!$nodeSectionId || empty($nodeSectionId)){
+      $data['to'] = [];
+      return \Drupal::service('class_resolver')
+        ->getInstanceFromDefinition(VwCmn::class)
+        ->mailDataAlter($entity, $data);
+    }
+
+    // Get the section ids with the corresponding section of the node.
+    $querySaResult = \Drupal::database()
+      ->query('SELECT e.id
+            FROM section_association e
+            WHERE e.section_id = :section_id', array(
+        ':section_id' => $nodeSectionId,
+      ));
+    $entityId = "";
+    foreach ($querySaResult as $item) {
+      $entityId= $item->id;
+    }
+
+    // Get the user ids from the section_association__user_id with the corresponding section id.
+    $queryUserSectionResult = \Drupal::database()
+      ->query('SELECT sa.user_id_target_id
+            FROM section_association__user_id sa
+            WHERE sa.entity_id = :entity_id', array(
+        ":entity_id" => $entityId,
+      ));
+    $sectionUserTargetIds = [];
+    $weight = 0;
+    foreach ($queryUserSectionResult as $item) {
+      $approver = $this->entityTypeManager->getStorage('user')->load($item->user_id_target_id);
+      if(in_array('review_manager', $approver->getRoles()) && $approver->isActive()){
+        array_push($sectionUserTargetIds, [
+          'node_id' => $entity->id(),
+          'user_id' => $item->user_id_target_id,
+          'status' => $this->t('Waiting to approve'),
+          'weight' => $weight
+        ]);
+        $weight++;
+      }
+    }
+    try {
+      $query = $this->database->insert('osha_workflow_reviewers')
+        ->fields(['node_id', 'user_id', 'status', 'weight']);
+      foreach ($sectionUserTargetIds as $record){
+        $query->values($record);
+      }
+      $query->execute();
+    }catch (\Exception $e){
+
+    }
+  }
+
+  public function defaultProjectManagers(){
+    $entity = $this->getLastRevisionNode();
+    // Get the section of the node.
+    if($entity->hasField('field_section') && $entity->get('field_section')->get(0) != null){
+      $nodeSection = $entity->get('field_section')->get(0)->getValue();
+    }
+    else{
+      $nodeSection = null;
+    }
+
+    if( !$nodeSection || is_null($nodeSection) || empty($nodeSection) ){
+      $data['to'] = [];
+      return \Drupal::service('class_resolver')
+        ->getInstanceFromDefinition(VwCmn::class)
+        ->mailDataAlter($entity, $data);
+    }
+
+    $nodeSectionId = $nodeSection['target_id'];
+    if(!$nodeSectionId || empty($nodeSectionId)){
+      $data['to'] = [];
+      return \Drupal::service('class_resolver')
+        ->getInstanceFromDefinition(VwCmn::class)
+        ->mailDataAlter($entity, $data);
+    }
+
+    // Get the section ids with the corresponding section of the node.
+    $querySaResult = \Drupal::database()
+      ->query('SELECT e.id
+            FROM section_association e
+            WHERE e.section_id = :section_id', array(
+        ':section_id' => $nodeSectionId,
+      ));
+    $entityId = "";
+    foreach ($querySaResult as $item) {
+      $entityId= $item->id;
+    }
+
+    // Get the user ids from the section_association__user_id with the corresponding section id.
+    $queryUserSectionResult = \Drupal::database()
+      ->query('SELECT sa.user_id_target_id
+            FROM section_association__user_id sa
+            WHERE sa.entity_id = :entity_id', array(
+        ":entity_id" => $entityId,
+      ));
+    $sectionUserTargetIds = [];
+    $weight = 0;
+    foreach ($queryUserSectionResult as $item) {
+      $approver = $this->entityTypeManager->getStorage('user')->load($item->user_id_target_id);
+      if(in_array('project_manager', $approver->getRoles()) && $approver->isActive()){
+        array_push($sectionUserTargetIds, [
+          'node_id' => $entity->id(),
+          'user_id' => $item->user_id_target_id,
+          'status' => $this->t('Waiting to approve'),
+          'weight' => $weight
+        ]);
+        $weight++;
+      }
+    }
+    try {
+      $query = $this->database->insert('osha_workflow_project_managers')
+        ->fields(['node_id', 'user_id', 'status', 'weight']);
+      foreach ($sectionUserTargetIds as $record){
+        $query->values($record);
+      }
+      $query->execute();
+    }catch (\Exception $e){
+
+    }
+  }
   /**
    * Set the status to approve of users list.
    *
@@ -279,6 +489,8 @@ class VwHelper {
         $user_list[] = $data->user_id;
       }
     }
+
+    if($table=="reviewers"){return FALSE;}
 
     if (isset($user_list[0]) && $user_list[0] == $this->account->id()) {
       return TRUE;
