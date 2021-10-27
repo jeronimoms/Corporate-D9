@@ -24,7 +24,6 @@ dependencies:
     - node.type.press_release
   module:
     - ds
-    - layout_builder
     - media
     - text
     - user
@@ -61,9 +60,6 @@ third_party_settings:
         weight: 1
         label: hidden
         formatter: default
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.press_release.full
 targetEntityType: node
 bundle: press_release

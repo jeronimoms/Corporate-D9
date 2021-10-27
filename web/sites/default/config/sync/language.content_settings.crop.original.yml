@@ -1,0 +1,11 @@
+uuid: 660aad0d-9dc6-49d2-8a50-556b6adf82a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.original
+id: crop.original
+target_entity_type_id: crop
+target_bundle: original
+default_langcode: site_default
+language_alterable: false

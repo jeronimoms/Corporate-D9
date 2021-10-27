@@ -29,7 +29,6 @@ dependencies:
   module:
     - datetime
     - ds
-    - layout_builder
     - text
     - user
 third_party_settings:
@@ -62,9 +61,6 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.job_vacancies.full
 targetEntityType: node
 bundle: job_vacancies

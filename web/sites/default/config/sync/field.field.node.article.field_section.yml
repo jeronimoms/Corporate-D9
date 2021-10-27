@@ -6,6 +6,13 @@ dependencies:
     - field.storage.node.field_section
     - node.type.article
     - taxonomy.vocabulary.section
+  content:
+    - 'taxonomy_term:section:0202dd5f-8d85-4d8d-860d-e66c0edb37a4'
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.article.field_section
 field_name: field_section
 entity_type: node
@@ -14,7 +21,9 @@ label: Section
 description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 0202dd5f-8d85-4d8d-860d-e66c0edb37a4
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

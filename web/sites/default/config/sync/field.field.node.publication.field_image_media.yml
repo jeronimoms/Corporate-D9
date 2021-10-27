@@ -18,7 +18,7 @@ bundle: publication
 label: 'Cover image'
 description: 'The cover image that will be displayed on page.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

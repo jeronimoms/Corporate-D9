@@ -25,7 +25,6 @@ dependencies:
     - datetime
     - ds
     - field_group
-    - layout_builder
     - smart_trim
     - user
 third_party_settings:
@@ -47,9 +46,6 @@ third_party_settings:
         id: ''
         classes: 'group-seminar-event-details field-group-div'
       label: 'Event Details'
-  layout_builder:
-    allow_custom: false
-    enabled: false
   ds:
     layout:
       id: ds_1col
