@@ -20,12 +20,8 @@ dependencies:
     - node.type.directive
   module:
     - ds
-    - layout_builder
     - user
 third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
   ds:
     layout:
       id: ds_1col
@@ -85,6 +81,11 @@ targetEntityType: node
 bundle: directive
 mode: view
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_summary:
     type: basic_string
     weight: 2

@@ -5,12 +5,12 @@ _core:
   default_config_hash: GLswejPT_b3G9TtpI4NKwR1mhIB_-FnysNn9QKc-01w
 general:
   varnish_purger: true
-  varnish_server: osha-d9-stg-proxy-corp.mainstrat.com
+  varnish_server: osha-d9-prod-proxy-corp.mainstrat.com
   purger_maintenance_mode: false
   logging: '0'
   debug: '0'
   noise: ''
-  secret: 2e39d07adba26de28588f0a3748f7634b16e1aa832546dbc3b470415dade6769
+  secret: 0f29c810-0a59-4fc5-b500-1312669c165b
   grace: '10'
   page_cache_maximum_age: '604800'
 available:

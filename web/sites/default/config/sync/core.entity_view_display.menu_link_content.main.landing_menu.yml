@@ -8,13 +8,8 @@ dependencies:
     - field.field.menu_link_content.main.field_image_menu_main
     - system.menu.main
   module:
-    - layout_builder
     - linked_field
     - media
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: menu_link_content.main.landing_menu
 targetEntityType: menu_link_content
 bundle: main

@@ -1,0 +1,11 @@
+uuid: e7aa9d1a-cc66-4eab-a89c-c454babc11c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banners_home
+id: crop.banners_home
+target_entity_type_id: crop
+target_bundle: banners_home
+default_langcode: site_default
+language_alterable: false

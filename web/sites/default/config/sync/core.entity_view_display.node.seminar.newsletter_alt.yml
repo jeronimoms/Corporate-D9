@@ -24,7 +24,6 @@ dependencies:
   module:
     - datetime
     - field_group
-    - layout_builder
     - text
     - user
 third_party_settings:
@@ -49,9 +48,6 @@ third_party_settings:
         id: ''
         classes: 'group-seminar-event-details field-group-div'
       label: 'Event Details'
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.seminar.newsletter_alt
 targetEntityType: node
 bundle: seminar
@@ -61,6 +57,11 @@ content:
     label: hidden
     type: text_default
     weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -119,6 +120,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_country_code: true

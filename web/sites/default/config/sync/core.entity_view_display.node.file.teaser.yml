@@ -8,12 +8,8 @@ dependencies:
     - node.type.file
   module:
     - ds
-    - layout_builder
     - user
 third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
   ds:
     layout:
       id: layout_onecol

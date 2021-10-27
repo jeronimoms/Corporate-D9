@@ -1,0 +1,18 @@
+uuid: ec01cbb3-5493-4552-9cf4-f9889007aac1
+langcode: en
+status: true
+dependencies: {  }
+id: to_next_approver
+workflow: editorial
+transitions:
+  from_to_be_approved_to_to_be_approved: from_to_be_approved_to_to_be_approved
+roles:
+  approver: approver
+author: false
+site_mail: false
+emails: ''
+subject: '[OSHA Website] CMW:([node:id]) [node:title]'
+body:
+  value: "<p>Dear <strong>Approver</strong>,</p>\r\n\r\n<p>There is new content to be approved by you: <strong>[node:title]&nbsp;</strong> ([node:url]) (type: [node:type], status: <b>To be approved</b>). There are more&nbsp;items that you can review from <a href=\"/admin/workbench/approve\" target=\"_blank\">here.</a></p>\r\n\r\n<p>Thank you</p>\r\n"
+  format: full_html
+label: 'To next approver'

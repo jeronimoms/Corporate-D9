@@ -46,7 +46,6 @@ dependencies:
     - ds
     - field_group
     - file
-    - layout_builder
     - link
     - options
     - text
@@ -166,9 +165,6 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.events.newsletter_items_blocks_hide_intro_text
 targetEntityType: node
 bundle: events

@@ -9,7 +9,6 @@ dependencies:
   module:
     - ds
     - dynamic_entity_reference
-    - layout_builder
 third_party_settings:
   ds:
     layout:
@@ -30,9 +29,6 @@ third_party_settings:
     regions:
       ds_content:
         - field_node_id
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: block_content.block_node_views.full
 targetEntityType: block_content
 bundle: block_node_views
@@ -102,5 +98,6 @@ content:
     type: dynamic_entity_reference_entity_view
     region: ds_content
 hidden:
+  breadcrumbs: true
   langcode: true
   search_api_excerpt: true
