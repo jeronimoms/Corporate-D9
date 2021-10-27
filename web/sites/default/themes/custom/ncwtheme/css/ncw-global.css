@@ -214,6 +214,68 @@ input[type=search] {
   color: #003399;
 }
 
+/* Ck editor Accordions */
+.ckeditor-accordion-container > dl {
+  border: 0;
+  margin-bottom: 0;
+}
+.ckeditor-accordion-container > dl dt > a {
+  background-color: transparent;
+  padding: 0;
+  color: #003399;
+  font-family: "Open Sans Condensed";
+  font-size: 1.3rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 0 !important;
+}
+.ckeditor-accordion-container > dl dt > a:hover {
+  border-bottom: 0 !important;
+  background-color: transparent;
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
+  display: none;
+}
+.ckeditor-accordion-container > dl dt > a::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 17px;
+  background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+  top: 30%;
+  right: 20px;
+}
+.ckeditor-accordion-container > dl dt.active > a {
+  background-color: transparent;
+}
+.ckeditor-accordion-container > dl dt.active > a::after {
+  width: 17px;
+  background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+  right: 17px;
+}
+.ckeditor-accordion-container > dl dd {
+  padding: 0;
+}
+.ckeditor-accordion-container dt {
+  position: relative;
+  width: 100%;
+  font-family: "Open Sans Condensed";
+  color: #003399;
+  background: #e8eef7;
+  height: auto;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-right: 2.5rem;
+  border: 0;
+  margin-top: 0;
+  /*no margin - to fix text effect - add border*/
+  border-top: 5px solid #FFF;
+  border-bottom: 5px solid #FFF;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
 /* view board members / view advisory groups */
 .view-board-members .view-grouping, .view-advisory-groups .view-grouping, .view-seminar .view-grouping {
   width: 100%;
