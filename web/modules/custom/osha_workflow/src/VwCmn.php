@@ -143,7 +143,6 @@ class VwCmn implements ContainerInjectionInterface {
       for ($i=0; $i< count($users); $i++ ) {
         $user = $this->entityTypeManager->getStorage('user')->load($users[$i]->user_id);
         if($user->isActive() && $user->hasRole('project_manager')){
-          ksm($user);
           array_push($data['to'], $user->getEmail());
         }
       }
