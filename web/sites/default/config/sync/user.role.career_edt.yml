@@ -8,6 +8,8 @@ weight: 10
 is_admin: null
 permissions:
   - 'access media overview'
+  - 'access workbench'
+  - 'assign workbench access'
   - 'create calls content'
   - 'delete own calls content'
   - 'edit any calls content'
@@ -31,3 +33,5 @@ permissions:
   - 'use editorial transition send_to_publish_from_reviewed'
   - 'use editorial transition send_to_ready_to_publish_from_final_draft'
   - 'use editorial transition send_to_ready_to_publish_from_to_be_reviewed'
+  - 'use workbench access'
+  - 'view workbench access information'

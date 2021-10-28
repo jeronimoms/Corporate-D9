@@ -7,6 +7,8 @@ label: 'CAREER PM'
 weight: 8
 is_admin: null
 permissions:
+  - 'access workbench'
+  - 'assign workbench access'
   - 'create calls content'
   - 'delete own calls content'
   - 'edit any calls content'
@@ -20,3 +22,5 @@ permissions:
   - 'use editorial transition publishing'
   - 'use editorial transition send_to_publish_from_final_draft'
   - 'use editorial transition send_to_publish_from_reviewed'
+  - 'use workbench access'
+  - 'view workbench access information'
