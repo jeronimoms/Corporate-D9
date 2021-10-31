@@ -1768,7 +1768,7 @@ display:
           id: moderation_state
           table: node_field_revision
           field: moderation_state
-          relationship: nid
+          relationship: none
           group_type: group
           admin_label: ''
           label: Workflow
