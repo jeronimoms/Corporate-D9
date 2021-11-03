@@ -80,18 +80,19 @@ class VwHelper {
       $storage = $this->entityTypeManager->getStorage('node');
       $revision = $storage->getLatestRevisionId($node->id());
       return $storage->loadRevision($revision);
+    }else{
+      $vid = $this->routeMatch->getParameter('node_revision');
+      $storage = $this->entityTypeManager->getStorage('node');
+      $revision = ($vid !=null)? $storage->loadRevision($vid): [];
+      return $revision;
     }
-//    else{
-//      $vid = $this->routeMatch->getParameter('node_revision');
-//      $storage = $this->entityTypeManager->getStorage('node')->loadRevision($vid->id());
-//      return $storage;
-//
-//     // if(!$storage->is_current()){return  $storage;}
-//    }
 
     return [];
   }
 
+  public function getRoute(){
+    return $this->routeMatch;
+  }
   /**
    * Get the moderation state of current node.
    *
@@ -157,6 +158,7 @@ class VwHelper {
         ->condition('node_id', $this->getLastRevisionNode()->id(), '=')
         ->fields('v', ['id', 'node_id', 'user_id', 'status', 'weight']);
       $query->orderBy('v.weight');
+      //reorder to make Andrew first appprover by default
       return $query->execute()->fetchAll();
     } catch (\Exception $e) {
     }

@@ -105,9 +105,18 @@ class VwEntity implements ContainerInjectionInterface {
 
       // Remove the moderation form if the current user has the role "approver".
       if ($state == 'to_be_approved' && array_search('approver', $this->account->getRoles())) {
-        // Pending cofirmation!$form['#access'] = FALSE;
-//        ksm($form_state);
-        return;
+       // $form['#access'] = FALSE;
+        $form['approving'] = [
+          '#type' => 'hidden',
+          '#id' => 'approving',
+          '#value' => 'approver'
+        ];
+      }else{
+        $form['approving'] = [
+          '#type' => 'hidden',
+          '#id' => 'approving',
+          '#value' => 'other'
+        ];
       }
 
       // Custom validation to control if the list is empty.
@@ -132,11 +141,6 @@ class VwEntity implements ContainerInjectionInterface {
 
       // Custom validation to control if the list is empty.
       $form['#validate'][] = [$this, 'formValidateAlter'];
-
-      $query = \Drupal::entityQuery('user');
-
-      $uids = $query->execute();
-      ksm($uids);
     }
   }
 
@@ -231,6 +235,7 @@ class VwEntity implements ContainerInjectionInterface {
     // Set the block as first element.
     $plugin_block = $this->blockManager->createInstance('osha_workflow_block', []);
     array_unshift($build, $plugin_block->build());
+
   }
 
   /**

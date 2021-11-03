@@ -111,21 +111,22 @@ class VwApproveForm extends FormBase {
     // Update the status of current user.
     $this->helper->approveUser($form_state->get('osha_workflow_table'));
 
-    $node = $this->routeMatch->getParameter('node');
-    $storage = \Drupal::entityTypeManager()->getStorage('node');
-    $node = $storage->createRevision($node, $node->isDefaultRevision());
-
-    // If all users approved the content, then set the node as the.
-    // next state defined in the list.
+    // If all users approved the content, then set the node as the next state defined in the list.
     if ($this->helper->getModerationListStatus($form_state->get('osha_workflow_table'))) {
+      $node = $this->routeMatch->getParameter('node');
       $node->set('moderation_state', $form_state->get('osha_workflow_list_configuration')['workflow_state_next']);
       $new_state = $this->helper->getWorkflow()->getTypePlugin()->getState($form_state->get('osha_workflow_list_configuration')['workflow_state_next']);
+      $storage = \Drupal::entityTypeManager()->getStorage('node');
+      $node = $storage->createRevision($node, $node->isDefaultRevision());
     }
     else {
+      $node = $this->routeMatch->getParameter('node');
       $node->set('moderation_state', $form_state->get('osha_workflow_list_configuration')['workflow_state']);
       $new_state = $this->helper->getWorkflow()->getTypePlugin()->getState($form_state->get('osha_workflow_list_configuration')['workflow_state']);
+      $storage = \Drupal::entityTypeManager()->getStorage('node');
+      $node = $storage->createRevision($node, $node->isDefaultRevision());
     }
-
+    $node->isNewRevision(TRUE);
     $node->save();
 
     $this->messenger()->addStatus($this->t('The moderation state has been updated.'));
