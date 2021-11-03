@@ -5,6 +5,7 @@ namespace Drupal\osha_workflow\Form;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\osha_workflow\VwHelper;
 
@@ -28,11 +29,19 @@ class VwApproveForm extends FormBase {
   protected $configFactory;
 
   /**
+   * The Request object.
+   *
+   * @var \Drupal\Core\Routing\RouteMatchInterface
+   */
+  protected $routeMatch;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(VwHelper $vasefe_helper, ConfigFactoryInterface $config_factory) {
+  public function __construct(VwHelper $vasefe_helper, ConfigFactoryInterface $config_factory,RouteMatchInterface $routeMatch) {
     $this->helper = $vasefe_helper;
     $this->configFactory = $config_factory;
+    $this->routeMatch = $routeMatch;
   }
 
   /**
@@ -41,7 +50,8 @@ class VwApproveForm extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('osha_workflow.helper'),
-      $container->get('config.factory')
+      $container->get('config.factory'),
+      $container->get('current_route_match')
     );
   }
 
@@ -101,18 +111,30 @@ class VwApproveForm extends FormBase {
     // Update the status of current user.
     $this->helper->approveUser($form_state->get('osha_workflow_table'));
 
-
-    // If all users approved the content, then set the node as the.
-    // next state defined in the list.
+    // If all users approved the content, then set the node as the next state defined in the list.
     if ($this->helper->getModerationListStatus($form_state->get('osha_workflow_table'))) {
-      $this->helper->setNodeModerationState($form_state->get('osha_workflow_list_configuration')['workflow_state_next']);
+      $node = $this->routeMatch->getParameter('node');
+      $node->set('moderation_state', $form_state->get('osha_workflow_list_configuration')['workflow_state_next']);
+      $new_state = $this->helper->getWorkflow()->getTypePlugin()->getState($form_state->get('osha_workflow_list_configuration')['workflow_state_next']);
+      $storage = \Drupal::entityTypeManager()->getStorage('node');
+      $node = $storage->createRevision($node, $node->isDefaultRevision());
     }
     else {
-      // Auto save the current node to run the email handle.
-      $node = $this->helper->getLastRevisionNode();
-      $node->save();
+      $node = $this->routeMatch->getParameter('node');
+      $node->set('moderation_state', $form_state->get('osha_workflow_list_configuration')['workflow_state']);
+      $new_state = $this->helper->getWorkflow()->getTypePlugin()->getState($form_state->get('osha_workflow_list_configuration')['workflow_state']);
+      $storage = \Drupal::entityTypeManager()->getStorage('node');
+      $node = $storage->createRevision($node, $node->isDefaultRevision());
+    }
+    $node->isNewRevision(TRUE);
+    $node->save();
+
+    $this->messenger()->addStatus($this->t('The moderation state has been updated.'));
+    if ($new_state->isDefaultRevisionState()) {
+      $form_state->setRedirectUrl($node->toUrl('canonical'));
     }
   }
+
 
   /**
    * {@inheritdoc}

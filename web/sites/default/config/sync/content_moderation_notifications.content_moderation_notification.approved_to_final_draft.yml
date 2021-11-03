@@ -1,0 +1,18 @@
+uuid: 05b42755-3915-4b82-adad-64f2661750ec
+langcode: en
+status: true
+dependencies: {  }
+id: approved_to_final_draft
+workflow: editorial
+transitions:
+  content_rejected_by_the_project_manager: content_rejected_by_the_project_manager
+roles:
+  review_manager: review_manager
+author: false
+site_mail: false
+emails: ''
+subject: '[OSHA Website] CMW ([node:nid]) [node:title]'
+body:
+  value: "<p>Dear <strong>user</strong>,</p>\r\n\r\n<p>A content has been rejected <b>[node:title]</b>&nbsp;([node:url]) (type: <strong>[node:type]</strong>, status: <b>Final draft</b>).</p>\r\n\r\n<p>Thank you</p>\r\n"
+  format: full_html
+label: 'Approved to Final Draft'
