@@ -13,6 +13,6 @@ site_mail: false
 emails: ''
 subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear <strong>Reviewer</strong>,</p>\r\n\r\n<p>There is new content to be reviewed by you: <strong>[node:title]</strong> ([node:url]) (type: [node:type], status: <strong>Final draft</strong>). There are more items you can review from&nbsp;&nbsp;<a href=\"/admin/workbench/review-manager\" target=\"blank\">here</a>.</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  value: "<p>Dear <strong>Reviewer</strong>,</p>\r\n\r\n<p>There is new content to be reviewed by you: <strong>[node:title]</strong> ([node:url]) (type: <strong>[node:type]</strong>, status: <strong>Final draft</strong>). There are more items you can review from&nbsp;&nbsp;<a href=\"/admin/workbench/review-manager\" target=\"blank\">here</a>.</p>\r\n\r\n<p>Thank you</p>\r\n"
   format: full_html
 label: 'Draft to Final draft'

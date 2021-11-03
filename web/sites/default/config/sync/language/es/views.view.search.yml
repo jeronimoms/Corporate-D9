@@ -3,9 +3,6 @@ display:
   default:
     display_options:
       filters:
-        search_api_language:
-          expose:
-            description: ''
         search_api_fulltext:
           expose:
             label: Buscar

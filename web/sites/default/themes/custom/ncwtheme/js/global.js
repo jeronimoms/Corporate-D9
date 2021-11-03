@@ -402,6 +402,13 @@ jQuery(document).ready(function($) {
   // Hide aprobe form
   if ($("#approve-form")[0]) {
     $('#content-moderation-entity-moderation-form').hide();
+  }else{
+    $('#content-moderation-entity-moderation-form').show();
+  }
+  if($(".osha-workflow-list-widget p.active") && $(".osha-workflow-list-widget p.active").text() == "To Be Approved" && $("input[name='approving']").val()=="approver") {
+    $('#content-moderation-entity-moderation-form').hide();
+  }else{
+    $('#content-moderation-entity-moderation-form').show();
   }
 
   // Accesskey for custom elements

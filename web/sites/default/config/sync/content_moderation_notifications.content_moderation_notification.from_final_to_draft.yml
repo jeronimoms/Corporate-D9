@@ -12,12 +12,11 @@ transitions:
   from_ready_to_publish_to_draft: from_ready_to_publish_to_draft
 roles:
   editor: editor
-  review_manager: review_manager
 author: false
 site_mail: false
 emails: ''
 subject: '[OSHA Website-ddev] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear&nbsp;<strong>user</strong>,</p>\r\n\r\n<p>A content created by you needs to be revised in order to be approved:<strong>&nbsp;[node:title] </strong>([node:url]) (type:&nbsp;[node:content-type], status: Draft).</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  value: "<p>Dear&nbsp;<strong>user</strong>,</p>\r\n\r\n<p>A content created by you needs to be revised in order to be approved:<strong>&nbsp;[node:title] </strong>([node:url]) (type:&nbsp;<strong>[node:content-type]</strong>, status: <strong>Draft</strong>).</p>\r\n\r\n<p>Thank you</p>\r\n"
   format: full_html
 label: 'From any status to draft'
