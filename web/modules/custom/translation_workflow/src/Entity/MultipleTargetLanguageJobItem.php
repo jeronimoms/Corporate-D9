@@ -2,8 +2,10 @@
 
 namespace Drupal\translation_workflow\Entity;
 
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\Exception\UndefinedLinkTemplateException;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\tmgmt\Entity\JobItem;
@@ -247,8 +249,9 @@ class MultipleTargetLanguageJobItem extends JobItem {
     }
     $query->condition('state', [
       static::STATE_ACTIVE,
-      static::STATE_ACCEPTED,
       static::STATE_REVIEW,
+      static::STATE_TRANSLATION_VALIDATED,
+      static::STATE_TRANSLATION_VALIDATION_REQUIRED,
     ], 'IN');
     $existingJobItems = $query->execute();
     return !empty($existingJobItems);
@@ -439,9 +442,67 @@ class MultipleTargetLanguageJobItem extends JobItem {
         '@bundle' => $this->getItemType(),
         '@lang' => strtoupper($this->getTargetLangcode()),
       ]);
-    // @todo Validators
-    // OshaWorkflowNotifications::notifyTranslationAccepted($this);
-    return parent::acceptTranslation();
+    if (!$this->isNeedsReview() || !$plugin = $this->getSourcePlugin()) {
+      return FALSE;
+    }
+    if (!$plugin->saveTranslation($this, $this->getTargetLangcode())) {
+      return FALSE;
+    }
+    // If the plugin could save the translation, we will set it
+    // to the 'accepted' state.
+    $this->accepted();
+    return TRUE;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function accepted($message = NULL, $variables = [], $type = 'status') {
+    if (!isset($message)) {
+      $source_url = $this->getSourceUrl();
+      try {
+        // @todo Make sure we use the latest revision.
+        //   Fix in https://www.drupal.org/project/tmgmt/issues/2979126.
+        $translation = \Drupal::entityTypeManager()->getStorage($this->getItemType())->load($this->getItemId());
+      }
+      catch (PluginNotFoundException $e) {
+        $translation = NULL;
+      }
+      if (isset($translation) && $translation->hasTranslation($this->getTargetLangcode())) {
+        $translation = $translation->getTranslation($this->getTargetLangcode());
+        try {
+          $translation_url = $translation->toUrl();
+        }
+        catch (UndefinedLinkTemplateException $e) {
+          $translation_url = NULL;
+        }
+        $message = $source_url && $translation_url ? 'The translation for <a href=":source_url">@source</a> has been accepted as <a href=":target_url">@target</a>.' : 'The translation for @source has been accepted as @target.';
+        $variables = $source_url && $translation_url ? [
+          ':source_url' => $source_url->toString(),
+          '@source' => ($this->getSourceLabel()),
+          ':target_url' => $translation_url->toString(),
+          '@target' => $translation ? $translation->label() : $this->getSourceLabel(),
+        ] : [
+          '@source' => ($this->getSourceLabel()),
+          '@target' => ($translation ? $translation->label() : $this->getSourceLabel()),
+        ];
+      }
+      else {
+        $message   = $source_url ? 'The translation for <a href=":source_url">@source</a> has been accepted.' : 'The translation for @source has been accepted.';
+        $variables = $source_url ? [
+          ':source_url' => $source_url->toString(),
+          '@source'     => ($this->getSourceLabel()),
+        ] : ['@source' => ($this->getSourceLabel())];
+      }
+    }
+    $return = $this->setState(static::STATE_ACCEPTED, $message, $variables, $type);
+    // Check if this was the last unfinished job item in this job.
+    $job = $this->getJob();
+    if ($job && !$job->isContinuous() && tmgmt_job_check_finished($this->getJobId())) {
+      // Mark the job as finished in case it is a normal job.
+      $job->finished();
+    }
+    return $return;
   }
 
 }

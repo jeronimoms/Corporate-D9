@@ -143,6 +143,7 @@ class MultipleTargetLanguageJobForm extends TmgmtFormBase {
         '#open' => TRUE,
         '#weight' => 12,
       ];
+      $rows = [];
 
       foreach ($job->getItems() as $jobItem) {
         if (!$jobItem->isAccepted()) {
