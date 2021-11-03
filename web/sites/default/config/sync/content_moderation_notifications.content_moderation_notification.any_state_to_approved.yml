@@ -14,12 +14,13 @@ transitions:
   from_ready_to_publish_to_approved: from_ready_to_publish_to_approved
   from_published_to_ready_to_approved: from_published_to_ready_to_approved
 roles:
+  review_manager: review_manager
   project_manager: project_manager
 author: false
 site_mail: false
 emails: ''
 subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear <strong>user</strong>,</p>\r\n\r\n<p>A new content has been approved: <b>[node:title]</b>&nbsp;([node:url]) (type: [node:type], status:&nbsp;<b>Approved</b>).</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  value: "<p>Dear <strong>user</strong>,</p>\r\n\r\n<p>A new content has been approved: <b>[node:title]</b>&nbsp;([node:url]) (type: <strong>[node:type]</strong>, status:&nbsp;<b>Approved</b>).</p>\r\n\r\n<p>Thank you</p>\r\n"
   format: full_html
 label: 'Any state to Approved'
