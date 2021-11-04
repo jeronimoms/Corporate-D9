@@ -913,6 +913,16 @@ display:
           tokenize: false
           content: '<a class="clear-filter-view" href="/themes/musculoskeletal-disorders/practical-tools-musculoskeletal-disorders">Clear filter</a>'
           plugin_id: text_custom
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: '<h2 class="mt-3 available-resources">Resources available <span class="available-resources-number"><small>(@total)</small></span></h2>'
+          plugin_id: result
       footer:
         result:
           id: result
