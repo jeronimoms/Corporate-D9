@@ -1298,7 +1298,7 @@ display:
           group_type: group
           admin_label: ''
           order: DESC
-          exposed: false
+          exposed: true
           expose:
             label: 'Publication date'
           plugin_id: search_api

@@ -72,7 +72,6 @@ class VwCmn implements ContainerInjectionInterface {
     $this->formBuilder = $form_builder;
     $this->configFactory = $config_factory;
     $this->entityTypeManager = $entity_type_manager;
-
   }
 
   /**
@@ -108,7 +107,8 @@ class VwCmn implements ContainerInjectionInterface {
     $lists = $config->get('lists');
     if (array_key_exists('list', $lists)) {
       foreach ($lists['list'] as $list) {
-        if ($list['workflow'] == $workflow->id() && $list['workflow_state'] == $this->helper->getNodeModerationState()) {
+        if ($list['workflow'] == $workflow->id() &&
+          $list['workflow_state'] == $this->helper->getNodeModerationState()) {
           $table = strtolower($list['name']);
         }
       }
@@ -159,7 +159,6 @@ class VwCmn implements ContainerInjectionInterface {
       $data['to'] = [
         0 => $user->getEmail(),
       ];
-
       $this->helper->resetUsersStatus('approvers');
 
     }
