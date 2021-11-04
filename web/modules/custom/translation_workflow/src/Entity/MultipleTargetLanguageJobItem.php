@@ -241,7 +241,9 @@ class MultipleTargetLanguageJobItem extends JobItem {
     $query = \Drupal::entityQuery('tmgmt_job_item');
     foreach ($conditions as $field => $values) {
       if (is_array($values)) {
-        $query->condition($field, $values, 'IN');
+        if (!empty($values)) {
+          $query->condition($field, $values, 'IN');
+        }
       }
       else {
         $query->condition($field, $values);
