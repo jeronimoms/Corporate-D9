@@ -192,28 +192,30 @@ class Xml extends \XMLWriter implements FormatInterface {
     $job->set('file_uploaded', TRUE)->save();
 
     $flat_data = $this->getImportedTargets($job);
-    $flat_data['target_language'] = $this->extractTargetLanguage();
+    $flat_data['target_languages'] = $this->extractTargetLanguages();
     return $this->dataService->unflatten($flat_data);
   }
 
   /**
    * Extract translation language.
    *
-   * @return string
+   * @return array
    *   Translation language of xml.
    */
-  protected function extractTargetLanguage() {
-    $targetLanguage = NULL;
-    $translationTargetLanguage = $this->importedXML->xpath('//TranslationTargetLanguage');
-    if ($translationTargetLanguage) {
-      $translationTargetLanguage = reset($translationTargetLanguage);
-      $targetLanguage = (string) $translationTargetLanguage;
-      // @todo Do this in a better way.
-      if ($targetLanguage == 'pt') {
-        $targetLanguage = 'pt-pt';
+  protected function extractTargetLanguages() {
+    $targetLanguages = [];
+    $translationTargetLanguages = $this->importedXML->xpath('//TranslationTargetLanguage');
+    if ($translationTargetLanguages) {
+      foreach ($translationTargetLanguages as $translationTargetLanguage) {
+        $targetLanguage = (string) $translationTargetLanguage;
+        // @todo Do this in a better way.
+        if ($targetLanguage == 'pt') {
+          $targetLanguage = 'pt-pt';
+        }
+        $targetLanguages[] = $targetLanguage;
       }
     }
-    return $targetLanguage;
+    return $targetLanguages;
   }
 
   /**
