@@ -442,7 +442,7 @@ class MultipleTargetLanguageJobItem extends JobItem {
         '@bundle' => $this->getItemType(),
         '@lang' => strtoupper($this->getTargetLangcode()),
       ]);
-    if (!$this->isNeedsReview() || !$plugin = $this->getSourcePlugin()) {
+    if (!$plugin = $this->getSourcePlugin()) {
       return FALSE;
     }
     if (!$plugin->saveTranslation($this, $this->getTargetLangcode())) {
