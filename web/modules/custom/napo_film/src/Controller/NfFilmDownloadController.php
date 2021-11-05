@@ -73,8 +73,9 @@ class NfFilmDownloadController extends ControllerBase implements ContainerInject
       if (empty($video_id)) {
         $video_id = $default->get('field_video')->getString();
       }
-      if (is_array($video_id) && count($video_id) > 0) {
-        $video_id = $video_id[0]['target_id'];
+      if (is_array($video_id) && count($video_id) > 0 && $_GET["number"] != null) {
+        $numbervideo = $_GET["number"];
+        $video_id = $video_id[$numbervideo]['target_id'];
       }
       $media = $this->entityTypeManager->getStorage('media')->load($video_id);
       $media_file_id = $media->get('field_media_video_file')->getValue()['0']['target_id'];
