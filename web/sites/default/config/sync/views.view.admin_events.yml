@@ -2425,7 +2425,7 @@ display:
           type: select
           limit: true
           vid: activity
-          hierarchy: false
+          hierarchy: true
           error_message: true
           plugin_id: taxonomy_index_tid
         field_agency_role_value:
@@ -3679,7 +3679,7 @@ display:
             encoding: utf8
             utf8_bom: '0'
             use_serializer_encode_only: false
-      filename: events.xls
+      filename: events.xlsx
       automatic_download: true
       store_in_public_file_directory: null
       redirect_to_display: none
