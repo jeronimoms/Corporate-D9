@@ -353,7 +353,7 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
       ->condition('tjid', $this->id());
     foreach ($conditions as $key => $condition) {
       if (is_array($condition)) {
-        $operator = isset($condition['operator']) ? $condition['operator'] : '=';
+        $operator = isset($condition['operator']) ? $condition['operator'] : 'IN';
         $query->condition($key, $condition['value'], $operator);
       }
       else {
@@ -810,9 +810,9 @@ class MultipleTargetLanguageJob extends ContentEntityBase implements EntityOwner
    */
   public function addTranslatedData(array $data, $key = NULL, $status = NULL) {
     $itemsSearch = [];
-    if (isset($data['target_language'])) {
-      $itemsSearch = ['target_language' => $data['target_language']];
-      unset($data['target_language']);
+    if (isset($data['target_languages'])) {
+      $itemsSearch = ['target_language' => ['value' => $data['target_languages']]];
+      unset($data['target_languages']);
     }
     $key = \Drupal::service('tmgmt.data')->ensureArrayKey($key);
     $items = $this->getItems($itemsSearch);

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.newsletter_content.field_covid_contents_hideintro
+    - field.field.node.newsletter_content.field_date_to_publish
     - field.field.node.newsletter_content.field_events_section_title
     - field.field.node.newsletter_content.field_healthy_contents_hideintro
     - field.field.node.newsletter_content.field_hide_more_news_intro_text
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.newsletter_content.field_nlc_events_content
     - field.field.node.newsletter_content.field_oira_contents_hideintro
     - field.field.node.newsletter_content.field_oshmail_title
+    - field.field.node.newsletter_content.field_twetter_image_for_outlook
     - field.field.node.newsletter_content.field_url_alias
     - field.field.node.newsletter_content.field_view_twetter_block
     - field.field.node.newsletter_content.field_wiki_contents_hideintro
@@ -68,6 +70,7 @@ dependencies:
     - color_field
     - datetime
     - ds
+    - image
     - link
     - options
     - user
@@ -92,6 +95,15 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_date_to_publish:
+    weight: 61
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_events_section_title:
     weight: 49
@@ -174,6 +186,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_twetter_image_for_outlook:
+    weight: 60
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   field_url_alias:
     weight: 47

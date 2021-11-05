@@ -214,6 +214,68 @@ input[type=search] {
   color: #003399;
 }
 
+/* Ck editor Accordions */
+.ckeditor-accordion-container > dl {
+  border: 0;
+  margin-bottom: 0;
+}
+.ckeditor-accordion-container > dl dt > a {
+  background-color: transparent;
+  padding: 0;
+  color: #003399;
+  font-family: "Open Sans Condensed";
+  font-size: 1.3rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 0 !important;
+}
+.ckeditor-accordion-container > dl dt > a:hover {
+  border-bottom: 0 !important;
+  background-color: transparent;
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
+  display: none;
+}
+.ckeditor-accordion-container > dl dt > a::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 17px;
+  background: url(../images/triangle-collapsed.png) no-repeat scroll 100% center transparent;
+  top: 30%;
+  right: 20px;
+}
+.ckeditor-accordion-container > dl dt.active > a {
+  background-color: transparent;
+}
+.ckeditor-accordion-container > dl dt.active > a::after {
+  width: 17px;
+  background: url(../images/triangle-expanded.png) no-repeat scroll 100% center transparent;
+  right: 17px;
+}
+.ckeditor-accordion-container > dl dd {
+  padding: 0;
+}
+.ckeditor-accordion-container dt {
+  position: relative;
+  width: 100%;
+  font-family: "Open Sans Condensed";
+  color: #003399;
+  background: #e8eef7;
+  height: auto;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-right: 2.5rem;
+  border: 0;
+  margin-top: 0;
+  /*no margin - to fix text effect - add border*/
+  border-top: 5px solid #FFF;
+  border-bottom: 5px solid #FFF;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
 /* view board members / view advisory groups */
 .view-board-members .view-grouping, .view-advisory-groups .view-grouping, .view-seminar .view-grouping {
   width: 100%;
@@ -850,6 +912,10 @@ div#sliding-popup {
   line-height: 1.6;
 }
 
+.view-musculoskeletal-disorders-list .views-exposed-form, .view-practical-tools-and-guidance-on-dangerous-substances .views-exposed-form {
+  padding-bottom: 0;
+}
+
 .views-exposed-form.custom-active-filter {
   padding-bottom: 2.5rem;
 }
@@ -959,6 +1025,19 @@ select, .facets-dropdown {
   display: block;
 }
 
+a.clear-filter-view {
+  display: none;
+  font-size: 0.9rem;
+  color: #003399;
+  border-bottom: 2px solid #c72272;
+  padding: 0;
+  text-decoration: none;
+}
+a.clear-filter-view:hover {
+  border-bottom: 2px solid #003399;
+  text-decoration: none;
+}
+
 /* Custom styles in Pages */
 /*Publications*/
 .publications .view-filters fieldset {
@@ -1058,7 +1137,47 @@ select, .facets-dropdown {
   margin-top: 5px;
 }
 
+html[lang=el] .publications .view-filters fieldset {
+  width: 26%;
+}
+html[lang=el] .publications .view-filters fieldset:nth-child(3) {
+  width: 26%;
+}
+html[lang=el] .publications .view-filters fieldset:nth-child(2) {
+  width: 33%;
+}
+html[lang=el] .publications .form-item-search-api-fulltext {
+  margin-top: 21px;
+}
+
+html[lang=fr] .publications .view-filters fieldset {
+  width: 27%;
+}
+html[lang=fr] .publications .view-filters fieldset:nth-child(3) {
+  width: 24.5%;
+  margin-top: 21px;
+}
+html[lang=fr] .publications .view-filters fieldset:nth-child(2) {
+  width: 33%;
+}
+html[lang=fr] .publications .form-item-search-api-fulltext {
+  margin-top: 21px;
+}
+
 /* Rsponsive Filters */
+@media only screen and (max-width: 1200px) {
+  html[lang=fr] .publications .view-filters fieldset:nth-child(2) {
+    width: 31%;
+  }
+
+  html[lang=fr] .publications .view-filters fieldset:nth-child(2) {
+    width: 31%;
+  }
+
+  html[lang=el] .publications .view-filters fieldset:nth-child(2) {
+    width: 30%;
+  }
+}
 @media only screen and (max-width: 767px) {
   #edit-submit-publications-index {
     left: 89%;
@@ -1071,7 +1190,8 @@ select, .facets-dropdown {
   /* Custom styles in Pages */
   /*Publications*/
   .publications .view-filters fieldset {
-    width: 100%;
+    width: 100% !important;
+    margin-top: 0 !important;
   }
 }
 /*Headings*/
@@ -1587,6 +1707,10 @@ h3.home a:hover {
   content: none;
 }
 
+.node--type-fop-page .sidebar-second .related-views .views-element-container.block.block-views {
+  background: transparent;
+}
+
 /*Blocks right column*/
 .block-oshwiki-static {
   width: 100%;
@@ -2076,6 +2200,10 @@ body .see-more-arrow.arrow-back a:before, body .node--type-publication .rr-right
   height: 10px;
   background: url(../images/arrow-back.png) no-repeat;
   border-bottom: 0 !important;
+}
+
+html[lang=el] body.publications .view-display-id-slideshow .see-more-arrow a, html[lang=el] body.publications .view-display-id-slideshow .node--type-publication .rr-right-column .field--name-node-link a, .node--type-publication .rr-right-column html[lang=el] body.publications .view-display-id-slideshow .field--name-node-link a, html[lang=el] body.publications .view-display-id-slideshow .link_news_events a {
+  font-size: 0.65rem;
 }
 
 body .news_and_events.block-menu-block ul li {
@@ -3158,9 +3286,8 @@ body.node--type-infographic .field--name-body {
   margin: 0 0 2px;
 }
 
-/* Hide musculoskeletal disorders titles */
-.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field {
-  display: none;
+#approve-form {
+  padding-bottom: 1rem;
 }
 
 /* Breadcrumbs */
@@ -3220,7 +3347,7 @@ body.node--type-infographic .field--name-body {
 .view-eu-osha-event-summaries .events-summary-col {
   height: 100%;
   background: #FFF;
-  padding-bottom: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 .view-eu-osha-event-summaries .events-summary-col .left-column, .view-eu-osha-event-summaries .events-summary-col .right-column {
   padding: 1rem;
@@ -3237,8 +3364,32 @@ body.node--type-infographic .field--name-body {
 }
 .view-eu-osha-event-summaries .events-summary-col .field-content div.see-more-arrow, .view-eu-osha-event-summaries .events-summary-col .field-content .node--type-publication .rr-right-column div.field--name-node-link, .node--type-publication .rr-right-column .view-eu-osha-event-summaries .events-summary-col .field-content div.field--name-node-link {
   position: absolute;
-  bottom: 16px;
+  bottom: 15px;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content .report-media-document-file-link-only {
+  position: relative;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf {
+  position: absolute;
+  bottom: -47px;
   right: 16px;
+  width: 130px;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf a {
+  display: inline-block;
+  background: url("../images/ico-report-available.png") 1px 1px no-repeat;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  padding-left: 31px;
+  line-height: 17px;
+  padding-bottom: 5px;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf a:hover {
+  text-decoration: none;
+  color: #003399;
+}
+.view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf .file-size {
+  display: none;
 }
 .view-eu-osha-event-summaries .events-summary-col:nth-child(1) {
   border-right: 10px solid #cfddee;
@@ -3711,6 +3862,24 @@ body.node--type-infographic .field--name-body {
 }
 
 /* Responsive */
+@media only screen and (max-width: 1200px) {
+  .view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: auto;
+  }
+  .view-eu-osha-event-summaries .events-summary-col .field-content span.file--mime-application-pdf a {
+    display: inline-block;
+    background: url(../images/ico-report-available.png) 1px 3px no-repeat;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    padding-left: 31px;
+    line-height: 17px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
 @media only screen and (max-width: 768px) {
   .view-eu-osha-event-summaries .row {
     display: block;
@@ -6065,6 +6234,7 @@ body.node--type-publication {
 .node--type-publication .related-resources-fluid .publications-detail-right-column {
   padding-top: 1rem;
   padding-right: 1rem;
+  background: #FFF;
 }
 .node--type-publication .related-resources-fluid .node--type-publication h2 {
   font-size: 1.2rem;
@@ -6092,9 +6262,6 @@ body.node--type-publication {
   background: transparent;
   margin-bottom: 0;
   padding-bottom: 0;
-}
-.related-resources-fluid .field--type-entity-reference {
-  background: #FFFFFF;
 }
 .related-resources-fluid .field--type-entity-reference .aditional-publications {
   padding-top: 0;
@@ -6380,6 +6547,30 @@ body.node--type-publication {
     margin-right: 1rem;
   }
 }
+.content-order-copy {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+.content-order-copy a {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  padding-right: 0 !important;
+  float: left;
+  padding-top: 0;
+  background: transparent !important;
+  border-bottom: 0 !important;
+}
+.content-order-copy a:hover img {
+  opacity: 0.8;
+}
+.content-order-copy img {
+  width: 140px;
+  height: auto;
+  float: right;
+  margin-left: 1rem;
+}
+
 @media only screen and (max-width: 990px) {
   .node--type-publication .publications-left-column {
     display: none;
@@ -6434,6 +6625,18 @@ body.node--type-publication {
   }
   .publications .revamp-row .publications-right-column .content-publication-info span:nth-child(3) {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .content-order-copy span {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+  .content-order-copy img {
+    float: none;
+    margin-top: 1rem;
+    margin-left: 0;
   }
 }
 #block-headerthesaurus-2 .header__wrapper {
@@ -6924,7 +7127,6 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   margin-top: 5px;
 }
 .revamp-row .av-type {
-  display: flex;
   align-items: center;
 }
 .revamp-row .av-type span {
@@ -7360,6 +7562,21 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   padding-bottom: 0;
 }
 
+/* Hide musculoskeletal disorders titles */
+.node--type-musculoskeletal-disorders {
+  /* Hide original language description */
+}
+.node--type-musculoskeletal-disorders .h1-back-wrapper h1 {
+  max-width: 80%;
+}
+.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-node-title.field--type-ds.field--label-hidden.field__item,
+.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.field.field--name-field-title-original.field--type-string.field--label-hidden.field__item.quickedit-field {
+  display: none;
+}
+.node--type-musculoskeletal-disorders #block-ncwtheme-content > div > div > div.description-wrapper > .field--name-field-body-original {
+  display: none;
+}
+
 @media only screen and (max-width: 1615px) {
   /* Menu in two lines */
   body {
@@ -7613,6 +7830,16 @@ html[lang=de] #block-thesaurus ul .nav-item, html[lang=el] #block-thesaurus ul .
   .wraper-blog-and-img .img-newsletter img {
     width: 100%;
     height: auto;
+  }
+
+  .node--type-musculoskeletal-disorders .h1-back-wrapper h1 {
+    max-width: 100%;
+  }
+  .node--type-musculoskeletal-disorders #main .tags-wrapper {
+    display: block;
+  }
+  .node--type-musculoskeletal-disorders #main .tags-wrapper .field {
+    margin: 0 1rem 1rem 0;
   }
 }
 /* End Media 768px */

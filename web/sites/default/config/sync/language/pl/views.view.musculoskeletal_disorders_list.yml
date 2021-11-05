@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Wyszukaj
+          reset_button_label: 'Wyczyść filtr'
+          exposed_sorts_label: 'Posortuj według'
+          sort_asc_label: Rosnąca
+          sort_desc_label: Malejąca
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Wyszukaj
+      sorts:
+        field_year:
+          expose:
+            label: 'Rok publikacji'
+        search_api_relevance:
+          expose:
+            label: Istotność
+      empty:
+        area_text_custom:
+          content: 'Brak wyników'

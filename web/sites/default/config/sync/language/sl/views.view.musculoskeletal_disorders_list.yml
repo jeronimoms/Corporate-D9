@@ -1,0 +1,22 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Išči
+          reset_button_label: 'Počisti filter'
+          exposed_sorts_label: 'Razvrsti po'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Išči
+      sorts:
+        field_year:
+          expose:
+            label: 'Leto objave'
+        search_api_relevance:
+          expose:
+            label: Pomembnost
+      empty:
+        area_text_custom:
+          content: 'Ni zadetkov'

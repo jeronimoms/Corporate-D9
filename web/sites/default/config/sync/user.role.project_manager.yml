@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: project_manager
 label: 'Project Manager'
-weight: 5
+weight: -6
 is_admin: null
 permissions:
   - 'accept job item translation'
@@ -14,10 +14,12 @@ permissions:
   - 'access dashboard'
   - 'access devel information'
   - 'access media browser'
+  - 'access media overview'
   - 'access toolbar'
   - 'access workbench'
   - 'access workbench access by role'
   - 'administer approvers'
+  - 'administer project_managers'
   - 'administer reviewers'
   - 'administer search and replace settings'
   - 'create calls content'
@@ -156,6 +158,7 @@ permissions:
   - 'use editorial transition send_to_final_draft'
   - 'use editorial transition send_to_final_draft_from_publish'
   - 'use editorial transition send_to_ready_to_publish'
+  - 'use editorial transition send_to_ready_to_publish_from_draft_'
   - 'use editorial transition send_to_ready_to_publish_from_final_draft'
   - 'use editorial transition send_to_ready_to_publish_from_to_be_reviewed'
   - 'use linguatools autocomplete'

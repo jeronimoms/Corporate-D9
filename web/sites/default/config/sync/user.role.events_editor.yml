@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: events_editor
 label: 'Events Editor'
-weight: 12
+weight: 1
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -12,6 +12,7 @@ permissions:
   - 'access contextual links'
   - 'access dashboard'
   - 'access media browser'
+  - 'access media overview'
   - 'create events content'
   - 'create files'
   - 'create media'

@@ -1,0 +1,14 @@
+uuid: 5a666f37-c783-4040-a404-0ade363b5a28
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.procur_edt
+  module:
+    - user
+id: user_remove_role_action.procur_edt
+label: 'Remove the PROCUR_EDT role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: procur_edt

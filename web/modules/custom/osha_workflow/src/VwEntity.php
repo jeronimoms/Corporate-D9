@@ -105,8 +105,18 @@ class VwEntity implements ContainerInjectionInterface {
 
       // Remove the moderation form if the current user has the role "approver".
       if ($state == 'to_be_approved' && array_search('approver', $this->account->getRoles())) {
-        // Pending cofirmation! $form['#access'] = FALSE;.
-        return;
+       // $form['#access'] = FALSE;
+        $form['approving'] = [
+          '#type' => 'hidden',
+          '#id' => 'approving',
+          '#value' => 'approver'
+        ];
+      }else{
+        $form['approving'] = [
+          '#type' => 'hidden',
+          '#id' => 'approving',
+          '#value' => 'other'
+        ];
       }
 
       // Custom validation to control if the list is empty.
@@ -142,23 +152,37 @@ class VwEntity implements ContainerInjectionInterface {
   public function formValidateAlter(&$form, FormStateInterface $form_state) {
     // Get the new moderation state.
     $moderation_state = ($form_state->hasValue('moderation_state')) ? $form_state->getValue('moderation_state')[0]['value'] : $form_state->getValue('new_state');
+
+    // From draft to final draft.
+    if ($moderation_state == 'final_draft') {
+      // Get the list of reviewers.
+      $list = $this->helper->getModerationList('reviewers');
+      if (empty($list)) {
+        // Return default reviewers.
+        $list = $this->helper->getDefaultList('reviewers');
+      }
+    }
+
+    // From final draft to be reviewed.
+    if ($moderation_state == 'to_be_reviewed') {
+      // Get the list of reviewers.
+      $list = $this->helper->getModerationList('project_managers');
+      if (empty($list)) {
+        // Return default approvers.
+        $list = $this->helper->getDefaultList('project_managers');
+      }
+    }
+
+    // From to be reviewd to to be approved
     if ($moderation_state == 'to_be_approved') {
       // Get the list of approvers.
       $list = $this->helper->getModerationList('approvers');
       if (empty($list)) {
-        // Return error if the list is empty.
-        $form_state->setErrorByName('Empty Approvers', $this->t('The list of approvers is empty.'));
+        // Return default approvers.
+        $list = $this->helper->getDefaultList('approvers');
       }
     }
 
-    if ($moderation_state == 'final_draft') {
-      // Get the list of approvers.
-      $list = $this->helper->getModerationList('reviewers');
-      if (empty($list)) {
-        // Return error if the list is empty.
-        $form_state->setErrorByName('Empty Reviewers', $this->t('The list of reviewers is empty.'));
-      }
-    }
   }
 
   /**
@@ -211,6 +235,7 @@ class VwEntity implements ContainerInjectionInterface {
     // Set the block as first element.
     $plugin_block = $this->blockManager->createInstance('osha_workflow_block', []);
     array_unshift($build, $plugin_block->build());
+
   }
 
   /**
@@ -228,7 +253,13 @@ class VwEntity implements ContainerInjectionInterface {
     $lists = $config->get('lists');
     if (array_key_exists('list', $lists)) {
       foreach ($lists['list'] as $list) {
+        $alias = "";
         $name = strtolower($list['name']);
+        switch ($name){
+          case "reviewers": $alias="RM List";break;
+          case "project_managers": $alias="Review";break;
+          case "approvers": $alias= "Approve";break;
+        }
         // Generate the new local task.
         $local_tasks['entity.node.' . $name . '_node'] = [
           'route_name' => "osha_workflow." . $name . ".list",
@@ -238,9 +269,10 @@ class VwEntity implements ContainerInjectionInterface {
             'list_name' => $name,
           ],
           'options' => [],
-          'title' => $name,
+          'title' => $alias,
         ];
       }
+     // unset($local_tasks['entity.node.reviewers_node']);
     }
 
   }

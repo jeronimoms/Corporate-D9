@@ -19,14 +19,9 @@ dependencies:
     - image.style.infographic_thumbnail
     - node.type.infographic
   module:
-    - layout_builder
     - media
     - text
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.infographic.full
 targetEntityType: node
 bundle: infographic

@@ -37,7 +37,6 @@ dependencies:
     - datetime
     - ds
     - field_group
-    - layout_builder
     - user
 third_party_settings:
   field_group:
@@ -63,9 +62,6 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Summary & Resources'
-  layout_builder:
-    allow_custom: false
-    enabled: false
   ds:
     layout:
       id: ds_1col
@@ -114,6 +110,11 @@ targetEntityType: node
 bundle: publication
 mode: view
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_file_media:
     type: entity_reference_label
     weight: 2
@@ -134,6 +135,7 @@ content:
 hidden:
   addtoany: true
   body: true
+  breadcrumbs: true
   field_activity: true
   field_aditional_resources: true
   field_archived: true

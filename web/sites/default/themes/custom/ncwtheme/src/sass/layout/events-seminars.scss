@@ -1,12 +1,11 @@
 /* Views */
-
 .view-eu-osha-event-summaries{
   margin-top: 2rem;
   margin-bottom: 2rem;
   .events-summary-col{
     height: 100%;
     background: $bg-color-white;
-    padding-bottom: 1.5rem;
+    padding-bottom: 2.5rem;
     .left-column , .right-column{
       padding: 1rem;
     }
@@ -21,8 +20,32 @@
       }
       div.see-more-arrow{
         position: absolute;
-        bottom: 16px;
+        bottom: 15px;
+      }
+      .report-media-document-file-link-only{
+        position: relative;
+      }
+      span.file--mime-application-pdf{
+        position: absolute;
+        bottom: -47px;
         right: 16px;
+        width: 130px;
+        a{
+          display: inline-block;
+          background: url("../images/ico-report-available.png") 1px 1px no-repeat;
+          font-size: 0.9rem;
+          text-decoration: underline;
+          padding-left: 31px;
+          line-height: 17px;
+          padding-bottom: 5px;
+          &:hover{
+            text-decoration: none;
+            color: $text-color-blue;
+          }
+        }
+        .file-size{
+          display: none;
+        }
       }
     }
   }
@@ -443,6 +466,32 @@
 }
 
 /* Responsive */
+
+@media only screen and (max-width : 1200px) {
+  .view-eu-osha-event-summaries {
+    .events-summary-col {
+      .field-content {
+        span.file--mime-application-pdf {
+          position: relative;
+          bottom: 0;
+          right: 0;
+          width: auto;
+          a {
+            display: inline-block;
+            background: url(../images/ico-report-available.png) 1px 3px no-repeat;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            padding-left: 31px;
+            line-height: 17px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width : 768px) {
   .view-eu-osha-event-summaries {
     .row{

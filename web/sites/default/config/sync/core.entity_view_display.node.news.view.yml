@@ -30,7 +30,6 @@ dependencies:
   module:
     - datetime
     - ds
-    - layout_builder
     - media
     - smart_trim
     - user
@@ -69,9 +68,6 @@ third_party_settings:
           wrapper: h2
           class: ''
           exclude_node_title: '1'
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.news.view
 targetEntityType: node
 bundle: news

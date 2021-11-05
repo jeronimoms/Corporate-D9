@@ -256,7 +256,16 @@ jQuery(document).ready(function($) {
     //Add the active class to the left menu 'Procurement'
     $('.menu-level-1 > li:nth-child(6)').addClass('menu-item--active-trail');
     $('.menu-level-1 > li:nth-child(6) a').addClass('is-active');
+  }
 
+  //View clear filter MSD DB - MDR-4617
+  if ($(".clear-filter-view")[0]) {
+    let url = window.location.href;
+    if(url.includes('?')){
+      $('.clear-filter-view').show();
+    }else{
+      $('.clear-filter-view').hide();
+    }
   }
 
   //Add the active class to the left menu 'Infographics'
@@ -382,6 +391,24 @@ jQuery(document).ready(function($) {
   // Add class in letter A when load the page Glossary
   if (!$(".page-view-glossary .view-glossary .views-summary a.is-active")[0]) {
     $('.page-view-glossary .view-glossary .views-summary:nth-child(4) a').addClass('is-active');
+  }
+
+  // Show original language description on musculoskeletal disorders
+  if ($(".view-description-original-language")[0]) {
+    $('#block-ncwtheme-content > div > div > div.description-wrapper > .field--name-field-body-original').show();
+    $('#block-ncwtheme-content > div > div > div.description-wrapper > .field--name-body').hide();
+  }
+
+  // Hide aprobe form
+  if ($("#approve-form")[0]) {
+    $('#content-moderation-entity-moderation-form').hide();
+  }else{
+    $('#content-moderation-entity-moderation-form').show();
+  }
+  if($(".osha-workflow-list-widget p.active") && $(".osha-workflow-list-widget p.active").text() == "To Be Approved" && $("input[name='approving']").val()=="approver") {
+    $('#content-moderation-entity-moderation-form').hide();
+  }else{
+    $('#content-moderation-entity-moderation-form').show();
   }
 
   // Accesskey for custom elements

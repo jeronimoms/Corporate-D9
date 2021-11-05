@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: news_editor
 label: 'News Editor'
-weight: 14
+weight: 3
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -12,14 +12,18 @@ permissions:
   - 'access contextual links'
   - 'access dashboard'
   - 'access media browser'
+  - 'access media overview'
+  - 'access sitemap'
   - 'create files'
   - 'create highlight content'
+  - 'create image media'
   - 'create news content'
   - 'create press_release content'
   - 'create url aliases'
   - 'delete any image files'
   - 'delete own highlight content'
   - 'delete own image files'
+  - 'delete own image media'
   - 'delete own news content'
   - 'delete own press_release content'
   - 'edit any content in draft'
@@ -27,6 +31,7 @@ permissions:
   - 'edit any content in rejected'
   - 'edit any highlight content'
   - 'edit any image files'
+  - 'edit any image media'
   - 'edit any news content'
   - 'edit any press_release content'
   - 'edit meta tags'
@@ -38,6 +43,8 @@ permissions:
   - 'moderate news state from draft to final_draft'
   - 'moderate press_release state from draft to final_draft'
   - 'osha access administration pages'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition final_draft_to_final_draft'
   - 'use editorial transition send_to_final_draft'
   - 'use manualcrop'
   - 'use media wysiwyg'
@@ -46,8 +53,11 @@ permissions:
   - 'use text format full_html'
   - 'use text format full_html_minimal'
   - 'use workbench access'
+  - 'view all revisions'
+  - 'view media'
   - 'view own files'
   - 'view own private files'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view private files'
   - 'view the administration theme'

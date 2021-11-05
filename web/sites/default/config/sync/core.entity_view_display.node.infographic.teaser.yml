@@ -18,13 +18,8 @@ dependencies:
     - field.field.node.infographic.field_twin_infographics
     - node.type.infographic
   module:
-    - layout_builder
     - text
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.infographic.teaser
 targetEntityType: node
 bundle: infographic
@@ -37,8 +32,14 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_activity: true
   field_archived: true
   field_external_url: true

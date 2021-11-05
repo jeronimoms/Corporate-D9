@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: approver
 label: Approver
-weight: 6
+weight: -5
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -17,6 +17,7 @@ permissions:
   - 'access workbench'
   - 'access workbench access by role'
   - 'administer approvers'
+  - 'administer project_managers'
   - 'administer reviewers'
   - 'create 25th_anniversary content'
   - 'create article content'

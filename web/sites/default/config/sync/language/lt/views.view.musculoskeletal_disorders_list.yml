@@ -1,0 +1,22 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ieškoti
+          reset_button_label: 'Valyti filtrą'
+          exposed_sorts_label: 'Rūšiuoti pagal'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Ieškoti
+      sorts:
+        field_year:
+          expose:
+            label: 'Leidybos metai'
+        search_api_relevance:
+          expose:
+            label: Svarba
+      empty:
+        area_text_custom:
+          content: 'Rezultatų nerasta'

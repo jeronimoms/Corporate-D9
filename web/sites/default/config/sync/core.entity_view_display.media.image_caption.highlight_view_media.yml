@@ -14,12 +14,7 @@ dependencies:
   module:
     - ds
     - image_field_caption
-    - layout_builder
     - text
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: media.image_caption.highlight_view_media
 targetEntityType: media
 bundle: image_caption

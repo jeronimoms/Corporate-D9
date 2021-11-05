@@ -11,12 +11,7 @@ dependencies:
   module:
     - ds
     - image
-    - layout_builder
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.slideshare.osha_resources
 targetEntityType: node
 bundle: slideshare

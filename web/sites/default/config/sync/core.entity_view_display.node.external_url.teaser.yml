@@ -7,13 +7,8 @@ dependencies:
     - field.field.node.external_url.field_external_url
     - node.type.external_url
   module:
-    - layout_builder
     - link
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.external_url.teaser
 targetEntityType: node
 bundle: external_url
@@ -33,6 +28,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   langcode: true
   links: true
   search_api_excerpt: true

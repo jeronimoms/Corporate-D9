@@ -41,15 +41,10 @@ dependencies:
     - node.type.musculoskeletal_disorders
   module:
     - ds
-    - layout_builder
     - link
     - options
     - smart_trim
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.musculoskeletal_disorders.view
 targetEntityType: node
 bundle: musculoskeletal_disorders

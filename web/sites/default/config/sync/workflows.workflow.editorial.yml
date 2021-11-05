@@ -64,6 +64,11 @@ type_settings:
       default_revision: false
       label: 'To Be Reviewed'
       weight: -1
+    unpublished:
+      published: false
+      default_revision: true
+      label: Unpublished
+      weight: 4
   transitions:
     approve_rejected_content:
       label: 'Approve rejected content'
@@ -287,6 +292,48 @@ type_settings:
         - to_be_reviewed
       to: to_be_reviewed
       weight: -26
+    from_unpublished_to_approved:
+      label: 'From Unpublished to Approved'
+      from:
+        - unpublished
+      to: approved
+      weight: 36
+    from_unpublished_to_draft:
+      label: 'From Unpublished to Draft'
+      from:
+        - unpublished
+      to: draft
+      weight: 31
+    from_unpublished_to_final_draft:
+      label: 'From Unpublished to Final Draft'
+      from:
+        - unpublished
+      to: final_draft
+      weight: 33
+    from_unpublished_to_ready_to_publish:
+      label: 'From Unpublished to Ready to publish'
+      from:
+        - unpublished
+      to: ready_to_publish
+      weight: 37
+    from_unpublished_to_rejected:
+      label: 'From Unpublished to Rejected'
+      from:
+        - unpublished
+      to: rejected
+      weight: 32
+    from_unpublished_to_to_be_approved:
+      label: 'From Unpublished to To be Approved'
+      from:
+        - unpublished
+      to: to_be_approved
+      weight: 35
+    from_unpublished_to_to_be_reviewed:
+      label: 'From Unpublished to To be Reviewed'
+      from:
+        - unpublished
+      to: to_be_reviewed
+      weight: 34
     project_manager_rejects_rejected_content:
       label: 'Project Manager rejects Rejected content'
       from:
@@ -419,6 +466,12 @@ type_settings:
         - to_be_approved
       to: approved
       weight: -7
+    unpublish:
+      label: Unpublish
+      from:
+        - published
+      to: unpublished
+      weight: 30
   entity_types:
     node:
       - 25th_anniversary
