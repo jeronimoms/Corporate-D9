@@ -11,8 +11,8 @@ roles:
 author: false
 site_mail: false
 emails: ''
-subject: '[OSHA Website] CMW:([node:id]) [node:title]'
+subject: '[OSHA Website] CMW ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear <strong>Approver</strong>,</p>\r\n\r\n<p>There is new content to be approved by you: <strong>[node:title]&nbsp;</strong> ([node:url]) (type: [node:type], status: <b>To be approved</b>). There are more&nbsp;items that you can review from <a href=\"/admin/workbench/approve\" target=\"_blank\">here.</a></p>\r\n\r\n<p>Thank you</p>\r\n"
+  value: "<p>Dear <strong>Approver</strong>,</p>\r\n\r\n<p>There is new content to be approved by you: <strong>[node:title]&nbsp;</strong> ([node:url]) (type:<strong> [node:type]</strong>, status: <b>To be approved</b>). There are more&nbsp;items that you can review from <a href=\"/admin/workbench/approve\" target=\"_blank\">here.</a></p>\r\n\r\n<p>Thank you</p>\r\n"
   format: full_html
 label: 'To next approver'

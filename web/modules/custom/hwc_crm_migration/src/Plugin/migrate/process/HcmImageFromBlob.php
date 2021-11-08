@@ -33,8 +33,9 @@ class HcmImageFromBlob extends ProcessPluginBase {
       throw new MigrateSkipProcessException();
     }
 
-    $name = $row->getSourceProperty('title') . '.' . $row->getSourceProperty('field_logo_type');
-    $file = file_save_data(base64_decode($value), 'public://hcm_migration/images/' . $name, FileSystemInterface::EXISTS_REPLACE);
+    $name = $row->getSourceProperty('title') . ' ' . $row->getSourceProperty('field_country') . '.' . $row->getSourceProperty('field_logo_type');
+    print_r($name . PHP_EOL);
+    $file = file_save_data(base64_decode($value), 'public://ncw/images/' . $name, FileSystemInterface::EXISTS_REPLACE);
     $media = Media::create(
       [
         'bundle' => 'image',

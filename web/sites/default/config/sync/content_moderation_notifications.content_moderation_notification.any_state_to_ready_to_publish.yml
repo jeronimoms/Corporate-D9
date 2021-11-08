@@ -19,6 +19,6 @@ site_mail: false
 emails: ''
 subject: '[OSHA Website] CMW: ([node:nid]) [node:title]'
 body:
-  value: "<p>Dear <strong>user</strong>,</p>\r\n\r\n<p>No action is required. This message is just to inform you that there a content has been set to ready to publish:&nbsp;<strong>[node:title] ([node:url])</strong> (type: [node:content-type], status: <strong>Ready to publish</strong>)\"</p>\r\n\r\n<p>Thank you,</p>\r\n"
+  value: "<p>Dear <strong>user</strong>,</p>\r\n\r\n<p>No action is required. This message is just to inform you that there a content has been set to ready to publish:&nbsp;<strong>[node:title] ([node:url])</strong> (type: <strong>[node:content-type]</strong>, status: <strong>Ready to publish</strong>)\"</p>\r\n\r\n<p>Thank you</p>\r\n"
   format: full_html
 label: 'Any state to Ready to publish'
