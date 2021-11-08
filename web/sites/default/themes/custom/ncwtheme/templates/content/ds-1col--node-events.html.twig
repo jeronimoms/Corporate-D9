@@ -18,6 +18,14 @@
   <h1>{{ 'OSH events' | trans }}</h1>
   <a href="/oshevents" class="pull-right-flex back-to-link">{{ 'Back to events' | trans }}</a>
 </div>
+<div>
+  {% if not node.isPublished() %}
+    <mark class="unpublished">Unpublished</mark>
+  {% endif %}
+</div>
+{% if not node.isPublished() %}
+  <{{ ds_content_wrapper }}{{ attributes.addClass('node--unpublished') }}>
+{% endif %}
 <h2>{{ ds_content.node_title }}</h2>
 <div class="group-events-event-details field-group-div">
   <h3 class="events-title">{{ 'Event Details' | trans }}</h3>
