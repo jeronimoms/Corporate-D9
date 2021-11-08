@@ -9,6 +9,24 @@
  * - ds_content: content region
  */
 #}
+<style>
+  .node--unpublished div{ background-color: #fff4f4;}
+  .unpublished{
+    height: 0;
+    overflow: visible;
+    background-color: transparent;
+    color: #d8d8d8;
+    font-size: 75px;
+    line-height: 1;
+    font-family: Impact,"Arial Narrow",Helvetica,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-top: 0;
+  }
+</style>
 
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
@@ -18,6 +36,14 @@
   <h1>{{ 'OSH events' | trans }}</h1>
   <a href="/oshevents" class="pull-right-flex back-to-link">{{ 'Back to events' | trans }}</a>
 </div>
+<div>
+  {% if not node.isPublished() %}
+    <mark class="unpublished">Unpublished</mark>
+  {% endif %}
+</div>
+{% if not node.isPublished() %}
+  <{{ ds_content_wrapper }}{{ attributes.addClass('node--unpublished') }}>
+{% endif %}
 <h2>{{ ds_content.node_title }}</h2>
 <div class="group-events-event-details field-group-div">
   <h3 class="events-title">{{ 'Event Details' | trans }}</h3>
