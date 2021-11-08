@@ -405,7 +405,7 @@
         "drupal/reroute_email": "^2.0",
         "drupal/responsive_menu": "^4.4",
         "drupal/rules": "3.x-dev@dev",
-        "drupal/scanner": "^1.0@RC",
+        "drupal/scanner": "1.x-dev",
         "drupal/search_api": "^1.18",
         "drupal/search_api_attachments": "^1.0@beta",
         "drupal/search_api_autocomplete": "^1.4",
@@ -492,7 +492,9 @@
                 "On null isTranslatable": "https://www.drupal.org/files/issues/2019-12-05/2928108-49.patch",
                 "if you don't want to translate your URL alias": "https://www.drupal.org/files/issues/2020-01-26/2689459-127.patch",
                 "Disabled text formats can't be seen in the GUI": "https://www.drupal.org/files/issues/2020-05-20/2502637-82_0.patch",
-                "Distinct": "https://www.drupal.org/files/issues/2021-04-16/2993688-69.patch"
+                "Distinct": "https://www.drupal.org/files/issues/2021-04-16/2993688-69.patch",
+                "User can't reference unpublished content even when they have access to it": "https://www.drupal.org/files/issues/2021-06-09/2845144_52.patch"
+
             },
             "drupal/linked_field": {
                 "Token warnings": "https://www.drupal.org/files/issues/2020-08-14/problem-with-display-of-custom-data-in-layout-manager-3110226-8.patch",
