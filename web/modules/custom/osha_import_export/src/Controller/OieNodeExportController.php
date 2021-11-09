@@ -57,6 +57,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       $langs[$lang] = $node->getTranslation($lang);
     }
 
+
     $data = [
       'vid' => $node->get('vid')->getString(),
       'uid' => $node->get('uid')->getString(),
@@ -73,6 +74,7 @@ class OieNodeExportController extends ControllerBase implements ContainerInjecti
       'uuid' => $node->get('uuid')->getString(),
       'revision_timestamp' => $node->get('revision_timestamp')->getString(),
       'revision_uid' => $node->get('revision_uid')->getString(),
+      'pathalias' => mb_substr($node->get('path')->getString() ,0,mb_strpos($node->get('path')->getString(),',')),
     ];
 
     foreach ($node->getFieldDefinitions() as $field_name => $definition) {
