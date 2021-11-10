@@ -72,7 +72,6 @@ class SarScannerForm extends ScannerForm {
       $build['options']['#collapsible'] = TRUE;
       $build['options']['#open'] = FALSE;
       $build['submit_replace']['#validate'] = [$this, '::validateReplace'];
-      ksm($build['submit_replace']['#validate']);
     }
 
     $build['replace']['#weight'] = 98;
