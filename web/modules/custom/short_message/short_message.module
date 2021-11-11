@@ -26,6 +26,7 @@ function short_message_theme($existing, $type, $theme, $path) {
     'short_messages_body' => [
       'variables' => [
         'body_content' => NULL,
+        'node_id' => NULL,
         'bundle' => NULL,
         'contacts' => NULL,
       ],
