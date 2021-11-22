@@ -32,7 +32,7 @@ class NCWForm extends FormBase {
 
         // Block node if it has been sent to translate.
         foreach ($queryUserSectionResult as $item) {
-          if ($item->state == 1 || $item->state == 2 || $item->state == 5 || $item->state == 6) {
+          if ($item->state == 0 || $item->state == 1 || $item->state == 2 || $item->state == 5 || $item->state == 6) {
             // edition form
             if ($form_id == 'node_25th_anniversary_edit_form' || $form_id == 'node_article_edit_form' ||
               $form_id == 'node_banner_edit_form' || $form_id == 'node_blog_edit_form' || $form_id == 'node_calls_edit_form' ||
@@ -60,7 +60,7 @@ class NCWForm extends FormBase {
                   $job_number = $item->tjid;
                   $job_path = "/admin/translation_workflow/jobs/" . $job_number;
 
-                  \Drupal::messenger()->addWarning(t('This content is in an active translation job: <a href="@job_path">Translation job #@job_number</a>', array('@job_path' => $job_path, '@job_number' => $job_number)));
+                  \Drupal::messenger()->addWarning(t('<div id="translation-job-message">This content is in an active translation job: <a href="@job_path">Translation job #@job_number</a></div>', array('@job_path' => $job_path, '@job_number' => $job_number)));
                 }
               }
             }

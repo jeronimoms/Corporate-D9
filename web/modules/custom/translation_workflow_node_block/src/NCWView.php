@@ -33,7 +33,7 @@ class NCWView {
 
         // Block node if it has been sent to translate.
         foreach ($queryUserSectionResult as $item) {
-          if ($item->state == 1 || $item->state == 2 || $item->state == 5 || $item->state == 6) {
+          if ($item->state == 0 || $item->state == 1 || $item->state == 2 || $item->state == 5 || $item->state == 6) {
             // Get the id of the translation job
             $queryTranslationJobId = \Drupal::database()
               ->query('SELECT MAX(DISTINCT(tjid)) tjid
