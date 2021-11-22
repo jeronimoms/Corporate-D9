@@ -3340,6 +3340,44 @@ span.ckeditorimage {
   font-weight: 600;
 }
 
+.alert-wrapper {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 75vh;
+  z-index: 9;
+  margin-bottom: 2rem;
+}
+.alert-wrapper .alert-warning {
+  color: #333;
+  background: #FFFBD9;
+  border: 1px solid #FFEBC5;
+  border-radius: 0;
+  margin-top: 0;
+}
+.alert-wrapper .btn-close {
+  display: none;
+}
+
+.alert-warning::before {
+  float: left;
+  height: 2.15rem !important;
+  margin-right: 1em;
+}
+
+#translation-job-message {
+  padding-top: 6px;
+  color: #b17508;
+}
+#translation-job-message a {
+  border-bottom: 1px solid #c72272;
+}
+#translation-job-message a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #003399;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
