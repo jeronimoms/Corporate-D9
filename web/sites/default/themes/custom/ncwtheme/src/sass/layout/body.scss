@@ -1445,3 +1445,16 @@ span.ckeditorimage{
   float: left;
   margin-right: 10px;
 }
+
+.archived-container{
+  background: $bg-color-blue-light-2;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid $bg-color-blue-light;
+  p{
+    color: $text-color-blue;
+  }
+  p:nth-child(1){
+    font-weight: 600;
+  }
+}

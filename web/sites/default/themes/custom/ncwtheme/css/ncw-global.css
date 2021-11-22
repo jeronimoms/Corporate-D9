@@ -3327,6 +3327,19 @@ span.ckeditorimage {
   margin-right: 10px;
 }
 
+.archived-container {
+  background: #e8ecf5;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #cfddee;
+}
+.archived-container p {
+  color: #003399;
+}
+.archived-container p:nth-child(1) {
+  font-weight: 600;
+}
+
 /* Breadcrumbs */
 .breadcrumb-fluid {
   border-bottom: 2px solid #cfddee;
