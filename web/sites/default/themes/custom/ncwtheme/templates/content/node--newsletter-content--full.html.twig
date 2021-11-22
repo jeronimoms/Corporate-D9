@@ -73,14 +73,8 @@
  */
 #}
 
-
-
 {% set piwik_url_value = content.nlc_id_in_piwik.0['#context'].value %}
 {% set piwik_url = '?pk_campaign=' ~ piwik_url_value %}
-
-
-pageVariable:{{ drupal_dump(pageVariable) }}
-
 
 <article {{ attributes }}>
   <table class="newsletter-container" border="0" cellpadding="0" width="800"
