@@ -3030,8 +3030,8 @@ body.path-aggregator article.aggregator-item .item-description {
   clear: both;
 }
 
-/* Hide field reviwers */
-#main .form-item-node-id {
+/* Hide field reviwers - appprove and RM list (tabs) */
+#approver-form .form-item-node-id {
   display: none;
 }
 
