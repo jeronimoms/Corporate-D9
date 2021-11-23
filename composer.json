@@ -539,7 +539,8 @@
                 "Drupal breaks when using php version lower than 8": "patches/layoutcomponents-change_str_contains_for_php7.patch"
             },
             "drupal/tmgmt": {
-                "Use of deprecated theme function": "https://git.drupalcode.org/project/tmgmt/-/merge_requests/6.diff"
+                "Use of deprecated theme function": "https://git.drupalcode.org/project/tmgmt/-/merge_requests/6.diff",
+                "validateMaxLength gives bogus errors": "https://www.drupal.org/files/issues/2020-02-26/3116287_2.patch"
             },
             "drupal/pathologic": {
                 "Internal URL handling (Aliases, language prefixes, base://, ...)": "https://www.drupal.org/files/issues/2021-03-23/internal_url_handling-2418369-29.patch"
