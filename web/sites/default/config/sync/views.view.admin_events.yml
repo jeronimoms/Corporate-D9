@@ -27,6 +27,7 @@ dependencies:
     - user.role.approver
     - user.role.content_validator
     - user.role.editor
+    - user.role.eventpm
     - user.role.events_coordinator
     - user.role.events_editor
     - user.role.project_manager
@@ -68,8 +69,9 @@ display:
             project_manager: project_manager
             approver: approver
             content_validator: content_validator
-            events_coordinator: events_coordinator
             events_editor: events_editor
+            events_coordinator: events_coordinator
+            eventpm: eventpm
       cache:
         type: tag
         options: {  }
