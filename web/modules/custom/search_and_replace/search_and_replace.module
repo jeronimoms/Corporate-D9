@@ -25,7 +25,7 @@ function search_and_replace_form_alter(&$form, FormStateInterface $form_state, $
 function search_and_replace_form_scanner_admin_settings_alter(&$form, FormStateInterface $form_state, $form_id) {
   //hardcoded disabled entity_types and fields
   $forbidden_entity_types = ['paragraph'];
-  $forbidden_fields = ['field_descripcion'];
+  $forbidden_fields = ['moderation_state'];
   foreach ($form['enabled_content_types']['#options'] as $k => $v){
     $entity = explode(":",$k);
     if (in_array($entity[0], $forbidden_entity_types)){
