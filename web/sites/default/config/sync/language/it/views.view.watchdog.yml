@@ -3,5 +3,7 @@ display:
     display_title: Master
     display_options:
       fields:
+        timestamp:
+          label: Date
         message:
           label: Message
