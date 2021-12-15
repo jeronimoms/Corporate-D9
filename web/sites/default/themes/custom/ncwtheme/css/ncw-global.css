@@ -3940,6 +3940,9 @@ body.user-logged-in.toolbar-tray-open {
 .mean-expand {
   display: none; }
 
+.unpublishedmenu a {
+  color: red !important; }
+
 /* Responsive Menu */
 @media only screen and (max-width: 991px) {
   .content-first-row {
