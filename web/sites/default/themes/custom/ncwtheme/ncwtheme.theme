@@ -161,6 +161,46 @@ function ncwtheme_preprocess_ds_1col(&$variables){
   }
 }
 
+function ncwtheme_preprocess_menu(&$variables, $hook) {
+  if($hook=='menu' && isset($variables['menu_name'])){
+    if($variables['menu_name']=="main"){
+
+      foreach ($variables['items'] as $key => $item) {
+        if(count($item['below']) > 0) {
+
+          foreach ($item['below'] as $key => $value){
+            if(count($value['below'])>0) {
+              $second_level = $value['below'];
+
+              foreach ($second_level as $key=>$value){
+                $link = $value['original_link']->getUrlObject()->getInternalPath();
+                $nodeId= null;
+                $theNode = null;
+
+                if(preg_match('/node/',$link)){$nodeId =  explode('/', $link)[1];}
+
+                if($nodeId && is_numeric($nodeId)){
+                  $theNode = Drupal::entityTypeManager()->getStorage('node')->load($nodeId);
+                }
+
+                if($theNode && !$theNode->isPublished()){
+                  $value['attributes']->addClass('unpublishedmenu');
+                }else{
+                  if( $value['attributes']->hasClass('unpublishedmenu')){
+                    $value['attributes']->removeClass('unpublishedmenu');
+                  }
+                }
+              }
+
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+}
 
 
 
