@@ -39,6 +39,9 @@
  */
 #}
 
+{% set piwik_url_value = build.nlc_id_in_piwik.0['#context'].value %}
+{% set piwik_url = '?pk_campaign=' ~ piwik_url_value %}
+
 <table class="newsletter-container" border="0" cellpadding="0" width="800"
        style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; background-color: #ffffff; table-layout: fixed; max-width: 800px;">
   <tbody>
@@ -58,74 +61,74 @@
               <tr style="border: 0;">
                 <td
                   style="vertical-align: top; padding: 5px; border: 0; font-size: 12px; padding-left: 30px; padding-right: 30px; font-family: Arial,sans-serif;">
-                  <a href="/bg{{ build.field_url_alias.0}}"
+                  <a href="/bg{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Български</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/cs{{ build.field_url_alias.0}}"
+                  <a href="/cs{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Čeština</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/da{{ build.field_url_alias.0}}"
+                  <a href="/da{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Dansk</a> <span style="color: #606060;"> | </span>
-                  <a href="/de{{ build.field_url_alias.0}}"
+                  <a href="/de{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Deutsch</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/et{{ build.field_url_alias.0}}"
+                  <a href="/et{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Eesti</a> <span style="color: #606060;"> | </span>
-                  <a href="/el{{ build.field_url_alias.0}}"
+                  <a href="/el{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Ελληνικά</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/en{{ build.field_url_alias.0}}"
+                  <a href="/en{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #003399;">English</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/es{{ build.field_url_alias.0}}"
+                  <a href="/es{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Español</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/fr{{ build.field_url_alias.0}}"
+                  <a href="/fr{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Français</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/hr{{ build.field_url_alias.0}}"
+                  <a href="/hr{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Hrvatski</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/is{{ build.field_url_alias.0}}"
+                  <a href="/is{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Íslenska</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/it{{ build.field_url_alias.0}}"
+                  <a href="/it{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Italiano</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/lv{{ build.field_url_alias.0}}"
+                  <a href="/lv{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Latviešu</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/lt{{ build.field_url_alias.0}}"
+                  <a href="/lt{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Lietuvių</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/hu{{ build.field_url_alias.0}}"
+                  <a href="/hu{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Magyar</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/mt{{ build.field_url_alias.0}}"
+                  <a href="/mt{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Malti</a> <span style="color: #606060;"> | </span>
-                  <a href="/nl{{ build.field_url_alias.0}}"
+                  <a href="/nl{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Nederlands</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/no{{ build.field_url_alias.0}}"
+                  <a href="/no{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Norsk</a> <span style="color: #606060;"> | </span>
-                  <a href="/pl{{ build.field_url_alias.0}}"
+                  <a href="/pl{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Polski</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/pt{{ build.field_url_alias.0}}"
+                  <a href="/pt{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Português</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/ro{{ build.field_url_alias.0}}"
+                  <a href="/ro{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Română</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/sk{{ build.field_url_alias.0}}"
+                  <a href="/sk{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Slovenčina</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/sl{{ build.field_url_alias.0}}"
+                  <a href="/sl{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Slovenščina</a> <span
                     style="color: #606060;"> | </span>
-                  <a href="/fi{{ build.field_url_alias.0}}"
+                  <a href="/fi{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Suomi</a> <span style="color: #606060;"> | </span>
-                  <a href="/sv{{ build.field_url_alias.0}}"
+                  <a href="/sv{{ build.field_url_alias.0}}{{ piwik_url }}"
                      style="text-decoration: none; color: #606060;">Svenska</a></td>
               </tr>
               </tbody>
@@ -167,7 +170,7 @@
                       src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/flickr-blue.png"
                       width="auto" height="20" alt="Flickr"></a></td>
                 <td align="Right" style="vertical-align: top; border: 0; padding: 0 10px 0 10px; padding-right: 0px;">
-                  <a href="https://osha.europa.eu/en/tools-and-resources/blog?pk_campaign=oshmail_2021_03"
+                  <a href="https://osha.europa.eu/en/tools-and-resources/blog{{ piwik_url }}"
                      style="color: #144989; text-decoration: none;"><img
                       style="border:0px;height:20px;max-height:20px;max-width:20px;" typeof="foaf:Image"
                       src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/blog-blue.png"
@@ -186,8 +189,7 @@
         <tr style="border: 0;">
           <td class="osha-logos"
               style="border: 0; text-align: left; line-height: 1.1; vertical-align: top; padding: 0 20px 20px 20px;">
-            <a href="https://osha.europa.eu/en"
-               style="color: #0074BD; text-decoration: none;">
+            <a href="https://osha.europa.eu/en{{ piwik_url }}" style="color: #0074BD; text-decoration: none;">
               <img style="border: 0px; width: 247px; max-width: 247px; height: 87px; max-height: 87px;" typeof="foaf:Image" src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/EU-OSHA-en.png" width="247"
                    height="84" alt="European Agency for Safety and Health at Work">
             </a>
@@ -227,7 +229,7 @@
                   style="vertical-align: middle; border: 0; padding: 20px; line-height: 1.1; background-color: #003399; width: 30%; text-align: right; font-size: 14px; font-weight: 300; color: #ffffff; font-family: Oswald, Arial,sans-serif;"
                   class="hidden-print">
                   <a
-                    href="mailto:?subject=OSH%20Newsletter:%20OSHmail%20222&amp;body=Check%20out%20this%20newsletter:%20https://osha.europa.eu/en/entity-collection/oshmail_222"
+                    href="mailto:?subject=OSH%20Newsletter:%20{{ build.field_oshmail_title.0 }}&amp;body=Check%20out%20this%20newsletter:%20https://osha.europa.eu/en/entity-collection/{{ piwik_url_value }}"
                     title="Share by Email" class="forward-newsletter-link"
                     style="text-decoration: none; color: #ffffff;">
                     Forward this newsletter &nbsp;
@@ -280,7 +282,7 @@
                 <tbody>
                 <tr class="odd" style="border: 0; background-color: transparent;">
                   <td align="Right" style="vertical-align: top; padding: 0; border: 0; padding-bottom: 0;">
-                    <a href="{{ build.nlc_hlight_view_all[0]['#url'] }}" class="view-all see-more"
+                    <a href="{{ build.nlc_hlight_view_all[0]['#url'] }}{{ piwik_url }}" class="view-all see-more"
                        style="color: #003399; text-decoration: none; font-size: 16px;">{{ build.nlc_hlight_view_all[0]['#title'] }}
                       <img
                         style="border:0px;width:19px;height:11px;" typeof="foaf:Image"
@@ -533,20 +535,86 @@
                                 {% set hide_intro_text_oira = build.field_oira_contents_hideintro.0['#markup'] == 'On' %}
                                 {% if hide_intro_text_oira %}
                                   {% for key, item in build.nlc_oira_contents if key|first != '#' %}
+                                    {% set content_fields = drupal_entity('node', item['#node'].id) %}
+                                    {% set oira_title = content_fields['#node'].title.value %}
+                                    {% set oira_nid = content_fields['#node'].nid.value %}
+                                    {% set oira_date = content_fields['#node'].field_publication_date.getvalue.0.value|date("d/m/Y")  %}
+
+                                    <tr><td colspan="2" style="color: #003399; font-size: 14px; padding-top: 0; padding-bottom: 5px;">{{ oira_date }}</td></tr>
                                     {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                      <tr>
+                                        <td style="font-size: 14px; color: #003399;vertical-align: top"> >&nbsp;
+                                        </td>
+                                        <td style="padding-top: 0">
+                                          <a href="/node/{{ oira_nid }}{{ piwik_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">
+                                            {{ oira_title }}
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                      <td colspan="2" style="height: 25px;">&nbsp;</td>
+                                    </tr>
                                     {% endif %}
                                     {% if ( item['#node'].type.0.target_id  == 'news' ) %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                      <tr>
+                                        <td style="font-size: 14px; color: #003399;vertical-align: top"> >&nbsp;</td>
+                                        <td style="padding-top: 0">
+                                          <a href="/node/{{ oira_nid }}{{ piwik_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">
+                                            {{ oira_title }}
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td colspan="2" style="height: 25px;">&nbsp;</td>
+                                      </tr>
                                     {% endif %}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in build.nlc_oira_contents if key|first != '#' %}
+                                    {% set content_fields = drupal_entity('node', item['#node'].id) %}
+                                    {% set oira_title = content_fields['#node'].title.value %}
+                                    {% set oira_nid = content_fields['#node'].nid.value %}
+                                    {% set news_summary = content_fields['#node'].field_summary_html.0.value %}
+                                    {% set highlight_summary = content_fields['#node'].body.getvalue.0.value %}
+                                    {% set oira_date = content_fields['#node'].field_publication_date.getvalue.0.value|date("d/m/Y")  %}
+
+                                    <tr><td colspan="2" style="color: #003399; font-size: 14px; padding-top: 0; padding-bottom: 5px;">{{ oira_date }}</td></tr>
                                     {% if ( item['#node'].type.0.target_id  == 'highlight' ) %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                      <tr>
+                                        <td style="font-size: 14px; color: #003399;vertical-align: top"> >&nbsp;
+                                        </td>
+                                        <td style="padding-top: 0">
+                                          <a href="/node/{{ oira_nid }}{{ piwik_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">
+                                            {{ oira_title }}
+                                          </a>
+                                        </td>
+                                      </tr><tr>
+                                      <td></td>
+                                      <td style='color: #003399;font-size: 14px;'>
+                                        {{ highlight_summary|striptags|truncate(90, true) }}...
+                                      </td>
+                                    </tr><tr>
+                                      <td colspan="2" style="height: 25px;">&nbsp;</td>
+                                    </tr>
                                     {% endif %}
                                     {% if ( item['#node'].type.0.target_id  == 'news' ) %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                      <tr>
+                                        <td style="font-size: 14px; color: #003399;vertical-align: top"> >&nbsp;</td>
+                                        <td style="padding-top: 0">
+                                          <a href="/node/{{ oira_nid }}{{ piwik_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">
+                                            {{ oira_title }}
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td></td>
+                                        <td style='color: #003399;font-size: 14px;'>
+                                          {{ news_summary|striptags|truncate(90, true) }}...
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td colspan="2" style="height: 25px;">&nbsp;</td>
+                                      </tr>
                                     {% endif %}
                                   {% endfor %}
                                 {% endif %}
@@ -620,20 +688,81 @@
                                 {% set hide_intro_text_covid = build.field_covid_contents_hideintro.0['#markup'] == 'On' %}
                                 {% if hide_intro_text_covid %}
                                   {% for key, item in build.nlc_covid_contents if key|first != '#' %}
+                                    {% set content_fields = drupal_entity('node', item['#node'].id) %}
+                                    {% set covid_title = content_fields['#node'].title.value %}
+                                    {% set covid_nid = content_fields['#node'].nid.value %}
+                                    {% set publication_date = content_fields['#node'].field_publication_date.getvalue.0.value|date("d/m/Y")  %}
+
+                                    <tr><td colspan="2" style="color: #003399; font-size: 14px; padding-top: 0; padding-bottom: 5px;">{{ publication_date }}</td></tr>
                                     {% if ( item['#node'].type.0.target_id  == 'article' ) %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                      <tr>
+                                        <td style="font-size: 14px; color: #003399;vertical-align: top"> >&nbsp;</td>
+                                        <td style="padding-top: 0">
+                                          <a href="/node/{{ covid_nid }}{{ piwik_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">
+                                            {{ covid_title }}
+                                          </a>
+                                        </td>
+                                      </tr><tr>
+                                      <td><tr>
+                                      <td colspan="2" style="height: 25px;">&nbsp;</td>
+                                    </tr>
                                     {% endif %}
                                     {% if ( item['#node'].type.0.target_id  == 'news' ) %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks_hide_intro_text') }}
+                                      <tr>
+                                        <td style="font-size: 14px; color: #003399;vertical-align: top"> >&nbsp;</td>
+                                        <td style="padding-top: 0">
+                                          <a href="/node/{{ covid_nid }}{{ piwik_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">
+                                            {{ covid_title }}
+                                          </a>
+                                        </td>
+                                      </tr><tr>
+                                      <td colspan="2" style="height: 25px;">&nbsp;</td>
+                                    </tr>
                                     {% endif %}
                                   {% endfor %}
                                 {% else %}
                                   {% for key, item in build.nlc_covid_contents if key|first != '#' %}
+                                    {% set content_fields = drupal_entity('node', item['#node'].id) %}
+                                    {% set covid_title = content_fields['#node'].title.value %}
+                                    {% set covid_nid = content_fields['#node'].nid.value %}
+                                    {% set news_summary = content_fields['#node'].field_summary_html.0.value %}
+                                    {% set article_summary = content_fields['#node'].body.getvalue.0.value %}
+                                    {% set publication_date = content_fields['#node'].field_publication_date.getvalue.0.value|date("d/m/Y")  %}
+
+                                    <tr><td colspan="2" style="color: #003399; font-size: 14px; padding-top: 0; padding-bottom: 5px;">{{ publication_date }}</td></tr>
                                     {% if ( item['#node'].type.0.target_id  == 'article' ) %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                      <tr>
+                                        <td style="font-size: 14px; color: #003399;vertical-align: top"> >&nbsp;</td>
+                                        <td style="padding-top: 0">
+                                          <a href="/node/{{ covid_nid }}{{ piwik_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">
+                                            {{ covid_title }}
+                                          </a>
+                                        </td>
+                                      </tr><tr>
+                                      <td></td>
+                                      <td style='color: #003399;font-size: 14px;'>
+                                        {{ article_summary|striptags|truncate(90, true) }}...
+                                      </td>
+                                    </tr><tr>
+                                      <td colspan="2" style="height: 25px;">&nbsp;</td>
+                                    </tr>
                                     {% endif %}
                                     {% if ( item['#node'].type.0.target_id  == 'news' ) %}
-                                      {{ drupal_entity('node', item['#node'].id , 'newsletter_items_blocks') }}
+                                      <tr>
+                                        <td style="font-size: 14px; color: #003399;vertical-align: top"> >&nbsp;</td>
+                                        <td style="padding-top: 0">
+                                          <a href="/node/{{ covid_nid }}{{ piwik_url }}" style="color: #003399; text-decoration: none; font-size: 14px; font-weight: 600;">
+                                            {{ covid_title }}
+                                          </a>
+                                        </td>
+                                      </tr><tr>
+                                      <td></td>
+                                      <td style='color: #003399;font-size: 14px;'>
+                                        {{ news_summary|striptags|truncate(90, true) }}...
+                                      </td>
+                                    </tr><tr>
+                                      <td colspan="2" style="height: 25px;">&nbsp;</td>
+                                    </tr>
                                     {% endif %}
                                   {% endfor %}
                                 {% endif %}
@@ -939,7 +1068,7 @@
                           </tr>
                           <tr style="border: 0;">
                             <td style="text-align: right;">
-                              <a href="/oshnews" style="display: block; color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold; padding-top: 0">
+                              <a href="/oshnews{{ piwik_url }}" style="display: block; color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold; padding-top: 0">
                                 View all <img src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/flecha.png" alt="View all">
                               </a>
                             </td>
@@ -1052,7 +1181,7 @@
                           </tr>
                           <tr style="border: 0;">
                             <td style="text-align: right;">
-                              <a href="/oshnews" style="display: block; color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold; padding-top: 0">
+                              <a href="/oshnews{{ piwik_url }}" style="display: block; color: #003399; text-decoration: none; font-family: Arial,sans-serif; font-size: 13px; font-weight: bold; padding-top: 0">
                                 View all <img src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/flecha.png" alt="View all">
                               </a>
                             </td>
@@ -1177,15 +1306,15 @@
                    style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; max-width: 800px; background-color: #EFEFEF;">
               <tbody>
               <tr style="border: 0;">
-                <td
-                  style="vertical-align: top; border: 0; padding: 5px 10px 5px 10px; padding-top: 15px; padding-bottom: 15px; text-align: center; font-family: Arial,sans-serif; font-size: 12px; color: #333333;">
-                  <p style="font-size: 13px; margin: 0;"><b>Occupational Safety and Health News – Europe brought to
-                      you by EU-OSHA.</b></p>
-                  <p style="font-size: 13px; margin: 0;">Visit us at: <a
-                      href="https://osha.europa.eu/en?pk_campaign=oshmail_2021_03"
-                      style="color: #003399; border-bottom-style: solid; border-bottom-width: 1px; text-decoration: none;">https://osha.europa.eu/en</a>
-                    &nbsp; Contact us: <a href="mailto:information@osha.europa.eu"
-                                          style="color: #003399; border-bottom-style: solid; border-bottom-width: 1px; text-decoration: none;">information@osha.europa.eu</a>
+                <td style="vertical-align: top; border: 0; padding: 5px 10px 5px 10px; padding-top: 15px; padding-bottom: 15px; text-align: center; font-family: Arial,sans-serif; font-size: 12px; color: #333333;">
+                  <p style="font-size: 13px; margin: 0;">
+                    <b>Occupational Safety and Health News – Europe brought to you by EU-OSHA.</b>
+                  </p>
+                  <p style="font-size: 13px; margin: 0;">Visit us at:
+                    <a href="https://osha.europa.eu/en{{ piwik_url }}" style="color: #003399; border-bottom-style: solid; border-bottom-width: 1px; text-decoration: none;">
+                      https://osha.europa.eu/en
+                    </a>
+                    &nbsp; Contact us: <a href="mailto:information@osha.europa.eu" style="color: #003399; border-bottom-style: solid; border-bottom-width: 1px; text-decoration: none;">information@osha.europa.eu</a>
                   </p>
                 </td>
               </tr>
@@ -1226,7 +1355,7 @@
                               style="border:0px;height:20px;max-width:20px;" typeof="foaf:Image"
                               src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/flickr-blue.png"
                               width="auto" height="20" alt="Flickr"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                            href="https://osha.europa.eu/en/tools-and-resources/blog?pk_campaign=oshmail_2021_03"
+                            href="https://osha.europa.eu/en/tools-and-resources/blog{{ piwik_url }}"
                             style="color: #144989; text-decoration: none;"><img
                               style="border:0px;height:20px;max-width:20px;" typeof="foaf:Image"
                               src="https://osha.europa.eu/sites/default/themes/custom/ncwtheme/images/newsletter-images/blog-blue.png"
@@ -1234,13 +1363,12 @@
                       </td>
                     </tr>
                     <tr style="border: 0;">
-                      <td
-                        style="vertical-align: top; border: 0; text-align: center; padding: 5px 10px 5px 10px; padding-top: 10px; padding-bottom: 10px; color: #333333; font-family: Arial, sans-serif; font-size: 13px;">
+                      <td style="vertical-align: top; border: 0; text-align: center; padding: 5px 10px 5px 10px; padding-top: 10px; padding-bottom: 10px; color: #333333; font-family: Arial, sans-serif; font-size: 13px;">
                         <p style="font-size: 13px; margin: 0;">
-                          Subscribe to our <a
-                            href="https://osha.europa.eu/en/alertservice?pk_campaign=oshmail_2021_03"
-                            style="color: #003399; text-decoration: none;">Alert service</a> for <br> customised
-                          content delivery </p>
+                          Subscribe to our
+                          <a href="https://osha.europa.eu/en/alertservice{{ piwik_url }}" style="color: #003399; text-decoration: none;">
+                            Alert service
+                          </a> for <br> customised content delivery </p>
                       </td>
                     </tr>
                     </tbody>
@@ -1253,13 +1381,13 @@
                          style="font-family: 'Oswald', Arial, sans-serif; font-size: 14px; border: 0; margin: 0; border-collapse: collapse; border-spacing: 0;">
                     <tbody>
                     <tr style="border: 0;">
-                      <td
-                        style="vertical-align: top; border: 0; padding: 5px 10px 5px 10px; text-align: center; font-family: Arial, sans-serif; color: #333333; font-size: 13px;">
-                        <p style="font-size: 13px; margin: 0;">No longer wish to receive OSHmail? <a target="_blank"
-                                                                                                     href="https://analytics-eu.clickdimensions.com/oshaeuropaeu-a1cuo/pages/tvcgmcleema3qbqvroocg.html"
-                                                                                                     style="color: #003399; text-decoration: none;">Unsubscribe
-                            here.<span class="osha_target_external_link">&nbsp;</span></a></p>
-
+                      <td style="vertical-align: top; border: 0; padding: 5px 10px 5px 10px; text-align: center; font-family: Arial, sans-serif; color: #333333; font-size: 13px;">
+                        <p style="font-size: 13px; margin: 0;">
+                          No longer wish to receive OSHmail?
+                          <a target="_blank" href="https://analytics-eu.clickdimensions.com/oshaeuropaeu-a1cuo/pages/tvcgmcleema3qbqvroocg.html" style="color: #003399; text-decoration: none;">
+                            Unsubscribe here.<span class="osha_target_external_link">&nbsp;</span>
+                          </a>
+                        </p>
                       </td>
                     </tr>
                     </tbody>
@@ -1275,8 +1403,10 @@
                       <td
                         style="vertical-align: top; border: 0; padding: 5px 10px 5px 10px; text-align: center; font-family: Arial, sans-serif; color: #333333; font-size: 13px;">
                         <p style="font-size: 13px; margin: 0;">
-                          <a href="https://osha.europa.eu/en/node/2433?pk_campaign=oshmail_2021_03"
-                             style="color: #003399; text-decoration: none;">Privacy notice</a></p>
+                          <a href="https://osha.europa.eu/en/node/2433{{ piwik_url }}" style="color: #003399; text-decoration: none;">
+                            Privacy notice
+                          </a>
+                        </p>
                       </td>
                     </tr>
                     </tbody>
@@ -1299,19 +1429,3 @@
   </tr>
   </tbody>
 </table>
-
-
-
-{% if not opt_out_hidden %}
-    {% if format == 'html' %}
-        <p class="newsletter-footer"><a
-                    href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
-        </p>
-    {% else %}
-        -- {{ unsubscribe_text }} : [simplenews-subscriber:unsubscribe-url]
-    {% endif %}
-{% endif %}
-
-{% if key == 'test' %}
-    - - - {{ test_message }} - - -
-{% endif %}

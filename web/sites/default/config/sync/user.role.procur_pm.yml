@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: procur_pm
 label: 'PROCUR PM'
-weight: 5
+weight: 6
 is_admin: null
 permissions:
   - 'access workbench'
@@ -23,4 +23,6 @@ permissions:
   - 'use editorial transition send_to_publish_from_final_draft'
   - 'use editorial transition send_to_publish_from_reviewed'
   - 'use workbench access'
+  - 'view any unpublished content'
+  - 'view latest version'
   - 'view workbench access information'
