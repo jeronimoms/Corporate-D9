@@ -354,8 +354,8 @@ function osha_copy_publication_translation_create_base_publication($title, $type
   $node->uid = $user->uid;
   $node->status = 0;
   $node->promote = $source_node->promote;
-
-  foreach ( ['field_file_media', 'field_related_publications'] as $field) {
+  $avoid_fields = ['field_related_publications']; // @todo field_file_media
+  foreach ( $avoid_fields as $field) {
       $node->set($field,[]);
   }
   $node->set('title',$title);
@@ -1086,7 +1086,8 @@ function osha_lingua_tools_copy_one_publication_for_each_country($form, &$form_s
   $languages = array_intersect_key($country_options, $countries);
   $user = \Drupal::currentUser();
   $base_node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
-  foreach ( ['field_file_media', 'field_related_publications'] as $field) {
+  $avoid_fields = ['field_related_publications']; // @todo field_file_media
+  foreach ( $avoid_fields as $field) {
     $base_node->set($field,[]);
   }
   $base_title = $base_node->getTitle();
